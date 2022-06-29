@@ -27,11 +27,10 @@ impl std::fmt::Debug for ValidationExceptionField {
         formatter.finish()
     }
 }
-/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
-    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField)
-    #[non_exhaustive]
+    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod validation_exception_field {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
                 name: self.name,
@@ -68,7 +67,7 @@ pub mod validation_exception_field {
     }
 }
 impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     pub fn builder() -> crate::model::validation_exception_field::Builder {
         crate::model::validation_exception_field::Builder::default()
     }
@@ -206,11 +205,10 @@ impl std::fmt::Debug for WorkloadShare {
         formatter.finish()
     }
 }
-/// See [`WorkloadShare`](crate::model::WorkloadShare)
+/// See [`WorkloadShare`](crate::model::WorkloadShare).
 pub mod workload_share {
 
-    /// A builder for [`WorkloadShare`](crate::model::WorkloadShare)
-    #[non_exhaustive]
+    /// A builder for [`WorkloadShare`](crate::model::WorkloadShare).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -300,7 +298,7 @@ pub mod workload_share {
             self.workload_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkloadShare`](crate::model::WorkloadShare)
+        /// Consumes the builder and constructs a [`WorkloadShare`](crate::model::WorkloadShare).
         pub fn build(self) -> crate::model::WorkloadShare {
             crate::model::WorkloadShare {
                 share_id: self.share_id,
@@ -315,7 +313,7 @@ pub mod workload_share {
     }
 }
 impl WorkloadShare {
-    /// Creates a new builder-style object to manufacture [`WorkloadShare`](crate::model::WorkloadShare)
+    /// Creates a new builder-style object to manufacture [`WorkloadShare`](crate::model::WorkloadShare).
     pub fn builder() -> crate::model::workload_share::Builder {
         crate::model::workload_share::Builder::default()
     }
@@ -692,11 +690,10 @@ impl std::fmt::Debug for Workload {
         formatter.finish()
     }
 }
-/// See [`Workload`](crate::model::Workload)
+/// See [`Workload`](crate::model::Workload).
 pub mod workload {
 
-    /// A builder for [`Workload`](crate::model::Workload)
-    #[non_exhaustive]
+    /// A builder for [`Workload`](crate::model::Workload).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -1120,7 +1117,7 @@ pub mod workload {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Workload`](crate::model::Workload)
+        /// Consumes the builder and constructs a [`Workload`](crate::model::Workload).
         pub fn build(self) -> crate::model::Workload {
             crate::model::Workload {
                 workload_id: self.workload_id,
@@ -1153,7 +1150,7 @@ pub mod workload {
     }
 }
 impl Workload {
-    /// Creates a new builder-style object to manufacture [`Workload`](crate::model::Workload)
+    /// Creates a new builder-style object to manufacture [`Workload`](crate::model::Workload).
     pub fn builder() -> crate::model::workload::Builder {
         crate::model::workload::Builder::default()
     }
@@ -1408,11 +1405,10 @@ impl std::fmt::Debug for ShareInvitation {
         formatter.finish()
     }
 }
-/// See [`ShareInvitation`](crate::model::ShareInvitation)
+/// See [`ShareInvitation`](crate::model::ShareInvitation).
 pub mod share_invitation {
 
-    /// A builder for [`ShareInvitation`](crate::model::ShareInvitation)
-    #[non_exhaustive]
+    /// A builder for [`ShareInvitation`](crate::model::ShareInvitation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_invitation_id: std::option::Option<std::string::String>,
@@ -1484,7 +1480,7 @@ pub mod share_invitation {
             self.lens_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ShareInvitation`](crate::model::ShareInvitation)
+        /// Consumes the builder and constructs a [`ShareInvitation`](crate::model::ShareInvitation).
         pub fn build(self) -> crate::model::ShareInvitation {
             crate::model::ShareInvitation {
                 share_invitation_id: self.share_invitation_id,
@@ -1497,7 +1493,7 @@ pub mod share_invitation {
     }
 }
 impl ShareInvitation {
-    /// Creates a new builder-style object to manufacture [`ShareInvitation`](crate::model::ShareInvitation)
+    /// Creates a new builder-style object to manufacture [`ShareInvitation`](crate::model::ShareInvitation).
     pub fn builder() -> crate::model::share_invitation::Builder {
         crate::model::share_invitation::Builder::default()
     }
@@ -1707,11 +1703,10 @@ impl std::fmt::Debug for LensReview {
         formatter.finish()
     }
 }
-/// See [`LensReview`](crate::model::LensReview)
+/// See [`LensReview`](crate::model::LensReview).
 pub mod lens_review {
 
-    /// A builder for [`LensReview`](crate::model::LensReview)
-    #[non_exhaustive]
+    /// A builder for [`LensReview`](crate::model::LensReview).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -1858,7 +1853,7 @@ pub mod lens_review {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`LensReview`](crate::model::LensReview)
+        /// Consumes the builder and constructs a [`LensReview`](crate::model::LensReview).
         pub fn build(self) -> crate::model::LensReview {
             crate::model::LensReview {
                 lens_alias: self.lens_alias,
@@ -1876,7 +1871,7 @@ pub mod lens_review {
     }
 }
 impl LensReview {
-    /// Creates a new builder-style object to manufacture [`LensReview`](crate::model::LensReview)
+    /// Creates a new builder-style object to manufacture [`LensReview`](crate::model::LensReview).
     pub fn builder() -> crate::model::lens_review::Builder {
         crate::model::lens_review::Builder::default()
     }
@@ -1927,11 +1922,10 @@ impl std::fmt::Debug for PillarReviewSummary {
         formatter.finish()
     }
 }
-/// See [`PillarReviewSummary`](crate::model::PillarReviewSummary)
+/// See [`PillarReviewSummary`](crate::model::PillarReviewSummary).
 pub mod pillar_review_summary {
 
-    /// A builder for [`PillarReviewSummary`](crate::model::PillarReviewSummary)
-    #[non_exhaustive]
+    /// A builder for [`PillarReviewSummary`](crate::model::PillarReviewSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pillar_id: std::option::Option<std::string::String>,
@@ -1992,7 +1986,7 @@ pub mod pillar_review_summary {
             self.risk_counts = input;
             self
         }
-        /// Consumes the builder and constructs a [`PillarReviewSummary`](crate::model::PillarReviewSummary)
+        /// Consumes the builder and constructs a [`PillarReviewSummary`](crate::model::PillarReviewSummary).
         pub fn build(self) -> crate::model::PillarReviewSummary {
             crate::model::PillarReviewSummary {
                 pillar_id: self.pillar_id,
@@ -2004,7 +1998,7 @@ pub mod pillar_review_summary {
     }
 }
 impl PillarReviewSummary {
-    /// Creates a new builder-style object to manufacture [`PillarReviewSummary`](crate::model::PillarReviewSummary)
+    /// Creates a new builder-style object to manufacture [`PillarReviewSummary`](crate::model::PillarReviewSummary).
     pub fn builder() -> crate::model::pillar_review_summary::Builder {
         crate::model::pillar_review_summary::Builder::default()
     }
@@ -2203,11 +2197,10 @@ impl std::fmt::Debug for Answer {
         formatter.finish()
     }
 }
-/// See [`Answer`](crate::model::Answer)
+/// See [`Answer`](crate::model::Answer).
 pub mod answer {
 
-    /// A builder for [`Answer`](crate::model::Answer)
-    #[non_exhaustive]
+    /// A builder for [`Answer`](crate::model::Answer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -2420,7 +2413,7 @@ pub mod answer {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`Answer`](crate::model::Answer)
+        /// Consumes the builder and constructs a [`Answer`](crate::model::Answer).
         pub fn build(self) -> crate::model::Answer {
             crate::model::Answer {
                 question_id: self.question_id,
@@ -2442,7 +2435,7 @@ pub mod answer {
     }
 }
 impl Answer {
-    /// Creates a new builder-style object to manufacture [`Answer`](crate::model::Answer)
+    /// Creates a new builder-style object to manufacture [`Answer`](crate::model::Answer).
     pub fn builder() -> crate::model::answer::Builder {
         crate::model::answer::Builder::default()
     }
@@ -2562,11 +2555,10 @@ impl std::fmt::Debug for ChoiceAnswer {
         formatter.finish()
     }
 }
-/// See [`ChoiceAnswer`](crate::model::ChoiceAnswer)
+/// See [`ChoiceAnswer`](crate::model::ChoiceAnswer).
 pub mod choice_answer {
 
-    /// A builder for [`ChoiceAnswer`](crate::model::ChoiceAnswer)
-    #[non_exhaustive]
+    /// A builder for [`ChoiceAnswer`](crate::model::ChoiceAnswer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -2621,7 +2613,7 @@ pub mod choice_answer {
             self.notes = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChoiceAnswer`](crate::model::ChoiceAnswer)
+        /// Consumes the builder and constructs a [`ChoiceAnswer`](crate::model::ChoiceAnswer).
         pub fn build(self) -> crate::model::ChoiceAnswer {
             crate::model::ChoiceAnswer {
                 choice_id: self.choice_id,
@@ -2633,7 +2625,7 @@ pub mod choice_answer {
     }
 }
 impl ChoiceAnswer {
-    /// Creates a new builder-style object to manufacture [`ChoiceAnswer`](crate::model::ChoiceAnswer)
+    /// Creates a new builder-style object to manufacture [`ChoiceAnswer`](crate::model::ChoiceAnswer).
     pub fn builder() -> crate::model::choice_answer::Builder {
         crate::model::choice_answer::Builder::default()
     }
@@ -2828,11 +2820,10 @@ impl std::fmt::Debug for Choice {
         formatter.finish()
     }
 }
-/// See [`Choice`](crate::model::Choice)
+/// See [`Choice`](crate::model::Choice).
 pub mod choice {
 
-    /// A builder for [`Choice`](crate::model::Choice)
-    #[non_exhaustive]
+    /// A builder for [`Choice`](crate::model::Choice).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -2919,7 +2910,7 @@ pub mod choice {
             self.additional_resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`Choice`](crate::model::Choice)
+        /// Consumes the builder and constructs a [`Choice`](crate::model::Choice).
         pub fn build(self) -> crate::model::Choice {
             crate::model::Choice {
                 choice_id: self.choice_id,
@@ -2933,7 +2924,7 @@ pub mod choice {
     }
 }
 impl Choice {
-    /// Creates a new builder-style object to manufacture [`Choice`](crate::model::Choice)
+    /// Creates a new builder-style object to manufacture [`Choice`](crate::model::Choice).
     pub fn builder() -> crate::model::choice::Builder {
         crate::model::choice::Builder::default()
     }
@@ -2966,11 +2957,10 @@ impl std::fmt::Debug for AdditionalResources {
         formatter.finish()
     }
 }
-/// See [`AdditionalResources`](crate::model::AdditionalResources)
+/// See [`AdditionalResources`](crate::model::AdditionalResources).
 pub mod additional_resources {
 
-    /// A builder for [`AdditionalResources`](crate::model::AdditionalResources)
-    #[non_exhaustive]
+    /// A builder for [`AdditionalResources`](crate::model::AdditionalResources).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::AdditionalResourceType>,
@@ -3009,7 +2999,7 @@ pub mod additional_resources {
             self.content = input;
             self
         }
-        /// Consumes the builder and constructs a [`AdditionalResources`](crate::model::AdditionalResources)
+        /// Consumes the builder and constructs a [`AdditionalResources`](crate::model::AdditionalResources).
         pub fn build(self) -> crate::model::AdditionalResources {
             crate::model::AdditionalResources {
                 r#type: self.r#type,
@@ -3019,7 +3009,7 @@ pub mod additional_resources {
     }
 }
 impl AdditionalResources {
-    /// Creates a new builder-style object to manufacture [`AdditionalResources`](crate::model::AdditionalResources)
+    /// Creates a new builder-style object to manufacture [`AdditionalResources`](crate::model::AdditionalResources).
     pub fn builder() -> crate::model::additional_resources::Builder {
         crate::model::additional_resources::Builder::default()
     }
@@ -3052,11 +3042,10 @@ impl std::fmt::Debug for ChoiceContent {
         formatter.finish()
     }
 }
-/// See [`ChoiceContent`](crate::model::ChoiceContent)
+/// See [`ChoiceContent`](crate::model::ChoiceContent).
 pub mod choice_content {
 
-    /// A builder for [`ChoiceContent`](crate::model::ChoiceContent)
-    #[non_exhaustive]
+    /// A builder for [`ChoiceContent`](crate::model::ChoiceContent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) display_text: std::option::Option<std::string::String>,
@@ -3083,7 +3072,7 @@ pub mod choice_content {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChoiceContent`](crate::model::ChoiceContent)
+        /// Consumes the builder and constructs a [`ChoiceContent`](crate::model::ChoiceContent).
         pub fn build(self) -> crate::model::ChoiceContent {
             crate::model::ChoiceContent {
                 display_text: self.display_text,
@@ -3093,7 +3082,7 @@ pub mod choice_content {
     }
 }
 impl ChoiceContent {
-    /// Creates a new builder-style object to manufacture [`ChoiceContent`](crate::model::ChoiceContent)
+    /// Creates a new builder-style object to manufacture [`ChoiceContent`](crate::model::ChoiceContent).
     pub fn builder() -> crate::model::choice_content::Builder {
         crate::model::choice_content::Builder::default()
     }
@@ -3188,11 +3177,10 @@ impl std::fmt::Debug for ChoiceUpdate {
         formatter.finish()
     }
 }
-/// See [`ChoiceUpdate`](crate::model::ChoiceUpdate)
+/// See [`ChoiceUpdate`](crate::model::ChoiceUpdate).
 pub mod choice_update {
 
-    /// A builder for [`ChoiceUpdate`](crate::model::ChoiceUpdate)
-    #[non_exhaustive]
+    /// A builder for [`ChoiceUpdate`](crate::model::ChoiceUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ChoiceStatus>,
@@ -3236,7 +3224,7 @@ pub mod choice_update {
             self.notes = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChoiceUpdate`](crate::model::ChoiceUpdate)
+        /// Consumes the builder and constructs a [`ChoiceUpdate`](crate::model::ChoiceUpdate).
         pub fn build(self) -> crate::model::ChoiceUpdate {
             crate::model::ChoiceUpdate {
                 status: self.status,
@@ -3247,7 +3235,7 @@ pub mod choice_update {
     }
 }
 impl ChoiceUpdate {
-    /// Creates a new builder-style object to manufacture [`ChoiceUpdate`](crate::model::ChoiceUpdate)
+    /// Creates a new builder-style object to manufacture [`ChoiceUpdate`](crate::model::ChoiceUpdate).
     pub fn builder() -> crate::model::choice_update::Builder {
         crate::model::choice_update::Builder::default()
     }
@@ -3294,11 +3282,10 @@ impl std::fmt::Debug for WorkloadShareSummary {
         formatter.finish()
     }
 }
-/// See [`WorkloadShareSummary`](crate::model::WorkloadShareSummary)
+/// See [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
 pub mod workload_share_summary {
 
-    /// A builder for [`WorkloadShareSummary`](crate::model::WorkloadShareSummary)
-    #[non_exhaustive]
+    /// A builder for [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -3350,7 +3337,7 @@ pub mod workload_share_summary {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkloadShareSummary`](crate::model::WorkloadShareSummary)
+        /// Consumes the builder and constructs a [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
         pub fn build(self) -> crate::model::WorkloadShareSummary {
             crate::model::WorkloadShareSummary {
                 share_id: self.share_id,
@@ -3362,7 +3349,7 @@ pub mod workload_share_summary {
     }
 }
 impl WorkloadShareSummary {
-    /// Creates a new builder-style object to manufacture [`WorkloadShareSummary`](crate::model::WorkloadShareSummary)
+    /// Creates a new builder-style object to manufacture [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
     pub fn builder() -> crate::model::workload_share_summary::Builder {
         crate::model::workload_share_summary::Builder::default()
     }
@@ -3443,11 +3430,10 @@ impl std::fmt::Debug for WorkloadSummary {
         formatter.finish()
     }
 }
-/// See [`WorkloadSummary`](crate::model::WorkloadSummary)
+/// See [`WorkloadSummary`](crate::model::WorkloadSummary).
 pub mod workload_summary {
 
-    /// A builder for [`WorkloadSummary`](crate::model::WorkloadSummary)
-    #[non_exhaustive]
+    /// A builder for [`WorkloadSummary`](crate::model::WorkloadSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -3573,7 +3559,7 @@ pub mod workload_summary {
             self.improvement_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkloadSummary`](crate::model::WorkloadSummary)
+        /// Consumes the builder and constructs a [`WorkloadSummary`](crate::model::WorkloadSummary).
         pub fn build(self) -> crate::model::WorkloadSummary {
             crate::model::WorkloadSummary {
                 workload_id: self.workload_id,
@@ -3589,7 +3575,7 @@ pub mod workload_summary {
     }
 }
 impl WorkloadSummary {
-    /// Creates a new builder-style object to manufacture [`WorkloadSummary`](crate::model::WorkloadSummary)
+    /// Creates a new builder-style object to manufacture [`WorkloadSummary`](crate::model::WorkloadSummary).
     pub fn builder() -> crate::model::workload_summary::Builder {
         crate::model::workload_summary::Builder::default()
     }
@@ -3673,11 +3659,10 @@ impl std::fmt::Debug for ShareInvitationSummary {
         formatter.finish()
     }
 }
-/// See [`ShareInvitationSummary`](crate::model::ShareInvitationSummary)
+/// See [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
 pub mod share_invitation_summary {
 
-    /// A builder for [`ShareInvitationSummary`](crate::model::ShareInvitationSummary)
-    #[non_exhaustive]
+    /// A builder for [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_invitation_id: std::option::Option<std::string::String>,
@@ -3795,7 +3780,7 @@ pub mod share_invitation_summary {
             self.lens_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ShareInvitationSummary`](crate::model::ShareInvitationSummary)
+        /// Consumes the builder and constructs a [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
         pub fn build(self) -> crate::model::ShareInvitationSummary {
             crate::model::ShareInvitationSummary {
                 share_invitation_id: self.share_invitation_id,
@@ -3812,7 +3797,7 @@ pub mod share_invitation_summary {
     }
 }
 impl ShareInvitationSummary {
-    /// Creates a new builder-style object to manufacture [`ShareInvitationSummary`](crate::model::ShareInvitationSummary)
+    /// Creates a new builder-style object to manufacture [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
     pub fn builder() -> crate::model::share_invitation_summary::Builder {
         crate::model::share_invitation_summary::Builder::default()
     }
@@ -3845,11 +3830,10 @@ impl std::fmt::Debug for NotificationSummary {
         formatter.finish()
     }
 }
-/// See [`NotificationSummary`](crate::model::NotificationSummary)
+/// See [`NotificationSummary`](crate::model::NotificationSummary).
 pub mod notification_summary {
 
-    /// A builder for [`NotificationSummary`](crate::model::NotificationSummary)
-    #[non_exhaustive]
+    /// A builder for [`NotificationSummary`](crate::model::NotificationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::NotificationType>,
@@ -3882,7 +3866,7 @@ pub mod notification_summary {
             self.lens_upgrade_summary = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotificationSummary`](crate::model::NotificationSummary)
+        /// Consumes the builder and constructs a [`NotificationSummary`](crate::model::NotificationSummary).
         pub fn build(self) -> crate::model::NotificationSummary {
             crate::model::NotificationSummary {
                 r#type: self.r#type,
@@ -3892,7 +3876,7 @@ pub mod notification_summary {
     }
 }
 impl NotificationSummary {
-    /// Creates a new builder-style object to manufacture [`NotificationSummary`](crate::model::NotificationSummary)
+    /// Creates a new builder-style object to manufacture [`NotificationSummary`](crate::model::NotificationSummary).
     pub fn builder() -> crate::model::notification_summary::Builder {
         crate::model::notification_summary::Builder::default()
     }
@@ -3961,11 +3945,10 @@ impl std::fmt::Debug for LensUpgradeSummary {
         formatter.finish()
     }
 }
-/// See [`LensUpgradeSummary`](crate::model::LensUpgradeSummary)
+/// See [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
 pub mod lens_upgrade_summary {
 
-    /// A builder for [`LensUpgradeSummary`](crate::model::LensUpgradeSummary)
-    #[non_exhaustive]
+    /// A builder for [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workload_id: std::option::Option<std::string::String>,
@@ -4053,7 +4036,7 @@ pub mod lens_upgrade_summary {
             self.latest_lens_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`LensUpgradeSummary`](crate::model::LensUpgradeSummary)
+        /// Consumes the builder and constructs a [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
         pub fn build(self) -> crate::model::LensUpgradeSummary {
             crate::model::LensUpgradeSummary {
                 workload_id: self.workload_id,
@@ -4067,7 +4050,7 @@ pub mod lens_upgrade_summary {
     }
 }
 impl LensUpgradeSummary {
-    /// Creates a new builder-style object to manufacture [`LensUpgradeSummary`](crate::model::LensUpgradeSummary)
+    /// Creates a new builder-style object to manufacture [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
     pub fn builder() -> crate::model::lens_upgrade_summary::Builder {
         crate::model::lens_upgrade_summary::Builder::default()
     }
@@ -4173,11 +4156,10 @@ impl std::fmt::Debug for MilestoneSummary {
         formatter.finish()
     }
 }
-/// See [`MilestoneSummary`](crate::model::MilestoneSummary)
+/// See [`MilestoneSummary`](crate::model::MilestoneSummary).
 pub mod milestone_summary {
 
-    /// A builder for [`MilestoneSummary`](crate::model::MilestoneSummary)
-    #[non_exhaustive]
+    /// A builder for [`MilestoneSummary`](crate::model::MilestoneSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
@@ -4239,7 +4221,7 @@ pub mod milestone_summary {
             self.workload_summary = input;
             self
         }
-        /// Consumes the builder and constructs a [`MilestoneSummary`](crate::model::MilestoneSummary)
+        /// Consumes the builder and constructs a [`MilestoneSummary`](crate::model::MilestoneSummary).
         pub fn build(self) -> crate::model::MilestoneSummary {
             crate::model::MilestoneSummary {
                 milestone_number: self.milestone_number.unwrap_or_default(),
@@ -4251,7 +4233,7 @@ pub mod milestone_summary {
     }
 }
 impl MilestoneSummary {
-    /// Creates a new builder-style object to manufacture [`MilestoneSummary`](crate::model::MilestoneSummary)
+    /// Creates a new builder-style object to manufacture [`MilestoneSummary`](crate::model::MilestoneSummary).
     pub fn builder() -> crate::model::milestone_summary::Builder {
         crate::model::milestone_summary::Builder::default()
     }
@@ -4291,11 +4273,10 @@ impl std::fmt::Debug for LensShareSummary {
         formatter.finish()
     }
 }
-/// See [`LensShareSummary`](crate::model::LensShareSummary)
+/// See [`LensShareSummary`](crate::model::LensShareSummary).
 pub mod lens_share_summary {
 
-    /// A builder for [`LensShareSummary`](crate::model::LensShareSummary)
-    #[non_exhaustive]
+    /// A builder for [`LensShareSummary`](crate::model::LensShareSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) share_id: std::option::Option<std::string::String>,
@@ -4333,7 +4314,7 @@ pub mod lens_share_summary {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`LensShareSummary`](crate::model::LensShareSummary)
+        /// Consumes the builder and constructs a [`LensShareSummary`](crate::model::LensShareSummary).
         pub fn build(self) -> crate::model::LensShareSummary {
             crate::model::LensShareSummary {
                 share_id: self.share_id,
@@ -4344,7 +4325,7 @@ pub mod lens_share_summary {
     }
 }
 impl LensShareSummary {
-    /// Creates a new builder-style object to manufacture [`LensShareSummary`](crate::model::LensShareSummary)
+    /// Creates a new builder-style object to manufacture [`LensShareSummary`](crate::model::LensShareSummary).
     pub fn builder() -> crate::model::lens_share_summary::Builder {
         crate::model::lens_share_summary::Builder::default()
     }
@@ -4420,11 +4401,10 @@ impl std::fmt::Debug for LensReviewSummary {
         formatter.finish()
     }
 }
-/// See [`LensReviewSummary`](crate::model::LensReviewSummary)
+/// See [`LensReviewSummary`](crate::model::LensReviewSummary).
 pub mod lens_review_summary {
 
-    /// A builder for [`LensReviewSummary`](crate::model::LensReviewSummary)
-    #[non_exhaustive]
+    /// A builder for [`LensReviewSummary`](crate::model::LensReviewSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -4528,7 +4508,7 @@ pub mod lens_review_summary {
             self.risk_counts = input;
             self
         }
-        /// Consumes the builder and constructs a [`LensReviewSummary`](crate::model::LensReviewSummary)
+        /// Consumes the builder and constructs a [`LensReviewSummary`](crate::model::LensReviewSummary).
         pub fn build(self) -> crate::model::LensReviewSummary {
             crate::model::LensReviewSummary {
                 lens_alias: self.lens_alias,
@@ -4543,7 +4523,7 @@ pub mod lens_review_summary {
     }
 }
 impl LensReviewSummary {
-    /// Creates a new builder-style object to manufacture [`LensReviewSummary`](crate::model::LensReviewSummary)
+    /// Creates a new builder-style object to manufacture [`LensReviewSummary`](crate::model::LensReviewSummary).
     pub fn builder() -> crate::model::lens_review_summary::Builder {
         crate::model::lens_review_summary::Builder::default()
     }
@@ -4608,11 +4588,10 @@ impl std::fmt::Debug for ImprovementSummary {
         formatter.finish()
     }
 }
-/// See [`ImprovementSummary`](crate::model::ImprovementSummary)
+/// See [`ImprovementSummary`](crate::model::ImprovementSummary).
 pub mod improvement_summary {
 
-    /// A builder for [`ImprovementSummary`](crate::model::ImprovementSummary)
-    #[non_exhaustive]
+    /// A builder for [`ImprovementSummary`](crate::model::ImprovementSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -4703,7 +4682,7 @@ pub mod improvement_summary {
             self.improvement_plans = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImprovementSummary`](crate::model::ImprovementSummary)
+        /// Consumes the builder and constructs a [`ImprovementSummary`](crate::model::ImprovementSummary).
         pub fn build(self) -> crate::model::ImprovementSummary {
             crate::model::ImprovementSummary {
                 question_id: self.question_id,
@@ -4717,7 +4696,7 @@ pub mod improvement_summary {
     }
 }
 impl ImprovementSummary {
-    /// Creates a new builder-style object to manufacture [`ImprovementSummary`](crate::model::ImprovementSummary)
+    /// Creates a new builder-style object to manufacture [`ImprovementSummary`](crate::model::ImprovementSummary).
     pub fn builder() -> crate::model::improvement_summary::Builder {
         crate::model::improvement_summary::Builder::default()
     }
@@ -4759,11 +4738,10 @@ impl std::fmt::Debug for ChoiceImprovementPlan {
         formatter.finish()
     }
 }
-/// See [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
+/// See [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
 pub mod choice_improvement_plan {
 
-    /// A builder for [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
-    #[non_exhaustive]
+    /// A builder for [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -4806,7 +4784,7 @@ pub mod choice_improvement_plan {
             self.improvement_plan_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
+        /// Consumes the builder and constructs a [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
         pub fn build(self) -> crate::model::ChoiceImprovementPlan {
             crate::model::ChoiceImprovementPlan {
                 choice_id: self.choice_id,
@@ -4817,7 +4795,7 @@ pub mod choice_improvement_plan {
     }
 }
 impl ChoiceImprovementPlan {
-    /// Creates a new builder-style object to manufacture [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan)
+    /// Creates a new builder-style object to manufacture [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
     pub fn builder() -> crate::model::choice_improvement_plan::Builder {
         crate::model::choice_improvement_plan::Builder::default()
     }
@@ -4912,11 +4890,10 @@ impl std::fmt::Debug for LensSummary {
         formatter.finish()
     }
 }
-/// See [`LensSummary`](crate::model::LensSummary)
+/// See [`LensSummary`](crate::model::LensSummary).
 pub mod lens_summary {
 
-    /// A builder for [`LensSummary`](crate::model::LensSummary)
-    #[non_exhaustive]
+    /// A builder for [`LensSummary`](crate::model::LensSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_arn: std::option::Option<std::string::String>,
@@ -5046,7 +5023,7 @@ pub mod lens_summary {
             self.lens_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`LensSummary`](crate::model::LensSummary)
+        /// Consumes the builder and constructs a [`LensSummary`](crate::model::LensSummary).
         pub fn build(self) -> crate::model::LensSummary {
             crate::model::LensSummary {
                 lens_arn: self.lens_arn,
@@ -5064,7 +5041,7 @@ pub mod lens_summary {
     }
 }
 impl LensSummary {
-    /// Creates a new builder-style object to manufacture [`LensSummary`](crate::model::LensSummary)
+    /// Creates a new builder-style object to manufacture [`LensSummary`](crate::model::LensSummary).
     pub fn builder() -> crate::model::lens_summary::Builder {
         crate::model::lens_summary::Builder::default()
     }
@@ -5271,11 +5248,10 @@ impl std::fmt::Debug for AnswerSummary {
         formatter.finish()
     }
 }
-/// See [`AnswerSummary`](crate::model::AnswerSummary)
+/// See [`AnswerSummary`](crate::model::AnswerSummary).
 pub mod answer_summary {
 
-    /// A builder for [`AnswerSummary`](crate::model::AnswerSummary)
-    #[non_exhaustive]
+    /// A builder for [`AnswerSummary`](crate::model::AnswerSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -5417,7 +5393,7 @@ pub mod answer_summary {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnswerSummary`](crate::model::AnswerSummary)
+        /// Consumes the builder and constructs a [`AnswerSummary`](crate::model::AnswerSummary).
         pub fn build(self) -> crate::model::AnswerSummary {
             crate::model::AnswerSummary {
                 question_id: self.question_id,
@@ -5434,7 +5410,7 @@ pub mod answer_summary {
     }
 }
 impl AnswerSummary {
-    /// Creates a new builder-style object to manufacture [`AnswerSummary`](crate::model::AnswerSummary)
+    /// Creates a new builder-style object to manufacture [`AnswerSummary`](crate::model::AnswerSummary).
     pub fn builder() -> crate::model::answer_summary::Builder {
         crate::model::answer_summary::Builder::default()
     }
@@ -5474,11 +5450,10 @@ impl std::fmt::Debug for ChoiceAnswerSummary {
         formatter.finish()
     }
 }
-/// See [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
+/// See [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
 pub mod choice_answer_summary {
 
-    /// A builder for [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) choice_id: std::option::Option<std::string::String>,
@@ -5522,7 +5497,7 @@ pub mod choice_answer_summary {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
+        /// Consumes the builder and constructs a [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
         pub fn build(self) -> crate::model::ChoiceAnswerSummary {
             crate::model::ChoiceAnswerSummary {
                 choice_id: self.choice_id,
@@ -5533,7 +5508,7 @@ pub mod choice_answer_summary {
     }
 }
 impl ChoiceAnswerSummary {
-    /// Creates a new builder-style object to manufacture [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary)
+    /// Creates a new builder-style object to manufacture [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
     pub fn builder() -> crate::model::choice_answer_summary::Builder {
         crate::model::choice_answer_summary::Builder::default()
     }
@@ -5643,11 +5618,10 @@ impl std::fmt::Debug for Milestone {
         formatter.finish()
     }
 }
-/// See [`Milestone`](crate::model::Milestone)
+/// See [`Milestone`](crate::model::Milestone).
 pub mod milestone {
 
-    /// A builder for [`Milestone`](crate::model::Milestone)
-    #[non_exhaustive]
+    /// A builder for [`Milestone`](crate::model::Milestone).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) milestone_number: std::option::Option<i32>,
@@ -5706,7 +5680,7 @@ pub mod milestone {
             self.workload = input;
             self
         }
-        /// Consumes the builder and constructs a [`Milestone`](crate::model::Milestone)
+        /// Consumes the builder and constructs a [`Milestone`](crate::model::Milestone).
         pub fn build(self) -> crate::model::Milestone {
             crate::model::Milestone {
                 milestone_number: self.milestone_number.unwrap_or_default(),
@@ -5718,7 +5692,7 @@ pub mod milestone {
     }
 }
 impl Milestone {
-    /// Creates a new builder-style object to manufacture [`Milestone`](crate::model::Milestone)
+    /// Creates a new builder-style object to manufacture [`Milestone`](crate::model::Milestone).
     pub fn builder() -> crate::model::milestone::Builder {
         crate::model::milestone::Builder::default()
     }
@@ -5744,11 +5718,10 @@ impl std::fmt::Debug for VersionDifferences {
         formatter.finish()
     }
 }
-/// See [`VersionDifferences`](crate::model::VersionDifferences)
+/// See [`VersionDifferences`](crate::model::VersionDifferences).
 pub mod version_differences {
 
-    /// A builder for [`VersionDifferences`](crate::model::VersionDifferences)
-    #[non_exhaustive]
+    /// A builder for [`VersionDifferences`](crate::model::VersionDifferences).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pillar_differences:
@@ -5774,7 +5747,7 @@ pub mod version_differences {
             self.pillar_differences = input;
             self
         }
-        /// Consumes the builder and constructs a [`VersionDifferences`](crate::model::VersionDifferences)
+        /// Consumes the builder and constructs a [`VersionDifferences`](crate::model::VersionDifferences).
         pub fn build(self) -> crate::model::VersionDifferences {
             crate::model::VersionDifferences {
                 pillar_differences: self.pillar_differences,
@@ -5783,7 +5756,7 @@ pub mod version_differences {
     }
 }
 impl VersionDifferences {
-    /// Creates a new builder-style object to manufacture [`VersionDifferences`](crate::model::VersionDifferences)
+    /// Creates a new builder-style object to manufacture [`VersionDifferences`](crate::model::VersionDifferences).
     pub fn builder() -> crate::model::version_differences::Builder {
         crate::model::version_differences::Builder::default()
     }
@@ -5832,11 +5805,10 @@ impl std::fmt::Debug for PillarDifference {
         formatter.finish()
     }
 }
-/// See [`PillarDifference`](crate::model::PillarDifference)
+/// See [`PillarDifference`](crate::model::PillarDifference).
 pub mod pillar_difference {
 
-    /// A builder for [`PillarDifference`](crate::model::PillarDifference)
-    #[non_exhaustive]
+    /// A builder for [`PillarDifference`](crate::model::PillarDifference).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pillar_id: std::option::Option<std::string::String>,
@@ -5900,7 +5872,7 @@ pub mod pillar_difference {
             self.question_differences = input;
             self
         }
-        /// Consumes the builder and constructs a [`PillarDifference`](crate::model::PillarDifference)
+        /// Consumes the builder and constructs a [`PillarDifference`](crate::model::PillarDifference).
         pub fn build(self) -> crate::model::PillarDifference {
             crate::model::PillarDifference {
                 pillar_id: self.pillar_id,
@@ -5912,7 +5884,7 @@ pub mod pillar_difference {
     }
 }
 impl PillarDifference {
-    /// Creates a new builder-style object to manufacture [`PillarDifference`](crate::model::PillarDifference)
+    /// Creates a new builder-style object to manufacture [`PillarDifference`](crate::model::PillarDifference).
     pub fn builder() -> crate::model::pillar_difference::Builder {
         crate::model::pillar_difference::Builder::default()
     }
@@ -5952,11 +5924,10 @@ impl std::fmt::Debug for QuestionDifference {
         formatter.finish()
     }
 }
-/// See [`QuestionDifference`](crate::model::QuestionDifference)
+/// See [`QuestionDifference`](crate::model::QuestionDifference).
 pub mod question_difference {
 
-    /// A builder for [`QuestionDifference`](crate::model::QuestionDifference)
-    #[non_exhaustive]
+    /// A builder for [`QuestionDifference`](crate::model::QuestionDifference).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) question_id: std::option::Option<std::string::String>,
@@ -6000,7 +5971,7 @@ pub mod question_difference {
             self.difference_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`QuestionDifference`](crate::model::QuestionDifference)
+        /// Consumes the builder and constructs a [`QuestionDifference`](crate::model::QuestionDifference).
         pub fn build(self) -> crate::model::QuestionDifference {
             crate::model::QuestionDifference {
                 question_id: self.question_id,
@@ -6011,7 +5982,7 @@ pub mod question_difference {
     }
 }
 impl QuestionDifference {
-    /// Creates a new builder-style object to manufacture [`QuestionDifference`](crate::model::QuestionDifference)
+    /// Creates a new builder-style object to manufacture [`QuestionDifference`](crate::model::QuestionDifference).
     pub fn builder() -> crate::model::question_difference::Builder {
         crate::model::question_difference::Builder::default()
     }
@@ -6118,11 +6089,10 @@ impl std::fmt::Debug for LensReviewReport {
         formatter.finish()
     }
 }
-/// See [`LensReviewReport`](crate::model::LensReviewReport)
+/// See [`LensReviewReport`](crate::model::LensReviewReport).
 pub mod lens_review_report {
 
-    /// A builder for [`LensReviewReport`](crate::model::LensReviewReport)
-    #[non_exhaustive]
+    /// A builder for [`LensReviewReport`](crate::model::LensReviewReport).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_alias: std::option::Option<std::string::String>,
@@ -6171,7 +6141,7 @@ pub mod lens_review_report {
             self.base64_string = input;
             self
         }
-        /// Consumes the builder and constructs a [`LensReviewReport`](crate::model::LensReviewReport)
+        /// Consumes the builder and constructs a [`LensReviewReport`](crate::model::LensReviewReport).
         pub fn build(self) -> crate::model::LensReviewReport {
             crate::model::LensReviewReport {
                 lens_alias: self.lens_alias,
@@ -6182,7 +6152,7 @@ pub mod lens_review_report {
     }
 }
 impl LensReviewReport {
-    /// Creates a new builder-style object to manufacture [`LensReviewReport`](crate::model::LensReviewReport)
+    /// Creates a new builder-style object to manufacture [`LensReviewReport`](crate::model::LensReviewReport).
     pub fn builder() -> crate::model::lens_review_report::Builder {
         crate::model::lens_review_report::Builder::default()
     }
@@ -6254,11 +6224,10 @@ impl std::fmt::Debug for Lens {
         formatter.finish()
     }
 }
-/// See [`Lens`](crate::model::Lens)
+/// See [`Lens`](crate::model::Lens).
 pub mod lens {
 
-    /// A builder for [`Lens`](crate::model::Lens)
-    #[non_exhaustive]
+    /// A builder for [`Lens`](crate::model::Lens).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lens_arn: std::option::Option<std::string::String>,
@@ -6360,7 +6329,7 @@ pub mod lens {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Lens`](crate::model::Lens)
+        /// Consumes the builder and constructs a [`Lens`](crate::model::Lens).
         pub fn build(self) -> crate::model::Lens {
             crate::model::Lens {
                 lens_arn: self.lens_arn,
@@ -6375,7 +6344,7 @@ pub mod lens {
     }
 }
 impl Lens {
-    /// Creates a new builder-style object to manufacture [`Lens`](crate::model::Lens)
+    /// Creates a new builder-style object to manufacture [`Lens`](crate::model::Lens).
     pub fn builder() -> crate::model::lens::Builder {
         crate::model::lens::Builder::default()
     }

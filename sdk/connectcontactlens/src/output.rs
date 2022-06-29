@@ -36,11 +36,10 @@ impl std::fmt::Debug for ListRealtimeContactAnalysisSegmentsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput)
+/// See [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
 pub mod list_realtime_contact_analysis_segments_output {
 
-    /// A builder for [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segments:
@@ -87,7 +86,7 @@ pub mod list_realtime_contact_analysis_segments_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput)
+        /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
         pub fn build(self) -> crate::output::ListRealtimeContactAnalysisSegmentsOutput {
             crate::output::ListRealtimeContactAnalysisSegmentsOutput {
                 segments: self.segments,
@@ -97,7 +96,7 @@ pub mod list_realtime_contact_analysis_segments_output {
     }
 }
 impl ListRealtimeContactAnalysisSegmentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
     pub fn builder() -> crate::output::list_realtime_contact_analysis_segments_output::Builder {
         crate::output::list_realtime_contact_analysis_segments_output::Builder::default()
     }

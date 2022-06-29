@@ -48,11 +48,10 @@ impl std::fmt::Debug for Model {
         formatter.finish()
     }
 }
-/// See [`Model`](crate::model::Model)
+/// See [`Model`](crate::model::Model).
 pub mod model {
 
-    /// A builder for [`Model`](crate::model::Model)
-    #[non_exhaustive]
+    /// A builder for [`Model`](crate::model::Model).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_name: std::option::Option<std::string::String>,
@@ -130,7 +129,7 @@ pub mod model {
             self.model_metrics = input;
             self
         }
-        /// Consumes the builder and constructs a [`Model`](crate::model::Model)
+        /// Consumes the builder and constructs a [`Model`](crate::model::Model).
         pub fn build(self) -> crate::model::Model {
             crate::model::Model {
                 model_name: self.model_name,
@@ -143,7 +142,7 @@ pub mod model {
     }
 }
 impl Model {
-    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model)
+    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
     pub fn builder() -> crate::model::model::Builder {
         crate::model::model::Builder::default()
     }
@@ -190,11 +189,10 @@ impl std::fmt::Debug for EdgeMetric {
         formatter.finish()
     }
 }
-/// See [`EdgeMetric`](crate::model::EdgeMetric)
+/// See [`EdgeMetric`](crate::model::EdgeMetric).
 pub mod edge_metric {
 
-    /// A builder for [`EdgeMetric`](crate::model::EdgeMetric)
-    #[non_exhaustive]
+    /// A builder for [`EdgeMetric`](crate::model::EdgeMetric).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimension: std::option::Option<std::string::String>,
@@ -246,7 +244,7 @@ pub mod edge_metric {
             self.timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`EdgeMetric`](crate::model::EdgeMetric)
+        /// Consumes the builder and constructs a [`EdgeMetric`](crate::model::EdgeMetric).
         pub fn build(self) -> crate::model::EdgeMetric {
             crate::model::EdgeMetric {
                 dimension: self.dimension,
@@ -258,7 +256,7 @@ pub mod edge_metric {
     }
 }
 impl EdgeMetric {
-    /// Creates a new builder-style object to manufacture [`EdgeMetric`](crate::model::EdgeMetric)
+    /// Creates a new builder-style object to manufacture [`EdgeMetric`](crate::model::EdgeMetric).
     pub fn builder() -> crate::model::edge_metric::Builder {
         crate::model::edge_metric::Builder::default()
     }

@@ -26,11 +26,10 @@ impl std::fmt::Debug for ListSharedEndpointsOutput {
         formatter.finish()
     }
 }
-/// See [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
+/// See [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
 pub mod list_shared_endpoints_output {
 
-    /// A builder for [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -66,7 +65,7 @@ pub mod list_shared_endpoints_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
+        /// Consumes the builder and constructs a [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
         pub fn build(self) -> crate::output::ListSharedEndpointsOutput {
             crate::output::ListSharedEndpointsOutput {
                 endpoints: self.endpoints,
@@ -76,7 +75,7 @@ pub mod list_shared_endpoints_output {
     }
 }
 impl ListSharedEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput)
+    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput).
     pub fn builder() -> crate::output::list_shared_endpoints_output::Builder {
         crate::output::list_shared_endpoints_output::Builder::default()
     }
@@ -109,11 +108,10 @@ impl std::fmt::Debug for ListEndpointsOutput {
         formatter.finish()
     }
 }
-/// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
+/// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
 pub mod list_endpoints_output {
 
-    /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
@@ -149,7 +147,7 @@ pub mod list_endpoints_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
+        /// Consumes the builder and constructs a [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
         pub fn build(self) -> crate::output::ListEndpointsOutput {
             crate::output::ListEndpointsOutput {
                 endpoints: self.endpoints,
@@ -159,7 +157,7 @@ pub mod list_endpoints_output {
     }
 }
 impl ListEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput)
+    /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
     pub fn builder() -> crate::output::list_endpoints_output::Builder {
         crate::output::list_endpoints_output::Builder::default()
     }
@@ -175,22 +173,21 @@ impl std::fmt::Debug for DeleteEndpointOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+/// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
 
-    /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+        /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
         pub fn build(self) -> crate::output::DeleteEndpointOutput {
             crate::output::DeleteEndpointOutput {}
         }
     }
 }
 impl DeleteEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
     pub fn builder() -> crate::output::delete_endpoint_output::Builder {
         crate::output::delete_endpoint_output::Builder::default()
     }
@@ -216,11 +213,10 @@ impl std::fmt::Debug for CreateEndpointOutput {
         formatter.finish()
     }
 }
-/// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
+/// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
 pub mod create_endpoint_output {
 
-    /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -236,7 +232,7 @@ pub mod create_endpoint_output {
             self.endpoint_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
+        /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
         pub fn build(self) -> crate::output::CreateEndpointOutput {
             crate::output::CreateEndpointOutput {
                 endpoint_arn: self.endpoint_arn,
@@ -245,7 +241,7 @@ pub mod create_endpoint_output {
     }
 }
 impl CreateEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput)
+    /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
     pub fn builder() -> crate::output::create_endpoint_output::Builder {
         crate::output::create_endpoint_output::Builder::default()
     }

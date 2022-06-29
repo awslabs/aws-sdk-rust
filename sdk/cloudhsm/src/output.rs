@@ -19,11 +19,10 @@ impl std::fmt::Debug for RemoveTagsFromResourceOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+/// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
 
-    /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod remove_tags_from_resource_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+        /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
             crate::output::RemoveTagsFromResourceOutput {
                 status: self.status,
@@ -48,7 +47,7 @@ pub mod remove_tags_from_resource_output {
     }
 }
 impl RemoveTagsFromResourceOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
         crate::output::remove_tags_from_resource_output::Builder::default()
     }
@@ -74,11 +73,10 @@ impl std::fmt::Debug for ModifyLunaClientOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput)
+/// See [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
 pub mod modify_luna_client_output {
 
-    /// A builder for [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -94,7 +92,7 @@ pub mod modify_luna_client_output {
             self.client_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput)
+        /// Consumes the builder and constructs a [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
         pub fn build(self) -> crate::output::ModifyLunaClientOutput {
             crate::output::ModifyLunaClientOutput {
                 client_arn: self.client_arn,
@@ -103,7 +101,7 @@ pub mod modify_luna_client_output {
     }
 }
 impl ModifyLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
     pub fn builder() -> crate::output::modify_luna_client_output::Builder {
         crate::output::modify_luna_client_output::Builder::default()
     }
@@ -129,11 +127,10 @@ impl std::fmt::Debug for ModifyHsmOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyHsmOutput`](crate::output::ModifyHsmOutput)
+/// See [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
 pub mod modify_hsm_output {
 
-    /// A builder for [`ModifyHsmOutput`](crate::output::ModifyHsmOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -149,7 +146,7 @@ pub mod modify_hsm_output {
             self.hsm_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyHsmOutput`](crate::output::ModifyHsmOutput)
+        /// Consumes the builder and constructs a [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
         pub fn build(self) -> crate::output::ModifyHsmOutput {
             crate::output::ModifyHsmOutput {
                 hsm_arn: self.hsm_arn,
@@ -158,7 +155,7 @@ pub mod modify_hsm_output {
     }
 }
 impl ModifyHsmOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyHsmOutput`](crate::output::ModifyHsmOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
     pub fn builder() -> crate::output::modify_hsm_output::Builder {
         crate::output::modify_hsm_output::Builder::default()
     }
@@ -184,11 +181,10 @@ impl std::fmt::Debug for ModifyHapgOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyHapgOutput`](crate::output::ModifyHapgOutput)
+/// See [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
 pub mod modify_hapg_output {
 
-    /// A builder for [`ModifyHapgOutput`](crate::output::ModifyHapgOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -204,7 +200,7 @@ pub mod modify_hapg_output {
             self.hapg_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyHapgOutput`](crate::output::ModifyHapgOutput)
+        /// Consumes the builder and constructs a [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
         pub fn build(self) -> crate::output::ModifyHapgOutput {
             crate::output::ModifyHapgOutput {
                 hapg_arn: self.hapg_arn,
@@ -213,7 +209,7 @@ pub mod modify_hapg_output {
     }
 }
 impl ModifyHapgOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyHapgOutput`](crate::output::ModifyHapgOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
     pub fn builder() -> crate::output::modify_hapg_output::Builder {
         crate::output::modify_hapg_output::Builder::default()
     }
@@ -239,11 +235,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -268,7 +263,7 @@ pub mod list_tags_for_resource_output {
             self.tag_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tag_list: self.tag_list,
@@ -277,7 +272,7 @@ pub mod list_tags_for_resource_output {
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -310,11 +305,10 @@ impl std::fmt::Debug for ListLunaClientsOutput {
         formatter.finish()
     }
 }
-/// See [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput)
+/// See [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
 pub mod list_luna_clients_output {
 
-    /// A builder for [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -350,7 +344,7 @@ pub mod list_luna_clients_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput)
+        /// Consumes the builder and constructs a [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
         pub fn build(self) -> crate::output::ListLunaClientsOutput {
             crate::output::ListLunaClientsOutput {
                 client_list: self.client_list,
@@ -360,7 +354,7 @@ pub mod list_luna_clients_output {
     }
 }
 impl ListLunaClientsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput)
+    /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
     pub fn builder() -> crate::output::list_luna_clients_output::Builder {
         crate::output::list_luna_clients_output::Builder::default()
     }
@@ -393,11 +387,10 @@ impl std::fmt::Debug for ListHsmsOutput {
         formatter.finish()
     }
 }
-/// See [`ListHsmsOutput`](crate::output::ListHsmsOutput)
+/// See [`ListHsmsOutput`](crate::output::ListHsmsOutput).
 pub mod list_hsms_output {
 
-    /// A builder for [`ListHsmsOutput`](crate::output::ListHsmsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListHsmsOutput`](crate::output::ListHsmsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -433,7 +426,7 @@ pub mod list_hsms_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListHsmsOutput`](crate::output::ListHsmsOutput)
+        /// Consumes the builder and constructs a [`ListHsmsOutput`](crate::output::ListHsmsOutput).
         pub fn build(self) -> crate::output::ListHsmsOutput {
             crate::output::ListHsmsOutput {
                 hsm_list: self.hsm_list,
@@ -443,7 +436,7 @@ pub mod list_hsms_output {
     }
 }
 impl ListHsmsOutput {
-    /// Creates a new builder-style object to manufacture [`ListHsmsOutput`](crate::output::ListHsmsOutput)
+    /// Creates a new builder-style object to manufacture [`ListHsmsOutput`](crate::output::ListHsmsOutput).
     pub fn builder() -> crate::output::list_hsms_output::Builder {
         crate::output::list_hsms_output::Builder::default()
     }
@@ -476,11 +469,10 @@ impl std::fmt::Debug for ListHapgsOutput {
         formatter.finish()
     }
 }
-/// See [`ListHapgsOutput`](crate::output::ListHapgsOutput)
+/// See [`ListHapgsOutput`](crate::output::ListHapgsOutput).
 pub mod list_hapgs_output {
 
-    /// A builder for [`ListHapgsOutput`](crate::output::ListHapgsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListHapgsOutput`](crate::output::ListHapgsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -516,7 +508,7 @@ pub mod list_hapgs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListHapgsOutput`](crate::output::ListHapgsOutput)
+        /// Consumes the builder and constructs a [`ListHapgsOutput`](crate::output::ListHapgsOutput).
         pub fn build(self) -> crate::output::ListHapgsOutput {
             crate::output::ListHapgsOutput {
                 hapg_list: self.hapg_list,
@@ -526,7 +518,7 @@ pub mod list_hapgs_output {
     }
 }
 impl ListHapgsOutput {
-    /// Creates a new builder-style object to manufacture [`ListHapgsOutput`](crate::output::ListHapgsOutput)
+    /// Creates a new builder-style object to manufacture [`ListHapgsOutput`](crate::output::ListHapgsOutput).
     pub fn builder() -> crate::output::list_hapgs_output::Builder {
         crate::output::list_hapgs_output::Builder::default()
     }
@@ -552,11 +544,10 @@ impl std::fmt::Debug for ListAvailableZonesOutput {
         formatter.finish()
     }
 }
-/// See [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput)
+/// See [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
 pub mod list_available_zones_output {
 
-    /// A builder for [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) az_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -581,7 +572,7 @@ pub mod list_available_zones_output {
             self.az_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput)
+        /// Consumes the builder and constructs a [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
         pub fn build(self) -> crate::output::ListAvailableZonesOutput {
             crate::output::ListAvailableZonesOutput {
                 az_list: self.az_list,
@@ -590,7 +581,7 @@ pub mod list_available_zones_output {
     }
 }
 impl ListAvailableZonesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
     pub fn builder() -> crate::output::list_available_zones_output::Builder {
         crate::output::list_available_zones_output::Builder::default()
     }
@@ -630,11 +621,10 @@ impl std::fmt::Debug for GetConfigOutput {
         formatter.finish()
     }
 }
-/// See [`GetConfigOutput`](crate::output::GetConfigOutput)
+/// See [`GetConfigOutput`](crate::output::GetConfigOutput).
 pub mod get_config_output {
 
-    /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) config_type: std::option::Option<std::string::String>,
@@ -672,7 +662,7 @@ pub mod get_config_output {
             self.config_cred = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetConfigOutput`](crate::output::GetConfigOutput)
+        /// Consumes the builder and constructs a [`GetConfigOutput`](crate::output::GetConfigOutput).
         pub fn build(self) -> crate::output::GetConfigOutput {
             crate::output::GetConfigOutput {
                 config_type: self.config_type,
@@ -683,7 +673,7 @@ pub mod get_config_output {
     }
 }
 impl GetConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetConfigOutput`](crate::output::GetConfigOutput)
+    /// Creates a new builder-style object to manufacture [`GetConfigOutput`](crate::output::GetConfigOutput).
     pub fn builder() -> crate::output::get_config_output::Builder {
         crate::output::get_config_output::Builder::default()
     }
@@ -737,11 +727,10 @@ impl std::fmt::Debug for DescribeLunaClientOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput)
+/// See [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
 pub mod describe_luna_client_output {
 
-    /// A builder for [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -807,7 +796,7 @@ pub mod describe_luna_client_output {
             self.label = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput)
+        /// Consumes the builder and constructs a [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
         pub fn build(self) -> crate::output::DescribeLunaClientOutput {
             crate::output::DescribeLunaClientOutput {
                 client_arn: self.client_arn,
@@ -820,7 +809,7 @@ pub mod describe_luna_client_output {
     }
 }
 impl DescribeLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
     pub fn builder() -> crate::output::describe_luna_client_output::Builder {
         crate::output::describe_luna_client_output::Builder::default()
     }
@@ -994,11 +983,10 @@ impl std::fmt::Debug for DescribeHsmOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeHsmOutput`](crate::output::DescribeHsmOutput)
+/// See [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
 pub mod describe_hsm_output {
 
-    /// A builder for [`DescribeHsmOutput`](crate::output::DescribeHsmOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -1284,7 +1272,7 @@ pub mod describe_hsm_output {
             self.partitions = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeHsmOutput`](crate::output::DescribeHsmOutput)
+        /// Consumes the builder and constructs a [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
         pub fn build(self) -> crate::output::DescribeHsmOutput {
             crate::output::DescribeHsmOutput {
                 hsm_arn: self.hsm_arn,
@@ -1313,7 +1301,7 @@ pub mod describe_hsm_output {
     }
 }
 impl DescribeHsmOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHsmOutput`](crate::output::DescribeHsmOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
     pub fn builder() -> crate::output::describe_hsm_output::Builder {
         crate::output::describe_hsm_output::Builder::default()
     }
@@ -1395,11 +1383,10 @@ impl std::fmt::Debug for DescribeHapgOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeHapgOutput`](crate::output::DescribeHapgOutput)
+/// See [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
 pub mod describe_hapg_output {
 
-    /// A builder for [`DescribeHapgOutput`](crate::output::DescribeHapgOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -1546,7 +1533,7 @@ pub mod describe_hapg_output {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeHapgOutput`](crate::output::DescribeHapgOutput)
+        /// Consumes the builder and constructs a [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
         pub fn build(self) -> crate::output::DescribeHapgOutput {
             crate::output::DescribeHapgOutput {
                 hapg_arn: self.hapg_arn,
@@ -1563,7 +1550,7 @@ pub mod describe_hapg_output {
     }
 }
 impl DescribeHapgOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHapgOutput`](crate::output::DescribeHapgOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
     pub fn builder() -> crate::output::describe_hapg_output::Builder {
         crate::output::describe_hapg_output::Builder::default()
     }
@@ -1589,11 +1576,10 @@ impl std::fmt::Debug for DeleteLunaClientOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput)
+/// See [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
 pub mod delete_luna_client_output {
 
-    /// A builder for [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -1609,7 +1595,7 @@ pub mod delete_luna_client_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput)
+        /// Consumes the builder and constructs a [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
         pub fn build(self) -> crate::output::DeleteLunaClientOutput {
             crate::output::DeleteLunaClientOutput {
                 status: self.status,
@@ -1618,7 +1604,7 @@ pub mod delete_luna_client_output {
     }
 }
 impl DeleteLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
     pub fn builder() -> crate::output::delete_luna_client_output::Builder {
         crate::output::delete_luna_client_output::Builder::default()
     }
@@ -1644,11 +1630,10 @@ impl std::fmt::Debug for DeleteHsmOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteHsmOutput`](crate::output::DeleteHsmOutput)
+/// See [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
 pub mod delete_hsm_output {
 
-    /// A builder for [`DeleteHsmOutput`](crate::output::DeleteHsmOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -1664,7 +1649,7 @@ pub mod delete_hsm_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteHsmOutput`](crate::output::DeleteHsmOutput)
+        /// Consumes the builder and constructs a [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
         pub fn build(self) -> crate::output::DeleteHsmOutput {
             crate::output::DeleteHsmOutput {
                 status: self.status,
@@ -1673,7 +1658,7 @@ pub mod delete_hsm_output {
     }
 }
 impl DeleteHsmOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHsmOutput`](crate::output::DeleteHsmOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
     pub fn builder() -> crate::output::delete_hsm_output::Builder {
         crate::output::delete_hsm_output::Builder::default()
     }
@@ -1699,11 +1684,10 @@ impl std::fmt::Debug for DeleteHapgOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteHapgOutput`](crate::output::DeleteHapgOutput)
+/// See [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
 pub mod delete_hapg_output {
 
-    /// A builder for [`DeleteHapgOutput`](crate::output::DeleteHapgOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -1719,7 +1703,7 @@ pub mod delete_hapg_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteHapgOutput`](crate::output::DeleteHapgOutput)
+        /// Consumes the builder and constructs a [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
         pub fn build(self) -> crate::output::DeleteHapgOutput {
             crate::output::DeleteHapgOutput {
                 status: self.status,
@@ -1728,7 +1712,7 @@ pub mod delete_hapg_output {
     }
 }
 impl DeleteHapgOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHapgOutput`](crate::output::DeleteHapgOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
     pub fn builder() -> crate::output::delete_hapg_output::Builder {
         crate::output::delete_hapg_output::Builder::default()
     }
@@ -1754,11 +1738,10 @@ impl std::fmt::Debug for CreateLunaClientOutput {
         formatter.finish()
     }
 }
-/// See [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput)
+/// See [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
 pub mod create_luna_client_output {
 
-    /// A builder for [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
@@ -1774,7 +1757,7 @@ pub mod create_luna_client_output {
             self.client_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput)
+        /// Consumes the builder and constructs a [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
         pub fn build(self) -> crate::output::CreateLunaClientOutput {
             crate::output::CreateLunaClientOutput {
                 client_arn: self.client_arn,
@@ -1783,7 +1766,7 @@ pub mod create_luna_client_output {
     }
 }
 impl CreateLunaClientOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput)
+    /// Creates a new builder-style object to manufacture [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
     pub fn builder() -> crate::output::create_luna_client_output::Builder {
         crate::output::create_luna_client_output::Builder::default()
     }
@@ -1809,11 +1792,10 @@ impl std::fmt::Debug for CreateHsmOutput {
         formatter.finish()
     }
 }
-/// See [`CreateHsmOutput`](crate::output::CreateHsmOutput)
+/// See [`CreateHsmOutput`](crate::output::CreateHsmOutput).
 pub mod create_hsm_output {
 
-    /// A builder for [`CreateHsmOutput`](crate::output::CreateHsmOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateHsmOutput`](crate::output::CreateHsmOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
@@ -1829,7 +1811,7 @@ pub mod create_hsm_output {
             self.hsm_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateHsmOutput`](crate::output::CreateHsmOutput)
+        /// Consumes the builder and constructs a [`CreateHsmOutput`](crate::output::CreateHsmOutput).
         pub fn build(self) -> crate::output::CreateHsmOutput {
             crate::output::CreateHsmOutput {
                 hsm_arn: self.hsm_arn,
@@ -1838,7 +1820,7 @@ pub mod create_hsm_output {
     }
 }
 impl CreateHsmOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHsmOutput`](crate::output::CreateHsmOutput)
+    /// Creates a new builder-style object to manufacture [`CreateHsmOutput`](crate::output::CreateHsmOutput).
     pub fn builder() -> crate::output::create_hsm_output::Builder {
         crate::output::create_hsm_output::Builder::default()
     }
@@ -1864,11 +1846,10 @@ impl std::fmt::Debug for CreateHapgOutput {
         formatter.finish()
     }
 }
-/// See [`CreateHapgOutput`](crate::output::CreateHapgOutput)
+/// See [`CreateHapgOutput`](crate::output::CreateHapgOutput).
 pub mod create_hapg_output {
 
-    /// A builder for [`CreateHapgOutput`](crate::output::CreateHapgOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateHapgOutput`](crate::output::CreateHapgOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
@@ -1884,7 +1865,7 @@ pub mod create_hapg_output {
             self.hapg_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateHapgOutput`](crate::output::CreateHapgOutput)
+        /// Consumes the builder and constructs a [`CreateHapgOutput`](crate::output::CreateHapgOutput).
         pub fn build(self) -> crate::output::CreateHapgOutput {
             crate::output::CreateHapgOutput {
                 hapg_arn: self.hapg_arn,
@@ -1893,7 +1874,7 @@ pub mod create_hapg_output {
     }
 }
 impl CreateHapgOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHapgOutput`](crate::output::CreateHapgOutput)
+    /// Creates a new builder-style object to manufacture [`CreateHapgOutput`](crate::output::CreateHapgOutput).
     pub fn builder() -> crate::output::create_hapg_output::Builder {
         crate::output::create_hapg_output::Builder::default()
     }
@@ -1919,11 +1900,10 @@ impl std::fmt::Debug for AddTagsToResourceOutput {
         formatter.finish()
     }
 }
-/// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+/// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
 
-    /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -1939,7 +1919,7 @@ pub mod add_tags_to_resource_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+        /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
             crate::output::AddTagsToResourceOutput {
                 status: self.status,
@@ -1948,7 +1928,7 @@ pub mod add_tags_to_resource_output {
     }
 }
 impl AddTagsToResourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
         crate::output::add_tags_to_resource_output::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct InvokeEndpoint {
     _private: (),
 }
 impl InvokeEndpoint {
-    /// Creates a new builder-style object to manufacture [`InvokeEndpointInput`](crate::input::InvokeEndpointInput)
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointInput`](crate::input::InvokeEndpointInput).
     pub fn builder() -> crate::input::invoke_endpoint_input::Builder {
         crate::input::invoke_endpoint_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct InvokeEndpointAsync {
     _private: (),
 }
 impl InvokeEndpointAsync {
-    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput)
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput).
     pub fn builder() -> crate::input::invoke_endpoint_async_input::Builder {
         crate::input::invoke_endpoint_async_input::Builder::default()
     }

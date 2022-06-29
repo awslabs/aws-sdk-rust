@@ -187,11 +187,10 @@ impl std::fmt::Debug for ResourceTag {
         formatter.finish()
     }
 }
-/// See [`ResourceTag`](crate::model::ResourceTag)
+/// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
-    /// A builder for [`ResourceTag`](crate::model::ResourceTag)
-    #[non_exhaustive]
+    /// A builder for [`ResourceTag`](crate::model::ResourceTag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_key: std::option::Option<std::string::String>,
@@ -224,7 +223,7 @@ pub mod resource_tag {
             self.resource_tag_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag)
+        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag).
         pub fn build(self) -> crate::model::ResourceTag {
             crate::model::ResourceTag {
                 resource_tag_key: self.resource_tag_key,
@@ -234,7 +233,7 @@ pub mod resource_tag {
     }
 }
 impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag)
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
     pub fn builder() -> crate::model::resource_tag::Builder {
         crate::model::resource_tag::Builder::default()
     }
@@ -322,11 +321,10 @@ impl std::fmt::Debug for RetentionPeriod {
         formatter.finish()
     }
 }
-/// See [`RetentionPeriod`](crate::model::RetentionPeriod)
+/// See [`RetentionPeriod`](crate::model::RetentionPeriod).
 pub mod retention_period {
 
-    /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod)
-    #[non_exhaustive]
+    /// A builder for [`RetentionPeriod`](crate::model::RetentionPeriod).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) retention_period_value: std::option::Option<i32>,
@@ -356,7 +354,7 @@ pub mod retention_period {
             self.retention_period_unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`RetentionPeriod`](crate::model::RetentionPeriod)
+        /// Consumes the builder and constructs a [`RetentionPeriod`](crate::model::RetentionPeriod).
         pub fn build(self) -> crate::model::RetentionPeriod {
             crate::model::RetentionPeriod {
                 retention_period_value: self.retention_period_value,
@@ -366,7 +364,7 @@ pub mod retention_period {
     }
 }
 impl RetentionPeriod {
-    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod)
+    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
     pub fn builder() -> crate::model::retention_period::Builder {
         crate::model::retention_period::Builder::default()
     }
@@ -501,11 +499,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -532,7 +529,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -542,7 +539,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -582,11 +579,10 @@ impl std::fmt::Debug for RuleSummary {
         formatter.finish()
     }
 }
-/// See [`RuleSummary`](crate::model::RuleSummary)
+/// See [`RuleSummary`](crate::model::RuleSummary).
 pub mod rule_summary {
 
-    /// A builder for [`RuleSummary`](crate::model::RuleSummary)
-    #[non_exhaustive]
+    /// A builder for [`RuleSummary`](crate::model::RuleSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -627,7 +623,7 @@ pub mod rule_summary {
             self.retention_period = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleSummary`](crate::model::RuleSummary)
+        /// Consumes the builder and constructs a [`RuleSummary`](crate::model::RuleSummary).
         pub fn build(self) -> crate::model::RuleSummary {
             crate::model::RuleSummary {
                 identifier: self.identifier,
@@ -638,7 +634,7 @@ pub mod rule_summary {
     }
 }
 impl RuleSummary {
-    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary)
+    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
     pub fn builder() -> crate::model::rule_summary::Builder {
         crate::model::rule_summary::Builder::default()
     }

@@ -4331,11 +4331,10 @@ impl std::fmt::Display for InvalidRequestException {
     }
 }
 impl std::error::Error for InvalidRequestException {}
-/// See [`InvalidRequestException`](crate::error::InvalidRequestException)
+/// See [`InvalidRequestException`](crate::error::InvalidRequestException).
 pub mod invalid_request_exception {
 
-    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4376,7 +4375,7 @@ pub mod invalid_request_exception {
             self.datasync_error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException)
+        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
         pub fn build(self) -> crate::error::InvalidRequestException {
             crate::error::InvalidRequestException {
                 message: self.message,
@@ -4387,7 +4386,7 @@ pub mod invalid_request_exception {
     }
 }
 impl InvalidRequestException {
-    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException)
+    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException).
     pub fn builder() -> crate::error::invalid_request_exception::Builder {
         crate::error::invalid_request_exception::Builder::default()
     }
@@ -4432,11 +4431,10 @@ impl std::fmt::Display for InternalException {
     }
 }
 impl std::error::Error for InternalException {}
-/// See [`InternalException`](crate::error::InternalException)
+/// See [`InternalException`](crate::error::InternalException).
 pub mod internal_exception {
 
-    /// A builder for [`InternalException`](crate::error::InternalException)
-    #[non_exhaustive]
+    /// A builder for [`InternalException`](crate::error::InternalException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4463,7 +4461,7 @@ pub mod internal_exception {
             self.error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalException`](crate::error::InternalException)
+        /// Consumes the builder and constructs a [`InternalException`](crate::error::InternalException).
         pub fn build(self) -> crate::error::InternalException {
             crate::error::InternalException {
                 message: self.message,
@@ -4473,7 +4471,7 @@ pub mod internal_exception {
     }
 }
 impl InternalException {
-    /// Creates a new builder-style object to manufacture [`InternalException`](crate::error::InternalException)
+    /// Creates a new builder-style object to manufacture [`InternalException`](crate::error::InternalException).
     pub fn builder() -> crate::error::internal_exception::Builder {
         crate::error::internal_exception::Builder::default()
     }

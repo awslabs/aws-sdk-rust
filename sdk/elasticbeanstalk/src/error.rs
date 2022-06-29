@@ -4782,11 +4782,10 @@ impl std::fmt::Display for TooManyBucketsException {
     }
 }
 impl std::error::Error for TooManyBucketsException {}
-/// See [`TooManyBucketsException`](crate::error::TooManyBucketsException)
+/// See [`TooManyBucketsException`](crate::error::TooManyBucketsException).
 pub mod too_many_buckets_exception {
 
-    /// A builder for [`TooManyBucketsException`](crate::error::TooManyBucketsException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyBucketsException`](crate::error::TooManyBucketsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4802,7 +4801,7 @@ pub mod too_many_buckets_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyBucketsException`](crate::error::TooManyBucketsException)
+        /// Consumes the builder and constructs a [`TooManyBucketsException`](crate::error::TooManyBucketsException).
         pub fn build(self) -> crate::error::TooManyBucketsException {
             crate::error::TooManyBucketsException {
                 message: self.message,
@@ -4811,7 +4810,7 @@ pub mod too_many_buckets_exception {
     }
 }
 impl TooManyBucketsException {
-    /// Creates a new builder-style object to manufacture [`TooManyBucketsException`](crate::error::TooManyBucketsException)
+    /// Creates a new builder-style object to manufacture [`TooManyBucketsException`](crate::error::TooManyBucketsException).
     pub fn builder() -> crate::error::too_many_buckets_exception::Builder {
         crate::error::too_many_buckets_exception::Builder::default()
     }
@@ -4847,11 +4846,10 @@ impl std::fmt::Display for InsufficientPrivilegesException {
     }
 }
 impl std::error::Error for InsufficientPrivilegesException {}
-/// See [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException)
+/// See [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException).
 pub mod insufficient_privileges_exception {
 
-    /// A builder for [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException)
-    #[non_exhaustive]
+    /// A builder for [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4867,7 +4865,7 @@ pub mod insufficient_privileges_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException)
+        /// Consumes the builder and constructs a [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException).
         pub fn build(self) -> crate::error::InsufficientPrivilegesException {
             crate::error::InsufficientPrivilegesException {
                 message: self.message,
@@ -4876,7 +4874,7 @@ pub mod insufficient_privileges_exception {
     }
 }
 impl InsufficientPrivilegesException {
-    /// Creates a new builder-style object to manufacture [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException)
+    /// Creates a new builder-style object to manufacture [`InsufficientPrivilegesException`](crate::error::InsufficientPrivilegesException).
     pub fn builder() -> crate::error::insufficient_privileges_exception::Builder {
         crate::error::insufficient_privileges_exception::Builder::default()
     }
@@ -4913,11 +4911,10 @@ impl std::fmt::Display for TooManyTagsException {
     }
 }
 impl std::error::Error for TooManyTagsException {}
-/// See [`TooManyTagsException`](crate::error::TooManyTagsException)
+/// See [`TooManyTagsException`](crate::error::TooManyTagsException).
 pub mod too_many_tags_exception {
 
-    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4933,7 +4930,7 @@ pub mod too_many_tags_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException)
+        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
         pub fn build(self) -> crate::error::TooManyTagsException {
             crate::error::TooManyTagsException {
                 message: self.message,
@@ -4942,7 +4939,7 @@ pub mod too_many_tags_exception {
     }
 }
 impl TooManyTagsException {
-    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException)
+    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
     pub fn builder() -> crate::error::too_many_tags_exception::Builder {
         crate::error::too_many_tags_exception::Builder::default()
     }
@@ -4978,11 +4975,10 @@ impl std::fmt::Display for ResourceTypeNotSupportedException {
     }
 }
 impl std::error::Error for ResourceTypeNotSupportedException {}
-/// See [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException)
+/// See [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException).
 pub mod resource_type_not_supported_exception {
 
-    /// A builder for [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException)
-    #[non_exhaustive]
+    /// A builder for [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4998,7 +4994,7 @@ pub mod resource_type_not_supported_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException)
+        /// Consumes the builder and constructs a [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException).
         pub fn build(self) -> crate::error::ResourceTypeNotSupportedException {
             crate::error::ResourceTypeNotSupportedException {
                 message: self.message,
@@ -5007,7 +5003,7 @@ pub mod resource_type_not_supported_exception {
     }
 }
 impl ResourceTypeNotSupportedException {
-    /// Creates a new builder-style object to manufacture [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException)
+    /// Creates a new builder-style object to manufacture [`ResourceTypeNotSupportedException`](crate::error::ResourceTypeNotSupportedException).
     pub fn builder() -> crate::error::resource_type_not_supported_exception::Builder {
         crate::error::resource_type_not_supported_exception::Builder::default()
     }
@@ -5043,11 +5039,10 @@ impl std::fmt::Display for ResourceNotFoundException {
     }
 }
 impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
 
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5063,7 +5058,7 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
                 message: self.message,
@@ -5072,7 +5067,7 @@ pub mod resource_not_found_exception {
     }
 }
 impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
     }
@@ -5108,11 +5103,10 @@ impl std::fmt::Display for OperationInProgressException {
     }
 }
 impl std::error::Error for OperationInProgressException {}
-/// See [`OperationInProgressException`](crate::error::OperationInProgressException)
+/// See [`OperationInProgressException`](crate::error::OperationInProgressException).
 pub mod operation_in_progress_exception {
 
-    /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException)
-    #[non_exhaustive]
+    /// A builder for [`OperationInProgressException`](crate::error::OperationInProgressException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5128,7 +5122,7 @@ pub mod operation_in_progress_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationInProgressException`](crate::error::OperationInProgressException)
+        /// Consumes the builder and constructs a [`OperationInProgressException`](crate::error::OperationInProgressException).
         pub fn build(self) -> crate::error::OperationInProgressException {
             crate::error::OperationInProgressException {
                 message: self.message,
@@ -5137,7 +5131,7 @@ pub mod operation_in_progress_exception {
     }
 }
 impl OperationInProgressException {
-    /// Creates a new builder-style object to manufacture [`OperationInProgressException`](crate::error::OperationInProgressException)
+    /// Creates a new builder-style object to manufacture [`OperationInProgressException`](crate::error::OperationInProgressException).
     pub fn builder() -> crate::error::operation_in_progress_exception::Builder {
         crate::error::operation_in_progress_exception::Builder::default()
     }
@@ -5173,11 +5167,10 @@ impl std::fmt::Display for ElasticBeanstalkServiceException {
     }
 }
 impl std::error::Error for ElasticBeanstalkServiceException {}
-/// See [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException)
+/// See [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException).
 pub mod elastic_beanstalk_service_exception {
 
-    /// A builder for [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException)
-    #[non_exhaustive]
+    /// A builder for [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5193,7 +5186,7 @@ pub mod elastic_beanstalk_service_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException)
+        /// Consumes the builder and constructs a [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException).
         pub fn build(self) -> crate::error::ElasticBeanstalkServiceException {
             crate::error::ElasticBeanstalkServiceException {
                 message: self.message,
@@ -5202,7 +5195,7 @@ pub mod elastic_beanstalk_service_exception {
     }
 }
 impl ElasticBeanstalkServiceException {
-    /// Creates a new builder-style object to manufacture [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException)
+    /// Creates a new builder-style object to manufacture [`ElasticBeanstalkServiceException`](crate::error::ElasticBeanstalkServiceException).
     pub fn builder() -> crate::error::elastic_beanstalk_service_exception::Builder {
         crate::error::elastic_beanstalk_service_exception::Builder::default()
     }
@@ -5238,11 +5231,10 @@ impl std::fmt::Display for InvalidRequestException {
     }
 }
 impl std::error::Error for InvalidRequestException {}
-/// See [`InvalidRequestException`](crate::error::InvalidRequestException)
+/// See [`InvalidRequestException`](crate::error::InvalidRequestException).
 pub mod invalid_request_exception {
 
-    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5258,7 +5250,7 @@ pub mod invalid_request_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException)
+        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
         pub fn build(self) -> crate::error::InvalidRequestException {
             crate::error::InvalidRequestException {
                 message: self.message,
@@ -5267,7 +5259,7 @@ pub mod invalid_request_exception {
     }
 }
 impl InvalidRequestException {
-    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException)
+    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException).
     pub fn builder() -> crate::error::invalid_request_exception::Builder {
         crate::error::invalid_request_exception::Builder::default()
     }
@@ -5303,11 +5295,10 @@ impl std::fmt::Display for PlatformVersionStillReferencedException {
     }
 }
 impl std::error::Error for PlatformVersionStillReferencedException {}
-/// See [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException)
+/// See [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException).
 pub mod platform_version_still_referenced_exception {
 
-    /// A builder for [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException)
-    #[non_exhaustive]
+    /// A builder for [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5323,7 +5314,7 @@ pub mod platform_version_still_referenced_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException)
+        /// Consumes the builder and constructs a [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException).
         pub fn build(self) -> crate::error::PlatformVersionStillReferencedException {
             crate::error::PlatformVersionStillReferencedException {
                 message: self.message,
@@ -5332,7 +5323,7 @@ pub mod platform_version_still_referenced_exception {
     }
 }
 impl PlatformVersionStillReferencedException {
-    /// Creates a new builder-style object to manufacture [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException)
+    /// Creates a new builder-style object to manufacture [`PlatformVersionStillReferencedException`](crate::error::PlatformVersionStillReferencedException).
     pub fn builder() -> crate::error::platform_version_still_referenced_exception::Builder {
         crate::error::platform_version_still_referenced_exception::Builder::default()
     }
@@ -5368,11 +5359,10 @@ impl std::fmt::Display for SourceBundleDeletionException {
     }
 }
 impl std::error::Error for SourceBundleDeletionException {}
-/// See [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException)
+/// See [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException).
 pub mod source_bundle_deletion_exception {
 
-    /// A builder for [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException)
-    #[non_exhaustive]
+    /// A builder for [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5388,7 +5378,7 @@ pub mod source_bundle_deletion_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException)
+        /// Consumes the builder and constructs a [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException).
         pub fn build(self) -> crate::error::SourceBundleDeletionException {
             crate::error::SourceBundleDeletionException {
                 message: self.message,
@@ -5397,7 +5387,7 @@ pub mod source_bundle_deletion_exception {
     }
 }
 impl SourceBundleDeletionException {
-    /// Creates a new builder-style object to manufacture [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException)
+    /// Creates a new builder-style object to manufacture [`SourceBundleDeletionException`](crate::error::SourceBundleDeletionException).
     pub fn builder() -> crate::error::source_bundle_deletion_exception::Builder {
         crate::error::source_bundle_deletion_exception::Builder::default()
     }
@@ -5438,11 +5428,10 @@ impl std::fmt::Display for S3LocationNotInServiceRegionException {
     }
 }
 impl std::error::Error for S3LocationNotInServiceRegionException {}
-/// See [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException)
+/// See [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException).
 pub mod s3_location_not_in_service_region_exception {
 
-    /// A builder for [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException)
-    #[non_exhaustive]
+    /// A builder for [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5458,7 +5447,7 @@ pub mod s3_location_not_in_service_region_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException)
+        /// Consumes the builder and constructs a [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException).
         pub fn build(self) -> crate::error::S3LocationNotInServiceRegionException {
             crate::error::S3LocationNotInServiceRegionException {
                 message: self.message,
@@ -5467,7 +5456,7 @@ pub mod s3_location_not_in_service_region_exception {
     }
 }
 impl S3LocationNotInServiceRegionException {
-    /// Creates a new builder-style object to manufacture [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException)
+    /// Creates a new builder-style object to manufacture [`S3LocationNotInServiceRegionException`](crate::error::S3LocationNotInServiceRegionException).
     pub fn builder() -> crate::error::s3_location_not_in_service_region_exception::Builder {
         crate::error::s3_location_not_in_service_region_exception::Builder::default()
     }
@@ -5503,11 +5492,10 @@ impl std::fmt::Display for S3SubscriptionRequiredException {
     }
 }
 impl std::error::Error for S3SubscriptionRequiredException {}
-/// See [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException)
+/// See [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException).
 pub mod s3_subscription_required_exception {
 
-    /// A builder for [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException)
-    #[non_exhaustive]
+    /// A builder for [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5523,7 +5511,7 @@ pub mod s3_subscription_required_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException)
+        /// Consumes the builder and constructs a [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException).
         pub fn build(self) -> crate::error::S3SubscriptionRequiredException {
             crate::error::S3SubscriptionRequiredException {
                 message: self.message,
@@ -5532,7 +5520,7 @@ pub mod s3_subscription_required_exception {
     }
 }
 impl S3SubscriptionRequiredException {
-    /// Creates a new builder-style object to manufacture [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException)
+    /// Creates a new builder-style object to manufacture [`S3SubscriptionRequiredException`](crate::error::S3SubscriptionRequiredException).
     pub fn builder() -> crate::error::s3_subscription_required_exception::Builder {
         crate::error::s3_subscription_required_exception::Builder::default()
     }
@@ -5568,11 +5556,10 @@ impl std::fmt::Display for TooManyPlatformsException {
     }
 }
 impl std::error::Error for TooManyPlatformsException {}
-/// See [`TooManyPlatformsException`](crate::error::TooManyPlatformsException)
+/// See [`TooManyPlatformsException`](crate::error::TooManyPlatformsException).
 pub mod too_many_platforms_exception {
 
-    /// A builder for [`TooManyPlatformsException`](crate::error::TooManyPlatformsException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyPlatformsException`](crate::error::TooManyPlatformsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5588,7 +5575,7 @@ pub mod too_many_platforms_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyPlatformsException`](crate::error::TooManyPlatformsException)
+        /// Consumes the builder and constructs a [`TooManyPlatformsException`](crate::error::TooManyPlatformsException).
         pub fn build(self) -> crate::error::TooManyPlatformsException {
             crate::error::TooManyPlatformsException {
                 message: self.message,
@@ -5597,7 +5584,7 @@ pub mod too_many_platforms_exception {
     }
 }
 impl TooManyPlatformsException {
-    /// Creates a new builder-style object to manufacture [`TooManyPlatformsException`](crate::error::TooManyPlatformsException)
+    /// Creates a new builder-style object to manufacture [`TooManyPlatformsException`](crate::error::TooManyPlatformsException).
     pub fn builder() -> crate::error::too_many_platforms_exception::Builder {
         crate::error::too_many_platforms_exception::Builder::default()
     }
@@ -5633,11 +5620,10 @@ impl std::fmt::Display for TooManyEnvironmentsException {
     }
 }
 impl std::error::Error for TooManyEnvironmentsException {}
-/// See [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException)
+/// See [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException).
 pub mod too_many_environments_exception {
 
-    /// A builder for [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5653,7 +5639,7 @@ pub mod too_many_environments_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException)
+        /// Consumes the builder and constructs a [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException).
         pub fn build(self) -> crate::error::TooManyEnvironmentsException {
             crate::error::TooManyEnvironmentsException {
                 message: self.message,
@@ -5662,7 +5648,7 @@ pub mod too_many_environments_exception {
     }
 }
 impl TooManyEnvironmentsException {
-    /// Creates a new builder-style object to manufacture [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException)
+    /// Creates a new builder-style object to manufacture [`TooManyEnvironmentsException`](crate::error::TooManyEnvironmentsException).
     pub fn builder() -> crate::error::too_many_environments_exception::Builder {
         crate::error::too_many_environments_exception::Builder::default()
     }
@@ -5698,11 +5684,10 @@ impl std::fmt::Display for TooManyConfigurationTemplatesException {
     }
 }
 impl std::error::Error for TooManyConfigurationTemplatesException {}
-/// See [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException)
+/// See [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException).
 pub mod too_many_configuration_templates_exception {
 
-    /// A builder for [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5718,7 +5703,7 @@ pub mod too_many_configuration_templates_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException)
+        /// Consumes the builder and constructs a [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException).
         pub fn build(self) -> crate::error::TooManyConfigurationTemplatesException {
             crate::error::TooManyConfigurationTemplatesException {
                 message: self.message,
@@ -5727,7 +5712,7 @@ pub mod too_many_configuration_templates_exception {
     }
 }
 impl TooManyConfigurationTemplatesException {
-    /// Creates a new builder-style object to manufacture [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException)
+    /// Creates a new builder-style object to manufacture [`TooManyConfigurationTemplatesException`](crate::error::TooManyConfigurationTemplatesException).
     pub fn builder() -> crate::error::too_many_configuration_templates_exception::Builder {
         crate::error::too_many_configuration_templates_exception::Builder::default()
     }
@@ -5763,11 +5748,10 @@ impl std::fmt::Display for TooManyApplicationVersionsException {
     }
 }
 impl std::error::Error for TooManyApplicationVersionsException {}
-/// See [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException)
+/// See [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException).
 pub mod too_many_application_versions_exception {
 
-    /// A builder for [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5783,7 +5767,7 @@ pub mod too_many_application_versions_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException)
+        /// Consumes the builder and constructs a [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException).
         pub fn build(self) -> crate::error::TooManyApplicationVersionsException {
             crate::error::TooManyApplicationVersionsException {
                 message: self.message,
@@ -5792,7 +5776,7 @@ pub mod too_many_application_versions_exception {
     }
 }
 impl TooManyApplicationVersionsException {
-    /// Creates a new builder-style object to manufacture [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException)
+    /// Creates a new builder-style object to manufacture [`TooManyApplicationVersionsException`](crate::error::TooManyApplicationVersionsException).
     pub fn builder() -> crate::error::too_many_application_versions_exception::Builder {
         crate::error::too_many_application_versions_exception::Builder::default()
     }
@@ -5828,11 +5812,10 @@ impl std::fmt::Display for TooManyApplicationsException {
     }
 }
 impl std::error::Error for TooManyApplicationsException {}
-/// See [`TooManyApplicationsException`](crate::error::TooManyApplicationsException)
+/// See [`TooManyApplicationsException`](crate::error::TooManyApplicationsException).
 pub mod too_many_applications_exception {
 
-    /// A builder for [`TooManyApplicationsException`](crate::error::TooManyApplicationsException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyApplicationsException`](crate::error::TooManyApplicationsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5848,7 +5831,7 @@ pub mod too_many_applications_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyApplicationsException`](crate::error::TooManyApplicationsException)
+        /// Consumes the builder and constructs a [`TooManyApplicationsException`](crate::error::TooManyApplicationsException).
         pub fn build(self) -> crate::error::TooManyApplicationsException {
             crate::error::TooManyApplicationsException {
                 message: self.message,
@@ -5857,7 +5840,7 @@ pub mod too_many_applications_exception {
     }
 }
 impl TooManyApplicationsException {
-    /// Creates a new builder-style object to manufacture [`TooManyApplicationsException`](crate::error::TooManyApplicationsException)
+    /// Creates a new builder-style object to manufacture [`TooManyApplicationsException`](crate::error::TooManyApplicationsException).
     pub fn builder() -> crate::error::too_many_applications_exception::Builder {
         crate::error::too_many_applications_exception::Builder::default()
     }
@@ -5893,11 +5876,10 @@ impl std::fmt::Display for CodeBuildNotInServiceRegionException {
     }
 }
 impl std::error::Error for CodeBuildNotInServiceRegionException {}
-/// See [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException)
+/// See [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException).
 pub mod code_build_not_in_service_region_exception {
 
-    /// A builder for [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException)
-    #[non_exhaustive]
+    /// A builder for [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5913,7 +5895,7 @@ pub mod code_build_not_in_service_region_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException)
+        /// Consumes the builder and constructs a [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException).
         pub fn build(self) -> crate::error::CodeBuildNotInServiceRegionException {
             crate::error::CodeBuildNotInServiceRegionException {
                 message: self.message,
@@ -5922,7 +5904,7 @@ pub mod code_build_not_in_service_region_exception {
     }
 }
 impl CodeBuildNotInServiceRegionException {
-    /// Creates a new builder-style object to manufacture [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException)
+    /// Creates a new builder-style object to manufacture [`CodeBuildNotInServiceRegionException`](crate::error::CodeBuildNotInServiceRegionException).
     pub fn builder() -> crate::error::code_build_not_in_service_region_exception::Builder {
         crate::error::code_build_not_in_service_region_exception::Builder::default()
     }
@@ -5958,11 +5940,10 @@ impl std::fmt::Display for ManagedActionInvalidStateException {
     }
 }
 impl std::error::Error for ManagedActionInvalidStateException {}
-/// See [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException)
+/// See [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException).
 pub mod managed_action_invalid_state_exception {
 
-    /// A builder for [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException)
-    #[non_exhaustive]
+    /// A builder for [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5978,7 +5959,7 @@ pub mod managed_action_invalid_state_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException)
+        /// Consumes the builder and constructs a [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException).
         pub fn build(self) -> crate::error::ManagedActionInvalidStateException {
             crate::error::ManagedActionInvalidStateException {
                 message: self.message,
@@ -5987,7 +5968,7 @@ pub mod managed_action_invalid_state_exception {
     }
 }
 impl ManagedActionInvalidStateException {
-    /// Creates a new builder-style object to manufacture [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException)
+    /// Creates a new builder-style object to manufacture [`ManagedActionInvalidStateException`](crate::error::ManagedActionInvalidStateException).
     pub fn builder() -> crate::error::managed_action_invalid_state_exception::Builder {
         crate::error::managed_action_invalid_state_exception::Builder::default()
     }

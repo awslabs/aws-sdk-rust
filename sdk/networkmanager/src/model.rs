@@ -27,11 +27,10 @@ impl std::fmt::Debug for ValidationExceptionField {
         formatter.finish()
     }
 }
-/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
-    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField)
-    #[non_exhaustive]
+    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod validation_exception_field {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
                 name: self.name,
@@ -68,7 +67,7 @@ pub mod validation_exception_field {
     }
 }
 impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     pub fn builder() -> crate::model::validation_exception_field::Builder {
         crate::model::validation_exception_field::Builder::default()
     }
@@ -176,11 +175,10 @@ impl std::fmt::Debug for VpcAttachment {
         formatter.finish()
     }
 }
-/// See [`VpcAttachment`](crate::model::VpcAttachment)
+/// See [`VpcAttachment`](crate::model::VpcAttachment).
 pub mod vpc_attachment {
 
-    /// A builder for [`VpcAttachment`](crate::model::VpcAttachment)
-    #[non_exhaustive]
+    /// A builder for [`VpcAttachment`](crate::model::VpcAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
@@ -230,7 +228,7 @@ pub mod vpc_attachment {
             self.options = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcAttachment`](crate::model::VpcAttachment)
+        /// Consumes the builder and constructs a [`VpcAttachment`](crate::model::VpcAttachment).
         pub fn build(self) -> crate::model::VpcAttachment {
             crate::model::VpcAttachment {
                 attachment: self.attachment,
@@ -241,7 +239,7 @@ pub mod vpc_attachment {
     }
 }
 impl VpcAttachment {
-    /// Creates a new builder-style object to manufacture [`VpcAttachment`](crate::model::VpcAttachment)
+    /// Creates a new builder-style object to manufacture [`VpcAttachment`](crate::model::VpcAttachment).
     pub fn builder() -> crate::model::vpc_attachment::Builder {
         crate::model::vpc_attachment::Builder::default()
     }
@@ -267,11 +265,10 @@ impl std::fmt::Debug for VpcOptions {
         formatter.finish()
     }
 }
-/// See [`VpcOptions`](crate::model::VpcOptions)
+/// See [`VpcOptions`](crate::model::VpcOptions).
 pub mod vpc_options {
 
-    /// A builder for [`VpcOptions`](crate::model::VpcOptions)
-    #[non_exhaustive]
+    /// A builder for [`VpcOptions`](crate::model::VpcOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv6_support: std::option::Option<bool>,
@@ -287,7 +284,7 @@ pub mod vpc_options {
             self.ipv6_support = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcOptions`](crate::model::VpcOptions)
+        /// Consumes the builder and constructs a [`VpcOptions`](crate::model::VpcOptions).
         pub fn build(self) -> crate::model::VpcOptions {
             crate::model::VpcOptions {
                 ipv6_support: self.ipv6_support.unwrap_or_default(),
@@ -296,7 +293,7 @@ pub mod vpc_options {
     }
 }
 impl VpcOptions {
-    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions)
+    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions).
     pub fn builder() -> crate::model::vpc_options::Builder {
         crate::model::vpc_options::Builder::default()
     }
@@ -418,11 +415,10 @@ impl std::fmt::Debug for Attachment {
         formatter.finish()
     }
 }
-/// See [`Attachment`](crate::model::Attachment)
+/// See [`Attachment`](crate::model::Attachment).
 pub mod attachment {
 
-    /// A builder for [`Attachment`](crate::model::Attachment)
-    #[non_exhaustive]
+    /// A builder for [`Attachment`](crate::model::Attachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -627,7 +623,7 @@ pub mod attachment {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`Attachment`](crate::model::Attachment)
+        /// Consumes the builder and constructs a [`Attachment`](crate::model::Attachment).
         pub fn build(self) -> crate::model::Attachment {
             crate::model::Attachment {
                 core_network_id: self.core_network_id,
@@ -649,7 +645,7 @@ pub mod attachment {
     }
 }
 impl Attachment {
-    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment)
+    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment).
     pub fn builder() -> crate::model::attachment::Builder {
         crate::model::attachment::Builder::default()
     }
@@ -692,11 +688,10 @@ impl std::fmt::Debug for ProposedSegmentChange {
         formatter.finish()
     }
 }
-/// See [`ProposedSegmentChange`](crate::model::ProposedSegmentChange)
+/// See [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
 pub mod proposed_segment_change {
 
-    /// A builder for [`ProposedSegmentChange`](crate::model::ProposedSegmentChange)
-    #[non_exhaustive]
+    /// A builder for [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -746,7 +741,7 @@ pub mod proposed_segment_change {
             self.segment_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProposedSegmentChange`](crate::model::ProposedSegmentChange)
+        /// Consumes the builder and constructs a [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
         pub fn build(self) -> crate::model::ProposedSegmentChange {
             crate::model::ProposedSegmentChange {
                 tags: self.tags,
@@ -757,7 +752,7 @@ pub mod proposed_segment_change {
     }
 }
 impl ProposedSegmentChange {
-    /// Creates a new builder-style object to manufacture [`ProposedSegmentChange`](crate::model::ProposedSegmentChange)
+    /// Creates a new builder-style object to manufacture [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
     pub fn builder() -> crate::model::proposed_segment_change::Builder {
         crate::model::proposed_segment_change::Builder::default()
     }
@@ -794,11 +789,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -829,7 +823,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -839,7 +833,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -1066,11 +1060,10 @@ impl std::fmt::Debug for Site {
         formatter.finish()
     }
 }
-/// See [`Site`](crate::model::Site)
+/// See [`Site`](crate::model::Site).
 pub mod site {
 
-    /// A builder for [`Site`](crate::model::Site)
-    #[non_exhaustive]
+    /// A builder for [`Site`](crate::model::Site).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) site_id: std::option::Option<std::string::String>,
@@ -1178,7 +1171,7 @@ pub mod site {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Site`](crate::model::Site)
+        /// Consumes the builder and constructs a [`Site`](crate::model::Site).
         pub fn build(self) -> crate::model::Site {
             crate::model::Site {
                 site_id: self.site_id,
@@ -1194,7 +1187,7 @@ pub mod site {
     }
 }
 impl Site {
-    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site)
+    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
     pub fn builder() -> crate::model::site::Builder {
         crate::model::site::Builder::default()
     }
@@ -1297,11 +1290,10 @@ impl std::fmt::Debug for Location {
         formatter.finish()
     }
 }
-/// See [`Location`](crate::model::Location)
+/// See [`Location`](crate::model::Location).
 pub mod location {
 
-    /// A builder for [`Location`](crate::model::Location)
-    #[non_exhaustive]
+    /// A builder for [`Location`](crate::model::Location).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -1339,7 +1331,7 @@ pub mod location {
             self.longitude = input;
             self
         }
-        /// Consumes the builder and constructs a [`Location`](crate::model::Location)
+        /// Consumes the builder and constructs a [`Location`](crate::model::Location).
         pub fn build(self) -> crate::model::Location {
             crate::model::Location {
                 address: self.address,
@@ -1350,7 +1342,7 @@ pub mod location {
     }
 }
 impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location)
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
     pub fn builder() -> crate::model::location::Builder {
         crate::model::location::Builder::default()
     }
@@ -1446,11 +1438,10 @@ impl std::fmt::Debug for Link {
         formatter.finish()
     }
 }
-/// See [`Link`](crate::model::Link)
+/// See [`Link`](crate::model::Link).
 pub mod link {
 
-    /// A builder for [`Link`](crate::model::Link)
-    #[non_exhaustive]
+    /// A builder for [`Link`](crate::model::Link).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_id: std::option::Option<std::string::String>,
@@ -1594,7 +1585,7 @@ pub mod link {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Link`](crate::model::Link)
+        /// Consumes the builder and constructs a [`Link`](crate::model::Link).
         pub fn build(self) -> crate::model::Link {
             crate::model::Link {
                 link_id: self.link_id,
@@ -1613,7 +1604,7 @@ pub mod link {
     }
 }
 impl Link {
-    /// Creates a new builder-style object to manufacture [`Link`](crate::model::Link)
+    /// Creates a new builder-style object to manufacture [`Link`](crate::model::Link).
     pub fn builder() -> crate::model::link::Builder {
         crate::model::link::Builder::default()
     }
@@ -1709,11 +1700,10 @@ impl std::fmt::Debug for Bandwidth {
         formatter.finish()
     }
 }
-/// See [`Bandwidth`](crate::model::Bandwidth)
+/// See [`Bandwidth`](crate::model::Bandwidth).
 pub mod bandwidth {
 
-    /// A builder for [`Bandwidth`](crate::model::Bandwidth)
-    #[non_exhaustive]
+    /// A builder for [`Bandwidth`](crate::model::Bandwidth).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_speed: std::option::Option<i32>,
@@ -1740,7 +1730,7 @@ pub mod bandwidth {
             self.download_speed = input;
             self
         }
-        /// Consumes the builder and constructs a [`Bandwidth`](crate::model::Bandwidth)
+        /// Consumes the builder and constructs a [`Bandwidth`](crate::model::Bandwidth).
         pub fn build(self) -> crate::model::Bandwidth {
             crate::model::Bandwidth {
                 upload_speed: self.upload_speed,
@@ -1750,7 +1740,7 @@ pub mod bandwidth {
     }
 }
 impl Bandwidth {
-    /// Creates a new builder-style object to manufacture [`Bandwidth`](crate::model::Bandwidth)
+    /// Creates a new builder-style object to manufacture [`Bandwidth`](crate::model::Bandwidth).
     pub fn builder() -> crate::model::bandwidth::Builder {
         crate::model::bandwidth::Builder::default()
     }
@@ -1811,11 +1801,10 @@ impl std::fmt::Debug for GlobalNetwork {
         formatter.finish()
     }
 }
-/// See [`GlobalNetwork`](crate::model::GlobalNetwork)
+/// See [`GlobalNetwork`](crate::model::GlobalNetwork).
 pub mod global_network {
 
-    /// A builder for [`GlobalNetwork`](crate::model::GlobalNetwork)
-    #[non_exhaustive]
+    /// A builder for [`GlobalNetwork`](crate::model::GlobalNetwork).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -1907,7 +1896,7 @@ pub mod global_network {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`GlobalNetwork`](crate::model::GlobalNetwork)
+        /// Consumes the builder and constructs a [`GlobalNetwork`](crate::model::GlobalNetwork).
         pub fn build(self) -> crate::model::GlobalNetwork {
             crate::model::GlobalNetwork {
                 global_network_id: self.global_network_id,
@@ -1921,7 +1910,7 @@ pub mod global_network {
     }
 }
 impl GlobalNetwork {
-    /// Creates a new builder-style object to manufacture [`GlobalNetwork`](crate::model::GlobalNetwork)
+    /// Creates a new builder-style object to manufacture [`GlobalNetwork`](crate::model::GlobalNetwork).
     pub fn builder() -> crate::model::global_network::Builder {
         crate::model::global_network::Builder::default()
     }
@@ -2101,11 +2090,10 @@ impl std::fmt::Debug for Device {
         formatter.finish()
     }
 }
-/// See [`Device`](crate::model::Device)
+/// See [`Device`](crate::model::Device).
 pub mod device {
 
-    /// A builder for [`Device`](crate::model::Device)
-    #[non_exhaustive]
+    /// A builder for [`Device`](crate::model::Device).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -2285,7 +2273,7 @@ pub mod device {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Device`](crate::model::Device)
+        /// Consumes the builder and constructs a [`Device`](crate::model::Device).
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
                 device_id: self.device_id,
@@ -2307,7 +2295,7 @@ pub mod device {
     }
 }
 impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device)
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
     pub fn builder() -> crate::model::device::Builder {
         crate::model::device::Builder::default()
     }
@@ -2403,11 +2391,10 @@ impl std::fmt::Debug for AwsLocation {
         formatter.finish()
     }
 }
-/// See [`AwsLocation`](crate::model::AwsLocation)
+/// See [`AwsLocation`](crate::model::AwsLocation).
 pub mod aws_location {
 
-    /// A builder for [`AwsLocation`](crate::model::AwsLocation)
-    #[non_exhaustive]
+    /// A builder for [`AwsLocation`](crate::model::AwsLocation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zone: std::option::Option<std::string::String>,
@@ -2434,7 +2421,7 @@ pub mod aws_location {
             self.subnet_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLocation`](crate::model::AwsLocation)
+        /// Consumes the builder and constructs a [`AwsLocation`](crate::model::AwsLocation).
         pub fn build(self) -> crate::model::AwsLocation {
             crate::model::AwsLocation {
                 zone: self.zone,
@@ -2444,7 +2431,7 @@ pub mod aws_location {
     }
 }
 impl AwsLocation {
-    /// Creates a new builder-style object to manufacture [`AwsLocation`](crate::model::AwsLocation)
+    /// Creates a new builder-style object to manufacture [`AwsLocation`](crate::model::AwsLocation).
     pub fn builder() -> crate::model::aws_location::Builder {
         crate::model::aws_location::Builder::default()
     }
@@ -2526,11 +2513,10 @@ impl std::fmt::Debug for CoreNetwork {
         formatter.finish()
     }
 }
-/// See [`CoreNetwork`](crate::model::CoreNetwork)
+/// See [`CoreNetwork`](crate::model::CoreNetwork).
 pub mod core_network {
 
-    /// A builder for [`CoreNetwork`](crate::model::CoreNetwork)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetwork`](crate::model::CoreNetwork).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -2676,7 +2662,7 @@ pub mod core_network {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetwork`](crate::model::CoreNetwork)
+        /// Consumes the builder and constructs a [`CoreNetwork`](crate::model::CoreNetwork).
         pub fn build(self) -> crate::model::CoreNetwork {
             crate::model::CoreNetwork {
                 global_network_id: self.global_network_id,
@@ -2693,7 +2679,7 @@ pub mod core_network {
     }
 }
 impl CoreNetwork {
-    /// Creates a new builder-style object to manufacture [`CoreNetwork`](crate::model::CoreNetwork)
+    /// Creates a new builder-style object to manufacture [`CoreNetwork`](crate::model::CoreNetwork).
     pub fn builder() -> crate::model::core_network::Builder {
         crate::model::core_network::Builder::default()
     }
@@ -2733,11 +2719,10 @@ impl std::fmt::Debug for CoreNetworkEdge {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkEdge`](crate::model::CoreNetworkEdge)
+/// See [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
 pub mod core_network_edge {
 
-    /// A builder for [`CoreNetworkEdge`](crate::model::CoreNetworkEdge)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edge_location: std::option::Option<std::string::String>,
@@ -2787,7 +2772,7 @@ pub mod core_network_edge {
             self.inside_cidr_blocks = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkEdge`](crate::model::CoreNetworkEdge)
+        /// Consumes the builder and constructs a [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
         pub fn build(self) -> crate::model::CoreNetworkEdge {
             crate::model::CoreNetworkEdge {
                 edge_location: self.edge_location,
@@ -2798,7 +2783,7 @@ pub mod core_network_edge {
     }
 }
 impl CoreNetworkEdge {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkEdge`](crate::model::CoreNetworkEdge)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
     pub fn builder() -> crate::model::core_network_edge::Builder {
         crate::model::core_network_edge::Builder::default()
     }
@@ -2838,11 +2823,10 @@ impl std::fmt::Debug for CoreNetworkSegment {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkSegment`](crate::model::CoreNetworkSegment)
+/// See [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
 pub mod core_network_segment {
 
-    /// A builder for [`CoreNetworkSegment`](crate::model::CoreNetworkSegment)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2898,7 +2882,7 @@ pub mod core_network_segment {
             self.shared_segments = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkSegment`](crate::model::CoreNetworkSegment)
+        /// Consumes the builder and constructs a [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
         pub fn build(self) -> crate::model::CoreNetworkSegment {
             crate::model::CoreNetworkSegment {
                 name: self.name,
@@ -2909,7 +2893,7 @@ pub mod core_network_segment {
     }
 }
 impl CoreNetworkSegment {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkSegment`](crate::model::CoreNetworkSegment)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
     pub fn builder() -> crate::model::core_network_segment::Builder {
         crate::model::core_network_segment::Builder::default()
     }
@@ -3068,11 +3052,10 @@ impl std::fmt::Debug for Connection {
         formatter.finish()
     }
 }
-/// See [`Connection`](crate::model::Connection)
+/// See [`Connection`](crate::model::Connection).
 pub mod connection {
 
-    /// A builder for [`Connection`](crate::model::Connection)
-    #[non_exhaustive]
+    /// A builder for [`Connection`](crate::model::Connection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -3228,7 +3211,7 @@ pub mod connection {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Connection`](crate::model::Connection)
+        /// Consumes the builder and constructs a [`Connection`](crate::model::Connection).
         pub fn build(self) -> crate::model::Connection {
             crate::model::Connection {
                 connection_id: self.connection_id,
@@ -3247,7 +3230,7 @@ pub mod connection {
     }
 }
 impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection)
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
     pub fn builder() -> crate::model::connection::Builder {
         crate::model::connection::Builder::default()
     }
@@ -3406,11 +3389,10 @@ impl std::fmt::Debug for RouteAnalysis {
         formatter.finish()
     }
 }
-/// See [`RouteAnalysis`](crate::model::RouteAnalysis)
+/// See [`RouteAnalysis`](crate::model::RouteAnalysis).
 pub mod route_analysis {
 
-    /// A builder for [`RouteAnalysis`](crate::model::RouteAnalysis)
-    #[non_exhaustive]
+    /// A builder for [`RouteAnalysis`](crate::model::RouteAnalysis).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -3563,7 +3545,7 @@ pub mod route_analysis {
             self.return_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteAnalysis`](crate::model::RouteAnalysis)
+        /// Consumes the builder and constructs a [`RouteAnalysis`](crate::model::RouteAnalysis).
         pub fn build(self) -> crate::model::RouteAnalysis {
             crate::model::RouteAnalysis {
                 global_network_id: self.global_network_id,
@@ -3582,7 +3564,7 @@ pub mod route_analysis {
     }
 }
 impl RouteAnalysis {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysis`](crate::model::RouteAnalysis)
+    /// Creates a new builder-style object to manufacture [`RouteAnalysis`](crate::model::RouteAnalysis).
     pub fn builder() -> crate::model::route_analysis::Builder {
         crate::model::route_analysis::Builder::default()
     }
@@ -3615,11 +3597,10 @@ impl std::fmt::Debug for RouteAnalysisPath {
         formatter.finish()
     }
 }
-/// See [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
+/// See [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
 pub mod route_analysis_path {
 
-    /// A builder for [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
-    #[non_exhaustive]
+    /// A builder for [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) completion_status: std::option::Option<crate::model::RouteAnalysisCompletion>,
@@ -3658,7 +3639,7 @@ pub mod route_analysis_path {
             self.path = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
+        /// Consumes the builder and constructs a [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
         pub fn build(self) -> crate::model::RouteAnalysisPath {
             crate::model::RouteAnalysisPath {
                 completion_status: self.completion_status,
@@ -3668,7 +3649,7 @@ pub mod route_analysis_path {
     }
 }
 impl RouteAnalysisPath {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisPath`](crate::model::RouteAnalysisPath)
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
     pub fn builder() -> crate::model::route_analysis_path::Builder {
         crate::model::route_analysis_path::Builder::default()
     }
@@ -3708,11 +3689,10 @@ impl std::fmt::Debug for PathComponent {
         formatter.finish()
     }
 }
-/// See [`PathComponent`](crate::model::PathComponent)
+/// See [`PathComponent`](crate::model::PathComponent).
 pub mod path_component {
 
-    /// A builder for [`PathComponent`](crate::model::PathComponent)
-    #[non_exhaustive]
+    /// A builder for [`PathComponent`](crate::model::PathComponent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sequence: std::option::Option<i32>,
@@ -3756,7 +3736,7 @@ pub mod path_component {
             self.destination_cidr_block = input;
             self
         }
-        /// Consumes the builder and constructs a [`PathComponent`](crate::model::PathComponent)
+        /// Consumes the builder and constructs a [`PathComponent`](crate::model::PathComponent).
         pub fn build(self) -> crate::model::PathComponent {
             crate::model::PathComponent {
                 sequence: self.sequence,
@@ -3767,7 +3747,7 @@ pub mod path_component {
     }
 }
 impl PathComponent {
-    /// Creates a new builder-style object to manufacture [`PathComponent`](crate::model::PathComponent)
+    /// Creates a new builder-style object to manufacture [`PathComponent`](crate::model::PathComponent).
     pub fn builder() -> crate::model::path_component::Builder {
         crate::model::path_component::Builder::default()
     }
@@ -3828,11 +3808,10 @@ impl std::fmt::Debug for NetworkResourceSummary {
         formatter.finish()
     }
 }
-/// See [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
+/// See [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
 pub mod network_resource_summary {
 
-    /// A builder for [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
-    #[non_exhaustive]
+    /// A builder for [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
@@ -3909,7 +3888,7 @@ pub mod network_resource_summary {
             self.is_middlebox = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
+        /// Consumes the builder and constructs a [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
         pub fn build(self) -> crate::model::NetworkResourceSummary {
             crate::model::NetworkResourceSummary {
                 registered_gateway_arn: self.registered_gateway_arn,
@@ -3923,7 +3902,7 @@ pub mod network_resource_summary {
     }
 }
 impl NetworkResourceSummary {
-    /// Creates a new builder-style object to manufacture [`NetworkResourceSummary`](crate::model::NetworkResourceSummary)
+    /// Creates a new builder-style object to manufacture [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
     pub fn builder() -> crate::model::network_resource_summary::Builder {
         crate::model::network_resource_summary::Builder::default()
     }
@@ -3993,11 +3972,10 @@ impl std::fmt::Debug for RouteAnalysisCompletion {
         formatter.finish()
     }
 }
-/// See [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
+/// See [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
 pub mod route_analysis_completion {
 
-    /// A builder for [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
-    #[non_exhaustive]
+    /// A builder for [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result_code:
@@ -4088,7 +4066,7 @@ pub mod route_analysis_completion {
             self.reason_context = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
+        /// Consumes the builder and constructs a [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
         pub fn build(self) -> crate::model::RouteAnalysisCompletion {
             crate::model::RouteAnalysisCompletion {
                 result_code: self.result_code,
@@ -4099,7 +4077,7 @@ pub mod route_analysis_completion {
     }
 }
 impl RouteAnalysisCompletion {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion)
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
     pub fn builder() -> crate::model::route_analysis_completion::Builder {
         crate::model::route_analysis_completion::Builder::default()
     }
@@ -4328,11 +4306,10 @@ impl std::fmt::Debug for RouteAnalysisEndpointOptions {
         formatter.finish()
     }
 }
-/// See [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
+/// See [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
 pub mod route_analysis_endpoint_options {
 
-    /// A builder for [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
-    #[non_exhaustive]
+    /// A builder for [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_attachment_arn: std::option::Option<std::string::String>,
@@ -4379,7 +4356,7 @@ pub mod route_analysis_endpoint_options {
             self.ip_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
+        /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
         pub fn build(self) -> crate::model::RouteAnalysisEndpointOptions {
             crate::model::RouteAnalysisEndpointOptions {
                 transit_gateway_attachment_arn: self.transit_gateway_attachment_arn,
@@ -4390,7 +4367,7 @@ pub mod route_analysis_endpoint_options {
     }
 }
 impl RouteAnalysisEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions)
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
     pub fn builder() -> crate::model::route_analysis_endpoint_options::Builder {
         crate::model::route_analysis_endpoint_options::Builder::default()
     }
@@ -4485,11 +4462,10 @@ impl std::fmt::Debug for RouteAnalysisEndpointOptionsSpecification {
         formatter.finish()
     }
 }
-/// See [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
+/// See [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
 pub mod route_analysis_endpoint_options_specification {
 
-    /// A builder for [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
-    #[non_exhaustive]
+    /// A builder for [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_attachment_arn: std::option::Option<std::string::String>,
@@ -4522,7 +4498,7 @@ pub mod route_analysis_endpoint_options_specification {
             self.ip_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
+        /// Consumes the builder and constructs a [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
         pub fn build(self) -> crate::model::RouteAnalysisEndpointOptionsSpecification {
             crate::model::RouteAnalysisEndpointOptionsSpecification {
                 transit_gateway_attachment_arn: self.transit_gateway_attachment_arn,
@@ -4532,7 +4508,7 @@ pub mod route_analysis_endpoint_options_specification {
     }
 }
 impl RouteAnalysisEndpointOptionsSpecification {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification)
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
     pub fn builder() -> crate::model::route_analysis_endpoint_options_specification::Builder {
         crate::model::route_analysis_endpoint_options_specification::Builder::default()
     }
@@ -4582,11 +4558,10 @@ impl std::fmt::Debug for OrganizationStatus {
         formatter.finish()
     }
 }
-/// See [`OrganizationStatus`](crate::model::OrganizationStatus)
+/// See [`OrganizationStatus`](crate::model::OrganizationStatus).
 pub mod organization_status {
 
-    /// A builder for [`OrganizationStatus`](crate::model::OrganizationStatus)
-    #[non_exhaustive]
+    /// A builder for [`OrganizationStatus`](crate::model::OrganizationStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization_id: std::option::Option<std::string::String>,
@@ -4656,7 +4631,7 @@ pub mod organization_status {
             self.account_status_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`OrganizationStatus`](crate::model::OrganizationStatus)
+        /// Consumes the builder and constructs a [`OrganizationStatus`](crate::model::OrganizationStatus).
         pub fn build(self) -> crate::model::OrganizationStatus {
             crate::model::OrganizationStatus {
                 organization_id: self.organization_id,
@@ -4668,7 +4643,7 @@ pub mod organization_status {
     }
 }
 impl OrganizationStatus {
-    /// Creates a new builder-style object to manufacture [`OrganizationStatus`](crate::model::OrganizationStatus)
+    /// Creates a new builder-style object to manufacture [`OrganizationStatus`](crate::model::OrganizationStatus).
     pub fn builder() -> crate::model::organization_status::Builder {
         crate::model::organization_status::Builder::default()
     }
@@ -4701,11 +4676,10 @@ impl std::fmt::Debug for AccountStatus {
         formatter.finish()
     }
 }
-/// See [`AccountStatus`](crate::model::AccountStatus)
+/// See [`AccountStatus`](crate::model::AccountStatus).
 pub mod account_status {
 
-    /// A builder for [`AccountStatus`](crate::model::AccountStatus)
-    #[non_exhaustive]
+    /// A builder for [`AccountStatus`](crate::model::AccountStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4735,7 +4709,7 @@ pub mod account_status {
             self.slr_deployment_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountStatus`](crate::model::AccountStatus)
+        /// Consumes the builder and constructs a [`AccountStatus`](crate::model::AccountStatus).
         pub fn build(self) -> crate::model::AccountStatus {
             crate::model::AccountStatus {
                 account_id: self.account_id,
@@ -4745,7 +4719,7 @@ pub mod account_status {
     }
 }
 impl AccountStatus {
-    /// Creates a new builder-style object to manufacture [`AccountStatus`](crate::model::AccountStatus)
+    /// Creates a new builder-style object to manufacture [`AccountStatus`](crate::model::AccountStatus).
     pub fn builder() -> crate::model::account_status::Builder {
         crate::model::account_status::Builder::default()
     }
@@ -4820,11 +4794,10 @@ impl std::fmt::Debug for CoreNetworkPolicy {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy)
+/// See [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
 pub mod core_network_policy {
 
-    /// A builder for [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -4942,7 +4915,7 @@ pub mod core_network_policy {
             self.policy_document = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy)
+        /// Consumes the builder and constructs a [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
         pub fn build(self) -> crate::model::CoreNetworkPolicy {
             crate::model::CoreNetworkPolicy {
                 core_network_id: self.core_network_id,
@@ -4958,7 +4931,7 @@ pub mod core_network_policy {
     }
 }
 impl CoreNetworkPolicy {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
     pub fn builder() -> crate::model::core_network_policy::Builder {
         crate::model::core_network_policy::Builder::default()
     }
@@ -4998,11 +4971,10 @@ impl std::fmt::Debug for CoreNetworkPolicyError {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError)
+/// See [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
 pub mod core_network_policy_error {
 
-    /// A builder for [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -5040,7 +5012,7 @@ pub mod core_network_policy_error {
             self.path = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError)
+        /// Consumes the builder and constructs a [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
         pub fn build(self) -> crate::model::CoreNetworkPolicyError {
             crate::model::CoreNetworkPolicyError {
                 error_code: self.error_code,
@@ -5051,7 +5023,7 @@ pub mod core_network_policy_error {
     }
 }
 impl CoreNetworkPolicyError {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
     pub fn builder() -> crate::model::core_network_policy_error::Builder {
         crate::model::core_network_policy_error::Builder::default()
     }
@@ -5226,11 +5198,10 @@ impl std::fmt::Debug for TransitGatewayRegistration {
         formatter.finish()
     }
 }
-/// See [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration)
+/// See [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
 pub mod transit_gateway_registration {
 
-    /// A builder for [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration)
-    #[non_exhaustive]
+    /// A builder for [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -5277,7 +5248,7 @@ pub mod transit_gateway_registration {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration)
+        /// Consumes the builder and constructs a [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
         pub fn build(self) -> crate::model::TransitGatewayRegistration {
             crate::model::TransitGatewayRegistration {
                 global_network_id: self.global_network_id,
@@ -5288,7 +5259,7 @@ pub mod transit_gateway_registration {
     }
 }
 impl TransitGatewayRegistration {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration)
+    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
     pub fn builder() -> crate::model::transit_gateway_registration::Builder {
         crate::model::transit_gateway_registration::Builder::default()
     }
@@ -5321,11 +5292,10 @@ impl std::fmt::Debug for TransitGatewayRegistrationStateReason {
         formatter.finish()
     }
 }
-/// See [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason)
+/// See [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
 pub mod transit_gateway_registration_state_reason {
 
-    /// A builder for [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason)
-    #[non_exhaustive]
+    /// A builder for [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::TransitGatewayRegistrationState>,
@@ -5355,7 +5325,7 @@ pub mod transit_gateway_registration_state_reason {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason)
+        /// Consumes the builder and constructs a [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
         pub fn build(self) -> crate::model::TransitGatewayRegistrationStateReason {
             crate::model::TransitGatewayRegistrationStateReason {
                 code: self.code,
@@ -5365,7 +5335,7 @@ pub mod transit_gateway_registration_state_reason {
     }
 }
 impl TransitGatewayRegistrationStateReason {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason)
+    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
     pub fn builder() -> crate::model::transit_gateway_registration_state_reason::Builder {
         crate::model::transit_gateway_registration_state_reason::Builder::default()
     }
@@ -5500,11 +5470,10 @@ impl std::fmt::Debug for CoreNetworkSummary {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkSummary`](crate::model::CoreNetworkSummary)
+/// See [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
 pub mod core_network_summary {
 
-    /// A builder for [`CoreNetworkSummary`](crate::model::CoreNetworkSummary)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -5610,7 +5579,7 @@ pub mod core_network_summary {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkSummary`](crate::model::CoreNetworkSummary)
+        /// Consumes the builder and constructs a [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
         pub fn build(self) -> crate::model::CoreNetworkSummary {
             crate::model::CoreNetworkSummary {
                 core_network_id: self.core_network_id,
@@ -5625,7 +5594,7 @@ pub mod core_network_summary {
     }
 }
 impl CoreNetworkSummary {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkSummary`](crate::model::CoreNetworkSummary)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
     pub fn builder() -> crate::model::core_network_summary::Builder {
         crate::model::core_network_summary::Builder::default()
     }
@@ -5686,11 +5655,10 @@ impl std::fmt::Debug for CoreNetworkPolicyVersion {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion)
+/// See [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
 pub mod core_network_policy_version {
 
-    /// A builder for [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -5773,7 +5741,7 @@ pub mod core_network_policy_version {
             self.change_set_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion)
+        /// Consumes the builder and constructs a [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
         pub fn build(self) -> crate::model::CoreNetworkPolicyVersion {
             crate::model::CoreNetworkPolicyVersion {
                 core_network_id: self.core_network_id,
@@ -5787,7 +5755,7 @@ pub mod core_network_policy_version {
     }
 }
 impl CoreNetworkPolicyVersion {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
     pub fn builder() -> crate::model::core_network_policy_version::Builder {
         crate::model::core_network_policy_version::Builder::default()
     }
@@ -5855,11 +5823,10 @@ impl std::fmt::Debug for ConnectPeerSummary {
         formatter.finish()
     }
 }
-/// See [`ConnectPeerSummary`](crate::model::ConnectPeerSummary)
+/// See [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
 pub mod connect_peer_summary {
 
-    /// A builder for [`ConnectPeerSummary`](crate::model::ConnectPeerSummary)
-    #[non_exhaustive]
+    /// A builder for [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -5968,7 +5935,7 @@ pub mod connect_peer_summary {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectPeerSummary`](crate::model::ConnectPeerSummary)
+        /// Consumes the builder and constructs a [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
         pub fn build(self) -> crate::model::ConnectPeerSummary {
             crate::model::ConnectPeerSummary {
                 core_network_id: self.core_network_id,
@@ -5983,7 +5950,7 @@ pub mod connect_peer_summary {
     }
 }
 impl ConnectPeerSummary {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerSummary`](crate::model::ConnectPeerSummary)
+    /// Creates a new builder-style object to manufacture [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
     pub fn builder() -> crate::model::connect_peer_summary::Builder {
         crate::model::connect_peer_summary::Builder::default()
     }
@@ -6105,11 +6072,10 @@ impl std::fmt::Debug for TransitGatewayConnectPeerAssociation {
         formatter.finish()
     }
 }
-/// See [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation)
+/// See [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
 pub mod transit_gateway_connect_peer_association {
 
-    /// A builder for [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation)
-    #[non_exhaustive]
+    /// A builder for [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_connect_peer_arn: std::option::Option<std::string::String>,
@@ -6185,7 +6151,7 @@ pub mod transit_gateway_connect_peer_association {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation)
+        /// Consumes the builder and constructs a [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
         pub fn build(self) -> crate::model::TransitGatewayConnectPeerAssociation {
             crate::model::TransitGatewayConnectPeerAssociation {
                 transit_gateway_connect_peer_arn: self.transit_gateway_connect_peer_arn,
@@ -6198,7 +6164,7 @@ pub mod transit_gateway_connect_peer_association {
     }
 }
 impl TransitGatewayConnectPeerAssociation {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation)
+    /// Creates a new builder-style object to manufacture [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
     pub fn builder() -> crate::model::transit_gateway_connect_peer_association::Builder {
         crate::model::transit_gateway_connect_peer_association::Builder::default()
     }
@@ -6294,11 +6260,10 @@ impl std::fmt::Debug for SiteToSiteVpnAttachment {
         formatter.finish()
     }
 }
-/// See [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment)
+/// See [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
 pub mod site_to_site_vpn_attachment {
 
-    /// A builder for [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment)
-    #[non_exhaustive]
+    /// A builder for [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
@@ -6331,7 +6296,7 @@ pub mod site_to_site_vpn_attachment {
             self.vpn_connection_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment)
+        /// Consumes the builder and constructs a [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
         pub fn build(self) -> crate::model::SiteToSiteVpnAttachment {
             crate::model::SiteToSiteVpnAttachment {
                 attachment: self.attachment,
@@ -6341,7 +6306,7 @@ pub mod site_to_site_vpn_attachment {
     }
 }
 impl SiteToSiteVpnAttachment {
-    /// Creates a new builder-style object to manufacture [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment)
+    /// Creates a new builder-style object to manufacture [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
     pub fn builder() -> crate::model::site_to_site_vpn_attachment::Builder {
         crate::model::site_to_site_vpn_attachment::Builder::default()
     }
@@ -6423,11 +6388,10 @@ impl std::fmt::Debug for NetworkTelemetry {
         formatter.finish()
     }
 }
-/// See [`NetworkTelemetry`](crate::model::NetworkTelemetry)
+/// See [`NetworkTelemetry`](crate::model::NetworkTelemetry).
 pub mod network_telemetry {
 
-    /// A builder for [`NetworkTelemetry`](crate::model::NetworkTelemetry)
-    #[non_exhaustive]
+    /// A builder for [`NetworkTelemetry`](crate::model::NetworkTelemetry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
@@ -6543,7 +6507,7 @@ pub mod network_telemetry {
             self.health = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkTelemetry`](crate::model::NetworkTelemetry)
+        /// Consumes the builder and constructs a [`NetworkTelemetry`](crate::model::NetworkTelemetry).
         pub fn build(self) -> crate::model::NetworkTelemetry {
             crate::model::NetworkTelemetry {
                 registered_gateway_arn: self.registered_gateway_arn,
@@ -6560,7 +6524,7 @@ pub mod network_telemetry {
     }
 }
 impl NetworkTelemetry {
-    /// Creates a new builder-style object to manufacture [`NetworkTelemetry`](crate::model::NetworkTelemetry)
+    /// Creates a new builder-style object to manufacture [`NetworkTelemetry`](crate::model::NetworkTelemetry).
     pub fn builder() -> crate::model::network_telemetry::Builder {
         crate::model::network_telemetry::Builder::default()
     }
@@ -6600,11 +6564,10 @@ impl std::fmt::Debug for ConnectionHealth {
         formatter.finish()
     }
 }
-/// See [`ConnectionHealth`](crate::model::ConnectionHealth)
+/// See [`ConnectionHealth`](crate::model::ConnectionHealth).
 pub mod connection_health {
 
-    /// A builder for [`ConnectionHealth`](crate::model::ConnectionHealth)
-    #[non_exhaustive]
+    /// A builder for [`ConnectionHealth`](crate::model::ConnectionHealth).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ConnectionType>,
@@ -6651,7 +6614,7 @@ pub mod connection_health {
             self.timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectionHealth`](crate::model::ConnectionHealth)
+        /// Consumes the builder and constructs a [`ConnectionHealth`](crate::model::ConnectionHealth).
         pub fn build(self) -> crate::model::ConnectionHealth {
             crate::model::ConnectionHealth {
                 r#type: self.r#type,
@@ -6662,7 +6625,7 @@ pub mod connection_health {
     }
 }
 impl ConnectionHealth {
-    /// Creates a new builder-style object to manufacture [`ConnectionHealth`](crate::model::ConnectionHealth)
+    /// Creates a new builder-style object to manufacture [`ConnectionHealth`](crate::model::ConnectionHealth).
     pub fn builder() -> crate::model::connection_health::Builder {
         crate::model::connection_health::Builder::default()
     }
@@ -6826,11 +6789,10 @@ impl std::fmt::Debug for NetworkRoute {
         formatter.finish()
     }
 }
-/// See [`NetworkRoute`](crate::model::NetworkRoute)
+/// See [`NetworkRoute`](crate::model::NetworkRoute).
 pub mod network_route {
 
-    /// A builder for [`NetworkRoute`](crate::model::NetworkRoute)
-    #[non_exhaustive]
+    /// A builder for [`NetworkRoute`](crate::model::NetworkRoute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
@@ -6906,7 +6868,7 @@ pub mod network_route {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkRoute`](crate::model::NetworkRoute)
+        /// Consumes the builder and constructs a [`NetworkRoute`](crate::model::NetworkRoute).
         pub fn build(self) -> crate::model::NetworkRoute {
             crate::model::NetworkRoute {
                 destination_cidr_block: self.destination_cidr_block,
@@ -6919,7 +6881,7 @@ pub mod network_route {
     }
 }
 impl NetworkRoute {
-    /// Creates a new builder-style object to manufacture [`NetworkRoute`](crate::model::NetworkRoute)
+    /// Creates a new builder-style object to manufacture [`NetworkRoute`](crate::model::NetworkRoute).
     pub fn builder() -> crate::model::network_route::Builder {
         crate::model::network_route::Builder::default()
     }
@@ -7096,11 +7058,10 @@ impl std::fmt::Debug for NetworkRouteDestination {
         formatter.finish()
     }
 }
-/// See [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
+/// See [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
 pub mod network_route_destination {
 
-    /// A builder for [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
-    #[non_exhaustive]
+    /// A builder for [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_attachment_id: std::option::Option<std::string::String>,
@@ -7186,7 +7147,7 @@ pub mod network_route_destination {
             self.resource_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
+        /// Consumes the builder and constructs a [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
         pub fn build(self) -> crate::model::NetworkRouteDestination {
             crate::model::NetworkRouteDestination {
                 core_network_attachment_id: self.core_network_attachment_id,
@@ -7200,7 +7161,7 @@ pub mod network_route_destination {
     }
 }
 impl NetworkRouteDestination {
-    /// Creates a new builder-style object to manufacture [`NetworkRouteDestination`](crate::model::NetworkRouteDestination)
+    /// Creates a new builder-style object to manufacture [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
     pub fn builder() -> crate::model::network_route_destination::Builder {
         crate::model::network_route_destination::Builder::default()
     }
@@ -7295,11 +7256,10 @@ impl std::fmt::Debug for CoreNetworkSegmentEdgeIdentifier {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier)
+/// See [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
 pub mod core_network_segment_edge_identifier {
 
-    /// A builder for [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -7343,7 +7303,7 @@ pub mod core_network_segment_edge_identifier {
             self.edge_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier)
+        /// Consumes the builder and constructs a [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
         pub fn build(self) -> crate::model::CoreNetworkSegmentEdgeIdentifier {
             crate::model::CoreNetworkSegmentEdgeIdentifier {
                 core_network_id: self.core_network_id,
@@ -7354,7 +7314,7 @@ pub mod core_network_segment_edge_identifier {
     }
 }
 impl CoreNetworkSegmentEdgeIdentifier {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
     pub fn builder() -> crate::model::core_network_segment_edge_identifier::Builder {
         crate::model::core_network_segment_edge_identifier::Builder::default()
     }
@@ -7393,11 +7353,10 @@ impl std::fmt::Debug for RouteTableIdentifier {
         formatter.finish()
     }
 }
-/// See [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
+/// See [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
 pub mod route_table_identifier {
 
-    /// A builder for [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
-    #[non_exhaustive]
+    /// A builder for [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transit_gateway_route_table_arn: std::option::Option<std::string::String>,
@@ -7437,7 +7396,7 @@ pub mod route_table_identifier {
             self.core_network_segment_edge = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
+        /// Consumes the builder and constructs a [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
         pub fn build(self) -> crate::model::RouteTableIdentifier {
             crate::model::RouteTableIdentifier {
                 transit_gateway_route_table_arn: self.transit_gateway_route_table_arn,
@@ -7447,7 +7406,7 @@ pub mod route_table_identifier {
     }
 }
 impl RouteTableIdentifier {
-    /// Creates a new builder-style object to manufacture [`RouteTableIdentifier`](crate::model::RouteTableIdentifier)
+    /// Creates a new builder-style object to manufacture [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
     pub fn builder() -> crate::model::route_table_identifier::Builder {
         crate::model::route_table_identifier::Builder::default()
     }
@@ -7591,11 +7550,10 @@ impl std::fmt::Debug for NetworkResource {
         formatter.finish()
     }
 }
-/// See [`NetworkResource`](crate::model::NetworkResource)
+/// See [`NetworkResource`](crate::model::NetworkResource).
 pub mod network_resource {
 
-    /// A builder for [`NetworkResource`](crate::model::NetworkResource)
-    #[non_exhaustive]
+    /// A builder for [`NetworkResource`](crate::model::NetworkResource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
@@ -7803,7 +7761,7 @@ pub mod network_resource {
             self.metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkResource`](crate::model::NetworkResource)
+        /// Consumes the builder and constructs a [`NetworkResource`](crate::model::NetworkResource).
         pub fn build(self) -> crate::model::NetworkResource {
             crate::model::NetworkResource {
                 registered_gateway_arn: self.registered_gateway_arn,
@@ -7822,7 +7780,7 @@ pub mod network_resource {
     }
 }
 impl NetworkResource {
-    /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource)
+    /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource).
     pub fn builder() -> crate::model::network_resource::Builder {
         crate::model::network_resource::Builder::default()
     }
@@ -7855,11 +7813,10 @@ impl std::fmt::Debug for Relationship {
         formatter.finish()
     }
 }
-/// See [`Relationship`](crate::model::Relationship)
+/// See [`Relationship`](crate::model::Relationship).
 pub mod relationship {
 
-    /// A builder for [`Relationship`](crate::model::Relationship)
-    #[non_exhaustive]
+    /// A builder for [`Relationship`](crate::model::Relationship).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<std::string::String>,
@@ -7886,7 +7843,7 @@ pub mod relationship {
             self.to = input;
             self
         }
-        /// Consumes the builder and constructs a [`Relationship`](crate::model::Relationship)
+        /// Consumes the builder and constructs a [`Relationship`](crate::model::Relationship).
         pub fn build(self) -> crate::model::Relationship {
             crate::model::Relationship {
                 from: self.from,
@@ -7896,7 +7853,7 @@ pub mod relationship {
     }
 }
 impl Relationship {
-    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship)
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
     pub fn builder() -> crate::model::relationship::Builder {
         crate::model::relationship::Builder::default()
     }
@@ -7929,11 +7886,10 @@ impl std::fmt::Debug for NetworkResourceCount {
         formatter.finish()
     }
 }
-/// See [`NetworkResourceCount`](crate::model::NetworkResourceCount)
+/// See [`NetworkResourceCount`](crate::model::NetworkResourceCount).
 pub mod network_resource_count {
 
-    /// A builder for [`NetworkResourceCount`](crate::model::NetworkResourceCount)
-    #[non_exhaustive]
+    /// A builder for [`NetworkResourceCount`](crate::model::NetworkResourceCount).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -7963,7 +7919,7 @@ pub mod network_resource_count {
             self.count = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkResourceCount`](crate::model::NetworkResourceCount)
+        /// Consumes the builder and constructs a [`NetworkResourceCount`](crate::model::NetworkResourceCount).
         pub fn build(self) -> crate::model::NetworkResourceCount {
             crate::model::NetworkResourceCount {
                 resource_type: self.resource_type,
@@ -7973,7 +7929,7 @@ pub mod network_resource_count {
     }
 }
 impl NetworkResourceCount {
-    /// Creates a new builder-style object to manufacture [`NetworkResourceCount`](crate::model::NetworkResourceCount)
+    /// Creates a new builder-style object to manufacture [`NetworkResourceCount`](crate::model::NetworkResourceCount).
     pub fn builder() -> crate::model::network_resource_count::Builder {
         crate::model::network_resource_count::Builder::default()
     }
@@ -8022,11 +7978,10 @@ impl std::fmt::Debug for LinkAssociation {
         formatter.finish()
     }
 }
-/// See [`LinkAssociation`](crate::model::LinkAssociation)
+/// See [`LinkAssociation`](crate::model::LinkAssociation).
 pub mod link_association {
 
-    /// A builder for [`LinkAssociation`](crate::model::LinkAssociation)
-    #[non_exhaustive]
+    /// A builder for [`LinkAssociation`](crate::model::LinkAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_network_id: std::option::Option<std::string::String>,
@@ -8081,7 +8036,7 @@ pub mod link_association {
             self.link_association_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`LinkAssociation`](crate::model::LinkAssociation)
+        /// Consumes the builder and constructs a [`LinkAssociation`](crate::model::LinkAssociation).
         pub fn build(self) -> crate::model::LinkAssociation {
             crate::model::LinkAssociation {
                 global_network_id: self.global_network_id,
@@ -8093,7 +8048,7 @@ pub mod link_association {
     }
 }
 impl LinkAssociation {
-    /// Creates a new builder-style object to manufacture [`LinkAssociation`](crate::model::LinkAssociation)
+    /// Creates a new builder-style object to manufacture [`LinkAssociation`](crate::model::LinkAssociation).
     pub fn builder() -> crate::model::link_association::Builder {
         crate::model::link_association::Builder::default()
     }
@@ -8210,11 +8165,10 @@ impl std::fmt::Debug for CustomerGatewayAssociation {
         formatter.finish()
     }
 }
-/// See [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation)
+/// See [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
 pub mod customer_gateway_association {
 
-    /// A builder for [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation)
-    #[non_exhaustive]
+    /// A builder for [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_gateway_arn: std::option::Option<std::string::String>,
@@ -8283,7 +8237,7 @@ pub mod customer_gateway_association {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation)
+        /// Consumes the builder and constructs a [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
         pub fn build(self) -> crate::model::CustomerGatewayAssociation {
             crate::model::CustomerGatewayAssociation {
                 customer_gateway_arn: self.customer_gateway_arn,
@@ -8296,7 +8250,7 @@ pub mod customer_gateway_association {
     }
 }
 impl CustomerGatewayAssociation {
-    /// Creates a new builder-style object to manufacture [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation)
+    /// Creates a new builder-style object to manufacture [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
     pub fn builder() -> crate::model::customer_gateway_association::Builder {
         crate::model::customer_gateway_association::Builder::default()
     }
@@ -8413,11 +8367,10 @@ impl std::fmt::Debug for CoreNetworkChange {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkChange`](crate::model::CoreNetworkChange)
+/// See [`CoreNetworkChange`](crate::model::CoreNetworkChange).
 pub mod core_network_change {
 
-    /// A builder for [`CoreNetworkChange`](crate::model::CoreNetworkChange)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkChange`](crate::model::CoreNetworkChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChangeType>,
@@ -8486,7 +8439,7 @@ pub mod core_network_change {
             self.new_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkChange`](crate::model::CoreNetworkChange)
+        /// Consumes the builder and constructs a [`CoreNetworkChange`](crate::model::CoreNetworkChange).
         pub fn build(self) -> crate::model::CoreNetworkChange {
             crate::model::CoreNetworkChange {
                 r#type: self.r#type,
@@ -8499,7 +8452,7 @@ pub mod core_network_change {
     }
 }
 impl CoreNetworkChange {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkChange`](crate::model::CoreNetworkChange)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChange`](crate::model::CoreNetworkChange).
     pub fn builder() -> crate::model::core_network_change::Builder {
         crate::model::core_network_change::Builder::default()
     }
@@ -8567,11 +8520,10 @@ impl std::fmt::Debug for CoreNetworkChangeValues {
         formatter.finish()
     }
 }
-/// See [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues)
+/// See [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
 pub mod core_network_change_values {
 
-    /// A builder for [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues)
-    #[non_exhaustive]
+    /// A builder for [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segment_name: std::option::Option<std::string::String>,
@@ -8683,7 +8635,7 @@ pub mod core_network_change_values {
             self.shared_segments = input;
             self
         }
-        /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues)
+        /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
         pub fn build(self) -> crate::model::CoreNetworkChangeValues {
             crate::model::CoreNetworkChangeValues {
                 segment_name: self.segment_name,
@@ -8698,7 +8650,7 @@ pub mod core_network_change_values {
     }
 }
 impl CoreNetworkChangeValues {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues)
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
     pub fn builder() -> crate::model::core_network_change_values::Builder {
         crate::model::core_network_change_values::Builder::default()
     }
@@ -8884,11 +8836,10 @@ impl std::fmt::Debug for ConnectPeerAssociation {
         formatter.finish()
     }
 }
-/// See [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation)
+/// See [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
 pub mod connect_peer_association {
 
-    /// A builder for [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation)
-    #[non_exhaustive]
+    /// A builder for [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_peer_id: std::option::Option<std::string::String>,
@@ -8957,7 +8908,7 @@ pub mod connect_peer_association {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation)
+        /// Consumes the builder and constructs a [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
         pub fn build(self) -> crate::model::ConnectPeerAssociation {
             crate::model::ConnectPeerAssociation {
                 connect_peer_id: self.connect_peer_id,
@@ -8970,7 +8921,7 @@ pub mod connect_peer_association {
     }
 }
 impl ConnectPeerAssociation {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation)
+    /// Creates a new builder-style object to manufacture [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
     pub fn builder() -> crate::model::connect_peer_association::Builder {
         crate::model::connect_peer_association::Builder::default()
     }
@@ -9108,11 +9059,10 @@ impl std::fmt::Debug for ConnectPeer {
         formatter.finish()
     }
 }
-/// See [`ConnectPeer`](crate::model::ConnectPeer)
+/// See [`ConnectPeer`](crate::model::ConnectPeer).
 pub mod connect_peer {
 
-    /// A builder for [`ConnectPeer`](crate::model::ConnectPeer)
-    #[non_exhaustive]
+    /// A builder for [`ConnectPeer`](crate::model::ConnectPeer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_id: std::option::Option<std::string::String>,
@@ -9235,7 +9185,7 @@ pub mod connect_peer {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectPeer`](crate::model::ConnectPeer)
+        /// Consumes the builder and constructs a [`ConnectPeer`](crate::model::ConnectPeer).
         pub fn build(self) -> crate::model::ConnectPeer {
             crate::model::ConnectPeer {
                 core_network_id: self.core_network_id,
@@ -9251,7 +9201,7 @@ pub mod connect_peer {
     }
 }
 impl ConnectPeer {
-    /// Creates a new builder-style object to manufacture [`ConnectPeer`](crate::model::ConnectPeer)
+    /// Creates a new builder-style object to manufacture [`ConnectPeer`](crate::model::ConnectPeer).
     pub fn builder() -> crate::model::connect_peer::Builder {
         crate::model::connect_peer::Builder::default()
     }
@@ -9308,11 +9258,10 @@ impl std::fmt::Debug for ConnectPeerConfiguration {
         formatter.finish()
     }
 }
-/// See [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration)
+/// See [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
 pub mod connect_peer_configuration {
 
-    /// A builder for [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_address: std::option::Option<std::string::String>,
@@ -9400,7 +9349,7 @@ pub mod connect_peer_configuration {
             self.bgp_configurations = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration)
+        /// Consumes the builder and constructs a [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
         pub fn build(self) -> crate::model::ConnectPeerConfiguration {
             crate::model::ConnectPeerConfiguration {
                 core_network_address: self.core_network_address,
@@ -9413,7 +9362,7 @@ pub mod connect_peer_configuration {
     }
 }
 impl ConnectPeerConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration)
+    /// Creates a new builder-style object to manufacture [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
     pub fn builder() -> crate::model::connect_peer_configuration::Builder {
         crate::model::connect_peer_configuration::Builder::default()
     }
@@ -9460,11 +9409,10 @@ impl std::fmt::Debug for ConnectPeerBgpConfiguration {
         formatter.finish()
     }
 }
-/// See [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration)
+/// See [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
 pub mod connect_peer_bgp_configuration {
 
-    /// A builder for [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) core_network_asn: std::option::Option<i64>,
@@ -9516,7 +9464,7 @@ pub mod connect_peer_bgp_configuration {
             self.peer_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration)
+        /// Consumes the builder and constructs a [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
         pub fn build(self) -> crate::model::ConnectPeerBgpConfiguration {
             crate::model::ConnectPeerBgpConfiguration {
                 core_network_asn: self.core_network_asn,
@@ -9528,7 +9476,7 @@ pub mod connect_peer_bgp_configuration {
     }
 }
 impl ConnectPeerBgpConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration)
+    /// Creates a new builder-style object to manufacture [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
     pub fn builder() -> crate::model::connect_peer_bgp_configuration::Builder {
         crate::model::connect_peer_bgp_configuration::Builder::default()
     }
@@ -9619,11 +9567,10 @@ impl std::fmt::Debug for ConnectAttachment {
         formatter.finish()
     }
 }
-/// See [`ConnectAttachment`](crate::model::ConnectAttachment)
+/// See [`ConnectAttachment`](crate::model::ConnectAttachment).
 pub mod connect_attachment {
 
-    /// A builder for [`ConnectAttachment`](crate::model::ConnectAttachment)
-    #[non_exhaustive]
+    /// A builder for [`ConnectAttachment`](crate::model::ConnectAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
@@ -9670,7 +9617,7 @@ pub mod connect_attachment {
             self.options = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectAttachment`](crate::model::ConnectAttachment)
+        /// Consumes the builder and constructs a [`ConnectAttachment`](crate::model::ConnectAttachment).
         pub fn build(self) -> crate::model::ConnectAttachment {
             crate::model::ConnectAttachment {
                 attachment: self.attachment,
@@ -9681,7 +9628,7 @@ pub mod connect_attachment {
     }
 }
 impl ConnectAttachment {
-    /// Creates a new builder-style object to manufacture [`ConnectAttachment`](crate::model::ConnectAttachment)
+    /// Creates a new builder-style object to manufacture [`ConnectAttachment`](crate::model::ConnectAttachment).
     pub fn builder() -> crate::model::connect_attachment::Builder {
         crate::model::connect_attachment::Builder::default()
     }
@@ -9707,11 +9654,10 @@ impl std::fmt::Debug for ConnectAttachmentOptions {
         formatter.finish()
     }
 }
-/// See [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions)
+/// See [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
 pub mod connect_attachment_options {
 
-    /// A builder for [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions)
-    #[non_exhaustive]
+    /// A builder for [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<crate::model::TunnelProtocol>,
@@ -9730,7 +9676,7 @@ pub mod connect_attachment_options {
             self.protocol = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions)
+        /// Consumes the builder and constructs a [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
         pub fn build(self) -> crate::model::ConnectAttachmentOptions {
             crate::model::ConnectAttachmentOptions {
                 protocol: self.protocol,
@@ -9739,7 +9685,7 @@ pub mod connect_attachment_options {
     }
 }
 impl ConnectAttachmentOptions {
-    /// Creates a new builder-style object to manufacture [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions)
+    /// Creates a new builder-style object to manufacture [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
     pub fn builder() -> crate::model::connect_attachment_options::Builder {
         crate::model::connect_attachment_options::Builder::default()
     }
@@ -9765,11 +9711,10 @@ impl std::fmt::Debug for BgpOptions {
         formatter.finish()
     }
 }
-/// See [`BgpOptions`](crate::model::BgpOptions)
+/// See [`BgpOptions`](crate::model::BgpOptions).
 pub mod bgp_options {
 
-    /// A builder for [`BgpOptions`](crate::model::BgpOptions)
-    #[non_exhaustive]
+    /// A builder for [`BgpOptions`](crate::model::BgpOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peer_asn: std::option::Option<i64>,
@@ -9785,7 +9730,7 @@ pub mod bgp_options {
             self.peer_asn = input;
             self
         }
-        /// Consumes the builder and constructs a [`BgpOptions`](crate::model::BgpOptions)
+        /// Consumes the builder and constructs a [`BgpOptions`](crate::model::BgpOptions).
         pub fn build(self) -> crate::model::BgpOptions {
             crate::model::BgpOptions {
                 peer_asn: self.peer_asn,
@@ -9794,7 +9739,7 @@ pub mod bgp_options {
     }
 }
 impl BgpOptions {
-    /// Creates a new builder-style object to manufacture [`BgpOptions`](crate::model::BgpOptions)
+    /// Creates a new builder-style object to manufacture [`BgpOptions`](crate::model::BgpOptions).
     pub fn builder() -> crate::model::bgp_options::Builder {
         crate::model::bgp_options::Builder::default()
     }

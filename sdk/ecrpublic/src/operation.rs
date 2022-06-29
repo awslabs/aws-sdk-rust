@@ -10,7 +10,7 @@ pub struct BatchCheckLayerAvailability {
     _private: (),
 }
 impl BatchCheckLayerAvailability {
-    /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityInput`](crate::input::BatchCheckLayerAvailabilityInput)
+    /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityInput`](crate::input::BatchCheckLayerAvailabilityInput).
     pub fn builder() -> crate::input::batch_check_layer_availability_input::Builder {
         crate::input::batch_check_layer_availability_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchDeleteImage {
     _private: (),
 }
 impl BatchDeleteImage {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteImageInput`](crate::input::BatchDeleteImageInput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteImageInput`](crate::input::BatchDeleteImageInput).
     pub fn builder() -> crate::input::batch_delete_image_input::Builder {
         crate::input::batch_delete_image_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CompleteLayerUpload {
     _private: (),
 }
 impl CompleteLayerUpload {
-    /// Creates a new builder-style object to manufacture [`CompleteLayerUploadInput`](crate::input::CompleteLayerUploadInput)
+    /// Creates a new builder-style object to manufacture [`CompleteLayerUploadInput`](crate::input::CompleteLayerUploadInput).
     pub fn builder() -> crate::input::complete_layer_upload_input::Builder {
         crate::input::complete_layer_upload_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateRepository {
     _private: (),
 }
 impl CreateRepository {
-    /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
     pub fn builder() -> crate::input::create_repository_input::Builder {
         crate::input::create_repository_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteRepository {
     _private: (),
 }
 impl DeleteRepository {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
     pub fn builder() -> crate::input::delete_repository_input::Builder {
         crate::input::delete_repository_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteRepositoryPolicy {
     _private: (),
 }
 impl DeleteRepositoryPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryPolicyInput`](crate::input::DeleteRepositoryPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryPolicyInput`](crate::input::DeleteRepositoryPolicyInput).
     pub fn builder() -> crate::input::delete_repository_policy_input::Builder {
         crate::input::delete_repository_policy_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DescribeImages {
     _private: (),
 }
 impl DescribeImages {
-    /// Creates a new builder-style object to manufacture [`DescribeImagesInput`](crate::input::DescribeImagesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeImagesInput`](crate::input::DescribeImagesInput).
     pub fn builder() -> crate::input::describe_images_input::Builder {
         crate::input::describe_images_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct DescribeImageTags {
     _private: (),
 }
 impl DescribeImageTags {
-    /// Creates a new builder-style object to manufacture [`DescribeImageTagsInput`](crate::input::DescribeImageTagsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeImageTagsInput`](crate::input::DescribeImageTagsInput).
     pub fn builder() -> crate::input::describe_image_tags_input::Builder {
         crate::input::describe_image_tags_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct DescribeRegistries {
     _private: (),
 }
 impl DescribeRegistries {
-    /// Creates a new builder-style object to manufacture [`DescribeRegistriesInput`](crate::input::DescribeRegistriesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRegistriesInput`](crate::input::DescribeRegistriesInput).
     pub fn builder() -> crate::input::describe_registries_input::Builder {
         crate::input::describe_registries_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct DescribeRepositories {
     _private: (),
 }
 impl DescribeRepositories {
-    /// Creates a new builder-style object to manufacture [`DescribeRepositoriesInput`](crate::input::DescribeRepositoriesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRepositoriesInput`](crate::input::DescribeRepositoriesInput).
     pub fn builder() -> crate::input::describe_repositories_input::Builder {
         crate::input::describe_repositories_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct GetAuthorizationToken {
     _private: (),
 }
 impl GetAuthorizationToken {
-    /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
     pub fn builder() -> crate::input::get_authorization_token_input::Builder {
         crate::input::get_authorization_token_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct GetRegistryCatalogData {
     _private: (),
 }
 impl GetRegistryCatalogData {
-    /// Creates a new builder-style object to manufacture [`GetRegistryCatalogDataInput`](crate::input::GetRegistryCatalogDataInput)
+    /// Creates a new builder-style object to manufacture [`GetRegistryCatalogDataInput`](crate::input::GetRegistryCatalogDataInput).
     pub fn builder() -> crate::input::get_registry_catalog_data_input::Builder {
         crate::input::get_registry_catalog_data_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct GetRepositoryCatalogData {
     _private: (),
 }
 impl GetRepositoryCatalogData {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryCatalogDataInput`](crate::input::GetRepositoryCatalogDataInput)
+    /// Creates a new builder-style object to manufacture [`GetRepositoryCatalogDataInput`](crate::input::GetRepositoryCatalogDataInput).
     pub fn builder() -> crate::input::get_repository_catalog_data_input::Builder {
         crate::input::get_repository_catalog_data_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct GetRepositoryPolicy {
     _private: (),
 }
 impl GetRepositoryPolicy {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyInput`](crate::input::GetRepositoryPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyInput`](crate::input::GetRepositoryPolicyInput).
     pub fn builder() -> crate::input::get_repository_policy_input::Builder {
         crate::input::get_repository_policy_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct InitiateLayerUpload {
     _private: (),
 }
 impl InitiateLayerUpload {
-    /// Creates a new builder-style object to manufacture [`InitiateLayerUploadInput`](crate::input::InitiateLayerUploadInput)
+    /// Creates a new builder-style object to manufacture [`InitiateLayerUploadInput`](crate::input::InitiateLayerUploadInput).
     pub fn builder() -> crate::input::initiate_layer_upload_input::Builder {
         crate::input::initiate_layer_upload_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct PutImage {
     _private: (),
 }
 impl PutImage {
-    /// Creates a new builder-style object to manufacture [`PutImageInput`](crate::input::PutImageInput)
+    /// Creates a new builder-style object to manufacture [`PutImageInput`](crate::input::PutImageInput).
     pub fn builder() -> crate::input::put_image_input::Builder {
         crate::input::put_image_input::Builder::default()
     }
@@ -583,7 +583,7 @@ pub struct PutRegistryCatalogData {
     _private: (),
 }
 impl PutRegistryCatalogData {
-    /// Creates a new builder-style object to manufacture [`PutRegistryCatalogDataInput`](crate::input::PutRegistryCatalogDataInput)
+    /// Creates a new builder-style object to manufacture [`PutRegistryCatalogDataInput`](crate::input::PutRegistryCatalogDataInput).
     pub fn builder() -> crate::input::put_registry_catalog_data_input::Builder {
         crate::input::put_registry_catalog_data_input::Builder::default()
     }
@@ -617,7 +617,7 @@ pub struct PutRepositoryCatalogData {
     _private: (),
 }
 impl PutRepositoryCatalogData {
-    /// Creates a new builder-style object to manufacture [`PutRepositoryCatalogDataInput`](crate::input::PutRepositoryCatalogDataInput)
+    /// Creates a new builder-style object to manufacture [`PutRepositoryCatalogDataInput`](crate::input::PutRepositoryCatalogDataInput).
     pub fn builder() -> crate::input::put_repository_catalog_data_input::Builder {
         crate::input::put_repository_catalog_data_input::Builder::default()
     }
@@ -651,7 +651,7 @@ pub struct SetRepositoryPolicy {
     _private: (),
 }
 impl SetRepositoryPolicy {
-    /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyInput`](crate::input::SetRepositoryPolicyInput)
+    /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyInput`](crate::input::SetRepositoryPolicyInput).
     pub fn builder() -> crate::input::set_repository_policy_input::Builder {
         crate::input::set_repository_policy_input::Builder::default()
     }
@@ -685,7 +685,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -717,7 +717,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -749,7 +749,7 @@ pub struct UploadLayerPart {
     _private: (),
 }
 impl UploadLayerPart {
-    /// Creates a new builder-style object to manufacture [`UploadLayerPartInput`](crate::input::UploadLayerPartInput)
+    /// Creates a new builder-style object to manufacture [`UploadLayerPartInput`](crate::input::UploadLayerPartInput).
     pub fn builder() -> crate::input::upload_layer_part_input::Builder {
         crate::input::upload_layer_part_input::Builder::default()
     }

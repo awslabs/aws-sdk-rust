@@ -35,11 +35,10 @@ impl std::fmt::Debug for WorkflowType {
         formatter.finish()
     }
 }
-/// See [`WorkflowType`](crate::model::WorkflowType)
+/// See [`WorkflowType`](crate::model::WorkflowType).
 pub mod workflow_type {
 
-    /// A builder for [`WorkflowType`](crate::model::WorkflowType)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowType`](crate::model::WorkflowType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -74,7 +73,7 @@ pub mod workflow_type {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowType`](crate::model::WorkflowType)
+        /// Consumes the builder and constructs a [`WorkflowType`](crate::model::WorkflowType).
         pub fn build(self) -> crate::model::WorkflowType {
             crate::model::WorkflowType {
                 name: self.name,
@@ -84,7 +83,7 @@ pub mod workflow_type {
     }
 }
 impl WorkflowType {
-    /// Creates a new builder-style object to manufacture [`WorkflowType`](crate::model::WorkflowType)
+    /// Creates a new builder-style object to manufacture [`WorkflowType`](crate::model::WorkflowType).
     pub fn builder() -> crate::model::workflow_type::Builder {
         crate::model::workflow_type::Builder::default()
     }
@@ -125,11 +124,10 @@ impl std::fmt::Debug for ActivityType {
         formatter.finish()
     }
 }
-/// See [`ActivityType`](crate::model::ActivityType)
+/// See [`ActivityType`](crate::model::ActivityType).
 pub mod activity_type {
 
-    /// A builder for [`ActivityType`](crate::model::ActivityType)
-    #[non_exhaustive]
+    /// A builder for [`ActivityType`](crate::model::ActivityType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -164,7 +162,7 @@ pub mod activity_type {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityType`](crate::model::ActivityType)
+        /// Consumes the builder and constructs a [`ActivityType`](crate::model::ActivityType).
         pub fn build(self) -> crate::model::ActivityType {
             crate::model::ActivityType {
                 name: self.name,
@@ -174,7 +172,7 @@ pub mod activity_type {
     }
 }
 impl ActivityType {
-    /// Creates a new builder-style object to manufacture [`ActivityType`](crate::model::ActivityType)
+    /// Creates a new builder-style object to manufacture [`ActivityType`](crate::model::ActivityType).
     pub fn builder() -> crate::model::activity_type::Builder {
         crate::model::activity_type::Builder::default()
     }
@@ -267,11 +265,10 @@ impl std::fmt::Debug for ResourceTag {
         formatter.finish()
     }
 }
-/// See [`ResourceTag`](crate::model::ResourceTag)
+/// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
-    /// A builder for [`ResourceTag`](crate::model::ResourceTag)
-    #[non_exhaustive]
+    /// A builder for [`ResourceTag`](crate::model::ResourceTag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -298,7 +295,7 @@ pub mod resource_tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag)
+        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag).
         pub fn build(self) -> crate::model::ResourceTag {
             crate::model::ResourceTag {
                 key: self.key,
@@ -308,7 +305,7 @@ pub mod resource_tag {
     }
 }
 impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag)
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
     pub fn builder() -> crate::model::resource_tag::Builder {
         crate::model::resource_tag::Builder::default()
     }
@@ -334,11 +331,10 @@ impl std::fmt::Debug for TaskList {
         formatter.finish()
     }
 }
-/// See [`TaskList`](crate::model::TaskList)
+/// See [`TaskList`](crate::model::TaskList).
 pub mod task_list {
 
-    /// A builder for [`TaskList`](crate::model::TaskList)
-    #[non_exhaustive]
+    /// A builder for [`TaskList`](crate::model::TaskList).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -354,14 +350,14 @@ pub mod task_list {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`TaskList`](crate::model::TaskList)
+        /// Consumes the builder and constructs a [`TaskList`](crate::model::TaskList).
         pub fn build(self) -> crate::model::TaskList {
             crate::model::TaskList { name: self.name }
         }
     }
 }
 impl TaskList {
-    /// Creates a new builder-style object to manufacture [`TaskList`](crate::model::TaskList)
+    /// Creates a new builder-style object to manufacture [`TaskList`](crate::model::TaskList).
     pub fn builder() -> crate::model::task_list::Builder {
         crate::model::task_list::Builder::default()
     }
@@ -619,11 +615,10 @@ impl std::fmt::Debug for Decision {
         formatter.finish()
     }
 }
-/// See [`Decision`](crate::model::Decision)
+/// See [`Decision`](crate::model::Decision).
 pub mod decision {
 
-    /// A builder for [`Decision`](crate::model::Decision)
-    #[non_exhaustive]
+    /// A builder for [`Decision`](crate::model::Decision).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decision_type: std::option::Option<crate::model::DecisionType>,
@@ -884,7 +879,7 @@ pub mod decision {
             self.schedule_lambda_function_decision_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`Decision`](crate::model::Decision)
+        /// Consumes the builder and constructs a [`Decision`](crate::model::Decision).
         pub fn build(self) -> crate::model::Decision {
             crate::model::Decision {
                 decision_type: self.decision_type,
@@ -916,7 +911,7 @@ pub mod decision {
     }
 }
 impl Decision {
-    /// Creates a new builder-style object to manufacture [`Decision`](crate::model::Decision)
+    /// Creates a new builder-style object to manufacture [`Decision`](crate::model::Decision).
     pub fn builder() -> crate::model::decision::Builder {
         crate::model::decision::Builder::default()
     }
@@ -970,11 +965,10 @@ impl std::fmt::Debug for ScheduleLambdaFunctionDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes)
+/// See [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
 pub mod schedule_lambda_function_decision_attributes {
 
-    /// A builder for [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1037,7 +1031,7 @@ pub mod schedule_lambda_function_decision_attributes {
             self.start_to_close_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes)
+        /// Consumes the builder and constructs a [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
         pub fn build(self) -> crate::model::ScheduleLambdaFunctionDecisionAttributes {
             crate::model::ScheduleLambdaFunctionDecisionAttributes {
                 id: self.id,
@@ -1050,7 +1044,7 @@ pub mod schedule_lambda_function_decision_attributes {
     }
 }
 impl ScheduleLambdaFunctionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionDecisionAttributes`](crate::model::ScheduleLambdaFunctionDecisionAttributes).
     pub fn builder() -> crate::model::schedule_lambda_function_decision_attributes::Builder {
         crate::model::schedule_lambda_function_decision_attributes::Builder::default()
     }
@@ -1204,11 +1198,10 @@ impl std::fmt::Debug for StartChildWorkflowExecutionDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes)
+/// See [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
 pub mod start_child_workflow_execution_decision_attributes {
 
-    /// A builder for [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -1402,7 +1395,7 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.lambda_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes)
+        /// Consumes the builder and constructs a [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
         pub fn build(self) -> crate::model::StartChildWorkflowExecutionDecisionAttributes {
             crate::model::StartChildWorkflowExecutionDecisionAttributes {
                 workflow_type: self.workflow_type,
@@ -1421,7 +1414,7 @@ pub mod start_child_workflow_execution_decision_attributes {
     }
 }
 impl StartChildWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionDecisionAttributes`](crate::model::StartChildWorkflowExecutionDecisionAttributes).
     pub fn builder() -> crate::model::start_child_workflow_execution_decision_attributes::Builder {
         crate::model::start_child_workflow_execution_decision_attributes::Builder::default()
     }
@@ -1470,11 +1463,10 @@ impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionDecisionAttribute
         formatter.finish()
     }
 }
-/// See [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes)
+/// See [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
 pub mod request_cancel_external_workflow_execution_decision_attributes {
 
-    /// A builder for [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -1512,7 +1504,7 @@ pub mod request_cancel_external_workflow_execution_decision_attributes {
             self.control = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes)
+        /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
         pub fn build(
             self,
         ) -> crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes {
@@ -1525,7 +1517,7 @@ pub mod request_cancel_external_workflow_execution_decision_attributes {
     }
 }
 impl RequestCancelExternalWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionDecisionAttributes`](crate::model::RequestCancelExternalWorkflowExecutionDecisionAttributes).
     pub fn builder(
     ) -> crate::model::request_cancel_external_workflow_execution_decision_attributes::Builder {
         crate::model::request_cancel_external_workflow_execution_decision_attributes::Builder::default()
@@ -1588,11 +1580,10 @@ impl std::fmt::Debug for SignalExternalWorkflowExecutionDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes)
+/// See [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
 pub mod signal_external_workflow_execution_decision_attributes {
 
-    /// A builder for [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -1652,7 +1643,7 @@ pub mod signal_external_workflow_execution_decision_attributes {
             self.control = input;
             self
         }
-        /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes)
+        /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
         pub fn build(self) -> crate::model::SignalExternalWorkflowExecutionDecisionAttributes {
             crate::model::SignalExternalWorkflowExecutionDecisionAttributes {
                 workflow_id: self.workflow_id,
@@ -1665,7 +1656,7 @@ pub mod signal_external_workflow_execution_decision_attributes {
     }
 }
 impl SignalExternalWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionDecisionAttributes`](crate::model::SignalExternalWorkflowExecutionDecisionAttributes).
     pub fn builder() -> crate::model::signal_external_workflow_execution_decision_attributes::Builder
     {
         crate::model::signal_external_workflow_execution_decision_attributes::Builder::default()
@@ -1700,11 +1691,10 @@ impl std::fmt::Debug for CancelTimerDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes)
+/// See [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
 pub mod cancel_timer_decision_attributes {
 
-    /// A builder for [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
@@ -1720,7 +1710,7 @@ pub mod cancel_timer_decision_attributes {
             self.timer_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes)
+        /// Consumes the builder and constructs a [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
         pub fn build(self) -> crate::model::CancelTimerDecisionAttributes {
             crate::model::CancelTimerDecisionAttributes {
                 timer_id: self.timer_id,
@@ -1729,7 +1719,7 @@ pub mod cancel_timer_decision_attributes {
     }
 }
 impl CancelTimerDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`CancelTimerDecisionAttributes`](crate::model::CancelTimerDecisionAttributes).
     pub fn builder() -> crate::model::cancel_timer_decision_attributes::Builder {
         crate::model::cancel_timer_decision_attributes::Builder::default()
     }
@@ -1781,11 +1771,10 @@ impl std::fmt::Debug for StartTimerDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes)
+/// See [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
 pub mod start_timer_decision_attributes {
 
-    /// A builder for [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
@@ -1830,7 +1819,7 @@ pub mod start_timer_decision_attributes {
             self.start_to_fire_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes)
+        /// Consumes the builder and constructs a [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
         pub fn build(self) -> crate::model::StartTimerDecisionAttributes {
             crate::model::StartTimerDecisionAttributes {
                 timer_id: self.timer_id,
@@ -1841,7 +1830,7 @@ pub mod start_timer_decision_attributes {
     }
 }
 impl StartTimerDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`StartTimerDecisionAttributes`](crate::model::StartTimerDecisionAttributes).
     pub fn builder() -> crate::model::start_timer_decision_attributes::Builder {
         crate::model::start_timer_decision_attributes::Builder::default()
     }
@@ -1882,11 +1871,10 @@ impl std::fmt::Debug for RecordMarkerDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes)
+/// See [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
 pub mod record_marker_decision_attributes {
 
-    /// A builder for [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
@@ -1913,7 +1901,7 @@ pub mod record_marker_decision_attributes {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes)
+        /// Consumes the builder and constructs a [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
         pub fn build(self) -> crate::model::RecordMarkerDecisionAttributes {
             crate::model::RecordMarkerDecisionAttributes {
                 marker_name: self.marker_name,
@@ -1923,7 +1911,7 @@ pub mod record_marker_decision_attributes {
     }
 }
 impl RecordMarkerDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`RecordMarkerDecisionAttributes`](crate::model::RecordMarkerDecisionAttributes).
     pub fn builder() -> crate::model::record_marker_decision_attributes::Builder {
         crate::model::record_marker_decision_attributes::Builder::default()
     }
@@ -2054,11 +2042,10 @@ impl std::fmt::Debug for ContinueAsNewWorkflowExecutionDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes)
+/// See [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
 pub mod continue_as_new_workflow_execution_decision_attributes {
 
-    /// A builder for [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
@@ -2222,7 +2209,7 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.lambda_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes)
+        /// Consumes the builder and constructs a [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
         pub fn build(self) -> crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes {
             crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes {
                 input: self.input,
@@ -2239,7 +2226,7 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
     }
 }
 impl ContinueAsNewWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::model::ContinueAsNewWorkflowExecutionDecisionAttributes).
     pub fn builder() -> crate::model::continue_as_new_workflow_execution_decision_attributes::Builder
     {
         crate::model::continue_as_new_workflow_execution_decision_attributes::Builder::default()
@@ -2274,11 +2261,10 @@ impl std::fmt::Debug for CancelWorkflowExecutionDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes)
+/// See [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
 pub mod cancel_workflow_execution_decision_attributes {
 
-    /// A builder for [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
@@ -2294,7 +2280,7 @@ pub mod cancel_workflow_execution_decision_attributes {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes)
+        /// Consumes the builder and constructs a [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
         pub fn build(self) -> crate::model::CancelWorkflowExecutionDecisionAttributes {
             crate::model::CancelWorkflowExecutionDecisionAttributes {
                 details: self.details,
@@ -2303,7 +2289,7 @@ pub mod cancel_workflow_execution_decision_attributes {
     }
 }
 impl CancelWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionDecisionAttributes`](crate::model::CancelWorkflowExecutionDecisionAttributes).
     pub fn builder() -> crate::model::cancel_workflow_execution_decision_attributes::Builder {
         crate::model::cancel_workflow_execution_decision_attributes::Builder::default()
     }
@@ -2344,11 +2330,10 @@ impl std::fmt::Debug for FailWorkflowExecutionDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes)
+/// See [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
 pub mod fail_workflow_execution_decision_attributes {
 
-    /// A builder for [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -2375,7 +2360,7 @@ pub mod fail_workflow_execution_decision_attributes {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes)
+        /// Consumes the builder and constructs a [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
         pub fn build(self) -> crate::model::FailWorkflowExecutionDecisionAttributes {
             crate::model::FailWorkflowExecutionDecisionAttributes {
                 reason: self.reason,
@@ -2385,7 +2370,7 @@ pub mod fail_workflow_execution_decision_attributes {
     }
 }
 impl FailWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionDecisionAttributes`](crate::model::FailWorkflowExecutionDecisionAttributes).
     pub fn builder() -> crate::model::fail_workflow_execution_decision_attributes::Builder {
         crate::model::fail_workflow_execution_decision_attributes::Builder::default()
     }
@@ -2419,11 +2404,10 @@ impl std::fmt::Debug for CompleteWorkflowExecutionDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes)
+/// See [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
 pub mod complete_workflow_execution_decision_attributes {
 
-    /// A builder for [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
@@ -2439,7 +2423,7 @@ pub mod complete_workflow_execution_decision_attributes {
             self.result = input;
             self
         }
-        /// Consumes the builder and constructs a [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes)
+        /// Consumes the builder and constructs a [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
         pub fn build(self) -> crate::model::CompleteWorkflowExecutionDecisionAttributes {
             crate::model::CompleteWorkflowExecutionDecisionAttributes {
                 result: self.result,
@@ -2448,7 +2432,7 @@ pub mod complete_workflow_execution_decision_attributes {
     }
 }
 impl CompleteWorkflowExecutionDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionDecisionAttributes`](crate::model::CompleteWorkflowExecutionDecisionAttributes).
     pub fn builder() -> crate::model::complete_workflow_execution_decision_attributes::Builder {
         crate::model::complete_workflow_execution_decision_attributes::Builder::default()
     }
@@ -2482,11 +2466,10 @@ impl std::fmt::Debug for RequestCancelActivityTaskDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes)
+/// See [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
 pub mod request_cancel_activity_task_decision_attributes {
 
-    /// A builder for [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -2502,7 +2485,7 @@ pub mod request_cancel_activity_task_decision_attributes {
             self.activity_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes)
+        /// Consumes the builder and constructs a [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
         pub fn build(self) -> crate::model::RequestCancelActivityTaskDecisionAttributes {
             crate::model::RequestCancelActivityTaskDecisionAttributes {
                 activity_id: self.activity_id,
@@ -2511,7 +2494,7 @@ pub mod request_cancel_activity_task_decision_attributes {
     }
 }
 impl RequestCancelActivityTaskDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskDecisionAttributes`](crate::model::RequestCancelActivityTaskDecisionAttributes).
     pub fn builder() -> crate::model::request_cancel_activity_task_decision_attributes::Builder {
         crate::model::request_cancel_activity_task_decision_attributes::Builder::default()
     }
@@ -2643,11 +2626,10 @@ impl std::fmt::Debug for ScheduleActivityTaskDecisionAttributes {
         formatter.finish()
     }
 }
-/// See [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes)
+/// See [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
 pub mod schedule_activity_task_decision_attributes {
 
-    /// A builder for [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
@@ -2810,7 +2792,7 @@ pub mod schedule_activity_task_decision_attributes {
             self.heartbeat_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes)
+        /// Consumes the builder and constructs a [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
         pub fn build(self) -> crate::model::ScheduleActivityTaskDecisionAttributes {
             crate::model::ScheduleActivityTaskDecisionAttributes {
                 activity_type: self.activity_type,
@@ -2828,7 +2810,7 @@ pub mod schedule_activity_task_decision_attributes {
     }
 }
 impl ScheduleActivityTaskDecisionAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes)
+    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskDecisionAttributes`](crate::model::ScheduleActivityTaskDecisionAttributes).
     pub fn builder() -> crate::model::schedule_activity_task_decision_attributes::Builder {
         crate::model::schedule_activity_task_decision_attributes::Builder::default()
     }
@@ -3770,11 +3752,10 @@ impl std::fmt::Debug for HistoryEvent {
         formatter.finish()
     }
 }
-/// See [`HistoryEvent`](crate::model::HistoryEvent)
+/// See [`HistoryEvent`](crate::model::HistoryEvent).
 pub mod history_event {
 
-    /// A builder for [`HistoryEvent`](crate::model::HistoryEvent)
-    #[non_exhaustive]
+    /// A builder for [`HistoryEvent`](crate::model::HistoryEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -4829,7 +4810,7 @@ pub mod history_event {
             self.start_lambda_function_failed_event_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`HistoryEvent`](crate::model::HistoryEvent)
+        /// Consumes the builder and constructs a [`HistoryEvent`](crate::model::HistoryEvent).
         pub fn build(self) -> crate::model::HistoryEvent {
             crate::model::HistoryEvent {
                 event_timestamp: self.event_timestamp,
@@ -4938,7 +4919,7 @@ pub mod history_event {
     }
 }
 impl HistoryEvent {
-    /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::model::HistoryEvent)
+    /// Creates a new builder-style object to manufacture [`HistoryEvent`](crate::model::HistoryEvent).
     pub fn builder() -> crate::model::history_event::Builder {
         crate::model::history_event::Builder::default()
     }
@@ -4982,11 +4963,10 @@ impl std::fmt::Debug for StartLambdaFunctionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes)
+/// See [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
 pub mod start_lambda_function_failed_event_attributes {
 
-    /// A builder for [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -5031,7 +5011,7 @@ pub mod start_lambda_function_failed_event_attributes {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
         pub fn build(self) -> crate::model::StartLambdaFunctionFailedEventAttributes {
             crate::model::StartLambdaFunctionFailedEventAttributes {
                 scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
@@ -5042,7 +5022,7 @@ pub mod start_lambda_function_failed_event_attributes {
     }
 }
 impl StartLambdaFunctionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`StartLambdaFunctionFailedEventAttributes`](crate::model::StartLambdaFunctionFailedEventAttributes).
     pub fn builder() -> crate::model::start_lambda_function_failed_event_attributes::Builder {
         crate::model::start_lambda_function_failed_event_attributes::Builder::default()
     }
@@ -5147,11 +5127,10 @@ impl std::fmt::Debug for ScheduleLambdaFunctionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes)
+/// See [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
 pub mod schedule_lambda_function_failed_event_attributes {
 
-    /// A builder for [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5210,7 +5189,7 @@ pub mod schedule_lambda_function_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
         pub fn build(self) -> crate::model::ScheduleLambdaFunctionFailedEventAttributes {
             crate::model::ScheduleLambdaFunctionFailedEventAttributes {
                 id: self.id,
@@ -5224,7 +5203,7 @@ pub mod schedule_lambda_function_failed_event_attributes {
     }
 }
 impl ScheduleLambdaFunctionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ScheduleLambdaFunctionFailedEventAttributes`](crate::model::ScheduleLambdaFunctionFailedEventAttributes).
     pub fn builder() -> crate::model::schedule_lambda_function_failed_event_attributes::Builder {
         crate::model::schedule_lambda_function_failed_event_attributes::Builder::default()
     }
@@ -5344,11 +5323,10 @@ impl std::fmt::Debug for LambdaFunctionTimedOutEventAttributes {
         formatter.finish()
     }
 }
-/// See [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes)
+/// See [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
 pub mod lambda_function_timed_out_event_attributes {
 
-    /// A builder for [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -5389,7 +5367,7 @@ pub mod lambda_function_timed_out_event_attributes {
             self.timeout_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes)
+        /// Consumes the builder and constructs a [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
         pub fn build(self) -> crate::model::LambdaFunctionTimedOutEventAttributes {
             crate::model::LambdaFunctionTimedOutEventAttributes {
                 scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
@@ -5400,7 +5378,7 @@ pub mod lambda_function_timed_out_event_attributes {
     }
 }
 impl LambdaFunctionTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes)
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionTimedOutEventAttributes`](crate::model::LambdaFunctionTimedOutEventAttributes).
     pub fn builder() -> crate::model::lambda_function_timed_out_event_attributes::Builder {
         crate::model::lambda_function_timed_out_event_attributes::Builder::default()
     }
@@ -5498,11 +5476,10 @@ impl std::fmt::Debug for LambdaFunctionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes)
+/// See [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
 pub mod lambda_function_failed_event_attributes {
 
-    /// A builder for [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -5551,7 +5528,7 @@ pub mod lambda_function_failed_event_attributes {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
         pub fn build(self) -> crate::model::LambdaFunctionFailedEventAttributes {
             crate::model::LambdaFunctionFailedEventAttributes {
                 scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
@@ -5563,7 +5540,7 @@ pub mod lambda_function_failed_event_attributes {
     }
 }
 impl LambdaFunctionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionFailedEventAttributes`](crate::model::LambdaFunctionFailedEventAttributes).
     pub fn builder() -> crate::model::lambda_function_failed_event_attributes::Builder {
         crate::model::lambda_function_failed_event_attributes::Builder::default()
     }
@@ -5603,11 +5580,10 @@ impl std::fmt::Debug for LambdaFunctionCompletedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes)
+/// See [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
 pub mod lambda_function_completed_event_attributes {
 
-    /// A builder for [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -5645,7 +5621,7 @@ pub mod lambda_function_completed_event_attributes {
             self.result = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes)
+        /// Consumes the builder and constructs a [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
         pub fn build(self) -> crate::model::LambdaFunctionCompletedEventAttributes {
             crate::model::LambdaFunctionCompletedEventAttributes {
                 scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
@@ -5656,7 +5632,7 @@ pub mod lambda_function_completed_event_attributes {
     }
 }
 impl LambdaFunctionCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionCompletedEventAttributes`](crate::model::LambdaFunctionCompletedEventAttributes).
     pub fn builder() -> crate::model::lambda_function_completed_event_attributes::Builder {
         crate::model::lambda_function_completed_event_attributes::Builder::default()
     }
@@ -5682,11 +5658,10 @@ impl std::fmt::Debug for LambdaFunctionStartedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes)
+/// See [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
 pub mod lambda_function_started_event_attributes {
 
-    /// A builder for [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scheduled_event_id: std::option::Option<i64>,
@@ -5702,7 +5677,7 @@ pub mod lambda_function_started_event_attributes {
             self.scheduled_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes)
+        /// Consumes the builder and constructs a [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
         pub fn build(self) -> crate::model::LambdaFunctionStartedEventAttributes {
             crate::model::LambdaFunctionStartedEventAttributes {
                 scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
@@ -5711,7 +5686,7 @@ pub mod lambda_function_started_event_attributes {
     }
 }
 impl LambdaFunctionStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionStartedEventAttributes`](crate::model::LambdaFunctionStartedEventAttributes).
     pub fn builder() -> crate::model::lambda_function_started_event_attributes::Builder {
         crate::model::lambda_function_started_event_attributes::Builder::default()
     }
@@ -5775,11 +5750,10 @@ impl std::fmt::Debug for LambdaFunctionScheduledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes)
+/// See [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
 pub mod lambda_function_scheduled_event_attributes {
 
-    /// A builder for [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5856,7 +5830,7 @@ pub mod lambda_function_scheduled_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes)
+        /// Consumes the builder and constructs a [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
         pub fn build(self) -> crate::model::LambdaFunctionScheduledEventAttributes {
             crate::model::LambdaFunctionScheduledEventAttributes {
                 id: self.id,
@@ -5872,7 +5846,7 @@ pub mod lambda_function_scheduled_event_attributes {
     }
 }
 impl LambdaFunctionScheduledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionScheduledEventAttributes`](crate::model::LambdaFunctionScheduledEventAttributes).
     pub fn builder() -> crate::model::lambda_function_scheduled_event_attributes::Builder {
         crate::model::lambda_function_scheduled_event_attributes::Builder::default()
     }
@@ -5944,11 +5918,10 @@ impl std::fmt::Debug for StartChildWorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes)
+/// See [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
 pub mod start_child_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -6037,7 +6010,7 @@ pub mod start_child_workflow_execution_failed_event_attributes {
             self.control = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::StartChildWorkflowExecutionFailedEventAttributes {
             crate::model::StartChildWorkflowExecutionFailedEventAttributes {
                 workflow_type: self.workflow_type,
@@ -6053,7 +6026,7 @@ pub mod start_child_workflow_execution_failed_event_attributes {
     }
 }
 impl StartChildWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionFailedEventAttributes`](crate::model::StartChildWorkflowExecutionFailedEventAttributes).
     pub fn builder() -> crate::model::start_child_workflow_execution_failed_event_attributes::Builder
     {
         crate::model::start_child_workflow_execution_failed_event_attributes::Builder::default()
@@ -6226,11 +6199,10 @@ impl std::fmt::Debug for CancelTimerFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes)
+/// See [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
 pub mod cancel_timer_failed_event_attributes {
 
-    /// A builder for [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
@@ -6278,7 +6250,7 @@ pub mod cancel_timer_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes)
+        /// Consumes the builder and constructs a [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
         pub fn build(self) -> crate::model::CancelTimerFailedEventAttributes {
             crate::model::CancelTimerFailedEventAttributes {
                 timer_id: self.timer_id,
@@ -6291,7 +6263,7 @@ pub mod cancel_timer_failed_event_attributes {
     }
 }
 impl CancelTimerFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`CancelTimerFailedEventAttributes`](crate::model::CancelTimerFailedEventAttributes).
     pub fn builder() -> crate::model::cancel_timer_failed_event_attributes::Builder {
         crate::model::cancel_timer_failed_event_attributes::Builder::default()
     }
@@ -6393,11 +6365,10 @@ impl std::fmt::Debug for StartTimerFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes)
+/// See [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
 pub mod start_timer_failed_event_attributes {
 
-    /// A builder for [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
@@ -6445,7 +6416,7 @@ pub mod start_timer_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes)
+        /// Consumes the builder and constructs a [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
         pub fn build(self) -> crate::model::StartTimerFailedEventAttributes {
             crate::model::StartTimerFailedEventAttributes {
                 timer_id: self.timer_id,
@@ -6458,7 +6429,7 @@ pub mod start_timer_failed_event_attributes {
     }
 }
 impl StartTimerFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`StartTimerFailedEventAttributes`](crate::model::StartTimerFailedEventAttributes).
     pub fn builder() -> crate::model::start_timer_failed_event_attributes::Builder {
         crate::model::start_timer_failed_event_attributes::Builder::default()
     }
@@ -6575,11 +6546,10 @@ impl std::fmt::Debug for RequestCancelActivityTaskFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes)
+/// See [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
 pub mod request_cancel_activity_task_failed_event_attributes {
 
-    /// A builder for [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_id: std::option::Option<std::string::String>,
@@ -6627,7 +6597,7 @@ pub mod request_cancel_activity_task_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes)
+        /// Consumes the builder and constructs a [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
         pub fn build(self) -> crate::model::RequestCancelActivityTaskFailedEventAttributes {
             crate::model::RequestCancelActivityTaskFailedEventAttributes {
                 activity_id: self.activity_id,
@@ -6640,7 +6610,7 @@ pub mod request_cancel_activity_task_failed_event_attributes {
     }
 }
 impl RequestCancelActivityTaskFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`RequestCancelActivityTaskFailedEventAttributes`](crate::model::RequestCancelActivityTaskFailedEventAttributes).
     pub fn builder() -> crate::model::request_cancel_activity_task_failed_event_attributes::Builder
     {
         crate::model::request_cancel_activity_task_failed_event_attributes::Builder::default()
@@ -6754,11 +6724,10 @@ impl std::fmt::Debug for ScheduleActivityTaskFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes)
+/// See [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
 pub mod schedule_activity_task_failed_event_attributes {
 
-    /// A builder for [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
@@ -6820,7 +6789,7 @@ pub mod schedule_activity_task_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes)
+        /// Consumes the builder and constructs a [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
         pub fn build(self) -> crate::model::ScheduleActivityTaskFailedEventAttributes {
             crate::model::ScheduleActivityTaskFailedEventAttributes {
                 activity_type: self.activity_type,
@@ -6834,7 +6803,7 @@ pub mod schedule_activity_task_failed_event_attributes {
     }
 }
 impl ScheduleActivityTaskFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ScheduleActivityTaskFailedEventAttributes`](crate::model::ScheduleActivityTaskFailedEventAttributes).
     pub fn builder() -> crate::model::schedule_activity_task_failed_event_attributes::Builder {
         crate::model::schedule_activity_task_failed_event_attributes::Builder::default()
     }
@@ -7040,11 +7009,10 @@ impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionFailedEventAttrib
         formatter.finish()
     }
 }
-/// See [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes)
+/// See [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
 pub mod request_cancel_external_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -7131,7 +7099,7 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
             self.control = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
         pub fn build(
             self,
         ) -> crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes {
@@ -7149,7 +7117,7 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
     }
 }
 impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionFailedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionFailedEventAttributes).
     pub fn builder(
     ) -> crate::model::request_cancel_external_workflow_execution_failed_event_attributes::Builder
     {
@@ -7265,11 +7233,10 @@ impl std::fmt::Debug for RequestCancelExternalWorkflowExecutionInitiatedEventAtt
         formatter.finish()
     }
 }
-/// See [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes)
+/// See [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
 pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
 
-    /// A builder for [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -7321,7 +7288,7 @@ pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
             self.control = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes)
+        /// Consumes the builder and constructs a [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
         pub fn build(
             self,
         ) -> crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
@@ -7337,7 +7304,7 @@ pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
     }
 }
 impl RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`RequestCancelExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes).
     pub fn builder(
     ) -> crate::model::request_cancel_external_workflow_execution_initiated_event_attributes::Builder
     {
@@ -7373,11 +7340,10 @@ impl std::fmt::Debug for ExternalWorkflowExecutionCancelRequestedEventAttributes
         formatter.finish()
     }
 }
-/// See [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes)
+/// See [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
 pub mod external_workflow_execution_cancel_requested_event_attributes {
 
-    /// A builder for [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -7407,7 +7373,7 @@ pub mod external_workflow_execution_cancel_requested_event_attributes {
             self.initiated_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes)
+        /// Consumes the builder and constructs a [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
         pub fn build(
             self,
         ) -> crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes {
@@ -7419,7 +7385,7 @@ pub mod external_workflow_execution_cancel_requested_event_attributes {
     }
 }
 impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::model::ExternalWorkflowExecutionCancelRequestedEventAttributes).
     pub fn builder(
     ) -> crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder {
         crate::model::external_workflow_execution_cancel_requested_event_attributes::Builder::default()
@@ -7453,11 +7419,10 @@ impl std::fmt::Debug for WorkflowExecution {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecution`](crate::model::WorkflowExecution)
+/// See [`WorkflowExecution`](crate::model::WorkflowExecution).
 pub mod workflow_execution {
 
-    /// A builder for [`WorkflowExecution`](crate::model::WorkflowExecution)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecution`](crate::model::WorkflowExecution).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -7484,7 +7449,7 @@ pub mod workflow_execution {
             self.run_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecution`](crate::model::WorkflowExecution)
+        /// Consumes the builder and constructs a [`WorkflowExecution`](crate::model::WorkflowExecution).
         pub fn build(self) -> crate::model::WorkflowExecution {
             crate::model::WorkflowExecution {
                 workflow_id: self.workflow_id,
@@ -7494,7 +7459,7 @@ pub mod workflow_execution {
     }
 }
 impl WorkflowExecution {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecution`](crate::model::WorkflowExecution)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecution`](crate::model::WorkflowExecution).
     pub fn builder() -> crate::model::workflow_execution::Builder {
         crate::model::workflow_execution::Builder::default()
     }
@@ -7564,11 +7529,10 @@ impl std::fmt::Debug for SignalExternalWorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes)
+/// See [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
 pub mod signal_external_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -7653,7 +7617,7 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
             self.control = input;
             self
         }
-        /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::SignalExternalWorkflowExecutionFailedEventAttributes {
             crate::model::SignalExternalWorkflowExecutionFailedEventAttributes {
                 workflow_id: self.workflow_id,
@@ -7669,7 +7633,7 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
     }
 }
 impl SignalExternalWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionFailedEventAttributes`](crate::model::SignalExternalWorkflowExecutionFailedEventAttributes).
     pub fn builder(
     ) -> crate::model::signal_external_workflow_execution_failed_event_attributes::Builder {
         crate::model::signal_external_workflow_execution_failed_event_attributes::Builder::default()
@@ -7766,11 +7730,10 @@ impl std::fmt::Debug for ExternalWorkflowExecutionSignaledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes)
+/// See [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
 pub mod external_workflow_execution_signaled_event_attributes {
 
-    /// A builder for [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -7800,7 +7763,7 @@ pub mod external_workflow_execution_signaled_event_attributes {
             self.initiated_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes)
+        /// Consumes the builder and constructs a [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
         pub fn build(self) -> crate::model::ExternalWorkflowExecutionSignaledEventAttributes {
             crate::model::ExternalWorkflowExecutionSignaledEventAttributes {
                 workflow_execution: self.workflow_execution,
@@ -7810,7 +7773,7 @@ pub mod external_workflow_execution_signaled_event_attributes {
     }
 }
 impl ExternalWorkflowExecutionSignaledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionSignaledEventAttributes`](crate::model::ExternalWorkflowExecutionSignaledEventAttributes).
     pub fn builder() -> crate::model::external_workflow_execution_signaled_event_attributes::Builder
     {
         crate::model::external_workflow_execution_signaled_event_attributes::Builder::default()
@@ -7876,11 +7839,10 @@ impl std::fmt::Debug for SignalExternalWorkflowExecutionInitiatedEventAttributes
         formatter.finish()
     }
 }
-/// See [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes)
+/// See [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
 pub mod signal_external_workflow_execution_initiated_event_attributes {
 
-    /// A builder for [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -7954,7 +7916,7 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
             self.control = input;
             self
         }
-        /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes)
+        /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
         pub fn build(
             self,
         ) -> crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes {
@@ -7972,7 +7934,7 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
     }
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::model::SignalExternalWorkflowExecutionInitiatedEventAttributes).
     pub fn builder(
     ) -> crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder {
         crate::model::signal_external_workflow_execution_initiated_event_attributes::Builder::default()
@@ -8020,11 +7982,10 @@ impl std::fmt::Debug for ChildWorkflowExecutionTerminatedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes)
+/// See [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
 pub mod child_workflow_execution_terminated_event_attributes {
 
-    /// A builder for [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -8079,7 +8040,7 @@ pub mod child_workflow_execution_terminated_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes)
+        /// Consumes the builder and constructs a [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
         pub fn build(self) -> crate::model::ChildWorkflowExecutionTerminatedEventAttributes {
             crate::model::ChildWorkflowExecutionTerminatedEventAttributes {
                 workflow_execution: self.workflow_execution,
@@ -8091,7 +8052,7 @@ pub mod child_workflow_execution_terminated_event_attributes {
     }
 }
 impl ChildWorkflowExecutionTerminatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTerminatedEventAttributes`](crate::model::ChildWorkflowExecutionTerminatedEventAttributes).
     pub fn builder() -> crate::model::child_workflow_execution_terminated_event_attributes::Builder
     {
         crate::model::child_workflow_execution_terminated_event_attributes::Builder::default()
@@ -8146,11 +8107,10 @@ impl std::fmt::Debug for ChildWorkflowExecutionCanceledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes)
+/// See [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
 pub mod child_workflow_execution_canceled_event_attributes {
 
-    /// A builder for [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -8216,7 +8176,7 @@ pub mod child_workflow_execution_canceled_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes)
+        /// Consumes the builder and constructs a [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
         pub fn build(self) -> crate::model::ChildWorkflowExecutionCanceledEventAttributes {
             crate::model::ChildWorkflowExecutionCanceledEventAttributes {
                 workflow_execution: self.workflow_execution,
@@ -8229,7 +8189,7 @@ pub mod child_workflow_execution_canceled_event_attributes {
     }
 }
 impl ChildWorkflowExecutionCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCanceledEventAttributes`](crate::model::ChildWorkflowExecutionCanceledEventAttributes).
     pub fn builder() -> crate::model::child_workflow_execution_canceled_event_attributes::Builder {
         crate::model::child_workflow_execution_canceled_event_attributes::Builder::default()
     }
@@ -8283,11 +8243,10 @@ impl std::fmt::Debug for ChildWorkflowExecutionTimedOutEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes)
+/// See [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
 pub mod child_workflow_execution_timed_out_event_attributes {
 
-    /// A builder for [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -8356,7 +8315,7 @@ pub mod child_workflow_execution_timed_out_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes)
+        /// Consumes the builder and constructs a [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
         pub fn build(self) -> crate::model::ChildWorkflowExecutionTimedOutEventAttributes {
             crate::model::ChildWorkflowExecutionTimedOutEventAttributes {
                 workflow_execution: self.workflow_execution,
@@ -8369,7 +8328,7 @@ pub mod child_workflow_execution_timed_out_event_attributes {
     }
 }
 impl ChildWorkflowExecutionTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::model::ChildWorkflowExecutionTimedOutEventAttributes).
     pub fn builder() -> crate::model::child_workflow_execution_timed_out_event_attributes::Builder {
         crate::model::child_workflow_execution_timed_out_event_attributes::Builder::default()
     }
@@ -8481,11 +8440,10 @@ impl std::fmt::Debug for ChildWorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes)
+/// See [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
 pub mod child_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -8562,7 +8520,7 @@ pub mod child_workflow_execution_failed_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::ChildWorkflowExecutionFailedEventAttributes {
             crate::model::ChildWorkflowExecutionFailedEventAttributes {
                 workflow_execution: self.workflow_execution,
@@ -8576,7 +8534,7 @@ pub mod child_workflow_execution_failed_event_attributes {
     }
 }
 impl ChildWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionFailedEventAttributes`](crate::model::ChildWorkflowExecutionFailedEventAttributes).
     pub fn builder() -> crate::model::child_workflow_execution_failed_event_attributes::Builder {
         crate::model::child_workflow_execution_failed_event_attributes::Builder::default()
     }
@@ -8630,11 +8588,10 @@ impl std::fmt::Debug for ChildWorkflowExecutionCompletedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes)
+/// See [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
 pub mod child_workflow_execution_completed_event_attributes {
 
-    /// A builder for [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -8700,7 +8657,7 @@ pub mod child_workflow_execution_completed_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes)
+        /// Consumes the builder and constructs a [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
         pub fn build(self) -> crate::model::ChildWorkflowExecutionCompletedEventAttributes {
             crate::model::ChildWorkflowExecutionCompletedEventAttributes {
                 workflow_execution: self.workflow_execution,
@@ -8713,7 +8670,7 @@ pub mod child_workflow_execution_completed_event_attributes {
     }
 }
 impl ChildWorkflowExecutionCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionCompletedEventAttributes`](crate::model::ChildWorkflowExecutionCompletedEventAttributes).
     pub fn builder() -> crate::model::child_workflow_execution_completed_event_attributes::Builder {
         crate::model::child_workflow_execution_completed_event_attributes::Builder::default()
     }
@@ -8753,11 +8710,10 @@ impl std::fmt::Debug for ChildWorkflowExecutionStartedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes)
+/// See [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
 pub mod child_workflow_execution_started_event_attributes {
 
-    /// A builder for [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -8801,7 +8757,7 @@ pub mod child_workflow_execution_started_event_attributes {
             self.initiated_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes)
+        /// Consumes the builder and constructs a [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
         pub fn build(self) -> crate::model::ChildWorkflowExecutionStartedEventAttributes {
             crate::model::ChildWorkflowExecutionStartedEventAttributes {
                 workflow_execution: self.workflow_execution,
@@ -8812,7 +8768,7 @@ pub mod child_workflow_execution_started_event_attributes {
     }
 }
 impl ChildWorkflowExecutionStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ChildWorkflowExecutionStartedEventAttributes`](crate::model::ChildWorkflowExecutionStartedEventAttributes).
     pub fn builder() -> crate::model::child_workflow_execution_started_event_attributes::Builder {
         crate::model::child_workflow_execution_started_event_attributes::Builder::default()
     }
@@ -8942,11 +8898,10 @@ impl std::fmt::Debug for StartChildWorkflowExecutionInitiatedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes)
+/// See [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
 pub mod start_child_workflow_execution_initiated_event_attributes {
 
-    /// A builder for [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -9134,7 +9089,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.lambda_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes)
+        /// Consumes the builder and constructs a [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
         pub fn build(self) -> crate::model::StartChildWorkflowExecutionInitiatedEventAttributes {
             crate::model::StartChildWorkflowExecutionInitiatedEventAttributes {
                 workflow_id: self.workflow_id,
@@ -9156,7 +9111,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
     }
 }
 impl StartChildWorkflowExecutionInitiatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`StartChildWorkflowExecutionInitiatedEventAttributes`](crate::model::StartChildWorkflowExecutionInitiatedEventAttributes).
     pub fn builder(
     ) -> crate::model::start_child_workflow_execution_initiated_event_attributes::Builder {
         crate::model::start_child_workflow_execution_initiated_event_attributes::Builder::default()
@@ -9200,11 +9155,10 @@ impl std::fmt::Debug for TimerCanceledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes)
+/// See [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
 pub mod timer_canceled_event_attributes {
 
-    /// A builder for [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
@@ -9245,7 +9199,7 @@ pub mod timer_canceled_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes)
+        /// Consumes the builder and constructs a [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
         pub fn build(self) -> crate::model::TimerCanceledEventAttributes {
             crate::model::TimerCanceledEventAttributes {
                 timer_id: self.timer_id,
@@ -9258,7 +9212,7 @@ pub mod timer_canceled_event_attributes {
     }
 }
 impl TimerCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`TimerCanceledEventAttributes`](crate::model::TimerCanceledEventAttributes).
     pub fn builder() -> crate::model::timer_canceled_event_attributes::Builder {
         crate::model::timer_canceled_event_attributes::Builder::default()
     }
@@ -9291,11 +9245,10 @@ impl std::fmt::Debug for TimerFiredEventAttributes {
         formatter.finish()
     }
 }
-/// See [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes)
+/// See [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
 pub mod timer_fired_event_attributes {
 
-    /// A builder for [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
@@ -9322,7 +9275,7 @@ pub mod timer_fired_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes)
+        /// Consumes the builder and constructs a [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
         pub fn build(self) -> crate::model::TimerFiredEventAttributes {
             crate::model::TimerFiredEventAttributes {
                 timer_id: self.timer_id,
@@ -9332,7 +9285,7 @@ pub mod timer_fired_event_attributes {
     }
 }
 impl TimerFiredEventAttributes {
-    /// Creates a new builder-style object to manufacture [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes)
+    /// Creates a new builder-style object to manufacture [`TimerFiredEventAttributes`](crate::model::TimerFiredEventAttributes).
     pub fn builder() -> crate::model::timer_fired_event_attributes::Builder {
         crate::model::timer_fired_event_attributes::Builder::default()
     }
@@ -9384,11 +9337,10 @@ impl std::fmt::Debug for TimerStartedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes)
+/// See [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
 pub mod timer_started_event_attributes {
 
-    /// A builder for [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timer_id: std::option::Option<std::string::String>,
@@ -9445,7 +9397,7 @@ pub mod timer_started_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes)
+        /// Consumes the builder and constructs a [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
         pub fn build(self) -> crate::model::TimerStartedEventAttributes {
             crate::model::TimerStartedEventAttributes {
                 timer_id: self.timer_id,
@@ -9459,7 +9411,7 @@ pub mod timer_started_event_attributes {
     }
 }
 impl TimerStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`TimerStartedEventAttributes`](crate::model::TimerStartedEventAttributes).
     pub fn builder() -> crate::model::timer_started_event_attributes::Builder {
         crate::model::timer_started_event_attributes::Builder::default()
     }
@@ -9506,11 +9458,10 @@ impl std::fmt::Debug for RecordMarkerFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes)
+/// See [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
 pub mod record_marker_failed_event_attributes {
 
-    /// A builder for [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
@@ -9558,7 +9509,7 @@ pub mod record_marker_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes)
+        /// Consumes the builder and constructs a [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
         pub fn build(self) -> crate::model::RecordMarkerFailedEventAttributes {
             crate::model::RecordMarkerFailedEventAttributes {
                 marker_name: self.marker_name,
@@ -9571,7 +9522,7 @@ pub mod record_marker_failed_event_attributes {
     }
 }
 impl RecordMarkerFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`RecordMarkerFailedEventAttributes`](crate::model::RecordMarkerFailedEventAttributes).
     pub fn builder() -> crate::model::record_marker_failed_event_attributes::Builder {
         crate::model::record_marker_failed_event_attributes::Builder::default()
     }
@@ -9665,11 +9616,10 @@ impl std::fmt::Debug for MarkerRecordedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes)
+/// See [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
 pub mod marker_recorded_event_attributes {
 
-    /// A builder for [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker_name: std::option::Option<std::string::String>,
@@ -9710,7 +9660,7 @@ pub mod marker_recorded_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes)
+        /// Consumes the builder and constructs a [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
         pub fn build(self) -> crate::model::MarkerRecordedEventAttributes {
             crate::model::MarkerRecordedEventAttributes {
                 marker_name: self.marker_name,
@@ -9723,7 +9673,7 @@ pub mod marker_recorded_event_attributes {
     }
 }
 impl MarkerRecordedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`MarkerRecordedEventAttributes`](crate::model::MarkerRecordedEventAttributes).
     pub fn builder() -> crate::model::marker_recorded_event_attributes::Builder {
         crate::model::marker_recorded_event_attributes::Builder::default()
     }
@@ -9778,11 +9728,10 @@ impl std::fmt::Debug for WorkflowExecutionSignaledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes)
+/// See [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
 pub mod workflow_execution_signaled_event_attributes {
 
-    /// A builder for [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signal_name: std::option::Option<std::string::String>,
@@ -9838,7 +9787,7 @@ pub mod workflow_execution_signaled_event_attributes {
             self.external_initiated_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionSignaledEventAttributes {
             crate::model::WorkflowExecutionSignaledEventAttributes {
                 signal_name: self.signal_name,
@@ -9850,7 +9799,7 @@ pub mod workflow_execution_signaled_event_attributes {
     }
 }
 impl WorkflowExecutionSignaledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionSignaledEventAttributes`](crate::model::WorkflowExecutionSignaledEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_signaled_event_attributes::Builder {
         crate::model::workflow_execution_signaled_event_attributes::Builder::default()
     }
@@ -9886,11 +9835,10 @@ impl std::fmt::Debug for ActivityTaskCancelRequestedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes)
+/// See [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
 pub mod activity_task_cancel_requested_event_attributes {
 
-    /// A builder for [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
@@ -9920,7 +9868,7 @@ pub mod activity_task_cancel_requested_event_attributes {
             self.activity_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes)
+        /// Consumes the builder and constructs a [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
         pub fn build(self) -> crate::model::ActivityTaskCancelRequestedEventAttributes {
             crate::model::ActivityTaskCancelRequestedEventAttributes {
                 decision_task_completed_event_id: self
@@ -9932,7 +9880,7 @@ pub mod activity_task_cancel_requested_event_attributes {
     }
 }
 impl ActivityTaskCancelRequestedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ActivityTaskCancelRequestedEventAttributes`](crate::model::ActivityTaskCancelRequestedEventAttributes).
     pub fn builder() -> crate::model::activity_task_cancel_requested_event_attributes::Builder {
         crate::model::activity_task_cancel_requested_event_attributes::Builder::default()
     }
@@ -9982,11 +9930,10 @@ impl std::fmt::Debug for ActivityTaskCanceledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes)
+/// See [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
 pub mod activity_task_canceled_event_attributes {
 
-    /// A builder for [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
@@ -10038,7 +9985,7 @@ pub mod activity_task_canceled_event_attributes {
             self.latest_cancel_requested_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes)
+        /// Consumes the builder and constructs a [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
         pub fn build(self) -> crate::model::ActivityTaskCanceledEventAttributes {
             crate::model::ActivityTaskCanceledEventAttributes {
                 details: self.details,
@@ -10052,7 +9999,7 @@ pub mod activity_task_canceled_event_attributes {
     }
 }
 impl ActivityTaskCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ActivityTaskCanceledEventAttributes`](crate::model::ActivityTaskCanceledEventAttributes).
     pub fn builder() -> crate::model::activity_task_canceled_event_attributes::Builder {
         crate::model::activity_task_canceled_event_attributes::Builder::default()
     }
@@ -10099,11 +10046,10 @@ impl std::fmt::Debug for ActivityTaskTimedOutEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes)
+/// See [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
 pub mod activity_task_timed_out_event_attributes {
 
-    /// A builder for [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::ActivityTaskTimeoutType>,
@@ -10155,7 +10101,7 @@ pub mod activity_task_timed_out_event_attributes {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes)
+        /// Consumes the builder and constructs a [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
         pub fn build(self) -> crate::model::ActivityTaskTimedOutEventAttributes {
             crate::model::ActivityTaskTimedOutEventAttributes {
                 timeout_type: self.timeout_type,
@@ -10167,7 +10113,7 @@ pub mod activity_task_timed_out_event_attributes {
     }
 }
 impl ActivityTaskTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ActivityTaskTimedOutEventAttributes`](crate::model::ActivityTaskTimedOutEventAttributes).
     pub fn builder() -> crate::model::activity_task_timed_out_event_attributes::Builder {
         crate::model::activity_task_timed_out_event_attributes::Builder::default()
     }
@@ -10282,11 +10228,10 @@ impl std::fmt::Debug for ActivityTaskFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes)
+/// See [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
 pub mod activity_task_failed_event_attributes {
 
-    /// A builder for [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -10335,7 +10280,7 @@ pub mod activity_task_failed_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes)
+        /// Consumes the builder and constructs a [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
         pub fn build(self) -> crate::model::ActivityTaskFailedEventAttributes {
             crate::model::ActivityTaskFailedEventAttributes {
                 reason: self.reason,
@@ -10347,7 +10292,7 @@ pub mod activity_task_failed_event_attributes {
     }
 }
 impl ActivityTaskFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ActivityTaskFailedEventAttributes`](crate::model::ActivityTaskFailedEventAttributes).
     pub fn builder() -> crate::model::activity_task_failed_event_attributes::Builder {
         crate::model::activity_task_failed_event_attributes::Builder::default()
     }
@@ -10387,11 +10332,10 @@ impl std::fmt::Debug for ActivityTaskCompletedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes)
+/// See [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
 pub mod activity_task_completed_event_attributes {
 
-    /// A builder for [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
@@ -10429,7 +10373,7 @@ pub mod activity_task_completed_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes)
+        /// Consumes the builder and constructs a [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
         pub fn build(self) -> crate::model::ActivityTaskCompletedEventAttributes {
             crate::model::ActivityTaskCompletedEventAttributes {
                 result: self.result,
@@ -10440,7 +10384,7 @@ pub mod activity_task_completed_event_attributes {
     }
 }
 impl ActivityTaskCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ActivityTaskCompletedEventAttributes`](crate::model::ActivityTaskCompletedEventAttributes).
     pub fn builder() -> crate::model::activity_task_completed_event_attributes::Builder {
         crate::model::activity_task_completed_event_attributes::Builder::default()
     }
@@ -10473,11 +10417,10 @@ impl std::fmt::Debug for ActivityTaskStartedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes)
+/// See [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
 pub mod activity_task_started_event_attributes {
 
-    /// A builder for [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -10504,7 +10447,7 @@ pub mod activity_task_started_event_attributes {
             self.scheduled_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes)
+        /// Consumes the builder and constructs a [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
         pub fn build(self) -> crate::model::ActivityTaskStartedEventAttributes {
             crate::model::ActivityTaskStartedEventAttributes {
                 identity: self.identity,
@@ -10514,7 +10457,7 @@ pub mod activity_task_started_event_attributes {
     }
 }
 impl ActivityTaskStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ActivityTaskStartedEventAttributes`](crate::model::ActivityTaskStartedEventAttributes).
     pub fn builder() -> crate::model::activity_task_started_event_attributes::Builder {
         crate::model::activity_task_started_event_attributes::Builder::default()
     }
@@ -10617,11 +10560,10 @@ impl std::fmt::Debug for ActivityTaskScheduledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes)
+/// See [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
 pub mod activity_task_scheduled_event_attributes {
 
-    /// A builder for [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
@@ -10772,7 +10714,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.heartbeat_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes)
+        /// Consumes the builder and constructs a [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
         pub fn build(self) -> crate::model::ActivityTaskScheduledEventAttributes {
             crate::model::ActivityTaskScheduledEventAttributes {
                 activity_type: self.activity_type,
@@ -10793,7 +10735,7 @@ pub mod activity_task_scheduled_event_attributes {
     }
 }
 impl ActivityTaskScheduledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ActivityTaskScheduledEventAttributes`](crate::model::ActivityTaskScheduledEventAttributes).
     pub fn builder() -> crate::model::activity_task_scheduled_event_attributes::Builder {
         crate::model::activity_task_scheduled_event_attributes::Builder::default()
     }
@@ -10833,11 +10775,10 @@ impl std::fmt::Debug for DecisionTaskTimedOutEventAttributes {
         formatter.finish()
     }
 }
-/// See [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes)
+/// See [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
 pub mod decision_task_timed_out_event_attributes {
 
-    /// A builder for [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::DecisionTaskTimeoutType>,
@@ -10878,7 +10819,7 @@ pub mod decision_task_timed_out_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes)
+        /// Consumes the builder and constructs a [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
         pub fn build(self) -> crate::model::DecisionTaskTimedOutEventAttributes {
             crate::model::DecisionTaskTimedOutEventAttributes {
                 timeout_type: self.timeout_type,
@@ -10889,7 +10830,7 @@ pub mod decision_task_timed_out_event_attributes {
     }
 }
 impl DecisionTaskTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes)
+    /// Creates a new builder-style object to manufacture [`DecisionTaskTimedOutEventAttributes`](crate::model::DecisionTaskTimedOutEventAttributes).
     pub fn builder() -> crate::model::decision_task_timed_out_event_attributes::Builder {
         crate::model::decision_task_timed_out_event_attributes::Builder::default()
     }
@@ -10980,11 +10921,10 @@ impl std::fmt::Debug for DecisionTaskCompletedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes)
+/// See [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
 pub mod decision_task_completed_event_attributes {
 
-    /// A builder for [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_context: std::option::Option<std::string::String>,
@@ -11025,7 +10965,7 @@ pub mod decision_task_completed_event_attributes {
             self.started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes)
+        /// Consumes the builder and constructs a [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
         pub fn build(self) -> crate::model::DecisionTaskCompletedEventAttributes {
             crate::model::DecisionTaskCompletedEventAttributes {
                 execution_context: self.execution_context,
@@ -11036,7 +10976,7 @@ pub mod decision_task_completed_event_attributes {
     }
 }
 impl DecisionTaskCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`DecisionTaskCompletedEventAttributes`](crate::model::DecisionTaskCompletedEventAttributes).
     pub fn builder() -> crate::model::decision_task_completed_event_attributes::Builder {
         crate::model::decision_task_completed_event_attributes::Builder::default()
     }
@@ -11069,11 +11009,10 @@ impl std::fmt::Debug for DecisionTaskStartedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes)
+/// See [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
 pub mod decision_task_started_event_attributes {
 
-    /// A builder for [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity: std::option::Option<std::string::String>,
@@ -11100,7 +11039,7 @@ pub mod decision_task_started_event_attributes {
             self.scheduled_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes)
+        /// Consumes the builder and constructs a [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
         pub fn build(self) -> crate::model::DecisionTaskStartedEventAttributes {
             crate::model::DecisionTaskStartedEventAttributes {
                 identity: self.identity,
@@ -11110,7 +11049,7 @@ pub mod decision_task_started_event_attributes {
     }
 }
 impl DecisionTaskStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`DecisionTaskStartedEventAttributes`](crate::model::DecisionTaskStartedEventAttributes).
     pub fn builder() -> crate::model::decision_task_started_event_attributes::Builder {
         crate::model::decision_task_started_event_attributes::Builder::default()
     }
@@ -11154,11 +11093,10 @@ impl std::fmt::Debug for DecisionTaskScheduledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes)
+/// See [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
 pub mod decision_task_scheduled_event_attributes {
 
-    /// A builder for [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_list: std::option::Option<crate::model::TaskList>,
@@ -11206,7 +11144,7 @@ pub mod decision_task_scheduled_event_attributes {
             self.start_to_close_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes)
+        /// Consumes the builder and constructs a [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
         pub fn build(self) -> crate::model::DecisionTaskScheduledEventAttributes {
             crate::model::DecisionTaskScheduledEventAttributes {
                 task_list: self.task_list,
@@ -11217,7 +11155,7 @@ pub mod decision_task_scheduled_event_attributes {
     }
 }
 impl DecisionTaskScheduledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`DecisionTaskScheduledEventAttributes`](crate::model::DecisionTaskScheduledEventAttributes).
     pub fn builder() -> crate::model::decision_task_scheduled_event_attributes::Builder {
         crate::model::decision_task_scheduled_event_attributes::Builder::default()
     }
@@ -11267,11 +11205,10 @@ impl std::fmt::Debug for WorkflowExecutionCancelRequestedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes)
+/// See [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
 pub mod workflow_execution_cancel_requested_event_attributes {
 
-    /// A builder for [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_workflow_execution:
@@ -11319,7 +11256,7 @@ pub mod workflow_execution_cancel_requested_event_attributes {
             self.cause = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionCancelRequestedEventAttributes {
             crate::model::WorkflowExecutionCancelRequestedEventAttributes {
                 external_workflow_execution: self.external_workflow_execution,
@@ -11330,7 +11267,7 @@ pub mod workflow_execution_cancel_requested_event_attributes {
     }
 }
 impl WorkflowExecutionCancelRequestedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCancelRequestedEventAttributes`](crate::model::WorkflowExecutionCancelRequestedEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_cancel_requested_event_attributes::Builder
     {
         crate::model::workflow_execution_cancel_requested_event_attributes::Builder::default()
@@ -11441,11 +11378,10 @@ impl std::fmt::Debug for WorkflowExecutionTerminatedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes)
+/// See [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
 pub mod workflow_execution_terminated_event_attributes {
 
-    /// A builder for [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -11512,7 +11448,7 @@ pub mod workflow_execution_terminated_event_attributes {
             self.cause = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionTerminatedEventAttributes {
             crate::model::WorkflowExecutionTerminatedEventAttributes {
                 reason: self.reason,
@@ -11524,7 +11460,7 @@ pub mod workflow_execution_terminated_event_attributes {
     }
 }
 impl WorkflowExecutionTerminatedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTerminatedEventAttributes`](crate::model::WorkflowExecutionTerminatedEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_terminated_event_attributes::Builder {
         crate::model::workflow_execution_terminated_event_attributes::Builder::default()
     }
@@ -11629,11 +11565,10 @@ impl std::fmt::Debug for ContinueAsNewWorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes)
+/// See [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
 pub mod continue_as_new_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause:
@@ -11674,7 +11609,7 @@ pub mod continue_as_new_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes {
             crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes {
                 cause: self.cause,
@@ -11686,7 +11621,7 @@ pub mod continue_as_new_workflow_execution_failed_event_attributes {
     }
 }
 impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`ContinueAsNewWorkflowExecutionFailedEventAttributes`](crate::model::ContinueAsNewWorkflowExecutionFailedEventAttributes).
     pub fn builder(
     ) -> crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder {
         crate::model::continue_as_new_workflow_execution_failed_event_attributes::Builder::default()
@@ -11901,11 +11836,10 @@ impl std::fmt::Debug for WorkflowExecutionContinuedAsNewEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes)
+/// See [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
 pub mod workflow_execution_continued_as_new_event_attributes {
 
-    /// A builder for [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
@@ -12083,7 +12017,7 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.lambda_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionContinuedAsNewEventAttributes {
             crate::model::WorkflowExecutionContinuedAsNewEventAttributes {
                 input: self.input,
@@ -12104,7 +12038,7 @@ pub mod workflow_execution_continued_as_new_event_attributes {
     }
 }
 impl WorkflowExecutionContinuedAsNewEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::model::WorkflowExecutionContinuedAsNewEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_continued_as_new_event_attributes::Builder
     {
         crate::model::workflow_execution_continued_as_new_event_attributes::Builder::default()
@@ -12145,11 +12079,10 @@ impl std::fmt::Debug for CancelWorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes)
+/// See [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
 pub mod cancel_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::CancelWorkflowExecutionFailedCause>,
@@ -12186,7 +12119,7 @@ pub mod cancel_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::CancelWorkflowExecutionFailedEventAttributes {
             crate::model::CancelWorkflowExecutionFailedEventAttributes {
                 cause: self.cause,
@@ -12198,7 +12131,7 @@ pub mod cancel_workflow_execution_failed_event_attributes {
     }
 }
 impl CancelWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`CancelWorkflowExecutionFailedEventAttributes`](crate::model::CancelWorkflowExecutionFailedEventAttributes).
     pub fn builder() -> crate::model::cancel_workflow_execution_failed_event_attributes::Builder {
         crate::model::cancel_workflow_execution_failed_event_attributes::Builder::default()
     }
@@ -12289,11 +12222,10 @@ impl std::fmt::Debug for WorkflowExecutionCanceledEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes)
+/// See [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
 pub mod workflow_execution_canceled_event_attributes {
 
-    /// A builder for [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<std::string::String>,
@@ -12323,7 +12255,7 @@ pub mod workflow_execution_canceled_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionCanceledEventAttributes {
             crate::model::WorkflowExecutionCanceledEventAttributes {
                 details: self.details,
@@ -12335,7 +12267,7 @@ pub mod workflow_execution_canceled_event_attributes {
     }
 }
 impl WorkflowExecutionCanceledEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCanceledEventAttributes`](crate::model::WorkflowExecutionCanceledEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_canceled_event_attributes::Builder {
         crate::model::workflow_execution_canceled_event_attributes::Builder::default()
     }
@@ -12380,11 +12312,10 @@ impl std::fmt::Debug for WorkflowExecutionTimedOutEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes)
+/// See [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
 pub mod workflow_execution_timed_out_event_attributes {
 
-    /// A builder for [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timeout_type: std::option::Option<crate::model::WorkflowExecutionTimeoutType>,
@@ -12429,7 +12360,7 @@ pub mod workflow_execution_timed_out_event_attributes {
             self.child_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionTimedOutEventAttributes {
             crate::model::WorkflowExecutionTimedOutEventAttributes {
                 timeout_type: self.timeout_type,
@@ -12439,7 +12370,7 @@ pub mod workflow_execution_timed_out_event_attributes {
     }
 }
 impl WorkflowExecutionTimedOutEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionTimedOutEventAttributes`](crate::model::WorkflowExecutionTimedOutEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_timed_out_event_attributes::Builder {
         crate::model::workflow_execution_timed_out_event_attributes::Builder::default()
     }
@@ -12479,11 +12410,10 @@ impl std::fmt::Debug for FailWorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes)
+/// See [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
 pub mod fail_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::FailWorkflowExecutionFailedCause>,
@@ -12520,7 +12450,7 @@ pub mod fail_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::FailWorkflowExecutionFailedEventAttributes {
             crate::model::FailWorkflowExecutionFailedEventAttributes {
                 cause: self.cause,
@@ -12532,7 +12462,7 @@ pub mod fail_workflow_execution_failed_event_attributes {
     }
 }
 impl FailWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`FailWorkflowExecutionFailedEventAttributes`](crate::model::FailWorkflowExecutionFailedEventAttributes).
     pub fn builder() -> crate::model::fail_workflow_execution_failed_event_attributes::Builder {
         crate::model::fail_workflow_execution_failed_event_attributes::Builder::default()
     }
@@ -12630,11 +12560,10 @@ impl std::fmt::Debug for WorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes)
+/// See [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
 pub mod workflow_execution_failed_event_attributes {
 
-    /// A builder for [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -12675,7 +12604,7 @@ pub mod workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionFailedEventAttributes {
             crate::model::WorkflowExecutionFailedEventAttributes {
                 reason: self.reason,
@@ -12688,7 +12617,7 @@ pub mod workflow_execution_failed_event_attributes {
     }
 }
 impl WorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFailedEventAttributes`](crate::model::WorkflowExecutionFailedEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_failed_event_attributes::Builder {
         crate::model::workflow_execution_failed_event_attributes::Builder::default()
     }
@@ -12730,11 +12659,10 @@ impl std::fmt::Debug for CompleteWorkflowExecutionFailedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes)
+/// See [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
 pub mod complete_workflow_execution_failed_event_attributes {
 
-    /// A builder for [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cause: std::option::Option<crate::model::CompleteWorkflowExecutionFailedCause>,
@@ -12771,7 +12699,7 @@ pub mod complete_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes)
+        /// Consumes the builder and constructs a [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
         pub fn build(self) -> crate::model::CompleteWorkflowExecutionFailedEventAttributes {
             crate::model::CompleteWorkflowExecutionFailedEventAttributes {
                 cause: self.cause,
@@ -12783,7 +12711,7 @@ pub mod complete_workflow_execution_failed_event_attributes {
     }
 }
 impl CompleteWorkflowExecutionFailedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`CompleteWorkflowExecutionFailedEventAttributes`](crate::model::CompleteWorkflowExecutionFailedEventAttributes).
     pub fn builder() -> crate::model::complete_workflow_execution_failed_event_attributes::Builder {
         crate::model::complete_workflow_execution_failed_event_attributes::Builder::default()
     }
@@ -12878,11 +12806,10 @@ impl std::fmt::Debug for WorkflowExecutionCompletedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes)
+/// See [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
 pub mod workflow_execution_completed_event_attributes {
 
-    /// A builder for [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
@@ -12912,7 +12839,7 @@ pub mod workflow_execution_completed_event_attributes {
             self.decision_task_completed_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionCompletedEventAttributes {
             crate::model::WorkflowExecutionCompletedEventAttributes {
                 result: self.result,
@@ -12924,7 +12851,7 @@ pub mod workflow_execution_completed_event_attributes {
     }
 }
 impl WorkflowExecutionCompletedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionCompletedEventAttributes`](crate::model::WorkflowExecutionCompletedEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_completed_event_attributes::Builder {
         crate::model::workflow_execution_completed_event_attributes::Builder::default()
     }
@@ -13054,11 +12981,10 @@ impl std::fmt::Debug for WorkflowExecutionStartedEventAttributes {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes)
+/// See [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
 pub mod workflow_execution_started_event_attributes {
 
-    /// A builder for [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input: std::option::Option<std::string::String>,
@@ -13247,7 +13173,7 @@ pub mod workflow_execution_started_event_attributes {
             self.lambda_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes)
+        /// Consumes the builder and constructs a [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
         pub fn build(self) -> crate::model::WorkflowExecutionStartedEventAttributes {
             crate::model::WorkflowExecutionStartedEventAttributes {
                 input: self.input,
@@ -13267,7 +13193,7 @@ pub mod workflow_execution_started_event_attributes {
     }
 }
 impl WorkflowExecutionStartedEventAttributes {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionStartedEventAttributes`](crate::model::WorkflowExecutionStartedEventAttributes).
     pub fn builder() -> crate::model::workflow_execution_started_event_attributes::Builder {
         crate::model::workflow_execution_started_event_attributes::Builder::default()
     }
@@ -13667,11 +13593,10 @@ impl std::fmt::Debug for WorkflowTypeInfo {
         formatter.finish()
     }
 }
-/// See [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo)
+/// See [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
 pub mod workflow_type_info {
 
-    /// A builder for [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
@@ -13743,7 +13668,7 @@ pub mod workflow_type_info {
             self.deprecation_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo)
+        /// Consumes the builder and constructs a [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
         pub fn build(self) -> crate::model::WorkflowTypeInfo {
             crate::model::WorkflowTypeInfo {
                 workflow_type: self.workflow_type,
@@ -13756,7 +13681,7 @@ pub mod workflow_type_info {
     }
 }
 impl WorkflowTypeInfo {
-    /// Creates a new builder-style object to manufacture [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo)
+    /// Creates a new builder-style object to manufacture [`WorkflowTypeInfo`](crate::model::WorkflowTypeInfo).
     pub fn builder() -> crate::model::workflow_type_info::Builder {
         crate::model::workflow_type_info::Builder::default()
     }
@@ -13909,11 +13834,10 @@ impl std::fmt::Debug for WorkflowExecutionInfo {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo)
+/// See [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
 pub mod workflow_execution_info {
 
-    /// A builder for [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::WorkflowExecution>,
@@ -14063,7 +13987,7 @@ pub mod workflow_execution_info {
             self.cancel_requested = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo)
+        /// Consumes the builder and constructs a [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
         pub fn build(self) -> crate::model::WorkflowExecutionInfo {
             crate::model::WorkflowExecutionInfo {
                 execution: self.execution,
@@ -14080,7 +14004,7 @@ pub mod workflow_execution_info {
     }
 }
 impl WorkflowExecutionInfo {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionInfo`](crate::model::WorkflowExecutionInfo).
     pub fn builder() -> crate::model::workflow_execution_info::Builder {
         crate::model::workflow_execution_info::Builder::default()
     }
@@ -14239,11 +14163,10 @@ impl std::fmt::Debug for WorkflowExecutionFilter {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter)
+/// See [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
 pub mod workflow_execution_filter {
 
-    /// A builder for [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
@@ -14259,7 +14182,7 @@ pub mod workflow_execution_filter {
             self.workflow_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter)
+        /// Consumes the builder and constructs a [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
         pub fn build(self) -> crate::model::WorkflowExecutionFilter {
             crate::model::WorkflowExecutionFilter {
                 workflow_id: self.workflow_id,
@@ -14268,7 +14191,7 @@ pub mod workflow_execution_filter {
     }
 }
 impl WorkflowExecutionFilter {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionFilter`](crate::model::WorkflowExecutionFilter).
     pub fn builder() -> crate::model::workflow_execution_filter::Builder {
         crate::model::workflow_execution_filter::Builder::default()
     }
@@ -14296,11 +14219,10 @@ impl std::fmt::Debug for TagFilter {
         formatter.finish()
     }
 }
-/// See [`TagFilter`](crate::model::TagFilter)
+/// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
-    /// A builder for [`TagFilter`](crate::model::TagFilter)
-    #[non_exhaustive]
+    /// A builder for [`TagFilter`](crate::model::TagFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag: std::option::Option<std::string::String>,
@@ -14318,14 +14240,14 @@ pub mod tag_filter {
             self.tag = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter)
+        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter).
         pub fn build(self) -> crate::model::TagFilter {
             crate::model::TagFilter { tag: self.tag }
         }
     }
 }
 impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter)
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
     pub fn builder() -> crate::model::tag_filter::Builder {
         crate::model::tag_filter::Builder::default()
     }
@@ -14358,11 +14280,10 @@ impl std::fmt::Debug for WorkflowTypeFilter {
         formatter.finish()
     }
 }
-/// See [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter)
+/// See [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
 pub mod workflow_type_filter {
 
-    /// A builder for [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -14389,7 +14310,7 @@ pub mod workflow_type_filter {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter)
+        /// Consumes the builder and constructs a [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
         pub fn build(self) -> crate::model::WorkflowTypeFilter {
             crate::model::WorkflowTypeFilter {
                 name: self.name,
@@ -14399,7 +14320,7 @@ pub mod workflow_type_filter {
     }
 }
 impl WorkflowTypeFilter {
-    /// Creates a new builder-style object to manufacture [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter)
+    /// Creates a new builder-style object to manufacture [`WorkflowTypeFilter`](crate::model::WorkflowTypeFilter).
     pub fn builder() -> crate::model::workflow_type_filter::Builder {
         crate::model::workflow_type_filter::Builder::default()
     }
@@ -14432,11 +14353,10 @@ impl std::fmt::Debug for ExecutionTimeFilter {
         formatter.finish()
     }
 }
-/// See [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter)
+/// See [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
 pub mod execution_time_filter {
 
-    /// A builder for [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter)
-    #[non_exhaustive]
+    /// A builder for [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) oldest_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -14469,7 +14389,7 @@ pub mod execution_time_filter {
             self.latest_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter)
+        /// Consumes the builder and constructs a [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
         pub fn build(self) -> crate::model::ExecutionTimeFilter {
             crate::model::ExecutionTimeFilter {
                 oldest_date: self.oldest_date,
@@ -14479,7 +14399,7 @@ pub mod execution_time_filter {
     }
 }
 impl ExecutionTimeFilter {
-    /// Creates a new builder-style object to manufacture [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter)
+    /// Creates a new builder-style object to manufacture [`ExecutionTimeFilter`](crate::model::ExecutionTimeFilter).
     pub fn builder() -> crate::model::execution_time_filter::Builder {
         crate::model::execution_time_filter::Builder::default()
     }
@@ -14534,11 +14454,10 @@ impl std::fmt::Debug for DomainInfo {
         formatter.finish()
     }
 }
-/// See [`DomainInfo`](crate::model::DomainInfo)
+/// See [`DomainInfo`](crate::model::DomainInfo).
 pub mod domain_info {
 
-    /// A builder for [`DomainInfo`](crate::model::DomainInfo)
-    #[non_exhaustive]
+    /// A builder for [`DomainInfo`](crate::model::DomainInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -14598,7 +14517,7 @@ pub mod domain_info {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainInfo`](crate::model::DomainInfo)
+        /// Consumes the builder and constructs a [`DomainInfo`](crate::model::DomainInfo).
         pub fn build(self) -> crate::model::DomainInfo {
             crate::model::DomainInfo {
                 name: self.name,
@@ -14610,7 +14529,7 @@ pub mod domain_info {
     }
 }
 impl DomainInfo {
-    /// Creates a new builder-style object to manufacture [`DomainInfo`](crate::model::DomainInfo)
+    /// Creates a new builder-style object to manufacture [`DomainInfo`](crate::model::DomainInfo).
     pub fn builder() -> crate::model::domain_info::Builder {
         crate::model::domain_info::Builder::default()
     }
@@ -14636,11 +14555,10 @@ impl std::fmt::Debug for CloseStatusFilter {
         formatter.finish()
     }
 }
-/// See [`CloseStatusFilter`](crate::model::CloseStatusFilter)
+/// See [`CloseStatusFilter`](crate::model::CloseStatusFilter).
 pub mod close_status_filter {
 
-    /// A builder for [`CloseStatusFilter`](crate::model::CloseStatusFilter)
-    #[non_exhaustive]
+    /// A builder for [`CloseStatusFilter`](crate::model::CloseStatusFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::CloseStatus>,
@@ -14656,7 +14574,7 @@ pub mod close_status_filter {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloseStatusFilter`](crate::model::CloseStatusFilter)
+        /// Consumes the builder and constructs a [`CloseStatusFilter`](crate::model::CloseStatusFilter).
         pub fn build(self) -> crate::model::CloseStatusFilter {
             crate::model::CloseStatusFilter {
                 status: self.status,
@@ -14665,7 +14583,7 @@ pub mod close_status_filter {
     }
 }
 impl CloseStatusFilter {
-    /// Creates a new builder-style object to manufacture [`CloseStatusFilter`](crate::model::CloseStatusFilter)
+    /// Creates a new builder-style object to manufacture [`CloseStatusFilter`](crate::model::CloseStatusFilter).
     pub fn builder() -> crate::model::close_status_filter::Builder {
         crate::model::close_status_filter::Builder::default()
     }
@@ -14719,11 +14637,10 @@ impl std::fmt::Debug for ActivityTypeInfo {
         formatter.finish()
     }
 }
-/// See [`ActivityTypeInfo`](crate::model::ActivityTypeInfo)
+/// See [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
 pub mod activity_type_info {
 
-    /// A builder for [`ActivityTypeInfo`](crate::model::ActivityTypeInfo)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
@@ -14795,7 +14712,7 @@ pub mod activity_type_info {
             self.deprecation_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTypeInfo`](crate::model::ActivityTypeInfo)
+        /// Consumes the builder and constructs a [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
         pub fn build(self) -> crate::model::ActivityTypeInfo {
             crate::model::ActivityTypeInfo {
                 activity_type: self.activity_type,
@@ -14808,7 +14725,7 @@ pub mod activity_type_info {
     }
 }
 impl ActivityTypeInfo {
-    /// Creates a new builder-style object to manufacture [`ActivityTypeInfo`](crate::model::ActivityTypeInfo)
+    /// Creates a new builder-style object to manufacture [`ActivityTypeInfo`](crate::model::ActivityTypeInfo).
     pub fn builder() -> crate::model::activity_type_info::Builder {
         crate::model::activity_type_info::Builder::default()
     }
@@ -14899,11 +14816,10 @@ impl std::fmt::Debug for WorkflowTypeConfiguration {
         formatter.finish()
     }
 }
-/// See [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration)
+/// See [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
 pub mod workflow_type_configuration {
 
-    /// A builder for [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_task_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -15023,7 +14939,7 @@ pub mod workflow_type_configuration {
             self.default_lambda_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration)
+        /// Consumes the builder and constructs a [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
         pub fn build(self) -> crate::model::WorkflowTypeConfiguration {
             crate::model::WorkflowTypeConfiguration {
                 default_task_start_to_close_timeout: self.default_task_start_to_close_timeout,
@@ -15038,7 +14954,7 @@ pub mod workflow_type_configuration {
     }
 }
 impl WorkflowTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration)
+    /// Creates a new builder-style object to manufacture [`WorkflowTypeConfiguration`](crate::model::WorkflowTypeConfiguration).
     pub fn builder() -> crate::model::workflow_type_configuration::Builder {
         crate::model::workflow_type_configuration::Builder::default()
     }
@@ -15095,11 +15011,10 @@ impl std::fmt::Debug for WorkflowExecutionOpenCounts {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts)
+/// See [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
 pub mod workflow_execution_open_counts {
 
-    /// A builder for [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) open_activity_tasks: std::option::Option<i32>,
@@ -15162,7 +15077,7 @@ pub mod workflow_execution_open_counts {
             self.open_lambda_functions = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts)
+        /// Consumes the builder and constructs a [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
         pub fn build(self) -> crate::model::WorkflowExecutionOpenCounts {
             crate::model::WorkflowExecutionOpenCounts {
                 open_activity_tasks: self.open_activity_tasks.unwrap_or_default(),
@@ -15177,7 +15092,7 @@ pub mod workflow_execution_open_counts {
     }
 }
 impl WorkflowExecutionOpenCounts {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionOpenCounts`](crate::model::WorkflowExecutionOpenCounts).
     pub fn builder() -> crate::model::workflow_execution_open_counts::Builder {
         crate::model::workflow_execution_open_counts::Builder::default()
     }
@@ -15262,11 +15177,10 @@ impl std::fmt::Debug for WorkflowExecutionConfiguration {
         formatter.finish()
     }
 }
-/// See [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration)
+/// See [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
 pub mod workflow_execution_configuration {
 
-    /// A builder for [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -15373,7 +15287,7 @@ pub mod workflow_execution_configuration {
             self.lambda_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration)
+        /// Consumes the builder and constructs a [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
         pub fn build(self) -> crate::model::WorkflowExecutionConfiguration {
             crate::model::WorkflowExecutionConfiguration {
                 task_start_to_close_timeout: self.task_start_to_close_timeout,
@@ -15387,7 +15301,7 @@ pub mod workflow_execution_configuration {
     }
 }
 impl WorkflowExecutionConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionConfiguration`](crate::model::WorkflowExecutionConfiguration).
     pub fn builder() -> crate::model::workflow_execution_configuration::Builder {
         crate::model::workflow_execution_configuration::Builder::default()
     }
@@ -15416,11 +15330,10 @@ impl std::fmt::Debug for DomainConfiguration {
         formatter.finish()
     }
 }
-/// See [`DomainConfiguration`](crate::model::DomainConfiguration)
+/// See [`DomainConfiguration`](crate::model::DomainConfiguration).
 pub mod domain_configuration {
 
-    /// A builder for [`DomainConfiguration`](crate::model::DomainConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DomainConfiguration`](crate::model::DomainConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workflow_execution_retention_period_in_days:
@@ -15443,7 +15356,7 @@ pub mod domain_configuration {
             self.workflow_execution_retention_period_in_days = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainConfiguration`](crate::model::DomainConfiguration)
+        /// Consumes the builder and constructs a [`DomainConfiguration`](crate::model::DomainConfiguration).
         pub fn build(self) -> crate::model::DomainConfiguration {
             crate::model::DomainConfiguration {
                 workflow_execution_retention_period_in_days: self
@@ -15453,7 +15366,7 @@ pub mod domain_configuration {
     }
 }
 impl DomainConfiguration {
-    /// Creates a new builder-style object to manufacture [`DomainConfiguration`](crate::model::DomainConfiguration)
+    /// Creates a new builder-style object to manufacture [`DomainConfiguration`](crate::model::DomainConfiguration).
     pub fn builder() -> crate::model::domain_configuration::Builder {
         crate::model::domain_configuration::Builder::default()
     }
@@ -15540,11 +15453,10 @@ impl std::fmt::Debug for ActivityTypeConfiguration {
         formatter.finish()
     }
 }
-/// See [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration)
+/// See [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
 pub mod activity_type_configuration {
 
-    /// A builder for [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_task_start_to_close_timeout: std::option::Option<std::string::String>,
@@ -15659,7 +15571,7 @@ pub mod activity_type_configuration {
             self.default_task_schedule_to_close_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration)
+        /// Consumes the builder and constructs a [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
         pub fn build(self) -> crate::model::ActivityTypeConfiguration {
             crate::model::ActivityTypeConfiguration {
                 default_task_start_to_close_timeout: self.default_task_start_to_close_timeout,
@@ -15673,7 +15585,7 @@ pub mod activity_type_configuration {
     }
 }
 impl ActivityTypeConfiguration {
-    /// Creates a new builder-style object to manufacture [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration)
+    /// Creates a new builder-style object to manufacture [`ActivityTypeConfiguration`](crate::model::ActivityTypeConfiguration).
     pub fn builder() -> crate::model::activity_type_configuration::Builder {
         crate::model::activity_type_configuration::Builder::default()
     }

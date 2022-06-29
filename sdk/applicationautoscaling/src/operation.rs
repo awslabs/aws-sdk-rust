@@ -10,7 +10,7 @@ pub struct DeleteScalingPolicy {
     _private: (),
 }
 impl DeleteScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyInput`](crate::input::DeleteScalingPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyInput`](crate::input::DeleteScalingPolicyInput).
     pub fn builder() -> crate::input::delete_scaling_policy_input::Builder {
         crate::input::delete_scaling_policy_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteScheduledAction {
     _private: (),
 }
 impl DeleteScheduledAction {
-    /// Creates a new builder-style object to manufacture [`DeleteScheduledActionInput`](crate::input::DeleteScheduledActionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteScheduledActionInput`](crate::input::DeleteScheduledActionInput).
     pub fn builder() -> crate::input::delete_scheduled_action_input::Builder {
         crate::input::delete_scheduled_action_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DeregisterScalableTarget {
     _private: (),
 }
 impl DeregisterScalableTarget {
-    /// Creates a new builder-style object to manufacture [`DeregisterScalableTargetInput`](crate::input::DeregisterScalableTargetInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterScalableTargetInput`](crate::input::DeregisterScalableTargetInput).
     pub fn builder() -> crate::input::deregister_scalable_target_input::Builder {
         crate::input::deregister_scalable_target_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeScalableTargets {
     _private: (),
 }
 impl DescribeScalableTargets {
-    /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsInput`](crate::input::DescribeScalableTargetsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsInput`](crate::input::DescribeScalableTargetsInput).
     pub fn builder() -> crate::input::describe_scalable_targets_input::Builder {
         crate::input::describe_scalable_targets_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeScalingActivities {
     _private: (),
 }
 impl DescribeScalingActivities {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesInput`](crate::input::DescribeScalingActivitiesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesInput`](crate::input::DescribeScalingActivitiesInput).
     pub fn builder() -> crate::input::describe_scaling_activities_input::Builder {
         crate::input::describe_scaling_activities_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DescribeScalingPolicies {
     _private: (),
 }
 impl DescribeScalingPolicies {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesInput`](crate::input::DescribeScalingPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesInput`](crate::input::DescribeScalingPoliciesInput).
     pub fn builder() -> crate::input::describe_scaling_policies_input::Builder {
         crate::input::describe_scaling_policies_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DescribeScheduledActions {
     _private: (),
 }
 impl DescribeScheduledActions {
-    /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsInput`](crate::input::DescribeScheduledActionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsInput`](crate::input::DescribeScheduledActionsInput).
     pub fn builder() -> crate::input::describe_scheduled_actions_input::Builder {
         crate::input::describe_scheduled_actions_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct PutScalingPolicy {
     _private: (),
 }
 impl PutScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput).
     pub fn builder() -> crate::input::put_scaling_policy_input::Builder {
         crate::input::put_scaling_policy_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct PutScheduledAction {
     _private: (),
 }
 impl PutScheduledAction {
-    /// Creates a new builder-style object to manufacture [`PutScheduledActionInput`](crate::input::PutScheduledActionInput)
+    /// Creates a new builder-style object to manufacture [`PutScheduledActionInput`](crate::input::PutScheduledActionInput).
     pub fn builder() -> crate::input::put_scheduled_action_input::Builder {
         crate::input::put_scheduled_action_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct RegisterScalableTarget {
     _private: (),
 }
 impl RegisterScalableTarget {
-    /// Creates a new builder-style object to manufacture [`RegisterScalableTargetInput`](crate::input::RegisterScalableTargetInput)
+    /// Creates a new builder-style object to manufacture [`RegisterScalableTargetInput`](crate::input::RegisterScalableTargetInput).
     pub fn builder() -> crate::input::register_scalable_target_input::Builder {
         crate::input::register_scalable_target_input::Builder::default()
     }

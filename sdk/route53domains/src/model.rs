@@ -50,11 +50,10 @@ impl std::fmt::Debug for BillingRecord {
         formatter.finish()
     }
 }
-/// See [`BillingRecord`](crate::model::BillingRecord)
+/// See [`BillingRecord`](crate::model::BillingRecord).
 pub mod billing_record {
 
-    /// A builder for [`BillingRecord`](crate::model::BillingRecord)
-    #[non_exhaustive]
+    /// A builder for [`BillingRecord`](crate::model::BillingRecord).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -122,7 +121,7 @@ pub mod billing_record {
             self.price = input;
             self
         }
-        /// Consumes the builder and constructs a [`BillingRecord`](crate::model::BillingRecord)
+        /// Consumes the builder and constructs a [`BillingRecord`](crate::model::BillingRecord).
         pub fn build(self) -> crate::model::BillingRecord {
             crate::model::BillingRecord {
                 domain_name: self.domain_name,
@@ -135,7 +134,7 @@ pub mod billing_record {
     }
 }
 impl BillingRecord {
-    /// Creates a new builder-style object to manufacture [`BillingRecord`](crate::model::BillingRecord)
+    /// Creates a new builder-style object to manufacture [`BillingRecord`](crate::model::BillingRecord).
     pub fn builder() -> crate::model::billing_record::Builder {
         crate::model::billing_record::Builder::default()
     }
@@ -314,11 +313,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -353,7 +351,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -363,7 +361,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -400,11 +398,10 @@ impl std::fmt::Debug for Nameserver {
         formatter.finish()
     }
 }
-/// See [`Nameserver`](crate::model::Nameserver)
+/// See [`Nameserver`](crate::model::Nameserver).
 pub mod nameserver {
 
-    /// A builder for [`Nameserver`](crate::model::Nameserver)
-    #[non_exhaustive]
+    /// A builder for [`Nameserver`](crate::model::Nameserver).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -444,7 +441,7 @@ pub mod nameserver {
             self.glue_ips = input;
             self
         }
-        /// Consumes the builder and constructs a [`Nameserver`](crate::model::Nameserver)
+        /// Consumes the builder and constructs a [`Nameserver`](crate::model::Nameserver).
         pub fn build(self) -> crate::model::Nameserver {
             crate::model::Nameserver {
                 name: self.name,
@@ -454,7 +451,7 @@ pub mod nameserver {
     }
 }
 impl Nameserver {
-    /// Creates a new builder-style object to manufacture [`Nameserver`](crate::model::Nameserver)
+    /// Creates a new builder-style object to manufacture [`Nameserver`](crate::model::Nameserver).
     pub fn builder() -> crate::model::nameserver::Builder {
         crate::model::nameserver::Builder::default()
     }
@@ -585,11 +582,10 @@ impl std::fmt::Debug for ContactDetail {
         formatter.finish()
     }
 }
-/// See [`ContactDetail`](crate::model::ContactDetail)
+/// See [`ContactDetail`](crate::model::ContactDetail).
 pub mod contact_detail {
 
-    /// A builder for [`ContactDetail`](crate::model::ContactDetail)
-    #[non_exhaustive]
+    /// A builder for [`ContactDetail`](crate::model::ContactDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) first_name: std::option::Option<std::string::String>,
@@ -786,7 +782,7 @@ pub mod contact_detail {
             self.extra_params = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContactDetail`](crate::model::ContactDetail)
+        /// Consumes the builder and constructs a [`ContactDetail`](crate::model::ContactDetail).
         pub fn build(self) -> crate::model::ContactDetail {
             crate::model::ContactDetail {
                 first_name: self.first_name,
@@ -808,7 +804,7 @@ pub mod contact_detail {
     }
 }
 impl ContactDetail {
-    /// Creates a new builder-style object to manufacture [`ContactDetail`](crate::model::ContactDetail)
+    /// Creates a new builder-style object to manufacture [`ContactDetail`](crate::model::ContactDetail).
     pub fn builder() -> crate::model::contact_detail::Builder {
         crate::model::contact_detail::Builder::default()
     }
@@ -1381,11 +1377,10 @@ impl std::fmt::Debug for ExtraParam {
         formatter.finish()
     }
 }
-/// See [`ExtraParam`](crate::model::ExtraParam)
+/// See [`ExtraParam`](crate::model::ExtraParam).
 pub mod extra_param {
 
-    /// A builder for [`ExtraParam`](crate::model::ExtraParam)
-    #[non_exhaustive]
+    /// A builder for [`ExtraParam`](crate::model::ExtraParam).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ExtraParamName>,
@@ -1955,7 +1950,7 @@ pub mod extra_param {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExtraParam`](crate::model::ExtraParam)
+        /// Consumes the builder and constructs a [`ExtraParam`](crate::model::ExtraParam).
         pub fn build(self) -> crate::model::ExtraParam {
             crate::model::ExtraParam {
                 name: self.name,
@@ -1965,7 +1960,7 @@ pub mod extra_param {
     }
 }
 impl ExtraParam {
-    /// Creates a new builder-style object to manufacture [`ExtraParam`](crate::model::ExtraParam)
+    /// Creates a new builder-style object to manufacture [`ExtraParam`](crate::model::ExtraParam).
     pub fn builder() -> crate::model::extra_param::Builder {
         crate::model::extra_param::Builder::default()
     }
@@ -3367,11 +3362,10 @@ impl std::fmt::Debug for DomainPrice {
         formatter.finish()
     }
 }
-/// See [`DomainPrice`](crate::model::DomainPrice)
+/// See [`DomainPrice`](crate::model::DomainPrice).
 pub mod domain_price {
 
-    /// A builder for [`DomainPrice`](crate::model::DomainPrice)
-    #[non_exhaustive]
+    /// A builder for [`DomainPrice`](crate::model::DomainPrice).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3457,7 +3451,7 @@ pub mod domain_price {
             self.restoration_price = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainPrice`](crate::model::DomainPrice)
+        /// Consumes the builder and constructs a [`DomainPrice`](crate::model::DomainPrice).
         pub fn build(self) -> crate::model::DomainPrice {
             crate::model::DomainPrice {
                 name: self.name,
@@ -3471,7 +3465,7 @@ pub mod domain_price {
     }
 }
 impl DomainPrice {
-    /// Creates a new builder-style object to manufacture [`DomainPrice`](crate::model::DomainPrice)
+    /// Creates a new builder-style object to manufacture [`DomainPrice`](crate::model::DomainPrice).
     pub fn builder() -> crate::model::domain_price::Builder {
         crate::model::domain_price::Builder::default()
     }
@@ -3504,11 +3498,10 @@ impl std::fmt::Debug for PriceWithCurrency {
         formatter.finish()
     }
 }
-/// See [`PriceWithCurrency`](crate::model::PriceWithCurrency)
+/// See [`PriceWithCurrency`](crate::model::PriceWithCurrency).
 pub mod price_with_currency {
 
-    /// A builder for [`PriceWithCurrency`](crate::model::PriceWithCurrency)
-    #[non_exhaustive]
+    /// A builder for [`PriceWithCurrency`](crate::model::PriceWithCurrency).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) price: std::option::Option<f64>,
@@ -3535,7 +3528,7 @@ pub mod price_with_currency {
             self.currency = input;
             self
         }
-        /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::model::PriceWithCurrency)
+        /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::model::PriceWithCurrency).
         pub fn build(self) -> crate::model::PriceWithCurrency {
             crate::model::PriceWithCurrency {
                 price: self.price.unwrap_or_default(),
@@ -3545,7 +3538,7 @@ pub mod price_with_currency {
     }
 }
 impl PriceWithCurrency {
-    /// Creates a new builder-style object to manufacture [`PriceWithCurrency`](crate::model::PriceWithCurrency)
+    /// Creates a new builder-style object to manufacture [`PriceWithCurrency`](crate::model::PriceWithCurrency).
     pub fn builder() -> crate::model::price_with_currency::Builder {
         crate::model::price_with_currency::Builder::default()
     }
@@ -3592,11 +3585,10 @@ impl std::fmt::Debug for OperationSummary {
         formatter.finish()
     }
 }
-/// See [`OperationSummary`](crate::model::OperationSummary)
+/// See [`OperationSummary`](crate::model::OperationSummary).
 pub mod operation_summary {
 
-    /// A builder for [`OperationSummary`](crate::model::OperationSummary)
-    #[non_exhaustive]
+    /// A builder for [`OperationSummary`](crate::model::OperationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -3651,7 +3643,7 @@ pub mod operation_summary {
             self.submitted_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationSummary`](crate::model::OperationSummary)
+        /// Consumes the builder and constructs a [`OperationSummary`](crate::model::OperationSummary).
         pub fn build(self) -> crate::model::OperationSummary {
             crate::model::OperationSummary {
                 operation_id: self.operation_id,
@@ -3663,7 +3655,7 @@ pub mod operation_summary {
     }
 }
 impl OperationSummary {
-    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary)
+    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
     pub fn builder() -> crate::model::operation_summary::Builder {
         crate::model::operation_summary::Builder::default()
     }
@@ -3777,11 +3769,10 @@ impl std::fmt::Debug for DomainSummary {
         formatter.finish()
     }
 }
-/// See [`DomainSummary`](crate::model::DomainSummary)
+/// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
 
-    /// A builder for [`DomainSummary`](crate::model::DomainSummary)
-    #[non_exhaustive]
+    /// A builder for [`DomainSummary`](crate::model::DomainSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -3833,7 +3824,7 @@ pub mod domain_summary {
             self.expiry = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary)
+        /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary).
         pub fn build(self) -> crate::model::DomainSummary {
             crate::model::DomainSummary {
                 domain_name: self.domain_name,
@@ -3845,7 +3836,7 @@ pub mod domain_summary {
     }
 }
 impl DomainSummary {
-    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary)
+    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
     pub fn builder() -> crate::model::domain_summary::Builder {
         crate::model::domain_summary::Builder::default()
     }
@@ -3878,11 +3869,10 @@ impl std::fmt::Debug for SortCondition {
         formatter.finish()
     }
 }
-/// See [`SortCondition`](crate::model::SortCondition)
+/// See [`SortCondition`](crate::model::SortCondition).
 pub mod sort_condition {
 
-    /// A builder for [`SortCondition`](crate::model::SortCondition)
-    #[non_exhaustive]
+    /// A builder for [`SortCondition`](crate::model::SortCondition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListDomainsAttributeName>,
@@ -3915,7 +3905,7 @@ pub mod sort_condition {
             self.sort_order = input;
             self
         }
-        /// Consumes the builder and constructs a [`SortCondition`](crate::model::SortCondition)
+        /// Consumes the builder and constructs a [`SortCondition`](crate::model::SortCondition).
         pub fn build(self) -> crate::model::SortCondition {
             crate::model::SortCondition {
                 name: self.name,
@@ -3925,7 +3915,7 @@ pub mod sort_condition {
     }
 }
 impl SortCondition {
-    /// Creates a new builder-style object to manufacture [`SortCondition`](crate::model::SortCondition)
+    /// Creates a new builder-style object to manufacture [`SortCondition`](crate::model::SortCondition).
     pub fn builder() -> crate::model::sort_condition::Builder {
         crate::model::sort_condition::Builder::default()
     }
@@ -4085,11 +4075,10 @@ impl std::fmt::Debug for FilterCondition {
         formatter.finish()
     }
 }
-/// See [`FilterCondition`](crate::model::FilterCondition)
+/// See [`FilterCondition`](crate::model::FilterCondition).
 pub mod filter_condition {
 
-    /// A builder for [`FilterCondition`](crate::model::FilterCondition)
-    #[non_exhaustive]
+    /// A builder for [`FilterCondition`](crate::model::FilterCondition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListDomainsAttributeName>,
@@ -4149,7 +4138,7 @@ pub mod filter_condition {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`FilterCondition`](crate::model::FilterCondition)
+        /// Consumes the builder and constructs a [`FilterCondition`](crate::model::FilterCondition).
         pub fn build(self) -> crate::model::FilterCondition {
             crate::model::FilterCondition {
                 name: self.name,
@@ -4160,7 +4149,7 @@ pub mod filter_condition {
     }
 }
 impl FilterCondition {
-    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition)
+    /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
     pub fn builder() -> crate::model::filter_condition::Builder {
         crate::model::filter_condition::Builder::default()
     }
@@ -4370,11 +4359,10 @@ impl std::fmt::Debug for DomainSuggestion {
         formatter.finish()
     }
 }
-/// See [`DomainSuggestion`](crate::model::DomainSuggestion)
+/// See [`DomainSuggestion`](crate::model::DomainSuggestion).
 pub mod domain_suggestion {
 
-    /// A builder for [`DomainSuggestion`](crate::model::DomainSuggestion)
-    #[non_exhaustive]
+    /// A builder for [`DomainSuggestion`](crate::model::DomainSuggestion).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -4519,7 +4507,7 @@ pub mod domain_suggestion {
             self.availability = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainSuggestion`](crate::model::DomainSuggestion)
+        /// Consumes the builder and constructs a [`DomainSuggestion`](crate::model::DomainSuggestion).
         pub fn build(self) -> crate::model::DomainSuggestion {
             crate::model::DomainSuggestion {
                 domain_name: self.domain_name,
@@ -4529,7 +4517,7 @@ pub mod domain_suggestion {
     }
 }
 impl DomainSuggestion {
-    /// Creates a new builder-style object to manufacture [`DomainSuggestion`](crate::model::DomainSuggestion)
+    /// Creates a new builder-style object to manufacture [`DomainSuggestion`](crate::model::DomainSuggestion).
     pub fn builder() -> crate::model::domain_suggestion::Builder {
         crate::model::domain_suggestion::Builder::default()
     }
@@ -4660,11 +4648,10 @@ impl std::fmt::Debug for DomainTransferability {
         formatter.finish()
     }
 }
-/// See [`DomainTransferability`](crate::model::DomainTransferability)
+/// See [`DomainTransferability`](crate::model::DomainTransferability).
 pub mod domain_transferability {
 
-    /// A builder for [`DomainTransferability`](crate::model::DomainTransferability)
-    #[non_exhaustive]
+    /// A builder for [`DomainTransferability`](crate::model::DomainTransferability).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transferable: std::option::Option<crate::model::Transferable>,
@@ -4729,7 +4716,7 @@ pub mod domain_transferability {
             self.transferable = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainTransferability`](crate::model::DomainTransferability)
+        /// Consumes the builder and constructs a [`DomainTransferability`](crate::model::DomainTransferability).
         pub fn build(self) -> crate::model::DomainTransferability {
             crate::model::DomainTransferability {
                 transferable: self.transferable,
@@ -4738,7 +4725,7 @@ pub mod domain_transferability {
     }
 }
 impl DomainTransferability {
-    /// Creates a new builder-style object to manufacture [`DomainTransferability`](crate::model::DomainTransferability)
+    /// Creates a new builder-style object to manufacture [`DomainTransferability`](crate::model::DomainTransferability).
     pub fn builder() -> crate::model::domain_transferability::Builder {
         crate::model::domain_transferability::Builder::default()
     }

@@ -42,11 +42,10 @@ impl std::fmt::Debug for Attendee {
         formatter.finish()
     }
 }
-/// See [`Attendee`](crate::model::Attendee)
+/// See [`Attendee`](crate::model::Attendee).
 pub mod attendee {
 
-    /// A builder for [`Attendee`](crate::model::Attendee)
-    #[non_exhaustive]
+    /// A builder for [`Attendee`](crate::model::Attendee).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -101,7 +100,7 @@ pub mod attendee {
             self.capabilities = input;
             self
         }
-        /// Consumes the builder and constructs a [`Attendee`](crate::model::Attendee)
+        /// Consumes the builder and constructs a [`Attendee`](crate::model::Attendee).
         pub fn build(self) -> crate::model::Attendee {
             crate::model::Attendee {
                 external_user_id: self.external_user_id,
@@ -113,7 +112,7 @@ pub mod attendee {
     }
 }
 impl Attendee {
-    /// Creates a new builder-style object to manufacture [`Attendee`](crate::model::Attendee)
+    /// Creates a new builder-style object to manufacture [`Attendee`](crate::model::Attendee).
     pub fn builder() -> crate::model::attendee::Builder {
         crate::model::attendee::Builder::default()
     }
@@ -153,11 +152,10 @@ impl std::fmt::Debug for AttendeeCapabilities {
         formatter.finish()
     }
 }
-/// See [`AttendeeCapabilities`](crate::model::AttendeeCapabilities)
+/// See [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
 pub mod attendee_capabilities {
 
-    /// A builder for [`AttendeeCapabilities`](crate::model::AttendeeCapabilities)
-    #[non_exhaustive]
+    /// A builder for [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio: std::option::Option<crate::model::MediaCapabilities>,
@@ -204,7 +202,7 @@ pub mod attendee_capabilities {
             self.content = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttendeeCapabilities`](crate::model::AttendeeCapabilities)
+        /// Consumes the builder and constructs a [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
         pub fn build(self) -> crate::model::AttendeeCapabilities {
             crate::model::AttendeeCapabilities {
                 audio: self.audio,
@@ -215,7 +213,7 @@ pub mod attendee_capabilities {
     }
 }
 impl AttendeeCapabilities {
-    /// Creates a new builder-style object to manufacture [`AttendeeCapabilities`](crate::model::AttendeeCapabilities)
+    /// Creates a new builder-style object to manufacture [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
     pub fn builder() -> crate::model::attendee_capabilities::Builder {
         crate::model::attendee_capabilities::Builder::default()
     }
@@ -322,11 +320,10 @@ impl std::fmt::Debug for TranscriptionConfiguration {
         formatter.finish()
     }
 }
-/// See [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
+/// See [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
 pub mod transcription_configuration {
 
-    /// A builder for [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_transcribe_settings:
@@ -367,7 +364,7 @@ pub mod transcription_configuration {
             self.engine_transcribe_medical_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
+        /// Consumes the builder and constructs a [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
         pub fn build(self) -> crate::model::TranscriptionConfiguration {
             crate::model::TranscriptionConfiguration {
                 engine_transcribe_settings: self.engine_transcribe_settings,
@@ -377,7 +374,7 @@ pub mod transcription_configuration {
     }
 }
 impl TranscriptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration)
+    /// Creates a new builder-style object to manufacture [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
     pub fn builder() -> crate::model::transcription_configuration::Builder {
         crate::model::transcription_configuration::Builder::default()
     }
@@ -446,11 +443,10 @@ impl std::fmt::Debug for EngineTranscribeMedicalSettings {
         formatter.finish()
     }
 }
-/// See [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
+/// See [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
 pub mod engine_transcribe_medical_settings {
 
-    /// A builder for [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
-    #[non_exhaustive]
+    /// A builder for [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::TranscribeMedicalLanguageCode>,
@@ -543,7 +539,7 @@ pub mod engine_transcribe_medical_settings {
             self.content_identification_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
+        /// Consumes the builder and constructs a [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
         pub fn build(self) -> crate::model::EngineTranscribeMedicalSettings {
             crate::model::EngineTranscribeMedicalSettings {
                 language_code: self.language_code,
@@ -557,7 +553,7 @@ pub mod engine_transcribe_medical_settings {
     }
 }
 impl EngineTranscribeMedicalSettings {
-    /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings)
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
     pub fn builder() -> crate::model::engine_transcribe_medical_settings::Builder {
         crate::model::engine_transcribe_medical_settings::Builder::default()
     }
@@ -1015,11 +1011,10 @@ impl std::fmt::Debug for EngineTranscribeSettings {
         formatter.finish()
     }
 }
-/// See [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
+/// See [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
 pub mod engine_transcribe_settings {
 
-    /// A builder for [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
-    #[non_exhaustive]
+    /// A builder for [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<crate::model::TranscribeLanguageCode>,
@@ -1239,7 +1234,7 @@ pub mod engine_transcribe_settings {
             self.preferred_language = input;
             self
         }
-        /// Consumes the builder and constructs a [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
+        /// Consumes the builder and constructs a [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
         pub fn build(self) -> crate::model::EngineTranscribeSettings {
             crate::model::EngineTranscribeSettings {
                 language_code: self.language_code,
@@ -1263,7 +1258,7 @@ pub mod engine_transcribe_settings {
     }
 }
 impl EngineTranscribeSettings {
-    /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings)
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
     pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
         crate::model::engine_transcribe_settings::Builder::default()
     }
@@ -1766,11 +1761,10 @@ impl std::fmt::Debug for Meeting {
         formatter.finish()
     }
 }
-/// See [`Meeting`](crate::model::Meeting)
+/// See [`Meeting`](crate::model::Meeting).
 pub mod meeting {
 
-    /// A builder for [`Meeting`](crate::model::Meeting)
-    #[non_exhaustive]
+    /// A builder for [`Meeting`](crate::model::Meeting).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meeting_id: std::option::Option<std::string::String>,
@@ -1873,7 +1867,7 @@ pub mod meeting {
             self.primary_meeting_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Meeting`](crate::model::Meeting)
+        /// Consumes the builder and constructs a [`Meeting`](crate::model::Meeting).
         pub fn build(self) -> crate::model::Meeting {
             crate::model::Meeting {
                 meeting_id: self.meeting_id,
@@ -1888,7 +1882,7 @@ pub mod meeting {
     }
 }
 impl Meeting {
-    /// Creates a new builder-style object to manufacture [`Meeting`](crate::model::Meeting)
+    /// Creates a new builder-style object to manufacture [`Meeting`](crate::model::Meeting).
     pub fn builder() -> crate::model::meeting::Builder {
         crate::model::meeting::Builder::default()
     }
@@ -1914,11 +1908,10 @@ impl std::fmt::Debug for MeetingFeaturesConfiguration {
         formatter.finish()
     }
 }
-/// See [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration)
+/// See [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
 pub mod meeting_features_configuration {
 
-    /// A builder for [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio: std::option::Option<crate::model::AudioFeatures>,
@@ -1937,14 +1930,14 @@ pub mod meeting_features_configuration {
             self.audio = input;
             self
         }
-        /// Consumes the builder and constructs a [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration)
+        /// Consumes the builder and constructs a [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
         pub fn build(self) -> crate::model::MeetingFeaturesConfiguration {
             crate::model::MeetingFeaturesConfiguration { audio: self.audio }
         }
     }
 }
 impl MeetingFeaturesConfiguration {
-    /// Creates a new builder-style object to manufacture [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration)
+    /// Creates a new builder-style object to manufacture [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
     pub fn builder() -> crate::model::meeting_features_configuration::Builder {
         crate::model::meeting_features_configuration::Builder::default()
     }
@@ -1970,11 +1963,10 @@ impl std::fmt::Debug for AudioFeatures {
         formatter.finish()
     }
 }
-/// See [`AudioFeatures`](crate::model::AudioFeatures)
+/// See [`AudioFeatures`](crate::model::AudioFeatures).
 pub mod audio_features {
 
-    /// A builder for [`AudioFeatures`](crate::model::AudioFeatures)
-    #[non_exhaustive]
+    /// A builder for [`AudioFeatures`](crate::model::AudioFeatures).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) echo_reduction: std::option::Option<crate::model::MeetingFeatureStatus>,
@@ -1993,7 +1985,7 @@ pub mod audio_features {
             self.echo_reduction = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioFeatures`](crate::model::AudioFeatures)
+        /// Consumes the builder and constructs a [`AudioFeatures`](crate::model::AudioFeatures).
         pub fn build(self) -> crate::model::AudioFeatures {
             crate::model::AudioFeatures {
                 echo_reduction: self.echo_reduction,
@@ -2002,7 +1994,7 @@ pub mod audio_features {
     }
 }
 impl AudioFeatures {
-    /// Creates a new builder-style object to manufacture [`AudioFeatures`](crate::model::AudioFeatures)
+    /// Creates a new builder-style object to manufacture [`AudioFeatures`](crate::model::AudioFeatures).
     pub fn builder() -> crate::model::audio_features::Builder {
         crate::model::audio_features::Builder::default()
     }
@@ -2132,11 +2124,10 @@ impl std::fmt::Debug for MediaPlacement {
         formatter.finish()
     }
 }
-/// See [`MediaPlacement`](crate::model::MediaPlacement)
+/// See [`MediaPlacement`](crate::model::MediaPlacement).
 pub mod media_placement {
 
-    /// A builder for [`MediaPlacement`](crate::model::MediaPlacement)
-    #[non_exhaustive]
+    /// A builder for [`MediaPlacement`](crate::model::MediaPlacement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_host_url: std::option::Option<std::string::String>,
@@ -2253,7 +2244,7 @@ pub mod media_placement {
             self.event_ingestion_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaPlacement`](crate::model::MediaPlacement)
+        /// Consumes the builder and constructs a [`MediaPlacement`](crate::model::MediaPlacement).
         pub fn build(self) -> crate::model::MediaPlacement {
             crate::model::MediaPlacement {
                 audio_host_url: self.audio_host_url,
@@ -2269,7 +2260,7 @@ pub mod media_placement {
     }
 }
 impl MediaPlacement {
-    /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::model::MediaPlacement)
+    /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::model::MediaPlacement).
     pub fn builder() -> crate::model::media_placement::Builder {
         crate::model::media_placement::Builder::default()
     }
@@ -2309,11 +2300,10 @@ impl std::fmt::Debug for CreateAttendeeError {
         formatter.finish()
     }
 }
-/// See [`CreateAttendeeError`](crate::model::CreateAttendeeError)
+/// See [`CreateAttendeeError`](crate::model::CreateAttendeeError).
 pub mod create_attendee_error {
 
-    /// A builder for [`CreateAttendeeError`](crate::model::CreateAttendeeError)
-    #[non_exhaustive]
+    /// A builder for [`CreateAttendeeError`](crate::model::CreateAttendeeError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -2357,7 +2347,7 @@ pub mod create_attendee_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAttendeeError`](crate::model::CreateAttendeeError)
+        /// Consumes the builder and constructs a [`CreateAttendeeError`](crate::model::CreateAttendeeError).
         pub fn build(self) -> crate::model::CreateAttendeeError {
             crate::model::CreateAttendeeError {
                 external_user_id: self.external_user_id,
@@ -2368,7 +2358,7 @@ pub mod create_attendee_error {
     }
 }
 impl CreateAttendeeError {
-    /// Creates a new builder-style object to manufacture [`CreateAttendeeError`](crate::model::CreateAttendeeError)
+    /// Creates a new builder-style object to manufacture [`CreateAttendeeError`](crate::model::CreateAttendeeError).
     pub fn builder() -> crate::model::create_attendee_error::Builder {
         crate::model::create_attendee_error::Builder::default()
     }
@@ -2401,11 +2391,10 @@ impl std::fmt::Debug for CreateAttendeeRequestItem {
         formatter.finish()
     }
 }
-/// See [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem)
+/// See [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
 pub mod create_attendee_request_item {
 
-    /// A builder for [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem)
-    #[non_exhaustive]
+    /// A builder for [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) external_user_id: std::option::Option<std::string::String>,
@@ -2438,7 +2427,7 @@ pub mod create_attendee_request_item {
             self.capabilities = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem)
+        /// Consumes the builder and constructs a [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
         pub fn build(self) -> crate::model::CreateAttendeeRequestItem {
             crate::model::CreateAttendeeRequestItem {
                 external_user_id: self.external_user_id,
@@ -2448,7 +2437,7 @@ pub mod create_attendee_request_item {
     }
 }
 impl CreateAttendeeRequestItem {
-    /// Creates a new builder-style object to manufacture [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem)
+    /// Creates a new builder-style object to manufacture [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
     pub fn builder() -> crate::model::create_attendee_request_item::Builder {
         crate::model::create_attendee_request_item::Builder::default()
     }
@@ -2488,11 +2477,10 @@ impl std::fmt::Debug for NotificationsConfiguration {
         formatter.finish()
     }
 }
-/// See [`NotificationsConfiguration`](crate::model::NotificationsConfiguration)
+/// See [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
 pub mod notifications_configuration {
 
-    /// A builder for [`NotificationsConfiguration`](crate::model::NotificationsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
@@ -2539,7 +2527,7 @@ pub mod notifications_configuration {
             self.sqs_queue_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotificationsConfiguration`](crate::model::NotificationsConfiguration)
+        /// Consumes the builder and constructs a [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
         pub fn build(self) -> crate::model::NotificationsConfiguration {
             crate::model::NotificationsConfiguration {
                 lambda_function_arn: self.lambda_function_arn,
@@ -2550,7 +2538,7 @@ pub mod notifications_configuration {
     }
 }
 impl NotificationsConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationsConfiguration`](crate::model::NotificationsConfiguration)
+    /// Creates a new builder-style object to manufacture [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
     pub fn builder() -> crate::model::notifications_configuration::Builder {
         crate::model::notifications_configuration::Builder::default()
     }
@@ -2576,11 +2564,10 @@ impl std::fmt::Debug for AttendeeIdItem {
         formatter.finish()
     }
 }
-/// See [`AttendeeIdItem`](crate::model::AttendeeIdItem)
+/// See [`AttendeeIdItem`](crate::model::AttendeeIdItem).
 pub mod attendee_id_item {
 
-    /// A builder for [`AttendeeIdItem`](crate::model::AttendeeIdItem)
-    #[non_exhaustive]
+    /// A builder for [`AttendeeIdItem`](crate::model::AttendeeIdItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attendee_id: std::option::Option<std::string::String>,
@@ -2596,7 +2583,7 @@ pub mod attendee_id_item {
             self.attendee_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttendeeIdItem`](crate::model::AttendeeIdItem)
+        /// Consumes the builder and constructs a [`AttendeeIdItem`](crate::model::AttendeeIdItem).
         pub fn build(self) -> crate::model::AttendeeIdItem {
             crate::model::AttendeeIdItem {
                 attendee_id: self.attendee_id,
@@ -2605,7 +2592,7 @@ pub mod attendee_id_item {
     }
 }
 impl AttendeeIdItem {
-    /// Creates a new builder-style object to manufacture [`AttendeeIdItem`](crate::model::AttendeeIdItem)
+    /// Creates a new builder-style object to manufacture [`AttendeeIdItem`](crate::model::AttendeeIdItem).
     pub fn builder() -> crate::model::attendee_id_item::Builder {
         crate::model::attendee_id_item::Builder::default()
     }

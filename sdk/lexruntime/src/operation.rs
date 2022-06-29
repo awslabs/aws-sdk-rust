@@ -10,7 +10,7 @@ pub struct DeleteSession {
     _private: (),
 }
 impl DeleteSession {
-    /// Creates a new builder-style object to manufacture [`DeleteSessionInput`](crate::input::DeleteSessionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSessionInput`](crate::input::DeleteSessionInput).
     pub fn builder() -> crate::input::delete_session_input::Builder {
         crate::input::delete_session_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct GetSession {
     _private: (),
 }
 impl GetSession {
-    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput)
+    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput).
     pub fn builder() -> crate::input::get_session_input::Builder {
         crate::input::get_session_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct PostContent {
     _private: (),
 }
 impl PostContent {
-    /// Creates a new builder-style object to manufacture [`PostContentInput`](crate::input::PostContentInput)
+    /// Creates a new builder-style object to manufacture [`PostContentInput`](crate::input::PostContentInput).
     pub fn builder() -> crate::input::post_content_input::Builder {
         crate::input::post_content_input::Builder::default()
     }
@@ -113,7 +113,7 @@ pub struct PostText {
     _private: (),
 }
 impl PostText {
-    /// Creates a new builder-style object to manufacture [`PostTextInput`](crate::input::PostTextInput)
+    /// Creates a new builder-style object to manufacture [`PostTextInput`](crate::input::PostTextInput).
     pub fn builder() -> crate::input::post_text_input::Builder {
         crate::input::post_text_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct PutSession {
     _private: (),
 }
 impl PutSession {
-    /// Creates a new builder-style object to manufacture [`PutSessionInput`](crate::input::PutSessionInput)
+    /// Creates a new builder-style object to manufacture [`PutSessionInput`](crate::input::PutSessionInput).
     pub fn builder() -> crate::input::put_session_input::Builder {
         crate::input::put_session_input::Builder::default()
     }

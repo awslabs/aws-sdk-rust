@@ -10,7 +10,7 @@ pub struct AcceptGrant {
     _private: (),
 }
 impl AcceptGrant {
-    /// Creates a new builder-style object to manufacture [`AcceptGrantInput`](crate::input::AcceptGrantInput)
+    /// Creates a new builder-style object to manufacture [`AcceptGrantInput`](crate::input::AcceptGrantInput).
     pub fn builder() -> crate::input::accept_grant_input::Builder {
         crate::input::accept_grant_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CheckInLicense {
     _private: (),
 }
 impl CheckInLicense {
-    /// Creates a new builder-style object to manufacture [`CheckInLicenseInput`](crate::input::CheckInLicenseInput)
+    /// Creates a new builder-style object to manufacture [`CheckInLicenseInput`](crate::input::CheckInLicenseInput).
     pub fn builder() -> crate::input::check_in_license_input::Builder {
         crate::input::check_in_license_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CheckoutBorrowLicense {
     _private: (),
 }
 impl CheckoutBorrowLicense {
-    /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput)
+    /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseInput`](crate::input::CheckoutBorrowLicenseInput).
     pub fn builder() -> crate::input::checkout_borrow_license_input::Builder {
         crate::input::checkout_borrow_license_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CheckoutLicense {
     _private: (),
 }
 impl CheckoutLicense {
-    /// Creates a new builder-style object to manufacture [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput)
+    /// Creates a new builder-style object to manufacture [`CheckoutLicenseInput`](crate::input::CheckoutLicenseInput).
     pub fn builder() -> crate::input::checkout_license_input::Builder {
         crate::input::checkout_license_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateGrant {
     _private: (),
 }
 impl CreateGrant {
-    /// Creates a new builder-style object to manufacture [`CreateGrantInput`](crate::input::CreateGrantInput)
+    /// Creates a new builder-style object to manufacture [`CreateGrantInput`](crate::input::CreateGrantInput).
     pub fn builder() -> crate::input::create_grant_input::Builder {
         crate::input::create_grant_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct CreateGrantVersion {
     _private: (),
 }
 impl CreateGrantVersion {
-    /// Creates a new builder-style object to manufacture [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateGrantVersionInput`](crate::input::CreateGrantVersionInput).
     pub fn builder() -> crate::input::create_grant_version_input::Builder {
         crate::input::create_grant_version_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct CreateLicense {
     _private: (),
 }
 impl CreateLicense {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseInput`](crate::input::CreateLicenseInput)
+    /// Creates a new builder-style object to manufacture [`CreateLicenseInput`](crate::input::CreateLicenseInput).
     pub fn builder() -> crate::input::create_license_input::Builder {
         crate::input::create_license_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct CreateLicenseConfiguration {
     _private: (),
 }
 impl CreateLicenseConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationInput`](crate::input::CreateLicenseConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationInput`](crate::input::CreateLicenseConfigurationInput).
     pub fn builder() -> crate::input::create_license_configuration_input::Builder {
         crate::input::create_license_configuration_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct CreateLicenseConversionTaskForResource {
     _private: (),
 }
 impl CreateLicenseConversionTaskForResource {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput)
+    /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceInput`](crate::input::CreateLicenseConversionTaskForResourceInput).
     pub fn builder() -> crate::input::create_license_conversion_task_for_resource_input::Builder {
         crate::input::create_license_conversion_task_for_resource_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct CreateLicenseManagerReportGenerator {
     _private: (),
 }
 impl CreateLicenseManagerReportGenerator {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorInput`](crate::input::CreateLicenseManagerReportGeneratorInput)
+    /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorInput`](crate::input::CreateLicenseManagerReportGeneratorInput).
     pub fn builder() -> crate::input::create_license_manager_report_generator_input::Builder {
         crate::input::create_license_manager_report_generator_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct CreateLicenseVersion {
     _private: (),
 }
 impl CreateLicenseVersion {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateLicenseVersionInput`](crate::input::CreateLicenseVersionInput).
     pub fn builder() -> crate::input::create_license_version_input::Builder {
         crate::input::create_license_version_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct CreateToken {
     _private: (),
 }
 impl CreateToken {
-    /// Creates a new builder-style object to manufacture [`CreateTokenInput`](crate::input::CreateTokenInput)
+    /// Creates a new builder-style object to manufacture [`CreateTokenInput`](crate::input::CreateTokenInput).
     pub fn builder() -> crate::input::create_token_input::Builder {
         crate::input::create_token_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct DeleteGrant {
     _private: (),
 }
 impl DeleteGrant {
-    /// Creates a new builder-style object to manufacture [`DeleteGrantInput`](crate::input::DeleteGrantInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGrantInput`](crate::input::DeleteGrantInput).
     pub fn builder() -> crate::input::delete_grant_input::Builder {
         crate::input::delete_grant_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct DeleteLicense {
     _private: (),
 }
 impl DeleteLicense {
-    /// Creates a new builder-style object to manufacture [`DeleteLicenseInput`](crate::input::DeleteLicenseInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLicenseInput`](crate::input::DeleteLicenseInput).
     pub fn builder() -> crate::input::delete_license_input::Builder {
         crate::input::delete_license_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct DeleteLicenseConfiguration {
     _private: (),
 }
 impl DeleteLicenseConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationInput`](crate::input::DeleteLicenseConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationInput`](crate::input::DeleteLicenseConfigurationInput).
     pub fn builder() -> crate::input::delete_license_configuration_input::Builder {
         crate::input::delete_license_configuration_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct DeleteLicenseManagerReportGenerator {
     _private: (),
 }
 impl DeleteLicenseManagerReportGenerator {
-    /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorInput`](crate::input::DeleteLicenseManagerReportGeneratorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorInput`](crate::input::DeleteLicenseManagerReportGeneratorInput).
     pub fn builder() -> crate::input::delete_license_manager_report_generator_input::Builder {
         crate::input::delete_license_manager_report_generator_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct DeleteToken {
     _private: (),
 }
 impl DeleteToken {
-    /// Creates a new builder-style object to manufacture [`DeleteTokenInput`](crate::input::DeleteTokenInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTokenInput`](crate::input::DeleteTokenInput).
     pub fn builder() -> crate::input::delete_token_input::Builder {
         crate::input::delete_token_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct ExtendLicenseConsumption {
     _private: (),
 }
 impl ExtendLicenseConsumption {
-    /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionInput`](crate::input::ExtendLicenseConsumptionInput)
+    /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionInput`](crate::input::ExtendLicenseConsumptionInput).
     pub fn builder() -> crate::input::extend_license_consumption_input::Builder {
         crate::input::extend_license_consumption_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct GetAccessToken {
     _private: (),
 }
 impl GetAccessToken {
-    /// Creates a new builder-style object to manufacture [`GetAccessTokenInput`](crate::input::GetAccessTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessTokenInput`](crate::input::GetAccessTokenInput).
     pub fn builder() -> crate::input::get_access_token_input::Builder {
         crate::input::get_access_token_input::Builder::default()
     }
@@ -642,7 +642,7 @@ pub struct GetGrant {
     _private: (),
 }
 impl GetGrant {
-    /// Creates a new builder-style object to manufacture [`GetGrantInput`](crate::input::GetGrantInput)
+    /// Creates a new builder-style object to manufacture [`GetGrantInput`](crate::input::GetGrantInput).
     pub fn builder() -> crate::input::get_grant_input::Builder {
         crate::input::get_grant_input::Builder::default()
     }
@@ -673,7 +673,7 @@ pub struct GetLicense {
     _private: (),
 }
 impl GetLicense {
-    /// Creates a new builder-style object to manufacture [`GetLicenseInput`](crate::input::GetLicenseInput)
+    /// Creates a new builder-style object to manufacture [`GetLicenseInput`](crate::input::GetLicenseInput).
     pub fn builder() -> crate::input::get_license_input::Builder {
         crate::input::get_license_input::Builder::default()
     }
@@ -705,7 +705,7 @@ pub struct GetLicenseConfiguration {
     _private: (),
 }
 impl GetLicenseConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetLicenseConfigurationInput`](crate::input::GetLicenseConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetLicenseConfigurationInput`](crate::input::GetLicenseConfigurationInput).
     pub fn builder() -> crate::input::get_license_configuration_input::Builder {
         crate::input::get_license_configuration_input::Builder::default()
     }
@@ -739,7 +739,7 @@ pub struct GetLicenseConversionTask {
     _private: (),
 }
 impl GetLicenseConversionTask {
-    /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput)
+    /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskInput`](crate::input::GetLicenseConversionTaskInput).
     pub fn builder() -> crate::input::get_license_conversion_task_input::Builder {
         crate::input::get_license_conversion_task_input::Builder::default()
     }
@@ -773,7 +773,7 @@ pub struct GetLicenseManagerReportGenerator {
     _private: (),
 }
 impl GetLicenseManagerReportGenerator {
-    /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorInput`](crate::input::GetLicenseManagerReportGeneratorInput)
+    /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorInput`](crate::input::GetLicenseManagerReportGeneratorInput).
     pub fn builder() -> crate::input::get_license_manager_report_generator_input::Builder {
         crate::input::get_license_manager_report_generator_input::Builder::default()
     }
@@ -807,7 +807,7 @@ pub struct GetLicenseUsage {
     _private: (),
 }
 impl GetLicenseUsage {
-    /// Creates a new builder-style object to manufacture [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput)
+    /// Creates a new builder-style object to manufacture [`GetLicenseUsageInput`](crate::input::GetLicenseUsageInput).
     pub fn builder() -> crate::input::get_license_usage_input::Builder {
         crate::input::get_license_usage_input::Builder::default()
     }
@@ -841,7 +841,7 @@ pub struct GetServiceSettings {
     _private: (),
 }
 impl GetServiceSettings {
-    /// Creates a new builder-style object to manufacture [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceSettingsInput`](crate::input::GetServiceSettingsInput).
     pub fn builder() -> crate::input::get_service_settings_input::Builder {
         crate::input::get_service_settings_input::Builder::default()
     }
@@ -875,7 +875,7 @@ pub struct ListAssociationsForLicenseConfiguration {
     _private: (),
 }
 impl ListAssociationsForLicenseConfiguration {
-    /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationInput`](crate::input::ListAssociationsForLicenseConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationInput`](crate::input::ListAssociationsForLicenseConfigurationInput).
     pub fn builder() -> crate::input::list_associations_for_license_configuration_input::Builder {
         crate::input::list_associations_for_license_configuration_input::Builder::default()
     }
@@ -913,7 +913,7 @@ pub struct ListDistributedGrants {
     _private: (),
 }
 impl ListDistributedGrants {
-    /// Creates a new builder-style object to manufacture [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput)
+    /// Creates a new builder-style object to manufacture [`ListDistributedGrantsInput`](crate::input::ListDistributedGrantsInput).
     pub fn builder() -> crate::input::list_distributed_grants_input::Builder {
         crate::input::list_distributed_grants_input::Builder::default()
     }
@@ -947,7 +947,7 @@ pub struct ListFailuresForLicenseConfigurationOperations {
     _private: (),
 }
 impl ListFailuresForLicenseConfigurationOperations {
-    /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput)
+    /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::input::ListFailuresForLicenseConfigurationOperationsInput).
     pub fn builder(
     ) -> crate::input::list_failures_for_license_configuration_operations_input::Builder {
         crate::input::list_failures_for_license_configuration_operations_input::Builder::default()
@@ -986,7 +986,7 @@ pub struct ListLicenseConfigurations {
     _private: (),
 }
 impl ListLicenseConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsInput`](crate::input::ListLicenseConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsInput`](crate::input::ListLicenseConfigurationsInput).
     pub fn builder() -> crate::input::list_license_configurations_input::Builder {
         crate::input::list_license_configurations_input::Builder::default()
     }
@@ -1020,7 +1020,7 @@ pub struct ListLicenseConversionTasks {
     _private: (),
 }
 impl ListLicenseConversionTasks {
-    /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput)
+    /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksInput`](crate::input::ListLicenseConversionTasksInput).
     pub fn builder() -> crate::input::list_license_conversion_tasks_input::Builder {
         crate::input::list_license_conversion_tasks_input::Builder::default()
     }
@@ -1054,7 +1054,7 @@ pub struct ListLicenseManagerReportGenerators {
     _private: (),
 }
 impl ListLicenseManagerReportGenerators {
-    /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsInput`](crate::input::ListLicenseManagerReportGeneratorsInput)
+    /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsInput`](crate::input::ListLicenseManagerReportGeneratorsInput).
     pub fn builder() -> crate::input::list_license_manager_report_generators_input::Builder {
         crate::input::list_license_manager_report_generators_input::Builder::default()
     }
@@ -1088,7 +1088,7 @@ pub struct ListLicenses {
     _private: (),
 }
 impl ListLicenses {
-    /// Creates a new builder-style object to manufacture [`ListLicensesInput`](crate::input::ListLicensesInput)
+    /// Creates a new builder-style object to manufacture [`ListLicensesInput`](crate::input::ListLicensesInput).
     pub fn builder() -> crate::input::list_licenses_input::Builder {
         crate::input::list_licenses_input::Builder::default()
     }
@@ -1120,7 +1120,7 @@ pub struct ListLicenseSpecificationsForResource {
     _private: (),
 }
 impl ListLicenseSpecificationsForResource {
-    /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceInput`](crate::input::ListLicenseSpecificationsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceInput`](crate::input::ListLicenseSpecificationsForResourceInput).
     pub fn builder() -> crate::input::list_license_specifications_for_resource_input::Builder {
         crate::input::list_license_specifications_for_resource_input::Builder::default()
     }
@@ -1156,7 +1156,7 @@ pub struct ListLicenseVersions {
     _private: (),
 }
 impl ListLicenseVersions {
-    /// Creates a new builder-style object to manufacture [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListLicenseVersionsInput`](crate::input::ListLicenseVersionsInput).
     pub fn builder() -> crate::input::list_license_versions_input::Builder {
         crate::input::list_license_versions_input::Builder::default()
     }
@@ -1190,7 +1190,7 @@ pub struct ListReceivedGrants {
     _private: (),
 }
 impl ListReceivedGrants {
-    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput)
+    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsInput`](crate::input::ListReceivedGrantsInput).
     pub fn builder() -> crate::input::list_received_grants_input::Builder {
         crate::input::list_received_grants_input::Builder::default()
     }
@@ -1224,7 +1224,7 @@ pub struct ListReceivedLicenses {
     _private: (),
 }
 impl ListReceivedLicenses {
-    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput)
+    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesInput`](crate::input::ListReceivedLicensesInput).
     pub fn builder() -> crate::input::list_received_licenses_input::Builder {
         crate::input::list_received_licenses_input::Builder::default()
     }
@@ -1258,7 +1258,7 @@ pub struct ListResourceInventory {
     _private: (),
 }
 impl ListResourceInventory {
-    /// Creates a new builder-style object to manufacture [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput)
+    /// Creates a new builder-style object to manufacture [`ListResourceInventoryInput`](crate::input::ListResourceInventoryInput).
     pub fn builder() -> crate::input::list_resource_inventory_input::Builder {
         crate::input::list_resource_inventory_input::Builder::default()
     }
@@ -1292,7 +1292,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1326,7 +1326,7 @@ pub struct ListTokens {
     _private: (),
 }
 impl ListTokens {
-    /// Creates a new builder-style object to manufacture [`ListTokensInput`](crate::input::ListTokensInput)
+    /// Creates a new builder-style object to manufacture [`ListTokensInput`](crate::input::ListTokensInput).
     pub fn builder() -> crate::input::list_tokens_input::Builder {
         crate::input::list_tokens_input::Builder::default()
     }
@@ -1358,7 +1358,7 @@ pub struct ListUsageForLicenseConfiguration {
     _private: (),
 }
 impl ListUsageForLicenseConfiguration {
-    /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationInput`](crate::input::ListUsageForLicenseConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationInput`](crate::input::ListUsageForLicenseConfigurationInput).
     pub fn builder() -> crate::input::list_usage_for_license_configuration_input::Builder {
         crate::input::list_usage_for_license_configuration_input::Builder::default()
     }
@@ -1392,7 +1392,7 @@ pub struct RejectGrant {
     _private: (),
 }
 impl RejectGrant {
-    /// Creates a new builder-style object to manufacture [`RejectGrantInput`](crate::input::RejectGrantInput)
+    /// Creates a new builder-style object to manufacture [`RejectGrantInput`](crate::input::RejectGrantInput).
     pub fn builder() -> crate::input::reject_grant_input::Builder {
         crate::input::reject_grant_input::Builder::default()
     }
@@ -1424,7 +1424,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1456,7 +1456,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1488,7 +1488,7 @@ pub struct UpdateLicenseConfiguration {
     _private: (),
 }
 impl UpdateLicenseConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationInput`](crate::input::UpdateLicenseConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationInput`](crate::input::UpdateLicenseConfigurationInput).
     pub fn builder() -> crate::input::update_license_configuration_input::Builder {
         crate::input::update_license_configuration_input::Builder::default()
     }
@@ -1522,7 +1522,7 @@ pub struct UpdateLicenseManagerReportGenerator {
     _private: (),
 }
 impl UpdateLicenseManagerReportGenerator {
-    /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorInput`](crate::input::UpdateLicenseManagerReportGeneratorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorInput`](crate::input::UpdateLicenseManagerReportGeneratorInput).
     pub fn builder() -> crate::input::update_license_manager_report_generator_input::Builder {
         crate::input::update_license_manager_report_generator_input::Builder::default()
     }
@@ -1556,7 +1556,7 @@ pub struct UpdateLicenseSpecificationsForResource {
     _private: (),
 }
 impl UpdateLicenseSpecificationsForResource {
-    /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceInput`](crate::input::UpdateLicenseSpecificationsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceInput`](crate::input::UpdateLicenseSpecificationsForResourceInput).
     pub fn builder() -> crate::input::update_license_specifications_for_resource_input::Builder {
         crate::input::update_license_specifications_for_resource_input::Builder::default()
     }
@@ -1592,7 +1592,7 @@ pub struct UpdateServiceSettings {
     _private: (),
 }
 impl UpdateServiceSettings {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsInput`](crate::input::UpdateServiceSettingsInput).
     pub fn builder() -> crate::input::update_service_settings_input::Builder {
         crate::input::update_service_settings_input::Builder::default()
     }

@@ -56,11 +56,10 @@ impl std::fmt::Debug for ResourceAttribute {
         formatter.finish()
     }
 }
-/// See [`ResourceAttribute`](crate::model::ResourceAttribute)
+/// See [`ResourceAttribute`](crate::model::ResourceAttribute).
 pub mod resource_attribute {
 
-    /// A builder for [`ResourceAttribute`](crate::model::ResourceAttribute)
-    #[non_exhaustive]
+    /// A builder for [`ResourceAttribute`](crate::model::ResourceAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ResourceAttributeType>,
@@ -90,7 +89,7 @@ pub mod resource_attribute {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceAttribute`](crate::model::ResourceAttribute)
+        /// Consumes the builder and constructs a [`ResourceAttribute`](crate::model::ResourceAttribute).
         pub fn build(self) -> crate::model::ResourceAttribute {
             crate::model::ResourceAttribute {
                 r#type: self.r#type,
@@ -100,7 +99,7 @@ pub mod resource_attribute {
     }
 }
 impl ResourceAttribute {
-    /// Creates a new builder-style object to manufacture [`ResourceAttribute`](crate::model::ResourceAttribute)
+    /// Creates a new builder-style object to manufacture [`ResourceAttribute`](crate::model::ResourceAttribute).
     pub fn builder() -> crate::model::resource_attribute::Builder {
         crate::model::resource_attribute::Builder::default()
     }
@@ -238,11 +237,10 @@ impl std::fmt::Debug for Task {
         formatter.finish()
     }
 }
-/// See [`Task`](crate::model::Task)
+/// See [`Task`](crate::model::Task).
 pub mod task {
 
-    /// A builder for [`Task`](crate::model::Task)
-    #[non_exhaustive]
+    /// A builder for [`Task`](crate::model::Task).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -283,7 +281,7 @@ pub mod task {
             self.progress_percent = input;
             self
         }
-        /// Consumes the builder and constructs a [`Task`](crate::model::Task)
+        /// Consumes the builder and constructs a [`Task`](crate::model::Task).
         pub fn build(self) -> crate::model::Task {
             crate::model::Task {
                 status: self.status,
@@ -294,7 +292,7 @@ pub mod task {
     }
 }
 impl Task {
-    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task)
+    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task).
     pub fn builder() -> crate::model::task::Builder {
         crate::model::task::Builder::default()
     }
@@ -445,11 +443,10 @@ impl std::fmt::Debug for ProgressUpdateStreamSummary {
         formatter.finish()
     }
 }
-/// See [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary)
+/// See [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
 pub mod progress_update_stream_summary {
 
-    /// A builder for [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary)
-    #[non_exhaustive]
+    /// A builder for [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
@@ -471,7 +468,7 @@ pub mod progress_update_stream_summary {
             self.progress_update_stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary)
+        /// Consumes the builder and constructs a [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
         pub fn build(self) -> crate::model::ProgressUpdateStreamSummary {
             crate::model::ProgressUpdateStreamSummary {
                 progress_update_stream_name: self.progress_update_stream_name,
@@ -480,7 +477,7 @@ pub mod progress_update_stream_summary {
     }
 }
 impl ProgressUpdateStreamSummary {
-    /// Creates a new builder-style object to manufacture [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary)
+    /// Creates a new builder-style object to manufacture [`ProgressUpdateStreamSummary`](crate::model::ProgressUpdateStreamSummary).
     pub fn builder() -> crate::model::progress_update_stream_summary::Builder {
         crate::model::progress_update_stream_summary::Builder::default()
     }
@@ -541,11 +538,10 @@ impl std::fmt::Debug for MigrationTaskSummary {
         formatter.finish()
     }
 }
-/// See [`MigrationTaskSummary`](crate::model::MigrationTaskSummary)
+/// See [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
 pub mod migration_task_summary {
 
-    /// A builder for [`MigrationTaskSummary`](crate::model::MigrationTaskSummary)
-    #[non_exhaustive]
+    /// A builder for [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -628,7 +624,7 @@ pub mod migration_task_summary {
             self.update_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`MigrationTaskSummary`](crate::model::MigrationTaskSummary)
+        /// Consumes the builder and constructs a [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
         pub fn build(self) -> crate::model::MigrationTaskSummary {
             crate::model::MigrationTaskSummary {
                 progress_update_stream: self.progress_update_stream,
@@ -642,7 +638,7 @@ pub mod migration_task_summary {
     }
 }
 impl MigrationTaskSummary {
-    /// Creates a new builder-style object to manufacture [`MigrationTaskSummary`](crate::model::MigrationTaskSummary)
+    /// Creates a new builder-style object to manufacture [`MigrationTaskSummary`](crate::model::MigrationTaskSummary).
     pub fn builder() -> crate::model::migration_task_summary::Builder {
         crate::model::migration_task_summary::Builder::default()
     }
@@ -675,11 +671,10 @@ impl std::fmt::Debug for DiscoveredResource {
         formatter.finish()
     }
 }
-/// See [`DiscoveredResource`](crate::model::DiscoveredResource)
+/// See [`DiscoveredResource`](crate::model::DiscoveredResource).
 pub mod discovered_resource {
 
-    /// A builder for [`DiscoveredResource`](crate::model::DiscoveredResource)
-    #[non_exhaustive]
+    /// A builder for [`DiscoveredResource`](crate::model::DiscoveredResource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
@@ -709,7 +704,7 @@ pub mod discovered_resource {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`DiscoveredResource`](crate::model::DiscoveredResource)
+        /// Consumes the builder and constructs a [`DiscoveredResource`](crate::model::DiscoveredResource).
         pub fn build(self) -> crate::model::DiscoveredResource {
             crate::model::DiscoveredResource {
                 configuration_id: self.configuration_id,
@@ -719,7 +714,7 @@ pub mod discovered_resource {
     }
 }
 impl DiscoveredResource {
-    /// Creates a new builder-style object to manufacture [`DiscoveredResource`](crate::model::DiscoveredResource)
+    /// Creates a new builder-style object to manufacture [`DiscoveredResource`](crate::model::DiscoveredResource).
     pub fn builder() -> crate::model::discovered_resource::Builder {
         crate::model::discovered_resource::Builder::default()
     }
@@ -752,11 +747,10 @@ impl std::fmt::Debug for CreatedArtifact {
         formatter.finish()
     }
 }
-/// See [`CreatedArtifact`](crate::model::CreatedArtifact)
+/// See [`CreatedArtifact`](crate::model::CreatedArtifact).
 pub mod created_artifact {
 
-    /// A builder for [`CreatedArtifact`](crate::model::CreatedArtifact)
-    #[non_exhaustive]
+    /// A builder for [`CreatedArtifact`](crate::model::CreatedArtifact).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -783,7 +777,7 @@ pub mod created_artifact {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatedArtifact`](crate::model::CreatedArtifact)
+        /// Consumes the builder and constructs a [`CreatedArtifact`](crate::model::CreatedArtifact).
         pub fn build(self) -> crate::model::CreatedArtifact {
             crate::model::CreatedArtifact {
                 name: self.name,
@@ -793,7 +787,7 @@ pub mod created_artifact {
     }
 }
 impl CreatedArtifact {
-    /// Creates a new builder-style object to manufacture [`CreatedArtifact`](crate::model::CreatedArtifact)
+    /// Creates a new builder-style object to manufacture [`CreatedArtifact`](crate::model::CreatedArtifact).
     pub fn builder() -> crate::model::created_artifact::Builder {
         crate::model::created_artifact::Builder::default()
     }
@@ -833,11 +827,10 @@ impl std::fmt::Debug for ApplicationState {
         formatter.finish()
     }
 }
-/// See [`ApplicationState`](crate::model::ApplicationState)
+/// See [`ApplicationState`](crate::model::ApplicationState).
 pub mod application_state {
 
-    /// A builder for [`ApplicationState`](crate::model::ApplicationState)
-    #[non_exhaustive]
+    /// A builder for [`ApplicationState`](crate::model::ApplicationState).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
@@ -884,7 +877,7 @@ pub mod application_state {
             self.last_updated_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApplicationState`](crate::model::ApplicationState)
+        /// Consumes the builder and constructs a [`ApplicationState`](crate::model::ApplicationState).
         pub fn build(self) -> crate::model::ApplicationState {
             crate::model::ApplicationState {
                 application_id: self.application_id,
@@ -895,7 +888,7 @@ pub mod application_state {
     }
 }
 impl ApplicationState {
-    /// Creates a new builder-style object to manufacture [`ApplicationState`](crate::model::ApplicationState)
+    /// Creates a new builder-style object to manufacture [`ApplicationState`](crate::model::ApplicationState).
     pub fn builder() -> crate::model::application_state::Builder {
         crate::model::application_state::Builder::default()
     }
@@ -952,11 +945,10 @@ impl std::fmt::Debug for MigrationTask {
         formatter.finish()
     }
 }
-/// See [`MigrationTask`](crate::model::MigrationTask)
+/// See [`MigrationTask`](crate::model::MigrationTask).
 pub mod migration_task {
 
-    /// A builder for [`MigrationTask`](crate::model::MigrationTask)
-    #[non_exhaustive]
+    /// A builder for [`MigrationTask`](crate::model::MigrationTask).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
@@ -1035,7 +1027,7 @@ pub mod migration_task {
             self.resource_attribute_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`MigrationTask`](crate::model::MigrationTask)
+        /// Consumes the builder and constructs a [`MigrationTask`](crate::model::MigrationTask).
         pub fn build(self) -> crate::model::MigrationTask {
             crate::model::MigrationTask {
                 progress_update_stream: self.progress_update_stream,
@@ -1048,7 +1040,7 @@ pub mod migration_task {
     }
 }
 impl MigrationTask {
-    /// Creates a new builder-style object to manufacture [`MigrationTask`](crate::model::MigrationTask)
+    /// Creates a new builder-style object to manufacture [`MigrationTask`](crate::model::MigrationTask).
     pub fn builder() -> crate::model::migration_task::Builder {
         crate::model::migration_task::Builder::default()
     }

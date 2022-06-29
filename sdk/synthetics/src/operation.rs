@@ -10,7 +10,7 @@ pub struct CreateCanary {
     _private: (),
 }
 impl CreateCanary {
-    /// Creates a new builder-style object to manufacture [`CreateCanaryInput`](crate::input::CreateCanaryInput)
+    /// Creates a new builder-style object to manufacture [`CreateCanaryInput`](crate::input::CreateCanaryInput).
     pub fn builder() -> crate::input::create_canary_input::Builder {
         crate::input::create_canary_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DeleteCanary {
     _private: (),
 }
 impl DeleteCanary {
-    /// Creates a new builder-style object to manufacture [`DeleteCanaryInput`](crate::input::DeleteCanaryInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCanaryInput`](crate::input::DeleteCanaryInput).
     pub fn builder() -> crate::input::delete_canary_input::Builder {
         crate::input::delete_canary_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct DescribeCanaries {
     _private: (),
 }
 impl DescribeCanaries {
-    /// Creates a new builder-style object to manufacture [`DescribeCanariesInput`](crate::input::DescribeCanariesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCanariesInput`](crate::input::DescribeCanariesInput).
     pub fn builder() -> crate::input::describe_canaries_input::Builder {
         crate::input::describe_canaries_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct DescribeCanariesLastRun {
     _private: (),
 }
 impl DescribeCanariesLastRun {
-    /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunInput`](crate::input::DescribeCanariesLastRunInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunInput`](crate::input::DescribeCanariesLastRunInput).
     pub fn builder() -> crate::input::describe_canaries_last_run_input::Builder {
         crate::input::describe_canaries_last_run_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DescribeRuntimeVersions {
     _private: (),
 }
 impl DescribeRuntimeVersions {
-    /// Creates a new builder-style object to manufacture [`DescribeRuntimeVersionsInput`](crate::input::DescribeRuntimeVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRuntimeVersionsInput`](crate::input::DescribeRuntimeVersionsInput).
     pub fn builder() -> crate::input::describe_runtime_versions_input::Builder {
         crate::input::describe_runtime_versions_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct GetCanary {
     _private: (),
 }
 impl GetCanary {
-    /// Creates a new builder-style object to manufacture [`GetCanaryInput`](crate::input::GetCanaryInput)
+    /// Creates a new builder-style object to manufacture [`GetCanaryInput`](crate::input::GetCanaryInput).
     pub fn builder() -> crate::input::get_canary_input::Builder {
         crate::input::get_canary_input::Builder::default()
     }
@@ -207,7 +207,7 @@ pub struct GetCanaryRuns {
     _private: (),
 }
 impl GetCanaryRuns {
-    /// Creates a new builder-style object to manufacture [`GetCanaryRunsInput`](crate::input::GetCanaryRunsInput)
+    /// Creates a new builder-style object to manufacture [`GetCanaryRunsInput`](crate::input::GetCanaryRunsInput).
     pub fn builder() -> crate::input::get_canary_runs_input::Builder {
         crate::input::get_canary_runs_input::Builder::default()
     }
@@ -239,7 +239,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -273,7 +273,7 @@ pub struct StartCanary {
     _private: (),
 }
 impl StartCanary {
-    /// Creates a new builder-style object to manufacture [`StartCanaryInput`](crate::input::StartCanaryInput)
+    /// Creates a new builder-style object to manufacture [`StartCanaryInput`](crate::input::StartCanaryInput).
     pub fn builder() -> crate::input::start_canary_input::Builder {
         crate::input::start_canary_input::Builder::default()
     }
@@ -305,7 +305,7 @@ pub struct StopCanary {
     _private: (),
 }
 impl StopCanary {
-    /// Creates a new builder-style object to manufacture [`StopCanaryInput`](crate::input::StopCanaryInput)
+    /// Creates a new builder-style object to manufacture [`StopCanaryInput`](crate::input::StopCanaryInput).
     pub fn builder() -> crate::input::stop_canary_input::Builder {
         crate::input::stop_canary_input::Builder::default()
     }
@@ -337,7 +337,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -369,7 +369,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -401,7 +401,7 @@ pub struct UpdateCanary {
     _private: (),
 }
 impl UpdateCanary {
-    /// Creates a new builder-style object to manufacture [`UpdateCanaryInput`](crate::input::UpdateCanaryInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCanaryInput`](crate::input::UpdateCanaryInput).
     pub fn builder() -> crate::input::update_canary_input::Builder {
         crate::input::update_canary_input::Builder::default()
     }

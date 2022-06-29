@@ -221,11 +221,10 @@ impl std::fmt::Display for MarketplaceCommerceAnalyticsException {
     }
 }
 impl std::error::Error for MarketplaceCommerceAnalyticsException {}
-/// See [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException)
+/// See [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
 pub mod marketplace_commerce_analytics_exception {
 
-    /// A builder for [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException)
-    #[non_exhaustive]
+    /// A builder for [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -241,7 +240,7 @@ pub mod marketplace_commerce_analytics_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException)
+        /// Consumes the builder and constructs a [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
         pub fn build(self) -> crate::error::MarketplaceCommerceAnalyticsException {
             crate::error::MarketplaceCommerceAnalyticsException {
                 message: self.message,
@@ -250,7 +249,7 @@ pub mod marketplace_commerce_analytics_exception {
     }
 }
 impl MarketplaceCommerceAnalyticsException {
-    /// Creates a new builder-style object to manufacture [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException)
+    /// Creates a new builder-style object to manufacture [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
     pub fn builder() -> crate::error::marketplace_commerce_analytics_exception::Builder {
         crate::error::marketplace_commerce_analytics_exception::Builder::default()
     }

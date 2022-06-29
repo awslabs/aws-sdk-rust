@@ -27,11 +27,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -68,7 +67,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -181,11 +180,10 @@ impl std::fmt::Debug for BgpPeer {
         formatter.finish()
     }
 }
-/// See [`BgpPeer`](crate::model::BgpPeer)
+/// See [`BgpPeer`](crate::model::BgpPeer).
 pub mod bgp_peer {
 
-    /// A builder for [`BgpPeer`](crate::model::BgpPeer)
-    #[non_exhaustive]
+    /// A builder for [`BgpPeer`](crate::model::BgpPeer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bgp_peer_id: std::option::Option<std::string::String>,
@@ -345,7 +343,7 @@ pub mod bgp_peer {
             self.aws_logical_device_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`BgpPeer`](crate::model::BgpPeer)
+        /// Consumes the builder and constructs a [`BgpPeer`](crate::model::BgpPeer).
         pub fn build(self) -> crate::model::BgpPeer {
             crate::model::BgpPeer {
                 bgp_peer_id: self.bgp_peer_id,
@@ -363,7 +361,7 @@ pub mod bgp_peer {
     }
 }
 impl BgpPeer {
-    /// Creates a new builder-style object to manufacture [`BgpPeer`](crate::model::BgpPeer)
+    /// Creates a new builder-style object to manufacture [`BgpPeer`](crate::model::BgpPeer).
     pub fn builder() -> crate::model::bgp_peer::Builder {
         crate::model::bgp_peer::Builder::default()
     }
@@ -570,11 +568,10 @@ impl std::fmt::Debug for RouteFilterPrefix {
         formatter.finish()
     }
 }
-/// See [`RouteFilterPrefix`](crate::model::RouteFilterPrefix)
+/// See [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
 pub mod route_filter_prefix {
 
-    /// A builder for [`RouteFilterPrefix`](crate::model::RouteFilterPrefix)
-    #[non_exhaustive]
+    /// A builder for [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
@@ -590,14 +587,14 @@ pub mod route_filter_prefix {
             self.cidr = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteFilterPrefix`](crate::model::RouteFilterPrefix)
+        /// Consumes the builder and constructs a [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
         pub fn build(self) -> crate::model::RouteFilterPrefix {
             crate::model::RouteFilterPrefix { cidr: self.cidr }
         }
     }
 }
 impl RouteFilterPrefix {
-    /// Creates a new builder-style object to manufacture [`RouteFilterPrefix`](crate::model::RouteFilterPrefix)
+    /// Creates a new builder-style object to manufacture [`RouteFilterPrefix`](crate::model::RouteFilterPrefix).
     pub fn builder() -> crate::model::route_filter_prefix::Builder {
         crate::model::route_filter_prefix::Builder::default()
     }
@@ -751,11 +748,10 @@ impl std::fmt::Debug for MacSecKey {
         formatter.finish()
     }
 }
-/// See [`MacSecKey`](crate::model::MacSecKey)
+/// See [`MacSecKey`](crate::model::MacSecKey).
 pub mod mac_sec_key {
 
-    /// A builder for [`MacSecKey`](crate::model::MacSecKey)
-    #[non_exhaustive]
+    /// A builder for [`MacSecKey`](crate::model::MacSecKey).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) secret_arn: std::option::Option<std::string::String>,
@@ -818,7 +814,7 @@ pub mod mac_sec_key {
             self.start_on = input;
             self
         }
-        /// Consumes the builder and constructs a [`MacSecKey`](crate::model::MacSecKey)
+        /// Consumes the builder and constructs a [`MacSecKey`](crate::model::MacSecKey).
         pub fn build(self) -> crate::model::MacSecKey {
             crate::model::MacSecKey {
                 secret_arn: self.secret_arn,
@@ -830,7 +826,7 @@ pub mod mac_sec_key {
     }
 }
 impl MacSecKey {
-    /// Creates a new builder-style object to manufacture [`MacSecKey`](crate::model::MacSecKey)
+    /// Creates a new builder-style object to manufacture [`MacSecKey`](crate::model::MacSecKey).
     pub fn builder() -> crate::model::mac_sec_key::Builder {
         crate::model::mac_sec_key::Builder::default()
     }
@@ -1090,11 +1086,10 @@ impl std::fmt::Debug for Connection {
         formatter.finish()
     }
 }
-/// See [`Connection`](crate::model::Connection)
+/// See [`Connection`](crate::model::Connection).
 pub mod connection {
 
-    /// A builder for [`Connection`](crate::model::Connection)
-    #[non_exhaustive]
+    /// A builder for [`Connection`](crate::model::Connection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -1418,7 +1413,7 @@ pub mod connection {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`Connection`](crate::model::Connection)
+        /// Consumes the builder and constructs a [`Connection`](crate::model::Connection).
         pub fn build(self) -> crate::model::Connection {
             crate::model::Connection {
                 owner_account: self.owner_account,
@@ -1448,7 +1443,7 @@ pub mod connection {
     }
 }
 impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection)
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
     pub fn builder() -> crate::model::connection::Builder {
         crate::model::connection::Builder::default()
     }
@@ -1739,11 +1734,10 @@ impl std::fmt::Debug for DirectConnectGatewayAssociation {
         formatter.finish()
     }
 }
-/// See [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation)
+/// See [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
 pub mod direct_connect_gateway_association {
 
-    /// A builder for [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation)
-    #[non_exhaustive]
+    /// A builder for [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -1922,7 +1916,7 @@ pub mod direct_connect_gateway_association {
             self.virtual_gateway_owner_account = input;
             self
         }
-        /// Consumes the builder and constructs a [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation)
+        /// Consumes the builder and constructs a [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
         pub fn build(self) -> crate::model::DirectConnectGatewayAssociation {
             crate::model::DirectConnectGatewayAssociation {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -1941,7 +1935,7 @@ pub mod direct_connect_gateway_association {
     }
 }
 impl DirectConnectGatewayAssociation {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation)
+    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociation`](crate::model::DirectConnectGatewayAssociation).
     pub fn builder() -> crate::model::direct_connect_gateway_association::Builder {
         crate::model::direct_connect_gateway_association::Builder::default()
     }
@@ -1988,11 +1982,10 @@ impl std::fmt::Debug for AssociatedGateway {
         formatter.finish()
     }
 }
-/// See [`AssociatedGateway`](crate::model::AssociatedGateway)
+/// See [`AssociatedGateway`](crate::model::AssociatedGateway).
 pub mod associated_gateway {
 
-    /// A builder for [`AssociatedGateway`](crate::model::AssociatedGateway)
-    #[non_exhaustive]
+    /// A builder for [`AssociatedGateway`](crate::model::AssociatedGateway).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2044,7 +2037,7 @@ pub mod associated_gateway {
             self.region = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociatedGateway`](crate::model::AssociatedGateway)
+        /// Consumes the builder and constructs a [`AssociatedGateway`](crate::model::AssociatedGateway).
         pub fn build(self) -> crate::model::AssociatedGateway {
             crate::model::AssociatedGateway {
                 id: self.id,
@@ -2056,7 +2049,7 @@ pub mod associated_gateway {
     }
 }
 impl AssociatedGateway {
-    /// Creates a new builder-style object to manufacture [`AssociatedGateway`](crate::model::AssociatedGateway)
+    /// Creates a new builder-style object to manufacture [`AssociatedGateway`](crate::model::AssociatedGateway).
     pub fn builder() -> crate::model::associated_gateway::Builder {
         crate::model::associated_gateway::Builder::default()
     }
@@ -2265,11 +2258,10 @@ impl std::fmt::Debug for DirectConnectGateway {
         formatter.finish()
     }
 }
-/// See [`DirectConnectGateway`](crate::model::DirectConnectGateway)
+/// See [`DirectConnectGateway`](crate::model::DirectConnectGateway).
 pub mod direct_connect_gateway {
 
-    /// A builder for [`DirectConnectGateway`](crate::model::DirectConnectGateway)
-    #[non_exhaustive]
+    /// A builder for [`DirectConnectGateway`](crate::model::DirectConnectGateway).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -2374,7 +2366,7 @@ pub mod direct_connect_gateway {
             self.state_change_error = input;
             self
         }
-        /// Consumes the builder and constructs a [`DirectConnectGateway`](crate::model::DirectConnectGateway)
+        /// Consumes the builder and constructs a [`DirectConnectGateway`](crate::model::DirectConnectGateway).
         pub fn build(self) -> crate::model::DirectConnectGateway {
             crate::model::DirectConnectGateway {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -2388,7 +2380,7 @@ pub mod direct_connect_gateway {
     }
 }
 impl DirectConnectGateway {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGateway`](crate::model::DirectConnectGateway)
+    /// Creates a new builder-style object to manufacture [`DirectConnectGateway`](crate::model::DirectConnectGateway).
     pub fn builder() -> crate::model::direct_connect_gateway::Builder {
         crate::model::direct_connect_gateway::Builder::default()
     }
@@ -2526,11 +2518,10 @@ impl std::fmt::Debug for VirtualInterfaceTestHistory {
         formatter.finish()
     }
 }
-/// See [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory)
+/// See [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
 pub mod virtual_interface_test_history {
 
-    /// A builder for [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory)
-    #[non_exhaustive]
+    /// A builder for [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_id: std::option::Option<std::string::String>,
@@ -2644,7 +2635,7 @@ pub mod virtual_interface_test_history {
             self.end_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory)
+        /// Consumes the builder and constructs a [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
         pub fn build(self) -> crate::model::VirtualInterfaceTestHistory {
             crate::model::VirtualInterfaceTestHistory {
                 test_id: self.test_id,
@@ -2660,7 +2651,7 @@ pub mod virtual_interface_test_history {
     }
 }
 impl VirtualInterfaceTestHistory {
-    /// Creates a new builder-style object to manufacture [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory)
+    /// Creates a new builder-style object to manufacture [`VirtualInterfaceTestHistory`](crate::model::VirtualInterfaceTestHistory).
     pub fn builder() -> crate::model::virtual_interface_test_history::Builder {
         crate::model::virtual_interface_test_history::Builder::default()
     }
@@ -2887,11 +2878,10 @@ impl std::fmt::Debug for VirtualInterface {
         formatter.finish()
     }
 }
-/// See [`VirtualInterface`](crate::model::VirtualInterface)
+/// See [`VirtualInterface`](crate::model::VirtualInterface).
 pub mod virtual_interface {
 
-    /// A builder for [`VirtualInterface`](crate::model::VirtualInterface)
-    #[non_exhaustive]
+    /// A builder for [`VirtualInterface`](crate::model::VirtualInterface).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -3280,7 +3270,7 @@ pub mod virtual_interface {
             self.site_link_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`VirtualInterface`](crate::model::VirtualInterface)
+        /// Consumes the builder and constructs a [`VirtualInterface`](crate::model::VirtualInterface).
         pub fn build(self) -> crate::model::VirtualInterface {
             crate::model::VirtualInterface {
                 owner_account: self.owner_account,
@@ -3314,7 +3304,7 @@ pub mod virtual_interface {
     }
 }
 impl VirtualInterface {
-    /// Creates a new builder-style object to manufacture [`VirtualInterface`](crate::model::VirtualInterface)
+    /// Creates a new builder-style object to manufacture [`VirtualInterface`](crate::model::VirtualInterface).
     pub fn builder() -> crate::model::virtual_interface::Builder {
         crate::model::virtual_interface::Builder::default()
     }
@@ -3359,11 +3349,10 @@ impl std::fmt::Debug for VirtualGateway {
         formatter.finish()
     }
 }
-/// See [`VirtualGateway`](crate::model::VirtualGateway)
+/// See [`VirtualGateway`](crate::model::VirtualGateway).
 pub mod virtual_gateway {
 
-    /// A builder for [`VirtualGateway`](crate::model::VirtualGateway)
-    #[non_exhaustive]
+    /// A builder for [`VirtualGateway`](crate::model::VirtualGateway).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
@@ -3408,7 +3397,7 @@ pub mod virtual_gateway {
             self.virtual_gateway_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`VirtualGateway`](crate::model::VirtualGateway)
+        /// Consumes the builder and constructs a [`VirtualGateway`](crate::model::VirtualGateway).
         pub fn build(self) -> crate::model::VirtualGateway {
             crate::model::VirtualGateway {
                 virtual_gateway_id: self.virtual_gateway_id,
@@ -3418,7 +3407,7 @@ pub mod virtual_gateway {
     }
 }
 impl VirtualGateway {
-    /// Creates a new builder-style object to manufacture [`VirtualGateway`](crate::model::VirtualGateway)
+    /// Creates a new builder-style object to manufacture [`VirtualGateway`](crate::model::VirtualGateway).
     pub fn builder() -> crate::model::virtual_gateway::Builder {
         crate::model::virtual_gateway::Builder::default()
     }
@@ -3451,11 +3440,10 @@ impl std::fmt::Debug for ResourceTag {
         formatter.finish()
     }
 }
-/// See [`ResourceTag`](crate::model::ResourceTag)
+/// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
-    /// A builder for [`ResourceTag`](crate::model::ResourceTag)
-    #[non_exhaustive]
+    /// A builder for [`ResourceTag`](crate::model::ResourceTag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -3491,7 +3479,7 @@ pub mod resource_tag {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag)
+        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag).
         pub fn build(self) -> crate::model::ResourceTag {
             crate::model::ResourceTag {
                 resource_arn: self.resource_arn,
@@ -3501,7 +3489,7 @@ pub mod resource_tag {
     }
 }
 impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag)
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
     pub fn builder() -> crate::model::resource_tag::Builder {
         crate::model::resource_tag::Builder::default()
     }
@@ -3565,11 +3553,10 @@ impl std::fmt::Debug for RouterType {
         formatter.finish()
     }
 }
-/// See [`RouterType`](crate::model::RouterType)
+/// See [`RouterType`](crate::model::RouterType).
 pub mod router_type {
 
-    /// A builder for [`RouterType`](crate::model::RouterType)
-    #[non_exhaustive]
+    /// A builder for [`RouterType`](crate::model::RouterType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vendor: std::option::Option<std::string::String>,
@@ -3652,7 +3639,7 @@ pub mod router_type {
             self.router_type_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouterType`](crate::model::RouterType)
+        /// Consumes the builder and constructs a [`RouterType`](crate::model::RouterType).
         pub fn build(self) -> crate::model::RouterType {
             crate::model::RouterType {
                 vendor: self.vendor,
@@ -3666,7 +3653,7 @@ pub mod router_type {
     }
 }
 impl RouterType {
-    /// Creates a new builder-style object to manufacture [`RouterType`](crate::model::RouterType)
+    /// Creates a new builder-style object to manufacture [`RouterType`](crate::model::RouterType).
     pub fn builder() -> crate::model::router_type::Builder {
         crate::model::router_type::Builder::default()
     }
@@ -3730,11 +3717,10 @@ impl std::fmt::Debug for Location {
         formatter.finish()
     }
 }
-/// See [`Location`](crate::model::Location)
+/// See [`Location`](crate::model::Location).
 pub mod location {
 
-    /// A builder for [`Location`](crate::model::Location)
-    #[non_exhaustive]
+    /// A builder for [`Location`](crate::model::Location).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location_code: std::option::Option<std::string::String>,
@@ -3842,7 +3828,7 @@ pub mod location {
             self.available_mac_sec_port_speeds = input;
             self
         }
-        /// Consumes the builder and constructs a [`Location`](crate::model::Location)
+        /// Consumes the builder and constructs a [`Location`](crate::model::Location).
         pub fn build(self) -> crate::model::Location {
             crate::model::Location {
                 location_code: self.location_code,
@@ -3856,7 +3842,7 @@ pub mod location {
     }
 }
 impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location)
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
     pub fn builder() -> crate::model::location::Builder {
         crate::model::location::Builder::default()
     }
@@ -4095,11 +4081,10 @@ impl std::fmt::Debug for Lag {
         formatter.finish()
     }
 }
-/// See [`Lag`](crate::model::Lag)
+/// See [`Lag`](crate::model::Lag).
 pub mod lag {
 
-    /// A builder for [`Lag`](crate::model::Lag)
-    #[non_exhaustive]
+    /// A builder for [`Lag`](crate::model::Lag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
@@ -4403,7 +4388,7 @@ pub mod lag {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`Lag`](crate::model::Lag)
+        /// Consumes the builder and constructs a [`Lag`](crate::model::Lag).
         pub fn build(self) -> crate::model::Lag {
             crate::model::Lag {
                 connections_bandwidth: self.connections_bandwidth,
@@ -4432,7 +4417,7 @@ pub mod lag {
     }
 }
 impl Lag {
-    /// Creates a new builder-style object to manufacture [`Lag`](crate::model::Lag)
+    /// Creates a new builder-style object to manufacture [`Lag`](crate::model::Lag).
     pub fn builder() -> crate::model::lag::Builder {
         crate::model::lag::Builder::default()
     }
@@ -4576,11 +4561,10 @@ impl std::fmt::Debug for Interconnect {
         formatter.finish()
     }
 }
-/// See [`Interconnect`](crate::model::Interconnect)
+/// See [`Interconnect`](crate::model::Interconnect).
 pub mod interconnect {
 
-    /// A builder for [`Interconnect`](crate::model::Interconnect)
-    #[non_exhaustive]
+    /// A builder for [`Interconnect`](crate::model::Interconnect).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
@@ -4801,7 +4785,7 @@ pub mod interconnect {
             self.provider_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Interconnect`](crate::model::Interconnect)
+        /// Consumes the builder and constructs a [`Interconnect`](crate::model::Interconnect).
         pub fn build(self) -> crate::model::Interconnect {
             crate::model::Interconnect {
                 interconnect_id: self.interconnect_id,
@@ -4824,7 +4808,7 @@ pub mod interconnect {
     }
 }
 impl Interconnect {
-    /// Creates a new builder-style object to manufacture [`Interconnect`](crate::model::Interconnect)
+    /// Creates a new builder-style object to manufacture [`Interconnect`](crate::model::Interconnect).
     pub fn builder() -> crate::model::interconnect::Builder {
         crate::model::interconnect::Builder::default()
     }
@@ -4940,11 +4924,10 @@ impl std::fmt::Debug for Loa {
         formatter.finish()
     }
 }
-/// See [`Loa`](crate::model::Loa)
+/// See [`Loa`](crate::model::Loa).
 pub mod loa {
 
-    /// A builder for [`Loa`](crate::model::Loa)
-    #[non_exhaustive]
+    /// A builder for [`Loa`](crate::model::Loa).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa_content: std::option::Option<aws_smithy_types::Blob>,
@@ -4977,7 +4960,7 @@ pub mod loa {
             self.loa_content_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`Loa`](crate::model::Loa)
+        /// Consumes the builder and constructs a [`Loa`](crate::model::Loa).
         pub fn build(self) -> crate::model::Loa {
             crate::model::Loa {
                 loa_content: self.loa_content,
@@ -4987,7 +4970,7 @@ pub mod loa {
     }
 }
 impl Loa {
-    /// Creates a new builder-style object to manufacture [`Loa`](crate::model::Loa)
+    /// Creates a new builder-style object to manufacture [`Loa`](crate::model::Loa).
     pub fn builder() -> crate::model::loa::Builder {
         crate::model::loa::Builder::default()
     }
@@ -5074,11 +5057,10 @@ impl std::fmt::Debug for DirectConnectGatewayAttachment {
         formatter.finish()
     }
 }
-/// See [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment)
+/// See [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
 pub mod direct_connect_gateway_attachment {
 
-    /// A builder for [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment)
-    #[non_exhaustive]
+    /// A builder for [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
@@ -5204,7 +5186,7 @@ pub mod direct_connect_gateway_attachment {
             self.state_change_error = input;
             self
         }
-        /// Consumes the builder and constructs a [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment)
+        /// Consumes the builder and constructs a [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
         pub fn build(self) -> crate::model::DirectConnectGatewayAttachment {
             crate::model::DirectConnectGatewayAttachment {
                 direct_connect_gateway_id: self.direct_connect_gateway_id,
@@ -5219,7 +5201,7 @@ pub mod direct_connect_gateway_attachment {
     }
 }
 impl DirectConnectGatewayAttachment {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment)
+    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAttachment`](crate::model::DirectConnectGatewayAttachment).
     pub fn builder() -> crate::model::direct_connect_gateway_attachment::Builder {
         crate::model::direct_connect_gateway_attachment::Builder::default()
     }
@@ -5443,11 +5425,10 @@ impl std::fmt::Debug for DirectConnectGatewayAssociationProposal {
         formatter.finish()
     }
 }
-/// See [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal)
+/// See [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
 pub mod direct_connect_gateway_association_proposal {
 
-    /// A builder for [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal)
-    #[non_exhaustive]
+    /// A builder for [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proposal_id: std::option::Option<std::string::String>,
@@ -5588,7 +5569,7 @@ pub mod direct_connect_gateway_association_proposal {
             self.requested_allowed_prefixes_to_direct_connect_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal)
+        /// Consumes the builder and constructs a [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
         pub fn build(self) -> crate::model::DirectConnectGatewayAssociationProposal {
             crate::model::DirectConnectGatewayAssociationProposal {
                 proposal_id: self.proposal_id,
@@ -5605,7 +5586,7 @@ pub mod direct_connect_gateway_association_proposal {
     }
 }
 impl DirectConnectGatewayAssociationProposal {
-    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal)
+    /// Creates a new builder-style object to manufacture [`DirectConnectGatewayAssociationProposal`](crate::model::DirectConnectGatewayAssociationProposal).
     pub fn builder() -> crate::model::direct_connect_gateway_association_proposal::Builder {
         crate::model::direct_connect_gateway_association_proposal::Builder::default()
     }
@@ -5756,11 +5737,10 @@ impl std::fmt::Debug for CustomerAgreement {
         formatter.finish()
     }
 }
-/// See [`CustomerAgreement`](crate::model::CustomerAgreement)
+/// See [`CustomerAgreement`](crate::model::CustomerAgreement).
 pub mod customer_agreement {
 
-    /// A builder for [`CustomerAgreement`](crate::model::CustomerAgreement)
-    #[non_exhaustive]
+    /// A builder for [`CustomerAgreement`](crate::model::CustomerAgreement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreement_name: std::option::Option<std::string::String>,
@@ -5790,7 +5770,7 @@ pub mod customer_agreement {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomerAgreement`](crate::model::CustomerAgreement)
+        /// Consumes the builder and constructs a [`CustomerAgreement`](crate::model::CustomerAgreement).
         pub fn build(self) -> crate::model::CustomerAgreement {
             crate::model::CustomerAgreement {
                 agreement_name: self.agreement_name,
@@ -5800,7 +5780,7 @@ pub mod customer_agreement {
     }
 }
 impl CustomerAgreement {
-    /// Creates a new builder-style object to manufacture [`CustomerAgreement`](crate::model::CustomerAgreement)
+    /// Creates a new builder-style object to manufacture [`CustomerAgreement`](crate::model::CustomerAgreement).
     pub fn builder() -> crate::model::customer_agreement::Builder {
         crate::model::customer_agreement::Builder::default()
     }
@@ -5898,11 +5878,10 @@ impl std::fmt::Debug for NewTransitVirtualInterface {
         formatter.finish()
     }
 }
-/// See [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface)
+/// See [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
 pub mod new_transit_virtual_interface {
 
-    /// A builder for [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface)
-    #[non_exhaustive]
+    /// A builder for [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
@@ -6054,7 +6033,7 @@ pub mod new_transit_virtual_interface {
             self.enable_site_link = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface)
+        /// Consumes the builder and constructs a [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
         pub fn build(self) -> crate::model::NewTransitVirtualInterface {
             crate::model::NewTransitVirtualInterface {
                 virtual_interface_name: self.virtual_interface_name,
@@ -6073,7 +6052,7 @@ pub mod new_transit_virtual_interface {
     }
 }
 impl NewTransitVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface)
+    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterface`](crate::model::NewTransitVirtualInterface).
     pub fn builder() -> crate::model::new_transit_virtual_interface::Builder {
         crate::model::new_transit_virtual_interface::Builder::default()
     }
@@ -6157,11 +6136,10 @@ impl std::fmt::Debug for NewPublicVirtualInterface {
         formatter.finish()
     }
 }
-/// See [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface)
+/// See [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
 pub mod new_public_virtual_interface {
 
-    /// A builder for [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface)
-    #[non_exhaustive]
+    /// A builder for [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
@@ -6298,7 +6276,7 @@ pub mod new_public_virtual_interface {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface)
+        /// Consumes the builder and constructs a [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
         pub fn build(self) -> crate::model::NewPublicVirtualInterface {
             crate::model::NewPublicVirtualInterface {
                 virtual_interface_name: self.virtual_interface_name,
@@ -6315,7 +6293,7 @@ pub mod new_public_virtual_interface {
     }
 }
 impl NewPublicVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface)
+    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterface`](crate::model::NewPublicVirtualInterface).
     pub fn builder() -> crate::model::new_public_virtual_interface::Builder {
         crate::model::new_public_virtual_interface::Builder::default()
     }
@@ -6420,11 +6398,10 @@ impl std::fmt::Debug for NewPrivateVirtualInterface {
         formatter.finish()
     }
 }
-/// See [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface)
+/// See [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
 pub mod new_private_virtual_interface {
 
-    /// A builder for [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface)
-    #[non_exhaustive]
+    /// A builder for [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
@@ -6590,7 +6567,7 @@ pub mod new_private_virtual_interface {
             self.enable_site_link = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface)
+        /// Consumes the builder and constructs a [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
         pub fn build(self) -> crate::model::NewPrivateVirtualInterface {
             crate::model::NewPrivateVirtualInterface {
                 virtual_interface_name: self.virtual_interface_name,
@@ -6610,7 +6587,7 @@ pub mod new_private_virtual_interface {
     }
 }
 impl NewPrivateVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface)
+    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterface`](crate::model::NewPrivateVirtualInterface).
     pub fn builder() -> crate::model::new_private_virtual_interface::Builder {
         crate::model::new_private_virtual_interface::Builder::default()
     }
@@ -6664,11 +6641,10 @@ impl std::fmt::Debug for NewBgpPeer {
         formatter.finish()
     }
 }
-/// See [`NewBgpPeer`](crate::model::NewBgpPeer)
+/// See [`NewBgpPeer`](crate::model::NewBgpPeer).
 pub mod new_bgp_peer {
 
-    /// A builder for [`NewBgpPeer`](crate::model::NewBgpPeer)
-    #[non_exhaustive]
+    /// A builder for [`NewBgpPeer`](crate::model::NewBgpPeer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asn: std::option::Option<i32>,
@@ -6737,7 +6713,7 @@ pub mod new_bgp_peer {
             self.customer_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewBgpPeer`](crate::model::NewBgpPeer)
+        /// Consumes the builder and constructs a [`NewBgpPeer`](crate::model::NewBgpPeer).
         pub fn build(self) -> crate::model::NewBgpPeer {
             crate::model::NewBgpPeer {
                 asn: self.asn.unwrap_or_default(),
@@ -6750,7 +6726,7 @@ pub mod new_bgp_peer {
     }
 }
 impl NewBgpPeer {
-    /// Creates a new builder-style object to manufacture [`NewBgpPeer`](crate::model::NewBgpPeer)
+    /// Creates a new builder-style object to manufacture [`NewBgpPeer`](crate::model::NewBgpPeer).
     pub fn builder() -> crate::model::new_bgp_peer::Builder {
         crate::model::new_bgp_peer::Builder::default()
     }
@@ -6834,11 +6810,10 @@ impl std::fmt::Debug for NewTransitVirtualInterfaceAllocation {
         formatter.finish()
     }
 }
-/// See [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation)
+/// See [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
 pub mod new_transit_virtual_interface_allocation {
 
-    /// A builder for [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation)
-    #[non_exhaustive]
+    /// A builder for [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
@@ -6965,7 +6940,7 @@ pub mod new_transit_virtual_interface_allocation {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation)
+        /// Consumes the builder and constructs a [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
         pub fn build(self) -> crate::model::NewTransitVirtualInterfaceAllocation {
             crate::model::NewTransitVirtualInterfaceAllocation {
                 virtual_interface_name: self.virtual_interface_name,
@@ -6982,7 +6957,7 @@ pub mod new_transit_virtual_interface_allocation {
     }
 }
 impl NewTransitVirtualInterfaceAllocation {
-    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation)
+    /// Creates a new builder-style object to manufacture [`NewTransitVirtualInterfaceAllocation`](crate::model::NewTransitVirtualInterfaceAllocation).
     pub fn builder() -> crate::model::new_transit_virtual_interface_allocation::Builder {
         crate::model::new_transit_virtual_interface_allocation::Builder::default()
     }
@@ -7066,11 +7041,10 @@ impl std::fmt::Debug for NewPublicVirtualInterfaceAllocation {
         formatter.finish()
     }
 }
-/// See [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation)
+/// See [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
 pub mod new_public_virtual_interface_allocation {
 
-    /// A builder for [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation)
-    #[non_exhaustive]
+    /// A builder for [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
@@ -7207,7 +7181,7 @@ pub mod new_public_virtual_interface_allocation {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation)
+        /// Consumes the builder and constructs a [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
         pub fn build(self) -> crate::model::NewPublicVirtualInterfaceAllocation {
             crate::model::NewPublicVirtualInterfaceAllocation {
                 virtual_interface_name: self.virtual_interface_name,
@@ -7224,7 +7198,7 @@ pub mod new_public_virtual_interface_allocation {
     }
 }
 impl NewPublicVirtualInterfaceAllocation {
-    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation)
+    /// Creates a new builder-style object to manufacture [`NewPublicVirtualInterfaceAllocation`](crate::model::NewPublicVirtualInterfaceAllocation).
     pub fn builder() -> crate::model::new_public_virtual_interface_allocation::Builder {
         crate::model::new_public_virtual_interface_allocation::Builder::default()
     }
@@ -7308,11 +7282,10 @@ impl std::fmt::Debug for NewPrivateVirtualInterfaceAllocation {
         formatter.finish()
     }
 }
-/// See [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation)
+/// See [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
 pub mod new_private_virtual_interface_allocation {
 
-    /// A builder for [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation)
-    #[non_exhaustive]
+    /// A builder for [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
@@ -7439,7 +7412,7 @@ pub mod new_private_virtual_interface_allocation {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation)
+        /// Consumes the builder and constructs a [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
         pub fn build(self) -> crate::model::NewPrivateVirtualInterfaceAllocation {
             crate::model::NewPrivateVirtualInterfaceAllocation {
                 virtual_interface_name: self.virtual_interface_name,
@@ -7456,7 +7429,7 @@ pub mod new_private_virtual_interface_allocation {
     }
 }
 impl NewPrivateVirtualInterfaceAllocation {
-    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation)
+    /// Creates a new builder-style object to manufacture [`NewPrivateVirtualInterfaceAllocation`](crate::model::NewPrivateVirtualInterfaceAllocation).
     pub fn builder() -> crate::model::new_private_virtual_interface_allocation::Builder {
         crate::model::new_private_virtual_interface_allocation::Builder::default()
     }

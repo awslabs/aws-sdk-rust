@@ -27,11 +27,10 @@ impl std::fmt::Debug for GroupQuery {
         formatter.finish()
     }
 }
-/// See [`GroupQuery`](crate::model::GroupQuery)
+/// See [`GroupQuery`](crate::model::GroupQuery).
 pub mod group_query {
 
-    /// A builder for [`GroupQuery`](crate::model::GroupQuery)
-    #[non_exhaustive]
+    /// A builder for [`GroupQuery`](crate::model::GroupQuery).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -61,7 +60,7 @@ pub mod group_query {
             self.resource_query = input;
             self
         }
-        /// Consumes the builder and constructs a [`GroupQuery`](crate::model::GroupQuery)
+        /// Consumes the builder and constructs a [`GroupQuery`](crate::model::GroupQuery).
         pub fn build(self) -> crate::model::GroupQuery {
             crate::model::GroupQuery {
                 group_name: self.group_name,
@@ -71,7 +70,7 @@ pub mod group_query {
     }
 }
 impl GroupQuery {
-    /// Creates a new builder-style object to manufacture [`GroupQuery`](crate::model::GroupQuery)
+    /// Creates a new builder-style object to manufacture [`GroupQuery`](crate::model::GroupQuery).
     pub fn builder() -> crate::model::group_query::Builder {
         crate::model::group_query::Builder::default()
     }
@@ -148,11 +147,10 @@ impl std::fmt::Debug for ResourceQuery {
         formatter.finish()
     }
 }
-/// See [`ResourceQuery`](crate::model::ResourceQuery)
+/// See [`ResourceQuery`](crate::model::ResourceQuery).
 pub mod resource_query {
 
-    /// A builder for [`ResourceQuery`](crate::model::ResourceQuery)
-    #[non_exhaustive]
+    /// A builder for [`ResourceQuery`](crate::model::ResourceQuery).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::QueryType>,
@@ -203,7 +201,7 @@ pub mod resource_query {
             self.query = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceQuery`](crate::model::ResourceQuery)
+        /// Consumes the builder and constructs a [`ResourceQuery`](crate::model::ResourceQuery).
         pub fn build(self) -> crate::model::ResourceQuery {
             crate::model::ResourceQuery {
                 r#type: self.r#type,
@@ -213,7 +211,7 @@ pub mod resource_query {
     }
 }
 impl ResourceQuery {
-    /// Creates a new builder-style object to manufacture [`ResourceQuery`](crate::model::ResourceQuery)
+    /// Creates a new builder-style object to manufacture [`ResourceQuery`](crate::model::ResourceQuery).
     pub fn builder() -> crate::model::resource_query::Builder {
         crate::model::resource_query::Builder::default()
     }
@@ -312,11 +310,10 @@ impl std::fmt::Debug for Group {
         formatter.finish()
     }
 }
-/// See [`Group`](crate::model::Group)
+/// See [`Group`](crate::model::Group).
 pub mod group {
 
-    /// A builder for [`Group`](crate::model::Group)
-    #[non_exhaustive]
+    /// A builder for [`Group`](crate::model::Group).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_arn: std::option::Option<std::string::String>,
@@ -354,7 +351,7 @@ pub mod group {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`Group`](crate::model::Group)
+        /// Consumes the builder and constructs a [`Group`](crate::model::Group).
         pub fn build(self) -> crate::model::Group {
             crate::model::Group {
                 group_arn: self.group_arn,
@@ -365,7 +362,7 @@ pub mod group {
     }
 }
 impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group)
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
     pub fn builder() -> crate::model::group::Builder {
         crate::model::group::Builder::default()
     }
@@ -391,11 +388,10 @@ impl std::fmt::Debug for PendingResource {
         formatter.finish()
     }
 }
-/// See [`PendingResource`](crate::model::PendingResource)
+/// See [`PendingResource`](crate::model::PendingResource).
 pub mod pending_resource {
 
-    /// A builder for [`PendingResource`](crate::model::PendingResource)
-    #[non_exhaustive]
+    /// A builder for [`PendingResource`](crate::model::PendingResource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -411,7 +407,7 @@ pub mod pending_resource {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`PendingResource`](crate::model::PendingResource)
+        /// Consumes the builder and constructs a [`PendingResource`](crate::model::PendingResource).
         pub fn build(self) -> crate::model::PendingResource {
             crate::model::PendingResource {
                 resource_arn: self.resource_arn,
@@ -420,7 +416,7 @@ pub mod pending_resource {
     }
 }
 impl PendingResource {
-    /// Creates a new builder-style object to manufacture [`PendingResource`](crate::model::PendingResource)
+    /// Creates a new builder-style object to manufacture [`PendingResource`](crate::model::PendingResource).
     pub fn builder() -> crate::model::pending_resource::Builder {
         crate::model::pending_resource::Builder::default()
     }
@@ -460,11 +456,10 @@ impl std::fmt::Debug for FailedResource {
         formatter.finish()
     }
 }
-/// See [`FailedResource`](crate::model::FailedResource)
+/// See [`FailedResource`](crate::model::FailedResource).
 pub mod failed_resource {
 
-    /// A builder for [`FailedResource`](crate::model::FailedResource)
-    #[non_exhaustive]
+    /// A builder for [`FailedResource`](crate::model::FailedResource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -505,7 +500,7 @@ pub mod failed_resource {
             self.error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailedResource`](crate::model::FailedResource)
+        /// Consumes the builder and constructs a [`FailedResource`](crate::model::FailedResource).
         pub fn build(self) -> crate::model::FailedResource {
             crate::model::FailedResource {
                 resource_arn: self.resource_arn,
@@ -516,7 +511,7 @@ pub mod failed_resource {
     }
 }
 impl FailedResource {
-    /// Creates a new builder-style object to manufacture [`FailedResource`](crate::model::FailedResource)
+    /// Creates a new builder-style object to manufacture [`FailedResource`](crate::model::FailedResource).
     pub fn builder() -> crate::model::failed_resource::Builder {
         crate::model::failed_resource::Builder::default()
     }
@@ -549,11 +544,10 @@ impl std::fmt::Debug for QueryError {
         formatter.finish()
     }
 }
-/// See [`QueryError`](crate::model::QueryError)
+/// See [`QueryError`](crate::model::QueryError).
 pub mod query_error {
 
-    /// A builder for [`QueryError`](crate::model::QueryError)
-    #[non_exhaustive]
+    /// A builder for [`QueryError`](crate::model::QueryError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::QueryErrorCode>,
@@ -583,7 +577,7 @@ pub mod query_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryError`](crate::model::QueryError)
+        /// Consumes the builder and constructs a [`QueryError`](crate::model::QueryError).
         pub fn build(self) -> crate::model::QueryError {
             crate::model::QueryError {
                 error_code: self.error_code,
@@ -593,7 +587,7 @@ pub mod query_error {
     }
 }
 impl QueryError {
-    /// Creates a new builder-style object to manufacture [`QueryError`](crate::model::QueryError)
+    /// Creates a new builder-style object to manufacture [`QueryError`](crate::model::QueryError).
     pub fn builder() -> crate::model::query_error::Builder {
         crate::model::query_error::Builder::default()
     }
@@ -684,11 +678,10 @@ impl std::fmt::Debug for ResourceIdentifier {
         formatter.finish()
     }
 }
-/// See [`ResourceIdentifier`](crate::model::ResourceIdentifier)
+/// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
 pub mod resource_identifier {
 
-    /// A builder for [`ResourceIdentifier`](crate::model::ResourceIdentifier)
-    #[non_exhaustive]
+    /// A builder for [`ResourceIdentifier`](crate::model::ResourceIdentifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -718,7 +711,7 @@ pub mod resource_identifier {
             self.resource_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::model::ResourceIdentifier)
+        /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::model::ResourceIdentifier).
         pub fn build(self) -> crate::model::ResourceIdentifier {
             crate::model::ResourceIdentifier {
                 resource_arn: self.resource_arn,
@@ -728,7 +721,7 @@ pub mod resource_identifier {
     }
 }
 impl ResourceIdentifier {
-    /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier)
+    /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
     pub fn builder() -> crate::model::resource_identifier::Builder {
         crate::model::resource_identifier::Builder::default()
     }
@@ -761,11 +754,10 @@ impl std::fmt::Debug for GroupConfigurationItem {
         formatter.finish()
     }
 }
-/// See [`GroupConfigurationItem`](crate::model::GroupConfigurationItem)
+/// See [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
 pub mod group_configuration_item {
 
-    /// A builder for [`GroupConfigurationItem`](crate::model::GroupConfigurationItem)
-    #[non_exhaustive]
+    /// A builder for [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -802,7 +794,7 @@ pub mod group_configuration_item {
             self.parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`GroupConfigurationItem`](crate::model::GroupConfigurationItem)
+        /// Consumes the builder and constructs a [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
         pub fn build(self) -> crate::model::GroupConfigurationItem {
             crate::model::GroupConfigurationItem {
                 r#type: self.r#type,
@@ -812,7 +804,7 @@ pub mod group_configuration_item {
     }
 }
 impl GroupConfigurationItem {
-    /// Creates a new builder-style object to manufacture [`GroupConfigurationItem`](crate::model::GroupConfigurationItem)
+    /// Creates a new builder-style object to manufacture [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
     pub fn builder() -> crate::model::group_configuration_item::Builder {
         crate::model::group_configuration_item::Builder::default()
     }
@@ -845,11 +837,10 @@ impl std::fmt::Debug for GroupConfigurationParameter {
         formatter.finish()
     }
 }
-/// See [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter)
+/// See [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
 pub mod group_configuration_parameter {
 
-    /// A builder for [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter)
-    #[non_exhaustive]
+    /// A builder for [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -885,7 +876,7 @@ pub mod group_configuration_parameter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter)
+        /// Consumes the builder and constructs a [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
         pub fn build(self) -> crate::model::GroupConfigurationParameter {
             crate::model::GroupConfigurationParameter {
                 name: self.name,
@@ -895,7 +886,7 @@ pub mod group_configuration_parameter {
     }
 }
 impl GroupConfigurationParameter {
-    /// Creates a new builder-style object to manufacture [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter)
+    /// Creates a new builder-style object to manufacture [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
     pub fn builder() -> crate::model::group_configuration_parameter::Builder {
         crate::model::group_configuration_parameter::Builder::default()
     }
@@ -928,11 +919,10 @@ impl std::fmt::Debug for GroupIdentifier {
         formatter.finish()
     }
 }
-/// See [`GroupIdentifier`](crate::model::GroupIdentifier)
+/// See [`GroupIdentifier`](crate::model::GroupIdentifier).
 pub mod group_identifier {
 
-    /// A builder for [`GroupIdentifier`](crate::model::GroupIdentifier)
-    #[non_exhaustive]
+    /// A builder for [`GroupIdentifier`](crate::model::GroupIdentifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -959,7 +949,7 @@ pub mod group_identifier {
             self.group_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`GroupIdentifier`](crate::model::GroupIdentifier)
+        /// Consumes the builder and constructs a [`GroupIdentifier`](crate::model::GroupIdentifier).
         pub fn build(self) -> crate::model::GroupIdentifier {
             crate::model::GroupIdentifier {
                 group_name: self.group_name,
@@ -969,7 +959,7 @@ pub mod group_identifier {
     }
 }
 impl GroupIdentifier {
-    /// Creates a new builder-style object to manufacture [`GroupIdentifier`](crate::model::GroupIdentifier)
+    /// Creates a new builder-style object to manufacture [`GroupIdentifier`](crate::model::GroupIdentifier).
     pub fn builder() -> crate::model::group_identifier::Builder {
         crate::model::group_identifier::Builder::default()
     }
@@ -1002,11 +992,10 @@ impl std::fmt::Debug for GroupFilter {
         formatter.finish()
     }
 }
-/// See [`GroupFilter`](crate::model::GroupFilter)
+/// See [`GroupFilter`](crate::model::GroupFilter).
 pub mod group_filter {
 
-    /// A builder for [`GroupFilter`](crate::model::GroupFilter)
-    #[non_exhaustive]
+    /// A builder for [`GroupFilter`](crate::model::GroupFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::GroupFilterName>,
@@ -1045,7 +1034,7 @@ pub mod group_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`GroupFilter`](crate::model::GroupFilter)
+        /// Consumes the builder and constructs a [`GroupFilter`](crate::model::GroupFilter).
         pub fn build(self) -> crate::model::GroupFilter {
             crate::model::GroupFilter {
                 name: self.name,
@@ -1055,7 +1044,7 @@ pub mod group_filter {
     }
 }
 impl GroupFilter {
-    /// Creates a new builder-style object to manufacture [`GroupFilter`](crate::model::GroupFilter)
+    /// Creates a new builder-style object to manufacture [`GroupFilter`](crate::model::GroupFilter).
     pub fn builder() -> crate::model::group_filter::Builder {
         crate::model::group_filter::Builder::default()
     }
@@ -1147,11 +1136,10 @@ impl std::fmt::Debug for ListGroupResourcesItem {
         formatter.finish()
     }
 }
-/// See [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem)
+/// See [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
 pub mod list_group_resources_item {
 
-    /// A builder for [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem)
-    #[non_exhaustive]
+    /// A builder for [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<crate::model::ResourceIdentifier>,
@@ -1188,7 +1176,7 @@ pub mod list_group_resources_item {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem)
+        /// Consumes the builder and constructs a [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
         pub fn build(self) -> crate::model::ListGroupResourcesItem {
             crate::model::ListGroupResourcesItem {
                 identifier: self.identifier,
@@ -1198,7 +1186,7 @@ pub mod list_group_resources_item {
     }
 }
 impl ListGroupResourcesItem {
-    /// Creates a new builder-style object to manufacture [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem)
+    /// Creates a new builder-style object to manufacture [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
     pub fn builder() -> crate::model::list_group_resources_item::Builder {
         crate::model::list_group_resources_item::Builder::default()
     }
@@ -1224,11 +1212,10 @@ impl std::fmt::Debug for ResourceStatus {
         formatter.finish()
     }
 }
-/// See [`ResourceStatus`](crate::model::ResourceStatus)
+/// See [`ResourceStatus`](crate::model::ResourceStatus).
 pub mod resource_status {
 
-    /// A builder for [`ResourceStatus`](crate::model::ResourceStatus)
-    #[non_exhaustive]
+    /// A builder for [`ResourceStatus`](crate::model::ResourceStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ResourceStatusValue>,
@@ -1247,14 +1234,14 @@ pub mod resource_status {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceStatus`](crate::model::ResourceStatus)
+        /// Consumes the builder and constructs a [`ResourceStatus`](crate::model::ResourceStatus).
         pub fn build(self) -> crate::model::ResourceStatus {
             crate::model::ResourceStatus { name: self.name }
         }
     }
 }
 impl ResourceStatus {
-    /// Creates a new builder-style object to manufacture [`ResourceStatus`](crate::model::ResourceStatus)
+    /// Creates a new builder-style object to manufacture [`ResourceStatus`](crate::model::ResourceStatus).
     pub fn builder() -> crate::model::resource_status::Builder {
         crate::model::resource_status::Builder::default()
     }
@@ -1338,11 +1325,10 @@ impl std::fmt::Debug for ResourceFilter {
         formatter.finish()
     }
 }
-/// See [`ResourceFilter`](crate::model::ResourceFilter)
+/// See [`ResourceFilter`](crate::model::ResourceFilter).
 pub mod resource_filter {
 
-    /// A builder for [`ResourceFilter`](crate::model::ResourceFilter)
-    #[non_exhaustive]
+    /// A builder for [`ResourceFilter`](crate::model::ResourceFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ResourceFilterName>,
@@ -1381,7 +1367,7 @@ pub mod resource_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceFilter`](crate::model::ResourceFilter)
+        /// Consumes the builder and constructs a [`ResourceFilter`](crate::model::ResourceFilter).
         pub fn build(self) -> crate::model::ResourceFilter {
             crate::model::ResourceFilter {
                 name: self.name,
@@ -1391,7 +1377,7 @@ pub mod resource_filter {
     }
 }
 impl ResourceFilter {
-    /// Creates a new builder-style object to manufacture [`ResourceFilter`](crate::model::ResourceFilter)
+    /// Creates a new builder-style object to manufacture [`ResourceFilter`](crate::model::ResourceFilter).
     pub fn builder() -> crate::model::resource_filter::Builder {
         crate::model::resource_filter::Builder::default()
     }
@@ -1492,11 +1478,10 @@ impl std::fmt::Debug for GroupConfiguration {
         formatter.finish()
     }
 }
-/// See [`GroupConfiguration`](crate::model::GroupConfiguration)
+/// See [`GroupConfiguration`](crate::model::GroupConfiguration).
 pub mod group_configuration {
 
-    /// A builder for [`GroupConfiguration`](crate::model::GroupConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`GroupConfiguration`](crate::model::GroupConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration:
@@ -1574,7 +1559,7 @@ pub mod group_configuration {
             self.failure_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`GroupConfiguration`](crate::model::GroupConfiguration)
+        /// Consumes the builder and constructs a [`GroupConfiguration`](crate::model::GroupConfiguration).
         pub fn build(self) -> crate::model::GroupConfiguration {
             crate::model::GroupConfiguration {
                 configuration: self.configuration,
@@ -1586,7 +1571,7 @@ pub mod group_configuration {
     }
 }
 impl GroupConfiguration {
-    /// Creates a new builder-style object to manufacture [`GroupConfiguration`](crate::model::GroupConfiguration)
+    /// Creates a new builder-style object to manufacture [`GroupConfiguration`](crate::model::GroupConfiguration).
     pub fn builder() -> crate::model::group_configuration::Builder {
         crate::model::group_configuration::Builder::default()
     }

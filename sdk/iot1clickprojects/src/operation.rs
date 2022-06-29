@@ -10,7 +10,7 @@ pub struct AssociateDeviceWithPlacement {
     _private: (),
 }
 impl AssociateDeviceWithPlacement {
-    /// Creates a new builder-style object to manufacture [`AssociateDeviceWithPlacementInput`](crate::input::AssociateDeviceWithPlacementInput)
+    /// Creates a new builder-style object to manufacture [`AssociateDeviceWithPlacementInput`](crate::input::AssociateDeviceWithPlacementInput).
     pub fn builder() -> crate::input::associate_device_with_placement_input::Builder {
         crate::input::associate_device_with_placement_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreatePlacement {
     _private: (),
 }
 impl CreatePlacement {
-    /// Creates a new builder-style object to manufacture [`CreatePlacementInput`](crate::input::CreatePlacementInput)
+    /// Creates a new builder-style object to manufacture [`CreatePlacementInput`](crate::input::CreatePlacementInput).
     pub fn builder() -> crate::input::create_placement_input::Builder {
         crate::input::create_placement_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateProject {
     _private: (),
 }
 impl CreateProject {
-    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput)
+    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput).
     pub fn builder() -> crate::input::create_project_input::Builder {
         crate::input::create_project_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeletePlacement {
     _private: (),
 }
 impl DeletePlacement {
-    /// Creates a new builder-style object to manufacture [`DeletePlacementInput`](crate::input::DeletePlacementInput)
+    /// Creates a new builder-style object to manufacture [`DeletePlacementInput`](crate::input::DeletePlacementInput).
     pub fn builder() -> crate::input::delete_placement_input::Builder {
         crate::input::delete_placement_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DeleteProject {
     _private: (),
 }
 impl DeleteProject {
-    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput).
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DescribePlacement {
     _private: (),
 }
 impl DescribePlacement {
-    /// Creates a new builder-style object to manufacture [`DescribePlacementInput`](crate::input::DescribePlacementInput)
+    /// Creates a new builder-style object to manufacture [`DescribePlacementInput`](crate::input::DescribePlacementInput).
     pub fn builder() -> crate::input::describe_placement_input::Builder {
         crate::input::describe_placement_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DescribeProject {
     _private: (),
 }
 impl DescribeProject {
-    /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput)
+    /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput).
     pub fn builder() -> crate::input::describe_project_input::Builder {
         crate::input::describe_project_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DisassociateDeviceFromPlacement {
     _private: (),
 }
 impl DisassociateDeviceFromPlacement {
-    /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromPlacementInput`](crate::input::DisassociateDeviceFromPlacementInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromPlacementInput`](crate::input::DisassociateDeviceFromPlacementInput).
     pub fn builder() -> crate::input::disassociate_device_from_placement_input::Builder {
         crate::input::disassociate_device_from_placement_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct GetDevicesInPlacement {
     _private: (),
 }
 impl GetDevicesInPlacement {
-    /// Creates a new builder-style object to manufacture [`GetDevicesInPlacementInput`](crate::input::GetDevicesInPlacementInput)
+    /// Creates a new builder-style object to manufacture [`GetDevicesInPlacementInput`](crate::input::GetDevicesInPlacementInput).
     pub fn builder() -> crate::input::get_devices_in_placement_input::Builder {
         crate::input::get_devices_in_placement_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct ListPlacements {
     _private: (),
 }
 impl ListPlacements {
-    /// Creates a new builder-style object to manufacture [`ListPlacementsInput`](crate::input::ListPlacementsInput)
+    /// Creates a new builder-style object to manufacture [`ListPlacementsInput`](crate::input::ListPlacementsInput).
     pub fn builder() -> crate::input::list_placements_input::Builder {
         crate::input::list_placements_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct ListProjects {
     _private: (),
 }
 impl ListProjects {
-    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput)
+    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput).
     pub fn builder() -> crate::input::list_projects_input::Builder {
         crate::input::list_projects_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -474,7 +474,7 @@ pub struct UpdatePlacement {
     _private: (),
 }
 impl UpdatePlacement {
-    /// Creates a new builder-style object to manufacture [`UpdatePlacementInput`](crate::input::UpdatePlacementInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePlacementInput`](crate::input::UpdatePlacementInput).
     pub fn builder() -> crate::input::update_placement_input::Builder {
         crate::input::update_placement_input::Builder::default()
     }
@@ -508,7 +508,7 @@ pub struct UpdateProject {
     _private: (),
 }
 impl UpdateProject {
-    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput)
+    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput).
     pub fn builder() -> crate::input::update_project_input::Builder {
         crate::input::update_project_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CancelTaskExecution {
     _private: (),
 }
 impl CancelTaskExecution {
-    /// Creates a new builder-style object to manufacture [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput)
+    /// Creates a new builder-style object to manufacture [`CancelTaskExecutionInput`](crate::input::CancelTaskExecutionInput).
     pub fn builder() -> crate::input::cancel_task_execution_input::Builder {
         crate::input::cancel_task_execution_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateAgent {
     _private: (),
 }
 impl CreateAgent {
-    /// Creates a new builder-style object to manufacture [`CreateAgentInput`](crate::input::CreateAgentInput)
+    /// Creates a new builder-style object to manufacture [`CreateAgentInput`](crate::input::CreateAgentInput).
     pub fn builder() -> crate::input::create_agent_input::Builder {
         crate::input::create_agent_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateLocationEfs {
     _private: (),
 }
 impl CreateLocationEfs {
-    /// Creates a new builder-style object to manufacture [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationEfsInput`](crate::input::CreateLocationEfsInput).
     pub fn builder() -> crate::input::create_location_efs_input::Builder {
         crate::input::create_location_efs_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateLocationFsxLustre {
     _private: (),
 }
 impl CreateLocationFsxLustre {
-    /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreInput`](crate::input::CreateLocationFsxLustreInput).
     pub fn builder() -> crate::input::create_location_fsx_lustre_input::Builder {
         crate::input::create_location_fsx_lustre_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateLocationFsxOpenZfs {
     _private: (),
 }
 impl CreateLocationFsxOpenZfs {
-    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsInput`](crate::input::CreateLocationFsxOpenZfsInput).
     pub fn builder() -> crate::input::create_location_fsx_open_zfs_input::Builder {
         crate::input::create_location_fsx_open_zfs_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateLocationFsxWindows {
     _private: (),
 }
 impl CreateLocationFsxWindows {
-    /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsInput`](crate::input::CreateLocationFsxWindowsInput).
     pub fn builder() -> crate::input::create_location_fsx_windows_input::Builder {
         crate::input::create_location_fsx_windows_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct CreateLocationHdfs {
     _private: (),
 }
 impl CreateLocationHdfs {
-    /// Creates a new builder-style object to manufacture [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationHdfsInput`](crate::input::CreateLocationHdfsInput).
     pub fn builder() -> crate::input::create_location_hdfs_input::Builder {
         crate::input::create_location_hdfs_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct CreateLocationNfs {
     _private: (),
 }
 impl CreateLocationNfs {
-    /// Creates a new builder-style object to manufacture [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationNfsInput`](crate::input::CreateLocationNfsInput).
     pub fn builder() -> crate::input::create_location_nfs_input::Builder {
         crate::input::create_location_nfs_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct CreateLocationObjectStorage {
     _private: (),
 }
 impl CreateLocationObjectStorage {
-    /// Creates a new builder-style object to manufacture [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationObjectStorageInput`](crate::input::CreateLocationObjectStorageInput).
     pub fn builder() -> crate::input::create_location_object_storage_input::Builder {
         crate::input::create_location_object_storage_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct CreateLocationS3 {
     _private: (),
 }
 impl CreateLocationS3 {
-    /// Creates a new builder-style object to manufacture [`CreateLocationS3Input`](crate::input::CreateLocationS3Input)
+    /// Creates a new builder-style object to manufacture [`CreateLocationS3Input`](crate::input::CreateLocationS3Input).
     pub fn builder() -> crate::input::create_location_s3_input::Builder {
         crate::input::create_location_s3_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct CreateLocationSmb {
     _private: (),
 }
 impl CreateLocationSmb {
-    /// Creates a new builder-style object to manufacture [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput)
+    /// Creates a new builder-style object to manufacture [`CreateLocationSmbInput`](crate::input::CreateLocationSmbInput).
     pub fn builder() -> crate::input::create_location_smb_input::Builder {
         crate::input::create_location_smb_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct CreateTask {
     _private: (),
 }
 impl CreateTask {
-    /// Creates a new builder-style object to manufacture [`CreateTaskInput`](crate::input::CreateTaskInput)
+    /// Creates a new builder-style object to manufacture [`CreateTaskInput`](crate::input::CreateTaskInput).
     pub fn builder() -> crate::input::create_task_input::Builder {
         crate::input::create_task_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DeleteAgent {
     _private: (),
 }
 impl DeleteAgent {
-    /// Creates a new builder-style object to manufacture [`DeleteAgentInput`](crate::input::DeleteAgentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAgentInput`](crate::input::DeleteAgentInput).
     pub fn builder() -> crate::input::delete_agent_input::Builder {
         crate::input::delete_agent_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct DeleteLocation {
     _private: (),
 }
 impl DeleteLocation {
-    /// Creates a new builder-style object to manufacture [`DeleteLocationInput`](crate::input::DeleteLocationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLocationInput`](crate::input::DeleteLocationInput).
     pub fn builder() -> crate::input::delete_location_input::Builder {
         crate::input::delete_location_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct DeleteTask {
     _private: (),
 }
 impl DeleteTask {
-    /// Creates a new builder-style object to manufacture [`DeleteTaskInput`](crate::input::DeleteTaskInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTaskInput`](crate::input::DeleteTaskInput).
     pub fn builder() -> crate::input::delete_task_input::Builder {
         crate::input::delete_task_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct DescribeAgent {
     _private: (),
 }
 impl DescribeAgent {
-    /// Creates a new builder-style object to manufacture [`DescribeAgentInput`](crate::input::DescribeAgentInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAgentInput`](crate::input::DescribeAgentInput).
     pub fn builder() -> crate::input::describe_agent_input::Builder {
         crate::input::describe_agent_input::Builder::default()
     }
@@ -542,7 +542,7 @@ pub struct DescribeLocationEfs {
     _private: (),
 }
 impl DescribeLocationEfs {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationEfsInput`](crate::input::DescribeLocationEfsInput).
     pub fn builder() -> crate::input::describe_location_efs_input::Builder {
         crate::input::describe_location_efs_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct DescribeLocationFsxLustre {
     _private: (),
 }
 impl DescribeLocationFsxLustre {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreInput`](crate::input::DescribeLocationFsxLustreInput).
     pub fn builder() -> crate::input::describe_location_fsx_lustre_input::Builder {
         crate::input::describe_location_fsx_lustre_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct DescribeLocationFsxOpenZfs {
     _private: (),
 }
 impl DescribeLocationFsxOpenZfs {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsInput`](crate::input::DescribeLocationFsxOpenZfsInput).
     pub fn builder() -> crate::input::describe_location_fsx_open_zfs_input::Builder {
         crate::input::describe_location_fsx_open_zfs_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct DescribeLocationFsxWindows {
     _private: (),
 }
 impl DescribeLocationFsxWindows {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsInput`](crate::input::DescribeLocationFsxWindowsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsInput`](crate::input::DescribeLocationFsxWindowsInput).
     pub fn builder() -> crate::input::describe_location_fsx_windows_input::Builder {
         crate::input::describe_location_fsx_windows_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct DescribeLocationHdfs {
     _private: (),
 }
 impl DescribeLocationHdfs {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsInput`](crate::input::DescribeLocationHdfsInput).
     pub fn builder() -> crate::input::describe_location_hdfs_input::Builder {
         crate::input::describe_location_hdfs_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct DescribeLocationNfs {
     _private: (),
 }
 impl DescribeLocationNfs {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationNfsInput`](crate::input::DescribeLocationNfsInput).
     pub fn builder() -> crate::input::describe_location_nfs_input::Builder {
         crate::input::describe_location_nfs_input::Builder::default()
     }
@@ -746,7 +746,7 @@ pub struct DescribeLocationObjectStorage {
     _private: (),
 }
 impl DescribeLocationObjectStorage {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageInput`](crate::input::DescribeLocationObjectStorageInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageInput`](crate::input::DescribeLocationObjectStorageInput).
     pub fn builder() -> crate::input::describe_location_object_storage_input::Builder {
         crate::input::describe_location_object_storage_input::Builder::default()
     }
@@ -780,7 +780,7 @@ pub struct DescribeLocationS3 {
     _private: (),
 }
 impl DescribeLocationS3 {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationS3Input`](crate::input::DescribeLocationS3Input).
     pub fn builder() -> crate::input::describe_location_s3_input::Builder {
         crate::input::describe_location_s3_input::Builder::default()
     }
@@ -814,7 +814,7 @@ pub struct DescribeLocationSmb {
     _private: (),
 }
 impl DescribeLocationSmb {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationSmbInput`](crate::input::DescribeLocationSmbInput).
     pub fn builder() -> crate::input::describe_location_smb_input::Builder {
         crate::input::describe_location_smb_input::Builder::default()
     }
@@ -848,7 +848,7 @@ pub struct DescribeTask {
     _private: (),
 }
 impl DescribeTask {
-    /// Creates a new builder-style object to manufacture [`DescribeTaskInput`](crate::input::DescribeTaskInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTaskInput`](crate::input::DescribeTaskInput).
     pub fn builder() -> crate::input::describe_task_input::Builder {
         crate::input::describe_task_input::Builder::default()
     }
@@ -880,7 +880,7 @@ pub struct DescribeTaskExecution {
     _private: (),
 }
 impl DescribeTaskExecution {
-    /// Creates a new builder-style object to manufacture [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTaskExecutionInput`](crate::input::DescribeTaskExecutionInput).
     pub fn builder() -> crate::input::describe_task_execution_input::Builder {
         crate::input::describe_task_execution_input::Builder::default()
     }
@@ -914,7 +914,7 @@ pub struct ListAgents {
     _private: (),
 }
 impl ListAgents {
-    /// Creates a new builder-style object to manufacture [`ListAgentsInput`](crate::input::ListAgentsInput)
+    /// Creates a new builder-style object to manufacture [`ListAgentsInput`](crate::input::ListAgentsInput).
     pub fn builder() -> crate::input::list_agents_input::Builder {
         crate::input::list_agents_input::Builder::default()
     }
@@ -946,7 +946,7 @@ pub struct ListLocations {
     _private: (),
 }
 impl ListLocations {
-    /// Creates a new builder-style object to manufacture [`ListLocationsInput`](crate::input::ListLocationsInput)
+    /// Creates a new builder-style object to manufacture [`ListLocationsInput`](crate::input::ListLocationsInput).
     pub fn builder() -> crate::input::list_locations_input::Builder {
         crate::input::list_locations_input::Builder::default()
     }
@@ -978,7 +978,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1012,7 +1012,7 @@ pub struct ListTaskExecutions {
     _private: (),
 }
 impl ListTaskExecutions {
-    /// Creates a new builder-style object to manufacture [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListTaskExecutionsInput`](crate::input::ListTaskExecutionsInput).
     pub fn builder() -> crate::input::list_task_executions_input::Builder {
         crate::input::list_task_executions_input::Builder::default()
     }
@@ -1046,7 +1046,7 @@ pub struct ListTasks {
     _private: (),
 }
 impl ListTasks {
-    /// Creates a new builder-style object to manufacture [`ListTasksInput`](crate::input::ListTasksInput)
+    /// Creates a new builder-style object to manufacture [`ListTasksInput`](crate::input::ListTasksInput).
     pub fn builder() -> crate::input::list_tasks_input::Builder {
         crate::input::list_tasks_input::Builder::default()
     }
@@ -1077,7 +1077,7 @@ pub struct StartTaskExecution {
     _private: (),
 }
 impl StartTaskExecution {
-    /// Creates a new builder-style object to manufacture [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput)
+    /// Creates a new builder-style object to manufacture [`StartTaskExecutionInput`](crate::input::StartTaskExecutionInput).
     pub fn builder() -> crate::input::start_task_execution_input::Builder {
         crate::input::start_task_execution_input::Builder::default()
     }
@@ -1111,7 +1111,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1143,7 +1143,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1175,7 +1175,7 @@ pub struct UpdateAgent {
     _private: (),
 }
 impl UpdateAgent {
-    /// Creates a new builder-style object to manufacture [`UpdateAgentInput`](crate::input::UpdateAgentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAgentInput`](crate::input::UpdateAgentInput).
     pub fn builder() -> crate::input::update_agent_input::Builder {
         crate::input::update_agent_input::Builder::default()
     }
@@ -1207,7 +1207,7 @@ pub struct UpdateLocationHdfs {
     _private: (),
 }
 impl UpdateLocationHdfs {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsInput`](crate::input::UpdateLocationHdfsInput).
     pub fn builder() -> crate::input::update_location_hdfs_input::Builder {
         crate::input::update_location_hdfs_input::Builder::default()
     }
@@ -1241,7 +1241,7 @@ pub struct UpdateLocationNfs {
     _private: (),
 }
 impl UpdateLocationNfs {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLocationNfsInput`](crate::input::UpdateLocationNfsInput).
     pub fn builder() -> crate::input::update_location_nfs_input::Builder {
         crate::input::update_location_nfs_input::Builder::default()
     }
@@ -1275,7 +1275,7 @@ pub struct UpdateLocationObjectStorage {
     _private: (),
 }
 impl UpdateLocationObjectStorage {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageInput`](crate::input::UpdateLocationObjectStorageInput).
     pub fn builder() -> crate::input::update_location_object_storage_input::Builder {
         crate::input::update_location_object_storage_input::Builder::default()
     }
@@ -1309,7 +1309,7 @@ pub struct UpdateLocationSmb {
     _private: (),
 }
 impl UpdateLocationSmb {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLocationSmbInput`](crate::input::UpdateLocationSmbInput).
     pub fn builder() -> crate::input::update_location_smb_input::Builder {
         crate::input::update_location_smb_input::Builder::default()
     }
@@ -1343,7 +1343,7 @@ pub struct UpdateTask {
     _private: (),
 }
 impl UpdateTask {
-    /// Creates a new builder-style object to manufacture [`UpdateTaskInput`](crate::input::UpdateTaskInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTaskInput`](crate::input::UpdateTaskInput).
     pub fn builder() -> crate::input::update_task_input::Builder {
         crate::input::update_task_input::Builder::default()
     }
@@ -1375,7 +1375,7 @@ pub struct UpdateTaskExecution {
     _private: (),
 }
 impl UpdateTaskExecution {
-    /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionInput`](crate::input::UpdateTaskExecutionInput).
     pub fn builder() -> crate::input::update_task_execution_input::Builder {
         crate::input::update_task_execution_input::Builder::default()
     }

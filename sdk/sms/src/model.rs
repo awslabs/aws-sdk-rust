@@ -81,11 +81,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -112,7 +111,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -122,7 +121,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -162,11 +161,10 @@ impl std::fmt::Debug for ServerGroup {
         formatter.finish()
     }
 }
-/// See [`ServerGroup`](crate::model::ServerGroup)
+/// See [`ServerGroup`](crate::model::ServerGroup).
 pub mod server_group {
 
-    /// A builder for [`ServerGroup`](crate::model::ServerGroup)
-    #[non_exhaustive]
+    /// A builder for [`ServerGroup`](crate::model::ServerGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -216,7 +214,7 @@ pub mod server_group {
             self.server_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerGroup`](crate::model::ServerGroup)
+        /// Consumes the builder and constructs a [`ServerGroup`](crate::model::ServerGroup).
         pub fn build(self) -> crate::model::ServerGroup {
             crate::model::ServerGroup {
                 server_group_id: self.server_group_id,
@@ -227,7 +225,7 @@ pub mod server_group {
     }
 }
 impl ServerGroup {
-    /// Creates a new builder-style object to manufacture [`ServerGroup`](crate::model::ServerGroup)
+    /// Creates a new builder-style object to manufacture [`ServerGroup`](crate::model::ServerGroup).
     pub fn builder() -> crate::model::server_group::Builder {
         crate::model::server_group::Builder::default()
     }
@@ -284,11 +282,10 @@ impl std::fmt::Debug for Server {
         formatter.finish()
     }
 }
-/// See [`Server`](crate::model::Server)
+/// See [`Server`](crate::model::Server).
 pub mod server {
 
-    /// A builder for [`Server`](crate::model::Server)
-    #[non_exhaustive]
+    /// A builder for [`Server`](crate::model::Server).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_id: std::option::Option<std::string::String>,
@@ -354,7 +351,7 @@ pub mod server {
             self.replication_job_terminated = input;
             self
         }
-        /// Consumes the builder and constructs a [`Server`](crate::model::Server)
+        /// Consumes the builder and constructs a [`Server`](crate::model::Server).
         pub fn build(self) -> crate::model::Server {
             crate::model::Server {
                 server_id: self.server_id,
@@ -367,7 +364,7 @@ pub mod server {
     }
 }
 impl Server {
-    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server)
+    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server).
     pub fn builder() -> crate::model::server::Builder {
         crate::model::server::Builder::default()
     }
@@ -421,11 +418,10 @@ impl std::fmt::Debug for VmServer {
         formatter.finish()
     }
 }
-/// See [`VmServer`](crate::model::VmServer)
+/// See [`VmServer`](crate::model::VmServer).
 pub mod vm_server {
 
-    /// A builder for [`VmServer`](crate::model::VmServer)
-    #[non_exhaustive]
+    /// A builder for [`VmServer`](crate::model::VmServer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vm_server_address: std::option::Option<crate::model::VmServerAddress>,
@@ -494,7 +490,7 @@ pub mod vm_server {
             self.vm_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`VmServer`](crate::model::VmServer)
+        /// Consumes the builder and constructs a [`VmServer`](crate::model::VmServer).
         pub fn build(self) -> crate::model::VmServer {
             crate::model::VmServer {
                 vm_server_address: self.vm_server_address,
@@ -507,7 +503,7 @@ pub mod vm_server {
     }
 }
 impl VmServer {
-    /// Creates a new builder-style object to manufacture [`VmServer`](crate::model::VmServer)
+    /// Creates a new builder-style object to manufacture [`VmServer`](crate::model::VmServer).
     pub fn builder() -> crate::model::vm_server::Builder {
         crate::model::vm_server::Builder::default()
     }
@@ -599,11 +595,10 @@ impl std::fmt::Debug for VmServerAddress {
         formatter.finish()
     }
 }
-/// See [`VmServerAddress`](crate::model::VmServerAddress)
+/// See [`VmServerAddress`](crate::model::VmServerAddress).
 pub mod vm_server_address {
 
-    /// A builder for [`VmServerAddress`](crate::model::VmServerAddress)
-    #[non_exhaustive]
+    /// A builder for [`VmServerAddress`](crate::model::VmServerAddress).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vm_manager_id: std::option::Option<std::string::String>,
@@ -633,7 +628,7 @@ pub mod vm_server_address {
             self.vm_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`VmServerAddress`](crate::model::VmServerAddress)
+        /// Consumes the builder and constructs a [`VmServerAddress`](crate::model::VmServerAddress).
         pub fn build(self) -> crate::model::VmServerAddress {
             crate::model::VmServerAddress {
                 vm_manager_id: self.vm_manager_id,
@@ -643,7 +638,7 @@ pub mod vm_server_address {
     }
 }
 impl VmServerAddress {
-    /// Creates a new builder-style object to manufacture [`VmServerAddress`](crate::model::VmServerAddress)
+    /// Creates a new builder-style object to manufacture [`VmServerAddress`](crate::model::VmServerAddress).
     pub fn builder() -> crate::model::vm_server_address::Builder {
         crate::model::vm_server_address::Builder::default()
     }
@@ -861,11 +856,10 @@ impl std::fmt::Debug for AppSummary {
         formatter.finish()
     }
 }
-/// See [`AppSummary`](crate::model::AppSummary)
+/// See [`AppSummary`](crate::model::AppSummary).
 pub mod app_summary {
 
-    /// A builder for [`AppSummary`](crate::model::AppSummary)
-    #[non_exhaustive]
+    /// A builder for [`AppSummary`](crate::model::AppSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
@@ -1123,7 +1117,7 @@ pub mod app_summary {
             self.total_servers = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppSummary`](crate::model::AppSummary)
+        /// Consumes the builder and constructs a [`AppSummary`](crate::model::AppSummary).
         pub fn build(self) -> crate::model::AppSummary {
             crate::model::AppSummary {
                 app_id: self.app_id,
@@ -1150,7 +1144,7 @@ pub mod app_summary {
     }
 }
 impl AppSummary {
-    /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary)
+    /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary).
     pub fn builder() -> crate::model::app_summary::Builder {
         crate::model::app_summary::Builder::default()
     }
@@ -1190,11 +1184,10 @@ impl std::fmt::Debug for LaunchDetails {
         formatter.finish()
     }
 }
-/// See [`LaunchDetails`](crate::model::LaunchDetails)
+/// See [`LaunchDetails`](crate::model::LaunchDetails).
 pub mod launch_details {
 
-    /// A builder for [`LaunchDetails`](crate::model::LaunchDetails)
-    #[non_exhaustive]
+    /// A builder for [`LaunchDetails`](crate::model::LaunchDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latest_launch_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1235,7 +1228,7 @@ pub mod launch_details {
             self.stack_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`LaunchDetails`](crate::model::LaunchDetails)
+        /// Consumes the builder and constructs a [`LaunchDetails`](crate::model::LaunchDetails).
         pub fn build(self) -> crate::model::LaunchDetails {
             crate::model::LaunchDetails {
                 latest_launch_time: self.latest_launch_time,
@@ -1246,7 +1239,7 @@ pub mod launch_details {
     }
 }
 impl LaunchDetails {
-    /// Creates a new builder-style object to manufacture [`LaunchDetails`](crate::model::LaunchDetails)
+    /// Creates a new builder-style object to manufacture [`LaunchDetails`](crate::model::LaunchDetails).
     pub fn builder() -> crate::model::launch_details::Builder {
         crate::model::launch_details::Builder::default()
     }
@@ -1724,11 +1717,10 @@ impl std::fmt::Debug for ServerGroupValidationConfiguration {
         formatter.finish()
     }
 }
-/// See [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration)
+/// See [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
 pub mod server_group_validation_configuration {
 
-    /// A builder for [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -1771,7 +1763,7 @@ pub mod server_group_validation_configuration {
             self.server_validation_configurations = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration)
+        /// Consumes the builder and constructs a [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
         pub fn build(self) -> crate::model::ServerGroupValidationConfiguration {
             crate::model::ServerGroupValidationConfiguration {
                 server_group_id: self.server_group_id,
@@ -1781,7 +1773,7 @@ pub mod server_group_validation_configuration {
     }
 }
 impl ServerGroupValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration)
+    /// Creates a new builder-style object to manufacture [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
     pub fn builder() -> crate::model::server_group_validation_configuration::Builder {
         crate::model::server_group_validation_configuration::Builder::default()
     }
@@ -1846,11 +1838,10 @@ impl std::fmt::Debug for ServerValidationConfiguration {
         formatter.finish()
     }
 }
-/// See [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration)
+/// See [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
 pub mod server_validation_configuration {
 
-    /// A builder for [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -1927,7 +1918,7 @@ pub mod server_validation_configuration {
             self.user_data_validation_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration)
+        /// Consumes the builder and constructs a [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
         pub fn build(self) -> crate::model::ServerValidationConfiguration {
             crate::model::ServerValidationConfiguration {
                 server: self.server,
@@ -1940,7 +1931,7 @@ pub mod server_validation_configuration {
     }
 }
 impl ServerValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration)
+    /// Creates a new builder-style object to manufacture [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
     pub fn builder() -> crate::model::server_validation_configuration::Builder {
         crate::model::server_validation_configuration::Builder::default()
     }
@@ -1973,11 +1964,10 @@ impl std::fmt::Debug for UserDataValidationParameters {
         formatter.finish()
     }
 }
-/// See [`UserDataValidationParameters`](crate::model::UserDataValidationParameters)
+/// See [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
 pub mod user_data_validation_parameters {
 
-    /// A builder for [`UserDataValidationParameters`](crate::model::UserDataValidationParameters)
-    #[non_exhaustive]
+    /// A builder for [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -2007,7 +1997,7 @@ pub mod user_data_validation_parameters {
             self.script_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserDataValidationParameters`](crate::model::UserDataValidationParameters)
+        /// Consumes the builder and constructs a [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
         pub fn build(self) -> crate::model::UserDataValidationParameters {
             crate::model::UserDataValidationParameters {
                 source: self.source,
@@ -2017,7 +2007,7 @@ pub mod user_data_validation_parameters {
     }
 }
 impl UserDataValidationParameters {
-    /// Creates a new builder-style object to manufacture [`UserDataValidationParameters`](crate::model::UserDataValidationParameters)
+    /// Creates a new builder-style object to manufacture [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
     pub fn builder() -> crate::model::user_data_validation_parameters::Builder {
         crate::model::user_data_validation_parameters::Builder::default()
     }
@@ -2098,11 +2088,10 @@ impl std::fmt::Debug for Source {
         formatter.finish()
     }
 }
-/// See [`Source`](crate::model::Source)
+/// See [`Source`](crate::model::Source).
 pub mod source {
 
-    /// A builder for [`Source`](crate::model::Source)
-    #[non_exhaustive]
+    /// A builder for [`Source`](crate::model::Source).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -2121,7 +2110,7 @@ pub mod source {
             self.s3_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`Source`](crate::model::Source)
+        /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source {
                 s3_location: self.s3_location,
@@ -2130,7 +2119,7 @@ pub mod source {
     }
 }
 impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source)
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
     pub fn builder() -> crate::model::source::Builder {
         crate::model::source::Builder::default()
     }
@@ -2163,11 +2152,10 @@ impl std::fmt::Debug for S3Location {
         formatter.finish()
     }
 }
-/// See [`S3Location`](crate::model::S3Location)
+/// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
-    /// A builder for [`S3Location`](crate::model::S3Location)
-    #[non_exhaustive]
+    /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2194,7 +2182,7 @@ pub mod s3_location {
             self.key = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
+        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
                 bucket: self.bucket,
@@ -2204,7 +2192,7 @@ pub mod s3_location {
     }
 }
 impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location)
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
     pub fn builder() -> crate::model::s3_location::Builder {
         crate::model::s3_location::Builder::default()
     }
@@ -2306,11 +2294,10 @@ impl std::fmt::Debug for AppValidationConfiguration {
         formatter.finish()
     }
 }
-/// See [`AppValidationConfiguration`](crate::model::AppValidationConfiguration)
+/// See [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
 pub mod app_validation_configuration {
 
-    /// A builder for [`AppValidationConfiguration`](crate::model::AppValidationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_id: std::option::Option<std::string::String>,
@@ -2376,7 +2363,7 @@ pub mod app_validation_configuration {
             self.ssm_validation_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppValidationConfiguration`](crate::model::AppValidationConfiguration)
+        /// Consumes the builder and constructs a [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
         pub fn build(self) -> crate::model::AppValidationConfiguration {
             crate::model::AppValidationConfiguration {
                 validation_id: self.validation_id,
@@ -2388,7 +2375,7 @@ pub mod app_validation_configuration {
     }
 }
 impl AppValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AppValidationConfiguration`](crate::model::AppValidationConfiguration)
+    /// Creates a new builder-style object to manufacture [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
     pub fn builder() -> crate::model::app_validation_configuration::Builder {
         crate::model::app_validation_configuration::Builder::default()
     }
@@ -2449,11 +2436,10 @@ impl std::fmt::Debug for SsmValidationParameters {
         formatter.finish()
     }
 }
-/// See [`SsmValidationParameters`](crate::model::SsmValidationParameters)
+/// See [`SsmValidationParameters`](crate::model::SsmValidationParameters).
 pub mod ssm_validation_parameters {
 
-    /// A builder for [`SsmValidationParameters`](crate::model::SsmValidationParameters)
-    #[non_exhaustive]
+    /// A builder for [`SsmValidationParameters`](crate::model::SsmValidationParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::Source>,
@@ -2530,7 +2516,7 @@ pub mod ssm_validation_parameters {
             self.output_s3_bucket_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`SsmValidationParameters`](crate::model::SsmValidationParameters)
+        /// Consumes the builder and constructs a [`SsmValidationParameters`](crate::model::SsmValidationParameters).
         pub fn build(self) -> crate::model::SsmValidationParameters {
             crate::model::SsmValidationParameters {
                 source: self.source,
@@ -2544,7 +2530,7 @@ pub mod ssm_validation_parameters {
     }
 }
 impl SsmValidationParameters {
-    /// Creates a new builder-style object to manufacture [`SsmValidationParameters`](crate::model::SsmValidationParameters)
+    /// Creates a new builder-style object to manufacture [`SsmValidationParameters`](crate::model::SsmValidationParameters).
     pub fn builder() -> crate::model::ssm_validation_parameters::Builder {
         crate::model::ssm_validation_parameters::Builder::default()
     }
@@ -2634,11 +2620,10 @@ impl std::fmt::Debug for ServerGroupReplicationConfiguration {
         formatter.finish()
     }
 }
-/// See [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration)
+/// See [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
 pub mod server_group_replication_configuration {
 
-    /// A builder for [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -2681,7 +2666,7 @@ pub mod server_group_replication_configuration {
             self.server_replication_configurations = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration)
+        /// Consumes the builder and constructs a [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
         pub fn build(self) -> crate::model::ServerGroupReplicationConfiguration {
             crate::model::ServerGroupReplicationConfiguration {
                 server_group_id: self.server_group_id,
@@ -2691,7 +2676,7 @@ pub mod server_group_replication_configuration {
     }
 }
 impl ServerGroupReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration)
+    /// Creates a new builder-style object to manufacture [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
     pub fn builder() -> crate::model::server_group_replication_configuration::Builder {
         crate::model::server_group_replication_configuration::Builder::default()
     }
@@ -2730,11 +2715,10 @@ impl std::fmt::Debug for ServerReplicationConfiguration {
         formatter.finish()
     }
 }
-/// See [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration)
+/// See [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
 pub mod server_replication_configuration {
 
-    /// A builder for [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -2768,7 +2752,7 @@ pub mod server_replication_configuration {
             self.server_replication_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration)
+        /// Consumes the builder and constructs a [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
         pub fn build(self) -> crate::model::ServerReplicationConfiguration {
             crate::model::ServerReplicationConfiguration {
                 server: self.server,
@@ -2778,7 +2762,7 @@ pub mod server_replication_configuration {
     }
 }
 impl ServerReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration)
+    /// Creates a new builder-style object to manufacture [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
     pub fn builder() -> crate::model::server_replication_configuration::Builder {
         crate::model::server_replication_configuration::Builder::default()
     }
@@ -2863,11 +2847,10 @@ impl std::fmt::Debug for ServerReplicationParameters {
         formatter.finish()
     }
 }
-/// See [`ServerReplicationParameters`](crate::model::ServerReplicationParameters)
+/// See [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
 pub mod server_replication_parameters {
 
-    /// A builder for [`ServerReplicationParameters`](crate::model::ServerReplicationParameters)
-    #[non_exhaustive]
+    /// A builder for [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) seed_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2972,7 +2955,7 @@ pub mod server_replication_parameters {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerReplicationParameters`](crate::model::ServerReplicationParameters)
+        /// Consumes the builder and constructs a [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
         pub fn build(self) -> crate::model::ServerReplicationParameters {
             crate::model::ServerReplicationParameters {
                 seed_time: self.seed_time,
@@ -2987,7 +2970,7 @@ pub mod server_replication_parameters {
     }
 }
 impl ServerReplicationParameters {
-    /// Creates a new builder-style object to manufacture [`ServerReplicationParameters`](crate::model::ServerReplicationParameters)
+    /// Creates a new builder-style object to manufacture [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
     pub fn builder() -> crate::model::server_replication_parameters::Builder {
         crate::model::server_replication_parameters::Builder::default()
     }
@@ -3033,11 +3016,10 @@ impl std::fmt::Debug for ServerGroupLaunchConfiguration {
         formatter.finish()
     }
 }
-/// See [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration)
+/// See [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
 pub mod server_group_launch_configuration {
 
-    /// A builder for [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_group_id: std::option::Option<std::string::String>,
@@ -3091,7 +3073,7 @@ pub mod server_group_launch_configuration {
             self.server_launch_configurations = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration)
+        /// Consumes the builder and constructs a [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
         pub fn build(self) -> crate::model::ServerGroupLaunchConfiguration {
             crate::model::ServerGroupLaunchConfiguration {
                 server_group_id: self.server_group_id,
@@ -3102,7 +3084,7 @@ pub mod server_group_launch_configuration {
     }
 }
 impl ServerGroupLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration)
+    /// Creates a new builder-style object to manufacture [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
     pub fn builder() -> crate::model::server_group_launch_configuration::Builder {
         crate::model::server_group_launch_configuration::Builder::default()
     }
@@ -3208,11 +3190,10 @@ impl std::fmt::Debug for ServerLaunchConfiguration {
         formatter.finish()
     }
 }
-/// See [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration)
+/// See [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
 pub mod server_launch_configuration {
 
-    /// A builder for [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -3364,7 +3345,7 @@ pub mod server_launch_configuration {
             self.configure_script_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration)
+        /// Consumes the builder and constructs a [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
         pub fn build(self) -> crate::model::ServerLaunchConfiguration {
             crate::model::ServerLaunchConfiguration {
                 server: self.server,
@@ -3384,7 +3365,7 @@ pub mod server_launch_configuration {
     }
 }
 impl ServerLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration)
+    /// Creates a new builder-style object to manufacture [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
     pub fn builder() -> crate::model::server_launch_configuration::Builder {
         crate::model::server_launch_configuration::Builder::default()
     }
@@ -3410,11 +3391,10 @@ impl std::fmt::Debug for UserData {
         formatter.finish()
     }
 }
-/// See [`UserData`](crate::model::UserData)
+/// See [`UserData`](crate::model::UserData).
 pub mod user_data {
 
-    /// A builder for [`UserData`](crate::model::UserData)
-    #[non_exhaustive]
+    /// A builder for [`UserData`](crate::model::UserData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -3433,7 +3413,7 @@ pub mod user_data {
             self.s3_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserData`](crate::model::UserData)
+        /// Consumes the builder and constructs a [`UserData`](crate::model::UserData).
         pub fn build(self) -> crate::model::UserData {
             crate::model::UserData {
                 s3_location: self.s3_location,
@@ -3442,7 +3422,7 @@ pub mod user_data {
     }
 }
 impl UserData {
-    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData)
+    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
     pub fn builder() -> crate::model::user_data::Builder {
         crate::model::user_data::Builder::default()
     }
@@ -3482,11 +3462,10 @@ impl std::fmt::Debug for NotificationContext {
         formatter.finish()
     }
 }
-/// See [`NotificationContext`](crate::model::NotificationContext)
+/// See [`NotificationContext`](crate::model::NotificationContext).
 pub mod notification_context {
 
-    /// A builder for [`NotificationContext`](crate::model::NotificationContext)
-    #[non_exhaustive]
+    /// A builder for [`NotificationContext`](crate::model::NotificationContext).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_id: std::option::Option<std::string::String>,
@@ -3533,7 +3512,7 @@ pub mod notification_context {
             self.status_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotificationContext`](crate::model::NotificationContext)
+        /// Consumes the builder and constructs a [`NotificationContext`](crate::model::NotificationContext).
         pub fn build(self) -> crate::model::NotificationContext {
             crate::model::NotificationContext {
                 validation_id: self.validation_id,
@@ -3544,7 +3523,7 @@ pub mod notification_context {
     }
 }
 impl NotificationContext {
-    /// Creates a new builder-style object to manufacture [`NotificationContext`](crate::model::NotificationContext)
+    /// Creates a new builder-style object to manufacture [`NotificationContext`](crate::model::NotificationContext).
     pub fn builder() -> crate::model::notification_context::Builder {
         crate::model::notification_context::Builder::default()
     }
@@ -3800,11 +3779,10 @@ impl std::fmt::Debug for ReplicationRun {
         formatter.finish()
     }
 }
-/// See [`ReplicationRun`](crate::model::ReplicationRun)
+/// See [`ReplicationRun`](crate::model::ReplicationRun).
 pub mod replication_run {
 
-    /// A builder for [`ReplicationRun`](crate::model::ReplicationRun)
-    #[non_exhaustive]
+    /// A builder for [`ReplicationRun`](crate::model::ReplicationRun).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_run_id: std::option::Option<std::string::String>,
@@ -3965,7 +3943,7 @@ pub mod replication_run {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicationRun`](crate::model::ReplicationRun)
+        /// Consumes the builder and constructs a [`ReplicationRun`](crate::model::ReplicationRun).
         pub fn build(self) -> crate::model::ReplicationRun {
             crate::model::ReplicationRun {
                 replication_run_id: self.replication_run_id,
@@ -3984,7 +3962,7 @@ pub mod replication_run {
     }
 }
 impl ReplicationRun {
-    /// Creates a new builder-style object to manufacture [`ReplicationRun`](crate::model::ReplicationRun)
+    /// Creates a new builder-style object to manufacture [`ReplicationRun`](crate::model::ReplicationRun).
     pub fn builder() -> crate::model::replication_run::Builder {
         crate::model::replication_run::Builder::default()
     }
@@ -4017,11 +3995,10 @@ impl std::fmt::Debug for ReplicationRunStageDetails {
         formatter.finish()
     }
 }
-/// See [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails)
+/// See [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
 pub mod replication_run_stage_details {
 
-    /// A builder for [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails)
-    #[non_exhaustive]
+    /// A builder for [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stage: std::option::Option<std::string::String>,
@@ -4051,7 +4028,7 @@ pub mod replication_run_stage_details {
             self.stage_progress = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails)
+        /// Consumes the builder and constructs a [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
         pub fn build(self) -> crate::model::ReplicationRunStageDetails {
             crate::model::ReplicationRunStageDetails {
                 stage: self.stage,
@@ -4061,7 +4038,7 @@ pub mod replication_run_stage_details {
     }
 }
 impl ReplicationRunStageDetails {
-    /// Creates a new builder-style object to manufacture [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails)
+    /// Creates a new builder-style object to manufacture [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
     pub fn builder() -> crate::model::replication_run_stage_details::Builder {
         crate::model::replication_run_stage_details::Builder::default()
     }
@@ -4366,11 +4343,10 @@ impl std::fmt::Debug for ReplicationJob {
         formatter.finish()
     }
 }
-/// See [`ReplicationJob`](crate::model::ReplicationJob)
+/// See [`ReplicationJob`](crate::model::ReplicationJob).
 pub mod replication_job {
 
-    /// A builder for [`ReplicationJob`](crate::model::ReplicationJob)
-    #[non_exhaustive]
+    /// A builder for [`ReplicationJob`](crate::model::ReplicationJob).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_job_id: std::option::Option<std::string::String>,
@@ -4627,7 +4603,7 @@ pub mod replication_job {
             self.replication_run_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicationJob`](crate::model::ReplicationJob)
+        /// Consumes the builder and constructs a [`ReplicationJob`](crate::model::ReplicationJob).
         pub fn build(self) -> crate::model::ReplicationJob {
             crate::model::ReplicationJob {
                 replication_job_id: self.replication_job_id,
@@ -4653,7 +4629,7 @@ pub mod replication_job {
     }
 }
 impl ReplicationJob {
-    /// Creates a new builder-style object to manufacture [`ReplicationJob`](crate::model::ReplicationJob)
+    /// Creates a new builder-style object to manufacture [`ReplicationJob`](crate::model::ReplicationJob).
     pub fn builder() -> crate::model::replication_job::Builder {
         crate::model::replication_job::Builder::default()
     }
@@ -4830,11 +4806,10 @@ impl std::fmt::Debug for Connector {
         formatter.finish()
     }
 }
-/// See [`Connector`](crate::model::Connector)
+/// See [`Connector`](crate::model::Connector).
 pub mod connector {
 
-    /// A builder for [`Connector`](crate::model::Connector)
-    #[non_exhaustive]
+    /// A builder for [`Connector`](crate::model::Connector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_id: std::option::Option<std::string::String>,
@@ -4974,7 +4949,7 @@ pub mod connector {
             self.associated_on = input;
             self
         }
-        /// Consumes the builder and constructs a [`Connector`](crate::model::Connector)
+        /// Consumes the builder and constructs a [`Connector`](crate::model::Connector).
         pub fn build(self) -> crate::model::Connector {
             crate::model::Connector {
                 connector_id: self.connector_id,
@@ -4992,7 +4967,7 @@ pub mod connector {
     }
 }
 impl Connector {
-    /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector)
+    /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector).
     pub fn builder() -> crate::model::connector::Builder {
         crate::model::connector::Builder::default()
     }
@@ -5190,11 +5165,10 @@ impl std::fmt::Debug for ValidationOutput {
         formatter.finish()
     }
 }
-/// See [`ValidationOutput`](crate::model::ValidationOutput)
+/// See [`ValidationOutput`](crate::model::ValidationOutput).
 pub mod validation_output {
 
-    /// A builder for [`ValidationOutput`](crate::model::ValidationOutput)
-    #[non_exhaustive]
+    /// A builder for [`ValidationOutput`](crate::model::ValidationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_id: std::option::Option<std::string::String>,
@@ -5298,7 +5272,7 @@ pub mod validation_output {
             self.server_validation_output = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationOutput`](crate::model::ValidationOutput)
+        /// Consumes the builder and constructs a [`ValidationOutput`](crate::model::ValidationOutput).
         pub fn build(self) -> crate::model::ValidationOutput {
             crate::model::ValidationOutput {
                 validation_id: self.validation_id,
@@ -5313,7 +5287,7 @@ pub mod validation_output {
     }
 }
 impl ValidationOutput {
-    /// Creates a new builder-style object to manufacture [`ValidationOutput`](crate::model::ValidationOutput)
+    /// Creates a new builder-style object to manufacture [`ValidationOutput`](crate::model::ValidationOutput).
     pub fn builder() -> crate::model::validation_output::Builder {
         crate::model::validation_output::Builder::default()
     }
@@ -5339,11 +5313,10 @@ impl std::fmt::Debug for ServerValidationOutput {
         formatter.finish()
     }
 }
-/// See [`ServerValidationOutput`](crate::model::ServerValidationOutput)
+/// See [`ServerValidationOutput`](crate::model::ServerValidationOutput).
 pub mod server_validation_output {
 
-    /// A builder for [`ServerValidationOutput`](crate::model::ServerValidationOutput)
-    #[non_exhaustive]
+    /// A builder for [`ServerValidationOutput`](crate::model::ServerValidationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server: std::option::Option<crate::model::Server>,
@@ -5359,7 +5332,7 @@ pub mod server_validation_output {
             self.server = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerValidationOutput`](crate::model::ServerValidationOutput)
+        /// Consumes the builder and constructs a [`ServerValidationOutput`](crate::model::ServerValidationOutput).
         pub fn build(self) -> crate::model::ServerValidationOutput {
             crate::model::ServerValidationOutput {
                 server: self.server,
@@ -5368,7 +5341,7 @@ pub mod server_validation_output {
     }
 }
 impl ServerValidationOutput {
-    /// Creates a new builder-style object to manufacture [`ServerValidationOutput`](crate::model::ServerValidationOutput)
+    /// Creates a new builder-style object to manufacture [`ServerValidationOutput`](crate::model::ServerValidationOutput).
     pub fn builder() -> crate::model::server_validation_output::Builder {
         crate::model::server_validation_output::Builder::default()
     }
@@ -5394,11 +5367,10 @@ impl std::fmt::Debug for AppValidationOutput {
         formatter.finish()
     }
 }
-/// See [`AppValidationOutput`](crate::model::AppValidationOutput)
+/// See [`AppValidationOutput`](crate::model::AppValidationOutput).
 pub mod app_validation_output {
 
-    /// A builder for [`AppValidationOutput`](crate::model::AppValidationOutput)
-    #[non_exhaustive]
+    /// A builder for [`AppValidationOutput`](crate::model::AppValidationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssm_output: std::option::Option<crate::model::SsmOutput>,
@@ -5417,7 +5389,7 @@ pub mod app_validation_output {
             self.ssm_output = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppValidationOutput`](crate::model::AppValidationOutput)
+        /// Consumes the builder and constructs a [`AppValidationOutput`](crate::model::AppValidationOutput).
         pub fn build(self) -> crate::model::AppValidationOutput {
             crate::model::AppValidationOutput {
                 ssm_output: self.ssm_output,
@@ -5426,7 +5398,7 @@ pub mod app_validation_output {
     }
 }
 impl AppValidationOutput {
-    /// Creates a new builder-style object to manufacture [`AppValidationOutput`](crate::model::AppValidationOutput)
+    /// Creates a new builder-style object to manufacture [`AppValidationOutput`](crate::model::AppValidationOutput).
     pub fn builder() -> crate::model::app_validation_output::Builder {
         crate::model::app_validation_output::Builder::default()
     }
@@ -5452,11 +5424,10 @@ impl std::fmt::Debug for SsmOutput {
         formatter.finish()
     }
 }
-/// See [`SsmOutput`](crate::model::SsmOutput)
+/// See [`SsmOutput`](crate::model::SsmOutput).
 pub mod ssm_output {
 
-    /// A builder for [`SsmOutput`](crate::model::SsmOutput)
-    #[non_exhaustive]
+    /// A builder for [`SsmOutput`](crate::model::SsmOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_location: std::option::Option<crate::model::S3Location>,
@@ -5475,7 +5446,7 @@ pub mod ssm_output {
             self.s3_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`SsmOutput`](crate::model::SsmOutput)
+        /// Consumes the builder and constructs a [`SsmOutput`](crate::model::SsmOutput).
         pub fn build(self) -> crate::model::SsmOutput {
             crate::model::SsmOutput {
                 s3_location: self.s3_location,
@@ -5484,7 +5455,7 @@ pub mod ssm_output {
     }
 }
 impl SsmOutput {
-    /// Creates a new builder-style object to manufacture [`SsmOutput`](crate::model::SsmOutput)
+    /// Creates a new builder-style object to manufacture [`SsmOutput`](crate::model::SsmOutput).
     pub fn builder() -> crate::model::ssm_output::Builder {
         crate::model::ssm_output::Builder::default()
     }

@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateTableOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateTableOutput`](crate::output::UpdateTableOutput)
+/// See [`UpdateTableOutput`](crate::output::UpdateTableOutput).
 pub mod update_table_output {
 
-    /// A builder for [`UpdateTableOutput`](crate::output::UpdateTableOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateTableOutput`](crate::output::UpdateTableOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod update_table_output {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::output::UpdateTableOutput)
+        /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::output::UpdateTableOutput).
         pub fn build(self) -> crate::output::UpdateTableOutput {
             crate::output::UpdateTableOutput {
                 resource_arn: self.resource_arn,
@@ -48,7 +47,7 @@ pub mod update_table_output {
     }
 }
 impl UpdateTableOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTableOutput`](crate::output::UpdateTableOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateTableOutput`](crate::output::UpdateTableOutput).
     pub fn builder() -> crate::output::update_table_output::Builder {
         crate::output::update_table_output::Builder::default()
     }
@@ -64,22 +63,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -95,22 +93,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -136,11 +133,10 @@ impl std::fmt::Debug for RestoreTableOutput {
         formatter.finish()
     }
 }
-/// See [`RestoreTableOutput`](crate::output::RestoreTableOutput)
+/// See [`RestoreTableOutput`](crate::output::RestoreTableOutput).
 pub mod restore_table_output {
 
-    /// A builder for [`RestoreTableOutput`](crate::output::RestoreTableOutput)
-    #[non_exhaustive]
+    /// A builder for [`RestoreTableOutput`](crate::output::RestoreTableOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) restored_table_arn: std::option::Option<std::string::String>,
@@ -159,7 +155,7 @@ pub mod restore_table_output {
             self.restored_table_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`RestoreTableOutput`](crate::output::RestoreTableOutput)
+        /// Consumes the builder and constructs a [`RestoreTableOutput`](crate::output::RestoreTableOutput).
         pub fn build(self) -> crate::output::RestoreTableOutput {
             crate::output::RestoreTableOutput {
                 restored_table_arn: self.restored_table_arn,
@@ -168,7 +164,7 @@ pub mod restore_table_output {
     }
 }
 impl RestoreTableOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreTableOutput`](crate::output::RestoreTableOutput)
+    /// Creates a new builder-style object to manufacture [`RestoreTableOutput`](crate::output::RestoreTableOutput).
     pub fn builder() -> crate::output::restore_table_output::Builder {
         crate::output::restore_table_output::Builder::default()
     }
@@ -201,11 +197,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -241,7 +236,7 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 next_token: self.next_token,
@@ -251,7 +246,7 @@ pub mod list_tags_for_resource_output {
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -284,11 +279,10 @@ impl std::fmt::Debug for ListTablesOutput {
         formatter.finish()
     }
 }
-/// See [`ListTablesOutput`](crate::output::ListTablesOutput)
+/// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
 
-    /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -324,7 +318,7 @@ pub mod list_tables_output {
             self.tables = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput)
+        /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
                 next_token: self.next_token,
@@ -334,7 +328,7 @@ pub mod list_tables_output {
     }
 }
 impl ListTablesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput)
+    /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
     pub fn builder() -> crate::output::list_tables_output::Builder {
         crate::output::list_tables_output::Builder::default()
     }
@@ -367,11 +361,10 @@ impl std::fmt::Debug for ListKeyspacesOutput {
         formatter.finish()
     }
 }
-/// See [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput)
+/// See [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
 pub mod list_keyspaces_output {
 
-    /// A builder for [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -407,7 +400,7 @@ pub mod list_keyspaces_output {
             self.keyspaces = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput)
+        /// Consumes the builder and constructs a [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
         pub fn build(self) -> crate::output::ListKeyspacesOutput {
             crate::output::ListKeyspacesOutput {
                 next_token: self.next_token,
@@ -417,7 +410,7 @@ pub mod list_keyspaces_output {
     }
 }
 impl ListKeyspacesOutput {
-    /// Creates a new builder-style object to manufacture [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput)
+    /// Creates a new builder-style object to manufacture [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
     pub fn builder() -> crate::output::list_keyspaces_output::Builder {
         crate::output::list_keyspaces_output::Builder::default()
     }
@@ -530,11 +523,10 @@ impl std::fmt::Debug for GetTableOutput {
         formatter.finish()
     }
 }
-/// See [`GetTableOutput`](crate::output::GetTableOutput)
+/// See [`GetTableOutput`](crate::output::GetTableOutput).
 pub mod get_table_output {
 
-    /// A builder for [`GetTableOutput`](crate::output::GetTableOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetTableOutput`](crate::output::GetTableOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -705,7 +697,7 @@ pub mod get_table_output {
             self.comment = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetTableOutput`](crate::output::GetTableOutput)
+        /// Consumes the builder and constructs a [`GetTableOutput`](crate::output::GetTableOutput).
         pub fn build(self) -> crate::output::GetTableOutput {
             crate::output::GetTableOutput {
                 keyspace_name: self.keyspace_name,
@@ -725,7 +717,7 @@ pub mod get_table_output {
     }
 }
 impl GetTableOutput {
-    /// Creates a new builder-style object to manufacture [`GetTableOutput`](crate::output::GetTableOutput)
+    /// Creates a new builder-style object to manufacture [`GetTableOutput`](crate::output::GetTableOutput).
     pub fn builder() -> crate::output::get_table_output::Builder {
         crate::output::get_table_output::Builder::default()
     }
@@ -758,11 +750,10 @@ impl std::fmt::Debug for GetKeyspaceOutput {
         formatter.finish()
     }
 }
-/// See [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput)
+/// See [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
 pub mod get_keyspace_output {
 
-    /// A builder for [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyspace_name: std::option::Option<std::string::String>,
@@ -792,7 +783,7 @@ pub mod get_keyspace_output {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput)
+        /// Consumes the builder and constructs a [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
         pub fn build(self) -> crate::output::GetKeyspaceOutput {
             crate::output::GetKeyspaceOutput {
                 keyspace_name: self.keyspace_name,
@@ -802,7 +793,7 @@ pub mod get_keyspace_output {
     }
 }
 impl GetKeyspaceOutput {
-    /// Creates a new builder-style object to manufacture [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput)
+    /// Creates a new builder-style object to manufacture [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
     pub fn builder() -> crate::output::get_keyspace_output::Builder {
         crate::output::get_keyspace_output::Builder::default()
     }
@@ -818,22 +809,21 @@ impl std::fmt::Debug for DeleteTableOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteTableOutput`](crate::output::DeleteTableOutput)
+/// See [`DeleteTableOutput`](crate::output::DeleteTableOutput).
 pub mod delete_table_output {
 
-    /// A builder for [`DeleteTableOutput`](crate::output::DeleteTableOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteTableOutput`](crate::output::DeleteTableOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteTableOutput`](crate::output::DeleteTableOutput)
+        /// Consumes the builder and constructs a [`DeleteTableOutput`](crate::output::DeleteTableOutput).
         pub fn build(self) -> crate::output::DeleteTableOutput {
             crate::output::DeleteTableOutput {}
         }
     }
 }
 impl DeleteTableOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTableOutput`](crate::output::DeleteTableOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteTableOutput`](crate::output::DeleteTableOutput).
     pub fn builder() -> crate::output::delete_table_output::Builder {
         crate::output::delete_table_output::Builder::default()
     }
@@ -849,22 +839,21 @@ impl std::fmt::Debug for DeleteKeyspaceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput)
+/// See [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
 pub mod delete_keyspace_output {
 
-    /// A builder for [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput)
+        /// Consumes the builder and constructs a [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
         pub fn build(self) -> crate::output::DeleteKeyspaceOutput {
             crate::output::DeleteKeyspaceOutput {}
         }
     }
 }
 impl DeleteKeyspaceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
     pub fn builder() -> crate::output::delete_keyspace_output::Builder {
         crate::output::delete_keyspace_output::Builder::default()
     }
@@ -890,11 +879,10 @@ impl std::fmt::Debug for CreateTableOutput {
         formatter.finish()
     }
 }
-/// See [`CreateTableOutput`](crate::output::CreateTableOutput)
+/// See [`CreateTableOutput`](crate::output::CreateTableOutput).
 pub mod create_table_output {
 
-    /// A builder for [`CreateTableOutput`](crate::output::CreateTableOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateTableOutput`](crate::output::CreateTableOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -910,7 +898,7 @@ pub mod create_table_output {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateTableOutput`](crate::output::CreateTableOutput)
+        /// Consumes the builder and constructs a [`CreateTableOutput`](crate::output::CreateTableOutput).
         pub fn build(self) -> crate::output::CreateTableOutput {
             crate::output::CreateTableOutput {
                 resource_arn: self.resource_arn,
@@ -919,7 +907,7 @@ pub mod create_table_output {
     }
 }
 impl CreateTableOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::output::CreateTableOutput)
+    /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::output::CreateTableOutput).
     pub fn builder() -> crate::output::create_table_output::Builder {
         crate::output::create_table_output::Builder::default()
     }
@@ -945,11 +933,10 @@ impl std::fmt::Debug for CreateKeyspaceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput)
+/// See [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
 pub mod create_keyspace_output {
 
-    /// A builder for [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -965,7 +952,7 @@ pub mod create_keyspace_output {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput)
+        /// Consumes the builder and constructs a [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
         pub fn build(self) -> crate::output::CreateKeyspaceOutput {
             crate::output::CreateKeyspaceOutput {
                 resource_arn: self.resource_arn,
@@ -974,7 +961,7 @@ pub mod create_keyspace_output {
     }
 }
 impl CreateKeyspaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
     pub fn builder() -> crate::output::create_keyspace_output::Builder {
         crate::output::create_keyspace_output::Builder::default()
     }

@@ -34,11 +34,10 @@ impl std::fmt::Debug for TableMember {
         formatter.finish()
     }
 }
-/// See [`TableMember`](crate::model::TableMember)
+/// See [`TableMember`](crate::model::TableMember).
 pub mod table_member {
 
-    /// A builder for [`TableMember`](crate::model::TableMember)
-    #[non_exhaustive]
+    /// A builder for [`TableMember`](crate::model::TableMember).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -76,7 +75,7 @@ pub mod table_member {
             self.schema = input;
             self
         }
-        /// Consumes the builder and constructs a [`TableMember`](crate::model::TableMember)
+        /// Consumes the builder and constructs a [`TableMember`](crate::model::TableMember).
         pub fn build(self) -> crate::model::TableMember {
             crate::model::TableMember {
                 name: self.name,
@@ -87,7 +86,7 @@ pub mod table_member {
     }
 }
 impl TableMember {
-    /// Creates a new builder-style object to manufacture [`TableMember`](crate::model::TableMember)
+    /// Creates a new builder-style object to manufacture [`TableMember`](crate::model::TableMember).
     pub fn builder() -> crate::model::table_member::Builder {
         crate::model::table_member::Builder::default()
     }
@@ -176,11 +175,10 @@ impl std::fmt::Debug for StatementData {
         formatter.finish()
     }
 }
-/// See [`StatementData`](crate::model::StatementData)
+/// See [`StatementData`](crate::model::StatementData).
 pub mod statement_data {
 
-    /// A builder for [`StatementData`](crate::model::StatementData)
-    #[non_exhaustive]
+    /// A builder for [`StatementData`](crate::model::StatementData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -325,7 +323,7 @@ pub mod statement_data {
             self.is_batch_statement = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatementData`](crate::model::StatementData)
+        /// Consumes the builder and constructs a [`StatementData`](crate::model::StatementData).
         pub fn build(self) -> crate::model::StatementData {
             crate::model::StatementData {
                 id: self.id,
@@ -343,7 +341,7 @@ pub mod statement_data {
     }
 }
 impl StatementData {
-    /// Creates a new builder-style object to manufacture [`StatementData`](crate::model::StatementData)
+    /// Creates a new builder-style object to manufacture [`StatementData`](crate::model::StatementData).
     pub fn builder() -> crate::model::statement_data::Builder {
         crate::model::statement_data::Builder::default()
     }
@@ -376,11 +374,10 @@ impl std::fmt::Debug for SqlParameter {
         formatter.finish()
     }
 }
-/// See [`SqlParameter`](crate::model::SqlParameter)
+/// See [`SqlParameter`](crate::model::SqlParameter).
 pub mod sql_parameter {
 
-    /// A builder for [`SqlParameter`](crate::model::SqlParameter)
-    #[non_exhaustive]
+    /// A builder for [`SqlParameter`](crate::model::SqlParameter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -407,7 +404,7 @@ pub mod sql_parameter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`SqlParameter`](crate::model::SqlParameter)
+        /// Consumes the builder and constructs a [`SqlParameter`](crate::model::SqlParameter).
         pub fn build(self) -> crate::model::SqlParameter {
             crate::model::SqlParameter {
                 name: self.name,
@@ -417,7 +414,7 @@ pub mod sql_parameter {
     }
 }
 impl SqlParameter {
-    /// Creates a new builder-style object to manufacture [`SqlParameter`](crate::model::SqlParameter)
+    /// Creates a new builder-style object to manufacture [`SqlParameter`](crate::model::SqlParameter).
     pub fn builder() -> crate::model::sql_parameter::Builder {
         crate::model::sql_parameter::Builder::default()
     }
@@ -610,11 +607,10 @@ impl std::fmt::Debug for ColumnMetadata {
         formatter.finish()
     }
 }
-/// See [`ColumnMetadata`](crate::model::ColumnMetadata)
+/// See [`ColumnMetadata`](crate::model::ColumnMetadata).
 pub mod column_metadata {
 
-    /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata)
-    #[non_exhaustive]
+    /// A builder for [`ColumnMetadata`](crate::model::ColumnMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_case_sensitive: std::option::Option<bool>,
@@ -765,7 +761,7 @@ pub mod column_metadata {
             self.column_default = input;
             self
         }
-        /// Consumes the builder and constructs a [`ColumnMetadata`](crate::model::ColumnMetadata)
+        /// Consumes the builder and constructs a [`ColumnMetadata`](crate::model::ColumnMetadata).
         pub fn build(self) -> crate::model::ColumnMetadata {
             crate::model::ColumnMetadata {
                 is_case_sensitive: self.is_case_sensitive.unwrap_or_default(),
@@ -786,7 +782,7 @@ pub mod column_metadata {
     }
 }
 impl ColumnMetadata {
-    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata)
+    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
     pub fn builder() -> crate::model::column_metadata::Builder {
         crate::model::column_metadata::Builder::default()
     }
@@ -993,11 +989,10 @@ impl std::fmt::Debug for SubStatementData {
         formatter.finish()
     }
 }
-/// See [`SubStatementData`](crate::model::SubStatementData)
+/// See [`SubStatementData`](crate::model::SubStatementData).
 pub mod sub_statement_data {
 
-    /// A builder for [`SubStatementData`](crate::model::SubStatementData)
-    #[non_exhaustive]
+    /// A builder for [`SubStatementData`](crate::model::SubStatementData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1132,7 +1127,7 @@ pub mod sub_statement_data {
             self.has_result_set = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubStatementData`](crate::model::SubStatementData)
+        /// Consumes the builder and constructs a [`SubStatementData`](crate::model::SubStatementData).
         pub fn build(self) -> crate::model::SubStatementData {
             crate::model::SubStatementData {
                 id: self.id,
@@ -1151,7 +1146,7 @@ pub mod sub_statement_data {
     }
 }
 impl SubStatementData {
-    /// Creates a new builder-style object to manufacture [`SubStatementData`](crate::model::SubStatementData)
+    /// Creates a new builder-style object to manufacture [`SubStatementData`](crate::model::SubStatementData).
     pub fn builder() -> crate::model::sub_statement_data::Builder {
         crate::model::sub_statement_data::Builder::default()
     }

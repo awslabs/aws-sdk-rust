@@ -45,11 +45,10 @@ impl std::fmt::Debug for UpdateParallelDataOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput)
+/// See [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
 pub mod update_parallel_data_output {
 
-    /// A builder for [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -111,7 +110,7 @@ pub mod update_parallel_data_output {
             self.latest_update_attempt_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput)
+        /// Consumes the builder and constructs a [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
         pub fn build(self) -> crate::output::UpdateParallelDataOutput {
             crate::output::UpdateParallelDataOutput {
                 name: self.name,
@@ -123,7 +122,7 @@ pub mod update_parallel_data_output {
     }
 }
 impl UpdateParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
     pub fn builder() -> crate::output::update_parallel_data_output::Builder {
         crate::output::update_parallel_data_output::Builder::default()
     }
@@ -179,11 +178,10 @@ impl std::fmt::Debug for TranslateTextOutput {
         formatter.finish()
     }
 }
-/// See [`TranslateTextOutput`](crate::output::TranslateTextOutput)
+/// See [`TranslateTextOutput`](crate::output::TranslateTextOutput).
 pub mod translate_text_output {
 
-    /// A builder for [`TranslateTextOutput`](crate::output::TranslateTextOutput)
-    #[non_exhaustive]
+    /// A builder for [`TranslateTextOutput`](crate::output::TranslateTextOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) translated_text: std::option::Option<std::string::String>,
@@ -265,7 +263,7 @@ pub mod translate_text_output {
             self.applied_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`TranslateTextOutput`](crate::output::TranslateTextOutput)
+        /// Consumes the builder and constructs a [`TranslateTextOutput`](crate::output::TranslateTextOutput).
         pub fn build(self) -> crate::output::TranslateTextOutput {
             crate::output::TranslateTextOutput {
                 translated_text: self.translated_text,
@@ -278,7 +276,7 @@ pub mod translate_text_output {
     }
 }
 impl TranslateTextOutput {
-    /// Creates a new builder-style object to manufacture [`TranslateTextOutput`](crate::output::TranslateTextOutput)
+    /// Creates a new builder-style object to manufacture [`TranslateTextOutput`](crate::output::TranslateTextOutput).
     pub fn builder() -> crate::output::translate_text_output::Builder {
         crate::output::translate_text_output::Builder::default()
     }
@@ -311,11 +309,10 @@ impl std::fmt::Debug for StopTextTranslationJobOutput {
         formatter.finish()
     }
 }
-/// See [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput)
+/// See [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
 pub mod stop_text_translation_job_output {
 
-    /// A builder for [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -345,7 +342,7 @@ pub mod stop_text_translation_job_output {
             self.job_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput)
+        /// Consumes the builder and constructs a [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
         pub fn build(self) -> crate::output::StopTextTranslationJobOutput {
             crate::output::StopTextTranslationJobOutput {
                 job_id: self.job_id,
@@ -355,7 +352,7 @@ pub mod stop_text_translation_job_output {
     }
 }
 impl StopTextTranslationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput)
+    /// Creates a new builder-style object to manufacture [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
     pub fn builder() -> crate::output::stop_text_translation_job_output::Builder {
         crate::output::stop_text_translation_job_output::Builder::default()
     }
@@ -406,11 +403,10 @@ impl std::fmt::Debug for StartTextTranslationJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput)
+/// See [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
 pub mod start_text_translation_job_output {
 
-    /// A builder for [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -458,7 +454,7 @@ pub mod start_text_translation_job_output {
             self.job_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput)
+        /// Consumes the builder and constructs a [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
         pub fn build(self) -> crate::output::StartTextTranslationJobOutput {
             crate::output::StartTextTranslationJobOutput {
                 job_id: self.job_id,
@@ -468,7 +464,7 @@ pub mod start_text_translation_job_output {
     }
 }
 impl StartTextTranslationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
     pub fn builder() -> crate::output::start_text_translation_job_output::Builder {
         crate::output::start_text_translation_job_output::Builder::default()
     }
@@ -507,11 +503,10 @@ impl std::fmt::Debug for ListTextTranslationJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput)
+/// See [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
 pub mod list_text_translation_jobs_output {
 
-    /// A builder for [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_translation_job_properties_list:
@@ -553,7 +548,7 @@ pub mod list_text_translation_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput)
+        /// Consumes the builder and constructs a [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
         pub fn build(self) -> crate::output::ListTextTranslationJobsOutput {
             crate::output::ListTextTranslationJobsOutput {
                 text_translation_job_properties_list: self.text_translation_job_properties_list,
@@ -563,7 +558,7 @@ pub mod list_text_translation_jobs_output {
     }
 }
 impl ListTextTranslationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
     pub fn builder() -> crate::output::list_text_translation_jobs_output::Builder {
         crate::output::list_text_translation_jobs_output::Builder::default()
     }
@@ -602,11 +597,10 @@ impl std::fmt::Debug for ListTerminologiesOutput {
         formatter.finish()
     }
 }
-/// See [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput)
+/// See [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
 pub mod list_terminologies_output {
 
-    /// A builder for [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties_list:
@@ -646,7 +640,7 @@ pub mod list_terminologies_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput)
+        /// Consumes the builder and constructs a [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
         pub fn build(self) -> crate::output::ListTerminologiesOutput {
             crate::output::ListTerminologiesOutput {
                 terminology_properties_list: self.terminology_properties_list,
@@ -656,7 +650,7 @@ pub mod list_terminologies_output {
     }
 }
 impl ListTerminologiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput)
+    /// Creates a new builder-style object to manufacture [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
     pub fn builder() -> crate::output::list_terminologies_output::Builder {
         crate::output::list_terminologies_output::Builder::default()
     }
@@ -695,11 +689,10 @@ impl std::fmt::Debug for ListParallelDataOutput {
         formatter.finish()
     }
 }
-/// See [`ListParallelDataOutput`](crate::output::ListParallelDataOutput)
+/// See [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
 pub mod list_parallel_data_output {
 
-    /// A builder for [`ListParallelDataOutput`](crate::output::ListParallelDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parallel_data_properties_list:
@@ -739,7 +732,7 @@ pub mod list_parallel_data_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListParallelDataOutput`](crate::output::ListParallelDataOutput)
+        /// Consumes the builder and constructs a [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
         pub fn build(self) -> crate::output::ListParallelDataOutput {
             crate::output::ListParallelDataOutput {
                 parallel_data_properties_list: self.parallel_data_properties_list,
@@ -749,7 +742,7 @@ pub mod list_parallel_data_output {
     }
 }
 impl ListParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`ListParallelDataOutput`](crate::output::ListParallelDataOutput)
+    /// Creates a new builder-style object to manufacture [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
     pub fn builder() -> crate::output::list_parallel_data_output::Builder {
         crate::output::list_parallel_data_output::Builder::default()
     }
@@ -786,11 +779,10 @@ impl std::fmt::Debug for ImportTerminologyOutput {
         formatter.finish()
     }
 }
-/// See [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput)
+/// See [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
 pub mod import_terminology_output {
 
-    /// A builder for [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput)
-    #[non_exhaustive]
+    /// A builder for [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
@@ -830,7 +822,7 @@ pub mod import_terminology_output {
             self.auxiliary_data_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput)
+        /// Consumes the builder and constructs a [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
         pub fn build(self) -> crate::output::ImportTerminologyOutput {
             crate::output::ImportTerminologyOutput {
                 terminology_properties: self.terminology_properties,
@@ -840,7 +832,7 @@ pub mod import_terminology_output {
     }
 }
 impl ImportTerminologyOutput {
-    /// Creates a new builder-style object to manufacture [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput)
+    /// Creates a new builder-style object to manufacture [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
     pub fn builder() -> crate::output::import_terminology_output::Builder {
         crate::output::import_terminology_output::Builder::default()
     }
@@ -894,11 +886,10 @@ impl std::fmt::Debug for GetTerminologyOutput {
         formatter.finish()
     }
 }
-/// See [`GetTerminologyOutput`](crate::output::GetTerminologyOutput)
+/// See [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
 pub mod get_terminology_output {
 
-    /// A builder for [`GetTerminologyOutput`](crate::output::GetTerminologyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
@@ -964,7 +955,7 @@ pub mod get_terminology_output {
             self.auxiliary_data_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetTerminologyOutput`](crate::output::GetTerminologyOutput)
+        /// Consumes the builder and constructs a [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
         pub fn build(self) -> crate::output::GetTerminologyOutput {
             crate::output::GetTerminologyOutput {
                 terminology_properties: self.terminology_properties,
@@ -975,7 +966,7 @@ pub mod get_terminology_output {
     }
 }
 impl GetTerminologyOutput {
-    /// Creates a new builder-style object to manufacture [`GetTerminologyOutput`](crate::output::GetTerminologyOutput)
+    /// Creates a new builder-style object to manufacture [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
     pub fn builder() -> crate::output::get_terminology_output::Builder {
         crate::output::get_terminology_output::Builder::default()
     }
@@ -1040,11 +1031,10 @@ impl std::fmt::Debug for GetParallelDataOutput {
         formatter.finish()
     }
 }
-/// See [`GetParallelDataOutput`](crate::output::GetParallelDataOutput)
+/// See [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
 pub mod get_parallel_data_output {
 
-    /// A builder for [`GetParallelDataOutput`](crate::output::GetParallelDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parallel_data_properties:
@@ -1125,7 +1115,7 @@ pub mod get_parallel_data_output {
             self.latest_update_attempt_auxiliary_data_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetParallelDataOutput`](crate::output::GetParallelDataOutput)
+        /// Consumes the builder and constructs a [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
         pub fn build(self) -> crate::output::GetParallelDataOutput {
             crate::output::GetParallelDataOutput {
                 parallel_data_properties: self.parallel_data_properties,
@@ -1138,7 +1128,7 @@ pub mod get_parallel_data_output {
     }
 }
 impl GetParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetParallelDataOutput`](crate::output::GetParallelDataOutput)
+    /// Creates a new builder-style object to manufacture [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
     pub fn builder() -> crate::output::get_parallel_data_output::Builder {
         crate::output::get_parallel_data_output::Builder::default()
     }
@@ -1170,11 +1160,10 @@ impl std::fmt::Debug for DescribeTextTranslationJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput)
+/// See [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
 pub mod describe_text_translation_job_output {
 
-    /// A builder for [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_translation_job_properties:
@@ -1197,7 +1186,7 @@ pub mod describe_text_translation_job_output {
             self.text_translation_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput)
+        /// Consumes the builder and constructs a [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
         pub fn build(self) -> crate::output::DescribeTextTranslationJobOutput {
             crate::output::DescribeTextTranslationJobOutput {
                 text_translation_job_properties: self.text_translation_job_properties,
@@ -1206,7 +1195,7 @@ pub mod describe_text_translation_job_output {
     }
 }
 impl DescribeTextTranslationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
     pub fn builder() -> crate::output::describe_text_translation_job_output::Builder {
         crate::output::describe_text_translation_job_output::Builder::default()
     }
@@ -1222,22 +1211,21 @@ impl std::fmt::Debug for DeleteTerminologyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
+/// See [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
 pub mod delete_terminology_output {
 
-    /// A builder for [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
+        /// Consumes the builder and constructs a [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
         pub fn build(self) -> crate::output::DeleteTerminologyOutput {
             crate::output::DeleteTerminologyOutput {}
         }
     }
 }
 impl DeleteTerminologyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
     pub fn builder() -> crate::output::delete_terminology_output::Builder {
         crate::output::delete_terminology_output::Builder::default()
     }
@@ -1270,11 +1258,10 @@ impl std::fmt::Debug for DeleteParallelDataOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput)
+/// See [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
 pub mod delete_parallel_data_output {
 
-    /// A builder for [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1304,7 +1291,7 @@ pub mod delete_parallel_data_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput)
+        /// Consumes the builder and constructs a [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
         pub fn build(self) -> crate::output::DeleteParallelDataOutput {
             crate::output::DeleteParallelDataOutput {
                 name: self.name,
@@ -1314,7 +1301,7 @@ pub mod delete_parallel_data_output {
     }
 }
 impl DeleteParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
     pub fn builder() -> crate::output::delete_parallel_data_output::Builder {
         crate::output::delete_parallel_data_output::Builder::default()
     }
@@ -1347,11 +1334,10 @@ impl std::fmt::Debug for CreateParallelDataOutput {
         formatter.finish()
     }
 }
-/// See [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput)
+/// See [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
 pub mod create_parallel_data_output {
 
-    /// A builder for [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1381,7 +1367,7 @@ pub mod create_parallel_data_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput)
+        /// Consumes the builder and constructs a [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
         pub fn build(self) -> crate::output::CreateParallelDataOutput {
             crate::output::CreateParallelDataOutput {
                 name: self.name,
@@ -1391,7 +1377,7 @@ pub mod create_parallel_data_output {
     }
 }
 impl CreateParallelDataOutput {
-    /// Creates a new builder-style object to manufacture [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput)
+    /// Creates a new builder-style object to manufacture [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
     pub fn builder() -> crate::output::create_parallel_data_output::Builder {
         crate::output::create_parallel_data_output::Builder::default()
     }

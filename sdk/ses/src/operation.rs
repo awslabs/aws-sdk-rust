@@ -10,7 +10,7 @@ pub struct CloneReceiptRuleSet {
     _private: (),
 }
 impl CloneReceiptRuleSet {
-    /// Creates a new builder-style object to manufacture [`CloneReceiptRuleSetInput`](crate::input::CloneReceiptRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`CloneReceiptRuleSetInput`](crate::input::CloneReceiptRuleSetInput).
     pub fn builder() -> crate::input::clone_receipt_rule_set_input::Builder {
         crate::input::clone_receipt_rule_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateConfigurationSet {
     _private: (),
 }
 impl CreateConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
     pub fn builder() -> crate::input::create_configuration_set_input::Builder {
         crate::input::create_configuration_set_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateConfigurationSetEventDestination {
     _private: (),
 }
 impl CreateConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::create_configuration_set_event_destination_input::Builder {
         crate::input::create_configuration_set_event_destination_input::Builder::default()
     }
@@ -114,7 +114,7 @@ pub struct CreateConfigurationSetTrackingOptions {
     _private: (),
 }
 impl CreateConfigurationSetTrackingOptions {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetTrackingOptionsInput`](crate::input::CreateConfigurationSetTrackingOptionsInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetTrackingOptionsInput`](crate::input::CreateConfigurationSetTrackingOptionsInput).
     pub fn builder() -> crate::input::create_configuration_set_tracking_options_input::Builder {
         crate::input::create_configuration_set_tracking_options_input::Builder::default()
     }
@@ -150,7 +150,7 @@ pub struct CreateCustomVerificationEmailTemplate {
     _private: (),
 }
 impl CreateCustomVerificationEmailTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput).
     pub fn builder() -> crate::input::create_custom_verification_email_template_input::Builder {
         crate::input::create_custom_verification_email_template_input::Builder::default()
     }
@@ -186,7 +186,7 @@ pub struct CreateReceiptFilter {
     _private: (),
 }
 impl CreateReceiptFilter {
-    /// Creates a new builder-style object to manufacture [`CreateReceiptFilterInput`](crate::input::CreateReceiptFilterInput)
+    /// Creates a new builder-style object to manufacture [`CreateReceiptFilterInput`](crate::input::CreateReceiptFilterInput).
     pub fn builder() -> crate::input::create_receipt_filter_input::Builder {
         crate::input::create_receipt_filter_input::Builder::default()
     }
@@ -220,7 +220,7 @@ pub struct CreateReceiptRule {
     _private: (),
 }
 impl CreateReceiptRule {
-    /// Creates a new builder-style object to manufacture [`CreateReceiptRuleInput`](crate::input::CreateReceiptRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateReceiptRuleInput`](crate::input::CreateReceiptRuleInput).
     pub fn builder() -> crate::input::create_receipt_rule_input::Builder {
         crate::input::create_receipt_rule_input::Builder::default()
     }
@@ -254,7 +254,7 @@ pub struct CreateReceiptRuleSet {
     _private: (),
 }
 impl CreateReceiptRuleSet {
-    /// Creates a new builder-style object to manufacture [`CreateReceiptRuleSetInput`](crate::input::CreateReceiptRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateReceiptRuleSetInput`](crate::input::CreateReceiptRuleSetInput).
     pub fn builder() -> crate::input::create_receipt_rule_set_input::Builder {
         crate::input::create_receipt_rule_set_input::Builder::default()
     }
@@ -288,7 +288,7 @@ pub struct CreateTemplate {
     _private: (),
 }
 impl CreateTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateTemplateInput`](crate::input::CreateTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateTemplateInput`](crate::input::CreateTemplateInput).
     pub fn builder() -> crate::input::create_template_input::Builder {
         crate::input::create_template_input::Builder::default()
     }
@@ -320,7 +320,7 @@ pub struct DeleteConfigurationSet {
     _private: (),
 }
 impl DeleteConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
     pub fn builder() -> crate::input::delete_configuration_set_input::Builder {
         crate::input::delete_configuration_set_input::Builder::default()
     }
@@ -354,7 +354,7 @@ pub struct DeleteConfigurationSetEventDestination {
     _private: (),
 }
 impl DeleteConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::delete_configuration_set_event_destination_input::Builder {
         crate::input::delete_configuration_set_event_destination_input::Builder::default()
     }
@@ -390,7 +390,7 @@ pub struct DeleteConfigurationSetTrackingOptions {
     _private: (),
 }
 impl DeleteConfigurationSetTrackingOptions {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetTrackingOptionsInput`](crate::input::DeleteConfigurationSetTrackingOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetTrackingOptionsInput`](crate::input::DeleteConfigurationSetTrackingOptionsInput).
     pub fn builder() -> crate::input::delete_configuration_set_tracking_options_input::Builder {
         crate::input::delete_configuration_set_tracking_options_input::Builder::default()
     }
@@ -426,7 +426,7 @@ pub struct DeleteCustomVerificationEmailTemplate {
     _private: (),
 }
 impl DeleteCustomVerificationEmailTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput).
     pub fn builder() -> crate::input::delete_custom_verification_email_template_input::Builder {
         crate::input::delete_custom_verification_email_template_input::Builder::default()
     }
@@ -462,7 +462,7 @@ pub struct DeleteIdentity {
     _private: (),
 }
 impl DeleteIdentity {
-    /// Creates a new builder-style object to manufacture [`DeleteIdentityInput`](crate::input::DeleteIdentityInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIdentityInput`](crate::input::DeleteIdentityInput).
     pub fn builder() -> crate::input::delete_identity_input::Builder {
         crate::input::delete_identity_input::Builder::default()
     }
@@ -494,7 +494,7 @@ pub struct DeleteIdentityPolicy {
     _private: (),
 }
 impl DeleteIdentityPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteIdentityPolicyInput`](crate::input::DeleteIdentityPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIdentityPolicyInput`](crate::input::DeleteIdentityPolicyInput).
     pub fn builder() -> crate::input::delete_identity_policy_input::Builder {
         crate::input::delete_identity_policy_input::Builder::default()
     }
@@ -528,7 +528,7 @@ pub struct DeleteReceiptFilter {
     _private: (),
 }
 impl DeleteReceiptFilter {
-    /// Creates a new builder-style object to manufacture [`DeleteReceiptFilterInput`](crate::input::DeleteReceiptFilterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReceiptFilterInput`](crate::input::DeleteReceiptFilterInput).
     pub fn builder() -> crate::input::delete_receipt_filter_input::Builder {
         crate::input::delete_receipt_filter_input::Builder::default()
     }
@@ -562,7 +562,7 @@ pub struct DeleteReceiptRule {
     _private: (),
 }
 impl DeleteReceiptRule {
-    /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleInput`](crate::input::DeleteReceiptRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleInput`](crate::input::DeleteReceiptRuleInput).
     pub fn builder() -> crate::input::delete_receipt_rule_input::Builder {
         crate::input::delete_receipt_rule_input::Builder::default()
     }
@@ -596,7 +596,7 @@ pub struct DeleteReceiptRuleSet {
     _private: (),
 }
 impl DeleteReceiptRuleSet {
-    /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleSetInput`](crate::input::DeleteReceiptRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleSetInput`](crate::input::DeleteReceiptRuleSetInput).
     pub fn builder() -> crate::input::delete_receipt_rule_set_input::Builder {
         crate::input::delete_receipt_rule_set_input::Builder::default()
     }
@@ -630,7 +630,7 @@ pub struct DeleteTemplate {
     _private: (),
 }
 impl DeleteTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteTemplateInput`](crate::input::DeleteTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTemplateInput`](crate::input::DeleteTemplateInput).
     pub fn builder() -> crate::input::delete_template_input::Builder {
         crate::input::delete_template_input::Builder::default()
     }
@@ -662,7 +662,7 @@ pub struct DeleteVerifiedEmailAddress {
     _private: (),
 }
 impl DeleteVerifiedEmailAddress {
-    /// Creates a new builder-style object to manufacture [`DeleteVerifiedEmailAddressInput`](crate::input::DeleteVerifiedEmailAddressInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVerifiedEmailAddressInput`](crate::input::DeleteVerifiedEmailAddressInput).
     pub fn builder() -> crate::input::delete_verified_email_address_input::Builder {
         crate::input::delete_verified_email_address_input::Builder::default()
     }
@@ -696,7 +696,7 @@ pub struct DescribeActiveReceiptRuleSet {
     _private: (),
 }
 impl DescribeActiveReceiptRuleSet {
-    /// Creates a new builder-style object to manufacture [`DescribeActiveReceiptRuleSetInput`](crate::input::DescribeActiveReceiptRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeActiveReceiptRuleSetInput`](crate::input::DescribeActiveReceiptRuleSetInput).
     pub fn builder() -> crate::input::describe_active_receipt_rule_set_input::Builder {
         crate::input::describe_active_receipt_rule_set_input::Builder::default()
     }
@@ -730,7 +730,7 @@ pub struct DescribeConfigurationSet {
     _private: (),
 }
 impl DescribeConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetInput`](crate::input::DescribeConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetInput`](crate::input::DescribeConfigurationSetInput).
     pub fn builder() -> crate::input::describe_configuration_set_input::Builder {
         crate::input::describe_configuration_set_input::Builder::default()
     }
@@ -764,7 +764,7 @@ pub struct DescribeReceiptRule {
     _private: (),
 }
 impl DescribeReceiptRule {
-    /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleInput`](crate::input::DescribeReceiptRuleInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleInput`](crate::input::DescribeReceiptRuleInput).
     pub fn builder() -> crate::input::describe_receipt_rule_input::Builder {
         crate::input::describe_receipt_rule_input::Builder::default()
     }
@@ -798,7 +798,7 @@ pub struct DescribeReceiptRuleSet {
     _private: (),
 }
 impl DescribeReceiptRuleSet {
-    /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleSetInput`](crate::input::DescribeReceiptRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleSetInput`](crate::input::DescribeReceiptRuleSetInput).
     pub fn builder() -> crate::input::describe_receipt_rule_set_input::Builder {
         crate::input::describe_receipt_rule_set_input::Builder::default()
     }
@@ -832,7 +832,7 @@ pub struct GetAccountSendingEnabled {
     _private: (),
 }
 impl GetAccountSendingEnabled {
-    /// Creates a new builder-style object to manufacture [`GetAccountSendingEnabledInput`](crate::input::GetAccountSendingEnabledInput)
+    /// Creates a new builder-style object to manufacture [`GetAccountSendingEnabledInput`](crate::input::GetAccountSendingEnabledInput).
     pub fn builder() -> crate::input::get_account_sending_enabled_input::Builder {
         crate::input::get_account_sending_enabled_input::Builder::default()
     }
@@ -866,7 +866,7 @@ pub struct GetCustomVerificationEmailTemplate {
     _private: (),
 }
 impl GetCustomVerificationEmailTemplate {
-    /// Creates a new builder-style object to manufacture [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput).
     pub fn builder() -> crate::input::get_custom_verification_email_template_input::Builder {
         crate::input::get_custom_verification_email_template_input::Builder::default()
     }
@@ -900,7 +900,7 @@ pub struct GetIdentityDkimAttributes {
     _private: (),
 }
 impl GetIdentityDkimAttributes {
-    /// Creates a new builder-style object to manufacture [`GetIdentityDkimAttributesInput`](crate::input::GetIdentityDkimAttributesInput)
+    /// Creates a new builder-style object to manufacture [`GetIdentityDkimAttributesInput`](crate::input::GetIdentityDkimAttributesInput).
     pub fn builder() -> crate::input::get_identity_dkim_attributes_input::Builder {
         crate::input::get_identity_dkim_attributes_input::Builder::default()
     }
@@ -934,7 +934,7 @@ pub struct GetIdentityMailFromDomainAttributes {
     _private: (),
 }
 impl GetIdentityMailFromDomainAttributes {
-    /// Creates a new builder-style object to manufacture [`GetIdentityMailFromDomainAttributesInput`](crate::input::GetIdentityMailFromDomainAttributesInput)
+    /// Creates a new builder-style object to manufacture [`GetIdentityMailFromDomainAttributesInput`](crate::input::GetIdentityMailFromDomainAttributesInput).
     pub fn builder() -> crate::input::get_identity_mail_from_domain_attributes_input::Builder {
         crate::input::get_identity_mail_from_domain_attributes_input::Builder::default()
     }
@@ -970,7 +970,7 @@ pub struct GetIdentityNotificationAttributes {
     _private: (),
 }
 impl GetIdentityNotificationAttributes {
-    /// Creates a new builder-style object to manufacture [`GetIdentityNotificationAttributesInput`](crate::input::GetIdentityNotificationAttributesInput)
+    /// Creates a new builder-style object to manufacture [`GetIdentityNotificationAttributesInput`](crate::input::GetIdentityNotificationAttributesInput).
     pub fn builder() -> crate::input::get_identity_notification_attributes_input::Builder {
         crate::input::get_identity_notification_attributes_input::Builder::default()
     }
@@ -1004,7 +1004,7 @@ pub struct GetIdentityPolicies {
     _private: (),
 }
 impl GetIdentityPolicies {
-    /// Creates a new builder-style object to manufacture [`GetIdentityPoliciesInput`](crate::input::GetIdentityPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`GetIdentityPoliciesInput`](crate::input::GetIdentityPoliciesInput).
     pub fn builder() -> crate::input::get_identity_policies_input::Builder {
         crate::input::get_identity_policies_input::Builder::default()
     }
@@ -1038,7 +1038,7 @@ pub struct GetIdentityVerificationAttributes {
     _private: (),
 }
 impl GetIdentityVerificationAttributes {
-    /// Creates a new builder-style object to manufacture [`GetIdentityVerificationAttributesInput`](crate::input::GetIdentityVerificationAttributesInput)
+    /// Creates a new builder-style object to manufacture [`GetIdentityVerificationAttributesInput`](crate::input::GetIdentityVerificationAttributesInput).
     pub fn builder() -> crate::input::get_identity_verification_attributes_input::Builder {
         crate::input::get_identity_verification_attributes_input::Builder::default()
     }
@@ -1072,7 +1072,7 @@ pub struct GetSendQuota {
     _private: (),
 }
 impl GetSendQuota {
-    /// Creates a new builder-style object to manufacture [`GetSendQuotaInput`](crate::input::GetSendQuotaInput)
+    /// Creates a new builder-style object to manufacture [`GetSendQuotaInput`](crate::input::GetSendQuotaInput).
     pub fn builder() -> crate::input::get_send_quota_input::Builder {
         crate::input::get_send_quota_input::Builder::default()
     }
@@ -1104,7 +1104,7 @@ pub struct GetSendStatistics {
     _private: (),
 }
 impl GetSendStatistics {
-    /// Creates a new builder-style object to manufacture [`GetSendStatisticsInput`](crate::input::GetSendStatisticsInput)
+    /// Creates a new builder-style object to manufacture [`GetSendStatisticsInput`](crate::input::GetSendStatisticsInput).
     pub fn builder() -> crate::input::get_send_statistics_input::Builder {
         crate::input::get_send_statistics_input::Builder::default()
     }
@@ -1138,7 +1138,7 @@ pub struct GetTemplate {
     _private: (),
 }
 impl GetTemplate {
-    /// Creates a new builder-style object to manufacture [`GetTemplateInput`](crate::input::GetTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetTemplateInput`](crate::input::GetTemplateInput).
     pub fn builder() -> crate::input::get_template_input::Builder {
         crate::input::get_template_input::Builder::default()
     }
@@ -1170,7 +1170,7 @@ pub struct ListConfigurationSets {
     _private: (),
 }
 impl ListConfigurationSets {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
     pub fn builder() -> crate::input::list_configuration_sets_input::Builder {
         crate::input::list_configuration_sets_input::Builder::default()
     }
@@ -1204,7 +1204,7 @@ pub struct ListCustomVerificationEmailTemplates {
     _private: (),
 }
 impl ListCustomVerificationEmailTemplates {
-    /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput).
     pub fn builder() -> crate::input::list_custom_verification_email_templates_input::Builder {
         crate::input::list_custom_verification_email_templates_input::Builder::default()
     }
@@ -1240,7 +1240,7 @@ pub struct ListIdentities {
     _private: (),
 }
 impl ListIdentities {
-    /// Creates a new builder-style object to manufacture [`ListIdentitiesInput`](crate::input::ListIdentitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
     pub fn builder() -> crate::input::list_identities_input::Builder {
         crate::input::list_identities_input::Builder::default()
     }
@@ -1272,7 +1272,7 @@ pub struct ListIdentityPolicies {
     _private: (),
 }
 impl ListIdentityPolicies {
-    /// Creates a new builder-style object to manufacture [`ListIdentityPoliciesInput`](crate::input::ListIdentityPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`ListIdentityPoliciesInput`](crate::input::ListIdentityPoliciesInput).
     pub fn builder() -> crate::input::list_identity_policies_input::Builder {
         crate::input::list_identity_policies_input::Builder::default()
     }
@@ -1306,7 +1306,7 @@ pub struct ListReceiptFilters {
     _private: (),
 }
 impl ListReceiptFilters {
-    /// Creates a new builder-style object to manufacture [`ListReceiptFiltersInput`](crate::input::ListReceiptFiltersInput)
+    /// Creates a new builder-style object to manufacture [`ListReceiptFiltersInput`](crate::input::ListReceiptFiltersInput).
     pub fn builder() -> crate::input::list_receipt_filters_input::Builder {
         crate::input::list_receipt_filters_input::Builder::default()
     }
@@ -1340,7 +1340,7 @@ pub struct ListReceiptRuleSets {
     _private: (),
 }
 impl ListReceiptRuleSets {
-    /// Creates a new builder-style object to manufacture [`ListReceiptRuleSetsInput`](crate::input::ListReceiptRuleSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListReceiptRuleSetsInput`](crate::input::ListReceiptRuleSetsInput).
     pub fn builder() -> crate::input::list_receipt_rule_sets_input::Builder {
         crate::input::list_receipt_rule_sets_input::Builder::default()
     }
@@ -1374,7 +1374,7 @@ pub struct ListTemplates {
     _private: (),
 }
 impl ListTemplates {
-    /// Creates a new builder-style object to manufacture [`ListTemplatesInput`](crate::input::ListTemplatesInput)
+    /// Creates a new builder-style object to manufacture [`ListTemplatesInput`](crate::input::ListTemplatesInput).
     pub fn builder() -> crate::input::list_templates_input::Builder {
         crate::input::list_templates_input::Builder::default()
     }
@@ -1406,7 +1406,7 @@ pub struct ListVerifiedEmailAddresses {
     _private: (),
 }
 impl ListVerifiedEmailAddresses {
-    /// Creates a new builder-style object to manufacture [`ListVerifiedEmailAddressesInput`](crate::input::ListVerifiedEmailAddressesInput)
+    /// Creates a new builder-style object to manufacture [`ListVerifiedEmailAddressesInput`](crate::input::ListVerifiedEmailAddressesInput).
     pub fn builder() -> crate::input::list_verified_email_addresses_input::Builder {
         crate::input::list_verified_email_addresses_input::Builder::default()
     }
@@ -1440,7 +1440,7 @@ pub struct PutConfigurationSetDeliveryOptions {
     _private: (),
 }
 impl PutConfigurationSetDeliveryOptions {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput)
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
     pub fn builder() -> crate::input::put_configuration_set_delivery_options_input::Builder {
         crate::input::put_configuration_set_delivery_options_input::Builder::default()
     }
@@ -1474,7 +1474,7 @@ pub struct PutIdentityPolicy {
     _private: (),
 }
 impl PutIdentityPolicy {
-    /// Creates a new builder-style object to manufacture [`PutIdentityPolicyInput`](crate::input::PutIdentityPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutIdentityPolicyInput`](crate::input::PutIdentityPolicyInput).
     pub fn builder() -> crate::input::put_identity_policy_input::Builder {
         crate::input::put_identity_policy_input::Builder::default()
     }
@@ -1508,7 +1508,7 @@ pub struct ReorderReceiptRuleSet {
     _private: (),
 }
 impl ReorderReceiptRuleSet {
-    /// Creates a new builder-style object to manufacture [`ReorderReceiptRuleSetInput`](crate::input::ReorderReceiptRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`ReorderReceiptRuleSetInput`](crate::input::ReorderReceiptRuleSetInput).
     pub fn builder() -> crate::input::reorder_receipt_rule_set_input::Builder {
         crate::input::reorder_receipt_rule_set_input::Builder::default()
     }
@@ -1542,7 +1542,7 @@ pub struct SendBounce {
     _private: (),
 }
 impl SendBounce {
-    /// Creates a new builder-style object to manufacture [`SendBounceInput`](crate::input::SendBounceInput)
+    /// Creates a new builder-style object to manufacture [`SendBounceInput`](crate::input::SendBounceInput).
     pub fn builder() -> crate::input::send_bounce_input::Builder {
         crate::input::send_bounce_input::Builder::default()
     }
@@ -1574,7 +1574,7 @@ pub struct SendBulkTemplatedEmail {
     _private: (),
 }
 impl SendBulkTemplatedEmail {
-    /// Creates a new builder-style object to manufacture [`SendBulkTemplatedEmailInput`](crate::input::SendBulkTemplatedEmailInput)
+    /// Creates a new builder-style object to manufacture [`SendBulkTemplatedEmailInput`](crate::input::SendBulkTemplatedEmailInput).
     pub fn builder() -> crate::input::send_bulk_templated_email_input::Builder {
         crate::input::send_bulk_templated_email_input::Builder::default()
     }
@@ -1608,7 +1608,7 @@ pub struct SendCustomVerificationEmail {
     _private: (),
 }
 impl SendCustomVerificationEmail {
-    /// Creates a new builder-style object to manufacture [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput)
+    /// Creates a new builder-style object to manufacture [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput).
     pub fn builder() -> crate::input::send_custom_verification_email_input::Builder {
         crate::input::send_custom_verification_email_input::Builder::default()
     }
@@ -1642,7 +1642,7 @@ pub struct SendEmail {
     _private: (),
 }
 impl SendEmail {
-    /// Creates a new builder-style object to manufacture [`SendEmailInput`](crate::input::SendEmailInput)
+    /// Creates a new builder-style object to manufacture [`SendEmailInput`](crate::input::SendEmailInput).
     pub fn builder() -> crate::input::send_email_input::Builder {
         crate::input::send_email_input::Builder::default()
     }
@@ -1673,7 +1673,7 @@ pub struct SendRawEmail {
     _private: (),
 }
 impl SendRawEmail {
-    /// Creates a new builder-style object to manufacture [`SendRawEmailInput`](crate::input::SendRawEmailInput)
+    /// Creates a new builder-style object to manufacture [`SendRawEmailInput`](crate::input::SendRawEmailInput).
     pub fn builder() -> crate::input::send_raw_email_input::Builder {
         crate::input::send_raw_email_input::Builder::default()
     }
@@ -1705,7 +1705,7 @@ pub struct SendTemplatedEmail {
     _private: (),
 }
 impl SendTemplatedEmail {
-    /// Creates a new builder-style object to manufacture [`SendTemplatedEmailInput`](crate::input::SendTemplatedEmailInput)
+    /// Creates a new builder-style object to manufacture [`SendTemplatedEmailInput`](crate::input::SendTemplatedEmailInput).
     pub fn builder() -> crate::input::send_templated_email_input::Builder {
         crate::input::send_templated_email_input::Builder::default()
     }
@@ -1739,7 +1739,7 @@ pub struct SetActiveReceiptRuleSet {
     _private: (),
 }
 impl SetActiveReceiptRuleSet {
-    /// Creates a new builder-style object to manufacture [`SetActiveReceiptRuleSetInput`](crate::input::SetActiveReceiptRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`SetActiveReceiptRuleSetInput`](crate::input::SetActiveReceiptRuleSetInput).
     pub fn builder() -> crate::input::set_active_receipt_rule_set_input::Builder {
         crate::input::set_active_receipt_rule_set_input::Builder::default()
     }
@@ -1773,7 +1773,7 @@ pub struct SetIdentityDkimEnabled {
     _private: (),
 }
 impl SetIdentityDkimEnabled {
-    /// Creates a new builder-style object to manufacture [`SetIdentityDkimEnabledInput`](crate::input::SetIdentityDkimEnabledInput)
+    /// Creates a new builder-style object to manufacture [`SetIdentityDkimEnabledInput`](crate::input::SetIdentityDkimEnabledInput).
     pub fn builder() -> crate::input::set_identity_dkim_enabled_input::Builder {
         crate::input::set_identity_dkim_enabled_input::Builder::default()
     }
@@ -1807,7 +1807,7 @@ pub struct SetIdentityFeedbackForwardingEnabled {
     _private: (),
 }
 impl SetIdentityFeedbackForwardingEnabled {
-    /// Creates a new builder-style object to manufacture [`SetIdentityFeedbackForwardingEnabledInput`](crate::input::SetIdentityFeedbackForwardingEnabledInput)
+    /// Creates a new builder-style object to manufacture [`SetIdentityFeedbackForwardingEnabledInput`](crate::input::SetIdentityFeedbackForwardingEnabledInput).
     pub fn builder() -> crate::input::set_identity_feedback_forwarding_enabled_input::Builder {
         crate::input::set_identity_feedback_forwarding_enabled_input::Builder::default()
     }
@@ -1843,7 +1843,7 @@ pub struct SetIdentityHeadersInNotificationsEnabled {
     _private: (),
 }
 impl SetIdentityHeadersInNotificationsEnabled {
-    /// Creates a new builder-style object to manufacture [`SetIdentityHeadersInNotificationsEnabledInput`](crate::input::SetIdentityHeadersInNotificationsEnabledInput)
+    /// Creates a new builder-style object to manufacture [`SetIdentityHeadersInNotificationsEnabledInput`](crate::input::SetIdentityHeadersInNotificationsEnabledInput).
     pub fn builder() -> crate::input::set_identity_headers_in_notifications_enabled_input::Builder {
         crate::input::set_identity_headers_in_notifications_enabled_input::Builder::default()
     }
@@ -1881,7 +1881,7 @@ pub struct SetIdentityMailFromDomain {
     _private: (),
 }
 impl SetIdentityMailFromDomain {
-    /// Creates a new builder-style object to manufacture [`SetIdentityMailFromDomainInput`](crate::input::SetIdentityMailFromDomainInput)
+    /// Creates a new builder-style object to manufacture [`SetIdentityMailFromDomainInput`](crate::input::SetIdentityMailFromDomainInput).
     pub fn builder() -> crate::input::set_identity_mail_from_domain_input::Builder {
         crate::input::set_identity_mail_from_domain_input::Builder::default()
     }
@@ -1915,7 +1915,7 @@ pub struct SetIdentityNotificationTopic {
     _private: (),
 }
 impl SetIdentityNotificationTopic {
-    /// Creates a new builder-style object to manufacture [`SetIdentityNotificationTopicInput`](crate::input::SetIdentityNotificationTopicInput)
+    /// Creates a new builder-style object to manufacture [`SetIdentityNotificationTopicInput`](crate::input::SetIdentityNotificationTopicInput).
     pub fn builder() -> crate::input::set_identity_notification_topic_input::Builder {
         crate::input::set_identity_notification_topic_input::Builder::default()
     }
@@ -1949,7 +1949,7 @@ pub struct SetReceiptRulePosition {
     _private: (),
 }
 impl SetReceiptRulePosition {
-    /// Creates a new builder-style object to manufacture [`SetReceiptRulePositionInput`](crate::input::SetReceiptRulePositionInput)
+    /// Creates a new builder-style object to manufacture [`SetReceiptRulePositionInput`](crate::input::SetReceiptRulePositionInput).
     pub fn builder() -> crate::input::set_receipt_rule_position_input::Builder {
         crate::input::set_receipt_rule_position_input::Builder::default()
     }
@@ -1983,7 +1983,7 @@ pub struct TestRenderTemplate {
     _private: (),
 }
 impl TestRenderTemplate {
-    /// Creates a new builder-style object to manufacture [`TestRenderTemplateInput`](crate::input::TestRenderTemplateInput)
+    /// Creates a new builder-style object to manufacture [`TestRenderTemplateInput`](crate::input::TestRenderTemplateInput).
     pub fn builder() -> crate::input::test_render_template_input::Builder {
         crate::input::test_render_template_input::Builder::default()
     }
@@ -2017,7 +2017,7 @@ pub struct UpdateAccountSendingEnabled {
     _private: (),
 }
 impl UpdateAccountSendingEnabled {
-    /// Creates a new builder-style object to manufacture [`UpdateAccountSendingEnabledInput`](crate::input::UpdateAccountSendingEnabledInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAccountSendingEnabledInput`](crate::input::UpdateAccountSendingEnabledInput).
     pub fn builder() -> crate::input::update_account_sending_enabled_input::Builder {
         crate::input::update_account_sending_enabled_input::Builder::default()
     }
@@ -2051,7 +2051,7 @@ pub struct UpdateConfigurationSetEventDestination {
     _private: (),
 }
 impl UpdateConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::update_configuration_set_event_destination_input::Builder {
         crate::input::update_configuration_set_event_destination_input::Builder::default()
     }
@@ -2087,7 +2087,7 @@ pub struct UpdateConfigurationSetReputationMetricsEnabled {
     _private: (),
 }
 impl UpdateConfigurationSetReputationMetricsEnabled {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::input::UpdateConfigurationSetReputationMetricsEnabledInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetReputationMetricsEnabledInput`](crate::input::UpdateConfigurationSetReputationMetricsEnabledInput).
     pub fn builder(
     ) -> crate::input::update_configuration_set_reputation_metrics_enabled_input::Builder {
         crate::input::update_configuration_set_reputation_metrics_enabled_input::Builder::default()
@@ -2126,7 +2126,7 @@ pub struct UpdateConfigurationSetSendingEnabled {
     _private: (),
 }
 impl UpdateConfigurationSetSendingEnabled {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetSendingEnabledInput`](crate::input::UpdateConfigurationSetSendingEnabledInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetSendingEnabledInput`](crate::input::UpdateConfigurationSetSendingEnabledInput).
     pub fn builder() -> crate::input::update_configuration_set_sending_enabled_input::Builder {
         crate::input::update_configuration_set_sending_enabled_input::Builder::default()
     }
@@ -2162,7 +2162,7 @@ pub struct UpdateConfigurationSetTrackingOptions {
     _private: (),
 }
 impl UpdateConfigurationSetTrackingOptions {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetTrackingOptionsInput`](crate::input::UpdateConfigurationSetTrackingOptionsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetTrackingOptionsInput`](crate::input::UpdateConfigurationSetTrackingOptionsInput).
     pub fn builder() -> crate::input::update_configuration_set_tracking_options_input::Builder {
         crate::input::update_configuration_set_tracking_options_input::Builder::default()
     }
@@ -2198,7 +2198,7 @@ pub struct UpdateCustomVerificationEmailTemplate {
     _private: (),
 }
 impl UpdateCustomVerificationEmailTemplate {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput).
     pub fn builder() -> crate::input::update_custom_verification_email_template_input::Builder {
         crate::input::update_custom_verification_email_template_input::Builder::default()
     }
@@ -2234,7 +2234,7 @@ pub struct UpdateReceiptRule {
     _private: (),
 }
 impl UpdateReceiptRule {
-    /// Creates a new builder-style object to manufacture [`UpdateReceiptRuleInput`](crate::input::UpdateReceiptRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateReceiptRuleInput`](crate::input::UpdateReceiptRuleInput).
     pub fn builder() -> crate::input::update_receipt_rule_input::Builder {
         crate::input::update_receipt_rule_input::Builder::default()
     }
@@ -2268,7 +2268,7 @@ pub struct UpdateTemplate {
     _private: (),
 }
 impl UpdateTemplate {
-    /// Creates a new builder-style object to manufacture [`UpdateTemplateInput`](crate::input::UpdateTemplateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTemplateInput`](crate::input::UpdateTemplateInput).
     pub fn builder() -> crate::input::update_template_input::Builder {
         crate::input::update_template_input::Builder::default()
     }
@@ -2300,7 +2300,7 @@ pub struct VerifyDomainDkim {
     _private: (),
 }
 impl VerifyDomainDkim {
-    /// Creates a new builder-style object to manufacture [`VerifyDomainDkimInput`](crate::input::VerifyDomainDkimInput)
+    /// Creates a new builder-style object to manufacture [`VerifyDomainDkimInput`](crate::input::VerifyDomainDkimInput).
     pub fn builder() -> crate::input::verify_domain_dkim_input::Builder {
         crate::input::verify_domain_dkim_input::Builder::default()
     }
@@ -2334,7 +2334,7 @@ pub struct VerifyDomainIdentity {
     _private: (),
 }
 impl VerifyDomainIdentity {
-    /// Creates a new builder-style object to manufacture [`VerifyDomainIdentityInput`](crate::input::VerifyDomainIdentityInput)
+    /// Creates a new builder-style object to manufacture [`VerifyDomainIdentityInput`](crate::input::VerifyDomainIdentityInput).
     pub fn builder() -> crate::input::verify_domain_identity_input::Builder {
         crate::input::verify_domain_identity_input::Builder::default()
     }
@@ -2368,7 +2368,7 @@ pub struct VerifyEmailAddress {
     _private: (),
 }
 impl VerifyEmailAddress {
-    /// Creates a new builder-style object to manufacture [`VerifyEmailAddressInput`](crate::input::VerifyEmailAddressInput)
+    /// Creates a new builder-style object to manufacture [`VerifyEmailAddressInput`](crate::input::VerifyEmailAddressInput).
     pub fn builder() -> crate::input::verify_email_address_input::Builder {
         crate::input::verify_email_address_input::Builder::default()
     }
@@ -2402,7 +2402,7 @@ pub struct VerifyEmailIdentity {
     _private: (),
 }
 impl VerifyEmailIdentity {
-    /// Creates a new builder-style object to manufacture [`VerifyEmailIdentityInput`](crate::input::VerifyEmailIdentityInput)
+    /// Creates a new builder-style object to manufacture [`VerifyEmailIdentityInput`](crate::input::VerifyEmailIdentityInput).
     pub fn builder() -> crate::input::verify_email_identity_input::Builder {
         crate::input::verify_email_identity_input::Builder::default()
     }

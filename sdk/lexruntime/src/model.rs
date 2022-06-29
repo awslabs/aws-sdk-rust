@@ -178,11 +178,10 @@ impl std::fmt::Debug for ActiveContext {
         formatter.finish()
     }
 }
-/// See [`ActiveContext`](crate::model::ActiveContext)
+/// See [`ActiveContext`](crate::model::ActiveContext).
 pub mod active_context {
 
-    /// A builder for [`ActiveContext`](crate::model::ActiveContext)
-    #[non_exhaustive]
+    /// A builder for [`ActiveContext`](crate::model::ActiveContext).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -240,7 +239,7 @@ pub mod active_context {
             self.parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActiveContext`](crate::model::ActiveContext)
+        /// Consumes the builder and constructs a [`ActiveContext`](crate::model::ActiveContext).
         pub fn build(self) -> crate::model::ActiveContext {
             crate::model::ActiveContext {
                 name: self.name,
@@ -251,7 +250,7 @@ pub mod active_context {
     }
 }
 impl ActiveContext {
-    /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::model::ActiveContext)
+    /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::model::ActiveContext).
     pub fn builder() -> crate::model::active_context::Builder {
         crate::model::active_context::Builder::default()
     }
@@ -284,11 +283,10 @@ impl std::fmt::Debug for ActiveContextTimeToLive {
         formatter.finish()
     }
 }
-/// See [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive)
+/// See [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
 pub mod active_context_time_to_live {
 
-    /// A builder for [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive)
-    #[non_exhaustive]
+    /// A builder for [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_to_live_in_seconds: std::option::Option<i32>,
@@ -315,7 +313,7 @@ pub mod active_context_time_to_live {
             self.turns_to_live = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive)
+        /// Consumes the builder and constructs a [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
         pub fn build(self) -> crate::model::ActiveContextTimeToLive {
             crate::model::ActiveContextTimeToLive {
                 time_to_live_in_seconds: self.time_to_live_in_seconds,
@@ -325,7 +323,7 @@ pub mod active_context_time_to_live {
     }
 }
 impl ActiveContextTimeToLive {
-    /// Creates a new builder-style object to manufacture [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive)
+    /// Creates a new builder-style object to manufacture [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
     pub fn builder() -> crate::model::active_context_time_to_live::Builder {
         crate::model::active_context_time_to_live::Builder::default()
     }
@@ -431,11 +429,10 @@ impl std::fmt::Debug for IntentSummary {
         formatter.finish()
     }
 }
-/// See [`IntentSummary`](crate::model::IntentSummary)
+/// See [`IntentSummary`](crate::model::IntentSummary).
 pub mod intent_summary {
 
-    /// A builder for [`IntentSummary`](crate::model::IntentSummary)
-    #[non_exhaustive]
+    /// A builder for [`IntentSummary`](crate::model::IntentSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -583,7 +580,7 @@ pub mod intent_summary {
             self.slot_to_elicit = input;
             self
         }
-        /// Consumes the builder and constructs a [`IntentSummary`](crate::model::IntentSummary)
+        /// Consumes the builder and constructs a [`IntentSummary`](crate::model::IntentSummary).
         pub fn build(self) -> crate::model::IntentSummary {
             crate::model::IntentSummary {
                 intent_name: self.intent_name,
@@ -598,7 +595,7 @@ pub mod intent_summary {
     }
 }
 impl IntentSummary {
-    /// Creates a new builder-style object to manufacture [`IntentSummary`](crate::model::IntentSummary)
+    /// Creates a new builder-style object to manufacture [`IntentSummary`](crate::model::IntentSummary).
     pub fn builder() -> crate::model::intent_summary::Builder {
         crate::model::intent_summary::Builder::default()
     }
@@ -895,11 +892,10 @@ impl std::fmt::Debug for DialogAction {
         formatter.finish()
     }
 }
-/// See [`DialogAction`](crate::model::DialogAction)
+/// See [`DialogAction`](crate::model::DialogAction).
 pub mod dialog_action {
 
-    /// A builder for [`DialogAction`](crate::model::DialogAction)
-    #[non_exhaustive]
+    /// A builder for [`DialogAction`](crate::model::DialogAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DialogActionType>,
@@ -1044,7 +1040,7 @@ pub mod dialog_action {
             self.message_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`DialogAction`](crate::model::DialogAction)
+        /// Consumes the builder and constructs a [`DialogAction`](crate::model::DialogAction).
         pub fn build(self) -> crate::model::DialogAction {
             crate::model::DialogAction {
                 r#type: self.r#type,
@@ -1059,7 +1055,7 @@ pub mod dialog_action {
     }
 }
 impl DialogAction {
-    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction)
+    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
     pub fn builder() -> crate::model::dialog_action::Builder {
         crate::model::dialog_action::Builder::default()
     }
@@ -1099,11 +1095,10 @@ impl std::fmt::Debug for ResponseCard {
         formatter.finish()
     }
 }
-/// See [`ResponseCard`](crate::model::ResponseCard)
+/// See [`ResponseCard`](crate::model::ResponseCard).
 pub mod response_card {
 
-    /// A builder for [`ResponseCard`](crate::model::ResponseCard)
-    #[non_exhaustive]
+    /// A builder for [`ResponseCard`](crate::model::ResponseCard).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -1154,7 +1149,7 @@ pub mod response_card {
             self.generic_attachments = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResponseCard`](crate::model::ResponseCard)
+        /// Consumes the builder and constructs a [`ResponseCard`](crate::model::ResponseCard).
         pub fn build(self) -> crate::model::ResponseCard {
             crate::model::ResponseCard {
                 version: self.version,
@@ -1165,7 +1160,7 @@ pub mod response_card {
     }
 }
 impl ResponseCard {
-    /// Creates a new builder-style object to manufacture [`ResponseCard`](crate::model::ResponseCard)
+    /// Creates a new builder-style object to manufacture [`ResponseCard`](crate::model::ResponseCard).
     pub fn builder() -> crate::model::response_card::Builder {
         crate::model::response_card::Builder::default()
     }
@@ -1219,11 +1214,10 @@ impl std::fmt::Debug for GenericAttachment {
         formatter.finish()
     }
 }
-/// See [`GenericAttachment`](crate::model::GenericAttachment)
+/// See [`GenericAttachment`](crate::model::GenericAttachment).
 pub mod generic_attachment {
 
-    /// A builder for [`GenericAttachment`](crate::model::GenericAttachment)
-    #[non_exhaustive]
+    /// A builder for [`GenericAttachment`](crate::model::GenericAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -1295,7 +1289,7 @@ pub mod generic_attachment {
             self.buttons = input;
             self
         }
-        /// Consumes the builder and constructs a [`GenericAttachment`](crate::model::GenericAttachment)
+        /// Consumes the builder and constructs a [`GenericAttachment`](crate::model::GenericAttachment).
         pub fn build(self) -> crate::model::GenericAttachment {
             crate::model::GenericAttachment {
                 title: self.title,
@@ -1308,7 +1302,7 @@ pub mod generic_attachment {
     }
 }
 impl GenericAttachment {
-    /// Creates a new builder-style object to manufacture [`GenericAttachment`](crate::model::GenericAttachment)
+    /// Creates a new builder-style object to manufacture [`GenericAttachment`](crate::model::GenericAttachment).
     pub fn builder() -> crate::model::generic_attachment::Builder {
         crate::model::generic_attachment::Builder::default()
     }
@@ -1341,11 +1335,10 @@ impl std::fmt::Debug for Button {
         formatter.finish()
     }
 }
-/// See [`Button`](crate::model::Button)
+/// See [`Button`](crate::model::Button).
 pub mod button {
 
-    /// A builder for [`Button`](crate::model::Button)
-    #[non_exhaustive]
+    /// A builder for [`Button`](crate::model::Button).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -1372,7 +1365,7 @@ pub mod button {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Button`](crate::model::Button)
+        /// Consumes the builder and constructs a [`Button`](crate::model::Button).
         pub fn build(self) -> crate::model::Button {
             crate::model::Button {
                 text: self.text,
@@ -1382,7 +1375,7 @@ pub mod button {
     }
 }
 impl Button {
-    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button)
+    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
     pub fn builder() -> crate::model::button::Builder {
         crate::model::button::Builder::default()
     }
@@ -1467,11 +1460,10 @@ impl std::fmt::Debug for SentimentResponse {
         formatter.finish()
     }
 }
-/// See [`SentimentResponse`](crate::model::SentimentResponse)
+/// See [`SentimentResponse`](crate::model::SentimentResponse).
 pub mod sentiment_response {
 
-    /// A builder for [`SentimentResponse`](crate::model::SentimentResponse)
-    #[non_exhaustive]
+    /// A builder for [`SentimentResponse`](crate::model::SentimentResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sentiment_label: std::option::Option<std::string::String>,
@@ -1504,7 +1496,7 @@ pub mod sentiment_response {
             self.sentiment_score = input;
             self
         }
-        /// Consumes the builder and constructs a [`SentimentResponse`](crate::model::SentimentResponse)
+        /// Consumes the builder and constructs a [`SentimentResponse`](crate::model::SentimentResponse).
         pub fn build(self) -> crate::model::SentimentResponse {
             crate::model::SentimentResponse {
                 sentiment_label: self.sentiment_label,
@@ -1514,7 +1506,7 @@ pub mod sentiment_response {
     }
 }
 impl SentimentResponse {
-    /// Creates a new builder-style object to manufacture [`SentimentResponse`](crate::model::SentimentResponse)
+    /// Creates a new builder-style object to manufacture [`SentimentResponse`](crate::model::SentimentResponse).
     pub fn builder() -> crate::model::sentiment_response::Builder {
         crate::model::sentiment_response::Builder::default()
     }
@@ -1558,11 +1550,10 @@ impl std::fmt::Debug for PredictedIntent {
         formatter.finish()
     }
 }
-/// See [`PredictedIntent`](crate::model::PredictedIntent)
+/// See [`PredictedIntent`](crate::model::PredictedIntent).
 pub mod predicted_intent {
 
-    /// A builder for [`PredictedIntent`](crate::model::PredictedIntent)
-    #[non_exhaustive]
+    /// A builder for [`PredictedIntent`](crate::model::PredictedIntent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -1620,7 +1611,7 @@ pub mod predicted_intent {
             self.slots = input;
             self
         }
-        /// Consumes the builder and constructs a [`PredictedIntent`](crate::model::PredictedIntent)
+        /// Consumes the builder and constructs a [`PredictedIntent`](crate::model::PredictedIntent).
         pub fn build(self) -> crate::model::PredictedIntent {
             crate::model::PredictedIntent {
                 intent_name: self.intent_name,
@@ -1631,7 +1622,7 @@ pub mod predicted_intent {
     }
 }
 impl PredictedIntent {
-    /// Creates a new builder-style object to manufacture [`PredictedIntent`](crate::model::PredictedIntent)
+    /// Creates a new builder-style object to manufacture [`PredictedIntent`](crate::model::PredictedIntent).
     pub fn builder() -> crate::model::predicted_intent::Builder {
         crate::model::predicted_intent::Builder::default()
     }
@@ -1657,11 +1648,10 @@ impl std::fmt::Debug for IntentConfidence {
         formatter.finish()
     }
 }
-/// See [`IntentConfidence`](crate::model::IntentConfidence)
+/// See [`IntentConfidence`](crate::model::IntentConfidence).
 pub mod intent_confidence {
 
-    /// A builder for [`IntentConfidence`](crate::model::IntentConfidence)
-    #[non_exhaustive]
+    /// A builder for [`IntentConfidence`](crate::model::IntentConfidence).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f64>,
@@ -1677,7 +1667,7 @@ pub mod intent_confidence {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`IntentConfidence`](crate::model::IntentConfidence)
+        /// Consumes the builder and constructs a [`IntentConfidence`](crate::model::IntentConfidence).
         pub fn build(self) -> crate::model::IntentConfidence {
             crate::model::IntentConfidence {
                 score: self.score.unwrap_or_default(),
@@ -1686,7 +1676,7 @@ pub mod intent_confidence {
     }
 }
 impl IntentConfidence {
-    /// Creates a new builder-style object to manufacture [`IntentConfidence`](crate::model::IntentConfidence)
+    /// Creates a new builder-style object to manufacture [`IntentConfidence`](crate::model::IntentConfidence).
     pub fn builder() -> crate::model::intent_confidence::Builder {
         crate::model::intent_confidence::Builder::default()
     }

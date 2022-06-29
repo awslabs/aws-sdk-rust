@@ -1082,11 +1082,10 @@ impl std::fmt::Display for ThrottledException {
     }
 }
 impl std::error::Error for ThrottledException {}
-/// See [`ThrottledException`](crate::error::ThrottledException)
+/// See [`ThrottledException`](crate::error::ThrottledException).
 pub mod throttled_exception {
 
-    /// A builder for [`ThrottledException`](crate::error::ThrottledException)
-    #[non_exhaustive]
+    /// A builder for [`ThrottledException`](crate::error::ThrottledException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1102,7 +1101,7 @@ pub mod throttled_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThrottledException`](crate::error::ThrottledException)
+        /// Consumes the builder and constructs a [`ThrottledException`](crate::error::ThrottledException).
         pub fn build(self) -> crate::error::ThrottledException {
             crate::error::ThrottledException {
                 message: self.message,
@@ -1111,7 +1110,7 @@ pub mod throttled_exception {
     }
 }
 impl ThrottledException {
-    /// Creates a new builder-style object to manufacture [`ThrottledException`](crate::error::ThrottledException)
+    /// Creates a new builder-style object to manufacture [`ThrottledException`](crate::error::ThrottledException).
     pub fn builder() -> crate::error::throttled_exception::Builder {
         crate::error::throttled_exception::Builder::default()
     }
@@ -1154,11 +1153,10 @@ impl std::fmt::Display for InvalidParameterException {
     }
 }
 impl std::error::Error for InvalidParameterException {}
-/// See [`InvalidParameterException`](crate::error::InvalidParameterException)
+/// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
 
-    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidParameterException`](crate::error::InvalidParameterException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1174,7 +1172,7 @@ pub mod invalid_parameter_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException)
+        /// Consumes the builder and constructs a [`InvalidParameterException`](crate::error::InvalidParameterException).
         pub fn build(self) -> crate::error::InvalidParameterException {
             crate::error::InvalidParameterException {
                 message: self.message,
@@ -1183,7 +1181,7 @@ pub mod invalid_parameter_exception {
     }
 }
 impl InvalidParameterException {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException)
+    /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
     pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
         crate::error::invalid_parameter_exception::Builder::default()
     }
@@ -1219,11 +1217,10 @@ impl std::fmt::Display for InternalServiceException {
     }
 }
 impl std::error::Error for InternalServiceException {}
-/// See [`InternalServiceException`](crate::error::InternalServiceException)
+/// See [`InternalServiceException`](crate::error::InternalServiceException).
 pub mod internal_service_exception {
 
-    /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
-    #[non_exhaustive]
+    /// A builder for [`InternalServiceException`](crate::error::InternalServiceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1239,7 +1236,7 @@ pub mod internal_service_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServiceException`](crate::error::InternalServiceException)
+        /// Consumes the builder and constructs a [`InternalServiceException`](crate::error::InternalServiceException).
         pub fn build(self) -> crate::error::InternalServiceException {
             crate::error::InternalServiceException {
                 message: self.message,
@@ -1248,7 +1245,7 @@ pub mod internal_service_exception {
     }
 }
 impl InternalServiceException {
-    /// Creates a new builder-style object to manufacture [`InternalServiceException`](crate::error::InternalServiceException)
+    /// Creates a new builder-style object to manufacture [`InternalServiceException`](crate::error::InternalServiceException).
     pub fn builder() -> crate::error::internal_service_exception::Builder {
         crate::error::internal_service_exception::Builder::default()
     }
@@ -1290,11 +1287,10 @@ impl std::fmt::Display for ConstraintViolationException {
     }
 }
 impl std::error::Error for ConstraintViolationException {}
-/// See [`ConstraintViolationException`](crate::error::ConstraintViolationException)
+/// See [`ConstraintViolationException`](crate::error::ConstraintViolationException).
 pub mod constraint_violation_exception {
 
-    /// A builder for [`ConstraintViolationException`](crate::error::ConstraintViolationException)
-    #[non_exhaustive]
+    /// A builder for [`ConstraintViolationException`](crate::error::ConstraintViolationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1310,7 +1306,7 @@ pub mod constraint_violation_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConstraintViolationException`](crate::error::ConstraintViolationException)
+        /// Consumes the builder and constructs a [`ConstraintViolationException`](crate::error::ConstraintViolationException).
         pub fn build(self) -> crate::error::ConstraintViolationException {
             crate::error::ConstraintViolationException {
                 message: self.message,
@@ -1319,7 +1315,7 @@ pub mod constraint_violation_exception {
     }
 }
 impl ConstraintViolationException {
-    /// Creates a new builder-style object to manufacture [`ConstraintViolationException`](crate::error::ConstraintViolationException)
+    /// Creates a new builder-style object to manufacture [`ConstraintViolationException`](crate::error::ConstraintViolationException).
     pub fn builder() -> crate::error::constraint_violation_exception::Builder {
         crate::error::constraint_violation_exception::Builder::default()
     }
@@ -1355,11 +1351,10 @@ impl std::fmt::Display for ConcurrentModificationException {
     }
 }
 impl std::error::Error for ConcurrentModificationException {}
-/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
 pub mod concurrent_modification_exception {
 
-    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
-    #[non_exhaustive]
+    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1375,7 +1370,7 @@ pub mod concurrent_modification_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
         pub fn build(self) -> crate::error::ConcurrentModificationException {
             crate::error::ConcurrentModificationException {
                 message: self.message,
@@ -1384,7 +1379,7 @@ pub mod concurrent_modification_exception {
     }
 }
 impl ConcurrentModificationException {
-    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
         crate::error::concurrent_modification_exception::Builder::default()
     }
@@ -1420,11 +1415,10 @@ impl std::fmt::Display for PaginationTokenExpiredException {
     }
 }
 impl std::error::Error for PaginationTokenExpiredException {}
-/// See [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException)
+/// See [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException).
 pub mod pagination_token_expired_exception {
 
-    /// A builder for [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException)
-    #[non_exhaustive]
+    /// A builder for [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1440,7 +1434,7 @@ pub mod pagination_token_expired_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException)
+        /// Consumes the builder and constructs a [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException).
         pub fn build(self) -> crate::error::PaginationTokenExpiredException {
             crate::error::PaginationTokenExpiredException {
                 message: self.message,
@@ -1449,7 +1443,7 @@ pub mod pagination_token_expired_exception {
     }
 }
 impl PaginationTokenExpiredException {
-    /// Creates a new builder-style object to manufacture [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException)
+    /// Creates a new builder-style object to manufacture [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException).
     pub fn builder() -> crate::error::pagination_token_expired_exception::Builder {
         crate::error::pagination_token_expired_exception::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CancelChangeSet {
     _private: (),
 }
 impl CancelChangeSet {
-    /// Creates a new builder-style object to manufacture [`CancelChangeSetInput`](crate::input::CancelChangeSetInput)
+    /// Creates a new builder-style object to manufacture [`CancelChangeSetInput`](crate::input::CancelChangeSetInput).
     pub fn builder() -> crate::input::cancel_change_set_input::Builder {
         crate::input::cancel_change_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeChangeSet {
     _private: (),
 }
 impl DescribeChangeSet {
-    /// Creates a new builder-style object to manufacture [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChangeSetInput`](crate::input::DescribeChangeSetInput).
     pub fn builder() -> crate::input::describe_change_set_input::Builder {
         crate::input::describe_change_set_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeEntity {
     _private: (),
 }
 impl DescribeEntity {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityInput`](crate::input::DescribeEntityInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntityInput`](crate::input::DescribeEntityInput).
     pub fn builder() -> crate::input::describe_entity_input::Builder {
         crate::input::describe_entity_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct ListChangeSets {
     _private: (),
 }
 impl ListChangeSets {
-    /// Creates a new builder-style object to manufacture [`ListChangeSetsInput`](crate::input::ListChangeSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListChangeSetsInput`](crate::input::ListChangeSetsInput).
     pub fn builder() -> crate::input::list_change_sets_input::Builder {
         crate::input::list_change_sets_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct ListEntities {
     _private: (),
 }
 impl ListEntities {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesInput`](crate::input::ListEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListEntitiesInput`](crate::input::ListEntitiesInput).
     pub fn builder() -> crate::input::list_entities_input::Builder {
         crate::input::list_entities_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct StartChangeSet {
     _private: (),
 }
 impl StartChangeSet {
-    /// Creates a new builder-style object to manufacture [`StartChangeSetInput`](crate::input::StartChangeSetInput)
+    /// Creates a new builder-style object to manufacture [`StartChangeSetInput`](crate::input::StartChangeSetInput).
     pub fn builder() -> crate::input::start_change_set_input::Builder {
         crate::input::start_change_set_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CreateAppInstance {
     _private: (),
 }
 impl CreateAppInstance {
-    /// Creates a new builder-style object to manufacture [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput)
+    /// Creates a new builder-style object to manufacture [`CreateAppInstanceInput`](crate::input::CreateAppInstanceInput).
     pub fn builder() -> crate::input::create_app_instance_input::Builder {
         crate::input::create_app_instance_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateAppInstanceAdmin {
     _private: (),
 }
 impl CreateAppInstanceAdmin {
-    /// Creates a new builder-style object to manufacture [`CreateAppInstanceAdminInput`](crate::input::CreateAppInstanceAdminInput)
+    /// Creates a new builder-style object to manufacture [`CreateAppInstanceAdminInput`](crate::input::CreateAppInstanceAdminInput).
     pub fn builder() -> crate::input::create_app_instance_admin_input::Builder {
         crate::input::create_app_instance_admin_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateAppInstanceUser {
     _private: (),
 }
 impl CreateAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`CreateAppInstanceUserInput`](crate::input::CreateAppInstanceUserInput).
     pub fn builder() -> crate::input::create_app_instance_user_input::Builder {
         crate::input::create_app_instance_user_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteAppInstance {
     _private: (),
 }
 impl DeleteAppInstance {
-    /// Creates a new builder-style object to manufacture [`DeleteAppInstanceInput`](crate::input::DeleteAppInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppInstanceInput`](crate::input::DeleteAppInstanceInput).
     pub fn builder() -> crate::input::delete_app_instance_input::Builder {
         crate::input::delete_app_instance_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteAppInstanceAdmin {
     _private: (),
 }
 impl DeleteAppInstanceAdmin {
-    /// Creates a new builder-style object to manufacture [`DeleteAppInstanceAdminInput`](crate::input::DeleteAppInstanceAdminInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppInstanceAdminInput`](crate::input::DeleteAppInstanceAdminInput).
     pub fn builder() -> crate::input::delete_app_instance_admin_input::Builder {
         crate::input::delete_app_instance_admin_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteAppInstanceUser {
     _private: (),
 }
 impl DeleteAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`DeleteAppInstanceUserInput`](crate::input::DeleteAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppInstanceUserInput`](crate::input::DeleteAppInstanceUserInput).
     pub fn builder() -> crate::input::delete_app_instance_user_input::Builder {
         crate::input::delete_app_instance_user_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeregisterAppInstanceUserEndpoint {
     _private: (),
 }
 impl DeregisterAppInstanceUserEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterAppInstanceUserEndpointInput`](crate::input::DeregisterAppInstanceUserEndpointInput).
     pub fn builder() -> crate::input::deregister_app_instance_user_endpoint_input::Builder {
         crate::input::deregister_app_instance_user_endpoint_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DescribeAppInstance {
     _private: (),
 }
 impl DescribeAppInstance {
-    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceInput`](crate::input::DescribeAppInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceInput`](crate::input::DescribeAppInstanceInput).
     pub fn builder() -> crate::input::describe_app_instance_input::Builder {
         crate::input::describe_app_instance_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DescribeAppInstanceAdmin {
     _private: (),
 }
 impl DescribeAppInstanceAdmin {
-    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceAdminInput`](crate::input::DescribeAppInstanceAdminInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceAdminInput`](crate::input::DescribeAppInstanceAdminInput).
     pub fn builder() -> crate::input::describe_app_instance_admin_input::Builder {
         crate::input::describe_app_instance_admin_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct DescribeAppInstanceUser {
     _private: (),
 }
 impl DescribeAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserInput`](crate::input::DescribeAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserInput`](crate::input::DescribeAppInstanceUserInput).
     pub fn builder() -> crate::input::describe_app_instance_user_input::Builder {
         crate::input::describe_app_instance_user_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct DescribeAppInstanceUserEndpoint {
     _private: (),
 }
 impl DescribeAppInstanceUserEndpoint {
-    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointInput`](crate::input::DescribeAppInstanceUserEndpointInput).
     pub fn builder() -> crate::input::describe_app_instance_user_endpoint_input::Builder {
         crate::input::describe_app_instance_user_endpoint_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct GetAppInstanceRetentionSettings {
     _private: (),
 }
 impl GetAppInstanceRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`GetAppInstanceRetentionSettingsInput`](crate::input::GetAppInstanceRetentionSettingsInput)
+    /// Creates a new builder-style object to manufacture [`GetAppInstanceRetentionSettingsInput`](crate::input::GetAppInstanceRetentionSettingsInput).
     pub fn builder() -> crate::input::get_app_instance_retention_settings_input::Builder {
         crate::input::get_app_instance_retention_settings_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct ListAppInstanceAdmins {
     _private: (),
 }
 impl ListAppInstanceAdmins {
-    /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsInput`](crate::input::ListAppInstanceAdminsInput).
     pub fn builder() -> crate::input::list_app_instance_admins_input::Builder {
         crate::input::list_app_instance_admins_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct ListAppInstances {
     _private: (),
 }
 impl ListAppInstances {
-    /// Creates a new builder-style object to manufacture [`ListAppInstancesInput`](crate::input::ListAppInstancesInput)
+    /// Creates a new builder-style object to manufacture [`ListAppInstancesInput`](crate::input::ListAppInstancesInput).
     pub fn builder() -> crate::input::list_app_instances_input::Builder {
         crate::input::list_app_instances_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct ListAppInstanceUserEndpoints {
     _private: (),
 }
 impl ListAppInstanceUserEndpoints {
-    /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsInput`](crate::input::ListAppInstanceUserEndpointsInput).
     pub fn builder() -> crate::input::list_app_instance_user_endpoints_input::Builder {
         crate::input::list_app_instance_user_endpoints_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct ListAppInstanceUsers {
     _private: (),
 }
 impl ListAppInstanceUsers {
-    /// Creates a new builder-style object to manufacture [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput)
+    /// Creates a new builder-style object to manufacture [`ListAppInstanceUsersInput`](crate::input::ListAppInstanceUsersInput).
     pub fn builder() -> crate::input::list_app_instance_users_input::Builder {
         crate::input::list_app_instance_users_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -588,7 +588,7 @@ pub struct PutAppInstanceRetentionSettings {
     _private: (),
 }
 impl PutAppInstanceRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`PutAppInstanceRetentionSettingsInput`](crate::input::PutAppInstanceRetentionSettingsInput)
+    /// Creates a new builder-style object to manufacture [`PutAppInstanceRetentionSettingsInput`](crate::input::PutAppInstanceRetentionSettingsInput).
     pub fn builder() -> crate::input::put_app_instance_retention_settings_input::Builder {
         crate::input::put_app_instance_retention_settings_input::Builder::default()
     }
@@ -622,7 +622,7 @@ pub struct RegisterAppInstanceUserEndpoint {
     _private: (),
 }
 impl RegisterAppInstanceUserEndpoint {
-    /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput)
+    /// Creates a new builder-style object to manufacture [`RegisterAppInstanceUserEndpointInput`](crate::input::RegisterAppInstanceUserEndpointInput).
     pub fn builder() -> crate::input::register_app_instance_user_endpoint_input::Builder {
         crate::input::register_app_instance_user_endpoint_input::Builder::default()
     }
@@ -656,7 +656,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -720,7 +720,7 @@ pub struct UpdateAppInstance {
     _private: (),
 }
 impl UpdateAppInstance {
-    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceInput`](crate::input::UpdateAppInstanceInput).
     pub fn builder() -> crate::input::update_app_instance_input::Builder {
         crate::input::update_app_instance_input::Builder::default()
     }
@@ -754,7 +754,7 @@ pub struct UpdateAppInstanceUser {
     _private: (),
 }
 impl UpdateAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserInput`](crate::input::UpdateAppInstanceUserInput).
     pub fn builder() -> crate::input::update_app_instance_user_input::Builder {
         crate::input::update_app_instance_user_input::Builder::default()
     }
@@ -788,7 +788,7 @@ pub struct UpdateAppInstanceUserEndpoint {
     _private: (),
 }
 impl UpdateAppInstanceUserEndpoint {
-    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointInput`](crate::input::UpdateAppInstanceUserEndpointInput).
     pub fn builder() -> crate::input::update_app_instance_user_endpoint_input::Builder {
         crate::input::update_app_instance_user_endpoint_input::Builder::default()
     }

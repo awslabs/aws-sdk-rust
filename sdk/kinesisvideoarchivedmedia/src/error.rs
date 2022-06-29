@@ -943,11 +943,10 @@ impl std::fmt::Display for ResourceNotFoundException {
     }
 }
 impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
 
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -963,7 +962,7 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
                 message: self.message,
@@ -972,7 +971,7 @@ pub mod resource_not_found_exception {
     }
 }
 impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
     }
@@ -1008,11 +1007,10 @@ impl std::fmt::Display for NotAuthorizedException {
     }
 }
 impl std::error::Error for NotAuthorizedException {}
-/// See [`NotAuthorizedException`](crate::error::NotAuthorizedException)
+/// See [`NotAuthorizedException`](crate::error::NotAuthorizedException).
 pub mod not_authorized_exception {
 
-    /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException)
-    #[non_exhaustive]
+    /// A builder for [`NotAuthorizedException`](crate::error::NotAuthorizedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1028,7 +1026,7 @@ pub mod not_authorized_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException)
+        /// Consumes the builder and constructs a [`NotAuthorizedException`](crate::error::NotAuthorizedException).
         pub fn build(self) -> crate::error::NotAuthorizedException {
             crate::error::NotAuthorizedException {
                 message: self.message,
@@ -1037,7 +1035,7 @@ pub mod not_authorized_exception {
     }
 }
 impl NotAuthorizedException {
-    /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException)
+    /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException).
     pub fn builder() -> crate::error::not_authorized_exception::Builder {
         crate::error::not_authorized_exception::Builder::default()
     }
@@ -1073,11 +1071,10 @@ impl std::fmt::Display for InvalidArgumentException {
     }
 }
 impl std::error::Error for InvalidArgumentException {}
-/// See [`InvalidArgumentException`](crate::error::InvalidArgumentException)
+/// See [`InvalidArgumentException`](crate::error::InvalidArgumentException).
 pub mod invalid_argument_exception {
 
-    /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidArgumentException`](crate::error::InvalidArgumentException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1093,7 +1090,7 @@ pub mod invalid_argument_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException)
+        /// Consumes the builder and constructs a [`InvalidArgumentException`](crate::error::InvalidArgumentException).
         pub fn build(self) -> crate::error::InvalidArgumentException {
             crate::error::InvalidArgumentException {
                 message: self.message,
@@ -1102,7 +1099,7 @@ pub mod invalid_argument_exception {
     }
 }
 impl InvalidArgumentException {
-    /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException)
+    /// Creates a new builder-style object to manufacture [`InvalidArgumentException`](crate::error::InvalidArgumentException).
     pub fn builder() -> crate::error::invalid_argument_exception::Builder {
         crate::error::invalid_argument_exception::Builder::default()
     }
@@ -1138,11 +1135,10 @@ impl std::fmt::Display for ClientLimitExceededException {
     }
 }
 impl std::error::Error for ClientLimitExceededException {}
-/// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
+/// See [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
 pub mod client_limit_exceeded_exception {
 
-    /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
-    #[non_exhaustive]
+    /// A builder for [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1158,7 +1154,7 @@ pub mod client_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
+        /// Consumes the builder and constructs a [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
         pub fn build(self) -> crate::error::ClientLimitExceededException {
             crate::error::ClientLimitExceededException {
                 message: self.message,
@@ -1167,7 +1163,7 @@ pub mod client_limit_exceeded_exception {
     }
 }
 impl ClientLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`ClientLimitExceededException`](crate::error::ClientLimitExceededException)
+    /// Creates a new builder-style object to manufacture [`ClientLimitExceededException`](crate::error::ClientLimitExceededException).
     pub fn builder() -> crate::error::client_limit_exceeded_exception::Builder {
         crate::error::client_limit_exceeded_exception::Builder::default()
     }
@@ -1203,11 +1199,10 @@ impl std::fmt::Display for UnsupportedStreamMediaTypeException {
     }
 }
 impl std::error::Error for UnsupportedStreamMediaTypeException {}
-/// See [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException)
+/// See [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
 pub mod unsupported_stream_media_type_exception {
 
-    /// A builder for [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1223,7 +1218,7 @@ pub mod unsupported_stream_media_type_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException)
+        /// Consumes the builder and constructs a [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
         pub fn build(self) -> crate::error::UnsupportedStreamMediaTypeException {
             crate::error::UnsupportedStreamMediaTypeException {
                 message: self.message,
@@ -1232,7 +1227,7 @@ pub mod unsupported_stream_media_type_exception {
     }
 }
 impl UnsupportedStreamMediaTypeException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException)
+    /// Creates a new builder-style object to manufacture [`UnsupportedStreamMediaTypeException`](crate::error::UnsupportedStreamMediaTypeException).
     pub fn builder() -> crate::error::unsupported_stream_media_type_exception::Builder {
         crate::error::unsupported_stream_media_type_exception::Builder::default()
     }
@@ -1268,11 +1263,10 @@ impl std::fmt::Display for NoDataRetentionException {
     }
 }
 impl std::error::Error for NoDataRetentionException {}
-/// See [`NoDataRetentionException`](crate::error::NoDataRetentionException)
+/// See [`NoDataRetentionException`](crate::error::NoDataRetentionException).
 pub mod no_data_retention_exception {
 
-    /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException)
-    #[non_exhaustive]
+    /// A builder for [`NoDataRetentionException`](crate::error::NoDataRetentionException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1288,7 +1282,7 @@ pub mod no_data_retention_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoDataRetentionException`](crate::error::NoDataRetentionException)
+        /// Consumes the builder and constructs a [`NoDataRetentionException`](crate::error::NoDataRetentionException).
         pub fn build(self) -> crate::error::NoDataRetentionException {
             crate::error::NoDataRetentionException {
                 message: self.message,
@@ -1297,7 +1291,7 @@ pub mod no_data_retention_exception {
     }
 }
 impl NoDataRetentionException {
-    /// Creates a new builder-style object to manufacture [`NoDataRetentionException`](crate::error::NoDataRetentionException)
+    /// Creates a new builder-style object to manufacture [`NoDataRetentionException`](crate::error::NoDataRetentionException).
     pub fn builder() -> crate::error::no_data_retention_exception::Builder {
         crate::error::no_data_retention_exception::Builder::default()
     }
@@ -1333,11 +1327,10 @@ impl std::fmt::Display for MissingCodecPrivateDataException {
     }
 }
 impl std::error::Error for MissingCodecPrivateDataException {}
-/// See [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException)
+/// See [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
 pub mod missing_codec_private_data_exception {
 
-    /// A builder for [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException)
-    #[non_exhaustive]
+    /// A builder for [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1353,7 +1346,7 @@ pub mod missing_codec_private_data_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException)
+        /// Consumes the builder and constructs a [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
         pub fn build(self) -> crate::error::MissingCodecPrivateDataException {
             crate::error::MissingCodecPrivateDataException {
                 message: self.message,
@@ -1362,7 +1355,7 @@ pub mod missing_codec_private_data_exception {
     }
 }
 impl MissingCodecPrivateDataException {
-    /// Creates a new builder-style object to manufacture [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException)
+    /// Creates a new builder-style object to manufacture [`MissingCodecPrivateDataException`](crate::error::MissingCodecPrivateDataException).
     pub fn builder() -> crate::error::missing_codec_private_data_exception::Builder {
         crate::error::missing_codec_private_data_exception::Builder::default()
     }
@@ -1398,11 +1391,10 @@ impl std::fmt::Display for InvalidCodecPrivateDataException {
     }
 }
 impl std::error::Error for InvalidCodecPrivateDataException {}
-/// See [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException)
+/// See [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
 pub mod invalid_codec_private_data_exception {
 
-    /// A builder for [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1418,7 +1410,7 @@ pub mod invalid_codec_private_data_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException)
+        /// Consumes the builder and constructs a [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
         pub fn build(self) -> crate::error::InvalidCodecPrivateDataException {
             crate::error::InvalidCodecPrivateDataException {
                 message: self.message,
@@ -1427,7 +1419,7 @@ pub mod invalid_codec_private_data_exception {
     }
 }
 impl InvalidCodecPrivateDataException {
-    /// Creates a new builder-style object to manufacture [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException)
+    /// Creates a new builder-style object to manufacture [`InvalidCodecPrivateDataException`](crate::error::InvalidCodecPrivateDataException).
     pub fn builder() -> crate::error::invalid_codec_private_data_exception::Builder {
         crate::error::invalid_codec_private_data_exception::Builder::default()
     }
@@ -1463,11 +1455,10 @@ impl std::fmt::Display for InvalidMediaFrameException {
     }
 }
 impl std::error::Error for InvalidMediaFrameException {}
-/// See [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException)
+/// See [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
 pub mod invalid_media_frame_exception {
 
-    /// A builder for [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1483,7 +1474,7 @@ pub mod invalid_media_frame_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException)
+        /// Consumes the builder and constructs a [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
         pub fn build(self) -> crate::error::InvalidMediaFrameException {
             crate::error::InvalidMediaFrameException {
                 message: self.message,
@@ -1492,7 +1483,7 @@ pub mod invalid_media_frame_exception {
     }
 }
 impl InvalidMediaFrameException {
-    /// Creates a new builder-style object to manufacture [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException)
+    /// Creates a new builder-style object to manufacture [`InvalidMediaFrameException`](crate::error::InvalidMediaFrameException).
     pub fn builder() -> crate::error::invalid_media_frame_exception::Builder {
         crate::error::invalid_media_frame_exception::Builder::default()
     }

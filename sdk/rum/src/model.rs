@@ -31,11 +31,10 @@ impl std::fmt::Debug for QueryFilter {
         formatter.finish()
     }
 }
-/// See [`QueryFilter`](crate::model::QueryFilter)
+/// See [`QueryFilter`](crate::model::QueryFilter).
 pub mod query_filter {
 
-    /// A builder for [`QueryFilter`](crate::model::QueryFilter)
-    #[non_exhaustive]
+    /// A builder for [`QueryFilter`](crate::model::QueryFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -73,7 +72,7 @@ pub mod query_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryFilter`](crate::model::QueryFilter)
+        /// Consumes the builder and constructs a [`QueryFilter`](crate::model::QueryFilter).
         pub fn build(self) -> crate::model::QueryFilter {
             crate::model::QueryFilter {
                 name: self.name,
@@ -83,7 +82,7 @@ pub mod query_filter {
     }
 }
 impl QueryFilter {
-    /// Creates a new builder-style object to manufacture [`QueryFilter`](crate::model::QueryFilter)
+    /// Creates a new builder-style object to manufacture [`QueryFilter`](crate::model::QueryFilter).
     pub fn builder() -> crate::model::query_filter::Builder {
         crate::model::query_filter::Builder::default()
     }
@@ -116,11 +115,10 @@ impl std::fmt::Debug for TimeRange {
         formatter.finish()
     }
 }
-/// See [`TimeRange`](crate::model::TimeRange)
+/// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
 
-    /// A builder for [`TimeRange`](crate::model::TimeRange)
-    #[non_exhaustive]
+    /// A builder for [`TimeRange`](crate::model::TimeRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) after: std::option::Option<i64>,
@@ -147,7 +145,7 @@ pub mod time_range {
             self.before = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimeRange`](crate::model::TimeRange)
+        /// Consumes the builder and constructs a [`TimeRange`](crate::model::TimeRange).
         pub fn build(self) -> crate::model::TimeRange {
             crate::model::TimeRange {
                 after: self.after.unwrap_or_default(),
@@ -157,7 +155,7 @@ pub mod time_range {
     }
 }
 impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange)
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
     pub fn builder() -> crate::model::time_range::Builder {
         crate::model::time_range::Builder::default()
     }
@@ -257,11 +255,10 @@ impl std::fmt::Debug for AppMonitorConfiguration {
         formatter.finish()
     }
 }
-/// See [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration)
+/// See [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
 pub mod app_monitor_configuration {
 
-    /// A builder for [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
@@ -425,7 +422,7 @@ pub mod app_monitor_configuration {
             self.enable_x_ray = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration)
+        /// Consumes the builder and constructs a [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
         pub fn build(self) -> crate::model::AppMonitorConfiguration {
             crate::model::AppMonitorConfiguration {
                 identity_pool_id: self.identity_pool_id,
@@ -442,7 +439,7 @@ pub mod app_monitor_configuration {
     }
 }
 impl AppMonitorConfiguration {
-    /// Creates a new builder-style object to manufacture [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration)
+    /// Creates a new builder-style object to manufacture [`AppMonitorConfiguration`](crate::model::AppMonitorConfiguration).
     pub fn builder() -> crate::model::app_monitor_configuration::Builder {
         crate::model::app_monitor_configuration::Builder::default()
     }
@@ -555,11 +552,10 @@ impl std::fmt::Debug for AppMonitorSummary {
         formatter.finish()
     }
 }
-/// See [`AppMonitorSummary`](crate::model::AppMonitorSummary)
+/// See [`AppMonitorSummary`](crate::model::AppMonitorSummary).
 pub mod app_monitor_summary {
 
-    /// A builder for [`AppMonitorSummary`](crate::model::AppMonitorSummary)
-    #[non_exhaustive]
+    /// A builder for [`AppMonitorSummary`](crate::model::AppMonitorSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -622,7 +618,7 @@ pub mod app_monitor_summary {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppMonitorSummary`](crate::model::AppMonitorSummary)
+        /// Consumes the builder and constructs a [`AppMonitorSummary`](crate::model::AppMonitorSummary).
         pub fn build(self) -> crate::model::AppMonitorSummary {
             crate::model::AppMonitorSummary {
                 name: self.name,
@@ -635,7 +631,7 @@ pub mod app_monitor_summary {
     }
 }
 impl AppMonitorSummary {
-    /// Creates a new builder-style object to manufacture [`AppMonitorSummary`](crate::model::AppMonitorSummary)
+    /// Creates a new builder-style object to manufacture [`AppMonitorSummary`](crate::model::AppMonitorSummary).
     pub fn builder() -> crate::model::app_monitor_summary::Builder {
         crate::model::app_monitor_summary::Builder::default()
     }
@@ -782,11 +778,10 @@ impl std::fmt::Debug for AppMonitor {
         formatter.finish()
     }
 }
-/// See [`AppMonitor`](crate::model::AppMonitor)
+/// See [`AppMonitor`](crate::model::AppMonitor).
 pub mod app_monitor {
 
-    /// A builder for [`AppMonitor`](crate::model::AppMonitor)
-    #[non_exhaustive]
+    /// A builder for [`AppMonitor`](crate::model::AppMonitor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -920,7 +915,7 @@ pub mod app_monitor {
             self.data_storage = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppMonitor`](crate::model::AppMonitor)
+        /// Consumes the builder and constructs a [`AppMonitor`](crate::model::AppMonitor).
         pub fn build(self) -> crate::model::AppMonitor {
             crate::model::AppMonitor {
                 name: self.name,
@@ -937,7 +932,7 @@ pub mod app_monitor {
     }
 }
 impl AppMonitor {
-    /// Creates a new builder-style object to manufacture [`AppMonitor`](crate::model::AppMonitor)
+    /// Creates a new builder-style object to manufacture [`AppMonitor`](crate::model::AppMonitor).
     pub fn builder() -> crate::model::app_monitor::Builder {
         crate::model::app_monitor::Builder::default()
     }
@@ -963,11 +958,10 @@ impl std::fmt::Debug for DataStorage {
         formatter.finish()
     }
 }
-/// See [`DataStorage`](crate::model::DataStorage)
+/// See [`DataStorage`](crate::model::DataStorage).
 pub mod data_storage {
 
-    /// A builder for [`DataStorage`](crate::model::DataStorage)
-    #[non_exhaustive]
+    /// A builder for [`DataStorage`](crate::model::DataStorage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log: std::option::Option<crate::model::CwLog>,
@@ -983,7 +977,7 @@ pub mod data_storage {
             self.cw_log = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataStorage`](crate::model::DataStorage)
+        /// Consumes the builder and constructs a [`DataStorage`](crate::model::DataStorage).
         pub fn build(self) -> crate::model::DataStorage {
             crate::model::DataStorage {
                 cw_log: self.cw_log,
@@ -992,7 +986,7 @@ pub mod data_storage {
     }
 }
 impl DataStorage {
-    /// Creates a new builder-style object to manufacture [`DataStorage`](crate::model::DataStorage)
+    /// Creates a new builder-style object to manufacture [`DataStorage`](crate::model::DataStorage).
     pub fn builder() -> crate::model::data_storage::Builder {
         crate::model::data_storage::Builder::default()
     }
@@ -1025,11 +1019,10 @@ impl std::fmt::Debug for CwLog {
         formatter.finish()
     }
 }
-/// See [`CwLog`](crate::model::CwLog)
+/// See [`CwLog`](crate::model::CwLog).
 pub mod cw_log {
 
-    /// A builder for [`CwLog`](crate::model::CwLog)
-    #[non_exhaustive]
+    /// A builder for [`CwLog`](crate::model::CwLog).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cw_log_enabled: std::option::Option<bool>,
@@ -1056,7 +1049,7 @@ pub mod cw_log {
             self.cw_log_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`CwLog`](crate::model::CwLog)
+        /// Consumes the builder and constructs a [`CwLog`](crate::model::CwLog).
         pub fn build(self) -> crate::model::CwLog {
             crate::model::CwLog {
                 cw_log_enabled: self.cw_log_enabled,
@@ -1066,7 +1059,7 @@ pub mod cw_log {
     }
 }
 impl CwLog {
-    /// Creates a new builder-style object to manufacture [`CwLog`](crate::model::CwLog)
+    /// Creates a new builder-style object to manufacture [`CwLog`](crate::model::CwLog).
     pub fn builder() -> crate::model::cw_log::Builder {
         crate::model::cw_log::Builder::default()
     }
@@ -1120,11 +1113,10 @@ impl std::fmt::Debug for RumEvent {
         formatter.finish()
     }
 }
-/// See [`RumEvent`](crate::model::RumEvent)
+/// See [`RumEvent`](crate::model::RumEvent).
 pub mod rum_event {
 
-    /// A builder for [`RumEvent`](crate::model::RumEvent)
-    #[non_exhaustive]
+    /// A builder for [`RumEvent`](crate::model::RumEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1187,7 +1179,7 @@ pub mod rum_event {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`RumEvent`](crate::model::RumEvent)
+        /// Consumes the builder and constructs a [`RumEvent`](crate::model::RumEvent).
         pub fn build(self) -> crate::model::RumEvent {
             crate::model::RumEvent {
                 id: self.id,
@@ -1200,7 +1192,7 @@ pub mod rum_event {
     }
 }
 impl RumEvent {
-    /// Creates a new builder-style object to manufacture [`RumEvent`](crate::model::RumEvent)
+    /// Creates a new builder-style object to manufacture [`RumEvent`](crate::model::RumEvent).
     pub fn builder() -> crate::model::rum_event::Builder {
         crate::model::rum_event::Builder::default()
     }
@@ -1233,11 +1225,10 @@ impl std::fmt::Debug for UserDetails {
         formatter.finish()
     }
 }
-/// See [`UserDetails`](crate::model::UserDetails)
+/// See [`UserDetails`](crate::model::UserDetails).
 pub mod user_details {
 
-    /// A builder for [`UserDetails`](crate::model::UserDetails)
-    #[non_exhaustive]
+    /// A builder for [`UserDetails`](crate::model::UserDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -1264,7 +1255,7 @@ pub mod user_details {
             self.session_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserDetails`](crate::model::UserDetails)
+        /// Consumes the builder and constructs a [`UserDetails`](crate::model::UserDetails).
         pub fn build(self) -> crate::model::UserDetails {
             crate::model::UserDetails {
                 user_id: self.user_id,
@@ -1274,7 +1265,7 @@ pub mod user_details {
     }
 }
 impl UserDetails {
-    /// Creates a new builder-style object to manufacture [`UserDetails`](crate::model::UserDetails)
+    /// Creates a new builder-style object to manufacture [`UserDetails`](crate::model::UserDetails).
     pub fn builder() -> crate::model::user_details::Builder {
         crate::model::user_details::Builder::default()
     }
@@ -1314,11 +1305,10 @@ impl std::fmt::Debug for AppMonitorDetails {
         formatter.finish()
     }
 }
-/// See [`AppMonitorDetails`](crate::model::AppMonitorDetails)
+/// See [`AppMonitorDetails`](crate::model::AppMonitorDetails).
 pub mod app_monitor_details {
 
-    /// A builder for [`AppMonitorDetails`](crate::model::AppMonitorDetails)
-    #[non_exhaustive]
+    /// A builder for [`AppMonitorDetails`](crate::model::AppMonitorDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1356,7 +1346,7 @@ pub mod app_monitor_details {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppMonitorDetails`](crate::model::AppMonitorDetails)
+        /// Consumes the builder and constructs a [`AppMonitorDetails`](crate::model::AppMonitorDetails).
         pub fn build(self) -> crate::model::AppMonitorDetails {
             crate::model::AppMonitorDetails {
                 name: self.name,
@@ -1367,7 +1357,7 @@ pub mod app_monitor_details {
     }
 }
 impl AppMonitorDetails {
-    /// Creates a new builder-style object to manufacture [`AppMonitorDetails`](crate::model::AppMonitorDetails)
+    /// Creates a new builder-style object to manufacture [`AppMonitorDetails`](crate::model::AppMonitorDetails).
     pub fn builder() -> crate::model::app_monitor_details::Builder {
         crate::model::app_monitor_details::Builder::default()
     }

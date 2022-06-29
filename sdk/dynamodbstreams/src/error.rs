@@ -487,11 +487,10 @@ impl std::fmt::Display for ResourceNotFoundException {
     }
 }
 impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
 
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -507,7 +506,7 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
                 message: self.message,
@@ -516,7 +515,7 @@ pub mod resource_not_found_exception {
     }
 }
 impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
     }
@@ -552,11 +551,10 @@ impl std::fmt::Display for InternalServerError {
     }
 }
 impl std::error::Error for InternalServerError {}
-/// See [`InternalServerError`](crate::error::InternalServerError)
+/// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
 
-    /// A builder for [`InternalServerError`](crate::error::InternalServerError)
-    #[non_exhaustive]
+    /// A builder for [`InternalServerError`](crate::error::InternalServerError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -572,7 +570,7 @@ pub mod internal_server_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
+        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
         pub fn build(self) -> crate::error::InternalServerError {
             crate::error::InternalServerError {
                 message: self.message,
@@ -581,7 +579,7 @@ pub mod internal_server_error {
     }
 }
 impl InternalServerError {
-    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError)
+    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
     pub fn builder() -> crate::error::internal_server_error::Builder {
         crate::error::internal_server_error::Builder::default()
     }
@@ -622,11 +620,10 @@ impl std::fmt::Display for TrimmedDataAccessException {
     }
 }
 impl std::error::Error for TrimmedDataAccessException {}
-/// See [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException)
+/// See [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
 pub mod trimmed_data_access_exception {
 
-    /// A builder for [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException)
-    #[non_exhaustive]
+    /// A builder for [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -642,7 +639,7 @@ pub mod trimmed_data_access_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException)
+        /// Consumes the builder and constructs a [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
         pub fn build(self) -> crate::error::TrimmedDataAccessException {
             crate::error::TrimmedDataAccessException {
                 message: self.message,
@@ -651,7 +648,7 @@ pub mod trimmed_data_access_exception {
     }
 }
 impl TrimmedDataAccessException {
-    /// Creates a new builder-style object to manufacture [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException)
+    /// Creates a new builder-style object to manufacture [`TrimmedDataAccessException`](crate::error::TrimmedDataAccessException).
     pub fn builder() -> crate::error::trimmed_data_access_exception::Builder {
         crate::error::trimmed_data_access_exception::Builder::default()
     }
@@ -690,11 +687,10 @@ impl std::fmt::Display for LimitExceededException {
     }
 }
 impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
+/// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
 
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -710,7 +706,7 @@ pub mod limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
                 message: self.message,
@@ -719,7 +715,7 @@ pub mod limit_exceeded_exception {
     }
 }
 impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
     pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
         crate::error::limit_exceeded_exception::Builder::default()
     }
@@ -755,11 +751,10 @@ impl std::fmt::Display for ExpiredIteratorException {
     }
 }
 impl std::error::Error for ExpiredIteratorException {}
-/// See [`ExpiredIteratorException`](crate::error::ExpiredIteratorException)
+/// See [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
 pub mod expired_iterator_exception {
 
-    /// A builder for [`ExpiredIteratorException`](crate::error::ExpiredIteratorException)
-    #[non_exhaustive]
+    /// A builder for [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -775,7 +770,7 @@ pub mod expired_iterator_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExpiredIteratorException`](crate::error::ExpiredIteratorException)
+        /// Consumes the builder and constructs a [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
         pub fn build(self) -> crate::error::ExpiredIteratorException {
             crate::error::ExpiredIteratorException {
                 message: self.message,
@@ -784,7 +779,7 @@ pub mod expired_iterator_exception {
     }
 }
 impl ExpiredIteratorException {
-    /// Creates a new builder-style object to manufacture [`ExpiredIteratorException`](crate::error::ExpiredIteratorException)
+    /// Creates a new builder-style object to manufacture [`ExpiredIteratorException`](crate::error::ExpiredIteratorException).
     pub fn builder() -> crate::error::expired_iterator_exception::Builder {
         crate::error::expired_iterator_exception::Builder::default()
     }

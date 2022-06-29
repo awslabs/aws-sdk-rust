@@ -10,7 +10,7 @@ pub struct CompleteAttachmentUpload {
     _private: (),
 }
 impl CompleteAttachmentUpload {
-    /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadInput`](crate::input::CompleteAttachmentUploadInput)
+    /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadInput`](crate::input::CompleteAttachmentUploadInput).
     pub fn builder() -> crate::input::complete_attachment_upload_input::Builder {
         crate::input::complete_attachment_upload_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateParticipantConnection {
     _private: (),
 }
 impl CreateParticipantConnection {
-    /// Creates a new builder-style object to manufacture [`CreateParticipantConnectionInput`](crate::input::CreateParticipantConnectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateParticipantConnectionInput`](crate::input::CreateParticipantConnectionInput).
     pub fn builder() -> crate::input::create_participant_connection_input::Builder {
         crate::input::create_participant_connection_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DisconnectParticipant {
     _private: (),
 }
 impl DisconnectParticipant {
-    /// Creates a new builder-style object to manufacture [`DisconnectParticipantInput`](crate::input::DisconnectParticipantInput)
+    /// Creates a new builder-style object to manufacture [`DisconnectParticipantInput`](crate::input::DisconnectParticipantInput).
     pub fn builder() -> crate::input::disconnect_participant_input::Builder {
         crate::input::disconnect_participant_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct GetAttachment {
     _private: (),
 }
 impl GetAttachment {
-    /// Creates a new builder-style object to manufacture [`GetAttachmentInput`](crate::input::GetAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`GetAttachmentInput`](crate::input::GetAttachmentInput).
     pub fn builder() -> crate::input::get_attachment_input::Builder {
         crate::input::get_attachment_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct GetTranscript {
     _private: (),
 }
 impl GetTranscript {
-    /// Creates a new builder-style object to manufacture [`GetTranscriptInput`](crate::input::GetTranscriptInput)
+    /// Creates a new builder-style object to manufacture [`GetTranscriptInput`](crate::input::GetTranscriptInput).
     pub fn builder() -> crate::input::get_transcript_input::Builder {
         crate::input::get_transcript_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct SendEvent {
     _private: (),
 }
 impl SendEvent {
-    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput)
+    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput).
     pub fn builder() -> crate::input::send_event_input::Builder {
         crate::input::send_event_input::Builder::default()
     }
@@ -207,7 +207,7 @@ pub struct SendMessage {
     _private: (),
 }
 impl SendMessage {
-    /// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::input::SendMessageInput)
+    /// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::input::SendMessageInput).
     pub fn builder() -> crate::input::send_message_input::Builder {
         crate::input::send_message_input::Builder::default()
     }
@@ -239,7 +239,7 @@ pub struct StartAttachmentUpload {
     _private: (),
 }
 impl StartAttachmentUpload {
-    /// Creates a new builder-style object to manufacture [`StartAttachmentUploadInput`](crate::input::StartAttachmentUploadInput)
+    /// Creates a new builder-style object to manufacture [`StartAttachmentUploadInput`](crate::input::StartAttachmentUploadInput).
     pub fn builder() -> crate::input::start_attachment_upload_input::Builder {
         crate::input::start_attachment_upload_input::Builder::default()
     }

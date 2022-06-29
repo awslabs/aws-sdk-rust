@@ -10,7 +10,7 @@ pub struct DeleteSession {
     _private: (),
 }
 impl DeleteSession {
-    /// Creates a new builder-style object to manufacture [`DeleteSessionInput`](crate::input::DeleteSessionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSessionInput`](crate::input::DeleteSessionInput).
     pub fn builder() -> crate::input::delete_session_input::Builder {
         crate::input::delete_session_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct GetSession {
     _private: (),
 }
 impl GetSession {
-    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput)
+    /// Creates a new builder-style object to manufacture [`GetSessionInput`](crate::input::GetSessionInput).
     pub fn builder() -> crate::input::get_session_input::Builder {
         crate::input::get_session_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct PutSession {
     _private: (),
 }
 impl PutSession {
-    /// Creates a new builder-style object to manufacture [`PutSessionInput`](crate::input::PutSessionInput)
+    /// Creates a new builder-style object to manufacture [`PutSessionInput`](crate::input::PutSessionInput).
     pub fn builder() -> crate::input::put_session_input::Builder {
         crate::input::put_session_input::Builder::default()
     }
@@ -113,7 +113,7 @@ pub struct RecognizeText {
     _private: (),
 }
 impl RecognizeText {
-    /// Creates a new builder-style object to manufacture [`RecognizeTextInput`](crate::input::RecognizeTextInput)
+    /// Creates a new builder-style object to manufacture [`RecognizeTextInput`](crate::input::RecognizeTextInput).
     pub fn builder() -> crate::input::recognize_text_input::Builder {
         crate::input::recognize_text_input::Builder::default()
     }
@@ -145,7 +145,7 @@ pub struct RecognizeUtterance {
     _private: (),
 }
 impl RecognizeUtterance {
-    /// Creates a new builder-style object to manufacture [`RecognizeUtteranceInput`](crate::input::RecognizeUtteranceInput)
+    /// Creates a new builder-style object to manufacture [`RecognizeUtteranceInput`](crate::input::RecognizeUtteranceInput).
     pub fn builder() -> crate::input::recognize_utterance_input::Builder {
         crate::input::recognize_utterance_input::Builder::default()
     }

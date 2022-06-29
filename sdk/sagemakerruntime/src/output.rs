@@ -26,11 +26,10 @@ impl std::fmt::Debug for InvokeEndpointAsyncOutput {
         formatter.finish()
     }
 }
-/// See [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput)
+/// See [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
 pub mod invoke_endpoint_async_output {
 
-    /// A builder for [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput)
-    #[non_exhaustive]
+    /// A builder for [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inference_id: std::option::Option<std::string::String>,
@@ -60,7 +59,7 @@ pub mod invoke_endpoint_async_output {
             self.output_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput)
+        /// Consumes the builder and constructs a [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
         pub fn build(self) -> crate::output::InvokeEndpointAsyncOutput {
             crate::output::InvokeEndpointAsyncOutput {
                 inference_id: self.inference_id,
@@ -70,7 +69,7 @@ pub mod invoke_endpoint_async_output {
     }
 }
 impl InvokeEndpointAsyncOutput {
-    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput)
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
     pub fn builder() -> crate::output::invoke_endpoint_async_output::Builder {
         crate::output::invoke_endpoint_async_output::Builder::default()
     }
@@ -126,11 +125,10 @@ impl std::fmt::Debug for InvokeEndpointOutput {
         formatter.finish()
     }
 }
-/// See [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput)
+/// See [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
 pub mod invoke_endpoint_output {
 
-    /// A builder for [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput)
-    #[non_exhaustive]
+    /// A builder for [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
@@ -191,7 +189,7 @@ pub mod invoke_endpoint_output {
             self.custom_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput)
+        /// Consumes the builder and constructs a [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
         pub fn build(self) -> crate::output::InvokeEndpointOutput {
             crate::output::InvokeEndpointOutput {
                 body: self.body,
@@ -203,7 +201,7 @@ pub mod invoke_endpoint_output {
     }
 }
 impl InvokeEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput)
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
     pub fn builder() -> crate::output::invoke_endpoint_output::Builder {
         crate::output::invoke_endpoint_output::Builder::default()
     }

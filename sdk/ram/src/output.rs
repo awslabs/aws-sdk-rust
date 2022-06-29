@@ -26,11 +26,10 @@ impl std::fmt::Debug for UpdateResourceShareOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput)
+/// See [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
 pub mod update_resource_share_output {
 
-    /// A builder for [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share: std::option::Option<crate::model::ResourceShare>,
@@ -60,7 +59,7 @@ pub mod update_resource_share_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput)
+        /// Consumes the builder and constructs a [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
         pub fn build(self) -> crate::output::UpdateResourceShareOutput {
             crate::output::UpdateResourceShareOutput {
                 resource_share: self.resource_share,
@@ -70,7 +69,7 @@ pub mod update_resource_share_output {
     }
 }
 impl UpdateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
     pub fn builder() -> crate::output::update_resource_share_output::Builder {
         crate::output::update_resource_share_output::Builder::default()
     }
@@ -86,22 +85,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -117,22 +115,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -167,11 +164,10 @@ impl std::fmt::Debug for RejectResourceShareInvitationOutput {
         formatter.finish()
     }
 }
-/// See [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput)
+/// See [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
 pub mod reject_resource_share_invitation_output {
 
-    /// A builder for [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput)
-    #[non_exhaustive]
+    /// A builder for [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation:
@@ -205,7 +201,7 @@ pub mod reject_resource_share_invitation_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput)
+        /// Consumes the builder and constructs a [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
         pub fn build(self) -> crate::output::RejectResourceShareInvitationOutput {
             crate::output::RejectResourceShareInvitationOutput {
                 resource_share_invitation: self.resource_share_invitation,
@@ -215,7 +211,7 @@ pub mod reject_resource_share_invitation_output {
     }
 }
 impl RejectResourceShareInvitationOutput {
-    /// Creates a new builder-style object to manufacture [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput)
+    /// Creates a new builder-style object to manufacture [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
     pub fn builder() -> crate::output::reject_resource_share_invitation_output::Builder {
         crate::output::reject_resource_share_invitation_output::Builder::default()
     }
@@ -241,11 +237,10 @@ impl std::fmt::Debug for PromoteResourceShareCreatedFromPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput)
+/// See [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
 pub mod promote_resource_share_created_from_policy_output {
 
-    /// A builder for [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -261,7 +256,7 @@ pub mod promote_resource_share_created_from_policy_output {
             self.return_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput)
+        /// Consumes the builder and constructs a [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
         pub fn build(self) -> crate::output::PromoteResourceShareCreatedFromPolicyOutput {
             crate::output::PromoteResourceShareCreatedFromPolicyOutput {
                 return_value: self.return_value,
@@ -270,7 +265,7 @@ pub mod promote_resource_share_created_from_policy_output {
     }
 }
 impl PromoteResourceShareCreatedFromPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
     pub fn builder() -> crate::output::promote_resource_share_created_from_policy_output::Builder {
         crate::output::promote_resource_share_created_from_policy_output::Builder::default()
     }
@@ -306,11 +301,10 @@ impl std::fmt::Debug for ListResourceTypesOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput)
+/// See [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
 pub mod list_resource_types_output {
 
-    /// A builder for [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_types:
@@ -347,7 +341,7 @@ pub mod list_resource_types_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput)
+        /// Consumes the builder and constructs a [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
         pub fn build(self) -> crate::output::ListResourceTypesOutput {
             crate::output::ListResourceTypesOutput {
                 resource_types: self.resource_types,
@@ -357,7 +351,7 @@ pub mod list_resource_types_output {
     }
 }
 impl ListResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
     pub fn builder() -> crate::output::list_resource_types_output::Builder {
         crate::output::list_resource_types_output::Builder::default()
     }
@@ -393,11 +387,10 @@ impl std::fmt::Debug for ListResourceSharePermissionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput)
+/// See [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
 pub mod list_resource_share_permissions_output {
 
-    /// A builder for [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions:
@@ -434,7 +427,7 @@ pub mod list_resource_share_permissions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput)
+        /// Consumes the builder and constructs a [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
         pub fn build(self) -> crate::output::ListResourceSharePermissionsOutput {
             crate::output::ListResourceSharePermissionsOutput {
                 permissions: self.permissions,
@@ -444,7 +437,7 @@ pub mod list_resource_share_permissions_output {
     }
 }
 impl ListResourceSharePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
     pub fn builder() -> crate::output::list_resource_share_permissions_output::Builder {
         crate::output::list_resource_share_permissions_output::Builder::default()
     }
@@ -477,11 +470,10 @@ impl std::fmt::Debug for ListResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+/// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
 
-    /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -517,7 +509,7 @@ pub mod list_resources_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+        /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput).
         pub fn build(self) -> crate::output::ListResourcesOutput {
             crate::output::ListResourcesOutput {
                 resources: self.resources,
@@ -527,7 +519,7 @@ pub mod list_resources_output {
     }
 }
 impl ListResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput).
     pub fn builder() -> crate::output::list_resources_output::Builder {
         crate::output::list_resources_output::Builder::default()
     }
@@ -560,11 +552,10 @@ impl std::fmt::Debug for ListPrincipalsOutput {
         formatter.finish()
     }
 }
-/// See [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput)
+/// See [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
 pub mod list_principals_output {
 
-    /// A builder for [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -600,7 +591,7 @@ pub mod list_principals_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput)
+        /// Consumes the builder and constructs a [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
         pub fn build(self) -> crate::output::ListPrincipalsOutput {
             crate::output::ListPrincipalsOutput {
                 principals: self.principals,
@@ -610,7 +601,7 @@ pub mod list_principals_output {
     }
 }
 impl ListPrincipalsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput)
+    /// Creates a new builder-style object to manufacture [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
     pub fn builder() -> crate::output::list_principals_output::Builder {
         crate::output::list_principals_output::Builder::default()
     }
@@ -646,11 +637,10 @@ impl std::fmt::Debug for ListPermissionVersionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
+/// See [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
 pub mod list_permission_versions_output {
 
-    /// A builder for [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions:
@@ -687,7 +677,7 @@ pub mod list_permission_versions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
+        /// Consumes the builder and constructs a [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
         pub fn build(self) -> crate::output::ListPermissionVersionsOutput {
             crate::output::ListPermissionVersionsOutput {
                 permissions: self.permissions,
@@ -697,7 +687,7 @@ pub mod list_permission_versions_output {
     }
 }
 impl ListPermissionVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
     pub fn builder() -> crate::output::list_permission_versions_output::Builder {
         crate::output::list_permission_versions_output::Builder::default()
     }
@@ -733,11 +723,10 @@ impl std::fmt::Debug for ListPermissionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
+/// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
 pub mod list_permissions_output {
 
-    /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions:
@@ -774,7 +763,7 @@ pub mod list_permissions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
+        /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
         pub fn build(self) -> crate::output::ListPermissionsOutput {
             crate::output::ListPermissionsOutput {
                 permissions: self.permissions,
@@ -784,7 +773,7 @@ pub mod list_permissions_output {
     }
 }
 impl ListPermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
     pub fn builder() -> crate::output::list_permissions_output::Builder {
         crate::output::list_permissions_output::Builder::default()
     }
@@ -817,11 +806,10 @@ impl std::fmt::Debug for ListPendingInvitationResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput)
+/// See [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
 pub mod list_pending_invitation_resources_output {
 
-    /// A builder for [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -857,7 +845,7 @@ pub mod list_pending_invitation_resources_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput)
+        /// Consumes the builder and constructs a [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
         pub fn build(self) -> crate::output::ListPendingInvitationResourcesOutput {
             crate::output::ListPendingInvitationResourcesOutput {
                 resources: self.resources,
@@ -867,7 +855,7 @@ pub mod list_pending_invitation_resources_output {
     }
 }
 impl ListPendingInvitationResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
     pub fn builder() -> crate::output::list_pending_invitation_resources_output::Builder {
         crate::output::list_pending_invitation_resources_output::Builder::default()
     }
@@ -900,11 +888,10 @@ impl std::fmt::Debug for GetResourceSharesOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput)
+/// See [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
 pub mod get_resource_shares_output {
 
-    /// A builder for [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_shares: std::option::Option<std::vec::Vec<crate::model::ResourceShare>>,
@@ -940,7 +927,7 @@ pub mod get_resource_shares_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput)
+        /// Consumes the builder and constructs a [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
         pub fn build(self) -> crate::output::GetResourceSharesOutput {
             crate::output::GetResourceSharesOutput {
                 resource_shares: self.resource_shares,
@@ -950,7 +937,7 @@ pub mod get_resource_shares_output {
     }
 }
 impl GetResourceSharesOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
     pub fn builder() -> crate::output::get_resource_shares_output::Builder {
         crate::output::get_resource_shares_output::Builder::default()
     }
@@ -989,11 +976,10 @@ impl std::fmt::Debug for GetResourceShareInvitationsOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput)
+/// See [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
 pub mod get_resource_share_invitations_output {
 
-    /// A builder for [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitations:
@@ -1033,7 +1019,7 @@ pub mod get_resource_share_invitations_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput)
+        /// Consumes the builder and constructs a [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
         pub fn build(self) -> crate::output::GetResourceShareInvitationsOutput {
             crate::output::GetResourceShareInvitationsOutput {
                 resource_share_invitations: self.resource_share_invitations,
@@ -1043,7 +1029,7 @@ pub mod get_resource_share_invitations_output {
     }
 }
 impl GetResourceShareInvitationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
     pub fn builder() -> crate::output::get_resource_share_invitations_output::Builder {
         crate::output::get_resource_share_invitations_output::Builder::default()
     }
@@ -1082,11 +1068,10 @@ impl std::fmt::Debug for GetResourceShareAssociationsOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput)
+/// See [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
 pub mod get_resource_share_associations_output {
 
-    /// A builder for [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_associations:
@@ -1126,7 +1111,7 @@ pub mod get_resource_share_associations_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput)
+        /// Consumes the builder and constructs a [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
         pub fn build(self) -> crate::output::GetResourceShareAssociationsOutput {
             crate::output::GetResourceShareAssociationsOutput {
                 resource_share_associations: self.resource_share_associations,
@@ -1136,7 +1121,7 @@ pub mod get_resource_share_associations_output {
     }
 }
 impl GetResourceShareAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
     pub fn builder() -> crate::output::get_resource_share_associations_output::Builder {
         crate::output::get_resource_share_associations_output::Builder::default()
     }
@@ -1169,11 +1154,10 @@ impl std::fmt::Debug for GetResourcePoliciesOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput)
+/// See [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
 pub mod get_resource_policies_output {
 
-    /// A builder for [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policies: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1209,7 +1193,7 @@ pub mod get_resource_policies_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput)
+        /// Consumes the builder and constructs a [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
         pub fn build(self) -> crate::output::GetResourcePoliciesOutput {
             crate::output::GetResourcePoliciesOutput {
                 policies: self.policies,
@@ -1219,7 +1203,7 @@ pub mod get_resource_policies_output {
     }
 }
 impl GetResourcePoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
     pub fn builder() -> crate::output::get_resource_policies_output::Builder {
         crate::output::get_resource_policies_output::Builder::default()
     }
@@ -1245,11 +1229,10 @@ impl std::fmt::Debug for GetPermissionOutput {
         formatter.finish()
     }
 }
-/// See [`GetPermissionOutput`](crate::output::GetPermissionOutput)
+/// See [`GetPermissionOutput`](crate::output::GetPermissionOutput).
 pub mod get_permission_output {
 
-    /// A builder for [`GetPermissionOutput`](crate::output::GetPermissionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPermissionOutput`](crate::output::GetPermissionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
@@ -1268,7 +1251,7 @@ pub mod get_permission_output {
             self.permission = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPermissionOutput`](crate::output::GetPermissionOutput)
+        /// Consumes the builder and constructs a [`GetPermissionOutput`](crate::output::GetPermissionOutput).
         pub fn build(self) -> crate::output::GetPermissionOutput {
             crate::output::GetPermissionOutput {
                 permission: self.permission,
@@ -1277,7 +1260,7 @@ pub mod get_permission_output {
     }
 }
 impl GetPermissionOutput {
-    /// Creates a new builder-style object to manufacture [`GetPermissionOutput`](crate::output::GetPermissionOutput)
+    /// Creates a new builder-style object to manufacture [`GetPermissionOutput`](crate::output::GetPermissionOutput).
     pub fn builder() -> crate::output::get_permission_output::Builder {
         crate::output::get_permission_output::Builder::default()
     }
@@ -1303,11 +1286,10 @@ impl std::fmt::Debug for EnableSharingWithAwsOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput)
+/// See [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
 pub mod enable_sharing_with_aws_organization_output {
 
-    /// A builder for [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1323,7 +1305,7 @@ pub mod enable_sharing_with_aws_organization_output {
             self.return_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput)
+        /// Consumes the builder and constructs a [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
         pub fn build(self) -> crate::output::EnableSharingWithAwsOrganizationOutput {
             crate::output::EnableSharingWithAwsOrganizationOutput {
                 return_value: self.return_value,
@@ -1332,7 +1314,7 @@ pub mod enable_sharing_with_aws_organization_output {
     }
 }
 impl EnableSharingWithAwsOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
     pub fn builder() -> crate::output::enable_sharing_with_aws_organization_output::Builder {
         crate::output::enable_sharing_with_aws_organization_output::Builder::default()
     }
@@ -1365,11 +1347,10 @@ impl std::fmt::Debug for DisassociateResourceSharePermissionOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput)
+/// See [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
 pub mod disassociate_resource_share_permission_output {
 
-    /// A builder for [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1396,7 +1377,7 @@ pub mod disassociate_resource_share_permission_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput)
+        /// Consumes the builder and constructs a [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
         pub fn build(self) -> crate::output::DisassociateResourceSharePermissionOutput {
             crate::output::DisassociateResourceSharePermissionOutput {
                 return_value: self.return_value,
@@ -1406,7 +1387,7 @@ pub mod disassociate_resource_share_permission_output {
     }
 }
 impl DisassociateResourceSharePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
     pub fn builder() -> crate::output::disassociate_resource_share_permission_output::Builder {
         crate::output::disassociate_resource_share_permission_output::Builder::default()
     }
@@ -1445,11 +1426,10 @@ impl std::fmt::Debug for DisassociateResourceShareOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput)
+/// See [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
 pub mod disassociate_resource_share_output {
 
-    /// A builder for [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_associations:
@@ -1489,7 +1469,7 @@ pub mod disassociate_resource_share_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput)
+        /// Consumes the builder and constructs a [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
         pub fn build(self) -> crate::output::DisassociateResourceShareOutput {
             crate::output::DisassociateResourceShareOutput {
                 resource_share_associations: self.resource_share_associations,
@@ -1499,7 +1479,7 @@ pub mod disassociate_resource_share_output {
     }
 }
 impl DisassociateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
     pub fn builder() -> crate::output::disassociate_resource_share_output::Builder {
         crate::output::disassociate_resource_share_output::Builder::default()
     }
@@ -1532,11 +1512,10 @@ impl std::fmt::Debug for DeleteResourceShareOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput)
+/// See [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
 pub mod delete_resource_share_output {
 
-    /// A builder for [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1563,7 +1542,7 @@ pub mod delete_resource_share_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput)
+        /// Consumes the builder and constructs a [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
         pub fn build(self) -> crate::output::DeleteResourceShareOutput {
             crate::output::DeleteResourceShareOutput {
                 return_value: self.return_value,
@@ -1573,7 +1552,7 @@ pub mod delete_resource_share_output {
     }
 }
 impl DeleteResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
     pub fn builder() -> crate::output::delete_resource_share_output::Builder {
         crate::output::delete_resource_share_output::Builder::default()
     }
@@ -1606,11 +1585,10 @@ impl std::fmt::Debug for CreateResourceShareOutput {
         formatter.finish()
     }
 }
-/// See [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput)
+/// See [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
 pub mod create_resource_share_output {
 
-    /// A builder for [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share: std::option::Option<crate::model::ResourceShare>,
@@ -1640,7 +1618,7 @@ pub mod create_resource_share_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput)
+        /// Consumes the builder and constructs a [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
         pub fn build(self) -> crate::output::CreateResourceShareOutput {
             crate::output::CreateResourceShareOutput {
                 resource_share: self.resource_share,
@@ -1650,7 +1628,7 @@ pub mod create_resource_share_output {
     }
 }
 impl CreateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput)
+    /// Creates a new builder-style object to manufacture [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
     pub fn builder() -> crate::output::create_resource_share_output::Builder {
         crate::output::create_resource_share_output::Builder::default()
     }
@@ -1683,11 +1661,10 @@ impl std::fmt::Debug for AssociateResourceSharePermissionOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput)
+/// See [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
 pub mod associate_resource_share_permission_output {
 
-    /// A builder for [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
@@ -1714,7 +1691,7 @@ pub mod associate_resource_share_permission_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput)
+        /// Consumes the builder and constructs a [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
         pub fn build(self) -> crate::output::AssociateResourceSharePermissionOutput {
             crate::output::AssociateResourceSharePermissionOutput {
                 return_value: self.return_value,
@@ -1724,7 +1701,7 @@ pub mod associate_resource_share_permission_output {
     }
 }
 impl AssociateResourceSharePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
     pub fn builder() -> crate::output::associate_resource_share_permission_output::Builder {
         crate::output::associate_resource_share_permission_output::Builder::default()
     }
@@ -1763,11 +1740,10 @@ impl std::fmt::Debug for AssociateResourceShareOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput)
+/// See [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
 pub mod associate_resource_share_output {
 
-    /// A builder for [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_associations:
@@ -1807,7 +1783,7 @@ pub mod associate_resource_share_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput)
+        /// Consumes the builder and constructs a [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
         pub fn build(self) -> crate::output::AssociateResourceShareOutput {
             crate::output::AssociateResourceShareOutput {
                 resource_share_associations: self.resource_share_associations,
@@ -1817,7 +1793,7 @@ pub mod associate_resource_share_output {
     }
 }
 impl AssociateResourceShareOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
     pub fn builder() -> crate::output::associate_resource_share_output::Builder {
         crate::output::associate_resource_share_output::Builder::default()
     }
@@ -1852,11 +1828,10 @@ impl std::fmt::Debug for AcceptResourceShareInvitationOutput {
         formatter.finish()
     }
 }
-/// See [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput)
+/// See [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
 pub mod accept_resource_share_invitation_output {
 
-    /// A builder for [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput)
-    #[non_exhaustive]
+    /// A builder for [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation:
@@ -1890,7 +1865,7 @@ pub mod accept_resource_share_invitation_output {
             self.client_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput)
+        /// Consumes the builder and constructs a [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
         pub fn build(self) -> crate::output::AcceptResourceShareInvitationOutput {
             crate::output::AcceptResourceShareInvitationOutput {
                 resource_share_invitation: self.resource_share_invitation,
@@ -1900,7 +1875,7 @@ pub mod accept_resource_share_invitation_output {
     }
 }
 impl AcceptResourceShareInvitationOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput)
+    /// Creates a new builder-style object to manufacture [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
     pub fn builder() -> crate::output::accept_resource_share_invitation_output::Builder {
         crate::output::accept_resource_share_invitation_output::Builder::default()
     }

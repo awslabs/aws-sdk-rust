@@ -10,7 +10,7 @@ pub struct DeleteHumanLoop {
     _private: (),
 }
 impl DeleteHumanLoop {
-    /// Creates a new builder-style object to manufacture [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput).
     pub fn builder() -> crate::input::delete_human_loop_input::Builder {
         crate::input::delete_human_loop_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeHumanLoop {
     _private: (),
 }
 impl DescribeHumanLoop {
-    /// Creates a new builder-style object to manufacture [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput).
     pub fn builder() -> crate::input::describe_human_loop_input::Builder {
         crate::input::describe_human_loop_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct ListHumanLoops {
     _private: (),
 }
 impl ListHumanLoops {
-    /// Creates a new builder-style object to manufacture [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput)
+    /// Creates a new builder-style object to manufacture [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput).
     pub fn builder() -> crate::input::list_human_loops_input::Builder {
         crate::input::list_human_loops_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct StartHumanLoop {
     _private: (),
 }
 impl StartHumanLoop {
-    /// Creates a new builder-style object to manufacture [`StartHumanLoopInput`](crate::input::StartHumanLoopInput)
+    /// Creates a new builder-style object to manufacture [`StartHumanLoopInput`](crate::input::StartHumanLoopInput).
     pub fn builder() -> crate::input::start_human_loop_input::Builder {
         crate::input::start_human_loop_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct StopHumanLoop {
     _private: (),
 }
 impl StopHumanLoop {
-    /// Creates a new builder-style object to manufacture [`StopHumanLoopInput`](crate::input::StopHumanLoopInput)
+    /// Creates a new builder-style object to manufacture [`StopHumanLoopInput`](crate::input::StopHumanLoopInput).
     pub fn builder() -> crate::input::stop_human_loop_input::Builder {
         crate::input::stop_human_loop_input::Builder::default()
     }

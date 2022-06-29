@@ -20,11 +20,10 @@ impl std::fmt::Debug for Destination {
         formatter.finish()
     }
 }
-/// See [`Destination`](crate::model::Destination)
+/// See [`Destination`](crate::model::Destination).
 pub mod destination {
 
-    /// A builder for [`Destination`](crate::model::Destination)
-    #[non_exhaustive]
+    /// A builder for [`Destination`](crate::model::Destination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Destination>,
@@ -40,14 +39,14 @@ pub mod destination {
             self.s3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`Destination`](crate::model::Destination)
+        /// Consumes the builder and constructs a [`Destination`](crate::model::Destination).
         pub fn build(self) -> crate::model::Destination {
             crate::model::Destination { s3: self.s3 }
         }
     }
 }
 impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination)
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
     pub fn builder() -> crate::model::destination::Builder {
         crate::model::destination::Builder::default()
     }
@@ -80,11 +79,10 @@ impl std::fmt::Debug for S3Destination {
         formatter.finish()
     }
 }
-/// See [`S3Destination`](crate::model::S3Destination)
+/// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
 
-    /// A builder for [`S3Destination`](crate::model::S3Destination)
-    #[non_exhaustive]
+    /// A builder for [`S3Destination`](crate::model::S3Destination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -111,7 +109,7 @@ pub mod s3_destination {
             self.prefix = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3Destination`](crate::model::S3Destination)
+        /// Consumes the builder and constructs a [`S3Destination`](crate::model::S3Destination).
         pub fn build(self) -> crate::model::S3Destination {
             crate::model::S3Destination {
                 bucket_name: self.bucket_name,
@@ -121,7 +119,7 @@ pub mod s3_destination {
     }
 }
 impl S3Destination {
-    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination)
+    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
     pub fn builder() -> crate::model::s3_destination::Builder {
         crate::model::s3_destination::Builder::default()
     }
@@ -147,11 +145,10 @@ impl std::fmt::Debug for Source {
         formatter.finish()
     }
 }
-/// See [`Source`](crate::model::Source)
+/// See [`Source`](crate::model::Source).
 pub mod source {
 
-    /// A builder for [`Source`](crate::model::Source)
-    #[non_exhaustive]
+    /// A builder for [`Source`](crate::model::Source).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Source>,
@@ -167,14 +164,14 @@ pub mod source {
             self.s3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`Source`](crate::model::Source)
+        /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source { s3: self.s3 }
         }
     }
 }
 impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source)
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
     pub fn builder() -> crate::model::source::Builder {
         crate::model::source::Builder::default()
     }
@@ -214,11 +211,10 @@ impl std::fmt::Debug for S3Source {
         formatter.finish()
     }
 }
-/// See [`S3Source`](crate::model::S3Source)
+/// See [`S3Source`](crate::model::S3Source).
 pub mod s3_source {
 
-    /// A builder for [`S3Source`](crate::model::S3Source)
-    #[non_exhaustive]
+    /// A builder for [`S3Source`](crate::model::S3Source).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -256,7 +252,7 @@ pub mod s3_source {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3Source`](crate::model::S3Source)
+        /// Consumes the builder and constructs a [`S3Source`](crate::model::S3Source).
         pub fn build(self) -> crate::model::S3Source {
             crate::model::S3Source {
                 bucket_name: self.bucket_name,
@@ -267,7 +263,7 @@ pub mod s3_source {
     }
 }
 impl S3Source {
-    /// Creates a new builder-style object to manufacture [`S3Source`](crate::model::S3Source)
+    /// Creates a new builder-style object to manufacture [`S3Source`](crate::model::S3Source).
     pub fn builder() -> crate::model::s3_source::Builder {
         crate::model::s3_source::Builder::default()
     }
@@ -302,11 +298,10 @@ impl std::fmt::Debug for SigningPlatformOverrides {
         formatter.finish()
     }
 }
-/// See [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides)
+/// See [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
 pub mod signing_platform_overrides {
 
-    /// A builder for [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides)
-    #[non_exhaustive]
+    /// A builder for [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signing_configuration:
@@ -343,7 +338,7 @@ pub mod signing_platform_overrides {
             self.signing_image_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides)
+        /// Consumes the builder and constructs a [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
         pub fn build(self) -> crate::model::SigningPlatformOverrides {
             crate::model::SigningPlatformOverrides {
                 signing_configuration: self.signing_configuration,
@@ -353,7 +348,7 @@ pub mod signing_platform_overrides {
     }
 }
 impl SigningPlatformOverrides {
-    /// Creates a new builder-style object to manufacture [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides)
+    /// Creates a new builder-style object to manufacture [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
     pub fn builder() -> crate::model::signing_platform_overrides::Builder {
         crate::model::signing_platform_overrides::Builder::default()
     }
@@ -445,11 +440,10 @@ impl std::fmt::Debug for SigningConfigurationOverrides {
         formatter.finish()
     }
 }
-/// See [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides)
+/// See [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
 pub mod signing_configuration_overrides {
 
-    /// A builder for [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides)
-    #[non_exhaustive]
+    /// A builder for [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithm>,
@@ -482,7 +476,7 @@ pub mod signing_configuration_overrides {
             self.hash_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides)
+        /// Consumes the builder and constructs a [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
         pub fn build(self) -> crate::model::SigningConfigurationOverrides {
             crate::model::SigningConfigurationOverrides {
                 encryption_algorithm: self.encryption_algorithm,
@@ -492,7 +486,7 @@ pub mod signing_configuration_overrides {
     }
 }
 impl SigningConfigurationOverrides {
-    /// Creates a new builder-style object to manufacture [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides)
+    /// Creates a new builder-style object to manufacture [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
     pub fn builder() -> crate::model::signing_configuration_overrides::Builder {
         crate::model::signing_configuration_overrides::Builder::default()
     }
@@ -635,11 +629,10 @@ impl std::fmt::Debug for SignatureValidityPeriod {
         formatter.finish()
     }
 }
-/// See [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod)
+/// See [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
 pub mod signature_validity_period {
 
-    /// A builder for [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod)
-    #[non_exhaustive]
+    /// A builder for [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
@@ -666,7 +659,7 @@ pub mod signature_validity_period {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod)
+        /// Consumes the builder and constructs a [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
         pub fn build(self) -> crate::model::SignatureValidityPeriod {
             crate::model::SignatureValidityPeriod {
                 value: self.value.unwrap_or_default(),
@@ -676,7 +669,7 @@ pub mod signature_validity_period {
     }
 }
 impl SignatureValidityPeriod {
-    /// Creates a new builder-style object to manufacture [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod)
+    /// Creates a new builder-style object to manufacture [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
     pub fn builder() -> crate::model::signature_validity_period::Builder {
         crate::model::signature_validity_period::Builder::default()
     }
@@ -761,11 +754,10 @@ impl std::fmt::Debug for SigningMaterial {
         formatter.finish()
     }
 }
-/// See [`SigningMaterial`](crate::model::SigningMaterial)
+/// See [`SigningMaterial`](crate::model::SigningMaterial).
 pub mod signing_material {
 
-    /// A builder for [`SigningMaterial`](crate::model::SigningMaterial)
-    #[non_exhaustive]
+    /// A builder for [`SigningMaterial`](crate::model::SigningMaterial).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -784,7 +776,7 @@ pub mod signing_material {
             self.certificate_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningMaterial`](crate::model::SigningMaterial)
+        /// Consumes the builder and constructs a [`SigningMaterial`](crate::model::SigningMaterial).
         pub fn build(self) -> crate::model::SigningMaterial {
             crate::model::SigningMaterial {
                 certificate_arn: self.certificate_arn,
@@ -793,7 +785,7 @@ pub mod signing_material {
     }
 }
 impl SigningMaterial {
-    /// Creates a new builder-style object to manufacture [`SigningMaterial`](crate::model::SigningMaterial)
+    /// Creates a new builder-style object to manufacture [`SigningMaterial`](crate::model::SigningMaterial).
     pub fn builder() -> crate::model::signing_material::Builder {
         crate::model::signing_material::Builder::default()
     }
@@ -899,11 +891,10 @@ impl std::fmt::Debug for SigningProfile {
         formatter.finish()
     }
 }
-/// See [`SigningProfile`](crate::model::SigningProfile)
+/// See [`SigningProfile`](crate::model::SigningProfile).
 pub mod signing_profile {
 
-    /// A builder for [`SigningProfile`](crate::model::SigningProfile)
-    #[non_exhaustive]
+    /// A builder for [`SigningProfile`](crate::model::SigningProfile).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_name: std::option::Option<std::string::String>,
@@ -1085,7 +1076,7 @@ pub mod signing_profile {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningProfile`](crate::model::SigningProfile)
+        /// Consumes the builder and constructs a [`SigningProfile`](crate::model::SigningProfile).
         pub fn build(self) -> crate::model::SigningProfile {
             crate::model::SigningProfile {
                 profile_name: self.profile_name,
@@ -1104,7 +1095,7 @@ pub mod signing_profile {
     }
 }
 impl SigningProfile {
-    /// Creates a new builder-style object to manufacture [`SigningProfile`](crate::model::SigningProfile)
+    /// Creates a new builder-style object to manufacture [`SigningProfile`](crate::model::SigningProfile).
     pub fn builder() -> crate::model::signing_profile::Builder {
         crate::model::signing_profile::Builder::default()
     }
@@ -1247,11 +1238,10 @@ impl std::fmt::Debug for SigningPlatform {
         formatter.finish()
     }
 }
-/// See [`SigningPlatform`](crate::model::SigningPlatform)
+/// See [`SigningPlatform`](crate::model::SigningPlatform).
 pub mod signing_platform {
 
-    /// A builder for [`SigningPlatform`](crate::model::SigningPlatform)
-    #[non_exhaustive]
+    /// A builder for [`SigningPlatform`](crate::model::SigningPlatform).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) platform_id: std::option::Option<std::string::String>,
@@ -1361,7 +1351,7 @@ pub mod signing_platform {
             self.revocation_supported = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningPlatform`](crate::model::SigningPlatform)
+        /// Consumes the builder and constructs a [`SigningPlatform`](crate::model::SigningPlatform).
         pub fn build(self) -> crate::model::SigningPlatform {
             crate::model::SigningPlatform {
                 platform_id: self.platform_id,
@@ -1378,7 +1368,7 @@ pub mod signing_platform {
     }
 }
 impl SigningPlatform {
-    /// Creates a new builder-style object to manufacture [`SigningPlatform`](crate::model::SigningPlatform)
+    /// Creates a new builder-style object to manufacture [`SigningPlatform`](crate::model::SigningPlatform).
     pub fn builder() -> crate::model::signing_platform::Builder {
         crate::model::signing_platform::Builder::default()
     }
@@ -1411,11 +1401,10 @@ impl std::fmt::Debug for SigningImageFormat {
         formatter.finish()
     }
 }
-/// See [`SigningImageFormat`](crate::model::SigningImageFormat)
+/// See [`SigningImageFormat`](crate::model::SigningImageFormat).
 pub mod signing_image_format {
 
-    /// A builder for [`SigningImageFormat`](crate::model::SigningImageFormat)
-    #[non_exhaustive]
+    /// A builder for [`SigningImageFormat`](crate::model::SigningImageFormat).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) supported_formats: std::option::Option<std::vec::Vec<crate::model::ImageFormat>>,
@@ -1454,7 +1443,7 @@ pub mod signing_image_format {
             self.default_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningImageFormat`](crate::model::SigningImageFormat)
+        /// Consumes the builder and constructs a [`SigningImageFormat`](crate::model::SigningImageFormat).
         pub fn build(self) -> crate::model::SigningImageFormat {
             crate::model::SigningImageFormat {
                 supported_formats: self.supported_formats,
@@ -1464,7 +1453,7 @@ pub mod signing_image_format {
     }
 }
 impl SigningImageFormat {
-    /// Creates a new builder-style object to manufacture [`SigningImageFormat`](crate::model::SigningImageFormat)
+    /// Creates a new builder-style object to manufacture [`SigningImageFormat`](crate::model::SigningImageFormat).
     pub fn builder() -> crate::model::signing_image_format::Builder {
         crate::model::signing_image_format::Builder::default()
     }
@@ -1504,11 +1493,10 @@ impl std::fmt::Debug for SigningConfiguration {
         formatter.finish()
     }
 }
-/// See [`SigningConfiguration`](crate::model::SigningConfiguration)
+/// See [`SigningConfiguration`](crate::model::SigningConfiguration).
 pub mod signing_configuration {
 
-    /// A builder for [`SigningConfiguration`](crate::model::SigningConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`SigningConfiguration`](crate::model::SigningConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_algorithm_options:
@@ -1545,7 +1533,7 @@ pub mod signing_configuration {
             self.hash_algorithm_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningConfiguration`](crate::model::SigningConfiguration)
+        /// Consumes the builder and constructs a [`SigningConfiguration`](crate::model::SigningConfiguration).
         pub fn build(self) -> crate::model::SigningConfiguration {
             crate::model::SigningConfiguration {
                 encryption_algorithm_options: self.encryption_algorithm_options,
@@ -1555,7 +1543,7 @@ pub mod signing_configuration {
     }
 }
 impl SigningConfiguration {
-    /// Creates a new builder-style object to manufacture [`SigningConfiguration`](crate::model::SigningConfiguration)
+    /// Creates a new builder-style object to manufacture [`SigningConfiguration`](crate::model::SigningConfiguration).
     pub fn builder() -> crate::model::signing_configuration::Builder {
         crate::model::signing_configuration::Builder::default()
     }
@@ -1588,11 +1576,10 @@ impl std::fmt::Debug for HashAlgorithmOptions {
         formatter.finish()
     }
 }
-/// See [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions)
+/// See [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
 pub mod hash_algorithm_options {
 
-    /// A builder for [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions)
-    #[non_exhaustive]
+    /// A builder for [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_values: std::option::Option<std::vec::Vec<crate::model::HashAlgorithm>>,
@@ -1631,7 +1618,7 @@ pub mod hash_algorithm_options {
             self.default_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions)
+        /// Consumes the builder and constructs a [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
         pub fn build(self) -> crate::model::HashAlgorithmOptions {
             crate::model::HashAlgorithmOptions {
                 allowed_values: self.allowed_values,
@@ -1641,7 +1628,7 @@ pub mod hash_algorithm_options {
     }
 }
 impl HashAlgorithmOptions {
-    /// Creates a new builder-style object to manufacture [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions)
+    /// Creates a new builder-style object to manufacture [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
     pub fn builder() -> crate::model::hash_algorithm_options::Builder {
         crate::model::hash_algorithm_options::Builder::default()
     }
@@ -1674,11 +1661,10 @@ impl std::fmt::Debug for EncryptionAlgorithmOptions {
         formatter.finish()
     }
 }
-/// See [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions)
+/// See [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
 pub mod encryption_algorithm_options {
 
-    /// A builder for [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions)
-    #[non_exhaustive]
+    /// A builder for [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_values:
@@ -1718,7 +1704,7 @@ pub mod encryption_algorithm_options {
             self.default_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions)
+        /// Consumes the builder and constructs a [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
         pub fn build(self) -> crate::model::EncryptionAlgorithmOptions {
             crate::model::EncryptionAlgorithmOptions {
                 allowed_values: self.allowed_values,
@@ -1728,7 +1714,7 @@ pub mod encryption_algorithm_options {
     }
 }
 impl EncryptionAlgorithmOptions {
-    /// Creates a new builder-style object to manufacture [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions)
+    /// Creates a new builder-style object to manufacture [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
     pub fn builder() -> crate::model::encryption_algorithm_options::Builder {
         crate::model::encryption_algorithm_options::Builder::default()
     }
@@ -1896,11 +1882,10 @@ impl std::fmt::Debug for SigningJob {
         formatter.finish()
     }
 }
-/// See [`SigningJob`](crate::model::SigningJob)
+/// See [`SigningJob`](crate::model::SigningJob).
 pub mod signing_job {
 
-    /// A builder for [`SigningJob`](crate::model::SigningJob)
-    #[non_exhaustive]
+    /// A builder for [`SigningJob`](crate::model::SigningJob).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2080,7 +2065,7 @@ pub mod signing_job {
             self.job_invoker = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningJob`](crate::model::SigningJob)
+        /// Consumes the builder and constructs a [`SigningJob`](crate::model::SigningJob).
         pub fn build(self) -> crate::model::SigningJob {
             crate::model::SigningJob {
                 job_id: self.job_id,
@@ -2102,7 +2087,7 @@ pub mod signing_job {
     }
 }
 impl SigningJob {
-    /// Creates a new builder-style object to manufacture [`SigningJob`](crate::model::SigningJob)
+    /// Creates a new builder-style object to manufacture [`SigningJob`](crate::model::SigningJob).
     pub fn builder() -> crate::model::signing_job::Builder {
         crate::model::signing_job::Builder::default()
     }
@@ -2187,11 +2172,10 @@ impl std::fmt::Debug for SignedObject {
         formatter.finish()
     }
 }
-/// See [`SignedObject`](crate::model::SignedObject)
+/// See [`SignedObject`](crate::model::SignedObject).
 pub mod signed_object {
 
-    /// A builder for [`SignedObject`](crate::model::SignedObject)
-    #[non_exhaustive]
+    /// A builder for [`SignedObject`](crate::model::SignedObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3SignedObject>,
@@ -2207,14 +2191,14 @@ pub mod signed_object {
             self.s3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`SignedObject`](crate::model::SignedObject)
+        /// Consumes the builder and constructs a [`SignedObject`](crate::model::SignedObject).
         pub fn build(self) -> crate::model::SignedObject {
             crate::model::SignedObject { s3: self.s3 }
         }
     }
 }
 impl SignedObject {
-    /// Creates a new builder-style object to manufacture [`SignedObject`](crate::model::SignedObject)
+    /// Creates a new builder-style object to manufacture [`SignedObject`](crate::model::SignedObject).
     pub fn builder() -> crate::model::signed_object::Builder {
         crate::model::signed_object::Builder::default()
     }
@@ -2247,11 +2231,10 @@ impl std::fmt::Debug for S3SignedObject {
         formatter.finish()
     }
 }
-/// See [`S3SignedObject`](crate::model::S3SignedObject)
+/// See [`S3SignedObject`](crate::model::S3SignedObject).
 pub mod s3_signed_object {
 
-    /// A builder for [`S3SignedObject`](crate::model::S3SignedObject)
-    #[non_exhaustive]
+    /// A builder for [`S3SignedObject`](crate::model::S3SignedObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -2278,7 +2261,7 @@ pub mod s3_signed_object {
             self.key = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3SignedObject`](crate::model::S3SignedObject)
+        /// Consumes the builder and constructs a [`S3SignedObject`](crate::model::S3SignedObject).
         pub fn build(self) -> crate::model::S3SignedObject {
             crate::model::S3SignedObject {
                 bucket_name: self.bucket_name,
@@ -2288,7 +2271,7 @@ pub mod s3_signed_object {
     }
 }
 impl S3SignedObject {
-    /// Creates a new builder-style object to manufacture [`S3SignedObject`](crate::model::S3SignedObject)
+    /// Creates a new builder-style object to manufacture [`S3SignedObject`](crate::model::S3SignedObject).
     pub fn builder() -> crate::model::s3_signed_object::Builder {
         crate::model::s3_signed_object::Builder::default()
     }
@@ -2335,11 +2318,10 @@ impl std::fmt::Debug for Permission {
         formatter.finish()
     }
 }
-/// See [`Permission`](crate::model::Permission)
+/// See [`Permission`](crate::model::Permission).
 pub mod permission {
 
-    /// A builder for [`Permission`](crate::model::Permission)
-    #[non_exhaustive]
+    /// A builder for [`Permission`](crate::model::Permission).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
@@ -2391,7 +2373,7 @@ pub mod permission {
             self.profile_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`Permission`](crate::model::Permission)
+        /// Consumes the builder and constructs a [`Permission`](crate::model::Permission).
         pub fn build(self) -> crate::model::Permission {
             crate::model::Permission {
                 action: self.action,
@@ -2403,7 +2385,7 @@ pub mod permission {
     }
 }
 impl Permission {
-    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission)
+    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
     pub fn builder() -> crate::model::permission::Builder {
         crate::model::permission::Builder::default()
     }
@@ -2443,11 +2425,10 @@ impl std::fmt::Debug for SigningProfileRevocationRecord {
         formatter.finish()
     }
 }
-/// See [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord)
+/// See [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
 pub mod signing_profile_revocation_record {
 
-    /// A builder for [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord)
-    #[non_exhaustive]
+    /// A builder for [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
@@ -2491,7 +2472,7 @@ pub mod signing_profile_revocation_record {
             self.revoked_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord)
+        /// Consumes the builder and constructs a [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
         pub fn build(self) -> crate::model::SigningProfileRevocationRecord {
             crate::model::SigningProfileRevocationRecord {
                 revocation_effective_from: self.revocation_effective_from,
@@ -2502,7 +2483,7 @@ pub mod signing_profile_revocation_record {
     }
 }
 impl SigningProfileRevocationRecord {
-    /// Creates a new builder-style object to manufacture [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord)
+    /// Creates a new builder-style object to manufacture [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
     pub fn builder() -> crate::model::signing_profile_revocation_record::Builder {
         crate::model::signing_profile_revocation_record::Builder::default()
     }
@@ -2542,11 +2523,10 @@ impl std::fmt::Debug for SigningJobRevocationRecord {
         formatter.finish()
     }
 }
-/// See [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord)
+/// See [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
 pub mod signing_job_revocation_record {
 
-    /// A builder for [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord)
-    #[non_exhaustive]
+    /// A builder for [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
@@ -2587,7 +2567,7 @@ pub mod signing_job_revocation_record {
             self.revoked_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord)
+        /// Consumes the builder and constructs a [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
         pub fn build(self) -> crate::model::SigningJobRevocationRecord {
             crate::model::SigningJobRevocationRecord {
                 reason: self.reason,
@@ -2598,7 +2578,7 @@ pub mod signing_job_revocation_record {
     }
 }
 impl SigningJobRevocationRecord {
-    /// Creates a new builder-style object to manufacture [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord)
+    /// Creates a new builder-style object to manufacture [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
     pub fn builder() -> crate::model::signing_job_revocation_record::Builder {
         crate::model::signing_job_revocation_record::Builder::default()
     }

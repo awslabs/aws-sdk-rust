@@ -41,11 +41,10 @@ impl std::fmt::Debug for UserProfileSummary {
         formatter.finish()
     }
 }
-/// See [`UserProfileSummary`](crate::model::UserProfileSummary)
+/// See [`UserProfileSummary`](crate::model::UserProfileSummary).
 pub mod user_profile_summary {
 
-    /// A builder for [`UserProfileSummary`](crate::model::UserProfileSummary)
-    #[non_exhaustive]
+    /// A builder for [`UserProfileSummary`](crate::model::UserProfileSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -100,7 +99,7 @@ pub mod user_profile_summary {
             self.ssh_public_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserProfileSummary`](crate::model::UserProfileSummary)
+        /// Consumes the builder and constructs a [`UserProfileSummary`](crate::model::UserProfileSummary).
         pub fn build(self) -> crate::model::UserProfileSummary {
             crate::model::UserProfileSummary {
                 user_arn: self.user_arn,
@@ -112,7 +111,7 @@ pub mod user_profile_summary {
     }
 }
 impl UserProfileSummary {
-    /// Creates a new builder-style object to manufacture [`UserProfileSummary`](crate::model::UserProfileSummary)
+    /// Creates a new builder-style object to manufacture [`UserProfileSummary`](crate::model::UserProfileSummary).
     pub fn builder() -> crate::model::user_profile_summary::Builder {
         crate::model::user_profile_summary::Builder::default()
     }
@@ -152,11 +151,10 @@ impl std::fmt::Debug for TeamMember {
         formatter.finish()
     }
 }
-/// See [`TeamMember`](crate::model::TeamMember)
+/// See [`TeamMember`](crate::model::TeamMember).
 pub mod team_member {
 
-    /// A builder for [`TeamMember`](crate::model::TeamMember)
-    #[non_exhaustive]
+    /// A builder for [`TeamMember`](crate::model::TeamMember).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -194,7 +192,7 @@ pub mod team_member {
             self.remote_access_allowed = input;
             self
         }
-        /// Consumes the builder and constructs a [`TeamMember`](crate::model::TeamMember)
+        /// Consumes the builder and constructs a [`TeamMember`](crate::model::TeamMember).
         pub fn build(self) -> crate::model::TeamMember {
             crate::model::TeamMember {
                 user_arn: self.user_arn,
@@ -205,7 +203,7 @@ pub mod team_member {
     }
 }
 impl TeamMember {
-    /// Creates a new builder-style object to manufacture [`TeamMember`](crate::model::TeamMember)
+    /// Creates a new builder-style object to manufacture [`TeamMember`](crate::model::TeamMember).
     pub fn builder() -> crate::model::team_member::Builder {
         crate::model::team_member::Builder::default()
     }
@@ -231,11 +229,10 @@ impl std::fmt::Debug for Resource {
         formatter.finish()
     }
 }
-/// See [`Resource`](crate::model::Resource)
+/// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
-    /// A builder for [`Resource`](crate::model::Resource)
-    #[non_exhaustive]
+    /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -251,14 +248,14 @@ pub mod resource {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource)
+        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource { id: self.id }
         }
     }
 }
 impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource)
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
     pub fn builder() -> crate::model::resource::Builder {
         crate::model::resource::Builder::default()
     }
@@ -291,11 +288,10 @@ impl std::fmt::Debug for ProjectSummary {
         formatter.finish()
     }
 }
-/// See [`ProjectSummary`](crate::model::ProjectSummary)
+/// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
 
-    /// A builder for [`ProjectSummary`](crate::model::ProjectSummary)
-    #[non_exhaustive]
+    /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_id: std::option::Option<std::string::String>,
@@ -322,7 +318,7 @@ pub mod project_summary {
             self.project_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary)
+        /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary).
         pub fn build(self) -> crate::model::ProjectSummary {
             crate::model::ProjectSummary {
                 project_id: self.project_id,
@@ -332,7 +328,7 @@ pub mod project_summary {
     }
 }
 impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary)
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
     pub fn builder() -> crate::model::project_summary::Builder {
         crate::model::project_summary::Builder::default()
     }
@@ -365,11 +361,10 @@ impl std::fmt::Debug for ProjectStatus {
         formatter.finish()
     }
 }
-/// See [`ProjectStatus`](crate::model::ProjectStatus)
+/// See [`ProjectStatus`](crate::model::ProjectStatus).
 pub mod project_status {
 
-    /// A builder for [`ProjectStatus`](crate::model::ProjectStatus)
-    #[non_exhaustive]
+    /// A builder for [`ProjectStatus`](crate::model::ProjectStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
@@ -396,7 +391,7 @@ pub mod project_status {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProjectStatus`](crate::model::ProjectStatus)
+        /// Consumes the builder and constructs a [`ProjectStatus`](crate::model::ProjectStatus).
         pub fn build(self) -> crate::model::ProjectStatus {
             crate::model::ProjectStatus {
                 state: self.state,
@@ -406,7 +401,7 @@ pub mod project_status {
     }
 }
 impl ProjectStatus {
-    /// Creates a new builder-style object to manufacture [`ProjectStatus`](crate::model::ProjectStatus)
+    /// Creates a new builder-style object to manufacture [`ProjectStatus`](crate::model::ProjectStatus).
     pub fn builder() -> crate::model::project_status::Builder {
         crate::model::project_status::Builder::default()
     }
@@ -450,11 +445,10 @@ impl std::fmt::Debug for Toolchain {
         formatter.finish()
     }
 }
-/// See [`Toolchain`](crate::model::Toolchain)
+/// See [`Toolchain`](crate::model::Toolchain).
 pub mod toolchain {
 
-    /// A builder for [`Toolchain`](crate::model::Toolchain)
-    #[non_exhaustive]
+    /// A builder for [`Toolchain`](crate::model::Toolchain).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ToolchainSource>,
@@ -512,7 +506,7 @@ pub mod toolchain {
             self.stack_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`Toolchain`](crate::model::Toolchain)
+        /// Consumes the builder and constructs a [`Toolchain`](crate::model::Toolchain).
         pub fn build(self) -> crate::model::Toolchain {
             crate::model::Toolchain {
                 source: self.source,
@@ -523,7 +517,7 @@ pub mod toolchain {
     }
 }
 impl Toolchain {
-    /// Creates a new builder-style object to manufacture [`Toolchain`](crate::model::Toolchain)
+    /// Creates a new builder-style object to manufacture [`Toolchain`](crate::model::Toolchain).
     pub fn builder() -> crate::model::toolchain::Builder {
         crate::model::toolchain::Builder::default()
     }
@@ -549,11 +543,10 @@ impl std::fmt::Debug for ToolchainSource {
         formatter.finish()
     }
 }
-/// See [`ToolchainSource`](crate::model::ToolchainSource)
+/// See [`ToolchainSource`](crate::model::ToolchainSource).
 pub mod toolchain_source {
 
-    /// A builder for [`ToolchainSource`](crate::model::ToolchainSource)
-    #[non_exhaustive]
+    /// A builder for [`ToolchainSource`](crate::model::ToolchainSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
@@ -569,14 +562,14 @@ pub mod toolchain_source {
             self.s3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`ToolchainSource`](crate::model::ToolchainSource)
+        /// Consumes the builder and constructs a [`ToolchainSource`](crate::model::ToolchainSource).
         pub fn build(self) -> crate::model::ToolchainSource {
             crate::model::ToolchainSource { s3: self.s3 }
         }
     }
 }
 impl ToolchainSource {
-    /// Creates a new builder-style object to manufacture [`ToolchainSource`](crate::model::ToolchainSource)
+    /// Creates a new builder-style object to manufacture [`ToolchainSource`](crate::model::ToolchainSource).
     pub fn builder() -> crate::model::toolchain_source::Builder {
         crate::model::toolchain_source::Builder::default()
     }
@@ -609,11 +602,10 @@ impl std::fmt::Debug for S3Location {
         formatter.finish()
     }
 }
-/// See [`S3Location`](crate::model::S3Location)
+/// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
-    /// A builder for [`S3Location`](crate::model::S3Location)
-    #[non_exhaustive]
+    /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -640,7 +632,7 @@ pub mod s3_location {
             self.bucket_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
+        /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
                 bucket_name: self.bucket_name,
@@ -650,7 +642,7 @@ pub mod s3_location {
     }
 }
 impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location)
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
     pub fn builder() -> crate::model::s3_location::Builder {
         crate::model::s3_location::Builder::default()
     }
@@ -683,11 +675,10 @@ impl std::fmt::Debug for Code {
         formatter.finish()
     }
 }
-/// See [`Code`](crate::model::Code)
+/// See [`Code`](crate::model::Code).
 pub mod code {
 
-    /// A builder for [`Code`](crate::model::Code)
-    #[non_exhaustive]
+    /// A builder for [`Code`](crate::model::Code).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::CodeSource>,
@@ -717,7 +708,7 @@ pub mod code {
             self.destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`Code`](crate::model::Code)
+        /// Consumes the builder and constructs a [`Code`](crate::model::Code).
         pub fn build(self) -> crate::model::Code {
             crate::model::Code {
                 source: self.source,
@@ -727,7 +718,7 @@ pub mod code {
     }
 }
 impl Code {
-    /// Creates a new builder-style object to manufacture [`Code`](crate::model::Code)
+    /// Creates a new builder-style object to manufacture [`Code`](crate::model::Code).
     pub fn builder() -> crate::model::code::Builder {
         crate::model::code::Builder::default()
     }
@@ -760,11 +751,10 @@ impl std::fmt::Debug for CodeDestination {
         formatter.finish()
     }
 }
-/// See [`CodeDestination`](crate::model::CodeDestination)
+/// See [`CodeDestination`](crate::model::CodeDestination).
 pub mod code_destination {
 
-    /// A builder for [`CodeDestination`](crate::model::CodeDestination)
-    #[non_exhaustive]
+    /// A builder for [`CodeDestination`](crate::model::CodeDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code_commit: std::option::Option<crate::model::CodeCommitCodeDestination>,
@@ -797,7 +787,7 @@ pub mod code_destination {
             self.git_hub = input;
             self
         }
-        /// Consumes the builder and constructs a [`CodeDestination`](crate::model::CodeDestination)
+        /// Consumes the builder and constructs a [`CodeDestination`](crate::model::CodeDestination).
         pub fn build(self) -> crate::model::CodeDestination {
             crate::model::CodeDestination {
                 code_commit: self.code_commit,
@@ -807,7 +797,7 @@ pub mod code_destination {
     }
 }
 impl CodeDestination {
-    /// Creates a new builder-style object to manufacture [`CodeDestination`](crate::model::CodeDestination)
+    /// Creates a new builder-style object to manufacture [`CodeDestination`](crate::model::CodeDestination).
     pub fn builder() -> crate::model::code_destination::Builder {
         crate::model::code_destination::Builder::default()
     }
@@ -875,11 +865,10 @@ impl std::fmt::Debug for GitHubCodeDestination {
         formatter.finish()
     }
 }
-/// See [`GitHubCodeDestination`](crate::model::GitHubCodeDestination)
+/// See [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
 pub mod git_hub_code_destination {
 
-    /// A builder for [`GitHubCodeDestination`](crate::model::GitHubCodeDestination)
-    #[non_exhaustive]
+    /// A builder for [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -961,7 +950,7 @@ pub mod git_hub_code_destination {
             self.token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GitHubCodeDestination`](crate::model::GitHubCodeDestination)
+        /// Consumes the builder and constructs a [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
         pub fn build(self) -> crate::model::GitHubCodeDestination {
             crate::model::GitHubCodeDestination {
                 name: self.name,
@@ -976,7 +965,7 @@ pub mod git_hub_code_destination {
     }
 }
 impl GitHubCodeDestination {
-    /// Creates a new builder-style object to manufacture [`GitHubCodeDestination`](crate::model::GitHubCodeDestination)
+    /// Creates a new builder-style object to manufacture [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
     pub fn builder() -> crate::model::git_hub_code_destination::Builder {
         crate::model::git_hub_code_destination::Builder::default()
     }
@@ -1002,11 +991,10 @@ impl std::fmt::Debug for CodeCommitCodeDestination {
         formatter.finish()
     }
 }
-/// See [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination)
+/// See [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
 pub mod code_commit_code_destination {
 
-    /// A builder for [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination)
-    #[non_exhaustive]
+    /// A builder for [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1022,14 +1010,14 @@ pub mod code_commit_code_destination {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination)
+        /// Consumes the builder and constructs a [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
         pub fn build(self) -> crate::model::CodeCommitCodeDestination {
             crate::model::CodeCommitCodeDestination { name: self.name }
         }
     }
 }
 impl CodeCommitCodeDestination {
-    /// Creates a new builder-style object to manufacture [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination)
+    /// Creates a new builder-style object to manufacture [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
     pub fn builder() -> crate::model::code_commit_code_destination::Builder {
         crate::model::code_commit_code_destination::Builder::default()
     }
@@ -1055,11 +1043,10 @@ impl std::fmt::Debug for CodeSource {
         formatter.finish()
     }
 }
-/// See [`CodeSource`](crate::model::CodeSource)
+/// See [`CodeSource`](crate::model::CodeSource).
 pub mod code_source {
 
-    /// A builder for [`CodeSource`](crate::model::CodeSource)
-    #[non_exhaustive]
+    /// A builder for [`CodeSource`](crate::model::CodeSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3: std::option::Option<crate::model::S3Location>,
@@ -1075,14 +1062,14 @@ pub mod code_source {
             self.s3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`CodeSource`](crate::model::CodeSource)
+        /// Consumes the builder and constructs a [`CodeSource`](crate::model::CodeSource).
         pub fn build(self) -> crate::model::CodeSource {
             crate::model::CodeSource { s3: self.s3 }
         }
     }
 }
 impl CodeSource {
-    /// Creates a new builder-style object to manufacture [`CodeSource`](crate::model::CodeSource)
+    /// Creates a new builder-style object to manufacture [`CodeSource`](crate::model::CodeSource).
     pub fn builder() -> crate::model::code_source::Builder {
         crate::model::code_source::Builder::default()
     }

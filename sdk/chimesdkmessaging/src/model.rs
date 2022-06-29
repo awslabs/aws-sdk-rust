@@ -153,11 +153,10 @@ impl std::fmt::Debug for ChannelMessageStatusStructure {
         formatter.finish()
     }
 }
-/// See [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure)
+/// See [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
 pub mod channel_message_status_structure {
 
-    /// A builder for [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::ChannelMessageStatus>,
@@ -187,7 +186,7 @@ pub mod channel_message_status_structure {
             self.detail = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure)
+        /// Consumes the builder and constructs a [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
         pub fn build(self) -> crate::model::ChannelMessageStatusStructure {
             crate::model::ChannelMessageStatusStructure {
                 value: self.value,
@@ -197,7 +196,7 @@ pub mod channel_message_status_structure {
     }
 }
 impl ChannelMessageStatusStructure {
-    /// Creates a new builder-style object to manufacture [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure)
+    /// Creates a new builder-style object to manufacture [`ChannelMessageStatusStructure`](crate::model::ChannelMessageStatusStructure).
     pub fn builder() -> crate::model::channel_message_status_structure::Builder {
         crate::model::channel_message_status_structure::Builder::default()
     }
@@ -307,11 +306,10 @@ impl std::fmt::Debug for Processor {
         formatter.finish()
     }
 }
-/// See [`Processor`](crate::model::Processor)
+/// See [`Processor`](crate::model::Processor).
 pub mod processor {
 
-    /// A builder for [`Processor`](crate::model::Processor)
-    #[non_exhaustive]
+    /// A builder for [`Processor`](crate::model::Processor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -366,7 +364,7 @@ pub mod processor {
             self.fallback_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`Processor`](crate::model::Processor)
+        /// Consumes the builder and constructs a [`Processor`](crate::model::Processor).
         pub fn build(self) -> crate::model::Processor {
             crate::model::Processor {
                 name: self.name,
@@ -378,7 +376,7 @@ pub mod processor {
     }
 }
 impl Processor {
-    /// Creates a new builder-style object to manufacture [`Processor`](crate::model::Processor)
+    /// Creates a new builder-style object to manufacture [`Processor`](crate::model::Processor).
     pub fn builder() -> crate::model::processor::Builder {
         crate::model::processor::Builder::default()
     }
@@ -459,11 +457,10 @@ impl std::fmt::Debug for ProcessorConfiguration {
         formatter.finish()
     }
 }
-/// See [`ProcessorConfiguration`](crate::model::ProcessorConfiguration)
+/// See [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
 pub mod processor_configuration {
 
-    /// A builder for [`ProcessorConfiguration`](crate::model::ProcessorConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda: std::option::Option<crate::model::LambdaConfiguration>,
@@ -482,7 +479,7 @@ pub mod processor_configuration {
             self.lambda = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProcessorConfiguration`](crate::model::ProcessorConfiguration)
+        /// Consumes the builder and constructs a [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
         pub fn build(self) -> crate::model::ProcessorConfiguration {
             crate::model::ProcessorConfiguration {
                 lambda: self.lambda,
@@ -491,7 +488,7 @@ pub mod processor_configuration {
     }
 }
 impl ProcessorConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProcessorConfiguration`](crate::model::ProcessorConfiguration)
+    /// Creates a new builder-style object to manufacture [`ProcessorConfiguration`](crate::model::ProcessorConfiguration).
     pub fn builder() -> crate::model::processor_configuration::Builder {
         crate::model::processor_configuration::Builder::default()
     }
@@ -524,11 +521,10 @@ impl std::fmt::Debug for LambdaConfiguration {
         formatter.finish()
     }
 }
-/// See [`LambdaConfiguration`](crate::model::LambdaConfiguration)
+/// See [`LambdaConfiguration`](crate::model::LambdaConfiguration).
 pub mod lambda_configuration {
 
-    /// A builder for [`LambdaConfiguration`](crate::model::LambdaConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`LambdaConfiguration`](crate::model::LambdaConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -558,7 +554,7 @@ pub mod lambda_configuration {
             self.invocation_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::model::LambdaConfiguration)
+        /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::model::LambdaConfiguration).
         pub fn build(self) -> crate::model::LambdaConfiguration {
             crate::model::LambdaConfiguration {
                 resource_arn: self.resource_arn,
@@ -568,7 +564,7 @@ pub mod lambda_configuration {
     }
 }
 impl LambdaConfiguration {
-    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration)
+    /// Creates a new builder-style object to manufacture [`LambdaConfiguration`](crate::model::LambdaConfiguration).
     pub fn builder() -> crate::model::lambda_configuration::Builder {
         crate::model::lambda_configuration::Builder::default()
     }
@@ -707,11 +703,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -738,7 +733,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -748,7 +743,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -774,11 +769,10 @@ impl std::fmt::Debug for MessageAttributeValue {
         formatter.finish()
     }
 }
-/// See [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+/// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
 pub mod message_attribute_value {
 
-    /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue)
-    #[non_exhaustive]
+    /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -803,7 +797,7 @@ pub mod message_attribute_value {
             self.string_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+        /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::model::MessageAttributeValue).
         pub fn build(self) -> crate::model::MessageAttributeValue {
             crate::model::MessageAttributeValue {
                 string_values: self.string_values,
@@ -812,7 +806,7 @@ pub mod message_attribute_value {
     }
 }
 impl MessageAttributeValue {
-    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
     pub fn builder() -> crate::model::message_attribute_value::Builder {
         crate::model::message_attribute_value::Builder::default()
     }
@@ -852,11 +846,10 @@ impl std::fmt::Debug for PushNotificationConfiguration {
         formatter.finish()
     }
 }
-/// See [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
+/// See [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
 pub mod push_notification_configuration {
 
-    /// A builder for [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -897,7 +890,7 @@ pub mod push_notification_configuration {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
+        /// Consumes the builder and constructs a [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
         pub fn build(self) -> crate::model::PushNotificationConfiguration {
             crate::model::PushNotificationConfiguration {
                 title: self.title,
@@ -908,7 +901,7 @@ pub mod push_notification_configuration {
     }
 }
 impl PushNotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration)
+    /// Creates a new builder-style object to manufacture [`PushNotificationConfiguration`](crate::model::PushNotificationConfiguration).
     pub fn builder() -> crate::model::push_notification_configuration::Builder {
         crate::model::push_notification_configuration::Builder::default()
     }
@@ -1134,11 +1127,10 @@ impl std::fmt::Debug for ChannelSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelSummary`](crate::model::ChannelSummary)
+/// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
 
-    /// A builder for [`ChannelSummary`](crate::model::ChannelSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelSummary`](crate::model::ChannelSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1215,7 +1207,7 @@ pub mod channel_summary {
             self.last_message_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelSummary`](crate::model::ChannelSummary)
+        /// Consumes the builder and constructs a [`ChannelSummary`](crate::model::ChannelSummary).
         pub fn build(self) -> crate::model::ChannelSummary {
             crate::model::ChannelSummary {
                 name: self.name,
@@ -1229,7 +1221,7 @@ pub mod channel_summary {
     }
 }
 impl ChannelSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
     pub fn builder() -> crate::model::channel_summary::Builder {
         crate::model::channel_summary::Builder::default()
     }
@@ -1328,11 +1320,10 @@ impl std::fmt::Debug for SearchField {
         formatter.finish()
     }
 }
-/// See [`SearchField`](crate::model::SearchField)
+/// See [`SearchField`](crate::model::SearchField).
 pub mod search_field {
 
-    /// A builder for [`SearchField`](crate::model::SearchField)
-    #[non_exhaustive]
+    /// A builder for [`SearchField`](crate::model::SearchField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::SearchFieldKey>,
@@ -1386,7 +1377,7 @@ pub mod search_field {
             self.operator = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchField`](crate::model::SearchField)
+        /// Consumes the builder and constructs a [`SearchField`](crate::model::SearchField).
         pub fn build(self) -> crate::model::SearchField {
             crate::model::SearchField {
                 key: self.key,
@@ -1397,7 +1388,7 @@ pub mod search_field {
     }
 }
 impl SearchField {
-    /// Creates a new builder-style object to manufacture [`SearchField`](crate::model::SearchField)
+    /// Creates a new builder-style object to manufacture [`SearchField`](crate::model::SearchField).
     pub fn builder() -> crate::model::search_field::Builder {
         crate::model::search_field::Builder::default()
     }
@@ -1531,11 +1522,10 @@ impl std::fmt::Debug for ChannelMembershipPreferences {
         formatter.finish()
     }
 }
-/// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+/// See [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
 pub mod channel_membership_preferences {
 
-    /// A builder for [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) push_notifications:
@@ -1558,7 +1548,7 @@ pub mod channel_membership_preferences {
             self.push_notifications = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+        /// Consumes the builder and constructs a [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
         pub fn build(self) -> crate::model::ChannelMembershipPreferences {
             crate::model::ChannelMembershipPreferences {
                 push_notifications: self.push_notifications,
@@ -1567,7 +1557,7 @@ pub mod channel_membership_preferences {
     }
 }
 impl ChannelMembershipPreferences {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences)
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipPreferences`](crate::model::ChannelMembershipPreferences).
     pub fn builder() -> crate::model::channel_membership_preferences::Builder {
         crate::model::channel_membership_preferences::Builder::default()
     }
@@ -1600,11 +1590,10 @@ impl std::fmt::Debug for PushNotificationPreferences {
         formatter.finish()
     }
 }
-/// See [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+/// See [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
 pub mod push_notification_preferences {
 
-    /// A builder for [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
-    #[non_exhaustive]
+    /// A builder for [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_notifications: std::option::Option<crate::model::AllowNotifications>,
@@ -1634,7 +1623,7 @@ pub mod push_notification_preferences {
             self.filter_rule = input;
             self
         }
-        /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+        /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
         pub fn build(self) -> crate::model::PushNotificationPreferences {
             crate::model::PushNotificationPreferences {
                 allow_notifications: self.allow_notifications,
@@ -1644,7 +1633,7 @@ pub mod push_notification_preferences {
     }
 }
 impl PushNotificationPreferences {
-    /// Creates a new builder-style object to manufacture [`PushNotificationPreferences`](crate::model::PushNotificationPreferences)
+    /// Creates a new builder-style object to manufacture [`PushNotificationPreferences`](crate::model::PushNotificationPreferences).
     pub fn builder() -> crate::model::push_notification_preferences::Builder {
         crate::model::push_notification_preferences::Builder::default()
     }
@@ -1736,11 +1725,10 @@ impl std::fmt::Debug for Identity {
         formatter.finish()
     }
 }
-/// See [`Identity`](crate::model::Identity)
+/// See [`Identity`](crate::model::Identity).
 pub mod identity {
 
-    /// A builder for [`Identity`](crate::model::Identity)
-    #[non_exhaustive]
+    /// A builder for [`Identity`](crate::model::Identity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1767,7 +1755,7 @@ pub mod identity {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity)
+        /// Consumes the builder and constructs a [`Identity`](crate::model::Identity).
         pub fn build(self) -> crate::model::Identity {
             crate::model::Identity {
                 arn: self.arn,
@@ -1777,7 +1765,7 @@ pub mod identity {
     }
 }
 impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity)
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
     pub fn builder() -> crate::model::identity::Builder {
         crate::model::identity::Builder::default()
     }
@@ -1803,11 +1791,10 @@ impl std::fmt::Debug for ChannelModeratedByAppInstanceUserSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
+/// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
 pub mod channel_moderated_by_app_instance_user_summary {
 
-    /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_summary: std::option::Option<crate::model::ChannelSummary>,
@@ -1826,7 +1813,7 @@ pub mod channel_moderated_by_app_instance_user_summary {
             self.channel_summary = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
+        /// Consumes the builder and constructs a [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
         pub fn build(self) -> crate::model::ChannelModeratedByAppInstanceUserSummary {
             crate::model::ChannelModeratedByAppInstanceUserSummary {
                 channel_summary: self.channel_summary,
@@ -1835,7 +1822,7 @@ pub mod channel_moderated_by_app_instance_user_summary {
     }
 }
 impl ChannelModeratedByAppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
     pub fn builder() -> crate::model::channel_moderated_by_app_instance_user_summary::Builder {
         crate::model::channel_moderated_by_app_instance_user_summary::Builder::default()
     }
@@ -1889,11 +1876,10 @@ impl std::fmt::Debug for ChannelAssociatedWithFlowSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary)
+/// See [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
 pub mod channel_associated_with_flow_summary {
 
-    /// A builder for [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1956,7 +1942,7 @@ pub mod channel_associated_with_flow_summary {
             self.metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary)
+        /// Consumes the builder and constructs a [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
         pub fn build(self) -> crate::model::ChannelAssociatedWithFlowSummary {
             crate::model::ChannelAssociatedWithFlowSummary {
                 name: self.name,
@@ -1969,7 +1955,7 @@ pub mod channel_associated_with_flow_summary {
     }
 }
 impl ChannelAssociatedWithFlowSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelAssociatedWithFlowSummary`](crate::model::ChannelAssociatedWithFlowSummary).
     pub fn builder() -> crate::model::channel_associated_with_flow_summary::Builder {
         crate::model::channel_associated_with_flow_summary::Builder::default()
     }
@@ -1995,11 +1981,10 @@ impl std::fmt::Debug for ChannelModeratorSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
+/// See [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
 pub mod channel_moderator_summary {
 
-    /// A builder for [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) moderator: std::option::Option<crate::model::Identity>,
@@ -2015,7 +2000,7 @@ pub mod channel_moderator_summary {
             self.moderator = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
+        /// Consumes the builder and constructs a [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
         pub fn build(self) -> crate::model::ChannelModeratorSummary {
             crate::model::ChannelModeratorSummary {
                 moderator: self.moderator,
@@ -2024,7 +2009,7 @@ pub mod channel_moderator_summary {
     }
 }
 impl ChannelModeratorSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
     pub fn builder() -> crate::model::channel_moderator_summary::Builder {
         crate::model::channel_moderator_summary::Builder::default()
     }
@@ -2126,11 +2111,10 @@ impl std::fmt::Debug for ChannelMessageSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
+/// See [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
 pub mod channel_message_summary {
 
-    /// A builder for [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -2288,7 +2272,7 @@ pub mod channel_message_summary {
             self.message_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
+        /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
         pub fn build(self) -> crate::model::ChannelMessageSummary {
             crate::model::ChannelMessageSummary {
                 message_id: self.message_id,
@@ -2307,7 +2291,7 @@ pub mod channel_message_summary {
     }
 }
 impl ChannelMessageSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMessageSummary`](crate::model::ChannelMessageSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
     pub fn builder() -> crate::model::channel_message_summary::Builder {
         crate::model::channel_message_summary::Builder::default()
     }
@@ -2401,11 +2385,10 @@ impl std::fmt::Debug for ChannelMembershipForAppInstanceUserSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
+/// See [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
 pub mod channel_membership_for_app_instance_user_summary {
 
-    /// A builder for [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_summary: std::option::Option<crate::model::ChannelSummary>,
@@ -2442,7 +2425,7 @@ pub mod channel_membership_for_app_instance_user_summary {
             self.app_instance_user_membership_summary = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
+        /// Consumes the builder and constructs a [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
         pub fn build(self) -> crate::model::ChannelMembershipForAppInstanceUserSummary {
             crate::model::ChannelMembershipForAppInstanceUserSummary {
                 channel_summary: self.channel_summary,
@@ -2452,7 +2435,7 @@ pub mod channel_membership_for_app_instance_user_summary {
     }
 }
 impl ChannelMembershipForAppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
     pub fn builder() -> crate::model::channel_membership_for_app_instance_user_summary::Builder {
         crate::model::channel_membership_for_app_instance_user_summary::Builder::default()
     }
@@ -2485,11 +2468,10 @@ impl std::fmt::Debug for AppInstanceUserMembershipSummary {
         formatter.finish()
     }
 }
-/// See [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
+/// See [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
 pub mod app_instance_user_membership_summary {
 
-    /// A builder for [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
-    #[non_exhaustive]
+    /// A builder for [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ChannelMembershipType>,
@@ -2522,7 +2504,7 @@ pub mod app_instance_user_membership_summary {
             self.read_marker_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
+        /// Consumes the builder and constructs a [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
         pub fn build(self) -> crate::model::AppInstanceUserMembershipSummary {
             crate::model::AppInstanceUserMembershipSummary {
                 r#type: self.r#type,
@@ -2532,7 +2514,7 @@ pub mod app_instance_user_membership_summary {
     }
 }
 impl AppInstanceUserMembershipSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary)
+    /// Creates a new builder-style object to manufacture [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
     pub fn builder() -> crate::model::app_instance_user_membership_summary::Builder {
         crate::model::app_instance_user_membership_summary::Builder::default()
     }
@@ -2613,11 +2595,10 @@ impl std::fmt::Debug for ChannelMembershipSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
+/// See [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
 pub mod channel_membership_summary {
 
-    /// A builder for [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member: std::option::Option<crate::model::Identity>,
@@ -2633,7 +2614,7 @@ pub mod channel_membership_summary {
             self.member = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
+        /// Consumes the builder and constructs a [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
         pub fn build(self) -> crate::model::ChannelMembershipSummary {
             crate::model::ChannelMembershipSummary {
                 member: self.member,
@@ -2642,7 +2623,7 @@ pub mod channel_membership_summary {
     }
 }
 impl ChannelMembershipSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
     pub fn builder() -> crate::model::channel_membership_summary::Builder {
         crate::model::channel_membership_summary::Builder::default()
     }
@@ -2682,11 +2663,10 @@ impl std::fmt::Debug for ChannelFlowSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelFlowSummary`](crate::model::ChannelFlowSummary)
+/// See [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
 pub mod channel_flow_summary {
 
-    /// A builder for [`ChannelFlowSummary`](crate::model::ChannelFlowSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
@@ -2736,7 +2716,7 @@ pub mod channel_flow_summary {
             self.processors = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelFlowSummary`](crate::model::ChannelFlowSummary)
+        /// Consumes the builder and constructs a [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
         pub fn build(self) -> crate::model::ChannelFlowSummary {
             crate::model::ChannelFlowSummary {
                 channel_flow_arn: self.channel_flow_arn,
@@ -2747,7 +2727,7 @@ pub mod channel_flow_summary {
     }
 }
 impl ChannelFlowSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelFlowSummary`](crate::model::ChannelFlowSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelFlowSummary`](crate::model::ChannelFlowSummary).
     pub fn builder() -> crate::model::channel_flow_summary::Builder {
         crate::model::channel_flow_summary::Builder::default()
     }
@@ -2773,11 +2753,10 @@ impl std::fmt::Debug for ChannelBanSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelBanSummary`](crate::model::ChannelBanSummary)
+/// See [`ChannelBanSummary`](crate::model::ChannelBanSummary).
 pub mod channel_ban_summary {
 
-    /// A builder for [`ChannelBanSummary`](crate::model::ChannelBanSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelBanSummary`](crate::model::ChannelBanSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member: std::option::Option<crate::model::Identity>,
@@ -2793,7 +2772,7 @@ pub mod channel_ban_summary {
             self.member = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelBanSummary`](crate::model::ChannelBanSummary)
+        /// Consumes the builder and constructs a [`ChannelBanSummary`](crate::model::ChannelBanSummary).
         pub fn build(self) -> crate::model::ChannelBanSummary {
             crate::model::ChannelBanSummary {
                 member: self.member,
@@ -2802,7 +2781,7 @@ pub mod channel_ban_summary {
     }
 }
 impl ChannelBanSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelBanSummary`](crate::model::ChannelBanSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelBanSummary`](crate::model::ChannelBanSummary).
     pub fn builder() -> crate::model::channel_ban_summary::Builder {
         crate::model::channel_ban_summary::Builder::default()
     }
@@ -2828,11 +2807,10 @@ impl std::fmt::Debug for MessagingSessionEndpoint {
         formatter.finish()
     }
 }
-/// See [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
+/// See [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
 pub mod messaging_session_endpoint {
 
-    /// A builder for [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -2848,14 +2826,14 @@ pub mod messaging_session_endpoint {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
+        /// Consumes the builder and constructs a [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
         pub fn build(self) -> crate::model::MessagingSessionEndpoint {
             crate::model::MessagingSessionEndpoint { url: self.url }
         }
     }
 }
 impl MessagingSessionEndpoint {
-    /// Creates a new builder-style object to manufacture [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint)
+    /// Creates a new builder-style object to manufacture [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
     pub fn builder() -> crate::model::messaging_session_endpoint::Builder {
         crate::model::messaging_session_endpoint::Builder::default()
     }
@@ -2971,11 +2949,10 @@ impl std::fmt::Debug for ChannelMessage {
         formatter.finish()
     }
 }
-/// See [`ChannelMessage`](crate::model::ChannelMessage)
+/// See [`ChannelMessage`](crate::model::ChannelMessage).
 pub mod channel_message {
 
-    /// A builder for [`ChannelMessage`](crate::model::ChannelMessage)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMessage`](crate::model::ChannelMessage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
@@ -3158,7 +3135,7 @@ pub mod channel_message {
             self.message_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMessage`](crate::model::ChannelMessage)
+        /// Consumes the builder and constructs a [`ChannelMessage`](crate::model::ChannelMessage).
         pub fn build(self) -> crate::model::ChannelMessage {
             crate::model::ChannelMessage {
                 channel_arn: self.channel_arn,
@@ -3179,7 +3156,7 @@ pub mod channel_message {
     }
 }
 impl ChannelMessage {
-    /// Creates a new builder-style object to manufacture [`ChannelMessage`](crate::model::ChannelMessage)
+    /// Creates a new builder-style object to manufacture [`ChannelMessage`](crate::model::ChannelMessage).
     pub fn builder() -> crate::model::channel_message::Builder {
         crate::model::channel_message::Builder::default()
     }
@@ -3226,11 +3203,10 @@ impl std::fmt::Debug for ChannelModerator {
         formatter.finish()
     }
 }
-/// See [`ChannelModerator`](crate::model::ChannelModerator)
+/// See [`ChannelModerator`](crate::model::ChannelModerator).
 pub mod channel_moderator {
 
-    /// A builder for [`ChannelModerator`](crate::model::ChannelModerator)
-    #[non_exhaustive]
+    /// A builder for [`ChannelModerator`](crate::model::ChannelModerator).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) moderator: std::option::Option<crate::model::Identity>,
@@ -3285,7 +3261,7 @@ pub mod channel_moderator {
             self.created_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelModerator`](crate::model::ChannelModerator)
+        /// Consumes the builder and constructs a [`ChannelModerator`](crate::model::ChannelModerator).
         pub fn build(self) -> crate::model::ChannelModerator {
             crate::model::ChannelModerator {
                 moderator: self.moderator,
@@ -3297,7 +3273,7 @@ pub mod channel_moderator {
     }
 }
 impl ChannelModerator {
-    /// Creates a new builder-style object to manufacture [`ChannelModerator`](crate::model::ChannelModerator)
+    /// Creates a new builder-style object to manufacture [`ChannelModerator`](crate::model::ChannelModerator).
     pub fn builder() -> crate::model::channel_moderator::Builder {
         crate::model::channel_moderator::Builder::default()
     }
@@ -3358,11 +3334,10 @@ impl std::fmt::Debug for ChannelMembership {
         formatter.finish()
     }
 }
-/// See [`ChannelMembership`](crate::model::ChannelMembership)
+/// See [`ChannelMembership`](crate::model::ChannelMembership).
 pub mod channel_membership {
 
-    /// A builder for [`ChannelMembership`](crate::model::ChannelMembership)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMembership`](crate::model::ChannelMembership).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invited_by: std::option::Option<crate::model::Identity>,
@@ -3445,7 +3420,7 @@ pub mod channel_membership {
             self.last_updated_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMembership`](crate::model::ChannelMembership)
+        /// Consumes the builder and constructs a [`ChannelMembership`](crate::model::ChannelMembership).
         pub fn build(self) -> crate::model::ChannelMembership {
             crate::model::ChannelMembership {
                 invited_by: self.invited_by,
@@ -3459,7 +3434,7 @@ pub mod channel_membership {
     }
 }
 impl ChannelMembership {
-    /// Creates a new builder-style object to manufacture [`ChannelMembership`](crate::model::ChannelMembership)
+    /// Creates a new builder-style object to manufacture [`ChannelMembership`](crate::model::ChannelMembership).
     pub fn builder() -> crate::model::channel_membership::Builder {
         crate::model::channel_membership::Builder::default()
     }
@@ -3513,11 +3488,10 @@ impl std::fmt::Debug for ChannelFlow {
         formatter.finish()
     }
 }
-/// See [`ChannelFlow`](crate::model::ChannelFlow)
+/// See [`ChannelFlow`](crate::model::ChannelFlow).
 pub mod channel_flow {
 
-    /// A builder for [`ChannelFlow`](crate::model::ChannelFlow)
-    #[non_exhaustive]
+    /// A builder for [`ChannelFlow`](crate::model::ChannelFlow).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
@@ -3595,7 +3569,7 @@ pub mod channel_flow {
             self.last_updated_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelFlow`](crate::model::ChannelFlow)
+        /// Consumes the builder and constructs a [`ChannelFlow`](crate::model::ChannelFlow).
         pub fn build(self) -> crate::model::ChannelFlow {
             crate::model::ChannelFlow {
                 channel_flow_arn: self.channel_flow_arn,
@@ -3608,7 +3582,7 @@ pub mod channel_flow {
     }
 }
 impl ChannelFlow {
-    /// Creates a new builder-style object to manufacture [`ChannelFlow`](crate::model::ChannelFlow)
+    /// Creates a new builder-style object to manufacture [`ChannelFlow`](crate::model::ChannelFlow).
     pub fn builder() -> crate::model::channel_flow::Builder {
         crate::model::channel_flow::Builder::default()
     }
@@ -3655,11 +3629,10 @@ impl std::fmt::Debug for ChannelBan {
         formatter.finish()
     }
 }
-/// See [`ChannelBan`](crate::model::ChannelBan)
+/// See [`ChannelBan`](crate::model::ChannelBan).
 pub mod channel_ban {
 
-    /// A builder for [`ChannelBan`](crate::model::ChannelBan)
-    #[non_exhaustive]
+    /// A builder for [`ChannelBan`](crate::model::ChannelBan).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member: std::option::Option<crate::model::Identity>,
@@ -3714,7 +3687,7 @@ pub mod channel_ban {
             self.created_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelBan`](crate::model::ChannelBan)
+        /// Consumes the builder and constructs a [`ChannelBan`](crate::model::ChannelBan).
         pub fn build(self) -> crate::model::ChannelBan {
             crate::model::ChannelBan {
                 member: self.member,
@@ -3726,7 +3699,7 @@ pub mod channel_ban {
     }
 }
 impl ChannelBan {
-    /// Creates a new builder-style object to manufacture [`ChannelBan`](crate::model::ChannelBan)
+    /// Creates a new builder-style object to manufacture [`ChannelBan`](crate::model::ChannelBan).
     pub fn builder() -> crate::model::channel_ban::Builder {
         crate::model::channel_ban::Builder::default()
     }
@@ -3815,11 +3788,10 @@ impl std::fmt::Debug for Channel {
         formatter.finish()
     }
 }
-/// See [`Channel`](crate::model::Channel)
+/// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
-    /// A builder for [`Channel`](crate::model::Channel)
-    #[non_exhaustive]
+    /// A builder for [`Channel`](crate::model::Channel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3952,7 +3924,7 @@ pub mod channel {
             self.channel_flow_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel)
+        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
         pub fn build(self) -> crate::model::Channel {
             crate::model::Channel {
                 name: self.name,
@@ -3970,7 +3942,7 @@ pub mod channel {
     }
 }
 impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel)
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
     pub fn builder() -> crate::model::channel::Builder {
         crate::model::channel::Builder::default()
     }
@@ -4032,11 +4004,10 @@ impl std::fmt::Debug for ChannelMessageCallback {
         formatter.finish()
     }
 }
-/// See [`ChannelMessageCallback`](crate::model::ChannelMessageCallback)
+/// See [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
 pub mod channel_message_callback {
 
-    /// A builder for [`ChannelMessageCallback`](crate::model::ChannelMessageCallback)
-    #[non_exhaustive]
+    /// A builder for [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -4120,7 +4091,7 @@ pub mod channel_message_callback {
             self.message_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelMessageCallback`](crate::model::ChannelMessageCallback)
+        /// Consumes the builder and constructs a [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
         pub fn build(self) -> crate::model::ChannelMessageCallback {
             crate::model::ChannelMessageCallback {
                 message_id: self.message_id,
@@ -4133,7 +4104,7 @@ pub mod channel_message_callback {
     }
 }
 impl ChannelMessageCallback {
-    /// Creates a new builder-style object to manufacture [`ChannelMessageCallback`](crate::model::ChannelMessageCallback)
+    /// Creates a new builder-style object to manufacture [`ChannelMessageCallback`](crate::model::ChannelMessageCallback).
     pub fn builder() -> crate::model::channel_message_callback::Builder {
         crate::model::channel_message_callback::Builder::default()
     }
@@ -4173,11 +4144,10 @@ impl std::fmt::Debug for BatchCreateChannelMembershipError {
         formatter.finish()
     }
 }
-/// See [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
+/// See [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
 pub mod batch_create_channel_membership_error {
 
-    /// A builder for [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
-    #[non_exhaustive]
+    /// A builder for [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_arn: std::option::Option<std::string::String>,
@@ -4221,7 +4191,7 @@ pub mod batch_create_channel_membership_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
+        /// Consumes the builder and constructs a [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
         pub fn build(self) -> crate::model::BatchCreateChannelMembershipError {
             crate::model::BatchCreateChannelMembershipError {
                 member_arn: self.member_arn,
@@ -4232,7 +4202,7 @@ pub mod batch_create_channel_membership_error {
     }
 }
 impl BatchCreateChannelMembershipError {
-    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError)
+    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
     pub fn builder() -> crate::model::batch_create_channel_membership_error::Builder {
         crate::model::batch_create_channel_membership_error::Builder::default()
     }
@@ -4279,11 +4249,10 @@ impl std::fmt::Debug for BatchChannelMemberships {
         formatter.finish()
     }
 }
-/// See [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
+/// See [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
 pub mod batch_channel_memberships {
 
-    /// A builder for [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
-    #[non_exhaustive]
+    /// A builder for [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invited_by: std::option::Option<crate::model::Identity>,
@@ -4347,7 +4316,7 @@ pub mod batch_channel_memberships {
             self.channel_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
+        /// Consumes the builder and constructs a [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
         pub fn build(self) -> crate::model::BatchChannelMemberships {
             crate::model::BatchChannelMemberships {
                 invited_by: self.invited_by,
@@ -4359,7 +4328,7 @@ pub mod batch_channel_memberships {
     }
 }
 impl BatchChannelMemberships {
-    /// Creates a new builder-style object to manufacture [`BatchChannelMemberships`](crate::model::BatchChannelMemberships)
+    /// Creates a new builder-style object to manufacture [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
     pub fn builder() -> crate::model::batch_channel_memberships::Builder {
         crate::model::batch_channel_memberships::Builder::default()
     }

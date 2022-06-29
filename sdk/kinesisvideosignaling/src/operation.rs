@@ -10,7 +10,7 @@ pub struct GetIceServerConfig {
     _private: (),
 }
 impl GetIceServerConfig {
-    /// Creates a new builder-style object to manufacture [`GetIceServerConfigInput`](crate::input::GetIceServerConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetIceServerConfigInput`](crate::input::GetIceServerConfigInput).
     pub fn builder() -> crate::input::get_ice_server_config_input::Builder {
         crate::input::get_ice_server_config_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct SendAlexaOfferToMaster {
     _private: (),
 }
 impl SendAlexaOfferToMaster {
-    /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterInput`](crate::input::SendAlexaOfferToMasterInput)
+    /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterInput`](crate::input::SendAlexaOfferToMasterInput).
     pub fn builder() -> crate::input::send_alexa_offer_to_master_input::Builder {
         crate::input::send_alexa_offer_to_master_input::Builder::default()
     }

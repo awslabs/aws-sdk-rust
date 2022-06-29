@@ -10,7 +10,7 @@ pub struct AssociateRepository {
     _private: (),
 }
 impl AssociateRepository {
-    /// Creates a new builder-style object to manufacture [`AssociateRepositoryInput`](crate::input::AssociateRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`AssociateRepositoryInput`](crate::input::AssociateRepositoryInput).
     pub fn builder() -> crate::input::associate_repository_input::Builder {
         crate::input::associate_repository_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateCodeReview {
     _private: (),
 }
 impl CreateCodeReview {
-    /// Creates a new builder-style object to manufacture [`CreateCodeReviewInput`](crate::input::CreateCodeReviewInput)
+    /// Creates a new builder-style object to manufacture [`CreateCodeReviewInput`](crate::input::CreateCodeReviewInput).
     pub fn builder() -> crate::input::create_code_review_input::Builder {
         crate::input::create_code_review_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeCodeReview {
     _private: (),
 }
 impl DescribeCodeReview {
-    /// Creates a new builder-style object to manufacture [`DescribeCodeReviewInput`](crate::input::DescribeCodeReviewInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCodeReviewInput`](crate::input::DescribeCodeReviewInput).
     pub fn builder() -> crate::input::describe_code_review_input::Builder {
         crate::input::describe_code_review_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeRecommendationFeedback {
     _private: (),
 }
 impl DescribeRecommendationFeedback {
-    /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackInput`](crate::input::DescribeRecommendationFeedbackInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackInput`](crate::input::DescribeRecommendationFeedbackInput).
     pub fn builder() -> crate::input::describe_recommendation_feedback_input::Builder {
         crate::input::describe_recommendation_feedback_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeRepositoryAssociation {
     _private: (),
 }
 impl DescribeRepositoryAssociation {
-    /// Creates a new builder-style object to manufacture [`DescribeRepositoryAssociationInput`](crate::input::DescribeRepositoryAssociationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRepositoryAssociationInput`](crate::input::DescribeRepositoryAssociationInput).
     pub fn builder() -> crate::input::describe_repository_association_input::Builder {
         crate::input::describe_repository_association_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DisassociateRepository {
     _private: (),
 }
 impl DisassociateRepository {
-    /// Creates a new builder-style object to manufacture [`DisassociateRepositoryInput`](crate::input::DisassociateRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateRepositoryInput`](crate::input::DisassociateRepositoryInput).
     pub fn builder() -> crate::input::disassociate_repository_input::Builder {
         crate::input::disassociate_repository_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct ListCodeReviews {
     _private: (),
 }
 impl ListCodeReviews {
-    /// Creates a new builder-style object to manufacture [`ListCodeReviewsInput`](crate::input::ListCodeReviewsInput)
+    /// Creates a new builder-style object to manufacture [`ListCodeReviewsInput`](crate::input::ListCodeReviewsInput).
     pub fn builder() -> crate::input::list_code_reviews_input::Builder {
         crate::input::list_code_reviews_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct ListRecommendationFeedback {
     _private: (),
 }
 impl ListRecommendationFeedback {
-    /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackInput`](crate::input::ListRecommendationFeedbackInput)
+    /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackInput`](crate::input::ListRecommendationFeedbackInput).
     pub fn builder() -> crate::input::list_recommendation_feedback_input::Builder {
         crate::input::list_recommendation_feedback_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ListRecommendations {
     _private: (),
 }
 impl ListRecommendations {
-    /// Creates a new builder-style object to manufacture [`ListRecommendationsInput`](crate::input::ListRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ListRecommendationsInput`](crate::input::ListRecommendationsInput).
     pub fn builder() -> crate::input::list_recommendations_input::Builder {
         crate::input::list_recommendations_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct ListRepositoryAssociations {
     _private: (),
 }
 impl ListRepositoryAssociations {
-    /// Creates a new builder-style object to manufacture [`ListRepositoryAssociationsInput`](crate::input::ListRepositoryAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListRepositoryAssociationsInput`](crate::input::ListRepositoryAssociationsInput).
     pub fn builder() -> crate::input::list_repository_associations_input::Builder {
         crate::input::list_repository_associations_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct PutRecommendationFeedback {
     _private: (),
 }
 impl PutRecommendationFeedback {
-    /// Creates a new builder-style object to manufacture [`PutRecommendationFeedbackInput`](crate::input::PutRecommendationFeedbackInput)
+    /// Creates a new builder-style object to manufacture [`PutRecommendationFeedbackInput`](crate::input::PutRecommendationFeedbackInput).
     pub fn builder() -> crate::input::put_recommendation_feedback_input::Builder {
         crate::input::put_recommendation_feedback_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

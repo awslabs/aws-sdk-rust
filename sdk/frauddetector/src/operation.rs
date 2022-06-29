@@ -10,7 +10,7 @@ pub struct BatchCreateVariable {
     _private: (),
 }
 impl BatchCreateVariable {
-    /// Creates a new builder-style object to manufacture [`BatchCreateVariableInput`](crate::input::BatchCreateVariableInput)
+    /// Creates a new builder-style object to manufacture [`BatchCreateVariableInput`](crate::input::BatchCreateVariableInput).
     pub fn builder() -> crate::input::batch_create_variable_input::Builder {
         crate::input::batch_create_variable_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchGetVariable {
     _private: (),
 }
 impl BatchGetVariable {
-    /// Creates a new builder-style object to manufacture [`BatchGetVariableInput`](crate::input::BatchGetVariableInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetVariableInput`](crate::input::BatchGetVariableInput).
     pub fn builder() -> crate::input::batch_get_variable_input::Builder {
         crate::input::batch_get_variable_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CancelBatchImportJob {
     _private: (),
 }
 impl CancelBatchImportJob {
-    /// Creates a new builder-style object to manufacture [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput)
+    /// Creates a new builder-style object to manufacture [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput).
     pub fn builder() -> crate::input::cancel_batch_import_job_input::Builder {
         crate::input::cancel_batch_import_job_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CancelBatchPredictionJob {
     _private: (),
 }
 impl CancelBatchPredictionJob {
-    /// Creates a new builder-style object to manufacture [`CancelBatchPredictionJobInput`](crate::input::CancelBatchPredictionJobInput)
+    /// Creates a new builder-style object to manufacture [`CancelBatchPredictionJobInput`](crate::input::CancelBatchPredictionJobInput).
     pub fn builder() -> crate::input::cancel_batch_prediction_job_input::Builder {
         crate::input::cancel_batch_prediction_job_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateBatchImportJob {
     _private: (),
 }
 impl CreateBatchImportJob {
-    /// Creates a new builder-style object to manufacture [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput).
     pub fn builder() -> crate::input::create_batch_import_job_input::Builder {
         crate::input::create_batch_import_job_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateBatchPredictionJob {
     _private: (),
 }
 impl CreateBatchPredictionJob {
-    /// Creates a new builder-style object to manufacture [`CreateBatchPredictionJobInput`](crate::input::CreateBatchPredictionJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateBatchPredictionJobInput`](crate::input::CreateBatchPredictionJobInput).
     pub fn builder() -> crate::input::create_batch_prediction_job_input::Builder {
         crate::input::create_batch_prediction_job_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct CreateDetectorVersion {
     _private: (),
 }
 impl CreateDetectorVersion {
-    /// Creates a new builder-style object to manufacture [`CreateDetectorVersionInput`](crate::input::CreateDetectorVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateDetectorVersionInput`](crate::input::CreateDetectorVersionInput).
     pub fn builder() -> crate::input::create_detector_version_input::Builder {
         crate::input::create_detector_version_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CreateModel {
     _private: (),
 }
 impl CreateModel {
-    /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::input::CreateModelInput)
+    /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::input::CreateModelInput).
     pub fn builder() -> crate::input::create_model_input::Builder {
         crate::input::create_model_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct CreateModelVersion {
     _private: (),
 }
 impl CreateModelVersion {
-    /// Creates a new builder-style object to manufacture [`CreateModelVersionInput`](crate::input::CreateModelVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateModelVersionInput`](crate::input::CreateModelVersionInput).
     pub fn builder() -> crate::input::create_model_version_input::Builder {
         crate::input::create_model_version_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct CreateRule {
     _private: (),
 }
 impl CreateRule {
-    /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput).
     pub fn builder() -> crate::input::create_rule_input::Builder {
         crate::input::create_rule_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct CreateVariable {
     _private: (),
 }
 impl CreateVariable {
-    /// Creates a new builder-style object to manufacture [`CreateVariableInput`](crate::input::CreateVariableInput)
+    /// Creates a new builder-style object to manufacture [`CreateVariableInput`](crate::input::CreateVariableInput).
     pub fn builder() -> crate::input::create_variable_input::Builder {
         crate::input::create_variable_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct DeleteBatchImportJob {
     _private: (),
 }
 impl DeleteBatchImportJob {
-    /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput).
     pub fn builder() -> crate::input::delete_batch_import_job_input::Builder {
         crate::input::delete_batch_import_job_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct DeleteBatchPredictionJob {
     _private: (),
 }
 impl DeleteBatchPredictionJob {
-    /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionJobInput`](crate::input::DeleteBatchPredictionJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionJobInput`](crate::input::DeleteBatchPredictionJobInput).
     pub fn builder() -> crate::input::delete_batch_prediction_job_input::Builder {
         crate::input::delete_batch_prediction_job_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct DeleteDetector {
     _private: (),
 }
 impl DeleteDetector {
-    /// Creates a new builder-style object to manufacture [`DeleteDetectorInput`](crate::input::DeleteDetectorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDetectorInput`](crate::input::DeleteDetectorInput).
     pub fn builder() -> crate::input::delete_detector_input::Builder {
         crate::input::delete_detector_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct DeleteDetectorVersion {
     _private: (),
 }
 impl DeleteDetectorVersion {
-    /// Creates a new builder-style object to manufacture [`DeleteDetectorVersionInput`](crate::input::DeleteDetectorVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDetectorVersionInput`](crate::input::DeleteDetectorVersionInput).
     pub fn builder() -> crate::input::delete_detector_version_input::Builder {
         crate::input::delete_detector_version_input::Builder::default()
     }
@@ -512,7 +512,7 @@ pub struct DeleteEntityType {
     _private: (),
 }
 impl DeleteEntityType {
-    /// Creates a new builder-style object to manufacture [`DeleteEntityTypeInput`](crate::input::DeleteEntityTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEntityTypeInput`](crate::input::DeleteEntityTypeInput).
     pub fn builder() -> crate::input::delete_entity_type_input::Builder {
         crate::input::delete_entity_type_input::Builder::default()
     }
@@ -546,7 +546,7 @@ pub struct DeleteEvent {
     _private: (),
 }
 impl DeleteEvent {
-    /// Creates a new builder-style object to manufacture [`DeleteEventInput`](crate::input::DeleteEventInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventInput`](crate::input::DeleteEventInput).
     pub fn builder() -> crate::input::delete_event_input::Builder {
         crate::input::delete_event_input::Builder::default()
     }
@@ -578,7 +578,7 @@ pub struct DeleteEventsByEventType {
     _private: (),
 }
 impl DeleteEventsByEventType {
-    /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput).
     pub fn builder() -> crate::input::delete_events_by_event_type_input::Builder {
         crate::input::delete_events_by_event_type_input::Builder::default()
     }
@@ -612,7 +612,7 @@ pub struct DeleteEventType {
     _private: (),
 }
 impl DeleteEventType {
-    /// Creates a new builder-style object to manufacture [`DeleteEventTypeInput`](crate::input::DeleteEventTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventTypeInput`](crate::input::DeleteEventTypeInput).
     pub fn builder() -> crate::input::delete_event_type_input::Builder {
         crate::input::delete_event_type_input::Builder::default()
     }
@@ -646,7 +646,7 @@ pub struct DeleteExternalModel {
     _private: (),
 }
 impl DeleteExternalModel {
-    /// Creates a new builder-style object to manufacture [`DeleteExternalModelInput`](crate::input::DeleteExternalModelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteExternalModelInput`](crate::input::DeleteExternalModelInput).
     pub fn builder() -> crate::input::delete_external_model_input::Builder {
         crate::input::delete_external_model_input::Builder::default()
     }
@@ -680,7 +680,7 @@ pub struct DeleteLabel {
     _private: (),
 }
 impl DeleteLabel {
-    /// Creates a new builder-style object to manufacture [`DeleteLabelInput`](crate::input::DeleteLabelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLabelInput`](crate::input::DeleteLabelInput).
     pub fn builder() -> crate::input::delete_label_input::Builder {
         crate::input::delete_label_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct DeleteModel {
     _private: (),
 }
 impl DeleteModel {
-    /// Creates a new builder-style object to manufacture [`DeleteModelInput`](crate::input::DeleteModelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteModelInput`](crate::input::DeleteModelInput).
     pub fn builder() -> crate::input::delete_model_input::Builder {
         crate::input::delete_model_input::Builder::default()
     }
@@ -744,7 +744,7 @@ pub struct DeleteModelVersion {
     _private: (),
 }
 impl DeleteModelVersion {
-    /// Creates a new builder-style object to manufacture [`DeleteModelVersionInput`](crate::input::DeleteModelVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteModelVersionInput`](crate::input::DeleteModelVersionInput).
     pub fn builder() -> crate::input::delete_model_version_input::Builder {
         crate::input::delete_model_version_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct DeleteOutcome {
     _private: (),
 }
 impl DeleteOutcome {
-    /// Creates a new builder-style object to manufacture [`DeleteOutcomeInput`](crate::input::DeleteOutcomeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOutcomeInput`](crate::input::DeleteOutcomeInput).
     pub fn builder() -> crate::input::delete_outcome_input::Builder {
         crate::input::delete_outcome_input::Builder::default()
     }
@@ -810,7 +810,7 @@ pub struct DeleteRule {
     _private: (),
 }
 impl DeleteRule {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput).
     pub fn builder() -> crate::input::delete_rule_input::Builder {
         crate::input::delete_rule_input::Builder::default()
     }
@@ -842,7 +842,7 @@ pub struct DeleteVariable {
     _private: (),
 }
 impl DeleteVariable {
-    /// Creates a new builder-style object to manufacture [`DeleteVariableInput`](crate::input::DeleteVariableInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVariableInput`](crate::input::DeleteVariableInput).
     pub fn builder() -> crate::input::delete_variable_input::Builder {
         crate::input::delete_variable_input::Builder::default()
     }
@@ -874,7 +874,7 @@ pub struct DescribeDetector {
     _private: (),
 }
 impl DescribeDetector {
-    /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::input::DescribeDetectorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::input::DescribeDetectorInput).
     pub fn builder() -> crate::input::describe_detector_input::Builder {
         crate::input::describe_detector_input::Builder::default()
     }
@@ -908,7 +908,7 @@ pub struct DescribeModelVersions {
     _private: (),
 }
 impl DescribeModelVersions {
-    /// Creates a new builder-style object to manufacture [`DescribeModelVersionsInput`](crate::input::DescribeModelVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeModelVersionsInput`](crate::input::DescribeModelVersionsInput).
     pub fn builder() -> crate::input::describe_model_versions_input::Builder {
         crate::input::describe_model_versions_input::Builder::default()
     }
@@ -942,7 +942,7 @@ pub struct GetBatchImportJobs {
     _private: (),
 }
 impl GetBatchImportJobs {
-    /// Creates a new builder-style object to manufacture [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput)
+    /// Creates a new builder-style object to manufacture [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput).
     pub fn builder() -> crate::input::get_batch_import_jobs_input::Builder {
         crate::input::get_batch_import_jobs_input::Builder::default()
     }
@@ -976,7 +976,7 @@ pub struct GetBatchPredictionJobs {
     _private: (),
 }
 impl GetBatchPredictionJobs {
-    /// Creates a new builder-style object to manufacture [`GetBatchPredictionJobsInput`](crate::input::GetBatchPredictionJobsInput)
+    /// Creates a new builder-style object to manufacture [`GetBatchPredictionJobsInput`](crate::input::GetBatchPredictionJobsInput).
     pub fn builder() -> crate::input::get_batch_prediction_jobs_input::Builder {
         crate::input::get_batch_prediction_jobs_input::Builder::default()
     }
@@ -1010,7 +1010,7 @@ pub struct GetDeleteEventsByEventTypeStatus {
     _private: (),
 }
 impl GetDeleteEventsByEventTypeStatus {
-    /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput).
     pub fn builder() -> crate::input::get_delete_events_by_event_type_status_input::Builder {
         crate::input::get_delete_events_by_event_type_status_input::Builder::default()
     }
@@ -1044,7 +1044,7 @@ pub struct GetDetectors {
     _private: (),
 }
 impl GetDetectors {
-    /// Creates a new builder-style object to manufacture [`GetDetectorsInput`](crate::input::GetDetectorsInput)
+    /// Creates a new builder-style object to manufacture [`GetDetectorsInput`](crate::input::GetDetectorsInput).
     pub fn builder() -> crate::input::get_detectors_input::Builder {
         crate::input::get_detectors_input::Builder::default()
     }
@@ -1076,7 +1076,7 @@ pub struct GetDetectorVersion {
     _private: (),
 }
 impl GetDetectorVersion {
-    /// Creates a new builder-style object to manufacture [`GetDetectorVersionInput`](crate::input::GetDetectorVersionInput)
+    /// Creates a new builder-style object to manufacture [`GetDetectorVersionInput`](crate::input::GetDetectorVersionInput).
     pub fn builder() -> crate::input::get_detector_version_input::Builder {
         crate::input::get_detector_version_input::Builder::default()
     }
@@ -1110,7 +1110,7 @@ pub struct GetEntityTypes {
     _private: (),
 }
 impl GetEntityTypes {
-    /// Creates a new builder-style object to manufacture [`GetEntityTypesInput`](crate::input::GetEntityTypesInput)
+    /// Creates a new builder-style object to manufacture [`GetEntityTypesInput`](crate::input::GetEntityTypesInput).
     pub fn builder() -> crate::input::get_entity_types_input::Builder {
         crate::input::get_entity_types_input::Builder::default()
     }
@@ -1142,7 +1142,7 @@ pub struct GetEvent {
     _private: (),
 }
 impl GetEvent {
-    /// Creates a new builder-style object to manufacture [`GetEventInput`](crate::input::GetEventInput)
+    /// Creates a new builder-style object to manufacture [`GetEventInput`](crate::input::GetEventInput).
     pub fn builder() -> crate::input::get_event_input::Builder {
         crate::input::get_event_input::Builder::default()
     }
@@ -1173,7 +1173,7 @@ pub struct GetEventPrediction {
     _private: (),
 }
 impl GetEventPrediction {
-    /// Creates a new builder-style object to manufacture [`GetEventPredictionInput`](crate::input::GetEventPredictionInput)
+    /// Creates a new builder-style object to manufacture [`GetEventPredictionInput`](crate::input::GetEventPredictionInput).
     pub fn builder() -> crate::input::get_event_prediction_input::Builder {
         crate::input::get_event_prediction_input::Builder::default()
     }
@@ -1207,7 +1207,7 @@ pub struct GetEventPredictionMetadata {
     _private: (),
 }
 impl GetEventPredictionMetadata {
-    /// Creates a new builder-style object to manufacture [`GetEventPredictionMetadataInput`](crate::input::GetEventPredictionMetadataInput)
+    /// Creates a new builder-style object to manufacture [`GetEventPredictionMetadataInput`](crate::input::GetEventPredictionMetadataInput).
     pub fn builder() -> crate::input::get_event_prediction_metadata_input::Builder {
         crate::input::get_event_prediction_metadata_input::Builder::default()
     }
@@ -1241,7 +1241,7 @@ pub struct GetEventTypes {
     _private: (),
 }
 impl GetEventTypes {
-    /// Creates a new builder-style object to manufacture [`GetEventTypesInput`](crate::input::GetEventTypesInput)
+    /// Creates a new builder-style object to manufacture [`GetEventTypesInput`](crate::input::GetEventTypesInput).
     pub fn builder() -> crate::input::get_event_types_input::Builder {
         crate::input::get_event_types_input::Builder::default()
     }
@@ -1273,7 +1273,7 @@ pub struct GetExternalModels {
     _private: (),
 }
 impl GetExternalModels {
-    /// Creates a new builder-style object to manufacture [`GetExternalModelsInput`](crate::input::GetExternalModelsInput)
+    /// Creates a new builder-style object to manufacture [`GetExternalModelsInput`](crate::input::GetExternalModelsInput).
     pub fn builder() -> crate::input::get_external_models_input::Builder {
         crate::input::get_external_models_input::Builder::default()
     }
@@ -1307,7 +1307,7 @@ pub struct GetKMSEncryptionKey {
     _private: (),
 }
 impl GetKMSEncryptionKey {
-    /// Creates a new builder-style object to manufacture [`GetKmsEncryptionKeyInput`](crate::input::GetKmsEncryptionKeyInput)
+    /// Creates a new builder-style object to manufacture [`GetKmsEncryptionKeyInput`](crate::input::GetKmsEncryptionKeyInput).
     pub fn builder() -> crate::input::get_kms_encryption_key_input::Builder {
         crate::input::get_kms_encryption_key_input::Builder::default()
     }
@@ -1341,7 +1341,7 @@ pub struct GetLabels {
     _private: (),
 }
 impl GetLabels {
-    /// Creates a new builder-style object to manufacture [`GetLabelsInput`](crate::input::GetLabelsInput)
+    /// Creates a new builder-style object to manufacture [`GetLabelsInput`](crate::input::GetLabelsInput).
     pub fn builder() -> crate::input::get_labels_input::Builder {
         crate::input::get_labels_input::Builder::default()
     }
@@ -1372,7 +1372,7 @@ pub struct GetModels {
     _private: (),
 }
 impl GetModels {
-    /// Creates a new builder-style object to manufacture [`GetModelsInput`](crate::input::GetModelsInput)
+    /// Creates a new builder-style object to manufacture [`GetModelsInput`](crate::input::GetModelsInput).
     pub fn builder() -> crate::input::get_models_input::Builder {
         crate::input::get_models_input::Builder::default()
     }
@@ -1403,7 +1403,7 @@ pub struct GetModelVersion {
     _private: (),
 }
 impl GetModelVersion {
-    /// Creates a new builder-style object to manufacture [`GetModelVersionInput`](crate::input::GetModelVersionInput)
+    /// Creates a new builder-style object to manufacture [`GetModelVersionInput`](crate::input::GetModelVersionInput).
     pub fn builder() -> crate::input::get_model_version_input::Builder {
         crate::input::get_model_version_input::Builder::default()
     }
@@ -1437,7 +1437,7 @@ pub struct GetOutcomes {
     _private: (),
 }
 impl GetOutcomes {
-    /// Creates a new builder-style object to manufacture [`GetOutcomesInput`](crate::input::GetOutcomesInput)
+    /// Creates a new builder-style object to manufacture [`GetOutcomesInput`](crate::input::GetOutcomesInput).
     pub fn builder() -> crate::input::get_outcomes_input::Builder {
         crate::input::get_outcomes_input::Builder::default()
     }
@@ -1469,7 +1469,7 @@ pub struct GetRules {
     _private: (),
 }
 impl GetRules {
-    /// Creates a new builder-style object to manufacture [`GetRulesInput`](crate::input::GetRulesInput)
+    /// Creates a new builder-style object to manufacture [`GetRulesInput`](crate::input::GetRulesInput).
     pub fn builder() -> crate::input::get_rules_input::Builder {
         crate::input::get_rules_input::Builder::default()
     }
@@ -1500,7 +1500,7 @@ pub struct GetVariables {
     _private: (),
 }
 impl GetVariables {
-    /// Creates a new builder-style object to manufacture [`GetVariablesInput`](crate::input::GetVariablesInput)
+    /// Creates a new builder-style object to manufacture [`GetVariablesInput`](crate::input::GetVariablesInput).
     pub fn builder() -> crate::input::get_variables_input::Builder {
         crate::input::get_variables_input::Builder::default()
     }
@@ -1532,7 +1532,7 @@ pub struct ListEventPredictions {
     _private: (),
 }
 impl ListEventPredictions {
-    /// Creates a new builder-style object to manufacture [`ListEventPredictionsInput`](crate::input::ListEventPredictionsInput)
+    /// Creates a new builder-style object to manufacture [`ListEventPredictionsInput`](crate::input::ListEventPredictionsInput).
     pub fn builder() -> crate::input::list_event_predictions_input::Builder {
         crate::input::list_event_predictions_input::Builder::default()
     }
@@ -1566,7 +1566,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1600,7 +1600,7 @@ pub struct PutDetector {
     _private: (),
 }
 impl PutDetector {
-    /// Creates a new builder-style object to manufacture [`PutDetectorInput`](crate::input::PutDetectorInput)
+    /// Creates a new builder-style object to manufacture [`PutDetectorInput`](crate::input::PutDetectorInput).
     pub fn builder() -> crate::input::put_detector_input::Builder {
         crate::input::put_detector_input::Builder::default()
     }
@@ -1632,7 +1632,7 @@ pub struct PutEntityType {
     _private: (),
 }
 impl PutEntityType {
-    /// Creates a new builder-style object to manufacture [`PutEntityTypeInput`](crate::input::PutEntityTypeInput)
+    /// Creates a new builder-style object to manufacture [`PutEntityTypeInput`](crate::input::PutEntityTypeInput).
     pub fn builder() -> crate::input::put_entity_type_input::Builder {
         crate::input::put_entity_type_input::Builder::default()
     }
@@ -1664,7 +1664,7 @@ pub struct PutEventType {
     _private: (),
 }
 impl PutEventType {
-    /// Creates a new builder-style object to manufacture [`PutEventTypeInput`](crate::input::PutEventTypeInput)
+    /// Creates a new builder-style object to manufacture [`PutEventTypeInput`](crate::input::PutEventTypeInput).
     pub fn builder() -> crate::input::put_event_type_input::Builder {
         crate::input::put_event_type_input::Builder::default()
     }
@@ -1696,7 +1696,7 @@ pub struct PutExternalModel {
     _private: (),
 }
 impl PutExternalModel {
-    /// Creates a new builder-style object to manufacture [`PutExternalModelInput`](crate::input::PutExternalModelInput)
+    /// Creates a new builder-style object to manufacture [`PutExternalModelInput`](crate::input::PutExternalModelInput).
     pub fn builder() -> crate::input::put_external_model_input::Builder {
         crate::input::put_external_model_input::Builder::default()
     }
@@ -1730,7 +1730,7 @@ pub struct PutKMSEncryptionKey {
     _private: (),
 }
 impl PutKMSEncryptionKey {
-    /// Creates a new builder-style object to manufacture [`PutKmsEncryptionKeyInput`](crate::input::PutKmsEncryptionKeyInput)
+    /// Creates a new builder-style object to manufacture [`PutKmsEncryptionKeyInput`](crate::input::PutKmsEncryptionKeyInput).
     pub fn builder() -> crate::input::put_kms_encryption_key_input::Builder {
         crate::input::put_kms_encryption_key_input::Builder::default()
     }
@@ -1764,7 +1764,7 @@ pub struct PutLabel {
     _private: (),
 }
 impl PutLabel {
-    /// Creates a new builder-style object to manufacture [`PutLabelInput`](crate::input::PutLabelInput)
+    /// Creates a new builder-style object to manufacture [`PutLabelInput`](crate::input::PutLabelInput).
     pub fn builder() -> crate::input::put_label_input::Builder {
         crate::input::put_label_input::Builder::default()
     }
@@ -1795,7 +1795,7 @@ pub struct PutOutcome {
     _private: (),
 }
 impl PutOutcome {
-    /// Creates a new builder-style object to manufacture [`PutOutcomeInput`](crate::input::PutOutcomeInput)
+    /// Creates a new builder-style object to manufacture [`PutOutcomeInput`](crate::input::PutOutcomeInput).
     pub fn builder() -> crate::input::put_outcome_input::Builder {
         crate::input::put_outcome_input::Builder::default()
     }
@@ -1827,7 +1827,7 @@ pub struct SendEvent {
     _private: (),
 }
 impl SendEvent {
-    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput)
+    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput).
     pub fn builder() -> crate::input::send_event_input::Builder {
         crate::input::send_event_input::Builder::default()
     }
@@ -1858,7 +1858,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1890,7 +1890,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1922,7 +1922,7 @@ pub struct UpdateDetectorVersion {
     _private: (),
 }
 impl UpdateDetectorVersion {
-    /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionInput`](crate::input::UpdateDetectorVersionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionInput`](crate::input::UpdateDetectorVersionInput).
     pub fn builder() -> crate::input::update_detector_version_input::Builder {
         crate::input::update_detector_version_input::Builder::default()
     }
@@ -1956,7 +1956,7 @@ pub struct UpdateDetectorVersionMetadata {
     _private: (),
 }
 impl UpdateDetectorVersionMetadata {
-    /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionMetadataInput`](crate::input::UpdateDetectorVersionMetadataInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionMetadataInput`](crate::input::UpdateDetectorVersionMetadataInput).
     pub fn builder() -> crate::input::update_detector_version_metadata_input::Builder {
         crate::input::update_detector_version_metadata_input::Builder::default()
     }
@@ -1990,7 +1990,7 @@ pub struct UpdateDetectorVersionStatus {
     _private: (),
 }
 impl UpdateDetectorVersionStatus {
-    /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionStatusInput`](crate::input::UpdateDetectorVersionStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionStatusInput`](crate::input::UpdateDetectorVersionStatusInput).
     pub fn builder() -> crate::input::update_detector_version_status_input::Builder {
         crate::input::update_detector_version_status_input::Builder::default()
     }
@@ -2024,7 +2024,7 @@ pub struct UpdateEventLabel {
     _private: (),
 }
 impl UpdateEventLabel {
-    /// Creates a new builder-style object to manufacture [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput).
     pub fn builder() -> crate::input::update_event_label_input::Builder {
         crate::input::update_event_label_input::Builder::default()
     }
@@ -2058,7 +2058,7 @@ pub struct UpdateModel {
     _private: (),
 }
 impl UpdateModel {
-    /// Creates a new builder-style object to manufacture [`UpdateModelInput`](crate::input::UpdateModelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateModelInput`](crate::input::UpdateModelInput).
     pub fn builder() -> crate::input::update_model_input::Builder {
         crate::input::update_model_input::Builder::default()
     }
@@ -2090,7 +2090,7 @@ pub struct UpdateModelVersion {
     _private: (),
 }
 impl UpdateModelVersion {
-    /// Creates a new builder-style object to manufacture [`UpdateModelVersionInput`](crate::input::UpdateModelVersionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateModelVersionInput`](crate::input::UpdateModelVersionInput).
     pub fn builder() -> crate::input::update_model_version_input::Builder {
         crate::input::update_model_version_input::Builder::default()
     }
@@ -2124,7 +2124,7 @@ pub struct UpdateModelVersionStatus {
     _private: (),
 }
 impl UpdateModelVersionStatus {
-    /// Creates a new builder-style object to manufacture [`UpdateModelVersionStatusInput`](crate::input::UpdateModelVersionStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateModelVersionStatusInput`](crate::input::UpdateModelVersionStatusInput).
     pub fn builder() -> crate::input::update_model_version_status_input::Builder {
         crate::input::update_model_version_status_input::Builder::default()
     }
@@ -2158,7 +2158,7 @@ pub struct UpdateRuleMetadata {
     _private: (),
 }
 impl UpdateRuleMetadata {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleMetadataInput`](crate::input::UpdateRuleMetadataInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleMetadataInput`](crate::input::UpdateRuleMetadataInput).
     pub fn builder() -> crate::input::update_rule_metadata_input::Builder {
         crate::input::update_rule_metadata_input::Builder::default()
     }
@@ -2192,7 +2192,7 @@ pub struct UpdateRuleVersion {
     _private: (),
 }
 impl UpdateRuleVersion {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleVersionInput`](crate::input::UpdateRuleVersionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleVersionInput`](crate::input::UpdateRuleVersionInput).
     pub fn builder() -> crate::input::update_rule_version_input::Builder {
         crate::input::update_rule_version_input::Builder::default()
     }
@@ -2226,7 +2226,7 @@ pub struct UpdateVariable {
     _private: (),
 }
 impl UpdateVariable {
-    /// Creates a new builder-style object to manufacture [`UpdateVariableInput`](crate::input::UpdateVariableInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVariableInput`](crate::input::UpdateVariableInput).
     pub fn builder() -> crate::input::update_variable_input::Builder {
         crate::input::update_variable_input::Builder::default()
     }

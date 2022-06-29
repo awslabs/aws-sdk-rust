@@ -10,7 +10,7 @@ pub struct AssociateTeamMember {
     _private: (),
 }
 impl AssociateTeamMember {
-    /// Creates a new builder-style object to manufacture [`AssociateTeamMemberInput`](crate::input::AssociateTeamMemberInput)
+    /// Creates a new builder-style object to manufacture [`AssociateTeamMemberInput`](crate::input::AssociateTeamMemberInput).
     pub fn builder() -> crate::input::associate_team_member_input::Builder {
         crate::input::associate_team_member_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateProject {
     _private: (),
 }
 impl CreateProject {
-    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput)
+    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput).
     pub fn builder() -> crate::input::create_project_input::Builder {
         crate::input::create_project_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateUserProfile {
     _private: (),
 }
 impl CreateUserProfile {
-    /// Creates a new builder-style object to manufacture [`CreateUserProfileInput`](crate::input::CreateUserProfileInput)
+    /// Creates a new builder-style object to manufacture [`CreateUserProfileInput`](crate::input::CreateUserProfileInput).
     pub fn builder() -> crate::input::create_user_profile_input::Builder {
         crate::input::create_user_profile_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteProject {
     _private: (),
 }
 impl DeleteProject {
-    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput).
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DeleteUserProfile {
     _private: (),
 }
 impl DeleteUserProfile {
-    /// Creates a new builder-style object to manufacture [`DeleteUserProfileInput`](crate::input::DeleteUserProfileInput)
+    /// Creates a new builder-style object to manufacture [`DeleteUserProfileInput`](crate::input::DeleteUserProfileInput).
     pub fn builder() -> crate::input::delete_user_profile_input::Builder {
         crate::input::delete_user_profile_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DescribeProject {
     _private: (),
 }
 impl DescribeProject {
-    /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput)
+    /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput).
     pub fn builder() -> crate::input::describe_project_input::Builder {
         crate::input::describe_project_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DescribeUserProfile {
     _private: (),
 }
 impl DescribeUserProfile {
-    /// Creates a new builder-style object to manufacture [`DescribeUserProfileInput`](crate::input::DescribeUserProfileInput)
+    /// Creates a new builder-style object to manufacture [`DescribeUserProfileInput`](crate::input::DescribeUserProfileInput).
     pub fn builder() -> crate::input::describe_user_profile_input::Builder {
         crate::input::describe_user_profile_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DisassociateTeamMember {
     _private: (),
 }
 impl DisassociateTeamMember {
-    /// Creates a new builder-style object to manufacture [`DisassociateTeamMemberInput`](crate::input::DisassociateTeamMemberInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateTeamMemberInput`](crate::input::DisassociateTeamMemberInput).
     pub fn builder() -> crate::input::disassociate_team_member_input::Builder {
         crate::input::disassociate_team_member_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct ListProjects {
     _private: (),
 }
 impl ListProjects {
-    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput)
+    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput).
     pub fn builder() -> crate::input::list_projects_input::Builder {
         crate::input::list_projects_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct ListResources {
     _private: (),
 }
 impl ListResources {
-    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput).
     pub fn builder() -> crate::input::list_resources_input::Builder {
         crate::input::list_resources_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct ListTagsForProject {
     _private: (),
 }
 impl ListTagsForProject {
-    /// Creates a new builder-style object to manufacture [`ListTagsForProjectInput`](crate::input::ListTagsForProjectInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForProjectInput`](crate::input::ListTagsForProjectInput).
     pub fn builder() -> crate::input::list_tags_for_project_input::Builder {
         crate::input::list_tags_for_project_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct ListTeamMembers {
     _private: (),
 }
 impl ListTeamMembers {
-    /// Creates a new builder-style object to manufacture [`ListTeamMembersInput`](crate::input::ListTeamMembersInput)
+    /// Creates a new builder-style object to manufacture [`ListTeamMembersInput`](crate::input::ListTeamMembersInput).
     pub fn builder() -> crate::input::list_team_members_input::Builder {
         crate::input::list_team_members_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct ListUserProfiles {
     _private: (),
 }
 impl ListUserProfiles {
-    /// Creates a new builder-style object to manufacture [`ListUserProfilesInput`](crate::input::ListUserProfilesInput)
+    /// Creates a new builder-style object to manufacture [`ListUserProfilesInput`](crate::input::ListUserProfilesInput).
     pub fn builder() -> crate::input::list_user_profiles_input::Builder {
         crate::input::list_user_profiles_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct TagProject {
     _private: (),
 }
 impl TagProject {
-    /// Creates a new builder-style object to manufacture [`TagProjectInput`](crate::input::TagProjectInput)
+    /// Creates a new builder-style object to manufacture [`TagProjectInput`](crate::input::TagProjectInput).
     pub fn builder() -> crate::input::tag_project_input::Builder {
         crate::input::tag_project_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct UntagProject {
     _private: (),
 }
 impl UntagProject {
-    /// Creates a new builder-style object to manufacture [`UntagProjectInput`](crate::input::UntagProjectInput)
+    /// Creates a new builder-style object to manufacture [`UntagProjectInput`](crate::input::UntagProjectInput).
     pub fn builder() -> crate::input::untag_project_input::Builder {
         crate::input::untag_project_input::Builder::default()
     }
@@ -508,7 +508,7 @@ pub struct UpdateProject {
     _private: (),
 }
 impl UpdateProject {
-    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput)
+    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput).
     pub fn builder() -> crate::input::update_project_input::Builder {
         crate::input::update_project_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct UpdateTeamMember {
     _private: (),
 }
 impl UpdateTeamMember {
-    /// Creates a new builder-style object to manufacture [`UpdateTeamMemberInput`](crate::input::UpdateTeamMemberInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTeamMemberInput`](crate::input::UpdateTeamMemberInput).
     pub fn builder() -> crate::input::update_team_member_input::Builder {
         crate::input::update_team_member_input::Builder::default()
     }
@@ -574,7 +574,7 @@ pub struct UpdateUserProfile {
     _private: (),
 }
 impl UpdateUserProfile {
-    /// Creates a new builder-style object to manufacture [`UpdateUserProfileInput`](crate::input::UpdateUserProfileInput)
+    /// Creates a new builder-style object to manufacture [`UpdateUserProfileInput`](crate::input::UpdateUserProfileInput).
     pub fn builder() -> crate::input::update_user_profile_input::Builder {
         crate::input::update_user_profile_input::Builder::default()
     }

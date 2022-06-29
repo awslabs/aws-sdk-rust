@@ -10,7 +10,7 @@ pub struct AssociateApprovalRuleTemplateWithRepository {
     _private: (),
 }
 impl AssociateApprovalRuleTemplateWithRepository {
-    /// Creates a new builder-style object to manufacture [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::input::AssociateApprovalRuleTemplateWithRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::input::AssociateApprovalRuleTemplateWithRepositoryInput).
     pub fn builder() -> crate::input::associate_approval_rule_template_with_repository_input::Builder
     {
         crate::input::associate_approval_rule_template_with_repository_input::Builder::default()
@@ -51,7 +51,7 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositories {
     _private: (),
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositories {
-    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput)
+    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput).
     pub fn builder(
     ) -> crate::input::batch_associate_approval_rule_template_with_repositories_input::Builder {
         crate::input::batch_associate_approval_rule_template_with_repositories_input::Builder::default()
@@ -88,7 +88,7 @@ pub struct BatchDescribeMergeConflicts {
     _private: (),
 }
 impl BatchDescribeMergeConflicts {
-    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsInput`](crate::input::BatchDescribeMergeConflictsInput)
+    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsInput`](crate::input::BatchDescribeMergeConflictsInput).
     pub fn builder() -> crate::input::batch_describe_merge_conflicts_input::Builder {
         crate::input::batch_describe_merge_conflicts_input::Builder::default()
     }
@@ -122,7 +122,7 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositories {
     _private: (),
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositories {
-    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput)
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput).
     pub fn builder(
     ) -> crate::input::batch_disassociate_approval_rule_template_from_repositories_input::Builder
     {
@@ -160,7 +160,7 @@ pub struct BatchGetCommits {
     _private: (),
 }
 impl BatchGetCommits {
-    /// Creates a new builder-style object to manufacture [`BatchGetCommitsInput`](crate::input::BatchGetCommitsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetCommitsInput`](crate::input::BatchGetCommitsInput).
     pub fn builder() -> crate::input::batch_get_commits_input::Builder {
         crate::input::batch_get_commits_input::Builder::default()
     }
@@ -194,7 +194,7 @@ pub struct BatchGetRepositories {
     _private: (),
 }
 impl BatchGetRepositories {
-    /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesInput`](crate::input::BatchGetRepositoriesInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesInput`](crate::input::BatchGetRepositoriesInput).
     pub fn builder() -> crate::input::batch_get_repositories_input::Builder {
         crate::input::batch_get_repositories_input::Builder::default()
     }
@@ -228,7 +228,7 @@ pub struct CreateApprovalRuleTemplate {
     _private: (),
 }
 impl CreateApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateApprovalRuleTemplateInput`](crate::input::CreateApprovalRuleTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateApprovalRuleTemplateInput`](crate::input::CreateApprovalRuleTemplateInput).
     pub fn builder() -> crate::input::create_approval_rule_template_input::Builder {
         crate::input::create_approval_rule_template_input::Builder::default()
     }
@@ -262,7 +262,7 @@ pub struct CreateBranch {
     _private: (),
 }
 impl CreateBranch {
-    /// Creates a new builder-style object to manufacture [`CreateBranchInput`](crate::input::CreateBranchInput)
+    /// Creates a new builder-style object to manufacture [`CreateBranchInput`](crate::input::CreateBranchInput).
     pub fn builder() -> crate::input::create_branch_input::Builder {
         crate::input::create_branch_input::Builder::default()
     }
@@ -294,7 +294,7 @@ pub struct CreateCommit {
     _private: (),
 }
 impl CreateCommit {
-    /// Creates a new builder-style object to manufacture [`CreateCommitInput`](crate::input::CreateCommitInput)
+    /// Creates a new builder-style object to manufacture [`CreateCommitInput`](crate::input::CreateCommitInput).
     pub fn builder() -> crate::input::create_commit_input::Builder {
         crate::input::create_commit_input::Builder::default()
     }
@@ -326,7 +326,7 @@ pub struct CreatePullRequest {
     _private: (),
 }
 impl CreatePullRequest {
-    /// Creates a new builder-style object to manufacture [`CreatePullRequestInput`](crate::input::CreatePullRequestInput)
+    /// Creates a new builder-style object to manufacture [`CreatePullRequestInput`](crate::input::CreatePullRequestInput).
     pub fn builder() -> crate::input::create_pull_request_input::Builder {
         crate::input::create_pull_request_input::Builder::default()
     }
@@ -360,7 +360,7 @@ pub struct CreatePullRequestApprovalRule {
     _private: (),
 }
 impl CreatePullRequestApprovalRule {
-    /// Creates a new builder-style object to manufacture [`CreatePullRequestApprovalRuleInput`](crate::input::CreatePullRequestApprovalRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreatePullRequestApprovalRuleInput`](crate::input::CreatePullRequestApprovalRuleInput).
     pub fn builder() -> crate::input::create_pull_request_approval_rule_input::Builder {
         crate::input::create_pull_request_approval_rule_input::Builder::default()
     }
@@ -394,7 +394,7 @@ pub struct CreateRepository {
     _private: (),
 }
 impl CreateRepository {
-    /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
     pub fn builder() -> crate::input::create_repository_input::Builder {
         crate::input::create_repository_input::Builder::default()
     }
@@ -428,7 +428,7 @@ pub struct CreateUnreferencedMergeCommit {
     _private: (),
 }
 impl CreateUnreferencedMergeCommit {
-    /// Creates a new builder-style object to manufacture [`CreateUnreferencedMergeCommitInput`](crate::input::CreateUnreferencedMergeCommitInput)
+    /// Creates a new builder-style object to manufacture [`CreateUnreferencedMergeCommitInput`](crate::input::CreateUnreferencedMergeCommitInput).
     pub fn builder() -> crate::input::create_unreferenced_merge_commit_input::Builder {
         crate::input::create_unreferenced_merge_commit_input::Builder::default()
     }
@@ -462,7 +462,7 @@ pub struct DeleteApprovalRuleTemplate {
     _private: (),
 }
 impl DeleteApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateInput`](crate::input::DeleteApprovalRuleTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateInput`](crate::input::DeleteApprovalRuleTemplateInput).
     pub fn builder() -> crate::input::delete_approval_rule_template_input::Builder {
         crate::input::delete_approval_rule_template_input::Builder::default()
     }
@@ -496,7 +496,7 @@ pub struct DeleteBranch {
     _private: (),
 }
 impl DeleteBranch {
-    /// Creates a new builder-style object to manufacture [`DeleteBranchInput`](crate::input::DeleteBranchInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBranchInput`](crate::input::DeleteBranchInput).
     pub fn builder() -> crate::input::delete_branch_input::Builder {
         crate::input::delete_branch_input::Builder::default()
     }
@@ -528,7 +528,7 @@ pub struct DeleteCommentContent {
     _private: (),
 }
 impl DeleteCommentContent {
-    /// Creates a new builder-style object to manufacture [`DeleteCommentContentInput`](crate::input::DeleteCommentContentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCommentContentInput`](crate::input::DeleteCommentContentInput).
     pub fn builder() -> crate::input::delete_comment_content_input::Builder {
         crate::input::delete_comment_content_input::Builder::default()
     }
@@ -562,7 +562,7 @@ pub struct DeleteFile {
     _private: (),
 }
 impl DeleteFile {
-    /// Creates a new builder-style object to manufacture [`DeleteFileInput`](crate::input::DeleteFileInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFileInput`](crate::input::DeleteFileInput).
     pub fn builder() -> crate::input::delete_file_input::Builder {
         crate::input::delete_file_input::Builder::default()
     }
@@ -594,7 +594,7 @@ pub struct DeletePullRequestApprovalRule {
     _private: (),
 }
 impl DeletePullRequestApprovalRule {
-    /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleInput`](crate::input::DeletePullRequestApprovalRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleInput`](crate::input::DeletePullRequestApprovalRuleInput).
     pub fn builder() -> crate::input::delete_pull_request_approval_rule_input::Builder {
         crate::input::delete_pull_request_approval_rule_input::Builder::default()
     }
@@ -628,7 +628,7 @@ pub struct DeleteRepository {
     _private: (),
 }
 impl DeleteRepository {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
     pub fn builder() -> crate::input::delete_repository_input::Builder {
         crate::input::delete_repository_input::Builder::default()
     }
@@ -662,7 +662,7 @@ pub struct DescribeMergeConflicts {
     _private: (),
 }
 impl DescribeMergeConflicts {
-    /// Creates a new builder-style object to manufacture [`DescribeMergeConflictsInput`](crate::input::DescribeMergeConflictsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMergeConflictsInput`](crate::input::DescribeMergeConflictsInput).
     pub fn builder() -> crate::input::describe_merge_conflicts_input::Builder {
         crate::input::describe_merge_conflicts_input::Builder::default()
     }
@@ -696,7 +696,7 @@ pub struct DescribePullRequestEvents {
     _private: (),
 }
 impl DescribePullRequestEvents {
-    /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsInput`](crate::input::DescribePullRequestEventsInput)
+    /// Creates a new builder-style object to manufacture [`DescribePullRequestEventsInput`](crate::input::DescribePullRequestEventsInput).
     pub fn builder() -> crate::input::describe_pull_request_events_input::Builder {
         crate::input::describe_pull_request_events_input::Builder::default()
     }
@@ -730,7 +730,7 @@ pub struct DisassociateApprovalRuleTemplateFromRepository {
     _private: (),
 }
 impl DisassociateApprovalRuleTemplateFromRepository {
-    /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput).
     pub fn builder(
     ) -> crate::input::disassociate_approval_rule_template_from_repository_input::Builder {
         crate::input::disassociate_approval_rule_template_from_repository_input::Builder::default()
@@ -769,7 +769,7 @@ pub struct EvaluatePullRequestApprovalRules {
     _private: (),
 }
 impl EvaluatePullRequestApprovalRules {
-    /// Creates a new builder-style object to manufacture [`EvaluatePullRequestApprovalRulesInput`](crate::input::EvaluatePullRequestApprovalRulesInput)
+    /// Creates a new builder-style object to manufacture [`EvaluatePullRequestApprovalRulesInput`](crate::input::EvaluatePullRequestApprovalRulesInput).
     pub fn builder() -> crate::input::evaluate_pull_request_approval_rules_input::Builder {
         crate::input::evaluate_pull_request_approval_rules_input::Builder::default()
     }
@@ -803,7 +803,7 @@ pub struct GetApprovalRuleTemplate {
     _private: (),
 }
 impl GetApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`GetApprovalRuleTemplateInput`](crate::input::GetApprovalRuleTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetApprovalRuleTemplateInput`](crate::input::GetApprovalRuleTemplateInput).
     pub fn builder() -> crate::input::get_approval_rule_template_input::Builder {
         crate::input::get_approval_rule_template_input::Builder::default()
     }
@@ -837,7 +837,7 @@ pub struct GetBlob {
     _private: (),
 }
 impl GetBlob {
-    /// Creates a new builder-style object to manufacture [`GetBlobInput`](crate::input::GetBlobInput)
+    /// Creates a new builder-style object to manufacture [`GetBlobInput`](crate::input::GetBlobInput).
     pub fn builder() -> crate::input::get_blob_input::Builder {
         crate::input::get_blob_input::Builder::default()
     }
@@ -868,7 +868,7 @@ pub struct GetBranch {
     _private: (),
 }
 impl GetBranch {
-    /// Creates a new builder-style object to manufacture [`GetBranchInput`](crate::input::GetBranchInput)
+    /// Creates a new builder-style object to manufacture [`GetBranchInput`](crate::input::GetBranchInput).
     pub fn builder() -> crate::input::get_branch_input::Builder {
         crate::input::get_branch_input::Builder::default()
     }
@@ -899,7 +899,7 @@ pub struct GetComment {
     _private: (),
 }
 impl GetComment {
-    /// Creates a new builder-style object to manufacture [`GetCommentInput`](crate::input::GetCommentInput)
+    /// Creates a new builder-style object to manufacture [`GetCommentInput`](crate::input::GetCommentInput).
     pub fn builder() -> crate::input::get_comment_input::Builder {
         crate::input::get_comment_input::Builder::default()
     }
@@ -931,7 +931,7 @@ pub struct GetCommentReactions {
     _private: (),
 }
 impl GetCommentReactions {
-    /// Creates a new builder-style object to manufacture [`GetCommentReactionsInput`](crate::input::GetCommentReactionsInput)
+    /// Creates a new builder-style object to manufacture [`GetCommentReactionsInput`](crate::input::GetCommentReactionsInput).
     pub fn builder() -> crate::input::get_comment_reactions_input::Builder {
         crate::input::get_comment_reactions_input::Builder::default()
     }
@@ -965,7 +965,7 @@ pub struct GetCommentsForComparedCommit {
     _private: (),
 }
 impl GetCommentsForComparedCommit {
-    /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitInput`](crate::input::GetCommentsForComparedCommitInput)
+    /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitInput`](crate::input::GetCommentsForComparedCommitInput).
     pub fn builder() -> crate::input::get_comments_for_compared_commit_input::Builder {
         crate::input::get_comments_for_compared_commit_input::Builder::default()
     }
@@ -999,7 +999,7 @@ pub struct GetCommentsForPullRequest {
     _private: (),
 }
 impl GetCommentsForPullRequest {
-    /// Creates a new builder-style object to manufacture [`GetCommentsForPullRequestInput`](crate::input::GetCommentsForPullRequestInput)
+    /// Creates a new builder-style object to manufacture [`GetCommentsForPullRequestInput`](crate::input::GetCommentsForPullRequestInput).
     pub fn builder() -> crate::input::get_comments_for_pull_request_input::Builder {
         crate::input::get_comments_for_pull_request_input::Builder::default()
     }
@@ -1033,7 +1033,7 @@ pub struct GetCommit {
     _private: (),
 }
 impl GetCommit {
-    /// Creates a new builder-style object to manufacture [`GetCommitInput`](crate::input::GetCommitInput)
+    /// Creates a new builder-style object to manufacture [`GetCommitInput`](crate::input::GetCommitInput).
     pub fn builder() -> crate::input::get_commit_input::Builder {
         crate::input::get_commit_input::Builder::default()
     }
@@ -1064,7 +1064,7 @@ pub struct GetDifferences {
     _private: (),
 }
 impl GetDifferences {
-    /// Creates a new builder-style object to manufacture [`GetDifferencesInput`](crate::input::GetDifferencesInput)
+    /// Creates a new builder-style object to manufacture [`GetDifferencesInput`](crate::input::GetDifferencesInput).
     pub fn builder() -> crate::input::get_differences_input::Builder {
         crate::input::get_differences_input::Builder::default()
     }
@@ -1096,7 +1096,7 @@ pub struct GetFile {
     _private: (),
 }
 impl GetFile {
-    /// Creates a new builder-style object to manufacture [`GetFileInput`](crate::input::GetFileInput)
+    /// Creates a new builder-style object to manufacture [`GetFileInput`](crate::input::GetFileInput).
     pub fn builder() -> crate::input::get_file_input::Builder {
         crate::input::get_file_input::Builder::default()
     }
@@ -1127,7 +1127,7 @@ pub struct GetFolder {
     _private: (),
 }
 impl GetFolder {
-    /// Creates a new builder-style object to manufacture [`GetFolderInput`](crate::input::GetFolderInput)
+    /// Creates a new builder-style object to manufacture [`GetFolderInput`](crate::input::GetFolderInput).
     pub fn builder() -> crate::input::get_folder_input::Builder {
         crate::input::get_folder_input::Builder::default()
     }
@@ -1158,7 +1158,7 @@ pub struct GetMergeCommit {
     _private: (),
 }
 impl GetMergeCommit {
-    /// Creates a new builder-style object to manufacture [`GetMergeCommitInput`](crate::input::GetMergeCommitInput)
+    /// Creates a new builder-style object to manufacture [`GetMergeCommitInput`](crate::input::GetMergeCommitInput).
     pub fn builder() -> crate::input::get_merge_commit_input::Builder {
         crate::input::get_merge_commit_input::Builder::default()
     }
@@ -1190,7 +1190,7 @@ pub struct GetMergeConflicts {
     _private: (),
 }
 impl GetMergeConflicts {
-    /// Creates a new builder-style object to manufacture [`GetMergeConflictsInput`](crate::input::GetMergeConflictsInput)
+    /// Creates a new builder-style object to manufacture [`GetMergeConflictsInput`](crate::input::GetMergeConflictsInput).
     pub fn builder() -> crate::input::get_merge_conflicts_input::Builder {
         crate::input::get_merge_conflicts_input::Builder::default()
     }
@@ -1224,7 +1224,7 @@ pub struct GetMergeOptions {
     _private: (),
 }
 impl GetMergeOptions {
-    /// Creates a new builder-style object to manufacture [`GetMergeOptionsInput`](crate::input::GetMergeOptionsInput)
+    /// Creates a new builder-style object to manufacture [`GetMergeOptionsInput`](crate::input::GetMergeOptionsInput).
     pub fn builder() -> crate::input::get_merge_options_input::Builder {
         crate::input::get_merge_options_input::Builder::default()
     }
@@ -1258,7 +1258,7 @@ pub struct GetPullRequest {
     _private: (),
 }
 impl GetPullRequest {
-    /// Creates a new builder-style object to manufacture [`GetPullRequestInput`](crate::input::GetPullRequestInput)
+    /// Creates a new builder-style object to manufacture [`GetPullRequestInput`](crate::input::GetPullRequestInput).
     pub fn builder() -> crate::input::get_pull_request_input::Builder {
         crate::input::get_pull_request_input::Builder::default()
     }
@@ -1290,7 +1290,7 @@ pub struct GetPullRequestApprovalStates {
     _private: (),
 }
 impl GetPullRequestApprovalStates {
-    /// Creates a new builder-style object to manufacture [`GetPullRequestApprovalStatesInput`](crate::input::GetPullRequestApprovalStatesInput)
+    /// Creates a new builder-style object to manufacture [`GetPullRequestApprovalStatesInput`](crate::input::GetPullRequestApprovalStatesInput).
     pub fn builder() -> crate::input::get_pull_request_approval_states_input::Builder {
         crate::input::get_pull_request_approval_states_input::Builder::default()
     }
@@ -1324,7 +1324,7 @@ pub struct GetPullRequestOverrideState {
     _private: (),
 }
 impl GetPullRequestOverrideState {
-    /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateInput`](crate::input::GetPullRequestOverrideStateInput)
+    /// Creates a new builder-style object to manufacture [`GetPullRequestOverrideStateInput`](crate::input::GetPullRequestOverrideStateInput).
     pub fn builder() -> crate::input::get_pull_request_override_state_input::Builder {
         crate::input::get_pull_request_override_state_input::Builder::default()
     }
@@ -1358,7 +1358,7 @@ pub struct GetRepository {
     _private: (),
 }
 impl GetRepository {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryInput`](crate::input::GetRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`GetRepositoryInput`](crate::input::GetRepositoryInput).
     pub fn builder() -> crate::input::get_repository_input::Builder {
         crate::input::get_repository_input::Builder::default()
     }
@@ -1390,7 +1390,7 @@ pub struct GetRepositoryTriggers {
     _private: (),
 }
 impl GetRepositoryTriggers {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryTriggersInput`](crate::input::GetRepositoryTriggersInput)
+    /// Creates a new builder-style object to manufacture [`GetRepositoryTriggersInput`](crate::input::GetRepositoryTriggersInput).
     pub fn builder() -> crate::input::get_repository_triggers_input::Builder {
         crate::input::get_repository_triggers_input::Builder::default()
     }
@@ -1424,7 +1424,7 @@ pub struct ListApprovalRuleTemplates {
     _private: (),
 }
 impl ListApprovalRuleTemplates {
-    /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesInput`](crate::input::ListApprovalRuleTemplatesInput)
+    /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesInput`](crate::input::ListApprovalRuleTemplatesInput).
     pub fn builder() -> crate::input::list_approval_rule_templates_input::Builder {
         crate::input::list_approval_rule_templates_input::Builder::default()
     }
@@ -1458,7 +1458,7 @@ pub struct ListAssociatedApprovalRuleTemplatesForRepository {
     _private: (),
 }
 impl ListAssociatedApprovalRuleTemplatesForRepository {
-    /// Creates a new builder-style object to manufacture [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput).
     pub fn builder(
     ) -> crate::input::list_associated_approval_rule_templates_for_repository_input::Builder {
         crate::input::list_associated_approval_rule_templates_for_repository_input::Builder::default(
@@ -1496,7 +1496,7 @@ pub struct ListBranches {
     _private: (),
 }
 impl ListBranches {
-    /// Creates a new builder-style object to manufacture [`ListBranchesInput`](crate::input::ListBranchesInput)
+    /// Creates a new builder-style object to manufacture [`ListBranchesInput`](crate::input::ListBranchesInput).
     pub fn builder() -> crate::input::list_branches_input::Builder {
         crate::input::list_branches_input::Builder::default()
     }
@@ -1528,7 +1528,7 @@ pub struct ListPullRequests {
     _private: (),
 }
 impl ListPullRequests {
-    /// Creates a new builder-style object to manufacture [`ListPullRequestsInput`](crate::input::ListPullRequestsInput)
+    /// Creates a new builder-style object to manufacture [`ListPullRequestsInput`](crate::input::ListPullRequestsInput).
     pub fn builder() -> crate::input::list_pull_requests_input::Builder {
         crate::input::list_pull_requests_input::Builder::default()
     }
@@ -1562,7 +1562,7 @@ pub struct ListRepositories {
     _private: (),
 }
 impl ListRepositories {
-    /// Creates a new builder-style object to manufacture [`ListRepositoriesInput`](crate::input::ListRepositoriesInput)
+    /// Creates a new builder-style object to manufacture [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
     pub fn builder() -> crate::input::list_repositories_input::Builder {
         crate::input::list_repositories_input::Builder::default()
     }
@@ -1596,7 +1596,7 @@ pub struct ListRepositoriesForApprovalRuleTemplate {
     _private: (),
 }
 impl ListRepositoriesForApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateInput`](crate::input::ListRepositoriesForApprovalRuleTemplateInput)
+    /// Creates a new builder-style object to manufacture [`ListRepositoriesForApprovalRuleTemplateInput`](crate::input::ListRepositoriesForApprovalRuleTemplateInput).
     pub fn builder() -> crate::input::list_repositories_for_approval_rule_template_input::Builder {
         crate::input::list_repositories_for_approval_rule_template_input::Builder::default()
     }
@@ -1634,7 +1634,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1668,7 +1668,7 @@ pub struct MergeBranchesByFastForward {
     _private: (),
 }
 impl MergeBranchesByFastForward {
-    /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardInput`](crate::input::MergeBranchesByFastForwardInput)
+    /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardInput`](crate::input::MergeBranchesByFastForwardInput).
     pub fn builder() -> crate::input::merge_branches_by_fast_forward_input::Builder {
         crate::input::merge_branches_by_fast_forward_input::Builder::default()
     }
@@ -1702,7 +1702,7 @@ pub struct MergeBranchesBySquash {
     _private: (),
 }
 impl MergeBranchesBySquash {
-    /// Creates a new builder-style object to manufacture [`MergeBranchesBySquashInput`](crate::input::MergeBranchesBySquashInput)
+    /// Creates a new builder-style object to manufacture [`MergeBranchesBySquashInput`](crate::input::MergeBranchesBySquashInput).
     pub fn builder() -> crate::input::merge_branches_by_squash_input::Builder {
         crate::input::merge_branches_by_squash_input::Builder::default()
     }
@@ -1736,7 +1736,7 @@ pub struct MergeBranchesByThreeWay {
     _private: (),
 }
 impl MergeBranchesByThreeWay {
-    /// Creates a new builder-style object to manufacture [`MergeBranchesByThreeWayInput`](crate::input::MergeBranchesByThreeWayInput)
+    /// Creates a new builder-style object to manufacture [`MergeBranchesByThreeWayInput`](crate::input::MergeBranchesByThreeWayInput).
     pub fn builder() -> crate::input::merge_branches_by_three_way_input::Builder {
         crate::input::merge_branches_by_three_way_input::Builder::default()
     }
@@ -1770,7 +1770,7 @@ pub struct MergePullRequestByFastForward {
     _private: (),
 }
 impl MergePullRequestByFastForward {
-    /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardInput`](crate::input::MergePullRequestByFastForwardInput)
+    /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardInput`](crate::input::MergePullRequestByFastForwardInput).
     pub fn builder() -> crate::input::merge_pull_request_by_fast_forward_input::Builder {
         crate::input::merge_pull_request_by_fast_forward_input::Builder::default()
     }
@@ -1804,7 +1804,7 @@ pub struct MergePullRequestBySquash {
     _private: (),
 }
 impl MergePullRequestBySquash {
-    /// Creates a new builder-style object to manufacture [`MergePullRequestBySquashInput`](crate::input::MergePullRequestBySquashInput)
+    /// Creates a new builder-style object to manufacture [`MergePullRequestBySquashInput`](crate::input::MergePullRequestBySquashInput).
     pub fn builder() -> crate::input::merge_pull_request_by_squash_input::Builder {
         crate::input::merge_pull_request_by_squash_input::Builder::default()
     }
@@ -1838,7 +1838,7 @@ pub struct MergePullRequestByThreeWay {
     _private: (),
 }
 impl MergePullRequestByThreeWay {
-    /// Creates a new builder-style object to manufacture [`MergePullRequestByThreeWayInput`](crate::input::MergePullRequestByThreeWayInput)
+    /// Creates a new builder-style object to manufacture [`MergePullRequestByThreeWayInput`](crate::input::MergePullRequestByThreeWayInput).
     pub fn builder() -> crate::input::merge_pull_request_by_three_way_input::Builder {
         crate::input::merge_pull_request_by_three_way_input::Builder::default()
     }
@@ -1872,7 +1872,7 @@ pub struct OverridePullRequestApprovalRules {
     _private: (),
 }
 impl OverridePullRequestApprovalRules {
-    /// Creates a new builder-style object to manufacture [`OverridePullRequestApprovalRulesInput`](crate::input::OverridePullRequestApprovalRulesInput)
+    /// Creates a new builder-style object to manufacture [`OverridePullRequestApprovalRulesInput`](crate::input::OverridePullRequestApprovalRulesInput).
     pub fn builder() -> crate::input::override_pull_request_approval_rules_input::Builder {
         crate::input::override_pull_request_approval_rules_input::Builder::default()
     }
@@ -1906,7 +1906,7 @@ pub struct PostCommentForComparedCommit {
     _private: (),
 }
 impl PostCommentForComparedCommit {
-    /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitInput`](crate::input::PostCommentForComparedCommitInput)
+    /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitInput`](crate::input::PostCommentForComparedCommitInput).
     pub fn builder() -> crate::input::post_comment_for_compared_commit_input::Builder {
         crate::input::post_comment_for_compared_commit_input::Builder::default()
     }
@@ -1940,7 +1940,7 @@ pub struct PostCommentForPullRequest {
     _private: (),
 }
 impl PostCommentForPullRequest {
-    /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestInput`](crate::input::PostCommentForPullRequestInput)
+    /// Creates a new builder-style object to manufacture [`PostCommentForPullRequestInput`](crate::input::PostCommentForPullRequestInput).
     pub fn builder() -> crate::input::post_comment_for_pull_request_input::Builder {
         crate::input::post_comment_for_pull_request_input::Builder::default()
     }
@@ -1974,7 +1974,7 @@ pub struct PostCommentReply {
     _private: (),
 }
 impl PostCommentReply {
-    /// Creates a new builder-style object to manufacture [`PostCommentReplyInput`](crate::input::PostCommentReplyInput)
+    /// Creates a new builder-style object to manufacture [`PostCommentReplyInput`](crate::input::PostCommentReplyInput).
     pub fn builder() -> crate::input::post_comment_reply_input::Builder {
         crate::input::post_comment_reply_input::Builder::default()
     }
@@ -2008,7 +2008,7 @@ pub struct PutCommentReaction {
     _private: (),
 }
 impl PutCommentReaction {
-    /// Creates a new builder-style object to manufacture [`PutCommentReactionInput`](crate::input::PutCommentReactionInput)
+    /// Creates a new builder-style object to manufacture [`PutCommentReactionInput`](crate::input::PutCommentReactionInput).
     pub fn builder() -> crate::input::put_comment_reaction_input::Builder {
         crate::input::put_comment_reaction_input::Builder::default()
     }
@@ -2042,7 +2042,7 @@ pub struct PutFile {
     _private: (),
 }
 impl PutFile {
-    /// Creates a new builder-style object to manufacture [`PutFileInput`](crate::input::PutFileInput)
+    /// Creates a new builder-style object to manufacture [`PutFileInput`](crate::input::PutFileInput).
     pub fn builder() -> crate::input::put_file_input::Builder {
         crate::input::put_file_input::Builder::default()
     }
@@ -2073,7 +2073,7 @@ pub struct PutRepositoryTriggers {
     _private: (),
 }
 impl PutRepositoryTriggers {
-    /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersInput`](crate::input::PutRepositoryTriggersInput)
+    /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersInput`](crate::input::PutRepositoryTriggersInput).
     pub fn builder() -> crate::input::put_repository_triggers_input::Builder {
         crate::input::put_repository_triggers_input::Builder::default()
     }
@@ -2107,7 +2107,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -2139,7 +2139,7 @@ pub struct TestRepositoryTriggers {
     _private: (),
 }
 impl TestRepositoryTriggers {
-    /// Creates a new builder-style object to manufacture [`TestRepositoryTriggersInput`](crate::input::TestRepositoryTriggersInput)
+    /// Creates a new builder-style object to manufacture [`TestRepositoryTriggersInput`](crate::input::TestRepositoryTriggersInput).
     pub fn builder() -> crate::input::test_repository_triggers_input::Builder {
         crate::input::test_repository_triggers_input::Builder::default()
     }
@@ -2173,7 +2173,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -2205,7 +2205,7 @@ pub struct UpdateApprovalRuleTemplateContent {
     _private: (),
 }
 impl UpdateApprovalRuleTemplateContent {
-    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentInput`](crate::input::UpdateApprovalRuleTemplateContentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentInput`](crate::input::UpdateApprovalRuleTemplateContentInput).
     pub fn builder() -> crate::input::update_approval_rule_template_content_input::Builder {
         crate::input::update_approval_rule_template_content_input::Builder::default()
     }
@@ -2239,7 +2239,7 @@ pub struct UpdateApprovalRuleTemplateDescription {
     _private: (),
 }
 impl UpdateApprovalRuleTemplateDescription {
-    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateDescriptionInput`](crate::input::UpdateApprovalRuleTemplateDescriptionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateDescriptionInput`](crate::input::UpdateApprovalRuleTemplateDescriptionInput).
     pub fn builder() -> crate::input::update_approval_rule_template_description_input::Builder {
         crate::input::update_approval_rule_template_description_input::Builder::default()
     }
@@ -2275,7 +2275,7 @@ pub struct UpdateApprovalRuleTemplateName {
     _private: (),
 }
 impl UpdateApprovalRuleTemplateName {
-    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateNameInput`](crate::input::UpdateApprovalRuleTemplateNameInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateNameInput`](crate::input::UpdateApprovalRuleTemplateNameInput).
     pub fn builder() -> crate::input::update_approval_rule_template_name_input::Builder {
         crate::input::update_approval_rule_template_name_input::Builder::default()
     }
@@ -2309,7 +2309,7 @@ pub struct UpdateComment {
     _private: (),
 }
 impl UpdateComment {
-    /// Creates a new builder-style object to manufacture [`UpdateCommentInput`](crate::input::UpdateCommentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCommentInput`](crate::input::UpdateCommentInput).
     pub fn builder() -> crate::input::update_comment_input::Builder {
         crate::input::update_comment_input::Builder::default()
     }
@@ -2341,7 +2341,7 @@ pub struct UpdateDefaultBranch {
     _private: (),
 }
 impl UpdateDefaultBranch {
-    /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchInput`](crate::input::UpdateDefaultBranchInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchInput`](crate::input::UpdateDefaultBranchInput).
     pub fn builder() -> crate::input::update_default_branch_input::Builder {
         crate::input::update_default_branch_input::Builder::default()
     }
@@ -2375,7 +2375,7 @@ pub struct UpdatePullRequestApprovalRuleContent {
     _private: (),
 }
 impl UpdatePullRequestApprovalRuleContent {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalRuleContentInput`](crate::input::UpdatePullRequestApprovalRuleContentInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalRuleContentInput`](crate::input::UpdatePullRequestApprovalRuleContentInput).
     pub fn builder() -> crate::input::update_pull_request_approval_rule_content_input::Builder {
         crate::input::update_pull_request_approval_rule_content_input::Builder::default()
     }
@@ -2411,7 +2411,7 @@ pub struct UpdatePullRequestApprovalState {
     _private: (),
 }
 impl UpdatePullRequestApprovalState {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateInput`](crate::input::UpdatePullRequestApprovalStateInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalStateInput`](crate::input::UpdatePullRequestApprovalStateInput).
     pub fn builder() -> crate::input::update_pull_request_approval_state_input::Builder {
         crate::input::update_pull_request_approval_state_input::Builder::default()
     }
@@ -2445,7 +2445,7 @@ pub struct UpdatePullRequestDescription {
     _private: (),
 }
 impl UpdatePullRequestDescription {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionInput`](crate::input::UpdatePullRequestDescriptionInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestDescriptionInput`](crate::input::UpdatePullRequestDescriptionInput).
     pub fn builder() -> crate::input::update_pull_request_description_input::Builder {
         crate::input::update_pull_request_description_input::Builder::default()
     }
@@ -2479,7 +2479,7 @@ pub struct UpdatePullRequestStatus {
     _private: (),
 }
 impl UpdatePullRequestStatus {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusInput`](crate::input::UpdatePullRequestStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusInput`](crate::input::UpdatePullRequestStatusInput).
     pub fn builder() -> crate::input::update_pull_request_status_input::Builder {
         crate::input::update_pull_request_status_input::Builder::default()
     }
@@ -2513,7 +2513,7 @@ pub struct UpdatePullRequestTitle {
     _private: (),
 }
 impl UpdatePullRequestTitle {
-    /// Creates a new builder-style object to manufacture [`UpdatePullRequestTitleInput`](crate::input::UpdatePullRequestTitleInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePullRequestTitleInput`](crate::input::UpdatePullRequestTitleInput).
     pub fn builder() -> crate::input::update_pull_request_title_input::Builder {
         crate::input::update_pull_request_title_input::Builder::default()
     }
@@ -2547,7 +2547,7 @@ pub struct UpdateRepositoryDescription {
     _private: (),
 }
 impl UpdateRepositoryDescription {
-    /// Creates a new builder-style object to manufacture [`UpdateRepositoryDescriptionInput`](crate::input::UpdateRepositoryDescriptionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRepositoryDescriptionInput`](crate::input::UpdateRepositoryDescriptionInput).
     pub fn builder() -> crate::input::update_repository_description_input::Builder {
         crate::input::update_repository_description_input::Builder::default()
     }
@@ -2581,7 +2581,7 @@ pub struct UpdateRepositoryName {
     _private: (),
 }
 impl UpdateRepositoryName {
-    /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameInput`](crate::input::UpdateRepositoryNameInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameInput`](crate::input::UpdateRepositoryNameInput).
     pub fn builder() -> crate::input::update_repository_name_input::Builder {
         crate::input::update_repository_name_input::Builder::default()
     }

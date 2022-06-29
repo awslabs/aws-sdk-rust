@@ -10,7 +10,7 @@ pub struct PutEvents {
     _private: (),
 }
 impl PutEvents {
-    /// Creates a new builder-style object to manufacture [`PutEventsInput`](crate::input::PutEventsInput)
+    /// Creates a new builder-style object to manufacture [`PutEventsInput`](crate::input::PutEventsInput).
     pub fn builder() -> crate::input::put_events_input::Builder {
         crate::input::put_events_input::Builder::default()
     }
@@ -41,7 +41,7 @@ pub struct PutItems {
     _private: (),
 }
 impl PutItems {
-    /// Creates a new builder-style object to manufacture [`PutItemsInput`](crate::input::PutItemsInput)
+    /// Creates a new builder-style object to manufacture [`PutItemsInput`](crate::input::PutItemsInput).
     pub fn builder() -> crate::input::put_items_input::Builder {
         crate::input::put_items_input::Builder::default()
     }
@@ -72,7 +72,7 @@ pub struct PutUsers {
     _private: (),
 }
 impl PutUsers {
-    /// Creates a new builder-style object to manufacture [`PutUsersInput`](crate::input::PutUsersInput)
+    /// Creates a new builder-style object to manufacture [`PutUsersInput`](crate::input::PutUsersInput).
     pub fn builder() -> crate::input::put_users_input::Builder {
         crate::input::put_users_input::Builder::default()
     }

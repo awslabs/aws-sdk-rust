@@ -10,7 +10,7 @@ pub struct CreateConfigurationSet {
     _private: (),
 }
 impl CreateConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
     pub fn builder() -> crate::input::create_configuration_set_input::Builder {
         crate::input::create_configuration_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateConfigurationSetEventDestination {
     _private: (),
 }
 impl CreateConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::create_configuration_set_event_destination_input::Builder {
         crate::input::create_configuration_set_event_destination_input::Builder::default()
     }
@@ -80,7 +80,7 @@ pub struct DeleteConfigurationSet {
     _private: (),
 }
 impl DeleteConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
     pub fn builder() -> crate::input::delete_configuration_set_input::Builder {
         crate::input::delete_configuration_set_input::Builder::default()
     }
@@ -114,7 +114,7 @@ pub struct DeleteConfigurationSetEventDestination {
     _private: (),
 }
 impl DeleteConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::delete_configuration_set_event_destination_input::Builder {
         crate::input::delete_configuration_set_event_destination_input::Builder::default()
     }
@@ -150,7 +150,7 @@ pub struct GetConfigurationSetEventDestinations {
     _private: (),
 }
 impl GetConfigurationSetEventDestinations {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput)
+    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
     pub fn builder() -> crate::input::get_configuration_set_event_destinations_input::Builder {
         crate::input::get_configuration_set_event_destinations_input::Builder::default()
     }
@@ -186,7 +186,7 @@ pub struct ListConfigurationSets {
     _private: (),
 }
 impl ListConfigurationSets {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
     pub fn builder() -> crate::input::list_configuration_sets_input::Builder {
         crate::input::list_configuration_sets_input::Builder::default()
     }
@@ -220,7 +220,7 @@ pub struct SendVoiceMessage {
     _private: (),
 }
 impl SendVoiceMessage {
-    /// Creates a new builder-style object to manufacture [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput)
+    /// Creates a new builder-style object to manufacture [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
     pub fn builder() -> crate::input::send_voice_message_input::Builder {
         crate::input::send_voice_message_input::Builder::default()
     }
@@ -254,7 +254,7 @@ pub struct UpdateConfigurationSetEventDestination {
     _private: (),
 }
 impl UpdateConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::update_configuration_set_event_destination_input::Builder {
         crate::input::update_configuration_set_event_destination_input::Builder::default()
     }

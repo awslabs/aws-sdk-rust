@@ -456,11 +456,10 @@ impl std::fmt::Display for ValidationException {
     }
 }
 impl std::error::Error for ValidationException {}
-/// See [`ValidationException`](crate::error::ValidationException)
+/// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
 
-    /// A builder for [`ValidationException`](crate::error::ValidationException)
-    #[non_exhaustive]
+    /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -476,7 +475,7 @@ pub mod validation_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
                 message: self.message,
@@ -485,7 +484,7 @@ pub mod validation_exception {
     }
 }
 impl ValidationException {
-    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
     pub fn builder() -> crate::error::validation_exception::Builder {
         crate::error::validation_exception::Builder::default()
     }
@@ -521,11 +520,10 @@ impl std::fmt::Display for ReportLimitReachedException {
     }
 }
 impl std::error::Error for ReportLimitReachedException {}
-/// See [`ReportLimitReachedException`](crate::error::ReportLimitReachedException)
+/// See [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
 pub mod report_limit_reached_exception {
 
-    /// A builder for [`ReportLimitReachedException`](crate::error::ReportLimitReachedException)
-    #[non_exhaustive]
+    /// A builder for [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -541,7 +539,7 @@ pub mod report_limit_reached_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReportLimitReachedException`](crate::error::ReportLimitReachedException)
+        /// Consumes the builder and constructs a [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
         pub fn build(self) -> crate::error::ReportLimitReachedException {
             crate::error::ReportLimitReachedException {
                 message: self.message,
@@ -550,7 +548,7 @@ pub mod report_limit_reached_exception {
     }
 }
 impl ReportLimitReachedException {
-    /// Creates a new builder-style object to manufacture [`ReportLimitReachedException`](crate::error::ReportLimitReachedException)
+    /// Creates a new builder-style object to manufacture [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
     pub fn builder() -> crate::error::report_limit_reached_exception::Builder {
         crate::error::report_limit_reached_exception::Builder::default()
     }
@@ -586,11 +584,10 @@ impl std::fmt::Display for InternalErrorException {
     }
 }
 impl std::error::Error for InternalErrorException {}
-/// See [`InternalErrorException`](crate::error::InternalErrorException)
+/// See [`InternalErrorException`](crate::error::InternalErrorException).
 pub mod internal_error_exception {
 
-    /// A builder for [`InternalErrorException`](crate::error::InternalErrorException)
-    #[non_exhaustive]
+    /// A builder for [`InternalErrorException`](crate::error::InternalErrorException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -606,7 +603,7 @@ pub mod internal_error_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalErrorException`](crate::error::InternalErrorException)
+        /// Consumes the builder and constructs a [`InternalErrorException`](crate::error::InternalErrorException).
         pub fn build(self) -> crate::error::InternalErrorException {
             crate::error::InternalErrorException {
                 message: self.message,
@@ -615,7 +612,7 @@ pub mod internal_error_exception {
     }
 }
 impl InternalErrorException {
-    /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException)
+    /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException).
     pub fn builder() -> crate::error::internal_error_exception::Builder {
         crate::error::internal_error_exception::Builder::default()
     }
@@ -651,11 +648,10 @@ impl std::fmt::Display for DuplicateReportNameException {
     }
 }
 impl std::error::Error for DuplicateReportNameException {}
-/// See [`DuplicateReportNameException`](crate::error::DuplicateReportNameException)
+/// See [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
 pub mod duplicate_report_name_exception {
 
-    /// A builder for [`DuplicateReportNameException`](crate::error::DuplicateReportNameException)
-    #[non_exhaustive]
+    /// A builder for [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -671,7 +667,7 @@ pub mod duplicate_report_name_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DuplicateReportNameException`](crate::error::DuplicateReportNameException)
+        /// Consumes the builder and constructs a [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
         pub fn build(self) -> crate::error::DuplicateReportNameException {
             crate::error::DuplicateReportNameException {
                 message: self.message,
@@ -680,7 +676,7 @@ pub mod duplicate_report_name_exception {
     }
 }
 impl DuplicateReportNameException {
-    /// Creates a new builder-style object to manufacture [`DuplicateReportNameException`](crate::error::DuplicateReportNameException)
+    /// Creates a new builder-style object to manufacture [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
     pub fn builder() -> crate::error::duplicate_report_name_exception::Builder {
         crate::error::duplicate_report_name_exception::Builder::default()
     }

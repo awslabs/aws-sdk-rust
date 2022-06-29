@@ -1037,11 +1037,10 @@ impl std::fmt::Debug for AwsSecurityFindingFilters {
         formatter.finish()
     }
 }
-/// See [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters)
+/// See [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
 pub mod aws_security_finding_filters {
 
-    /// A builder for [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters)
-    #[non_exhaustive]
+    /// A builder for [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_arn: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -3142,7 +3141,7 @@ pub mod aws_security_finding_filters {
             self.sample = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters)
+        /// Consumes the builder and constructs a [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
         pub fn build(self) -> crate::model::AwsSecurityFindingFilters {
             crate::model::AwsSecurityFindingFilters {
                 product_arn: self.product_arn,
@@ -3253,7 +3252,7 @@ pub mod aws_security_finding_filters {
     }
 }
 impl AwsSecurityFindingFilters {
-    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters)
+    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingFilters`](crate::model::AwsSecurityFindingFilters).
     pub fn builder() -> crate::model::aws_security_finding_filters::Builder {
         crate::model::aws_security_finding_filters::Builder::default()
     }
@@ -3279,11 +3278,10 @@ impl std::fmt::Debug for BooleanFilter {
         formatter.finish()
     }
 }
-/// See [`BooleanFilter`](crate::model::BooleanFilter)
+/// See [`BooleanFilter`](crate::model::BooleanFilter).
 pub mod boolean_filter {
 
-    /// A builder for [`BooleanFilter`](crate::model::BooleanFilter)
-    #[non_exhaustive]
+    /// A builder for [`BooleanFilter`](crate::model::BooleanFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<bool>,
@@ -3299,7 +3297,7 @@ pub mod boolean_filter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`BooleanFilter`](crate::model::BooleanFilter)
+        /// Consumes the builder and constructs a [`BooleanFilter`](crate::model::BooleanFilter).
         pub fn build(self) -> crate::model::BooleanFilter {
             crate::model::BooleanFilter {
                 value: self.value.unwrap_or_default(),
@@ -3308,7 +3306,7 @@ pub mod boolean_filter {
     }
 }
 impl BooleanFilter {
-    /// Creates a new builder-style object to manufacture [`BooleanFilter`](crate::model::BooleanFilter)
+    /// Creates a new builder-style object to manufacture [`BooleanFilter`](crate::model::BooleanFilter).
     pub fn builder() -> crate::model::boolean_filter::Builder {
         crate::model::boolean_filter::Builder::default()
     }
@@ -3381,11 +3379,10 @@ impl std::fmt::Debug for StringFilter {
         formatter.finish()
     }
 }
-/// See [`StringFilter`](crate::model::StringFilter)
+/// See [`StringFilter`](crate::model::StringFilter).
 pub mod string_filter {
 
-    /// A builder for [`StringFilter`](crate::model::StringFilter)
-    #[non_exhaustive]
+    /// A builder for [`StringFilter`](crate::model::StringFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3455,7 +3452,7 @@ pub mod string_filter {
             self.comparison = input;
             self
         }
-        /// Consumes the builder and constructs a [`StringFilter`](crate::model::StringFilter)
+        /// Consumes the builder and constructs a [`StringFilter`](crate::model::StringFilter).
         pub fn build(self) -> crate::model::StringFilter {
             crate::model::StringFilter {
                 value: self.value,
@@ -3465,7 +3462,7 @@ pub mod string_filter {
     }
 }
 impl StringFilter {
-    /// Creates a new builder-style object to manufacture [`StringFilter`](crate::model::StringFilter)
+    /// Creates a new builder-style object to manufacture [`StringFilter`](crate::model::StringFilter).
     pub fn builder() -> crate::model::string_filter::Builder {
         crate::model::string_filter::Builder::default()
     }
@@ -3568,11 +3565,10 @@ impl std::fmt::Debug for NumberFilter {
         formatter.finish()
     }
 }
-/// See [`NumberFilter`](crate::model::NumberFilter)
+/// See [`NumberFilter`](crate::model::NumberFilter).
 pub mod number_filter {
 
-    /// A builder for [`NumberFilter`](crate::model::NumberFilter)
-    #[non_exhaustive]
+    /// A builder for [`NumberFilter`](crate::model::NumberFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gte: std::option::Option<f64>,
@@ -3610,7 +3606,7 @@ pub mod number_filter {
             self.eq = input;
             self
         }
-        /// Consumes the builder and constructs a [`NumberFilter`](crate::model::NumberFilter)
+        /// Consumes the builder and constructs a [`NumberFilter`](crate::model::NumberFilter).
         pub fn build(self) -> crate::model::NumberFilter {
             crate::model::NumberFilter {
                 gte: self.gte.unwrap_or_default(),
@@ -3621,7 +3617,7 @@ pub mod number_filter {
     }
 }
 impl NumberFilter {
-    /// Creates a new builder-style object to manufacture [`NumberFilter`](crate::model::NumberFilter)
+    /// Creates a new builder-style object to manufacture [`NumberFilter`](crate::model::NumberFilter).
     pub fn builder() -> crate::model::number_filter::Builder {
         crate::model::number_filter::Builder::default()
     }
@@ -3647,11 +3643,10 @@ impl std::fmt::Debug for KeywordFilter {
         formatter.finish()
     }
 }
-/// See [`KeywordFilter`](crate::model::KeywordFilter)
+/// See [`KeywordFilter`](crate::model::KeywordFilter).
 pub mod keyword_filter {
 
-    /// A builder for [`KeywordFilter`](crate::model::KeywordFilter)
-    #[non_exhaustive]
+    /// A builder for [`KeywordFilter`](crate::model::KeywordFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -3667,14 +3662,14 @@ pub mod keyword_filter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeywordFilter`](crate::model::KeywordFilter)
+        /// Consumes the builder and constructs a [`KeywordFilter`](crate::model::KeywordFilter).
         pub fn build(self) -> crate::model::KeywordFilter {
             crate::model::KeywordFilter { value: self.value }
         }
     }
 }
 impl KeywordFilter {
-    /// Creates a new builder-style object to manufacture [`KeywordFilter`](crate::model::KeywordFilter)
+    /// Creates a new builder-style object to manufacture [`KeywordFilter`](crate::model::KeywordFilter).
     pub fn builder() -> crate::model::keyword_filter::Builder {
         crate::model::keyword_filter::Builder::default()
     }
@@ -3714,11 +3709,10 @@ impl std::fmt::Debug for DateFilter {
         formatter.finish()
     }
 }
-/// See [`DateFilter`](crate::model::DateFilter)
+/// See [`DateFilter`](crate::model::DateFilter).
 pub mod date_filter {
 
-    /// A builder for [`DateFilter`](crate::model::DateFilter)
-    #[non_exhaustive]
+    /// A builder for [`DateFilter`](crate::model::DateFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<std::string::String>,
@@ -3759,7 +3753,7 @@ pub mod date_filter {
             self.date_range = input;
             self
         }
-        /// Consumes the builder and constructs a [`DateFilter`](crate::model::DateFilter)
+        /// Consumes the builder and constructs a [`DateFilter`](crate::model::DateFilter).
         pub fn build(self) -> crate::model::DateFilter {
             crate::model::DateFilter {
                 start: self.start,
@@ -3770,7 +3764,7 @@ pub mod date_filter {
     }
 }
 impl DateFilter {
-    /// Creates a new builder-style object to manufacture [`DateFilter`](crate::model::DateFilter)
+    /// Creates a new builder-style object to manufacture [`DateFilter`](crate::model::DateFilter).
     pub fn builder() -> crate::model::date_filter::Builder {
         crate::model::date_filter::Builder::default()
     }
@@ -3803,11 +3797,10 @@ impl std::fmt::Debug for DateRange {
         formatter.finish()
     }
 }
-/// See [`DateRange`](crate::model::DateRange)
+/// See [`DateRange`](crate::model::DateRange).
 pub mod date_range {
 
-    /// A builder for [`DateRange`](crate::model::DateRange)
-    #[non_exhaustive]
+    /// A builder for [`DateRange`](crate::model::DateRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<i32>,
@@ -3834,7 +3827,7 @@ pub mod date_range {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`DateRange`](crate::model::DateRange)
+        /// Consumes the builder and constructs a [`DateRange`](crate::model::DateRange).
         pub fn build(self) -> crate::model::DateRange {
             crate::model::DateRange {
                 value: self.value.unwrap_or_default(),
@@ -3844,7 +3837,7 @@ pub mod date_range {
     }
 }
 impl DateRange {
-    /// Creates a new builder-style object to manufacture [`DateRange`](crate::model::DateRange)
+    /// Creates a new builder-style object to manufacture [`DateRange`](crate::model::DateRange).
     pub fn builder() -> crate::model::date_range::Builder {
         crate::model::date_range::Builder::default()
     }
@@ -3945,11 +3938,10 @@ impl std::fmt::Debug for MapFilter {
         formatter.finish()
     }
 }
-/// See [`MapFilter`](crate::model::MapFilter)
+/// See [`MapFilter`](crate::model::MapFilter).
 pub mod map_filter {
 
-    /// A builder for [`MapFilter`](crate::model::MapFilter)
-    #[non_exhaustive]
+    /// A builder for [`MapFilter`](crate::model::MapFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -4000,7 +3992,7 @@ pub mod map_filter {
             self.comparison = input;
             self
         }
-        /// Consumes the builder and constructs a [`MapFilter`](crate::model::MapFilter)
+        /// Consumes the builder and constructs a [`MapFilter`](crate::model::MapFilter).
         pub fn build(self) -> crate::model::MapFilter {
             crate::model::MapFilter {
                 key: self.key,
@@ -4011,7 +4003,7 @@ pub mod map_filter {
     }
 }
 impl MapFilter {
-    /// Creates a new builder-style object to manufacture [`MapFilter`](crate::model::MapFilter)
+    /// Creates a new builder-style object to manufacture [`MapFilter`](crate::model::MapFilter).
     pub fn builder() -> crate::model::map_filter::Builder {
         crate::model::map_filter::Builder::default()
     }
@@ -4092,11 +4084,10 @@ impl std::fmt::Debug for IpFilter {
         formatter.finish()
     }
 }
-/// See [`IpFilter`](crate::model::IpFilter)
+/// See [`IpFilter`](crate::model::IpFilter).
 pub mod ip_filter {
 
-    /// A builder for [`IpFilter`](crate::model::IpFilter)
-    #[non_exhaustive]
+    /// A builder for [`IpFilter`](crate::model::IpFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
@@ -4112,14 +4103,14 @@ pub mod ip_filter {
             self.cidr = input;
             self
         }
-        /// Consumes the builder and constructs a [`IpFilter`](crate::model::IpFilter)
+        /// Consumes the builder and constructs a [`IpFilter`](crate::model::IpFilter).
         pub fn build(self) -> crate::model::IpFilter {
             crate::model::IpFilter { cidr: self.cidr }
         }
     }
 }
 impl IpFilter {
-    /// Creates a new builder-style object to manufacture [`IpFilter`](crate::model::IpFilter)
+    /// Creates a new builder-style object to manufacture [`IpFilter`](crate::model::IpFilter).
     pub fn builder() -> crate::model::ip_filter::Builder {
         crate::model::ip_filter::Builder::default()
     }
@@ -4207,11 +4198,10 @@ impl std::fmt::Debug for NoteUpdate {
         formatter.finish()
     }
 }
-/// See [`NoteUpdate`](crate::model::NoteUpdate)
+/// See [`NoteUpdate`](crate::model::NoteUpdate).
 pub mod note_update {
 
-    /// A builder for [`NoteUpdate`](crate::model::NoteUpdate)
-    #[non_exhaustive]
+    /// A builder for [`NoteUpdate`](crate::model::NoteUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -4238,7 +4228,7 @@ pub mod note_update {
             self.updated_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoteUpdate`](crate::model::NoteUpdate)
+        /// Consumes the builder and constructs a [`NoteUpdate`](crate::model::NoteUpdate).
         pub fn build(self) -> crate::model::NoteUpdate {
             crate::model::NoteUpdate {
                 text: self.text,
@@ -4248,7 +4238,7 @@ pub mod note_update {
     }
 }
 impl NoteUpdate {
-    /// Creates a new builder-style object to manufacture [`NoteUpdate`](crate::model::NoteUpdate)
+    /// Creates a new builder-style object to manufacture [`NoteUpdate`](crate::model::NoteUpdate).
     pub fn builder() -> crate::model::note_update::Builder {
         crate::model::note_update::Builder::default()
     }
@@ -4281,11 +4271,10 @@ impl std::fmt::Debug for AdminAccount {
         formatter.finish()
     }
 }
-/// See [`AdminAccount`](crate::model::AdminAccount)
+/// See [`AdminAccount`](crate::model::AdminAccount).
 pub mod admin_account {
 
-    /// A builder for [`AdminAccount`](crate::model::AdminAccount)
-    #[non_exhaustive]
+    /// A builder for [`AdminAccount`](crate::model::AdminAccount).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4312,7 +4301,7 @@ pub mod admin_account {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AdminAccount`](crate::model::AdminAccount)
+        /// Consumes the builder and constructs a [`AdminAccount`](crate::model::AdminAccount).
         pub fn build(self) -> crate::model::AdminAccount {
             crate::model::AdminAccount {
                 account_id: self.account_id,
@@ -4322,7 +4311,7 @@ pub mod admin_account {
     }
 }
 impl AdminAccount {
-    /// Creates a new builder-style object to manufacture [`AdminAccount`](crate::model::AdminAccount)
+    /// Creates a new builder-style object to manufacture [`AdminAccount`](crate::model::AdminAccount).
     pub fn builder() -> crate::model::admin_account::Builder {
         crate::model::admin_account::Builder::default()
     }
@@ -4467,11 +4456,10 @@ impl std::fmt::Debug for Member {
         formatter.finish()
     }
 }
-/// See [`Member`](crate::model::Member)
+/// See [`Member`](crate::model::Member).
 pub mod member {
 
-    /// A builder for [`Member`](crate::model::Member)
-    #[non_exhaustive]
+    /// A builder for [`Member`](crate::model::Member).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4587,7 +4575,7 @@ pub mod member {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`Member`](crate::model::Member)
+        /// Consumes the builder and constructs a [`Member`](crate::model::Member).
         pub fn build(self) -> crate::model::Member {
             crate::model::Member {
                 account_id: self.account_id,
@@ -4602,7 +4590,7 @@ pub mod member {
     }
 }
 impl Member {
-    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member)
+    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
     pub fn builder() -> crate::model::member::Builder {
         crate::model::member::Builder::default()
     }
@@ -4649,11 +4637,10 @@ impl std::fmt::Debug for Invitation {
         formatter.finish()
     }
 }
-/// See [`Invitation`](crate::model::Invitation)
+/// See [`Invitation`](crate::model::Invitation).
 pub mod invitation {
 
-    /// A builder for [`Invitation`](crate::model::Invitation)
-    #[non_exhaustive]
+    /// A builder for [`Invitation`](crate::model::Invitation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4711,7 +4698,7 @@ pub mod invitation {
             self.member_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`Invitation`](crate::model::Invitation)
+        /// Consumes the builder and constructs a [`Invitation`](crate::model::Invitation).
         pub fn build(self) -> crate::model::Invitation {
             crate::model::Invitation {
                 account_id: self.account_id,
@@ -4723,7 +4710,7 @@ pub mod invitation {
     }
 }
 impl Invitation {
-    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation)
+    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
     pub fn builder() -> crate::model::invitation::Builder {
         crate::model::invitation::Builder::default()
     }
@@ -4749,11 +4736,10 @@ impl std::fmt::Debug for FindingAggregator {
         formatter.finish()
     }
 }
-/// See [`FindingAggregator`](crate::model::FindingAggregator)
+/// See [`FindingAggregator`](crate::model::FindingAggregator).
 pub mod finding_aggregator {
 
-    /// A builder for [`FindingAggregator`](crate::model::FindingAggregator)
-    #[non_exhaustive]
+    /// A builder for [`FindingAggregator`](crate::model::FindingAggregator).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_aggregator_arn: std::option::Option<std::string::String>,
@@ -4772,7 +4758,7 @@ pub mod finding_aggregator {
             self.finding_aggregator_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`FindingAggregator`](crate::model::FindingAggregator)
+        /// Consumes the builder and constructs a [`FindingAggregator`](crate::model::FindingAggregator).
         pub fn build(self) -> crate::model::FindingAggregator {
             crate::model::FindingAggregator {
                 finding_aggregator_arn: self.finding_aggregator_arn,
@@ -4781,7 +4767,7 @@ pub mod finding_aggregator {
     }
 }
 impl FindingAggregator {
-    /// Creates a new builder-style object to manufacture [`FindingAggregator`](crate::model::FindingAggregator)
+    /// Creates a new builder-style object to manufacture [`FindingAggregator`](crate::model::FindingAggregator).
     pub fn builder() -> crate::model::finding_aggregator::Builder {
         crate::model::finding_aggregator::Builder::default()
     }
@@ -4814,11 +4800,10 @@ impl std::fmt::Debug for Result {
         formatter.finish()
     }
 }
-/// See [`Result`](crate::model::Result)
+/// See [`Result`](crate::model::Result).
 pub mod result {
 
-    /// A builder for [`Result`](crate::model::Result)
-    #[non_exhaustive]
+    /// A builder for [`Result`](crate::model::Result).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -4848,7 +4833,7 @@ pub mod result {
             self.processing_result = input;
             self
         }
-        /// Consumes the builder and constructs a [`Result`](crate::model::Result)
+        /// Consumes the builder and constructs a [`Result`](crate::model::Result).
         pub fn build(self) -> crate::model::Result {
             crate::model::Result {
                 account_id: self.account_id,
@@ -4858,7 +4843,7 @@ pub mod result {
     }
 }
 impl Result {
-    /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result)
+    /// Creates a new builder-style object to manufacture [`Result`](crate::model::Result).
     pub fn builder() -> crate::model::result::Builder {
         crate::model::result::Builder::default()
     }
@@ -4905,11 +4890,10 @@ impl std::fmt::Debug for Insight {
         formatter.finish()
     }
 }
-/// See [`Insight`](crate::model::Insight)
+/// See [`Insight`](crate::model::Insight).
 pub mod insight {
 
-    /// A builder for [`Insight`](crate::model::Insight)
-    #[non_exhaustive]
+    /// A builder for [`Insight`](crate::model::Insight).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arn: std::option::Option<std::string::String>,
@@ -4964,7 +4948,7 @@ pub mod insight {
             self.group_by_attribute = input;
             self
         }
-        /// Consumes the builder and constructs a [`Insight`](crate::model::Insight)
+        /// Consumes the builder and constructs a [`Insight`](crate::model::Insight).
         pub fn build(self) -> crate::model::Insight {
             crate::model::Insight {
                 insight_arn: self.insight_arn,
@@ -4976,7 +4960,7 @@ pub mod insight {
     }
 }
 impl Insight {
-    /// Creates a new builder-style object to manufacture [`Insight`](crate::model::Insight)
+    /// Creates a new builder-style object to manufacture [`Insight`](crate::model::Insight).
     pub fn builder() -> crate::model::insight::Builder {
         crate::model::insight::Builder::default()
     }
@@ -5016,11 +5000,10 @@ impl std::fmt::Debug for InsightResults {
         formatter.finish()
     }
 }
-/// See [`InsightResults`](crate::model::InsightResults)
+/// See [`InsightResults`](crate::model::InsightResults).
 pub mod insight_results {
 
-    /// A builder for [`InsightResults`](crate::model::InsightResults)
-    #[non_exhaustive]
+    /// A builder for [`InsightResults`](crate::model::InsightResults).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_arn: std::option::Option<std::string::String>,
@@ -5071,7 +5054,7 @@ pub mod insight_results {
             self.result_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsightResults`](crate::model::InsightResults)
+        /// Consumes the builder and constructs a [`InsightResults`](crate::model::InsightResults).
         pub fn build(self) -> crate::model::InsightResults {
             crate::model::InsightResults {
                 insight_arn: self.insight_arn,
@@ -5082,7 +5065,7 @@ pub mod insight_results {
     }
 }
 impl InsightResults {
-    /// Creates a new builder-style object to manufacture [`InsightResults`](crate::model::InsightResults)
+    /// Creates a new builder-style object to manufacture [`InsightResults`](crate::model::InsightResults).
     pub fn builder() -> crate::model::insight_results::Builder {
         crate::model::insight_results::Builder::default()
     }
@@ -5115,11 +5098,10 @@ impl std::fmt::Debug for InsightResultValue {
         formatter.finish()
     }
 }
-/// See [`InsightResultValue`](crate::model::InsightResultValue)
+/// See [`InsightResultValue`](crate::model::InsightResultValue).
 pub mod insight_result_value {
 
-    /// A builder for [`InsightResultValue`](crate::model::InsightResultValue)
-    #[non_exhaustive]
+    /// A builder for [`InsightResultValue`](crate::model::InsightResultValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_by_attribute_value: std::option::Option<std::string::String>,
@@ -5149,7 +5131,7 @@ pub mod insight_result_value {
             self.count = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsightResultValue`](crate::model::InsightResultValue)
+        /// Consumes the builder and constructs a [`InsightResultValue`](crate::model::InsightResultValue).
         pub fn build(self) -> crate::model::InsightResultValue {
             crate::model::InsightResultValue {
                 group_by_attribute_value: self.group_by_attribute_value,
@@ -5159,7 +5141,7 @@ pub mod insight_result_value {
     }
 }
 impl InsightResultValue {
-    /// Creates a new builder-style object to manufacture [`InsightResultValue`](crate::model::InsightResultValue)
+    /// Creates a new builder-style object to manufacture [`InsightResultValue`](crate::model::InsightResultValue).
     pub fn builder() -> crate::model::insight_result_value::Builder {
         crate::model::insight_result_value::Builder::default()
     }
@@ -5514,11 +5496,10 @@ impl std::fmt::Debug for AwsSecurityFinding {
         formatter.finish()
     }
 }
-/// See [`AwsSecurityFinding`](crate::model::AwsSecurityFinding)
+/// See [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
 pub mod aws_security_finding {
 
-    /// A builder for [`AwsSecurityFinding`](crate::model::AwsSecurityFinding)
-    #[non_exhaustive]
+    /// A builder for [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_version: std::option::Option<std::string::String>,
@@ -6160,7 +6141,7 @@ pub mod aws_security_finding {
             self.sample = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSecurityFinding`](crate::model::AwsSecurityFinding)
+        /// Consumes the builder and constructs a [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
         pub fn build(self) -> crate::model::AwsSecurityFinding {
             crate::model::AwsSecurityFinding {
                 schema_version: self.schema_version,
@@ -6209,7 +6190,7 @@ pub mod aws_security_finding {
     }
 }
 impl AwsSecurityFinding {
-    /// Creates a new builder-style object to manufacture [`AwsSecurityFinding`](crate::model::AwsSecurityFinding)
+    /// Creates a new builder-style object to manufacture [`AwsSecurityFinding`](crate::model::AwsSecurityFinding).
     pub fn builder() -> crate::model::aws_security_finding::Builder {
         crate::model::aws_security_finding::Builder::default()
     }
@@ -6269,11 +6250,10 @@ impl std::fmt::Debug for FindingProviderFields {
         formatter.finish()
     }
 }
-/// See [`FindingProviderFields`](crate::model::FindingProviderFields)
+/// See [`FindingProviderFields`](crate::model::FindingProviderFields).
 pub mod finding_provider_fields {
 
-    /// A builder for [`FindingProviderFields`](crate::model::FindingProviderFields)
-    #[non_exhaustive]
+    /// A builder for [`FindingProviderFields`](crate::model::FindingProviderFields).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) confidence: std::option::Option<i32>,
@@ -6361,7 +6341,7 @@ pub mod finding_provider_fields {
             self.types = input;
             self
         }
-        /// Consumes the builder and constructs a [`FindingProviderFields`](crate::model::FindingProviderFields)
+        /// Consumes the builder and constructs a [`FindingProviderFields`](crate::model::FindingProviderFields).
         pub fn build(self) -> crate::model::FindingProviderFields {
             crate::model::FindingProviderFields {
                 confidence: self.confidence.unwrap_or_default(),
@@ -6374,7 +6354,7 @@ pub mod finding_provider_fields {
     }
 }
 impl FindingProviderFields {
-    /// Creates a new builder-style object to manufacture [`FindingProviderFields`](crate::model::FindingProviderFields)
+    /// Creates a new builder-style object to manufacture [`FindingProviderFields`](crate::model::FindingProviderFields).
     pub fn builder() -> crate::model::finding_provider_fields::Builder {
         crate::model::finding_provider_fields::Builder::default()
     }
@@ -6407,11 +6387,10 @@ impl std::fmt::Debug for FindingProviderSeverity {
         formatter.finish()
     }
 }
-/// See [`FindingProviderSeverity`](crate::model::FindingProviderSeverity)
+/// See [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
 pub mod finding_provider_severity {
 
-    /// A builder for [`FindingProviderSeverity`](crate::model::FindingProviderSeverity)
-    #[non_exhaustive]
+    /// A builder for [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<crate::model::SeverityLabel>,
@@ -6441,7 +6420,7 @@ pub mod finding_provider_severity {
             self.original = input;
             self
         }
-        /// Consumes the builder and constructs a [`FindingProviderSeverity`](crate::model::FindingProviderSeverity)
+        /// Consumes the builder and constructs a [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
         pub fn build(self) -> crate::model::FindingProviderSeverity {
             crate::model::FindingProviderSeverity {
                 label: self.label,
@@ -6451,7 +6430,7 @@ pub mod finding_provider_severity {
     }
 }
 impl FindingProviderSeverity {
-    /// Creates a new builder-style object to manufacture [`FindingProviderSeverity`](crate::model::FindingProviderSeverity)
+    /// Creates a new builder-style object to manufacture [`FindingProviderSeverity`](crate::model::FindingProviderSeverity).
     pub fn builder() -> crate::model::finding_provider_severity::Builder {
         crate::model::finding_provider_severity::Builder::default()
     }
@@ -6551,11 +6530,10 @@ impl std::fmt::Debug for RelatedFinding {
         formatter.finish()
     }
 }
-/// See [`RelatedFinding`](crate::model::RelatedFinding)
+/// See [`RelatedFinding`](crate::model::RelatedFinding).
 pub mod related_finding {
 
-    /// A builder for [`RelatedFinding`](crate::model::RelatedFinding)
-    #[non_exhaustive]
+    /// A builder for [`RelatedFinding`](crate::model::RelatedFinding).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_arn: std::option::Option<std::string::String>,
@@ -6582,7 +6560,7 @@ pub mod related_finding {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RelatedFinding`](crate::model::RelatedFinding)
+        /// Consumes the builder and constructs a [`RelatedFinding`](crate::model::RelatedFinding).
         pub fn build(self) -> crate::model::RelatedFinding {
             crate::model::RelatedFinding {
                 product_arn: self.product_arn,
@@ -6592,7 +6570,7 @@ pub mod related_finding {
     }
 }
 impl RelatedFinding {
-    /// Creates a new builder-style object to manufacture [`RelatedFinding`](crate::model::RelatedFinding)
+    /// Creates a new builder-style object to manufacture [`RelatedFinding`](crate::model::RelatedFinding).
     pub fn builder() -> crate::model::related_finding::Builder {
         crate::model::related_finding::Builder::default()
     }
@@ -6666,11 +6644,10 @@ impl std::fmt::Debug for Action {
         formatter.finish()
     }
 }
-/// See [`Action`](crate::model::Action)
+/// See [`Action`](crate::model::Action).
 pub mod action {
 
-    /// A builder for [`Action`](crate::model::Action)
-    #[non_exhaustive]
+    /// A builder for [`Action`](crate::model::Action).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_type: std::option::Option<std::string::String>,
@@ -6758,7 +6735,7 @@ pub mod action {
             self.port_probe_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`Action`](crate::model::Action)
+        /// Consumes the builder and constructs a [`Action`](crate::model::Action).
         pub fn build(self) -> crate::model::Action {
             crate::model::Action {
                 action_type: self.action_type,
@@ -6771,7 +6748,7 @@ pub mod action {
     }
 }
 impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action)
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
     pub fn builder() -> crate::model::action::Builder {
         crate::model::action::Builder::default()
     }
@@ -6804,11 +6781,10 @@ impl std::fmt::Debug for PortProbeAction {
         formatter.finish()
     }
 }
-/// See [`PortProbeAction`](crate::model::PortProbeAction)
+/// See [`PortProbeAction`](crate::model::PortProbeAction).
 pub mod port_probe_action {
 
-    /// A builder for [`PortProbeAction`](crate::model::PortProbeAction)
-    #[non_exhaustive]
+    /// A builder for [`PortProbeAction`](crate::model::PortProbeAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port_probe_details:
@@ -6845,7 +6821,7 @@ pub mod port_probe_action {
             self.blocked = input;
             self
         }
-        /// Consumes the builder and constructs a [`PortProbeAction`](crate::model::PortProbeAction)
+        /// Consumes the builder and constructs a [`PortProbeAction`](crate::model::PortProbeAction).
         pub fn build(self) -> crate::model::PortProbeAction {
             crate::model::PortProbeAction {
                 port_probe_details: self.port_probe_details,
@@ -6855,7 +6831,7 @@ pub mod port_probe_action {
     }
 }
 impl PortProbeAction {
-    /// Creates a new builder-style object to manufacture [`PortProbeAction`](crate::model::PortProbeAction)
+    /// Creates a new builder-style object to manufacture [`PortProbeAction`](crate::model::PortProbeAction).
     pub fn builder() -> crate::model::port_probe_action::Builder {
         crate::model::port_probe_action::Builder::default()
     }
@@ -6895,11 +6871,10 @@ impl std::fmt::Debug for PortProbeDetail {
         formatter.finish()
     }
 }
-/// See [`PortProbeDetail`](crate::model::PortProbeDetail)
+/// See [`PortProbeDetail`](crate::model::PortProbeDetail).
 pub mod port_probe_detail {
 
-    /// A builder for [`PortProbeDetail`](crate::model::PortProbeDetail)
-    #[non_exhaustive]
+    /// A builder for [`PortProbeDetail`](crate::model::PortProbeDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) local_port_details: std::option::Option<crate::model::ActionLocalPortDetails>,
@@ -6946,7 +6921,7 @@ pub mod port_probe_detail {
             self.remote_ip_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`PortProbeDetail`](crate::model::PortProbeDetail)
+        /// Consumes the builder and constructs a [`PortProbeDetail`](crate::model::PortProbeDetail).
         pub fn build(self) -> crate::model::PortProbeDetail {
             crate::model::PortProbeDetail {
                 local_port_details: self.local_port_details,
@@ -6957,7 +6932,7 @@ pub mod port_probe_detail {
     }
 }
 impl PortProbeDetail {
-    /// Creates a new builder-style object to manufacture [`PortProbeDetail`](crate::model::PortProbeDetail)
+    /// Creates a new builder-style object to manufacture [`PortProbeDetail`](crate::model::PortProbeDetail).
     pub fn builder() -> crate::model::port_probe_detail::Builder {
         crate::model::port_probe_detail::Builder::default()
     }
@@ -7011,11 +6986,10 @@ impl std::fmt::Debug for ActionRemoteIpDetails {
         formatter.finish()
     }
 }
-/// See [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails)
+/// See [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
 pub mod action_remote_ip_details {
 
-    /// A builder for [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails)
-    #[non_exhaustive]
+    /// A builder for [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address_v4: std::option::Option<std::string::String>,
@@ -7084,7 +7058,7 @@ pub mod action_remote_ip_details {
             self.geo_location = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails)
+        /// Consumes the builder and constructs a [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
         pub fn build(self) -> crate::model::ActionRemoteIpDetails {
             crate::model::ActionRemoteIpDetails {
                 ip_address_v4: self.ip_address_v4,
@@ -7097,7 +7071,7 @@ pub mod action_remote_ip_details {
     }
 }
 impl ActionRemoteIpDetails {
-    /// Creates a new builder-style object to manufacture [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails)
+    /// Creates a new builder-style object to manufacture [`ActionRemoteIpDetails`](crate::model::ActionRemoteIpDetails).
     pub fn builder() -> crate::model::action_remote_ip_details::Builder {
         crate::model::action_remote_ip_details::Builder::default()
     }
@@ -7130,11 +7104,10 @@ impl std::fmt::Debug for GeoLocation {
         formatter.finish()
     }
 }
-/// See [`GeoLocation`](crate::model::GeoLocation)
+/// See [`GeoLocation`](crate::model::GeoLocation).
 pub mod geo_location {
 
-    /// A builder for [`GeoLocation`](crate::model::GeoLocation)
-    #[non_exhaustive]
+    /// A builder for [`GeoLocation`](crate::model::GeoLocation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lon: std::option::Option<f64>,
@@ -7161,7 +7134,7 @@ pub mod geo_location {
             self.lat = input;
             self
         }
-        /// Consumes the builder and constructs a [`GeoLocation`](crate::model::GeoLocation)
+        /// Consumes the builder and constructs a [`GeoLocation`](crate::model::GeoLocation).
         pub fn build(self) -> crate::model::GeoLocation {
             crate::model::GeoLocation {
                 lon: self.lon.unwrap_or_default(),
@@ -7171,7 +7144,7 @@ pub mod geo_location {
     }
 }
 impl GeoLocation {
-    /// Creates a new builder-style object to manufacture [`GeoLocation`](crate::model::GeoLocation)
+    /// Creates a new builder-style object to manufacture [`GeoLocation`](crate::model::GeoLocation).
     pub fn builder() -> crate::model::geo_location::Builder {
         crate::model::geo_location::Builder::default()
     }
@@ -7197,11 +7170,10 @@ impl std::fmt::Debug for City {
         formatter.finish()
     }
 }
-/// See [`City`](crate::model::City)
+/// See [`City`](crate::model::City).
 pub mod city {
 
-    /// A builder for [`City`](crate::model::City)
-    #[non_exhaustive]
+    /// A builder for [`City`](crate::model::City).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) city_name: std::option::Option<std::string::String>,
@@ -7217,7 +7189,7 @@ pub mod city {
             self.city_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`City`](crate::model::City)
+        /// Consumes the builder and constructs a [`City`](crate::model::City).
         pub fn build(self) -> crate::model::City {
             crate::model::City {
                 city_name: self.city_name,
@@ -7226,7 +7198,7 @@ pub mod city {
     }
 }
 impl City {
-    /// Creates a new builder-style object to manufacture [`City`](crate::model::City)
+    /// Creates a new builder-style object to manufacture [`City`](crate::model::City).
     pub fn builder() -> crate::model::city::Builder {
         crate::model::city::Builder::default()
     }
@@ -7259,11 +7231,10 @@ impl std::fmt::Debug for Country {
         formatter.finish()
     }
 }
-/// See [`Country`](crate::model::Country)
+/// See [`Country`](crate::model::Country).
 pub mod country {
 
-    /// A builder for [`Country`](crate::model::Country)
-    #[non_exhaustive]
+    /// A builder for [`Country`](crate::model::Country).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) country_code: std::option::Option<std::string::String>,
@@ -7290,7 +7261,7 @@ pub mod country {
             self.country_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Country`](crate::model::Country)
+        /// Consumes the builder and constructs a [`Country`](crate::model::Country).
         pub fn build(self) -> crate::model::Country {
             crate::model::Country {
                 country_code: self.country_code,
@@ -7300,7 +7271,7 @@ pub mod country {
     }
 }
 impl Country {
-    /// Creates a new builder-style object to manufacture [`Country`](crate::model::Country)
+    /// Creates a new builder-style object to manufacture [`Country`](crate::model::Country).
     pub fn builder() -> crate::model::country::Builder {
         crate::model::country::Builder::default()
     }
@@ -7347,11 +7318,10 @@ impl std::fmt::Debug for IpOrganizationDetails {
         formatter.finish()
     }
 }
-/// See [`IpOrganizationDetails`](crate::model::IpOrganizationDetails)
+/// See [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
 pub mod ip_organization_details {
 
-    /// A builder for [`IpOrganizationDetails`](crate::model::IpOrganizationDetails)
-    #[non_exhaustive]
+    /// A builder for [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asn: std::option::Option<i32>,
@@ -7400,7 +7370,7 @@ pub mod ip_organization_details {
             self.org = input;
             self
         }
-        /// Consumes the builder and constructs a [`IpOrganizationDetails`](crate::model::IpOrganizationDetails)
+        /// Consumes the builder and constructs a [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
         pub fn build(self) -> crate::model::IpOrganizationDetails {
             crate::model::IpOrganizationDetails {
                 asn: self.asn.unwrap_or_default(),
@@ -7412,7 +7382,7 @@ pub mod ip_organization_details {
     }
 }
 impl IpOrganizationDetails {
-    /// Creates a new builder-style object to manufacture [`IpOrganizationDetails`](crate::model::IpOrganizationDetails)
+    /// Creates a new builder-style object to manufacture [`IpOrganizationDetails`](crate::model::IpOrganizationDetails).
     pub fn builder() -> crate::model::ip_organization_details::Builder {
         crate::model::ip_organization_details::Builder::default()
     }
@@ -7438,11 +7408,10 @@ impl std::fmt::Debug for ActionLocalIpDetails {
         formatter.finish()
     }
 }
-/// See [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails)
+/// See [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
 pub mod action_local_ip_details {
 
-    /// A builder for [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails)
-    #[non_exhaustive]
+    /// A builder for [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address_v4: std::option::Option<std::string::String>,
@@ -7461,7 +7430,7 @@ pub mod action_local_ip_details {
             self.ip_address_v4 = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails)
+        /// Consumes the builder and constructs a [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
         pub fn build(self) -> crate::model::ActionLocalIpDetails {
             crate::model::ActionLocalIpDetails {
                 ip_address_v4: self.ip_address_v4,
@@ -7470,7 +7439,7 @@ pub mod action_local_ip_details {
     }
 }
 impl ActionLocalIpDetails {
-    /// Creates a new builder-style object to manufacture [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails)
+    /// Creates a new builder-style object to manufacture [`ActionLocalIpDetails`](crate::model::ActionLocalIpDetails).
     pub fn builder() -> crate::model::action_local_ip_details::Builder {
         crate::model::action_local_ip_details::Builder::default()
     }
@@ -7503,11 +7472,10 @@ impl std::fmt::Debug for ActionLocalPortDetails {
         formatter.finish()
     }
 }
-/// See [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails)
+/// See [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
 pub mod action_local_port_details {
 
-    /// A builder for [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails)
-    #[non_exhaustive]
+    /// A builder for [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
@@ -7534,7 +7502,7 @@ pub mod action_local_port_details {
             self.port_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails)
+        /// Consumes the builder and constructs a [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
         pub fn build(self) -> crate::model::ActionLocalPortDetails {
             crate::model::ActionLocalPortDetails {
                 port: self.port.unwrap_or_default(),
@@ -7544,7 +7512,7 @@ pub mod action_local_port_details {
     }
 }
 impl ActionLocalPortDetails {
-    /// Creates a new builder-style object to manufacture [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails)
+    /// Creates a new builder-style object to manufacture [`ActionLocalPortDetails`](crate::model::ActionLocalPortDetails).
     pub fn builder() -> crate::model::action_local_port_details::Builder {
         crate::model::action_local_port_details::Builder::default()
     }
@@ -7584,11 +7552,10 @@ impl std::fmt::Debug for DnsRequestAction {
         formatter.finish()
     }
 }
-/// See [`DnsRequestAction`](crate::model::DnsRequestAction)
+/// See [`DnsRequestAction`](crate::model::DnsRequestAction).
 pub mod dns_request_action {
 
-    /// A builder for [`DnsRequestAction`](crate::model::DnsRequestAction)
-    #[non_exhaustive]
+    /// A builder for [`DnsRequestAction`](crate::model::DnsRequestAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -7626,7 +7593,7 @@ pub mod dns_request_action {
             self.blocked = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsRequestAction`](crate::model::DnsRequestAction)
+        /// Consumes the builder and constructs a [`DnsRequestAction`](crate::model::DnsRequestAction).
         pub fn build(self) -> crate::model::DnsRequestAction {
             crate::model::DnsRequestAction {
                 domain: self.domain,
@@ -7637,7 +7604,7 @@ pub mod dns_request_action {
     }
 }
 impl DnsRequestAction {
-    /// Creates a new builder-style object to manufacture [`DnsRequestAction`](crate::model::DnsRequestAction)
+    /// Creates a new builder-style object to manufacture [`DnsRequestAction`](crate::model::DnsRequestAction).
     pub fn builder() -> crate::model::dns_request_action::Builder {
         crate::model::dns_request_action::Builder::default()
     }
@@ -7718,11 +7685,10 @@ impl std::fmt::Debug for AwsApiCallAction {
         formatter.finish()
     }
 }
-/// See [`AwsApiCallAction`](crate::model::AwsApiCallAction)
+/// See [`AwsApiCallAction`](crate::model::AwsApiCallAction).
 pub mod aws_api_call_action {
 
-    /// A builder for [`AwsApiCallAction`](crate::model::AwsApiCallAction)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiCallAction`](crate::model::AwsApiCallAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api: std::option::Option<std::string::String>,
@@ -7841,7 +7807,7 @@ pub mod aws_api_call_action {
             self.last_seen = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiCallAction`](crate::model::AwsApiCallAction)
+        /// Consumes the builder and constructs a [`AwsApiCallAction`](crate::model::AwsApiCallAction).
         pub fn build(self) -> crate::model::AwsApiCallAction {
             crate::model::AwsApiCallAction {
                 api: self.api,
@@ -7857,7 +7823,7 @@ pub mod aws_api_call_action {
     }
 }
 impl AwsApiCallAction {
-    /// Creates a new builder-style object to manufacture [`AwsApiCallAction`](crate::model::AwsApiCallAction)
+    /// Creates a new builder-style object to manufacture [`AwsApiCallAction`](crate::model::AwsApiCallAction).
     pub fn builder() -> crate::model::aws_api_call_action::Builder {
         crate::model::aws_api_call_action::Builder::default()
     }
@@ -7883,11 +7849,10 @@ impl std::fmt::Debug for AwsApiCallActionDomainDetails {
         formatter.finish()
     }
 }
-/// See [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails)
+/// See [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
 pub mod aws_api_call_action_domain_details {
 
-    /// A builder for [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -7903,7 +7868,7 @@ pub mod aws_api_call_action_domain_details {
             self.domain = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails)
+        /// Consumes the builder and constructs a [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
         pub fn build(self) -> crate::model::AwsApiCallActionDomainDetails {
             crate::model::AwsApiCallActionDomainDetails {
                 domain: self.domain,
@@ -7912,7 +7877,7 @@ pub mod aws_api_call_action_domain_details {
     }
 }
 impl AwsApiCallActionDomainDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails)
+    /// Creates a new builder-style object to manufacture [`AwsApiCallActionDomainDetails`](crate::model::AwsApiCallActionDomainDetails).
     pub fn builder() -> crate::model::aws_api_call_action_domain_details::Builder {
         crate::model::aws_api_call_action_domain_details::Builder::default()
     }
@@ -7975,11 +7940,10 @@ impl std::fmt::Debug for NetworkConnectionAction {
         formatter.finish()
     }
 }
-/// See [`NetworkConnectionAction`](crate::model::NetworkConnectionAction)
+/// See [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
 pub mod network_connection_action {
 
-    /// A builder for [`NetworkConnectionAction`](crate::model::NetworkConnectionAction)
-    #[non_exhaustive]
+    /// A builder for [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_direction: std::option::Option<std::string::String>,
@@ -8062,7 +8026,7 @@ pub mod network_connection_action {
             self.blocked = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkConnectionAction`](crate::model::NetworkConnectionAction)
+        /// Consumes the builder and constructs a [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
         pub fn build(self) -> crate::model::NetworkConnectionAction {
             crate::model::NetworkConnectionAction {
                 connection_direction: self.connection_direction,
@@ -8076,7 +8040,7 @@ pub mod network_connection_action {
     }
 }
 impl NetworkConnectionAction {
-    /// Creates a new builder-style object to manufacture [`NetworkConnectionAction`](crate::model::NetworkConnectionAction)
+    /// Creates a new builder-style object to manufacture [`NetworkConnectionAction`](crate::model::NetworkConnectionAction).
     pub fn builder() -> crate::model::network_connection_action::Builder {
         crate::model::network_connection_action::Builder::default()
     }
@@ -8109,11 +8073,10 @@ impl std::fmt::Debug for ActionRemotePortDetails {
         formatter.finish()
     }
 }
-/// See [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails)
+/// See [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
 pub mod action_remote_port_details {
 
-    /// A builder for [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails)
-    #[non_exhaustive]
+    /// A builder for [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) port: std::option::Option<i32>,
@@ -8140,7 +8103,7 @@ pub mod action_remote_port_details {
             self.port_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails)
+        /// Consumes the builder and constructs a [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
         pub fn build(self) -> crate::model::ActionRemotePortDetails {
             crate::model::ActionRemotePortDetails {
                 port: self.port.unwrap_or_default(),
@@ -8150,7 +8113,7 @@ pub mod action_remote_port_details {
     }
 }
 impl ActionRemotePortDetails {
-    /// Creates a new builder-style object to manufacture [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails)
+    /// Creates a new builder-style object to manufacture [`ActionRemotePortDetails`](crate::model::ActionRemotePortDetails).
     pub fn builder() -> crate::model::action_remote_port_details::Builder {
         crate::model::action_remote_port_details::Builder::default()
     }
@@ -8250,11 +8213,10 @@ impl std::fmt::Debug for PatchSummary {
         formatter.finish()
     }
 }
-/// See [`PatchSummary`](crate::model::PatchSummary)
+/// See [`PatchSummary`](crate::model::PatchSummary).
 pub mod patch_summary {
 
-    /// A builder for [`PatchSummary`](crate::model::PatchSummary)
-    #[non_exhaustive]
+    /// A builder for [`PatchSummary`](crate::model::PatchSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8393,7 +8355,7 @@ pub mod patch_summary {
             self.operation = input;
             self
         }
-        /// Consumes the builder and constructs a [`PatchSummary`](crate::model::PatchSummary)
+        /// Consumes the builder and constructs a [`PatchSummary`](crate::model::PatchSummary).
         pub fn build(self) -> crate::model::PatchSummary {
             crate::model::PatchSummary {
                 id: self.id,
@@ -8412,7 +8374,7 @@ pub mod patch_summary {
     }
 }
 impl PatchSummary {
-    /// Creates a new builder-style object to manufacture [`PatchSummary`](crate::model::PatchSummary)
+    /// Creates a new builder-style object to manufacture [`PatchSummary`](crate::model::PatchSummary).
     pub fn builder() -> crate::model::patch_summary::Builder {
         crate::model::patch_summary::Builder::default()
     }
@@ -8473,11 +8435,10 @@ impl std::fmt::Debug for Vulnerability {
         formatter.finish()
     }
 }
-/// See [`Vulnerability`](crate::model::Vulnerability)
+/// See [`Vulnerability`](crate::model::Vulnerability).
 pub mod vulnerability {
 
-    /// A builder for [`Vulnerability`](crate::model::Vulnerability)
-    #[non_exhaustive]
+    /// A builder for [`Vulnerability`](crate::model::Vulnerability).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -8588,7 +8549,7 @@ pub mod vulnerability {
             self.reference_urls = input;
             self
         }
-        /// Consumes the builder and constructs a [`Vulnerability`](crate::model::Vulnerability)
+        /// Consumes the builder and constructs a [`Vulnerability`](crate::model::Vulnerability).
         pub fn build(self) -> crate::model::Vulnerability {
             crate::model::Vulnerability {
                 id: self.id,
@@ -8602,7 +8563,7 @@ pub mod vulnerability {
     }
 }
 impl Vulnerability {
-    /// Creates a new builder-style object to manufacture [`Vulnerability`](crate::model::Vulnerability)
+    /// Creates a new builder-style object to manufacture [`Vulnerability`](crate::model::Vulnerability).
     pub fn builder() -> crate::model::vulnerability::Builder {
         crate::model::vulnerability::Builder::default()
     }
@@ -8660,11 +8621,10 @@ impl std::fmt::Debug for VulnerabilityVendor {
         formatter.finish()
     }
 }
-/// See [`VulnerabilityVendor`](crate::model::VulnerabilityVendor)
+/// See [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
 pub mod vulnerability_vendor {
 
-    /// A builder for [`VulnerabilityVendor`](crate::model::VulnerabilityVendor)
-    #[non_exhaustive]
+    /// A builder for [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -8737,7 +8697,7 @@ pub mod vulnerability_vendor {
             self.vendor_updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`VulnerabilityVendor`](crate::model::VulnerabilityVendor)
+        /// Consumes the builder and constructs a [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
         pub fn build(self) -> crate::model::VulnerabilityVendor {
             crate::model::VulnerabilityVendor {
                 name: self.name,
@@ -8750,7 +8710,7 @@ pub mod vulnerability_vendor {
     }
 }
 impl VulnerabilityVendor {
-    /// Creates a new builder-style object to manufacture [`VulnerabilityVendor`](crate::model::VulnerabilityVendor)
+    /// Creates a new builder-style object to manufacture [`VulnerabilityVendor`](crate::model::VulnerabilityVendor).
     pub fn builder() -> crate::model::vulnerability_vendor::Builder {
         crate::model::vulnerability_vendor::Builder::default()
     }
@@ -8804,11 +8764,10 @@ impl std::fmt::Debug for Cvss {
         formatter.finish()
     }
 }
-/// See [`Cvss`](crate::model::Cvss)
+/// See [`Cvss`](crate::model::Cvss).
 pub mod cvss {
 
-    /// A builder for [`Cvss`](crate::model::Cvss)
-    #[non_exhaustive]
+    /// A builder for [`Cvss`](crate::model::Cvss).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
@@ -8877,7 +8836,7 @@ pub mod cvss {
             self.adjustments = input;
             self
         }
-        /// Consumes the builder and constructs a [`Cvss`](crate::model::Cvss)
+        /// Consumes the builder and constructs a [`Cvss`](crate::model::Cvss).
         pub fn build(self) -> crate::model::Cvss {
             crate::model::Cvss {
                 version: self.version,
@@ -8890,7 +8849,7 @@ pub mod cvss {
     }
 }
 impl Cvss {
-    /// Creates a new builder-style object to manufacture [`Cvss`](crate::model::Cvss)
+    /// Creates a new builder-style object to manufacture [`Cvss`](crate::model::Cvss).
     pub fn builder() -> crate::model::cvss::Builder {
         crate::model::cvss::Builder::default()
     }
@@ -8923,11 +8882,10 @@ impl std::fmt::Debug for Adjustment {
         formatter.finish()
     }
 }
-/// See [`Adjustment`](crate::model::Adjustment)
+/// See [`Adjustment`](crate::model::Adjustment).
 pub mod adjustment {
 
-    /// A builder for [`Adjustment`](crate::model::Adjustment)
-    #[non_exhaustive]
+    /// A builder for [`Adjustment`](crate::model::Adjustment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<std::string::String>,
@@ -8954,7 +8912,7 @@ pub mod adjustment {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`Adjustment`](crate::model::Adjustment)
+        /// Consumes the builder and constructs a [`Adjustment`](crate::model::Adjustment).
         pub fn build(self) -> crate::model::Adjustment {
             crate::model::Adjustment {
                 metric: self.metric,
@@ -8964,7 +8922,7 @@ pub mod adjustment {
     }
 }
 impl Adjustment {
-    /// Creates a new builder-style object to manufacture [`Adjustment`](crate::model::Adjustment)
+    /// Creates a new builder-style object to manufacture [`Adjustment`](crate::model::Adjustment).
     pub fn builder() -> crate::model::adjustment::Builder {
         crate::model::adjustment::Builder::default()
     }
@@ -9032,11 +8990,10 @@ impl std::fmt::Debug for SoftwarePackage {
         formatter.finish()
     }
 }
-/// See [`SoftwarePackage`](crate::model::SoftwarePackage)
+/// See [`SoftwarePackage`](crate::model::SoftwarePackage).
 pub mod software_package {
 
-    /// A builder for [`SoftwarePackage`](crate::model::SoftwarePackage)
-    #[non_exhaustive]
+    /// A builder for [`SoftwarePackage`](crate::model::SoftwarePackage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -9121,7 +9078,7 @@ pub mod software_package {
             self.file_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`SoftwarePackage`](crate::model::SoftwarePackage)
+        /// Consumes the builder and constructs a [`SoftwarePackage`](crate::model::SoftwarePackage).
         pub fn build(self) -> crate::model::SoftwarePackage {
             crate::model::SoftwarePackage {
                 name: self.name,
@@ -9136,7 +9093,7 @@ pub mod software_package {
     }
 }
 impl SoftwarePackage {
-    /// Creates a new builder-style object to manufacture [`SoftwarePackage`](crate::model::SoftwarePackage)
+    /// Creates a new builder-style object to manufacture [`SoftwarePackage`](crate::model::SoftwarePackage).
     pub fn builder() -> crate::model::software_package::Builder {
         crate::model::software_package::Builder::default()
     }
@@ -9178,11 +9135,10 @@ impl std::fmt::Debug for Note {
         formatter.finish()
     }
 }
-/// See [`Note`](crate::model::Note)
+/// See [`Note`](crate::model::Note).
 pub mod note {
 
-    /// A builder for [`Note`](crate::model::Note)
-    #[non_exhaustive]
+    /// A builder for [`Note`](crate::model::Note).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -9222,7 +9178,7 @@ pub mod note {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`Note`](crate::model::Note)
+        /// Consumes the builder and constructs a [`Note`](crate::model::Note).
         pub fn build(self) -> crate::model::Note {
             crate::model::Note {
                 text: self.text,
@@ -9233,7 +9189,7 @@ pub mod note {
     }
 }
 impl Note {
-    /// Creates a new builder-style object to manufacture [`Note`](crate::model::Note)
+    /// Creates a new builder-style object to manufacture [`Note`](crate::model::Note).
     pub fn builder() -> crate::model::note::Builder {
         crate::model::note::Builder::default()
     }
@@ -9281,11 +9237,10 @@ impl std::fmt::Debug for Workflow {
         formatter.finish()
     }
 }
-/// See [`Workflow`](crate::model::Workflow)
+/// See [`Workflow`](crate::model::Workflow).
 pub mod workflow {
 
-    /// A builder for [`Workflow`](crate::model::Workflow)
-    #[non_exhaustive]
+    /// A builder for [`Workflow`](crate::model::Workflow).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::WorkflowStatus>,
@@ -9326,7 +9281,7 @@ pub mod workflow {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`Workflow`](crate::model::Workflow)
+        /// Consumes the builder and constructs a [`Workflow`](crate::model::Workflow).
         pub fn build(self) -> crate::model::Workflow {
             crate::model::Workflow {
                 status: self.status,
@@ -9335,7 +9290,7 @@ pub mod workflow {
     }
 }
 impl Workflow {
-    /// Creates a new builder-style object to manufacture [`Workflow`](crate::model::Workflow)
+    /// Creates a new builder-style object to manufacture [`Workflow`](crate::model::Workflow).
     pub fn builder() -> crate::model::workflow::Builder {
         crate::model::workflow::Builder::default()
     }
@@ -9593,11 +9548,10 @@ impl std::fmt::Debug for Compliance {
         formatter.finish()
     }
 }
-/// See [`Compliance`](crate::model::Compliance)
+/// See [`Compliance`](crate::model::Compliance).
 pub mod compliance {
 
-    /// A builder for [`Compliance`](crate::model::Compliance)
-    #[non_exhaustive]
+    /// A builder for [`Compliance`](crate::model::Compliance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ComplianceStatus>,
@@ -9676,7 +9630,7 @@ pub mod compliance {
             self.status_reasons = input;
             self
         }
-        /// Consumes the builder and constructs a [`Compliance`](crate::model::Compliance)
+        /// Consumes the builder and constructs a [`Compliance`](crate::model::Compliance).
         pub fn build(self) -> crate::model::Compliance {
             crate::model::Compliance {
                 status: self.status,
@@ -9687,7 +9641,7 @@ pub mod compliance {
     }
 }
 impl Compliance {
-    /// Creates a new builder-style object to manufacture [`Compliance`](crate::model::Compliance)
+    /// Creates a new builder-style object to manufacture [`Compliance`](crate::model::Compliance).
     pub fn builder() -> crate::model::compliance::Builder {
         crate::model::compliance::Builder::default()
     }
@@ -9720,11 +9674,10 @@ impl std::fmt::Debug for StatusReason {
         formatter.finish()
     }
 }
-/// See [`StatusReason`](crate::model::StatusReason)
+/// See [`StatusReason`](crate::model::StatusReason).
 pub mod status_reason {
 
-    /// A builder for [`StatusReason`](crate::model::StatusReason)
-    #[non_exhaustive]
+    /// A builder for [`StatusReason`](crate::model::StatusReason).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason_code: std::option::Option<std::string::String>,
@@ -9751,7 +9704,7 @@ pub mod status_reason {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatusReason`](crate::model::StatusReason)
+        /// Consumes the builder and constructs a [`StatusReason`](crate::model::StatusReason).
         pub fn build(self) -> crate::model::StatusReason {
             crate::model::StatusReason {
                 reason_code: self.reason_code,
@@ -9761,7 +9714,7 @@ pub mod status_reason {
     }
 }
 impl StatusReason {
-    /// Creates a new builder-style object to manufacture [`StatusReason`](crate::model::StatusReason)
+    /// Creates a new builder-style object to manufacture [`StatusReason`](crate::model::StatusReason).
     pub fn builder() -> crate::model::status_reason::Builder {
         crate::model::status_reason::Builder::default()
     }
@@ -9907,11 +9860,10 @@ impl std::fmt::Debug for Resource {
         formatter.finish()
     }
 }
-/// See [`Resource`](crate::model::Resource)
+/// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
-    /// A builder for [`Resource`](crate::model::Resource)
-    #[non_exhaustive]
+    /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -10039,7 +9991,7 @@ pub mod resource {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource)
+        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
                 r#type: self.r#type,
@@ -10055,7 +10007,7 @@ pub mod resource {
     }
 }
 impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource)
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
     pub fn builder() -> crate::model::resource::Builder {
         crate::model::resource::Builder::default()
     }
@@ -10793,11 +10745,10 @@ impl std::fmt::Debug for ResourceDetails {
         formatter.finish()
     }
 }
-/// See [`ResourceDetails`](crate::model::ResourceDetails)
+/// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
 
-    /// A builder for [`ResourceDetails`](crate::model::ResourceDetails)
-    #[non_exhaustive]
+    /// A builder for [`ResourceDetails`](crate::model::ResourceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_auto_scaling_auto_scaling_group:
@@ -12063,7 +12014,7 @@ pub mod resource_details {
             self.aws_ecs_task = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails)
+        /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails).
         pub fn build(self) -> crate::model::ResourceDetails {
             crate::model::ResourceDetails {
                 aws_auto_scaling_auto_scaling_group: self.aws_auto_scaling_auto_scaling_group,
@@ -12147,7 +12098,7 @@ pub mod resource_details {
     }
 }
 impl ResourceDetails {
-    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails)
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
     pub fn builder() -> crate::model::resource_details::Builder {
         crate::model::resource_details::Builder::default()
     }
@@ -12229,11 +12180,10 @@ impl std::fmt::Debug for AwsEcsTaskDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails)
+/// See [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
 pub mod aws_ecs_task_details {
 
-    /// A builder for [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -12360,7 +12310,7 @@ pub mod aws_ecs_task_details {
             self.containers = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDetails {
             crate::model::AwsEcsTaskDetails {
                 cluster_arn: self.cluster_arn,
@@ -12377,7 +12327,7 @@ pub mod aws_ecs_task_details {
     }
 }
 impl AwsEcsTaskDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDetails`](crate::model::AwsEcsTaskDetails).
     pub fn builder() -> crate::model::aws_ecs_task_details::Builder {
         crate::model::aws_ecs_task_details::Builder::default()
     }
@@ -12424,11 +12374,10 @@ impl std::fmt::Debug for AwsEcsContainerDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails)
+/// See [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
 pub mod aws_ecs_container_details {
 
-    /// A builder for [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -12486,7 +12435,7 @@ pub mod aws_ecs_container_details {
             self.privileged = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails)
+        /// Consumes the builder and constructs a [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
         pub fn build(self) -> crate::model::AwsEcsContainerDetails {
             crate::model::AwsEcsContainerDetails {
                 name: self.name,
@@ -12498,7 +12447,7 @@ pub mod aws_ecs_container_details {
     }
 }
 impl AwsEcsContainerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsContainerDetails`](crate::model::AwsEcsContainerDetails).
     pub fn builder() -> crate::model::aws_ecs_container_details::Builder {
         crate::model::aws_ecs_container_details::Builder::default()
     }
@@ -12531,11 +12480,10 @@ impl std::fmt::Debug for AwsMountPoint {
         formatter.finish()
     }
 }
-/// See [`AwsMountPoint`](crate::model::AwsMountPoint)
+/// See [`AwsMountPoint`](crate::model::AwsMountPoint).
 pub mod aws_mount_point {
 
-    /// A builder for [`AwsMountPoint`](crate::model::AwsMountPoint)
-    #[non_exhaustive]
+    /// A builder for [`AwsMountPoint`](crate::model::AwsMountPoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_volume: std::option::Option<std::string::String>,
@@ -12568,7 +12516,7 @@ pub mod aws_mount_point {
             self.container_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsMountPoint`](crate::model::AwsMountPoint)
+        /// Consumes the builder and constructs a [`AwsMountPoint`](crate::model::AwsMountPoint).
         pub fn build(self) -> crate::model::AwsMountPoint {
             crate::model::AwsMountPoint {
                 source_volume: self.source_volume,
@@ -12578,7 +12526,7 @@ pub mod aws_mount_point {
     }
 }
 impl AwsMountPoint {
-    /// Creates a new builder-style object to manufacture [`AwsMountPoint`](crate::model::AwsMountPoint)
+    /// Creates a new builder-style object to manufacture [`AwsMountPoint`](crate::model::AwsMountPoint).
     pub fn builder() -> crate::model::aws_mount_point::Builder {
         crate::model::aws_mount_point::Builder::default()
     }
@@ -12611,11 +12559,10 @@ impl std::fmt::Debug for AwsEcsTaskVolumeDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails)
+/// See [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
 pub mod aws_ecs_task_volume_details {
 
-    /// A builder for [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -12645,7 +12592,7 @@ pub mod aws_ecs_task_volume_details {
             self.host = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskVolumeDetails {
             crate::model::AwsEcsTaskVolumeDetails {
                 name: self.name,
@@ -12655,7 +12602,7 @@ pub mod aws_ecs_task_volume_details {
     }
 }
 impl AwsEcsTaskVolumeDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeDetails`](crate::model::AwsEcsTaskVolumeDetails).
     pub fn builder() -> crate::model::aws_ecs_task_volume_details::Builder {
         crate::model::aws_ecs_task_volume_details::Builder::default()
     }
@@ -12681,11 +12628,10 @@ impl std::fmt::Debug for AwsEcsTaskVolumeHostDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails)
+/// See [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
 pub mod aws_ecs_task_volume_host_details {
 
-    /// A builder for [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_path: std::option::Option<std::string::String>,
@@ -12701,7 +12647,7 @@ pub mod aws_ecs_task_volume_host_details {
             self.source_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskVolumeHostDetails {
             crate::model::AwsEcsTaskVolumeHostDetails {
                 source_path: self.source_path,
@@ -12710,7 +12656,7 @@ pub mod aws_ecs_task_volume_host_details {
     }
 }
 impl AwsEcsTaskVolumeHostDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskVolumeHostDetails`](crate::model::AwsEcsTaskVolumeHostDetails).
     pub fn builder() -> crate::model::aws_ecs_task_volume_host_details::Builder {
         crate::model::aws_ecs_task_volume_host_details::Builder::default()
     }
@@ -12757,11 +12703,10 @@ impl std::fmt::Debug for AwsWafRuleGroupDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails)
+/// See [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
 pub mod aws_waf_rule_group_details {
 
-    /// A builder for [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -12823,7 +12768,7 @@ pub mod aws_waf_rule_group_details {
             self.rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails)
+        /// Consumes the builder and constructs a [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
         pub fn build(self) -> crate::model::AwsWafRuleGroupDetails {
             crate::model::AwsWafRuleGroupDetails {
                 metric_name: self.metric_name,
@@ -12835,7 +12780,7 @@ pub mod aws_waf_rule_group_details {
     }
 }
 impl AwsWafRuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupDetails`](crate::model::AwsWafRuleGroupDetails).
     pub fn builder() -> crate::model::aws_waf_rule_group_details::Builder {
         crate::model::aws_waf_rule_group_details::Builder::default()
     }
@@ -12882,11 +12827,10 @@ impl std::fmt::Debug for AwsWafRuleGroupRulesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails)
+/// See [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
 pub mod aws_waf_rule_group_rules_details {
 
-    /// A builder for [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::AwsWafRuleGroupRulesActionDetails>,
@@ -12938,7 +12882,7 @@ pub mod aws_waf_rule_group_rules_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails)
+        /// Consumes the builder and constructs a [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
         pub fn build(self) -> crate::model::AwsWafRuleGroupRulesDetails {
             crate::model::AwsWafRuleGroupRulesDetails {
                 action: self.action,
@@ -12950,7 +12894,7 @@ pub mod aws_waf_rule_group_rules_details {
     }
 }
 impl AwsWafRuleGroupRulesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesDetails`](crate::model::AwsWafRuleGroupRulesDetails).
     pub fn builder() -> crate::model::aws_waf_rule_group_rules_details::Builder {
         crate::model::aws_waf_rule_group_rules_details::Builder::default()
     }
@@ -12976,11 +12920,10 @@ impl std::fmt::Debug for AwsWafRuleGroupRulesActionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails)
+/// See [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
 pub mod aws_waf_rule_group_rules_action_details {
 
-    /// A builder for [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -12996,7 +12939,7 @@ pub mod aws_waf_rule_group_rules_action_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails)
+        /// Consumes the builder and constructs a [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
         pub fn build(self) -> crate::model::AwsWafRuleGroupRulesActionDetails {
             crate::model::AwsWafRuleGroupRulesActionDetails {
                 r#type: self.r#type,
@@ -13005,7 +12948,7 @@ pub mod aws_waf_rule_group_rules_action_details {
     }
 }
 impl AwsWafRuleGroupRulesActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleGroupRulesActionDetails`](crate::model::AwsWafRuleGroupRulesActionDetails).
     pub fn builder() -> crate::model::aws_waf_rule_group_rules_action_details::Builder {
         crate::model::aws_waf_rule_group_rules_action_details::Builder::default()
     }
@@ -13055,11 +12998,10 @@ impl std::fmt::Debug for AwsWafRuleDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails)
+/// See [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
 pub mod aws_waf_rule_details {
 
-    /// A builder for [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -13121,7 +13063,7 @@ pub mod aws_waf_rule_details {
             self.rule_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails)
+        /// Consumes the builder and constructs a [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
         pub fn build(self) -> crate::model::AwsWafRuleDetails {
             crate::model::AwsWafRuleDetails {
                 metric_name: self.metric_name,
@@ -13133,7 +13075,7 @@ pub mod aws_waf_rule_details {
     }
 }
 impl AwsWafRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRuleDetails`](crate::model::AwsWafRuleDetails).
     pub fn builder() -> crate::model::aws_waf_rule_details::Builder {
         crate::model::aws_waf_rule_details::Builder::default()
     }
@@ -13173,11 +13115,10 @@ impl std::fmt::Debug for AwsWafRulePredicateListDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails)
+/// See [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
 pub mod aws_waf_rule_predicate_list_details {
 
-    /// A builder for [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -13215,7 +13156,7 @@ pub mod aws_waf_rule_predicate_list_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails)
+        /// Consumes the builder and constructs a [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
         pub fn build(self) -> crate::model::AwsWafRulePredicateListDetails {
             crate::model::AwsWafRulePredicateListDetails {
                 data_id: self.data_id,
@@ -13226,7 +13167,7 @@ pub mod aws_waf_rule_predicate_list_details {
     }
 }
 impl AwsWafRulePredicateListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRulePredicateListDetails`](crate::model::AwsWafRulePredicateListDetails).
     pub fn builder() -> crate::model::aws_waf_rule_predicate_list_details::Builder {
         crate::model::aws_waf_rule_predicate_list_details::Builder::default()
     }
@@ -13283,11 +13224,10 @@ impl std::fmt::Debug for AwsWafRegionalWebAclDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails)
+/// See [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
 pub mod aws_waf_regional_web_acl_details {
 
-    /// A builder for [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_action: std::option::Option<std::string::String>,
@@ -13365,7 +13305,7 @@ pub mod aws_waf_regional_web_acl_details {
             self.web_acl_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalWebAclDetails {
             crate::model::AwsWafRegionalWebAclDetails {
                 default_action: self.default_action,
@@ -13378,7 +13318,7 @@ pub mod aws_waf_regional_web_acl_details {
     }
 }
 impl AwsWafRegionalWebAclDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclDetails`](crate::model::AwsWafRegionalWebAclDetails).
     pub fn builder() -> crate::model::aws_waf_regional_web_acl_details::Builder {
         crate::model::aws_waf_regional_web_acl_details::Builder::default()
     }
@@ -13438,11 +13378,10 @@ impl std::fmt::Debug for AwsWafRegionalWebAclRulesListDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails)
+/// See [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
 pub mod aws_waf_regional_web_acl_rules_list_details {
 
-    /// A builder for [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action:
@@ -13518,7 +13457,7 @@ pub mod aws_waf_regional_web_acl_rules_list_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalWebAclRulesListDetails {
             crate::model::AwsWafRegionalWebAclRulesListDetails {
                 action: self.action,
@@ -13531,7 +13470,7 @@ pub mod aws_waf_regional_web_acl_rules_list_details {
     }
 }
 impl AwsWafRegionalWebAclRulesListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListDetails`](crate::model::AwsWafRegionalWebAclRulesListDetails).
     pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_details::Builder {
         crate::model::aws_waf_regional_web_acl_rules_list_details::Builder::default()
     }
@@ -13557,11 +13496,10 @@ impl std::fmt::Debug for AwsWafRegionalWebAclRulesListOverrideActionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails)
+/// See [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
 pub mod aws_waf_regional_web_acl_rules_list_override_action_details {
 
-    /// A builder for [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -13577,7 +13515,7 @@ pub mod aws_waf_regional_web_acl_rules_list_override_action_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails {
             crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails {
                 r#type: self.r#type,
@@ -13586,7 +13524,7 @@ pub mod aws_waf_regional_web_acl_rules_list_override_action_details {
     }
 }
 impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::model::AwsWafRegionalWebAclRulesListOverrideActionDetails).
     pub fn builder(
     ) -> crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder {
         crate::model::aws_waf_regional_web_acl_rules_list_override_action_details::Builder::default(
@@ -13614,11 +13552,10 @@ impl std::fmt::Debug for AwsWafRegionalWebAclRulesListActionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails)
+/// See [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
 pub mod aws_waf_regional_web_acl_rules_list_action_details {
 
-    /// A builder for [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -13634,7 +13571,7 @@ pub mod aws_waf_regional_web_acl_rules_list_action_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalWebAclRulesListActionDetails {
             crate::model::AwsWafRegionalWebAclRulesListActionDetails {
                 r#type: self.r#type,
@@ -13643,7 +13580,7 @@ pub mod aws_waf_regional_web_acl_rules_list_action_details {
     }
 }
 impl AwsWafRegionalWebAclRulesListActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListActionDetails`](crate::model::AwsWafRegionalWebAclRulesListActionDetails).
     pub fn builder() -> crate::model::aws_waf_regional_web_acl_rules_list_action_details::Builder {
         crate::model::aws_waf_regional_web_acl_rules_list_action_details::Builder::default()
     }
@@ -13693,11 +13630,10 @@ impl std::fmt::Debug for AwsWafRegionalRuleDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails)
+/// See [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
 pub mod aws_waf_regional_rule_details {
 
-    /// A builder for [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -13762,7 +13698,7 @@ pub mod aws_waf_regional_rule_details {
             self.rule_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalRuleDetails {
             crate::model::AwsWafRegionalRuleDetails {
                 metric_name: self.metric_name,
@@ -13774,7 +13710,7 @@ pub mod aws_waf_regional_rule_details {
     }
 }
 impl AwsWafRegionalRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleDetails`](crate::model::AwsWafRegionalRuleDetails).
     pub fn builder() -> crate::model::aws_waf_regional_rule_details::Builder {
         crate::model::aws_waf_regional_rule_details::Builder::default()
     }
@@ -13814,11 +13750,10 @@ impl std::fmt::Debug for AwsWafRegionalRulePredicateListDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails)
+/// See [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
 pub mod aws_waf_regional_rule_predicate_list_details {
 
-    /// A builder for [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -13856,7 +13791,7 @@ pub mod aws_waf_regional_rule_predicate_list_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalRulePredicateListDetails {
             crate::model::AwsWafRegionalRulePredicateListDetails {
                 data_id: self.data_id,
@@ -13867,7 +13802,7 @@ pub mod aws_waf_regional_rule_predicate_list_details {
     }
 }
 impl AwsWafRegionalRulePredicateListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRulePredicateListDetails`](crate::model::AwsWafRegionalRulePredicateListDetails).
     pub fn builder() -> crate::model::aws_waf_regional_rule_predicate_list_details::Builder {
         crate::model::aws_waf_regional_rule_predicate_list_details::Builder::default()
     }
@@ -13917,11 +13852,10 @@ impl std::fmt::Debug for AwsWafRegionalRuleGroupDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails)
+/// See [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
 pub mod aws_waf_regional_rule_group_details {
 
-    /// A builder for [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -13985,7 +13919,7 @@ pub mod aws_waf_regional_rule_group_details {
             self.rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalRuleGroupDetails {
             crate::model::AwsWafRegionalRuleGroupDetails {
                 metric_name: self.metric_name,
@@ -13997,7 +13931,7 @@ pub mod aws_waf_regional_rule_group_details {
     }
 }
 impl AwsWafRegionalRuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupDetails`](crate::model::AwsWafRegionalRuleGroupDetails).
     pub fn builder() -> crate::model::aws_waf_regional_rule_group_details::Builder {
         crate::model::aws_waf_regional_rule_group_details::Builder::default()
     }
@@ -14046,11 +13980,10 @@ impl std::fmt::Debug for AwsWafRegionalRuleGroupRulesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails)
+/// See [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
 pub mod aws_waf_regional_rule_group_rules_details {
 
-    /// A builder for [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action:
@@ -14106,7 +14039,7 @@ pub mod aws_waf_regional_rule_group_rules_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalRuleGroupRulesDetails {
             crate::model::AwsWafRegionalRuleGroupRulesDetails {
                 action: self.action,
@@ -14118,7 +14051,7 @@ pub mod aws_waf_regional_rule_group_rules_details {
     }
 }
 impl AwsWafRegionalRuleGroupRulesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesDetails`](crate::model::AwsWafRegionalRuleGroupRulesDetails).
     pub fn builder() -> crate::model::aws_waf_regional_rule_group_rules_details::Builder {
         crate::model::aws_waf_regional_rule_group_rules_details::Builder::default()
     }
@@ -14144,11 +14077,10 @@ impl std::fmt::Debug for AwsWafRegionalRuleGroupRulesActionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails)
+/// See [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
 pub mod aws_waf_regional_rule_group_rules_action_details {
 
-    /// A builder for [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -14164,7 +14096,7 @@ pub mod aws_waf_regional_rule_group_rules_action_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalRuleGroupRulesActionDetails {
             crate::model::AwsWafRegionalRuleGroupRulesActionDetails {
                 r#type: self.r#type,
@@ -14173,7 +14105,7 @@ pub mod aws_waf_regional_rule_group_rules_action_details {
     }
 }
 impl AwsWafRegionalRuleGroupRulesActionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRuleGroupRulesActionDetails`](crate::model::AwsWafRegionalRuleGroupRulesActionDetails).
     pub fn builder() -> crate::model::aws_waf_regional_rule_group_rules_action_details::Builder {
         crate::model::aws_waf_regional_rule_group_rules_action_details::Builder::default()
     }
@@ -14235,11 +14167,10 @@ impl std::fmt::Debug for AwsEc2VpcPeeringConnectionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails)
+/// See [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
 pub mod aws_ec2_vpc_peering_connection_details {
 
-    /// A builder for [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accepter_vpc_info:
@@ -14326,7 +14257,7 @@ pub mod aws_ec2_vpc_peering_connection_details {
             self.vpc_peering_connection_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
         pub fn build(self) -> crate::model::AwsEc2VpcPeeringConnectionDetails {
             crate::model::AwsEc2VpcPeeringConnectionDetails {
                 accepter_vpc_info: self.accepter_vpc_info,
@@ -14339,7 +14270,7 @@ pub mod aws_ec2_vpc_peering_connection_details {
     }
 }
 impl AwsEc2VpcPeeringConnectionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionDetails`](crate::model::AwsEc2VpcPeeringConnectionDetails).
     pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_details::Builder {
         crate::model::aws_ec2_vpc_peering_connection_details::Builder::default()
     }
@@ -14372,11 +14303,10 @@ impl std::fmt::Debug for AwsEc2VpcPeeringConnectionStatusDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails)
+/// See [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
 pub mod aws_ec2_vpc_peering_connection_status_details {
 
-    /// A builder for [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -14403,7 +14333,7 @@ pub mod aws_ec2_vpc_peering_connection_status_details {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
         pub fn build(self) -> crate::model::AwsEc2VpcPeeringConnectionStatusDetails {
             crate::model::AwsEc2VpcPeeringConnectionStatusDetails {
                 code: self.code,
@@ -14413,7 +14343,7 @@ pub mod aws_ec2_vpc_peering_connection_status_details {
     }
 }
 impl AwsEc2VpcPeeringConnectionStatusDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::model::AwsEc2VpcPeeringConnectionStatusDetails).
     pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_status_details::Builder {
         crate::model::aws_ec2_vpc_peering_connection_status_details::Builder::default()
     }
@@ -14489,11 +14419,10 @@ impl std::fmt::Debug for AwsEc2VpcPeeringConnectionVpcInfoDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails)
+/// See [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
 pub mod aws_ec2_vpc_peering_connection_vpc_info_details {
 
-    /// A builder for [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block: std::option::Option<std::string::String>,
@@ -14604,7 +14533,7 @@ pub mod aws_ec2_vpc_peering_connection_vpc_info_details {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
         pub fn build(self) -> crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails {
             crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails {
                 cidr_block: self.cidr_block,
@@ -14619,7 +14548,7 @@ pub mod aws_ec2_vpc_peering_connection_vpc_info_details {
     }
 }
 impl AwsEc2VpcPeeringConnectionVpcInfoDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::model::AwsEc2VpcPeeringConnectionVpcInfoDetails).
     pub fn builder() -> crate::model::aws_ec2_vpc_peering_connection_vpc_info_details::Builder {
         crate::model::aws_ec2_vpc_peering_connection_vpc_info_details::Builder::default()
     }
@@ -14668,11 +14597,10 @@ impl std::fmt::Debug for VpcInfoPeeringOptionsDetails {
         formatter.finish()
     }
 }
-/// See [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails)
+/// See [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
 pub mod vpc_info_peering_options_details {
 
-    /// A builder for [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_dns_resolution_from_remote_vpc: std::option::Option<bool>,
@@ -14719,7 +14647,7 @@ pub mod vpc_info_peering_options_details {
             self.allow_egress_from_local_vpc_to_remote_classic_link = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails)
+        /// Consumes the builder and constructs a [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
         pub fn build(self) -> crate::model::VpcInfoPeeringOptionsDetails {
             crate::model::VpcInfoPeeringOptionsDetails {
                 allow_dns_resolution_from_remote_vpc: self
@@ -14736,7 +14664,7 @@ pub mod vpc_info_peering_options_details {
     }
 }
 impl VpcInfoPeeringOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`VpcInfoPeeringOptionsDetails`](crate::model::VpcInfoPeeringOptionsDetails).
     pub fn builder() -> crate::model::vpc_info_peering_options_details::Builder {
         crate::model::vpc_info_peering_options_details::Builder::default()
     }
@@ -14762,11 +14690,10 @@ impl std::fmt::Debug for VpcInfoIpv6CidrBlockSetDetails {
         formatter.finish()
     }
 }
-/// See [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails)
+/// See [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
 pub mod vpc_info_ipv6_cidr_block_set_details {
 
-    /// A builder for [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails)
-    #[non_exhaustive]
+    /// A builder for [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv6_cidr_block: std::option::Option<std::string::String>,
@@ -14785,7 +14712,7 @@ pub mod vpc_info_ipv6_cidr_block_set_details {
             self.ipv6_cidr_block = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails)
+        /// Consumes the builder and constructs a [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
         pub fn build(self) -> crate::model::VpcInfoIpv6CidrBlockSetDetails {
             crate::model::VpcInfoIpv6CidrBlockSetDetails {
                 ipv6_cidr_block: self.ipv6_cidr_block,
@@ -14794,7 +14721,7 @@ pub mod vpc_info_ipv6_cidr_block_set_details {
     }
 }
 impl VpcInfoIpv6CidrBlockSetDetails {
-    /// Creates a new builder-style object to manufacture [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails)
+    /// Creates a new builder-style object to manufacture [`VpcInfoIpv6CidrBlockSetDetails`](crate::model::VpcInfoIpv6CidrBlockSetDetails).
     pub fn builder() -> crate::model::vpc_info_ipv6_cidr_block_set_details::Builder {
         crate::model::vpc_info_ipv6_cidr_block_set_details::Builder::default()
     }
@@ -14820,11 +14747,10 @@ impl std::fmt::Debug for VpcInfoCidrBlockSetDetails {
         formatter.finish()
     }
 }
-/// See [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails)
+/// See [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
 pub mod vpc_info_cidr_block_set_details {
 
-    /// A builder for [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails)
-    #[non_exhaustive]
+    /// A builder for [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block: std::option::Option<std::string::String>,
@@ -14840,7 +14766,7 @@ pub mod vpc_info_cidr_block_set_details {
             self.cidr_block = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails)
+        /// Consumes the builder and constructs a [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
         pub fn build(self) -> crate::model::VpcInfoCidrBlockSetDetails {
             crate::model::VpcInfoCidrBlockSetDetails {
                 cidr_block: self.cidr_block,
@@ -14849,7 +14775,7 @@ pub mod vpc_info_cidr_block_set_details {
     }
 }
 impl VpcInfoCidrBlockSetDetails {
-    /// Creates a new builder-style object to manufacture [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails)
+    /// Creates a new builder-style object to manufacture [`VpcInfoCidrBlockSetDetails`](crate::model::VpcInfoCidrBlockSetDetails).
     pub fn builder() -> crate::model::vpc_info_cidr_block_set_details::Builder {
         crate::model::vpc_info_cidr_block_set_details::Builder::default()
     }
@@ -15035,11 +14961,10 @@ impl std::fmt::Debug for AwsCloudWatchAlarmDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails)
+/// See [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
 pub mod aws_cloud_watch_alarm_details {
 
-    /// A builder for [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions_enabled: std::option::Option<bool>,
@@ -15360,7 +15285,7 @@ pub mod aws_cloud_watch_alarm_details {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails)
+        /// Consumes the builder and constructs a [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
         pub fn build(self) -> crate::model::AwsCloudWatchAlarmDetails {
             crate::model::AwsCloudWatchAlarmDetails {
                 actions_enabled: self.actions_enabled.unwrap_or_default(),
@@ -15390,7 +15315,7 @@ pub mod aws_cloud_watch_alarm_details {
     }
 }
 impl AwsCloudWatchAlarmDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDetails`](crate::model::AwsCloudWatchAlarmDetails).
     pub fn builder() -> crate::model::aws_cloud_watch_alarm_details::Builder {
         crate::model::aws_cloud_watch_alarm_details::Builder::default()
     }
@@ -15423,11 +15348,10 @@ impl std::fmt::Debug for AwsCloudWatchAlarmDimensionsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails)
+/// See [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
 pub mod aws_cloud_watch_alarm_dimensions_details {
 
-    /// A builder for [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -15454,7 +15378,7 @@ pub mod aws_cloud_watch_alarm_dimensions_details {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails)
+        /// Consumes the builder and constructs a [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
         pub fn build(self) -> crate::model::AwsCloudWatchAlarmDimensionsDetails {
             crate::model::AwsCloudWatchAlarmDimensionsDetails {
                 name: self.name,
@@ -15464,7 +15388,7 @@ pub mod aws_cloud_watch_alarm_dimensions_details {
     }
 }
 impl AwsCloudWatchAlarmDimensionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCloudWatchAlarmDimensionsDetails`](crate::model::AwsCloudWatchAlarmDimensionsDetails).
     pub fn builder() -> crate::model::aws_cloud_watch_alarm_dimensions_details::Builder {
         crate::model::aws_cloud_watch_alarm_dimensions_details::Builder::default()
     }
@@ -15597,11 +15521,10 @@ impl std::fmt::Debug for AwsCloudFormationStackDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails)
+/// See [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
 pub mod aws_cloud_formation_stack_details {
 
-    /// A builder for [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15823,7 +15746,7 @@ pub mod aws_cloud_formation_stack_details {
             self.timeout_in_minutes = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails)
+        /// Consumes the builder and constructs a [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
         pub fn build(self) -> crate::model::AwsCloudFormationStackDetails {
             crate::model::AwsCloudFormationStackDetails {
                 capabilities: self.capabilities,
@@ -15848,7 +15771,7 @@ pub mod aws_cloud_formation_stack_details {
     }
 }
 impl AwsCloudFormationStackDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDetails`](crate::model::AwsCloudFormationStackDetails).
     pub fn builder() -> crate::model::aws_cloud_formation_stack_details::Builder {
         crate::model::aws_cloud_formation_stack_details::Builder::default()
     }
@@ -15888,11 +15811,10 @@ impl std::fmt::Debug for AwsCloudFormationStackOutputsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails)
+/// See [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
 pub mod aws_cloud_formation_stack_outputs_details {
 
-    /// A builder for [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -15930,7 +15852,7 @@ pub mod aws_cloud_formation_stack_outputs_details {
             self.output_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails)
+        /// Consumes the builder and constructs a [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
         pub fn build(self) -> crate::model::AwsCloudFormationStackOutputsDetails {
             crate::model::AwsCloudFormationStackOutputsDetails {
                 description: self.description,
@@ -15941,7 +15863,7 @@ pub mod aws_cloud_formation_stack_outputs_details {
     }
 }
 impl AwsCloudFormationStackOutputsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackOutputsDetails`](crate::model::AwsCloudFormationStackOutputsDetails).
     pub fn builder() -> crate::model::aws_cloud_formation_stack_outputs_details::Builder {
         crate::model::aws_cloud_formation_stack_outputs_details::Builder::default()
     }
@@ -15967,11 +15889,10 @@ impl std::fmt::Debug for AwsCloudFormationStackDriftInformationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails)
+/// See [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
 pub mod aws_cloud_formation_stack_drift_information_details {
 
-    /// A builder for [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_drift_status: std::option::Option<std::string::String>,
@@ -15990,7 +15911,7 @@ pub mod aws_cloud_formation_stack_drift_information_details {
             self.stack_drift_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails)
+        /// Consumes the builder and constructs a [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
         pub fn build(self) -> crate::model::AwsCloudFormationStackDriftInformationDetails {
             crate::model::AwsCloudFormationStackDriftInformationDetails {
                 stack_drift_status: self.stack_drift_status,
@@ -15999,7 +15920,7 @@ pub mod aws_cloud_formation_stack_drift_information_details {
     }
 }
 impl AwsCloudFormationStackDriftInformationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFormationStackDriftInformationDetails`](crate::model::AwsCloudFormationStackDriftInformationDetails).
     pub fn builder() -> crate::model::aws_cloud_formation_stack_drift_information_details::Builder {
         crate::model::aws_cloud_formation_stack_drift_information_details::Builder::default()
     }
@@ -16064,11 +15985,10 @@ impl std::fmt::Debug for AwsEfsAccessPointDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails)
+/// See [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
 pub mod aws_efs_access_point_details {
 
-    /// A builder for [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
@@ -16158,7 +16078,7 @@ pub mod aws_efs_access_point_details {
             self.root_directory = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails)
+        /// Consumes the builder and constructs a [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
         pub fn build(self) -> crate::model::AwsEfsAccessPointDetails {
             crate::model::AwsEfsAccessPointDetails {
                 access_point_id: self.access_point_id,
@@ -16172,7 +16092,7 @@ pub mod aws_efs_access_point_details {
     }
 }
 impl AwsEfsAccessPointDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointDetails`](crate::model::AwsEfsAccessPointDetails).
     pub fn builder() -> crate::model::aws_efs_access_point_details::Builder {
         crate::model::aws_efs_access_point_details::Builder::default()
     }
@@ -16208,11 +16128,10 @@ impl std::fmt::Debug for AwsEfsAccessPointRootDirectoryDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails)
+/// See [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
 pub mod aws_efs_access_point_root_directory_details {
 
-    /// A builder for [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_info:
@@ -16248,7 +16167,7 @@ pub mod aws_efs_access_point_root_directory_details {
             self.path = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails)
+        /// Consumes the builder and constructs a [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
         pub fn build(self) -> crate::model::AwsEfsAccessPointRootDirectoryDetails {
             crate::model::AwsEfsAccessPointRootDirectoryDetails {
                 creation_info: self.creation_info,
@@ -16258,7 +16177,7 @@ pub mod aws_efs_access_point_root_directory_details {
     }
 }
 impl AwsEfsAccessPointRootDirectoryDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryDetails`](crate::model::AwsEfsAccessPointRootDirectoryDetails).
     pub fn builder() -> crate::model::aws_efs_access_point_root_directory_details::Builder {
         crate::model::aws_efs_access_point_root_directory_details::Builder::default()
     }
@@ -16298,11 +16217,10 @@ impl std::fmt::Debug for AwsEfsAccessPointRootDirectoryCreationInfoDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails)
+/// See [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
 pub mod aws_efs_access_point_root_directory_creation_info_details {
 
-    /// A builder for [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_gid: std::option::Option<std::string::String>,
@@ -16340,7 +16258,7 @@ pub mod aws_efs_access_point_root_directory_creation_info_details {
             self.permissions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails)
+        /// Consumes the builder and constructs a [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
         pub fn build(self) -> crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails {
             crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails {
                 owner_gid: self.owner_gid,
@@ -16351,7 +16269,7 @@ pub mod aws_efs_access_point_root_directory_creation_info_details {
     }
 }
 impl AwsEfsAccessPointRootDirectoryCreationInfoDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointRootDirectoryCreationInfoDetails`](crate::model::AwsEfsAccessPointRootDirectoryCreationInfoDetails).
     pub fn builder(
     ) -> crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder {
         crate::model::aws_efs_access_point_root_directory_creation_info_details::Builder::default()
@@ -16392,11 +16310,10 @@ impl std::fmt::Debug for AwsEfsAccessPointPosixUserDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails)
+/// See [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
 pub mod aws_efs_access_point_posix_user_details {
 
-    /// A builder for [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gid: std::option::Option<std::string::String>,
@@ -16443,7 +16360,7 @@ pub mod aws_efs_access_point_posix_user_details {
             self.uid = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails)
+        /// Consumes the builder and constructs a [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
         pub fn build(self) -> crate::model::AwsEfsAccessPointPosixUserDetails {
             crate::model::AwsEfsAccessPointPosixUserDetails {
                 gid: self.gid,
@@ -16454,7 +16371,7 @@ pub mod aws_efs_access_point_posix_user_details {
     }
 }
 impl AwsEfsAccessPointPosixUserDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEfsAccessPointPosixUserDetails`](crate::model::AwsEfsAccessPointPosixUserDetails).
     pub fn builder() -> crate::model::aws_efs_access_point_posix_user_details::Builder {
         crate::model::aws_efs_access_point_posix_user_details::Builder::default()
     }
@@ -16575,11 +16492,10 @@ impl std::fmt::Debug for AwsEc2TransitGatewayDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails)
+/// See [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
 pub mod aws_ec2_transit_gateway_details {
 
-    /// A builder for [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -16765,7 +16681,7 @@ pub mod aws_ec2_transit_gateway_details {
             self.amazon_side_asn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails)
+        /// Consumes the builder and constructs a [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
         pub fn build(self) -> crate::model::AwsEc2TransitGatewayDetails {
             crate::model::AwsEc2TransitGatewayDetails {
                 id: self.id,
@@ -16785,7 +16701,7 @@ pub mod aws_ec2_transit_gateway_details {
     }
 }
 impl AwsEc2TransitGatewayDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2TransitGatewayDetails`](crate::model::AwsEc2TransitGatewayDetails).
     pub fn builder() -> crate::model::aws_ec2_transit_gateway_details::Builder {
         crate::model::aws_ec2_transit_gateway_details::Builder::default()
     }
@@ -16842,11 +16758,10 @@ impl std::fmt::Debug for AwsKinesisStreamDetails {
         formatter.finish()
     }
 }
-/// See [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails)
+/// See [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
 pub mod aws_kinesis_stream_details {
 
-    /// A builder for [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -16913,7 +16828,7 @@ pub mod aws_kinesis_stream_details {
             self.retention_period_hours = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails)
+        /// Consumes the builder and constructs a [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
         pub fn build(self) -> crate::model::AwsKinesisStreamDetails {
             crate::model::AwsKinesisStreamDetails {
                 name: self.name,
@@ -16926,7 +16841,7 @@ pub mod aws_kinesis_stream_details {
     }
 }
 impl AwsKinesisStreamDetails {
-    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails)
+    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamDetails`](crate::model::AwsKinesisStreamDetails).
     pub fn builder() -> crate::model::aws_kinesis_stream_details::Builder {
         crate::model::aws_kinesis_stream_details::Builder::default()
     }
@@ -16959,11 +16874,10 @@ impl std::fmt::Debug for AwsKinesisStreamStreamEncryptionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails)
+/// See [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
 pub mod aws_kinesis_stream_stream_encryption_details {
 
-    /// A builder for [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<std::string::String>,
@@ -16993,7 +16907,7 @@ pub mod aws_kinesis_stream_stream_encryption_details {
             self.key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails)
+        /// Consumes the builder and constructs a [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
         pub fn build(self) -> crate::model::AwsKinesisStreamStreamEncryptionDetails {
             crate::model::AwsKinesisStreamStreamEncryptionDetails {
                 encryption_type: self.encryption_type,
@@ -17003,7 +16917,7 @@ pub mod aws_kinesis_stream_stream_encryption_details {
     }
 }
 impl AwsKinesisStreamStreamEncryptionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsKinesisStreamStreamEncryptionDetails`](crate::model::AwsKinesisStreamStreamEncryptionDetails).
     pub fn builder() -> crate::model::aws_kinesis_stream_stream_encryption_details::Builder {
         crate::model::aws_kinesis_stream_stream_encryption_details::Builder::default()
     }
@@ -17077,11 +16991,10 @@ impl std::fmt::Debug for AwsRdsDbSecurityGroupDetails {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
+/// See [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
 pub mod aws_rds_db_security_group_details {
 
-    /// A builder for [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group_arn: std::option::Option<std::string::String>,
@@ -17200,7 +17113,7 @@ pub mod aws_rds_db_security_group_details {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
+        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
         pub fn build(self) -> crate::model::AwsRdsDbSecurityGroupDetails {
             crate::model::AwsRdsDbSecurityGroupDetails {
                 db_security_group_arn: self.db_security_group_arn,
@@ -17215,7 +17128,7 @@ pub mod aws_rds_db_security_group_details {
     }
 }
 impl AwsRdsDbSecurityGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupDetails`](crate::model::AwsRdsDbSecurityGroupDetails).
     pub fn builder() -> crate::model::aws_rds_db_security_group_details::Builder {
         crate::model::aws_rds_db_security_group_details::Builder::default()
     }
@@ -17248,11 +17161,10 @@ impl std::fmt::Debug for AwsRdsDbSecurityGroupIpRange {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
+/// See [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
 pub mod aws_rds_db_security_group_ip_range {
 
-    /// A builder for [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_ip: std::option::Option<std::string::String>,
@@ -17279,7 +17191,7 @@ pub mod aws_rds_db_security_group_ip_range {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
+        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
         pub fn build(self) -> crate::model::AwsRdsDbSecurityGroupIpRange {
             crate::model::AwsRdsDbSecurityGroupIpRange {
                 cidr_ip: self.cidr_ip,
@@ -17289,7 +17201,7 @@ pub mod aws_rds_db_security_group_ip_range {
     }
 }
 impl AwsRdsDbSecurityGroupIpRange {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupIpRange`](crate::model::AwsRdsDbSecurityGroupIpRange).
     pub fn builder() -> crate::model::aws_rds_db_security_group_ip_range::Builder {
         crate::model::aws_rds_db_security_group_ip_range::Builder::default()
     }
@@ -17339,11 +17251,10 @@ impl std::fmt::Debug for AwsRdsDbSecurityGroupEc2SecurityGroup {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
+/// See [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
 pub mod aws_rds_db_security_group_ec2_security_group {
 
-    /// A builder for [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ec2_security_group_id: std::option::Option<std::string::String>,
@@ -17404,7 +17315,7 @@ pub mod aws_rds_db_security_group_ec2_security_group {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
+        /// Consumes the builder and constructs a [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
         pub fn build(self) -> crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup {
             crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup {
                 ec2_security_group_id: self.ec2_security_group_id,
@@ -17416,7 +17327,7 @@ pub mod aws_rds_db_security_group_ec2_security_group {
     }
 }
 impl AwsRdsDbSecurityGroupEc2SecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSecurityGroupEc2SecurityGroup`](crate::model::AwsRdsDbSecurityGroupEc2SecurityGroup).
     pub fn builder() -> crate::model::aws_rds_db_security_group_ec2_security_group::Builder {
         crate::model::aws_rds_db_security_group_ec2_security_group::Builder::default()
     }
@@ -17485,11 +17396,10 @@ impl std::fmt::Debug for AwsNetworkFirewallRuleGroupDetails {
         formatter.finish()
     }
 }
-/// See [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails)
+/// See [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
 pub mod aws_network_firewall_rule_group_details {
 
-    /// A builder for [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity: std::option::Option<i32>,
@@ -17583,7 +17493,7 @@ pub mod aws_network_firewall_rule_group_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails)
+        /// Consumes the builder and constructs a [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
         pub fn build(self) -> crate::model::AwsNetworkFirewallRuleGroupDetails {
             crate::model::AwsNetworkFirewallRuleGroupDetails {
                 capacity: self.capacity.unwrap_or_default(),
@@ -17598,7 +17508,7 @@ pub mod aws_network_firewall_rule_group_details {
     }
 }
 impl AwsNetworkFirewallRuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails)
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallRuleGroupDetails`](crate::model::AwsNetworkFirewallRuleGroupDetails).
     pub fn builder() -> crate::model::aws_network_firewall_rule_group_details::Builder {
         crate::model::aws_network_firewall_rule_group_details::Builder::default()
     }
@@ -17635,11 +17545,10 @@ impl std::fmt::Debug for RuleGroupDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupDetails`](crate::model::RuleGroupDetails)
+/// See [`RuleGroupDetails`](crate::model::RuleGroupDetails).
 pub mod rule_group_details {
 
-    /// A builder for [`RuleGroupDetails`](crate::model::RuleGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupDetails`](crate::model::RuleGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_variables: std::option::Option<crate::model::RuleGroupVariables>,
@@ -17676,7 +17585,7 @@ pub mod rule_group_details {
             self.rules_source = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupDetails`](crate::model::RuleGroupDetails)
+        /// Consumes the builder and constructs a [`RuleGroupDetails`](crate::model::RuleGroupDetails).
         pub fn build(self) -> crate::model::RuleGroupDetails {
             crate::model::RuleGroupDetails {
                 rule_variables: self.rule_variables,
@@ -17686,7 +17595,7 @@ pub mod rule_group_details {
     }
 }
 impl RuleGroupDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupDetails`](crate::model::RuleGroupDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupDetails`](crate::model::RuleGroupDetails).
     pub fn builder() -> crate::model::rule_group_details::Builder {
         crate::model::rule_group_details::Builder::default()
     }
@@ -17745,11 +17654,10 @@ impl std::fmt::Debug for RuleGroupSource {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSource`](crate::model::RuleGroupSource)
+/// See [`RuleGroupSource`](crate::model::RuleGroupSource).
 pub mod rule_group_source {
 
-    /// A builder for [`RuleGroupSource`](crate::model::RuleGroupSource)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSource`](crate::model::RuleGroupSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules_source_list: std::option::Option<crate::model::RuleGroupSourceListDetails>,
@@ -17828,7 +17736,7 @@ pub mod rule_group_source {
             self.stateless_rules_and_custom_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSource`](crate::model::RuleGroupSource)
+        /// Consumes the builder and constructs a [`RuleGroupSource`](crate::model::RuleGroupSource).
         pub fn build(self) -> crate::model::RuleGroupSource {
             crate::model::RuleGroupSource {
                 rules_source_list: self.rules_source_list,
@@ -17840,7 +17748,7 @@ pub mod rule_group_source {
     }
 }
 impl RuleGroupSource {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSource`](crate::model::RuleGroupSource)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSource`](crate::model::RuleGroupSource).
     pub fn builder() -> crate::model::rule_group_source::Builder {
         crate::model::rule_group_source::Builder::default()
     }
@@ -17879,11 +17787,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRulesAndCustomActionsDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails)
+/// See [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
 pub mod rule_group_source_stateless_rules_and_custom_actions_details {
 
-    /// A builder for [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_actions:
@@ -17940,7 +17847,7 @@ pub mod rule_group_source_stateless_rules_and_custom_actions_details {
             self.stateless_rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
         pub fn build(self) -> crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails {
             crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails {
                 custom_actions: self.custom_actions,
@@ -17950,7 +17857,7 @@ pub mod rule_group_source_stateless_rules_and_custom_actions_details {
     }
 }
 impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::model::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
     pub fn builder(
     ) -> crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder {
         crate::model::rule_group_source_stateless_rules_and_custom_actions_details::Builder::default(
@@ -17987,11 +17894,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRulesDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails)
+/// See [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
 pub mod rule_group_source_stateless_rules_details {
 
-    /// A builder for [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
@@ -18025,7 +17931,7 @@ pub mod rule_group_source_stateless_rules_details {
             self.rule_definition = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
         pub fn build(self) -> crate::model::RuleGroupSourceStatelessRulesDetails {
             crate::model::RuleGroupSourceStatelessRulesDetails {
                 priority: self.priority.unwrap_or_default(),
@@ -18035,7 +17941,7 @@ pub mod rule_group_source_stateless_rules_details {
     }
 }
 impl RuleGroupSourceStatelessRulesDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRulesDetails`](crate::model::RuleGroupSourceStatelessRulesDetails).
     pub fn builder() -> crate::model::rule_group_source_stateless_rules_details::Builder {
         crate::model::rule_group_source_stateless_rules_details::Builder::default()
     }
@@ -18071,11 +17977,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRuleDefinition {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition)
+/// See [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
 pub mod rule_group_source_stateless_rule_definition {
 
-    /// A builder for [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18118,7 +18023,7 @@ pub mod rule_group_source_stateless_rule_definition {
             self.match_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
         pub fn build(self) -> crate::model::RuleGroupSourceStatelessRuleDefinition {
             crate::model::RuleGroupSourceStatelessRuleDefinition {
                 actions: self.actions,
@@ -18128,7 +18033,7 @@ pub mod rule_group_source_stateless_rule_definition {
     }
 }
 impl RuleGroupSourceStatelessRuleDefinition {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleDefinition`](crate::model::RuleGroupSourceStatelessRuleDefinition).
     pub fn builder() -> crate::model::rule_group_source_stateless_rule_definition::Builder {
         crate::model::rule_group_source_stateless_rule_definition::Builder::default()
     }
@@ -18215,11 +18120,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRuleMatchAttributes {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes)
+/// See [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
 pub mod rule_group_source_stateless_rule_match_attributes {
 
-    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_ports: std::option::Option<
@@ -18382,7 +18286,7 @@ pub mod rule_group_source_stateless_rule_match_attributes {
             self.tcp_flags = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
         pub fn build(self) -> crate::model::RuleGroupSourceStatelessRuleMatchAttributes {
             crate::model::RuleGroupSourceStatelessRuleMatchAttributes {
                 destination_ports: self.destination_ports,
@@ -18396,7 +18300,7 @@ pub mod rule_group_source_stateless_rule_match_attributes {
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributes {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributes`](crate::model::RuleGroupSourceStatelessRuleMatchAttributes).
     pub fn builder() -> crate::model::rule_group_source_stateless_rule_match_attributes::Builder {
         crate::model::rule_group_source_stateless_rule_match_attributes::Builder::default()
     }
@@ -18429,11 +18333,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags)
+/// See [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
 pub mod rule_group_source_stateless_rule_match_attributes_tcp_flags {
 
-    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flags: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18478,7 +18381,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_tcp_flags {
             self.masks = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
         pub fn build(self) -> crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
             crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
                 flags: self.flags,
@@ -18488,7 +18391,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_tcp_flags {
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesTcpFlags`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags).
     pub fn builder(
     ) -> crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder {
         crate::model::rule_group_source_stateless_rule_match_attributes_tcp_flags::Builder::default(
@@ -18516,11 +18419,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRuleMatchAttributesSources {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources)
+/// See [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
 pub mod rule_group_source_stateless_rule_match_attributes_sources {
 
-    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_definition: std::option::Option<std::string::String>,
@@ -18539,7 +18441,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_sources {
             self.address_definition = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
         pub fn build(self) -> crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources {
             crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources {
                 address_definition: self.address_definition,
@@ -18548,7 +18450,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_sources {
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesSources {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSources`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSources).
     pub fn builder(
     ) -> crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder {
         crate::model::rule_group_source_stateless_rule_match_attributes_sources::Builder::default()
@@ -18583,11 +18485,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRuleMatchAttributesSourcePorts 
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts)
+/// See [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
 pub mod rule_group_source_stateless_rule_match_attributes_source_ports {
 
-    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
@@ -18614,7 +18515,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_source_ports {
             self.to_port = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
         pub fn build(self) -> crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
             crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
                 from_port: self.from_port.unwrap_or_default(),
@@ -18624,7 +18525,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_source_ports {
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesSourcePorts {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesSourcePorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesSourcePorts).
     pub fn builder(
     ) -> crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder {
         crate::model::rule_group_source_stateless_rule_match_attributes_source_ports::Builder::default()
@@ -18652,11 +18553,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRuleMatchAttributesDestinations
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations)
+/// See [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
 pub mod rule_group_source_stateless_rule_match_attributes_destinations {
 
-    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_definition: std::option::Option<std::string::String>,
@@ -18675,7 +18575,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_destinations {
             self.address_definition = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
         pub fn build(
             self,
         ) -> crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations {
@@ -18686,7 +18586,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_destinations {
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
     pub fn builder(
     ) -> crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder {
         crate::model::rule_group_source_stateless_rule_match_attributes_destinations::Builder::default()
@@ -18721,11 +18621,10 @@ impl std::fmt::Debug for RuleGroupSourceStatelessRuleMatchAttributesDestinationP
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts)
+/// See [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
 pub mod rule_group_source_stateless_rule_match_attributes_destination_ports {
 
-    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_port: std::option::Option<i32>,
@@ -18752,7 +18651,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_destination_ports {
             self.to_port = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
         pub fn build(
             self,
         ) -> crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
@@ -18764,7 +18663,7 @@ pub mod rule_group_source_stateless_rule_match_attributes_destination_ports {
     }
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::model::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
     pub fn builder(
     ) -> crate::model::rule_group_source_stateless_rule_match_attributes_destination_ports::Builder
     {
@@ -18801,11 +18700,10 @@ impl std::fmt::Debug for RuleGroupSourceCustomActionsDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails)
+/// See [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
 pub mod rule_group_source_custom_actions_details {
 
-    /// A builder for [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_definition:
@@ -18839,7 +18737,7 @@ pub mod rule_group_source_custom_actions_details {
             self.action_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails)
+        /// Consumes the builder and constructs a [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
         pub fn build(self) -> crate::model::RuleGroupSourceCustomActionsDetails {
             crate::model::RuleGroupSourceCustomActionsDetails {
                 action_definition: self.action_definition,
@@ -18849,7 +18747,7 @@ pub mod rule_group_source_custom_actions_details {
     }
 }
 impl RuleGroupSourceCustomActionsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceCustomActionsDetails`](crate::model::RuleGroupSourceCustomActionsDetails).
     pub fn builder() -> crate::model::rule_group_source_custom_actions_details::Builder {
         crate::model::rule_group_source_custom_actions_details::Builder::default()
     }
@@ -18878,11 +18776,10 @@ impl std::fmt::Debug for StatelessCustomActionDefinition {
         formatter.finish()
     }
 }
-/// See [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition)
+/// See [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
 pub mod stateless_custom_action_definition {
 
-    /// A builder for [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition)
-    #[non_exhaustive]
+    /// A builder for [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) publish_metric_action:
@@ -18905,7 +18802,7 @@ pub mod stateless_custom_action_definition {
             self.publish_metric_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition)
+        /// Consumes the builder and constructs a [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
         pub fn build(self) -> crate::model::StatelessCustomActionDefinition {
             crate::model::StatelessCustomActionDefinition {
                 publish_metric_action: self.publish_metric_action,
@@ -18914,7 +18811,7 @@ pub mod stateless_custom_action_definition {
     }
 }
 impl StatelessCustomActionDefinition {
-    /// Creates a new builder-style object to manufacture [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition)
+    /// Creates a new builder-style object to manufacture [`StatelessCustomActionDefinition`](crate::model::StatelessCustomActionDefinition).
     pub fn builder() -> crate::model::stateless_custom_action_definition::Builder {
         crate::model::stateless_custom_action_definition::Builder::default()
     }
@@ -18944,11 +18841,10 @@ impl std::fmt::Debug for StatelessCustomPublishMetricAction {
         formatter.finish()
     }
 }
-/// See [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction)
+/// See [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
 pub mod stateless_custom_publish_metric_action {
 
-    /// A builder for [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction)
-    #[non_exhaustive]
+    /// A builder for [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<
@@ -18980,7 +18876,7 @@ pub mod stateless_custom_publish_metric_action {
             self.dimensions = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction)
+        /// Consumes the builder and constructs a [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
         pub fn build(self) -> crate::model::StatelessCustomPublishMetricAction {
             crate::model::StatelessCustomPublishMetricAction {
                 dimensions: self.dimensions,
@@ -18989,7 +18885,7 @@ pub mod stateless_custom_publish_metric_action {
     }
 }
 impl StatelessCustomPublishMetricAction {
-    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction)
+    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricAction`](crate::model::StatelessCustomPublishMetricAction).
     pub fn builder() -> crate::model::stateless_custom_publish_metric_action::Builder {
         crate::model::stateless_custom_publish_metric_action::Builder::default()
     }
@@ -19015,11 +18911,10 @@ impl std::fmt::Debug for StatelessCustomPublishMetricActionDimension {
         formatter.finish()
     }
 }
-/// See [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension)
+/// See [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
 pub mod stateless_custom_publish_metric_action_dimension {
 
-    /// A builder for [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension)
-    #[non_exhaustive]
+    /// A builder for [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -19035,14 +18930,14 @@ pub mod stateless_custom_publish_metric_action_dimension {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension)
+        /// Consumes the builder and constructs a [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
         pub fn build(self) -> crate::model::StatelessCustomPublishMetricActionDimension {
             crate::model::StatelessCustomPublishMetricActionDimension { value: self.value }
         }
     }
 }
 impl StatelessCustomPublishMetricActionDimension {
-    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension)
+    /// Creates a new builder-style object to manufacture [`StatelessCustomPublishMetricActionDimension`](crate::model::StatelessCustomPublishMetricActionDimension).
     pub fn builder() -> crate::model::stateless_custom_publish_metric_action_dimension::Builder {
         crate::model::stateless_custom_publish_metric_action_dimension::Builder::default()
     }
@@ -19088,11 +18983,10 @@ impl std::fmt::Debug for RuleGroupSourceStatefulRulesDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails)
+/// See [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
 pub mod rule_group_source_stateful_rules_details {
 
-    /// A builder for [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
@@ -19153,7 +19047,7 @@ pub mod rule_group_source_stateful_rules_details {
             self.rule_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
         pub fn build(self) -> crate::model::RuleGroupSourceStatefulRulesDetails {
             crate::model::RuleGroupSourceStatefulRulesDetails {
                 action: self.action,
@@ -19164,7 +19058,7 @@ pub mod rule_group_source_stateful_rules_details {
     }
 }
 impl RuleGroupSourceStatefulRulesDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesDetails`](crate::model::RuleGroupSourceStatefulRulesDetails).
     pub fn builder() -> crate::model::rule_group_source_stateful_rules_details::Builder {
         crate::model::rule_group_source_stateful_rules_details::Builder::default()
     }
@@ -19197,11 +19091,10 @@ impl std::fmt::Debug for RuleGroupSourceStatefulRulesOptionsDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails)
+/// See [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
 pub mod rule_group_source_stateful_rules_options_details {
 
-    /// A builder for [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keyword: std::option::Option<std::string::String>,
@@ -19237,7 +19130,7 @@ pub mod rule_group_source_stateful_rules_options_details {
             self.settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
         pub fn build(self) -> crate::model::RuleGroupSourceStatefulRulesOptionsDetails {
             crate::model::RuleGroupSourceStatefulRulesOptionsDetails {
                 keyword: self.keyword,
@@ -19247,7 +19140,7 @@ pub mod rule_group_source_stateful_rules_options_details {
     }
 }
 impl RuleGroupSourceStatefulRulesOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::model::RuleGroupSourceStatefulRulesOptionsDetails).
     pub fn builder() -> crate::model::rule_group_source_stateful_rules_options_details::Builder {
         crate::model::rule_group_source_stateful_rules_options_details::Builder::default()
     }
@@ -19308,11 +19201,10 @@ impl std::fmt::Debug for RuleGroupSourceStatefulRulesHeaderDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails)
+/// See [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
 pub mod rule_group_source_stateful_rules_header_details {
 
-    /// A builder for [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<std::string::String>,
@@ -19386,7 +19278,7 @@ pub mod rule_group_source_stateful_rules_header_details {
             self.source_port = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails)
+        /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
         pub fn build(self) -> crate::model::RuleGroupSourceStatefulRulesHeaderDetails {
             crate::model::RuleGroupSourceStatefulRulesHeaderDetails {
                 destination: self.destination,
@@ -19400,7 +19292,7 @@ pub mod rule_group_source_stateful_rules_header_details {
     }
 }
 impl RuleGroupSourceStatefulRulesHeaderDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceStatefulRulesHeaderDetails`](crate::model::RuleGroupSourceStatefulRulesHeaderDetails).
     pub fn builder() -> crate::model::rule_group_source_stateful_rules_header_details::Builder {
         crate::model::rule_group_source_stateful_rules_header_details::Builder::default()
     }
@@ -19440,11 +19332,10 @@ impl std::fmt::Debug for RuleGroupSourceListDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails)
+/// See [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
 pub mod rule_group_source_list_details {
 
-    /// A builder for [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) generated_rules_type: std::option::Option<std::string::String>,
@@ -19503,7 +19394,7 @@ pub mod rule_group_source_list_details {
             self.targets = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails)
+        /// Consumes the builder and constructs a [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
         pub fn build(self) -> crate::model::RuleGroupSourceListDetails {
             crate::model::RuleGroupSourceListDetails {
                 generated_rules_type: self.generated_rules_type,
@@ -19514,7 +19405,7 @@ pub mod rule_group_source_list_details {
     }
 }
 impl RuleGroupSourceListDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupSourceListDetails`](crate::model::RuleGroupSourceListDetails).
     pub fn builder() -> crate::model::rule_group_source_list_details::Builder {
         crate::model::rule_group_source_list_details::Builder::default()
     }
@@ -19549,11 +19440,10 @@ impl std::fmt::Debug for RuleGroupVariables {
         formatter.finish()
     }
 }
-/// See [`RuleGroupVariables`](crate::model::RuleGroupVariables)
+/// See [`RuleGroupVariables`](crate::model::RuleGroupVariables).
 pub mod rule_group_variables {
 
-    /// A builder for [`RuleGroupVariables`](crate::model::RuleGroupVariables)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupVariables`](crate::model::RuleGroupVariables).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_sets: std::option::Option<crate::model::RuleGroupVariablesIpSetsDetails>,
@@ -19586,7 +19476,7 @@ pub mod rule_group_variables {
             self.port_sets = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupVariables`](crate::model::RuleGroupVariables)
+        /// Consumes the builder and constructs a [`RuleGroupVariables`](crate::model::RuleGroupVariables).
         pub fn build(self) -> crate::model::RuleGroupVariables {
             crate::model::RuleGroupVariables {
                 ip_sets: self.ip_sets,
@@ -19596,7 +19486,7 @@ pub mod rule_group_variables {
     }
 }
 impl RuleGroupVariables {
-    /// Creates a new builder-style object to manufacture [`RuleGroupVariables`](crate::model::RuleGroupVariables)
+    /// Creates a new builder-style object to manufacture [`RuleGroupVariables`](crate::model::RuleGroupVariables).
     pub fn builder() -> crate::model::rule_group_variables::Builder {
         crate::model::rule_group_variables::Builder::default()
     }
@@ -19622,11 +19512,10 @@ impl std::fmt::Debug for RuleGroupVariablesPortSetsDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails)
+/// See [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
 pub mod rule_group_variables_port_sets_details {
 
-    /// A builder for [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19651,7 +19540,7 @@ pub mod rule_group_variables_port_sets_details {
             self.definition = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails)
+        /// Consumes the builder and constructs a [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
         pub fn build(self) -> crate::model::RuleGroupVariablesPortSetsDetails {
             crate::model::RuleGroupVariablesPortSetsDetails {
                 definition: self.definition,
@@ -19660,7 +19549,7 @@ pub mod rule_group_variables_port_sets_details {
     }
 }
 impl RuleGroupVariablesPortSetsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesPortSetsDetails`](crate::model::RuleGroupVariablesPortSetsDetails).
     pub fn builder() -> crate::model::rule_group_variables_port_sets_details::Builder {
         crate::model::rule_group_variables_port_sets_details::Builder::default()
     }
@@ -19686,11 +19575,10 @@ impl std::fmt::Debug for RuleGroupVariablesIpSetsDetails {
         formatter.finish()
     }
 }
-/// See [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails)
+/// See [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
 pub mod rule_group_variables_ip_sets_details {
 
-    /// A builder for [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails)
-    #[non_exhaustive]
+    /// A builder for [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19715,7 +19603,7 @@ pub mod rule_group_variables_ip_sets_details {
             self.definition = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails)
+        /// Consumes the builder and constructs a [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
         pub fn build(self) -> crate::model::RuleGroupVariablesIpSetsDetails {
             crate::model::RuleGroupVariablesIpSetsDetails {
                 definition: self.definition,
@@ -19724,7 +19612,7 @@ pub mod rule_group_variables_ip_sets_details {
     }
 }
 impl RuleGroupVariablesIpSetsDetails {
-    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails)
+    /// Creates a new builder-style object to manufacture [`RuleGroupVariablesIpSetsDetails`](crate::model::RuleGroupVariablesIpSetsDetails).
     pub fn builder() -> crate::model::rule_group_variables_ip_sets_details::Builder {
         crate::model::rule_group_variables_ip_sets_details::Builder::default()
     }
@@ -19820,11 +19708,10 @@ impl std::fmt::Debug for AwsNetworkFirewallFirewallDetails {
         formatter.finish()
     }
 }
-/// See [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails)
+/// See [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
 pub mod aws_network_firewall_firewall_details {
 
-    /// A builder for [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_protection: std::option::Option<bool>,
@@ -19964,7 +19851,7 @@ pub mod aws_network_firewall_firewall_details {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails)
+        /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
         pub fn build(self) -> crate::model::AwsNetworkFirewallFirewallDetails {
             crate::model::AwsNetworkFirewallFirewallDetails {
                 delete_protection: self.delete_protection.unwrap_or_default(),
@@ -19984,7 +19871,7 @@ pub mod aws_network_firewall_firewall_details {
     }
 }
 impl AwsNetworkFirewallFirewallDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails)
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallDetails`](crate::model::AwsNetworkFirewallFirewallDetails).
     pub fn builder() -> crate::model::aws_network_firewall_firewall_details::Builder {
         crate::model::aws_network_firewall_firewall_details::Builder::default()
     }
@@ -20010,11 +19897,10 @@ impl std::fmt::Debug for AwsNetworkFirewallFirewallSubnetMappingsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails)
+/// See [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
 pub mod aws_network_firewall_firewall_subnet_mappings_details {
 
-    /// A builder for [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -20030,7 +19916,7 @@ pub mod aws_network_firewall_firewall_subnet_mappings_details {
             self.subnet_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails)
+        /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
         pub fn build(self) -> crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails {
             crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails {
                 subnet_id: self.subnet_id,
@@ -20039,7 +19925,7 @@ pub mod aws_network_firewall_firewall_subnet_mappings_details {
     }
 }
 impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::model::AwsNetworkFirewallFirewallSubnetMappingsDetails).
     pub fn builder() -> crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder
     {
         crate::model::aws_network_firewall_firewall_subnet_mappings_details::Builder::default()
@@ -20094,11 +19980,10 @@ impl std::fmt::Debug for AwsNetworkFirewallFirewallPolicyDetails {
         formatter.finish()
     }
 }
-/// See [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails)
+/// See [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
 pub mod aws_network_firewall_firewall_policy_details {
 
-    /// A builder for [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy: std::option::Option<crate::model::FirewallPolicyDetails>,
@@ -20170,7 +20055,7 @@ pub mod aws_network_firewall_firewall_policy_details {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails)
+        /// Consumes the builder and constructs a [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
         pub fn build(self) -> crate::model::AwsNetworkFirewallFirewallPolicyDetails {
             crate::model::AwsNetworkFirewallFirewallPolicyDetails {
                 firewall_policy: self.firewall_policy,
@@ -20183,7 +20068,7 @@ pub mod aws_network_firewall_firewall_policy_details {
     }
 }
 impl AwsNetworkFirewallFirewallPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsNetworkFirewallFirewallPolicyDetails`](crate::model::AwsNetworkFirewallFirewallPolicyDetails).
     pub fn builder() -> crate::model::aws_network_firewall_firewall_policy_details::Builder {
         crate::model::aws_network_firewall_firewall_policy_details::Builder::default()
     }
@@ -20266,11 +20151,10 @@ impl std::fmt::Debug for FirewallPolicyDetails {
         formatter.finish()
     }
 }
-/// See [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails)
+/// See [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
 pub mod firewall_policy_details {
 
-    /// A builder for [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails)
-    #[non_exhaustive]
+    /// A builder for [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stateful_rule_group_references: std::option::Option<
@@ -20405,7 +20289,7 @@ pub mod firewall_policy_details {
             self.stateless_rule_group_references = input;
             self
         }
-        /// Consumes the builder and constructs a [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails)
+        /// Consumes the builder and constructs a [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
         pub fn build(self) -> crate::model::FirewallPolicyDetails {
             crate::model::FirewallPolicyDetails {
                 stateful_rule_group_references: self.stateful_rule_group_references,
@@ -20418,7 +20302,7 @@ pub mod firewall_policy_details {
     }
 }
 impl FirewallPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails)
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyDetails`](crate::model::FirewallPolicyDetails).
     pub fn builder() -> crate::model::firewall_policy_details::Builder {
         crate::model::firewall_policy_details::Builder::default()
     }
@@ -20451,11 +20335,10 @@ impl std::fmt::Debug for FirewallPolicyStatelessRuleGroupReferencesDetails {
         formatter.finish()
     }
 }
-/// See [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails)
+/// See [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
 pub mod firewall_policy_stateless_rule_group_references_details {
 
-    /// A builder for [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails)
-    #[non_exhaustive]
+    /// A builder for [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) priority: std::option::Option<i32>,
@@ -20482,7 +20365,7 @@ pub mod firewall_policy_stateless_rule_group_references_details {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails)
+        /// Consumes the builder and constructs a [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
         pub fn build(self) -> crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails {
             crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails {
                 priority: self.priority.unwrap_or_default(),
@@ -20492,7 +20375,7 @@ pub mod firewall_policy_stateless_rule_group_references_details {
     }
 }
 impl FirewallPolicyStatelessRuleGroupReferencesDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails)
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatelessRuleGroupReferencesDetails).
     pub fn builder(
     ) -> crate::model::firewall_policy_stateless_rule_group_references_details::Builder {
         crate::model::firewall_policy_stateless_rule_group_references_details::Builder::default()
@@ -20528,11 +20411,10 @@ impl std::fmt::Debug for FirewallPolicyStatelessCustomActionsDetails {
         formatter.finish()
     }
 }
-/// See [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails)
+/// See [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
 pub mod firewall_policy_stateless_custom_actions_details {
 
-    /// A builder for [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_definition:
@@ -20566,7 +20448,7 @@ pub mod firewall_policy_stateless_custom_actions_details {
             self.action_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails)
+        /// Consumes the builder and constructs a [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
         pub fn build(self) -> crate::model::FirewallPolicyStatelessCustomActionsDetails {
             crate::model::FirewallPolicyStatelessCustomActionsDetails {
                 action_definition: self.action_definition,
@@ -20576,7 +20458,7 @@ pub mod firewall_policy_stateless_custom_actions_details {
     }
 }
 impl FirewallPolicyStatelessCustomActionsDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails)
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatelessCustomActionsDetails`](crate::model::FirewallPolicyStatelessCustomActionsDetails).
     pub fn builder() -> crate::model::firewall_policy_stateless_custom_actions_details::Builder {
         crate::model::firewall_policy_stateless_custom_actions_details::Builder::default()
     }
@@ -20602,11 +20484,10 @@ impl std::fmt::Debug for FirewallPolicyStatefulRuleGroupReferencesDetails {
         formatter.finish()
     }
 }
-/// See [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails)
+/// See [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
 pub mod firewall_policy_stateful_rule_group_references_details {
 
-    /// A builder for [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails)
-    #[non_exhaustive]
+    /// A builder for [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -20622,7 +20503,7 @@ pub mod firewall_policy_stateful_rule_group_references_details {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails)
+        /// Consumes the builder and constructs a [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
         pub fn build(self) -> crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails {
             crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails {
                 resource_arn: self.resource_arn,
@@ -20631,7 +20512,7 @@ pub mod firewall_policy_stateful_rule_group_references_details {
     }
 }
 impl FirewallPolicyStatefulRuleGroupReferencesDetails {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails)
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::model::FirewallPolicyStatefulRuleGroupReferencesDetails).
     pub fn builder() -> crate::model::firewall_policy_stateful_rule_group_references_details::Builder
     {
         crate::model::firewall_policy_stateful_rule_group_references_details::Builder::default()
@@ -20720,11 +20601,10 @@ impl std::fmt::Debug for AwsEksClusterDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails)
+/// See [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
 pub mod aws_eks_cluster_details {
 
-    /// A builder for [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -20844,7 +20724,7 @@ pub mod aws_eks_cluster_details {
             self.logging = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails)
+        /// Consumes the builder and constructs a [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
         pub fn build(self) -> crate::model::AwsEksClusterDetails {
             crate::model::AwsEksClusterDetails {
                 arn: self.arn,
@@ -20861,7 +20741,7 @@ pub mod aws_eks_cluster_details {
     }
 }
 impl AwsEksClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterDetails`](crate::model::AwsEksClusterDetails).
     pub fn builder() -> crate::model::aws_eks_cluster_details::Builder {
         crate::model::aws_eks_cluster_details::Builder::default()
     }
@@ -20890,11 +20770,10 @@ impl std::fmt::Debug for AwsEksClusterLoggingDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails)
+/// See [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
 pub mod aws_eks_cluster_logging_details {
 
-    /// A builder for [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_logging: std::option::Option<
@@ -20926,7 +20805,7 @@ pub mod aws_eks_cluster_logging_details {
             self.cluster_logging = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails)
+        /// Consumes the builder and constructs a [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
         pub fn build(self) -> crate::model::AwsEksClusterLoggingDetails {
             crate::model::AwsEksClusterLoggingDetails {
                 cluster_logging: self.cluster_logging,
@@ -20935,7 +20814,7 @@ pub mod aws_eks_cluster_logging_details {
     }
 }
 impl AwsEksClusterLoggingDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingDetails`](crate::model::AwsEksClusterLoggingDetails).
     pub fn builder() -> crate::model::aws_eks_cluster_logging_details::Builder {
         crate::model::aws_eks_cluster_logging_details::Builder::default()
     }
@@ -20968,11 +20847,10 @@ impl std::fmt::Debug for AwsEksClusterLoggingClusterLoggingDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails)
+/// See [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
 pub mod aws_eks_cluster_logging_cluster_logging_details {
 
-    /// A builder for [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -21008,7 +20886,7 @@ pub mod aws_eks_cluster_logging_cluster_logging_details {
             self.types = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails)
+        /// Consumes the builder and constructs a [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
         pub fn build(self) -> crate::model::AwsEksClusterLoggingClusterLoggingDetails {
             crate::model::AwsEksClusterLoggingClusterLoggingDetails {
                 enabled: self.enabled.unwrap_or_default(),
@@ -21018,7 +20896,7 @@ pub mod aws_eks_cluster_logging_cluster_logging_details {
     }
 }
 impl AwsEksClusterLoggingClusterLoggingDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterLoggingClusterLoggingDetails`](crate::model::AwsEksClusterLoggingClusterLoggingDetails).
     pub fn builder() -> crate::model::aws_eks_cluster_logging_cluster_logging_details::Builder {
         crate::model::aws_eks_cluster_logging_cluster_logging_details::Builder::default()
     }
@@ -21051,11 +20929,10 @@ impl std::fmt::Debug for AwsEksClusterResourcesVpcConfigDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails)
+/// See [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
 pub mod aws_eks_cluster_resources_vpc_config_details {
 
-    /// A builder for [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21100,7 +20977,7 @@ pub mod aws_eks_cluster_resources_vpc_config_details {
             self.subnet_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails)
+        /// Consumes the builder and constructs a [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
         pub fn build(self) -> crate::model::AwsEksClusterResourcesVpcConfigDetails {
             crate::model::AwsEksClusterResourcesVpcConfigDetails {
                 security_group_ids: self.security_group_ids,
@@ -21110,7 +20987,7 @@ pub mod aws_eks_cluster_resources_vpc_config_details {
     }
 }
 impl AwsEksClusterResourcesVpcConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEksClusterResourcesVpcConfigDetails`](crate::model::AwsEksClusterResourcesVpcConfigDetails).
     pub fn builder() -> crate::model::aws_eks_cluster_resources_vpc_config_details::Builder {
         crate::model::aws_eks_cluster_resources_vpc_config_details::Builder::default()
     }
@@ -21179,11 +21056,10 @@ impl std::fmt::Debug for AwsEcrRepositoryDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails)
+/// See [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
 pub mod aws_ecr_repository_details {
 
-    /// A builder for [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -21279,7 +21155,7 @@ pub mod aws_ecr_repository_details {
             self.repository_policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails)
+        /// Consumes the builder and constructs a [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
         pub fn build(self) -> crate::model::AwsEcrRepositoryDetails {
             crate::model::AwsEcrRepositoryDetails {
                 arn: self.arn,
@@ -21293,7 +21169,7 @@ pub mod aws_ecr_repository_details {
     }
 }
 impl AwsEcrRepositoryDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryDetails`](crate::model::AwsEcrRepositoryDetails).
     pub fn builder() -> crate::model::aws_ecr_repository_details::Builder {
         crate::model::aws_ecr_repository_details::Builder::default()
     }
@@ -21326,11 +21202,10 @@ impl std::fmt::Debug for AwsEcrRepositoryLifecyclePolicyDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails)
+/// See [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
 pub mod aws_ecr_repository_lifecycle_policy_details {
 
-    /// A builder for [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
@@ -21360,7 +21235,7 @@ pub mod aws_ecr_repository_lifecycle_policy_details {
             self.registry_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails)
+        /// Consumes the builder and constructs a [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
         pub fn build(self) -> crate::model::AwsEcrRepositoryLifecyclePolicyDetails {
             crate::model::AwsEcrRepositoryLifecyclePolicyDetails {
                 lifecycle_policy_text: self.lifecycle_policy_text,
@@ -21370,7 +21245,7 @@ pub mod aws_ecr_repository_lifecycle_policy_details {
     }
 }
 impl AwsEcrRepositoryLifecyclePolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::model::AwsEcrRepositoryLifecyclePolicyDetails).
     pub fn builder() -> crate::model::aws_ecr_repository_lifecycle_policy_details::Builder {
         crate::model::aws_ecr_repository_lifecycle_policy_details::Builder::default()
     }
@@ -21396,11 +21271,10 @@ impl std::fmt::Debug for AwsEcrRepositoryImageScanningConfigurationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails)
+/// See [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
 pub mod aws_ecr_repository_image_scanning_configuration_details {
 
-    /// A builder for [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scan_on_push: std::option::Option<bool>,
@@ -21416,7 +21290,7 @@ pub mod aws_ecr_repository_image_scanning_configuration_details {
             self.scan_on_push = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
         pub fn build(self) -> crate::model::AwsEcrRepositoryImageScanningConfigurationDetails {
             crate::model::AwsEcrRepositoryImageScanningConfigurationDetails {
                 scan_on_push: self.scan_on_push.unwrap_or_default(),
@@ -21425,7 +21299,7 @@ pub mod aws_ecr_repository_image_scanning_configuration_details {
     }
 }
 impl AwsEcrRepositoryImageScanningConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::model::AwsEcrRepositoryImageScanningConfigurationDetails).
     pub fn builder(
     ) -> crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder {
         crate::model::aws_ecr_repository_image_scanning_configuration_details::Builder::default()
@@ -21490,11 +21364,10 @@ impl std::fmt::Debug for AwsWafRegionalRateBasedRuleDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails)
+/// See [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
 pub mod aws_waf_regional_rate_based_rule_details {
 
-    /// A builder for [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -21581,7 +21454,7 @@ pub mod aws_waf_regional_rate_based_rule_details {
             self.match_predicates = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails)
+        /// Consumes the builder and constructs a [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
         pub fn build(self) -> crate::model::AwsWafRegionalRateBasedRuleDetails {
             crate::model::AwsWafRegionalRateBasedRuleDetails {
                 metric_name: self.metric_name,
@@ -21595,7 +21468,7 @@ pub mod aws_waf_regional_rate_based_rule_details {
     }
 }
 impl AwsWafRegionalRateBasedRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleDetails`](crate::model::AwsWafRegionalRateBasedRuleDetails).
     pub fn builder() -> crate::model::aws_waf_regional_rate_based_rule_details::Builder {
         crate::model::aws_waf_regional_rate_based_rule_details::Builder::default()
     }
@@ -21637,11 +21510,10 @@ impl std::fmt::Debug for AwsWafRegionalRateBasedRuleMatchPredicate {
         formatter.finish()
     }
 }
-/// See [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate)
+/// See [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
 pub mod aws_waf_regional_rate_based_rule_match_predicate {
 
-    /// A builder for [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -21681,7 +21553,7 @@ pub mod aws_waf_regional_rate_based_rule_match_predicate {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate)
+        /// Consumes the builder and constructs a [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
         pub fn build(self) -> crate::model::AwsWafRegionalRateBasedRuleMatchPredicate {
             crate::model::AwsWafRegionalRateBasedRuleMatchPredicate {
                 data_id: self.data_id,
@@ -21692,7 +21564,7 @@ pub mod aws_waf_regional_rate_based_rule_match_predicate {
     }
 }
 impl AwsWafRegionalRateBasedRuleMatchPredicate {
-    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate)
+    /// Creates a new builder-style object to manufacture [`AwsWafRegionalRateBasedRuleMatchPredicate`](crate::model::AwsWafRegionalRateBasedRuleMatchPredicate).
     pub fn builder() -> crate::model::aws_waf_regional_rate_based_rule_match_predicate::Builder {
         crate::model::aws_waf_regional_rate_based_rule_match_predicate::Builder::default()
     }
@@ -21756,11 +21628,10 @@ impl std::fmt::Debug for AwsWafRateBasedRuleDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails)
+/// See [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
 pub mod aws_waf_rate_based_rule_details {
 
-    /// A builder for [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -21846,7 +21717,7 @@ pub mod aws_waf_rate_based_rule_details {
             self.match_predicates = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails)
+        /// Consumes the builder and constructs a [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
         pub fn build(self) -> crate::model::AwsWafRateBasedRuleDetails {
             crate::model::AwsWafRateBasedRuleDetails {
                 metric_name: self.metric_name,
@@ -21860,7 +21731,7 @@ pub mod aws_waf_rate_based_rule_details {
     }
 }
 impl AwsWafRateBasedRuleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleDetails`](crate::model::AwsWafRateBasedRuleDetails).
     pub fn builder() -> crate::model::aws_waf_rate_based_rule_details::Builder {
         crate::model::aws_waf_rate_based_rule_details::Builder::default()
     }
@@ -21902,11 +21773,10 @@ impl std::fmt::Debug for AwsWafRateBasedRuleMatchPredicate {
         formatter.finish()
     }
 }
-/// See [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate)
+/// See [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
 pub mod aws_waf_rate_based_rule_match_predicate {
 
-    /// A builder for [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_id: std::option::Option<std::string::String>,
@@ -21946,7 +21816,7 @@ pub mod aws_waf_rate_based_rule_match_predicate {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate)
+        /// Consumes the builder and constructs a [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
         pub fn build(self) -> crate::model::AwsWafRateBasedRuleMatchPredicate {
             crate::model::AwsWafRateBasedRuleMatchPredicate {
                 data_id: self.data_id,
@@ -21957,7 +21827,7 @@ pub mod aws_waf_rate_based_rule_match_predicate {
     }
 }
 impl AwsWafRateBasedRuleMatchPredicate {
-    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate)
+    /// Creates a new builder-style object to manufacture [`AwsWafRateBasedRuleMatchPredicate`](crate::model::AwsWafRateBasedRuleMatchPredicate).
     pub fn builder() -> crate::model::aws_waf_rate_based_rule_match_predicate::Builder {
         crate::model::aws_waf_rate_based_rule_match_predicate::Builder::default()
     }
@@ -21997,11 +21867,10 @@ impl std::fmt::Debug for AwsXrayEncryptionConfigDetails {
         formatter.finish()
     }
 }
-/// See [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails)
+/// See [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
 pub mod aws_xray_encryption_config_details {
 
-    /// A builder for [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -22039,7 +21908,7 @@ pub mod aws_xray_encryption_config_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails)
+        /// Consumes the builder and constructs a [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
         pub fn build(self) -> crate::model::AwsXrayEncryptionConfigDetails {
             crate::model::AwsXrayEncryptionConfigDetails {
                 key_id: self.key_id,
@@ -22050,7 +21919,7 @@ pub mod aws_xray_encryption_config_details {
     }
 }
 impl AwsXrayEncryptionConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsXrayEncryptionConfigDetails`](crate::model::AwsXrayEncryptionConfigDetails).
     pub fn builder() -> crate::model::aws_xray_encryption_config_details::Builder {
         crate::model::aws_xray_encryption_config_details::Builder::default()
     }
@@ -22156,11 +22025,10 @@ impl std::fmt::Debug for AwsEc2VpcEndpointServiceDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails)
+/// See [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
 pub mod aws_ec2_vpc_endpoint_service_details {
 
-    /// A builder for [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acceptance_required: std::option::Option<bool>,
@@ -22346,7 +22214,7 @@ pub mod aws_ec2_vpc_endpoint_service_details {
             self.service_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
         pub fn build(self) -> crate::model::AwsEc2VpcEndpointServiceDetails {
             crate::model::AwsEc2VpcEndpointServiceDetails {
                 acceptance_required: self.acceptance_required.unwrap_or_default(),
@@ -22365,7 +22233,7 @@ pub mod aws_ec2_vpc_endpoint_service_details {
     }
 }
 impl AwsEc2VpcEndpointServiceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceDetails`](crate::model::AwsEc2VpcEndpointServiceDetails).
     pub fn builder() -> crate::model::aws_ec2_vpc_endpoint_service_details::Builder {
         crate::model::aws_ec2_vpc_endpoint_service_details::Builder::default()
     }
@@ -22391,11 +22259,10 @@ impl std::fmt::Debug for AwsEc2VpcEndpointServiceServiceTypeDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails)
+/// See [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
 pub mod aws_ec2_vpc_endpoint_service_service_type_details {
 
-    /// A builder for [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<std::string::String>,
@@ -22411,7 +22278,7 @@ pub mod aws_ec2_vpc_endpoint_service_service_type_details {
             self.service_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
         pub fn build(self) -> crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails {
             crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails {
                 service_type: self.service_type,
@@ -22420,7 +22287,7 @@ pub mod aws_ec2_vpc_endpoint_service_service_type_details {
     }
 }
 impl AwsEc2VpcEndpointServiceServiceTypeDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::model::AwsEc2VpcEndpointServiceServiceTypeDetails).
     pub fn builder() -> crate::model::aws_ec2_vpc_endpoint_service_service_type_details::Builder {
         crate::model::aws_ec2_vpc_endpoint_service_service_type_details::Builder::default()
     }
@@ -22587,11 +22454,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainDetails {
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails)
+/// See [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
 pub mod aws_open_search_service_domain_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -22865,7 +22731,7 @@ pub mod aws_open_search_service_domain_details {
             self.advanced_security_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
         pub fn build(self) -> crate::model::AwsOpenSearchServiceDomainDetails {
             crate::model::AwsOpenSearchServiceDomainDetails {
                 arn: self.arn,
@@ -22888,7 +22754,7 @@ pub mod aws_open_search_service_domain_details {
     }
 }
 impl AwsOpenSearchServiceDomainDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDetails`](crate::model::AwsOpenSearchServiceDomainDetails).
     pub fn builder() -> crate::model::aws_open_search_service_domain_details::Builder {
         crate::model::aws_open_search_service_domain_details::Builder::default()
     }
@@ -22936,11 +22802,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetail
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
 pub mod aws_open_search_service_domain_advanced_security_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -22990,7 +22855,7 @@ pub mod aws_open_search_service_domain_advanced_security_options_details {
             self.master_user_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
@@ -23005,7 +22870,7 @@ pub mod aws_open_search_service_domain_advanced_security_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails`](crate::model::AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails).
     pub fn builder(
     ) -> crate::model::aws_open_search_service_domain_advanced_security_options_details::Builder
     {
@@ -23047,11 +22912,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainMasterUserOptionsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
 pub mod aws_open_search_service_domain_master_user_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) master_user_arn: std::option::Option<std::string::String>,
@@ -23098,7 +22962,7 @@ pub mod aws_open_search_service_domain_master_user_options_details {
             self.master_user_password = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
         pub fn build(self) -> crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails {
             crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails {
                 master_user_arn: self.master_user_arn,
@@ -23109,7 +22973,7 @@ pub mod aws_open_search_service_domain_master_user_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::model::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
     pub fn builder(
     ) -> crate::model::aws_open_search_service_domain_master_user_options_details::Builder {
         crate::model::aws_open_search_service_domain_master_user_options_details::Builder::default()
@@ -23159,11 +23023,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
 pub mod aws_open_search_service_domain_log_publishing_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_slow_logs:
@@ -23222,7 +23085,7 @@ pub mod aws_open_search_service_domain_log_publishing_options_details {
             self.audit_logs = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
         pub fn build(self) -> crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
             crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
                 index_slow_logs: self.index_slow_logs,
@@ -23233,7 +23096,7 @@ pub mod aws_open_search_service_domain_log_publishing_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::model::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
     pub fn builder(
     ) -> crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder {
         crate::model::aws_open_search_service_domain_log_publishing_options_details::Builder::default()
@@ -23270,11 +23133,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainLogPublishingOption {
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption)
+/// See [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
 pub mod aws_open_search_service_domain_log_publishing_option {
 
-    /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
@@ -23307,7 +23169,7 @@ pub mod aws_open_search_service_domain_log_publishing_option {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
         pub fn build(self) -> crate::model::AwsOpenSearchServiceDomainLogPublishingOption {
             crate::model::AwsOpenSearchServiceDomainLogPublishingOption {
                 cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
@@ -23317,7 +23179,7 @@ pub mod aws_open_search_service_domain_log_publishing_option {
     }
 }
 impl AwsOpenSearchServiceDomainLogPublishingOption {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainLogPublishingOption`](crate::model::AwsOpenSearchServiceDomainLogPublishingOption).
     pub fn builder() -> crate::model::aws_open_search_service_domain_log_publishing_option::Builder
     {
         crate::model::aws_open_search_service_domain_log_publishing_option::Builder::default()
@@ -23351,11 +23213,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainVpcOptionsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
 pub mod aws_open_search_service_domain_vpc_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -23400,7 +23261,7 @@ pub mod aws_open_search_service_domain_vpc_options_details {
             self.subnet_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
         pub fn build(self) -> crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails {
             crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails {
                 security_group_ids: self.security_group_ids,
@@ -23410,7 +23271,7 @@ pub mod aws_open_search_service_domain_vpc_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainVpcOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainVpcOptionsDetails`](crate::model::AwsOpenSearchServiceDomainVpcOptionsDetails).
     pub fn builder() -> crate::model::aws_open_search_service_domain_vpc_options_details::Builder {
         crate::model::aws_open_search_service_domain_vpc_options_details::Builder::default()
     }
@@ -23468,11 +23329,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainDomainEndpointOptionsDetails 
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
 pub mod aws_open_search_service_domain_domain_endpoint_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_endpoint_certificate_arn: std::option::Option<std::string::String>,
@@ -23544,7 +23404,7 @@ pub mod aws_open_search_service_domain_domain_endpoint_options_details {
             self.tls_security_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
         pub fn build(self) -> crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
             crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
                 custom_endpoint_certificate_arn: self.custom_endpoint_certificate_arn,
@@ -23557,7 +23417,7 @@ pub mod aws_open_search_service_domain_domain_endpoint_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::model::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
     pub fn builder(
     ) -> crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder {
         crate::model::aws_open_search_service_domain_domain_endpoint_options_details::Builder::default()
@@ -23655,11 +23515,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainClusterConfigDetails {
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails)
+/// See [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
 pub mod aws_open_search_service_domain_cluster_config_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_count: std::option::Option<i32>,
@@ -23792,7 +23651,7 @@ pub mod aws_open_search_service_domain_cluster_config_details {
             self.dedicated_master_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
         pub fn build(self) -> crate::model::AwsOpenSearchServiceDomainClusterConfigDetails {
             crate::model::AwsOpenSearchServiceDomainClusterConfigDetails {
                 instance_count: self.instance_count.unwrap_or_default(),
@@ -23810,7 +23669,7 @@ pub mod aws_open_search_service_domain_cluster_config_details {
     }
 }
 impl AwsOpenSearchServiceDomainClusterConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigDetails).
     pub fn builder() -> crate::model::aws_open_search_service_domain_cluster_config_details::Builder
     {
         crate::model::aws_open_search_service_domain_cluster_config_details::Builder::default()
@@ -23838,11 +23697,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainClusterConfigZoneAwarenessCon
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails)
+/// See [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
 pub mod aws_open_search_service_domain_cluster_config_zone_awareness_config_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone_count: std::option::Option<i32>,
@@ -23858,7 +23716,7 @@ pub mod aws_open_search_service_domain_cluster_config_zone_awareness_config_deta
             self.availability_zone_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails
@@ -23870,7 +23728,7 @@ pub mod aws_open_search_service_domain_cluster_config_zone_awareness_config_deta
     }
 }
 impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
     pub fn builder() -> crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder{
         crate::model::aws_open_search_service_domain_cluster_config_zone_awareness_config_details::Builder::default()
     }
@@ -23946,11 +23804,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
 pub mod aws_open_search_service_domain_service_software_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automated_update_date: std::option::Option<std::string::String>,
@@ -24052,7 +23909,7 @@ pub mod aws_open_search_service_domain_service_software_options_details {
             self.optional_deployment = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
@@ -24070,7 +23927,7 @@ pub mod aws_open_search_service_domain_service_software_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::model::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
     pub fn builder(
     ) -> crate::model::aws_open_search_service_domain_service_software_options_details::Builder
     {
@@ -24099,11 +23956,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDe
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
 pub mod aws_open_search_service_domain_node_to_node_encryption_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -24119,7 +23975,7 @@ pub mod aws_open_search_service_domain_node_to_node_encryption_options_details {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
@@ -24130,7 +23986,7 @@ pub mod aws_open_search_service_domain_node_to_node_encryption_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails`](crate::model::AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails).
     pub fn builder(
     ) -> crate::model::aws_open_search_service_domain_node_to_node_encryption_options_details::Builder
     {
@@ -24166,11 +24022,10 @@ impl std::fmt::Debug for AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetail
         formatter.finish()
     }
 }
-/// See [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails)
+/// See [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
 pub mod aws_open_search_service_domain_encryption_at_rest_options_details {
 
-    /// A builder for [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -24197,7 +24052,7 @@ pub mod aws_open_search_service_domain_encryption_at_rest_options_details {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
@@ -24209,7 +24064,7 @@ pub mod aws_open_search_service_domain_encryption_at_rest_options_details {
     }
 }
 impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::model::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
     pub fn builder(
     ) -> crate::model::aws_open_search_service_domain_encryption_at_rest_options_details::Builder
     {
@@ -24274,11 +24129,10 @@ impl std::fmt::Debug for AwsEcrContainerImageDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+/// See [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
 pub mod aws_ecr_container_image_details {
 
-    /// A builder for [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -24366,7 +24220,7 @@ pub mod aws_ecr_container_image_details {
             self.image_published_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+        /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
         pub fn build(self) -> crate::model::AwsEcrContainerImageDetails {
             crate::model::AwsEcrContainerImageDetails {
                 registry_id: self.registry_id,
@@ -24380,7 +24234,7 @@ pub mod aws_ecr_container_image_details {
     }
 }
 impl AwsEcrContainerImageDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcrContainerImageDetails`](crate::model::AwsEcrContainerImageDetails).
     pub fn builder() -> crate::model::aws_ecr_container_image_details::Builder {
         crate::model::aws_ecr_container_image_details::Builder::default()
     }
@@ -24482,11 +24336,10 @@ impl std::fmt::Debug for AwsEc2VpnConnectionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
+/// See [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
 pub mod aws_ec2_vpn_connection_details {
 
-    /// A builder for [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpn_connection_id: std::option::Option<std::string::String>,
@@ -24661,7 +24514,7 @@ pub mod aws_ec2_vpn_connection_details {
             self.transit_gateway_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
         pub fn build(self) -> crate::model::AwsEc2VpnConnectionDetails {
             crate::model::AwsEc2VpnConnectionDetails {
                 vpn_connection_id: self.vpn_connection_id,
@@ -24680,7 +24533,7 @@ pub mod aws_ec2_vpn_connection_details {
     }
 }
 impl AwsEc2VpnConnectionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionDetails`](crate::model::AwsEc2VpnConnectionDetails).
     pub fn builder() -> crate::model::aws_ec2_vpn_connection_details::Builder {
         crate::model::aws_ec2_vpn_connection_details::Builder::default()
     }
@@ -24713,11 +24566,10 @@ impl std::fmt::Debug for AwsEc2VpnConnectionRoutesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
+/// See [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
 pub mod aws_ec2_vpn_connection_routes_details {
 
-    /// A builder for [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
@@ -24747,7 +24599,7 @@ pub mod aws_ec2_vpn_connection_routes_details {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
         pub fn build(self) -> crate::model::AwsEc2VpnConnectionRoutesDetails {
             crate::model::AwsEc2VpnConnectionRoutesDetails {
                 destination_cidr_block: self.destination_cidr_block,
@@ -24757,7 +24609,7 @@ pub mod aws_ec2_vpn_connection_routes_details {
     }
 }
 impl AwsEc2VpnConnectionRoutesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionRoutesDetails`](crate::model::AwsEc2VpnConnectionRoutesDetails).
     pub fn builder() -> crate::model::aws_ec2_vpn_connection_routes_details::Builder {
         crate::model::aws_ec2_vpn_connection_routes_details::Builder::default()
     }
@@ -24794,11 +24646,10 @@ impl std::fmt::Debug for AwsEc2VpnConnectionOptionsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
+/// See [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
 pub mod aws_ec2_vpn_connection_options_details {
 
-    /// A builder for [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_routes_only: std::option::Option<bool>,
@@ -24841,7 +24692,7 @@ pub mod aws_ec2_vpn_connection_options_details {
             self.tunnel_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
         pub fn build(self) -> crate::model::AwsEc2VpnConnectionOptionsDetails {
             crate::model::AwsEc2VpnConnectionOptionsDetails {
                 static_routes_only: self.static_routes_only.unwrap_or_default(),
@@ -24851,7 +24702,7 @@ pub mod aws_ec2_vpn_connection_options_details {
     }
 }
 impl AwsEc2VpnConnectionOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsDetails).
     pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_details::Builder {
         crate::model::aws_ec2_vpn_connection_options_details::Builder::default()
     }
@@ -24994,11 +24845,10 @@ impl std::fmt::Debug for AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
+/// See [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
 pub mod aws_ec2_vpn_connection_options_tunnel_options_details {
 
-    /// A builder for [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dpd_timeout_seconds: std::option::Option<i32>,
@@ -25267,7 +25117,7 @@ pub mod aws_ec2_vpn_connection_options_tunnel_options_details {
             self.tunnel_inside_cidr = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
         pub fn build(self) -> crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
             crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
                 dpd_timeout_seconds: self.dpd_timeout_seconds.unwrap_or_default(),
@@ -25291,7 +25141,7 @@ pub mod aws_ec2_vpn_connection_options_tunnel_options_details {
     }
 }
 impl AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionOptionsTunnelOptionsDetails`](crate::model::AwsEc2VpnConnectionOptionsTunnelOptionsDetails).
     pub fn builder() -> crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder
     {
         crate::model::aws_ec2_vpn_connection_options_tunnel_options_details::Builder::default()
@@ -25355,11 +25205,10 @@ impl std::fmt::Debug for AwsEc2VpnConnectionVgwTelemetryDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
+/// See [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
 pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
 
-    /// A builder for [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accepted_route_count: std::option::Option<i32>,
@@ -25444,7 +25293,7 @@ pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
             self.status_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
         pub fn build(self) -> crate::model::AwsEc2VpnConnectionVgwTelemetryDetails {
             crate::model::AwsEc2VpnConnectionVgwTelemetryDetails {
                 accepted_route_count: self.accepted_route_count.unwrap_or_default(),
@@ -25458,7 +25307,7 @@ pub mod aws_ec2_vpn_connection_vgw_telemetry_details {
     }
 }
 impl AwsEc2VpnConnectionVgwTelemetryDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::model::AwsEc2VpnConnectionVgwTelemetryDetails).
     pub fn builder() -> crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder {
         crate::model::aws_ec2_vpn_connection_vgw_telemetry_details::Builder::default()
     }
@@ -25633,11 +25482,10 @@ impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
+/// See [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
 pub mod aws_auto_scaling_launch_configuration_details {
 
-    /// A builder for [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
@@ -25929,7 +25777,7 @@ pub mod aws_auto_scaling_launch_configuration_details {
             self.metadata_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
         pub fn build(self) -> crate::model::AwsAutoScalingLaunchConfigurationDetails {
             crate::model::AwsAutoScalingLaunchConfigurationDetails {
                 associate_public_ip_address: self.associate_public_ip_address.unwrap_or_default(),
@@ -25956,7 +25804,7 @@ pub mod aws_auto_scaling_launch_configuration_details {
     }
 }
 impl AwsAutoScalingLaunchConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationDetails`](crate::model::AwsAutoScalingLaunchConfigurationDetails).
     pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_details::Builder {
         crate::model::aws_auto_scaling_launch_configuration_details::Builder::default()
     }
@@ -25999,11 +25847,10 @@ impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationMetadataOptions {
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions)
+/// See [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
 pub mod aws_auto_scaling_launch_configuration_metadata_options {
 
-    /// A builder for [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_endpoint: std::option::Option<std::string::String>,
@@ -26044,7 +25891,7 @@ pub mod aws_auto_scaling_launch_configuration_metadata_options {
             self.http_tokens = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions)
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
         pub fn build(self) -> crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions {
             crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions {
                 http_endpoint: self.http_endpoint,
@@ -26055,7 +25902,7 @@ pub mod aws_auto_scaling_launch_configuration_metadata_options {
     }
 }
 impl AwsAutoScalingLaunchConfigurationMetadataOptions {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationMetadataOptions`](crate::model::AwsAutoScalingLaunchConfigurationMetadataOptions).
     pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder
     {
         crate::model::aws_auto_scaling_launch_configuration_metadata_options::Builder::default()
@@ -26085,11 +25932,10 @@ impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationInstanceMonitoringDeta
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
+/// See [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
 pub mod aws_auto_scaling_launch_configuration_instance_monitoring_details {
 
-    /// A builder for [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -26107,7 +25953,7 @@ pub mod aws_auto_scaling_launch_configuration_instance_monitoring_details {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
@@ -26118,7 +25964,7 @@ pub mod aws_auto_scaling_launch_configuration_instance_monitoring_details {
     }
 }
 impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::model::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
     pub fn builder(
     ) -> crate::model::aws_auto_scaling_launch_configuration_instance_monitoring_details::Builder
     {
@@ -26178,11 +26024,10 @@ impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDet
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
+/// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
 pub mod aws_auto_scaling_launch_configuration_block_device_mappings_details {
 
-    /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -26245,7 +26090,7 @@ pub mod aws_auto_scaling_launch_configuration_block_device_mappings_details {
             self.virtual_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
@@ -26259,7 +26104,7 @@ pub mod aws_auto_scaling_launch_configuration_block_device_mappings_details {
     }
 }
 impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails).
     pub fn builder(
     ) -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_details::Builder
     {
@@ -26341,11 +26186,10 @@ impl std::fmt::Debug for AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbs
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
+/// See [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
 pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details {
 
-    /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delete_on_termination: std::option::Option<bool>,
@@ -26434,7 +26278,7 @@ pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details 
             self.volume_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
@@ -26450,7 +26294,7 @@ pub mod aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details 
     }
 }
 impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::model::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
     pub fn builder() -> crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder{
         crate::model::aws_auto_scaling_launch_configuration_block_device_mappings_ebs_details::Builder::default()
     }
@@ -26666,11 +26510,10 @@ impl std::fmt::Debug for AwsEcsServiceDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
+/// See [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
 pub mod aws_ecs_service_details {
 
-    /// A builder for [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capacity_provider_strategy: std::option::Option<
@@ -27043,7 +26886,7 @@ pub mod aws_ecs_service_details {
             self.task_definition = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
         pub fn build(self) -> crate::model::AwsEcsServiceDetails {
             crate::model::AwsEcsServiceDetails {
                 capacity_provider_strategy: self.capacity_provider_strategy,
@@ -27075,7 +26918,7 @@ pub mod aws_ecs_service_details {
     }
 }
 impl AwsEcsServiceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails).
     pub fn builder() -> crate::model::aws_ecs_service_details::Builder {
         crate::model::aws_ecs_service_details::Builder::default()
     }
@@ -27130,11 +26973,10 @@ impl std::fmt::Debug for AwsEcsServiceServiceRegistriesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
+/// See [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
 pub mod aws_ecs_service_service_registries_details {
 
-    /// A builder for [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -27194,7 +27036,7 @@ pub mod aws_ecs_service_service_registries_details {
             self.registry_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
         pub fn build(self) -> crate::model::AwsEcsServiceServiceRegistriesDetails {
             crate::model::AwsEcsServiceServiceRegistriesDetails {
                 container_name: self.container_name,
@@ -27206,7 +27048,7 @@ pub mod aws_ecs_service_service_registries_details {
     }
 }
 impl AwsEcsServiceServiceRegistriesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails).
     pub fn builder() -> crate::model::aws_ecs_service_service_registries_details::Builder {
         crate::model::aws_ecs_service_service_registries_details::Builder::default()
     }
@@ -27253,11 +27095,10 @@ impl std::fmt::Debug for AwsEcsServicePlacementStrategiesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
+/// See [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
 pub mod aws_ecs_service_placement_strategies_details {
 
-    /// A builder for [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
@@ -27298,7 +27139,7 @@ pub mod aws_ecs_service_placement_strategies_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
         pub fn build(self) -> crate::model::AwsEcsServicePlacementStrategiesDetails {
             crate::model::AwsEcsServicePlacementStrategiesDetails {
                 field: self.field,
@@ -27308,7 +27149,7 @@ pub mod aws_ecs_service_placement_strategies_details {
     }
 }
 impl AwsEcsServicePlacementStrategiesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails).
     pub fn builder() -> crate::model::aws_ecs_service_placement_strategies_details::Builder {
         crate::model::aws_ecs_service_placement_strategies_details::Builder::default()
     }
@@ -27343,11 +27184,10 @@ impl std::fmt::Debug for AwsEcsServicePlacementConstraintsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
+/// See [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
 pub mod aws_ecs_service_placement_constraints_details {
 
-    /// A builder for [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -27376,7 +27216,7 @@ pub mod aws_ecs_service_placement_constraints_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
         pub fn build(self) -> crate::model::AwsEcsServicePlacementConstraintsDetails {
             crate::model::AwsEcsServicePlacementConstraintsDetails {
                 expression: self.expression,
@@ -27386,7 +27226,7 @@ pub mod aws_ecs_service_placement_constraints_details {
     }
 }
 impl AwsEcsServicePlacementConstraintsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails).
     pub fn builder() -> crate::model::aws_ecs_service_placement_constraints_details::Builder {
         crate::model::aws_ecs_service_placement_constraints_details::Builder::default()
     }
@@ -27418,11 +27258,10 @@ impl std::fmt::Debug for AwsEcsServiceNetworkConfigurationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
+/// See [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
 pub mod aws_ecs_service_network_configuration_details {
 
-    /// A builder for [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_vpc_configuration: std::option::Option<
@@ -27448,7 +27287,7 @@ pub mod aws_ecs_service_network_configuration_details {
             self.aws_vpc_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
         pub fn build(self) -> crate::model::AwsEcsServiceNetworkConfigurationDetails {
             crate::model::AwsEcsServiceNetworkConfigurationDetails {
                 aws_vpc_configuration: self.aws_vpc_configuration,
@@ -27457,7 +27296,7 @@ pub mod aws_ecs_service_network_configuration_details {
     }
 }
 impl AwsEcsServiceNetworkConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails).
     pub fn builder() -> crate::model::aws_ecs_service_network_configuration_details::Builder {
         crate::model::aws_ecs_service_network_configuration_details::Builder::default()
     }
@@ -27504,11 +27343,10 @@ impl std::fmt::Debug for AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDet
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
+/// See [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
 pub mod aws_ecs_service_network_configuration_aws_vpc_configuration_details {
 
-    /// A builder for [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assign_public_ip: std::option::Option<std::string::String>,
@@ -27573,7 +27411,7 @@ pub mod aws_ecs_service_network_configuration_aws_vpc_configuration_details {
             self.subnets = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
@@ -27586,7 +27424,7 @@ pub mod aws_ecs_service_network_configuration_aws_vpc_configuration_details {
     }
 }
 impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder
     {
@@ -27639,11 +27477,10 @@ impl std::fmt::Debug for AwsEcsServiceLoadBalancersDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
+/// See [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
 pub mod aws_ecs_service_load_balancers_details {
 
-    /// A builder for [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -27705,7 +27542,7 @@ pub mod aws_ecs_service_load_balancers_details {
             self.target_group_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
         pub fn build(self) -> crate::model::AwsEcsServiceLoadBalancersDetails {
             crate::model::AwsEcsServiceLoadBalancersDetails {
                 container_name: self.container_name,
@@ -27717,7 +27554,7 @@ pub mod aws_ecs_service_load_balancers_details {
     }
 }
 impl AwsEcsServiceLoadBalancersDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails).
     pub fn builder() -> crate::model::aws_ecs_service_load_balancers_details::Builder {
         crate::model::aws_ecs_service_load_balancers_details::Builder::default()
     }
@@ -27749,11 +27586,10 @@ impl std::fmt::Debug for AwsEcsServiceDeploymentControllerDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
+/// See [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
 pub mod aws_ecs_service_deployment_controller_details {
 
-    /// A builder for [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -27775,7 +27611,7 @@ pub mod aws_ecs_service_deployment_controller_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
         pub fn build(self) -> crate::model::AwsEcsServiceDeploymentControllerDetails {
             crate::model::AwsEcsServiceDeploymentControllerDetails {
                 r#type: self.r#type,
@@ -27784,7 +27620,7 @@ pub mod aws_ecs_service_deployment_controller_details {
     }
 }
 impl AwsEcsServiceDeploymentControllerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails).
     pub fn builder() -> crate::model::aws_ecs_service_deployment_controller_details::Builder {
         crate::model::aws_ecs_service_deployment_controller_details::Builder::default()
     }
@@ -27841,11 +27677,10 @@ impl std::fmt::Debug for AwsEcsServiceDeploymentConfigurationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
+/// See [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
 pub mod aws_ecs_service_deployment_configuration_details {
 
-    /// A builder for [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_circuit_breaker: std::option::Option<
@@ -27901,7 +27736,7 @@ pub mod aws_ecs_service_deployment_configuration_details {
             self.minimum_healthy_percent = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
         pub fn build(self) -> crate::model::AwsEcsServiceDeploymentConfigurationDetails {
             crate::model::AwsEcsServiceDeploymentConfigurationDetails {
                 deployment_circuit_breaker: self.deployment_circuit_breaker,
@@ -27912,7 +27747,7 @@ pub mod aws_ecs_service_deployment_configuration_details {
     }
 }
 impl AwsEcsServiceDeploymentConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails).
     pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_details::Builder {
         crate::model::aws_ecs_service_deployment_configuration_details::Builder::default()
     }
@@ -27946,11 +27781,10 @@ impl std::fmt::Debug for AwsEcsServiceDeploymentConfigurationDeploymentCircuitBr
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
+/// See [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
 pub mod aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details {
 
-    /// A builder for [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable: std::option::Option<bool>,
@@ -27977,7 +27811,7 @@ pub mod aws_ecs_service_deployment_configuration_deployment_circuit_breaker_deta
             self.rollback = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails
@@ -27990,7 +27824,7 @@ pub mod aws_ecs_service_deployment_configuration_deployment_circuit_breaker_deta
     }
 }
 impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
     pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder{
         crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder::default()
     }
@@ -28036,11 +27870,10 @@ impl std::fmt::Debug for AwsEcsServiceCapacityProviderStrategyDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
+/// See [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
 pub mod aws_ecs_service_capacity_provider_strategy_details {
 
-    /// A builder for [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base: std::option::Option<i32>,
@@ -28087,7 +27920,7 @@ pub mod aws_ecs_service_capacity_provider_strategy_details {
             self.weight = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
+        /// Consumes the builder and constructs a [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
         pub fn build(self) -> crate::model::AwsEcsServiceCapacityProviderStrategyDetails {
             crate::model::AwsEcsServiceCapacityProviderStrategyDetails {
                 base: self.base.unwrap_or_default(),
@@ -28098,7 +27931,7 @@ pub mod aws_ecs_service_capacity_provider_strategy_details {
     }
 }
 impl AwsEcsServiceCapacityProviderStrategyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails).
     pub fn builder() -> crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder {
         crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder::default()
     }
@@ -28194,11 +28027,10 @@ impl std::fmt::Debug for AwsRdsEventSubscriptionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
+/// See [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
 pub mod aws_rds_event_subscription_details {
 
-    /// A builder for [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cust_subscription_id: std::option::Option<std::string::String>,
@@ -28350,7 +28182,7 @@ pub mod aws_rds_event_subscription_details {
             self.subscription_creation_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
+        /// Consumes the builder and constructs a [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
         pub fn build(self) -> crate::model::AwsRdsEventSubscriptionDetails {
             crate::model::AwsRdsEventSubscriptionDetails {
                 cust_subscription_id: self.cust_subscription_id,
@@ -28368,7 +28200,7 @@ pub mod aws_rds_event_subscription_details {
     }
 }
 impl AwsRdsEventSubscriptionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails).
     pub fn builder() -> crate::model::aws_rds_event_subscription_details::Builder {
         crate::model::aws_rds_event_subscription_details::Builder::default()
     }
@@ -28438,11 +28270,10 @@ impl std::fmt::Debug for ContainerDetails {
         formatter.finish()
     }
 }
-/// See [`ContainerDetails`](crate::model::ContainerDetails)
+/// See [`ContainerDetails`](crate::model::ContainerDetails).
 pub mod container_details {
 
-    /// A builder for [`ContainerDetails`](crate::model::ContainerDetails)
-    #[non_exhaustive]
+    /// A builder for [`ContainerDetails`](crate::model::ContainerDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_runtime: std::option::Option<std::string::String>,
@@ -28538,7 +28369,7 @@ pub mod container_details {
             self.privileged = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContainerDetails`](crate::model::ContainerDetails)
+        /// Consumes the builder and constructs a [`ContainerDetails`](crate::model::ContainerDetails).
         pub fn build(self) -> crate::model::ContainerDetails {
             crate::model::ContainerDetails {
                 container_runtime: self.container_runtime,
@@ -28553,7 +28384,7 @@ pub mod container_details {
     }
 }
 impl ContainerDetails {
-    /// Creates a new builder-style object to manufacture [`ContainerDetails`](crate::model::ContainerDetails)
+    /// Creates a new builder-style object to manufacture [`ContainerDetails`](crate::model::ContainerDetails).
     pub fn builder() -> crate::model::container_details::Builder {
         crate::model::container_details::Builder::default()
     }
@@ -28586,11 +28417,10 @@ impl std::fmt::Debug for VolumeMount {
         formatter.finish()
     }
 }
-/// See [`VolumeMount`](crate::model::VolumeMount)
+/// See [`VolumeMount`](crate::model::VolumeMount).
 pub mod volume_mount {
 
-    /// A builder for [`VolumeMount`](crate::model::VolumeMount)
-    #[non_exhaustive]
+    /// A builder for [`VolumeMount`](crate::model::VolumeMount).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -28617,7 +28447,7 @@ pub mod volume_mount {
             self.mount_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`VolumeMount`](crate::model::VolumeMount)
+        /// Consumes the builder and constructs a [`VolumeMount`](crate::model::VolumeMount).
         pub fn build(self) -> crate::model::VolumeMount {
             crate::model::VolumeMount {
                 name: self.name,
@@ -28627,7 +28457,7 @@ pub mod volume_mount {
     }
 }
 impl VolumeMount {
-    /// Creates a new builder-style object to manufacture [`VolumeMount`](crate::model::VolumeMount)
+    /// Creates a new builder-style object to manufacture [`VolumeMount`](crate::model::VolumeMount).
     pub fn builder() -> crate::model::volume_mount::Builder {
         crate::model::volume_mount::Builder::default()
     }
@@ -28763,11 +28593,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails)
+/// See [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
 pub mod aws_ecs_task_definition_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_definitions: std::option::Option<
@@ -29009,7 +28838,7 @@ pub mod aws_ecs_task_definition_details {
             self.volumes = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionDetails {
             crate::model::AwsEcsTaskDefinitionDetails {
                 container_definitions: self.container_definitions,
@@ -29031,7 +28860,7 @@ pub mod aws_ecs_task_definition_details {
     }
 }
 impl AwsEcsTaskDefinitionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionDetails`](crate::model::AwsEcsTaskDefinitionDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_details::Builder {
         crate::model::aws_ecs_task_definition_details::Builder::default()
     }
@@ -29093,11 +28922,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionVolumesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails)
+/// See [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
 pub mod aws_ecs_task_definition_volumes_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) docker_volume_configuration: std::option::Option<
@@ -29169,7 +28997,7 @@ pub mod aws_ecs_task_definition_volumes_details {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionVolumesDetails {
             crate::model::AwsEcsTaskDefinitionVolumesDetails {
                 docker_volume_configuration: self.docker_volume_configuration,
@@ -29181,7 +29009,7 @@ pub mod aws_ecs_task_definition_volumes_details {
     }
 }
 impl AwsEcsTaskDefinitionVolumesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDetails`](crate::model::AwsEcsTaskDefinitionVolumesDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_details::Builder {
         crate::model::aws_ecs_task_definition_volumes_details::Builder::default()
     }
@@ -29207,11 +29035,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionVolumesHostDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails)
+/// See [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
 pub mod aws_ecs_task_definition_volumes_host_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_path: std::option::Option<std::string::String>,
@@ -29227,7 +29054,7 @@ pub mod aws_ecs_task_definition_volumes_host_details {
             self.source_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionVolumesHostDetails {
             crate::model::AwsEcsTaskDefinitionVolumesHostDetails {
                 source_path: self.source_path,
@@ -29236,7 +29063,7 @@ pub mod aws_ecs_task_definition_volumes_host_details {
     }
 }
 impl AwsEcsTaskDefinitionVolumesHostDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesHostDetails`](crate::model::AwsEcsTaskDefinitionVolumesHostDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_host_details::Builder {
         crate::model::aws_ecs_task_definition_volumes_host_details::Builder::default()
     }
@@ -29297,11 +29124,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetail
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails)
+/// See [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
 pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_config: std::option::Option<crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails>,
@@ -29376,7 +29202,7 @@ pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_details {
             self.transit_encryption_port = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
@@ -29391,7 +29217,7 @@ pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_details {
     }
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_details::Builder
     {
@@ -29430,11 +29256,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails)
+/// See [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
 pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_id: std::option::Option<std::string::String>,
@@ -29464,7 +29289,7 @@ pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_c
             self.iam = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
@@ -29479,7 +29304,7 @@ pub mod aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_c
     }
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::model::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder{
         crate::model::aws_ecs_task_definition_volumes_efs_volume_configuration_authorization_config_details::Builder::default()
     }
@@ -29542,11 +29367,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDet
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails)
+/// See [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
 pub mod aws_ecs_task_definition_volumes_docker_volume_configuration_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) autoprovision: std::option::Option<bool>,
@@ -29640,7 +29464,7 @@ pub mod aws_ecs_task_definition_volumes_docker_volume_configuration_details {
             self.scope = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
@@ -29655,7 +29479,7 @@ pub mod aws_ecs_task_definition_volumes_docker_volume_configuration_details {
     }
 }
 impl AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails`](crate::model::AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_volumes_docker_volume_configuration_details::Builder
     {
@@ -29704,11 +29528,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionProxyConfigurationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails)
+/// See [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
 pub mod aws_ecs_task_definition_proxy_configuration_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_name: std::option::Option<std::string::String>,
@@ -29761,7 +29584,7 @@ pub mod aws_ecs_task_definition_proxy_configuration_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails {
             crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails {
                 container_name: self.container_name,
@@ -29772,7 +29595,7 @@ pub mod aws_ecs_task_definition_proxy_configuration_details {
     }
 }
 impl AwsEcsTaskDefinitionProxyConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_proxy_configuration_details::Builder {
         crate::model::aws_ecs_task_definition_proxy_configuration_details::Builder::default()
     }
@@ -29807,11 +29630,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionProxyConfigurationProxyConfiguratio
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails)
+/// See [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
 pub mod aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -29838,7 +29660,7 @@ pub mod aws_ecs_task_definition_proxy_configuration_proxy_configuration_properti
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails
@@ -29853,7 +29675,7 @@ pub mod aws_ecs_task_definition_proxy_configuration_proxy_configuration_properti
     }
 }
 impl AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails`](crate::model::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder{
         crate::model::aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details::Builder::default()
     }
@@ -29886,11 +29708,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionPlacementConstraintsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails)
+/// See [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
 pub mod aws_ecs_task_definition_placement_constraints_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
@@ -29917,7 +29738,7 @@ pub mod aws_ecs_task_definition_placement_constraints_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails {
             crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails {
                 expression: self.expression,
@@ -29927,7 +29748,7 @@ pub mod aws_ecs_task_definition_placement_constraints_details {
     }
 }
 impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::model::AwsEcsTaskDefinitionPlacementConstraintsDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_placement_constraints_details::Builder
     {
         crate::model::aws_ecs_task_definition_placement_constraints_details::Builder::default()
@@ -29961,11 +29782,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails)
+/// See [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
 pub mod aws_ecs_task_definition_inference_accelerators_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
@@ -29992,7 +29812,7 @@ pub mod aws_ecs_task_definition_inference_accelerators_details {
             self.device_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
             crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
                 device_name: self.device_name,
@@ -30002,7 +29822,7 @@ pub mod aws_ecs_task_definition_inference_accelerators_details {
     }
 }
 impl AwsEcsTaskDefinitionInferenceAcceleratorsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::model::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder
     {
         crate::model::aws_ecs_task_definition_inference_accelerators_details::Builder::default()
@@ -30415,11 +30235,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
 pub mod aws_ecs_task_definition_container_definitions_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -31193,7 +31012,7 @@ pub mod aws_ecs_task_definition_container_definitions_details {
             self.working_directory = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails {
             crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails {
                 command: self.command,
@@ -31240,7 +31059,7 @@ pub mod aws_ecs_task_definition_container_definitions_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_details::Builder
     {
         crate::model::aws_ecs_task_definition_container_definitions_details::Builder::default()
@@ -31275,11 +31094,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDeta
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
 pub mod aws_ecs_task_definition_container_definitions_volumes_from_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_only: std::option::Option<bool>,
@@ -31309,7 +31127,7 @@ pub mod aws_ecs_task_definition_container_definitions_volumes_from_details {
             self.source_container = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
@@ -31321,7 +31139,7 @@ pub mod aws_ecs_task_definition_container_definitions_volumes_from_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_volumes_from_details::Builder
     {
@@ -31364,11 +31182,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails 
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
 pub mod aws_ecs_task_definition_container_definitions_ulimits_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hard_limit: std::option::Option<i32>,
@@ -31406,7 +31223,7 @@ pub mod aws_ecs_task_definition_container_definitions_ulimits_details {
             self.soft_limit = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
             crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
                 hard_limit: self.hard_limit.unwrap_or_default(),
@@ -31417,7 +31234,7 @@ pub mod aws_ecs_task_definition_container_definitions_ulimits_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder {
         crate::model::aws_ecs_task_definition_container_definitions_ulimits_details::Builder::default()
@@ -31452,11 +31269,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsSystemControlsD
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
 pub mod aws_ecs_task_definition_container_definitions_system_controls_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -31483,7 +31299,7 @@ pub mod aws_ecs_task_definition_container_definitions_system_controls_details {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
@@ -31495,7 +31311,7 @@ pub mod aws_ecs_task_definition_container_definitions_system_controls_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_system_controls_details::Builder
     {
@@ -31531,11 +31347,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails 
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
 pub mod aws_ecs_task_definition_container_definitions_secrets_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -31562,7 +31377,7 @@ pub mod aws_ecs_task_definition_container_definitions_secrets_details {
             self.value_from = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
             crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
                 name: self.name,
@@ -31572,7 +31387,7 @@ pub mod aws_ecs_task_definition_container_definitions_secrets_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsSecretsDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder {
         crate::model::aws_ecs_task_definition_container_definitions_secrets_details::Builder::default()
@@ -31611,11 +31426,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsResourceRequire
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
 pub mod aws_ecs_task_definition_container_definitions_resource_requirements_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -31646,7 +31460,7 @@ pub mod aws_ecs_task_definition_container_definitions_resource_requirements_deta
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails
@@ -31659,7 +31473,7 @@ pub mod aws_ecs_task_definition_container_definitions_resource_requirements_deta
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_resource_requirements_details::Builder::default()
     }
@@ -31686,11 +31500,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsRepositoryCrede
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
 pub mod aws_ecs_task_definition_container_definitions_repository_credentials_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials_parameter: std::option::Option<std::string::String>,
@@ -31709,7 +31522,7 @@ pub mod aws_ecs_task_definition_container_definitions_repository_credentials_det
             self.credentials_parameter = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails
@@ -31721,7 +31534,7 @@ pub mod aws_ecs_task_definition_container_definitions_repository_credentials_det
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_repository_credentials_details::Builder::default()
     }
@@ -31762,11 +31575,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDet
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
 pub mod aws_ecs_task_definition_container_definitions_port_mappings_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_port: std::option::Option<i32>,
@@ -31804,7 +31616,7 @@ pub mod aws_ecs_task_definition_container_definitions_port_mappings_details {
             self.protocol = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
@@ -31817,7 +31629,7 @@ pub mod aws_ecs_task_definition_container_definitions_port_mappings_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_port_mappings_details::Builder
     {
@@ -31860,11 +31672,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsMountPointsDeta
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
 pub mod aws_ecs_task_definition_container_definitions_mount_points_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_path: std::option::Option<std::string::String>,
@@ -31908,7 +31719,7 @@ pub mod aws_ecs_task_definition_container_definitions_mount_points_details {
             self.source_volume = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
@@ -31921,7 +31732,7 @@ pub mod aws_ecs_task_definition_container_definitions_mount_points_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_mount_points_details::Builder
     {
@@ -31967,11 +31778,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsLogConfiguratio
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
 pub mod aws_ecs_task_definition_container_definitions_log_configuration_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_driver: std::option::Option<std::string::String>,
@@ -32036,7 +31846,7 @@ pub mod aws_ecs_task_definition_container_definitions_log_configuration_details 
             self.secret_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
@@ -32049,7 +31859,7 @@ pub mod aws_ecs_task_definition_container_definitions_log_configuration_details 
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_log_configuration_details::Builder::default()
     }
@@ -32088,11 +31898,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
 pub mod aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -32121,7 +31930,7 @@ pub mod aws_ecs_task_definition_container_definitions_log_configuration_secret_o
             self.value_from = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
         pub fn build(self) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails{
             crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
                 name: self.name
@@ -32133,7 +31942,7 @@ pub mod aws_ecs_task_definition_container_definitions_log_configuration_secret_o
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details::Builder::default()
     }
@@ -32224,11 +32033,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsLinuxParameters
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capabilities: std::option::Option<crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails>,
@@ -32340,7 +32148,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_details {
             self.tmpfs = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
@@ -32357,7 +32165,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_details::Builder
     {
@@ -32400,11 +32208,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsLinuxParameters
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_path: std::option::Option<std::string::String>,
@@ -32454,7 +32261,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_det
             self.size = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails
@@ -32468,7 +32275,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_det
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_tmpfs_details::Builder::default()
     }
@@ -32509,11 +32316,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsLinuxParameters
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_devices_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_path: std::option::Option<std::string::String>,
@@ -32563,7 +32369,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_devices_d
             self.permissions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails
@@ -32577,7 +32383,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_devices_d
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_devices_details::Builder::default()
     }
@@ -32614,11 +32420,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
 pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) add: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32663,7 +32468,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilit
             self.drop = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails
@@ -32678,7 +32483,7 @@ pub mod aws_ecs_task_definition_container_definitions_linux_parameters_capabilit
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_linux_parameters_capabilities_details::Builder::default()
     }
@@ -32733,11 +32538,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDeta
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
 pub mod aws_ecs_task_definition_container_definitions_health_check_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32806,7 +32610,7 @@ pub mod aws_ecs_task_definition_container_definitions_health_check_details {
             self.timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
@@ -32821,7 +32625,7 @@ pub mod aws_ecs_task_definition_container_definitions_health_check_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_health_check_details::Builder
     {
@@ -32873,11 +32677,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigu
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
 pub mod aws_ecs_task_definition_container_definitions_firelens_configuration_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<
@@ -32933,7 +32736,7 @@ pub mod aws_ecs_task_definition_container_definitions_firelens_configuration_det
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails
@@ -32946,7 +32749,7 @@ pub mod aws_ecs_task_definition_container_definitions_firelens_configuration_det
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_firelens_configuration_details::Builder::default()
     }
@@ -32980,11 +32783,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetai
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
 pub mod aws_ecs_task_definition_container_definitions_extra_hosts_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -33011,7 +32813,7 @@ pub mod aws_ecs_task_definition_container_definitions_extra_hosts_details {
             self.ip_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
@@ -33023,7 +32825,7 @@ pub mod aws_ecs_task_definition_container_definitions_extra_hosts_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_extra_hosts_details::Builder
     {
@@ -33059,11 +32861,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFile
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
 pub mod aws_ecs_task_definition_container_definitions_environment_files_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -33090,7 +32891,7 @@ pub mod aws_ecs_task_definition_container_definitions_environment_files_details 
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
@@ -33102,7 +32903,7 @@ pub mod aws_ecs_task_definition_container_definitions_environment_files_details 
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetails).
     pub fn builder() -> crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder{
         crate::model::aws_ecs_task_definition_container_definitions_environment_files_details::Builder::default()
     }
@@ -33136,11 +32937,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDeta
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
 pub mod aws_ecs_task_definition_container_definitions_environment_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -33167,7 +32967,7 @@ pub mod aws_ecs_task_definition_container_definitions_environment_details {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
@@ -33179,7 +32979,7 @@ pub mod aws_ecs_task_definition_container_definitions_environment_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_environment_details::Builder
     {
@@ -33215,11 +33015,10 @@ impl std::fmt::Debug for AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetail
         formatter.finish()
     }
 }
-/// See [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails)
+/// See [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
 pub mod aws_ecs_task_definition_container_definitions_depends_on_details {
 
-    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition: std::option::Option<std::string::String>,
@@ -33249,7 +33048,7 @@ pub mod aws_ecs_task_definition_container_definitions_depends_on_details {
             self.container_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails)
+        /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
@@ -33261,7 +33060,7 @@ pub mod aws_ecs_task_definition_container_definitions_depends_on_details {
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::model::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_task_definition_container_definitions_depends_on_details::Builder
     {
@@ -33368,11 +33167,10 @@ impl std::fmt::Debug for AwsEcsClusterDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails)
+/// See [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
 pub mod aws_ecs_cluster_details {
 
-    /// A builder for [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -33537,7 +33335,7 @@ pub mod aws_ecs_cluster_details {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails)
+        /// Consumes the builder and constructs a [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
         pub fn build(self) -> crate::model::AwsEcsClusterDetails {
             crate::model::AwsEcsClusterDetails {
                 cluster_arn: self.cluster_arn,
@@ -33557,7 +33355,7 @@ pub mod aws_ecs_cluster_details {
     }
 }
 impl AwsEcsClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDetails`](crate::model::AwsEcsClusterDetails).
     pub fn builder() -> crate::model::aws_ecs_cluster_details::Builder {
         crate::model::aws_ecs_cluster_details::Builder::default()
     }
@@ -33597,11 +33395,10 @@ impl std::fmt::Debug for AwsEcsClusterDefaultCapacityProviderStrategyDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails)
+/// See [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
 pub mod aws_ecs_cluster_default_capacity_provider_strategy_details {
 
-    /// A builder for [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base: std::option::Option<i32>,
@@ -33642,7 +33439,7 @@ pub mod aws_ecs_cluster_default_capacity_provider_strategy_details {
             self.weight = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails)
+        /// Consumes the builder and constructs a [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
         pub fn build(self) -> crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails {
             crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails {
                 base: self.base.unwrap_or_default(),
@@ -33653,7 +33450,7 @@ pub mod aws_ecs_cluster_default_capacity_provider_strategy_details {
     }
 }
 impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::model::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder {
         crate::model::aws_ecs_cluster_default_capacity_provider_strategy_details::Builder::default()
@@ -33689,11 +33486,10 @@ impl std::fmt::Debug for AwsEcsClusterConfigurationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails)
+/// See [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
 pub mod aws_ecs_cluster_configuration_details {
 
-    /// A builder for [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execute_command_configuration: std::option::Option<
@@ -33719,7 +33515,7 @@ pub mod aws_ecs_cluster_configuration_details {
             self.execute_command_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
         pub fn build(self) -> crate::model::AwsEcsClusterConfigurationDetails {
             crate::model::AwsEcsClusterConfigurationDetails {
                 execute_command_configuration: self.execute_command_configuration,
@@ -33728,7 +33524,7 @@ pub mod aws_ecs_cluster_configuration_details {
     }
 }
 impl AwsEcsClusterConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationDetails`](crate::model::AwsEcsClusterConfigurationDetails).
     pub fn builder() -> crate::model::aws_ecs_cluster_configuration_details::Builder {
         crate::model::aws_ecs_cluster_configuration_details::Builder::default()
     }
@@ -33775,11 +33571,10 @@ impl std::fmt::Debug for AwsEcsClusterConfigurationExecuteCommandConfigurationDe
         formatter.finish()
     }
 }
-/// See [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails)
+/// See [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
 pub mod aws_ecs_cluster_configuration_execute_command_configuration_details {
 
-    /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -33823,7 +33618,7 @@ pub mod aws_ecs_cluster_configuration_execute_command_configuration_details {
             self.logging = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
@@ -33836,7 +33631,7 @@ pub mod aws_ecs_cluster_configuration_execute_command_configuration_details {
     }
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
     pub fn builder(
     ) -> crate::model::aws_ecs_cluster_configuration_execute_command_configuration_details::Builder
     {
@@ -33902,11 +33697,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails)
+/// See [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
 pub mod aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details {
 
-    /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_encryption_enabled: std::option::Option<bool>,
@@ -33978,7 +33772,7 @@ pub mod aws_ecs_cluster_configuration_execute_command_configuration_log_configur
             self.s3_key_prefix = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
         pub fn build(self) -> crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails{
             crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
                 cloud_watch_encryption_enabled: self.cloud_watch_encryption_enabled
@@ -33998,7 +33792,7 @@ pub mod aws_ecs_cluster_configuration_execute_command_configuration_log_configur
     }
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::model::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
     pub fn builder() -> crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder{
         crate::model::aws_ecs_cluster_configuration_execute_command_configuration_log_configuration_details::Builder::default()
     }
@@ -34031,11 +33825,10 @@ impl std::fmt::Debug for AwsEcsClusterClusterSettingsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails)
+/// See [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
 pub mod aws_ecs_cluster_cluster_settings_details {
 
-    /// A builder for [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -34062,7 +33855,7 @@ pub mod aws_ecs_cluster_cluster_settings_details {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails)
+        /// Consumes the builder and constructs a [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
         pub fn build(self) -> crate::model::AwsEcsClusterClusterSettingsDetails {
             crate::model::AwsEcsClusterClusterSettingsDetails {
                 name: self.name,
@@ -34072,7 +33865,7 @@ pub mod aws_ecs_cluster_cluster_settings_details {
     }
 }
 impl AwsEcsClusterClusterSettingsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEcsClusterClusterSettingsDetails`](crate::model::AwsEcsClusterClusterSettingsDetails).
     pub fn builder() -> crate::model::aws_ecs_cluster_cluster_settings_details::Builder {
         crate::model::aws_ecs_cluster_cluster_settings_details::Builder::default()
     }
@@ -34401,11 +34194,10 @@ impl std::fmt::Debug for AwsRdsDbClusterDetails {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails)
+/// See [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
 pub mod aws_rds_db_cluster_details {
 
-    /// A builder for [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allocated_storage: std::option::Option<i32>,
@@ -34988,7 +34780,7 @@ pub mod aws_rds_db_cluster_details {
             self.iam_database_authentication_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails)
+        /// Consumes the builder and constructs a [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
         pub fn build(self) -> crate::model::AwsRdsDbClusterDetails {
             crate::model::AwsRdsDbClusterDetails {
                 allocated_storage: self.allocated_storage.unwrap_or_default(),
@@ -35035,7 +34827,7 @@ pub mod aws_rds_db_cluster_details {
     }
 }
 impl AwsRdsDbClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterDetails`](crate::model::AwsRdsDbClusterDetails).
     pub fn builder() -> crate::model::aws_rds_db_cluster_details::Builder {
         crate::model::aws_rds_db_cluster_details::Builder::default()
     }
@@ -35085,11 +34877,10 @@ impl std::fmt::Debug for AwsRdsDbClusterMember {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember)
+/// See [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
 pub mod aws_rds_db_cluster_member {
 
-    /// A builder for [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_cluster_writer: std::option::Option<bool>,
@@ -35147,7 +34938,7 @@ pub mod aws_rds_db_cluster_member {
             self.db_cluster_parameter_group_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember)
+        /// Consumes the builder and constructs a [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
         pub fn build(self) -> crate::model::AwsRdsDbClusterMember {
             crate::model::AwsRdsDbClusterMember {
                 is_cluster_writer: self.is_cluster_writer.unwrap_or_default(),
@@ -35159,7 +34950,7 @@ pub mod aws_rds_db_cluster_member {
     }
 }
 impl AwsRdsDbClusterMember {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterMember`](crate::model::AwsRdsDbClusterMember).
     pub fn builder() -> crate::model::aws_rds_db_cluster_member::Builder {
         crate::model::aws_rds_db_cluster_member::Builder::default()
     }
@@ -35195,11 +34986,10 @@ impl std::fmt::Debug for AwsRdsDbClusterOptionGroupMembership {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership)
+/// See [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
 pub mod aws_rds_db_cluster_option_group_membership {
 
-    /// A builder for [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_option_group_name: std::option::Option<std::string::String>,
@@ -35232,7 +35022,7 @@ pub mod aws_rds_db_cluster_option_group_membership {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership)
+        /// Consumes the builder and constructs a [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
         pub fn build(self) -> crate::model::AwsRdsDbClusterOptionGroupMembership {
             crate::model::AwsRdsDbClusterOptionGroupMembership {
                 db_cluster_option_group_name: self.db_cluster_option_group_name,
@@ -35242,7 +35032,7 @@ pub mod aws_rds_db_cluster_option_group_membership {
     }
 }
 impl AwsRdsDbClusterOptionGroupMembership {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterOptionGroupMembership`](crate::model::AwsRdsDbClusterOptionGroupMembership).
     pub fn builder() -> crate::model::aws_rds_db_cluster_option_group_membership::Builder {
         crate::model::aws_rds_db_cluster_option_group_membership::Builder::default()
     }
@@ -35289,11 +35079,10 @@ impl std::fmt::Debug for AwsRdsDbDomainMembership {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership)
+/// See [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
 pub mod aws_rds_db_domain_membership {
 
-    /// A builder for [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
@@ -35345,7 +35134,7 @@ pub mod aws_rds_db_domain_membership {
             self.iam_role_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership)
+        /// Consumes the builder and constructs a [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
         pub fn build(self) -> crate::model::AwsRdsDbDomainMembership {
             crate::model::AwsRdsDbDomainMembership {
                 domain: self.domain,
@@ -35357,7 +35146,7 @@ pub mod aws_rds_db_domain_membership {
     }
 }
 impl AwsRdsDbDomainMembership {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbDomainMembership`](crate::model::AwsRdsDbDomainMembership).
     pub fn builder() -> crate::model::aws_rds_db_domain_membership::Builder {
         crate::model::aws_rds_db_domain_membership::Builder::default()
     }
@@ -35390,11 +35179,10 @@ impl std::fmt::Debug for AwsRdsDbClusterAssociatedRole {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole)
+/// See [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
 pub mod aws_rds_db_cluster_associated_role {
 
-    /// A builder for [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -35421,7 +35209,7 @@ pub mod aws_rds_db_cluster_associated_role {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole)
+        /// Consumes the builder and constructs a [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
         pub fn build(self) -> crate::model::AwsRdsDbClusterAssociatedRole {
             crate::model::AwsRdsDbClusterAssociatedRole {
                 role_arn: self.role_arn,
@@ -35431,7 +35219,7 @@ pub mod aws_rds_db_cluster_associated_role {
     }
 }
 impl AwsRdsDbClusterAssociatedRole {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterAssociatedRole`](crate::model::AwsRdsDbClusterAssociatedRole).
     pub fn builder() -> crate::model::aws_rds_db_cluster_associated_role::Builder {
         crate::model::aws_rds_db_cluster_associated_role::Builder::default()
     }
@@ -35464,11 +35252,10 @@ impl std::fmt::Debug for AwsRdsDbInstanceVpcSecurityGroup {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup)
+/// See [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
 pub mod aws_rds_db_instance_vpc_security_group {
 
-    /// A builder for [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_security_group_id: std::option::Option<std::string::String>,
@@ -35498,7 +35285,7 @@ pub mod aws_rds_db_instance_vpc_security_group {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup)
+        /// Consumes the builder and constructs a [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
         pub fn build(self) -> crate::model::AwsRdsDbInstanceVpcSecurityGroup {
             crate::model::AwsRdsDbInstanceVpcSecurityGroup {
                 vpc_security_group_id: self.vpc_security_group_id,
@@ -35508,7 +35295,7 @@ pub mod aws_rds_db_instance_vpc_security_group {
     }
 }
 impl AwsRdsDbInstanceVpcSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceVpcSecurityGroup`](crate::model::AwsRdsDbInstanceVpcSecurityGroup).
     pub fn builder() -> crate::model::aws_rds_db_instance_vpc_security_group::Builder {
         crate::model::aws_rds_db_instance_vpc_security_group::Builder::default()
     }
@@ -35663,11 +35450,10 @@ impl std::fmt::Debug for AwsRdsDbClusterSnapshotDetails {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails)
+/// See [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
 pub mod aws_rds_db_cluster_snapshot_details {
 
-    /// A builder for [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -35913,7 +35699,7 @@ pub mod aws_rds_db_cluster_snapshot_details {
             self.iam_database_authentication_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails)
+        /// Consumes the builder and constructs a [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
         pub fn build(self) -> crate::model::AwsRdsDbClusterSnapshotDetails {
             crate::model::AwsRdsDbClusterSnapshotDetails {
                 availability_zones: self.availability_zones,
@@ -35941,7 +35727,7 @@ pub mod aws_rds_db_cluster_snapshot_details {
     }
 }
 impl AwsRdsDbClusterSnapshotDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbClusterSnapshotDetails`](crate::model::AwsRdsDbClusterSnapshotDetails).
     pub fn builder() -> crate::model::aws_rds_db_cluster_snapshot_details::Builder {
         crate::model::aws_rds_db_cluster_snapshot_details::Builder::default()
     }
@@ -36158,11 +35944,10 @@ impl std::fmt::Debug for AwsRdsDbSnapshotDetails {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails)
+/// See [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
 pub mod aws_rds_db_snapshot_details {
 
-    /// A builder for [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -36522,7 +36307,7 @@ pub mod aws_rds_db_snapshot_details {
             self.dbi_resource_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails)
+        /// Consumes the builder and constructs a [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
         pub fn build(self) -> crate::model::AwsRdsDbSnapshotDetails {
             crate::model::AwsRdsDbSnapshotDetails {
                 db_snapshot_identifier: self.db_snapshot_identifier,
@@ -36559,7 +36344,7 @@ pub mod aws_rds_db_snapshot_details {
     }
 }
 impl AwsRdsDbSnapshotDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSnapshotDetails`](crate::model::AwsRdsDbSnapshotDetails).
     pub fn builder() -> crate::model::aws_rds_db_snapshot_details::Builder {
         crate::model::aws_rds_db_snapshot_details::Builder::default()
     }
@@ -36592,11 +36377,10 @@ impl std::fmt::Debug for AwsRdsDbProcessorFeature {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature)
+/// See [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
 pub mod aws_rds_db_processor_feature {
 
-    /// A builder for [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -36623,7 +36407,7 @@ pub mod aws_rds_db_processor_feature {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature)
+        /// Consumes the builder and constructs a [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
         pub fn build(self) -> crate::model::AwsRdsDbProcessorFeature {
             crate::model::AwsRdsDbProcessorFeature {
                 name: self.name,
@@ -36633,7 +36417,7 @@ pub mod aws_rds_db_processor_feature {
     }
 }
 impl AwsRdsDbProcessorFeature {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbProcessorFeature`](crate::model::AwsRdsDbProcessorFeature).
     pub fn builder() -> crate::model::aws_rds_db_processor_feature::Builder {
         crate::model::aws_rds_db_processor_feature::Builder::default()
     }
@@ -36680,11 +36464,10 @@ impl std::fmt::Debug for AwsWafWebAclDetails {
         formatter.finish()
     }
 }
-/// See [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails)
+/// See [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
 pub mod aws_waf_web_acl_details {
 
-    /// A builder for [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -36745,7 +36528,7 @@ pub mod aws_waf_web_acl_details {
             self.web_acl_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails)
+        /// Consumes the builder and constructs a [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
         pub fn build(self) -> crate::model::AwsWafWebAclDetails {
             crate::model::AwsWafWebAclDetails {
                 name: self.name,
@@ -36757,7 +36540,7 @@ pub mod aws_waf_web_acl_details {
     }
 }
 impl AwsWafWebAclDetails {
-    /// Creates a new builder-style object to manufacture [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails)
+    /// Creates a new builder-style object to manufacture [`AwsWafWebAclDetails`](crate::model::AwsWafWebAclDetails).
     pub fn builder() -> crate::model::aws_waf_web_acl_details::Builder {
         crate::model::aws_waf_web_acl_details::Builder::default()
     }
@@ -36828,11 +36611,10 @@ impl std::fmt::Debug for AwsWafWebAclRule {
         formatter.finish()
     }
 }
-/// See [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule)
+/// See [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
 pub mod aws_waf_web_acl_rule {
 
-    /// A builder for [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule)
-    #[non_exhaustive]
+    /// A builder for [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::WafAction>,
@@ -36926,7 +36708,7 @@ pub mod aws_waf_web_acl_rule {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule)
+        /// Consumes the builder and constructs a [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
         pub fn build(self) -> crate::model::AwsWafWebAclRule {
             crate::model::AwsWafWebAclRule {
                 action: self.action,
@@ -36940,7 +36722,7 @@ pub mod aws_waf_web_acl_rule {
     }
 }
 impl AwsWafWebAclRule {
-    /// Creates a new builder-style object to manufacture [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule)
+    /// Creates a new builder-style object to manufacture [`AwsWafWebAclRule`](crate::model::AwsWafWebAclRule).
     pub fn builder() -> crate::model::aws_waf_web_acl_rule::Builder {
         crate::model::aws_waf_web_acl_rule::Builder::default()
     }
@@ -36968,11 +36750,10 @@ impl std::fmt::Debug for WafOverrideAction {
         formatter.finish()
     }
 }
-/// See [`WafOverrideAction`](crate::model::WafOverrideAction)
+/// See [`WafOverrideAction`](crate::model::WafOverrideAction).
 pub mod waf_override_action {
 
-    /// A builder for [`WafOverrideAction`](crate::model::WafOverrideAction)
-    #[non_exhaustive]
+    /// A builder for [`WafOverrideAction`](crate::model::WafOverrideAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -36990,7 +36771,7 @@ pub mod waf_override_action {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafOverrideAction`](crate::model::WafOverrideAction)
+        /// Consumes the builder and constructs a [`WafOverrideAction`](crate::model::WafOverrideAction).
         pub fn build(self) -> crate::model::WafOverrideAction {
             crate::model::WafOverrideAction {
                 r#type: self.r#type,
@@ -36999,7 +36780,7 @@ pub mod waf_override_action {
     }
 }
 impl WafOverrideAction {
-    /// Creates a new builder-style object to manufacture [`WafOverrideAction`](crate::model::WafOverrideAction)
+    /// Creates a new builder-style object to manufacture [`WafOverrideAction`](crate::model::WafOverrideAction).
     pub fn builder() -> crate::model::waf_override_action::Builder {
         crate::model::waf_override_action::Builder::default()
     }
@@ -37025,11 +36806,10 @@ impl std::fmt::Debug for WafExcludedRule {
         formatter.finish()
     }
 }
-/// See [`WafExcludedRule`](crate::model::WafExcludedRule)
+/// See [`WafExcludedRule`](crate::model::WafExcludedRule).
 pub mod waf_excluded_rule {
 
-    /// A builder for [`WafExcludedRule`](crate::model::WafExcludedRule)
-    #[non_exhaustive]
+    /// A builder for [`WafExcludedRule`](crate::model::WafExcludedRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_id: std::option::Option<std::string::String>,
@@ -37045,7 +36825,7 @@ pub mod waf_excluded_rule {
             self.rule_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafExcludedRule`](crate::model::WafExcludedRule)
+        /// Consumes the builder and constructs a [`WafExcludedRule`](crate::model::WafExcludedRule).
         pub fn build(self) -> crate::model::WafExcludedRule {
             crate::model::WafExcludedRule {
                 rule_id: self.rule_id,
@@ -37054,7 +36834,7 @@ pub mod waf_excluded_rule {
     }
 }
 impl WafExcludedRule {
-    /// Creates a new builder-style object to manufacture [`WafExcludedRule`](crate::model::WafExcludedRule)
+    /// Creates a new builder-style object to manufacture [`WafExcludedRule`](crate::model::WafExcludedRule).
     pub fn builder() -> crate::model::waf_excluded_rule::Builder {
         crate::model::waf_excluded_rule::Builder::default()
     }
@@ -37092,11 +36872,10 @@ impl std::fmt::Debug for WafAction {
         formatter.finish()
     }
 }
-/// See [`WafAction`](crate::model::WafAction)
+/// See [`WafAction`](crate::model::WafAction).
 pub mod waf_action {
 
-    /// A builder for [`WafAction`](crate::model::WafAction)
-    #[non_exhaustive]
+    /// A builder for [`WafAction`](crate::model::WafAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -37124,7 +36903,7 @@ pub mod waf_action {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafAction`](crate::model::WafAction)
+        /// Consumes the builder and constructs a [`WafAction`](crate::model::WafAction).
         pub fn build(self) -> crate::model::WafAction {
             crate::model::WafAction {
                 r#type: self.r#type,
@@ -37133,7 +36912,7 @@ pub mod waf_action {
     }
 }
 impl WafAction {
-    /// Creates a new builder-style object to manufacture [`WafAction`](crate::model::WafAction)
+    /// Creates a new builder-style object to manufacture [`WafAction`](crate::model::WafAction).
     pub fn builder() -> crate::model::waf_action::Builder {
         crate::model::waf_action::Builder::default()
     }
@@ -37183,11 +36962,10 @@ impl std::fmt::Debug for AwsSqsQueueDetails {
         formatter.finish()
     }
 }
-/// See [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails)
+/// See [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
 pub mod aws_sqs_queue_details {
 
-    /// A builder for [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_data_key_reuse_period_seconds: std::option::Option<i32>,
@@ -37245,7 +37023,7 @@ pub mod aws_sqs_queue_details {
             self.dead_letter_target_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails)
+        /// Consumes the builder and constructs a [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
         pub fn build(self) -> crate::model::AwsSqsQueueDetails {
             crate::model::AwsSqsQueueDetails {
                 kms_data_key_reuse_period_seconds: self
@@ -37259,7 +37037,7 @@ pub mod aws_sqs_queue_details {
     }
 }
 impl AwsSqsQueueDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails)
+    /// Creates a new builder-style object to manufacture [`AwsSqsQueueDetails`](crate::model::AwsSqsQueueDetails).
     pub fn builder() -> crate::model::aws_sqs_queue_details::Builder {
         crate::model::aws_sqs_queue_details::Builder::default()
     }
@@ -37376,11 +37154,10 @@ impl std::fmt::Debug for AwsSnsTopicDetails {
         formatter.finish()
     }
 }
-/// See [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails)
+/// See [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
 pub mod aws_sns_topic_details {
 
-    /// A builder for [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
@@ -37561,7 +37338,7 @@ pub mod aws_sns_topic_details {
             self.http_failure_feedback_role_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails)
+        /// Consumes the builder and constructs a [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
         pub fn build(self) -> crate::model::AwsSnsTopicDetails {
             crate::model::AwsSnsTopicDetails {
                 kms_master_key_id: self.kms_master_key_id,
@@ -37580,7 +37357,7 @@ pub mod aws_sns_topic_details {
     }
 }
 impl AwsSnsTopicDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails)
+    /// Creates a new builder-style object to manufacture [`AwsSnsTopicDetails`](crate::model::AwsSnsTopicDetails).
     pub fn builder() -> crate::model::aws_sns_topic_details::Builder {
         crate::model::aws_sns_topic_details::Builder::default()
     }
@@ -37613,11 +37390,10 @@ impl std::fmt::Debug for AwsSnsTopicSubscription {
         formatter.finish()
     }
 }
-/// See [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription)
+/// See [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
 pub mod aws_sns_topic_subscription {
 
-    /// A builder for [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription)
-    #[non_exhaustive]
+    /// A builder for [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -37644,7 +37420,7 @@ pub mod aws_sns_topic_subscription {
             self.protocol = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription)
+        /// Consumes the builder and constructs a [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
         pub fn build(self) -> crate::model::AwsSnsTopicSubscription {
             crate::model::AwsSnsTopicSubscription {
                 endpoint: self.endpoint,
@@ -37654,7 +37430,7 @@ pub mod aws_sns_topic_subscription {
     }
 }
 impl AwsSnsTopicSubscription {
-    /// Creates a new builder-style object to manufacture [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription)
+    /// Creates a new builder-style object to manufacture [`AwsSnsTopicSubscription`](crate::model::AwsSnsTopicSubscription).
     pub fn builder() -> crate::model::aws_sns_topic_subscription::Builder {
         crate::model::aws_sns_topic_subscription::Builder::default()
     }
@@ -38186,11 +37962,10 @@ impl std::fmt::Debug for AwsRdsDbInstanceDetails {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails)
+/// See [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
 pub mod aws_rds_db_instance_details {
 
-    /// A builder for [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associated_roles:
@@ -39107,7 +38882,7 @@ pub mod aws_rds_db_instance_details {
             self.max_allocated_storage = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails)
+        /// Consumes the builder and constructs a [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
         pub fn build(self) -> crate::model::AwsRdsDbInstanceDetails {
             crate::model::AwsRdsDbInstanceDetails {
                 associated_roles: self.associated_roles,
@@ -39177,7 +38952,7 @@ pub mod aws_rds_db_instance_details {
     }
 }
 impl AwsRdsDbInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceDetails`](crate::model::AwsRdsDbInstanceDetails).
     pub fn builder() -> crate::model::aws_rds_db_instance_details::Builder {
         crate::model::aws_rds_db_instance_details::Builder::default()
     }
@@ -39217,11 +38992,10 @@ impl std::fmt::Debug for AwsRdsDbInstanceEndpoint {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint)
+/// See [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
 pub mod aws_rds_db_instance_endpoint {
 
-    /// A builder for [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -39262,7 +39036,7 @@ pub mod aws_rds_db_instance_endpoint {
             self.hosted_zone_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint)
+        /// Consumes the builder and constructs a [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
         pub fn build(self) -> crate::model::AwsRdsDbInstanceEndpoint {
             crate::model::AwsRdsDbInstanceEndpoint {
                 address: self.address,
@@ -39273,7 +39047,7 @@ pub mod aws_rds_db_instance_endpoint {
     }
 }
 impl AwsRdsDbInstanceEndpoint {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceEndpoint`](crate::model::AwsRdsDbInstanceEndpoint).
     pub fn builder() -> crate::model::aws_rds_db_instance_endpoint::Builder {
         crate::model::aws_rds_db_instance_endpoint::Builder::default()
     }
@@ -39320,11 +39094,10 @@ impl std::fmt::Debug for AwsRdsDbStatusInfo {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo)
+/// See [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
 pub mod aws_rds_db_status_info {
 
-    /// A builder for [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_type: std::option::Option<std::string::String>,
@@ -39373,7 +39146,7 @@ pub mod aws_rds_db_status_info {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo)
+        /// Consumes the builder and constructs a [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
         pub fn build(self) -> crate::model::AwsRdsDbStatusInfo {
             crate::model::AwsRdsDbStatusInfo {
                 status_type: self.status_type,
@@ -39385,7 +39158,7 @@ pub mod aws_rds_db_status_info {
     }
 }
 impl AwsRdsDbStatusInfo {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbStatusInfo`](crate::model::AwsRdsDbStatusInfo).
     pub fn builder() -> crate::model::aws_rds_db_status_info::Builder {
         crate::model::aws_rds_db_status_info::Builder::default()
     }
@@ -39418,11 +39191,10 @@ impl std::fmt::Debug for AwsRdsDbOptionGroupMembership {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership)
+/// See [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
 pub mod aws_rds_db_option_group_membership {
 
-    /// A builder for [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) option_group_name: std::option::Option<std::string::String>,
@@ -39452,7 +39224,7 @@ pub mod aws_rds_db_option_group_membership {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership)
+        /// Consumes the builder and constructs a [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
         pub fn build(self) -> crate::model::AwsRdsDbOptionGroupMembership {
             crate::model::AwsRdsDbOptionGroupMembership {
                 option_group_name: self.option_group_name,
@@ -39462,7 +39234,7 @@ pub mod aws_rds_db_option_group_membership {
     }
 }
 impl AwsRdsDbOptionGroupMembership {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbOptionGroupMembership`](crate::model::AwsRdsDbOptionGroupMembership).
     pub fn builder() -> crate::model::aws_rds_db_option_group_membership::Builder {
         crate::model::aws_rds_db_option_group_membership::Builder::default()
     }
@@ -39595,11 +39367,10 @@ impl std::fmt::Debug for AwsRdsDbPendingModifiedValues {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues)
+/// See [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
 pub mod aws_rds_db_pending_modified_values {
 
-    /// A builder for [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance_class: std::option::Option<std::string::String>,
@@ -39807,7 +39578,7 @@ pub mod aws_rds_db_pending_modified_values {
             self.processor_features = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues)
+        /// Consumes the builder and constructs a [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
         pub fn build(self) -> crate::model::AwsRdsDbPendingModifiedValues {
             crate::model::AwsRdsDbPendingModifiedValues {
                 db_instance_class: self.db_instance_class,
@@ -39830,7 +39601,7 @@ pub mod aws_rds_db_pending_modified_values {
     }
 }
 impl AwsRdsDbPendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbPendingModifiedValues`](crate::model::AwsRdsDbPendingModifiedValues).
     pub fn builder() -> crate::model::aws_rds_db_pending_modified_values::Builder {
         crate::model::aws_rds_db_pending_modified_values::Builder::default()
     }
@@ -39863,11 +39634,10 @@ impl std::fmt::Debug for AwsRdsPendingCloudWatchLogsExports {
         formatter.finish()
     }
 }
-/// See [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports)
+/// See [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
 pub mod aws_rds_pending_cloud_watch_logs_exports {
 
-    /// A builder for [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_types_to_enable: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -39912,7 +39682,7 @@ pub mod aws_rds_pending_cloud_watch_logs_exports {
             self.log_types_to_disable = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports)
+        /// Consumes the builder and constructs a [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
         pub fn build(self) -> crate::model::AwsRdsPendingCloudWatchLogsExports {
             crate::model::AwsRdsPendingCloudWatchLogsExports {
                 log_types_to_enable: self.log_types_to_enable,
@@ -39922,7 +39692,7 @@ pub mod aws_rds_pending_cloud_watch_logs_exports {
     }
 }
 impl AwsRdsPendingCloudWatchLogsExports {
-    /// Creates a new builder-style object to manufacture [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports)
+    /// Creates a new builder-style object to manufacture [`AwsRdsPendingCloudWatchLogsExports`](crate::model::AwsRdsPendingCloudWatchLogsExports).
     pub fn builder() -> crate::model::aws_rds_pending_cloud_watch_logs_exports::Builder {
         crate::model::aws_rds_pending_cloud_watch_logs_exports::Builder::default()
     }
@@ -39986,11 +39756,10 @@ impl std::fmt::Debug for AwsRdsDbSubnetGroup {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup)
+/// See [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
 pub mod aws_rds_db_subnet_group {
 
-    /// A builder for [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
@@ -40086,7 +39855,7 @@ pub mod aws_rds_db_subnet_group {
             self.db_subnet_group_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup)
+        /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
         pub fn build(self) -> crate::model::AwsRdsDbSubnetGroup {
             crate::model::AwsRdsDbSubnetGroup {
                 db_subnet_group_name: self.db_subnet_group_name,
@@ -40100,7 +39869,7 @@ pub mod aws_rds_db_subnet_group {
     }
 }
 impl AwsRdsDbSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroup`](crate::model::AwsRdsDbSubnetGroup).
     pub fn builder() -> crate::model::aws_rds_db_subnet_group::Builder {
         crate::model::aws_rds_db_subnet_group::Builder::default()
     }
@@ -40143,11 +39912,10 @@ impl std::fmt::Debug for AwsRdsDbSubnetGroupSubnet {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet)
+/// See [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
 pub mod aws_rds_db_subnet_group_subnet {
 
-    /// A builder for [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_identifier: std::option::Option<std::string::String>,
@@ -40198,7 +39966,7 @@ pub mod aws_rds_db_subnet_group_subnet {
             self.subnet_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet)
+        /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
         pub fn build(self) -> crate::model::AwsRdsDbSubnetGroupSubnet {
             crate::model::AwsRdsDbSubnetGroupSubnet {
                 subnet_identifier: self.subnet_identifier,
@@ -40209,7 +39977,7 @@ pub mod aws_rds_db_subnet_group_subnet {
     }
 }
 impl AwsRdsDbSubnetGroupSubnet {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnet`](crate::model::AwsRdsDbSubnetGroupSubnet).
     pub fn builder() -> crate::model::aws_rds_db_subnet_group_subnet::Builder {
         crate::model::aws_rds_db_subnet_group_subnet::Builder::default()
     }
@@ -40235,11 +40003,10 @@ impl std::fmt::Debug for AwsRdsDbSubnetGroupSubnetAvailabilityZone {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone)
+/// See [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
 pub mod aws_rds_db_subnet_group_subnet_availability_zone {
 
-    /// A builder for [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -40255,14 +40022,14 @@ pub mod aws_rds_db_subnet_group_subnet_availability_zone {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone)
+        /// Consumes the builder and constructs a [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
         pub fn build(self) -> crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone {
             crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone { name: self.name }
         }
     }
 }
 impl AwsRdsDbSubnetGroupSubnetAvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbSubnetGroupSubnetAvailabilityZone`](crate::model::AwsRdsDbSubnetGroupSubnetAvailabilityZone).
     pub fn builder() -> crate::model::aws_rds_db_subnet_group_subnet_availability_zone::Builder {
         crate::model::aws_rds_db_subnet_group_subnet_availability_zone::Builder::default()
     }
@@ -40295,11 +40062,10 @@ impl std::fmt::Debug for AwsRdsDbParameterGroup {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup)
+/// See [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
 pub mod aws_rds_db_parameter_group {
 
-    /// A builder for [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
@@ -40332,7 +40098,7 @@ pub mod aws_rds_db_parameter_group {
             self.parameter_apply_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup)
+        /// Consumes the builder and constructs a [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
         pub fn build(self) -> crate::model::AwsRdsDbParameterGroup {
             crate::model::AwsRdsDbParameterGroup {
                 db_parameter_group_name: self.db_parameter_group_name,
@@ -40342,7 +40108,7 @@ pub mod aws_rds_db_parameter_group {
     }
 }
 impl AwsRdsDbParameterGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbParameterGroup`](crate::model::AwsRdsDbParameterGroup).
     pub fn builder() -> crate::model::aws_rds_db_parameter_group::Builder {
         crate::model::aws_rds_db_parameter_group::Builder::default()
     }
@@ -40392,11 +40158,10 @@ impl std::fmt::Debug for AwsRdsDbInstanceAssociatedRole {
         formatter.finish()
     }
 }
-/// See [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole)
+/// See [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
 pub mod aws_rds_db_instance_associated_role {
 
-    /// A builder for [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole)
-    #[non_exhaustive]
+    /// A builder for [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -40444,7 +40209,7 @@ pub mod aws_rds_db_instance_associated_role {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole)
+        /// Consumes the builder and constructs a [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
         pub fn build(self) -> crate::model::AwsRdsDbInstanceAssociatedRole {
             crate::model::AwsRdsDbInstanceAssociatedRole {
                 role_arn: self.role_arn,
@@ -40455,7 +40220,7 @@ pub mod aws_rds_db_instance_associated_role {
     }
 }
 impl AwsRdsDbInstanceAssociatedRole {
-    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole)
+    /// Creates a new builder-style object to manufacture [`AwsRdsDbInstanceAssociatedRole`](crate::model::AwsRdsDbInstanceAssociatedRole).
     pub fn builder() -> crate::model::aws_rds_db_instance_associated_role::Builder {
         crate::model::aws_rds_db_instance_associated_role::Builder::default()
     }
@@ -40499,11 +40264,10 @@ impl std::fmt::Debug for AwsLambdaLayerVersionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails)
+/// See [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
 pub mod aws_lambda_layer_version_details {
 
-    /// A builder for [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<i64>,
@@ -40554,7 +40318,7 @@ pub mod aws_lambda_layer_version_details {
             self.created_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails)
+        /// Consumes the builder and constructs a [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
         pub fn build(self) -> crate::model::AwsLambdaLayerVersionDetails {
             crate::model::AwsLambdaLayerVersionDetails {
                 version: self.version.unwrap_or_default(),
@@ -40565,7 +40329,7 @@ pub mod aws_lambda_layer_version_details {
     }
 }
 impl AwsLambdaLayerVersionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaLayerVersionDetails`](crate::model::AwsLambdaLayerVersionDetails).
     pub fn builder() -> crate::model::aws_lambda_layer_version_details::Builder {
         crate::model::aws_lambda_layer_version_details::Builder::default()
     }
@@ -40716,11 +40480,10 @@ impl std::fmt::Debug for AwsLambdaFunctionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails)
+/// See [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
 pub mod aws_lambda_function_details {
 
-    /// A builder for [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::AwsLambdaFunctionCode>,
@@ -40963,7 +40726,7 @@ pub mod aws_lambda_function_details {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
         pub fn build(self) -> crate::model::AwsLambdaFunctionDetails {
             crate::model::AwsLambdaFunctionDetails {
                 code: self.code,
@@ -40989,7 +40752,7 @@ pub mod aws_lambda_function_details {
     }
 }
 impl AwsLambdaFunctionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDetails`](crate::model::AwsLambdaFunctionDetails).
     pub fn builder() -> crate::model::aws_lambda_function_details::Builder {
         crate::model::aws_lambda_function_details::Builder::default()
     }
@@ -41029,11 +40792,10 @@ impl std::fmt::Debug for AwsLambdaFunctionVpcConfig {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig)
+/// See [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
 pub mod aws_lambda_function_vpc_config {
 
-    /// A builder for [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -41089,7 +40851,7 @@ pub mod aws_lambda_function_vpc_config {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
         pub fn build(self) -> crate::model::AwsLambdaFunctionVpcConfig {
             crate::model::AwsLambdaFunctionVpcConfig {
                 security_group_ids: self.security_group_ids,
@@ -41100,7 +40862,7 @@ pub mod aws_lambda_function_vpc_config {
     }
 }
 impl AwsLambdaFunctionVpcConfig {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionVpcConfig`](crate::model::AwsLambdaFunctionVpcConfig).
     pub fn builder() -> crate::model::aws_lambda_function_vpc_config::Builder {
         crate::model::aws_lambda_function_vpc_config::Builder::default()
     }
@@ -41126,11 +40888,10 @@ impl std::fmt::Debug for AwsLambdaFunctionTracingConfig {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig)
+/// See [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
 pub mod aws_lambda_function_tracing_config {
 
-    /// A builder for [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<std::string::String>,
@@ -41146,14 +40907,14 @@ pub mod aws_lambda_function_tracing_config {
             self.mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
         pub fn build(self) -> crate::model::AwsLambdaFunctionTracingConfig {
             crate::model::AwsLambdaFunctionTracingConfig { mode: self.mode }
         }
     }
 }
 impl AwsLambdaFunctionTracingConfig {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionTracingConfig`](crate::model::AwsLambdaFunctionTracingConfig).
     pub fn builder() -> crate::model::aws_lambda_function_tracing_config::Builder {
         crate::model::aws_lambda_function_tracing_config::Builder::default()
     }
@@ -41186,11 +40947,10 @@ impl std::fmt::Debug for AwsLambdaFunctionLayer {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer)
+/// See [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
 pub mod aws_lambda_function_layer {
 
-    /// A builder for [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -41217,7 +40977,7 @@ pub mod aws_lambda_function_layer {
             self.code_size = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
         pub fn build(self) -> crate::model::AwsLambdaFunctionLayer {
             crate::model::AwsLambdaFunctionLayer {
                 arn: self.arn,
@@ -41227,7 +40987,7 @@ pub mod aws_lambda_function_layer {
     }
 }
 impl AwsLambdaFunctionLayer {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionLayer`](crate::model::AwsLambdaFunctionLayer).
     pub fn builder() -> crate::model::aws_lambda_function_layer::Builder {
         crate::model::aws_lambda_function_layer::Builder::default()
     }
@@ -41264,11 +41024,10 @@ impl std::fmt::Debug for AwsLambdaFunctionEnvironment {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment)
+/// See [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
 pub mod aws_lambda_function_environment {
 
-    /// A builder for [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) variables: std::option::Option<
@@ -41315,7 +41074,7 @@ pub mod aws_lambda_function_environment {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
         pub fn build(self) -> crate::model::AwsLambdaFunctionEnvironment {
             crate::model::AwsLambdaFunctionEnvironment {
                 variables: self.variables,
@@ -41325,7 +41084,7 @@ pub mod aws_lambda_function_environment {
     }
 }
 impl AwsLambdaFunctionEnvironment {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironment`](crate::model::AwsLambdaFunctionEnvironment).
     pub fn builder() -> crate::model::aws_lambda_function_environment::Builder {
         crate::model::aws_lambda_function_environment::Builder::default()
     }
@@ -41358,11 +41117,10 @@ impl std::fmt::Debug for AwsLambdaFunctionEnvironmentError {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError)
+/// See [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
 pub mod aws_lambda_function_environment_error {
 
-    /// A builder for [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -41389,7 +41147,7 @@ pub mod aws_lambda_function_environment_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
         pub fn build(self) -> crate::model::AwsLambdaFunctionEnvironmentError {
             crate::model::AwsLambdaFunctionEnvironmentError {
                 error_code: self.error_code,
@@ -41399,7 +41157,7 @@ pub mod aws_lambda_function_environment_error {
     }
 }
 impl AwsLambdaFunctionEnvironmentError {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionEnvironmentError`](crate::model::AwsLambdaFunctionEnvironmentError).
     pub fn builder() -> crate::model::aws_lambda_function_environment_error::Builder {
         crate::model::aws_lambda_function_environment_error::Builder::default()
     }
@@ -41425,11 +41183,10 @@ impl std::fmt::Debug for AwsLambdaFunctionDeadLetterConfig {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig)
+/// See [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
 pub mod aws_lambda_function_dead_letter_config {
 
-    /// A builder for [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -41445,7 +41202,7 @@ pub mod aws_lambda_function_dead_letter_config {
             self.target_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
         pub fn build(self) -> crate::model::AwsLambdaFunctionDeadLetterConfig {
             crate::model::AwsLambdaFunctionDeadLetterConfig {
                 target_arn: self.target_arn,
@@ -41454,7 +41211,7 @@ pub mod aws_lambda_function_dead_letter_config {
     }
 }
 impl AwsLambdaFunctionDeadLetterConfig {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionDeadLetterConfig`](crate::model::AwsLambdaFunctionDeadLetterConfig).
     pub fn builder() -> crate::model::aws_lambda_function_dead_letter_config::Builder {
         crate::model::aws_lambda_function_dead_letter_config::Builder::default()
     }
@@ -41501,11 +41258,10 @@ impl std::fmt::Debug for AwsLambdaFunctionCode {
         formatter.finish()
     }
 }
-/// See [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode)
+/// See [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
 pub mod aws_lambda_function_code {
 
-    /// A builder for [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode)
-    #[non_exhaustive]
+    /// A builder for [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -41557,7 +41313,7 @@ pub mod aws_lambda_function_code {
             self.zip_file = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode)
+        /// Consumes the builder and constructs a [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
         pub fn build(self) -> crate::model::AwsLambdaFunctionCode {
             crate::model::AwsLambdaFunctionCode {
                 s3_bucket: self.s3_bucket,
@@ -41569,7 +41325,7 @@ pub mod aws_lambda_function_code {
     }
 }
 impl AwsLambdaFunctionCode {
-    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode)
+    /// Creates a new builder-style object to manufacture [`AwsLambdaFunctionCode`](crate::model::AwsLambdaFunctionCode).
     pub fn builder() -> crate::model::aws_lambda_function_code::Builder {
         crate::model::aws_lambda_function_code::Builder::default()
     }
@@ -41652,11 +41408,10 @@ impl std::fmt::Debug for AwsKmsKeyDetails {
         formatter.finish()
     }
 }
-/// See [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails)
+/// See [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
 pub mod aws_kms_key_details {
 
-    /// A builder for [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -41760,7 +41515,7 @@ pub mod aws_kms_key_details {
             self.key_rotation_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails)
+        /// Consumes the builder and constructs a [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
         pub fn build(self) -> crate::model::AwsKmsKeyDetails {
             crate::model::AwsKmsKeyDetails {
                 aws_account_id: self.aws_account_id,
@@ -41776,7 +41531,7 @@ pub mod aws_kms_key_details {
     }
 }
 impl AwsKmsKeyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsKmsKeyDetails`](crate::model::AwsKmsKeyDetails).
     pub fn builder() -> crate::model::aws_kms_key_details::Builder {
         crate::model::aws_kms_key_details::Builder::default()
     }
@@ -41878,11 +41633,10 @@ impl std::fmt::Debug for AwsIamRoleDetails {
         formatter.finish()
     }
 }
-/// See [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails)
+/// See [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
 pub mod aws_iam_role_details {
 
-    /// A builder for [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assume_role_policy_document: std::option::Option<std::string::String>,
@@ -42045,7 +41799,7 @@ pub mod aws_iam_role_details {
             self.path = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails)
+        /// Consumes the builder and constructs a [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
         pub fn build(self) -> crate::model::AwsIamRoleDetails {
             crate::model::AwsIamRoleDetails {
                 assume_role_policy_document: self.assume_role_policy_document,
@@ -42063,7 +41817,7 @@ pub mod aws_iam_role_details {
     }
 }
 impl AwsIamRoleDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails)
+    /// Creates a new builder-style object to manufacture [`AwsIamRoleDetails`](crate::model::AwsIamRoleDetails).
     pub fn builder() -> crate::model::aws_iam_role_details::Builder {
         crate::model::aws_iam_role_details::Builder::default()
     }
@@ -42089,11 +41843,10 @@ impl std::fmt::Debug for AwsIamRolePolicy {
         formatter.finish()
     }
 }
-/// See [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy)
+/// See [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
 pub mod aws_iam_role_policy {
 
-    /// A builder for [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -42109,7 +41862,7 @@ pub mod aws_iam_role_policy {
             self.policy_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy)
+        /// Consumes the builder and constructs a [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
         pub fn build(self) -> crate::model::AwsIamRolePolicy {
             crate::model::AwsIamRolePolicy {
                 policy_name: self.policy_name,
@@ -42118,7 +41871,7 @@ pub mod aws_iam_role_policy {
     }
 }
 impl AwsIamRolePolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy)
+    /// Creates a new builder-style object to manufacture [`AwsIamRolePolicy`](crate::model::AwsIamRolePolicy).
     pub fn builder() -> crate::model::aws_iam_role_policy::Builder {
         crate::model::aws_iam_role_policy::Builder::default()
     }
@@ -42151,11 +41904,10 @@ impl std::fmt::Debug for AwsIamPermissionsBoundary {
         formatter.finish()
     }
 }
-/// See [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary)
+/// See [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
 pub mod aws_iam_permissions_boundary {
 
-    /// A builder for [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions_boundary_arn: std::option::Option<std::string::String>,
@@ -42188,7 +41940,7 @@ pub mod aws_iam_permissions_boundary {
             self.permissions_boundary_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary)
+        /// Consumes the builder and constructs a [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
         pub fn build(self) -> crate::model::AwsIamPermissionsBoundary {
             crate::model::AwsIamPermissionsBoundary {
                 permissions_boundary_arn: self.permissions_boundary_arn,
@@ -42198,7 +41950,7 @@ pub mod aws_iam_permissions_boundary {
     }
 }
 impl AwsIamPermissionsBoundary {
-    /// Creates a new builder-style object to manufacture [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary)
+    /// Creates a new builder-style object to manufacture [`AwsIamPermissionsBoundary`](crate::model::AwsIamPermissionsBoundary).
     pub fn builder() -> crate::model::aws_iam_permissions_boundary::Builder {
         crate::model::aws_iam_permissions_boundary::Builder::default()
     }
@@ -42261,11 +42013,10 @@ impl std::fmt::Debug for AwsIamInstanceProfile {
         formatter.finish()
     }
 }
-/// See [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile)
+/// See [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
 pub mod aws_iam_instance_profile {
 
-    /// A builder for [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -42354,7 +42105,7 @@ pub mod aws_iam_instance_profile {
             self.roles = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile)
+        /// Consumes the builder and constructs a [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
         pub fn build(self) -> crate::model::AwsIamInstanceProfile {
             crate::model::AwsIamInstanceProfile {
                 arn: self.arn,
@@ -42368,7 +42119,7 @@ pub mod aws_iam_instance_profile {
     }
 }
 impl AwsIamInstanceProfile {
-    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile)
+    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfile`](crate::model::AwsIamInstanceProfile).
     pub fn builder() -> crate::model::aws_iam_instance_profile::Builder {
         crate::model::aws_iam_instance_profile::Builder::default()
     }
@@ -42434,11 +42185,10 @@ impl std::fmt::Debug for AwsIamInstanceProfileRole {
         formatter.finish()
     }
 }
-/// See [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole)
+/// See [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
 pub mod aws_iam_instance_profile_role {
 
-    /// A builder for [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -42517,7 +42267,7 @@ pub mod aws_iam_instance_profile_role {
             self.role_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole)
+        /// Consumes the builder and constructs a [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
         pub fn build(self) -> crate::model::AwsIamInstanceProfileRole {
             crate::model::AwsIamInstanceProfileRole {
                 arn: self.arn,
@@ -42531,7 +42281,7 @@ pub mod aws_iam_instance_profile_role {
     }
 }
 impl AwsIamInstanceProfileRole {
-    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole)
+    /// Creates a new builder-style object to manufacture [`AwsIamInstanceProfileRole`](crate::model::AwsIamInstanceProfileRole).
     pub fn builder() -> crate::model::aws_iam_instance_profile_role::Builder {
         crate::model::aws_iam_instance_profile_role::Builder::default()
     }
@@ -42564,11 +42314,10 @@ impl std::fmt::Debug for AwsIamAttachedManagedPolicy {
         formatter.finish()
     }
 }
-/// See [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy)
+/// See [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
 pub mod aws_iam_attached_managed_policy {
 
-    /// A builder for [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -42595,7 +42344,7 @@ pub mod aws_iam_attached_managed_policy {
             self.policy_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy)
+        /// Consumes the builder and constructs a [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
         pub fn build(self) -> crate::model::AwsIamAttachedManagedPolicy {
             crate::model::AwsIamAttachedManagedPolicy {
                 policy_name: self.policy_name,
@@ -42605,7 +42354,7 @@ pub mod aws_iam_attached_managed_policy {
     }
 }
 impl AwsIamAttachedManagedPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy)
+    /// Creates a new builder-style object to manufacture [`AwsIamAttachedManagedPolicy`](crate::model::AwsIamAttachedManagedPolicy).
     pub fn builder() -> crate::model::aws_iam_attached_managed_policy::Builder {
         crate::model::aws_iam_attached_managed_policy::Builder::default()
     }
@@ -42671,11 +42420,10 @@ impl std::fmt::Debug for AwsIamGroupDetails {
         formatter.finish()
     }
 }
-/// See [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails)
+/// See [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
 pub mod aws_iam_group_details {
 
-    /// A builder for [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_managed_policies:
@@ -42771,7 +42519,7 @@ pub mod aws_iam_group_details {
             self.path = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails)
+        /// Consumes the builder and constructs a [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
         pub fn build(self) -> crate::model::AwsIamGroupDetails {
             crate::model::AwsIamGroupDetails {
                 attached_managed_policies: self.attached_managed_policies,
@@ -42785,7 +42533,7 @@ pub mod aws_iam_group_details {
     }
 }
 impl AwsIamGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails)
+    /// Creates a new builder-style object to manufacture [`AwsIamGroupDetails`](crate::model::AwsIamGroupDetails).
     pub fn builder() -> crate::model::aws_iam_group_details::Builder {
         crate::model::aws_iam_group_details::Builder::default()
     }
@@ -42811,11 +42559,10 @@ impl std::fmt::Debug for AwsIamGroupPolicy {
         formatter.finish()
     }
 }
-/// See [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy)
+/// See [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
 pub mod aws_iam_group_policy {
 
-    /// A builder for [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -42831,7 +42578,7 @@ pub mod aws_iam_group_policy {
             self.policy_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy)
+        /// Consumes the builder and constructs a [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
         pub fn build(self) -> crate::model::AwsIamGroupPolicy {
             crate::model::AwsIamGroupPolicy {
                 policy_name: self.policy_name,
@@ -42840,7 +42587,7 @@ pub mod aws_iam_group_policy {
     }
 }
 impl AwsIamGroupPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy)
+    /// Creates a new builder-style object to manufacture [`AwsIamGroupPolicy`](crate::model::AwsIamGroupPolicy).
     pub fn builder() -> crate::model::aws_iam_group_policy::Builder {
         crate::model::aws_iam_group_policy::Builder::default()
     }
@@ -43007,11 +42754,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerDetails {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails)
+/// See [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
 pub mod aws_elb_load_balancer_details {
 
-    /// A builder for [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -43309,7 +43055,7 @@ pub mod aws_elb_load_balancer_details {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerDetails {
             crate::model::AwsElbLoadBalancerDetails {
                 availability_zones: self.availability_zones,
@@ -43334,7 +43080,7 @@ pub mod aws_elb_load_balancer_details {
     }
 }
 impl AwsElbLoadBalancerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerDetails`](crate::model::AwsElbLoadBalancerDetails).
     pub fn builder() -> crate::model::aws_elb_load_balancer_details::Builder {
         crate::model::aws_elb_load_balancer_details::Builder::default()
     }
@@ -43367,11 +43113,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerSourceSecurityGroup {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup)
+/// See [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
 pub mod aws_elb_load_balancer_source_security_group {
 
-    /// A builder for [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -43398,7 +43143,7 @@ pub mod aws_elb_load_balancer_source_security_group {
             self.owner_alias = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerSourceSecurityGroup {
             crate::model::AwsElbLoadBalancerSourceSecurityGroup {
                 group_name: self.group_name,
@@ -43408,7 +43153,7 @@ pub mod aws_elb_load_balancer_source_security_group {
     }
 }
 impl AwsElbLoadBalancerSourceSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerSourceSecurityGroup`](crate::model::AwsElbLoadBalancerSourceSecurityGroup).
     pub fn builder() -> crate::model::aws_elb_load_balancer_source_security_group::Builder {
         crate::model::aws_elb_load_balancer_source_security_group::Builder::default()
     }
@@ -43460,11 +43205,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerPolicies {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies)
+/// See [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
 pub mod aws_elb_load_balancer_policies {
 
-    /// A builder for [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_cookie_stickiness_policies:
@@ -43539,7 +43283,7 @@ pub mod aws_elb_load_balancer_policies {
             self.other_policies = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerPolicies {
             crate::model::AwsElbLoadBalancerPolicies {
                 app_cookie_stickiness_policies: self.app_cookie_stickiness_policies,
@@ -43550,7 +43294,7 @@ pub mod aws_elb_load_balancer_policies {
     }
 }
 impl AwsElbLoadBalancerPolicies {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerPolicies`](crate::model::AwsElbLoadBalancerPolicies).
     pub fn builder() -> crate::model::aws_elb_load_balancer_policies::Builder {
         crate::model::aws_elb_load_balancer_policies::Builder::default()
     }
@@ -43583,11 +43327,10 @@ impl std::fmt::Debug for AwsElbLbCookieStickinessPolicy {
         formatter.finish()
     }
 }
-/// See [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy)
+/// See [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
 pub mod aws_elb_lb_cookie_stickiness_policy {
 
-    /// A builder for [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cookie_expiration_period: std::option::Option<i64>,
@@ -43614,7 +43357,7 @@ pub mod aws_elb_lb_cookie_stickiness_policy {
             self.policy_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy)
+        /// Consumes the builder and constructs a [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
         pub fn build(self) -> crate::model::AwsElbLbCookieStickinessPolicy {
             crate::model::AwsElbLbCookieStickinessPolicy {
                 cookie_expiration_period: self.cookie_expiration_period.unwrap_or_default(),
@@ -43624,7 +43367,7 @@ pub mod aws_elb_lb_cookie_stickiness_policy {
     }
 }
 impl AwsElbLbCookieStickinessPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy)
+    /// Creates a new builder-style object to manufacture [`AwsElbLbCookieStickinessPolicy`](crate::model::AwsElbLbCookieStickinessPolicy).
     pub fn builder() -> crate::model::aws_elb_lb_cookie_stickiness_policy::Builder {
         crate::model::aws_elb_lb_cookie_stickiness_policy::Builder::default()
     }
@@ -43657,11 +43400,10 @@ impl std::fmt::Debug for AwsElbAppCookieStickinessPolicy {
         formatter.finish()
     }
 }
-/// See [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy)
+/// See [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
 pub mod aws_elb_app_cookie_stickiness_policy {
 
-    /// A builder for [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cookie_name: std::option::Option<std::string::String>,
@@ -43688,7 +43430,7 @@ pub mod aws_elb_app_cookie_stickiness_policy {
             self.policy_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy)
+        /// Consumes the builder and constructs a [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
         pub fn build(self) -> crate::model::AwsElbAppCookieStickinessPolicy {
             crate::model::AwsElbAppCookieStickinessPolicy {
                 cookie_name: self.cookie_name,
@@ -43698,7 +43440,7 @@ pub mod aws_elb_app_cookie_stickiness_policy {
     }
 }
 impl AwsElbAppCookieStickinessPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy)
+    /// Creates a new builder-style object to manufacture [`AwsElbAppCookieStickinessPolicy`](crate::model::AwsElbAppCookieStickinessPolicy).
     pub fn builder() -> crate::model::aws_elb_app_cookie_stickiness_policy::Builder {
         crate::model::aws_elb_app_cookie_stickiness_policy::Builder::default()
     }
@@ -43772,11 +43514,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerAttributes {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes)
+/// See [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
 pub mod aws_elb_load_balancer_attributes {
 
-    /// A builder for [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log: std::option::Option<crate::model::AwsElbLoadBalancerAccessLog>,
@@ -43883,7 +43624,7 @@ pub mod aws_elb_load_balancer_attributes {
             self.additional_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerAttributes {
             crate::model::AwsElbLoadBalancerAttributes {
                 access_log: self.access_log,
@@ -43896,7 +43637,7 @@ pub mod aws_elb_load_balancer_attributes {
     }
 }
 impl AwsElbLoadBalancerAttributes {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAttributes`](crate::model::AwsElbLoadBalancerAttributes).
     pub fn builder() -> crate::model::aws_elb_load_balancer_attributes::Builder {
         crate::model::aws_elb_load_balancer_attributes::Builder::default()
     }
@@ -43929,11 +43670,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerAdditionalAttribute {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
+/// See [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
 pub mod aws_elb_load_balancer_additional_attribute {
 
-    /// A builder for [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -43960,7 +43700,7 @@ pub mod aws_elb_load_balancer_additional_attribute {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerAdditionalAttribute {
             crate::model::AwsElbLoadBalancerAdditionalAttribute {
                 key: self.key,
@@ -43970,7 +43710,7 @@ pub mod aws_elb_load_balancer_additional_attribute {
     }
 }
 impl AwsElbLoadBalancerAdditionalAttribute {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAdditionalAttribute`](crate::model::AwsElbLoadBalancerAdditionalAttribute).
     pub fn builder() -> crate::model::aws_elb_load_balancer_additional_attribute::Builder {
         crate::model::aws_elb_load_balancer_additional_attribute::Builder::default()
     }
@@ -43996,11 +43736,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerCrossZoneLoadBalancing {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing)
+/// See [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
 pub mod aws_elb_load_balancer_cross_zone_load_balancing {
 
-    /// A builder for [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -44016,7 +43755,7 @@ pub mod aws_elb_load_balancer_cross_zone_load_balancing {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing {
             crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing {
                 enabled: self.enabled.unwrap_or_default(),
@@ -44025,7 +43764,7 @@ pub mod aws_elb_load_balancer_cross_zone_load_balancing {
     }
 }
 impl AwsElbLoadBalancerCrossZoneLoadBalancing {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerCrossZoneLoadBalancing`](crate::model::AwsElbLoadBalancerCrossZoneLoadBalancing).
     pub fn builder() -> crate::model::aws_elb_load_balancer_cross_zone_load_balancing::Builder {
         crate::model::aws_elb_load_balancer_cross_zone_load_balancing::Builder::default()
     }
@@ -44051,11 +43790,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerConnectionSettings {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings)
+/// See [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
 pub mod aws_elb_load_balancer_connection_settings {
 
-    /// A builder for [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idle_timeout: std::option::Option<i32>,
@@ -44071,7 +43809,7 @@ pub mod aws_elb_load_balancer_connection_settings {
             self.idle_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerConnectionSettings {
             crate::model::AwsElbLoadBalancerConnectionSettings {
                 idle_timeout: self.idle_timeout.unwrap_or_default(),
@@ -44080,7 +43818,7 @@ pub mod aws_elb_load_balancer_connection_settings {
     }
 }
 impl AwsElbLoadBalancerConnectionSettings {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionSettings`](crate::model::AwsElbLoadBalancerConnectionSettings).
     pub fn builder() -> crate::model::aws_elb_load_balancer_connection_settings::Builder {
         crate::model::aws_elb_load_balancer_connection_settings::Builder::default()
     }
@@ -44113,11 +43851,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerConnectionDraining {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining)
+/// See [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
 pub mod aws_elb_load_balancer_connection_draining {
 
-    /// A builder for [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -44144,7 +43881,7 @@ pub mod aws_elb_load_balancer_connection_draining {
             self.timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerConnectionDraining {
             crate::model::AwsElbLoadBalancerConnectionDraining {
                 enabled: self.enabled.unwrap_or_default(),
@@ -44154,7 +43891,7 @@ pub mod aws_elb_load_balancer_connection_draining {
     }
 }
 impl AwsElbLoadBalancerConnectionDraining {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerConnectionDraining`](crate::model::AwsElbLoadBalancerConnectionDraining).
     pub fn builder() -> crate::model::aws_elb_load_balancer_connection_draining::Builder {
         crate::model::aws_elb_load_balancer_connection_draining::Builder::default()
     }
@@ -44205,11 +43942,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerAccessLog {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog)
+/// See [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
 pub mod aws_elb_load_balancer_access_log {
 
-    /// A builder for [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emit_interval: std::option::Option<i32>,
@@ -44268,7 +44004,7 @@ pub mod aws_elb_load_balancer_access_log {
             self.s3_bucket_prefix = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerAccessLog {
             crate::model::AwsElbLoadBalancerAccessLog {
                 emit_interval: self.emit_interval.unwrap_or_default(),
@@ -44280,7 +44016,7 @@ pub mod aws_elb_load_balancer_access_log {
     }
 }
 impl AwsElbLoadBalancerAccessLog {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerAccessLog`](crate::model::AwsElbLoadBalancerAccessLog).
     pub fn builder() -> crate::model::aws_elb_load_balancer_access_log::Builder {
         crate::model::aws_elb_load_balancer_access_log::Builder::default()
     }
@@ -44313,11 +44049,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerListenerDescription {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription)
+/// See [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
 pub mod aws_elb_load_balancer_listener_description {
 
-    /// A builder for [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) listener: std::option::Option<crate::model::AwsElbLoadBalancerListener>,
@@ -44356,7 +44091,7 @@ pub mod aws_elb_load_balancer_listener_description {
             self.policy_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerListenerDescription {
             crate::model::AwsElbLoadBalancerListenerDescription {
                 listener: self.listener,
@@ -44366,7 +44101,7 @@ pub mod aws_elb_load_balancer_listener_description {
     }
 }
 impl AwsElbLoadBalancerListenerDescription {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListenerDescription`](crate::model::AwsElbLoadBalancerListenerDescription).
     pub fn builder() -> crate::model::aws_elb_load_balancer_listener_description::Builder {
         crate::model::aws_elb_load_balancer_listener_description::Builder::default()
     }
@@ -44428,11 +44163,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerListener {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener)
+/// See [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
 pub mod aws_elb_load_balancer_listener {
 
-    /// A builder for [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_port: std::option::Option<i32>,
@@ -44506,7 +44240,7 @@ pub mod aws_elb_load_balancer_listener {
             self.ssl_certificate_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerListener {
             crate::model::AwsElbLoadBalancerListener {
                 instance_port: self.instance_port.unwrap_or_default(),
@@ -44519,7 +44253,7 @@ pub mod aws_elb_load_balancer_listener {
     }
 }
 impl AwsElbLoadBalancerListener {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerListener`](crate::model::AwsElbLoadBalancerListener).
     pub fn builder() -> crate::model::aws_elb_load_balancer_listener::Builder {
         crate::model::aws_elb_load_balancer_listener::Builder::default()
     }
@@ -44545,11 +44279,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerInstance {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance)
+/// See [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
 pub mod aws_elb_load_balancer_instance {
 
-    /// A builder for [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -44565,7 +44298,7 @@ pub mod aws_elb_load_balancer_instance {
             self.instance_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerInstance {
             crate::model::AwsElbLoadBalancerInstance {
                 instance_id: self.instance_id,
@@ -44574,7 +44307,7 @@ pub mod aws_elb_load_balancer_instance {
     }
 }
 impl AwsElbLoadBalancerInstance {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerInstance`](crate::model::AwsElbLoadBalancerInstance).
     pub fn builder() -> crate::model::aws_elb_load_balancer_instance::Builder {
         crate::model::aws_elb_load_balancer_instance::Builder::default()
     }
@@ -44646,11 +44379,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerHealthCheck {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck)
+/// See [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
 pub mod aws_elb_load_balancer_health_check {
 
-    /// A builder for [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) healthy_threshold: std::option::Option<i32>,
@@ -44728,7 +44460,7 @@ pub mod aws_elb_load_balancer_health_check {
             self.unhealthy_threshold = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerHealthCheck {
             crate::model::AwsElbLoadBalancerHealthCheck {
                 healthy_threshold: self.healthy_threshold.unwrap_or_default(),
@@ -44741,7 +44473,7 @@ pub mod aws_elb_load_balancer_health_check {
     }
 }
 impl AwsElbLoadBalancerHealthCheck {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerHealthCheck`](crate::model::AwsElbLoadBalancerHealthCheck).
     pub fn builder() -> crate::model::aws_elb_load_balancer_health_check::Builder {
         crate::model::aws_elb_load_balancer_health_check::Builder::default()
     }
@@ -44774,11 +44506,10 @@ impl std::fmt::Debug for AwsElbLoadBalancerBackendServerDescription {
         formatter.finish()
     }
 }
-/// See [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription)
+/// See [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
 pub mod aws_elb_load_balancer_backend_server_description {
 
-    /// A builder for [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_port: std::option::Option<i32>,
@@ -44814,7 +44545,7 @@ pub mod aws_elb_load_balancer_backend_server_description {
             self.policy_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription)
+        /// Consumes the builder and constructs a [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
         pub fn build(self) -> crate::model::AwsElbLoadBalancerBackendServerDescription {
             crate::model::AwsElbLoadBalancerBackendServerDescription {
                 instance_port: self.instance_port.unwrap_or_default(),
@@ -44824,7 +44555,7 @@ pub mod aws_elb_load_balancer_backend_server_description {
     }
 }
 impl AwsElbLoadBalancerBackendServerDescription {
-    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription)
+    /// Creates a new builder-style object to manufacture [`AwsElbLoadBalancerBackendServerDescription`](crate::model::AwsElbLoadBalancerBackendServerDescription).
     pub fn builder() -> crate::model::aws_elb_load_balancer_backend_server_description::Builder {
         crate::model::aws_elb_load_balancer_backend_server_description::Builder::default()
     }
@@ -45258,11 +44989,10 @@ impl std::fmt::Debug for AwsRedshiftClusterDetails {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails)
+/// See [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
 pub mod aws_redshift_cluster_details {
 
-    /// A builder for [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_version_upgrade: std::option::Option<bool>,
@@ -46015,7 +45745,7 @@ pub mod aws_redshift_cluster_details {
             self.logging_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
         pub fn build(self) -> crate::model::AwsRedshiftClusterDetails {
             crate::model::AwsRedshiftClusterDetails {
                 allow_version_upgrade: self.allow_version_upgrade.unwrap_or_default(),
@@ -46072,7 +45802,7 @@ pub mod aws_redshift_cluster_details {
     }
 }
 impl AwsRedshiftClusterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDetails`](crate::model::AwsRedshiftClusterDetails).
     pub fn builder() -> crate::model::aws_redshift_cluster_details::Builder {
         crate::model::aws_redshift_cluster_details::Builder::default()
     }
@@ -46140,11 +45870,10 @@ impl std::fmt::Debug for AwsRedshiftClusterLoggingStatus {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
+/// See [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
 pub mod aws_redshift_cluster_logging_status {
 
-    /// A builder for [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -46234,7 +45963,7 @@ pub mod aws_redshift_cluster_logging_status {
             self.s3_key_prefix = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
         pub fn build(self) -> crate::model::AwsRedshiftClusterLoggingStatus {
             crate::model::AwsRedshiftClusterLoggingStatus {
                 bucket_name: self.bucket_name,
@@ -46248,7 +45977,7 @@ pub mod aws_redshift_cluster_logging_status {
     }
 }
 impl AwsRedshiftClusterLoggingStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterLoggingStatus`](crate::model::AwsRedshiftClusterLoggingStatus).
     pub fn builder() -> crate::model::aws_redshift_cluster_logging_status::Builder {
         crate::model::aws_redshift_cluster_logging_status::Builder::default()
     }
@@ -46281,11 +46010,10 @@ impl std::fmt::Debug for AwsRedshiftClusterVpcSecurityGroup {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup)
+/// See [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
 pub mod aws_redshift_cluster_vpc_security_group {
 
-    /// A builder for [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -46315,7 +46043,7 @@ pub mod aws_redshift_cluster_vpc_security_group {
             self.vpc_security_group_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
         pub fn build(self) -> crate::model::AwsRedshiftClusterVpcSecurityGroup {
             crate::model::AwsRedshiftClusterVpcSecurityGroup {
                 status: self.status,
@@ -46325,7 +46053,7 @@ pub mod aws_redshift_cluster_vpc_security_group {
     }
 }
 impl AwsRedshiftClusterVpcSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterVpcSecurityGroup`](crate::model::AwsRedshiftClusterVpcSecurityGroup).
     pub fn builder() -> crate::model::aws_redshift_cluster_vpc_security_group::Builder {
         crate::model::aws_redshift_cluster_vpc_security_group::Builder::default()
     }
@@ -46407,11 +46135,10 @@ impl std::fmt::Debug for AwsRedshiftClusterRestoreStatus {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus)
+/// See [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
 pub mod aws_redshift_cluster_restore_status {
 
-    /// A builder for [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) current_restore_rate_in_mega_bytes_per_second: std::option::Option<f64>,
@@ -46500,7 +46227,7 @@ pub mod aws_redshift_cluster_restore_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
         pub fn build(self) -> crate::model::AwsRedshiftClusterRestoreStatus {
             crate::model::AwsRedshiftClusterRestoreStatus {
                 current_restore_rate_in_mega_bytes_per_second: self
@@ -46518,7 +46245,7 @@ pub mod aws_redshift_cluster_restore_status {
     }
 }
 impl AwsRedshiftClusterRestoreStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterRestoreStatus`](crate::model::AwsRedshiftClusterRestoreStatus).
     pub fn builder() -> crate::model::aws_redshift_cluster_restore_status::Builder {
         crate::model::aws_redshift_cluster_restore_status::Builder::default()
     }
@@ -46553,11 +46280,10 @@ impl std::fmt::Debug for AwsRedshiftClusterResizeInfo {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo)
+/// See [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
 pub mod aws_redshift_cluster_resize_info {
 
-    /// A builder for [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_cancel_resize: std::option::Option<bool>,
@@ -46586,7 +46312,7 @@ pub mod aws_redshift_cluster_resize_info {
             self.resize_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
         pub fn build(self) -> crate::model::AwsRedshiftClusterResizeInfo {
             crate::model::AwsRedshiftClusterResizeInfo {
                 allow_cancel_resize: self.allow_cancel_resize.unwrap_or_default(),
@@ -46596,7 +46322,7 @@ pub mod aws_redshift_cluster_resize_info {
     }
 }
 impl AwsRedshiftClusterResizeInfo {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterResizeInfo`](crate::model::AwsRedshiftClusterResizeInfo).
     pub fn builder() -> crate::model::aws_redshift_cluster_resize_info::Builder {
         crate::model::aws_redshift_cluster_resize_info::Builder::default()
     }
@@ -46695,11 +46421,10 @@ impl std::fmt::Debug for AwsRedshiftClusterPendingModifiedValues {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues)
+/// See [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
 pub mod aws_redshift_cluster_pending_modified_values {
 
-    /// A builder for [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automated_snapshot_retention_period: std::option::Option<i32>,
@@ -46843,7 +46568,7 @@ pub mod aws_redshift_cluster_pending_modified_values {
             self.publicly_accessible = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
         pub fn build(self) -> crate::model::AwsRedshiftClusterPendingModifiedValues {
             crate::model::AwsRedshiftClusterPendingModifiedValues {
                 automated_snapshot_retention_period: self
@@ -46864,7 +46589,7 @@ pub mod aws_redshift_cluster_pending_modified_values {
     }
 }
 impl AwsRedshiftClusterPendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterPendingModifiedValues`](crate::model::AwsRedshiftClusterPendingModifiedValues).
     pub fn builder() -> crate::model::aws_redshift_cluster_pending_modified_values::Builder {
         crate::model::aws_redshift_cluster_pending_modified_values::Builder::default()
     }
@@ -46899,11 +46624,10 @@ impl std::fmt::Debug for AwsRedshiftClusterIamRole {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole)
+/// See [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
 pub mod aws_redshift_cluster_iam_role {
 
-    /// A builder for [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apply_status: std::option::Option<std::string::String>,
@@ -46932,7 +46656,7 @@ pub mod aws_redshift_cluster_iam_role {
             self.iam_role_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
         pub fn build(self) -> crate::model::AwsRedshiftClusterIamRole {
             crate::model::AwsRedshiftClusterIamRole {
                 apply_status: self.apply_status,
@@ -46942,7 +46666,7 @@ pub mod aws_redshift_cluster_iam_role {
     }
 }
 impl AwsRedshiftClusterIamRole {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterIamRole`](crate::model::AwsRedshiftClusterIamRole).
     pub fn builder() -> crate::model::aws_redshift_cluster_iam_role::Builder {
         crate::model::aws_redshift_cluster_iam_role::Builder::default()
     }
@@ -46992,11 +46716,10 @@ impl std::fmt::Debug for AwsRedshiftClusterHsmStatus {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus)
+/// See [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
 pub mod aws_redshift_cluster_hsm_status {
 
-    /// A builder for [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_client_certificate_identifier: std::option::Option<std::string::String>,
@@ -47050,7 +46773,7 @@ pub mod aws_redshift_cluster_hsm_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
         pub fn build(self) -> crate::model::AwsRedshiftClusterHsmStatus {
             crate::model::AwsRedshiftClusterHsmStatus {
                 hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,
@@ -47061,7 +46784,7 @@ pub mod aws_redshift_cluster_hsm_status {
     }
 }
 impl AwsRedshiftClusterHsmStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterHsmStatus`](crate::model::AwsRedshiftClusterHsmStatus).
     pub fn builder() -> crate::model::aws_redshift_cluster_hsm_status::Builder {
         crate::model::aws_redshift_cluster_hsm_status::Builder::default()
     }
@@ -47094,11 +46817,10 @@ impl std::fmt::Debug for AwsRedshiftClusterEndpoint {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint)
+/// See [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
 pub mod aws_redshift_cluster_endpoint {
 
-    /// A builder for [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
@@ -47125,7 +46847,7 @@ pub mod aws_redshift_cluster_endpoint {
             self.port = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
         pub fn build(self) -> crate::model::AwsRedshiftClusterEndpoint {
             crate::model::AwsRedshiftClusterEndpoint {
                 address: self.address,
@@ -47135,7 +46857,7 @@ pub mod aws_redshift_cluster_endpoint {
     }
 }
 impl AwsRedshiftClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterEndpoint`](crate::model::AwsRedshiftClusterEndpoint).
     pub fn builder() -> crate::model::aws_redshift_cluster_endpoint::Builder {
         crate::model::aws_redshift_cluster_endpoint::Builder::default()
     }
@@ -47168,11 +46890,10 @@ impl std::fmt::Debug for AwsRedshiftClusterElasticIpStatus {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus)
+/// See [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
 pub mod aws_redshift_cluster_elastic_ip_status {
 
-    /// A builder for [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elastic_ip: std::option::Option<std::string::String>,
@@ -47199,7 +46920,7 @@ pub mod aws_redshift_cluster_elastic_ip_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
         pub fn build(self) -> crate::model::AwsRedshiftClusterElasticIpStatus {
             crate::model::AwsRedshiftClusterElasticIpStatus {
                 elastic_ip: self.elastic_ip,
@@ -47209,7 +46930,7 @@ pub mod aws_redshift_cluster_elastic_ip_status {
     }
 }
 impl AwsRedshiftClusterElasticIpStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterElasticIpStatus`](crate::model::AwsRedshiftClusterElasticIpStatus).
     pub fn builder() -> crate::model::aws_redshift_cluster_elastic_ip_status::Builder {
         crate::model::aws_redshift_cluster_elastic_ip_status::Builder::default()
     }
@@ -47262,11 +46983,10 @@ impl std::fmt::Debug for AwsRedshiftClusterDeferredMaintenanceWindow {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow)
+/// See [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
 pub mod aws_redshift_cluster_deferred_maintenance_window {
 
-    /// A builder for [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) defer_maintenance_end_time: std::option::Option<std::string::String>,
@@ -47323,7 +47043,7 @@ pub mod aws_redshift_cluster_deferred_maintenance_window {
             self.defer_maintenance_start_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
         pub fn build(self) -> crate::model::AwsRedshiftClusterDeferredMaintenanceWindow {
             crate::model::AwsRedshiftClusterDeferredMaintenanceWindow {
                 defer_maintenance_end_time: self.defer_maintenance_end_time,
@@ -47334,7 +47054,7 @@ pub mod aws_redshift_cluster_deferred_maintenance_window {
     }
 }
 impl AwsRedshiftClusterDeferredMaintenanceWindow {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::model::AwsRedshiftClusterDeferredMaintenanceWindow).
     pub fn builder() -> crate::model::aws_redshift_cluster_deferred_maintenance_window::Builder {
         crate::model::aws_redshift_cluster_deferred_maintenance_window::Builder::default()
     }
@@ -47388,11 +47108,10 @@ impl std::fmt::Debug for AwsRedshiftClusterClusterSnapshotCopyStatus {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus)
+/// See [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
 pub mod aws_redshift_cluster_cluster_snapshot_copy_status {
 
-    /// A builder for [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_region: std::option::Option<std::string::String>,
@@ -47454,7 +47173,7 @@ pub mod aws_redshift_cluster_cluster_snapshot_copy_status {
             self.snapshot_copy_grant_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
         pub fn build(self) -> crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus {
             crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus {
                 destination_region: self.destination_region,
@@ -47468,7 +47187,7 @@ pub mod aws_redshift_cluster_cluster_snapshot_copy_status {
     }
 }
 impl AwsRedshiftClusterClusterSnapshotCopyStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::model::AwsRedshiftClusterClusterSnapshotCopyStatus).
     pub fn builder() -> crate::model::aws_redshift_cluster_cluster_snapshot_copy_status::Builder {
         crate::model::aws_redshift_cluster_cluster_snapshot_copy_status::Builder::default()
     }
@@ -47504,11 +47223,10 @@ impl std::fmt::Debug for AwsRedshiftClusterClusterSecurityGroup {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup)
+/// See [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
 pub mod aws_redshift_cluster_cluster_security_group {
 
-    /// A builder for [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_security_group_name: std::option::Option<std::string::String>,
@@ -47541,7 +47259,7 @@ pub mod aws_redshift_cluster_cluster_security_group {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
         pub fn build(self) -> crate::model::AwsRedshiftClusterClusterSecurityGroup {
             crate::model::AwsRedshiftClusterClusterSecurityGroup {
                 cluster_security_group_name: self.cluster_security_group_name,
@@ -47551,7 +47269,7 @@ pub mod aws_redshift_cluster_cluster_security_group {
     }
 }
 impl AwsRedshiftClusterClusterSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterSecurityGroup`](crate::model::AwsRedshiftClusterClusterSecurityGroup).
     pub fn builder() -> crate::model::aws_redshift_cluster_cluster_security_group::Builder {
         crate::model::aws_redshift_cluster_cluster_security_group::Builder::default()
     }
@@ -47597,11 +47315,10 @@ impl std::fmt::Debug for AwsRedshiftClusterClusterParameterGroup {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup)
+/// See [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
 pub mod aws_redshift_cluster_cluster_parameter_group {
 
-    /// A builder for [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_parameter_status_list: std::option::Option<
@@ -47661,7 +47378,7 @@ pub mod aws_redshift_cluster_cluster_parameter_group {
             self.parameter_group_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
         pub fn build(self) -> crate::model::AwsRedshiftClusterClusterParameterGroup {
             crate::model::AwsRedshiftClusterClusterParameterGroup {
                 cluster_parameter_status_list: self.cluster_parameter_status_list,
@@ -47672,7 +47389,7 @@ pub mod aws_redshift_cluster_cluster_parameter_group {
     }
 }
 impl AwsRedshiftClusterClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterGroup`](crate::model::AwsRedshiftClusterClusterParameterGroup).
     pub fn builder() -> crate::model::aws_redshift_cluster_cluster_parameter_group::Builder {
         crate::model::aws_redshift_cluster_cluster_parameter_group::Builder::default()
     }
@@ -47717,11 +47434,10 @@ impl std::fmt::Debug for AwsRedshiftClusterClusterParameterStatus {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus)
+/// See [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
 pub mod aws_redshift_cluster_cluster_parameter_status {
 
-    /// A builder for [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_name: std::option::Option<std::string::String>,
@@ -47773,7 +47489,7 @@ pub mod aws_redshift_cluster_cluster_parameter_status {
             self.parameter_apply_error_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
         pub fn build(self) -> crate::model::AwsRedshiftClusterClusterParameterStatus {
             crate::model::AwsRedshiftClusterClusterParameterStatus {
                 parameter_name: self.parameter_name,
@@ -47784,7 +47500,7 @@ pub mod aws_redshift_cluster_cluster_parameter_status {
     }
 }
 impl AwsRedshiftClusterClusterParameterStatus {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterParameterStatus`](crate::model::AwsRedshiftClusterClusterParameterStatus).
     pub fn builder() -> crate::model::aws_redshift_cluster_cluster_parameter_status::Builder {
         crate::model::aws_redshift_cluster_cluster_parameter_status::Builder::default()
     }
@@ -47824,11 +47540,10 @@ impl std::fmt::Debug for AwsRedshiftClusterClusterNode {
         formatter.finish()
     }
 }
-/// See [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode)
+/// See [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
 pub mod aws_redshift_cluster_cluster_node {
 
-    /// A builder for [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode)
-    #[non_exhaustive]
+    /// A builder for [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) node_role: std::option::Option<std::string::String>,
@@ -47872,7 +47587,7 @@ pub mod aws_redshift_cluster_cluster_node {
             self.public_ip_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode)
+        /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
         pub fn build(self) -> crate::model::AwsRedshiftClusterClusterNode {
             crate::model::AwsRedshiftClusterClusterNode {
                 node_role: self.node_role,
@@ -47883,7 +47598,7 @@ pub mod aws_redshift_cluster_cluster_node {
     }
 }
 impl AwsRedshiftClusterClusterNode {
-    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode)
+    /// Creates a new builder-style object to manufacture [`AwsRedshiftClusterClusterNode`](crate::model::AwsRedshiftClusterClusterNode).
     pub fn builder() -> crate::model::aws_redshift_cluster_cluster_node::Builder {
         crate::model::aws_redshift_cluster_cluster_node::Builder::default()
     }
@@ -48105,11 +47820,10 @@ impl std::fmt::Debug for AwsCertificateManagerCertificateDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails)
+/// See [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
 pub mod aws_certificate_manager_certificate_details {
 
-    /// A builder for [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
@@ -48489,7 +48203,7 @@ pub mod aws_certificate_manager_certificate_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails)
+        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
         pub fn build(self) -> crate::model::AwsCertificateManagerCertificateDetails {
             crate::model::AwsCertificateManagerCertificateDetails {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -48520,7 +48234,7 @@ pub mod aws_certificate_manager_certificate_details {
     }
 }
 impl AwsCertificateManagerCertificateDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDetails`](crate::model::AwsCertificateManagerCertificateDetails).
     pub fn builder() -> crate::model::aws_certificate_manager_certificate_details::Builder {
         crate::model::aws_certificate_manager_certificate_details::Builder::default()
     }
@@ -48578,11 +48292,10 @@ impl std::fmt::Debug for AwsCertificateManagerCertificateRenewalSummary {
         formatter.finish()
     }
 }
-/// See [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary)
+/// See [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
 pub mod aws_certificate_manager_certificate_renewal_summary {
 
-    /// A builder for [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary)
-    #[non_exhaustive]
+    /// A builder for [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_validation_options: std::option::Option<
@@ -48659,7 +48372,7 @@ pub mod aws_certificate_manager_certificate_renewal_summary {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary)
+        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
         pub fn build(self) -> crate::model::AwsCertificateManagerCertificateRenewalSummary {
             crate::model::AwsCertificateManagerCertificateRenewalSummary {
                 domain_validation_options: self.domain_validation_options,
@@ -48671,7 +48384,7 @@ pub mod aws_certificate_manager_certificate_renewal_summary {
     }
 }
 impl AwsCertificateManagerCertificateRenewalSummary {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary)
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateRenewalSummary`](crate::model::AwsCertificateManagerCertificateRenewalSummary).
     pub fn builder() -> crate::model::aws_certificate_manager_certificate_renewal_summary::Builder {
         crate::model::aws_certificate_manager_certificate_renewal_summary::Builder::default()
     }
@@ -48740,11 +48453,10 @@ impl std::fmt::Debug for AwsCertificateManagerCertificateDomainValidationOption 
         formatter.finish()
     }
 }
-/// See [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption)
+/// See [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
 pub mod aws_certificate_manager_certificate_domain_validation_option {
 
-    /// A builder for [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption)
-    #[non_exhaustive]
+    /// A builder for [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -48842,7 +48554,7 @@ pub mod aws_certificate_manager_certificate_domain_validation_option {
             self.validation_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption)
+        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
         pub fn build(self) -> crate::model::AwsCertificateManagerCertificateDomainValidationOption {
             crate::model::AwsCertificateManagerCertificateDomainValidationOption {
                 domain_name: self.domain_name,
@@ -48856,7 +48568,7 @@ pub mod aws_certificate_manager_certificate_domain_validation_option {
     }
 }
 impl AwsCertificateManagerCertificateDomainValidationOption {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption)
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateDomainValidationOption`](crate::model::AwsCertificateManagerCertificateDomainValidationOption).
     pub fn builder(
     ) -> crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder {
         crate::model::aws_certificate_manager_certificate_domain_validation_option::Builder::default(
@@ -48898,11 +48610,10 @@ impl std::fmt::Debug for AwsCertificateManagerCertificateResourceRecord {
         formatter.finish()
     }
 }
-/// See [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord)
+/// See [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
 pub mod aws_certificate_manager_certificate_resource_record {
 
-    /// A builder for [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord)
-    #[non_exhaustive]
+    /// A builder for [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -48940,7 +48651,7 @@ pub mod aws_certificate_manager_certificate_resource_record {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord)
+        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
         pub fn build(self) -> crate::model::AwsCertificateManagerCertificateResourceRecord {
             crate::model::AwsCertificateManagerCertificateResourceRecord {
                 name: self.name,
@@ -48951,7 +48662,7 @@ pub mod aws_certificate_manager_certificate_resource_record {
     }
 }
 impl AwsCertificateManagerCertificateResourceRecord {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord)
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateResourceRecord`](crate::model::AwsCertificateManagerCertificateResourceRecord).
     pub fn builder() -> crate::model::aws_certificate_manager_certificate_resource_record::Builder {
         crate::model::aws_certificate_manager_certificate_resource_record::Builder::default()
     }
@@ -48982,11 +48693,10 @@ impl std::fmt::Debug for AwsCertificateManagerCertificateOptions {
         formatter.finish()
     }
 }
-/// See [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions)
+/// See [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
 pub mod aws_certificate_manager_certificate_options {
 
-    /// A builder for [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_transparency_logging_preference:
@@ -49011,7 +48721,7 @@ pub mod aws_certificate_manager_certificate_options {
             self.certificate_transparency_logging_preference = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions)
+        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
         pub fn build(self) -> crate::model::AwsCertificateManagerCertificateOptions {
             crate::model::AwsCertificateManagerCertificateOptions {
                 certificate_transparency_logging_preference: self
@@ -49021,7 +48731,7 @@ pub mod aws_certificate_manager_certificate_options {
     }
 }
 impl AwsCertificateManagerCertificateOptions {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions)
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateOptions`](crate::model::AwsCertificateManagerCertificateOptions).
     pub fn builder() -> crate::model::aws_certificate_manager_certificate_options::Builder {
         crate::model::aws_certificate_manager_certificate_options::Builder::default()
     }
@@ -49047,11 +48757,10 @@ impl std::fmt::Debug for AwsCertificateManagerCertificateKeyUsage {
         formatter.finish()
     }
 }
-/// See [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage)
+/// See [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
 pub mod aws_certificate_manager_certificate_key_usage {
 
-    /// A builder for [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage)
-    #[non_exhaustive]
+    /// A builder for [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -49067,14 +48776,14 @@ pub mod aws_certificate_manager_certificate_key_usage {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage)
+        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
         pub fn build(self) -> crate::model::AwsCertificateManagerCertificateKeyUsage {
             crate::model::AwsCertificateManagerCertificateKeyUsage { name: self.name }
         }
     }
 }
 impl AwsCertificateManagerCertificateKeyUsage {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage)
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateKeyUsage`](crate::model::AwsCertificateManagerCertificateKeyUsage).
     pub fn builder() -> crate::model::aws_certificate_manager_certificate_key_usage::Builder {
         crate::model::aws_certificate_manager_certificate_key_usage::Builder::default()
     }
@@ -49109,11 +48818,10 @@ impl std::fmt::Debug for AwsCertificateManagerCertificateExtendedKeyUsage {
         formatter.finish()
     }
 }
-/// See [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage)
+/// See [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
 pub mod aws_certificate_manager_certificate_extended_key_usage {
 
-    /// A builder for [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage)
-    #[non_exhaustive]
+    /// A builder for [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -49142,7 +48850,7 @@ pub mod aws_certificate_manager_certificate_extended_key_usage {
             self.o_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage)
+        /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
         pub fn build(self) -> crate::model::AwsCertificateManagerCertificateExtendedKeyUsage {
             crate::model::AwsCertificateManagerCertificateExtendedKeyUsage {
                 name: self.name,
@@ -49152,7 +48860,7 @@ pub mod aws_certificate_manager_certificate_extended_key_usage {
     }
 }
 impl AwsCertificateManagerCertificateExtendedKeyUsage {
-    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage)
+    /// Creates a new builder-style object to manufacture [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::model::AwsCertificateManagerCertificateExtendedKeyUsage).
     pub fn builder() -> crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder
     {
         crate::model::aws_certificate_manager_certificate_extended_key_usage::Builder::default()
@@ -49179,11 +48887,10 @@ impl std::fmt::Debug for AwsSsmPatchComplianceDetails {
         formatter.finish()
     }
 }
-/// See [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails)
+/// See [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
 pub mod aws_ssm_patch_compliance_details {
 
-    /// A builder for [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) patch: std::option::Option<crate::model::AwsSsmPatch>,
@@ -49199,14 +48906,14 @@ pub mod aws_ssm_patch_compliance_details {
             self.patch = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails)
+        /// Consumes the builder and constructs a [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
         pub fn build(self) -> crate::model::AwsSsmPatchComplianceDetails {
             crate::model::AwsSsmPatchComplianceDetails { patch: self.patch }
         }
     }
 }
 impl AwsSsmPatchComplianceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails)
+    /// Creates a new builder-style object to manufacture [`AwsSsmPatchComplianceDetails`](crate::model::AwsSsmPatchComplianceDetails).
     pub fn builder() -> crate::model::aws_ssm_patch_compliance_details::Builder {
         crate::model::aws_ssm_patch_compliance_details::Builder::default()
     }
@@ -49234,11 +48941,10 @@ impl std::fmt::Debug for AwsSsmPatch {
         formatter.finish()
     }
 }
-/// See [`AwsSsmPatch`](crate::model::AwsSsmPatch)
+/// See [`AwsSsmPatch`](crate::model::AwsSsmPatch).
 pub mod aws_ssm_patch {
 
-    /// A builder for [`AwsSsmPatch`](crate::model::AwsSsmPatch)
-    #[non_exhaustive]
+    /// A builder for [`AwsSsmPatch`](crate::model::AwsSsmPatch).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_summary: std::option::Option<crate::model::AwsSsmComplianceSummary>,
@@ -49257,7 +48963,7 @@ pub mod aws_ssm_patch {
             self.compliance_summary = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSsmPatch`](crate::model::AwsSsmPatch)
+        /// Consumes the builder and constructs a [`AwsSsmPatch`](crate::model::AwsSsmPatch).
         pub fn build(self) -> crate::model::AwsSsmPatch {
             crate::model::AwsSsmPatch {
                 compliance_summary: self.compliance_summary,
@@ -49266,7 +48972,7 @@ pub mod aws_ssm_patch {
     }
 }
 impl AwsSsmPatch {
-    /// Creates a new builder-style object to manufacture [`AwsSsmPatch`](crate::model::AwsSsmPatch)
+    /// Creates a new builder-style object to manufacture [`AwsSsmPatch`](crate::model::AwsSsmPatch).
     pub fn builder() -> crate::model::aws_ssm_patch::Builder {
         crate::model::aws_ssm_patch::Builder::default()
     }
@@ -49441,11 +49147,10 @@ impl std::fmt::Debug for AwsSsmComplianceSummary {
         formatter.finish()
     }
 }
-/// See [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary)
+/// See [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
 pub mod aws_ssm_compliance_summary {
 
-    /// A builder for [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary)
-    #[non_exhaustive]
+    /// A builder for [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -49681,7 +49386,7 @@ pub mod aws_ssm_compliance_summary {
             self.patch_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary)
+        /// Consumes the builder and constructs a [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
         pub fn build(self) -> crate::model::AwsSsmComplianceSummary {
             crate::model::AwsSsmComplianceSummary {
                 status: self.status,
@@ -49713,7 +49418,7 @@ pub mod aws_ssm_compliance_summary {
     }
 }
 impl AwsSsmComplianceSummary {
-    /// Creates a new builder-style object to manufacture [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary)
+    /// Creates a new builder-style object to manufacture [`AwsSsmComplianceSummary`](crate::model::AwsSsmComplianceSummary).
     pub fn builder() -> crate::model::aws_ssm_compliance_summary::Builder {
         crate::model::aws_ssm_compliance_summary::Builder::default()
     }
@@ -49849,11 +49554,10 @@ impl std::fmt::Debug for AwsCloudTrailTrailDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails)
+/// See [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
 pub mod aws_cloud_trail_trail_details {
 
-    /// A builder for [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
@@ -50047,7 +49751,7 @@ pub mod aws_cloud_trail_trail_details {
             self.trail_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails)
+        /// Consumes the builder and constructs a [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
         pub fn build(self) -> crate::model::AwsCloudTrailTrailDetails {
             crate::model::AwsCloudTrailTrailDetails {
                 cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
@@ -50072,7 +49776,7 @@ pub mod aws_cloud_trail_trail_details {
     }
 }
 impl AwsCloudTrailTrailDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCloudTrailTrailDetails`](crate::model::AwsCloudTrailTrailDetails).
     pub fn builder() -> crate::model::aws_cloud_trail_trail_details::Builder {
         crate::model::aws_cloud_trail_trail_details::Builder::default()
     }
@@ -50167,11 +49871,10 @@ impl std::fmt::Debug for AwsApiGatewayRestApiDetails {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails)
+/// See [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
 pub mod aws_api_gateway_rest_api_details {
 
-    /// A builder for [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -50304,7 +50007,7 @@ pub mod aws_api_gateway_rest_api_details {
             self.endpoint_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails)
+        /// Consumes the builder and constructs a [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
         pub fn build(self) -> crate::model::AwsApiGatewayRestApiDetails {
             crate::model::AwsApiGatewayRestApiDetails {
                 id: self.id,
@@ -50321,7 +50024,7 @@ pub mod aws_api_gateway_rest_api_details {
     }
 }
 impl AwsApiGatewayRestApiDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayRestApiDetails`](crate::model::AwsApiGatewayRestApiDetails).
     pub fn builder() -> crate::model::aws_api_gateway_rest_api_details::Builder {
         crate::model::aws_api_gateway_rest_api_details::Builder::default()
     }
@@ -50349,11 +50052,10 @@ impl std::fmt::Debug for AwsApiGatewayEndpointConfiguration {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration)
+/// See [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
 pub mod aws_api_gateway_endpoint_configuration {
 
-    /// A builder for [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -50380,14 +50082,14 @@ pub mod aws_api_gateway_endpoint_configuration {
             self.types = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration)
+        /// Consumes the builder and constructs a [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
         pub fn build(self) -> crate::model::AwsApiGatewayEndpointConfiguration {
             crate::model::AwsApiGatewayEndpointConfiguration { types: self.types }
         }
     }
 }
 impl AwsApiGatewayEndpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayEndpointConfiguration`](crate::model::AwsApiGatewayEndpointConfiguration).
     pub fn builder() -> crate::model::aws_api_gateway_endpoint_configuration::Builder {
         crate::model::aws_api_gateway_endpoint_configuration::Builder::default()
     }
@@ -50547,11 +50249,10 @@ impl std::fmt::Debug for AwsApiGatewayStageDetails {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails)
+/// See [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
 pub mod aws_api_gateway_stage_details {
 
-    /// A builder for [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
@@ -50805,7 +50506,7 @@ pub mod aws_api_gateway_stage_details {
             self.web_acl_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails)
+        /// Consumes the builder and constructs a [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
         pub fn build(self) -> crate::model::AwsApiGatewayStageDetails {
             crate::model::AwsApiGatewayStageDetails {
                 deployment_id: self.deployment_id,
@@ -50829,7 +50530,7 @@ pub mod aws_api_gateway_stage_details {
     }
 }
 impl AwsApiGatewayStageDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayStageDetails`](crate::model::AwsApiGatewayStageDetails).
     pub fn builder() -> crate::model::aws_api_gateway_stage_details::Builder {
         crate::model::aws_api_gateway_stage_details::Builder::default()
     }
@@ -50882,11 +50583,10 @@ impl std::fmt::Debug for AwsApiGatewayCanarySettings {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings)
+/// See [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
 pub mod aws_api_gateway_canary_settings {
 
-    /// A builder for [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) percent_traffic: std::option::Option<f64>,
@@ -50957,7 +50657,7 @@ pub mod aws_api_gateway_canary_settings {
             self.use_stage_cache = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings)
+        /// Consumes the builder and constructs a [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
         pub fn build(self) -> crate::model::AwsApiGatewayCanarySettings {
             crate::model::AwsApiGatewayCanarySettings {
                 percent_traffic: self.percent_traffic.unwrap_or_default(),
@@ -50969,7 +50669,7 @@ pub mod aws_api_gateway_canary_settings {
     }
 }
 impl AwsApiGatewayCanarySettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayCanarySettings`](crate::model::AwsApiGatewayCanarySettings).
     pub fn builder() -> crate::model::aws_api_gateway_canary_settings::Builder {
         crate::model::aws_api_gateway_canary_settings::Builder::default()
     }
@@ -51002,11 +50702,10 @@ impl std::fmt::Debug for AwsApiGatewayAccessLogSettings {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings)
+/// See [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
 pub mod aws_api_gateway_access_log_settings {
 
-    /// A builder for [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<std::string::String>,
@@ -51036,7 +50735,7 @@ pub mod aws_api_gateway_access_log_settings {
             self.destination_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings)
+        /// Consumes the builder and constructs a [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
         pub fn build(self) -> crate::model::AwsApiGatewayAccessLogSettings {
             crate::model::AwsApiGatewayAccessLogSettings {
                 format: self.format,
@@ -51046,7 +50745,7 @@ pub mod aws_api_gateway_access_log_settings {
     }
 }
 impl AwsApiGatewayAccessLogSettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayAccessLogSettings`](crate::model::AwsApiGatewayAccessLogSettings).
     pub fn builder() -> crate::model::aws_api_gateway_access_log_settings::Builder {
         crate::model::aws_api_gateway_access_log_settings::Builder::default()
     }
@@ -51167,11 +50866,10 @@ impl std::fmt::Debug for AwsApiGatewayMethodSettings {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings)
+/// See [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
 pub mod aws_api_gateway_method_settings {
 
-    /// A builder for [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics_enabled: std::option::Option<bool>,
@@ -51336,7 +51034,7 @@ pub mod aws_api_gateway_method_settings {
             self.resource_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings)
+        /// Consumes the builder and constructs a [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
         pub fn build(self) -> crate::model::AwsApiGatewayMethodSettings {
             crate::model::AwsApiGatewayMethodSettings {
                 metrics_enabled: self.metrics_enabled.unwrap_or_default(),
@@ -51359,7 +51057,7 @@ pub mod aws_api_gateway_method_settings {
     }
 }
 impl AwsApiGatewayMethodSettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayMethodSettings`](crate::model::AwsApiGatewayMethodSettings).
     pub fn builder() -> crate::model::aws_api_gateway_method_settings::Builder {
         crate::model::aws_api_gateway_method_settings::Builder::default()
     }
@@ -51534,11 +51232,10 @@ impl std::fmt::Debug for AwsDynamoDbTableDetails {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails)
+/// See [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
 pub mod aws_dynamo_db_table_details {
 
-    /// A builder for [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_definitions:
@@ -51866,7 +51563,7 @@ pub mod aws_dynamo_db_table_details {
             self.table_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
         pub fn build(self) -> crate::model::AwsDynamoDbTableDetails {
             crate::model::AwsDynamoDbTableDetails {
                 attribute_definitions: self.attribute_definitions,
@@ -51893,7 +51590,7 @@ pub mod aws_dynamo_db_table_details {
     }
 }
 impl AwsDynamoDbTableDetails {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableDetails`](crate::model::AwsDynamoDbTableDetails).
     pub fn builder() -> crate::model::aws_dynamo_db_table_details::Builder {
         crate::model::aws_dynamo_db_table_details::Builder::default()
     }
@@ -51926,11 +51623,10 @@ impl std::fmt::Debug for AwsDynamoDbTableStreamSpecification {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification)
+/// See [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
 pub mod aws_dynamo_db_table_stream_specification {
 
-    /// A builder for [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_enabled: std::option::Option<bool>,
@@ -51960,7 +51656,7 @@ pub mod aws_dynamo_db_table_stream_specification {
             self.stream_view_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
         pub fn build(self) -> crate::model::AwsDynamoDbTableStreamSpecification {
             crate::model::AwsDynamoDbTableStreamSpecification {
                 stream_enabled: self.stream_enabled.unwrap_or_default(),
@@ -51970,7 +51666,7 @@ pub mod aws_dynamo_db_table_stream_specification {
     }
 }
 impl AwsDynamoDbTableStreamSpecification {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableStreamSpecification`](crate::model::AwsDynamoDbTableStreamSpecification).
     pub fn builder() -> crate::model::aws_dynamo_db_table_stream_specification::Builder {
         crate::model::aws_dynamo_db_table_stream_specification::Builder::default()
     }
@@ -52022,11 +51718,10 @@ impl std::fmt::Debug for AwsDynamoDbTableSseDescription {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription)
+/// See [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
 pub mod aws_dynamo_db_table_sse_description {
 
-    /// A builder for [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inaccessible_encryption_date_time: std::option::Option<std::string::String>,
@@ -52086,7 +51781,7 @@ pub mod aws_dynamo_db_table_sse_description {
             self.kms_master_key_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
         pub fn build(self) -> crate::model::AwsDynamoDbTableSseDescription {
             crate::model::AwsDynamoDbTableSseDescription {
                 inaccessible_encryption_date_time: self.inaccessible_encryption_date_time,
@@ -52098,7 +51793,7 @@ pub mod aws_dynamo_db_table_sse_description {
     }
 }
 impl AwsDynamoDbTableSseDescription {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableSseDescription`](crate::model::AwsDynamoDbTableSseDescription).
     pub fn builder() -> crate::model::aws_dynamo_db_table_sse_description::Builder {
         crate::model::aws_dynamo_db_table_sse_description::Builder::default()
     }
@@ -52147,11 +51842,10 @@ impl std::fmt::Debug for AwsDynamoDbTableRestoreSummary {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary)
+/// See [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
 pub mod aws_dynamo_db_table_restore_summary {
 
-    /// A builder for [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_backup_arn: std::option::Option<std::string::String>,
@@ -52211,7 +51905,7 @@ pub mod aws_dynamo_db_table_restore_summary {
             self.restore_in_progress = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
         pub fn build(self) -> crate::model::AwsDynamoDbTableRestoreSummary {
             crate::model::AwsDynamoDbTableRestoreSummary {
                 source_backup_arn: self.source_backup_arn,
@@ -52223,7 +51917,7 @@ pub mod aws_dynamo_db_table_restore_summary {
     }
 }
 impl AwsDynamoDbTableRestoreSummary {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableRestoreSummary`](crate::model::AwsDynamoDbTableRestoreSummary).
     pub fn builder() -> crate::model::aws_dynamo_db_table_restore_summary::Builder {
         crate::model::aws_dynamo_db_table_restore_summary::Builder::default()
     }
@@ -52297,11 +51991,10 @@ impl std::fmt::Debug for AwsDynamoDbTableReplica {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica)
+/// See [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
 pub mod aws_dynamo_db_table_replica {
 
-    /// A builder for [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_secondary_indexes: std::option::Option<
@@ -52404,7 +52097,7 @@ pub mod aws_dynamo_db_table_replica {
             self.replica_status_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
         pub fn build(self) -> crate::model::AwsDynamoDbTableReplica {
             crate::model::AwsDynamoDbTableReplica {
                 global_secondary_indexes: self.global_secondary_indexes,
@@ -52418,7 +52111,7 @@ pub mod aws_dynamo_db_table_replica {
     }
 }
 impl AwsDynamoDbTableReplica {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplica`](crate::model::AwsDynamoDbTableReplica).
     pub fn builder() -> crate::model::aws_dynamo_db_table_replica::Builder {
         crate::model::aws_dynamo_db_table_replica::Builder::default()
     }
@@ -52444,11 +52137,10 @@ impl std::fmt::Debug for AwsDynamoDbTableProvisionedThroughputOverride {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride)
+/// See [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
 pub mod aws_dynamo_db_table_provisioned_throughput_override {
 
-    /// A builder for [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_capacity_units: std::option::Option<i32>,
@@ -52464,7 +52156,7 @@ pub mod aws_dynamo_db_table_provisioned_throughput_override {
             self.read_capacity_units = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
         pub fn build(self) -> crate::model::AwsDynamoDbTableProvisionedThroughputOverride {
             crate::model::AwsDynamoDbTableProvisionedThroughputOverride {
                 read_capacity_units: self.read_capacity_units.unwrap_or_default(),
@@ -52473,7 +52165,7 @@ pub mod aws_dynamo_db_table_provisioned_throughput_override {
     }
 }
 impl AwsDynamoDbTableProvisionedThroughputOverride {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::model::AwsDynamoDbTableProvisionedThroughputOverride).
     pub fn builder() -> crate::model::aws_dynamo_db_table_provisioned_throughput_override::Builder {
         crate::model::aws_dynamo_db_table_provisioned_throughput_override::Builder::default()
     }
@@ -52512,11 +52204,10 @@ impl std::fmt::Debug for AwsDynamoDbTableReplicaGlobalSecondaryIndex {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex)
+/// See [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
 pub mod aws_dynamo_db_table_replica_global_secondary_index {
 
-    /// A builder for [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -52550,7 +52241,7 @@ pub mod aws_dynamo_db_table_replica_global_secondary_index {
             self.provisioned_throughput_override = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
         pub fn build(self) -> crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex {
             crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex {
                 index_name: self.index_name,
@@ -52560,7 +52251,7 @@ pub mod aws_dynamo_db_table_replica_global_secondary_index {
     }
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
     pub fn builder() -> crate::model::aws_dynamo_db_table_replica_global_secondary_index::Builder {
         crate::model::aws_dynamo_db_table_replica_global_secondary_index::Builder::default()
     }
@@ -52618,11 +52309,10 @@ impl std::fmt::Debug for AwsDynamoDbTableProvisionedThroughput {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput)
+/// See [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
 pub mod aws_dynamo_db_table_provisioned_throughput {
 
-    /// A builder for [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_decrease_date_time: std::option::Option<std::string::String>,
@@ -52692,7 +52382,7 @@ pub mod aws_dynamo_db_table_provisioned_throughput {
             self.write_capacity_units = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
         pub fn build(self) -> crate::model::AwsDynamoDbTableProvisionedThroughput {
             crate::model::AwsDynamoDbTableProvisionedThroughput {
                 last_decrease_date_time: self.last_decrease_date_time,
@@ -52705,7 +52395,7 @@ pub mod aws_dynamo_db_table_provisioned_throughput {
     }
 }
 impl AwsDynamoDbTableProvisionedThroughput {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProvisionedThroughput`](crate::model::AwsDynamoDbTableProvisionedThroughput).
     pub fn builder() -> crate::model::aws_dynamo_db_table_provisioned_throughput::Builder {
         crate::model::aws_dynamo_db_table_provisioned_throughput::Builder::default()
     }
@@ -52752,11 +52442,10 @@ impl std::fmt::Debug for AwsDynamoDbTableLocalSecondaryIndex {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex)
+/// See [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
 pub mod aws_dynamo_db_table_local_secondary_index {
 
-    /// A builder for [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_arn: std::option::Option<std::string::String>,
@@ -52818,7 +52507,7 @@ pub mod aws_dynamo_db_table_local_secondary_index {
             self.projection = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
         pub fn build(self) -> crate::model::AwsDynamoDbTableLocalSecondaryIndex {
             crate::model::AwsDynamoDbTableLocalSecondaryIndex {
                 index_arn: self.index_arn,
@@ -52830,7 +52519,7 @@ pub mod aws_dynamo_db_table_local_secondary_index {
     }
 }
 impl AwsDynamoDbTableLocalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableLocalSecondaryIndex`](crate::model::AwsDynamoDbTableLocalSecondaryIndex).
     pub fn builder() -> crate::model::aws_dynamo_db_table_local_secondary_index::Builder {
         crate::model::aws_dynamo_db_table_local_secondary_index::Builder::default()
     }
@@ -52863,11 +52552,10 @@ impl std::fmt::Debug for AwsDynamoDbTableProjection {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection)
+/// See [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
 pub mod aws_dynamo_db_table_projection {
 
-    /// A builder for [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -52906,7 +52594,7 @@ pub mod aws_dynamo_db_table_projection {
             self.projection_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
         pub fn build(self) -> crate::model::AwsDynamoDbTableProjection {
             crate::model::AwsDynamoDbTableProjection {
                 non_key_attributes: self.non_key_attributes,
@@ -52916,7 +52604,7 @@ pub mod aws_dynamo_db_table_projection {
     }
 }
 impl AwsDynamoDbTableProjection {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableProjection`](crate::model::AwsDynamoDbTableProjection).
     pub fn builder() -> crate::model::aws_dynamo_db_table_projection::Builder {
         crate::model::aws_dynamo_db_table_projection::Builder::default()
     }
@@ -52949,11 +52637,10 @@ impl std::fmt::Debug for AwsDynamoDbTableKeySchema {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema)
+/// See [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
 pub mod aws_dynamo_db_table_key_schema {
 
-    /// A builder for [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -52983,7 +52670,7 @@ pub mod aws_dynamo_db_table_key_schema {
             self.key_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
         pub fn build(self) -> crate::model::AwsDynamoDbTableKeySchema {
             crate::model::AwsDynamoDbTableKeySchema {
                 attribute_name: self.attribute_name,
@@ -52993,7 +52680,7 @@ pub mod aws_dynamo_db_table_key_schema {
     }
 }
 impl AwsDynamoDbTableKeySchema {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableKeySchema`](crate::model::AwsDynamoDbTableKeySchema).
     pub fn builder() -> crate::model::aws_dynamo_db_table_key_schema::Builder {
         crate::model::aws_dynamo_db_table_key_schema::Builder::default()
     }
@@ -53078,11 +52765,10 @@ impl std::fmt::Debug for AwsDynamoDbTableGlobalSecondaryIndex {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex)
+/// See [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
 pub mod aws_dynamo_db_table_global_secondary_index {
 
-    /// A builder for [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backfilling: std::option::Option<bool>,
@@ -53206,7 +52892,7 @@ pub mod aws_dynamo_db_table_global_secondary_index {
             self.provisioned_throughput = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
         pub fn build(self) -> crate::model::AwsDynamoDbTableGlobalSecondaryIndex {
             crate::model::AwsDynamoDbTableGlobalSecondaryIndex {
                 backfilling: self.backfilling.unwrap_or_default(),
@@ -53223,7 +52909,7 @@ pub mod aws_dynamo_db_table_global_secondary_index {
     }
 }
 impl AwsDynamoDbTableGlobalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::model::AwsDynamoDbTableGlobalSecondaryIndex).
     pub fn builder() -> crate::model::aws_dynamo_db_table_global_secondary_index::Builder {
         crate::model::aws_dynamo_db_table_global_secondary_index::Builder::default()
     }
@@ -53261,11 +52947,10 @@ impl std::fmt::Debug for AwsDynamoDbTableBillingModeSummary {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary)
+/// See [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
 pub mod aws_dynamo_db_table_billing_mode_summary {
 
-    /// A builder for [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_mode: std::option::Option<std::string::String>,
@@ -53301,7 +52986,7 @@ pub mod aws_dynamo_db_table_billing_mode_summary {
             self.last_update_to_pay_per_request_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
         pub fn build(self) -> crate::model::AwsDynamoDbTableBillingModeSummary {
             crate::model::AwsDynamoDbTableBillingModeSummary {
                 billing_mode: self.billing_mode,
@@ -53312,7 +52997,7 @@ pub mod aws_dynamo_db_table_billing_mode_summary {
     }
 }
 impl AwsDynamoDbTableBillingModeSummary {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableBillingModeSummary`](crate::model::AwsDynamoDbTableBillingModeSummary).
     pub fn builder() -> crate::model::aws_dynamo_db_table_billing_mode_summary::Builder {
         crate::model::aws_dynamo_db_table_billing_mode_summary::Builder::default()
     }
@@ -53345,11 +53030,10 @@ impl std::fmt::Debug for AwsDynamoDbTableAttributeDefinition {
         formatter.finish()
     }
 }
-/// See [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition)
+/// See [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
 pub mod aws_dynamo_db_table_attribute_definition {
 
-    /// A builder for [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition)
-    #[non_exhaustive]
+    /// A builder for [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -53382,7 +53066,7 @@ pub mod aws_dynamo_db_table_attribute_definition {
             self.attribute_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition)
+        /// Consumes the builder and constructs a [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
         pub fn build(self) -> crate::model::AwsDynamoDbTableAttributeDefinition {
             crate::model::AwsDynamoDbTableAttributeDefinition {
                 attribute_name: self.attribute_name,
@@ -53392,7 +53076,7 @@ pub mod aws_dynamo_db_table_attribute_definition {
     }
 }
 impl AwsDynamoDbTableAttributeDefinition {
-    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition)
+    /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableAttributeDefinition`](crate::model::AwsDynamoDbTableAttributeDefinition).
     pub fn builder() -> crate::model::aws_dynamo_db_table_attribute_definition::Builder {
         crate::model::aws_dynamo_db_table_attribute_definition::Builder::default()
     }
@@ -53503,11 +53187,10 @@ impl std::fmt::Debug for AwsApiGatewayV2ApiDetails {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails)
+/// See [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
 pub mod aws_api_gateway_v2_api_details {
 
-    /// A builder for [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -53653,7 +53336,7 @@ pub mod aws_api_gateway_v2_api_details {
             self.cors_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails)
+        /// Consumes the builder and constructs a [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
         pub fn build(self) -> crate::model::AwsApiGatewayV2ApiDetails {
             crate::model::AwsApiGatewayV2ApiDetails {
                 api_endpoint: self.api_endpoint,
@@ -53671,7 +53354,7 @@ pub mod aws_api_gateway_v2_api_details {
     }
 }
 impl AwsApiGatewayV2ApiDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2ApiDetails`](crate::model::AwsApiGatewayV2ApiDetails).
     pub fn builder() -> crate::model::aws_api_gateway_v2_api_details::Builder {
         crate::model::aws_api_gateway_v2_api_details::Builder::default()
     }
@@ -53732,11 +53415,10 @@ impl std::fmt::Debug for AwsCorsConfiguration {
         formatter.finish()
     }
 }
-/// See [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration)
+/// See [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
 pub mod aws_cors_configuration {
 
-    /// A builder for [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_origins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -53843,7 +53525,7 @@ pub mod aws_cors_configuration {
             self.allow_headers = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration)
+        /// Consumes the builder and constructs a [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
         pub fn build(self) -> crate::model::AwsCorsConfiguration {
             crate::model::AwsCorsConfiguration {
                 allow_origins: self.allow_origins,
@@ -53857,7 +53539,7 @@ pub mod aws_cors_configuration {
     }
 }
 impl AwsCorsConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration)
+    /// Creates a new builder-style object to manufacture [`AwsCorsConfiguration`](crate::model::AwsCorsConfiguration).
     pub fn builder() -> crate::model::aws_cors_configuration::Builder {
         crate::model::aws_cors_configuration::Builder::default()
     }
@@ -53998,11 +53680,10 @@ impl std::fmt::Debug for AwsApiGatewayV2StageDetails {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails)
+/// See [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
 pub mod aws_api_gateway_v2_stage_details {
 
-    /// A builder for [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
@@ -54217,7 +53898,7 @@ pub mod aws_api_gateway_v2_stage_details {
             self.api_gateway_managed = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails)
+        /// Consumes the builder and constructs a [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
         pub fn build(self) -> crate::model::AwsApiGatewayV2StageDetails {
             crate::model::AwsApiGatewayV2StageDetails {
                 client_certificate_id: self.client_certificate_id,
@@ -54238,7 +53919,7 @@ pub mod aws_api_gateway_v2_stage_details {
     }
 }
 impl AwsApiGatewayV2StageDetails {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2StageDetails`](crate::model::AwsApiGatewayV2StageDetails).
     pub fn builder() -> crate::model::aws_api_gateway_v2_stage_details::Builder {
         crate::model::aws_api_gateway_v2_stage_details::Builder::default()
     }
@@ -54298,11 +53979,10 @@ impl std::fmt::Debug for AwsApiGatewayV2RouteSettings {
         formatter.finish()
     }
 }
-/// See [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings)
+/// See [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
 pub mod aws_api_gateway_v2_route_settings {
 
-    /// A builder for [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings)
-    #[non_exhaustive]
+    /// A builder for [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detailed_metrics_enabled: std::option::Option<bool>,
@@ -54371,7 +54051,7 @@ pub mod aws_api_gateway_v2_route_settings {
             self.throttling_rate_limit = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings)
+        /// Consumes the builder and constructs a [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
         pub fn build(self) -> crate::model::AwsApiGatewayV2RouteSettings {
             crate::model::AwsApiGatewayV2RouteSettings {
                 detailed_metrics_enabled: self.detailed_metrics_enabled.unwrap_or_default(),
@@ -54384,7 +54064,7 @@ pub mod aws_api_gateway_v2_route_settings {
     }
 }
 impl AwsApiGatewayV2RouteSettings {
-    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings)
+    /// Creates a new builder-style object to manufacture [`AwsApiGatewayV2RouteSettings`](crate::model::AwsApiGatewayV2RouteSettings).
     pub fn builder() -> crate::model::aws_api_gateway_v2_route_settings::Builder {
         crate::model::aws_api_gateway_v2_route_settings::Builder::default()
     }
@@ -54487,11 +54167,10 @@ impl std::fmt::Debug for AwsIamPolicyDetails {
         formatter.finish()
     }
 }
-/// See [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails)
+/// See [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
 pub mod aws_iam_policy_details {
 
-    /// A builder for [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment_count: std::option::Option<i32>,
@@ -54637,7 +54316,7 @@ pub mod aws_iam_policy_details {
             self.update_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails)
+        /// Consumes the builder and constructs a [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
         pub fn build(self) -> crate::model::AwsIamPolicyDetails {
             crate::model::AwsIamPolicyDetails {
                 attachment_count: self.attachment_count.unwrap_or_default(),
@@ -54658,7 +54337,7 @@ pub mod aws_iam_policy_details {
     }
 }
 impl AwsIamPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsIamPolicyDetails`](crate::model::AwsIamPolicyDetails).
     pub fn builder() -> crate::model::aws_iam_policy_details::Builder {
         crate::model::aws_iam_policy_details::Builder::default()
     }
@@ -54700,11 +54379,10 @@ impl std::fmt::Debug for AwsIamPolicyVersion {
         formatter.finish()
     }
 }
-/// See [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion)
+/// See [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
 pub mod aws_iam_policy_version {
 
-    /// A builder for [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -54744,7 +54422,7 @@ pub mod aws_iam_policy_version {
             self.create_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion)
+        /// Consumes the builder and constructs a [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
         pub fn build(self) -> crate::model::AwsIamPolicyVersion {
             crate::model::AwsIamPolicyVersion {
                 version_id: self.version_id,
@@ -54755,7 +54433,7 @@ pub mod aws_iam_policy_version {
     }
 }
 impl AwsIamPolicyVersion {
-    /// Creates a new builder-style object to manufacture [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion)
+    /// Creates a new builder-style object to manufacture [`AwsIamPolicyVersion`](crate::model::AwsIamPolicyVersion).
     pub fn builder() -> crate::model::aws_iam_policy_version::Builder {
         crate::model::aws_iam_policy_version::Builder::default()
     }
@@ -54837,11 +54515,10 @@ impl std::fmt::Debug for AwsIamUserDetails {
         formatter.finish()
     }
 }
-/// See [`AwsIamUserDetails`](crate::model::AwsIamUserDetails)
+/// See [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
 pub mod aws_iam_user_details {
 
-    /// A builder for [`AwsIamUserDetails`](crate::model::AwsIamUserDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_managed_policies:
@@ -54975,7 +54652,7 @@ pub mod aws_iam_user_details {
             self.user_policy_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamUserDetails`](crate::model::AwsIamUserDetails)
+        /// Consumes the builder and constructs a [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
         pub fn build(self) -> crate::model::AwsIamUserDetails {
             crate::model::AwsIamUserDetails {
                 attached_managed_policies: self.attached_managed_policies,
@@ -54991,7 +54668,7 @@ pub mod aws_iam_user_details {
     }
 }
 impl AwsIamUserDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamUserDetails`](crate::model::AwsIamUserDetails)
+    /// Creates a new builder-style object to manufacture [`AwsIamUserDetails`](crate::model::AwsIamUserDetails).
     pub fn builder() -> crate::model::aws_iam_user_details::Builder {
         crate::model::aws_iam_user_details::Builder::default()
     }
@@ -55017,11 +54694,10 @@ impl std::fmt::Debug for AwsIamUserPolicy {
         formatter.finish()
     }
 }
-/// See [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy)
+/// See [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
 pub mod aws_iam_user_policy {
 
-    /// A builder for [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -55037,7 +54713,7 @@ pub mod aws_iam_user_policy {
             self.policy_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy)
+        /// Consumes the builder and constructs a [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
         pub fn build(self) -> crate::model::AwsIamUserPolicy {
             crate::model::AwsIamUserPolicy {
                 policy_name: self.policy_name,
@@ -55046,7 +54722,7 @@ pub mod aws_iam_user_policy {
     }
 }
 impl AwsIamUserPolicy {
-    /// Creates a new builder-style object to manufacture [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy)
+    /// Creates a new builder-style object to manufacture [`AwsIamUserPolicy`](crate::model::AwsIamUserPolicy).
     pub fn builder() -> crate::model::aws_iam_user_policy::Builder {
         crate::model::aws_iam_user_policy::Builder::default()
     }
@@ -55134,11 +54810,10 @@ impl std::fmt::Debug for AwsIamAccessKeyDetails {
         formatter.finish()
     }
 }
-/// See [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails)
+/// See [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
 pub mod aws_iam_access_key_details {
 
-    /// A builder for [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -55265,7 +54940,7 @@ pub mod aws_iam_access_key_details {
             self.session_context = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails)
+        /// Consumes the builder and constructs a [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
         pub fn build(self) -> crate::model::AwsIamAccessKeyDetails {
             crate::model::AwsIamAccessKeyDetails {
                 user_name: self.user_name,
@@ -55282,7 +54957,7 @@ pub mod aws_iam_access_key_details {
     }
 }
 impl AwsIamAccessKeyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeyDetails`](crate::model::AwsIamAccessKeyDetails).
     pub fn builder() -> crate::model::aws_iam_access_key_details::Builder {
         crate::model::aws_iam_access_key_details::Builder::default()
     }
@@ -55320,11 +54995,10 @@ impl std::fmt::Debug for AwsIamAccessKeySessionContext {
         formatter.finish()
     }
 }
-/// See [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext)
+/// See [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
 pub mod aws_iam_access_key_session_context {
 
-    /// A builder for [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
@@ -55365,7 +55039,7 @@ pub mod aws_iam_access_key_session_context {
             self.session_issuer = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext)
+        /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
         pub fn build(self) -> crate::model::AwsIamAccessKeySessionContext {
             crate::model::AwsIamAccessKeySessionContext {
                 attributes: self.attributes,
@@ -55375,7 +55049,7 @@ pub mod aws_iam_access_key_session_context {
     }
 }
 impl AwsIamAccessKeySessionContext {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext)
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContext`](crate::model::AwsIamAccessKeySessionContext).
     pub fn builder() -> crate::model::aws_iam_access_key_session_context::Builder {
         crate::model::aws_iam_access_key_session_context::Builder::default()
     }
@@ -55429,11 +55103,10 @@ impl std::fmt::Debug for AwsIamAccessKeySessionContextSessionIssuer {
         formatter.finish()
     }
 }
-/// See [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer)
+/// See [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
 pub mod aws_iam_access_key_session_context_session_issuer {
 
-    /// A builder for [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -55493,7 +55166,7 @@ pub mod aws_iam_access_key_session_context_session_issuer {
             self.user_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer)
+        /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
         pub fn build(self) -> crate::model::AwsIamAccessKeySessionContextSessionIssuer {
             crate::model::AwsIamAccessKeySessionContextSessionIssuer {
                 r#type: self.r#type,
@@ -55506,7 +55179,7 @@ pub mod aws_iam_access_key_session_context_session_issuer {
     }
 }
 impl AwsIamAccessKeySessionContextSessionIssuer {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer)
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextSessionIssuer`](crate::model::AwsIamAccessKeySessionContextSessionIssuer).
     pub fn builder() -> crate::model::aws_iam_access_key_session_context_session_issuer::Builder {
         crate::model::aws_iam_access_key_session_context_session_issuer::Builder::default()
     }
@@ -55541,11 +55214,10 @@ impl std::fmt::Debug for AwsIamAccessKeySessionContextAttributes {
         formatter.finish()
     }
 }
-/// See [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes)
+/// See [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
 pub mod aws_iam_access_key_session_context_attributes {
 
-    /// A builder for [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mfa_authenticated: std::option::Option<bool>,
@@ -55577,7 +55249,7 @@ pub mod aws_iam_access_key_session_context_attributes {
             self.creation_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes)
+        /// Consumes the builder and constructs a [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
         pub fn build(self) -> crate::model::AwsIamAccessKeySessionContextAttributes {
             crate::model::AwsIamAccessKeySessionContextAttributes {
                 mfa_authenticated: self.mfa_authenticated.unwrap_or_default(),
@@ -55587,7 +55259,7 @@ pub mod aws_iam_access_key_session_context_attributes {
     }
 }
 impl AwsIamAccessKeySessionContextAttributes {
-    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes)
+    /// Creates a new builder-style object to manufacture [`AwsIamAccessKeySessionContextAttributes`](crate::model::AwsIamAccessKeySessionContextAttributes).
     pub fn builder() -> crate::model::aws_iam_access_key_session_context_attributes::Builder {
         crate::model::aws_iam_access_key_session_context_attributes::Builder::default()
     }
@@ -55722,11 +55394,10 @@ impl std::fmt::Debug for AwsSecretsManagerSecretDetails {
         formatter.finish()
     }
 }
-/// See [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails)
+/// See [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
 pub mod aws_secrets_manager_secret_details {
 
-    /// A builder for [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rotation_rules:
@@ -55832,7 +55503,7 @@ pub mod aws_secrets_manager_secret_details {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails)
+        /// Consumes the builder and constructs a [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
         pub fn build(self) -> crate::model::AwsSecretsManagerSecretDetails {
             crate::model::AwsSecretsManagerSecretDetails {
                 rotation_rules: self.rotation_rules,
@@ -55850,7 +55521,7 @@ pub mod aws_secrets_manager_secret_details {
     }
 }
 impl AwsSecretsManagerSecretDetails {
-    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails)
+    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretDetails`](crate::model::AwsSecretsManagerSecretDetails).
     pub fn builder() -> crate::model::aws_secrets_manager_secret_details::Builder {
         crate::model::aws_secrets_manager_secret_details::Builder::default()
     }
@@ -55876,11 +55547,10 @@ impl std::fmt::Debug for AwsSecretsManagerSecretRotationRules {
         formatter.finish()
     }
 }
-/// See [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules)
+/// See [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
 pub mod aws_secrets_manager_secret_rotation_rules {
 
-    /// A builder for [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules)
-    #[non_exhaustive]
+    /// A builder for [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatically_after_days: std::option::Option<i32>,
@@ -55896,7 +55566,7 @@ pub mod aws_secrets_manager_secret_rotation_rules {
             self.automatically_after_days = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules)
+        /// Consumes the builder and constructs a [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
         pub fn build(self) -> crate::model::AwsSecretsManagerSecretRotationRules {
             crate::model::AwsSecretsManagerSecretRotationRules {
                 automatically_after_days: self.automatically_after_days.unwrap_or_default(),
@@ -55905,7 +55575,7 @@ pub mod aws_secrets_manager_secret_rotation_rules {
     }
 }
 impl AwsSecretsManagerSecretRotationRules {
-    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules)
+    /// Creates a new builder-style object to manufacture [`AwsSecretsManagerSecretRotationRules`](crate::model::AwsSecretsManagerSecretRotationRules).
     pub fn builder() -> crate::model::aws_secrets_manager_secret_rotation_rules::Builder {
         crate::model::aws_secrets_manager_secret_rotation_rules::Builder::default()
     }
@@ -55968,11 +55638,10 @@ impl std::fmt::Debug for AwsS3ObjectDetails {
         formatter.finish()
     }
 }
-/// See [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails)
+/// See [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
 pub mod aws_s3_object_details {
 
-    /// A builder for [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_modified: std::option::Option<std::string::String>,
@@ -56054,7 +55723,7 @@ pub mod aws_s3_object_details {
             self.ssekms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails)
+        /// Consumes the builder and constructs a [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
         pub fn build(self) -> crate::model::AwsS3ObjectDetails {
             crate::model::AwsS3ObjectDetails {
                 last_modified: self.last_modified,
@@ -56068,7 +55737,7 @@ pub mod aws_s3_object_details {
     }
 }
 impl AwsS3ObjectDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3ObjectDetails`](crate::model::AwsS3ObjectDetails).
     pub fn builder() -> crate::model::aws_s3_object_details::Builder {
         crate::model::aws_s3_object_details::Builder::default()
     }
@@ -56115,11 +55784,10 @@ impl std::fmt::Debug for AwsS3AccountPublicAccessBlockDetails {
         formatter.finish()
     }
 }
-/// See [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails)
+/// See [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
 pub mod aws_s3_account_public_access_block_details {
 
-    /// A builder for [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block_public_acls: std::option::Option<bool>,
@@ -56168,7 +55836,7 @@ pub mod aws_s3_account_public_access_block_details {
             self.restrict_public_buckets = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails)
+        /// Consumes the builder and constructs a [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
         pub fn build(self) -> crate::model::AwsS3AccountPublicAccessBlockDetails {
             crate::model::AwsS3AccountPublicAccessBlockDetails {
                 block_public_acls: self.block_public_acls.unwrap_or_default(),
@@ -56180,7 +55848,7 @@ pub mod aws_s3_account_public_access_block_details {
     }
 }
 impl AwsS3AccountPublicAccessBlockDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3AccountPublicAccessBlockDetails`](crate::model::AwsS3AccountPublicAccessBlockDetails).
     pub fn builder() -> crate::model::aws_s3_account_public_access_block_details::Builder {
         crate::model::aws_s3_account_public_access_block_details::Builder::default()
     }
@@ -56327,11 +55995,10 @@ impl std::fmt::Debug for AwsS3BucketDetails {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails)
+/// See [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
 pub mod aws_s3_bucket_details {
 
-    /// A builder for [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
@@ -56527,7 +56194,7 @@ pub mod aws_s3_bucket_details {
             self.bucket_versioning_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
         pub fn build(self) -> crate::model::AwsS3BucketDetails {
             crate::model::AwsS3BucketDetails {
                 owner_id: self.owner_id,
@@ -56547,7 +56214,7 @@ pub mod aws_s3_bucket_details {
     }
 }
 impl AwsS3BucketDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketDetails`](crate::model::AwsS3BucketDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_details::Builder {
         crate::model::aws_s3_bucket_details::Builder::default()
     }
@@ -56580,11 +56247,10 @@ impl std::fmt::Debug for AwsS3BucketBucketVersioningConfiguration {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration)
+/// See [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
 pub mod aws_s3_bucket_bucket_versioning_configuration {
 
-    /// A builder for [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_mfa_delete_enabled: std::option::Option<bool>,
@@ -56611,7 +56277,7 @@ pub mod aws_s3_bucket_bucket_versioning_configuration {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
         pub fn build(self) -> crate::model::AwsS3BucketBucketVersioningConfiguration {
             crate::model::AwsS3BucketBucketVersioningConfiguration {
                 is_mfa_delete_enabled: self.is_mfa_delete_enabled.unwrap_or_default(),
@@ -56621,7 +56287,7 @@ pub mod aws_s3_bucket_bucket_versioning_configuration {
     }
 }
 impl AwsS3BucketBucketVersioningConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketVersioningConfiguration`](crate::model::AwsS3BucketBucketVersioningConfiguration).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_versioning_configuration::Builder {
         crate::model::aws_s3_bucket_bucket_versioning_configuration::Builder::default()
     }
@@ -56651,11 +56317,10 @@ impl std::fmt::Debug for AwsS3BucketNotificationConfiguration {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
+/// See [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
 pub mod aws_s3_bucket_notification_configuration {
 
-    /// A builder for [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configurations: std::option::Option<
@@ -56687,7 +56352,7 @@ pub mod aws_s3_bucket_notification_configuration {
             self.configurations = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
         pub fn build(self) -> crate::model::AwsS3BucketNotificationConfiguration {
             crate::model::AwsS3BucketNotificationConfiguration {
                 configurations: self.configurations,
@@ -56696,7 +56361,7 @@ pub mod aws_s3_bucket_notification_configuration {
     }
 }
 impl AwsS3BucketNotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfiguration`](crate::model::AwsS3BucketNotificationConfiguration).
     pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration::Builder {
         crate::model::aws_s3_bucket_notification_configuration::Builder::default()
     }
@@ -56745,11 +56410,10 @@ impl std::fmt::Debug for AwsS3BucketNotificationConfigurationDetail {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
+/// See [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
 pub mod aws_s3_bucket_notification_configuration_detail {
 
-    /// A builder for [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -56814,7 +56478,7 @@ pub mod aws_s3_bucket_notification_configuration_detail {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
         pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationDetail {
             crate::model::AwsS3BucketNotificationConfigurationDetail {
                 events: self.events,
@@ -56826,7 +56490,7 @@ pub mod aws_s3_bucket_notification_configuration_detail {
     }
 }
 impl AwsS3BucketNotificationConfigurationDetail {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationDetail`](crate::model::AwsS3BucketNotificationConfigurationDetail).
     pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_detail::Builder {
         crate::model::aws_s3_bucket_notification_configuration_detail::Builder::default()
     }
@@ -56855,11 +56519,10 @@ impl std::fmt::Debug for AwsS3BucketNotificationConfigurationFilter {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
+/// See [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
 pub mod aws_s3_bucket_notification_configuration_filter {
 
-    /// A builder for [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_key_filter:
@@ -56884,7 +56547,7 @@ pub mod aws_s3_bucket_notification_configuration_filter {
             self.s3_key_filter = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
         pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationFilter {
             crate::model::AwsS3BucketNotificationConfigurationFilter {
                 s3_key_filter: self.s3_key_filter,
@@ -56893,7 +56556,7 @@ pub mod aws_s3_bucket_notification_configuration_filter {
     }
 }
 impl AwsS3BucketNotificationConfigurationFilter {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationFilter`](crate::model::AwsS3BucketNotificationConfigurationFilter).
     pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_filter::Builder {
         crate::model::aws_s3_bucket_notification_configuration_filter::Builder::default()
     }
@@ -56924,11 +56587,10 @@ impl std::fmt::Debug for AwsS3BucketNotificationConfigurationS3KeyFilter {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
+/// See [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
 pub mod aws_s3_bucket_notification_configuration_s3_key_filter {
 
-    /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_rules: std::option::Option<
@@ -56960,7 +56622,7 @@ pub mod aws_s3_bucket_notification_configuration_s3_key_filter {
             self.filter_rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
         pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter {
             crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter {
                 filter_rules: self.filter_rules,
@@ -56969,7 +56631,7 @@ pub mod aws_s3_bucket_notification_configuration_s3_key_filter {
     }
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilter {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilter).
     pub fn builder() -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder
     {
         crate::model::aws_s3_bucket_notification_configuration_s3_key_filter::Builder::default()
@@ -57007,11 +56669,10 @@ impl std::fmt::Debug for AwsS3BucketNotificationConfigurationS3KeyFilterRule {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
+/// See [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
 pub mod aws_s3_bucket_notification_configuration_s3_key_filter_rule {
 
-    /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<
@@ -57048,7 +56709,7 @@ pub mod aws_s3_bucket_notification_configuration_s3_key_filter_rule {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
+        /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
         pub fn build(self) -> crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule {
             crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule {
                 name: self.name,
@@ -57058,7 +56719,7 @@ pub mod aws_s3_bucket_notification_configuration_s3_key_filter_rule {
     }
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilterRule {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::model::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
     pub fn builder(
     ) -> crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder {
         crate::model::aws_s3_bucket_notification_configuration_s3_key_filter_rule::Builder::default(
@@ -57171,11 +56832,10 @@ impl std::fmt::Debug for AwsS3BucketWebsiteConfiguration {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
+/// See [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
 pub mod aws_s3_bucket_website_configuration {
 
-    /// A builder for [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_document: std::option::Option<std::string::String>,
@@ -57253,7 +56913,7 @@ pub mod aws_s3_bucket_website_configuration {
             self.routing_rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
         pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfiguration {
             crate::model::AwsS3BucketWebsiteConfiguration {
                 error_document: self.error_document,
@@ -57265,7 +56925,7 @@ pub mod aws_s3_bucket_website_configuration {
     }
 }
 impl AwsS3BucketWebsiteConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfiguration`](crate::model::AwsS3BucketWebsiteConfiguration).
     pub fn builder() -> crate::model::aws_s3_bucket_website_configuration::Builder {
         crate::model::aws_s3_bucket_website_configuration::Builder::default()
     }
@@ -57306,11 +56966,10 @@ impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRoutingRule {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
+/// See [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
 pub mod aws_s3_bucket_website_configuration_routing_rule {
 
-    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) condition:
@@ -57355,7 +57014,7 @@ pub mod aws_s3_bucket_website_configuration_routing_rule {
             self.redirect = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
         pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRoutingRule {
             crate::model::AwsS3BucketWebsiteConfigurationRoutingRule {
                 condition: self.condition,
@@ -57365,7 +57024,7 @@ pub mod aws_s3_bucket_website_configuration_routing_rule {
     }
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRule {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRule`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRule).
     pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder {
         crate::model::aws_s3_bucket_website_configuration_routing_rule::Builder::default()
     }
@@ -57423,11 +57082,10 @@ impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
+/// See [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
 pub mod aws_s3_bucket_website_configuration_routing_rule_redirect {
 
-    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -57500,7 +57158,7 @@ pub mod aws_s3_bucket_website_configuration_routing_rule_redirect {
             self.replace_key_with = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
         pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
             crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
                 hostname: self.hostname,
@@ -57513,7 +57171,7 @@ pub mod aws_s3_bucket_website_configuration_routing_rule_redirect {
     }
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
     pub fn builder(
     ) -> crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder {
         crate::model::aws_s3_bucket_website_configuration_routing_rule_redirect::Builder::default()
@@ -57550,11 +57208,10 @@ impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
+/// See [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
 pub mod aws_s3_bucket_website_configuration_routing_rule_condition {
 
-    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_error_code_returned_equals: std::option::Option<std::string::String>,
@@ -57590,7 +57247,7 @@ pub mod aws_s3_bucket_website_configuration_routing_rule_condition {
             self.key_prefix_equals = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
         pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
             crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
                 http_error_code_returned_equals: self.http_error_code_returned_equals,
@@ -57600,7 +57257,7 @@ pub mod aws_s3_bucket_website_configuration_routing_rule_condition {
     }
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::model::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
     pub fn builder(
     ) -> crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder {
         crate::model::aws_s3_bucket_website_configuration_routing_rule_condition::Builder::default()
@@ -57634,11 +57291,10 @@ impl std::fmt::Debug for AwsS3BucketWebsiteConfigurationRedirectTo {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
+/// See [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
 pub mod aws_s3_bucket_website_configuration_redirect_to {
 
-    /// A builder for [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hostname: std::option::Option<std::string::String>,
@@ -57665,7 +57321,7 @@ pub mod aws_s3_bucket_website_configuration_redirect_to {
             self.protocol = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
+        /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
         pub fn build(self) -> crate::model::AwsS3BucketWebsiteConfigurationRedirectTo {
             crate::model::AwsS3BucketWebsiteConfigurationRedirectTo {
                 hostname: self.hostname,
@@ -57675,7 +57331,7 @@ pub mod aws_s3_bucket_website_configuration_redirect_to {
     }
 }
 impl AwsS3BucketWebsiteConfigurationRedirectTo {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::model::AwsS3BucketWebsiteConfigurationRedirectTo).
     pub fn builder() -> crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder {
         crate::model::aws_s3_bucket_website_configuration_redirect_to::Builder::default()
     }
@@ -57708,11 +57364,10 @@ impl std::fmt::Debug for AwsS3BucketLoggingConfiguration {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
+/// See [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
 pub mod aws_s3_bucket_logging_configuration {
 
-    /// A builder for [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_bucket_name: std::option::Option<std::string::String>,
@@ -57745,7 +57400,7 @@ pub mod aws_s3_bucket_logging_configuration {
             self.log_file_prefix = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
+        /// Consumes the builder and constructs a [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
         pub fn build(self) -> crate::model::AwsS3BucketLoggingConfiguration {
             crate::model::AwsS3BucketLoggingConfiguration {
                 destination_bucket_name: self.destination_bucket_name,
@@ -57755,7 +57410,7 @@ pub mod aws_s3_bucket_logging_configuration {
     }
 }
 impl AwsS3BucketLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketLoggingConfiguration`](crate::model::AwsS3BucketLoggingConfiguration).
     pub fn builder() -> crate::model::aws_s3_bucket_logging_configuration::Builder {
         crate::model::aws_s3_bucket_logging_configuration::Builder::default()
     }
@@ -57786,11 +57441,10 @@ impl std::fmt::Debug for AwsS3BucketBucketLifecycleConfigurationDetails {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<
@@ -57822,14 +57476,14 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_details {
             self.rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
         pub fn build(self) -> crate::model::AwsS3BucketBucketLifecycleConfigurationDetails {
             crate::model::AwsS3BucketBucketLifecycleConfigurationDetails { rules: self.rules }
         }
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder
     {
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_details::Builder::default()
@@ -57949,11 +57603,10 @@ impl std::fmt::Debug for AwsS3BucketBucketLifecycleConfigurationRulesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) abort_incomplete_multipart_upload: std::option::Option<crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>,
@@ -58134,7 +57787,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_details {
             self.transitions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
         pub fn build(self) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails {
             crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails {
                 abort_incomplete_multipart_upload: self.abort_incomplete_multipart_upload,
@@ -58155,7 +57808,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_details {
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
     pub fn builder(
     ) -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder {
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_details::Builder::default()
@@ -58199,11 +57852,10 @@ impl std::fmt::Debug for AwsS3BucketBucketLifecycleConfigurationRulesTransitions
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) date: std::option::Option<std::string::String>,
@@ -58246,7 +57898,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details {
             self.storage_class = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
@@ -58259,7 +57911,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details {
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
     pub fn builder(
     ) -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_transitions_details::Builder
     {
@@ -58298,11 +57950,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) days: std::option::Option<i32>,
@@ -58332,7 +57983,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_tr
             self.storage_class = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
         pub fn build(self) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails{
             crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
                 days: self.days
@@ -58345,7 +57996,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_tr
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder{
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details::Builder::default()
     }
@@ -58378,11 +58029,10 @@ impl std::fmt::Debug for AwsS3BucketBucketLifecycleConfigurationRulesFilterDetai
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predicate: std::option::Option<
@@ -58408,7 +58058,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details {
             self.predicate = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
@@ -58419,7 +58069,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details {
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
     pub fn builder(
     ) -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_details::Builder
     {
@@ -58473,11 +58123,10 @@ impl std::fmt::Debug for AwsS3BucketBucketLifecycleConfigurationRulesFilterPredi
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operands: std::option::Option<std::vec::Vec<crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails>>,
@@ -58546,7 +58195,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_deta
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails
@@ -58561,7 +58210,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_deta
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder{
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_details::Builder::default()
     }
@@ -58595,11 +58244,10 @@ impl std::fmt::Debug for AwsS3BucketBucketLifecycleConfigurationRulesFilterPredi
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58626,7 +58274,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails
@@ -58639,7 +58287,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateTagDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder{
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_tag_details::Builder::default()
     }
@@ -58685,11 +58333,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
@@ -58733,7 +58380,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_oper
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails
@@ -58750,7 +58397,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_oper
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder{
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details::Builder::default()
     }
@@ -58787,11 +58434,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58818,7 +58464,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_oper
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
         pub fn build(self) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails{
             crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
                 key: self.key
@@ -58830,7 +58476,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_oper
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder{
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_tag_details::Builder::default()
     }
@@ -58860,11 +58506,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails)
+/// See [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
 pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details {
 
-    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) days_after_initiation: std::option::Option<i32>,
@@ -58880,7 +58525,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_mult
             self.days_after_initiation = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails)
+        /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
         pub fn build(self) -> crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails{
             crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
                 days_after_initiation: self.days_after_initiation
@@ -58891,7 +58536,7 @@ pub mod aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_mult
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::model::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
     pub fn builder() -> crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder{
         crate::model::aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details::Builder::default()
     }
@@ -58920,11 +58565,10 @@ impl std::fmt::Debug for AwsS3BucketServerSideEncryptionConfiguration {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration)
+/// See [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
 pub mod aws_s3_bucket_server_side_encryption_configuration {
 
-    /// A builder for [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules:
@@ -58952,14 +58596,14 @@ pub mod aws_s3_bucket_server_side_encryption_configuration {
             self.rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration)
+        /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
         pub fn build(self) -> crate::model::AwsS3BucketServerSideEncryptionConfiguration {
             crate::model::AwsS3BucketServerSideEncryptionConfiguration { rules: self.rules }
         }
     }
 }
 impl AwsS3BucketServerSideEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionConfiguration`](crate::model::AwsS3BucketServerSideEncryptionConfiguration).
     pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_configuration::Builder {
         crate::model::aws_s3_bucket_server_side_encryption_configuration::Builder::default()
     }
@@ -58991,11 +58635,10 @@ impl std::fmt::Debug for AwsS3BucketServerSideEncryptionRule {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule)
+/// See [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
 pub mod aws_s3_bucket_server_side_encryption_rule {
 
-    /// A builder for [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) apply_server_side_encryption_by_default:
@@ -59018,7 +58661,7 @@ pub mod aws_s3_bucket_server_side_encryption_rule {
             self.apply_server_side_encryption_by_default = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule)
+        /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
         pub fn build(self) -> crate::model::AwsS3BucketServerSideEncryptionRule {
             crate::model::AwsS3BucketServerSideEncryptionRule {
                 apply_server_side_encryption_by_default: self
@@ -59028,7 +58671,7 @@ pub mod aws_s3_bucket_server_side_encryption_rule {
     }
 }
 impl AwsS3BucketServerSideEncryptionRule {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionRule`](crate::model::AwsS3BucketServerSideEncryptionRule).
     pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_rule::Builder {
         crate::model::aws_s3_bucket_server_side_encryption_rule::Builder::default()
     }
@@ -59061,11 +58704,10 @@ impl std::fmt::Debug for AwsS3BucketServerSideEncryptionByDefault {
         formatter.finish()
     }
 }
-/// See [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault)
+/// See [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
 pub mod aws_s3_bucket_server_side_encryption_by_default {
 
-    /// A builder for [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault)
-    #[non_exhaustive]
+    /// A builder for [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sse_algorithm: std::option::Option<std::string::String>,
@@ -59098,7 +58740,7 @@ pub mod aws_s3_bucket_server_side_encryption_by_default {
             self.kms_master_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault)
+        /// Consumes the builder and constructs a [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
         pub fn build(self) -> crate::model::AwsS3BucketServerSideEncryptionByDefault {
             crate::model::AwsS3BucketServerSideEncryptionByDefault {
                 sse_algorithm: self.sse_algorithm,
@@ -59108,7 +58750,7 @@ pub mod aws_s3_bucket_server_side_encryption_by_default {
     }
 }
 impl AwsS3BucketServerSideEncryptionByDefault {
-    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault)
+    /// Creates a new builder-style object to manufacture [`AwsS3BucketServerSideEncryptionByDefault`](crate::model::AwsS3BucketServerSideEncryptionByDefault).
     pub fn builder() -> crate::model::aws_s3_bucket_server_side_encryption_by_default::Builder {
         crate::model::aws_s3_bucket_server_side_encryption_by_default::Builder::default()
     }
@@ -59260,11 +58902,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainDetails {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails)
+/// See [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
 pub mod aws_elasticsearch_domain_details {
 
-    /// A builder for [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<std::string::String>,
@@ -59496,7 +59137,7 @@ pub mod aws_elasticsearch_domain_details {
             self.vpc_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainDetails {
             crate::model::AwsElasticsearchDomainDetails {
                 access_policies: self.access_policies,
@@ -59517,7 +59158,7 @@ pub mod aws_elasticsearch_domain_details {
     }
 }
 impl AwsElasticsearchDomainDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDetails`](crate::model::AwsElasticsearchDomainDetails).
     pub fn builder() -> crate::model::aws_elasticsearch_domain_details::Builder {
         crate::model::aws_elasticsearch_domain_details::Builder::default()
     }
@@ -59564,11 +59205,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainVpcOptions {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions)
+/// See [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
 pub mod aws_elasticsearch_domain_vpc_options {
 
-    /// A builder for [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -59644,7 +59284,7 @@ pub mod aws_elasticsearch_domain_vpc_options {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainVpcOptions {
             crate::model::AwsElasticsearchDomainVpcOptions {
                 availability_zones: self.availability_zones,
@@ -59656,7 +59296,7 @@ pub mod aws_elasticsearch_domain_vpc_options {
     }
 }
 impl AwsElasticsearchDomainVpcOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainVpcOptions`](crate::model::AwsElasticsearchDomainVpcOptions).
     pub fn builder() -> crate::model::aws_elasticsearch_domain_vpc_options::Builder {
         crate::model::aws_elasticsearch_domain_vpc_options::Builder::default()
     }
@@ -59724,11 +59364,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainServiceSoftwareOptions {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions)
+/// See [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
 pub mod aws_elasticsearch_domain_service_software_options {
 
-    /// A builder for [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automated_update_date: std::option::Option<std::string::String>,
@@ -59819,7 +59458,7 @@ pub mod aws_elasticsearch_domain_service_software_options {
             self.update_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainServiceSoftwareOptions {
             crate::model::AwsElasticsearchDomainServiceSoftwareOptions {
                 automated_update_date: self.automated_update_date,
@@ -59834,7 +59473,7 @@ pub mod aws_elasticsearch_domain_service_software_options {
     }
 }
 impl AwsElasticsearchDomainServiceSoftwareOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::model::AwsElasticsearchDomainServiceSoftwareOptions).
     pub fn builder() -> crate::model::aws_elasticsearch_domain_service_software_options::Builder {
         crate::model::aws_elasticsearch_domain_service_software_options::Builder::default()
     }
@@ -59860,11 +59499,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainNodeToNodeEncryptionOptions {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions)
+/// See [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
 pub mod aws_elasticsearch_domain_node_to_node_encryption_options {
 
-    /// A builder for [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -59880,7 +59518,7 @@ pub mod aws_elasticsearch_domain_node_to_node_encryption_options {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions {
             crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions {
                 enabled: self.enabled.unwrap_or_default(),
@@ -59889,7 +59527,7 @@ pub mod aws_elasticsearch_domain_node_to_node_encryption_options {
     }
 }
 impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::model::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
     pub fn builder(
     ) -> crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder {
         crate::model::aws_elasticsearch_domain_node_to_node_encryption_options::Builder::default()
@@ -59942,11 +59580,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainLogPublishingOptions {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions)
+/// See [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
 pub mod aws_elasticsearch_domain_log_publishing_options {
 
-    /// A builder for [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_slow_logs:
@@ -60011,7 +59648,7 @@ pub mod aws_elasticsearch_domain_log_publishing_options {
             self.audit_logs = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainLogPublishingOptions {
             crate::model::AwsElasticsearchDomainLogPublishingOptions {
                 index_slow_logs: self.index_slow_logs,
@@ -60022,7 +59659,7 @@ pub mod aws_elasticsearch_domain_log_publishing_options {
     }
 }
 impl AwsElasticsearchDomainLogPublishingOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions).
     pub fn builder() -> crate::model::aws_elasticsearch_domain_log_publishing_options::Builder {
         crate::model::aws_elasticsearch_domain_log_publishing_options::Builder::default()
     }
@@ -60058,11 +59695,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainLogPublishingOptionsLogConfig {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig)
+/// See [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
 pub mod aws_elasticsearch_domain_log_publishing_options_log_config {
 
-    /// A builder for [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
@@ -60095,7 +59731,7 @@ pub mod aws_elasticsearch_domain_log_publishing_options_log_config {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig {
             crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig {
                 cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
@@ -60105,7 +59741,7 @@ pub mod aws_elasticsearch_domain_log_publishing_options_log_config {
     }
 }
 impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
     pub fn builder(
     ) -> crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder {
         crate::model::aws_elasticsearch_domain_log_publishing_options_log_config::Builder::default()
@@ -60139,11 +59775,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainEncryptionAtRestOptions {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions)
+/// See [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
 pub mod aws_elasticsearch_domain_encryption_at_rest_options {
 
-    /// A builder for [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -60170,7 +59805,7 @@ pub mod aws_elasticsearch_domain_encryption_at_rest_options {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainEncryptionAtRestOptions {
             crate::model::AwsElasticsearchDomainEncryptionAtRestOptions {
                 enabled: self.enabled.unwrap_or_default(),
@@ -60180,7 +59815,7 @@ pub mod aws_elasticsearch_domain_encryption_at_rest_options {
     }
 }
 impl AwsElasticsearchDomainEncryptionAtRestOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions).
     pub fn builder() -> crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder {
         crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder::default()
     }
@@ -60255,11 +59890,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainElasticsearchClusterConfigDetails
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
+/// See [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
 pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
 
-    /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dedicated_master_count: std::option::Option<i32>,
@@ -60353,7 +59987,7 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
             self.zone_awareness_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails {
@@ -60370,7 +60004,7 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
     }
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails).
     pub fn builder(
     ) -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder {
         crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder::default()
@@ -60401,11 +60035,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
+/// See [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
 pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details {
 
-    /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone_count: std::option::Option<i32>,
@@ -60421,7 +60054,7 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_con
             self.availability_zone_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails
@@ -60435,7 +60068,7 @@ pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_con
     }
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
     pub fn builder() -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder{
         crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder::default()
     }
@@ -60478,11 +60111,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainDomainEndpointOptions {
         formatter.finish()
     }
 }
-/// See [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions)
+/// See [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
 pub mod aws_elasticsearch_domain_domain_endpoint_options {
 
-    /// A builder for [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce_https: std::option::Option<bool>,
@@ -60522,7 +60154,7 @@ pub mod aws_elasticsearch_domain_domain_endpoint_options {
             self.tls_security_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions)
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
         pub fn build(self) -> crate::model::AwsElasticsearchDomainDomainEndpointOptions {
             crate::model::AwsElasticsearchDomainDomainEndpointOptions {
                 enforce_https: self.enforce_https.unwrap_or_default(),
@@ -60532,7 +60164,7 @@ pub mod aws_elasticsearch_domain_domain_endpoint_options {
     }
 }
 impl AwsElasticsearchDomainDomainEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions)
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainDomainEndpointOptions`](crate::model::AwsElasticsearchDomainDomainEndpointOptions).
     pub fn builder() -> crate::model::aws_elasticsearch_domain_domain_endpoint_options::Builder {
         crate::model::aws_elasticsearch_domain_domain_endpoint_options::Builder::default()
     }
@@ -60671,11 +60303,10 @@ impl std::fmt::Debug for AwsElasticBeanstalkEnvironmentDetails {
         formatter.finish()
     }
 }
-/// See [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails)
+/// See [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
 pub mod aws_elastic_beanstalk_environment_details {
 
-    /// A builder for [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_name: std::option::Option<std::string::String>,
@@ -60909,7 +60540,7 @@ pub mod aws_elastic_beanstalk_environment_details {
             self.version_label = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails)
+        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
         pub fn build(self) -> crate::model::AwsElasticBeanstalkEnvironmentDetails {
             crate::model::AwsElasticBeanstalkEnvironmentDetails {
                 application_name: self.application_name,
@@ -60933,7 +60564,7 @@ pub mod aws_elastic_beanstalk_environment_details {
     }
 }
 impl AwsElasticBeanstalkEnvironmentDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails)
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentDetails`](crate::model::AwsElasticBeanstalkEnvironmentDetails).
     pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_details::Builder {
         crate::model::aws_elastic_beanstalk_environment_details::Builder::default()
     }
@@ -60973,11 +60604,10 @@ impl std::fmt::Debug for AwsElasticBeanstalkEnvironmentTier {
         formatter.finish()
     }
 }
-/// See [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier)
+/// See [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
 pub mod aws_elastic_beanstalk_environment_tier {
 
-    /// A builder for [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -61015,7 +60645,7 @@ pub mod aws_elastic_beanstalk_environment_tier {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier)
+        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
         pub fn build(self) -> crate::model::AwsElasticBeanstalkEnvironmentTier {
             crate::model::AwsElasticBeanstalkEnvironmentTier {
                 name: self.name,
@@ -61026,7 +60656,7 @@ pub mod aws_elastic_beanstalk_environment_tier {
     }
 }
 impl AwsElasticBeanstalkEnvironmentTier {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier)
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentTier`](crate::model::AwsElasticBeanstalkEnvironmentTier).
     pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_tier::Builder {
         crate::model::aws_elastic_beanstalk_environment_tier::Builder::default()
     }
@@ -61073,11 +60703,10 @@ impl std::fmt::Debug for AwsElasticBeanstalkEnvironmentOptionSetting {
         formatter.finish()
     }
 }
-/// See [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting)
+/// See [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
 pub mod aws_elastic_beanstalk_environment_option_setting {
 
-    /// A builder for [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<std::string::String>,
@@ -61129,7 +60758,7 @@ pub mod aws_elastic_beanstalk_environment_option_setting {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting)
+        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
         pub fn build(self) -> crate::model::AwsElasticBeanstalkEnvironmentOptionSetting {
             crate::model::AwsElasticBeanstalkEnvironmentOptionSetting {
                 namespace: self.namespace,
@@ -61141,7 +60770,7 @@ pub mod aws_elastic_beanstalk_environment_option_setting {
     }
 }
 impl AwsElasticBeanstalkEnvironmentOptionSetting {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting)
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::model::AwsElasticBeanstalkEnvironmentOptionSetting).
     pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_option_setting::Builder {
         crate::model::aws_elastic_beanstalk_environment_option_setting::Builder::default()
     }
@@ -61174,11 +60803,10 @@ impl std::fmt::Debug for AwsElasticBeanstalkEnvironmentEnvironmentLink {
         formatter.finish()
     }
 }
-/// See [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink)
+/// See [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
 pub mod aws_elastic_beanstalk_environment_environment_link {
 
-    /// A builder for [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink)
-    #[non_exhaustive]
+    /// A builder for [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_name: std::option::Option<std::string::String>,
@@ -61208,7 +60836,7 @@ pub mod aws_elastic_beanstalk_environment_environment_link {
             self.link_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink)
+        /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
         pub fn build(self) -> crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink {
             crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink {
                 environment_name: self.environment_name,
@@ -61218,7 +60846,7 @@ pub mod aws_elastic_beanstalk_environment_environment_link {
     }
 }
 impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
-    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink)
+    /// Creates a new builder-style object to manufacture [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::model::AwsElasticBeanstalkEnvironmentEnvironmentLink).
     pub fn builder() -> crate::model::aws_elastic_beanstalk_environment_environment_link::Builder {
         crate::model::aws_elastic_beanstalk_environment_environment_link::Builder::default()
     }
@@ -61319,11 +60947,10 @@ impl std::fmt::Debug for AwsElbv2LoadBalancerDetails {
         formatter.finish()
     }
 }
-/// See [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails)
+/// See [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
 pub mod aws_elbv2_load_balancer_details {
 
-    /// A builder for [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones:
@@ -61492,7 +61119,7 @@ pub mod aws_elbv2_load_balancer_details {
             self.load_balancer_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails)
+        /// Consumes the builder and constructs a [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
         pub fn build(self) -> crate::model::AwsElbv2LoadBalancerDetails {
             crate::model::AwsElbv2LoadBalancerDetails {
                 availability_zones: self.availability_zones,
@@ -61511,7 +61138,7 @@ pub mod aws_elbv2_load_balancer_details {
     }
 }
 impl AwsElbv2LoadBalancerDetails {
-    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails)
+    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerDetails`](crate::model::AwsElbv2LoadBalancerDetails).
     pub fn builder() -> crate::model::aws_elbv2_load_balancer_details::Builder {
         crate::model::aws_elbv2_load_balancer_details::Builder::default()
     }
@@ -61544,11 +61171,10 @@ impl std::fmt::Debug for AwsElbv2LoadBalancerAttribute {
         formatter.finish()
     }
 }
-/// See [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute)
+/// See [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
 pub mod aws_elbv2_load_balancer_attribute {
 
-    /// A builder for [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute)
-    #[non_exhaustive]
+    /// A builder for [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -61575,7 +61201,7 @@ pub mod aws_elbv2_load_balancer_attribute {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute)
+        /// Consumes the builder and constructs a [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
         pub fn build(self) -> crate::model::AwsElbv2LoadBalancerAttribute {
             crate::model::AwsElbv2LoadBalancerAttribute {
                 key: self.key,
@@ -61585,7 +61211,7 @@ pub mod aws_elbv2_load_balancer_attribute {
     }
 }
 impl AwsElbv2LoadBalancerAttribute {
-    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute)
+    /// Creates a new builder-style object to manufacture [`AwsElbv2LoadBalancerAttribute`](crate::model::AwsElbv2LoadBalancerAttribute).
     pub fn builder() -> crate::model::aws_elbv2_load_balancer_attribute::Builder {
         crate::model::aws_elbv2_load_balancer_attribute::Builder::default()
     }
@@ -61622,11 +61248,10 @@ impl std::fmt::Debug for LoadBalancerState {
         formatter.finish()
     }
 }
-/// See [`LoadBalancerState`](crate::model::LoadBalancerState)
+/// See [`LoadBalancerState`](crate::model::LoadBalancerState).
 pub mod load_balancer_state {
 
-    /// A builder for [`LoadBalancerState`](crate::model::LoadBalancerState)
-    #[non_exhaustive]
+    /// A builder for [`LoadBalancerState`](crate::model::LoadBalancerState).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -61657,7 +61282,7 @@ pub mod load_balancer_state {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`LoadBalancerState`](crate::model::LoadBalancerState)
+        /// Consumes the builder and constructs a [`LoadBalancerState`](crate::model::LoadBalancerState).
         pub fn build(self) -> crate::model::LoadBalancerState {
             crate::model::LoadBalancerState {
                 code: self.code,
@@ -61667,7 +61292,7 @@ pub mod load_balancer_state {
     }
 }
 impl LoadBalancerState {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState)
+    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState).
     pub fn builder() -> crate::model::load_balancer_state::Builder {
         crate::model::load_balancer_state::Builder::default()
     }
@@ -61700,11 +61325,10 @@ impl std::fmt::Debug for AvailabilityZone {
         formatter.finish()
     }
 }
-/// See [`AvailabilityZone`](crate::model::AvailabilityZone)
+/// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
-    /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone)
-    #[non_exhaustive]
+    /// A builder for [`AvailabilityZone`](crate::model::AvailabilityZone).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) zone_name: std::option::Option<std::string::String>,
@@ -61731,7 +61355,7 @@ pub mod availability_zone {
             self.subnet_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AvailabilityZone`](crate::model::AvailabilityZone)
+        /// Consumes the builder and constructs a [`AvailabilityZone`](crate::model::AvailabilityZone).
         pub fn build(self) -> crate::model::AvailabilityZone {
             crate::model::AvailabilityZone {
                 zone_name: self.zone_name,
@@ -61741,7 +61365,7 @@ pub mod availability_zone {
     }
 }
 impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone)
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
     pub fn builder() -> crate::model::availability_zone::Builder {
         crate::model::availability_zone::Builder::default()
     }
@@ -61804,11 +61428,10 @@ impl std::fmt::Debug for AwsEc2NetworkAclDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails)
+/// See [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
 pub mod aws_ec2_network_acl_details {
 
-    /// A builder for [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_default: std::option::Option<bool>,
@@ -61901,7 +61524,7 @@ pub mod aws_ec2_network_acl_details {
             self.entries = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
         pub fn build(self) -> crate::model::AwsEc2NetworkAclDetails {
             crate::model::AwsEc2NetworkAclDetails {
                 is_default: self.is_default.unwrap_or_default(),
@@ -61915,7 +61538,7 @@ pub mod aws_ec2_network_acl_details {
     }
 }
 impl AwsEc2NetworkAclDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclDetails`](crate::model::AwsEc2NetworkAclDetails).
     pub fn builder() -> crate::model::aws_ec2_network_acl_details::Builder {
         crate::model::aws_ec2_network_acl_details::Builder::default()
     }
@@ -61990,11 +61613,10 @@ impl std::fmt::Debug for AwsEc2NetworkAclEntry {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry)
+/// See [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
 pub mod aws_ec2_network_acl_entry {
 
-    /// A builder for [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block: std::option::Option<std::string::String>,
@@ -62096,7 +61718,7 @@ pub mod aws_ec2_network_acl_entry {
             self.rule_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
         pub fn build(self) -> crate::model::AwsEc2NetworkAclEntry {
             crate::model::AwsEc2NetworkAclEntry {
                 cidr_block: self.cidr_block,
@@ -62112,7 +61734,7 @@ pub mod aws_ec2_network_acl_entry {
     }
 }
 impl AwsEc2NetworkAclEntry {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclEntry`](crate::model::AwsEc2NetworkAclEntry).
     pub fn builder() -> crate::model::aws_ec2_network_acl_entry::Builder {
         crate::model::aws_ec2_network_acl_entry::Builder::default()
     }
@@ -62145,11 +61767,10 @@ impl std::fmt::Debug for PortRangeFromTo {
         formatter.finish()
     }
 }
-/// See [`PortRangeFromTo`](crate::model::PortRangeFromTo)
+/// See [`PortRangeFromTo`](crate::model::PortRangeFromTo).
 pub mod port_range_from_to {
 
-    /// A builder for [`PortRangeFromTo`](crate::model::PortRangeFromTo)
-    #[non_exhaustive]
+    /// A builder for [`PortRangeFromTo`](crate::model::PortRangeFromTo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<i32>,
@@ -62176,7 +61797,7 @@ pub mod port_range_from_to {
             self.to = input;
             self
         }
-        /// Consumes the builder and constructs a [`PortRangeFromTo`](crate::model::PortRangeFromTo)
+        /// Consumes the builder and constructs a [`PortRangeFromTo`](crate::model::PortRangeFromTo).
         pub fn build(self) -> crate::model::PortRangeFromTo {
             crate::model::PortRangeFromTo {
                 from: self.from.unwrap_or_default(),
@@ -62186,7 +61807,7 @@ pub mod port_range_from_to {
     }
 }
 impl PortRangeFromTo {
-    /// Creates a new builder-style object to manufacture [`PortRangeFromTo`](crate::model::PortRangeFromTo)
+    /// Creates a new builder-style object to manufacture [`PortRangeFromTo`](crate::model::PortRangeFromTo).
     pub fn builder() -> crate::model::port_range_from_to::Builder {
         crate::model::port_range_from_to::Builder::default()
     }
@@ -62219,11 +61840,10 @@ impl std::fmt::Debug for IcmpTypeCode {
         formatter.finish()
     }
 }
-/// See [`IcmpTypeCode`](crate::model::IcmpTypeCode)
+/// See [`IcmpTypeCode`](crate::model::IcmpTypeCode).
 pub mod icmp_type_code {
 
-    /// A builder for [`IcmpTypeCode`](crate::model::IcmpTypeCode)
-    #[non_exhaustive]
+    /// A builder for [`IcmpTypeCode`](crate::model::IcmpTypeCode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<i32>,
@@ -62250,7 +61870,7 @@ pub mod icmp_type_code {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`IcmpTypeCode`](crate::model::IcmpTypeCode)
+        /// Consumes the builder and constructs a [`IcmpTypeCode`](crate::model::IcmpTypeCode).
         pub fn build(self) -> crate::model::IcmpTypeCode {
             crate::model::IcmpTypeCode {
                 code: self.code.unwrap_or_default(),
@@ -62260,7 +61880,7 @@ pub mod icmp_type_code {
     }
 }
 impl IcmpTypeCode {
-    /// Creates a new builder-style object to manufacture [`IcmpTypeCode`](crate::model::IcmpTypeCode)
+    /// Creates a new builder-style object to manufacture [`IcmpTypeCode`](crate::model::IcmpTypeCode).
     pub fn builder() -> crate::model::icmp_type_code::Builder {
         crate::model::icmp_type_code::Builder::default()
     }
@@ -62303,11 +61923,10 @@ impl std::fmt::Debug for AwsEc2NetworkAclAssociation {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation)
+/// See [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
 pub mod aws_ec2_network_acl_association {
 
-    /// A builder for [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_acl_association_id: std::option::Option<std::string::String>,
@@ -62351,7 +61970,7 @@ pub mod aws_ec2_network_acl_association {
             self.subnet_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
         pub fn build(self) -> crate::model::AwsEc2NetworkAclAssociation {
             crate::model::AwsEc2NetworkAclAssociation {
                 network_acl_association_id: self.network_acl_association_id,
@@ -62362,7 +61981,7 @@ pub mod aws_ec2_network_acl_association {
     }
 }
 impl AwsEc2NetworkAclAssociation {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkAclAssociation`](crate::model::AwsEc2NetworkAclAssociation).
     pub fn builder() -> crate::model::aws_ec2_network_acl_association::Builder {
         crate::model::aws_ec2_network_acl_association::Builder::default()
     }
@@ -62484,11 +62103,10 @@ impl std::fmt::Debug for AwsEc2SubnetDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails)
+/// See [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
 pub mod aws_ec2_subnet_details {
 
-    /// A builder for [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assign_ipv6_address_on_creation: std::option::Option<bool>,
@@ -62658,7 +62276,7 @@ pub mod aws_ec2_subnet_details {
             self.ipv6_cidr_block_association_set = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails)
+        /// Consumes the builder and constructs a [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
         pub fn build(self) -> crate::model::AwsEc2SubnetDetails {
             crate::model::AwsEc2SubnetDetails {
                 assign_ipv6_address_on_creation: self
@@ -62681,7 +62299,7 @@ pub mod aws_ec2_subnet_details {
     }
 }
 impl AwsEc2SubnetDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2SubnetDetails`](crate::model::AwsEc2SubnetDetails).
     pub fn builder() -> crate::model::aws_ec2_subnet_details::Builder {
         crate::model::aws_ec2_subnet_details::Builder::default()
     }
@@ -62721,11 +62339,10 @@ impl std::fmt::Debug for Ipv6CidrBlockAssociation {
         formatter.finish()
     }
 }
-/// See [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation)
+/// See [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
 pub mod ipv6_cidr_block_association {
 
-    /// A builder for [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation)
-    #[non_exhaustive]
+    /// A builder for [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -62772,7 +62389,7 @@ pub mod ipv6_cidr_block_association {
             self.cidr_block_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation)
+        /// Consumes the builder and constructs a [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
         pub fn build(self) -> crate::model::Ipv6CidrBlockAssociation {
             crate::model::Ipv6CidrBlockAssociation {
                 association_id: self.association_id,
@@ -62783,7 +62400,7 @@ pub mod ipv6_cidr_block_association {
     }
 }
 impl Ipv6CidrBlockAssociation {
-    /// Creates a new builder-style object to manufacture [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation)
+    /// Creates a new builder-style object to manufacture [`Ipv6CidrBlockAssociation`](crate::model::Ipv6CidrBlockAssociation).
     pub fn builder() -> crate::model::ipv6_cidr_block_association::Builder {
         crate::model::ipv6_cidr_block_association::Builder::default()
     }
@@ -62877,11 +62494,10 @@ impl std::fmt::Debug for AwsEc2EipDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails)
+/// See [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
 pub mod aws_ec2_eip_details {
 
-    /// A builder for [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -63019,7 +62635,7 @@ pub mod aws_ec2_eip_details {
             self.private_ip_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails)
+        /// Consumes the builder and constructs a [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
         pub fn build(self) -> crate::model::AwsEc2EipDetails {
             crate::model::AwsEc2EipDetails {
                 instance_id: self.instance_id,
@@ -63037,7 +62653,7 @@ pub mod aws_ec2_eip_details {
     }
 }
 impl AwsEc2EipDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2EipDetails`](crate::model::AwsEc2EipDetails).
     pub fn builder() -> crate::model::aws_ec2_eip_details::Builder {
         crate::model::aws_ec2_eip_details::Builder::default()
     }
@@ -63096,11 +62712,10 @@ impl std::fmt::Debug for AwsEc2VpcDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails)
+/// See [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
 pub mod aws_ec2_vpc_details {
 
-    /// A builder for [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_block_association_set:
@@ -63178,7 +62793,7 @@ pub mod aws_ec2_vpc_details {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
         pub fn build(self) -> crate::model::AwsEc2VpcDetails {
             crate::model::AwsEc2VpcDetails {
                 cidr_block_association_set: self.cidr_block_association_set,
@@ -63190,7 +62805,7 @@ pub mod aws_ec2_vpc_details {
     }
 }
 impl AwsEc2VpcDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VpcDetails`](crate::model::AwsEc2VpcDetails).
     pub fn builder() -> crate::model::aws_ec2_vpc_details::Builder {
         crate::model::aws_ec2_vpc_details::Builder::default()
     }
@@ -63230,11 +62845,10 @@ impl std::fmt::Debug for CidrBlockAssociation {
         formatter.finish()
     }
 }
-/// See [`CidrBlockAssociation`](crate::model::CidrBlockAssociation)
+/// See [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
 pub mod cidr_block_association {
 
-    /// A builder for [`CidrBlockAssociation`](crate::model::CidrBlockAssociation)
-    #[non_exhaustive]
+    /// A builder for [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -63278,7 +62892,7 @@ pub mod cidr_block_association {
             self.cidr_block_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`CidrBlockAssociation`](crate::model::CidrBlockAssociation)
+        /// Consumes the builder and constructs a [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
         pub fn build(self) -> crate::model::CidrBlockAssociation {
             crate::model::CidrBlockAssociation {
                 association_id: self.association_id,
@@ -63289,7 +62903,7 @@ pub mod cidr_block_association {
     }
 }
 impl CidrBlockAssociation {
-    /// Creates a new builder-style object to manufacture [`CidrBlockAssociation`](crate::model::CidrBlockAssociation)
+    /// Creates a new builder-style object to manufacture [`CidrBlockAssociation`](crate::model::CidrBlockAssociation).
     pub fn builder() -> crate::model::cidr_block_association::Builder {
         crate::model::cidr_block_association::Builder::default()
     }
@@ -63387,11 +63001,10 @@ impl std::fmt::Debug for AwsEc2VolumeDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails)
+/// See [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
 pub mod aws_ec2_volume_details {
 
-    /// A builder for [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_time: std::option::Option<std::string::String>,
@@ -63532,7 +63145,7 @@ pub mod aws_ec2_volume_details {
             self.volume_scan_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails)
+        /// Consumes the builder and constructs a [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
         pub fn build(self) -> crate::model::AwsEc2VolumeDetails {
             crate::model::AwsEc2VolumeDetails {
                 create_time: self.create_time,
@@ -63551,7 +63164,7 @@ pub mod aws_ec2_volume_details {
     }
 }
 impl AwsEc2VolumeDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeDetails`](crate::model::AwsEc2VolumeDetails).
     pub fn builder() -> crate::model::aws_ec2_volume_details::Builder {
         crate::model::aws_ec2_volume_details::Builder::default()
     }
@@ -63598,11 +63211,10 @@ impl std::fmt::Debug for AwsEc2VolumeAttachment {
         formatter.finish()
     }
 }
-/// See [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment)
+/// See [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
 pub mod aws_ec2_volume_attachment {
 
-    /// A builder for [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attach_time: std::option::Option<std::string::String>,
@@ -63651,7 +63263,7 @@ pub mod aws_ec2_volume_attachment {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment)
+        /// Consumes the builder and constructs a [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
         pub fn build(self) -> crate::model::AwsEc2VolumeAttachment {
             crate::model::AwsEc2VolumeAttachment {
                 attach_time: self.attach_time,
@@ -63663,7 +63275,7 @@ pub mod aws_ec2_volume_attachment {
     }
 }
 impl AwsEc2VolumeAttachment {
-    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment)
+    /// Creates a new builder-style object to manufacture [`AwsEc2VolumeAttachment`](crate::model::AwsEc2VolumeAttachment).
     pub fn builder() -> crate::model::aws_ec2_volume_attachment::Builder {
         crate::model::aws_ec2_volume_attachment::Builder::default()
     }
@@ -63730,11 +63342,10 @@ impl std::fmt::Debug for AwsEc2SecurityGroupDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails)
+/// See [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
 pub mod aws_ec2_security_group_details {
 
-    /// A builder for [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -63835,7 +63446,7 @@ pub mod aws_ec2_security_group_details {
             self.ip_permissions_egress = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails)
+        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
         pub fn build(self) -> crate::model::AwsEc2SecurityGroupDetails {
             crate::model::AwsEc2SecurityGroupDetails {
                 group_name: self.group_name,
@@ -63849,7 +63460,7 @@ pub mod aws_ec2_security_group_details {
     }
 }
 impl AwsEc2SecurityGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupDetails`](crate::model::AwsEc2SecurityGroupDetails).
     pub fn builder() -> crate::model::aws_ec2_security_group_details::Builder {
         crate::model::aws_ec2_security_group_details::Builder::default()
     }
@@ -63937,11 +63548,10 @@ impl std::fmt::Debug for AwsEc2SecurityGroupIpPermission {
         formatter.finish()
     }
 }
-/// See [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission)
+/// See [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
 pub mod aws_ec2_security_group_ip_permission {
 
-    /// A builder for [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_protocol: std::option::Option<std::string::String>,
@@ -64085,7 +63695,7 @@ pub mod aws_ec2_security_group_ip_permission {
             self.prefix_list_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission)
+        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
         pub fn build(self) -> crate::model::AwsEc2SecurityGroupIpPermission {
             crate::model::AwsEc2SecurityGroupIpPermission {
                 ip_protocol: self.ip_protocol,
@@ -64100,7 +63710,7 @@ pub mod aws_ec2_security_group_ip_permission {
     }
 }
 impl AwsEc2SecurityGroupIpPermission {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission)
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpPermission`](crate::model::AwsEc2SecurityGroupIpPermission).
     pub fn builder() -> crate::model::aws_ec2_security_group_ip_permission::Builder {
         crate::model::aws_ec2_security_group_ip_permission::Builder::default()
     }
@@ -64126,11 +63736,10 @@ impl std::fmt::Debug for AwsEc2SecurityGroupPrefixListId {
         formatter.finish()
     }
 }
-/// See [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId)
+/// See [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
 pub mod aws_ec2_security_group_prefix_list_id {
 
-    /// A builder for [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix_list_id: std::option::Option<std::string::String>,
@@ -64149,7 +63758,7 @@ pub mod aws_ec2_security_group_prefix_list_id {
             self.prefix_list_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId)
+        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
         pub fn build(self) -> crate::model::AwsEc2SecurityGroupPrefixListId {
             crate::model::AwsEc2SecurityGroupPrefixListId {
                 prefix_list_id: self.prefix_list_id,
@@ -64158,7 +63767,7 @@ pub mod aws_ec2_security_group_prefix_list_id {
     }
 }
 impl AwsEc2SecurityGroupPrefixListId {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId)
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupPrefixListId`](crate::model::AwsEc2SecurityGroupPrefixListId).
     pub fn builder() -> crate::model::aws_ec2_security_group_prefix_list_id::Builder {
         crate::model::aws_ec2_security_group_prefix_list_id::Builder::default()
     }
@@ -64184,11 +63793,10 @@ impl std::fmt::Debug for AwsEc2SecurityGroupIpv6Range {
         formatter.finish()
     }
 }
-/// See [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range)
+/// See [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
 pub mod aws_ec2_security_group_ipv6_range {
 
-    /// A builder for [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_ipv6: std::option::Option<std::string::String>,
@@ -64204,7 +63812,7 @@ pub mod aws_ec2_security_group_ipv6_range {
             self.cidr_ipv6 = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range)
+        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
         pub fn build(self) -> crate::model::AwsEc2SecurityGroupIpv6Range {
             crate::model::AwsEc2SecurityGroupIpv6Range {
                 cidr_ipv6: self.cidr_ipv6,
@@ -64213,7 +63821,7 @@ pub mod aws_ec2_security_group_ipv6_range {
     }
 }
 impl AwsEc2SecurityGroupIpv6Range {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range)
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpv6Range`](crate::model::AwsEc2SecurityGroupIpv6Range).
     pub fn builder() -> crate::model::aws_ec2_security_group_ipv6_range::Builder {
         crate::model::aws_ec2_security_group_ipv6_range::Builder::default()
     }
@@ -64239,11 +63847,10 @@ impl std::fmt::Debug for AwsEc2SecurityGroupIpRange {
         formatter.finish()
     }
 }
-/// See [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange)
+/// See [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
 pub mod aws_ec2_security_group_ip_range {
 
-    /// A builder for [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_ip: std::option::Option<std::string::String>,
@@ -64259,7 +63866,7 @@ pub mod aws_ec2_security_group_ip_range {
             self.cidr_ip = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange)
+        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
         pub fn build(self) -> crate::model::AwsEc2SecurityGroupIpRange {
             crate::model::AwsEc2SecurityGroupIpRange {
                 cidr_ip: self.cidr_ip,
@@ -64268,7 +63875,7 @@ pub mod aws_ec2_security_group_ip_range {
     }
 }
 impl AwsEc2SecurityGroupIpRange {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange)
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupIpRange`](crate::model::AwsEc2SecurityGroupIpRange).
     pub fn builder() -> crate::model::aws_ec2_security_group_ip_range::Builder {
         crate::model::aws_ec2_security_group_ip_range::Builder::default()
     }
@@ -64333,11 +63940,10 @@ impl std::fmt::Debug for AwsEc2SecurityGroupUserIdGroupPair {
         formatter.finish()
     }
 }
-/// See [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair)
+/// See [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
 pub mod aws_ec2_security_group_user_id_group_pair {
 
-    /// A builder for [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -64418,7 +64024,7 @@ pub mod aws_ec2_security_group_user_id_group_pair {
             self.vpc_peering_connection_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair)
+        /// Consumes the builder and constructs a [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
         pub fn build(self) -> crate::model::AwsEc2SecurityGroupUserIdGroupPair {
             crate::model::AwsEc2SecurityGroupUserIdGroupPair {
                 group_id: self.group_id,
@@ -64432,7 +64038,7 @@ pub mod aws_ec2_security_group_user_id_group_pair {
     }
 }
 impl AwsEc2SecurityGroupUserIdGroupPair {
-    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair)
+    /// Creates a new builder-style object to manufacture [`AwsEc2SecurityGroupUserIdGroupPair`](crate::model::AwsEc2SecurityGroupUserIdGroupPair).
     pub fn builder() -> crate::model::aws_ec2_security_group_user_id_group_pair::Builder {
         crate::model::aws_ec2_security_group_user_id_group_pair::Builder::default()
     }
@@ -64519,11 +64125,10 @@ impl std::fmt::Debug for AwsEc2NetworkInterfaceDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails)
+/// See [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
 pub mod aws_ec2_network_interface_details {
 
-    /// A builder for [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::AwsEc2NetworkInterfaceAttachment>,
@@ -64672,7 +64277,7 @@ pub mod aws_ec2_network_interface_details {
             self.public_ip = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
         pub fn build(self) -> crate::model::AwsEc2NetworkInterfaceDetails {
             crate::model::AwsEc2NetworkInterfaceDetails {
                 attachment: self.attachment,
@@ -64688,7 +64293,7 @@ pub mod aws_ec2_network_interface_details {
     }
 }
 impl AwsEc2NetworkInterfaceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceDetails`](crate::model::AwsEc2NetworkInterfaceDetails).
     pub fn builder() -> crate::model::aws_ec2_network_interface_details::Builder {
         crate::model::aws_ec2_network_interface_details::Builder::default()
     }
@@ -64721,11 +64326,10 @@ impl std::fmt::Debug for AwsEc2NetworkInterfacePrivateIpAddressDetail {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail)
+/// See [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
 pub mod aws_ec2_network_interface_private_ip_address_detail {
 
-    /// A builder for [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) private_ip_address: std::option::Option<std::string::String>,
@@ -64758,7 +64362,7 @@ pub mod aws_ec2_network_interface_private_ip_address_detail {
             self.private_dns_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
         pub fn build(self) -> crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail {
             crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail {
                 private_ip_address: self.private_ip_address,
@@ -64768,7 +64372,7 @@ pub mod aws_ec2_network_interface_private_ip_address_detail {
     }
 }
 impl AwsEc2NetworkInterfacePrivateIpAddressDetail {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfacePrivateIpAddressDetail`](crate::model::AwsEc2NetworkInterfacePrivateIpAddressDetail).
     pub fn builder() -> crate::model::aws_ec2_network_interface_private_ip_address_detail::Builder {
         crate::model::aws_ec2_network_interface_private_ip_address_detail::Builder::default()
     }
@@ -64794,11 +64398,10 @@ impl std::fmt::Debug for AwsEc2NetworkInterfaceIpV6AddressDetail {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail)
+/// See [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
 pub mod aws_ec2_network_interface_ip_v6_address_detail {
 
-    /// A builder for [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_v6_address: std::option::Option<std::string::String>,
@@ -64817,7 +64420,7 @@ pub mod aws_ec2_network_interface_ip_v6_address_detail {
             self.ip_v6_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
         pub fn build(self) -> crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail {
             crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail {
                 ip_v6_address: self.ip_v6_address,
@@ -64826,7 +64429,7 @@ pub mod aws_ec2_network_interface_ip_v6_address_detail {
     }
 }
 impl AwsEc2NetworkInterfaceIpV6AddressDetail {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::model::AwsEc2NetworkInterfaceIpV6AddressDetail).
     pub fn builder() -> crate::model::aws_ec2_network_interface_ip_v6_address_detail::Builder {
         crate::model::aws_ec2_network_interface_ip_v6_address_detail::Builder::default()
     }
@@ -64859,11 +64462,10 @@ impl std::fmt::Debug for AwsEc2NetworkInterfaceSecurityGroup {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup)
+/// See [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
 pub mod aws_ec2_network_interface_security_group {
 
-    /// A builder for [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -64890,7 +64492,7 @@ pub mod aws_ec2_network_interface_security_group {
             self.group_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
         pub fn build(self) -> crate::model::AwsEc2NetworkInterfaceSecurityGroup {
             crate::model::AwsEc2NetworkInterfaceSecurityGroup {
                 group_name: self.group_name,
@@ -64900,7 +64502,7 @@ pub mod aws_ec2_network_interface_security_group {
     }
 }
 impl AwsEc2NetworkInterfaceSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceSecurityGroup`](crate::model::AwsEc2NetworkInterfaceSecurityGroup).
     pub fn builder() -> crate::model::aws_ec2_network_interface_security_group::Builder {
         crate::model::aws_ec2_network_interface_security_group::Builder::default()
     }
@@ -64972,11 +64574,10 @@ impl std::fmt::Debug for AwsEc2NetworkInterfaceAttachment {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment)
+/// See [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
 pub mod aws_ec2_network_interface_attachment {
 
-    /// A builder for [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attach_time: std::option::Option<std::string::String>,
@@ -65068,7 +64669,7 @@ pub mod aws_ec2_network_interface_attachment {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
         pub fn build(self) -> crate::model::AwsEc2NetworkInterfaceAttachment {
             crate::model::AwsEc2NetworkInterfaceAttachment {
                 attach_time: self.attach_time,
@@ -65083,7 +64684,7 @@ pub mod aws_ec2_network_interface_attachment {
     }
 }
 impl AwsEc2NetworkInterfaceAttachment {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceAttachment`](crate::model::AwsEc2NetworkInterfaceAttachment).
     pub fn builder() -> crate::model::aws_ec2_network_interface_attachment::Builder {
         crate::model::aws_ec2_network_interface_attachment::Builder::default()
     }
@@ -65193,11 +64794,10 @@ impl std::fmt::Debug for AwsEc2InstanceDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails)
+/// See [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
 pub mod aws_ec2_instance_details {
 
-    /// A builder for [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -65383,7 +64983,7 @@ pub mod aws_ec2_instance_details {
             self.metadata_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails)
+        /// Consumes the builder and constructs a [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
         pub fn build(self) -> crate::model::AwsEc2InstanceDetails {
             crate::model::AwsEc2InstanceDetails {
                 r#type: self.r#type,
@@ -65403,7 +65003,7 @@ pub mod aws_ec2_instance_details {
     }
 }
 impl AwsEc2InstanceDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceDetails`](crate::model::AwsEc2InstanceDetails).
     pub fn builder() -> crate::model::aws_ec2_instance_details::Builder {
         crate::model::aws_ec2_instance_details::Builder::default()
     }
@@ -65460,11 +65060,10 @@ impl std::fmt::Debug for AwsEc2InstanceMetadataOptions {
         formatter.finish()
     }
 }
-/// See [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions)
+/// See [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
 pub mod aws_ec2_instance_metadata_options {
 
-    /// A builder for [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_endpoint: std::option::Option<std::string::String>,
@@ -65533,7 +65132,7 @@ pub mod aws_ec2_instance_metadata_options {
             self.instance_metadata_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions)
+        /// Consumes the builder and constructs a [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
         pub fn build(self) -> crate::model::AwsEc2InstanceMetadataOptions {
             crate::model::AwsEc2InstanceMetadataOptions {
                 http_endpoint: self.http_endpoint,
@@ -65546,7 +65145,7 @@ pub mod aws_ec2_instance_metadata_options {
     }
 }
 impl AwsEc2InstanceMetadataOptions {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions)
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceMetadataOptions`](crate::model::AwsEc2InstanceMetadataOptions).
     pub fn builder() -> crate::model::aws_ec2_instance_metadata_options::Builder {
         crate::model::aws_ec2_instance_metadata_options::Builder::default()
     }
@@ -65572,11 +65171,10 @@ impl std::fmt::Debug for AwsEc2InstanceNetworkInterfacesDetails {
         formatter.finish()
     }
 }
-/// See [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails)
+/// See [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
 pub mod aws_ec2_instance_network_interfaces_details {
 
-    /// A builder for [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
@@ -65595,7 +65193,7 @@ pub mod aws_ec2_instance_network_interfaces_details {
             self.network_interface_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails)
+        /// Consumes the builder and constructs a [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
         pub fn build(self) -> crate::model::AwsEc2InstanceNetworkInterfacesDetails {
             crate::model::AwsEc2InstanceNetworkInterfacesDetails {
                 network_interface_id: self.network_interface_id,
@@ -65604,7 +65202,7 @@ pub mod aws_ec2_instance_network_interfaces_details {
     }
 }
 impl AwsEc2InstanceNetworkInterfacesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceNetworkInterfacesDetails`](crate::model::AwsEc2InstanceNetworkInterfacesDetails).
     pub fn builder() -> crate::model::aws_ec2_instance_network_interfaces_details::Builder {
         crate::model::aws_ec2_instance_network_interfaces_details::Builder::default()
     }
@@ -65719,11 +65317,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails)
+/// See [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
 pub mod aws_cloud_front_distribution_details {
 
-    /// A builder for [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_behaviors:
@@ -65902,7 +65499,7 @@ pub mod aws_cloud_front_distribution_details {
             self.web_acl_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionDetails {
             crate::model::AwsCloudFrontDistributionDetails {
                 cache_behaviors: self.cache_behaviors,
@@ -65922,7 +65519,7 @@ pub mod aws_cloud_front_distribution_details {
     }
 }
 impl AwsCloudFrontDistributionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDetails`](crate::model::AwsCloudFrontDistributionDetails).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_details::Builder {
         crate::model::aws_cloud_front_distribution_details::Builder::default()
     }
@@ -65993,11 +65590,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionViewerCertificate {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate)
+/// See [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
 pub mod aws_cloud_front_distribution_viewer_certificate {
 
-    /// A builder for [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acm_certificate_arn: std::option::Option<std::string::String>,
@@ -66097,7 +65693,7 @@ pub mod aws_cloud_front_distribution_viewer_certificate {
             self.ssl_support_method = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionViewerCertificate {
             crate::model::AwsCloudFrontDistributionViewerCertificate {
                 acm_certificate_arn: self.acm_certificate_arn,
@@ -66114,7 +65710,7 @@ pub mod aws_cloud_front_distribution_viewer_certificate {
     }
 }
 impl AwsCloudFrontDistributionViewerCertificate {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionViewerCertificate`](crate::model::AwsCloudFrontDistributionViewerCertificate).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_viewer_certificate::Builder {
         crate::model::aws_cloud_front_distribution_viewer_certificate::Builder::default()
     }
@@ -66143,11 +65739,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginGroups {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups)
+/// See [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
 pub mod aws_cloud_front_distribution_origin_groups {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items:
@@ -66175,14 +65770,14 @@ pub mod aws_cloud_front_distribution_origin_groups {
             self.items = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOriginGroups {
             crate::model::AwsCloudFrontDistributionOriginGroups { items: self.items }
         }
     }
 }
 impl AwsCloudFrontDistributionOriginGroups {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroups`](crate::model::AwsCloudFrontDistributionOriginGroups).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_groups::Builder {
         crate::model::aws_cloud_front_distribution_origin_groups::Builder::default()
     }
@@ -66211,11 +65806,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginGroup {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup)
+/// See [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
 pub mod aws_cloud_front_distribution_origin_group {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failover_criteria:
@@ -66238,7 +65832,7 @@ pub mod aws_cloud_front_distribution_origin_group {
             self.failover_criteria = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOriginGroup {
             crate::model::AwsCloudFrontDistributionOriginGroup {
                 failover_criteria: self.failover_criteria,
@@ -66247,7 +65841,7 @@ pub mod aws_cloud_front_distribution_origin_group {
     }
 }
 impl AwsCloudFrontDistributionOriginGroup {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroup`](crate::model::AwsCloudFrontDistributionOriginGroup).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group::Builder {
         crate::model::aws_cloud_front_distribution_origin_group::Builder::default()
     }
@@ -66277,11 +65871,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginGroupFailover {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover)
+/// See [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
 pub mod aws_cloud_front_distribution_origin_group_failover {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_codes: std::option::Option<
@@ -66307,7 +65900,7 @@ pub mod aws_cloud_front_distribution_origin_group_failover {
             self.status_codes = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOriginGroupFailover {
             crate::model::AwsCloudFrontDistributionOriginGroupFailover {
                 status_codes: self.status_codes,
@@ -66316,7 +65909,7 @@ pub mod aws_cloud_front_distribution_origin_group_failover {
     }
 }
 impl AwsCloudFrontDistributionOriginGroupFailover {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailover`](crate::model::AwsCloudFrontDistributionOriginGroupFailover).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_group_failover::Builder {
         crate::model::aws_cloud_front_distribution_origin_group_failover::Builder::default()
     }
@@ -66350,11 +65943,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginGroupFailoverStatusCodes
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes)
+/// See [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
 pub mod aws_cloud_front_distribution_origin_group_failover_status_codes {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<i32>>,
@@ -66387,7 +65979,7 @@ pub mod aws_cloud_front_distribution_origin_group_failover_status_codes {
             self.quantity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
         pub fn build(
             self,
         ) -> crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
@@ -66399,7 +65991,7 @@ pub mod aws_cloud_front_distribution_origin_group_failover_status_codes {
     }
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::model::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
     pub fn builder(
     ) -> crate::model::aws_cloud_front_distribution_origin_group_failover_status_codes::Builder
     {
@@ -66430,11 +66022,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOrigins {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins)
+/// See [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
 pub mod aws_cloud_front_distribution_origins {
 
-    /// A builder for [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items:
@@ -66462,14 +66053,14 @@ pub mod aws_cloud_front_distribution_origins {
             self.items = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOrigins {
             crate::model::AwsCloudFrontDistributionOrigins { items: self.items }
         }
     }
 }
 impl AwsCloudFrontDistributionOrigins {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOrigins`](crate::model::AwsCloudFrontDistributionOrigins).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_origins::Builder {
         crate::model::aws_cloud_front_distribution_origins::Builder::default()
     }
@@ -66529,11 +66120,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginItem {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem)
+/// See [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
 pub mod aws_cloud_front_distribution_origin_item {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -66609,7 +66199,7 @@ pub mod aws_cloud_front_distribution_origin_item {
             self.custom_origin_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOriginItem {
             crate::model::AwsCloudFrontDistributionOriginItem {
                 domain_name: self.domain_name,
@@ -66622,7 +66212,7 @@ pub mod aws_cloud_front_distribution_origin_item {
     }
 }
 impl AwsCloudFrontDistributionOriginItem {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginItem`](crate::model::AwsCloudFrontDistributionOriginItem).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_item::Builder {
         crate::model::aws_cloud_front_distribution_origin_item::Builder::default()
     }
@@ -66686,11 +66276,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginCustomOriginConfig {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig)
+/// See [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
 pub mod aws_cloud_front_distribution_origin_custom_origin_config {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_port: std::option::Option<i32>,
@@ -66771,7 +66360,7 @@ pub mod aws_cloud_front_distribution_origin_custom_origin_config {
             self.origin_ssl_protocols = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig {
             crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig {
                 http_port: self.http_port.unwrap_or_default(),
@@ -66785,7 +66374,7 @@ pub mod aws_cloud_front_distribution_origin_custom_origin_config {
     }
 }
 impl AwsCloudFrontDistributionOriginCustomOriginConfig {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::model::AwsCloudFrontDistributionOriginCustomOriginConfig).
     pub fn builder(
     ) -> crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder {
         crate::model::aws_cloud_front_distribution_origin_custom_origin_config::Builder::default()
@@ -66819,11 +66408,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginSslProtocols {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols)
+/// See [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
 pub mod aws_cloud_front_distribution_origin_ssl_protocols {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -66859,7 +66447,7 @@ pub mod aws_cloud_front_distribution_origin_ssl_protocols {
             self.quantity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOriginSslProtocols {
             crate::model::AwsCloudFrontDistributionOriginSslProtocols {
                 items: self.items,
@@ -66869,7 +66457,7 @@ pub mod aws_cloud_front_distribution_origin_ssl_protocols {
     }
 }
 impl AwsCloudFrontDistributionOriginSslProtocols {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginSslProtocols`](crate::model::AwsCloudFrontDistributionOriginSslProtocols).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_ssl_protocols::Builder {
         crate::model::aws_cloud_front_distribution_origin_ssl_protocols::Builder::default()
     }
@@ -66895,11 +66483,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionOriginS3OriginConfig {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig)
+/// See [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
 pub mod aws_cloud_front_distribution_origin_s3_origin_config {
 
-    /// A builder for [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) origin_access_identity: std::option::Option<std::string::String>,
@@ -66918,7 +66505,7 @@ pub mod aws_cloud_front_distribution_origin_s3_origin_config {
             self.origin_access_identity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionOriginS3OriginConfig {
             crate::model::AwsCloudFrontDistributionOriginS3OriginConfig {
                 origin_access_identity: self.origin_access_identity,
@@ -66927,7 +66514,7 @@ pub mod aws_cloud_front_distribution_origin_s3_origin_config {
     }
 }
 impl AwsCloudFrontDistributionOriginS3OriginConfig {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::model::AwsCloudFrontDistributionOriginS3OriginConfig).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder
     {
         crate::model::aws_cloud_front_distribution_origin_s3_origin_config::Builder::default()
@@ -66975,11 +66562,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionLogging {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging)
+/// See [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
 pub mod aws_cloud_front_distribution_logging {
 
-    /// A builder for [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -67028,7 +66614,7 @@ pub mod aws_cloud_front_distribution_logging {
             self.prefix = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionLogging {
             crate::model::AwsCloudFrontDistributionLogging {
                 bucket: self.bucket,
@@ -67040,7 +66626,7 @@ pub mod aws_cloud_front_distribution_logging {
     }
 }
 impl AwsCloudFrontDistributionLogging {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionLogging`](crate::model::AwsCloudFrontDistributionLogging).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_logging::Builder {
         crate::model::aws_cloud_front_distribution_logging::Builder::default()
     }
@@ -67076,11 +66662,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionDefaultCacheBehavior {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior)
+/// See [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
 pub mod aws_cloud_front_distribution_default_cache_behavior {
 
-    /// A builder for [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) viewer_protocol_policy: std::option::Option<std::string::String>,
@@ -67109,7 +66694,7 @@ pub mod aws_cloud_front_distribution_default_cache_behavior {
             self.viewer_protocol_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionDefaultCacheBehavior {
             crate::model::AwsCloudFrontDistributionDefaultCacheBehavior {
                 viewer_protocol_policy: self.viewer_protocol_policy,
@@ -67118,7 +66703,7 @@ pub mod aws_cloud_front_distribution_default_cache_behavior {
     }
 }
 impl AwsCloudFrontDistributionDefaultCacheBehavior {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionDefaultCacheBehavior`](crate::model::AwsCloudFrontDistributionDefaultCacheBehavior).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_default_cache_behavior::Builder {
         crate::model::aws_cloud_front_distribution_default_cache_behavior::Builder::default()
     }
@@ -67147,11 +66732,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionCacheBehaviors {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors)
+/// See [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
 pub mod aws_cloud_front_distribution_cache_behaviors {
 
-    /// A builder for [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<
@@ -67183,14 +66767,14 @@ pub mod aws_cloud_front_distribution_cache_behaviors {
             self.items = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionCacheBehaviors {
             crate::model::AwsCloudFrontDistributionCacheBehaviors { items: self.items }
         }
     }
 }
 impl AwsCloudFrontDistributionCacheBehaviors {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehaviors`](crate::model::AwsCloudFrontDistributionCacheBehaviors).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_cache_behaviors::Builder {
         crate::model::aws_cloud_front_distribution_cache_behaviors::Builder::default()
     }
@@ -67226,11 +66810,10 @@ impl std::fmt::Debug for AwsCloudFrontDistributionCacheBehavior {
         formatter.finish()
     }
 }
-/// See [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior)
+/// See [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
 pub mod aws_cloud_front_distribution_cache_behavior {
 
-    /// A builder for [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior)
-    #[non_exhaustive]
+    /// A builder for [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) viewer_protocol_policy: std::option::Option<std::string::String>,
@@ -67259,7 +66842,7 @@ pub mod aws_cloud_front_distribution_cache_behavior {
             self.viewer_protocol_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior)
+        /// Consumes the builder and constructs a [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
         pub fn build(self) -> crate::model::AwsCloudFrontDistributionCacheBehavior {
             crate::model::AwsCloudFrontDistributionCacheBehavior {
                 viewer_protocol_policy: self.viewer_protocol_policy,
@@ -67268,7 +66851,7 @@ pub mod aws_cloud_front_distribution_cache_behavior {
     }
 }
 impl AwsCloudFrontDistributionCacheBehavior {
-    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior)
+    /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionCacheBehavior`](crate::model::AwsCloudFrontDistributionCacheBehavior).
     pub fn builder() -> crate::model::aws_cloud_front_distribution_cache_behavior::Builder {
         crate::model::aws_cloud_front_distribution_cache_behavior::Builder::default()
     }
@@ -67362,11 +66945,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails)
+/// See [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
 pub mod aws_code_build_project_details {
 
-    /// A builder for [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_key: std::option::Option<std::string::String>,
@@ -67521,7 +67103,7 @@ pub mod aws_code_build_project_details {
             self.secondary_artifacts = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectDetails {
             crate::model::AwsCodeBuildProjectDetails {
                 encryption_key: self.encryption_key,
@@ -67538,7 +67120,7 @@ pub mod aws_code_build_project_details {
     }
 }
 impl AwsCodeBuildProjectDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectDetails`](crate::model::AwsCodeBuildProjectDetails).
     pub fn builder() -> crate::model::aws_code_build_project_details::Builder {
         crate::model::aws_code_build_project_details::Builder::default()
     }
@@ -67620,11 +67202,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectArtifactsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
+/// See [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
 pub mod aws_code_build_project_artifacts_details {
 
-    /// A builder for [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) artifact_identifier: std::option::Option<std::string::String>,
@@ -67734,7 +67315,7 @@ pub mod aws_code_build_project_artifacts_details {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectArtifactsDetails {
             crate::model::AwsCodeBuildProjectArtifactsDetails {
                 artifact_identifier: self.artifact_identifier,
@@ -67751,7 +67332,7 @@ pub mod aws_code_build_project_artifacts_details {
     }
 }
 impl AwsCodeBuildProjectArtifactsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectArtifactsDetails`](crate::model::AwsCodeBuildProjectArtifactsDetails).
     pub fn builder() -> crate::model::aws_code_build_project_artifacts_details::Builder {
         crate::model::aws_code_build_project_artifacts_details::Builder::default()
     }
@@ -67791,11 +67372,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectVpcConfig {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig)
+/// See [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
 pub mod aws_code_build_project_vpc_config {
 
-    /// A builder for [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -67851,7 +67431,7 @@ pub mod aws_code_build_project_vpc_config {
             self.security_group_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectVpcConfig {
             crate::model::AwsCodeBuildProjectVpcConfig {
                 vpc_id: self.vpc_id,
@@ -67862,7 +67442,7 @@ pub mod aws_code_build_project_vpc_config {
     }
 }
 impl AwsCodeBuildProjectVpcConfig {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectVpcConfig`](crate::model::AwsCodeBuildProjectVpcConfig).
     pub fn builder() -> crate::model::aws_code_build_project_vpc_config::Builder {
         crate::model::aws_code_build_project_vpc_config::Builder::default()
     }
@@ -67901,11 +67481,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectLogsConfigDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails)
+/// See [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
 pub mod aws_code_build_project_logs_config_details {
 
-    /// A builder for [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs:
@@ -67948,7 +67527,7 @@ pub mod aws_code_build_project_logs_config_details {
             self.s3_logs = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectLogsConfigDetails {
             crate::model::AwsCodeBuildProjectLogsConfigDetails {
                 cloud_watch_logs: self.cloud_watch_logs,
@@ -67958,7 +67537,7 @@ pub mod aws_code_build_project_logs_config_details {
     }
 }
 impl AwsCodeBuildProjectLogsConfigDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigDetails`](crate::model::AwsCodeBuildProjectLogsConfigDetails).
     pub fn builder() -> crate::model::aws_code_build_project_logs_config_details::Builder {
         crate::model::aws_code_build_project_logs_config_details::Builder::default()
     }
@@ -67998,11 +67577,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectLogsConfigS3LogsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails)
+/// See [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
 pub mod aws_code_build_project_logs_config_s3_logs_details {
 
-    /// A builder for [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_disabled: std::option::Option<bool>,
@@ -68040,7 +67618,7 @@ pub mod aws_code_build_project_logs_config_s3_logs_details {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails {
             crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails {
                 encryption_disabled: self.encryption_disabled.unwrap_or_default(),
@@ -68051,7 +67629,7 @@ pub mod aws_code_build_project_logs_config_s3_logs_details {
     }
 }
 impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigS3LogsDetails).
     pub fn builder() -> crate::model::aws_code_build_project_logs_config_s3_logs_details::Builder {
         crate::model::aws_code_build_project_logs_config_s3_logs_details::Builder::default()
     }
@@ -68091,11 +67669,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails)
+/// See [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
 pub mod aws_code_build_project_logs_config_cloud_watch_logs_details {
 
-    /// A builder for [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_name: std::option::Option<std::string::String>,
@@ -68133,7 +67710,7 @@ pub mod aws_code_build_project_logs_config_cloud_watch_logs_details {
             self.stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
             crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
                 group_name: self.group_name,
@@ -68144,7 +67721,7 @@ pub mod aws_code_build_project_logs_config_cloud_watch_logs_details {
     }
 }
 impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::model::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
     pub fn builder(
     ) -> crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder {
         crate::model::aws_code_build_project_logs_config_cloud_watch_logs_details::Builder::default(
@@ -68235,11 +67812,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectSource {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource)
+/// See [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
 pub mod aws_code_build_project_source {
 
-    /// A builder for [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -68330,7 +67906,7 @@ pub mod aws_code_build_project_source {
             self.insecure_ssl = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectSource {
             crate::model::AwsCodeBuildProjectSource {
                 r#type: self.r#type,
@@ -68342,7 +67918,7 @@ pub mod aws_code_build_project_source {
     }
 }
 impl AwsCodeBuildProjectSource {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectSource`](crate::model::AwsCodeBuildProjectSource).
     pub fn builder() -> crate::model::aws_code_build_project_source::Builder {
         crate::model::aws_code_build_project_source::Builder::default()
     }
@@ -68435,11 +68011,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectEnvironment {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment)
+/// See [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
 pub mod aws_code_build_project_environment {
 
-    /// A builder for [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -68563,7 +68138,7 @@ pub mod aws_code_build_project_environment {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectEnvironment {
             crate::model::AwsCodeBuildProjectEnvironment {
                 certificate: self.certificate,
@@ -68577,7 +68152,7 @@ pub mod aws_code_build_project_environment {
     }
 }
 impl AwsCodeBuildProjectEnvironment {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironment`](crate::model::AwsCodeBuildProjectEnvironment).
     pub fn builder() -> crate::model::aws_code_build_project_environment::Builder {
         crate::model::aws_code_build_project_environment::Builder::default()
     }
@@ -68616,11 +68191,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectEnvironmentRegistryCredential {
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential)
+/// See [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
 pub mod aws_code_build_project_environment_registry_credential {
 
-    /// A builder for [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credential: std::option::Option<std::string::String>,
@@ -68656,7 +68230,7 @@ pub mod aws_code_build_project_environment_registry_credential {
             self.credential_provider = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
         pub fn build(self) -> crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential {
             crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential {
                 credential: self.credential,
@@ -68666,7 +68240,7 @@ pub mod aws_code_build_project_environment_registry_credential {
     }
 }
 impl AwsCodeBuildProjectEnvironmentRegistryCredential {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentRegistryCredential`](crate::model::AwsCodeBuildProjectEnvironmentRegistryCredential).
     pub fn builder() -> crate::model::aws_code_build_project_environment_registry_credential::Builder
     {
         crate::model::aws_code_build_project_environment_registry_credential::Builder::default()
@@ -68708,11 +68282,10 @@ impl std::fmt::Debug for AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetai
         formatter.finish()
     }
 }
-/// See [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails)
+/// See [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
 pub mod aws_code_build_project_environment_environment_variables_details {
 
-    /// A builder for [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -68750,7 +68323,7 @@ pub mod aws_code_build_project_environment_environment_variables_details {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails)
+        /// Consumes the builder and constructs a [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
@@ -68763,7 +68336,7 @@ pub mod aws_code_build_project_environment_environment_variables_details {
     }
 }
 impl AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails {
-    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails)
+    /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails`](crate::model::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails).
     pub fn builder(
     ) -> crate::model::aws_code_build_project_environment_environment_variables_details::Builder
     {
@@ -68866,11 +68439,10 @@ impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupDetails {
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails)
+/// See [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
 pub mod aws_auto_scaling_auto_scaling_group_details {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_configuration_name: std::option::Option<std::string::String>,
@@ -69027,7 +68599,7 @@ pub mod aws_auto_scaling_auto_scaling_group_details {
             self.capacity_rebalance = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
         pub fn build(self) -> crate::model::AwsAutoScalingAutoScalingGroupDetails {
             crate::model::AwsAutoScalingAutoScalingGroupDetails {
                 launch_configuration_name: self.launch_configuration_name,
@@ -69044,7 +68616,7 @@ pub mod aws_auto_scaling_auto_scaling_group_details {
     }
 }
 impl AwsAutoScalingAutoScalingGroupDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupDetails`](crate::model::AwsAutoScalingAutoScalingGroupDetails).
     pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_details::Builder {
         crate::model::aws_auto_scaling_auto_scaling_group_details::Builder::default()
     }
@@ -69086,11 +68658,10 @@ impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTempl
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
+/// See [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
 pub mod aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
@@ -69134,7 +68705,7 @@ pub mod aws_auto_scaling_auto_scaling_group_launch_template_launch_template_spec
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
         pub fn build(
             self,
         ) -> crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification
@@ -69148,7 +68719,7 @@ pub mod aws_auto_scaling_auto_scaling_group_launch_template_launch_template_spec
     }
 }
 impl AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification).
     pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder{
         crate::model::aws_auto_scaling_auto_scaling_group_launch_template_launch_template_specification::Builder::default()
     }
@@ -69175,11 +68746,10 @@ impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupAvailabilityZonesListDeta
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails)
+/// See [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
 pub mod aws_auto_scaling_auto_scaling_group_availability_zones_list_details {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -69195,7 +68765,7 @@ pub mod aws_auto_scaling_auto_scaling_group_availability_zones_list_details {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
@@ -69206,7 +68776,7 @@ pub mod aws_auto_scaling_auto_scaling_group_availability_zones_list_details {
     }
 }
 impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
     pub fn builder(
     ) -> crate::model::aws_auto_scaling_auto_scaling_group_availability_zones_list_details::Builder
     {
@@ -69246,11 +68816,10 @@ impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetai
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails)
+/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances_distribution: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>,
@@ -69289,7 +68858,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details {
             self.launch_template = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
@@ -69301,7 +68870,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details {
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails).
     pub fn builder(
     ) -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_details::Builder
     {
@@ -69341,11 +68910,10 @@ impl std::fmt::Debug for AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunc
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails)
+/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_specification: std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
@@ -69390,7 +68958,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
             self.overrides = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
         pub fn build(
             self,
         ) -> crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails
@@ -69403,7 +68971,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails).
     pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder{
         crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_details::Builder::default()
     }
@@ -69440,11 +69008,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails)
+/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_type: std::option::Option<std::string::String>,
@@ -69477,7 +69044,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
             self.weighted_capacity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
         pub fn build(self) -> crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails{
             crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
                 instance_type: self.instance_type
@@ -69489,7 +69056,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails).
     pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder{
         crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_overrides_list_details::Builder::default()
     }
@@ -69532,11 +69099,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification)
+/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) launch_template_id: std::option::Option<std::string::String>,
@@ -69580,7 +69146,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
         pub fn build(self) -> crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification{
             crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
                 launch_template_id: self.launch_template_id
@@ -69594,7 +69160,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_templa
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
     pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder{
         crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification::Builder::default()
     }
@@ -69665,11 +69231,10 @@ impl std::fmt::Debug
         formatter.finish()
     }
 }
-/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails)
+/// See [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
 pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details {
 
-    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails)
-    #[non_exhaustive]
+    /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) on_demand_allocation_strategy: std::option::Option<std::string::String>,
@@ -69755,7 +69320,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_dis
             self.spot_max_price = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails)
+        /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
         pub fn build(self) -> crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails{
             crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
                 on_demand_allocation_strategy: self.on_demand_allocation_strategy
@@ -69778,7 +69343,7 @@ pub mod aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_dis
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails {
-    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails)
+    /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails`](crate::model::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails).
     pub fn builder() -> crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder{
         crate::model::aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details::Builder::default()
     }
@@ -69811,11 +69376,10 @@ impl std::fmt::Debug for DataClassificationDetails {
         formatter.finish()
     }
 }
-/// See [`DataClassificationDetails`](crate::model::DataClassificationDetails)
+/// See [`DataClassificationDetails`](crate::model::DataClassificationDetails).
 pub mod data_classification_details {
 
-    /// A builder for [`DataClassificationDetails`](crate::model::DataClassificationDetails)
-    #[non_exhaustive]
+    /// A builder for [`DataClassificationDetails`](crate::model::DataClassificationDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detailed_results_location: std::option::Option<std::string::String>,
@@ -69848,7 +69412,7 @@ pub mod data_classification_details {
             self.result = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataClassificationDetails`](crate::model::DataClassificationDetails)
+        /// Consumes the builder and constructs a [`DataClassificationDetails`](crate::model::DataClassificationDetails).
         pub fn build(self) -> crate::model::DataClassificationDetails {
             crate::model::DataClassificationDetails {
                 detailed_results_location: self.detailed_results_location,
@@ -69858,7 +69422,7 @@ pub mod data_classification_details {
     }
 }
 impl DataClassificationDetails {
-    /// Creates a new builder-style object to manufacture [`DataClassificationDetails`](crate::model::DataClassificationDetails)
+    /// Creates a new builder-style object to manufacture [`DataClassificationDetails`](crate::model::DataClassificationDetails).
     pub fn builder() -> crate::model::data_classification_details::Builder {
         crate::model::data_classification_details::Builder::default()
     }
@@ -69921,11 +69485,10 @@ impl std::fmt::Debug for ClassificationResult {
         formatter.finish()
     }
 }
-/// See [`ClassificationResult`](crate::model::ClassificationResult)
+/// See [`ClassificationResult`](crate::model::ClassificationResult).
 pub mod classification_result {
 
-    /// A builder for [`ClassificationResult`](crate::model::ClassificationResult)
-    #[non_exhaustive]
+    /// A builder for [`ClassificationResult`](crate::model::ClassificationResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mime_type: std::option::Option<std::string::String>,
@@ -70016,7 +69579,7 @@ pub mod classification_result {
             self.custom_data_identifiers = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClassificationResult`](crate::model::ClassificationResult)
+        /// Consumes the builder and constructs a [`ClassificationResult`](crate::model::ClassificationResult).
         pub fn build(self) -> crate::model::ClassificationResult {
             crate::model::ClassificationResult {
                 mime_type: self.mime_type,
@@ -70030,7 +69593,7 @@ pub mod classification_result {
     }
 }
 impl ClassificationResult {
-    /// Creates a new builder-style object to manufacture [`ClassificationResult`](crate::model::ClassificationResult)
+    /// Creates a new builder-style object to manufacture [`ClassificationResult`](crate::model::ClassificationResult).
     pub fn builder() -> crate::model::classification_result::Builder {
         crate::model::classification_result::Builder::default()
     }
@@ -70066,11 +69629,10 @@ impl std::fmt::Debug for CustomDataIdentifiersResult {
         formatter.finish()
     }
 }
-/// See [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult)
+/// See [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
 pub mod custom_data_identifiers_result {
 
-    /// A builder for [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult)
-    #[non_exhaustive]
+    /// A builder for [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detections:
@@ -70109,7 +69671,7 @@ pub mod custom_data_identifiers_result {
             self.total_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult)
+        /// Consumes the builder and constructs a [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
         pub fn build(self) -> crate::model::CustomDataIdentifiersResult {
             crate::model::CustomDataIdentifiersResult {
                 detections: self.detections,
@@ -70119,7 +69681,7 @@ pub mod custom_data_identifiers_result {
     }
 }
 impl CustomDataIdentifiersResult {
-    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult)
+    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersResult`](crate::model::CustomDataIdentifiersResult).
     pub fn builder() -> crate::model::custom_data_identifiers_result::Builder {
         crate::model::custom_data_identifiers_result::Builder::default()
     }
@@ -70166,11 +69728,10 @@ impl std::fmt::Debug for CustomDataIdentifiersDetections {
         formatter.finish()
     }
 }
-/// See [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections)
+/// See [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
 pub mod custom_data_identifiers_detections {
 
-    /// A builder for [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections)
-    #[non_exhaustive]
+    /// A builder for [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i64>,
@@ -70222,7 +69783,7 @@ pub mod custom_data_identifiers_detections {
             self.occurrences = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections)
+        /// Consumes the builder and constructs a [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
         pub fn build(self) -> crate::model::CustomDataIdentifiersDetections {
             crate::model::CustomDataIdentifiersDetections {
                 count: self.count.unwrap_or_default(),
@@ -70234,7 +69795,7 @@ pub mod custom_data_identifiers_detections {
     }
 }
 impl CustomDataIdentifiersDetections {
-    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections)
+    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiersDetections`](crate::model::CustomDataIdentifiersDetections).
     pub fn builder() -> crate::model::custom_data_identifiers_detections::Builder {
         crate::model::custom_data_identifiers_detections::Builder::default()
     }
@@ -70288,11 +69849,10 @@ impl std::fmt::Debug for Occurrences {
         formatter.finish()
     }
 }
-/// See [`Occurrences`](crate::model::Occurrences)
+/// See [`Occurrences`](crate::model::Occurrences).
 pub mod occurrences {
 
-    /// A builder for [`Occurrences`](crate::model::Occurrences)
-    #[non_exhaustive]
+    /// A builder for [`Occurrences`](crate::model::Occurrences).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -70397,7 +69957,7 @@ pub mod occurrences {
             self.cells = input;
             self
         }
-        /// Consumes the builder and constructs a [`Occurrences`](crate::model::Occurrences)
+        /// Consumes the builder and constructs a [`Occurrences`](crate::model::Occurrences).
         pub fn build(self) -> crate::model::Occurrences {
             crate::model::Occurrences {
                 line_ranges: self.line_ranges,
@@ -70410,7 +69970,7 @@ pub mod occurrences {
     }
 }
 impl Occurrences {
-    /// Creates a new builder-style object to manufacture [`Occurrences`](crate::model::Occurrences)
+    /// Creates a new builder-style object to manufacture [`Occurrences`](crate::model::Occurrences).
     pub fn builder() -> crate::model::occurrences::Builder {
         crate::model::occurrences::Builder::default()
     }
@@ -70457,11 +70017,10 @@ impl std::fmt::Debug for Cell {
         formatter.finish()
     }
 }
-/// See [`Cell`](crate::model::Cell)
+/// See [`Cell`](crate::model::Cell).
 pub mod cell {
 
-    /// A builder for [`Cell`](crate::model::Cell)
-    #[non_exhaustive]
+    /// A builder for [`Cell`](crate::model::Cell).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column: std::option::Option<i64>,
@@ -70513,7 +70072,7 @@ pub mod cell {
             self.cell_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`Cell`](crate::model::Cell)
+        /// Consumes the builder and constructs a [`Cell`](crate::model::Cell).
         pub fn build(self) -> crate::model::Cell {
             crate::model::Cell {
                 column: self.column.unwrap_or_default(),
@@ -70525,7 +70084,7 @@ pub mod cell {
     }
 }
 impl Cell {
-    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell)
+    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
     pub fn builder() -> crate::model::cell::Builder {
         crate::model::cell::Builder::default()
     }
@@ -70558,11 +70117,10 @@ impl std::fmt::Debug for Record {
         formatter.finish()
     }
 }
-/// See [`Record`](crate::model::Record)
+/// See [`Record`](crate::model::Record).
 pub mod record {
 
-    /// A builder for [`Record`](crate::model::Record)
-    #[non_exhaustive]
+    /// A builder for [`Record`](crate::model::Record).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) json_path: std::option::Option<std::string::String>,
@@ -70589,7 +70147,7 @@ pub mod record {
             self.record_index = input;
             self
         }
-        /// Consumes the builder and constructs a [`Record`](crate::model::Record)
+        /// Consumes the builder and constructs a [`Record`](crate::model::Record).
         pub fn build(self) -> crate::model::Record {
             crate::model::Record {
                 json_path: self.json_path,
@@ -70599,7 +70157,7 @@ pub mod record {
     }
 }
 impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record)
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
     pub fn builder() -> crate::model::record::Builder {
         crate::model::record::Builder::default()
     }
@@ -70639,11 +70197,10 @@ impl std::fmt::Debug for Page {
         formatter.finish()
     }
 }
-/// See [`Page`](crate::model::Page)
+/// See [`Page`](crate::model::Page).
 pub mod page {
 
-    /// A builder for [`Page`](crate::model::Page)
-    #[non_exhaustive]
+    /// A builder for [`Page`](crate::model::Page).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_number: std::option::Option<i64>,
@@ -70681,7 +70238,7 @@ pub mod page {
             self.offset_range = input;
             self
         }
-        /// Consumes the builder and constructs a [`Page`](crate::model::Page)
+        /// Consumes the builder and constructs a [`Page`](crate::model::Page).
         pub fn build(self) -> crate::model::Page {
             crate::model::Page {
                 page_number: self.page_number.unwrap_or_default(),
@@ -70692,7 +70249,7 @@ pub mod page {
     }
 }
 impl Page {
-    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page)
+    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
     pub fn builder() -> crate::model::page::Builder {
         crate::model::page::Builder::default()
     }
@@ -70732,11 +70289,10 @@ impl std::fmt::Debug for Range {
         formatter.finish()
     }
 }
-/// See [`Range`](crate::model::Range)
+/// See [`Range`](crate::model::Range).
 pub mod range {
 
-    /// A builder for [`Range`](crate::model::Range)
-    #[non_exhaustive]
+    /// A builder for [`Range`](crate::model::Range).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<i64>,
@@ -70774,7 +70330,7 @@ pub mod range {
             self.start_column = input;
             self
         }
-        /// Consumes the builder and constructs a [`Range`](crate::model::Range)
+        /// Consumes the builder and constructs a [`Range`](crate::model::Range).
         pub fn build(self) -> crate::model::Range {
             crate::model::Range {
                 start: self.start.unwrap_or_default(),
@@ -70785,7 +70341,7 @@ pub mod range {
     }
 }
 impl Range {
-    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range)
+    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
     pub fn builder() -> crate::model::range::Builder {
         crate::model::range::Builder::default()
     }
@@ -70825,11 +70381,10 @@ impl std::fmt::Debug for SensitiveDataResult {
         formatter.finish()
     }
 }
-/// See [`SensitiveDataResult`](crate::model::SensitiveDataResult)
+/// See [`SensitiveDataResult`](crate::model::SensitiveDataResult).
 pub mod sensitive_data_result {
 
-    /// A builder for [`SensitiveDataResult`](crate::model::SensitiveDataResult)
-    #[non_exhaustive]
+    /// A builder for [`SensitiveDataResult`](crate::model::SensitiveDataResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<std::string::String>,
@@ -70877,7 +70432,7 @@ pub mod sensitive_data_result {
             self.total_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`SensitiveDataResult`](crate::model::SensitiveDataResult)
+        /// Consumes the builder and constructs a [`SensitiveDataResult`](crate::model::SensitiveDataResult).
         pub fn build(self) -> crate::model::SensitiveDataResult {
             crate::model::SensitiveDataResult {
                 category: self.category,
@@ -70888,7 +70443,7 @@ pub mod sensitive_data_result {
     }
 }
 impl SensitiveDataResult {
-    /// Creates a new builder-style object to manufacture [`SensitiveDataResult`](crate::model::SensitiveDataResult)
+    /// Creates a new builder-style object to manufacture [`SensitiveDataResult`](crate::model::SensitiveDataResult).
     pub fn builder() -> crate::model::sensitive_data_result::Builder {
         crate::model::sensitive_data_result::Builder::default()
     }
@@ -70928,11 +70483,10 @@ impl std::fmt::Debug for SensitiveDataDetections {
         formatter.finish()
     }
 }
-/// See [`SensitiveDataDetections`](crate::model::SensitiveDataDetections)
+/// See [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
 pub mod sensitive_data_detections {
 
-    /// A builder for [`SensitiveDataDetections`](crate::model::SensitiveDataDetections)
-    #[non_exhaustive]
+    /// A builder for [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i64>,
@@ -70973,7 +70527,7 @@ pub mod sensitive_data_detections {
             self.occurrences = input;
             self
         }
-        /// Consumes the builder and constructs a [`SensitiveDataDetections`](crate::model::SensitiveDataDetections)
+        /// Consumes the builder and constructs a [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
         pub fn build(self) -> crate::model::SensitiveDataDetections {
             crate::model::SensitiveDataDetections {
                 count: self.count.unwrap_or_default(),
@@ -70984,7 +70538,7 @@ pub mod sensitive_data_detections {
     }
 }
 impl SensitiveDataDetections {
-    /// Creates a new builder-style object to manufacture [`SensitiveDataDetections`](crate::model::SensitiveDataDetections)
+    /// Creates a new builder-style object to manufacture [`SensitiveDataDetections`](crate::model::SensitiveDataDetections).
     pub fn builder() -> crate::model::sensitive_data_detections::Builder {
         crate::model::sensitive_data_detections::Builder::default()
     }
@@ -71017,11 +70571,10 @@ impl std::fmt::Debug for ClassificationStatus {
         formatter.finish()
     }
 }
-/// See [`ClassificationStatus`](crate::model::ClassificationStatus)
+/// See [`ClassificationStatus`](crate::model::ClassificationStatus).
 pub mod classification_status {
 
-    /// A builder for [`ClassificationStatus`](crate::model::ClassificationStatus)
-    #[non_exhaustive]
+    /// A builder for [`ClassificationStatus`](crate::model::ClassificationStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -71048,7 +70601,7 @@ pub mod classification_status {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClassificationStatus`](crate::model::ClassificationStatus)
+        /// Consumes the builder and constructs a [`ClassificationStatus`](crate::model::ClassificationStatus).
         pub fn build(self) -> crate::model::ClassificationStatus {
             crate::model::ClassificationStatus {
                 code: self.code,
@@ -71058,7 +70611,7 @@ pub mod classification_status {
     }
 }
 impl ClassificationStatus {
-    /// Creates a new builder-style object to manufacture [`ClassificationStatus`](crate::model::ClassificationStatus)
+    /// Creates a new builder-style object to manufacture [`ClassificationStatus`](crate::model::ClassificationStatus).
     pub fn builder() -> crate::model::classification_status::Builder {
         crate::model::classification_status::Builder::default()
     }
@@ -71180,11 +70733,10 @@ impl std::fmt::Debug for ThreatIntelIndicator {
         formatter.finish()
     }
 }
-/// See [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator)
+/// See [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
 pub mod threat_intel_indicator {
 
-    /// A builder for [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator)
-    #[non_exhaustive]
+    /// A builder for [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ThreatIntelIndicatorType>,
@@ -71266,7 +70818,7 @@ pub mod threat_intel_indicator {
             self.source_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator)
+        /// Consumes the builder and constructs a [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
         pub fn build(self) -> crate::model::ThreatIntelIndicator {
             crate::model::ThreatIntelIndicator {
                 r#type: self.r#type,
@@ -71280,7 +70832,7 @@ pub mod threat_intel_indicator {
     }
 }
 impl ThreatIntelIndicator {
-    /// Creates a new builder-style object to manufacture [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator)
+    /// Creates a new builder-style object to manufacture [`ThreatIntelIndicator`](crate::model::ThreatIntelIndicator).
     pub fn builder() -> crate::model::threat_intel_indicator::Builder {
         crate::model::threat_intel_indicator::Builder::default()
     }
@@ -71508,11 +71060,10 @@ impl std::fmt::Debug for Threat {
         formatter.finish()
     }
 }
-/// See [`Threat`](crate::model::Threat)
+/// See [`Threat`](crate::model::Threat).
 pub mod threat {
 
-    /// A builder for [`Threat`](crate::model::Threat)
-    #[non_exhaustive]
+    /// A builder for [`Threat`](crate::model::Threat).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -71570,7 +71121,7 @@ pub mod threat {
             self.file_paths = input;
             self
         }
-        /// Consumes the builder and constructs a [`Threat`](crate::model::Threat)
+        /// Consumes the builder and constructs a [`Threat`](crate::model::Threat).
         pub fn build(self) -> crate::model::Threat {
             crate::model::Threat {
                 name: self.name,
@@ -71582,7 +71133,7 @@ pub mod threat {
     }
 }
 impl Threat {
-    /// Creates a new builder-style object to manufacture [`Threat`](crate::model::Threat)
+    /// Creates a new builder-style object to manufacture [`Threat`](crate::model::Threat).
     pub fn builder() -> crate::model::threat::Builder {
         crate::model::threat::Builder::default()
     }
@@ -71629,11 +71180,10 @@ impl std::fmt::Debug for FilePaths {
         formatter.finish()
     }
 }
-/// See [`FilePaths`](crate::model::FilePaths)
+/// See [`FilePaths`](crate::model::FilePaths).
 pub mod file_paths {
 
-    /// A builder for [`FilePaths`](crate::model::FilePaths)
-    #[non_exhaustive]
+    /// A builder for [`FilePaths`](crate::model::FilePaths).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -71682,7 +71232,7 @@ pub mod file_paths {
             self.hash = input;
             self
         }
-        /// Consumes the builder and constructs a [`FilePaths`](crate::model::FilePaths)
+        /// Consumes the builder and constructs a [`FilePaths`](crate::model::FilePaths).
         pub fn build(self) -> crate::model::FilePaths {
             crate::model::FilePaths {
                 file_path: self.file_path,
@@ -71694,7 +71244,7 @@ pub mod file_paths {
     }
 }
 impl FilePaths {
-    /// Creates a new builder-style object to manufacture [`FilePaths`](crate::model::FilePaths)
+    /// Creates a new builder-style object to manufacture [`FilePaths`](crate::model::FilePaths).
     pub fn builder() -> crate::model::file_paths::Builder {
         crate::model::file_paths::Builder::default()
     }
@@ -71759,11 +71309,10 @@ impl std::fmt::Debug for ProcessDetails {
         formatter.finish()
     }
 }
-/// See [`ProcessDetails`](crate::model::ProcessDetails)
+/// See [`ProcessDetails`](crate::model::ProcessDetails).
 pub mod process_details {
 
-    /// A builder for [`ProcessDetails`](crate::model::ProcessDetails)
-    #[non_exhaustive]
+    /// A builder for [`ProcessDetails`](crate::model::ProcessDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -71841,7 +71390,7 @@ pub mod process_details {
             self.terminated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProcessDetails`](crate::model::ProcessDetails)
+        /// Consumes the builder and constructs a [`ProcessDetails`](crate::model::ProcessDetails).
         pub fn build(self) -> crate::model::ProcessDetails {
             crate::model::ProcessDetails {
                 name: self.name,
@@ -71855,7 +71404,7 @@ pub mod process_details {
     }
 }
 impl ProcessDetails {
-    /// Creates a new builder-style object to manufacture [`ProcessDetails`](crate::model::ProcessDetails)
+    /// Creates a new builder-style object to manufacture [`ProcessDetails`](crate::model::ProcessDetails).
     pub fn builder() -> crate::model::process_details::Builder {
         crate::model::process_details::Builder::default()
     }
@@ -71902,11 +71451,10 @@ impl std::fmt::Debug for NetworkPathComponent {
         formatter.finish()
     }
 }
-/// See [`NetworkPathComponent`](crate::model::NetworkPathComponent)
+/// See [`NetworkPathComponent`](crate::model::NetworkPathComponent).
 pub mod network_path_component {
 
-    /// A builder for [`NetworkPathComponent`](crate::model::NetworkPathComponent)
-    #[non_exhaustive]
+    /// A builder for [`NetworkPathComponent`](crate::model::NetworkPathComponent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_id: std::option::Option<std::string::String>,
@@ -71964,7 +71512,7 @@ pub mod network_path_component {
             self.ingress = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkPathComponent`](crate::model::NetworkPathComponent)
+        /// Consumes the builder and constructs a [`NetworkPathComponent`](crate::model::NetworkPathComponent).
         pub fn build(self) -> crate::model::NetworkPathComponent {
             crate::model::NetworkPathComponent {
                 component_id: self.component_id,
@@ -71976,7 +71524,7 @@ pub mod network_path_component {
     }
 }
 impl NetworkPathComponent {
-    /// Creates a new builder-style object to manufacture [`NetworkPathComponent`](crate::model::NetworkPathComponent)
+    /// Creates a new builder-style object to manufacture [`NetworkPathComponent`](crate::model::NetworkPathComponent).
     pub fn builder() -> crate::model::network_path_component::Builder {
         crate::model::network_path_component::Builder::default()
     }
@@ -72016,11 +71564,10 @@ impl std::fmt::Debug for NetworkHeader {
         formatter.finish()
     }
 }
-/// See [`NetworkHeader`](crate::model::NetworkHeader)
+/// See [`NetworkHeader`](crate::model::NetworkHeader).
 pub mod network_header {
 
-    /// A builder for [`NetworkHeader`](crate::model::NetworkHeader)
-    #[non_exhaustive]
+    /// A builder for [`NetworkHeader`](crate::model::NetworkHeader).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protocol: std::option::Option<std::string::String>,
@@ -72064,7 +71611,7 @@ pub mod network_header {
             self.source = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkHeader`](crate::model::NetworkHeader)
+        /// Consumes the builder and constructs a [`NetworkHeader`](crate::model::NetworkHeader).
         pub fn build(self) -> crate::model::NetworkHeader {
             crate::model::NetworkHeader {
                 protocol: self.protocol,
@@ -72075,7 +71622,7 @@ pub mod network_header {
     }
 }
 impl NetworkHeader {
-    /// Creates a new builder-style object to manufacture [`NetworkHeader`](crate::model::NetworkHeader)
+    /// Creates a new builder-style object to manufacture [`NetworkHeader`](crate::model::NetworkHeader).
     pub fn builder() -> crate::model::network_header::Builder {
         crate::model::network_header::Builder::default()
     }
@@ -72108,11 +71655,10 @@ impl std::fmt::Debug for NetworkPathComponentDetails {
         formatter.finish()
     }
 }
-/// See [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails)
+/// See [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
 pub mod network_path_component_details {
 
-    /// A builder for [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails)
-    #[non_exhaustive]
+    /// A builder for [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -72157,7 +71703,7 @@ pub mod network_path_component_details {
             self.port_ranges = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails)
+        /// Consumes the builder and constructs a [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
         pub fn build(self) -> crate::model::NetworkPathComponentDetails {
             crate::model::NetworkPathComponentDetails {
                 address: self.address,
@@ -72167,7 +71713,7 @@ pub mod network_path_component_details {
     }
 }
 impl NetworkPathComponentDetails {
-    /// Creates a new builder-style object to manufacture [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails)
+    /// Creates a new builder-style object to manufacture [`NetworkPathComponentDetails`](crate::model::NetworkPathComponentDetails).
     pub fn builder() -> crate::model::network_path_component_details::Builder {
         crate::model::network_path_component_details::Builder::default()
     }
@@ -72200,11 +71746,10 @@ impl std::fmt::Debug for PortRange {
         formatter.finish()
     }
 }
-/// See [`PortRange`](crate::model::PortRange)
+/// See [`PortRange`](crate::model::PortRange).
 pub mod port_range {
 
-    /// A builder for [`PortRange`](crate::model::PortRange)
-    #[non_exhaustive]
+    /// A builder for [`PortRange`](crate::model::PortRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin: std::option::Option<i32>,
@@ -72231,7 +71776,7 @@ pub mod port_range {
             self.end = input;
             self
         }
-        /// Consumes the builder and constructs a [`PortRange`](crate::model::PortRange)
+        /// Consumes the builder and constructs a [`PortRange`](crate::model::PortRange).
         pub fn build(self) -> crate::model::PortRange {
             crate::model::PortRange {
                 begin: self.begin.unwrap_or_default(),
@@ -72241,7 +71786,7 @@ pub mod port_range {
     }
 }
 impl PortRange {
-    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange)
+    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
     pub fn builder() -> crate::model::port_range::Builder {
         crate::model::port_range::Builder::default()
     }
@@ -72344,11 +71889,10 @@ impl std::fmt::Debug for Network {
         formatter.finish()
     }
 }
-/// See [`Network`](crate::model::Network)
+/// See [`Network`](crate::model::Network).
 pub mod network {
 
-    /// A builder for [`Network`](crate::model::Network)
-    #[non_exhaustive]
+    /// A builder for [`Network`](crate::model::Network).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direction: std::option::Option<crate::model::NetworkDirection>,
@@ -72503,7 +72047,7 @@ pub mod network {
             self.destination_domain = input;
             self
         }
-        /// Consumes the builder and constructs a [`Network`](crate::model::Network)
+        /// Consumes the builder and constructs a [`Network`](crate::model::Network).
         pub fn build(self) -> crate::model::Network {
             crate::model::Network {
                 direction: self.direction,
@@ -72523,7 +72067,7 @@ pub mod network {
     }
 }
 impl Network {
-    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network)
+    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
     pub fn builder() -> crate::model::network::Builder {
         crate::model::network::Builder::default()
     }
@@ -72625,11 +72169,10 @@ impl std::fmt::Debug for Malware {
         formatter.finish()
     }
 }
-/// See [`Malware`](crate::model::Malware)
+/// See [`Malware`](crate::model::Malware).
 pub mod malware {
 
-    /// A builder for [`Malware`](crate::model::Malware)
-    #[non_exhaustive]
+    /// A builder for [`Malware`](crate::model::Malware).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -72678,7 +72221,7 @@ pub mod malware {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`Malware`](crate::model::Malware)
+        /// Consumes the builder and constructs a [`Malware`](crate::model::Malware).
         pub fn build(self) -> crate::model::Malware {
             crate::model::Malware {
                 name: self.name,
@@ -72690,7 +72233,7 @@ pub mod malware {
     }
 }
 impl Malware {
-    /// Creates a new builder-style object to manufacture [`Malware`](crate::model::Malware)
+    /// Creates a new builder-style object to manufacture [`Malware`](crate::model::Malware).
     pub fn builder() -> crate::model::malware::Builder {
         crate::model::malware::Builder::default()
     }
@@ -72898,11 +72441,10 @@ impl std::fmt::Debug for Remediation {
         formatter.finish()
     }
 }
-/// See [`Remediation`](crate::model::Remediation)
+/// See [`Remediation`](crate::model::Remediation).
 pub mod remediation {
 
-    /// A builder for [`Remediation`](crate::model::Remediation)
-    #[non_exhaustive]
+    /// A builder for [`Remediation`](crate::model::Remediation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation: std::option::Option<crate::model::Recommendation>,
@@ -72921,7 +72463,7 @@ pub mod remediation {
             self.recommendation = input;
             self
         }
-        /// Consumes the builder and constructs a [`Remediation`](crate::model::Remediation)
+        /// Consumes the builder and constructs a [`Remediation`](crate::model::Remediation).
         pub fn build(self) -> crate::model::Remediation {
             crate::model::Remediation {
                 recommendation: self.recommendation,
@@ -72930,7 +72472,7 @@ pub mod remediation {
     }
 }
 impl Remediation {
-    /// Creates a new builder-style object to manufacture [`Remediation`](crate::model::Remediation)
+    /// Creates a new builder-style object to manufacture [`Remediation`](crate::model::Remediation).
     pub fn builder() -> crate::model::remediation::Builder {
         crate::model::remediation::Builder::default()
     }
@@ -72963,11 +72505,10 @@ impl std::fmt::Debug for Recommendation {
         formatter.finish()
     }
 }
-/// See [`Recommendation`](crate::model::Recommendation)
+/// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
 
-    /// A builder for [`Recommendation`](crate::model::Recommendation)
-    #[non_exhaustive]
+    /// A builder for [`Recommendation`](crate::model::Recommendation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -72994,7 +72535,7 @@ pub mod recommendation {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation)
+        /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation).
         pub fn build(self) -> crate::model::Recommendation {
             crate::model::Recommendation {
                 text: self.text,
@@ -73004,7 +72545,7 @@ pub mod recommendation {
     }
 }
 impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation)
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
     pub fn builder() -> crate::model::recommendation::Builder {
         crate::model::recommendation::Builder::default()
     }
@@ -73101,11 +72642,10 @@ impl std::fmt::Debug for Severity {
         formatter.finish()
     }
 }
-/// See [`Severity`](crate::model::Severity)
+/// See [`Severity`](crate::model::Severity).
 pub mod severity {
 
-    /// A builder for [`Severity`](crate::model::Severity)
-    #[non_exhaustive]
+    /// A builder for [`Severity`](crate::model::Severity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product: std::option::Option<f64>,
@@ -73205,7 +72745,7 @@ pub mod severity {
             self.original = input;
             self
         }
-        /// Consumes the builder and constructs a [`Severity`](crate::model::Severity)
+        /// Consumes the builder and constructs a [`Severity`](crate::model::Severity).
         pub fn build(self) -> crate::model::Severity {
             crate::model::Severity {
                 product: self.product.unwrap_or_default(),
@@ -73217,7 +72757,7 @@ pub mod severity {
     }
 }
 impl Severity {
-    /// Creates a new builder-style object to manufacture [`Severity`](crate::model::Severity)
+    /// Creates a new builder-style object to manufacture [`Severity`](crate::model::Severity).
     pub fn builder() -> crate::model::severity::Builder {
         crate::model::severity::Builder::default()
     }
@@ -73250,11 +72790,10 @@ impl std::fmt::Debug for SortCriterion {
         formatter.finish()
     }
 }
-/// See [`SortCriterion`](crate::model::SortCriterion)
+/// See [`SortCriterion`](crate::model::SortCriterion).
 pub mod sort_criterion {
 
-    /// A builder for [`SortCriterion`](crate::model::SortCriterion)
-    #[non_exhaustive]
+    /// A builder for [`SortCriterion`](crate::model::SortCriterion).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
@@ -73284,7 +72823,7 @@ pub mod sort_criterion {
             self.sort_order = input;
             self
         }
-        /// Consumes the builder and constructs a [`SortCriterion`](crate::model::SortCriterion)
+        /// Consumes the builder and constructs a [`SortCriterion`](crate::model::SortCriterion).
         pub fn build(self) -> crate::model::SortCriterion {
             crate::model::SortCriterion {
                 field: self.field,
@@ -73294,7 +72833,7 @@ pub mod sort_criterion {
     }
 }
 impl SortCriterion {
-    /// Creates a new builder-style object to manufacture [`SortCriterion`](crate::model::SortCriterion)
+    /// Creates a new builder-style object to manufacture [`SortCriterion`](crate::model::SortCriterion).
     pub fn builder() -> crate::model::sort_criterion::Builder {
         crate::model::sort_criterion::Builder::default()
     }
@@ -73428,11 +72967,10 @@ impl std::fmt::Debug for StandardsSubscription {
         formatter.finish()
     }
 }
-/// See [`StandardsSubscription`](crate::model::StandardsSubscription)
+/// See [`StandardsSubscription`](crate::model::StandardsSubscription).
 pub mod standards_subscription {
 
-    /// A builder for [`StandardsSubscription`](crate::model::StandardsSubscription)
-    #[non_exhaustive]
+    /// A builder for [`StandardsSubscription`](crate::model::StandardsSubscription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_subscription_arn: std::option::Option<std::string::String>,
@@ -73541,7 +73079,7 @@ pub mod standards_subscription {
             self.standards_status_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`StandardsSubscription`](crate::model::StandardsSubscription)
+        /// Consumes the builder and constructs a [`StandardsSubscription`](crate::model::StandardsSubscription).
         pub fn build(self) -> crate::model::StandardsSubscription {
             crate::model::StandardsSubscription {
                 standards_subscription_arn: self.standards_subscription_arn,
@@ -73554,7 +73092,7 @@ pub mod standards_subscription {
     }
 }
 impl StandardsSubscription {
-    /// Creates a new builder-style object to manufacture [`StandardsSubscription`](crate::model::StandardsSubscription)
+    /// Creates a new builder-style object to manufacture [`StandardsSubscription`](crate::model::StandardsSubscription).
     pub fn builder() -> crate::model::standards_subscription::Builder {
         crate::model::standards_subscription::Builder::default()
     }
@@ -73580,11 +73118,10 @@ impl std::fmt::Debug for StandardsStatusReason {
         formatter.finish()
     }
 }
-/// See [`StandardsStatusReason`](crate::model::StandardsStatusReason)
+/// See [`StandardsStatusReason`](crate::model::StandardsStatusReason).
 pub mod standards_status_reason {
 
-    /// A builder for [`StandardsStatusReason`](crate::model::StandardsStatusReason)
-    #[non_exhaustive]
+    /// A builder for [`StandardsStatusReason`](crate::model::StandardsStatusReason).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_reason_code: std::option::Option<crate::model::StatusReasonCode>,
@@ -73603,7 +73140,7 @@ pub mod standards_status_reason {
             self.status_reason_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`StandardsStatusReason`](crate::model::StandardsStatusReason)
+        /// Consumes the builder and constructs a [`StandardsStatusReason`](crate::model::StandardsStatusReason).
         pub fn build(self) -> crate::model::StandardsStatusReason {
             crate::model::StandardsStatusReason {
                 status_reason_code: self.status_reason_code,
@@ -73612,7 +73149,7 @@ pub mod standards_status_reason {
     }
 }
 impl StandardsStatusReason {
-    /// Creates a new builder-style object to manufacture [`StandardsStatusReason`](crate::model::StandardsStatusReason)
+    /// Creates a new builder-style object to manufacture [`StandardsStatusReason`](crate::model::StandardsStatusReason).
     pub fn builder() -> crate::model::standards_status_reason::Builder {
         crate::model::standards_status_reason::Builder::default()
     }
@@ -73829,11 +73366,10 @@ impl std::fmt::Debug for StandardsControl {
         formatter.finish()
     }
 }
-/// See [`StandardsControl`](crate::model::StandardsControl)
+/// See [`StandardsControl`](crate::model::StandardsControl).
 pub mod standards_control {
 
-    /// A builder for [`StandardsControl`](crate::model::StandardsControl)
-    #[non_exhaustive]
+    /// A builder for [`StandardsControl`](crate::model::StandardsControl).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_control_arn: std::option::Option<std::string::String>,
@@ -73977,7 +73513,7 @@ pub mod standards_control {
             self.related_requirements = input;
             self
         }
-        /// Consumes the builder and constructs a [`StandardsControl`](crate::model::StandardsControl)
+        /// Consumes the builder and constructs a [`StandardsControl`](crate::model::StandardsControl).
         pub fn build(self) -> crate::model::StandardsControl {
             crate::model::StandardsControl {
                 standards_control_arn: self.standards_control_arn,
@@ -73995,7 +73531,7 @@ pub mod standards_control {
     }
 }
 impl StandardsControl {
-    /// Creates a new builder-style object to manufacture [`StandardsControl`](crate::model::StandardsControl)
+    /// Creates a new builder-style object to manufacture [`StandardsControl`](crate::model::StandardsControl).
     pub fn builder() -> crate::model::standards_control::Builder {
         crate::model::standards_control::Builder::default()
     }
@@ -74107,11 +73643,10 @@ impl std::fmt::Debug for Standard {
         formatter.finish()
     }
 }
-/// See [`Standard`](crate::model::Standard)
+/// See [`Standard`](crate::model::Standard).
 pub mod standard {
 
-    /// A builder for [`Standard`](crate::model::Standard)
-    #[non_exhaustive]
+    /// A builder for [`Standard`](crate::model::Standard).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_arn: std::option::Option<std::string::String>,
@@ -74165,7 +73700,7 @@ pub mod standard {
             self.enabled_by_default = input;
             self
         }
-        /// Consumes the builder and constructs a [`Standard`](crate::model::Standard)
+        /// Consumes the builder and constructs a [`Standard`](crate::model::Standard).
         pub fn build(self) -> crate::model::Standard {
             crate::model::Standard {
                 standards_arn: self.standards_arn,
@@ -74177,7 +73712,7 @@ pub mod standard {
     }
 }
 impl Standard {
-    /// Creates a new builder-style object to manufacture [`Standard`](crate::model::Standard)
+    /// Creates a new builder-style object to manufacture [`Standard`](crate::model::Standard).
     pub fn builder() -> crate::model::standard::Builder {
         crate::model::standard::Builder::default()
     }
@@ -74274,11 +73809,10 @@ impl std::fmt::Debug for Product {
         formatter.finish()
     }
 }
-/// See [`Product`](crate::model::Product)
+/// See [`Product`](crate::model::Product).
 pub mod product {
 
-    /// A builder for [`Product`](crate::model::Product)
-    #[non_exhaustive]
+    /// A builder for [`Product`](crate::model::Product).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_arn: std::option::Option<std::string::String>,
@@ -74425,7 +73959,7 @@ pub mod product {
             self.product_subscription_resource_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`Product`](crate::model::Product)
+        /// Consumes the builder and constructs a [`Product`](crate::model::Product).
         pub fn build(self) -> crate::model::Product {
             crate::model::Product {
                 product_arn: self.product_arn,
@@ -74442,7 +73976,7 @@ pub mod product {
     }
 }
 impl Product {
-    /// Creates a new builder-style object to manufacture [`Product`](crate::model::Product)
+    /// Creates a new builder-style object to manufacture [`Product`](crate::model::Product).
     pub fn builder() -> crate::model::product::Builder {
         crate::model::product::Builder::default()
     }
@@ -74545,11 +74079,10 @@ impl std::fmt::Debug for ActionTarget {
         formatter.finish()
     }
 }
-/// See [`ActionTarget`](crate::model::ActionTarget)
+/// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
 
-    /// A builder for [`ActionTarget`](crate::model::ActionTarget)
-    #[non_exhaustive]
+    /// A builder for [`ActionTarget`](crate::model::ActionTarget).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_target_arn: std::option::Option<std::string::String>,
@@ -74590,7 +74123,7 @@ pub mod action_target {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActionTarget`](crate::model::ActionTarget)
+        /// Consumes the builder and constructs a [`ActionTarget`](crate::model::ActionTarget).
         pub fn build(self) -> crate::model::ActionTarget {
             crate::model::ActionTarget {
                 action_target_arn: self.action_target_arn,
@@ -74601,7 +74134,7 @@ pub mod action_target {
     }
 }
 impl ActionTarget {
-    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget)
+    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
     pub fn builder() -> crate::model::action_target::Builder {
         crate::model::action_target::Builder::default()
     }
@@ -74634,11 +74167,10 @@ impl std::fmt::Debug for AccountDetails {
         formatter.finish()
     }
 }
-/// See [`AccountDetails`](crate::model::AccountDetails)
+/// See [`AccountDetails`](crate::model::AccountDetails).
 pub mod account_details {
 
-    /// A builder for [`AccountDetails`](crate::model::AccountDetails)
-    #[non_exhaustive]
+    /// A builder for [`AccountDetails`](crate::model::AccountDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -74665,7 +74197,7 @@ pub mod account_details {
             self.email = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountDetails`](crate::model::AccountDetails)
+        /// Consumes the builder and constructs a [`AccountDetails`](crate::model::AccountDetails).
         pub fn build(self) -> crate::model::AccountDetails {
             crate::model::AccountDetails {
                 account_id: self.account_id,
@@ -74675,7 +74207,7 @@ pub mod account_details {
     }
 }
 impl AccountDetails {
-    /// Creates a new builder-style object to manufacture [`AccountDetails`](crate::model::AccountDetails)
+    /// Creates a new builder-style object to manufacture [`AccountDetails`](crate::model::AccountDetails).
     pub fn builder() -> crate::model::account_details::Builder {
         crate::model::account_details::Builder::default()
     }
@@ -74717,11 +74249,10 @@ impl std::fmt::Debug for BatchUpdateFindingsUnprocessedFinding {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding)
+/// See [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
 pub mod batch_update_findings_unprocessed_finding {
 
-    /// A builder for [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) finding_identifier:
@@ -74769,7 +74300,7 @@ pub mod batch_update_findings_unprocessed_finding {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding)
+        /// Consumes the builder and constructs a [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
         pub fn build(self) -> crate::model::BatchUpdateFindingsUnprocessedFinding {
             crate::model::BatchUpdateFindingsUnprocessedFinding {
                 finding_identifier: self.finding_identifier,
@@ -74780,7 +74311,7 @@ pub mod batch_update_findings_unprocessed_finding {
     }
 }
 impl BatchUpdateFindingsUnprocessedFinding {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateFindingsUnprocessedFinding`](crate::model::BatchUpdateFindingsUnprocessedFinding).
     pub fn builder() -> crate::model::batch_update_findings_unprocessed_finding::Builder {
         crate::model::batch_update_findings_unprocessed_finding::Builder::default()
     }
@@ -74813,11 +74344,10 @@ impl std::fmt::Debug for AwsSecurityFindingIdentifier {
         formatter.finish()
     }
 }
-/// See [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier)
+/// See [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
 pub mod aws_security_finding_identifier {
 
-    /// A builder for [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier)
-    #[non_exhaustive]
+    /// A builder for [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -74844,7 +74374,7 @@ pub mod aws_security_finding_identifier {
             self.product_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier)
+        /// Consumes the builder and constructs a [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
         pub fn build(self) -> crate::model::AwsSecurityFindingIdentifier {
             crate::model::AwsSecurityFindingIdentifier {
                 id: self.id,
@@ -74854,7 +74384,7 @@ pub mod aws_security_finding_identifier {
     }
 }
 impl AwsSecurityFindingIdentifier {
-    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier)
+    /// Creates a new builder-style object to manufacture [`AwsSecurityFindingIdentifier`](crate::model::AwsSecurityFindingIdentifier).
     pub fn builder() -> crate::model::aws_security_finding_identifier::Builder {
         crate::model::aws_security_finding_identifier::Builder::default()
     }
@@ -74902,11 +74432,10 @@ impl std::fmt::Debug for WorkflowUpdate {
         formatter.finish()
     }
 }
-/// See [`WorkflowUpdate`](crate::model::WorkflowUpdate)
+/// See [`WorkflowUpdate`](crate::model::WorkflowUpdate).
 pub mod workflow_update {
 
-    /// A builder for [`WorkflowUpdate`](crate::model::WorkflowUpdate)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowUpdate`](crate::model::WorkflowUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::WorkflowStatus>,
@@ -74947,7 +74476,7 @@ pub mod workflow_update {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowUpdate`](crate::model::WorkflowUpdate)
+        /// Consumes the builder and constructs a [`WorkflowUpdate`](crate::model::WorkflowUpdate).
         pub fn build(self) -> crate::model::WorkflowUpdate {
             crate::model::WorkflowUpdate {
                 status: self.status,
@@ -74956,7 +74485,7 @@ pub mod workflow_update {
     }
 }
 impl WorkflowUpdate {
-    /// Creates a new builder-style object to manufacture [`WorkflowUpdate`](crate::model::WorkflowUpdate)
+    /// Creates a new builder-style object to manufacture [`WorkflowUpdate`](crate::model::WorkflowUpdate).
     pub fn builder() -> crate::model::workflow_update::Builder {
         crate::model::workflow_update::Builder::default()
     }
@@ -75026,11 +74555,10 @@ impl std::fmt::Debug for SeverityUpdate {
         formatter.finish()
     }
 }
-/// See [`SeverityUpdate`](crate::model::SeverityUpdate)
+/// See [`SeverityUpdate`](crate::model::SeverityUpdate).
 pub mod severity_update {
 
-    /// A builder for [`SeverityUpdate`](crate::model::SeverityUpdate)
-    #[non_exhaustive]
+    /// A builder for [`SeverityUpdate`](crate::model::SeverityUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) normalized: std::option::Option<i32>,
@@ -75101,7 +74629,7 @@ pub mod severity_update {
             self.label = input;
             self
         }
-        /// Consumes the builder and constructs a [`SeverityUpdate`](crate::model::SeverityUpdate)
+        /// Consumes the builder and constructs a [`SeverityUpdate`](crate::model::SeverityUpdate).
         pub fn build(self) -> crate::model::SeverityUpdate {
             crate::model::SeverityUpdate {
                 normalized: self.normalized.unwrap_or_default(),
@@ -75112,7 +74640,7 @@ pub mod severity_update {
     }
 }
 impl SeverityUpdate {
-    /// Creates a new builder-style object to manufacture [`SeverityUpdate`](crate::model::SeverityUpdate)
+    /// Creates a new builder-style object to manufacture [`SeverityUpdate`](crate::model::SeverityUpdate).
     pub fn builder() -> crate::model::severity_update::Builder {
         crate::model::severity_update::Builder::default()
     }
@@ -75152,11 +74680,10 @@ impl std::fmt::Debug for ImportFindingsError {
         formatter.finish()
     }
 }
-/// See [`ImportFindingsError`](crate::model::ImportFindingsError)
+/// See [`ImportFindingsError`](crate::model::ImportFindingsError).
 pub mod import_findings_error {
 
-    /// A builder for [`ImportFindingsError`](crate::model::ImportFindingsError)
-    #[non_exhaustive]
+    /// A builder for [`ImportFindingsError`](crate::model::ImportFindingsError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -75197,7 +74724,7 @@ pub mod import_findings_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportFindingsError`](crate::model::ImportFindingsError)
+        /// Consumes the builder and constructs a [`ImportFindingsError`](crate::model::ImportFindingsError).
         pub fn build(self) -> crate::model::ImportFindingsError {
             crate::model::ImportFindingsError {
                 id: self.id,
@@ -75208,7 +74735,7 @@ pub mod import_findings_error {
     }
 }
 impl ImportFindingsError {
-    /// Creates a new builder-style object to manufacture [`ImportFindingsError`](crate::model::ImportFindingsError)
+    /// Creates a new builder-style object to manufacture [`ImportFindingsError`](crate::model::ImportFindingsError).
     pub fn builder() -> crate::model::import_findings_error::Builder {
         crate::model::import_findings_error::Builder::default()
     }
@@ -75245,11 +74772,10 @@ impl std::fmt::Debug for StandardsSubscriptionRequest {
         formatter.finish()
     }
 }
-/// See [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest)
+/// See [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
 pub mod standards_subscription_request {
 
-    /// A builder for [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest)
-    #[non_exhaustive]
+    /// A builder for [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) standards_arn: std::option::Option<std::string::String>,
@@ -75296,7 +74822,7 @@ pub mod standards_subscription_request {
             self.standards_input = input;
             self
         }
-        /// Consumes the builder and constructs a [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest)
+        /// Consumes the builder and constructs a [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
         pub fn build(self) -> crate::model::StandardsSubscriptionRequest {
             crate::model::StandardsSubscriptionRequest {
                 standards_arn: self.standards_arn,
@@ -75306,7 +74832,7 @@ pub mod standards_subscription_request {
     }
 }
 impl StandardsSubscriptionRequest {
-    /// Creates a new builder-style object to manufacture [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest)
+    /// Creates a new builder-style object to manufacture [`StandardsSubscriptionRequest`](crate::model::StandardsSubscriptionRequest).
     pub fn builder() -> crate::model::standards_subscription_request::Builder {
         crate::model::standards_subscription_request::Builder::default()
     }

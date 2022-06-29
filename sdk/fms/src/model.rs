@@ -27,11 +27,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -68,7 +67,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -142,11 +141,10 @@ impl std::fmt::Debug for ProtocolsListData {
         formatter.finish()
     }
 }
-/// See [`ProtocolsListData`](crate::model::ProtocolsListData)
+/// See [`ProtocolsListData`](crate::model::ProtocolsListData).
 pub mod protocols_list_data {
 
-    /// A builder for [`ProtocolsListData`](crate::model::ProtocolsListData)
-    #[non_exhaustive]
+    /// A builder for [`ProtocolsListData`](crate::model::ProtocolsListData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
@@ -263,7 +261,7 @@ pub mod protocols_list_data {
             self.previous_protocols_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProtocolsListData`](crate::model::ProtocolsListData)
+        /// Consumes the builder and constructs a [`ProtocolsListData`](crate::model::ProtocolsListData).
         pub fn build(self) -> crate::model::ProtocolsListData {
             crate::model::ProtocolsListData {
                 list_id: self.list_id,
@@ -278,7 +276,7 @@ pub mod protocols_list_data {
     }
 }
 impl ProtocolsListData {
-    /// Creates a new builder-style object to manufacture [`ProtocolsListData`](crate::model::ProtocolsListData)
+    /// Creates a new builder-style object to manufacture [`ProtocolsListData`](crate::model::ProtocolsListData).
     pub fn builder() -> crate::model::protocols_list_data::Builder {
         crate::model::protocols_list_data::Builder::default()
     }
@@ -447,11 +445,10 @@ impl std::fmt::Debug for Policy {
         formatter.finish()
     }
 }
-/// See [`Policy`](crate::model::Policy)
+/// See [`Policy`](crate::model::Policy).
 pub mod policy {
 
-    /// A builder for [`Policy`](crate::model::Policy)
-    #[non_exhaustive]
+    /// A builder for [`Policy`](crate::model::Policy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -702,7 +699,7 @@ pub mod policy {
             self.exclude_map = input;
             self
         }
-        /// Consumes the builder and constructs a [`Policy`](crate::model::Policy)
+        /// Consumes the builder and constructs a [`Policy`](crate::model::Policy).
         pub fn build(self) -> crate::model::Policy {
             crate::model::Policy {
                 policy_id: self.policy_id,
@@ -724,7 +721,7 @@ pub mod policy {
     }
 }
 impl Policy {
-    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy)
+    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
     pub fn builder() -> crate::model::policy::Builder {
         crate::model::policy::Builder::default()
     }
@@ -812,11 +809,10 @@ impl std::fmt::Debug for ResourceTag {
         formatter.finish()
     }
 }
-/// See [`ResourceTag`](crate::model::ResourceTag)
+/// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
-    /// A builder for [`ResourceTag`](crate::model::ResourceTag)
-    #[non_exhaustive]
+    /// A builder for [`ResourceTag`](crate::model::ResourceTag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -843,7 +839,7 @@ pub mod resource_tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag)
+        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag).
         pub fn build(self) -> crate::model::ResourceTag {
             crate::model::ResourceTag {
                 key: self.key,
@@ -853,7 +849,7 @@ pub mod resource_tag {
     }
 }
 impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag)
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
     pub fn builder() -> crate::model::resource_tag::Builder {
         crate::model::resource_tag::Builder::default()
     }
@@ -935,11 +931,10 @@ impl std::fmt::Debug for SecurityServicePolicyData {
         formatter.finish()
     }
 }
-/// See [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData)
+/// See [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
 pub mod security_service_policy_data {
 
-    /// A builder for [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData)
-    #[non_exhaustive]
+    /// A builder for [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SecurityServiceType>,
@@ -1028,7 +1023,7 @@ pub mod security_service_policy_data {
             self.policy_option = input;
             self
         }
-        /// Consumes the builder and constructs a [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData)
+        /// Consumes the builder and constructs a [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
         pub fn build(self) -> crate::model::SecurityServicePolicyData {
             crate::model::SecurityServicePolicyData {
                 r#type: self.r#type,
@@ -1039,7 +1034,7 @@ pub mod security_service_policy_data {
     }
 }
 impl SecurityServicePolicyData {
-    /// Creates a new builder-style object to manufacture [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData)
+    /// Creates a new builder-style object to manufacture [`SecurityServicePolicyData`](crate::model::SecurityServicePolicyData).
     pub fn builder() -> crate::model::security_service_policy_data::Builder {
         crate::model::security_service_policy_data::Builder::default()
     }
@@ -1079,11 +1074,10 @@ impl std::fmt::Debug for PolicyOption {
         formatter.finish()
     }
 }
-/// See [`PolicyOption`](crate::model::PolicyOption)
+/// See [`PolicyOption`](crate::model::PolicyOption).
 pub mod policy_option {
 
-    /// A builder for [`PolicyOption`](crate::model::PolicyOption)
-    #[non_exhaustive]
+    /// A builder for [`PolicyOption`](crate::model::PolicyOption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_firewall_policy:
@@ -1124,7 +1118,7 @@ pub mod policy_option {
             self.third_party_firewall_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyOption`](crate::model::PolicyOption)
+        /// Consumes the builder and constructs a [`PolicyOption`](crate::model::PolicyOption).
         pub fn build(self) -> crate::model::PolicyOption {
             crate::model::PolicyOption {
                 network_firewall_policy: self.network_firewall_policy,
@@ -1134,7 +1128,7 @@ pub mod policy_option {
     }
 }
 impl PolicyOption {
-    /// Creates a new builder-style object to manufacture [`PolicyOption`](crate::model::PolicyOption)
+    /// Creates a new builder-style object to manufacture [`PolicyOption`](crate::model::PolicyOption).
     pub fn builder() -> crate::model::policy_option::Builder {
         crate::model::policy_option::Builder::default()
     }
@@ -1162,11 +1156,10 @@ impl std::fmt::Debug for ThirdPartyFirewallPolicy {
         formatter.finish()
     }
 }
-/// See [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
+/// See [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
 pub mod third_party_firewall_policy {
 
-    /// A builder for [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
-    #[non_exhaustive]
+    /// A builder for [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_deployment_model:
@@ -1189,7 +1182,7 @@ pub mod third_party_firewall_policy {
             self.firewall_deployment_model = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
         pub fn build(self) -> crate::model::ThirdPartyFirewallPolicy {
             crate::model::ThirdPartyFirewallPolicy {
                 firewall_deployment_model: self.firewall_deployment_model,
@@ -1198,7 +1191,7 @@ pub mod third_party_firewall_policy {
     }
 }
 impl ThirdPartyFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy)
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallPolicy`](crate::model::ThirdPartyFirewallPolicy).
     pub fn builder() -> crate::model::third_party_firewall_policy::Builder {
         crate::model::third_party_firewall_policy::Builder::default()
     }
@@ -1281,11 +1274,10 @@ impl std::fmt::Debug for NetworkFirewallPolicy {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy)
+/// See [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
 pub mod network_firewall_policy {
 
-    /// A builder for [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_deployment_model:
@@ -1308,7 +1300,7 @@ pub mod network_firewall_policy {
             self.firewall_deployment_model = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy)
+        /// Consumes the builder and constructs a [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
         pub fn build(self) -> crate::model::NetworkFirewallPolicy {
             crate::model::NetworkFirewallPolicy {
                 firewall_deployment_model: self.firewall_deployment_model,
@@ -1317,7 +1309,7 @@ pub mod network_firewall_policy {
     }
 }
 impl NetworkFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicy`](crate::model::NetworkFirewallPolicy).
     pub fn builder() -> crate::model::network_firewall_policy::Builder {
         crate::model::network_firewall_policy::Builder::default()
     }
@@ -1484,11 +1476,10 @@ impl std::fmt::Debug for AppsListData {
         formatter.finish()
     }
 }
-/// See [`AppsListData`](crate::model::AppsListData)
+/// See [`AppsListData`](crate::model::AppsListData).
 pub mod apps_list_data {
 
-    /// A builder for [`AppsListData`](crate::model::AppsListData)
-    #[non_exhaustive]
+    /// A builder for [`AppsListData`](crate::model::AppsListData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_id: std::option::Option<std::string::String>,
@@ -1605,7 +1596,7 @@ pub mod apps_list_data {
             self.previous_apps_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppsListData`](crate::model::AppsListData)
+        /// Consumes the builder and constructs a [`AppsListData`](crate::model::AppsListData).
         pub fn build(self) -> crate::model::AppsListData {
             crate::model::AppsListData {
                 list_id: self.list_id,
@@ -1620,7 +1611,7 @@ pub mod apps_list_data {
     }
 }
 impl AppsListData {
-    /// Creates a new builder-style object to manufacture [`AppsListData`](crate::model::AppsListData)
+    /// Creates a new builder-style object to manufacture [`AppsListData`](crate::model::AppsListData).
     pub fn builder() -> crate::model::apps_list_data::Builder {
         crate::model::apps_list_data::Builder::default()
     }
@@ -1660,11 +1651,10 @@ impl std::fmt::Debug for App {
         formatter.finish()
     }
 }
-/// See [`App`](crate::model::App)
+/// See [`App`](crate::model::App).
 pub mod app {
 
-    /// A builder for [`App`](crate::model::App)
-    #[non_exhaustive]
+    /// A builder for [`App`](crate::model::App).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_name: std::option::Option<std::string::String>,
@@ -1702,7 +1692,7 @@ pub mod app {
             self.port = input;
             self
         }
-        /// Consumes the builder and constructs a [`App`](crate::model::App)
+        /// Consumes the builder and constructs a [`App`](crate::model::App).
         pub fn build(self) -> crate::model::App {
             crate::model::App {
                 app_name: self.app_name,
@@ -1713,7 +1703,7 @@ pub mod app {
     }
 }
 impl App {
-    /// Creates a new builder-style object to manufacture [`App`](crate::model::App)
+    /// Creates a new builder-style object to manufacture [`App`](crate::model::App).
     pub fn builder() -> crate::model::app::Builder {
         crate::model::app::Builder::default()
     }
@@ -1746,11 +1736,10 @@ impl std::fmt::Debug for ThirdPartyFirewallFirewallPolicy {
         formatter.finish()
     }
 }
-/// See [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
+/// See [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
 pub mod third_party_firewall_firewall_policy {
 
-    /// A builder for [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
-    #[non_exhaustive]
+    /// A builder for [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_id: std::option::Option<std::string::String>,
@@ -1783,7 +1772,7 @@ pub mod third_party_firewall_firewall_policy {
             self.firewall_policy_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
         pub fn build(self) -> crate::model::ThirdPartyFirewallFirewallPolicy {
             crate::model::ThirdPartyFirewallFirewallPolicy {
                 firewall_policy_id: self.firewall_policy_id,
@@ -1793,7 +1782,7 @@ pub mod third_party_firewall_firewall_policy {
     }
 }
 impl ThirdPartyFirewallFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy)
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallFirewallPolicy`](crate::model::ThirdPartyFirewallFirewallPolicy).
     pub fn builder() -> crate::model::third_party_firewall_firewall_policy::Builder {
         crate::model::third_party_firewall_firewall_policy::Builder::default()
     }
@@ -1891,11 +1880,10 @@ impl std::fmt::Debug for ProtocolsListDataSummary {
         formatter.finish()
     }
 }
-/// See [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary)
+/// See [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
 pub mod protocols_list_data_summary {
 
-    /// A builder for [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary)
-    #[non_exhaustive]
+    /// A builder for [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_arn: std::option::Option<std::string::String>,
@@ -1953,7 +1941,7 @@ pub mod protocols_list_data_summary {
             self.protocols_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary)
+        /// Consumes the builder and constructs a [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
         pub fn build(self) -> crate::model::ProtocolsListDataSummary {
             crate::model::ProtocolsListDataSummary {
                 list_arn: self.list_arn,
@@ -1965,7 +1953,7 @@ pub mod protocols_list_data_summary {
     }
 }
 impl ProtocolsListDataSummary {
-    /// Creates a new builder-style object to manufacture [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary)
+    /// Creates a new builder-style object to manufacture [`ProtocolsListDataSummary`](crate::model::ProtocolsListDataSummary).
     pub fn builder() -> crate::model::protocols_list_data_summary::Builder {
         crate::model::protocols_list_data_summary::Builder::default()
     }
@@ -2040,11 +2028,10 @@ impl std::fmt::Debug for PolicySummary {
         formatter.finish()
     }
 }
-/// See [`PolicySummary`](crate::model::PolicySummary)
+/// See [`PolicySummary`](crate::model::PolicySummary).
 pub mod policy_summary {
 
-    /// A builder for [`PolicySummary`](crate::model::PolicySummary)
-    #[non_exhaustive]
+    /// A builder for [`PolicySummary`](crate::model::PolicySummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
@@ -2139,7 +2126,7 @@ pub mod policy_summary {
             self.delete_unused_fm_managed_resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicySummary`](crate::model::PolicySummary)
+        /// Consumes the builder and constructs a [`PolicySummary`](crate::model::PolicySummary).
         pub fn build(self) -> crate::model::PolicySummary {
             crate::model::PolicySummary {
                 policy_arn: self.policy_arn,
@@ -2156,7 +2143,7 @@ pub mod policy_summary {
     }
 }
 impl PolicySummary {
-    /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::model::PolicySummary)
+    /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::model::PolicySummary).
     pub fn builder() -> crate::model::policy_summary::Builder {
         crate::model::policy_summary::Builder::default()
     }
@@ -2230,11 +2217,10 @@ impl std::fmt::Debug for PolicyComplianceStatus {
         formatter.finish()
     }
 }
-/// See [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus)
+/// See [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
 pub mod policy_compliance_status {
 
-    /// A builder for [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus)
-    #[non_exhaustive]
+    /// A builder for [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_owner: std::option::Option<std::string::String>,
@@ -2349,7 +2335,7 @@ pub mod policy_compliance_status {
             self.issue_info_map = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus)
+        /// Consumes the builder and constructs a [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
         pub fn build(self) -> crate::model::PolicyComplianceStatus {
             crate::model::PolicyComplianceStatus {
                 policy_owner: self.policy_owner,
@@ -2364,7 +2350,7 @@ pub mod policy_compliance_status {
     }
 }
 impl PolicyComplianceStatus {
-    /// Creates a new builder-style object to manufacture [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus)
+    /// Creates a new builder-style object to manufacture [`PolicyComplianceStatus`](crate::model::PolicyComplianceStatus).
     pub fn builder() -> crate::model::policy_compliance_status::Builder {
         crate::model::policy_compliance_status::Builder::default()
     }
@@ -2469,11 +2455,10 @@ impl std::fmt::Debug for EvaluationResult {
         formatter.finish()
     }
 }
-/// See [`EvaluationResult`](crate::model::EvaluationResult)
+/// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
 
-    /// A builder for [`EvaluationResult`](crate::model::EvaluationResult)
-    #[non_exhaustive]
+    /// A builder for [`EvaluationResult`](crate::model::EvaluationResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compliance_status: std::option::Option<crate::model::PolicyComplianceStatusType>,
@@ -2517,7 +2502,7 @@ pub mod evaluation_result {
             self.evaluation_limit_exceeded = input;
             self
         }
-        /// Consumes the builder and constructs a [`EvaluationResult`](crate::model::EvaluationResult)
+        /// Consumes the builder and constructs a [`EvaluationResult`](crate::model::EvaluationResult).
         pub fn build(self) -> crate::model::EvaluationResult {
             crate::model::EvaluationResult {
                 compliance_status: self.compliance_status,
@@ -2528,7 +2513,7 @@ pub mod evaluation_result {
     }
 }
 impl EvaluationResult {
-    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult)
+    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
     pub fn builder() -> crate::model::evaluation_result::Builder {
         crate::model::evaluation_result::Builder::default()
     }
@@ -2630,11 +2615,10 @@ impl std::fmt::Debug for AppsListDataSummary {
         formatter.finish()
     }
 }
-/// See [`AppsListDataSummary`](crate::model::AppsListDataSummary)
+/// See [`AppsListDataSummary`](crate::model::AppsListDataSummary).
 pub mod apps_list_data_summary {
 
-    /// A builder for [`AppsListDataSummary`](crate::model::AppsListDataSummary)
-    #[non_exhaustive]
+    /// A builder for [`AppsListDataSummary`](crate::model::AppsListDataSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_arn: std::option::Option<std::string::String>,
@@ -2692,7 +2676,7 @@ pub mod apps_list_data_summary {
             self.apps_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`AppsListDataSummary`](crate::model::AppsListDataSummary)
+        /// Consumes the builder and constructs a [`AppsListDataSummary`](crate::model::AppsListDataSummary).
         pub fn build(self) -> crate::model::AppsListDataSummary {
             crate::model::AppsListDataSummary {
                 list_arn: self.list_arn,
@@ -2704,7 +2688,7 @@ pub mod apps_list_data_summary {
     }
 }
 impl AppsListDataSummary {
-    /// Creates a new builder-style object to manufacture [`AppsListDataSummary`](crate::model::AppsListDataSummary)
+    /// Creates a new builder-style object to manufacture [`AppsListDataSummary`](crate::model::AppsListDataSummary).
     pub fn builder() -> crate::model::apps_list_data_summary::Builder {
         crate::model::apps_list_data_summary::Builder::default()
     }
@@ -2772,11 +2756,10 @@ impl std::fmt::Debug for ViolationDetail {
         formatter.finish()
     }
 }
-/// See [`ViolationDetail`](crate::model::ViolationDetail)
+/// See [`ViolationDetail`](crate::model::ViolationDetail).
 pub mod violation_detail {
 
-    /// A builder for [`ViolationDetail`](crate::model::ViolationDetail)
-    #[non_exhaustive]
+    /// A builder for [`ViolationDetail`](crate::model::ViolationDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -2886,7 +2869,7 @@ pub mod violation_detail {
             self.resource_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`ViolationDetail`](crate::model::ViolationDetail)
+        /// Consumes the builder and constructs a [`ViolationDetail`](crate::model::ViolationDetail).
         pub fn build(self) -> crate::model::ViolationDetail {
             crate::model::ViolationDetail {
                 policy_id: self.policy_id,
@@ -2901,7 +2884,7 @@ pub mod violation_detail {
     }
 }
 impl ViolationDetail {
-    /// Creates a new builder-style object to manufacture [`ViolationDetail`](crate::model::ViolationDetail)
+    /// Creates a new builder-style object to manufacture [`ViolationDetail`](crate::model::ViolationDetail).
     pub fn builder() -> crate::model::violation_detail::Builder {
         crate::model::violation_detail::Builder::default()
     }
@@ -3227,11 +3210,10 @@ impl std::fmt::Debug for ResourceViolation {
         formatter.finish()
     }
 }
-/// See [`ResourceViolation`](crate::model::ResourceViolation)
+/// See [`ResourceViolation`](crate::model::ResourceViolation).
 pub mod resource_violation {
 
-    /// A builder for [`ResourceViolation`](crate::model::ResourceViolation)
-    #[non_exhaustive]
+    /// A builder for [`ResourceViolation`](crate::model::ResourceViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_vpc_security_group_violation:
@@ -3662,7 +3644,7 @@ pub mod resource_violation {
             self.firewall_subnet_missing_vpc_endpoint_violation = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceViolation`](crate::model::ResourceViolation)
+        /// Consumes the builder and constructs a [`ResourceViolation`](crate::model::ResourceViolation).
         pub fn build(self) -> crate::model::ResourceViolation {
             crate::model::ResourceViolation {
                 aws_vpc_security_group_violation: self.aws_vpc_security_group_violation,
@@ -3711,7 +3693,7 @@ pub mod resource_violation {
     }
 }
 impl ResourceViolation {
-    /// Creates a new builder-style object to manufacture [`ResourceViolation`](crate::model::ResourceViolation)
+    /// Creates a new builder-style object to manufacture [`ResourceViolation`](crate::model::ResourceViolation).
     pub fn builder() -> crate::model::resource_violation::Builder {
         crate::model::resource_violation::Builder::default()
     }
@@ -3761,11 +3743,10 @@ impl std::fmt::Debug for FirewallSubnetMissingVpcEndpointViolation {
         formatter.finish()
     }
 }
-/// See [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
+/// See [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
 pub mod firewall_subnet_missing_vpc_endpoint_violation {
 
-    /// A builder for [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
-    #[non_exhaustive]
+    /// A builder for [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
@@ -3826,7 +3807,7 @@ pub mod firewall_subnet_missing_vpc_endpoint_violation {
             self.subnet_availability_zone_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
+        /// Consumes the builder and constructs a [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
         pub fn build(self) -> crate::model::FirewallSubnetMissingVpcEndpointViolation {
             crate::model::FirewallSubnetMissingVpcEndpointViolation {
                 firewall_subnet_id: self.firewall_subnet_id,
@@ -3838,7 +3819,7 @@ pub mod firewall_subnet_missing_vpc_endpoint_violation {
     }
 }
 impl FirewallSubnetMissingVpcEndpointViolation {
-    /// Creates a new builder-style object to manufacture [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation)
+    /// Creates a new builder-style object to manufacture [`FirewallSubnetMissingVpcEndpointViolation`](crate::model::FirewallSubnetMissingVpcEndpointViolation).
     pub fn builder() -> crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder {
         crate::model::firewall_subnet_missing_vpc_endpoint_violation::Builder::default()
     }
@@ -3892,11 +3873,10 @@ impl std::fmt::Debug for ThirdPartyFirewallMissingExpectedRouteTableViolation {
         formatter.finish()
     }
 }
-/// See [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
+/// See [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
 pub mod third_party_firewall_missing_expected_route_table_violation {
 
-    /// A builder for [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
-    #[non_exhaustive]
+    /// A builder for [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -3968,7 +3948,7 @@ pub mod third_party_firewall_missing_expected_route_table_violation {
             self.expected_route_table = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
         pub fn build(self) -> crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation {
             crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation {
                 violation_target: self.violation_target,
@@ -3981,7 +3961,7 @@ pub mod third_party_firewall_missing_expected_route_table_violation {
     }
 }
 impl ThirdPartyFirewallMissingExpectedRouteTableViolation {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation)
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingExpectedRouteTableViolation`](crate::model::ThirdPartyFirewallMissingExpectedRouteTableViolation).
     pub fn builder(
     ) -> crate::model::third_party_firewall_missing_expected_route_table_violation::Builder {
         crate::model::third_party_firewall_missing_expected_route_table_violation::Builder::default(
@@ -4030,11 +4010,10 @@ impl std::fmt::Debug for ThirdPartyFirewallMissingSubnetViolation {
         formatter.finish()
     }
 }
-/// See [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
+/// See [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
 pub mod third_party_firewall_missing_subnet_violation {
 
-    /// A builder for [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
-    #[non_exhaustive]
+    /// A builder for [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -4092,7 +4071,7 @@ pub mod third_party_firewall_missing_subnet_violation {
             self.target_violation_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
         pub fn build(self) -> crate::model::ThirdPartyFirewallMissingSubnetViolation {
             crate::model::ThirdPartyFirewallMissingSubnetViolation {
                 violation_target: self.violation_target,
@@ -4104,7 +4083,7 @@ pub mod third_party_firewall_missing_subnet_violation {
     }
 }
 impl ThirdPartyFirewallMissingSubnetViolation {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation)
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingSubnetViolation`](crate::model::ThirdPartyFirewallMissingSubnetViolation).
     pub fn builder() -> crate::model::third_party_firewall_missing_subnet_violation::Builder {
         crate::model::third_party_firewall_missing_subnet_violation::Builder::default()
     }
@@ -4151,11 +4130,10 @@ impl std::fmt::Debug for ThirdPartyFirewallMissingFirewallViolation {
         formatter.finish()
     }
 }
-/// See [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
+/// See [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
 pub mod third_party_firewall_missing_firewall_violation {
 
-    /// A builder for [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
-    #[non_exhaustive]
+    /// A builder for [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -4213,7 +4191,7 @@ pub mod third_party_firewall_missing_firewall_violation {
             self.target_violation_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
+        /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
         pub fn build(self) -> crate::model::ThirdPartyFirewallMissingFirewallViolation {
             crate::model::ThirdPartyFirewallMissingFirewallViolation {
                 violation_target: self.violation_target,
@@ -4225,7 +4203,7 @@ pub mod third_party_firewall_missing_firewall_violation {
     }
 }
 impl ThirdPartyFirewallMissingFirewallViolation {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation)
+    /// Creates a new builder-style object to manufacture [`ThirdPartyFirewallMissingFirewallViolation`](crate::model::ThirdPartyFirewallMissingFirewallViolation).
     pub fn builder() -> crate::model::third_party_firewall_missing_firewall_violation::Builder {
         crate::model::third_party_firewall_missing_firewall_violation::Builder::default()
     }
@@ -4337,11 +4315,10 @@ impl std::fmt::Debug for RouteHasOutOfScopeEndpointViolation {
         formatter.finish()
     }
 }
-/// See [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation)
+/// See [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
 pub mod route_has_out_of_scope_endpoint_violation {
 
-    /// A builder for [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation)
-    #[non_exhaustive]
+    /// A builder for [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -4535,7 +4512,7 @@ pub mod route_has_out_of_scope_endpoint_violation {
             self.internet_gateway_routes = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation)
+        /// Consumes the builder and constructs a [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
         pub fn build(self) -> crate::model::RouteHasOutOfScopeEndpointViolation {
             crate::model::RouteHasOutOfScopeEndpointViolation {
                 subnet_id: self.subnet_id,
@@ -4555,7 +4532,7 @@ pub mod route_has_out_of_scope_endpoint_violation {
     }
 }
 impl RouteHasOutOfScopeEndpointViolation {
-    /// Creates a new builder-style object to manufacture [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation)
+    /// Creates a new builder-style object to manufacture [`RouteHasOutOfScopeEndpointViolation`](crate::model::RouteHasOutOfScopeEndpointViolation).
     pub fn builder() -> crate::model::route_has_out_of_scope_endpoint_violation::Builder {
         crate::model::route_has_out_of_scope_endpoint_violation::Builder::default()
     }
@@ -4602,11 +4579,10 @@ impl std::fmt::Debug for Route {
         formatter.finish()
     }
 }
-/// See [`Route`](crate::model::Route)
+/// See [`Route`](crate::model::Route).
 pub mod route {
 
-    /// A builder for [`Route`](crate::model::Route)
-    #[non_exhaustive]
+    /// A builder for [`Route`](crate::model::Route).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_type: std::option::Option<crate::model::DestinationType>,
@@ -4661,7 +4637,7 @@ pub mod route {
             self.target = input;
             self
         }
-        /// Consumes the builder and constructs a [`Route`](crate::model::Route)
+        /// Consumes the builder and constructs a [`Route`](crate::model::Route).
         pub fn build(self) -> crate::model::Route {
             crate::model::Route {
                 destination_type: self.destination_type,
@@ -4673,7 +4649,7 @@ pub mod route {
     }
 }
 impl Route {
-    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route)
+    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route).
     pub fn builder() -> crate::model::route::Builder {
         crate::model::route::Builder::default()
     }
@@ -4887,11 +4863,10 @@ impl std::fmt::Debug for FirewallSubnetIsOutOfScopeViolation {
         formatter.finish()
     }
 }
-/// See [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation)
+/// See [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
 pub mod firewall_subnet_is_out_of_scope_violation {
 
-    /// A builder for [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation)
-    #[non_exhaustive]
+    /// A builder for [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
@@ -4966,7 +4941,7 @@ pub mod firewall_subnet_is_out_of_scope_violation {
             self.vpc_endpoint_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation)
+        /// Consumes the builder and constructs a [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
         pub fn build(self) -> crate::model::FirewallSubnetIsOutOfScopeViolation {
             crate::model::FirewallSubnetIsOutOfScopeViolation {
                 firewall_subnet_id: self.firewall_subnet_id,
@@ -4979,7 +4954,7 @@ pub mod firewall_subnet_is_out_of_scope_violation {
     }
 }
 impl FirewallSubnetIsOutOfScopeViolation {
-    /// Creates a new builder-style object to manufacture [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation)
+    /// Creates a new builder-style object to manufacture [`FirewallSubnetIsOutOfScopeViolation`](crate::model::FirewallSubnetIsOutOfScopeViolation).
     pub fn builder() -> crate::model::firewall_subnet_is_out_of_scope_violation::Builder {
         crate::model::firewall_subnet_is_out_of_scope_violation::Builder::default()
     }
@@ -5012,11 +4987,10 @@ impl std::fmt::Debug for PossibleRemediationActions {
         formatter.finish()
     }
 }
-/// See [`PossibleRemediationActions`](crate::model::PossibleRemediationActions)
+/// See [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
 pub mod possible_remediation_actions {
 
-    /// A builder for [`PossibleRemediationActions`](crate::model::PossibleRemediationActions)
-    #[non_exhaustive]
+    /// A builder for [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5053,7 +5027,7 @@ pub mod possible_remediation_actions {
             self.actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`PossibleRemediationActions`](crate::model::PossibleRemediationActions)
+        /// Consumes the builder and constructs a [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
         pub fn build(self) -> crate::model::PossibleRemediationActions {
             crate::model::PossibleRemediationActions {
                 description: self.description,
@@ -5063,7 +5037,7 @@ pub mod possible_remediation_actions {
     }
 }
 impl PossibleRemediationActions {
-    /// Creates a new builder-style object to manufacture [`PossibleRemediationActions`](crate::model::PossibleRemediationActions)
+    /// Creates a new builder-style object to manufacture [`PossibleRemediationActions`](crate::model::PossibleRemediationActions).
     pub fn builder() -> crate::model::possible_remediation_actions::Builder {
         crate::model::possible_remediation_actions::Builder::default()
     }
@@ -5109,11 +5083,10 @@ impl std::fmt::Debug for PossibleRemediationAction {
         formatter.finish()
     }
 }
-/// See [`PossibleRemediationAction`](crate::model::PossibleRemediationAction)
+/// See [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
 pub mod possible_remediation_action {
 
-    /// A builder for [`PossibleRemediationAction`](crate::model::PossibleRemediationAction)
-    #[non_exhaustive]
+    /// A builder for [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5164,7 +5137,7 @@ pub mod possible_remediation_action {
             self.is_default_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`PossibleRemediationAction`](crate::model::PossibleRemediationAction)
+        /// Consumes the builder and constructs a [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
         pub fn build(self) -> crate::model::PossibleRemediationAction {
             crate::model::PossibleRemediationAction {
                 description: self.description,
@@ -5175,7 +5148,7 @@ pub mod possible_remediation_action {
     }
 }
 impl PossibleRemediationAction {
-    /// Creates a new builder-style object to manufacture [`PossibleRemediationAction`](crate::model::PossibleRemediationAction)
+    /// Creates a new builder-style object to manufacture [`PossibleRemediationAction`](crate::model::PossibleRemediationAction).
     pub fn builder() -> crate::model::possible_remediation_action::Builder {
         crate::model::possible_remediation_action::Builder::default()
     }
@@ -5208,11 +5181,10 @@ impl std::fmt::Debug for RemediationActionWithOrder {
         formatter.finish()
     }
 }
-/// See [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder)
+/// See [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
 pub mod remediation_action_with_order {
 
-    /// A builder for [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder)
-    #[non_exhaustive]
+    /// A builder for [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remediation_action: std::option::Option<crate::model::RemediationAction>,
@@ -5242,7 +5214,7 @@ pub mod remediation_action_with_order {
             self.order = input;
             self
         }
-        /// Consumes the builder and constructs a [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder)
+        /// Consumes the builder and constructs a [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
         pub fn build(self) -> crate::model::RemediationActionWithOrder {
             crate::model::RemediationActionWithOrder {
                 remediation_action: self.remediation_action,
@@ -5252,7 +5224,7 @@ pub mod remediation_action_with_order {
     }
 }
 impl RemediationActionWithOrder {
-    /// Creates a new builder-style object to manufacture [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder)
+    /// Creates a new builder-style object to manufacture [`RemediationActionWithOrder`](crate::model::RemediationActionWithOrder).
     pub fn builder() -> crate::model::remediation_action_with_order::Builder {
         crate::model::remediation_action_with_order::Builder::default()
     }
@@ -5369,11 +5341,10 @@ impl std::fmt::Debug for RemediationAction {
         formatter.finish()
     }
 }
-/// See [`RemediationAction`](crate::model::RemediationAction)
+/// See [`RemediationAction`](crate::model::RemediationAction).
 pub mod remediation_action {
 
-    /// A builder for [`RemediationAction`](crate::model::RemediationAction)
-    #[non_exhaustive]
+    /// A builder for [`RemediationAction`](crate::model::RemediationAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5531,7 +5502,7 @@ pub mod remediation_action {
             self.fms_policy_update_firewall_creation_config_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`RemediationAction`](crate::model::RemediationAction)
+        /// Consumes the builder and constructs a [`RemediationAction`](crate::model::RemediationAction).
         pub fn build(self) -> crate::model::RemediationAction {
             crate::model::RemediationAction {
                 description: self.description,
@@ -5550,7 +5521,7 @@ pub mod remediation_action {
     }
 }
 impl RemediationAction {
-    /// Creates a new builder-style object to manufacture [`RemediationAction`](crate::model::RemediationAction)
+    /// Creates a new builder-style object to manufacture [`RemediationAction`](crate::model::RemediationAction).
     pub fn builder() -> crate::model::remediation_action::Builder {
         crate::model::remediation_action::Builder::default()
     }
@@ -5583,11 +5554,10 @@ impl std::fmt::Debug for FmsPolicyUpdateFirewallCreationConfigAction {
         formatter.finish()
     }
 }
-/// See [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction)
+/// See [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
 pub mod fms_policy_update_firewall_creation_config_action {
 
-    /// A builder for [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction)
-    #[non_exhaustive]
+    /// A builder for [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5617,7 +5587,7 @@ pub mod fms_policy_update_firewall_creation_config_action {
             self.firewall_creation_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction)
+        /// Consumes the builder and constructs a [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
         pub fn build(self) -> crate::model::FmsPolicyUpdateFirewallCreationConfigAction {
             crate::model::FmsPolicyUpdateFirewallCreationConfigAction {
                 description: self.description,
@@ -5627,7 +5597,7 @@ pub mod fms_policy_update_firewall_creation_config_action {
     }
 }
 impl FmsPolicyUpdateFirewallCreationConfigAction {
-    /// Creates a new builder-style object to manufacture [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction)
+    /// Creates a new builder-style object to manufacture [`FmsPolicyUpdateFirewallCreationConfigAction`](crate::model::FmsPolicyUpdateFirewallCreationConfigAction).
     pub fn builder() -> crate::model::fms_policy_update_firewall_creation_config_action::Builder {
         crate::model::fms_policy_update_firewall_creation_config_action::Builder::default()
     }
@@ -5660,11 +5630,10 @@ impl std::fmt::Debug for Ec2CreateRouteTableAction {
         formatter.finish()
     }
 }
-/// See [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction)
+/// See [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
 pub mod ec2_create_route_table_action {
 
-    /// A builder for [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction)
-    #[non_exhaustive]
+    /// A builder for [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5694,7 +5663,7 @@ pub mod ec2_create_route_table_action {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction)
+        /// Consumes the builder and constructs a [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
         pub fn build(self) -> crate::model::Ec2CreateRouteTableAction {
             crate::model::Ec2CreateRouteTableAction {
                 description: self.description,
@@ -5704,7 +5673,7 @@ pub mod ec2_create_route_table_action {
     }
 }
 impl Ec2CreateRouteTableAction {
-    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction)
+    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteTableAction`](crate::model::Ec2CreateRouteTableAction).
     pub fn builder() -> crate::model::ec2_create_route_table_action::Builder {
         crate::model::ec2_create_route_table_action::Builder::default()
     }
@@ -5737,11 +5706,10 @@ impl std::fmt::Debug for ActionTarget {
         formatter.finish()
     }
 }
-/// See [`ActionTarget`](crate::model::ActionTarget)
+/// See [`ActionTarget`](crate::model::ActionTarget).
 pub mod action_target {
 
-    /// A builder for [`ActionTarget`](crate::model::ActionTarget)
-    #[non_exhaustive]
+    /// A builder for [`ActionTarget`](crate::model::ActionTarget).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -5768,7 +5736,7 @@ pub mod action_target {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActionTarget`](crate::model::ActionTarget)
+        /// Consumes the builder and constructs a [`ActionTarget`](crate::model::ActionTarget).
         pub fn build(self) -> crate::model::ActionTarget {
             crate::model::ActionTarget {
                 resource_id: self.resource_id,
@@ -5778,7 +5746,7 @@ pub mod action_target {
     }
 }
 impl ActionTarget {
-    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget)
+    /// Creates a new builder-style object to manufacture [`ActionTarget`](crate::model::ActionTarget).
     pub fn builder() -> crate::model::action_target::Builder {
         crate::model::action_target::Builder::default()
     }
@@ -5825,11 +5793,10 @@ impl std::fmt::Debug for Ec2AssociateRouteTableAction {
         formatter.finish()
     }
 }
-/// See [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction)
+/// See [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
 pub mod ec2_associate_route_table_action {
 
-    /// A builder for [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction)
-    #[non_exhaustive]
+    /// A builder for [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5887,7 +5854,7 @@ pub mod ec2_associate_route_table_action {
             self.gateway_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction)
+        /// Consumes the builder and constructs a [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
         pub fn build(self) -> crate::model::Ec2AssociateRouteTableAction {
             crate::model::Ec2AssociateRouteTableAction {
                 description: self.description,
@@ -5899,7 +5866,7 @@ pub mod ec2_associate_route_table_action {
     }
 }
 impl Ec2AssociateRouteTableAction {
-    /// Creates a new builder-style object to manufacture [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction)
+    /// Creates a new builder-style object to manufacture [`Ec2AssociateRouteTableAction`](crate::model::Ec2AssociateRouteTableAction).
     pub fn builder() -> crate::model::ec2_associate_route_table_action::Builder {
         crate::model::ec2_associate_route_table_action::Builder::default()
     }
@@ -5939,11 +5906,10 @@ impl std::fmt::Debug for Ec2ReplaceRouteTableAssociationAction {
         formatter.finish()
     }
 }
-/// See [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction)
+/// See [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
 pub mod ec2_replace_route_table_association_action {
 
-    /// A builder for [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction)
-    #[non_exhaustive]
+    /// A builder for [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -5987,7 +5953,7 @@ pub mod ec2_replace_route_table_association_action {
             self.route_table_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction)
+        /// Consumes the builder and constructs a [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
         pub fn build(self) -> crate::model::Ec2ReplaceRouteTableAssociationAction {
             crate::model::Ec2ReplaceRouteTableAssociationAction {
                 description: self.description,
@@ -5998,7 +5964,7 @@ pub mod ec2_replace_route_table_association_action {
     }
 }
 impl Ec2ReplaceRouteTableAssociationAction {
-    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction)
+    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteTableAssociationAction`](crate::model::Ec2ReplaceRouteTableAssociationAction).
     pub fn builder() -> crate::model::ec2_replace_route_table_association_action::Builder {
         crate::model::ec2_replace_route_table_association_action::Builder::default()
     }
@@ -6038,11 +6004,10 @@ impl std::fmt::Debug for Ec2CopyRouteTableAction {
         formatter.finish()
     }
 }
-/// See [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction)
+/// See [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
 pub mod ec2_copy_route_table_action {
 
-    /// A builder for [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction)
-    #[non_exhaustive]
+    /// A builder for [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6086,7 +6051,7 @@ pub mod ec2_copy_route_table_action {
             self.route_table_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction)
+        /// Consumes the builder and constructs a [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
         pub fn build(self) -> crate::model::Ec2CopyRouteTableAction {
             crate::model::Ec2CopyRouteTableAction {
                 description: self.description,
@@ -6097,7 +6062,7 @@ pub mod ec2_copy_route_table_action {
     }
 }
 impl Ec2CopyRouteTableAction {
-    /// Creates a new builder-style object to manufacture [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction)
+    /// Creates a new builder-style object to manufacture [`Ec2CopyRouteTableAction`](crate::model::Ec2CopyRouteTableAction).
     pub fn builder() -> crate::model::ec2_copy_route_table_action::Builder {
         crate::model::ec2_copy_route_table_action::Builder::default()
     }
@@ -6157,11 +6122,10 @@ impl std::fmt::Debug for Ec2DeleteRouteAction {
         formatter.finish()
     }
 }
-/// See [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction)
+/// See [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
 pub mod ec2_delete_route_action {
 
-    /// A builder for [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction)
-    #[non_exhaustive]
+    /// A builder for [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6236,7 +6200,7 @@ pub mod ec2_delete_route_action {
             self.route_table_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction)
+        /// Consumes the builder and constructs a [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
         pub fn build(self) -> crate::model::Ec2DeleteRouteAction {
             crate::model::Ec2DeleteRouteAction {
                 description: self.description,
@@ -6249,7 +6213,7 @@ pub mod ec2_delete_route_action {
     }
 }
 impl Ec2DeleteRouteAction {
-    /// Creates a new builder-style object to manufacture [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction)
+    /// Creates a new builder-style object to manufacture [`Ec2DeleteRouteAction`](crate::model::Ec2DeleteRouteAction).
     pub fn builder() -> crate::model::ec2_delete_route_action::Builder {
         crate::model::ec2_delete_route_action::Builder::default()
     }
@@ -6316,11 +6280,10 @@ impl std::fmt::Debug for Ec2ReplaceRouteAction {
         formatter.finish()
     }
 }
-/// See [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction)
+/// See [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
 pub mod ec2_replace_route_action {
 
-    /// A builder for [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction)
-    #[non_exhaustive]
+    /// A builder for [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6409,7 +6372,7 @@ pub mod ec2_replace_route_action {
             self.route_table_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction)
+        /// Consumes the builder and constructs a [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
         pub fn build(self) -> crate::model::Ec2ReplaceRouteAction {
             crate::model::Ec2ReplaceRouteAction {
                 description: self.description,
@@ -6423,7 +6386,7 @@ pub mod ec2_replace_route_action {
     }
 }
 impl Ec2ReplaceRouteAction {
-    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction)
+    /// Creates a new builder-style object to manufacture [`Ec2ReplaceRouteAction`](crate::model::Ec2ReplaceRouteAction).
     pub fn builder() -> crate::model::ec2_replace_route_action::Builder {
         crate::model::ec2_replace_route_action::Builder::default()
     }
@@ -6497,11 +6460,10 @@ impl std::fmt::Debug for Ec2CreateRouteAction {
         formatter.finish()
     }
 }
-/// See [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction)
+/// See [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
 pub mod ec2_create_route_action {
 
-    /// A builder for [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction)
-    #[non_exhaustive]
+    /// A builder for [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -6604,7 +6566,7 @@ pub mod ec2_create_route_action {
             self.route_table_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction)
+        /// Consumes the builder and constructs a [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
         pub fn build(self) -> crate::model::Ec2CreateRouteAction {
             crate::model::Ec2CreateRouteAction {
                 description: self.description,
@@ -6619,7 +6581,7 @@ pub mod ec2_create_route_action {
     }
 }
 impl Ec2CreateRouteAction {
-    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction)
+    /// Creates a new builder-style object to manufacture [`Ec2CreateRouteAction`](crate::model::Ec2CreateRouteAction).
     pub fn builder() -> crate::model::ec2_create_route_action::Builder {
         crate::model::ec2_create_route_action::Builder::default()
     }
@@ -6665,11 +6627,10 @@ impl std::fmt::Debug for DnsRuleGroupLimitExceededViolation {
         formatter.finish()
     }
 }
-/// See [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation)
+/// See [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
 pub mod dns_rule_group_limit_exceeded_violation {
 
-    /// A builder for [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation)
-    #[non_exhaustive]
+    /// A builder for [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -6719,7 +6680,7 @@ pub mod dns_rule_group_limit_exceeded_violation {
             self.number_of_rule_groups_already_associated = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation)
+        /// Consumes the builder and constructs a [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
         pub fn build(self) -> crate::model::DnsRuleGroupLimitExceededViolation {
             crate::model::DnsRuleGroupLimitExceededViolation {
                 violation_target: self.violation_target,
@@ -6732,7 +6693,7 @@ pub mod dns_rule_group_limit_exceeded_violation {
     }
 }
 impl DnsRuleGroupLimitExceededViolation {
-    /// Creates a new builder-style object to manufacture [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation)
+    /// Creates a new builder-style object to manufacture [`DnsRuleGroupLimitExceededViolation`](crate::model::DnsRuleGroupLimitExceededViolation).
     pub fn builder() -> crate::model::dns_rule_group_limit_exceeded_violation::Builder {
         crate::model::dns_rule_group_limit_exceeded_violation::Builder::default()
     }
@@ -6768,11 +6729,10 @@ impl std::fmt::Debug for DnsDuplicateRuleGroupViolation {
         formatter.finish()
     }
 }
-/// See [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation)
+/// See [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
 pub mod dns_duplicate_rule_group_violation {
 
-    /// A builder for [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation)
-    #[non_exhaustive]
+    /// A builder for [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -6808,7 +6768,7 @@ pub mod dns_duplicate_rule_group_violation {
             self.violation_target_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation)
+        /// Consumes the builder and constructs a [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
         pub fn build(self) -> crate::model::DnsDuplicateRuleGroupViolation {
             crate::model::DnsDuplicateRuleGroupViolation {
                 violation_target: self.violation_target,
@@ -6818,7 +6778,7 @@ pub mod dns_duplicate_rule_group_violation {
     }
 }
 impl DnsDuplicateRuleGroupViolation {
-    /// Creates a new builder-style object to manufacture [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation)
+    /// Creates a new builder-style object to manufacture [`DnsDuplicateRuleGroupViolation`](crate::model::DnsDuplicateRuleGroupViolation).
     pub fn builder() -> crate::model::dns_duplicate_rule_group_violation::Builder {
         crate::model::dns_duplicate_rule_group_violation::Builder::default()
     }
@@ -6875,11 +6835,10 @@ impl std::fmt::Debug for DnsRuleGroupPriorityConflictViolation {
         formatter.finish()
     }
 }
-/// See [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation)
+/// See [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
 pub mod dns_rule_group_priority_conflict_violation {
 
-    /// A builder for [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation)
-    #[non_exhaustive]
+    /// A builder for [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -6960,7 +6919,7 @@ pub mod dns_rule_group_priority_conflict_violation {
             self.unavailable_priorities = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation)
+        /// Consumes the builder and constructs a [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
         pub fn build(self) -> crate::model::DnsRuleGroupPriorityConflictViolation {
             crate::model::DnsRuleGroupPriorityConflictViolation {
                 violation_target: self.violation_target,
@@ -6973,7 +6932,7 @@ pub mod dns_rule_group_priority_conflict_violation {
     }
 }
 impl DnsRuleGroupPriorityConflictViolation {
-    /// Creates a new builder-style object to manufacture [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation)
+    /// Creates a new builder-style object to manufacture [`DnsRuleGroupPriorityConflictViolation`](crate::model::DnsRuleGroupPriorityConflictViolation).
     pub fn builder() -> crate::model::dns_rule_group_priority_conflict_violation::Builder {
         crate::model::dns_rule_group_priority_conflict_violation::Builder::default()
     }
@@ -7013,11 +6972,10 @@ impl std::fmt::Debug for NetworkFirewallMissingExpectedRoutesViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation)
+/// See [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
 pub mod network_firewall_missing_expected_routes_violation {
 
-    /// A builder for [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -7067,7 +7025,7 @@ pub mod network_firewall_missing_expected_routes_violation {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
         pub fn build(self) -> crate::model::NetworkFirewallMissingExpectedRoutesViolation {
             crate::model::NetworkFirewallMissingExpectedRoutesViolation {
                 violation_target: self.violation_target,
@@ -7078,7 +7036,7 @@ pub mod network_firewall_missing_expected_routes_violation {
     }
 }
 impl NetworkFirewallMissingExpectedRoutesViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRoutesViolation`](crate::model::NetworkFirewallMissingExpectedRoutesViolation).
     pub fn builder() -> crate::model::network_firewall_missing_expected_routes_violation::Builder {
         crate::model::network_firewall_missing_expected_routes_violation::Builder::default()
     }
@@ -7139,11 +7097,10 @@ impl std::fmt::Debug for ExpectedRoute {
         formatter.finish()
     }
 }
-/// See [`ExpectedRoute`](crate::model::ExpectedRoute)
+/// See [`ExpectedRoute`](crate::model::ExpectedRoute).
 pub mod expected_route {
 
-    /// A builder for [`ExpectedRoute`](crate::model::ExpectedRoute)
-    #[non_exhaustive]
+    /// A builder for [`ExpectedRoute`](crate::model::ExpectedRoute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_v4_cidr: std::option::Option<std::string::String>,
@@ -7238,7 +7195,7 @@ pub mod expected_route {
             self.route_table_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExpectedRoute`](crate::model::ExpectedRoute)
+        /// Consumes the builder and constructs a [`ExpectedRoute`](crate::model::ExpectedRoute).
         pub fn build(self) -> crate::model::ExpectedRoute {
             crate::model::ExpectedRoute {
                 ip_v4_cidr: self.ip_v4_cidr,
@@ -7252,7 +7209,7 @@ pub mod expected_route {
     }
 }
 impl ExpectedRoute {
-    /// Creates a new builder-style object to manufacture [`ExpectedRoute`](crate::model::ExpectedRoute)
+    /// Creates a new builder-style object to manufacture [`ExpectedRoute`](crate::model::ExpectedRoute).
     pub fn builder() -> crate::model::expected_route::Builder {
         crate::model::expected_route::Builder::default()
     }
@@ -7299,11 +7256,10 @@ impl std::fmt::Debug for NetworkFirewallUnexpectedGatewayRoutesViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation)
+/// See [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
 pub mod network_firewall_unexpected_gateway_routes_violation {
 
-    /// A builder for [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
@@ -7364,7 +7320,7 @@ pub mod network_firewall_unexpected_gateway_routes_violation {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
         pub fn build(self) -> crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation {
             crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation {
                 gateway_id: self.gateway_id,
@@ -7376,7 +7332,7 @@ pub mod network_firewall_unexpected_gateway_routes_violation {
     }
 }
 impl NetworkFirewallUnexpectedGatewayRoutesViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::model::NetworkFirewallUnexpectedGatewayRoutesViolation).
     pub fn builder() -> crate::model::network_firewall_unexpected_gateway_routes_violation::Builder
     {
         crate::model::network_firewall_unexpected_gateway_routes_violation::Builder::default()
@@ -7431,11 +7387,10 @@ impl std::fmt::Debug for NetworkFirewallUnexpectedFirewallRoutesViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation)
+/// See [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
 pub mod network_firewall_unexpected_firewall_routes_violation {
 
-    /// A builder for [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
@@ -7513,7 +7468,7 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
         pub fn build(self) -> crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation {
             crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation {
                 firewall_subnet_id: self.firewall_subnet_id,
@@ -7526,7 +7481,7 @@ pub mod network_firewall_unexpected_firewall_routes_violation {
     }
 }
 impl NetworkFirewallUnexpectedFirewallRoutesViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::model::NetworkFirewallUnexpectedFirewallRoutesViolation).
     pub fn builder() -> crate::model::network_firewall_unexpected_firewall_routes_violation::Builder
     {
         crate::model::network_firewall_unexpected_firewall_routes_violation::Builder::default()
@@ -7574,11 +7529,10 @@ impl std::fmt::Debug for NetworkFirewallBlackHoleRouteDetectedViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation)
+/// See [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
 pub mod network_firewall_black_hole_route_detected_violation {
 
-    /// A builder for [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -7642,7 +7596,7 @@ pub mod network_firewall_black_hole_route_detected_violation {
             self.violating_routes = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
         pub fn build(self) -> crate::model::NetworkFirewallBlackHoleRouteDetectedViolation {
             crate::model::NetworkFirewallBlackHoleRouteDetectedViolation {
                 violation_target: self.violation_target,
@@ -7654,7 +7608,7 @@ pub mod network_firewall_black_hole_route_detected_violation {
     }
 }
 impl NetworkFirewallBlackHoleRouteDetectedViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::model::NetworkFirewallBlackHoleRouteDetectedViolation).
     pub fn builder() -> crate::model::network_firewall_black_hole_route_detected_violation::Builder
     {
         crate::model::network_firewall_black_hole_route_detected_violation::Builder::default()
@@ -7819,11 +7773,10 @@ impl std::fmt::Debug for NetworkFirewallInvalidRouteConfigurationViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation)
+/// See [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
 pub mod network_firewall_invalid_route_configuration_violation {
 
-    /// A builder for [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8098,7 +8051,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
         pub fn build(self) -> crate::model::NetworkFirewallInvalidRouteConfigurationViolation {
             crate::model::NetworkFirewallInvalidRouteConfigurationViolation {
                 affected_subnets: self.affected_subnets,
@@ -8124,7 +8077,7 @@ pub mod network_firewall_invalid_route_configuration_violation {
     }
 }
 impl NetworkFirewallInvalidRouteConfigurationViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallInvalidRouteConfigurationViolation`](crate::model::NetworkFirewallInvalidRouteConfigurationViolation).
     pub fn builder() -> crate::model::network_firewall_invalid_route_configuration_violation::Builder
     {
         crate::model::network_firewall_invalid_route_configuration_violation::Builder::default()
@@ -8279,11 +8232,10 @@ impl std::fmt::Debug for NetworkFirewallInternetTrafficNotInspectedViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation)
+/// See [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
 pub mod network_firewall_internet_traffic_not_inspected_violation {
 
-    /// A builder for [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -8538,7 +8490,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
             self.vpc_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
         pub fn build(self) -> crate::model::NetworkFirewallInternetTrafficNotInspectedViolation {
             crate::model::NetworkFirewallInternetTrafficNotInspectedViolation {
                 subnet_id: self.subnet_id,
@@ -8563,7 +8515,7 @@ pub mod network_firewall_internet_traffic_not_inspected_violation {
     }
 }
 impl NetworkFirewallInternetTrafficNotInspectedViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallInternetTrafficNotInspectedViolation`](crate::model::NetworkFirewallInternetTrafficNotInspectedViolation).
     pub fn builder(
     ) -> crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder {
         crate::model::network_firewall_internet_traffic_not_inspected_violation::Builder::default()
@@ -8616,11 +8568,10 @@ impl std::fmt::Debug for NetworkFirewallPolicyModifiedViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation)
+/// See [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
 pub mod network_firewall_policy_modified_violation {
 
-    /// A builder for [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -8675,7 +8626,7 @@ pub mod network_firewall_policy_modified_violation {
             self.expected_policy_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
         pub fn build(self) -> crate::model::NetworkFirewallPolicyModifiedViolation {
             crate::model::NetworkFirewallPolicyModifiedViolation {
                 violation_target: self.violation_target,
@@ -8686,7 +8637,7 @@ pub mod network_firewall_policy_modified_violation {
     }
 }
 impl NetworkFirewallPolicyModifiedViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyModifiedViolation`](crate::model::NetworkFirewallPolicyModifiedViolation).
     pub fn builder() -> crate::model::network_firewall_policy_modified_violation::Builder {
         crate::model::network_firewall_policy_modified_violation::Builder::default()
     }
@@ -8747,11 +8698,10 @@ impl std::fmt::Debug for NetworkFirewallPolicyDescription {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription)
+/// See [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
 pub mod network_firewall_policy_description {
 
-    /// A builder for [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stateless_rule_groups:
@@ -8864,7 +8814,7 @@ pub mod network_firewall_policy_description {
             self.stateful_rule_groups = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription)
+        /// Consumes the builder and constructs a [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
         pub fn build(self) -> crate::model::NetworkFirewallPolicyDescription {
             crate::model::NetworkFirewallPolicyDescription {
                 stateless_rule_groups: self.stateless_rule_groups,
@@ -8877,7 +8827,7 @@ pub mod network_firewall_policy_description {
     }
 }
 impl NetworkFirewallPolicyDescription {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallPolicyDescription`](crate::model::NetworkFirewallPolicyDescription).
     pub fn builder() -> crate::model::network_firewall_policy_description::Builder {
         crate::model::network_firewall_policy_description::Builder::default()
     }
@@ -8910,11 +8860,10 @@ impl std::fmt::Debug for StatefulRuleGroup {
         formatter.finish()
     }
 }
-/// See [`StatefulRuleGroup`](crate::model::StatefulRuleGroup)
+/// See [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
 pub mod stateful_rule_group {
 
-    /// A builder for [`StatefulRuleGroup`](crate::model::StatefulRuleGroup)
-    #[non_exhaustive]
+    /// A builder for [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
@@ -8944,7 +8893,7 @@ pub mod stateful_rule_group {
             self.resource_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatefulRuleGroup`](crate::model::StatefulRuleGroup)
+        /// Consumes the builder and constructs a [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
         pub fn build(self) -> crate::model::StatefulRuleGroup {
             crate::model::StatefulRuleGroup {
                 rule_group_name: self.rule_group_name,
@@ -8954,7 +8903,7 @@ pub mod stateful_rule_group {
     }
 }
 impl StatefulRuleGroup {
-    /// Creates a new builder-style object to manufacture [`StatefulRuleGroup`](crate::model::StatefulRuleGroup)
+    /// Creates a new builder-style object to manufacture [`StatefulRuleGroup`](crate::model::StatefulRuleGroup).
     pub fn builder() -> crate::model::stateful_rule_group::Builder {
         crate::model::stateful_rule_group::Builder::default()
     }
@@ -8994,11 +8943,10 @@ impl std::fmt::Debug for StatelessRuleGroup {
         formatter.finish()
     }
 }
-/// See [`StatelessRuleGroup`](crate::model::StatelessRuleGroup)
+/// See [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
 pub mod stateless_rule_group {
 
-    /// A builder for [`StatelessRuleGroup`](crate::model::StatelessRuleGroup)
-    #[non_exhaustive]
+    /// A builder for [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_name: std::option::Option<std::string::String>,
@@ -9039,7 +8987,7 @@ pub mod stateless_rule_group {
             self.priority = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatelessRuleGroup`](crate::model::StatelessRuleGroup)
+        /// Consumes the builder and constructs a [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
         pub fn build(self) -> crate::model::StatelessRuleGroup {
             crate::model::StatelessRuleGroup {
                 rule_group_name: self.rule_group_name,
@@ -9050,7 +8998,7 @@ pub mod stateless_rule_group {
     }
 }
 impl StatelessRuleGroup {
-    /// Creates a new builder-style object to manufacture [`StatelessRuleGroup`](crate::model::StatelessRuleGroup)
+    /// Creates a new builder-style object to manufacture [`StatelessRuleGroup`](crate::model::StatelessRuleGroup).
     pub fn builder() -> crate::model::stateless_rule_group::Builder {
         crate::model::stateless_rule_group::Builder::default()
     }
@@ -9104,11 +9052,10 @@ impl std::fmt::Debug for NetworkFirewallMissingExpectedRtViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation)
+/// See [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
 pub mod network_firewall_missing_expected_rt_violation {
 
-    /// A builder for [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9180,7 +9127,7 @@ pub mod network_firewall_missing_expected_rt_violation {
             self.expected_route_table = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
         pub fn build(self) -> crate::model::NetworkFirewallMissingExpectedRtViolation {
             crate::model::NetworkFirewallMissingExpectedRtViolation {
                 violation_target: self.violation_target,
@@ -9193,7 +9140,7 @@ pub mod network_firewall_missing_expected_rt_violation {
     }
 }
 impl NetworkFirewallMissingExpectedRtViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingExpectedRtViolation`](crate::model::NetworkFirewallMissingExpectedRtViolation).
     pub fn builder() -> crate::model::network_firewall_missing_expected_rt_violation::Builder {
         crate::model::network_firewall_missing_expected_rt_violation::Builder::default()
     }
@@ -9240,11 +9187,10 @@ impl std::fmt::Debug for NetworkFirewallMissingSubnetViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation)
+/// See [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
 pub mod network_firewall_missing_subnet_violation {
 
-    /// A builder for [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9302,7 +9248,7 @@ pub mod network_firewall_missing_subnet_violation {
             self.target_violation_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
         pub fn build(self) -> crate::model::NetworkFirewallMissingSubnetViolation {
             crate::model::NetworkFirewallMissingSubnetViolation {
                 violation_target: self.violation_target,
@@ -9314,7 +9260,7 @@ pub mod network_firewall_missing_subnet_violation {
     }
 }
 impl NetworkFirewallMissingSubnetViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingSubnetViolation`](crate::model::NetworkFirewallMissingSubnetViolation).
     pub fn builder() -> crate::model::network_firewall_missing_subnet_violation::Builder {
         crate::model::network_firewall_missing_subnet_violation::Builder::default()
     }
@@ -9361,11 +9307,10 @@ impl std::fmt::Debug for NetworkFirewallMissingFirewallViolation {
         formatter.finish()
     }
 }
-/// See [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation)
+/// See [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
 pub mod network_firewall_missing_firewall_violation {
 
-    /// A builder for [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation)
-    #[non_exhaustive]
+    /// A builder for [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9423,7 +9368,7 @@ pub mod network_firewall_missing_firewall_violation {
             self.target_violation_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation)
+        /// Consumes the builder and constructs a [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
         pub fn build(self) -> crate::model::NetworkFirewallMissingFirewallViolation {
             crate::model::NetworkFirewallMissingFirewallViolation {
                 violation_target: self.violation_target,
@@ -9435,7 +9380,7 @@ pub mod network_firewall_missing_firewall_violation {
     }
 }
 impl NetworkFirewallMissingFirewallViolation {
-    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation)
+    /// Creates a new builder-style object to manufacture [`NetworkFirewallMissingFirewallViolation`](crate::model::NetworkFirewallMissingFirewallViolation).
     pub fn builder() -> crate::model::network_firewall_missing_firewall_violation::Builder {
         crate::model::network_firewall_missing_firewall_violation::Builder::default()
     }
@@ -9474,11 +9419,10 @@ impl std::fmt::Debug for AwsEc2InstanceViolation {
         formatter.finish()
     }
 }
-/// See [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation)
+/// See [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
 pub mod aws_ec2_instance_violation {
 
-    /// A builder for [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9525,7 +9469,7 @@ pub mod aws_ec2_instance_violation {
             self.aws_ec2_network_interface_violations = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation)
+        /// Consumes the builder and constructs a [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
         pub fn build(self) -> crate::model::AwsEc2InstanceViolation {
             crate::model::AwsEc2InstanceViolation {
                 violation_target: self.violation_target,
@@ -9535,7 +9479,7 @@ pub mod aws_ec2_instance_violation {
     }
 }
 impl AwsEc2InstanceViolation {
-    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation)
+    /// Creates a new builder-style object to manufacture [`AwsEc2InstanceViolation`](crate::model::AwsEc2InstanceViolation).
     pub fn builder() -> crate::model::aws_ec2_instance_violation::Builder {
         crate::model::aws_ec2_instance_violation::Builder::default()
     }
@@ -9568,11 +9512,10 @@ impl std::fmt::Debug for AwsEc2NetworkInterfaceViolation {
         formatter.finish()
     }
 }
-/// See [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation)
+/// See [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
 pub mod aws_ec2_network_interface_violation {
 
-    /// A builder for [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation)
-    #[non_exhaustive]
+    /// A builder for [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9612,7 +9555,7 @@ pub mod aws_ec2_network_interface_violation {
             self.violating_security_groups = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation)
+        /// Consumes the builder and constructs a [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
         pub fn build(self) -> crate::model::AwsEc2NetworkInterfaceViolation {
             crate::model::AwsEc2NetworkInterfaceViolation {
                 violation_target: self.violation_target,
@@ -9622,7 +9565,7 @@ pub mod aws_ec2_network_interface_violation {
     }
 }
 impl AwsEc2NetworkInterfaceViolation {
-    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation)
+    /// Creates a new builder-style object to manufacture [`AwsEc2NetworkInterfaceViolation`](crate::model::AwsEc2NetworkInterfaceViolation).
     pub fn builder() -> crate::model::aws_ec2_network_interface_violation::Builder {
         crate::model::aws_ec2_network_interface_violation::Builder::default()
     }
@@ -9678,11 +9621,10 @@ impl std::fmt::Debug for AwsVpcSecurityGroupViolation {
         formatter.finish()
     }
 }
-/// See [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation)
+/// See [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
 pub mod aws_vpc_security_group_violation {
 
-    /// A builder for [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation)
-    #[non_exhaustive]
+    /// A builder for [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) violation_target: std::option::Option<std::string::String>,
@@ -9764,7 +9706,7 @@ pub mod aws_vpc_security_group_violation {
             self.possible_security_group_remediation_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation)
+        /// Consumes the builder and constructs a [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
         pub fn build(self) -> crate::model::AwsVpcSecurityGroupViolation {
             crate::model::AwsVpcSecurityGroupViolation {
                 violation_target: self.violation_target,
@@ -9777,7 +9719,7 @@ pub mod aws_vpc_security_group_violation {
     }
 }
 impl AwsVpcSecurityGroupViolation {
-    /// Creates a new builder-style object to manufacture [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation)
+    /// Creates a new builder-style object to manufacture [`AwsVpcSecurityGroupViolation`](crate::model::AwsVpcSecurityGroupViolation).
     pub fn builder() -> crate::model::aws_vpc_security_group_violation::Builder {
         crate::model::aws_vpc_security_group_violation::Builder::default()
     }
@@ -9828,11 +9770,10 @@ impl std::fmt::Debug for SecurityGroupRemediationAction {
         formatter.finish()
     }
 }
-/// See [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction)
+/// See [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
 pub mod security_group_remediation_action {
 
-    /// A builder for [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction)
-    #[non_exhaustive]
+    /// A builder for [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) remediation_action_type:
@@ -9895,7 +9836,7 @@ pub mod security_group_remediation_action {
             self.is_default_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction)
+        /// Consumes the builder and constructs a [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
         pub fn build(self) -> crate::model::SecurityGroupRemediationAction {
             crate::model::SecurityGroupRemediationAction {
                 remediation_action_type: self.remediation_action_type,
@@ -9907,7 +9848,7 @@ pub mod security_group_remediation_action {
     }
 }
 impl SecurityGroupRemediationAction {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction)
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRemediationAction`](crate::model::SecurityGroupRemediationAction).
     pub fn builder() -> crate::model::security_group_remediation_action::Builder {
         crate::model::security_group_remediation_action::Builder::default()
     }
@@ -9968,11 +9909,10 @@ impl std::fmt::Debug for SecurityGroupRuleDescription {
         formatter.finish()
     }
 }
-/// See [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
+/// See [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
 pub mod security_group_rule_description {
 
-    /// A builder for [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
-    #[non_exhaustive]
+    /// A builder for [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv4_range: std::option::Option<std::string::String>,
@@ -10046,7 +9986,7 @@ pub mod security_group_rule_description {
             self.to_port = input;
             self
         }
-        /// Consumes the builder and constructs a [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
+        /// Consumes the builder and constructs a [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
         pub fn build(self) -> crate::model::SecurityGroupRuleDescription {
             crate::model::SecurityGroupRuleDescription {
                 ipv4_range: self.ipv4_range,
@@ -10060,7 +10000,7 @@ pub mod security_group_rule_description {
     }
 }
 impl SecurityGroupRuleDescription {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription).
     pub fn builder() -> crate::model::security_group_rule_description::Builder {
         crate::model::security_group_rule_description::Builder::default()
     }
@@ -10148,11 +10088,10 @@ impl std::fmt::Debug for PartialMatch {
         formatter.finish()
     }
 }
-/// See [`PartialMatch`](crate::model::PartialMatch)
+/// See [`PartialMatch`](crate::model::PartialMatch).
 pub mod partial_match {
 
-    /// A builder for [`PartialMatch`](crate::model::PartialMatch)
-    #[non_exhaustive]
+    /// A builder for [`PartialMatch`](crate::model::PartialMatch).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reference: std::option::Option<std::string::String>,
@@ -10189,7 +10128,7 @@ pub mod partial_match {
             self.target_violation_reasons = input;
             self
         }
-        /// Consumes the builder and constructs a [`PartialMatch`](crate::model::PartialMatch)
+        /// Consumes the builder and constructs a [`PartialMatch`](crate::model::PartialMatch).
         pub fn build(self) -> crate::model::PartialMatch {
             crate::model::PartialMatch {
                 reference: self.reference,
@@ -10199,7 +10138,7 @@ pub mod partial_match {
     }
 }
 impl PartialMatch {
-    /// Creates a new builder-style object to manufacture [`PartialMatch`](crate::model::PartialMatch)
+    /// Creates a new builder-style object to manufacture [`PartialMatch`](crate::model::PartialMatch).
     pub fn builder() -> crate::model::partial_match::Builder {
         crate::model::partial_match::Builder::default()
     }
@@ -10405,11 +10344,10 @@ impl std::fmt::Debug for PolicyComplianceDetail {
         formatter.finish()
     }
 }
-/// See [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail)
+/// See [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
 pub mod policy_compliance_detail {
 
-    /// A builder for [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail)
-    #[non_exhaustive]
+    /// A builder for [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_owner: std::option::Option<std::string::String>,
@@ -10523,7 +10461,7 @@ pub mod policy_compliance_detail {
             self.issue_info_map = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail)
+        /// Consumes the builder and constructs a [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
         pub fn build(self) -> crate::model::PolicyComplianceDetail {
             crate::model::PolicyComplianceDetail {
                 policy_owner: self.policy_owner,
@@ -10538,7 +10476,7 @@ pub mod policy_compliance_detail {
     }
 }
 impl PolicyComplianceDetail {
-    /// Creates a new builder-style object to manufacture [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail)
+    /// Creates a new builder-style object to manufacture [`PolicyComplianceDetail`](crate::model::PolicyComplianceDetail).
     pub fn builder() -> crate::model::policy_compliance_detail::Builder {
         crate::model::policy_compliance_detail::Builder::default()
     }
@@ -10589,11 +10527,10 @@ impl std::fmt::Debug for ComplianceViolator {
         formatter.finish()
     }
 }
-/// See [`ComplianceViolator`](crate::model::ComplianceViolator)
+/// See [`ComplianceViolator`](crate::model::ComplianceViolator).
 pub mod compliance_violator {
 
-    /// A builder for [`ComplianceViolator`](crate::model::ComplianceViolator)
-    #[non_exhaustive]
+    /// A builder for [`ComplianceViolator`](crate::model::ComplianceViolator).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -10665,7 +10602,7 @@ pub mod compliance_violator {
             self.metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComplianceViolator`](crate::model::ComplianceViolator)
+        /// Consumes the builder and constructs a [`ComplianceViolator`](crate::model::ComplianceViolator).
         pub fn build(self) -> crate::model::ComplianceViolator {
             crate::model::ComplianceViolator {
                 resource_id: self.resource_id,
@@ -10677,7 +10614,7 @@ pub mod compliance_violator {
     }
 }
 impl ComplianceViolator {
-    /// Creates a new builder-style object to manufacture [`ComplianceViolator`](crate::model::ComplianceViolator)
+    /// Creates a new builder-style object to manufacture [`ComplianceViolator`](crate::model::ComplianceViolator).
     pub fn builder() -> crate::model::compliance_violator::Builder {
         crate::model::compliance_violator::Builder::default()
     }

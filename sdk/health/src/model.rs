@@ -36,11 +36,10 @@ impl std::fmt::Debug for EventType {
         formatter.finish()
     }
 }
-/// See [`EventType`](crate::model::EventType)
+/// See [`EventType`](crate::model::EventType).
 pub mod event_type {
 
-    /// A builder for [`EventType`](crate::model::EventType)
-    #[non_exhaustive]
+    /// A builder for [`EventType`](crate::model::EventType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<std::string::String>,
@@ -81,7 +80,7 @@ pub mod event_type {
             self.category = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventType`](crate::model::EventType)
+        /// Consumes the builder and constructs a [`EventType`](crate::model::EventType).
         pub fn build(self) -> crate::model::EventType {
             crate::model::EventType {
                 service: self.service,
@@ -92,7 +91,7 @@ pub mod event_type {
     }
 }
 impl EventType {
-    /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType)
+    /// Creates a new builder-style object to manufacture [`EventType`](crate::model::EventType).
     pub fn builder() -> crate::model::event_type::Builder {
         crate::model::event_type::Builder::default()
     }
@@ -200,11 +199,10 @@ impl std::fmt::Debug for EventTypeFilter {
         formatter.finish()
     }
 }
-/// See [`EventTypeFilter`](crate::model::EventTypeFilter)
+/// See [`EventTypeFilter`](crate::model::EventTypeFilter).
 pub mod event_type_filter {
 
-    /// A builder for [`EventTypeFilter`](crate::model::EventTypeFilter)
-    #[non_exhaustive]
+    /// A builder for [`EventTypeFilter`](crate::model::EventTypeFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -270,7 +268,7 @@ pub mod event_type_filter {
             self.event_type_categories = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventTypeFilter`](crate::model::EventTypeFilter)
+        /// Consumes the builder and constructs a [`EventTypeFilter`](crate::model::EventTypeFilter).
         pub fn build(self) -> crate::model::EventTypeFilter {
             crate::model::EventTypeFilter {
                 event_type_codes: self.event_type_codes,
@@ -281,7 +279,7 @@ pub mod event_type_filter {
     }
 }
 impl EventTypeFilter {
-    /// Creates a new builder-style object to manufacture [`EventTypeFilter`](crate::model::EventTypeFilter)
+    /// Creates a new builder-style object to manufacture [`EventTypeFilter`](crate::model::EventTypeFilter).
     pub fn builder() -> crate::model::event_type_filter::Builder {
         crate::model::event_type_filter::Builder::default()
     }
@@ -384,11 +382,10 @@ impl std::fmt::Debug for OrganizationEvent {
         formatter.finish()
     }
 }
-/// See [`OrganizationEvent`](crate::model::OrganizationEvent)
+/// See [`OrganizationEvent`](crate::model::OrganizationEvent).
 pub mod organization_event {
 
-    /// A builder for [`OrganizationEvent`](crate::model::OrganizationEvent)
-    #[non_exhaustive]
+    /// A builder for [`OrganizationEvent`](crate::model::OrganizationEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -538,7 +535,7 @@ pub mod organization_event {
             self.status_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`OrganizationEvent`](crate::model::OrganizationEvent)
+        /// Consumes the builder and constructs a [`OrganizationEvent`](crate::model::OrganizationEvent).
         pub fn build(self) -> crate::model::OrganizationEvent {
             crate::model::OrganizationEvent {
                 arn: self.arn,
@@ -556,7 +553,7 @@ pub mod organization_event {
     }
 }
 impl OrganizationEvent {
-    /// Creates a new builder-style object to manufacture [`OrganizationEvent`](crate::model::OrganizationEvent)
+    /// Creates a new builder-style object to manufacture [`OrganizationEvent`](crate::model::OrganizationEvent).
     pub fn builder() -> crate::model::organization_event::Builder {
         crate::model::organization_event::Builder::default()
     }
@@ -770,11 +767,10 @@ impl std::fmt::Debug for OrganizationEventFilter {
         formatter.finish()
     }
 }
-/// See [`OrganizationEventFilter`](crate::model::OrganizationEventFilter)
+/// See [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
 pub mod organization_event_filter {
 
-    /// A builder for [`OrganizationEventFilter`](crate::model::OrganizationEventFilter)
-    #[non_exhaustive]
+    /// A builder for [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -983,7 +979,7 @@ pub mod organization_event_filter {
             self.event_status_codes = input;
             self
         }
-        /// Consumes the builder and constructs a [`OrganizationEventFilter`](crate::model::OrganizationEventFilter)
+        /// Consumes the builder and constructs a [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
         pub fn build(self) -> crate::model::OrganizationEventFilter {
             crate::model::OrganizationEventFilter {
                 event_type_codes: self.event_type_codes,
@@ -1002,7 +998,7 @@ pub mod organization_event_filter {
     }
 }
 impl OrganizationEventFilter {
-    /// Creates a new builder-style object to manufacture [`OrganizationEventFilter`](crate::model::OrganizationEventFilter)
+    /// Creates a new builder-style object to manufacture [`OrganizationEventFilter`](crate::model::OrganizationEventFilter).
     pub fn builder() -> crate::model::organization_event_filter::Builder {
         crate::model::organization_event_filter::Builder::default()
     }
@@ -1035,11 +1031,10 @@ impl std::fmt::Debug for DateTimeRange {
         formatter.finish()
     }
 }
-/// See [`DateTimeRange`](crate::model::DateTimeRange)
+/// See [`DateTimeRange`](crate::model::DateTimeRange).
 pub mod date_time_range {
 
-    /// A builder for [`DateTimeRange`](crate::model::DateTimeRange)
-    #[non_exhaustive]
+    /// A builder for [`DateTimeRange`](crate::model::DateTimeRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from: std::option::Option<aws_smithy_types::DateTime>,
@@ -1066,7 +1061,7 @@ pub mod date_time_range {
             self.to = input;
             self
         }
-        /// Consumes the builder and constructs a [`DateTimeRange`](crate::model::DateTimeRange)
+        /// Consumes the builder and constructs a [`DateTimeRange`](crate::model::DateTimeRange).
         pub fn build(self) -> crate::model::DateTimeRange {
             crate::model::DateTimeRange {
                 from: self.from,
@@ -1076,7 +1071,7 @@ pub mod date_time_range {
     }
 }
 impl DateTimeRange {
-    /// Creates a new builder-style object to manufacture [`DateTimeRange`](crate::model::DateTimeRange)
+    /// Creates a new builder-style object to manufacture [`DateTimeRange`](crate::model::DateTimeRange).
     pub fn builder() -> crate::model::date_time_range::Builder {
         crate::model::date_time_range::Builder::default()
     }
@@ -1192,11 +1187,10 @@ impl std::fmt::Debug for Event {
         formatter.finish()
     }
 }
-/// See [`Event`](crate::model::Event)
+/// See [`Event`](crate::model::Event).
 pub mod event {
 
-    /// A builder for [`Event`](crate::model::Event)
-    #[non_exhaustive]
+    /// A builder for [`Event`](crate::model::Event).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1360,7 +1354,7 @@ pub mod event {
             self.event_scope_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`Event`](crate::model::Event)
+        /// Consumes the builder and constructs a [`Event`](crate::model::Event).
         pub fn build(self) -> crate::model::Event {
             crate::model::Event {
                 arn: self.arn,
@@ -1379,7 +1373,7 @@ pub mod event {
     }
 }
 impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event)
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
     pub fn builder() -> crate::model::event::Builder {
         crate::model::event::Builder::default()
     }
@@ -1498,11 +1492,10 @@ impl std::fmt::Debug for EventFilter {
         formatter.finish()
     }
 }
-/// See [`EventFilter`](crate::model::EventFilter)
+/// See [`EventFilter`](crate::model::EventFilter).
 pub mod event_filter {
 
-    /// A builder for [`EventFilter`](crate::model::EventFilter)
-    #[non_exhaustive]
+    /// A builder for [`EventFilter`](crate::model::EventFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1781,7 +1774,7 @@ pub mod event_filter {
             self.event_status_codes = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventFilter`](crate::model::EventFilter)
+        /// Consumes the builder and constructs a [`EventFilter`](crate::model::EventFilter).
         pub fn build(self) -> crate::model::EventFilter {
             crate::model::EventFilter {
                 event_arns: self.event_arns,
@@ -1802,7 +1795,7 @@ pub mod event_filter {
     }
 }
 impl EventFilter {
-    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter)
+    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
     pub fn builder() -> crate::model::event_filter::Builder {
         crate::model::event_filter::Builder::default()
     }
@@ -1865,11 +1858,10 @@ impl std::fmt::Debug for OrganizationEventDetailsErrorItem {
         formatter.finish()
     }
 }
-/// See [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem)
+/// See [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
 pub mod organization_event_details_error_item {
 
-    /// A builder for [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem)
-    #[non_exhaustive]
+    /// A builder for [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -1940,7 +1932,7 @@ pub mod organization_event_details_error_item {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem)
+        /// Consumes the builder and constructs a [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
         pub fn build(self) -> crate::model::OrganizationEventDetailsErrorItem {
             crate::model::OrganizationEventDetailsErrorItem {
                 aws_account_id: self.aws_account_id,
@@ -1952,7 +1944,7 @@ pub mod organization_event_details_error_item {
     }
 }
 impl OrganizationEventDetailsErrorItem {
-    /// Creates a new builder-style object to manufacture [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem)
+    /// Creates a new builder-style object to manufacture [`OrganizationEventDetailsErrorItem`](crate::model::OrganizationEventDetailsErrorItem).
     pub fn builder() -> crate::model::organization_event_details_error_item::Builder {
         crate::model::organization_event_details_error_item::Builder::default()
     }
@@ -2015,11 +2007,10 @@ impl std::fmt::Debug for OrganizationEventDetails {
         formatter.finish()
     }
 }
-/// See [`OrganizationEventDetails`](crate::model::OrganizationEventDetails)
+/// See [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
 pub mod organization_event_details {
 
-    /// A builder for [`OrganizationEventDetails`](crate::model::OrganizationEventDetails)
-    #[non_exhaustive]
+    /// A builder for [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2103,7 +2094,7 @@ pub mod organization_event_details {
             self.event_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`OrganizationEventDetails`](crate::model::OrganizationEventDetails)
+        /// Consumes the builder and constructs a [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
         pub fn build(self) -> crate::model::OrganizationEventDetails {
             crate::model::OrganizationEventDetails {
                 aws_account_id: self.aws_account_id,
@@ -2115,7 +2106,7 @@ pub mod organization_event_details {
     }
 }
 impl OrganizationEventDetails {
-    /// Creates a new builder-style object to manufacture [`OrganizationEventDetails`](crate::model::OrganizationEventDetails)
+    /// Creates a new builder-style object to manufacture [`OrganizationEventDetails`](crate::model::OrganizationEventDetails).
     pub fn builder() -> crate::model::organization_event_details::Builder {
         crate::model::organization_event_details::Builder::default()
     }
@@ -2141,11 +2132,10 @@ impl std::fmt::Debug for EventDescription {
         formatter.finish()
     }
 }
-/// See [`EventDescription`](crate::model::EventDescription)
+/// See [`EventDescription`](crate::model::EventDescription).
 pub mod event_description {
 
-    /// A builder for [`EventDescription`](crate::model::EventDescription)
-    #[non_exhaustive]
+    /// A builder for [`EventDescription`](crate::model::EventDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latest_description: std::option::Option<std::string::String>,
@@ -2164,7 +2154,7 @@ pub mod event_description {
             self.latest_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventDescription`](crate::model::EventDescription)
+        /// Consumes the builder and constructs a [`EventDescription`](crate::model::EventDescription).
         pub fn build(self) -> crate::model::EventDescription {
             crate::model::EventDescription {
                 latest_description: self.latest_description,
@@ -2173,7 +2163,7 @@ pub mod event_description {
     }
 }
 impl EventDescription {
-    /// Creates a new builder-style object to manufacture [`EventDescription`](crate::model::EventDescription)
+    /// Creates a new builder-style object to manufacture [`EventDescription`](crate::model::EventDescription).
     pub fn builder() -> crate::model::event_description::Builder {
         crate::model::event_description::Builder::default()
     }
@@ -2210,11 +2200,10 @@ impl std::fmt::Debug for EventAccountFilter {
         formatter.finish()
     }
 }
-/// See [`EventAccountFilter`](crate::model::EventAccountFilter)
+/// See [`EventAccountFilter`](crate::model::EventAccountFilter).
 pub mod event_account_filter {
 
-    /// A builder for [`EventAccountFilter`](crate::model::EventAccountFilter)
-    #[non_exhaustive]
+    /// A builder for [`EventAccountFilter`](crate::model::EventAccountFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2248,7 +2237,7 @@ pub mod event_account_filter {
             self.aws_account_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventAccountFilter`](crate::model::EventAccountFilter)
+        /// Consumes the builder and constructs a [`EventAccountFilter`](crate::model::EventAccountFilter).
         pub fn build(self) -> crate::model::EventAccountFilter {
             crate::model::EventAccountFilter {
                 event_arn: self.event_arn,
@@ -2258,7 +2247,7 @@ pub mod event_account_filter {
     }
 }
 impl EventAccountFilter {
-    /// Creates a new builder-style object to manufacture [`EventAccountFilter`](crate::model::EventAccountFilter)
+    /// Creates a new builder-style object to manufacture [`EventAccountFilter`](crate::model::EventAccountFilter).
     pub fn builder() -> crate::model::event_account_filter::Builder {
         crate::model::event_account_filter::Builder::default()
     }
@@ -2302,11 +2291,10 @@ impl std::fmt::Debug for EventDetailsErrorItem {
         formatter.finish()
     }
 }
-/// See [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem)
+/// See [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
 pub mod event_details_error_item {
 
-    /// A builder for [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem)
-    #[non_exhaustive]
+    /// A builder for [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2351,7 +2339,7 @@ pub mod event_details_error_item {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem)
+        /// Consumes the builder and constructs a [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
         pub fn build(self) -> crate::model::EventDetailsErrorItem {
             crate::model::EventDetailsErrorItem {
                 event_arn: self.event_arn,
@@ -2362,7 +2350,7 @@ pub mod event_details_error_item {
     }
 }
 impl EventDetailsErrorItem {
-    /// Creates a new builder-style object to manufacture [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem)
+    /// Creates a new builder-style object to manufacture [`EventDetailsErrorItem`](crate::model::EventDetailsErrorItem).
     pub fn builder() -> crate::model::event_details_error_item::Builder {
         crate::model::event_details_error_item::Builder::default()
     }
@@ -2406,11 +2394,10 @@ impl std::fmt::Debug for EventDetails {
         formatter.finish()
     }
 }
-/// See [`EventDetails`](crate::model::EventDetails)
+/// See [`EventDetails`](crate::model::EventDetails).
 pub mod event_details {
 
-    /// A builder for [`EventDetails`](crate::model::EventDetails)
-    #[non_exhaustive]
+    /// A builder for [`EventDetails`](crate::model::EventDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event: std::option::Option<crate::model::Event>,
@@ -2468,7 +2455,7 @@ pub mod event_details {
             self.event_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventDetails`](crate::model::EventDetails)
+        /// Consumes the builder and constructs a [`EventDetails`](crate::model::EventDetails).
         pub fn build(self) -> crate::model::EventDetails {
             crate::model::EventDetails {
                 event: self.event,
@@ -2479,7 +2466,7 @@ pub mod event_details {
     }
 }
 impl EventDetails {
-    /// Creates a new builder-style object to manufacture [`EventDetails`](crate::model::EventDetails)
+    /// Creates a new builder-style object to manufacture [`EventDetails`](crate::model::EventDetails).
     pub fn builder() -> crate::model::event_details::Builder {
         crate::model::event_details::Builder::default()
     }
@@ -2512,11 +2499,10 @@ impl std::fmt::Debug for EventAggregate {
         formatter.finish()
     }
 }
-/// See [`EventAggregate`](crate::model::EventAggregate)
+/// See [`EventAggregate`](crate::model::EventAggregate).
 pub mod event_aggregate {
 
-    /// A builder for [`EventAggregate`](crate::model::EventAggregate)
-    #[non_exhaustive]
+    /// A builder for [`EventAggregate`](crate::model::EventAggregate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregate_value: std::option::Option<std::string::String>,
@@ -2546,7 +2532,7 @@ pub mod event_aggregate {
             self.count = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventAggregate`](crate::model::EventAggregate)
+        /// Consumes the builder and constructs a [`EventAggregate`](crate::model::EventAggregate).
         pub fn build(self) -> crate::model::EventAggregate {
             crate::model::EventAggregate {
                 aggregate_value: self.aggregate_value,
@@ -2556,7 +2542,7 @@ pub mod event_aggregate {
     }
 }
 impl EventAggregate {
-    /// Creates a new builder-style object to manufacture [`EventAggregate`](crate::model::EventAggregate)
+    /// Creates a new builder-style object to manufacture [`EventAggregate`](crate::model::EventAggregate).
     pub fn builder() -> crate::model::event_aggregate::Builder {
         crate::model::event_aggregate::Builder::default()
     }
@@ -2644,11 +2630,10 @@ impl std::fmt::Debug for EntityAggregate {
         formatter.finish()
     }
 }
-/// See [`EntityAggregate`](crate::model::EntityAggregate)
+/// See [`EntityAggregate`](crate::model::EntityAggregate).
 pub mod entity_aggregate {
 
-    /// A builder for [`EntityAggregate`](crate::model::EntityAggregate)
-    #[non_exhaustive]
+    /// A builder for [`EntityAggregate`](crate::model::EntityAggregate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arn: std::option::Option<std::string::String>,
@@ -2679,7 +2664,7 @@ pub mod entity_aggregate {
             self.count = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityAggregate`](crate::model::EntityAggregate)
+        /// Consumes the builder and constructs a [`EntityAggregate`](crate::model::EntityAggregate).
         pub fn build(self) -> crate::model::EntityAggregate {
             crate::model::EntityAggregate {
                 event_arn: self.event_arn,
@@ -2689,7 +2674,7 @@ pub mod entity_aggregate {
     }
 }
 impl EntityAggregate {
-    /// Creates a new builder-style object to manufacture [`EntityAggregate`](crate::model::EntityAggregate)
+    /// Creates a new builder-style object to manufacture [`EntityAggregate`](crate::model::EntityAggregate).
     pub fn builder() -> crate::model::entity_aggregate::Builder {
         crate::model::entity_aggregate::Builder::default()
     }
@@ -2740,11 +2725,10 @@ impl std::fmt::Debug for OrganizationAffectedEntitiesErrorItem {
         formatter.finish()
     }
 }
-/// See [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem)
+/// See [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
 pub mod organization_affected_entities_error_item {
 
-    /// A builder for [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem)
-    #[non_exhaustive]
+    /// A builder for [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -2803,7 +2787,7 @@ pub mod organization_affected_entities_error_item {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem)
+        /// Consumes the builder and constructs a [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
         pub fn build(self) -> crate::model::OrganizationAffectedEntitiesErrorItem {
             crate::model::OrganizationAffectedEntitiesErrorItem {
                 aws_account_id: self.aws_account_id,
@@ -2815,7 +2799,7 @@ pub mod organization_affected_entities_error_item {
     }
 }
 impl OrganizationAffectedEntitiesErrorItem {
-    /// Creates a new builder-style object to manufacture [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem)
+    /// Creates a new builder-style object to manufacture [`OrganizationAffectedEntitiesErrorItem`](crate::model::OrganizationAffectedEntitiesErrorItem).
     pub fn builder() -> crate::model::organization_affected_entities_error_item::Builder {
         crate::model::organization_affected_entities_error_item::Builder::default()
     }
@@ -2902,11 +2886,10 @@ impl std::fmt::Debug for AffectedEntity {
         formatter.finish()
     }
 }
-/// See [`AffectedEntity`](crate::model::AffectedEntity)
+/// See [`AffectedEntity`](crate::model::AffectedEntity).
 pub mod affected_entity {
 
-    /// A builder for [`AffectedEntity`](crate::model::AffectedEntity)
-    #[non_exhaustive]
+    /// A builder for [`AffectedEntity`](crate::model::AffectedEntity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_arn: std::option::Option<std::string::String>,
@@ -3033,7 +3016,7 @@ pub mod affected_entity {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`AffectedEntity`](crate::model::AffectedEntity)
+        /// Consumes the builder and constructs a [`AffectedEntity`](crate::model::AffectedEntity).
         pub fn build(self) -> crate::model::AffectedEntity {
             crate::model::AffectedEntity {
                 entity_arn: self.entity_arn,
@@ -3049,7 +3032,7 @@ pub mod affected_entity {
     }
 }
 impl AffectedEntity {
-    /// Creates a new builder-style object to manufacture [`AffectedEntity`](crate::model::AffectedEntity)
+    /// Creates a new builder-style object to manufacture [`AffectedEntity`](crate::model::AffectedEntity).
     pub fn builder() -> crate::model::affected_entity::Builder {
         crate::model::affected_entity::Builder::default()
     }
@@ -3178,11 +3161,10 @@ impl std::fmt::Debug for EntityFilter {
         formatter.finish()
     }
 }
-/// See [`EntityFilter`](crate::model::EntityFilter)
+/// See [`EntityFilter`](crate::model::EntityFilter).
 pub mod entity_filter {
 
-    /// A builder for [`EntityFilter`](crate::model::EntityFilter)
-    #[non_exhaustive]
+    /// A builder for [`EntityFilter`](crate::model::EntityFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3319,7 +3301,7 @@ pub mod entity_filter {
             self.status_codes = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityFilter`](crate::model::EntityFilter)
+        /// Consumes the builder and constructs a [`EntityFilter`](crate::model::EntityFilter).
         pub fn build(self) -> crate::model::EntityFilter {
             crate::model::EntityFilter {
                 event_arns: self.event_arns,
@@ -3333,7 +3315,7 @@ pub mod entity_filter {
     }
 }
 impl EntityFilter {
-    /// Creates a new builder-style object to manufacture [`EntityFilter`](crate::model::EntityFilter)
+    /// Creates a new builder-style object to manufacture [`EntityFilter`](crate::model::EntityFilter).
     pub fn builder() -> crate::model::entity_filter::Builder {
         crate::model::entity_filter::Builder::default()
     }

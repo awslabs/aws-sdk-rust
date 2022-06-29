@@ -31,11 +31,10 @@ impl std::fmt::Debug for StorageGatewayError {
         formatter.finish()
     }
 }
-/// See [`StorageGatewayError`](crate::model::StorageGatewayError)
+/// See [`StorageGatewayError`](crate::model::StorageGatewayError).
 pub mod storage_gateway_error {
 
-    /// A builder for [`StorageGatewayError`](crate::model::StorageGatewayError)
-    #[non_exhaustive]
+    /// A builder for [`StorageGatewayError`](crate::model::StorageGatewayError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -82,7 +81,7 @@ pub mod storage_gateway_error {
             self.error_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`StorageGatewayError`](crate::model::StorageGatewayError)
+        /// Consumes the builder and constructs a [`StorageGatewayError`](crate::model::StorageGatewayError).
         pub fn build(self) -> crate::model::StorageGatewayError {
             crate::model::StorageGatewayError {
                 error_code: self.error_code,
@@ -92,7 +91,7 @@ pub mod storage_gateway_error {
     }
 }
 impl StorageGatewayError {
-    /// Creates a new builder-style object to manufacture [`StorageGatewayError`](crate::model::StorageGatewayError)
+    /// Creates a new builder-style object to manufacture [`StorageGatewayError`](crate::model::StorageGatewayError).
     pub fn builder() -> crate::model::storage_gateway_error::Builder {
         crate::model::storage_gateway_error::Builder::default()
     }
@@ -483,11 +482,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -514,7 +512,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -524,7 +522,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -611,11 +609,10 @@ impl std::fmt::Debug for SmbLocalGroups {
         formatter.finish()
     }
 }
-/// See [`SmbLocalGroups`](crate::model::SmbLocalGroups)
+/// See [`SmbLocalGroups`](crate::model::SmbLocalGroups).
 pub mod smb_local_groups {
 
-    /// A builder for [`SmbLocalGroups`](crate::model::SmbLocalGroups)
-    #[non_exhaustive]
+    /// A builder for [`SmbLocalGroups`](crate::model::SmbLocalGroups).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_admins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -642,7 +639,7 @@ pub mod smb_local_groups {
             self.gateway_admins = input;
             self
         }
-        /// Consumes the builder and constructs a [`SmbLocalGroups`](crate::model::SmbLocalGroups)
+        /// Consumes the builder and constructs a [`SmbLocalGroups`](crate::model::SmbLocalGroups).
         pub fn build(self) -> crate::model::SmbLocalGroups {
             crate::model::SmbLocalGroups {
                 gateway_admins: self.gateway_admins,
@@ -651,7 +648,7 @@ pub mod smb_local_groups {
     }
 }
 impl SmbLocalGroups {
-    /// Creates a new builder-style object to manufacture [`SmbLocalGroups`](crate::model::SmbLocalGroups)
+    /// Creates a new builder-style object to manufacture [`SmbLocalGroups`](crate::model::SmbLocalGroups).
     pub fn builder() -> crate::model::smb_local_groups::Builder {
         crate::model::smb_local_groups::Builder::default()
     }
@@ -682,11 +679,10 @@ impl std::fmt::Debug for CacheAttributes {
         formatter.finish()
     }
 }
-/// See [`CacheAttributes`](crate::model::CacheAttributes)
+/// See [`CacheAttributes`](crate::model::CacheAttributes).
 pub mod cache_attributes {
 
-    /// A builder for [`CacheAttributes`](crate::model::CacheAttributes)
-    #[non_exhaustive]
+    /// A builder for [`CacheAttributes`](crate::model::CacheAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cache_stale_timeout_in_seconds: std::option::Option<i32>,
@@ -707,7 +703,7 @@ pub mod cache_attributes {
             self.cache_stale_timeout_in_seconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`CacheAttributes`](crate::model::CacheAttributes)
+        /// Consumes the builder and constructs a [`CacheAttributes`](crate::model::CacheAttributes).
         pub fn build(self) -> crate::model::CacheAttributes {
             crate::model::CacheAttributes {
                 cache_stale_timeout_in_seconds: self.cache_stale_timeout_in_seconds,
@@ -716,7 +712,7 @@ pub mod cache_attributes {
     }
 }
 impl CacheAttributes {
-    /// Creates a new builder-style object to manufacture [`CacheAttributes`](crate::model::CacheAttributes)
+    /// Creates a new builder-style object to manufacture [`CacheAttributes`](crate::model::CacheAttributes).
     pub fn builder() -> crate::model::cache_attributes::Builder {
         crate::model::cache_attributes::Builder::default()
     }
@@ -903,11 +899,10 @@ impl std::fmt::Debug for NfsFileShareDefaults {
         formatter.finish()
     }
 }
-/// See [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults)
+/// See [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
 pub mod nfs_file_share_defaults {
 
-    /// A builder for [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults)
-    #[non_exhaustive]
+    /// A builder for [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_mode: std::option::Option<std::string::String>,
@@ -959,7 +954,7 @@ pub mod nfs_file_share_defaults {
             self.owner_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults)
+        /// Consumes the builder and constructs a [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
         pub fn build(self) -> crate::model::NfsFileShareDefaults {
             crate::model::NfsFileShareDefaults {
                 file_mode: self.file_mode,
@@ -971,7 +966,7 @@ pub mod nfs_file_share_defaults {
     }
 }
 impl NfsFileShareDefaults {
-    /// Creates a new builder-style object to manufacture [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults)
+    /// Creates a new builder-style object to manufacture [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults).
     pub fn builder() -> crate::model::nfs_file_share_defaults::Builder {
         crate::model::nfs_file_share_defaults::Builder::default()
     }
@@ -1108,11 +1103,10 @@ impl std::fmt::Debug for BandwidthRateLimitInterval {
         formatter.finish()
     }
 }
-/// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval)
+/// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
 pub mod bandwidth_rate_limit_interval {
 
-    /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval)
-    #[non_exhaustive]
+    /// A builder for [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_hour_of_day: std::option::Option<i32>,
@@ -1210,7 +1204,7 @@ pub mod bandwidth_rate_limit_interval {
             self.average_download_rate_limit_in_bits_per_sec = input;
             self
         }
-        /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval)
+        /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
         pub fn build(self) -> crate::model::BandwidthRateLimitInterval {
             crate::model::BandwidthRateLimitInterval {
                 start_hour_of_day: self.start_hour_of_day,
@@ -1227,7 +1221,7 @@ pub mod bandwidth_rate_limit_interval {
     }
 }
 impl BandwidthRateLimitInterval {
-    /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval)
+    /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
     pub fn builder() -> crate::model::bandwidth_rate_limit_interval::Builder {
         crate::model::bandwidth_rate_limit_interval::Builder::default()
     }
@@ -1285,11 +1279,10 @@ impl std::fmt::Debug for AutomaticTapeCreationRule {
         formatter.finish()
     }
 }
-/// See [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule)
+/// See [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
 pub mod automatic_tape_creation_rule {
 
-    /// A builder for [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule)
-    #[non_exhaustive]
+    /// A builder for [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_barcode_prefix: std::option::Option<std::string::String>,
@@ -1356,7 +1349,7 @@ pub mod automatic_tape_creation_rule {
             self.worm = input;
             self
         }
-        /// Consumes the builder and constructs a [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule)
+        /// Consumes the builder and constructs a [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
         pub fn build(self) -> crate::model::AutomaticTapeCreationRule {
             crate::model::AutomaticTapeCreationRule {
                 tape_barcode_prefix: self.tape_barcode_prefix,
@@ -1369,7 +1362,7 @@ pub mod automatic_tape_creation_rule {
     }
 }
 impl AutomaticTapeCreationRule {
-    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule)
+    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationRule`](crate::model::AutomaticTapeCreationRule).
     pub fn builder() -> crate::model::automatic_tape_creation_rule::Builder {
         crate::model::automatic_tape_creation_rule::Builder::default()
     }
@@ -1447,11 +1440,10 @@ impl std::fmt::Debug for VolumeInfo {
         formatter.finish()
     }
 }
-/// See [`VolumeInfo`](crate::model::VolumeInfo)
+/// See [`VolumeInfo`](crate::model::VolumeInfo).
 pub mod volume_info {
 
-    /// A builder for [`VolumeInfo`](crate::model::VolumeInfo)
-    #[non_exhaustive]
+    /// A builder for [`VolumeInfo`](crate::model::VolumeInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -1546,7 +1538,7 @@ pub mod volume_info {
             self.volume_attachment_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`VolumeInfo`](crate::model::VolumeInfo)
+        /// Consumes the builder and constructs a [`VolumeInfo`](crate::model::VolumeInfo).
         pub fn build(self) -> crate::model::VolumeInfo {
             crate::model::VolumeInfo {
                 volume_arn: self.volume_arn,
@@ -1561,7 +1553,7 @@ pub mod volume_info {
     }
 }
 impl VolumeInfo {
-    /// Creates a new builder-style object to manufacture [`VolumeInfo`](crate::model::VolumeInfo)
+    /// Creates a new builder-style object to manufacture [`VolumeInfo`](crate::model::VolumeInfo).
     pub fn builder() -> crate::model::volume_info::Builder {
         crate::model::volume_info::Builder::default()
     }
@@ -1615,11 +1607,10 @@ impl std::fmt::Debug for VolumeRecoveryPointInfo {
         formatter.finish()
     }
 }
-/// See [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo)
+/// See [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
 pub mod volume_recovery_point_info {
 
-    /// A builder for [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo)
-    #[non_exhaustive]
+    /// A builder for [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -1675,7 +1666,7 @@ pub mod volume_recovery_point_info {
             self.volume_recovery_point_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo)
+        /// Consumes the builder and constructs a [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
         pub fn build(self) -> crate::model::VolumeRecoveryPointInfo {
             crate::model::VolumeRecoveryPointInfo {
                 volume_arn: self.volume_arn,
@@ -1687,7 +1678,7 @@ pub mod volume_recovery_point_info {
     }
 }
 impl VolumeRecoveryPointInfo {
-    /// Creates a new builder-style object to manufacture [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo)
+    /// Creates a new builder-style object to manufacture [`VolumeRecoveryPointInfo`](crate::model::VolumeRecoveryPointInfo).
     pub fn builder() -> crate::model::volume_recovery_point_info::Builder {
         crate::model::volume_recovery_point_info::Builder::default()
     }
@@ -1762,11 +1753,10 @@ impl std::fmt::Debug for TapeInfo {
         formatter.finish()
     }
 }
-/// See [`TapeInfo`](crate::model::TapeInfo)
+/// See [`TapeInfo`](crate::model::TapeInfo).
 pub mod tape_info {
 
-    /// A builder for [`TapeInfo`](crate::model::TapeInfo)
-    #[non_exhaustive]
+    /// A builder for [`TapeInfo`](crate::model::TapeInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -1865,7 +1855,7 @@ pub mod tape_info {
             self.pool_entry_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`TapeInfo`](crate::model::TapeInfo)
+        /// Consumes the builder and constructs a [`TapeInfo`](crate::model::TapeInfo).
         pub fn build(self) -> crate::model::TapeInfo {
             crate::model::TapeInfo {
                 tape_arn: self.tape_arn,
@@ -1881,7 +1871,7 @@ pub mod tape_info {
     }
 }
 impl TapeInfo {
-    /// Creates a new builder-style object to manufacture [`TapeInfo`](crate::model::TapeInfo)
+    /// Creates a new builder-style object to manufacture [`TapeInfo`](crate::model::TapeInfo).
     pub fn builder() -> crate::model::tape_info::Builder {
         crate::model::tape_info::Builder::default()
     }
@@ -1945,11 +1935,10 @@ impl std::fmt::Debug for PoolInfo {
         formatter.finish()
     }
 }
-/// See [`PoolInfo`](crate::model::PoolInfo)
+/// See [`PoolInfo`](crate::model::PoolInfo).
 pub mod pool_info {
 
-    /// A builder for [`PoolInfo`](crate::model::PoolInfo)
-    #[non_exhaustive]
+    /// A builder for [`PoolInfo`](crate::model::PoolInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
@@ -2029,7 +2018,7 @@ pub mod pool_info {
             self.pool_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`PoolInfo`](crate::model::PoolInfo)
+        /// Consumes the builder and constructs a [`PoolInfo`](crate::model::PoolInfo).
         pub fn build(self) -> crate::model::PoolInfo {
             crate::model::PoolInfo {
                 pool_arn: self.pool_arn,
@@ -2043,7 +2032,7 @@ pub mod pool_info {
     }
 }
 impl PoolInfo {
-    /// Creates a new builder-style object to manufacture [`PoolInfo`](crate::model::PoolInfo)
+    /// Creates a new builder-style object to manufacture [`PoolInfo`](crate::model::PoolInfo).
     pub fn builder() -> crate::model::pool_info::Builder {
         crate::model::pool_info::Builder::default()
     }
@@ -2289,11 +2278,10 @@ impl std::fmt::Debug for Disk {
         formatter.finish()
     }
 }
-/// See [`Disk`](crate::model::Disk)
+/// See [`Disk`](crate::model::Disk).
 pub mod disk {
 
-    /// A builder for [`Disk`](crate::model::Disk)
-    #[non_exhaustive]
+    /// A builder for [`Disk`](crate::model::Disk).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) disk_id: std::option::Option<std::string::String>,
@@ -2403,7 +2391,7 @@ pub mod disk {
             self.disk_attribute_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`Disk`](crate::model::Disk)
+        /// Consumes the builder and constructs a [`Disk`](crate::model::Disk).
         pub fn build(self) -> crate::model::Disk {
             crate::model::Disk {
                 disk_id: self.disk_id,
@@ -2419,7 +2407,7 @@ pub mod disk {
     }
 }
 impl Disk {
-    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk)
+    /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
     pub fn builder() -> crate::model::disk::Builder {
         crate::model::disk::Builder::default()
     }
@@ -2503,11 +2491,10 @@ impl std::fmt::Debug for GatewayInfo {
         formatter.finish()
     }
 }
-/// See [`GatewayInfo`](crate::model::GatewayInfo)
+/// See [`GatewayInfo`](crate::model::GatewayInfo).
 pub mod gateway_info {
 
-    /// A builder for [`GatewayInfo`](crate::model::GatewayInfo)
-    #[non_exhaustive]
+    /// A builder for [`GatewayInfo`](crate::model::GatewayInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_id: std::option::Option<std::string::String>,
@@ -2628,7 +2615,7 @@ pub mod gateway_info {
             self.host_environment_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatewayInfo`](crate::model::GatewayInfo)
+        /// Consumes the builder and constructs a [`GatewayInfo`](crate::model::GatewayInfo).
         pub fn build(self) -> crate::model::GatewayInfo {
             crate::model::GatewayInfo {
                 gateway_id: self.gateway_id,
@@ -2645,7 +2632,7 @@ pub mod gateway_info {
     }
 }
 impl GatewayInfo {
-    /// Creates a new builder-style object to manufacture [`GatewayInfo`](crate::model::GatewayInfo)
+    /// Creates a new builder-style object to manufacture [`GatewayInfo`](crate::model::GatewayInfo).
     pub fn builder() -> crate::model::gateway_info::Builder {
         crate::model::gateway_info::Builder::default()
     }
@@ -2772,11 +2759,10 @@ impl std::fmt::Debug for FileSystemAssociationSummary {
         formatter.finish()
     }
 }
-/// See [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary)
+/// See [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
 pub mod file_system_association_summary {
 
-    /// A builder for [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary)
-    #[non_exhaustive]
+    /// A builder for [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_id: std::option::Option<std::string::String>,
@@ -2840,7 +2826,7 @@ pub mod file_system_association_summary {
             self.gateway_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary)
+        /// Consumes the builder and constructs a [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
         pub fn build(self) -> crate::model::FileSystemAssociationSummary {
             crate::model::FileSystemAssociationSummary {
                 file_system_association_id: self.file_system_association_id,
@@ -2852,7 +2838,7 @@ pub mod file_system_association_summary {
     }
 }
 impl FileSystemAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary)
+    /// Creates a new builder-style object to manufacture [`FileSystemAssociationSummary`](crate::model::FileSystemAssociationSummary).
     pub fn builder() -> crate::model::file_system_association_summary::Builder {
         crate::model::file_system_association_summary::Builder::default()
     }
@@ -2908,11 +2894,10 @@ impl std::fmt::Debug for FileShareInfo {
         formatter.finish()
     }
 }
-/// See [`FileShareInfo`](crate::model::FileShareInfo)
+/// See [`FileShareInfo`](crate::model::FileShareInfo).
 pub mod file_share_info {
 
-    /// A builder for [`FileShareInfo`](crate::model::FileShareInfo)
-    #[non_exhaustive]
+    /// A builder for [`FileShareInfo`](crate::model::FileShareInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_type: std::option::Option<crate::model::FileShareType>,
@@ -2986,7 +2971,7 @@ pub mod file_share_info {
             self.gateway_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileShareInfo`](crate::model::FileShareInfo)
+        /// Consumes the builder and constructs a [`FileShareInfo`](crate::model::FileShareInfo).
         pub fn build(self) -> crate::model::FileShareInfo {
             crate::model::FileShareInfo {
                 file_share_type: self.file_share_type,
@@ -2999,7 +2984,7 @@ pub mod file_share_info {
     }
 }
 impl FileShareInfo {
-    /// Creates a new builder-style object to manufacture [`FileShareInfo`](crate::model::FileShareInfo)
+    /// Creates a new builder-style object to manufacture [`FileShareInfo`](crate::model::FileShareInfo).
     pub fn builder() -> crate::model::file_share_info::Builder {
         crate::model::file_share_info::Builder::default()
     }
@@ -3093,11 +3078,10 @@ impl std::fmt::Debug for AutomaticTapeCreationPolicyInfo {
         formatter.finish()
     }
 }
-/// See [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo)
+/// See [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
 pub mod automatic_tape_creation_policy_info {
 
-    /// A builder for [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo)
-    #[non_exhaustive]
+    /// A builder for [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_tape_creation_rules:
@@ -3137,7 +3121,7 @@ pub mod automatic_tape_creation_policy_info {
             self.gateway_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo)
+        /// Consumes the builder and constructs a [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
         pub fn build(self) -> crate::model::AutomaticTapeCreationPolicyInfo {
             crate::model::AutomaticTapeCreationPolicyInfo {
                 automatic_tape_creation_rules: self.automatic_tape_creation_rules,
@@ -3147,7 +3131,7 @@ pub mod automatic_tape_creation_policy_info {
     }
 }
 impl AutomaticTapeCreationPolicyInfo {
-    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo)
+    /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationPolicyInfo`](crate::model::AutomaticTapeCreationPolicyInfo).
     pub fn builder() -> crate::model::automatic_tape_creation_policy_info::Builder {
         crate::model::automatic_tape_creation_policy_info::Builder::default()
     }
@@ -3289,11 +3273,10 @@ impl std::fmt::Debug for VtlDevice {
         formatter.finish()
     }
 }
-/// See [`VtlDevice`](crate::model::VtlDevice)
+/// See [`VtlDevice`](crate::model::VtlDevice).
 pub mod vtl_device {
 
-    /// A builder for [`VtlDevice`](crate::model::VtlDevice)
-    #[non_exhaustive]
+    /// A builder for [`VtlDevice`](crate::model::VtlDevice).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vtl_device_arn: std::option::Option<std::string::String>,
@@ -3375,7 +3358,7 @@ pub mod vtl_device {
             self.devicei_scsi_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`VtlDevice`](crate::model::VtlDevice)
+        /// Consumes the builder and constructs a [`VtlDevice`](crate::model::VtlDevice).
         pub fn build(self) -> crate::model::VtlDevice {
             crate::model::VtlDevice {
                 vtl_device_arn: self.vtl_device_arn,
@@ -3388,7 +3371,7 @@ pub mod vtl_device {
     }
 }
 impl VtlDevice {
-    /// Creates a new builder-style object to manufacture [`VtlDevice`](crate::model::VtlDevice)
+    /// Creates a new builder-style object to manufacture [`VtlDevice`](crate::model::VtlDevice).
     pub fn builder() -> crate::model::vtl_device::Builder {
         crate::model::vtl_device::Builder::default()
     }
@@ -3435,11 +3418,10 @@ impl std::fmt::Debug for DeviceiScsiAttributes {
         formatter.finish()
     }
 }
-/// See [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes)
+/// See [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
 pub mod devicei_scsi_attributes {
 
-    /// A builder for [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes)
-    #[non_exhaustive]
+    /// A builder for [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -3491,7 +3473,7 @@ pub mod devicei_scsi_attributes {
             self.chap_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes)
+        /// Consumes the builder and constructs a [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
         pub fn build(self) -> crate::model::DeviceiScsiAttributes {
             crate::model::DeviceiScsiAttributes {
                 target_arn: self.target_arn,
@@ -3503,7 +3485,7 @@ pub mod devicei_scsi_attributes {
     }
 }
 impl DeviceiScsiAttributes {
-    /// Creates a new builder-style object to manufacture [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes)
+    /// Creates a new builder-style object to manufacture [`DeviceiScsiAttributes`](crate::model::DeviceiScsiAttributes).
     pub fn builder() -> crate::model::devicei_scsi_attributes::Builder {
         crate::model::devicei_scsi_attributes::Builder::default()
     }
@@ -3619,11 +3601,10 @@ impl std::fmt::Debug for Tape {
         formatter.finish()
     }
 }
-/// See [`Tape`](crate::model::Tape)
+/// See [`Tape`](crate::model::Tape).
 pub mod tape {
 
-    /// A builder for [`Tape`](crate::model::Tape)
-    #[non_exhaustive]
+    /// A builder for [`Tape`](crate::model::Tape).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -3786,7 +3767,7 @@ pub mod tape {
             self.pool_entry_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tape`](crate::model::Tape)
+        /// Consumes the builder and constructs a [`Tape`](crate::model::Tape).
         pub fn build(self) -> crate::model::Tape {
             crate::model::Tape {
                 tape_arn: self.tape_arn,
@@ -3807,7 +3788,7 @@ pub mod tape {
     }
 }
 impl Tape {
-    /// Creates a new builder-style object to manufacture [`Tape`](crate::model::Tape)
+    /// Creates a new builder-style object to manufacture [`Tape`](crate::model::Tape).
     pub fn builder() -> crate::model::tape::Builder {
         crate::model::tape::Builder::default()
     }
@@ -3856,11 +3837,10 @@ impl std::fmt::Debug for TapeRecoveryPointInfo {
         formatter.finish()
     }
 }
-/// See [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo)
+/// See [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
 pub mod tape_recovery_point_info {
 
-    /// A builder for [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo)
-    #[non_exhaustive]
+    /// A builder for [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -3914,7 +3894,7 @@ pub mod tape_recovery_point_info {
             self.tape_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo)
+        /// Consumes the builder and constructs a [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
         pub fn build(self) -> crate::model::TapeRecoveryPointInfo {
             crate::model::TapeRecoveryPointInfo {
                 tape_arn: self.tape_arn,
@@ -3926,7 +3906,7 @@ pub mod tape_recovery_point_info {
     }
 }
 impl TapeRecoveryPointInfo {
-    /// Creates a new builder-style object to manufacture [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo)
+    /// Creates a new builder-style object to manufacture [`TapeRecoveryPointInfo`](crate::model::TapeRecoveryPointInfo).
     pub fn builder() -> crate::model::tape_recovery_point_info::Builder {
         crate::model::tape_recovery_point_info::Builder::default()
     }
@@ -4046,11 +4026,10 @@ impl std::fmt::Debug for TapeArchive {
         formatter.finish()
     }
 }
-/// See [`TapeArchive`](crate::model::TapeArchive)
+/// See [`TapeArchive`](crate::model::TapeArchive).
 pub mod tape_archive {
 
-    /// A builder for [`TapeArchive`](crate::model::TapeArchive)
-    #[non_exhaustive]
+    /// A builder for [`TapeArchive`](crate::model::TapeArchive).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tape_arn: std::option::Option<std::string::String>,
@@ -4220,7 +4199,7 @@ pub mod tape_archive {
             self.pool_entry_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`TapeArchive`](crate::model::TapeArchive)
+        /// Consumes the builder and constructs a [`TapeArchive`](crate::model::TapeArchive).
         pub fn build(self) -> crate::model::TapeArchive {
             crate::model::TapeArchive {
                 tape_arn: self.tape_arn,
@@ -4241,7 +4220,7 @@ pub mod tape_archive {
     }
 }
 impl TapeArchive {
-    /// Creates a new builder-style object to manufacture [`TapeArchive`](crate::model::TapeArchive)
+    /// Creates a new builder-style object to manufacture [`TapeArchive`](crate::model::TapeArchive).
     pub fn builder() -> crate::model::tape_archive::Builder {
         crate::model::tape_archive::Builder::default()
     }
@@ -4375,11 +4354,10 @@ impl std::fmt::Debug for StorediScsiVolume {
         formatter.finish()
     }
 }
-/// See [`StorediScsiVolume`](crate::model::StorediScsiVolume)
+/// See [`StorediScsiVolume`](crate::model::StorediScsiVolume).
 pub mod storedi_scsi_volume {
 
-    /// A builder for [`StorediScsiVolume`](crate::model::StorediScsiVolume)
-    #[non_exhaustive]
+    /// A builder for [`StorediScsiVolume`](crate::model::StorediScsiVolume).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -4579,7 +4557,7 @@ pub mod storedi_scsi_volume {
             self.target_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`StorediScsiVolume`](crate::model::StorediScsiVolume)
+        /// Consumes the builder and constructs a [`StorediScsiVolume`](crate::model::StorediScsiVolume).
         pub fn build(self) -> crate::model::StorediScsiVolume {
             crate::model::StorediScsiVolume {
                 volume_arn: self.volume_arn,
@@ -4602,7 +4580,7 @@ pub mod storedi_scsi_volume {
     }
 }
 impl StorediScsiVolume {
-    /// Creates a new builder-style object to manufacture [`StorediScsiVolume`](crate::model::StorediScsiVolume)
+    /// Creates a new builder-style object to manufacture [`StorediScsiVolume`](crate::model::StorediScsiVolume).
     pub fn builder() -> crate::model::storedi_scsi_volume::Builder {
         crate::model::storedi_scsi_volume::Builder::default()
     }
@@ -4656,11 +4634,10 @@ impl std::fmt::Debug for VolumeiScsiAttributes {
         formatter.finish()
     }
 }
-/// See [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes)
+/// See [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
 pub mod volumei_scsi_attributes {
 
-    /// A builder for [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes)
-    #[non_exhaustive]
+    /// A builder for [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -4723,7 +4700,7 @@ pub mod volumei_scsi_attributes {
             self.chap_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes)
+        /// Consumes the builder and constructs a [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
         pub fn build(self) -> crate::model::VolumeiScsiAttributes {
             crate::model::VolumeiScsiAttributes {
                 target_arn: self.target_arn,
@@ -4736,7 +4713,7 @@ pub mod volumei_scsi_attributes {
     }
 }
 impl VolumeiScsiAttributes {
-    /// Creates a new builder-style object to manufacture [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes)
+    /// Creates a new builder-style object to manufacture [`VolumeiScsiAttributes`](crate::model::VolumeiScsiAttributes).
     pub fn builder() -> crate::model::volumei_scsi_attributes::Builder {
         crate::model::volumei_scsi_attributes::Builder::default()
     }
@@ -5026,11 +5003,10 @@ impl std::fmt::Debug for SmbFileShareInfo {
         formatter.finish()
     }
 }
-/// See [`SmbFileShareInfo`](crate::model::SmbFileShareInfo)
+/// See [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
 pub mod smb_file_share_info {
 
-    /// A builder for [`SmbFileShareInfo`](crate::model::SmbFileShareInfo)
-    #[non_exhaustive]
+    /// A builder for [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_share_arn: std::option::Option<std::string::String>,
@@ -5497,7 +5473,7 @@ pub mod smb_file_share_info {
             self.oplocks_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`SmbFileShareInfo`](crate::model::SmbFileShareInfo)
+        /// Consumes the builder and constructs a [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
         pub fn build(self) -> crate::model::SmbFileShareInfo {
             crate::model::SmbFileShareInfo {
                 file_share_arn: self.file_share_arn,
@@ -5534,7 +5510,7 @@ pub mod smb_file_share_info {
     }
 }
 impl SmbFileShareInfo {
-    /// Creates a new builder-style object to manufacture [`SmbFileShareInfo`](crate::model::SmbFileShareInfo)
+    /// Creates a new builder-style object to manufacture [`SmbFileShareInfo`](crate::model::SmbFileShareInfo).
     pub fn builder() -> crate::model::smb_file_share_info::Builder {
         crate::model::smb_file_share_info::Builder::default()
     }
@@ -5791,11 +5767,10 @@ impl std::fmt::Debug for NfsFileShareInfo {
         formatter.finish()
     }
 }
-/// See [`NfsFileShareInfo`](crate::model::NfsFileShareInfo)
+/// See [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
 pub mod nfs_file_share_info {
 
-    /// A builder for [`NfsFileShareInfo`](crate::model::NfsFileShareInfo)
-    #[non_exhaustive]
+    /// A builder for [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
@@ -6189,7 +6164,7 @@ pub mod nfs_file_share_info {
             self.audit_destination_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`NfsFileShareInfo`](crate::model::NfsFileShareInfo)
+        /// Consumes the builder and constructs a [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
         pub fn build(self) -> crate::model::NfsFileShareInfo {
             crate::model::NfsFileShareInfo {
                 nfs_file_share_defaults: self.nfs_file_share_defaults,
@@ -6221,7 +6196,7 @@ pub mod nfs_file_share_info {
     }
 }
 impl NfsFileShareInfo {
-    /// Creates a new builder-style object to manufacture [`NfsFileShareInfo`](crate::model::NfsFileShareInfo)
+    /// Creates a new builder-style object to manufacture [`NfsFileShareInfo`](crate::model::NfsFileShareInfo).
     pub fn builder() -> crate::model::nfs_file_share_info::Builder {
         crate::model::nfs_file_share_info::Builder::default()
     }
@@ -6265,11 +6240,10 @@ impl std::fmt::Debug for NetworkInterface {
         formatter.finish()
     }
 }
-/// See [`NetworkInterface`](crate::model::NetworkInterface)
+/// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
-    /// A builder for [`NetworkInterface`](crate::model::NetworkInterface)
-    #[non_exhaustive]
+    /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ipv4_address: std::option::Option<std::string::String>,
@@ -6311,7 +6285,7 @@ pub mod network_interface {
             self.ipv6_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface)
+        /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
                 ipv4_address: self.ipv4_address,
@@ -6322,7 +6296,7 @@ pub mod network_interface {
     }
 }
 impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface)
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
     pub fn builder() -> crate::model::network_interface::Builder {
         crate::model::network_interface::Builder::default()
     }
@@ -6426,11 +6400,10 @@ impl std::fmt::Debug for FileSystemAssociationInfo {
         formatter.finish()
     }
 }
-/// See [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo)
+/// See [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
 pub mod file_system_association_info {
 
-    /// A builder for [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo)
-    #[non_exhaustive]
+    /// A builder for [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
@@ -6589,7 +6562,7 @@ pub mod file_system_association_info {
             self.file_system_association_status_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo)
+        /// Consumes the builder and constructs a [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
         pub fn build(self) -> crate::model::FileSystemAssociationInfo {
             crate::model::FileSystemAssociationInfo {
                 file_system_association_arn: self.file_system_association_arn,
@@ -6606,7 +6579,7 @@ pub mod file_system_association_info {
     }
 }
 impl FileSystemAssociationInfo {
-    /// Creates a new builder-style object to manufacture [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo)
+    /// Creates a new builder-style object to manufacture [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo).
     pub fn builder() -> crate::model::file_system_association_info::Builder {
         crate::model::file_system_association_info::Builder::default()
     }
@@ -6632,11 +6605,10 @@ impl std::fmt::Debug for FileSystemAssociationStatusDetail {
         formatter.finish()
     }
 }
-/// See [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail)
+/// See [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
 pub mod file_system_association_status_detail {
 
-    /// A builder for [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail)
-    #[non_exhaustive]
+    /// A builder for [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -6652,7 +6624,7 @@ pub mod file_system_association_status_detail {
             self.error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail)
+        /// Consumes the builder and constructs a [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
         pub fn build(self) -> crate::model::FileSystemAssociationStatusDetail {
             crate::model::FileSystemAssociationStatusDetail {
                 error_code: self.error_code,
@@ -6661,7 +6633,7 @@ pub mod file_system_association_status_detail {
     }
 }
 impl FileSystemAssociationStatusDetail {
-    /// Creates a new builder-style object to manufacture [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail)
+    /// Creates a new builder-style object to manufacture [`FileSystemAssociationStatusDetail`](crate::model::FileSystemAssociationStatusDetail).
     pub fn builder() -> crate::model::file_system_association_status_detail::Builder {
         crate::model::file_system_association_status_detail::Builder::default()
     }
@@ -6691,11 +6663,10 @@ impl std::fmt::Debug for EndpointNetworkConfiguration {
         formatter.finish()
     }
 }
-/// See [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
+/// See [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
 pub mod endpoint_network_configuration {
 
-    /// A builder for [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6724,7 +6695,7 @@ pub mod endpoint_network_configuration {
             self.ip_addresses = input;
             self
         }
-        /// Consumes the builder and constructs a [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
+        /// Consumes the builder and constructs a [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
         pub fn build(self) -> crate::model::EndpointNetworkConfiguration {
             crate::model::EndpointNetworkConfiguration {
                 ip_addresses: self.ip_addresses,
@@ -6733,7 +6704,7 @@ pub mod endpoint_network_configuration {
     }
 }
 impl EndpointNetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
+    /// Creates a new builder-style object to manufacture [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration).
     pub fn builder() -> crate::model::endpoint_network_configuration::Builder {
         crate::model::endpoint_network_configuration::Builder::default()
     }
@@ -6788,11 +6759,10 @@ impl std::fmt::Debug for ChapInfo {
         formatter.finish()
     }
 }
-/// See [`ChapInfo`](crate::model::ChapInfo)
+/// See [`ChapInfo`](crate::model::ChapInfo).
 pub mod chap_info {
 
-    /// A builder for [`ChapInfo`](crate::model::ChapInfo)
-    #[non_exhaustive]
+    /// A builder for [`ChapInfo`](crate::model::ChapInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_arn: std::option::Option<std::string::String>,
@@ -6858,7 +6828,7 @@ pub mod chap_info {
             self.secret_to_authenticate_target = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChapInfo`](crate::model::ChapInfo)
+        /// Consumes the builder and constructs a [`ChapInfo`](crate::model::ChapInfo).
         pub fn build(self) -> crate::model::ChapInfo {
             crate::model::ChapInfo {
                 target_arn: self.target_arn,
@@ -6870,7 +6840,7 @@ pub mod chap_info {
     }
 }
 impl ChapInfo {
-    /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::model::ChapInfo)
+    /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::model::ChapInfo).
     pub fn builder() -> crate::model::chap_info::Builder {
         crate::model::chap_info::Builder::default()
     }
@@ -6990,11 +6960,10 @@ impl std::fmt::Debug for CachediScsiVolume {
         formatter.finish()
     }
 }
-/// See [`CachediScsiVolume`](crate::model::CachediScsiVolume)
+/// See [`CachediScsiVolume`](crate::model::CachediScsiVolume).
 pub mod cachedi_scsi_volume {
 
-    /// A builder for [`CachediScsiVolume`](crate::model::CachediScsiVolume)
-    #[non_exhaustive]
+    /// A builder for [`CachediScsiVolume`](crate::model::CachediScsiVolume).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_arn: std::option::Option<std::string::String>,
@@ -7169,7 +7138,7 @@ pub mod cachedi_scsi_volume {
             self.target_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`CachediScsiVolume`](crate::model::CachediScsiVolume)
+        /// Consumes the builder and constructs a [`CachediScsiVolume`](crate::model::CachediScsiVolume).
         pub fn build(self) -> crate::model::CachediScsiVolume {
             crate::model::CachediScsiVolume {
                 volume_arn: self.volume_arn,
@@ -7190,7 +7159,7 @@ pub mod cachedi_scsi_volume {
     }
 }
 impl CachediScsiVolume {
-    /// Creates a new builder-style object to manufacture [`CachediScsiVolume`](crate::model::CachediScsiVolume)
+    /// Creates a new builder-style object to manufacture [`CachediScsiVolume`](crate::model::CachediScsiVolume).
     pub fn builder() -> crate::model::cachedi_scsi_volume::Builder {
         crate::model::cachedi_scsi_volume::Builder::default()
     }

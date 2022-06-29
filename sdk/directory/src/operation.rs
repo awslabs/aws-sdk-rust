@@ -10,7 +10,7 @@ pub struct AcceptSharedDirectory {
     _private: (),
 }
 impl AcceptSharedDirectory {
-    /// Creates a new builder-style object to manufacture [`AcceptSharedDirectoryInput`](crate::input::AcceptSharedDirectoryInput)
+    /// Creates a new builder-style object to manufacture [`AcceptSharedDirectoryInput`](crate::input::AcceptSharedDirectoryInput).
     pub fn builder() -> crate::input::accept_shared_directory_input::Builder {
         crate::input::accept_shared_directory_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AddIpRoutes {
     _private: (),
 }
 impl AddIpRoutes {
-    /// Creates a new builder-style object to manufacture [`AddIpRoutesInput`](crate::input::AddIpRoutesInput)
+    /// Creates a new builder-style object to manufacture [`AddIpRoutesInput`](crate::input::AddIpRoutesInput).
     pub fn builder() -> crate::input::add_ip_routes_input::Builder {
         crate::input::add_ip_routes_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct AddRegion {
     _private: (),
 }
 impl AddRegion {
-    /// Creates a new builder-style object to manufacture [`AddRegionInput`](crate::input::AddRegionInput)
+    /// Creates a new builder-style object to manufacture [`AddRegionInput`](crate::input::AddRegionInput).
     pub fn builder() -> crate::input::add_region_input::Builder {
         crate::input::add_region_input::Builder::default()
     }
@@ -107,7 +107,7 @@ pub struct AddTagsToResource {
     _private: (),
 }
 impl AddTagsToResource {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
     pub fn builder() -> crate::input::add_tags_to_resource_input::Builder {
         crate::input::add_tags_to_resource_input::Builder::default()
     }
@@ -141,7 +141,7 @@ pub struct CancelSchemaExtension {
     _private: (),
 }
 impl CancelSchemaExtension {
-    /// Creates a new builder-style object to manufacture [`CancelSchemaExtensionInput`](crate::input::CancelSchemaExtensionInput)
+    /// Creates a new builder-style object to manufacture [`CancelSchemaExtensionInput`](crate::input::CancelSchemaExtensionInput).
     pub fn builder() -> crate::input::cancel_schema_extension_input::Builder {
         crate::input::cancel_schema_extension_input::Builder::default()
     }
@@ -175,7 +175,7 @@ pub struct ConnectDirectory {
     _private: (),
 }
 impl ConnectDirectory {
-    /// Creates a new builder-style object to manufacture [`ConnectDirectoryInput`](crate::input::ConnectDirectoryInput)
+    /// Creates a new builder-style object to manufacture [`ConnectDirectoryInput`](crate::input::ConnectDirectoryInput).
     pub fn builder() -> crate::input::connect_directory_input::Builder {
         crate::input::connect_directory_input::Builder::default()
     }
@@ -209,7 +209,7 @@ pub struct CreateAlias {
     _private: (),
 }
 impl CreateAlias {
-    /// Creates a new builder-style object to manufacture [`CreateAliasInput`](crate::input::CreateAliasInput)
+    /// Creates a new builder-style object to manufacture [`CreateAliasInput`](crate::input::CreateAliasInput).
     pub fn builder() -> crate::input::create_alias_input::Builder {
         crate::input::create_alias_input::Builder::default()
     }
@@ -241,7 +241,7 @@ pub struct CreateComputer {
     _private: (),
 }
 impl CreateComputer {
-    /// Creates a new builder-style object to manufacture [`CreateComputerInput`](crate::input::CreateComputerInput)
+    /// Creates a new builder-style object to manufacture [`CreateComputerInput`](crate::input::CreateComputerInput).
     pub fn builder() -> crate::input::create_computer_input::Builder {
         crate::input::create_computer_input::Builder::default()
     }
@@ -273,7 +273,7 @@ pub struct CreateConditionalForwarder {
     _private: (),
 }
 impl CreateConditionalForwarder {
-    /// Creates a new builder-style object to manufacture [`CreateConditionalForwarderInput`](crate::input::CreateConditionalForwarderInput)
+    /// Creates a new builder-style object to manufacture [`CreateConditionalForwarderInput`](crate::input::CreateConditionalForwarderInput).
     pub fn builder() -> crate::input::create_conditional_forwarder_input::Builder {
         crate::input::create_conditional_forwarder_input::Builder::default()
     }
@@ -307,7 +307,7 @@ pub struct CreateDirectory {
     _private: (),
 }
 impl CreateDirectory {
-    /// Creates a new builder-style object to manufacture [`CreateDirectoryInput`](crate::input::CreateDirectoryInput)
+    /// Creates a new builder-style object to manufacture [`CreateDirectoryInput`](crate::input::CreateDirectoryInput).
     pub fn builder() -> crate::input::create_directory_input::Builder {
         crate::input::create_directory_input::Builder::default()
     }
@@ -341,7 +341,7 @@ pub struct CreateLogSubscription {
     _private: (),
 }
 impl CreateLogSubscription {
-    /// Creates a new builder-style object to manufacture [`CreateLogSubscriptionInput`](crate::input::CreateLogSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`CreateLogSubscriptionInput`](crate::input::CreateLogSubscriptionInput).
     pub fn builder() -> crate::input::create_log_subscription_input::Builder {
         crate::input::create_log_subscription_input::Builder::default()
     }
@@ -375,7 +375,7 @@ pub struct CreateMicrosoftAD {
     _private: (),
 }
 impl CreateMicrosoftAD {
-    /// Creates a new builder-style object to manufacture [`CreateMicrosoftAdInput`](crate::input::CreateMicrosoftAdInput)
+    /// Creates a new builder-style object to manufacture [`CreateMicrosoftAdInput`](crate::input::CreateMicrosoftAdInput).
     pub fn builder() -> crate::input::create_microsoft_ad_input::Builder {
         crate::input::create_microsoft_ad_input::Builder::default()
     }
@@ -409,7 +409,7 @@ pub struct CreateSnapshot {
     _private: (),
 }
 impl CreateSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
     pub fn builder() -> crate::input::create_snapshot_input::Builder {
         crate::input::create_snapshot_input::Builder::default()
     }
@@ -441,7 +441,7 @@ pub struct CreateTrust {
     _private: (),
 }
 impl CreateTrust {
-    /// Creates a new builder-style object to manufacture [`CreateTrustInput`](crate::input::CreateTrustInput)
+    /// Creates a new builder-style object to manufacture [`CreateTrustInput`](crate::input::CreateTrustInput).
     pub fn builder() -> crate::input::create_trust_input::Builder {
         crate::input::create_trust_input::Builder::default()
     }
@@ -473,7 +473,7 @@ pub struct DeleteConditionalForwarder {
     _private: (),
 }
 impl DeleteConditionalForwarder {
-    /// Creates a new builder-style object to manufacture [`DeleteConditionalForwarderInput`](crate::input::DeleteConditionalForwarderInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConditionalForwarderInput`](crate::input::DeleteConditionalForwarderInput).
     pub fn builder() -> crate::input::delete_conditional_forwarder_input::Builder {
         crate::input::delete_conditional_forwarder_input::Builder::default()
     }
@@ -507,7 +507,7 @@ pub struct DeleteDirectory {
     _private: (),
 }
 impl DeleteDirectory {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectoryInput`](crate::input::DeleteDirectoryInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDirectoryInput`](crate::input::DeleteDirectoryInput).
     pub fn builder() -> crate::input::delete_directory_input::Builder {
         crate::input::delete_directory_input::Builder::default()
     }
@@ -541,7 +541,7 @@ pub struct DeleteLogSubscription {
     _private: (),
 }
 impl DeleteLogSubscription {
-    /// Creates a new builder-style object to manufacture [`DeleteLogSubscriptionInput`](crate::input::DeleteLogSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLogSubscriptionInput`](crate::input::DeleteLogSubscriptionInput).
     pub fn builder() -> crate::input::delete_log_subscription_input::Builder {
         crate::input::delete_log_subscription_input::Builder::default()
     }
@@ -575,7 +575,7 @@ pub struct DeleteSnapshot {
     _private: (),
 }
 impl DeleteSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
     pub fn builder() -> crate::input::delete_snapshot_input::Builder {
         crate::input::delete_snapshot_input::Builder::default()
     }
@@ -607,7 +607,7 @@ pub struct DeleteTrust {
     _private: (),
 }
 impl DeleteTrust {
-    /// Creates a new builder-style object to manufacture [`DeleteTrustInput`](crate::input::DeleteTrustInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTrustInput`](crate::input::DeleteTrustInput).
     pub fn builder() -> crate::input::delete_trust_input::Builder {
         crate::input::delete_trust_input::Builder::default()
     }
@@ -639,7 +639,7 @@ pub struct DeregisterCertificate {
     _private: (),
 }
 impl DeregisterCertificate {
-    /// Creates a new builder-style object to manufacture [`DeregisterCertificateInput`](crate::input::DeregisterCertificateInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterCertificateInput`](crate::input::DeregisterCertificateInput).
     pub fn builder() -> crate::input::deregister_certificate_input::Builder {
         crate::input::deregister_certificate_input::Builder::default()
     }
@@ -673,7 +673,7 @@ pub struct DeregisterEventTopic {
     _private: (),
 }
 impl DeregisterEventTopic {
-    /// Creates a new builder-style object to manufacture [`DeregisterEventTopicInput`](crate::input::DeregisterEventTopicInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterEventTopicInput`](crate::input::DeregisterEventTopicInput).
     pub fn builder() -> crate::input::deregister_event_topic_input::Builder {
         crate::input::deregister_event_topic_input::Builder::default()
     }
@@ -707,7 +707,7 @@ pub struct DescribeCertificate {
     _private: (),
 }
 impl DescribeCertificate {
-    /// Creates a new builder-style object to manufacture [`DescribeCertificateInput`](crate::input::DescribeCertificateInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
     pub fn builder() -> crate::input::describe_certificate_input::Builder {
         crate::input::describe_certificate_input::Builder::default()
     }
@@ -741,7 +741,7 @@ pub struct DescribeClientAuthenticationSettings {
     _private: (),
 }
 impl DescribeClientAuthenticationSettings {
-    /// Creates a new builder-style object to manufacture [`DescribeClientAuthenticationSettingsInput`](crate::input::DescribeClientAuthenticationSettingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeClientAuthenticationSettingsInput`](crate::input::DescribeClientAuthenticationSettingsInput).
     pub fn builder() -> crate::input::describe_client_authentication_settings_input::Builder {
         crate::input::describe_client_authentication_settings_input::Builder::default()
     }
@@ -775,7 +775,7 @@ pub struct DescribeConditionalForwarders {
     _private: (),
 }
 impl DescribeConditionalForwarders {
-    /// Creates a new builder-style object to manufacture [`DescribeConditionalForwardersInput`](crate::input::DescribeConditionalForwardersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConditionalForwardersInput`](crate::input::DescribeConditionalForwardersInput).
     pub fn builder() -> crate::input::describe_conditional_forwarders_input::Builder {
         crate::input::describe_conditional_forwarders_input::Builder::default()
     }
@@ -809,7 +809,7 @@ pub struct DescribeDirectories {
     _private: (),
 }
 impl DescribeDirectories {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectoriesInput`](crate::input::DescribeDirectoriesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectoriesInput`](crate::input::DescribeDirectoriesInput).
     pub fn builder() -> crate::input::describe_directories_input::Builder {
         crate::input::describe_directories_input::Builder::default()
     }
@@ -843,7 +843,7 @@ pub struct DescribeDomainControllers {
     _private: (),
 }
 impl DescribeDomainControllers {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainControllersInput`](crate::input::DescribeDomainControllersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainControllersInput`](crate::input::DescribeDomainControllersInput).
     pub fn builder() -> crate::input::describe_domain_controllers_input::Builder {
         crate::input::describe_domain_controllers_input::Builder::default()
     }
@@ -877,7 +877,7 @@ pub struct DescribeEventTopics {
     _private: (),
 }
 impl DescribeEventTopics {
-    /// Creates a new builder-style object to manufacture [`DescribeEventTopicsInput`](crate::input::DescribeEventTopicsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventTopicsInput`](crate::input::DescribeEventTopicsInput).
     pub fn builder() -> crate::input::describe_event_topics_input::Builder {
         crate::input::describe_event_topics_input::Builder::default()
     }
@@ -911,7 +911,7 @@ pub struct DescribeLDAPSSettings {
     _private: (),
 }
 impl DescribeLDAPSSettings {
-    /// Creates a new builder-style object to manufacture [`DescribeLdapsSettingsInput`](crate::input::DescribeLdapsSettingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLdapsSettingsInput`](crate::input::DescribeLdapsSettingsInput).
     pub fn builder() -> crate::input::describe_ldaps_settings_input::Builder {
         crate::input::describe_ldaps_settings_input::Builder::default()
     }
@@ -945,7 +945,7 @@ pub struct DescribeRegions {
     _private: (),
 }
 impl DescribeRegions {
-    /// Creates a new builder-style object to manufacture [`DescribeRegionsInput`](crate::input::DescribeRegionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRegionsInput`](crate::input::DescribeRegionsInput).
     pub fn builder() -> crate::input::describe_regions_input::Builder {
         crate::input::describe_regions_input::Builder::default()
     }
@@ -979,7 +979,7 @@ pub struct DescribeSettings {
     _private: (),
 }
 impl DescribeSettings {
-    /// Creates a new builder-style object to manufacture [`DescribeSettingsInput`](crate::input::DescribeSettingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSettingsInput`](crate::input::DescribeSettingsInput).
     pub fn builder() -> crate::input::describe_settings_input::Builder {
         crate::input::describe_settings_input::Builder::default()
     }
@@ -1013,7 +1013,7 @@ pub struct DescribeSharedDirectories {
     _private: (),
 }
 impl DescribeSharedDirectories {
-    /// Creates a new builder-style object to manufacture [`DescribeSharedDirectoriesInput`](crate::input::DescribeSharedDirectoriesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSharedDirectoriesInput`](crate::input::DescribeSharedDirectoriesInput).
     pub fn builder() -> crate::input::describe_shared_directories_input::Builder {
         crate::input::describe_shared_directories_input::Builder::default()
     }
@@ -1047,7 +1047,7 @@ pub struct DescribeSnapshots {
     _private: (),
 }
 impl DescribeSnapshots {
-    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput).
     pub fn builder() -> crate::input::describe_snapshots_input::Builder {
         crate::input::describe_snapshots_input::Builder::default()
     }
@@ -1081,7 +1081,7 @@ pub struct DescribeTrusts {
     _private: (),
 }
 impl DescribeTrusts {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustsInput`](crate::input::DescribeTrustsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrustsInput`](crate::input::DescribeTrustsInput).
     pub fn builder() -> crate::input::describe_trusts_input::Builder {
         crate::input::describe_trusts_input::Builder::default()
     }
@@ -1113,7 +1113,7 @@ pub struct DisableClientAuthentication {
     _private: (),
 }
 impl DisableClientAuthentication {
-    /// Creates a new builder-style object to manufacture [`DisableClientAuthenticationInput`](crate::input::DisableClientAuthenticationInput)
+    /// Creates a new builder-style object to manufacture [`DisableClientAuthenticationInput`](crate::input::DisableClientAuthenticationInput).
     pub fn builder() -> crate::input::disable_client_authentication_input::Builder {
         crate::input::disable_client_authentication_input::Builder::default()
     }
@@ -1147,7 +1147,7 @@ pub struct DisableLDAPS {
     _private: (),
 }
 impl DisableLDAPS {
-    /// Creates a new builder-style object to manufacture [`DisableLdapsInput`](crate::input::DisableLdapsInput)
+    /// Creates a new builder-style object to manufacture [`DisableLdapsInput`](crate::input::DisableLdapsInput).
     pub fn builder() -> crate::input::disable_ldaps_input::Builder {
         crate::input::disable_ldaps_input::Builder::default()
     }
@@ -1179,7 +1179,7 @@ pub struct DisableRadius {
     _private: (),
 }
 impl DisableRadius {
-    /// Creates a new builder-style object to manufacture [`DisableRadiusInput`](crate::input::DisableRadiusInput)
+    /// Creates a new builder-style object to manufacture [`DisableRadiusInput`](crate::input::DisableRadiusInput).
     pub fn builder() -> crate::input::disable_radius_input::Builder {
         crate::input::disable_radius_input::Builder::default()
     }
@@ -1211,7 +1211,7 @@ pub struct DisableSso {
     _private: (),
 }
 impl DisableSso {
-    /// Creates a new builder-style object to manufacture [`DisableSsoInput`](crate::input::DisableSsoInput)
+    /// Creates a new builder-style object to manufacture [`DisableSsoInput`](crate::input::DisableSsoInput).
     pub fn builder() -> crate::input::disable_sso_input::Builder {
         crate::input::disable_sso_input::Builder::default()
     }
@@ -1243,7 +1243,7 @@ pub struct EnableClientAuthentication {
     _private: (),
 }
 impl EnableClientAuthentication {
-    /// Creates a new builder-style object to manufacture [`EnableClientAuthenticationInput`](crate::input::EnableClientAuthenticationInput)
+    /// Creates a new builder-style object to manufacture [`EnableClientAuthenticationInput`](crate::input::EnableClientAuthenticationInput).
     pub fn builder() -> crate::input::enable_client_authentication_input::Builder {
         crate::input::enable_client_authentication_input::Builder::default()
     }
@@ -1277,7 +1277,7 @@ pub struct EnableLDAPS {
     _private: (),
 }
 impl EnableLDAPS {
-    /// Creates a new builder-style object to manufacture [`EnableLdapsInput`](crate::input::EnableLdapsInput)
+    /// Creates a new builder-style object to manufacture [`EnableLdapsInput`](crate::input::EnableLdapsInput).
     pub fn builder() -> crate::input::enable_ldaps_input::Builder {
         crate::input::enable_ldaps_input::Builder::default()
     }
@@ -1309,7 +1309,7 @@ pub struct EnableRadius {
     _private: (),
 }
 impl EnableRadius {
-    /// Creates a new builder-style object to manufacture [`EnableRadiusInput`](crate::input::EnableRadiusInput)
+    /// Creates a new builder-style object to manufacture [`EnableRadiusInput`](crate::input::EnableRadiusInput).
     pub fn builder() -> crate::input::enable_radius_input::Builder {
         crate::input::enable_radius_input::Builder::default()
     }
@@ -1341,7 +1341,7 @@ pub struct EnableSso {
     _private: (),
 }
 impl EnableSso {
-    /// Creates a new builder-style object to manufacture [`EnableSsoInput`](crate::input::EnableSsoInput)
+    /// Creates a new builder-style object to manufacture [`EnableSsoInput`](crate::input::EnableSsoInput).
     pub fn builder() -> crate::input::enable_sso_input::Builder {
         crate::input::enable_sso_input::Builder::default()
     }
@@ -1372,7 +1372,7 @@ pub struct GetDirectoryLimits {
     _private: (),
 }
 impl GetDirectoryLimits {
-    /// Creates a new builder-style object to manufacture [`GetDirectoryLimitsInput`](crate::input::GetDirectoryLimitsInput)
+    /// Creates a new builder-style object to manufacture [`GetDirectoryLimitsInput`](crate::input::GetDirectoryLimitsInput).
     pub fn builder() -> crate::input::get_directory_limits_input::Builder {
         crate::input::get_directory_limits_input::Builder::default()
     }
@@ -1406,7 +1406,7 @@ pub struct GetSnapshotLimits {
     _private: (),
 }
 impl GetSnapshotLimits {
-    /// Creates a new builder-style object to manufacture [`GetSnapshotLimitsInput`](crate::input::GetSnapshotLimitsInput)
+    /// Creates a new builder-style object to manufacture [`GetSnapshotLimitsInput`](crate::input::GetSnapshotLimitsInput).
     pub fn builder() -> crate::input::get_snapshot_limits_input::Builder {
         crate::input::get_snapshot_limits_input::Builder::default()
     }
@@ -1440,7 +1440,7 @@ pub struct ListCertificates {
     _private: (),
 }
 impl ListCertificates {
-    /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::input::ListCertificatesInput)
+    /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::input::ListCertificatesInput).
     pub fn builder() -> crate::input::list_certificates_input::Builder {
         crate::input::list_certificates_input::Builder::default()
     }
@@ -1474,7 +1474,7 @@ pub struct ListIpRoutes {
     _private: (),
 }
 impl ListIpRoutes {
-    /// Creates a new builder-style object to manufacture [`ListIpRoutesInput`](crate::input::ListIpRoutesInput)
+    /// Creates a new builder-style object to manufacture [`ListIpRoutesInput`](crate::input::ListIpRoutesInput).
     pub fn builder() -> crate::input::list_ip_routes_input::Builder {
         crate::input::list_ip_routes_input::Builder::default()
     }
@@ -1506,7 +1506,7 @@ pub struct ListLogSubscriptions {
     _private: (),
 }
 impl ListLogSubscriptions {
-    /// Creates a new builder-style object to manufacture [`ListLogSubscriptionsInput`](crate::input::ListLogSubscriptionsInput)
+    /// Creates a new builder-style object to manufacture [`ListLogSubscriptionsInput`](crate::input::ListLogSubscriptionsInput).
     pub fn builder() -> crate::input::list_log_subscriptions_input::Builder {
         crate::input::list_log_subscriptions_input::Builder::default()
     }
@@ -1540,7 +1540,7 @@ pub struct ListSchemaExtensions {
     _private: (),
 }
 impl ListSchemaExtensions {
-    /// Creates a new builder-style object to manufacture [`ListSchemaExtensionsInput`](crate::input::ListSchemaExtensionsInput)
+    /// Creates a new builder-style object to manufacture [`ListSchemaExtensionsInput`](crate::input::ListSchemaExtensionsInput).
     pub fn builder() -> crate::input::list_schema_extensions_input::Builder {
         crate::input::list_schema_extensions_input::Builder::default()
     }
@@ -1574,7 +1574,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1608,7 +1608,7 @@ pub struct RegisterCertificate {
     _private: (),
 }
 impl RegisterCertificate {
-    /// Creates a new builder-style object to manufacture [`RegisterCertificateInput`](crate::input::RegisterCertificateInput)
+    /// Creates a new builder-style object to manufacture [`RegisterCertificateInput`](crate::input::RegisterCertificateInput).
     pub fn builder() -> crate::input::register_certificate_input::Builder {
         crate::input::register_certificate_input::Builder::default()
     }
@@ -1642,7 +1642,7 @@ pub struct RegisterEventTopic {
     _private: (),
 }
 impl RegisterEventTopic {
-    /// Creates a new builder-style object to manufacture [`RegisterEventTopicInput`](crate::input::RegisterEventTopicInput)
+    /// Creates a new builder-style object to manufacture [`RegisterEventTopicInput`](crate::input::RegisterEventTopicInput).
     pub fn builder() -> crate::input::register_event_topic_input::Builder {
         crate::input::register_event_topic_input::Builder::default()
     }
@@ -1676,7 +1676,7 @@ pub struct RejectSharedDirectory {
     _private: (),
 }
 impl RejectSharedDirectory {
-    /// Creates a new builder-style object to manufacture [`RejectSharedDirectoryInput`](crate::input::RejectSharedDirectoryInput)
+    /// Creates a new builder-style object to manufacture [`RejectSharedDirectoryInput`](crate::input::RejectSharedDirectoryInput).
     pub fn builder() -> crate::input::reject_shared_directory_input::Builder {
         crate::input::reject_shared_directory_input::Builder::default()
     }
@@ -1710,7 +1710,7 @@ pub struct RemoveIpRoutes {
     _private: (),
 }
 impl RemoveIpRoutes {
-    /// Creates a new builder-style object to manufacture [`RemoveIpRoutesInput`](crate::input::RemoveIpRoutesInput)
+    /// Creates a new builder-style object to manufacture [`RemoveIpRoutesInput`](crate::input::RemoveIpRoutesInput).
     pub fn builder() -> crate::input::remove_ip_routes_input::Builder {
         crate::input::remove_ip_routes_input::Builder::default()
     }
@@ -1742,7 +1742,7 @@ pub struct RemoveRegion {
     _private: (),
 }
 impl RemoveRegion {
-    /// Creates a new builder-style object to manufacture [`RemoveRegionInput`](crate::input::RemoveRegionInput)
+    /// Creates a new builder-style object to manufacture [`RemoveRegionInput`](crate::input::RemoveRegionInput).
     pub fn builder() -> crate::input::remove_region_input::Builder {
         crate::input::remove_region_input::Builder::default()
     }
@@ -1774,7 +1774,7 @@ pub struct RemoveTagsFromResource {
     _private: (),
 }
 impl RemoveTagsFromResource {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
     pub fn builder() -> crate::input::remove_tags_from_resource_input::Builder {
         crate::input::remove_tags_from_resource_input::Builder::default()
     }
@@ -1808,7 +1808,7 @@ pub struct ResetUserPassword {
     _private: (),
 }
 impl ResetUserPassword {
-    /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput)
+    /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput).
     pub fn builder() -> crate::input::reset_user_password_input::Builder {
         crate::input::reset_user_password_input::Builder::default()
     }
@@ -1842,7 +1842,7 @@ pub struct RestoreFromSnapshot {
     _private: (),
 }
 impl RestoreFromSnapshot {
-    /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput).
     pub fn builder() -> crate::input::restore_from_snapshot_input::Builder {
         crate::input::restore_from_snapshot_input::Builder::default()
     }
@@ -1876,7 +1876,7 @@ pub struct ShareDirectory {
     _private: (),
 }
 impl ShareDirectory {
-    /// Creates a new builder-style object to manufacture [`ShareDirectoryInput`](crate::input::ShareDirectoryInput)
+    /// Creates a new builder-style object to manufacture [`ShareDirectoryInput`](crate::input::ShareDirectoryInput).
     pub fn builder() -> crate::input::share_directory_input::Builder {
         crate::input::share_directory_input::Builder::default()
     }
@@ -1908,7 +1908,7 @@ pub struct StartSchemaExtension {
     _private: (),
 }
 impl StartSchemaExtension {
-    /// Creates a new builder-style object to manufacture [`StartSchemaExtensionInput`](crate::input::StartSchemaExtensionInput)
+    /// Creates a new builder-style object to manufacture [`StartSchemaExtensionInput`](crate::input::StartSchemaExtensionInput).
     pub fn builder() -> crate::input::start_schema_extension_input::Builder {
         crate::input::start_schema_extension_input::Builder::default()
     }
@@ -1942,7 +1942,7 @@ pub struct UnshareDirectory {
     _private: (),
 }
 impl UnshareDirectory {
-    /// Creates a new builder-style object to manufacture [`UnshareDirectoryInput`](crate::input::UnshareDirectoryInput)
+    /// Creates a new builder-style object to manufacture [`UnshareDirectoryInput`](crate::input::UnshareDirectoryInput).
     pub fn builder() -> crate::input::unshare_directory_input::Builder {
         crate::input::unshare_directory_input::Builder::default()
     }
@@ -1976,7 +1976,7 @@ pub struct UpdateConditionalForwarder {
     _private: (),
 }
 impl UpdateConditionalForwarder {
-    /// Creates a new builder-style object to manufacture [`UpdateConditionalForwarderInput`](crate::input::UpdateConditionalForwarderInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConditionalForwarderInput`](crate::input::UpdateConditionalForwarderInput).
     pub fn builder() -> crate::input::update_conditional_forwarder_input::Builder {
         crate::input::update_conditional_forwarder_input::Builder::default()
     }
@@ -2010,7 +2010,7 @@ pub struct UpdateNumberOfDomainControllers {
     _private: (),
 }
 impl UpdateNumberOfDomainControllers {
-    /// Creates a new builder-style object to manufacture [`UpdateNumberOfDomainControllersInput`](crate::input::UpdateNumberOfDomainControllersInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNumberOfDomainControllersInput`](crate::input::UpdateNumberOfDomainControllersInput).
     pub fn builder() -> crate::input::update_number_of_domain_controllers_input::Builder {
         crate::input::update_number_of_domain_controllers_input::Builder::default()
     }
@@ -2044,7 +2044,7 @@ pub struct UpdateRadius {
     _private: (),
 }
 impl UpdateRadius {
-    /// Creates a new builder-style object to manufacture [`UpdateRadiusInput`](crate::input::UpdateRadiusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRadiusInput`](crate::input::UpdateRadiusInput).
     pub fn builder() -> crate::input::update_radius_input::Builder {
         crate::input::update_radius_input::Builder::default()
     }
@@ -2076,7 +2076,7 @@ pub struct UpdateSettings {
     _private: (),
 }
 impl UpdateSettings {
-    /// Creates a new builder-style object to manufacture [`UpdateSettingsInput`](crate::input::UpdateSettingsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSettingsInput`](crate::input::UpdateSettingsInput).
     pub fn builder() -> crate::input::update_settings_input::Builder {
         crate::input::update_settings_input::Builder::default()
     }
@@ -2108,7 +2108,7 @@ pub struct UpdateTrust {
     _private: (),
 }
 impl UpdateTrust {
-    /// Creates a new builder-style object to manufacture [`UpdateTrustInput`](crate::input::UpdateTrustInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTrustInput`](crate::input::UpdateTrustInput).
     pub fn builder() -> crate::input::update_trust_input::Builder {
         crate::input::update_trust_input::Builder::default()
     }
@@ -2140,7 +2140,7 @@ pub struct VerifyTrust {
     _private: (),
 }
 impl VerifyTrust {
-    /// Creates a new builder-style object to manufacture [`VerifyTrustInput`](crate::input::VerifyTrustInput)
+    /// Creates a new builder-style object to manufacture [`VerifyTrustInput`](crate::input::VerifyTrustInput).
     pub fn builder() -> crate::input::verify_trust_input::Builder {
         crate::input::verify_trust_input::Builder::default()
     }

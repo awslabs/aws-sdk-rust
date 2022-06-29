@@ -10,7 +10,7 @@ pub struct CancelResourceRequest {
     _private: (),
 }
 impl CancelResourceRequest {
-    /// Creates a new builder-style object to manufacture [`CancelResourceRequestInput`](crate::input::CancelResourceRequestInput)
+    /// Creates a new builder-style object to manufacture [`CancelResourceRequestInput`](crate::input::CancelResourceRequestInput).
     pub fn builder() -> crate::input::cancel_resource_request_input::Builder {
         crate::input::cancel_resource_request_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateResource {
     _private: (),
 }
 impl CreateResource {
-    /// Creates a new builder-style object to manufacture [`CreateResourceInput`](crate::input::CreateResourceInput)
+    /// Creates a new builder-style object to manufacture [`CreateResourceInput`](crate::input::CreateResourceInput).
     pub fn builder() -> crate::input::create_resource_input::Builder {
         crate::input::create_resource_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteResource {
     _private: (),
 }
 impl DeleteResource {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceInput`](crate::input::DeleteResourceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourceInput`](crate::input::DeleteResourceInput).
     pub fn builder() -> crate::input::delete_resource_input::Builder {
         crate::input::delete_resource_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct GetResource {
     _private: (),
 }
 impl GetResource {
-    /// Creates a new builder-style object to manufacture [`GetResourceInput`](crate::input::GetResourceInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceInput`](crate::input::GetResourceInput).
     pub fn builder() -> crate::input::get_resource_input::Builder {
         crate::input::get_resource_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct GetResourceRequestStatus {
     _private: (),
 }
 impl GetResourceRequestStatus {
-    /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusInput`](crate::input::GetResourceRequestStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusInput`](crate::input::GetResourceRequestStatusInput).
     pub fn builder() -> crate::input::get_resource_request_status_input::Builder {
         crate::input::get_resource_request_status_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct ListResourceRequests {
     _private: (),
 }
 impl ListResourceRequests {
-    /// Creates a new builder-style object to manufacture [`ListResourceRequestsInput`](crate::input::ListResourceRequestsInput)
+    /// Creates a new builder-style object to manufacture [`ListResourceRequestsInput`](crate::input::ListResourceRequestsInput).
     pub fn builder() -> crate::input::list_resource_requests_input::Builder {
         crate::input::list_resource_requests_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct ListResources {
     _private: (),
 }
 impl ListResources {
-    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput).
     pub fn builder() -> crate::input::list_resources_input::Builder {
         crate::input::list_resources_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct UpdateResource {
     _private: (),
 }
 impl UpdateResource {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceInput`](crate::input::UpdateResourceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceInput`](crate::input::UpdateResourceInput).
     pub fn builder() -> crate::input::update_resource_input::Builder {
         crate::input::update_resource_input::Builder::default()
     }

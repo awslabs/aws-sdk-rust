@@ -10,7 +10,7 @@ pub struct CreateGatewayRoute {
     _private: (),
 }
 impl CreateGatewayRoute {
-    /// Creates a new builder-style object to manufacture [`CreateGatewayRouteInput`](crate::input::CreateGatewayRouteInput)
+    /// Creates a new builder-style object to manufacture [`CreateGatewayRouteInput`](crate::input::CreateGatewayRouteInput).
     pub fn builder() -> crate::input::create_gateway_route_input::Builder {
         crate::input::create_gateway_route_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateMesh {
     _private: (),
 }
 impl CreateMesh {
-    /// Creates a new builder-style object to manufacture [`CreateMeshInput`](crate::input::CreateMeshInput)
+    /// Creates a new builder-style object to manufacture [`CreateMeshInput`](crate::input::CreateMeshInput).
     pub fn builder() -> crate::input::create_mesh_input::Builder {
         crate::input::create_mesh_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateRoute {
     _private: (),
 }
 impl CreateRoute {
-    /// Creates a new builder-style object to manufacture [`CreateRouteInput`](crate::input::CreateRouteInput)
+    /// Creates a new builder-style object to manufacture [`CreateRouteInput`](crate::input::CreateRouteInput).
     pub fn builder() -> crate::input::create_route_input::Builder {
         crate::input::create_route_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateVirtualGateway {
     _private: (),
 }
 impl CreateVirtualGateway {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayInput`](crate::input::CreateVirtualGatewayInput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayInput`](crate::input::CreateVirtualGatewayInput).
     pub fn builder() -> crate::input::create_virtual_gateway_input::Builder {
         crate::input::create_virtual_gateway_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateVirtualNode {
     _private: (),
 }
 impl CreateVirtualNode {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualNodeInput`](crate::input::CreateVirtualNodeInput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualNodeInput`](crate::input::CreateVirtualNodeInput).
     pub fn builder() -> crate::input::create_virtual_node_input::Builder {
         crate::input::create_virtual_node_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct CreateVirtualRouter {
     _private: (),
 }
 impl CreateVirtualRouter {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualRouterInput`](crate::input::CreateVirtualRouterInput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualRouterInput`](crate::input::CreateVirtualRouterInput).
     pub fn builder() -> crate::input::create_virtual_router_input::Builder {
         crate::input::create_virtual_router_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct CreateVirtualService {
     _private: (),
 }
 impl CreateVirtualService {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualServiceInput`](crate::input::CreateVirtualServiceInput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualServiceInput`](crate::input::CreateVirtualServiceInput).
     pub fn builder() -> crate::input::create_virtual_service_input::Builder {
         crate::input::create_virtual_service_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteGatewayRoute {
     _private: (),
 }
 impl DeleteGatewayRoute {
-    /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteInput`](crate::input::DeleteGatewayRouteInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteInput`](crate::input::DeleteGatewayRouteInput).
     pub fn builder() -> crate::input::delete_gateway_route_input::Builder {
         crate::input::delete_gateway_route_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteMesh {
     _private: (),
 }
 impl DeleteMesh {
-    /// Creates a new builder-style object to manufacture [`DeleteMeshInput`](crate::input::DeleteMeshInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMeshInput`](crate::input::DeleteMeshInput).
     pub fn builder() -> crate::input::delete_mesh_input::Builder {
         crate::input::delete_mesh_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct DeleteRoute {
     _private: (),
 }
 impl DeleteRoute {
-    /// Creates a new builder-style object to manufacture [`DeleteRouteInput`](crate::input::DeleteRouteInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRouteInput`](crate::input::DeleteRouteInput).
     pub fn builder() -> crate::input::delete_route_input::Builder {
         crate::input::delete_route_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DeleteVirtualGateway {
     _private: (),
 }
 impl DeleteVirtualGateway {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayInput`](crate::input::DeleteVirtualGatewayInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayInput`](crate::input::DeleteVirtualGatewayInput).
     pub fn builder() -> crate::input::delete_virtual_gateway_input::Builder {
         crate::input::delete_virtual_gateway_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct DeleteVirtualNode {
     _private: (),
 }
 impl DeleteVirtualNode {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeInput`](crate::input::DeleteVirtualNodeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeInput`](crate::input::DeleteVirtualNodeInput).
     pub fn builder() -> crate::input::delete_virtual_node_input::Builder {
         crate::input::delete_virtual_node_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct DeleteVirtualRouter {
     _private: (),
 }
 impl DeleteVirtualRouter {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterInput`](crate::input::DeleteVirtualRouterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterInput`](crate::input::DeleteVirtualRouterInput).
     pub fn builder() -> crate::input::delete_virtual_router_input::Builder {
         crate::input::delete_virtual_router_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct DeleteVirtualService {
     _private: (),
 }
 impl DeleteVirtualService {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceInput`](crate::input::DeleteVirtualServiceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceInput`](crate::input::DeleteVirtualServiceInput).
     pub fn builder() -> crate::input::delete_virtual_service_input::Builder {
         crate::input::delete_virtual_service_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct DescribeGatewayRoute {
     _private: (),
 }
 impl DescribeGatewayRoute {
-    /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteInput`](crate::input::DescribeGatewayRouteInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteInput`](crate::input::DescribeGatewayRouteInput).
     pub fn builder() -> crate::input::describe_gateway_route_input::Builder {
         crate::input::describe_gateway_route_input::Builder::default()
     }
@@ -512,7 +512,7 @@ pub struct DescribeMesh {
     _private: (),
 }
 impl DescribeMesh {
-    /// Creates a new builder-style object to manufacture [`DescribeMeshInput`](crate::input::DescribeMeshInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMeshInput`](crate::input::DescribeMeshInput).
     pub fn builder() -> crate::input::describe_mesh_input::Builder {
         crate::input::describe_mesh_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct DescribeRoute {
     _private: (),
 }
 impl DescribeRoute {
-    /// Creates a new builder-style object to manufacture [`DescribeRouteInput`](crate::input::DescribeRouteInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRouteInput`](crate::input::DescribeRouteInput).
     pub fn builder() -> crate::input::describe_route_input::Builder {
         crate::input::describe_route_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct DescribeVirtualGateway {
     _private: (),
 }
 impl DescribeVirtualGateway {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayInput`](crate::input::DescribeVirtualGatewayInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayInput`](crate::input::DescribeVirtualGatewayInput).
     pub fn builder() -> crate::input::describe_virtual_gateway_input::Builder {
         crate::input::describe_virtual_gateway_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct DescribeVirtualNode {
     _private: (),
 }
 impl DescribeVirtualNode {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeInput`](crate::input::DescribeVirtualNodeInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeInput`](crate::input::DescribeVirtualNodeInput).
     pub fn builder() -> crate::input::describe_virtual_node_input::Builder {
         crate::input::describe_virtual_node_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct DescribeVirtualRouter {
     _private: (),
 }
 impl DescribeVirtualRouter {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterInput`](crate::input::DescribeVirtualRouterInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterInput`](crate::input::DescribeVirtualRouterInput).
     pub fn builder() -> crate::input::describe_virtual_router_input::Builder {
         crate::input::describe_virtual_router_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct DescribeVirtualService {
     _private: (),
 }
 impl DescribeVirtualService {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceInput`](crate::input::DescribeVirtualServiceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceInput`](crate::input::DescribeVirtualServiceInput).
     pub fn builder() -> crate::input::describe_virtual_service_input::Builder {
         crate::input::describe_virtual_service_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct ListGatewayRoutes {
     _private: (),
 }
 impl ListGatewayRoutes {
-    /// Creates a new builder-style object to manufacture [`ListGatewayRoutesInput`](crate::input::ListGatewayRoutesInput)
+    /// Creates a new builder-style object to manufacture [`ListGatewayRoutesInput`](crate::input::ListGatewayRoutesInput).
     pub fn builder() -> crate::input::list_gateway_routes_input::Builder {
         crate::input::list_gateway_routes_input::Builder::default()
     }
@@ -746,7 +746,7 @@ pub struct ListMeshes {
     _private: (),
 }
 impl ListMeshes {
-    /// Creates a new builder-style object to manufacture [`ListMeshesInput`](crate::input::ListMeshesInput)
+    /// Creates a new builder-style object to manufacture [`ListMeshesInput`](crate::input::ListMeshesInput).
     pub fn builder() -> crate::input::list_meshes_input::Builder {
         crate::input::list_meshes_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct ListRoutes {
     _private: (),
 }
 impl ListRoutes {
-    /// Creates a new builder-style object to manufacture [`ListRoutesInput`](crate::input::ListRoutesInput)
+    /// Creates a new builder-style object to manufacture [`ListRoutesInput`](crate::input::ListRoutesInput).
     pub fn builder() -> crate::input::list_routes_input::Builder {
         crate::input::list_routes_input::Builder::default()
     }
@@ -810,7 +810,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -844,7 +844,7 @@ pub struct ListVirtualGateways {
     _private: (),
 }
 impl ListVirtualGateways {
-    /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysInput`](crate::input::ListVirtualGatewaysInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysInput`](crate::input::ListVirtualGatewaysInput).
     pub fn builder() -> crate::input::list_virtual_gateways_input::Builder {
         crate::input::list_virtual_gateways_input::Builder::default()
     }
@@ -878,7 +878,7 @@ pub struct ListVirtualNodes {
     _private: (),
 }
 impl ListVirtualNodes {
-    /// Creates a new builder-style object to manufacture [`ListVirtualNodesInput`](crate::input::ListVirtualNodesInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualNodesInput`](crate::input::ListVirtualNodesInput).
     pub fn builder() -> crate::input::list_virtual_nodes_input::Builder {
         crate::input::list_virtual_nodes_input::Builder::default()
     }
@@ -912,7 +912,7 @@ pub struct ListVirtualRouters {
     _private: (),
 }
 impl ListVirtualRouters {
-    /// Creates a new builder-style object to manufacture [`ListVirtualRoutersInput`](crate::input::ListVirtualRoutersInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualRoutersInput`](crate::input::ListVirtualRoutersInput).
     pub fn builder() -> crate::input::list_virtual_routers_input::Builder {
         crate::input::list_virtual_routers_input::Builder::default()
     }
@@ -946,7 +946,7 @@ pub struct ListVirtualServices {
     _private: (),
 }
 impl ListVirtualServices {
-    /// Creates a new builder-style object to manufacture [`ListVirtualServicesInput`](crate::input::ListVirtualServicesInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualServicesInput`](crate::input::ListVirtualServicesInput).
     pub fn builder() -> crate::input::list_virtual_services_input::Builder {
         crate::input::list_virtual_services_input::Builder::default()
     }
@@ -980,7 +980,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1012,7 +1012,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1044,7 +1044,7 @@ pub struct UpdateGatewayRoute {
     _private: (),
 }
 impl UpdateGatewayRoute {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewayRouteInput`](crate::input::UpdateGatewayRouteInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGatewayRouteInput`](crate::input::UpdateGatewayRouteInput).
     pub fn builder() -> crate::input::update_gateway_route_input::Builder {
         crate::input::update_gateway_route_input::Builder::default()
     }
@@ -1078,7 +1078,7 @@ pub struct UpdateMesh {
     _private: (),
 }
 impl UpdateMesh {
-    /// Creates a new builder-style object to manufacture [`UpdateMeshInput`](crate::input::UpdateMeshInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMeshInput`](crate::input::UpdateMeshInput).
     pub fn builder() -> crate::input::update_mesh_input::Builder {
         crate::input::update_mesh_input::Builder::default()
     }
@@ -1110,7 +1110,7 @@ pub struct UpdateRoute {
     _private: (),
 }
 impl UpdateRoute {
-    /// Creates a new builder-style object to manufacture [`UpdateRouteInput`](crate::input::UpdateRouteInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRouteInput`](crate::input::UpdateRouteInput).
     pub fn builder() -> crate::input::update_route_input::Builder {
         crate::input::update_route_input::Builder::default()
     }
@@ -1142,7 +1142,7 @@ pub struct UpdateVirtualGateway {
     _private: (),
 }
 impl UpdateVirtualGateway {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayInput`](crate::input::UpdateVirtualGatewayInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayInput`](crate::input::UpdateVirtualGatewayInput).
     pub fn builder() -> crate::input::update_virtual_gateway_input::Builder {
         crate::input::update_virtual_gateway_input::Builder::default()
     }
@@ -1176,7 +1176,7 @@ pub struct UpdateVirtualNode {
     _private: (),
 }
 impl UpdateVirtualNode {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeInput`](crate::input::UpdateVirtualNodeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeInput`](crate::input::UpdateVirtualNodeInput).
     pub fn builder() -> crate::input::update_virtual_node_input::Builder {
         crate::input::update_virtual_node_input::Builder::default()
     }
@@ -1210,7 +1210,7 @@ pub struct UpdateVirtualRouter {
     _private: (),
 }
 impl UpdateVirtualRouter {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterInput`](crate::input::UpdateVirtualRouterInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterInput`](crate::input::UpdateVirtualRouterInput).
     pub fn builder() -> crate::input::update_virtual_router_input::Builder {
         crate::input::update_virtual_router_input::Builder::default()
     }
@@ -1244,7 +1244,7 @@ pub struct UpdateVirtualService {
     _private: (),
 }
 impl UpdateVirtualService {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceInput`](crate::input::UpdateVirtualServiceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceInput`](crate::input::UpdateVirtualServiceInput).
     pub fn builder() -> crate::input::update_virtual_service_input::Builder {
         crate::input::update_virtual_service_input::Builder::default()
     }

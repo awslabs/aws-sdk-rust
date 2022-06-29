@@ -10,7 +10,7 @@ pub struct AssociateCreatedArtifact {
     _private: (),
 }
 impl AssociateCreatedArtifact {
-    /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactInput`](crate::input::AssociateCreatedArtifactInput)
+    /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactInput`](crate::input::AssociateCreatedArtifactInput).
     pub fn builder() -> crate::input::associate_created_artifact_input::Builder {
         crate::input::associate_created_artifact_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateDiscoveredResource {
     _private: (),
 }
 impl AssociateDiscoveredResource {
-    /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceInput`](crate::input::AssociateDiscoveredResourceInput)
+    /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceInput`](crate::input::AssociateDiscoveredResourceInput).
     pub fn builder() -> crate::input::associate_discovered_resource_input::Builder {
         crate::input::associate_discovered_resource_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateProgressUpdateStream {
     _private: (),
 }
 impl CreateProgressUpdateStream {
-    /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamInput`](crate::input::CreateProgressUpdateStreamInput)
+    /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamInput`](crate::input::CreateProgressUpdateStreamInput).
     pub fn builder() -> crate::input::create_progress_update_stream_input::Builder {
         crate::input::create_progress_update_stream_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteProgressUpdateStream {
     _private: (),
 }
 impl DeleteProgressUpdateStream {
-    /// Creates a new builder-style object to manufacture [`DeleteProgressUpdateStreamInput`](crate::input::DeleteProgressUpdateStreamInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProgressUpdateStreamInput`](crate::input::DeleteProgressUpdateStreamInput).
     pub fn builder() -> crate::input::delete_progress_update_stream_input::Builder {
         crate::input::delete_progress_update_stream_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeApplicationState {
     _private: (),
 }
 impl DescribeApplicationState {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationStateInput`](crate::input::DescribeApplicationStateInput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationStateInput`](crate::input::DescribeApplicationStateInput).
     pub fn builder() -> crate::input::describe_application_state_input::Builder {
         crate::input::describe_application_state_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DescribeMigrationTask {
     _private: (),
 }
 impl DescribeMigrationTask {
-    /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskInput`](crate::input::DescribeMigrationTaskInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskInput`](crate::input::DescribeMigrationTaskInput).
     pub fn builder() -> crate::input::describe_migration_task_input::Builder {
         crate::input::describe_migration_task_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DisassociateCreatedArtifact {
     _private: (),
 }
 impl DisassociateCreatedArtifact {
-    /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactInput`](crate::input::DisassociateCreatedArtifactInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactInput`](crate::input::DisassociateCreatedArtifactInput).
     pub fn builder() -> crate::input::disassociate_created_artifact_input::Builder {
         crate::input::disassociate_created_artifact_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DisassociateDiscoveredResource {
     _private: (),
 }
 impl DisassociateDiscoveredResource {
-    /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceInput`](crate::input::DisassociateDiscoveredResourceInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceInput`](crate::input::DisassociateDiscoveredResourceInput).
     pub fn builder() -> crate::input::disassociate_discovered_resource_input::Builder {
         crate::input::disassociate_discovered_resource_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ImportMigrationTask {
     _private: (),
 }
 impl ImportMigrationTask {
-    /// Creates a new builder-style object to manufacture [`ImportMigrationTaskInput`](crate::input::ImportMigrationTaskInput)
+    /// Creates a new builder-style object to manufacture [`ImportMigrationTaskInput`](crate::input::ImportMigrationTaskInput).
     pub fn builder() -> crate::input::import_migration_task_input::Builder {
         crate::input::import_migration_task_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct ListApplicationStates {
     _private: (),
 }
 impl ListApplicationStates {
-    /// Creates a new builder-style object to manufacture [`ListApplicationStatesInput`](crate::input::ListApplicationStatesInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationStatesInput`](crate::input::ListApplicationStatesInput).
     pub fn builder() -> crate::input::list_application_states_input::Builder {
         crate::input::list_application_states_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct ListCreatedArtifacts {
     _private: (),
 }
 impl ListCreatedArtifacts {
-    /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsInput`](crate::input::ListCreatedArtifactsInput)
+    /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsInput`](crate::input::ListCreatedArtifactsInput).
     pub fn builder() -> crate::input::list_created_artifacts_input::Builder {
         crate::input::list_created_artifacts_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct ListDiscoveredResources {
     _private: (),
 }
 impl ListDiscoveredResources {
-    /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput).
     pub fn builder() -> crate::input::list_discovered_resources_input::Builder {
         crate::input::list_discovered_resources_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct ListMigrationTasks {
     _private: (),
 }
 impl ListMigrationTasks {
-    /// Creates a new builder-style object to manufacture [`ListMigrationTasksInput`](crate::input::ListMigrationTasksInput)
+    /// Creates a new builder-style object to manufacture [`ListMigrationTasksInput`](crate::input::ListMigrationTasksInput).
     pub fn builder() -> crate::input::list_migration_tasks_input::Builder {
         crate::input::list_migration_tasks_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct ListProgressUpdateStreams {
     _private: (),
 }
 impl ListProgressUpdateStreams {
-    /// Creates a new builder-style object to manufacture [`ListProgressUpdateStreamsInput`](crate::input::ListProgressUpdateStreamsInput)
+    /// Creates a new builder-style object to manufacture [`ListProgressUpdateStreamsInput`](crate::input::ListProgressUpdateStreamsInput).
     pub fn builder() -> crate::input::list_progress_update_streams_input::Builder {
         crate::input::list_progress_update_streams_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct NotifyApplicationState {
     _private: (),
 }
 impl NotifyApplicationState {
-    /// Creates a new builder-style object to manufacture [`NotifyApplicationStateInput`](crate::input::NotifyApplicationStateInput)
+    /// Creates a new builder-style object to manufacture [`NotifyApplicationStateInput`](crate::input::NotifyApplicationStateInput).
     pub fn builder() -> crate::input::notify_application_state_input::Builder {
         crate::input::notify_application_state_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct NotifyMigrationTaskState {
     _private: (),
 }
 impl NotifyMigrationTaskState {
-    /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateInput`](crate::input::NotifyMigrationTaskStateInput)
+    /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateInput`](crate::input::NotifyMigrationTaskStateInput).
     pub fn builder() -> crate::input::notify_migration_task_state_input::Builder {
         crate::input::notify_migration_task_state_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct PutResourceAttributes {
     _private: (),
 }
 impl PutResourceAttributes {
-    /// Creates a new builder-style object to manufacture [`PutResourceAttributesInput`](crate::input::PutResourceAttributesInput)
+    /// Creates a new builder-style object to manufacture [`PutResourceAttributesInput`](crate::input::PutResourceAttributesInput).
     pub fn builder() -> crate::input::put_resource_attributes_input::Builder {
         crate::input::put_resource_attributes_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CreateConnector {
     _private: (),
 }
 impl CreateConnector {
-    /// Creates a new builder-style object to manufacture [`CreateConnectorInput`](crate::input::CreateConnectorInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectorInput`](crate::input::CreateConnectorInput).
     pub fn builder() -> crate::input::create_connector_input::Builder {
         crate::input::create_connector_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateCustomPlugin {
     _private: (),
 }
 impl CreateCustomPlugin {
-    /// Creates a new builder-style object to manufacture [`CreateCustomPluginInput`](crate::input::CreateCustomPluginInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomPluginInput`](crate::input::CreateCustomPluginInput).
     pub fn builder() -> crate::input::create_custom_plugin_input::Builder {
         crate::input::create_custom_plugin_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateWorkerConfiguration {
     _private: (),
 }
 impl CreateWorkerConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateWorkerConfigurationInput`](crate::input::CreateWorkerConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkerConfigurationInput`](crate::input::CreateWorkerConfigurationInput).
     pub fn builder() -> crate::input::create_worker_configuration_input::Builder {
         crate::input::create_worker_configuration_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteConnector {
     _private: (),
 }
 impl DeleteConnector {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectorInput`](crate::input::DeleteConnectorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectorInput`](crate::input::DeleteConnectorInput).
     pub fn builder() -> crate::input::delete_connector_input::Builder {
         crate::input::delete_connector_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteCustomPlugin {
     _private: (),
 }
 impl DeleteCustomPlugin {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomPluginInput`](crate::input::DeleteCustomPluginInput).
     pub fn builder() -> crate::input::delete_custom_plugin_input::Builder {
         crate::input::delete_custom_plugin_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DescribeConnector {
     _private: (),
 }
 impl DescribeConnector {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::input::DescribeConnectorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
     pub fn builder() -> crate::input::describe_connector_input::Builder {
         crate::input::describe_connector_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DescribeCustomPlugin {
     _private: (),
 }
 impl DescribeCustomPlugin {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomPluginInput`](crate::input::DescribeCustomPluginInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomPluginInput`](crate::input::DescribeCustomPluginInput).
     pub fn builder() -> crate::input::describe_custom_plugin_input::Builder {
         crate::input::describe_custom_plugin_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DescribeWorkerConfiguration {
     _private: (),
 }
 impl DescribeWorkerConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkerConfigurationInput`](crate::input::DescribeWorkerConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorkerConfigurationInput`](crate::input::DescribeWorkerConfigurationInput).
     pub fn builder() -> crate::input::describe_worker_configuration_input::Builder {
         crate::input::describe_worker_configuration_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ListConnectors {
     _private: (),
 }
 impl ListConnectors {
-    /// Creates a new builder-style object to manufacture [`ListConnectorsInput`](crate::input::ListConnectorsInput)
+    /// Creates a new builder-style object to manufacture [`ListConnectorsInput`](crate::input::ListConnectorsInput).
     pub fn builder() -> crate::input::list_connectors_input::Builder {
         crate::input::list_connectors_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct ListCustomPlugins {
     _private: (),
 }
 impl ListCustomPlugins {
-    /// Creates a new builder-style object to manufacture [`ListCustomPluginsInput`](crate::input::ListCustomPluginsInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomPluginsInput`](crate::input::ListCustomPluginsInput).
     pub fn builder() -> crate::input::list_custom_plugins_input::Builder {
         crate::input::list_custom_plugins_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct ListWorkerConfigurations {
     _private: (),
 }
 impl ListWorkerConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListWorkerConfigurationsInput`](crate::input::ListWorkerConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkerConfigurationsInput`](crate::input::ListWorkerConfigurationsInput).
     pub fn builder() -> crate::input::list_worker_configurations_input::Builder {
         crate::input::list_worker_configurations_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct UpdateConnector {
     _private: (),
 }
 impl UpdateConnector {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectorInput`](crate::input::UpdateConnectorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorInput`](crate::input::UpdateConnectorInput).
     pub fn builder() -> crate::input::update_connector_input::Builder {
         crate::input::update_connector_input::Builder::default()
     }

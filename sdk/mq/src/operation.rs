@@ -10,7 +10,7 @@ pub struct CreateBroker {
     _private: (),
 }
 impl CreateBroker {
-    /// Creates a new builder-style object to manufacture [`CreateBrokerInput`](crate::input::CreateBrokerInput)
+    /// Creates a new builder-style object to manufacture [`CreateBrokerInput`](crate::input::CreateBrokerInput).
     pub fn builder() -> crate::input::create_broker_input::Builder {
         crate::input::create_broker_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateConfiguration {
     _private: (),
 }
 impl CreateConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationInput`](crate::input::CreateConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationInput`](crate::input::CreateConfigurationInput).
     pub fn builder() -> crate::input::create_configuration_input::Builder {
         crate::input::create_configuration_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateTags {
     _private: (),
 }
 impl CreateTags {
-    /// Creates a new builder-style object to manufacture [`CreateTagsInput`](crate::input::CreateTagsInput)
+    /// Creates a new builder-style object to manufacture [`CreateTagsInput`](crate::input::CreateTagsInput).
     pub fn builder() -> crate::input::create_tags_input::Builder {
         crate::input::create_tags_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateUser {
     _private: (),
 }
 impl CreateUser {
-    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput)
+    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput).
     pub fn builder() -> crate::input::create_user_input::Builder {
         crate::input::create_user_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct DeleteBroker {
     _private: (),
 }
 impl DeleteBroker {
-    /// Creates a new builder-style object to manufacture [`DeleteBrokerInput`](crate::input::DeleteBrokerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBrokerInput`](crate::input::DeleteBrokerInput).
     pub fn builder() -> crate::input::delete_broker_input::Builder {
         crate::input::delete_broker_input::Builder::default()
     }
@@ -172,7 +172,7 @@ pub struct DeleteTags {
     _private: (),
 }
 impl DeleteTags {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput).
     pub fn builder() -> crate::input::delete_tags_input::Builder {
         crate::input::delete_tags_input::Builder::default()
     }
@@ -204,7 +204,7 @@ pub struct DeleteUser {
     _private: (),
 }
 impl DeleteUser {
-    /// Creates a new builder-style object to manufacture [`DeleteUserInput`](crate::input::DeleteUserInput)
+    /// Creates a new builder-style object to manufacture [`DeleteUserInput`](crate::input::DeleteUserInput).
     pub fn builder() -> crate::input::delete_user_input::Builder {
         crate::input::delete_user_input::Builder::default()
     }
@@ -236,7 +236,7 @@ pub struct DescribeBroker {
     _private: (),
 }
 impl DescribeBroker {
-    /// Creates a new builder-style object to manufacture [`DescribeBrokerInput`](crate::input::DescribeBrokerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBrokerInput`](crate::input::DescribeBrokerInput).
     pub fn builder() -> crate::input::describe_broker_input::Builder {
         crate::input::describe_broker_input::Builder::default()
     }
@@ -268,7 +268,7 @@ pub struct DescribeBrokerEngineTypes {
     _private: (),
 }
 impl DescribeBrokerEngineTypes {
-    /// Creates a new builder-style object to manufacture [`DescribeBrokerEngineTypesInput`](crate::input::DescribeBrokerEngineTypesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBrokerEngineTypesInput`](crate::input::DescribeBrokerEngineTypesInput).
     pub fn builder() -> crate::input::describe_broker_engine_types_input::Builder {
         crate::input::describe_broker_engine_types_input::Builder::default()
     }
@@ -302,7 +302,7 @@ pub struct DescribeBrokerInstanceOptions {
     _private: (),
 }
 impl DescribeBrokerInstanceOptions {
-    /// Creates a new builder-style object to manufacture [`DescribeBrokerInstanceOptionsInput`](crate::input::DescribeBrokerInstanceOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBrokerInstanceOptionsInput`](crate::input::DescribeBrokerInstanceOptionsInput).
     pub fn builder() -> crate::input::describe_broker_instance_options_input::Builder {
         crate::input::describe_broker_instance_options_input::Builder::default()
     }
@@ -336,7 +336,7 @@ pub struct DescribeConfiguration {
     _private: (),
 }
 impl DescribeConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeConfigurationInput`](crate::input::DescribeConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConfigurationInput`](crate::input::DescribeConfigurationInput).
     pub fn builder() -> crate::input::describe_configuration_input::Builder {
         crate::input::describe_configuration_input::Builder::default()
     }
@@ -370,7 +370,7 @@ pub struct DescribeConfigurationRevision {
     _private: (),
 }
 impl DescribeConfigurationRevision {
-    /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionInput`](crate::input::DescribeConfigurationRevisionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionInput`](crate::input::DescribeConfigurationRevisionInput).
     pub fn builder() -> crate::input::describe_configuration_revision_input::Builder {
         crate::input::describe_configuration_revision_input::Builder::default()
     }
@@ -404,7 +404,7 @@ pub struct DescribeUser {
     _private: (),
 }
 impl DescribeUser {
-    /// Creates a new builder-style object to manufacture [`DescribeUserInput`](crate::input::DescribeUserInput)
+    /// Creates a new builder-style object to manufacture [`DescribeUserInput`](crate::input::DescribeUserInput).
     pub fn builder() -> crate::input::describe_user_input::Builder {
         crate::input::describe_user_input::Builder::default()
     }
@@ -436,7 +436,7 @@ pub struct ListBrokers {
     _private: (),
 }
 impl ListBrokers {
-    /// Creates a new builder-style object to manufacture [`ListBrokersInput`](crate::input::ListBrokersInput)
+    /// Creates a new builder-style object to manufacture [`ListBrokersInput`](crate::input::ListBrokersInput).
     pub fn builder() -> crate::input::list_brokers_input::Builder {
         crate::input::list_brokers_input::Builder::default()
     }
@@ -468,7 +468,7 @@ pub struct ListConfigurationRevisions {
     _private: (),
 }
 impl ListConfigurationRevisions {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsInput`](crate::input::ListConfigurationRevisionsInput)
+    /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsInput`](crate::input::ListConfigurationRevisionsInput).
     pub fn builder() -> crate::input::list_configuration_revisions_input::Builder {
         crate::input::list_configuration_revisions_input::Builder::default()
     }
@@ -502,7 +502,7 @@ pub struct ListConfigurations {
     _private: (),
 }
 impl ListConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationsInput`](crate::input::ListConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListConfigurationsInput`](crate::input::ListConfigurationsInput).
     pub fn builder() -> crate::input::list_configurations_input::Builder {
         crate::input::list_configurations_input::Builder::default()
     }
@@ -536,7 +536,7 @@ pub struct ListTags {
     _private: (),
 }
 impl ListTags {
-    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
     }
@@ -567,7 +567,7 @@ pub struct ListUsers {
     _private: (),
 }
 impl ListUsers {
-    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput)
+    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput).
     pub fn builder() -> crate::input::list_users_input::Builder {
         crate::input::list_users_input::Builder::default()
     }
@@ -598,7 +598,7 @@ pub struct RebootBroker {
     _private: (),
 }
 impl RebootBroker {
-    /// Creates a new builder-style object to manufacture [`RebootBrokerInput`](crate::input::RebootBrokerInput)
+    /// Creates a new builder-style object to manufacture [`RebootBrokerInput`](crate::input::RebootBrokerInput).
     pub fn builder() -> crate::input::reboot_broker_input::Builder {
         crate::input::reboot_broker_input::Builder::default()
     }
@@ -630,7 +630,7 @@ pub struct UpdateBroker {
     _private: (),
 }
 impl UpdateBroker {
-    /// Creates a new builder-style object to manufacture [`UpdateBrokerInput`](crate::input::UpdateBrokerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBrokerInput`](crate::input::UpdateBrokerInput).
     pub fn builder() -> crate::input::update_broker_input::Builder {
         crate::input::update_broker_input::Builder::default()
     }
@@ -662,7 +662,7 @@ pub struct UpdateConfiguration {
     _private: (),
 }
 impl UpdateConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationInput`](crate::input::UpdateConfigurationInput).
     pub fn builder() -> crate::input::update_configuration_input::Builder {
         crate::input::update_configuration_input::Builder::default()
     }
@@ -696,7 +696,7 @@ pub struct UpdateUser {
     _private: (),
 }
 impl UpdateUser {
-    /// Creates a new builder-style object to manufacture [`UpdateUserInput`](crate::input::UpdateUserInput)
+    /// Creates a new builder-style object to manufacture [`UpdateUserInput`](crate::input::UpdateUserInput).
     pub fn builder() -> crate::input::update_user_input::Builder {
         crate::input::update_user_input::Builder::default()
     }

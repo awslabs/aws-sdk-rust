@@ -49,11 +49,10 @@ impl std::fmt::Debug for Hypervisor {
         formatter.finish()
     }
 }
-/// See [`Hypervisor`](crate::model::Hypervisor)
+/// See [`Hypervisor`](crate::model::Hypervisor).
 pub mod hypervisor {
 
-    /// A builder for [`Hypervisor`](crate::model::Hypervisor)
-    #[non_exhaustive]
+    /// A builder for [`Hypervisor`](crate::model::Hypervisor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host: std::option::Option<std::string::String>,
@@ -119,7 +118,7 @@ pub mod hypervisor {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`Hypervisor`](crate::model::Hypervisor)
+        /// Consumes the builder and constructs a [`Hypervisor`](crate::model::Hypervisor).
         pub fn build(self) -> crate::model::Hypervisor {
             crate::model::Hypervisor {
                 host: self.host,
@@ -132,7 +131,7 @@ pub mod hypervisor {
     }
 }
 impl Hypervisor {
-    /// Creates a new builder-style object to manufacture [`Hypervisor`](crate::model::Hypervisor)
+    /// Creates a new builder-style object to manufacture [`Hypervisor`](crate::model::Hypervisor).
     pub fn builder() -> crate::model::hypervisor::Builder {
         crate::model::hypervisor::Builder::default()
     }
@@ -228,11 +227,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -259,7 +257,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -269,7 +267,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -323,11 +321,10 @@ impl std::fmt::Debug for Gateway {
         formatter.finish()
     }
 }
-/// See [`Gateway`](crate::model::Gateway)
+/// See [`Gateway`](crate::model::Gateway).
 pub mod gateway {
 
-    /// A builder for [`Gateway`](crate::model::Gateway)
-    #[non_exhaustive]
+    /// A builder for [`Gateway`](crate::model::Gateway).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -399,7 +396,7 @@ pub mod gateway {
             self.last_seen_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Gateway`](crate::model::Gateway)
+        /// Consumes the builder and constructs a [`Gateway`](crate::model::Gateway).
         pub fn build(self) -> crate::model::Gateway {
             crate::model::Gateway {
                 gateway_arn: self.gateway_arn,
@@ -412,7 +409,7 @@ pub mod gateway {
     }
 }
 impl Gateway {
-    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway)
+    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
     pub fn builder() -> crate::model::gateway::Builder {
         crate::model::gateway::Builder::default()
     }
@@ -536,11 +533,10 @@ impl std::fmt::Debug for GatewayDetails {
         formatter.finish()
     }
 }
-/// See [`GatewayDetails`](crate::model::GatewayDetails)
+/// See [`GatewayDetails`](crate::model::GatewayDetails).
 pub mod gateway_details {
 
-    /// A builder for [`GatewayDetails`](crate::model::GatewayDetails)
-    #[non_exhaustive]
+    /// A builder for [`GatewayDetails`](crate::model::GatewayDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
@@ -637,7 +633,7 @@ pub mod gateway_details {
             self.vpc_endpoint = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatewayDetails`](crate::model::GatewayDetails)
+        /// Consumes the builder and constructs a [`GatewayDetails`](crate::model::GatewayDetails).
         pub fn build(self) -> crate::model::GatewayDetails {
             crate::model::GatewayDetails {
                 gateway_arn: self.gateway_arn,
@@ -652,7 +648,7 @@ pub mod gateway_details {
     }
 }
 impl GatewayDetails {
-    /// Creates a new builder-style object to manufacture [`GatewayDetails`](crate::model::GatewayDetails)
+    /// Creates a new builder-style object to manufacture [`GatewayDetails`](crate::model::GatewayDetails).
     pub fn builder() -> crate::model::gateway_details::Builder {
         crate::model::gateway_details::Builder::default()
     }
@@ -713,11 +709,10 @@ impl std::fmt::Debug for VirtualMachine {
         formatter.finish()
     }
 }
-/// See [`VirtualMachine`](crate::model::VirtualMachine)
+/// See [`VirtualMachine`](crate::model::VirtualMachine).
 pub mod virtual_machine {
 
-    /// A builder for [`VirtualMachine`](crate::model::VirtualMachine)
-    #[non_exhaustive]
+    /// A builder for [`VirtualMachine`](crate::model::VirtualMachine).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) host_name: std::option::Option<std::string::String>,
@@ -794,7 +789,7 @@ pub mod virtual_machine {
             self.last_backup_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`VirtualMachine`](crate::model::VirtualMachine)
+        /// Consumes the builder and constructs a [`VirtualMachine`](crate::model::VirtualMachine).
         pub fn build(self) -> crate::model::VirtualMachine {
             crate::model::VirtualMachine {
                 host_name: self.host_name,
@@ -808,7 +803,7 @@ pub mod virtual_machine {
     }
 }
 impl VirtualMachine {
-    /// Creates a new builder-style object to manufacture [`VirtualMachine`](crate::model::VirtualMachine)
+    /// Creates a new builder-style object to manufacture [`VirtualMachine`](crate::model::VirtualMachine).
     pub fn builder() -> crate::model::virtual_machine::Builder {
         crate::model::virtual_machine::Builder::default()
     }

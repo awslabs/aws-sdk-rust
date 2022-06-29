@@ -10,7 +10,7 @@ pub struct DeleteRecommendationPreferences {
     _private: (),
 }
 impl DeleteRecommendationPreferences {
-    /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesInput`](crate::input::DeleteRecommendationPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesInput`](crate::input::DeleteRecommendationPreferencesInput).
     pub fn builder() -> crate::input::delete_recommendation_preferences_input::Builder {
         crate::input::delete_recommendation_preferences_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeRecommendationExportJobs {
     _private: (),
 }
 impl DescribeRecommendationExportJobs {
-    /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsInput`](crate::input::DescribeRecommendationExportJobsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsInput`](crate::input::DescribeRecommendationExportJobsInput).
     pub fn builder() -> crate::input::describe_recommendation_export_jobs_input::Builder {
         crate::input::describe_recommendation_export_jobs_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct ExportAutoScalingGroupRecommendations {
     _private: (),
 }
 impl ExportAutoScalingGroupRecommendations {
-    /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsInput`](crate::input::ExportAutoScalingGroupRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsInput`](crate::input::ExportAutoScalingGroupRecommendationsInput).
     pub fn builder() -> crate::input::export_auto_scaling_group_recommendations_input::Builder {
         crate::input::export_auto_scaling_group_recommendations_input::Builder::default()
     }
@@ -114,7 +114,7 @@ pub struct ExportEBSVolumeRecommendations {
     _private: (),
 }
 impl ExportEBSVolumeRecommendations {
-    /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsInput`](crate::input::ExportEbsVolumeRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsInput`](crate::input::ExportEbsVolumeRecommendationsInput).
     pub fn builder() -> crate::input::export_ebs_volume_recommendations_input::Builder {
         crate::input::export_ebs_volume_recommendations_input::Builder::default()
     }
@@ -148,7 +148,7 @@ pub struct ExportEC2InstanceRecommendations {
     _private: (),
 }
 impl ExportEC2InstanceRecommendations {
-    /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsInput`](crate::input::ExportEc2InstanceRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsInput`](crate::input::ExportEc2InstanceRecommendationsInput).
     pub fn builder() -> crate::input::export_ec2_instance_recommendations_input::Builder {
         crate::input::export_ec2_instance_recommendations_input::Builder::default()
     }
@@ -182,7 +182,7 @@ pub struct ExportLambdaFunctionRecommendations {
     _private: (),
 }
 impl ExportLambdaFunctionRecommendations {
-    /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsInput`](crate::input::ExportLambdaFunctionRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsInput`](crate::input::ExportLambdaFunctionRecommendationsInput).
     pub fn builder() -> crate::input::export_lambda_function_recommendations_input::Builder {
         crate::input::export_lambda_function_recommendations_input::Builder::default()
     }
@@ -216,7 +216,7 @@ pub struct GetAutoScalingGroupRecommendations {
     _private: (),
 }
 impl GetAutoScalingGroupRecommendations {
-    /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsInput`](crate::input::GetAutoScalingGroupRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsInput`](crate::input::GetAutoScalingGroupRecommendationsInput).
     pub fn builder() -> crate::input::get_auto_scaling_group_recommendations_input::Builder {
         crate::input::get_auto_scaling_group_recommendations_input::Builder::default()
     }
@@ -250,7 +250,7 @@ pub struct GetEBSVolumeRecommendations {
     _private: (),
 }
 impl GetEBSVolumeRecommendations {
-    /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsInput`](crate::input::GetEbsVolumeRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsInput`](crate::input::GetEbsVolumeRecommendationsInput).
     pub fn builder() -> crate::input::get_ebs_volume_recommendations_input::Builder {
         crate::input::get_ebs_volume_recommendations_input::Builder::default()
     }
@@ -284,7 +284,7 @@ pub struct GetEC2InstanceRecommendations {
     _private: (),
 }
 impl GetEC2InstanceRecommendations {
-    /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsInput`](crate::input::GetEc2InstanceRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsInput`](crate::input::GetEc2InstanceRecommendationsInput).
     pub fn builder() -> crate::input::get_ec2_instance_recommendations_input::Builder {
         crate::input::get_ec2_instance_recommendations_input::Builder::default()
     }
@@ -318,7 +318,7 @@ pub struct GetEC2RecommendationProjectedMetrics {
     _private: (),
 }
 impl GetEC2RecommendationProjectedMetrics {
-    /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsInput`](crate::input::GetEc2RecommendationProjectedMetricsInput)
+    /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsInput`](crate::input::GetEc2RecommendationProjectedMetricsInput).
     pub fn builder() -> crate::input::get_ec2_recommendation_projected_metrics_input::Builder {
         crate::input::get_ec2_recommendation_projected_metrics_input::Builder::default()
     }
@@ -354,7 +354,7 @@ pub struct GetEffectiveRecommendationPreferences {
     _private: (),
 }
 impl GetEffectiveRecommendationPreferences {
-    /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesInput`](crate::input::GetEffectiveRecommendationPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesInput`](crate::input::GetEffectiveRecommendationPreferencesInput).
     pub fn builder() -> crate::input::get_effective_recommendation_preferences_input::Builder {
         crate::input::get_effective_recommendation_preferences_input::Builder::default()
     }
@@ -390,7 +390,7 @@ pub struct GetEnrollmentStatus {
     _private: (),
 }
 impl GetEnrollmentStatus {
-    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusInput`](crate::input::GetEnrollmentStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusInput`](crate::input::GetEnrollmentStatusInput).
     pub fn builder() -> crate::input::get_enrollment_status_input::Builder {
         crate::input::get_enrollment_status_input::Builder::default()
     }
@@ -424,7 +424,7 @@ pub struct GetEnrollmentStatusesForOrganization {
     _private: (),
 }
 impl GetEnrollmentStatusesForOrganization {
-    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationInput`](crate::input::GetEnrollmentStatusesForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationInput`](crate::input::GetEnrollmentStatusesForOrganizationInput).
     pub fn builder() -> crate::input::get_enrollment_statuses_for_organization_input::Builder {
         crate::input::get_enrollment_statuses_for_organization_input::Builder::default()
     }
@@ -460,7 +460,7 @@ pub struct GetLambdaFunctionRecommendations {
     _private: (),
 }
 impl GetLambdaFunctionRecommendations {
-    /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsInput`](crate::input::GetLambdaFunctionRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsInput`](crate::input::GetLambdaFunctionRecommendationsInput).
     pub fn builder() -> crate::input::get_lambda_function_recommendations_input::Builder {
         crate::input::get_lambda_function_recommendations_input::Builder::default()
     }
@@ -494,7 +494,7 @@ pub struct GetRecommendationPreferences {
     _private: (),
 }
 impl GetRecommendationPreferences {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesInput`](crate::input::GetRecommendationPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesInput`](crate::input::GetRecommendationPreferencesInput).
     pub fn builder() -> crate::input::get_recommendation_preferences_input::Builder {
         crate::input::get_recommendation_preferences_input::Builder::default()
     }
@@ -528,7 +528,7 @@ pub struct GetRecommendationSummaries {
     _private: (),
 }
 impl GetRecommendationSummaries {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesInput`](crate::input::GetRecommendationSummariesInput)
+    /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesInput`](crate::input::GetRecommendationSummariesInput).
     pub fn builder() -> crate::input::get_recommendation_summaries_input::Builder {
         crate::input::get_recommendation_summaries_input::Builder::default()
     }
@@ -562,7 +562,7 @@ pub struct PutRecommendationPreferences {
     _private: (),
 }
 impl PutRecommendationPreferences {
-    /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesInput`](crate::input::PutRecommendationPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesInput`](crate::input::PutRecommendationPreferencesInput).
     pub fn builder() -> crate::input::put_recommendation_preferences_input::Builder {
         crate::input::put_recommendation_preferences_input::Builder::default()
     }
@@ -596,7 +596,7 @@ pub struct UpdateEnrollmentStatus {
     _private: (),
 }
 impl UpdateEnrollmentStatus {
-    /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusInput`](crate::input::UpdateEnrollmentStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusInput`](crate::input::UpdateEnrollmentStatusInput).
     pub fn builder() -> crate::input::update_enrollment_status_input::Builder {
         crate::input::update_enrollment_status_input::Builder::default()
     }

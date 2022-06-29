@@ -10,7 +10,7 @@ pub struct DescribeAcceleratorOfferings {
     _private: (),
 }
 impl DescribeAcceleratorOfferings {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOfferingsInput`](crate::input::DescribeAcceleratorOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOfferingsInput`](crate::input::DescribeAcceleratorOfferingsInput).
     pub fn builder() -> crate::input::describe_accelerator_offerings_input::Builder {
         crate::input::describe_accelerator_offerings_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeAccelerators {
     _private: (),
 }
 impl DescribeAccelerators {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorsInput`](crate::input::DescribeAcceleratorsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorsInput`](crate::input::DescribeAcceleratorsInput).
     pub fn builder() -> crate::input::describe_accelerators_input::Builder {
         crate::input::describe_accelerators_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeAcceleratorTypes {
     _private: (),
 }
 impl DescribeAcceleratorTypes {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorTypesInput`](crate::input::DescribeAcceleratorTypesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorTypesInput`](crate::input::DescribeAcceleratorTypesInput).
     pub fn builder() -> crate::input::describe_accelerator_types_input::Builder {
         crate::input::describe_accelerator_types_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

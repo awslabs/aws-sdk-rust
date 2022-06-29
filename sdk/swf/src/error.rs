@@ -4137,11 +4137,10 @@ impl std::fmt::Display for UnknownResourceFault {
     }
 }
 impl std::error::Error for UnknownResourceFault {}
-/// See [`UnknownResourceFault`](crate::error::UnknownResourceFault)
+/// See [`UnknownResourceFault`](crate::error::UnknownResourceFault).
 pub mod unknown_resource_fault {
 
-    /// A builder for [`UnknownResourceFault`](crate::error::UnknownResourceFault)
-    #[non_exhaustive]
+    /// A builder for [`UnknownResourceFault`](crate::error::UnknownResourceFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4157,7 +4156,7 @@ pub mod unknown_resource_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnknownResourceFault`](crate::error::UnknownResourceFault)
+        /// Consumes the builder and constructs a [`UnknownResourceFault`](crate::error::UnknownResourceFault).
         pub fn build(self) -> crate::error::UnknownResourceFault {
             crate::error::UnknownResourceFault {
                 message: self.message,
@@ -4166,7 +4165,7 @@ pub mod unknown_resource_fault {
     }
 }
 impl UnknownResourceFault {
-    /// Creates a new builder-style object to manufacture [`UnknownResourceFault`](crate::error::UnknownResourceFault)
+    /// Creates a new builder-style object to manufacture [`UnknownResourceFault`](crate::error::UnknownResourceFault).
     pub fn builder() -> crate::error::unknown_resource_fault::Builder {
         crate::error::unknown_resource_fault::Builder::default()
     }
@@ -4202,11 +4201,10 @@ impl std::fmt::Display for OperationNotPermittedFault {
     }
 }
 impl std::error::Error for OperationNotPermittedFault {}
-/// See [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault)
+/// See [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
 pub mod operation_not_permitted_fault {
 
-    /// A builder for [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault)
-    #[non_exhaustive]
+    /// A builder for [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4222,7 +4220,7 @@ pub mod operation_not_permitted_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault)
+        /// Consumes the builder and constructs a [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
         pub fn build(self) -> crate::error::OperationNotPermittedFault {
             crate::error::OperationNotPermittedFault {
                 message: self.message,
@@ -4231,7 +4229,7 @@ pub mod operation_not_permitted_fault {
     }
 }
 impl OperationNotPermittedFault {
-    /// Creates a new builder-style object to manufacture [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault)
+    /// Creates a new builder-style object to manufacture [`OperationNotPermittedFault`](crate::error::OperationNotPermittedFault).
     pub fn builder() -> crate::error::operation_not_permitted_fault::Builder {
         crate::error::operation_not_permitted_fault::Builder::default()
     }
@@ -4267,11 +4265,10 @@ impl std::fmt::Display for LimitExceededFault {
     }
 }
 impl std::error::Error for LimitExceededFault {}
-/// See [`LimitExceededFault`](crate::error::LimitExceededFault)
+/// See [`LimitExceededFault`](crate::error::LimitExceededFault).
 pub mod limit_exceeded_fault {
 
-    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4287,7 +4284,7 @@ pub mod limit_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault)
+        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault).
         pub fn build(self) -> crate::error::LimitExceededFault {
             crate::error::LimitExceededFault {
                 message: self.message,
@@ -4296,7 +4293,7 @@ pub mod limit_exceeded_fault {
     }
 }
 impl LimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault)
+    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault).
     pub fn builder() -> crate::error::limit_exceeded_fault::Builder {
         crate::error::limit_exceeded_fault::Builder::default()
     }
@@ -4332,11 +4329,10 @@ impl std::fmt::Display for TypeAlreadyExistsFault {
     }
 }
 impl std::error::Error for TypeAlreadyExistsFault {}
-/// See [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault)
+/// See [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
 pub mod type_already_exists_fault {
 
-    /// A builder for [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4352,7 +4348,7 @@ pub mod type_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
         pub fn build(self) -> crate::error::TypeAlreadyExistsFault {
             crate::error::TypeAlreadyExistsFault {
                 message: self.message,
@@ -4361,7 +4357,7 @@ pub mod type_already_exists_fault {
     }
 }
 impl TypeAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`TypeAlreadyExistsFault`](crate::error::TypeAlreadyExistsFault).
     pub fn builder() -> crate::error::type_already_exists_fault::Builder {
         crate::error::type_already_exists_fault::Builder::default()
     }
@@ -4397,11 +4393,10 @@ impl std::fmt::Display for DomainAlreadyExistsFault {
     }
 }
 impl std::error::Error for DomainAlreadyExistsFault {}
-/// See [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault)
+/// See [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
 pub mod domain_already_exists_fault {
 
-    /// A builder for [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4417,7 +4412,7 @@ pub mod domain_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
         pub fn build(self) -> crate::error::DomainAlreadyExistsFault {
             crate::error::DomainAlreadyExistsFault {
                 message: self.message,
@@ -4426,7 +4421,7 @@ pub mod domain_already_exists_fault {
     }
 }
 impl DomainAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DomainAlreadyExistsFault`](crate::error::DomainAlreadyExistsFault).
     pub fn builder() -> crate::error::domain_already_exists_fault::Builder {
         crate::error::domain_already_exists_fault::Builder::default()
     }
@@ -4462,11 +4457,10 @@ impl std::fmt::Display for TooManyTagsFault {
     }
 }
 impl std::error::Error for TooManyTagsFault {}
-/// See [`TooManyTagsFault`](crate::error::TooManyTagsFault)
+/// See [`TooManyTagsFault`](crate::error::TooManyTagsFault).
 pub mod too_many_tags_fault {
 
-    /// A builder for [`TooManyTagsFault`](crate::error::TooManyTagsFault)
-    #[non_exhaustive]
+    /// A builder for [`TooManyTagsFault`](crate::error::TooManyTagsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4482,7 +4476,7 @@ pub mod too_many_tags_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyTagsFault`](crate::error::TooManyTagsFault)
+        /// Consumes the builder and constructs a [`TooManyTagsFault`](crate::error::TooManyTagsFault).
         pub fn build(self) -> crate::error::TooManyTagsFault {
             crate::error::TooManyTagsFault {
                 message: self.message,
@@ -4491,7 +4485,7 @@ pub mod too_many_tags_fault {
     }
 }
 impl TooManyTagsFault {
-    /// Creates a new builder-style object to manufacture [`TooManyTagsFault`](crate::error::TooManyTagsFault)
+    /// Creates a new builder-style object to manufacture [`TooManyTagsFault`](crate::error::TooManyTagsFault).
     pub fn builder() -> crate::error::too_many_tags_fault::Builder {
         crate::error::too_many_tags_fault::Builder::default()
     }
@@ -4527,11 +4521,10 @@ impl std::fmt::Display for WorkflowExecutionAlreadyStartedFault {
     }
 }
 impl std::error::Error for WorkflowExecutionAlreadyStartedFault {}
-/// See [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault)
+/// See [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
 pub mod workflow_execution_already_started_fault {
 
-    /// A builder for [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault)
-    #[non_exhaustive]
+    /// A builder for [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4547,7 +4540,7 @@ pub mod workflow_execution_already_started_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault)
+        /// Consumes the builder and constructs a [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
         pub fn build(self) -> crate::error::WorkflowExecutionAlreadyStartedFault {
             crate::error::WorkflowExecutionAlreadyStartedFault {
                 message: self.message,
@@ -4556,7 +4549,7 @@ pub mod workflow_execution_already_started_fault {
     }
 }
 impl WorkflowExecutionAlreadyStartedFault {
-    /// Creates a new builder-style object to manufacture [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault)
+    /// Creates a new builder-style object to manufacture [`WorkflowExecutionAlreadyStartedFault`](crate::error::WorkflowExecutionAlreadyStartedFault).
     pub fn builder() -> crate::error::workflow_execution_already_started_fault::Builder {
         crate::error::workflow_execution_already_started_fault::Builder::default()
     }
@@ -4592,11 +4585,10 @@ impl std::fmt::Display for TypeDeprecatedFault {
     }
 }
 impl std::error::Error for TypeDeprecatedFault {}
-/// See [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault)
+/// See [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
 pub mod type_deprecated_fault {
 
-    /// A builder for [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault)
-    #[non_exhaustive]
+    /// A builder for [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4612,7 +4604,7 @@ pub mod type_deprecated_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault)
+        /// Consumes the builder and constructs a [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
         pub fn build(self) -> crate::error::TypeDeprecatedFault {
             crate::error::TypeDeprecatedFault {
                 message: self.message,
@@ -4621,7 +4613,7 @@ pub mod type_deprecated_fault {
     }
 }
 impl TypeDeprecatedFault {
-    /// Creates a new builder-style object to manufacture [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault)
+    /// Creates a new builder-style object to manufacture [`TypeDeprecatedFault`](crate::error::TypeDeprecatedFault).
     pub fn builder() -> crate::error::type_deprecated_fault::Builder {
         crate::error::type_deprecated_fault::Builder::default()
     }
@@ -4660,11 +4652,10 @@ impl std::fmt::Display for DefaultUndefinedFault {
     }
 }
 impl std::error::Error for DefaultUndefinedFault {}
-/// See [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault)
+/// See [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
 pub mod default_undefined_fault {
 
-    /// A builder for [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault)
-    #[non_exhaustive]
+    /// A builder for [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4680,7 +4671,7 @@ pub mod default_undefined_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault)
+        /// Consumes the builder and constructs a [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
         pub fn build(self) -> crate::error::DefaultUndefinedFault {
             crate::error::DefaultUndefinedFault {
                 message: self.message,
@@ -4689,7 +4680,7 @@ pub mod default_undefined_fault {
     }
 }
 impl DefaultUndefinedFault {
-    /// Creates a new builder-style object to manufacture [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault)
+    /// Creates a new builder-style object to manufacture [`DefaultUndefinedFault`](crate::error::DefaultUndefinedFault).
     pub fn builder() -> crate::error::default_undefined_fault::Builder {
         crate::error::default_undefined_fault::Builder::default()
     }
@@ -4725,11 +4716,10 @@ impl std::fmt::Display for DomainDeprecatedFault {
     }
 }
 impl std::error::Error for DomainDeprecatedFault {}
-/// See [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault)
+/// See [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
 pub mod domain_deprecated_fault {
 
-    /// A builder for [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault)
-    #[non_exhaustive]
+    /// A builder for [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4745,7 +4735,7 @@ pub mod domain_deprecated_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault)
+        /// Consumes the builder and constructs a [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
         pub fn build(self) -> crate::error::DomainDeprecatedFault {
             crate::error::DomainDeprecatedFault {
                 message: self.message,
@@ -4754,7 +4744,7 @@ pub mod domain_deprecated_fault {
     }
 }
 impl DomainDeprecatedFault {
-    /// Creates a new builder-style object to manufacture [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault)
+    /// Creates a new builder-style object to manufacture [`DomainDeprecatedFault`](crate::error::DomainDeprecatedFault).
     pub fn builder() -> crate::error::domain_deprecated_fault::Builder {
         crate::error::domain_deprecated_fault::Builder::default()
     }

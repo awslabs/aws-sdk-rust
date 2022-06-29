@@ -916,11 +916,10 @@ impl std::fmt::Display for StatementTimeoutException {
     }
 }
 impl std::error::Error for StatementTimeoutException {}
-/// See [`StatementTimeoutException`](crate::error::StatementTimeoutException)
+/// See [`StatementTimeoutException`](crate::error::StatementTimeoutException).
 pub mod statement_timeout_exception {
 
-    /// A builder for [`StatementTimeoutException`](crate::error::StatementTimeoutException)
-    #[non_exhaustive]
+    /// A builder for [`StatementTimeoutException`](crate::error::StatementTimeoutException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -947,7 +946,7 @@ pub mod statement_timeout_exception {
             self.db_connection_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StatementTimeoutException`](crate::error::StatementTimeoutException)
+        /// Consumes the builder and constructs a [`StatementTimeoutException`](crate::error::StatementTimeoutException).
         pub fn build(self) -> crate::error::StatementTimeoutException {
             crate::error::StatementTimeoutException {
                 message: self.message,
@@ -957,7 +956,7 @@ pub mod statement_timeout_exception {
     }
 }
 impl StatementTimeoutException {
-    /// Creates a new builder-style object to manufacture [`StatementTimeoutException`](crate::error::StatementTimeoutException)
+    /// Creates a new builder-style object to manufacture [`StatementTimeoutException`](crate::error::StatementTimeoutException).
     pub fn builder() -> crate::error::statement_timeout_exception::Builder {
         crate::error::statement_timeout_exception::Builder::default()
     }
@@ -993,11 +992,10 @@ impl std::fmt::Display for ServiceUnavailableError {
     }
 }
 impl std::error::Error for ServiceUnavailableError {}
-/// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+/// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
 pub mod service_unavailable_error {
 
-    /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-    #[non_exhaustive]
+    /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1013,7 +1011,7 @@ pub mod service_unavailable_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+        /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
         pub fn build(self) -> crate::error::ServiceUnavailableError {
             crate::error::ServiceUnavailableError {
                 message: self.message,
@@ -1022,7 +1020,7 @@ pub mod service_unavailable_error {
     }
 }
 impl ServiceUnavailableError {
-    /// Creates a new builder-style object to manufacture [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+    /// Creates a new builder-style object to manufacture [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
     pub fn builder() -> crate::error::service_unavailable_error::Builder {
         crate::error::service_unavailable_error::Builder::default()
     }
@@ -1058,11 +1056,10 @@ impl std::fmt::Display for NotFoundException {
     }
 }
 impl std::error::Error for NotFoundException {}
-/// See [`NotFoundException`](crate::error::NotFoundException)
+/// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
 
-    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1078,7 +1075,7 @@ pub mod not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
                 message: self.message,
@@ -1087,7 +1084,7 @@ pub mod not_found_exception {
     }
 }
 impl NotFoundException {
-    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
     pub fn builder() -> crate::error::not_found_exception::Builder {
         crate::error::not_found_exception::Builder::default()
     }
@@ -1123,11 +1120,10 @@ impl std::fmt::Display for InternalServerErrorException {
     }
 }
 impl std::error::Error for InternalServerErrorException {}
-/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+/// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
 pub mod internal_server_error_exception {
 
-    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException)
-    #[non_exhaustive]
+    /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1143,7 +1139,7 @@ pub mod internal_server_error_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+        /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
         pub fn build(self) -> crate::error::InternalServerErrorException {
             crate::error::InternalServerErrorException {
                 message: self.message,
@@ -1152,7 +1148,7 @@ pub mod internal_server_error_exception {
     }
 }
 impl InternalServerErrorException {
-    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException)
+    /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
     pub fn builder() -> crate::error::internal_server_error_exception::Builder {
         crate::error::internal_server_error_exception::Builder::default()
     }
@@ -1188,11 +1184,10 @@ impl std::fmt::Display for ForbiddenException {
     }
 }
 impl std::error::Error for ForbiddenException {}
-/// See [`ForbiddenException`](crate::error::ForbiddenException)
+/// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
 
-    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
-    #[non_exhaustive]
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1208,7 +1203,7 @@ pub mod forbidden_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException)
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
                 message: self.message,
@@ -1217,7 +1212,7 @@ pub mod forbidden_exception {
     }
 }
 impl ForbiddenException {
-    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException)
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
     pub fn builder() -> crate::error::forbidden_exception::Builder {
         crate::error::forbidden_exception::Builder::default()
     }
@@ -1253,11 +1248,10 @@ impl std::fmt::Display for BadRequestException {
     }
 }
 impl std::error::Error for BadRequestException {}
-/// See [`BadRequestException`](crate::error::BadRequestException)
+/// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
 
-    /// A builder for [`BadRequestException`](crate::error::BadRequestException)
-    #[non_exhaustive]
+    /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1273,7 +1267,7 @@ pub mod bad_request_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException)
+        /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
                 message: self.message,
@@ -1282,7 +1276,7 @@ pub mod bad_request_exception {
     }
 }
 impl BadRequestException {
-    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
+    /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
     pub fn builder() -> crate::error::bad_request_exception::Builder {
         crate::error::bad_request_exception::Builder::default()
     }
@@ -1318,11 +1312,10 @@ impl std::fmt::Display for AccessDeniedException {
     }
 }
 impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
 
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
-    #[non_exhaustive]
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1338,7 +1331,7 @@ pub mod access_denied_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
                 message: self.message,
@@ -1347,7 +1340,7 @@ pub mod access_denied_exception {
     }
 }
 impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
     }

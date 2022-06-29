@@ -9,22 +9,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -95,11 +93,10 @@ impl std::fmt::Debug for StartFhirImportJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput)
+/// See [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
 pub mod start_fhir_import_job_output {
 
-    /// A builder for [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -140,7 +137,7 @@ pub mod start_fhir_import_job_output {
             self.datastore_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput)
+        /// Consumes the builder and constructs a [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
         pub fn build(self) -> crate::output::StartFhirImportJobOutput {
             crate::output::StartFhirImportJobOutput {
                 job_id: self.job_id,
@@ -151,7 +148,7 @@ pub mod start_fhir_import_job_output {
     }
 }
 impl StartFhirImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
     pub fn builder() -> crate::output::start_fhir_import_job_output::Builder {
         crate::output::start_fhir_import_job_output::Builder::default()
     }
@@ -191,11 +188,10 @@ impl std::fmt::Debug for StartFhirExportJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput)
+/// See [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
 pub mod start_fhir_export_job_output {
 
-    /// A builder for [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -236,7 +232,7 @@ pub mod start_fhir_export_job_output {
             self.datastore_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput)
+        /// Consumes the builder and constructs a [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
         pub fn build(self) -> crate::output::StartFhirExportJobOutput {
             crate::output::StartFhirExportJobOutput {
                 job_id: self.job_id,
@@ -247,7 +243,7 @@ pub mod start_fhir_export_job_output {
     }
 }
 impl StartFhirExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
     pub fn builder() -> crate::output::start_fhir_export_job_output::Builder {
         crate::output::start_fhir_export_job_output::Builder::default()
     }
@@ -273,11 +269,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -302,14 +297,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -348,11 +343,10 @@ impl std::fmt::Debug for ListFhirImportJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput)
+/// See [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
 pub mod list_fhir_import_jobs_output {
 
-    /// A builder for [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_properties_list:
@@ -392,7 +386,7 @@ pub mod list_fhir_import_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput)
+        /// Consumes the builder and constructs a [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
         pub fn build(self) -> crate::output::ListFhirImportJobsOutput {
             crate::output::ListFhirImportJobsOutput {
                 import_job_properties_list: self.import_job_properties_list,
@@ -402,7 +396,7 @@ pub mod list_fhir_import_jobs_output {
     }
 }
 impl ListFhirImportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
     pub fn builder() -> crate::output::list_fhir_import_jobs_output::Builder {
         crate::output::list_fhir_import_jobs_output::Builder::default()
     }
@@ -441,11 +435,10 @@ impl std::fmt::Debug for ListFhirExportJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput)
+/// See [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
 pub mod list_fhir_export_jobs_output {
 
-    /// A builder for [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_properties_list:
@@ -485,7 +478,7 @@ pub mod list_fhir_export_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput)
+        /// Consumes the builder and constructs a [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
         pub fn build(self) -> crate::output::ListFhirExportJobsOutput {
             crate::output::ListFhirExportJobsOutput {
                 export_job_properties_list: self.export_job_properties_list,
@@ -495,7 +488,7 @@ pub mod list_fhir_export_jobs_output {
     }
 }
 impl ListFhirExportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
     pub fn builder() -> crate::output::list_fhir_export_jobs_output::Builder {
         crate::output::list_fhir_export_jobs_output::Builder::default()
     }
@@ -531,11 +524,10 @@ impl std::fmt::Debug for ListFhirDatastoresOutput {
         formatter.finish()
     }
 }
-/// See [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput)
+/// See [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
 pub mod list_fhir_datastores_output {
 
-    /// A builder for [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_properties_list:
@@ -575,7 +567,7 @@ pub mod list_fhir_datastores_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput)
+        /// Consumes the builder and constructs a [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
         pub fn build(self) -> crate::output::ListFhirDatastoresOutput {
             crate::output::ListFhirDatastoresOutput {
                 datastore_properties_list: self.datastore_properties_list,
@@ -585,7 +577,7 @@ pub mod list_fhir_datastores_output {
     }
 }
 impl ListFhirDatastoresOutput {
-    /// Creates a new builder-style object to manufacture [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput)
+    /// Creates a new builder-style object to manufacture [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
     pub fn builder() -> crate::output::list_fhir_datastores_output::Builder {
         crate::output::list_fhir_datastores_output::Builder::default()
     }
@@ -611,11 +603,10 @@ impl std::fmt::Debug for DescribeFhirImportJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput)
+/// See [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
 pub mod describe_fhir_import_job_output {
 
-    /// A builder for [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_properties: std::option::Option<crate::model::ImportJobProperties>,
@@ -634,7 +625,7 @@ pub mod describe_fhir_import_job_output {
             self.import_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput)
+        /// Consumes the builder and constructs a [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
         pub fn build(self) -> crate::output::DescribeFhirImportJobOutput {
             crate::output::DescribeFhirImportJobOutput {
                 import_job_properties: self.import_job_properties,
@@ -643,7 +634,7 @@ pub mod describe_fhir_import_job_output {
     }
 }
 impl DescribeFhirImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
     pub fn builder() -> crate::output::describe_fhir_import_job_output::Builder {
         crate::output::describe_fhir_import_job_output::Builder::default()
     }
@@ -669,11 +660,10 @@ impl std::fmt::Debug for DescribeFhirExportJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput)
+/// See [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
 pub mod describe_fhir_export_job_output {
 
-    /// A builder for [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_properties: std::option::Option<crate::model::ExportJobProperties>,
@@ -692,7 +682,7 @@ pub mod describe_fhir_export_job_output {
             self.export_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput)
+        /// Consumes the builder and constructs a [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
         pub fn build(self) -> crate::output::DescribeFhirExportJobOutput {
             crate::output::DescribeFhirExportJobOutput {
                 export_job_properties: self.export_job_properties,
@@ -701,7 +691,7 @@ pub mod describe_fhir_export_job_output {
     }
 }
 impl DescribeFhirExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
     pub fn builder() -> crate::output::describe_fhir_export_job_output::Builder {
         crate::output::describe_fhir_export_job_output::Builder::default()
     }
@@ -727,11 +717,10 @@ impl std::fmt::Debug for DescribeFhirDatastoreOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput)
+/// See [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
 pub mod describe_fhir_datastore_output {
 
-    /// A builder for [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
@@ -750,7 +739,7 @@ pub mod describe_fhir_datastore_output {
             self.datastore_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput)
+        /// Consumes the builder and constructs a [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
         pub fn build(self) -> crate::output::DescribeFhirDatastoreOutput {
             crate::output::DescribeFhirDatastoreOutput {
                 datastore_properties: self.datastore_properties,
@@ -759,7 +748,7 @@ pub mod describe_fhir_datastore_output {
     }
 }
 impl DescribeFhirDatastoreOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
     pub fn builder() -> crate::output::describe_fhir_datastore_output::Builder {
         crate::output::describe_fhir_datastore_output::Builder::default()
     }
@@ -806,11 +795,10 @@ impl std::fmt::Debug for DeleteFhirDatastoreOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput)
+/// See [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
 pub mod delete_fhir_datastore_output {
 
-    /// A builder for [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -868,7 +856,7 @@ pub mod delete_fhir_datastore_output {
             self.datastore_endpoint = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput)
+        /// Consumes the builder and constructs a [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
         pub fn build(self) -> crate::output::DeleteFhirDatastoreOutput {
             crate::output::DeleteFhirDatastoreOutput {
                 datastore_id: self.datastore_id,
@@ -880,7 +868,7 @@ pub mod delete_fhir_datastore_output {
     }
 }
 impl DeleteFhirDatastoreOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
     pub fn builder() -> crate::output::delete_fhir_datastore_output::Builder {
         crate::output::delete_fhir_datastore_output::Builder::default()
     }
@@ -927,11 +915,10 @@ impl std::fmt::Debug for CreateFhirDatastoreOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput)
+/// See [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
 pub mod create_fhir_datastore_output {
 
-    /// A builder for [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_id: std::option::Option<std::string::String>,
@@ -989,7 +976,7 @@ pub mod create_fhir_datastore_output {
             self.datastore_endpoint = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput)
+        /// Consumes the builder and constructs a [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
         pub fn build(self) -> crate::output::CreateFhirDatastoreOutput {
             crate::output::CreateFhirDatastoreOutput {
                 datastore_id: self.datastore_id,
@@ -1001,7 +988,7 @@ pub mod create_fhir_datastore_output {
     }
 }
 impl CreateFhirDatastoreOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
     pub fn builder() -> crate::output::create_fhir_datastore_output::Builder {
         crate::output::create_fhir_datastore_output::Builder::default()
     }

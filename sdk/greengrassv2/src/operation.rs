@@ -10,7 +10,7 @@ pub struct AssociateServiceRoleToAccount {
     _private: (),
 }
 impl AssociateServiceRoleToAccount {
-    /// Creates a new builder-style object to manufacture [`AssociateServiceRoleToAccountInput`](crate::input::AssociateServiceRoleToAccountInput)
+    /// Creates a new builder-style object to manufacture [`AssociateServiceRoleToAccountInput`](crate::input::AssociateServiceRoleToAccountInput).
     pub fn builder() -> crate::input::associate_service_role_to_account_input::Builder {
         crate::input::associate_service_role_to_account_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchAssociateClientDeviceWithCoreDevice {
     _private: (),
 }
 impl BatchAssociateClientDeviceWithCoreDevice {
-    /// Creates a new builder-style object to manufacture [`BatchAssociateClientDeviceWithCoreDeviceInput`](crate::input::BatchAssociateClientDeviceWithCoreDeviceInput)
+    /// Creates a new builder-style object to manufacture [`BatchAssociateClientDeviceWithCoreDeviceInput`](crate::input::BatchAssociateClientDeviceWithCoreDeviceInput).
     pub fn builder() -> crate::input::batch_associate_client_device_with_core_device_input::Builder
     {
         crate::input::batch_associate_client_device_with_core_device_input::Builder::default()
@@ -83,7 +83,7 @@ pub struct BatchDisassociateClientDeviceFromCoreDevice {
     _private: (),
 }
 impl BatchDisassociateClientDeviceFromCoreDevice {
-    /// Creates a new builder-style object to manufacture [`BatchDisassociateClientDeviceFromCoreDeviceInput`](crate::input::BatchDisassociateClientDeviceFromCoreDeviceInput)
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateClientDeviceFromCoreDeviceInput`](crate::input::BatchDisassociateClientDeviceFromCoreDeviceInput).
     pub fn builder(
     ) -> crate::input::batch_disassociate_client_device_from_core_device_input::Builder {
         crate::input::batch_disassociate_client_device_from_core_device_input::Builder::default()
@@ -124,7 +124,7 @@ pub struct CancelDeployment {
     _private: (),
 }
 impl CancelDeployment {
-    /// Creates a new builder-style object to manufacture [`CancelDeploymentInput`](crate::input::CancelDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`CancelDeploymentInput`](crate::input::CancelDeploymentInput).
     pub fn builder() -> crate::input::cancel_deployment_input::Builder {
         crate::input::cancel_deployment_input::Builder::default()
     }
@@ -158,7 +158,7 @@ pub struct CreateComponentVersion {
     _private: (),
 }
 impl CreateComponentVersion {
-    /// Creates a new builder-style object to manufacture [`CreateComponentVersionInput`](crate::input::CreateComponentVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateComponentVersionInput`](crate::input::CreateComponentVersionInput).
     pub fn builder() -> crate::input::create_component_version_input::Builder {
         crate::input::create_component_version_input::Builder::default()
     }
@@ -192,7 +192,7 @@ pub struct CreateDeployment {
     _private: (),
 }
 impl CreateDeployment {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
     pub fn builder() -> crate::input::create_deployment_input::Builder {
         crate::input::create_deployment_input::Builder::default()
     }
@@ -226,7 +226,7 @@ pub struct DeleteComponent {
     _private: (),
 }
 impl DeleteComponent {
-    /// Creates a new builder-style object to manufacture [`DeleteComponentInput`](crate::input::DeleteComponentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteComponentInput`](crate::input::DeleteComponentInput).
     pub fn builder() -> crate::input::delete_component_input::Builder {
         crate::input::delete_component_input::Builder::default()
     }
@@ -260,7 +260,7 @@ pub struct DeleteCoreDevice {
     _private: (),
 }
 impl DeleteCoreDevice {
-    /// Creates a new builder-style object to manufacture [`DeleteCoreDeviceInput`](crate::input::DeleteCoreDeviceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCoreDeviceInput`](crate::input::DeleteCoreDeviceInput).
     pub fn builder() -> crate::input::delete_core_device_input::Builder {
         crate::input::delete_core_device_input::Builder::default()
     }
@@ -294,7 +294,7 @@ pub struct DeleteDeployment {
     _private: (),
 }
 impl DeleteDeployment {
-    /// Creates a new builder-style object to manufacture [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentInput`](crate::input::DeleteDeploymentInput).
     pub fn builder() -> crate::input::delete_deployment_input::Builder {
         crate::input::delete_deployment_input::Builder::default()
     }
@@ -328,7 +328,7 @@ pub struct DescribeComponent {
     _private: (),
 }
 impl DescribeComponent {
-    /// Creates a new builder-style object to manufacture [`DescribeComponentInput`](crate::input::DescribeComponentInput)
+    /// Creates a new builder-style object to manufacture [`DescribeComponentInput`](crate::input::DescribeComponentInput).
     pub fn builder() -> crate::input::describe_component_input::Builder {
         crate::input::describe_component_input::Builder::default()
     }
@@ -362,7 +362,7 @@ pub struct DisassociateServiceRoleFromAccount {
     _private: (),
 }
 impl DisassociateServiceRoleFromAccount {
-    /// Creates a new builder-style object to manufacture [`DisassociateServiceRoleFromAccountInput`](crate::input::DisassociateServiceRoleFromAccountInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateServiceRoleFromAccountInput`](crate::input::DisassociateServiceRoleFromAccountInput).
     pub fn builder() -> crate::input::disassociate_service_role_from_account_input::Builder {
         crate::input::disassociate_service_role_from_account_input::Builder::default()
     }
@@ -396,7 +396,7 @@ pub struct GetComponent {
     _private: (),
 }
 impl GetComponent {
-    /// Creates a new builder-style object to manufacture [`GetComponentInput`](crate::input::GetComponentInput)
+    /// Creates a new builder-style object to manufacture [`GetComponentInput`](crate::input::GetComponentInput).
     pub fn builder() -> crate::input::get_component_input::Builder {
         crate::input::get_component_input::Builder::default()
     }
@@ -428,7 +428,7 @@ pub struct GetComponentVersionArtifact {
     _private: (),
 }
 impl GetComponentVersionArtifact {
-    /// Creates a new builder-style object to manufacture [`GetComponentVersionArtifactInput`](crate::input::GetComponentVersionArtifactInput)
+    /// Creates a new builder-style object to manufacture [`GetComponentVersionArtifactInput`](crate::input::GetComponentVersionArtifactInput).
     pub fn builder() -> crate::input::get_component_version_artifact_input::Builder {
         crate::input::get_component_version_artifact_input::Builder::default()
     }
@@ -462,7 +462,7 @@ pub struct GetConnectivityInfo {
     _private: (),
 }
 impl GetConnectivityInfo {
-    /// Creates a new builder-style object to manufacture [`GetConnectivityInfoInput`](crate::input::GetConnectivityInfoInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectivityInfoInput`](crate::input::GetConnectivityInfoInput).
     pub fn builder() -> crate::input::get_connectivity_info_input::Builder {
         crate::input::get_connectivity_info_input::Builder::default()
     }
@@ -496,7 +496,7 @@ pub struct GetCoreDevice {
     _private: (),
 }
 impl GetCoreDevice {
-    /// Creates a new builder-style object to manufacture [`GetCoreDeviceInput`](crate::input::GetCoreDeviceInput)
+    /// Creates a new builder-style object to manufacture [`GetCoreDeviceInput`](crate::input::GetCoreDeviceInput).
     pub fn builder() -> crate::input::get_core_device_input::Builder {
         crate::input::get_core_device_input::Builder::default()
     }
@@ -528,7 +528,7 @@ pub struct GetDeployment {
     _private: (),
 }
 impl GetDeployment {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput).
     pub fn builder() -> crate::input::get_deployment_input::Builder {
         crate::input::get_deployment_input::Builder::default()
     }
@@ -560,7 +560,7 @@ pub struct GetServiceRoleForAccount {
     _private: (),
 }
 impl GetServiceRoleForAccount {
-    /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountInput`](crate::input::GetServiceRoleForAccountInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceRoleForAccountInput`](crate::input::GetServiceRoleForAccountInput).
     pub fn builder() -> crate::input::get_service_role_for_account_input::Builder {
         crate::input::get_service_role_for_account_input::Builder::default()
     }
@@ -594,7 +594,7 @@ pub struct ListClientDevicesAssociatedWithCoreDevice {
     _private: (),
 }
 impl ListClientDevicesAssociatedWithCoreDevice {
-    /// Creates a new builder-style object to manufacture [`ListClientDevicesAssociatedWithCoreDeviceInput`](crate::input::ListClientDevicesAssociatedWithCoreDeviceInput)
+    /// Creates a new builder-style object to manufacture [`ListClientDevicesAssociatedWithCoreDeviceInput`](crate::input::ListClientDevicesAssociatedWithCoreDeviceInput).
     pub fn builder() -> crate::input::list_client_devices_associated_with_core_device_input::Builder
     {
         crate::input::list_client_devices_associated_with_core_device_input::Builder::default()
@@ -633,7 +633,7 @@ pub struct ListComponents {
     _private: (),
 }
 impl ListComponents {
-    /// Creates a new builder-style object to manufacture [`ListComponentsInput`](crate::input::ListComponentsInput)
+    /// Creates a new builder-style object to manufacture [`ListComponentsInput`](crate::input::ListComponentsInput).
     pub fn builder() -> crate::input::list_components_input::Builder {
         crate::input::list_components_input::Builder::default()
     }
@@ -665,7 +665,7 @@ pub struct ListComponentVersions {
     _private: (),
 }
 impl ListComponentVersions {
-    /// Creates a new builder-style object to manufacture [`ListComponentVersionsInput`](crate::input::ListComponentVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListComponentVersionsInput`](crate::input::ListComponentVersionsInput).
     pub fn builder() -> crate::input::list_component_versions_input::Builder {
         crate::input::list_component_versions_input::Builder::default()
     }
@@ -699,7 +699,7 @@ pub struct ListCoreDevices {
     _private: (),
 }
 impl ListCoreDevices {
-    /// Creates a new builder-style object to manufacture [`ListCoreDevicesInput`](crate::input::ListCoreDevicesInput)
+    /// Creates a new builder-style object to manufacture [`ListCoreDevicesInput`](crate::input::ListCoreDevicesInput).
     pub fn builder() -> crate::input::list_core_devices_input::Builder {
         crate::input::list_core_devices_input::Builder::default()
     }
@@ -733,7 +733,7 @@ pub struct ListDeployments {
     _private: (),
 }
 impl ListDeployments {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
     pub fn builder() -> crate::input::list_deployments_input::Builder {
         crate::input::list_deployments_input::Builder::default()
     }
@@ -767,7 +767,7 @@ pub struct ListEffectiveDeployments {
     _private: (),
 }
 impl ListEffectiveDeployments {
-    /// Creates a new builder-style object to manufacture [`ListEffectiveDeploymentsInput`](crate::input::ListEffectiveDeploymentsInput)
+    /// Creates a new builder-style object to manufacture [`ListEffectiveDeploymentsInput`](crate::input::ListEffectiveDeploymentsInput).
     pub fn builder() -> crate::input::list_effective_deployments_input::Builder {
         crate::input::list_effective_deployments_input::Builder::default()
     }
@@ -801,7 +801,7 @@ pub struct ListInstalledComponents {
     _private: (),
 }
 impl ListInstalledComponents {
-    /// Creates a new builder-style object to manufacture [`ListInstalledComponentsInput`](crate::input::ListInstalledComponentsInput)
+    /// Creates a new builder-style object to manufacture [`ListInstalledComponentsInput`](crate::input::ListInstalledComponentsInput).
     pub fn builder() -> crate::input::list_installed_components_input::Builder {
         crate::input::list_installed_components_input::Builder::default()
     }
@@ -835,7 +835,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -869,7 +869,7 @@ pub struct ResolveComponentCandidates {
     _private: (),
 }
 impl ResolveComponentCandidates {
-    /// Creates a new builder-style object to manufacture [`ResolveComponentCandidatesInput`](crate::input::ResolveComponentCandidatesInput)
+    /// Creates a new builder-style object to manufacture [`ResolveComponentCandidatesInput`](crate::input::ResolveComponentCandidatesInput).
     pub fn builder() -> crate::input::resolve_component_candidates_input::Builder {
         crate::input::resolve_component_candidates_input::Builder::default()
     }
@@ -903,7 +903,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -935,7 +935,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -967,7 +967,7 @@ pub struct UpdateConnectivityInfo {
     _private: (),
 }
 impl UpdateConnectivityInfo {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectivityInfoInput`](crate::input::UpdateConnectivityInfoInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConnectivityInfoInput`](crate::input::UpdateConnectivityInfoInput).
     pub fn builder() -> crate::input::update_connectivity_info_input::Builder {
         crate::input::update_connectivity_info_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct AbortEnvironmentUpdate {
     _private: (),
 }
 impl AbortEnvironmentUpdate {
-    /// Creates a new builder-style object to manufacture [`AbortEnvironmentUpdateInput`](crate::input::AbortEnvironmentUpdateInput)
+    /// Creates a new builder-style object to manufacture [`AbortEnvironmentUpdateInput`](crate::input::AbortEnvironmentUpdateInput).
     pub fn builder() -> crate::input::abort_environment_update_input::Builder {
         crate::input::abort_environment_update_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct ApplyEnvironmentManagedAction {
     _private: (),
 }
 impl ApplyEnvironmentManagedAction {
-    /// Creates a new builder-style object to manufacture [`ApplyEnvironmentManagedActionInput`](crate::input::ApplyEnvironmentManagedActionInput)
+    /// Creates a new builder-style object to manufacture [`ApplyEnvironmentManagedActionInput`](crate::input::ApplyEnvironmentManagedActionInput).
     pub fn builder() -> crate::input::apply_environment_managed_action_input::Builder {
         crate::input::apply_environment_managed_action_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AssociateEnvironmentOperationsRole {
     _private: (),
 }
 impl AssociateEnvironmentOperationsRole {
-    /// Creates a new builder-style object to manufacture [`AssociateEnvironmentOperationsRoleInput`](crate::input::AssociateEnvironmentOperationsRoleInput)
+    /// Creates a new builder-style object to manufacture [`AssociateEnvironmentOperationsRoleInput`](crate::input::AssociateEnvironmentOperationsRoleInput).
     pub fn builder() -> crate::input::associate_environment_operations_role_input::Builder {
         crate::input::associate_environment_operations_role_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CheckDNSAvailability {
     _private: (),
 }
 impl CheckDNSAvailability {
-    /// Creates a new builder-style object to manufacture [`CheckDnsAvailabilityInput`](crate::input::CheckDnsAvailabilityInput)
+    /// Creates a new builder-style object to manufacture [`CheckDnsAvailabilityInput`](crate::input::CheckDnsAvailabilityInput).
     pub fn builder() -> crate::input::check_dns_availability_input::Builder {
         crate::input::check_dns_availability_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct ComposeEnvironments {
     _private: (),
 }
 impl ComposeEnvironments {
-    /// Creates a new builder-style object to manufacture [`ComposeEnvironmentsInput`](crate::input::ComposeEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`ComposeEnvironmentsInput`](crate::input::ComposeEnvironmentsInput).
     pub fn builder() -> crate::input::compose_environments_input::Builder {
         crate::input::compose_environments_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct CreateApplicationVersion {
     _private: (),
 }
 impl CreateApplicationVersion {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput).
     pub fn builder() -> crate::input::create_application_version_input::Builder {
         crate::input::create_application_version_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CreateConfigurationTemplate {
     _private: (),
 }
 impl CreateConfigurationTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationTemplateInput`](crate::input::CreateConfigurationTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationTemplateInput`](crate::input::CreateConfigurationTemplateInput).
     pub fn builder() -> crate::input::create_configuration_template_input::Builder {
         crate::input::create_configuration_template_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct CreateEnvironment {
     _private: (),
 }
 impl CreateEnvironment {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
     pub fn builder() -> crate::input::create_environment_input::Builder {
         crate::input::create_environment_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct CreatePlatformVersion {
     _private: (),
 }
 impl CreatePlatformVersion {
-    /// Creates a new builder-style object to manufacture [`CreatePlatformVersionInput`](crate::input::CreatePlatformVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreatePlatformVersionInput`](crate::input::CreatePlatformVersionInput).
     pub fn builder() -> crate::input::create_platform_version_input::Builder {
         crate::input::create_platform_version_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct CreateStorageLocation {
     _private: (),
 }
 impl CreateStorageLocation {
-    /// Creates a new builder-style object to manufacture [`CreateStorageLocationInput`](crate::input::CreateStorageLocationInput)
+    /// Creates a new builder-style object to manufacture [`CreateStorageLocationInput`](crate::input::CreateStorageLocationInput).
     pub fn builder() -> crate::input::create_storage_location_input::Builder {
         crate::input::create_storage_location_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct DeleteApplicationVersion {
     _private: (),
 }
 impl DeleteApplicationVersion {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationVersionInput`](crate::input::DeleteApplicationVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationVersionInput`](crate::input::DeleteApplicationVersionInput).
     pub fn builder() -> crate::input::delete_application_version_input::Builder {
         crate::input::delete_application_version_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct DeleteConfigurationTemplate {
     _private: (),
 }
 impl DeleteConfigurationTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationTemplateInput`](crate::input::DeleteConfigurationTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationTemplateInput`](crate::input::DeleteConfigurationTemplateInput).
     pub fn builder() -> crate::input::delete_configuration_template_input::Builder {
         crate::input::delete_configuration_template_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct DeleteEnvironmentConfiguration {
     _private: (),
 }
 impl DeleteEnvironmentConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentConfigurationInput`](crate::input::DeleteEnvironmentConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentConfigurationInput`](crate::input::DeleteEnvironmentConfigurationInput).
     pub fn builder() -> crate::input::delete_environment_configuration_input::Builder {
         crate::input::delete_environment_configuration_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct DeletePlatformVersion {
     _private: (),
 }
 impl DeletePlatformVersion {
-    /// Creates a new builder-style object to manufacture [`DeletePlatformVersionInput`](crate::input::DeletePlatformVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeletePlatformVersionInput`](crate::input::DeletePlatformVersionInput).
     pub fn builder() -> crate::input::delete_platform_version_input::Builder {
         crate::input::delete_platform_version_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct DescribeAccountAttributes {
     _private: (),
 }
 impl DescribeAccountAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
     pub fn builder() -> crate::input::describe_account_attributes_input::Builder {
         crate::input::describe_account_attributes_input::Builder::default()
     }
@@ -588,7 +588,7 @@ pub struct DescribeApplications {
     _private: (),
 }
 impl DescribeApplications {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput).
     pub fn builder() -> crate::input::describe_applications_input::Builder {
         crate::input::describe_applications_input::Builder::default()
     }
@@ -622,7 +622,7 @@ pub struct DescribeApplicationVersions {
     _private: (),
 }
 impl DescribeApplicationVersions {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionsInput`](crate::input::DescribeApplicationVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionsInput`](crate::input::DescribeApplicationVersionsInput).
     pub fn builder() -> crate::input::describe_application_versions_input::Builder {
         crate::input::describe_application_versions_input::Builder::default()
     }
@@ -656,7 +656,7 @@ pub struct DescribeConfigurationOptions {
     _private: (),
 }
 impl DescribeConfigurationOptions {
-    /// Creates a new builder-style object to manufacture [`DescribeConfigurationOptionsInput`](crate::input::DescribeConfigurationOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConfigurationOptionsInput`](crate::input::DescribeConfigurationOptionsInput).
     pub fn builder() -> crate::input::describe_configuration_options_input::Builder {
         crate::input::describe_configuration_options_input::Builder::default()
     }
@@ -690,7 +690,7 @@ pub struct DescribeConfigurationSettings {
     _private: (),
 }
 impl DescribeConfigurationSettings {
-    /// Creates a new builder-style object to manufacture [`DescribeConfigurationSettingsInput`](crate::input::DescribeConfigurationSettingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConfigurationSettingsInput`](crate::input::DescribeConfigurationSettingsInput).
     pub fn builder() -> crate::input::describe_configuration_settings_input::Builder {
         crate::input::describe_configuration_settings_input::Builder::default()
     }
@@ -724,7 +724,7 @@ pub struct DescribeEnvironmentHealth {
     _private: (),
 }
 impl DescribeEnvironmentHealth {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentHealthInput`](crate::input::DescribeEnvironmentHealthInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentHealthInput`](crate::input::DescribeEnvironmentHealthInput).
     pub fn builder() -> crate::input::describe_environment_health_input::Builder {
         crate::input::describe_environment_health_input::Builder::default()
     }
@@ -758,7 +758,7 @@ pub struct DescribeEnvironmentManagedActionHistory {
     _private: (),
 }
 impl DescribeEnvironmentManagedActionHistory {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionHistoryInput`](crate::input::DescribeEnvironmentManagedActionHistoryInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionHistoryInput`](crate::input::DescribeEnvironmentManagedActionHistoryInput).
     pub fn builder() -> crate::input::describe_environment_managed_action_history_input::Builder {
         crate::input::describe_environment_managed_action_history_input::Builder::default()
     }
@@ -796,7 +796,7 @@ pub struct DescribeEnvironmentManagedActions {
     _private: (),
 }
 impl DescribeEnvironmentManagedActions {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionsInput`](crate::input::DescribeEnvironmentManagedActionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionsInput`](crate::input::DescribeEnvironmentManagedActionsInput).
     pub fn builder() -> crate::input::describe_environment_managed_actions_input::Builder {
         crate::input::describe_environment_managed_actions_input::Builder::default()
     }
@@ -830,7 +830,7 @@ pub struct DescribeEnvironmentResources {
     _private: (),
 }
 impl DescribeEnvironmentResources {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentResourcesInput`](crate::input::DescribeEnvironmentResourcesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentResourcesInput`](crate::input::DescribeEnvironmentResourcesInput).
     pub fn builder() -> crate::input::describe_environment_resources_input::Builder {
         crate::input::describe_environment_resources_input::Builder::default()
     }
@@ -864,7 +864,7 @@ pub struct DescribeEnvironments {
     _private: (),
 }
 impl DescribeEnvironments {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput).
     pub fn builder() -> crate::input::describe_environments_input::Builder {
         crate::input::describe_environments_input::Builder::default()
     }
@@ -898,7 +898,7 @@ pub struct DescribeEvents {
     _private: (),
 }
 impl DescribeEvents {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput).
     pub fn builder() -> crate::input::describe_events_input::Builder {
         crate::input::describe_events_input::Builder::default()
     }
@@ -930,7 +930,7 @@ pub struct DescribeInstancesHealth {
     _private: (),
 }
 impl DescribeInstancesHealth {
-    /// Creates a new builder-style object to manufacture [`DescribeInstancesHealthInput`](crate::input::DescribeInstancesHealthInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInstancesHealthInput`](crate::input::DescribeInstancesHealthInput).
     pub fn builder() -> crate::input::describe_instances_health_input::Builder {
         crate::input::describe_instances_health_input::Builder::default()
     }
@@ -964,7 +964,7 @@ pub struct DescribePlatformVersion {
     _private: (),
 }
 impl DescribePlatformVersion {
-    /// Creates a new builder-style object to manufacture [`DescribePlatformVersionInput`](crate::input::DescribePlatformVersionInput)
+    /// Creates a new builder-style object to manufacture [`DescribePlatformVersionInput`](crate::input::DescribePlatformVersionInput).
     pub fn builder() -> crate::input::describe_platform_version_input::Builder {
         crate::input::describe_platform_version_input::Builder::default()
     }
@@ -998,7 +998,7 @@ pub struct DisassociateEnvironmentOperationsRole {
     _private: (),
 }
 impl DisassociateEnvironmentOperationsRole {
-    /// Creates a new builder-style object to manufacture [`DisassociateEnvironmentOperationsRoleInput`](crate::input::DisassociateEnvironmentOperationsRoleInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateEnvironmentOperationsRoleInput`](crate::input::DisassociateEnvironmentOperationsRoleInput).
     pub fn builder() -> crate::input::disassociate_environment_operations_role_input::Builder {
         crate::input::disassociate_environment_operations_role_input::Builder::default()
     }
@@ -1034,7 +1034,7 @@ pub struct ListAvailableSolutionStacks {
     _private: (),
 }
 impl ListAvailableSolutionStacks {
-    /// Creates a new builder-style object to manufacture [`ListAvailableSolutionStacksInput`](crate::input::ListAvailableSolutionStacksInput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableSolutionStacksInput`](crate::input::ListAvailableSolutionStacksInput).
     pub fn builder() -> crate::input::list_available_solution_stacks_input::Builder {
         crate::input::list_available_solution_stacks_input::Builder::default()
     }
@@ -1068,7 +1068,7 @@ pub struct ListPlatformBranches {
     _private: (),
 }
 impl ListPlatformBranches {
-    /// Creates a new builder-style object to manufacture [`ListPlatformBranchesInput`](crate::input::ListPlatformBranchesInput)
+    /// Creates a new builder-style object to manufacture [`ListPlatformBranchesInput`](crate::input::ListPlatformBranchesInput).
     pub fn builder() -> crate::input::list_platform_branches_input::Builder {
         crate::input::list_platform_branches_input::Builder::default()
     }
@@ -1102,7 +1102,7 @@ pub struct ListPlatformVersions {
     _private: (),
 }
 impl ListPlatformVersions {
-    /// Creates a new builder-style object to manufacture [`ListPlatformVersionsInput`](crate::input::ListPlatformVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListPlatformVersionsInput`](crate::input::ListPlatformVersionsInput).
     pub fn builder() -> crate::input::list_platform_versions_input::Builder {
         crate::input::list_platform_versions_input::Builder::default()
     }
@@ -1136,7 +1136,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1170,7 +1170,7 @@ pub struct RebuildEnvironment {
     _private: (),
 }
 impl RebuildEnvironment {
-    /// Creates a new builder-style object to manufacture [`RebuildEnvironmentInput`](crate::input::RebuildEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`RebuildEnvironmentInput`](crate::input::RebuildEnvironmentInput).
     pub fn builder() -> crate::input::rebuild_environment_input::Builder {
         crate::input::rebuild_environment_input::Builder::default()
     }
@@ -1204,7 +1204,7 @@ pub struct RequestEnvironmentInfo {
     _private: (),
 }
 impl RequestEnvironmentInfo {
-    /// Creates a new builder-style object to manufacture [`RequestEnvironmentInfoInput`](crate::input::RequestEnvironmentInfoInput)
+    /// Creates a new builder-style object to manufacture [`RequestEnvironmentInfoInput`](crate::input::RequestEnvironmentInfoInput).
     pub fn builder() -> crate::input::request_environment_info_input::Builder {
         crate::input::request_environment_info_input::Builder::default()
     }
@@ -1238,7 +1238,7 @@ pub struct RestartAppServer {
     _private: (),
 }
 impl RestartAppServer {
-    /// Creates a new builder-style object to manufacture [`RestartAppServerInput`](crate::input::RestartAppServerInput)
+    /// Creates a new builder-style object to manufacture [`RestartAppServerInput`](crate::input::RestartAppServerInput).
     pub fn builder() -> crate::input::restart_app_server_input::Builder {
         crate::input::restart_app_server_input::Builder::default()
     }
@@ -1272,7 +1272,7 @@ pub struct RetrieveEnvironmentInfo {
     _private: (),
 }
 impl RetrieveEnvironmentInfo {
-    /// Creates a new builder-style object to manufacture [`RetrieveEnvironmentInfoInput`](crate::input::RetrieveEnvironmentInfoInput)
+    /// Creates a new builder-style object to manufacture [`RetrieveEnvironmentInfoInput`](crate::input::RetrieveEnvironmentInfoInput).
     pub fn builder() -> crate::input::retrieve_environment_info_input::Builder {
         crate::input::retrieve_environment_info_input::Builder::default()
     }
@@ -1306,7 +1306,7 @@ pub struct SwapEnvironmentCNAMEs {
     _private: (),
 }
 impl SwapEnvironmentCNAMEs {
-    /// Creates a new builder-style object to manufacture [`SwapEnvironmentCnamEsInput`](crate::input::SwapEnvironmentCnamEsInput)
+    /// Creates a new builder-style object to manufacture [`SwapEnvironmentCnamEsInput`](crate::input::SwapEnvironmentCnamEsInput).
     pub fn builder() -> crate::input::swap_environment_cnam_es_input::Builder {
         crate::input::swap_environment_cnam_es_input::Builder::default()
     }
@@ -1340,7 +1340,7 @@ pub struct TerminateEnvironment {
     _private: (),
 }
 impl TerminateEnvironment {
-    /// Creates a new builder-style object to manufacture [`TerminateEnvironmentInput`](crate::input::TerminateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`TerminateEnvironmentInput`](crate::input::TerminateEnvironmentInput).
     pub fn builder() -> crate::input::terminate_environment_input::Builder {
         crate::input::terminate_environment_input::Builder::default()
     }
@@ -1374,7 +1374,7 @@ pub struct UpdateApplication {
     _private: (),
 }
 impl UpdateApplication {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
     pub fn builder() -> crate::input::update_application_input::Builder {
         crate::input::update_application_input::Builder::default()
     }
@@ -1408,7 +1408,7 @@ pub struct UpdateApplicationResourceLifecycle {
     _private: (),
 }
 impl UpdateApplicationResourceLifecycle {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationResourceLifecycleInput`](crate::input::UpdateApplicationResourceLifecycleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationResourceLifecycleInput`](crate::input::UpdateApplicationResourceLifecycleInput).
     pub fn builder() -> crate::input::update_application_resource_lifecycle_input::Builder {
         crate::input::update_application_resource_lifecycle_input::Builder::default()
     }
@@ -1442,7 +1442,7 @@ pub struct UpdateApplicationVersion {
     _private: (),
 }
 impl UpdateApplicationVersion {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationVersionInput`](crate::input::UpdateApplicationVersionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationVersionInput`](crate::input::UpdateApplicationVersionInput).
     pub fn builder() -> crate::input::update_application_version_input::Builder {
         crate::input::update_application_version_input::Builder::default()
     }
@@ -1476,7 +1476,7 @@ pub struct UpdateConfigurationTemplate {
     _private: (),
 }
 impl UpdateConfigurationTemplate {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationTemplateInput`](crate::input::UpdateConfigurationTemplateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationTemplateInput`](crate::input::UpdateConfigurationTemplateInput).
     pub fn builder() -> crate::input::update_configuration_template_input::Builder {
         crate::input::update_configuration_template_input::Builder::default()
     }
@@ -1510,7 +1510,7 @@ pub struct UpdateEnvironment {
     _private: (),
 }
 impl UpdateEnvironment {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
     pub fn builder() -> crate::input::update_environment_input::Builder {
         crate::input::update_environment_input::Builder::default()
     }
@@ -1544,7 +1544,7 @@ pub struct UpdateTagsForResource {
     _private: (),
 }
 impl UpdateTagsForResource {
-    /// Creates a new builder-style object to manufacture [`UpdateTagsForResourceInput`](crate::input::UpdateTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTagsForResourceInput`](crate::input::UpdateTagsForResourceInput).
     pub fn builder() -> crate::input::update_tags_for_resource_input::Builder {
         crate::input::update_tags_for_resource_input::Builder::default()
     }
@@ -1578,7 +1578,7 @@ pub struct ValidateConfigurationSettings {
     _private: (),
 }
 impl ValidateConfigurationSettings {
-    /// Creates a new builder-style object to manufacture [`ValidateConfigurationSettingsInput`](crate::input::ValidateConfigurationSettingsInput)
+    /// Creates a new builder-style object to manufacture [`ValidateConfigurationSettingsInput`](crate::input::ValidateConfigurationSettingsInput).
     pub fn builder() -> crate::input::validate_configuration_settings_input::Builder {
         crate::input::validate_configuration_settings_input::Builder::default()
     }

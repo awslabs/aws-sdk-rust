@@ -10,7 +10,7 @@ pub struct CreateApp {
     _private: (),
 }
 impl CreateApp {
-    /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput)
+    /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput).
     pub fn builder() -> crate::input::create_app_input::Builder {
         crate::input::create_app_input::Builder::default()
     }
@@ -41,7 +41,7 @@ pub struct CreateReplicationJob {
     _private: (),
 }
 impl CreateReplicationJob {
-    /// Creates a new builder-style object to manufacture [`CreateReplicationJobInput`](crate::input::CreateReplicationJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateReplicationJobInput`](crate::input::CreateReplicationJobInput).
     pub fn builder() -> crate::input::create_replication_job_input::Builder {
         crate::input::create_replication_job_input::Builder::default()
     }
@@ -75,7 +75,7 @@ pub struct DeleteApp {
     _private: (),
 }
 impl DeleteApp {
-    /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput).
     pub fn builder() -> crate::input::delete_app_input::Builder {
         crate::input::delete_app_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct DeleteAppLaunchConfiguration {
     _private: (),
 }
 impl DeleteAppLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteAppLaunchConfigurationInput`](crate::input::DeleteAppLaunchConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppLaunchConfigurationInput`](crate::input::DeleteAppLaunchConfigurationInput).
     pub fn builder() -> crate::input::delete_app_launch_configuration_input::Builder {
         crate::input::delete_app_launch_configuration_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct DeleteAppReplicationConfiguration {
     _private: (),
 }
 impl DeleteAppReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteAppReplicationConfigurationInput`](crate::input::DeleteAppReplicationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppReplicationConfigurationInput`](crate::input::DeleteAppReplicationConfigurationInput).
     pub fn builder() -> crate::input::delete_app_replication_configuration_input::Builder {
         crate::input::delete_app_replication_configuration_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct DeleteAppValidationConfiguration {
     _private: (),
 }
 impl DeleteAppValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteAppValidationConfigurationInput`](crate::input::DeleteAppValidationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppValidationConfigurationInput`](crate::input::DeleteAppValidationConfigurationInput).
     pub fn builder() -> crate::input::delete_app_validation_configuration_input::Builder {
         crate::input::delete_app_validation_configuration_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DeleteReplicationJob {
     _private: (),
 }
 impl DeleteReplicationJob {
-    /// Creates a new builder-style object to manufacture [`DeleteReplicationJobInput`](crate::input::DeleteReplicationJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationJobInput`](crate::input::DeleteReplicationJobInput).
     pub fn builder() -> crate::input::delete_replication_job_input::Builder {
         crate::input::delete_replication_job_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DeleteServerCatalog {
     _private: (),
 }
 impl DeleteServerCatalog {
-    /// Creates a new builder-style object to manufacture [`DeleteServerCatalogInput`](crate::input::DeleteServerCatalogInput)
+    /// Creates a new builder-style object to manufacture [`DeleteServerCatalogInput`](crate::input::DeleteServerCatalogInput).
     pub fn builder() -> crate::input::delete_server_catalog_input::Builder {
         crate::input::delete_server_catalog_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct DisassociateConnector {
     _private: (),
 }
 impl DisassociateConnector {
-    /// Creates a new builder-style object to manufacture [`DisassociateConnectorInput`](crate::input::DisassociateConnectorInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateConnectorInput`](crate::input::DisassociateConnectorInput).
     pub fn builder() -> crate::input::disassociate_connector_input::Builder {
         crate::input::disassociate_connector_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct GenerateChangeSet {
     _private: (),
 }
 impl GenerateChangeSet {
-    /// Creates a new builder-style object to manufacture [`GenerateChangeSetInput`](crate::input::GenerateChangeSetInput)
+    /// Creates a new builder-style object to manufacture [`GenerateChangeSetInput`](crate::input::GenerateChangeSetInput).
     pub fn builder() -> crate::input::generate_change_set_input::Builder {
         crate::input::generate_change_set_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct GenerateTemplate {
     _private: (),
 }
 impl GenerateTemplate {
-    /// Creates a new builder-style object to manufacture [`GenerateTemplateInput`](crate::input::GenerateTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GenerateTemplateInput`](crate::input::GenerateTemplateInput).
     pub fn builder() -> crate::input::generate_template_input::Builder {
         crate::input::generate_template_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct GetApp {
     _private: (),
 }
 impl GetApp {
-    /// Creates a new builder-style object to manufacture [`GetAppInput`](crate::input::GetAppInput)
+    /// Creates a new builder-style object to manufacture [`GetAppInput`](crate::input::GetAppInput).
     pub fn builder() -> crate::input::get_app_input::Builder {
         crate::input::get_app_input::Builder::default()
     }
@@ -409,7 +409,7 @@ pub struct GetAppLaunchConfiguration {
     _private: (),
 }
 impl GetAppLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetAppLaunchConfigurationInput`](crate::input::GetAppLaunchConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetAppLaunchConfigurationInput`](crate::input::GetAppLaunchConfigurationInput).
     pub fn builder() -> crate::input::get_app_launch_configuration_input::Builder {
         crate::input::get_app_launch_configuration_input::Builder::default()
     }
@@ -443,7 +443,7 @@ pub struct GetAppReplicationConfiguration {
     _private: (),
 }
 impl GetAppReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetAppReplicationConfigurationInput`](crate::input::GetAppReplicationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetAppReplicationConfigurationInput`](crate::input::GetAppReplicationConfigurationInput).
     pub fn builder() -> crate::input::get_app_replication_configuration_input::Builder {
         crate::input::get_app_replication_configuration_input::Builder::default()
     }
@@ -477,7 +477,7 @@ pub struct GetAppValidationConfiguration {
     _private: (),
 }
 impl GetAppValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetAppValidationConfigurationInput`](crate::input::GetAppValidationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetAppValidationConfigurationInput`](crate::input::GetAppValidationConfigurationInput).
     pub fn builder() -> crate::input::get_app_validation_configuration_input::Builder {
         crate::input::get_app_validation_configuration_input::Builder::default()
     }
@@ -511,7 +511,7 @@ pub struct GetAppValidationOutput {
     _private: (),
 }
 impl GetAppValidationOutput {
-    /// Creates a new builder-style object to manufacture [`GetAppValidationOutputInput`](crate::input::GetAppValidationOutputInput)
+    /// Creates a new builder-style object to manufacture [`GetAppValidationOutputInput`](crate::input::GetAppValidationOutputInput).
     pub fn builder() -> crate::input::get_app_validation_output_input::Builder {
         crate::input::get_app_validation_output_input::Builder::default()
     }
@@ -545,7 +545,7 @@ pub struct GetConnectors {
     _private: (),
 }
 impl GetConnectors {
-    /// Creates a new builder-style object to manufacture [`GetConnectorsInput`](crate::input::GetConnectorsInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectorsInput`](crate::input::GetConnectorsInput).
     pub fn builder() -> crate::input::get_connectors_input::Builder {
         crate::input::get_connectors_input::Builder::default()
     }
@@ -577,7 +577,7 @@ pub struct GetReplicationJobs {
     _private: (),
 }
 impl GetReplicationJobs {
-    /// Creates a new builder-style object to manufacture [`GetReplicationJobsInput`](crate::input::GetReplicationJobsInput)
+    /// Creates a new builder-style object to manufacture [`GetReplicationJobsInput`](crate::input::GetReplicationJobsInput).
     pub fn builder() -> crate::input::get_replication_jobs_input::Builder {
         crate::input::get_replication_jobs_input::Builder::default()
     }
@@ -611,7 +611,7 @@ pub struct GetReplicationRuns {
     _private: (),
 }
 impl GetReplicationRuns {
-    /// Creates a new builder-style object to manufacture [`GetReplicationRunsInput`](crate::input::GetReplicationRunsInput)
+    /// Creates a new builder-style object to manufacture [`GetReplicationRunsInput`](crate::input::GetReplicationRunsInput).
     pub fn builder() -> crate::input::get_replication_runs_input::Builder {
         crate::input::get_replication_runs_input::Builder::default()
     }
@@ -645,7 +645,7 @@ pub struct GetServers {
     _private: (),
 }
 impl GetServers {
-    /// Creates a new builder-style object to manufacture [`GetServersInput`](crate::input::GetServersInput)
+    /// Creates a new builder-style object to manufacture [`GetServersInput`](crate::input::GetServersInput).
     pub fn builder() -> crate::input::get_servers_input::Builder {
         crate::input::get_servers_input::Builder::default()
     }
@@ -677,7 +677,7 @@ pub struct ImportAppCatalog {
     _private: (),
 }
 impl ImportAppCatalog {
-    /// Creates a new builder-style object to manufacture [`ImportAppCatalogInput`](crate::input::ImportAppCatalogInput)
+    /// Creates a new builder-style object to manufacture [`ImportAppCatalogInput`](crate::input::ImportAppCatalogInput).
     pub fn builder() -> crate::input::import_app_catalog_input::Builder {
         crate::input::import_app_catalog_input::Builder::default()
     }
@@ -711,7 +711,7 @@ pub struct ImportServerCatalog {
     _private: (),
 }
 impl ImportServerCatalog {
-    /// Creates a new builder-style object to manufacture [`ImportServerCatalogInput`](crate::input::ImportServerCatalogInput)
+    /// Creates a new builder-style object to manufacture [`ImportServerCatalogInput`](crate::input::ImportServerCatalogInput).
     pub fn builder() -> crate::input::import_server_catalog_input::Builder {
         crate::input::import_server_catalog_input::Builder::default()
     }
@@ -745,7 +745,7 @@ pub struct LaunchApp {
     _private: (),
 }
 impl LaunchApp {
-    /// Creates a new builder-style object to manufacture [`LaunchAppInput`](crate::input::LaunchAppInput)
+    /// Creates a new builder-style object to manufacture [`LaunchAppInput`](crate::input::LaunchAppInput).
     pub fn builder() -> crate::input::launch_app_input::Builder {
         crate::input::launch_app_input::Builder::default()
     }
@@ -776,7 +776,7 @@ pub struct ListApps {
     _private: (),
 }
 impl ListApps {
-    /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput).
     pub fn builder() -> crate::input::list_apps_input::Builder {
         crate::input::list_apps_input::Builder::default()
     }
@@ -807,7 +807,7 @@ pub struct NotifyAppValidationOutput {
     _private: (),
 }
 impl NotifyAppValidationOutput {
-    /// Creates a new builder-style object to manufacture [`NotifyAppValidationOutputInput`](crate::input::NotifyAppValidationOutputInput)
+    /// Creates a new builder-style object to manufacture [`NotifyAppValidationOutputInput`](crate::input::NotifyAppValidationOutputInput).
     pub fn builder() -> crate::input::notify_app_validation_output_input::Builder {
         crate::input::notify_app_validation_output_input::Builder::default()
     }
@@ -841,7 +841,7 @@ pub struct PutAppLaunchConfiguration {
     _private: (),
 }
 impl PutAppLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutAppLaunchConfigurationInput`](crate::input::PutAppLaunchConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutAppLaunchConfigurationInput`](crate::input::PutAppLaunchConfigurationInput).
     pub fn builder() -> crate::input::put_app_launch_configuration_input::Builder {
         crate::input::put_app_launch_configuration_input::Builder::default()
     }
@@ -875,7 +875,7 @@ pub struct PutAppReplicationConfiguration {
     _private: (),
 }
 impl PutAppReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutAppReplicationConfigurationInput`](crate::input::PutAppReplicationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutAppReplicationConfigurationInput`](crate::input::PutAppReplicationConfigurationInput).
     pub fn builder() -> crate::input::put_app_replication_configuration_input::Builder {
         crate::input::put_app_replication_configuration_input::Builder::default()
     }
@@ -909,7 +909,7 @@ pub struct PutAppValidationConfiguration {
     _private: (),
 }
 impl PutAppValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutAppValidationConfigurationInput`](crate::input::PutAppValidationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutAppValidationConfigurationInput`](crate::input::PutAppValidationConfigurationInput).
     pub fn builder() -> crate::input::put_app_validation_configuration_input::Builder {
         crate::input::put_app_validation_configuration_input::Builder::default()
     }
@@ -943,7 +943,7 @@ pub struct StartAppReplication {
     _private: (),
 }
 impl StartAppReplication {
-    /// Creates a new builder-style object to manufacture [`StartAppReplicationInput`](crate::input::StartAppReplicationInput)
+    /// Creates a new builder-style object to manufacture [`StartAppReplicationInput`](crate::input::StartAppReplicationInput).
     pub fn builder() -> crate::input::start_app_replication_input::Builder {
         crate::input::start_app_replication_input::Builder::default()
     }
@@ -977,7 +977,7 @@ pub struct StartOnDemandAppReplication {
     _private: (),
 }
 impl StartOnDemandAppReplication {
-    /// Creates a new builder-style object to manufacture [`StartOnDemandAppReplicationInput`](crate::input::StartOnDemandAppReplicationInput)
+    /// Creates a new builder-style object to manufacture [`StartOnDemandAppReplicationInput`](crate::input::StartOnDemandAppReplicationInput).
     pub fn builder() -> crate::input::start_on_demand_app_replication_input::Builder {
         crate::input::start_on_demand_app_replication_input::Builder::default()
     }
@@ -1011,7 +1011,7 @@ pub struct StartOnDemandReplicationRun {
     _private: (),
 }
 impl StartOnDemandReplicationRun {
-    /// Creates a new builder-style object to manufacture [`StartOnDemandReplicationRunInput`](crate::input::StartOnDemandReplicationRunInput)
+    /// Creates a new builder-style object to manufacture [`StartOnDemandReplicationRunInput`](crate::input::StartOnDemandReplicationRunInput).
     pub fn builder() -> crate::input::start_on_demand_replication_run_input::Builder {
         crate::input::start_on_demand_replication_run_input::Builder::default()
     }
@@ -1045,7 +1045,7 @@ pub struct StopAppReplication {
     _private: (),
 }
 impl StopAppReplication {
-    /// Creates a new builder-style object to manufacture [`StopAppReplicationInput`](crate::input::StopAppReplicationInput)
+    /// Creates a new builder-style object to manufacture [`StopAppReplicationInput`](crate::input::StopAppReplicationInput).
     pub fn builder() -> crate::input::stop_app_replication_input::Builder {
         crate::input::stop_app_replication_input::Builder::default()
     }
@@ -1079,7 +1079,7 @@ pub struct TerminateApp {
     _private: (),
 }
 impl TerminateApp {
-    /// Creates a new builder-style object to manufacture [`TerminateAppInput`](crate::input::TerminateAppInput)
+    /// Creates a new builder-style object to manufacture [`TerminateAppInput`](crate::input::TerminateAppInput).
     pub fn builder() -> crate::input::terminate_app_input::Builder {
         crate::input::terminate_app_input::Builder::default()
     }
@@ -1111,7 +1111,7 @@ pub struct UpdateApp {
     _private: (),
 }
 impl UpdateApp {
-    /// Creates a new builder-style object to manufacture [`UpdateAppInput`](crate::input::UpdateAppInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppInput`](crate::input::UpdateAppInput).
     pub fn builder() -> crate::input::update_app_input::Builder {
         crate::input::update_app_input::Builder::default()
     }
@@ -1142,7 +1142,7 @@ pub struct UpdateReplicationJob {
     _private: (),
 }
 impl UpdateReplicationJob {
-    /// Creates a new builder-style object to manufacture [`UpdateReplicationJobInput`](crate::input::UpdateReplicationJobInput)
+    /// Creates a new builder-style object to manufacture [`UpdateReplicationJobInput`](crate::input::UpdateReplicationJobInput).
     pub fn builder() -> crate::input::update_replication_job_input::Builder {
         crate::input::update_replication_job_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CreateCluster {
     _private: (),
 }
 impl CreateCluster {
-    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput).
     pub fn builder() -> crate::input::create_cluster_input::Builder {
         crate::input::create_cluster_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateParameterGroup {
     _private: (),
 }
 impl CreateParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CreateParameterGroupInput`](crate::input::CreateParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateParameterGroupInput`](crate::input::CreateParameterGroupInput).
     pub fn builder() -> crate::input::create_parameter_group_input::Builder {
         crate::input::create_parameter_group_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateSubnetGroup {
     _private: (),
 }
 impl CreateSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`CreateSubnetGroupInput`](crate::input::CreateSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateSubnetGroupInput`](crate::input::CreateSubnetGroupInput).
     pub fn builder() -> crate::input::create_subnet_group_input::Builder {
         crate::input::create_subnet_group_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DecreaseReplicationFactor {
     _private: (),
 }
 impl DecreaseReplicationFactor {
-    /// Creates a new builder-style object to manufacture [`DecreaseReplicationFactorInput`](crate::input::DecreaseReplicationFactorInput)
+    /// Creates a new builder-style object to manufacture [`DecreaseReplicationFactorInput`](crate::input::DecreaseReplicationFactorInput).
     pub fn builder() -> crate::input::decrease_replication_factor_input::Builder {
         crate::input::decrease_replication_factor_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DeleteCluster {
     _private: (),
 }
 impl DeleteCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput).
     pub fn builder() -> crate::input::delete_cluster_input::Builder {
         crate::input::delete_cluster_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeleteParameterGroup {
     _private: (),
 }
 impl DeleteParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteParameterGroupInput`](crate::input::DeleteParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteParameterGroupInput`](crate::input::DeleteParameterGroupInput).
     pub fn builder() -> crate::input::delete_parameter_group_input::Builder {
         crate::input::delete_parameter_group_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteSubnetGroup {
     _private: (),
 }
 impl DeleteSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteSubnetGroupInput`](crate::input::DeleteSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSubnetGroupInput`](crate::input::DeleteSubnetGroupInput).
     pub fn builder() -> crate::input::delete_subnet_group_input::Builder {
         crate::input::delete_subnet_group_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DescribeClusters {
     _private: (),
 }
 impl DescribeClusters {
-    /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::input::DescribeClustersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::input::DescribeClustersInput).
     pub fn builder() -> crate::input::describe_clusters_input::Builder {
         crate::input::describe_clusters_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DescribeDefaultParameters {
     _private: (),
 }
 impl DescribeDefaultParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeDefaultParametersInput`](crate::input::DescribeDefaultParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDefaultParametersInput`](crate::input::DescribeDefaultParametersInput).
     pub fn builder() -> crate::input::describe_default_parameters_input::Builder {
         crate::input::describe_default_parameters_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DescribeEvents {
     _private: (),
 }
 impl DescribeEvents {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput).
     pub fn builder() -> crate::input::describe_events_input::Builder {
         crate::input::describe_events_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct DescribeParameterGroups {
     _private: (),
 }
 impl DescribeParameterGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeParameterGroupsInput`](crate::input::DescribeParameterGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeParameterGroupsInput`](crate::input::DescribeParameterGroupsInput).
     pub fn builder() -> crate::input::describe_parameter_groups_input::Builder {
         crate::input::describe_parameter_groups_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct DescribeParameters {
     _private: (),
 }
 impl DescribeParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeParametersInput`](crate::input::DescribeParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeParametersInput`](crate::input::DescribeParametersInput).
     pub fn builder() -> crate::input::describe_parameters_input::Builder {
         crate::input::describe_parameters_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct DescribeSubnetGroups {
     _private: (),
 }
 impl DescribeSubnetGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeSubnetGroupsInput`](crate::input::DescribeSubnetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSubnetGroupsInput`](crate::input::DescribeSubnetGroupsInput).
     pub fn builder() -> crate::input::describe_subnet_groups_input::Builder {
         crate::input::describe_subnet_groups_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct IncreaseReplicationFactor {
     _private: (),
 }
 impl IncreaseReplicationFactor {
-    /// Creates a new builder-style object to manufacture [`IncreaseReplicationFactorInput`](crate::input::IncreaseReplicationFactorInput)
+    /// Creates a new builder-style object to manufacture [`IncreaseReplicationFactorInput`](crate::input::IncreaseReplicationFactorInput).
     pub fn builder() -> crate::input::increase_replication_factor_input::Builder {
         crate::input::increase_replication_factor_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct ListTags {
     _private: (),
 }
 impl ListTags {
-    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
     }
@@ -511,7 +511,7 @@ pub struct RebootNode {
     _private: (),
 }
 impl RebootNode {
-    /// Creates a new builder-style object to manufacture [`RebootNodeInput`](crate::input::RebootNodeInput)
+    /// Creates a new builder-style object to manufacture [`RebootNodeInput`](crate::input::RebootNodeInput).
     pub fn builder() -> crate::input::reboot_node_input::Builder {
         crate::input::reboot_node_input::Builder::default()
     }
@@ -543,7 +543,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -575,7 +575,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -607,7 +607,7 @@ pub struct UpdateCluster {
     _private: (),
 }
 impl UpdateCluster {
-    /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::input::UpdateClusterInput)
+    /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::input::UpdateClusterInput).
     pub fn builder() -> crate::input::update_cluster_input::Builder {
         crate::input::update_cluster_input::Builder::default()
     }
@@ -639,7 +639,7 @@ pub struct UpdateParameterGroup {
     _private: (),
 }
 impl UpdateParameterGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateParameterGroupInput`](crate::input::UpdateParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateParameterGroupInput`](crate::input::UpdateParameterGroupInput).
     pub fn builder() -> crate::input::update_parameter_group_input::Builder {
         crate::input::update_parameter_group_input::Builder::default()
     }
@@ -673,7 +673,7 @@ pub struct UpdateSubnetGroup {
     _private: (),
 }
 impl UpdateSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateSubnetGroupInput`](crate::input::UpdateSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSubnetGroupInput`](crate::input::UpdateSubnetGroupInput).
     pub fn builder() -> crate::input::update_subnet_group_input::Builder {
         crate::input::update_subnet_group_input::Builder::default()
     }

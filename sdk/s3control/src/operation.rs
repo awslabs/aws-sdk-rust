@@ -10,7 +10,7 @@ pub struct CreateAccessPoint {
     _private: (),
 }
 impl CreateAccessPoint {
-    /// Creates a new builder-style object to manufacture [`CreateAccessPointInput`](crate::input::CreateAccessPointInput)
+    /// Creates a new builder-style object to manufacture [`CreateAccessPointInput`](crate::input::CreateAccessPointInput).
     pub fn builder() -> crate::input::create_access_point_input::Builder {
         crate::input::create_access_point_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateAccessPointForObjectLambda {
     _private: (),
 }
 impl CreateAccessPointForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaInput`](crate::input::CreateAccessPointForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaInput`](crate::input::CreateAccessPointForObjectLambdaInput).
     pub fn builder() -> crate::input::create_access_point_for_object_lambda_input::Builder {
         crate::input::create_access_point_for_object_lambda_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateBucket {
     _private: (),
 }
 impl CreateBucket {
-    /// Creates a new builder-style object to manufacture [`CreateBucketInput`](crate::input::CreateBucketInput)
+    /// Creates a new builder-style object to manufacture [`CreateBucketInput`](crate::input::CreateBucketInput).
     pub fn builder() -> crate::input::create_bucket_input::Builder {
         crate::input::create_bucket_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateJob {
     _private: (),
 }
 impl CreateJob {
-    /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput).
     pub fn builder() -> crate::input::create_job_input::Builder {
         crate::input::create_job_input::Builder::default()
     }
@@ -141,7 +141,7 @@ pub struct CreateMultiRegionAccessPoint {
     _private: (),
 }
 impl CreateMultiRegionAccessPoint {
-    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput)
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointInput`](crate::input::CreateMultiRegionAccessPointInput).
     pub fn builder() -> crate::input::create_multi_region_access_point_input::Builder {
         crate::input::create_multi_region_access_point_input::Builder::default()
     }
@@ -175,7 +175,7 @@ pub struct DeleteAccessPoint {
     _private: (),
 }
 impl DeleteAccessPoint {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointInput`](crate::input::DeleteAccessPointInput).
     pub fn builder() -> crate::input::delete_access_point_input::Builder {
         crate::input::delete_access_point_input::Builder::default()
     }
@@ -209,7 +209,7 @@ pub struct DeleteAccessPointForObjectLambda {
     _private: (),
 }
 impl DeleteAccessPointForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaInput`](crate::input::DeleteAccessPointForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaInput`](crate::input::DeleteAccessPointForObjectLambdaInput).
     pub fn builder() -> crate::input::delete_access_point_for_object_lambda_input::Builder {
         crate::input::delete_access_point_for_object_lambda_input::Builder::default()
     }
@@ -243,7 +243,7 @@ pub struct DeleteAccessPointPolicy {
     _private: (),
 }
 impl DeleteAccessPointPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyInput`](crate::input::DeleteAccessPointPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyInput`](crate::input::DeleteAccessPointPolicyInput).
     pub fn builder() -> crate::input::delete_access_point_policy_input::Builder {
         crate::input::delete_access_point_policy_input::Builder::default()
     }
@@ -277,7 +277,7 @@ pub struct DeleteAccessPointPolicyForObjectLambda {
     _private: (),
 }
 impl DeleteAccessPointPolicyForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::input::DeleteAccessPointPolicyForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::input::DeleteAccessPointPolicyForObjectLambdaInput).
     pub fn builder() -> crate::input::delete_access_point_policy_for_object_lambda_input::Builder {
         crate::input::delete_access_point_policy_for_object_lambda_input::Builder::default()
     }
@@ -315,7 +315,7 @@ pub struct DeleteBucket {
     _private: (),
 }
 impl DeleteBucket {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketInput`](crate::input::DeleteBucketInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketInput`](crate::input::DeleteBucketInput).
     pub fn builder() -> crate::input::delete_bucket_input::Builder {
         crate::input::delete_bucket_input::Builder::default()
     }
@@ -347,7 +347,7 @@ pub struct DeleteBucketLifecycleConfiguration {
     _private: (),
 }
 impl DeleteBucketLifecycleConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationInput`](crate::input::DeleteBucketLifecycleConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationInput`](crate::input::DeleteBucketLifecycleConfigurationInput).
     pub fn builder() -> crate::input::delete_bucket_lifecycle_configuration_input::Builder {
         crate::input::delete_bucket_lifecycle_configuration_input::Builder::default()
     }
@@ -381,7 +381,7 @@ pub struct DeleteBucketPolicy {
     _private: (),
 }
 impl DeleteBucketPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyInput`](crate::input::DeleteBucketPolicyInput).
     pub fn builder() -> crate::input::delete_bucket_policy_input::Builder {
         crate::input::delete_bucket_policy_input::Builder::default()
     }
@@ -415,7 +415,7 @@ pub struct DeleteBucketTagging {
     _private: (),
 }
 impl DeleteBucketTagging {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingInput`](crate::input::DeleteBucketTaggingInput).
     pub fn builder() -> crate::input::delete_bucket_tagging_input::Builder {
         crate::input::delete_bucket_tagging_input::Builder::default()
     }
@@ -449,7 +449,7 @@ pub struct DeleteJobTagging {
     _private: (),
 }
 impl DeleteJobTagging {
-    /// Creates a new builder-style object to manufacture [`DeleteJobTaggingInput`](crate::input::DeleteJobTaggingInput)
+    /// Creates a new builder-style object to manufacture [`DeleteJobTaggingInput`](crate::input::DeleteJobTaggingInput).
     pub fn builder() -> crate::input::delete_job_tagging_input::Builder {
         crate::input::delete_job_tagging_input::Builder::default()
     }
@@ -483,7 +483,7 @@ pub struct DeleteMultiRegionAccessPoint {
     _private: (),
 }
 impl DeleteMultiRegionAccessPoint {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointInput`](crate::input::DeleteMultiRegionAccessPointInput).
     pub fn builder() -> crate::input::delete_multi_region_access_point_input::Builder {
         crate::input::delete_multi_region_access_point_input::Builder::default()
     }
@@ -517,7 +517,7 @@ pub struct DeletePublicAccessBlock {
     _private: (),
 }
 impl DeletePublicAccessBlock {
-    /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput)
+    /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockInput`](crate::input::DeletePublicAccessBlockInput).
     pub fn builder() -> crate::input::delete_public_access_block_input::Builder {
         crate::input::delete_public_access_block_input::Builder::default()
     }
@@ -551,7 +551,7 @@ pub struct DeleteStorageLensConfiguration {
     _private: (),
 }
 impl DeleteStorageLensConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationInput`](crate::input::DeleteStorageLensConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationInput`](crate::input::DeleteStorageLensConfigurationInput).
     pub fn builder() -> crate::input::delete_storage_lens_configuration_input::Builder {
         crate::input::delete_storage_lens_configuration_input::Builder::default()
     }
@@ -585,7 +585,7 @@ pub struct DeleteStorageLensConfigurationTagging {
     _private: (),
 }
 impl DeleteStorageLensConfigurationTagging {
-    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingInput`](crate::input::DeleteStorageLensConfigurationTaggingInput)
+    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingInput`](crate::input::DeleteStorageLensConfigurationTaggingInput).
     pub fn builder() -> crate::input::delete_storage_lens_configuration_tagging_input::Builder {
         crate::input::delete_storage_lens_configuration_tagging_input::Builder::default()
     }
@@ -621,7 +621,7 @@ pub struct DescribeJob {
     _private: (),
 }
 impl DescribeJob {
-    /// Creates a new builder-style object to manufacture [`DescribeJobInput`](crate::input::DescribeJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeJobInput`](crate::input::DescribeJobInput).
     pub fn builder() -> crate::input::describe_job_input::Builder {
         crate::input::describe_job_input::Builder::default()
     }
@@ -653,7 +653,7 @@ pub struct DescribeMultiRegionAccessPointOperation {
     _private: (),
 }
 impl DescribeMultiRegionAccessPointOperation {
-    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationInput`](crate::input::DescribeMultiRegionAccessPointOperationInput).
     pub fn builder() -> crate::input::describe_multi_region_access_point_operation_input::Builder {
         crate::input::describe_multi_region_access_point_operation_input::Builder::default()
     }
@@ -691,7 +691,7 @@ pub struct GetAccessPoint {
     _private: (),
 }
 impl GetAccessPoint {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointInput`](crate::input::GetAccessPointInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointInput`](crate::input::GetAccessPointInput).
     pub fn builder() -> crate::input::get_access_point_input::Builder {
         crate::input::get_access_point_input::Builder::default()
     }
@@ -723,7 +723,7 @@ pub struct GetAccessPointConfigurationForObjectLambda {
     _private: (),
 }
 impl GetAccessPointConfigurationForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaInput`](crate::input::GetAccessPointConfigurationForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaInput`](crate::input::GetAccessPointConfigurationForObjectLambdaInput).
     pub fn builder() -> crate::input::get_access_point_configuration_for_object_lambda_input::Builder
     {
         crate::input::get_access_point_configuration_for_object_lambda_input::Builder::default()
@@ -762,7 +762,7 @@ pub struct GetAccessPointForObjectLambda {
     _private: (),
 }
 impl GetAccessPointForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaInput`](crate::input::GetAccessPointForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaInput`](crate::input::GetAccessPointForObjectLambdaInput).
     pub fn builder() -> crate::input::get_access_point_for_object_lambda_input::Builder {
         crate::input::get_access_point_for_object_lambda_input::Builder::default()
     }
@@ -796,7 +796,7 @@ pub struct GetAccessPointPolicy {
     _private: (),
 }
 impl GetAccessPointPolicy {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyInput`](crate::input::GetAccessPointPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyInput`](crate::input::GetAccessPointPolicyInput).
     pub fn builder() -> crate::input::get_access_point_policy_input::Builder {
         crate::input::get_access_point_policy_input::Builder::default()
     }
@@ -830,7 +830,7 @@ pub struct GetAccessPointPolicyForObjectLambda {
     _private: (),
 }
 impl GetAccessPointPolicyForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaInput`](crate::input::GetAccessPointPolicyForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaInput`](crate::input::GetAccessPointPolicyForObjectLambdaInput).
     pub fn builder() -> crate::input::get_access_point_policy_for_object_lambda_input::Builder {
         crate::input::get_access_point_policy_for_object_lambda_input::Builder::default()
     }
@@ -866,7 +866,7 @@ pub struct GetAccessPointPolicyStatus {
     _private: (),
 }
 impl GetAccessPointPolicyStatus {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusInput`](crate::input::GetAccessPointPolicyStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusInput`](crate::input::GetAccessPointPolicyStatusInput).
     pub fn builder() -> crate::input::get_access_point_policy_status_input::Builder {
         crate::input::get_access_point_policy_status_input::Builder::default()
     }
@@ -900,7 +900,7 @@ pub struct GetAccessPointPolicyStatusForObjectLambda {
     _private: (),
 }
 impl GetAccessPointPolicyStatusForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::input::GetAccessPointPolicyStatusForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaInput`](crate::input::GetAccessPointPolicyStatusForObjectLambdaInput).
     pub fn builder() -> crate::input::get_access_point_policy_status_for_object_lambda_input::Builder
     {
         crate::input::get_access_point_policy_status_for_object_lambda_input::Builder::default()
@@ -939,7 +939,7 @@ pub struct GetBucket {
     _private: (),
 }
 impl GetBucket {
-    /// Creates a new builder-style object to manufacture [`GetBucketInput`](crate::input::GetBucketInput)
+    /// Creates a new builder-style object to manufacture [`GetBucketInput`](crate::input::GetBucketInput).
     pub fn builder() -> crate::input::get_bucket_input::Builder {
         crate::input::get_bucket_input::Builder::default()
     }
@@ -970,7 +970,7 @@ pub struct GetBucketLifecycleConfiguration {
     _private: (),
 }
 impl GetBucketLifecycleConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationInput`](crate::input::GetBucketLifecycleConfigurationInput).
     pub fn builder() -> crate::input::get_bucket_lifecycle_configuration_input::Builder {
         crate::input::get_bucket_lifecycle_configuration_input::Builder::default()
     }
@@ -1004,7 +1004,7 @@ pub struct GetBucketPolicy {
     _private: (),
 }
 impl GetBucketPolicy {
-    /// Creates a new builder-style object to manufacture [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetBucketPolicyInput`](crate::input::GetBucketPolicyInput).
     pub fn builder() -> crate::input::get_bucket_policy_input::Builder {
         crate::input::get_bucket_policy_input::Builder::default()
     }
@@ -1038,7 +1038,7 @@ pub struct GetBucketTagging {
     _private: (),
 }
 impl GetBucketTagging {
-    /// Creates a new builder-style object to manufacture [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput)
+    /// Creates a new builder-style object to manufacture [`GetBucketTaggingInput`](crate::input::GetBucketTaggingInput).
     pub fn builder() -> crate::input::get_bucket_tagging_input::Builder {
         crate::input::get_bucket_tagging_input::Builder::default()
     }
@@ -1072,7 +1072,7 @@ pub struct GetJobTagging {
     _private: (),
 }
 impl GetJobTagging {
-    /// Creates a new builder-style object to manufacture [`GetJobTaggingInput`](crate::input::GetJobTaggingInput)
+    /// Creates a new builder-style object to manufacture [`GetJobTaggingInput`](crate::input::GetJobTaggingInput).
     pub fn builder() -> crate::input::get_job_tagging_input::Builder {
         crate::input::get_job_tagging_input::Builder::default()
     }
@@ -1104,7 +1104,7 @@ pub struct GetMultiRegionAccessPoint {
     _private: (),
 }
 impl GetMultiRegionAccessPoint {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput)
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointInput`](crate::input::GetMultiRegionAccessPointInput).
     pub fn builder() -> crate::input::get_multi_region_access_point_input::Builder {
         crate::input::get_multi_region_access_point_input::Builder::default()
     }
@@ -1138,7 +1138,7 @@ pub struct GetMultiRegionAccessPointPolicy {
     _private: (),
 }
 impl GetMultiRegionAccessPointPolicy {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyInput`](crate::input::GetMultiRegionAccessPointPolicyInput).
     pub fn builder() -> crate::input::get_multi_region_access_point_policy_input::Builder {
         crate::input::get_multi_region_access_point_policy_input::Builder::default()
     }
@@ -1172,7 +1172,7 @@ pub struct GetMultiRegionAccessPointPolicyStatus {
     _private: (),
 }
 impl GetMultiRegionAccessPointPolicyStatus {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusInput`](crate::input::GetMultiRegionAccessPointPolicyStatusInput).
     pub fn builder() -> crate::input::get_multi_region_access_point_policy_status_input::Builder {
         crate::input::get_multi_region_access_point_policy_status_input::Builder::default()
     }
@@ -1210,7 +1210,7 @@ pub struct GetPublicAccessBlock {
     _private: (),
 }
 impl GetPublicAccessBlock {
-    /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput)
+    /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockInput`](crate::input::GetPublicAccessBlockInput).
     pub fn builder() -> crate::input::get_public_access_block_input::Builder {
         crate::input::get_public_access_block_input::Builder::default()
     }
@@ -1244,7 +1244,7 @@ pub struct GetStorageLensConfiguration {
     _private: (),
 }
 impl GetStorageLensConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationInput`](crate::input::GetStorageLensConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationInput`](crate::input::GetStorageLensConfigurationInput).
     pub fn builder() -> crate::input::get_storage_lens_configuration_input::Builder {
         crate::input::get_storage_lens_configuration_input::Builder::default()
     }
@@ -1278,7 +1278,7 @@ pub struct GetStorageLensConfigurationTagging {
     _private: (),
 }
 impl GetStorageLensConfigurationTagging {
-    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingInput`](crate::input::GetStorageLensConfigurationTaggingInput)
+    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingInput`](crate::input::GetStorageLensConfigurationTaggingInput).
     pub fn builder() -> crate::input::get_storage_lens_configuration_tagging_input::Builder {
         crate::input::get_storage_lens_configuration_tagging_input::Builder::default()
     }
@@ -1312,7 +1312,7 @@ pub struct ListAccessPoints {
     _private: (),
 }
 impl ListAccessPoints {
-    /// Creates a new builder-style object to manufacture [`ListAccessPointsInput`](crate::input::ListAccessPointsInput)
+    /// Creates a new builder-style object to manufacture [`ListAccessPointsInput`](crate::input::ListAccessPointsInput).
     pub fn builder() -> crate::input::list_access_points_input::Builder {
         crate::input::list_access_points_input::Builder::default()
     }
@@ -1346,7 +1346,7 @@ pub struct ListAccessPointsForObjectLambda {
     _private: (),
 }
 impl ListAccessPointsForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaInput`](crate::input::ListAccessPointsForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaInput`](crate::input::ListAccessPointsForObjectLambdaInput).
     pub fn builder() -> crate::input::list_access_points_for_object_lambda_input::Builder {
         crate::input::list_access_points_for_object_lambda_input::Builder::default()
     }
@@ -1380,7 +1380,7 @@ pub struct ListJobs {
     _private: (),
 }
 impl ListJobs {
-    /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput).
     pub fn builder() -> crate::input::list_jobs_input::Builder {
         crate::input::list_jobs_input::Builder::default()
     }
@@ -1411,7 +1411,7 @@ pub struct ListMultiRegionAccessPoints {
     _private: (),
 }
 impl ListMultiRegionAccessPoints {
-    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput)
+    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsInput`](crate::input::ListMultiRegionAccessPointsInput).
     pub fn builder() -> crate::input::list_multi_region_access_points_input::Builder {
         crate::input::list_multi_region_access_points_input::Builder::default()
     }
@@ -1445,7 +1445,7 @@ pub struct ListRegionalBuckets {
     _private: (),
 }
 impl ListRegionalBuckets {
-    /// Creates a new builder-style object to manufacture [`ListRegionalBucketsInput`](crate::input::ListRegionalBucketsInput)
+    /// Creates a new builder-style object to manufacture [`ListRegionalBucketsInput`](crate::input::ListRegionalBucketsInput).
     pub fn builder() -> crate::input::list_regional_buckets_input::Builder {
         crate::input::list_regional_buckets_input::Builder::default()
     }
@@ -1479,7 +1479,7 @@ pub struct ListStorageLensConfigurations {
     _private: (),
 }
 impl ListStorageLensConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsInput`](crate::input::ListStorageLensConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsInput`](crate::input::ListStorageLensConfigurationsInput).
     pub fn builder() -> crate::input::list_storage_lens_configurations_input::Builder {
         crate::input::list_storage_lens_configurations_input::Builder::default()
     }
@@ -1513,7 +1513,7 @@ pub struct PutAccessPointConfigurationForObjectLambda {
     _private: (),
 }
 impl PutAccessPointConfigurationForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaInput`](crate::input::PutAccessPointConfigurationForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaInput`](crate::input::PutAccessPointConfigurationForObjectLambdaInput).
     pub fn builder() -> crate::input::put_access_point_configuration_for_object_lambda_input::Builder
     {
         crate::input::put_access_point_configuration_for_object_lambda_input::Builder::default()
@@ -1552,7 +1552,7 @@ pub struct PutAccessPointPolicy {
     _private: (),
 }
 impl PutAccessPointPolicy {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyInput`](crate::input::PutAccessPointPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyInput`](crate::input::PutAccessPointPolicyInput).
     pub fn builder() -> crate::input::put_access_point_policy_input::Builder {
         crate::input::put_access_point_policy_input::Builder::default()
     }
@@ -1586,7 +1586,7 @@ pub struct PutAccessPointPolicyForObjectLambda {
     _private: (),
 }
 impl PutAccessPointPolicyForObjectLambda {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaInput`](crate::input::PutAccessPointPolicyForObjectLambdaInput)
+    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaInput`](crate::input::PutAccessPointPolicyForObjectLambdaInput).
     pub fn builder() -> crate::input::put_access_point_policy_for_object_lambda_input::Builder {
         crate::input::put_access_point_policy_for_object_lambda_input::Builder::default()
     }
@@ -1622,7 +1622,7 @@ pub struct PutBucketLifecycleConfiguration {
     _private: (),
 }
 impl PutBucketLifecycleConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationInput`](crate::input::PutBucketLifecycleConfigurationInput).
     pub fn builder() -> crate::input::put_bucket_lifecycle_configuration_input::Builder {
         crate::input::put_bucket_lifecycle_configuration_input::Builder::default()
     }
@@ -1656,7 +1656,7 @@ pub struct PutBucketPolicy {
     _private: (),
 }
 impl PutBucketPolicy {
-    /// Creates a new builder-style object to manufacture [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutBucketPolicyInput`](crate::input::PutBucketPolicyInput).
     pub fn builder() -> crate::input::put_bucket_policy_input::Builder {
         crate::input::put_bucket_policy_input::Builder::default()
     }
@@ -1690,7 +1690,7 @@ pub struct PutBucketTagging {
     _private: (),
 }
 impl PutBucketTagging {
-    /// Creates a new builder-style object to manufacture [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput)
+    /// Creates a new builder-style object to manufacture [`PutBucketTaggingInput`](crate::input::PutBucketTaggingInput).
     pub fn builder() -> crate::input::put_bucket_tagging_input::Builder {
         crate::input::put_bucket_tagging_input::Builder::default()
     }
@@ -1724,7 +1724,7 @@ pub struct PutJobTagging {
     _private: (),
 }
 impl PutJobTagging {
-    /// Creates a new builder-style object to manufacture [`PutJobTaggingInput`](crate::input::PutJobTaggingInput)
+    /// Creates a new builder-style object to manufacture [`PutJobTaggingInput`](crate::input::PutJobTaggingInput).
     pub fn builder() -> crate::input::put_job_tagging_input::Builder {
         crate::input::put_job_tagging_input::Builder::default()
     }
@@ -1756,7 +1756,7 @@ pub struct PutMultiRegionAccessPointPolicy {
     _private: (),
 }
 impl PutMultiRegionAccessPointPolicy {
-    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyInput`](crate::input::PutMultiRegionAccessPointPolicyInput).
     pub fn builder() -> crate::input::put_multi_region_access_point_policy_input::Builder {
         crate::input::put_multi_region_access_point_policy_input::Builder::default()
     }
@@ -1790,7 +1790,7 @@ pub struct PutPublicAccessBlock {
     _private: (),
 }
 impl PutPublicAccessBlock {
-    /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput)
+    /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockInput`](crate::input::PutPublicAccessBlockInput).
     pub fn builder() -> crate::input::put_public_access_block_input::Builder {
         crate::input::put_public_access_block_input::Builder::default()
     }
@@ -1824,7 +1824,7 @@ pub struct PutStorageLensConfiguration {
     _private: (),
 }
 impl PutStorageLensConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationInput`](crate::input::PutStorageLensConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationInput`](crate::input::PutStorageLensConfigurationInput).
     pub fn builder() -> crate::input::put_storage_lens_configuration_input::Builder {
         crate::input::put_storage_lens_configuration_input::Builder::default()
     }
@@ -1858,7 +1858,7 @@ pub struct PutStorageLensConfigurationTagging {
     _private: (),
 }
 impl PutStorageLensConfigurationTagging {
-    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingInput`](crate::input::PutStorageLensConfigurationTaggingInput)
+    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingInput`](crate::input::PutStorageLensConfigurationTaggingInput).
     pub fn builder() -> crate::input::put_storage_lens_configuration_tagging_input::Builder {
         crate::input::put_storage_lens_configuration_tagging_input::Builder::default()
     }
@@ -1892,7 +1892,7 @@ pub struct UpdateJobPriority {
     _private: (),
 }
 impl UpdateJobPriority {
-    /// Creates a new builder-style object to manufacture [`UpdateJobPriorityInput`](crate::input::UpdateJobPriorityInput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobPriorityInput`](crate::input::UpdateJobPriorityInput).
     pub fn builder() -> crate::input::update_job_priority_input::Builder {
         crate::input::update_job_priority_input::Builder::default()
     }
@@ -1926,7 +1926,7 @@ pub struct UpdateJobStatus {
     _private: (),
 }
 impl UpdateJobStatus {
-    /// Creates a new builder-style object to manufacture [`UpdateJobStatusInput`](crate::input::UpdateJobStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobStatusInput`](crate::input::UpdateJobStatusInput).
     pub fn builder() -> crate::input::update_job_status_input::Builder {
         crate::input::update_job_status_input::Builder::default()
     }

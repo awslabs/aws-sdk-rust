@@ -10,7 +10,7 @@ pub struct AddRoleToDBCluster {
     _private: (),
 }
 impl AddRoleToDBCluster {
-    /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterInput`](crate::input::AddRoleToDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterInput`](crate::input::AddRoleToDbClusterInput).
     pub fn builder() -> crate::input::add_role_to_db_cluster_input::Builder {
         crate::input::add_role_to_db_cluster_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AddRoleToDBInstance {
     _private: (),
 }
 impl AddRoleToDBInstance {
-    /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceInput`](crate::input::AddRoleToDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceInput`](crate::input::AddRoleToDbInstanceInput).
     pub fn builder() -> crate::input::add_role_to_db_instance_input::Builder {
         crate::input::add_role_to_db_instance_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AddSourceIdentifierToSubscription {
     _private: (),
 }
 impl AddSourceIdentifierToSubscription {
-    /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionInput`](crate::input::AddSourceIdentifierToSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionInput`](crate::input::AddSourceIdentifierToSubscriptionInput).
     pub fn builder() -> crate::input::add_source_identifier_to_subscription_input::Builder {
         crate::input::add_source_identifier_to_subscription_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct AddTagsToResource {
     _private: (),
 }
 impl AddTagsToResource {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
     pub fn builder() -> crate::input::add_tags_to_resource_input::Builder {
         crate::input::add_tags_to_resource_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct ApplyPendingMaintenanceAction {
     _private: (),
 }
 impl ApplyPendingMaintenanceAction {
-    /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionInput`](crate::input::ApplyPendingMaintenanceActionInput)
+    /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionInput`](crate::input::ApplyPendingMaintenanceActionInput).
     pub fn builder() -> crate::input::apply_pending_maintenance_action_input::Builder {
         crate::input::apply_pending_maintenance_action_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct AuthorizeDBSecurityGroupIngress {
     _private: (),
 }
 impl AuthorizeDBSecurityGroupIngress {
-    /// Creates a new builder-style object to manufacture [`AuthorizeDbSecurityGroupIngressInput`](crate::input::AuthorizeDbSecurityGroupIngressInput)
+    /// Creates a new builder-style object to manufacture [`AuthorizeDbSecurityGroupIngressInput`](crate::input::AuthorizeDbSecurityGroupIngressInput).
     pub fn builder() -> crate::input::authorize_db_security_group_ingress_input::Builder {
         crate::input::authorize_db_security_group_ingress_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct BacktrackDBCluster {
     _private: (),
 }
 impl BacktrackDBCluster {
-    /// Creates a new builder-style object to manufacture [`BacktrackDbClusterInput`](crate::input::BacktrackDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`BacktrackDbClusterInput`](crate::input::BacktrackDbClusterInput).
     pub fn builder() -> crate::input::backtrack_db_cluster_input::Builder {
         crate::input::backtrack_db_cluster_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CancelExportTask {
     _private: (),
 }
 impl CancelExportTask {
-    /// Creates a new builder-style object to manufacture [`CancelExportTaskInput`](crate::input::CancelExportTaskInput)
+    /// Creates a new builder-style object to manufacture [`CancelExportTaskInput`](crate::input::CancelExportTaskInput).
     pub fn builder() -> crate::input::cancel_export_task_input::Builder {
         crate::input::cancel_export_task_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct CopyDBClusterParameterGroup {
     _private: (),
 }
 impl CopyDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupInput`](crate::input::CopyDbClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupInput`](crate::input::CopyDbClusterParameterGroupInput).
     pub fn builder() -> crate::input::copy_db_cluster_parameter_group_input::Builder {
         crate::input::copy_db_cluster_parameter_group_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct CopyDBClusterSnapshot {
     _private: (),
 }
 impl CopyDBClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotInput`](crate::input::CopyDbClusterSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotInput`](crate::input::CopyDbClusterSnapshotInput).
     pub fn builder() -> crate::input::copy_db_cluster_snapshot_input::Builder {
         crate::input::copy_db_cluster_snapshot_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct CopyDBParameterGroup {
     _private: (),
 }
 impl CopyDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupInput`](crate::input::CopyDbParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupInput`](crate::input::CopyDbParameterGroupInput).
     pub fn builder() -> crate::input::copy_db_parameter_group_input::Builder {
         crate::input::copy_db_parameter_group_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct CopyDBSnapshot {
     _private: (),
 }
 impl CopyDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`CopyDbSnapshotInput`](crate::input::CopyDbSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CopyDbSnapshotInput`](crate::input::CopyDbSnapshotInput).
     pub fn builder() -> crate::input::copy_db_snapshot_input::Builder {
         crate::input::copy_db_snapshot_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct CopyOptionGroup {
     _private: (),
 }
 impl CopyOptionGroup {
-    /// Creates a new builder-style object to manufacture [`CopyOptionGroupInput`](crate::input::CopyOptionGroupInput)
+    /// Creates a new builder-style object to manufacture [`CopyOptionGroupInput`](crate::input::CopyOptionGroupInput).
     pub fn builder() -> crate::input::copy_option_group_input::Builder {
         crate::input::copy_option_group_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct CreateCustomDBEngineVersion {
     _private: (),
 }
 impl CreateCustomDBEngineVersion {
-    /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionInput`](crate::input::CreateCustomDbEngineVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionInput`](crate::input::CreateCustomDbEngineVersionInput).
     pub fn builder() -> crate::input::create_custom_db_engine_version_input::Builder {
         crate::input::create_custom_db_engine_version_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct CreateDBCluster {
     _private: (),
 }
 impl CreateDBCluster {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::input::CreateDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::input::CreateDbClusterInput).
     pub fn builder() -> crate::input::create_db_cluster_input::Builder {
         crate::input::create_db_cluster_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct CreateDBClusterEndpoint {
     _private: (),
 }
 impl CreateDBClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointInput`](crate::input::CreateDbClusterEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointInput`](crate::input::CreateDbClusterEndpointInput).
     pub fn builder() -> crate::input::create_db_cluster_endpoint_input::Builder {
         crate::input::create_db_cluster_endpoint_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct CreateDBClusterParameterGroup {
     _private: (),
 }
 impl CreateDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupInput`](crate::input::CreateDbClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupInput`](crate::input::CreateDbClusterParameterGroupInput).
     pub fn builder() -> crate::input::create_db_cluster_parameter_group_input::Builder {
         crate::input::create_db_cluster_parameter_group_input::Builder::default()
     }
@@ -586,7 +586,7 @@ pub struct CreateDBClusterSnapshot {
     _private: (),
 }
 impl CreateDBClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotInput`](crate::input::CreateDbClusterSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotInput`](crate::input::CreateDbClusterSnapshotInput).
     pub fn builder() -> crate::input::create_db_cluster_snapshot_input::Builder {
         crate::input::create_db_cluster_snapshot_input::Builder::default()
     }
@@ -620,7 +620,7 @@ pub struct CreateDBInstance {
     _private: (),
 }
 impl CreateDBInstance {
-    /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput).
     pub fn builder() -> crate::input::create_db_instance_input::Builder {
         crate::input::create_db_instance_input::Builder::default()
     }
@@ -654,7 +654,7 @@ pub struct CreateDBInstanceReadReplica {
     _private: (),
 }
 impl CreateDBInstanceReadReplica {
-    /// Creates a new builder-style object to manufacture [`CreateDbInstanceReadReplicaInput`](crate::input::CreateDbInstanceReadReplicaInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbInstanceReadReplicaInput`](crate::input::CreateDbInstanceReadReplicaInput).
     pub fn builder() -> crate::input::create_db_instance_read_replica_input::Builder {
         crate::input::create_db_instance_read_replica_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct CreateDBParameterGroup {
     _private: (),
 }
 impl CreateDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupInput`](crate::input::CreateDbParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupInput`](crate::input::CreateDbParameterGroupInput).
     pub fn builder() -> crate::input::create_db_parameter_group_input::Builder {
         crate::input::create_db_parameter_group_input::Builder::default()
     }
@@ -722,7 +722,7 @@ pub struct CreateDBProxy {
     _private: (),
 }
 impl CreateDBProxy {
-    /// Creates a new builder-style object to manufacture [`CreateDbProxyInput`](crate::input::CreateDbProxyInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbProxyInput`](crate::input::CreateDbProxyInput).
     pub fn builder() -> crate::input::create_db_proxy_input::Builder {
         crate::input::create_db_proxy_input::Builder::default()
     }
@@ -754,7 +754,7 @@ pub struct CreateDBProxyEndpoint {
     _private: (),
 }
 impl CreateDBProxyEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateDbProxyEndpointInput`](crate::input::CreateDbProxyEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbProxyEndpointInput`](crate::input::CreateDbProxyEndpointInput).
     pub fn builder() -> crate::input::create_db_proxy_endpoint_input::Builder {
         crate::input::create_db_proxy_endpoint_input::Builder::default()
     }
@@ -788,7 +788,7 @@ pub struct CreateDBSecurityGroup {
     _private: (),
 }
 impl CreateDBSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDbSecurityGroupInput`](crate::input::CreateDbSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbSecurityGroupInput`](crate::input::CreateDbSecurityGroupInput).
     pub fn builder() -> crate::input::create_db_security_group_input::Builder {
         crate::input::create_db_security_group_input::Builder::default()
     }
@@ -822,7 +822,7 @@ pub struct CreateDBSnapshot {
     _private: (),
 }
 impl CreateDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateDbSnapshotInput`](crate::input::CreateDbSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbSnapshotInput`](crate::input::CreateDbSnapshotInput).
     pub fn builder() -> crate::input::create_db_snapshot_input::Builder {
         crate::input::create_db_snapshot_input::Builder::default()
     }
@@ -856,7 +856,7 @@ pub struct CreateDBSubnetGroup {
     _private: (),
 }
 impl CreateDBSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupInput`](crate::input::CreateDbSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupInput`](crate::input::CreateDbSubnetGroupInput).
     pub fn builder() -> crate::input::create_db_subnet_group_input::Builder {
         crate::input::create_db_subnet_group_input::Builder::default()
     }
@@ -890,7 +890,7 @@ pub struct CreateEventSubscription {
     _private: (),
 }
 impl CreateEventSubscription {
-    /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput).
     pub fn builder() -> crate::input::create_event_subscription_input::Builder {
         crate::input::create_event_subscription_input::Builder::default()
     }
@@ -924,7 +924,7 @@ pub struct CreateGlobalCluster {
     _private: (),
 }
 impl CreateGlobalCluster {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterInput`](crate::input::CreateGlobalClusterInput).
     pub fn builder() -> crate::input::create_global_cluster_input::Builder {
         crate::input::create_global_cluster_input::Builder::default()
     }
@@ -958,7 +958,7 @@ pub struct CreateOptionGroup {
     _private: (),
 }
 impl CreateOptionGroup {
-    /// Creates a new builder-style object to manufacture [`CreateOptionGroupInput`](crate::input::CreateOptionGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateOptionGroupInput`](crate::input::CreateOptionGroupInput).
     pub fn builder() -> crate::input::create_option_group_input::Builder {
         crate::input::create_option_group_input::Builder::default()
     }
@@ -992,7 +992,7 @@ pub struct DeleteCustomDBEngineVersion {
     _private: (),
 }
 impl DeleteCustomDBEngineVersion {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomDbEngineVersionInput`](crate::input::DeleteCustomDbEngineVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomDbEngineVersionInput`](crate::input::DeleteCustomDbEngineVersionInput).
     pub fn builder() -> crate::input::delete_custom_db_engine_version_input::Builder {
         crate::input::delete_custom_db_engine_version_input::Builder::default()
     }
@@ -1026,7 +1026,7 @@ pub struct DeleteDBCluster {
     _private: (),
 }
 impl DeleteDBCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterInput`](crate::input::DeleteDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterInput`](crate::input::DeleteDbClusterInput).
     pub fn builder() -> crate::input::delete_db_cluster_input::Builder {
         crate::input::delete_db_cluster_input::Builder::default()
     }
@@ -1060,7 +1060,7 @@ pub struct DeleteDBClusterEndpoint {
     _private: (),
 }
 impl DeleteDBClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointInput`](crate::input::DeleteDbClusterEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointInput`](crate::input::DeleteDbClusterEndpointInput).
     pub fn builder() -> crate::input::delete_db_cluster_endpoint_input::Builder {
         crate::input::delete_db_cluster_endpoint_input::Builder::default()
     }
@@ -1094,7 +1094,7 @@ pub struct DeleteDBClusterParameterGroup {
     _private: (),
 }
 impl DeleteDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupInput`](crate::input::DeleteDbClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupInput`](crate::input::DeleteDbClusterParameterGroupInput).
     pub fn builder() -> crate::input::delete_db_cluster_parameter_group_input::Builder {
         crate::input::delete_db_cluster_parameter_group_input::Builder::default()
     }
@@ -1128,7 +1128,7 @@ pub struct DeleteDBClusterSnapshot {
     _private: (),
 }
 impl DeleteDBClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotInput`](crate::input::DeleteDbClusterSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotInput`](crate::input::DeleteDbClusterSnapshotInput).
     pub fn builder() -> crate::input::delete_db_cluster_snapshot_input::Builder {
         crate::input::delete_db_cluster_snapshot_input::Builder::default()
     }
@@ -1162,7 +1162,7 @@ pub struct DeleteDBInstance {
     _private: (),
 }
 impl DeleteDBInstance {
-    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceInput`](crate::input::DeleteDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceInput`](crate::input::DeleteDbInstanceInput).
     pub fn builder() -> crate::input::delete_db_instance_input::Builder {
         crate::input::delete_db_instance_input::Builder::default()
     }
@@ -1196,7 +1196,7 @@ pub struct DeleteDBInstanceAutomatedBackup {
     _private: (),
 }
 impl DeleteDBInstanceAutomatedBackup {
-    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceAutomatedBackupInput`](crate::input::DeleteDbInstanceAutomatedBackupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceAutomatedBackupInput`](crate::input::DeleteDbInstanceAutomatedBackupInput).
     pub fn builder() -> crate::input::delete_db_instance_automated_backup_input::Builder {
         crate::input::delete_db_instance_automated_backup_input::Builder::default()
     }
@@ -1230,7 +1230,7 @@ pub struct DeleteDBParameterGroup {
     _private: (),
 }
 impl DeleteDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupInput`](crate::input::DeleteDbParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupInput`](crate::input::DeleteDbParameterGroupInput).
     pub fn builder() -> crate::input::delete_db_parameter_group_input::Builder {
         crate::input::delete_db_parameter_group_input::Builder::default()
     }
@@ -1264,7 +1264,7 @@ pub struct DeleteDBProxy {
     _private: (),
 }
 impl DeleteDBProxy {
-    /// Creates a new builder-style object to manufacture [`DeleteDbProxyInput`](crate::input::DeleteDbProxyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbProxyInput`](crate::input::DeleteDbProxyInput).
     pub fn builder() -> crate::input::delete_db_proxy_input::Builder {
         crate::input::delete_db_proxy_input::Builder::default()
     }
@@ -1296,7 +1296,7 @@ pub struct DeleteDBProxyEndpoint {
     _private: (),
 }
 impl DeleteDBProxyEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteDbProxyEndpointInput`](crate::input::DeleteDbProxyEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbProxyEndpointInput`](crate::input::DeleteDbProxyEndpointInput).
     pub fn builder() -> crate::input::delete_db_proxy_endpoint_input::Builder {
         crate::input::delete_db_proxy_endpoint_input::Builder::default()
     }
@@ -1330,7 +1330,7 @@ pub struct DeleteDBSecurityGroup {
     _private: (),
 }
 impl DeleteDBSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDbSecurityGroupInput`](crate::input::DeleteDbSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbSecurityGroupInput`](crate::input::DeleteDbSecurityGroupInput).
     pub fn builder() -> crate::input::delete_db_security_group_input::Builder {
         crate::input::delete_db_security_group_input::Builder::default()
     }
@@ -1364,7 +1364,7 @@ pub struct DeleteDBSnapshot {
     _private: (),
 }
 impl DeleteDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteDbSnapshotInput`](crate::input::DeleteDbSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbSnapshotInput`](crate::input::DeleteDbSnapshotInput).
     pub fn builder() -> crate::input::delete_db_snapshot_input::Builder {
         crate::input::delete_db_snapshot_input::Builder::default()
     }
@@ -1398,7 +1398,7 @@ pub struct DeleteDBSubnetGroup {
     _private: (),
 }
 impl DeleteDBSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupInput`](crate::input::DeleteDbSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupInput`](crate::input::DeleteDbSubnetGroupInput).
     pub fn builder() -> crate::input::delete_db_subnet_group_input::Builder {
         crate::input::delete_db_subnet_group_input::Builder::default()
     }
@@ -1432,7 +1432,7 @@ pub struct DeleteEventSubscription {
     _private: (),
 }
 impl DeleteEventSubscription {
-    /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput).
     pub fn builder() -> crate::input::delete_event_subscription_input::Builder {
         crate::input::delete_event_subscription_input::Builder::default()
     }
@@ -1466,7 +1466,7 @@ pub struct DeleteGlobalCluster {
     _private: (),
 }
 impl DeleteGlobalCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterInput`](crate::input::DeleteGlobalClusterInput).
     pub fn builder() -> crate::input::delete_global_cluster_input::Builder {
         crate::input::delete_global_cluster_input::Builder::default()
     }
@@ -1500,7 +1500,7 @@ pub struct DeleteOptionGroup {
     _private: (),
 }
 impl DeleteOptionGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteOptionGroupInput`](crate::input::DeleteOptionGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOptionGroupInput`](crate::input::DeleteOptionGroupInput).
     pub fn builder() -> crate::input::delete_option_group_input::Builder {
         crate::input::delete_option_group_input::Builder::default()
     }
@@ -1534,7 +1534,7 @@ pub struct DeregisterDBProxyTargets {
     _private: (),
 }
 impl DeregisterDBProxyTargets {
-    /// Creates a new builder-style object to manufacture [`DeregisterDbProxyTargetsInput`](crate::input::DeregisterDbProxyTargetsInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterDbProxyTargetsInput`](crate::input::DeregisterDbProxyTargetsInput).
     pub fn builder() -> crate::input::deregister_db_proxy_targets_input::Builder {
         crate::input::deregister_db_proxy_targets_input::Builder::default()
     }
@@ -1568,7 +1568,7 @@ pub struct DescribeAccountAttributes {
     _private: (),
 }
 impl DescribeAccountAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
     pub fn builder() -> crate::input::describe_account_attributes_input::Builder {
         crate::input::describe_account_attributes_input::Builder::default()
     }
@@ -1602,7 +1602,7 @@ pub struct DescribeCertificates {
     _private: (),
 }
 impl DescribeCertificates {
-    /// Creates a new builder-style object to manufacture [`DescribeCertificatesInput`](crate::input::DescribeCertificatesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCertificatesInput`](crate::input::DescribeCertificatesInput).
     pub fn builder() -> crate::input::describe_certificates_input::Builder {
         crate::input::describe_certificates_input::Builder::default()
     }
@@ -1636,7 +1636,7 @@ pub struct DescribeDBClusterBacktracks {
     _private: (),
 }
 impl DescribeDBClusterBacktracks {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterBacktracksInput`](crate::input::DescribeDbClusterBacktracksInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterBacktracksInput`](crate::input::DescribeDbClusterBacktracksInput).
     pub fn builder() -> crate::input::describe_db_cluster_backtracks_input::Builder {
         crate::input::describe_db_cluster_backtracks_input::Builder::default()
     }
@@ -1670,7 +1670,7 @@ pub struct DescribeDBClusterEndpoints {
     _private: (),
 }
 impl DescribeDBClusterEndpoints {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsInput`](crate::input::DescribeDbClusterEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsInput`](crate::input::DescribeDbClusterEndpointsInput).
     pub fn builder() -> crate::input::describe_db_cluster_endpoints_input::Builder {
         crate::input::describe_db_cluster_endpoints_input::Builder::default()
     }
@@ -1704,7 +1704,7 @@ pub struct DescribeDBClusterParameterGroups {
     _private: (),
 }
 impl DescribeDBClusterParameterGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsInput`](crate::input::DescribeDbClusterParameterGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsInput`](crate::input::DescribeDbClusterParameterGroupsInput).
     pub fn builder() -> crate::input::describe_db_cluster_parameter_groups_input::Builder {
         crate::input::describe_db_cluster_parameter_groups_input::Builder::default()
     }
@@ -1738,7 +1738,7 @@ pub struct DescribeDBClusterParameters {
     _private: (),
 }
 impl DescribeDBClusterParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersInput`](crate::input::DescribeDbClusterParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersInput`](crate::input::DescribeDbClusterParametersInput).
     pub fn builder() -> crate::input::describe_db_cluster_parameters_input::Builder {
         crate::input::describe_db_cluster_parameters_input::Builder::default()
     }
@@ -1772,7 +1772,7 @@ pub struct DescribeDBClusters {
     _private: (),
 }
 impl DescribeDBClusters {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClustersInput`](crate::input::DescribeDbClustersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClustersInput`](crate::input::DescribeDbClustersInput).
     pub fn builder() -> crate::input::describe_db_clusters_input::Builder {
         crate::input::describe_db_clusters_input::Builder::default()
     }
@@ -1806,7 +1806,7 @@ pub struct DescribeDBClusterSnapshotAttributes {
     _private: (),
 }
 impl DescribeDBClusterSnapshotAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesInput`](crate::input::DescribeDbClusterSnapshotAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesInput`](crate::input::DescribeDbClusterSnapshotAttributesInput).
     pub fn builder() -> crate::input::describe_db_cluster_snapshot_attributes_input::Builder {
         crate::input::describe_db_cluster_snapshot_attributes_input::Builder::default()
     }
@@ -1840,7 +1840,7 @@ pub struct DescribeDBClusterSnapshots {
     _private: (),
 }
 impl DescribeDBClusterSnapshots {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsInput`](crate::input::DescribeDbClusterSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsInput`](crate::input::DescribeDbClusterSnapshotsInput).
     pub fn builder() -> crate::input::describe_db_cluster_snapshots_input::Builder {
         crate::input::describe_db_cluster_snapshots_input::Builder::default()
     }
@@ -1874,7 +1874,7 @@ pub struct DescribeDBEngineVersions {
     _private: (),
 }
 impl DescribeDBEngineVersions {
-    /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsInput`](crate::input::DescribeDbEngineVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsInput`](crate::input::DescribeDbEngineVersionsInput).
     pub fn builder() -> crate::input::describe_db_engine_versions_input::Builder {
         crate::input::describe_db_engine_versions_input::Builder::default()
     }
@@ -1908,7 +1908,7 @@ pub struct DescribeDBInstanceAutomatedBackups {
     _private: (),
 }
 impl DescribeDBInstanceAutomatedBackups {
-    /// Creates a new builder-style object to manufacture [`DescribeDbInstanceAutomatedBackupsInput`](crate::input::DescribeDbInstanceAutomatedBackupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbInstanceAutomatedBackupsInput`](crate::input::DescribeDbInstanceAutomatedBackupsInput).
     pub fn builder() -> crate::input::describe_db_instance_automated_backups_input::Builder {
         crate::input::describe_db_instance_automated_backups_input::Builder::default()
     }
@@ -1942,7 +1942,7 @@ pub struct DescribeDBInstances {
     _private: (),
 }
 impl DescribeDBInstances {
-    /// Creates a new builder-style object to manufacture [`DescribeDbInstancesInput`](crate::input::DescribeDbInstancesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbInstancesInput`](crate::input::DescribeDbInstancesInput).
     pub fn builder() -> crate::input::describe_db_instances_input::Builder {
         crate::input::describe_db_instances_input::Builder::default()
     }
@@ -1976,7 +1976,7 @@ pub struct DescribeDBLogFiles {
     _private: (),
 }
 impl DescribeDBLogFiles {
-    /// Creates a new builder-style object to manufacture [`DescribeDbLogFilesInput`](crate::input::DescribeDbLogFilesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbLogFilesInput`](crate::input::DescribeDbLogFilesInput).
     pub fn builder() -> crate::input::describe_db_log_files_input::Builder {
         crate::input::describe_db_log_files_input::Builder::default()
     }
@@ -2010,7 +2010,7 @@ pub struct DescribeDBParameterGroups {
     _private: (),
 }
 impl DescribeDBParameterGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsInput`](crate::input::DescribeDbParameterGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsInput`](crate::input::DescribeDbParameterGroupsInput).
     pub fn builder() -> crate::input::describe_db_parameter_groups_input::Builder {
         crate::input::describe_db_parameter_groups_input::Builder::default()
     }
@@ -2044,7 +2044,7 @@ pub struct DescribeDBParameters {
     _private: (),
 }
 impl DescribeDBParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeDbParametersInput`](crate::input::DescribeDbParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbParametersInput`](crate::input::DescribeDbParametersInput).
     pub fn builder() -> crate::input::describe_db_parameters_input::Builder {
         crate::input::describe_db_parameters_input::Builder::default()
     }
@@ -2078,7 +2078,7 @@ pub struct DescribeDBProxies {
     _private: (),
 }
 impl DescribeDBProxies {
-    /// Creates a new builder-style object to manufacture [`DescribeDbProxiesInput`](crate::input::DescribeDbProxiesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxiesInput`](crate::input::DescribeDbProxiesInput).
     pub fn builder() -> crate::input::describe_db_proxies_input::Builder {
         crate::input::describe_db_proxies_input::Builder::default()
     }
@@ -2112,7 +2112,7 @@ pub struct DescribeDBProxyEndpoints {
     _private: (),
 }
 impl DescribeDBProxyEndpoints {
-    /// Creates a new builder-style object to manufacture [`DescribeDbProxyEndpointsInput`](crate::input::DescribeDbProxyEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxyEndpointsInput`](crate::input::DescribeDbProxyEndpointsInput).
     pub fn builder() -> crate::input::describe_db_proxy_endpoints_input::Builder {
         crate::input::describe_db_proxy_endpoints_input::Builder::default()
     }
@@ -2146,7 +2146,7 @@ pub struct DescribeDBProxyTargetGroups {
     _private: (),
 }
 impl DescribeDBProxyTargetGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetGroupsInput`](crate::input::DescribeDbProxyTargetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetGroupsInput`](crate::input::DescribeDbProxyTargetGroupsInput).
     pub fn builder() -> crate::input::describe_db_proxy_target_groups_input::Builder {
         crate::input::describe_db_proxy_target_groups_input::Builder::default()
     }
@@ -2180,7 +2180,7 @@ pub struct DescribeDBProxyTargets {
     _private: (),
 }
 impl DescribeDBProxyTargets {
-    /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetsInput`](crate::input::DescribeDbProxyTargetsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetsInput`](crate::input::DescribeDbProxyTargetsInput).
     pub fn builder() -> crate::input::describe_db_proxy_targets_input::Builder {
         crate::input::describe_db_proxy_targets_input::Builder::default()
     }
@@ -2214,7 +2214,7 @@ pub struct DescribeDBSecurityGroups {
     _private: (),
 }
 impl DescribeDBSecurityGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDbSecurityGroupsInput`](crate::input::DescribeDbSecurityGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSecurityGroupsInput`](crate::input::DescribeDbSecurityGroupsInput).
     pub fn builder() -> crate::input::describe_db_security_groups_input::Builder {
         crate::input::describe_db_security_groups_input::Builder::default()
     }
@@ -2248,7 +2248,7 @@ pub struct DescribeDBSnapshotAttributes {
     _private: (),
 }
 impl DescribeDBSnapshotAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotAttributesInput`](crate::input::DescribeDbSnapshotAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotAttributesInput`](crate::input::DescribeDbSnapshotAttributesInput).
     pub fn builder() -> crate::input::describe_db_snapshot_attributes_input::Builder {
         crate::input::describe_db_snapshot_attributes_input::Builder::default()
     }
@@ -2282,7 +2282,7 @@ pub struct DescribeDBSnapshots {
     _private: (),
 }
 impl DescribeDBSnapshots {
-    /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotsInput`](crate::input::DescribeDbSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotsInput`](crate::input::DescribeDbSnapshotsInput).
     pub fn builder() -> crate::input::describe_db_snapshots_input::Builder {
         crate::input::describe_db_snapshots_input::Builder::default()
     }
@@ -2316,7 +2316,7 @@ pub struct DescribeDBSubnetGroups {
     _private: (),
 }
 impl DescribeDBSubnetGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsInput`](crate::input::DescribeDbSubnetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsInput`](crate::input::DescribeDbSubnetGroupsInput).
     pub fn builder() -> crate::input::describe_db_subnet_groups_input::Builder {
         crate::input::describe_db_subnet_groups_input::Builder::default()
     }
@@ -2350,7 +2350,7 @@ pub struct DescribeEngineDefaultClusterParameters {
     _private: (),
 }
 impl DescribeEngineDefaultClusterParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersInput`](crate::input::DescribeEngineDefaultClusterParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersInput`](crate::input::DescribeEngineDefaultClusterParametersInput).
     pub fn builder() -> crate::input::describe_engine_default_cluster_parameters_input::Builder {
         crate::input::describe_engine_default_cluster_parameters_input::Builder::default()
     }
@@ -2386,7 +2386,7 @@ pub struct DescribeEngineDefaultParameters {
     _private: (),
 }
 impl DescribeEngineDefaultParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput).
     pub fn builder() -> crate::input::describe_engine_default_parameters_input::Builder {
         crate::input::describe_engine_default_parameters_input::Builder::default()
     }
@@ -2420,7 +2420,7 @@ pub struct DescribeEventCategories {
     _private: (),
 }
 impl DescribeEventCategories {
-    /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesInput`](crate::input::DescribeEventCategoriesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesInput`](crate::input::DescribeEventCategoriesInput).
     pub fn builder() -> crate::input::describe_event_categories_input::Builder {
         crate::input::describe_event_categories_input::Builder::default()
     }
@@ -2454,7 +2454,7 @@ pub struct DescribeEvents {
     _private: (),
 }
 impl DescribeEvents {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput).
     pub fn builder() -> crate::input::describe_events_input::Builder {
         crate::input::describe_events_input::Builder::default()
     }
@@ -2486,7 +2486,7 @@ pub struct DescribeEventSubscriptions {
     _private: (),
 }
 impl DescribeEventSubscriptions {
-    /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput).
     pub fn builder() -> crate::input::describe_event_subscriptions_input::Builder {
         crate::input::describe_event_subscriptions_input::Builder::default()
     }
@@ -2520,7 +2520,7 @@ pub struct DescribeExportTasks {
     _private: (),
 }
 impl DescribeExportTasks {
-    /// Creates a new builder-style object to manufacture [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput)
+    /// Creates a new builder-style object to manufacture [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput).
     pub fn builder() -> crate::input::describe_export_tasks_input::Builder {
         crate::input::describe_export_tasks_input::Builder::default()
     }
@@ -2554,7 +2554,7 @@ pub struct DescribeGlobalClusters {
     _private: (),
 }
 impl DescribeGlobalClusters {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersInput`](crate::input::DescribeGlobalClustersInput).
     pub fn builder() -> crate::input::describe_global_clusters_input::Builder {
         crate::input::describe_global_clusters_input::Builder::default()
     }
@@ -2588,7 +2588,7 @@ pub struct DescribeOptionGroupOptions {
     _private: (),
 }
 impl DescribeOptionGroupOptions {
-    /// Creates a new builder-style object to manufacture [`DescribeOptionGroupOptionsInput`](crate::input::DescribeOptionGroupOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOptionGroupOptionsInput`](crate::input::DescribeOptionGroupOptionsInput).
     pub fn builder() -> crate::input::describe_option_group_options_input::Builder {
         crate::input::describe_option_group_options_input::Builder::default()
     }
@@ -2622,7 +2622,7 @@ pub struct DescribeOptionGroups {
     _private: (),
 }
 impl DescribeOptionGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeOptionGroupsInput`](crate::input::DescribeOptionGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOptionGroupsInput`](crate::input::DescribeOptionGroupsInput).
     pub fn builder() -> crate::input::describe_option_groups_input::Builder {
         crate::input::describe_option_groups_input::Builder::default()
     }
@@ -2656,7 +2656,7 @@ pub struct DescribeOrderableDBInstanceOptions {
     _private: (),
 }
 impl DescribeOrderableDBInstanceOptions {
-    /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsInput`](crate::input::DescribeOrderableDbInstanceOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsInput`](crate::input::DescribeOrderableDbInstanceOptionsInput).
     pub fn builder() -> crate::input::describe_orderable_db_instance_options_input::Builder {
         crate::input::describe_orderable_db_instance_options_input::Builder::default()
     }
@@ -2690,7 +2690,7 @@ pub struct DescribePendingMaintenanceActions {
     _private: (),
 }
 impl DescribePendingMaintenanceActions {
-    /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsInput`](crate::input::DescribePendingMaintenanceActionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsInput`](crate::input::DescribePendingMaintenanceActionsInput).
     pub fn builder() -> crate::input::describe_pending_maintenance_actions_input::Builder {
         crate::input::describe_pending_maintenance_actions_input::Builder::default()
     }
@@ -2724,7 +2724,7 @@ pub struct DescribeReservedDBInstances {
     _private: (),
 }
 impl DescribeReservedDBInstances {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesInput`](crate::input::DescribeReservedDbInstancesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesInput`](crate::input::DescribeReservedDbInstancesInput).
     pub fn builder() -> crate::input::describe_reserved_db_instances_input::Builder {
         crate::input::describe_reserved_db_instances_input::Builder::default()
     }
@@ -2758,7 +2758,7 @@ pub struct DescribeReservedDBInstancesOfferings {
     _private: (),
 }
 impl DescribeReservedDBInstancesOfferings {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOfferingsInput`](crate::input::DescribeReservedDbInstancesOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOfferingsInput`](crate::input::DescribeReservedDbInstancesOfferingsInput).
     pub fn builder() -> crate::input::describe_reserved_db_instances_offerings_input::Builder {
         crate::input::describe_reserved_db_instances_offerings_input::Builder::default()
     }
@@ -2794,7 +2794,7 @@ pub struct DescribeSourceRegions {
     _private: (),
 }
 impl DescribeSourceRegions {
-    /// Creates a new builder-style object to manufacture [`DescribeSourceRegionsInput`](crate::input::DescribeSourceRegionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSourceRegionsInput`](crate::input::DescribeSourceRegionsInput).
     pub fn builder() -> crate::input::describe_source_regions_input::Builder {
         crate::input::describe_source_regions_input::Builder::default()
     }
@@ -2828,7 +2828,7 @@ pub struct DescribeValidDBInstanceModifications {
     _private: (),
 }
 impl DescribeValidDBInstanceModifications {
-    /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsInput`](crate::input::DescribeValidDbInstanceModificationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsInput`](crate::input::DescribeValidDbInstanceModificationsInput).
     pub fn builder() -> crate::input::describe_valid_db_instance_modifications_input::Builder {
         crate::input::describe_valid_db_instance_modifications_input::Builder::default()
     }
@@ -2864,7 +2864,7 @@ pub struct DownloadDBLogFilePortion {
     _private: (),
 }
 impl DownloadDBLogFilePortion {
-    /// Creates a new builder-style object to manufacture [`DownloadDbLogFilePortionInput`](crate::input::DownloadDbLogFilePortionInput)
+    /// Creates a new builder-style object to manufacture [`DownloadDbLogFilePortionInput`](crate::input::DownloadDbLogFilePortionInput).
     pub fn builder() -> crate::input::download_db_log_file_portion_input::Builder {
         crate::input::download_db_log_file_portion_input::Builder::default()
     }
@@ -2898,7 +2898,7 @@ pub struct FailoverDBCluster {
     _private: (),
 }
 impl FailoverDBCluster {
-    /// Creates a new builder-style object to manufacture [`FailoverDbClusterInput`](crate::input::FailoverDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`FailoverDbClusterInput`](crate::input::FailoverDbClusterInput).
     pub fn builder() -> crate::input::failover_db_cluster_input::Builder {
         crate::input::failover_db_cluster_input::Builder::default()
     }
@@ -2932,7 +2932,7 @@ pub struct FailoverGlobalCluster {
     _private: (),
 }
 impl FailoverGlobalCluster {
-    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput)
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterInput`](crate::input::FailoverGlobalClusterInput).
     pub fn builder() -> crate::input::failover_global_cluster_input::Builder {
         crate::input::failover_global_cluster_input::Builder::default()
     }
@@ -2966,7 +2966,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -3000,7 +3000,7 @@ pub struct ModifyCertificates {
     _private: (),
 }
 impl ModifyCertificates {
-    /// Creates a new builder-style object to manufacture [`ModifyCertificatesInput`](crate::input::ModifyCertificatesInput)
+    /// Creates a new builder-style object to manufacture [`ModifyCertificatesInput`](crate::input::ModifyCertificatesInput).
     pub fn builder() -> crate::input::modify_certificates_input::Builder {
         crate::input::modify_certificates_input::Builder::default()
     }
@@ -3034,7 +3034,7 @@ pub struct ModifyCurrentDBClusterCapacity {
     _private: (),
 }
 impl ModifyCurrentDBClusterCapacity {
-    /// Creates a new builder-style object to manufacture [`ModifyCurrentDbClusterCapacityInput`](crate::input::ModifyCurrentDbClusterCapacityInput)
+    /// Creates a new builder-style object to manufacture [`ModifyCurrentDbClusterCapacityInput`](crate::input::ModifyCurrentDbClusterCapacityInput).
     pub fn builder() -> crate::input::modify_current_db_cluster_capacity_input::Builder {
         crate::input::modify_current_db_cluster_capacity_input::Builder::default()
     }
@@ -3068,7 +3068,7 @@ pub struct ModifyCustomDBEngineVersion {
     _private: (),
 }
 impl ModifyCustomDBEngineVersion {
-    /// Creates a new builder-style object to manufacture [`ModifyCustomDbEngineVersionInput`](crate::input::ModifyCustomDbEngineVersionInput)
+    /// Creates a new builder-style object to manufacture [`ModifyCustomDbEngineVersionInput`](crate::input::ModifyCustomDbEngineVersionInput).
     pub fn builder() -> crate::input::modify_custom_db_engine_version_input::Builder {
         crate::input::modify_custom_db_engine_version_input::Builder::default()
     }
@@ -3102,7 +3102,7 @@ pub struct ModifyDBCluster {
     _private: (),
 }
 impl ModifyDBCluster {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput).
     pub fn builder() -> crate::input::modify_db_cluster_input::Builder {
         crate::input::modify_db_cluster_input::Builder::default()
     }
@@ -3136,7 +3136,7 @@ pub struct ModifyDBClusterEndpoint {
     _private: (),
 }
 impl ModifyDBClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointInput`](crate::input::ModifyDbClusterEndpointInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointInput`](crate::input::ModifyDbClusterEndpointInput).
     pub fn builder() -> crate::input::modify_db_cluster_endpoint_input::Builder {
         crate::input::modify_db_cluster_endpoint_input::Builder::default()
     }
@@ -3170,7 +3170,7 @@ pub struct ModifyDBClusterParameterGroup {
     _private: (),
 }
 impl ModifyDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupInput`](crate::input::ModifyDbClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupInput`](crate::input::ModifyDbClusterParameterGroupInput).
     pub fn builder() -> crate::input::modify_db_cluster_parameter_group_input::Builder {
         crate::input::modify_db_cluster_parameter_group_input::Builder::default()
     }
@@ -3204,7 +3204,7 @@ pub struct ModifyDBClusterSnapshotAttribute {
     _private: (),
 }
 impl ModifyDBClusterSnapshotAttribute {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeInput`](crate::input::ModifyDbClusterSnapshotAttributeInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeInput`](crate::input::ModifyDbClusterSnapshotAttributeInput).
     pub fn builder() -> crate::input::modify_db_cluster_snapshot_attribute_input::Builder {
         crate::input::modify_db_cluster_snapshot_attribute_input::Builder::default()
     }
@@ -3238,7 +3238,7 @@ pub struct ModifyDBInstance {
     _private: (),
 }
 impl ModifyDBInstance {
-    /// Creates a new builder-style object to manufacture [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput).
     pub fn builder() -> crate::input::modify_db_instance_input::Builder {
         crate::input::modify_db_instance_input::Builder::default()
     }
@@ -3272,7 +3272,7 @@ pub struct ModifyDBParameterGroup {
     _private: (),
 }
 impl ModifyDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupInput`](crate::input::ModifyDbParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupInput`](crate::input::ModifyDbParameterGroupInput).
     pub fn builder() -> crate::input::modify_db_parameter_group_input::Builder {
         crate::input::modify_db_parameter_group_input::Builder::default()
     }
@@ -3306,7 +3306,7 @@ pub struct ModifyDBProxy {
     _private: (),
 }
 impl ModifyDBProxy {
-    /// Creates a new builder-style object to manufacture [`ModifyDbProxyInput`](crate::input::ModifyDbProxyInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbProxyInput`](crate::input::ModifyDbProxyInput).
     pub fn builder() -> crate::input::modify_db_proxy_input::Builder {
         crate::input::modify_db_proxy_input::Builder::default()
     }
@@ -3338,7 +3338,7 @@ pub struct ModifyDBProxyEndpoint {
     _private: (),
 }
 impl ModifyDBProxyEndpoint {
-    /// Creates a new builder-style object to manufacture [`ModifyDbProxyEndpointInput`](crate::input::ModifyDbProxyEndpointInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbProxyEndpointInput`](crate::input::ModifyDbProxyEndpointInput).
     pub fn builder() -> crate::input::modify_db_proxy_endpoint_input::Builder {
         crate::input::modify_db_proxy_endpoint_input::Builder::default()
     }
@@ -3372,7 +3372,7 @@ pub struct ModifyDBProxyTargetGroup {
     _private: (),
 }
 impl ModifyDBProxyTargetGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDbProxyTargetGroupInput`](crate::input::ModifyDbProxyTargetGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbProxyTargetGroupInput`](crate::input::ModifyDbProxyTargetGroupInput).
     pub fn builder() -> crate::input::modify_db_proxy_target_group_input::Builder {
         crate::input::modify_db_proxy_target_group_input::Builder::default()
     }
@@ -3406,7 +3406,7 @@ pub struct ModifyDBSnapshot {
     _private: (),
 }
 impl ModifyDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotInput`](crate::input::ModifyDbSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotInput`](crate::input::ModifyDbSnapshotInput).
     pub fn builder() -> crate::input::modify_db_snapshot_input::Builder {
         crate::input::modify_db_snapshot_input::Builder::default()
     }
@@ -3440,7 +3440,7 @@ pub struct ModifyDBSnapshotAttribute {
     _private: (),
 }
 impl ModifyDBSnapshotAttribute {
-    /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotAttributeInput`](crate::input::ModifyDbSnapshotAttributeInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotAttributeInput`](crate::input::ModifyDbSnapshotAttributeInput).
     pub fn builder() -> crate::input::modify_db_snapshot_attribute_input::Builder {
         crate::input::modify_db_snapshot_attribute_input::Builder::default()
     }
@@ -3474,7 +3474,7 @@ pub struct ModifyDBSubnetGroup {
     _private: (),
 }
 impl ModifyDBSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupInput`](crate::input::ModifyDbSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupInput`](crate::input::ModifyDbSubnetGroupInput).
     pub fn builder() -> crate::input::modify_db_subnet_group_input::Builder {
         crate::input::modify_db_subnet_group_input::Builder::default()
     }
@@ -3508,7 +3508,7 @@ pub struct ModifyEventSubscription {
     _private: (),
 }
 impl ModifyEventSubscription {
-    /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionInput`](crate::input::ModifyEventSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionInput`](crate::input::ModifyEventSubscriptionInput).
     pub fn builder() -> crate::input::modify_event_subscription_input::Builder {
         crate::input::modify_event_subscription_input::Builder::default()
     }
@@ -3542,7 +3542,7 @@ pub struct ModifyGlobalCluster {
     _private: (),
 }
 impl ModifyGlobalCluster {
-    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput)
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterInput`](crate::input::ModifyGlobalClusterInput).
     pub fn builder() -> crate::input::modify_global_cluster_input::Builder {
         crate::input::modify_global_cluster_input::Builder::default()
     }
@@ -3576,7 +3576,7 @@ pub struct ModifyOptionGroup {
     _private: (),
 }
 impl ModifyOptionGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyOptionGroupInput`](crate::input::ModifyOptionGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyOptionGroupInput`](crate::input::ModifyOptionGroupInput).
     pub fn builder() -> crate::input::modify_option_group_input::Builder {
         crate::input::modify_option_group_input::Builder::default()
     }
@@ -3610,7 +3610,7 @@ pub struct PromoteReadReplica {
     _private: (),
 }
 impl PromoteReadReplica {
-    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaInput`](crate::input::PromoteReadReplicaInput)
+    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaInput`](crate::input::PromoteReadReplicaInput).
     pub fn builder() -> crate::input::promote_read_replica_input::Builder {
         crate::input::promote_read_replica_input::Builder::default()
     }
@@ -3644,7 +3644,7 @@ pub struct PromoteReadReplicaDBCluster {
     _private: (),
 }
 impl PromoteReadReplicaDBCluster {
-    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterInput`](crate::input::PromoteReadReplicaDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterInput`](crate::input::PromoteReadReplicaDbClusterInput).
     pub fn builder() -> crate::input::promote_read_replica_db_cluster_input::Builder {
         crate::input::promote_read_replica_db_cluster_input::Builder::default()
     }
@@ -3678,7 +3678,7 @@ pub struct PurchaseReservedDBInstancesOffering {
     _private: (),
 }
 impl PurchaseReservedDBInstancesOffering {
-    /// Creates a new builder-style object to manufacture [`PurchaseReservedDbInstancesOfferingInput`](crate::input::PurchaseReservedDbInstancesOfferingInput)
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedDbInstancesOfferingInput`](crate::input::PurchaseReservedDbInstancesOfferingInput).
     pub fn builder() -> crate::input::purchase_reserved_db_instances_offering_input::Builder {
         crate::input::purchase_reserved_db_instances_offering_input::Builder::default()
     }
@@ -3712,7 +3712,7 @@ pub struct RebootDBCluster {
     _private: (),
 }
 impl RebootDBCluster {
-    /// Creates a new builder-style object to manufacture [`RebootDbClusterInput`](crate::input::RebootDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`RebootDbClusterInput`](crate::input::RebootDbClusterInput).
     pub fn builder() -> crate::input::reboot_db_cluster_input::Builder {
         crate::input::reboot_db_cluster_input::Builder::default()
     }
@@ -3746,7 +3746,7 @@ pub struct RebootDBInstance {
     _private: (),
 }
 impl RebootDBInstance {
-    /// Creates a new builder-style object to manufacture [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput).
     pub fn builder() -> crate::input::reboot_db_instance_input::Builder {
         crate::input::reboot_db_instance_input::Builder::default()
     }
@@ -3780,7 +3780,7 @@ pub struct RegisterDBProxyTargets {
     _private: (),
 }
 impl RegisterDBProxyTargets {
-    /// Creates a new builder-style object to manufacture [`RegisterDbProxyTargetsInput`](crate::input::RegisterDbProxyTargetsInput)
+    /// Creates a new builder-style object to manufacture [`RegisterDbProxyTargetsInput`](crate::input::RegisterDbProxyTargetsInput).
     pub fn builder() -> crate::input::register_db_proxy_targets_input::Builder {
         crate::input::register_db_proxy_targets_input::Builder::default()
     }
@@ -3814,7 +3814,7 @@ pub struct RemoveFromGlobalCluster {
     _private: (),
 }
 impl RemoveFromGlobalCluster {
-    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput)
+    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterInput`](crate::input::RemoveFromGlobalClusterInput).
     pub fn builder() -> crate::input::remove_from_global_cluster_input::Builder {
         crate::input::remove_from_global_cluster_input::Builder::default()
     }
@@ -3848,7 +3848,7 @@ pub struct RemoveRoleFromDBCluster {
     _private: (),
 }
 impl RemoveRoleFromDBCluster {
-    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterInput`](crate::input::RemoveRoleFromDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterInput`](crate::input::RemoveRoleFromDbClusterInput).
     pub fn builder() -> crate::input::remove_role_from_db_cluster_input::Builder {
         crate::input::remove_role_from_db_cluster_input::Builder::default()
     }
@@ -3882,7 +3882,7 @@ pub struct RemoveRoleFromDBInstance {
     _private: (),
 }
 impl RemoveRoleFromDBInstance {
-    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbInstanceInput`](crate::input::RemoveRoleFromDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbInstanceInput`](crate::input::RemoveRoleFromDbInstanceInput).
     pub fn builder() -> crate::input::remove_role_from_db_instance_input::Builder {
         crate::input::remove_role_from_db_instance_input::Builder::default()
     }
@@ -3916,7 +3916,7 @@ pub struct RemoveSourceIdentifierFromSubscription {
     _private: (),
 }
 impl RemoveSourceIdentifierFromSubscription {
-    /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionInput`](crate::input::RemoveSourceIdentifierFromSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionInput`](crate::input::RemoveSourceIdentifierFromSubscriptionInput).
     pub fn builder() -> crate::input::remove_source_identifier_from_subscription_input::Builder {
         crate::input::remove_source_identifier_from_subscription_input::Builder::default()
     }
@@ -3952,7 +3952,7 @@ pub struct RemoveTagsFromResource {
     _private: (),
 }
 impl RemoveTagsFromResource {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
     pub fn builder() -> crate::input::remove_tags_from_resource_input::Builder {
         crate::input::remove_tags_from_resource_input::Builder::default()
     }
@@ -3986,7 +3986,7 @@ pub struct ResetDBClusterParameterGroup {
     _private: (),
 }
 impl ResetDBClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupInput`](crate::input::ResetDbClusterParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupInput`](crate::input::ResetDbClusterParameterGroupInput).
     pub fn builder() -> crate::input::reset_db_cluster_parameter_group_input::Builder {
         crate::input::reset_db_cluster_parameter_group_input::Builder::default()
     }
@@ -4020,7 +4020,7 @@ pub struct ResetDBParameterGroup {
     _private: (),
 }
 impl ResetDBParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupInput`](crate::input::ResetDbParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupInput`](crate::input::ResetDbParameterGroupInput).
     pub fn builder() -> crate::input::reset_db_parameter_group_input::Builder {
         crate::input::reset_db_parameter_group_input::Builder::default()
     }
@@ -4054,7 +4054,7 @@ pub struct RestoreDBClusterFromS3 {
     _private: (),
 }
 impl RestoreDBClusterFromS3 {
-    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromS3Input`](crate::input::RestoreDbClusterFromS3Input)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromS3Input`](crate::input::RestoreDbClusterFromS3Input).
     pub fn builder() -> crate::input::restore_db_cluster_from_s3_input::Builder {
         crate::input::restore_db_cluster_from_s3_input::Builder::default()
     }
@@ -4088,7 +4088,7 @@ pub struct RestoreDBClusterFromSnapshot {
     _private: (),
 }
 impl RestoreDBClusterFromSnapshot {
-    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput).
     pub fn builder() -> crate::input::restore_db_cluster_from_snapshot_input::Builder {
         crate::input::restore_db_cluster_from_snapshot_input::Builder::default()
     }
@@ -4122,7 +4122,7 @@ pub struct RestoreDBClusterToPointInTime {
     _private: (),
 }
 impl RestoreDBClusterToPointInTime {
-    /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput).
     pub fn builder() -> crate::input::restore_db_cluster_to_point_in_time_input::Builder {
         crate::input::restore_db_cluster_to_point_in_time_input::Builder::default()
     }
@@ -4156,7 +4156,7 @@ pub struct RestoreDBInstanceFromDBSnapshot {
     _private: (),
 }
 impl RestoreDBInstanceFromDBSnapshot {
-    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromDbSnapshotInput`](crate::input::RestoreDbInstanceFromDbSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromDbSnapshotInput`](crate::input::RestoreDbInstanceFromDbSnapshotInput).
     pub fn builder() -> crate::input::restore_db_instance_from_db_snapshot_input::Builder {
         crate::input::restore_db_instance_from_db_snapshot_input::Builder::default()
     }
@@ -4190,7 +4190,7 @@ pub struct RestoreDBInstanceFromS3 {
     _private: (),
 }
 impl RestoreDBInstanceFromS3 {
-    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromS3Input`](crate::input::RestoreDbInstanceFromS3Input)
+    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromS3Input`](crate::input::RestoreDbInstanceFromS3Input).
     pub fn builder() -> crate::input::restore_db_instance_from_s3_input::Builder {
         crate::input::restore_db_instance_from_s3_input::Builder::default()
     }
@@ -4224,7 +4224,7 @@ pub struct RestoreDBInstanceToPointInTime {
     _private: (),
 }
 impl RestoreDBInstanceToPointInTime {
-    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceToPointInTimeInput`](crate::input::RestoreDbInstanceToPointInTimeInput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbInstanceToPointInTimeInput`](crate::input::RestoreDbInstanceToPointInTimeInput).
     pub fn builder() -> crate::input::restore_db_instance_to_point_in_time_input::Builder {
         crate::input::restore_db_instance_to_point_in_time_input::Builder::default()
     }
@@ -4258,7 +4258,7 @@ pub struct RevokeDBSecurityGroupIngress {
     _private: (),
 }
 impl RevokeDBSecurityGroupIngress {
-    /// Creates a new builder-style object to manufacture [`RevokeDbSecurityGroupIngressInput`](crate::input::RevokeDbSecurityGroupIngressInput)
+    /// Creates a new builder-style object to manufacture [`RevokeDbSecurityGroupIngressInput`](crate::input::RevokeDbSecurityGroupIngressInput).
     pub fn builder() -> crate::input::revoke_db_security_group_ingress_input::Builder {
         crate::input::revoke_db_security_group_ingress_input::Builder::default()
     }
@@ -4292,7 +4292,7 @@ pub struct StartActivityStream {
     _private: (),
 }
 impl StartActivityStream {
-    /// Creates a new builder-style object to manufacture [`StartActivityStreamInput`](crate::input::StartActivityStreamInput)
+    /// Creates a new builder-style object to manufacture [`StartActivityStreamInput`](crate::input::StartActivityStreamInput).
     pub fn builder() -> crate::input::start_activity_stream_input::Builder {
         crate::input::start_activity_stream_input::Builder::default()
     }
@@ -4326,7 +4326,7 @@ pub struct StartDBCluster {
     _private: (),
 }
 impl StartDBCluster {
-    /// Creates a new builder-style object to manufacture [`StartDbClusterInput`](crate::input::StartDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`StartDbClusterInput`](crate::input::StartDbClusterInput).
     pub fn builder() -> crate::input::start_db_cluster_input::Builder {
         crate::input::start_db_cluster_input::Builder::default()
     }
@@ -4358,7 +4358,7 @@ pub struct StartDBInstance {
     _private: (),
 }
 impl StartDBInstance {
-    /// Creates a new builder-style object to manufacture [`StartDbInstanceInput`](crate::input::StartDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`StartDbInstanceInput`](crate::input::StartDbInstanceInput).
     pub fn builder() -> crate::input::start_db_instance_input::Builder {
         crate::input::start_db_instance_input::Builder::default()
     }
@@ -4392,7 +4392,7 @@ pub struct StartDBInstanceAutomatedBackupsReplication {
     _private: (),
 }
 impl StartDBInstanceAutomatedBackupsReplication {
-    /// Creates a new builder-style object to manufacture [`StartDbInstanceAutomatedBackupsReplicationInput`](crate::input::StartDbInstanceAutomatedBackupsReplicationInput)
+    /// Creates a new builder-style object to manufacture [`StartDbInstanceAutomatedBackupsReplicationInput`](crate::input::StartDbInstanceAutomatedBackupsReplicationInput).
     pub fn builder() -> crate::input::start_db_instance_automated_backups_replication_input::Builder
     {
         crate::input::start_db_instance_automated_backups_replication_input::Builder::default()
@@ -4431,7 +4431,7 @@ pub struct StartExportTask {
     _private: (),
 }
 impl StartExportTask {
-    /// Creates a new builder-style object to manufacture [`StartExportTaskInput`](crate::input::StartExportTaskInput)
+    /// Creates a new builder-style object to manufacture [`StartExportTaskInput`](crate::input::StartExportTaskInput).
     pub fn builder() -> crate::input::start_export_task_input::Builder {
         crate::input::start_export_task_input::Builder::default()
     }
@@ -4465,7 +4465,7 @@ pub struct StopActivityStream {
     _private: (),
 }
 impl StopActivityStream {
-    /// Creates a new builder-style object to manufacture [`StopActivityStreamInput`](crate::input::StopActivityStreamInput)
+    /// Creates a new builder-style object to manufacture [`StopActivityStreamInput`](crate::input::StopActivityStreamInput).
     pub fn builder() -> crate::input::stop_activity_stream_input::Builder {
         crate::input::stop_activity_stream_input::Builder::default()
     }
@@ -4499,7 +4499,7 @@ pub struct StopDBCluster {
     _private: (),
 }
 impl StopDBCluster {
-    /// Creates a new builder-style object to manufacture [`StopDbClusterInput`](crate::input::StopDbClusterInput)
+    /// Creates a new builder-style object to manufacture [`StopDbClusterInput`](crate::input::StopDbClusterInput).
     pub fn builder() -> crate::input::stop_db_cluster_input::Builder {
         crate::input::stop_db_cluster_input::Builder::default()
     }
@@ -4531,7 +4531,7 @@ pub struct StopDBInstance {
     _private: (),
 }
 impl StopDBInstance {
-    /// Creates a new builder-style object to manufacture [`StopDbInstanceInput`](crate::input::StopDbInstanceInput)
+    /// Creates a new builder-style object to manufacture [`StopDbInstanceInput`](crate::input::StopDbInstanceInput).
     pub fn builder() -> crate::input::stop_db_instance_input::Builder {
         crate::input::stop_db_instance_input::Builder::default()
     }
@@ -4563,7 +4563,7 @@ pub struct StopDBInstanceAutomatedBackupsReplication {
     _private: (),
 }
 impl StopDBInstanceAutomatedBackupsReplication {
-    /// Creates a new builder-style object to manufacture [`StopDbInstanceAutomatedBackupsReplicationInput`](crate::input::StopDbInstanceAutomatedBackupsReplicationInput)
+    /// Creates a new builder-style object to manufacture [`StopDbInstanceAutomatedBackupsReplicationInput`](crate::input::StopDbInstanceAutomatedBackupsReplicationInput).
     pub fn builder() -> crate::input::stop_db_instance_automated_backups_replication_input::Builder
     {
         crate::input::stop_db_instance_automated_backups_replication_input::Builder::default()

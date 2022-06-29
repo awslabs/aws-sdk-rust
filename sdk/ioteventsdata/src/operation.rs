@@ -10,7 +10,7 @@ pub struct BatchAcknowledgeAlarm {
     _private: (),
 }
 impl BatchAcknowledgeAlarm {
-    /// Creates a new builder-style object to manufacture [`BatchAcknowledgeAlarmInput`](crate::input::BatchAcknowledgeAlarmInput)
+    /// Creates a new builder-style object to manufacture [`BatchAcknowledgeAlarmInput`](crate::input::BatchAcknowledgeAlarmInput).
     pub fn builder() -> crate::input::batch_acknowledge_alarm_input::Builder {
         crate::input::batch_acknowledge_alarm_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchDeleteDetector {
     _private: (),
 }
 impl BatchDeleteDetector {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorInput`](crate::input::BatchDeleteDetectorInput).
     pub fn builder() -> crate::input::batch_delete_detector_input::Builder {
         crate::input::batch_delete_detector_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchDisableAlarm {
     _private: (),
 }
 impl BatchDisableAlarm {
-    /// Creates a new builder-style object to manufacture [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput)
+    /// Creates a new builder-style object to manufacture [`BatchDisableAlarmInput`](crate::input::BatchDisableAlarmInput).
     pub fn builder() -> crate::input::batch_disable_alarm_input::Builder {
         crate::input::batch_disable_alarm_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct BatchEnableAlarm {
     _private: (),
 }
 impl BatchEnableAlarm {
-    /// Creates a new builder-style object to manufacture [`BatchEnableAlarmInput`](crate::input::BatchEnableAlarmInput)
+    /// Creates a new builder-style object to manufacture [`BatchEnableAlarmInput`](crate::input::BatchEnableAlarmInput).
     pub fn builder() -> crate::input::batch_enable_alarm_input::Builder {
         crate::input::batch_enable_alarm_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct BatchPutMessage {
     _private: (),
 }
 impl BatchPutMessage {
-    /// Creates a new builder-style object to manufacture [`BatchPutMessageInput`](crate::input::BatchPutMessageInput)
+    /// Creates a new builder-style object to manufacture [`BatchPutMessageInput`](crate::input::BatchPutMessageInput).
     pub fn builder() -> crate::input::batch_put_message_input::Builder {
         crate::input::batch_put_message_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct BatchResetAlarm {
     _private: (),
 }
 impl BatchResetAlarm {
-    /// Creates a new builder-style object to manufacture [`BatchResetAlarmInput`](crate::input::BatchResetAlarmInput)
+    /// Creates a new builder-style object to manufacture [`BatchResetAlarmInput`](crate::input::BatchResetAlarmInput).
     pub fn builder() -> crate::input::batch_reset_alarm_input::Builder {
         crate::input::batch_reset_alarm_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct BatchSnoozeAlarm {
     _private: (),
 }
 impl BatchSnoozeAlarm {
-    /// Creates a new builder-style object to manufacture [`BatchSnoozeAlarmInput`](crate::input::BatchSnoozeAlarmInput)
+    /// Creates a new builder-style object to manufacture [`BatchSnoozeAlarmInput`](crate::input::BatchSnoozeAlarmInput).
     pub fn builder() -> crate::input::batch_snooze_alarm_input::Builder {
         crate::input::batch_snooze_alarm_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct BatchUpdateDetector {
     _private: (),
 }
 impl BatchUpdateDetector {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorInput`](crate::input::BatchUpdateDetectorInput)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorInput`](crate::input::BatchUpdateDetectorInput).
     pub fn builder() -> crate::input::batch_update_detector_input::Builder {
         crate::input::batch_update_detector_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DescribeAlarm {
     _private: (),
 }
 impl DescribeAlarm {
-    /// Creates a new builder-style object to manufacture [`DescribeAlarmInput`](crate::input::DescribeAlarmInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAlarmInput`](crate::input::DescribeAlarmInput).
     pub fn builder() -> crate::input::describe_alarm_input::Builder {
         crate::input::describe_alarm_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct DescribeDetector {
     _private: (),
 }
 impl DescribeDetector {
-    /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::input::DescribeDetectorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::input::DescribeDetectorInput).
     pub fn builder() -> crate::input::describe_detector_input::Builder {
         crate::input::describe_detector_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct ListAlarms {
     _private: (),
 }
 impl ListAlarms {
-    /// Creates a new builder-style object to manufacture [`ListAlarmsInput`](crate::input::ListAlarmsInput)
+    /// Creates a new builder-style object to manufacture [`ListAlarmsInput`](crate::input::ListAlarmsInput).
     pub fn builder() -> crate::input::list_alarms_input::Builder {
         crate::input::list_alarms_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct ListDetectors {
     _private: (),
 }
 impl ListDetectors {
-    /// Creates a new builder-style object to manufacture [`ListDetectorsInput`](crate::input::ListDetectorsInput)
+    /// Creates a new builder-style object to manufacture [`ListDetectorsInput`](crate::input::ListDetectorsInput).
     pub fn builder() -> crate::input::list_detectors_input::Builder {
         crate::input::list_detectors_input::Builder::default()
     }

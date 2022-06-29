@@ -10,7 +10,7 @@ pub struct CancelCluster {
     _private: (),
 }
 impl CancelCluster {
-    /// Creates a new builder-style object to manufacture [`CancelClusterInput`](crate::input::CancelClusterInput)
+    /// Creates a new builder-style object to manufacture [`CancelClusterInput`](crate::input::CancelClusterInput).
     pub fn builder() -> crate::input::cancel_cluster_input::Builder {
         crate::input::cancel_cluster_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CancelJob {
     _private: (),
 }
 impl CancelJob {
-    /// Creates a new builder-style object to manufacture [`CancelJobInput`](crate::input::CancelJobInput)
+    /// Creates a new builder-style object to manufacture [`CancelJobInput`](crate::input::CancelJobInput).
     pub fn builder() -> crate::input::cancel_job_input::Builder {
         crate::input::cancel_job_input::Builder::default()
     }
@@ -73,7 +73,7 @@ pub struct CreateAddress {
     _private: (),
 }
 impl CreateAddress {
-    /// Creates a new builder-style object to manufacture [`CreateAddressInput`](crate::input::CreateAddressInput)
+    /// Creates a new builder-style object to manufacture [`CreateAddressInput`](crate::input::CreateAddressInput).
     pub fn builder() -> crate::input::create_address_input::Builder {
         crate::input::create_address_input::Builder::default()
     }
@@ -105,7 +105,7 @@ pub struct CreateCluster {
     _private: (),
 }
 impl CreateCluster {
-    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput).
     pub fn builder() -> crate::input::create_cluster_input::Builder {
         crate::input::create_cluster_input::Builder::default()
     }
@@ -137,7 +137,7 @@ pub struct CreateJob {
     _private: (),
 }
 impl CreateJob {
-    /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput).
     pub fn builder() -> crate::input::create_job_input::Builder {
         crate::input::create_job_input::Builder::default()
     }
@@ -168,7 +168,7 @@ pub struct CreateLongTermPricing {
     _private: (),
 }
 impl CreateLongTermPricing {
-    /// Creates a new builder-style object to manufacture [`CreateLongTermPricingInput`](crate::input::CreateLongTermPricingInput)
+    /// Creates a new builder-style object to manufacture [`CreateLongTermPricingInput`](crate::input::CreateLongTermPricingInput).
     pub fn builder() -> crate::input::create_long_term_pricing_input::Builder {
         crate::input::create_long_term_pricing_input::Builder::default()
     }
@@ -202,7 +202,7 @@ pub struct CreateReturnShippingLabel {
     _private: (),
 }
 impl CreateReturnShippingLabel {
-    /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelInput`](crate::input::CreateReturnShippingLabelInput)
+    /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelInput`](crate::input::CreateReturnShippingLabelInput).
     pub fn builder() -> crate::input::create_return_shipping_label_input::Builder {
         crate::input::create_return_shipping_label_input::Builder::default()
     }
@@ -236,7 +236,7 @@ pub struct DescribeAddress {
     _private: (),
 }
 impl DescribeAddress {
-    /// Creates a new builder-style object to manufacture [`DescribeAddressInput`](crate::input::DescribeAddressInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAddressInput`](crate::input::DescribeAddressInput).
     pub fn builder() -> crate::input::describe_address_input::Builder {
         crate::input::describe_address_input::Builder::default()
     }
@@ -270,7 +270,7 @@ pub struct DescribeAddresses {
     _private: (),
 }
 impl DescribeAddresses {
-    /// Creates a new builder-style object to manufacture [`DescribeAddressesInput`](crate::input::DescribeAddressesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAddressesInput`](crate::input::DescribeAddressesInput).
     pub fn builder() -> crate::input::describe_addresses_input::Builder {
         crate::input::describe_addresses_input::Builder::default()
     }
@@ -304,7 +304,7 @@ pub struct DescribeCluster {
     _private: (),
 }
 impl DescribeCluster {
-    /// Creates a new builder-style object to manufacture [`DescribeClusterInput`](crate::input::DescribeClusterInput)
+    /// Creates a new builder-style object to manufacture [`DescribeClusterInput`](crate::input::DescribeClusterInput).
     pub fn builder() -> crate::input::describe_cluster_input::Builder {
         crate::input::describe_cluster_input::Builder::default()
     }
@@ -338,7 +338,7 @@ pub struct DescribeJob {
     _private: (),
 }
 impl DescribeJob {
-    /// Creates a new builder-style object to manufacture [`DescribeJobInput`](crate::input::DescribeJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeJobInput`](crate::input::DescribeJobInput).
     pub fn builder() -> crate::input::describe_job_input::Builder {
         crate::input::describe_job_input::Builder::default()
     }
@@ -370,7 +370,7 @@ pub struct DescribeReturnShippingLabel {
     _private: (),
 }
 impl DescribeReturnShippingLabel {
-    /// Creates a new builder-style object to manufacture [`DescribeReturnShippingLabelInput`](crate::input::DescribeReturnShippingLabelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReturnShippingLabelInput`](crate::input::DescribeReturnShippingLabelInput).
     pub fn builder() -> crate::input::describe_return_shipping_label_input::Builder {
         crate::input::describe_return_shipping_label_input::Builder::default()
     }
@@ -404,7 +404,7 @@ pub struct GetJobManifest {
     _private: (),
 }
 impl GetJobManifest {
-    /// Creates a new builder-style object to manufacture [`GetJobManifestInput`](crate::input::GetJobManifestInput)
+    /// Creates a new builder-style object to manufacture [`GetJobManifestInput`](crate::input::GetJobManifestInput).
     pub fn builder() -> crate::input::get_job_manifest_input::Builder {
         crate::input::get_job_manifest_input::Builder::default()
     }
@@ -436,7 +436,7 @@ pub struct GetJobUnlockCode {
     _private: (),
 }
 impl GetJobUnlockCode {
-    /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeInput`](crate::input::GetJobUnlockCodeInput)
+    /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeInput`](crate::input::GetJobUnlockCodeInput).
     pub fn builder() -> crate::input::get_job_unlock_code_input::Builder {
         crate::input::get_job_unlock_code_input::Builder::default()
     }
@@ -470,7 +470,7 @@ pub struct GetSnowballUsage {
     _private: (),
 }
 impl GetSnowballUsage {
-    /// Creates a new builder-style object to manufacture [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput)
+    /// Creates a new builder-style object to manufacture [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput).
     pub fn builder() -> crate::input::get_snowball_usage_input::Builder {
         crate::input::get_snowball_usage_input::Builder::default()
     }
@@ -504,7 +504,7 @@ pub struct GetSoftwareUpdates {
     _private: (),
 }
 impl GetSoftwareUpdates {
-    /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesInput`](crate::input::GetSoftwareUpdatesInput)
+    /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesInput`](crate::input::GetSoftwareUpdatesInput).
     pub fn builder() -> crate::input::get_software_updates_input::Builder {
         crate::input::get_software_updates_input::Builder::default()
     }
@@ -538,7 +538,7 @@ pub struct ListClusterJobs {
     _private: (),
 }
 impl ListClusterJobs {
-    /// Creates a new builder-style object to manufacture [`ListClusterJobsInput`](crate::input::ListClusterJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListClusterJobsInput`](crate::input::ListClusterJobsInput).
     pub fn builder() -> crate::input::list_cluster_jobs_input::Builder {
         crate::input::list_cluster_jobs_input::Builder::default()
     }
@@ -572,7 +572,7 @@ pub struct ListClusters {
     _private: (),
 }
 impl ListClusters {
-    /// Creates a new builder-style object to manufacture [`ListClustersInput`](crate::input::ListClustersInput)
+    /// Creates a new builder-style object to manufacture [`ListClustersInput`](crate::input::ListClustersInput).
     pub fn builder() -> crate::input::list_clusters_input::Builder {
         crate::input::list_clusters_input::Builder::default()
     }
@@ -604,7 +604,7 @@ pub struct ListCompatibleImages {
     _private: (),
 }
 impl ListCompatibleImages {
-    /// Creates a new builder-style object to manufacture [`ListCompatibleImagesInput`](crate::input::ListCompatibleImagesInput)
+    /// Creates a new builder-style object to manufacture [`ListCompatibleImagesInput`](crate::input::ListCompatibleImagesInput).
     pub fn builder() -> crate::input::list_compatible_images_input::Builder {
         crate::input::list_compatible_images_input::Builder::default()
     }
@@ -638,7 +638,7 @@ pub struct ListJobs {
     _private: (),
 }
 impl ListJobs {
-    /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput).
     pub fn builder() -> crate::input::list_jobs_input::Builder {
         crate::input::list_jobs_input::Builder::default()
     }
@@ -669,7 +669,7 @@ pub struct ListLongTermPricing {
     _private: (),
 }
 impl ListLongTermPricing {
-    /// Creates a new builder-style object to manufacture [`ListLongTermPricingInput`](crate::input::ListLongTermPricingInput)
+    /// Creates a new builder-style object to manufacture [`ListLongTermPricingInput`](crate::input::ListLongTermPricingInput).
     pub fn builder() -> crate::input::list_long_term_pricing_input::Builder {
         crate::input::list_long_term_pricing_input::Builder::default()
     }
@@ -703,7 +703,7 @@ pub struct UpdateCluster {
     _private: (),
 }
 impl UpdateCluster {
-    /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::input::UpdateClusterInput)
+    /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::input::UpdateClusterInput).
     pub fn builder() -> crate::input::update_cluster_input::Builder {
         crate::input::update_cluster_input::Builder::default()
     }
@@ -735,7 +735,7 @@ pub struct UpdateJob {
     _private: (),
 }
 impl UpdateJob {
-    /// Creates a new builder-style object to manufacture [`UpdateJobInput`](crate::input::UpdateJobInput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobInput`](crate::input::UpdateJobInput).
     pub fn builder() -> crate::input::update_job_input::Builder {
         crate::input::update_job_input::Builder::default()
     }
@@ -766,7 +766,7 @@ pub struct UpdateJobShipmentState {
     _private: (),
 }
 impl UpdateJobShipmentState {
-    /// Creates a new builder-style object to manufacture [`UpdateJobShipmentStateInput`](crate::input::UpdateJobShipmentStateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobShipmentStateInput`](crate::input::UpdateJobShipmentStateInput).
     pub fn builder() -> crate::input::update_job_shipment_state_input::Builder {
         crate::input::update_job_shipment_state_input::Builder::default()
     }
@@ -800,7 +800,7 @@ pub struct UpdateLongTermPricing {
     _private: (),
 }
 impl UpdateLongTermPricing {
-    /// Creates a new builder-style object to manufacture [`UpdateLongTermPricingInput`](crate::input::UpdateLongTermPricingInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLongTermPricingInput`](crate::input::UpdateLongTermPricingInput).
     pub fn builder() -> crate::input::update_long_term_pricing_input::Builder {
         crate::input::update_long_term_pricing_input::Builder::default()
     }

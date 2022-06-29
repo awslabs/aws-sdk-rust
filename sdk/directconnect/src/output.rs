@@ -221,11 +221,10 @@ impl std::fmt::Debug for UpdateVirtualInterfaceAttributesOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput)
+/// See [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
 pub mod update_virtual_interface_attributes_output {
 
-    /// A builder for [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -614,7 +613,7 @@ pub mod update_virtual_interface_attributes_output {
             self.site_link_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput)
+        /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
         pub fn build(self) -> crate::output::UpdateVirtualInterfaceAttributesOutput {
             crate::output::UpdateVirtualInterfaceAttributesOutput {
                 owner_account: self.owner_account,
@@ -648,7 +647,7 @@ pub mod update_virtual_interface_attributes_output {
     }
 }
 impl UpdateVirtualInterfaceAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
     pub fn builder() -> crate::output::update_virtual_interface_attributes_output::Builder {
         crate::output::update_virtual_interface_attributes_output::Builder::default()
     }
@@ -836,11 +835,10 @@ impl std::fmt::Debug for UpdateLagOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateLagOutput`](crate::output::UpdateLagOutput)
+/// See [`UpdateLagOutput`](crate::output::UpdateLagOutput).
 pub mod update_lag_output {
 
-    /// A builder for [`UpdateLagOutput`](crate::output::UpdateLagOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateLagOutput`](crate::output::UpdateLagOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
@@ -1144,7 +1142,7 @@ pub mod update_lag_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateLagOutput`](crate::output::UpdateLagOutput)
+        /// Consumes the builder and constructs a [`UpdateLagOutput`](crate::output::UpdateLagOutput).
         pub fn build(self) -> crate::output::UpdateLagOutput {
             crate::output::UpdateLagOutput {
                 connections_bandwidth: self.connections_bandwidth,
@@ -1173,7 +1171,7 @@ pub mod update_lag_output {
     }
 }
 impl UpdateLagOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLagOutput`](crate::output::UpdateLagOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateLagOutput`](crate::output::UpdateLagOutput).
     pub fn builder() -> crate::output::update_lag_output::Builder {
         crate::output::update_lag_output::Builder::default()
     }
@@ -1205,11 +1203,10 @@ impl std::fmt::Debug for UpdateDirectConnectGatewayAssociationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput)
+/// See [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
 pub mod update_direct_connect_gateway_association_output {
 
-    /// A builder for [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
@@ -1232,7 +1229,7 @@ pub mod update_direct_connect_gateway_association_output {
             self.direct_connect_gateway_association = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput)
+        /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::UpdateDirectConnectGatewayAssociationOutput {
             crate::output::UpdateDirectConnectGatewayAssociationOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
@@ -1241,7 +1238,7 @@ pub mod update_direct_connect_gateway_association_output {
     }
 }
 impl UpdateDirectConnectGatewayAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
     pub fn builder() -> crate::output::update_direct_connect_gateway_association_output::Builder {
         crate::output::update_direct_connect_gateway_association_output::Builder::default()
     }
@@ -1269,11 +1266,10 @@ impl std::fmt::Debug for UpdateDirectConnectGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
+/// See [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
 pub mod update_direct_connect_gateway_output {
 
-    /// A builder for [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
@@ -1292,7 +1288,7 @@ pub mod update_direct_connect_gateway_output {
             self.direct_connect_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
+        /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::UpdateDirectConnectGatewayOutput {
             crate::output::UpdateDirectConnectGatewayOutput {
                 direct_connect_gateway: self.direct_connect_gateway,
@@ -1301,7 +1297,7 @@ pub mod update_direct_connect_gateway_output {
     }
 }
 impl UpdateDirectConnectGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
     pub fn builder() -> crate::output::update_direct_connect_gateway_output::Builder {
         crate::output::update_direct_connect_gateway_output::Builder::default()
     }
@@ -1502,11 +1498,10 @@ impl std::fmt::Debug for UpdateConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
+/// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
 pub mod update_connection_output {
 
-    /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -1830,7 +1825,7 @@ pub mod update_connection_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
+        /// Consumes the builder and constructs a [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
         pub fn build(self) -> crate::output::UpdateConnectionOutput {
             crate::output::UpdateConnectionOutput {
                 owner_account: self.owner_account,
@@ -1860,7 +1855,7 @@ pub mod update_connection_output {
     }
 }
 impl UpdateConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
     pub fn builder() -> crate::output::update_connection_output::Builder {
         crate::output::update_connection_output::Builder::default()
     }
@@ -1876,22 +1871,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -1907,22 +1901,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -1950,11 +1943,10 @@ impl std::fmt::Debug for StopBgpFailoverTestOutput {
         formatter.finish()
     }
 }
-/// See [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput)
+/// See [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
 pub mod stop_bgp_failover_test_output {
 
-    /// A builder for [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test:
@@ -1977,7 +1969,7 @@ pub mod stop_bgp_failover_test_output {
             self.virtual_interface_test = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput)
+        /// Consumes the builder and constructs a [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
         pub fn build(self) -> crate::output::StopBgpFailoverTestOutput {
             crate::output::StopBgpFailoverTestOutput {
                 virtual_interface_test: self.virtual_interface_test,
@@ -1986,7 +1978,7 @@ pub mod stop_bgp_failover_test_output {
     }
 }
 impl StopBgpFailoverTestOutput {
-    /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput)
+    /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
     pub fn builder() -> crate::output::stop_bgp_failover_test_output::Builder {
         crate::output::stop_bgp_failover_test_output::Builder::default()
     }
@@ -2014,11 +2006,10 @@ impl std::fmt::Debug for StartBgpFailoverTestOutput {
         formatter.finish()
     }
 }
-/// See [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput)
+/// See [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
 pub mod start_bgp_failover_test_output {
 
-    /// A builder for [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test:
@@ -2041,7 +2032,7 @@ pub mod start_bgp_failover_test_output {
             self.virtual_interface_test = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput)
+        /// Consumes the builder and constructs a [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
         pub fn build(self) -> crate::output::StartBgpFailoverTestOutput {
             crate::output::StartBgpFailoverTestOutput {
                 virtual_interface_test: self.virtual_interface_test,
@@ -2050,7 +2041,7 @@ pub mod start_bgp_failover_test_output {
     }
 }
 impl StartBgpFailoverTestOutput {
-    /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput)
+    /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
     pub fn builder() -> crate::output::start_bgp_failover_test_output::Builder {
         crate::output::start_bgp_failover_test_output::Builder::default()
     }
@@ -2089,11 +2080,10 @@ impl std::fmt::Debug for ListVirtualInterfaceTestHistoryOutput {
         formatter.finish()
     }
 }
-/// See [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput)
+/// See [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
 pub mod list_virtual_interface_test_history_output {
 
-    /// A builder for [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_test_history:
@@ -2133,7 +2123,7 @@ pub mod list_virtual_interface_test_history_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput)
+        /// Consumes the builder and constructs a [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
         pub fn build(self) -> crate::output::ListVirtualInterfaceTestHistoryOutput {
             crate::output::ListVirtualInterfaceTestHistoryOutput {
                 virtual_interface_test_history: self.virtual_interface_test_history,
@@ -2143,7 +2133,7 @@ pub mod list_virtual_interface_test_history_output {
     }
 }
 impl ListVirtualInterfaceTestHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
     pub fn builder() -> crate::output::list_virtual_interface_test_history_output::Builder {
         crate::output::list_virtual_interface_test_history_output::Builder::default()
     }
@@ -2176,11 +2166,10 @@ impl std::fmt::Debug for DisassociateMacSecKeyOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput)
+/// See [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
 pub mod disassociate_mac_sec_key_output {
 
-    /// A builder for [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -2219,7 +2208,7 @@ pub mod disassociate_mac_sec_key_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput)
+        /// Consumes the builder and constructs a [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
         pub fn build(self) -> crate::output::DisassociateMacSecKeyOutput {
             crate::output::DisassociateMacSecKeyOutput {
                 connection_id: self.connection_id,
@@ -2229,7 +2218,7 @@ pub mod disassociate_mac_sec_key_output {
     }
 }
 impl DisassociateMacSecKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
     pub fn builder() -> crate::output::disassociate_mac_sec_key_output::Builder {
         crate::output::disassociate_mac_sec_key_output::Builder::default()
     }
@@ -2430,11 +2419,10 @@ impl std::fmt::Debug for DisassociateConnectionFromLagOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput)
+/// See [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
 pub mod disassociate_connection_from_lag_output {
 
-    /// A builder for [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -2758,7 +2746,7 @@ pub mod disassociate_connection_from_lag_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput)
+        /// Consumes the builder and constructs a [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
         pub fn build(self) -> crate::output::DisassociateConnectionFromLagOutput {
             crate::output::DisassociateConnectionFromLagOutput {
                 owner_account: self.owner_account,
@@ -2788,7 +2776,7 @@ pub mod disassociate_connection_from_lag_output {
     }
 }
 impl DisassociateConnectionFromLagOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
     pub fn builder() -> crate::output::disassociate_connection_from_lag_output::Builder {
         crate::output::disassociate_connection_from_lag_output::Builder::default()
     }
@@ -2814,11 +2802,10 @@ impl std::fmt::Debug for DescribeVirtualInterfacesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput)
+/// See [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
 pub mod describe_virtual_interfaces_output {
 
-    /// A builder for [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interfaces:
@@ -2844,7 +2831,7 @@ pub mod describe_virtual_interfaces_output {
             self.virtual_interfaces = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput)
+        /// Consumes the builder and constructs a [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
         pub fn build(self) -> crate::output::DescribeVirtualInterfacesOutput {
             crate::output::DescribeVirtualInterfacesOutput {
                 virtual_interfaces: self.virtual_interfaces,
@@ -2853,7 +2840,7 @@ pub mod describe_virtual_interfaces_output {
     }
 }
 impl DescribeVirtualInterfacesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
     pub fn builder() -> crate::output::describe_virtual_interfaces_output::Builder {
         crate::output::describe_virtual_interfaces_output::Builder::default()
     }
@@ -2879,11 +2866,10 @@ impl std::fmt::Debug for DescribeVirtualGatewaysOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput)
+/// See [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
 pub mod describe_virtual_gateways_output {
 
-    /// A builder for [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateways:
@@ -2909,7 +2895,7 @@ pub mod describe_virtual_gateways_output {
             self.virtual_gateways = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput)
+        /// Consumes the builder and constructs a [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
         pub fn build(self) -> crate::output::DescribeVirtualGatewaysOutput {
             crate::output::DescribeVirtualGatewaysOutput {
                 virtual_gateways: self.virtual_gateways,
@@ -2918,7 +2904,7 @@ pub mod describe_virtual_gateways_output {
     }
 }
 impl DescribeVirtualGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
     pub fn builder() -> crate::output::describe_virtual_gateways_output::Builder {
         crate::output::describe_virtual_gateways_output::Builder::default()
     }
@@ -2944,11 +2930,10 @@ impl std::fmt::Debug for DescribeTagsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
+/// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
 
-    /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -2973,7 +2958,7 @@ pub mod describe_tags_output {
             self.resource_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
+        /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
         pub fn build(self) -> crate::output::DescribeTagsOutput {
             crate::output::DescribeTagsOutput {
                 resource_tags: self.resource_tags,
@@ -2982,7 +2967,7 @@ pub mod describe_tags_output {
     }
 }
 impl DescribeTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
     pub fn builder() -> crate::output::describe_tags_output::Builder {
         crate::output::describe_tags_output::Builder::default()
     }
@@ -3029,11 +3014,10 @@ impl std::fmt::Debug for DescribeRouterConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
+/// See [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
 pub mod describe_router_configuration_output {
 
-    /// A builder for [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) customer_router_config: std::option::Option<std::string::String>,
@@ -3091,7 +3075,7 @@ pub mod describe_router_configuration_output {
             self.virtual_interface_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
+        /// Consumes the builder and constructs a [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeRouterConfigurationOutput {
             crate::output::DescribeRouterConfigurationOutput {
                 customer_router_config: self.customer_router_config,
@@ -3103,7 +3087,7 @@ pub mod describe_router_configuration_output {
     }
 }
 impl DescribeRouterConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
     pub fn builder() -> crate::output::describe_router_configuration_output::Builder {
         crate::output::describe_router_configuration_output::Builder::default()
     }
@@ -3129,11 +3113,10 @@ impl std::fmt::Debug for DescribeLocationsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput)
+/// See [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
 pub mod describe_locations_output {
 
-    /// A builder for [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
@@ -3158,7 +3141,7 @@ pub mod describe_locations_output {
             self.locations = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput)
+        /// Consumes the builder and constructs a [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
         pub fn build(self) -> crate::output::DescribeLocationsOutput {
             crate::output::DescribeLocationsOutput {
                 locations: self.locations,
@@ -3167,7 +3150,7 @@ pub mod describe_locations_output {
     }
 }
 impl DescribeLocationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
     pub fn builder() -> crate::output::describe_locations_output::Builder {
         crate::output::describe_locations_output::Builder::default()
     }
@@ -3200,11 +3183,10 @@ impl std::fmt::Debug for DescribeLoaOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeLoaOutput`](crate::output::DescribeLoaOutput)
+/// See [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
 pub mod describe_loa_output {
 
-    /// A builder for [`DescribeLoaOutput`](crate::output::DescribeLoaOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa_content: std::option::Option<aws_smithy_types::Blob>,
@@ -3237,7 +3219,7 @@ pub mod describe_loa_output {
             self.loa_content_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeLoaOutput`](crate::output::DescribeLoaOutput)
+        /// Consumes the builder and constructs a [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
         pub fn build(self) -> crate::output::DescribeLoaOutput {
             crate::output::DescribeLoaOutput {
                 loa_content: self.loa_content,
@@ -3247,7 +3229,7 @@ pub mod describe_loa_output {
     }
 }
 impl DescribeLoaOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLoaOutput`](crate::output::DescribeLoaOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
     pub fn builder() -> crate::output::describe_loa_output::Builder {
         crate::output::describe_loa_output::Builder::default()
     }
@@ -3273,11 +3255,10 @@ impl std::fmt::Debug for DescribeLagsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeLagsOutput`](crate::output::DescribeLagsOutput)
+/// See [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
 pub mod describe_lags_output {
 
-    /// A builder for [`DescribeLagsOutput`](crate::output::DescribeLagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lags: std::option::Option<std::vec::Vec<crate::model::Lag>>,
@@ -3302,14 +3283,14 @@ pub mod describe_lags_output {
             self.lags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeLagsOutput`](crate::output::DescribeLagsOutput)
+        /// Consumes the builder and constructs a [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
         pub fn build(self) -> crate::output::DescribeLagsOutput {
             crate::output::DescribeLagsOutput { lags: self.lags }
         }
     }
 }
 impl DescribeLagsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLagsOutput`](crate::output::DescribeLagsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
     pub fn builder() -> crate::output::describe_lags_output::Builder {
         crate::output::describe_lags_output::Builder::default()
     }
@@ -3335,11 +3316,10 @@ impl std::fmt::Debug for DescribeInterconnectsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput)
+/// See [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
 pub mod describe_interconnects_output {
 
-    /// A builder for [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnects: std::option::Option<std::vec::Vec<crate::model::Interconnect>>,
@@ -3364,7 +3344,7 @@ pub mod describe_interconnects_output {
             self.interconnects = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput)
+        /// Consumes the builder and constructs a [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
         pub fn build(self) -> crate::output::DescribeInterconnectsOutput {
             crate::output::DescribeInterconnectsOutput {
                 interconnects: self.interconnects,
@@ -3373,7 +3353,7 @@ pub mod describe_interconnects_output {
     }
 }
 impl DescribeInterconnectsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
     pub fn builder() -> crate::output::describe_interconnects_output::Builder {
         crate::output::describe_interconnects_output::Builder::default()
     }
@@ -3399,11 +3379,10 @@ impl std::fmt::Debug for DescribeInterconnectLoaOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput)
+/// See [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
 pub mod describe_interconnect_loa_output {
 
-    /// A builder for [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
@@ -3419,14 +3398,14 @@ pub mod describe_interconnect_loa_output {
             self.loa = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput)
+        /// Consumes the builder and constructs a [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
         pub fn build(self) -> crate::output::DescribeInterconnectLoaOutput {
             crate::output::DescribeInterconnectLoaOutput { loa: self.loa }
         }
     }
 }
 impl DescribeInterconnectLoaOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
     pub fn builder() -> crate::output::describe_interconnect_loa_output::Builder {
         crate::output::describe_interconnect_loa_output::Builder::default()
     }
@@ -3452,11 +3431,10 @@ impl std::fmt::Debug for DescribeHostedConnectionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput)
+/// See [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
 pub mod describe_hosted_connections_output {
 
-    /// A builder for [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -3481,7 +3459,7 @@ pub mod describe_hosted_connections_output {
             self.connections = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput)
+        /// Consumes the builder and constructs a [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeHostedConnectionsOutput {
             crate::output::DescribeHostedConnectionsOutput {
                 connections: self.connections,
@@ -3490,7 +3468,7 @@ pub mod describe_hosted_connections_output {
     }
 }
 impl DescribeHostedConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
     pub fn builder() -> crate::output::describe_hosted_connections_output::Builder {
         crate::output::describe_hosted_connections_output::Builder::default()
     }
@@ -3526,11 +3504,10 @@ impl std::fmt::Debug for DescribeDirectConnectGatewaysOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput)
+/// See [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
 pub mod describe_direct_connect_gateways_output {
 
-    /// A builder for [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateways:
@@ -3570,7 +3547,7 @@ pub mod describe_direct_connect_gateways_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput)
+        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewaysOutput {
             crate::output::DescribeDirectConnectGatewaysOutput {
                 direct_connect_gateways: self.direct_connect_gateways,
@@ -3580,7 +3557,7 @@ pub mod describe_direct_connect_gateways_output {
     }
 }
 impl DescribeDirectConnectGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
     pub fn builder() -> crate::output::describe_direct_connect_gateways_output::Builder {
         crate::output::describe_direct_connect_gateways_output::Builder::default()
     }
@@ -3619,11 +3596,10 @@ impl std::fmt::Debug for DescribeDirectConnectGatewayAttachmentsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput)
+/// See [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
 pub mod describe_direct_connect_gateway_attachments_output {
 
-    /// A builder for [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_attachments:
@@ -3663,7 +3639,7 @@ pub mod describe_direct_connect_gateway_attachments_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput)
+        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewayAttachmentsOutput {
             crate::output::DescribeDirectConnectGatewayAttachmentsOutput {
                 direct_connect_gateway_attachments: self.direct_connect_gateway_attachments,
@@ -3673,7 +3649,7 @@ pub mod describe_direct_connect_gateway_attachments_output {
     }
 }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
     pub fn builder() -> crate::output::describe_direct_connect_gateway_attachments_output::Builder {
         crate::output::describe_direct_connect_gateway_attachments_output::Builder::default()
     }
@@ -3712,11 +3688,10 @@ impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput)
+/// See [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
 pub mod describe_direct_connect_gateway_associations_output {
 
-    /// A builder for [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_associations:
@@ -3758,7 +3733,7 @@ pub mod describe_direct_connect_gateway_associations_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput)
+        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewayAssociationsOutput {
             crate::output::DescribeDirectConnectGatewayAssociationsOutput {
                 direct_connect_gateway_associations: self.direct_connect_gateway_associations,
@@ -3768,7 +3743,7 @@ pub mod describe_direct_connect_gateway_associations_output {
     }
 }
 impl DescribeDirectConnectGatewayAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
     pub fn builder() -> crate::output::describe_direct_connect_gateway_associations_output::Builder
     {
         crate::output::describe_direct_connect_gateway_associations_output::Builder::default()
@@ -3809,11 +3784,10 @@ impl std::fmt::Debug for DescribeDirectConnectGatewayAssociationProposalsOutput 
         formatter.finish()
     }
 }
-/// See [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput)
+/// See [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
 pub mod describe_direct_connect_gateway_association_proposals_output {
 
-    /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposals: std::option::Option<
@@ -3858,7 +3832,7 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput)
+        /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
         pub fn build(
             self,
         ) -> crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput {
@@ -3871,7 +3845,7 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
     }
 }
 impl DescribeDirectConnectGatewayAssociationProposalsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
     pub fn builder(
     ) -> crate::output::describe_direct_connect_gateway_association_proposals_output::Builder {
         crate::output::describe_direct_connect_gateway_association_proposals_output::Builder::default()
@@ -3915,11 +3889,10 @@ impl std::fmt::Debug for DescribeCustomerMetadataOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
+/// See [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
 pub mod describe_customer_metadata_output {
 
-    /// A builder for [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
@@ -3968,7 +3941,7 @@ pub mod describe_customer_metadata_output {
             self.nni_partner_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
+        /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
         pub fn build(self) -> crate::output::DescribeCustomerMetadataOutput {
             crate::output::DescribeCustomerMetadataOutput {
                 agreements: self.agreements,
@@ -3978,7 +3951,7 @@ pub mod describe_customer_metadata_output {
     }
 }
 impl DescribeCustomerMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
     pub fn builder() -> crate::output::describe_customer_metadata_output::Builder {
         crate::output::describe_customer_metadata_output::Builder::default()
     }
@@ -4004,11 +3977,10 @@ impl std::fmt::Debug for DescribeConnectionsOnInterconnectOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput)
+/// See [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
 pub mod describe_connections_on_interconnect_output {
 
-    /// A builder for [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -4033,7 +4005,7 @@ pub mod describe_connections_on_interconnect_output {
             self.connections = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput)
+        /// Consumes the builder and constructs a [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
         pub fn build(self) -> crate::output::DescribeConnectionsOnInterconnectOutput {
             crate::output::DescribeConnectionsOnInterconnectOutput {
                 connections: self.connections,
@@ -4042,7 +4014,7 @@ pub mod describe_connections_on_interconnect_output {
     }
 }
 impl DescribeConnectionsOnInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
     pub fn builder() -> crate::output::describe_connections_on_interconnect_output::Builder {
         crate::output::describe_connections_on_interconnect_output::Builder::default()
     }
@@ -4068,11 +4040,10 @@ impl std::fmt::Debug for DescribeConnectionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput)
+/// See [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
 pub mod describe_connections_output {
 
-    /// A builder for [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -4097,7 +4068,7 @@ pub mod describe_connections_output {
             self.connections = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput)
+        /// Consumes the builder and constructs a [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeConnectionsOutput {
             crate::output::DescribeConnectionsOutput {
                 connections: self.connections,
@@ -4106,7 +4077,7 @@ pub mod describe_connections_output {
     }
 }
 impl DescribeConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
     pub fn builder() -> crate::output::describe_connections_output::Builder {
         crate::output::describe_connections_output::Builder::default()
     }
@@ -4132,11 +4103,10 @@ impl std::fmt::Debug for DescribeConnectionLoaOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput)
+/// See [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
 pub mod describe_connection_loa_output {
 
-    /// A builder for [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
@@ -4152,14 +4122,14 @@ pub mod describe_connection_loa_output {
             self.loa = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput)
+        /// Consumes the builder and constructs a [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
         pub fn build(self) -> crate::output::DescribeConnectionLoaOutput {
             crate::output::DescribeConnectionLoaOutput { loa: self.loa }
         }
     }
 }
 impl DescribeConnectionLoaOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
     pub fn builder() -> crate::output::describe_connection_loa_output::Builder {
         crate::output::describe_connection_loa_output::Builder::default()
     }
@@ -4209,11 +4179,10 @@ impl std::fmt::Debug for DeleteVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput)
+/// See [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
 pub mod delete_virtual_interface_output {
 
-    /// A builder for [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
@@ -4258,7 +4227,7 @@ pub mod delete_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::DeleteVirtualInterfaceOutput {
             crate::output::DeleteVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
@@ -4267,7 +4236,7 @@ pub mod delete_virtual_interface_output {
     }
 }
 impl DeleteVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
     pub fn builder() -> crate::output::delete_virtual_interface_output::Builder {
         crate::output::delete_virtual_interface_output::Builder::default()
     }
@@ -4455,11 +4424,10 @@ impl std::fmt::Debug for DeleteLagOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteLagOutput`](crate::output::DeleteLagOutput)
+/// See [`DeleteLagOutput`](crate::output::DeleteLagOutput).
 pub mod delete_lag_output {
 
-    /// A builder for [`DeleteLagOutput`](crate::output::DeleteLagOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteLagOutput`](crate::output::DeleteLagOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
@@ -4763,7 +4731,7 @@ pub mod delete_lag_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteLagOutput`](crate::output::DeleteLagOutput)
+        /// Consumes the builder and constructs a [`DeleteLagOutput`](crate::output::DeleteLagOutput).
         pub fn build(self) -> crate::output::DeleteLagOutput {
             crate::output::DeleteLagOutput {
                 connections_bandwidth: self.connections_bandwidth,
@@ -4792,7 +4760,7 @@ pub mod delete_lag_output {
     }
 }
 impl DeleteLagOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLagOutput`](crate::output::DeleteLagOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteLagOutput`](crate::output::DeleteLagOutput).
     pub fn builder() -> crate::output::delete_lag_output::Builder {
         crate::output::delete_lag_output::Builder::default()
     }
@@ -4836,11 +4804,10 @@ impl std::fmt::Debug for DeleteInterconnectOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput)
+/// See [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
 pub mod delete_interconnect_output {
 
-    /// A builder for [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_state: std::option::Option<crate::model::InterconnectState>,
@@ -4877,7 +4844,7 @@ pub mod delete_interconnect_output {
             self.interconnect_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput)
+        /// Consumes the builder and constructs a [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
         pub fn build(self) -> crate::output::DeleteInterconnectOutput {
             crate::output::DeleteInterconnectOutput {
                 interconnect_state: self.interconnect_state,
@@ -4886,7 +4853,7 @@ pub mod delete_interconnect_output {
     }
 }
 impl DeleteInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
     pub fn builder() -> crate::output::delete_interconnect_output::Builder {
         crate::output::delete_interconnect_output::Builder::default()
     }
@@ -4918,11 +4885,10 @@ impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationProposalOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput)
+/// See [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
 pub mod delete_direct_connect_gateway_association_proposal_output {
 
-    /// A builder for [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal:
@@ -4945,7 +4911,7 @@ pub mod delete_direct_connect_gateway_association_proposal_output {
             self.direct_connect_gateway_association_proposal = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput)
+        /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayAssociationProposalOutput {
             crate::output::DeleteDirectConnectGatewayAssociationProposalOutput {
                 direct_connect_gateway_association_proposal: self
@@ -4955,7 +4921,7 @@ pub mod delete_direct_connect_gateway_association_proposal_output {
     }
 }
 impl DeleteDirectConnectGatewayAssociationProposalOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
     pub fn builder(
     ) -> crate::output::delete_direct_connect_gateway_association_proposal_output::Builder {
         crate::output::delete_direct_connect_gateway_association_proposal_output::Builder::default()
@@ -4988,11 +4954,10 @@ impl std::fmt::Debug for DeleteDirectConnectGatewayAssociationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput)
+/// See [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
 pub mod delete_direct_connect_gateway_association_output {
 
-    /// A builder for [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
@@ -5015,7 +4980,7 @@ pub mod delete_direct_connect_gateway_association_output {
             self.direct_connect_gateway_association = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput)
+        /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayAssociationOutput {
             crate::output::DeleteDirectConnectGatewayAssociationOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
@@ -5024,7 +4989,7 @@ pub mod delete_direct_connect_gateway_association_output {
     }
 }
 impl DeleteDirectConnectGatewayAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
     pub fn builder() -> crate::output::delete_direct_connect_gateway_association_output::Builder {
         crate::output::delete_direct_connect_gateway_association_output::Builder::default()
     }
@@ -5052,11 +5017,10 @@ impl std::fmt::Debug for DeleteDirectConnectGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput)
+/// See [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
 pub mod delete_direct_connect_gateway_output {
 
-    /// A builder for [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
@@ -5075,7 +5039,7 @@ pub mod delete_direct_connect_gateway_output {
             self.direct_connect_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput)
+        /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayOutput {
             crate::output::DeleteDirectConnectGatewayOutput {
                 direct_connect_gateway: self.direct_connect_gateway,
@@ -5084,7 +5048,7 @@ pub mod delete_direct_connect_gateway_output {
     }
 }
 impl DeleteDirectConnectGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
     pub fn builder() -> crate::output::delete_direct_connect_gateway_output::Builder {
         crate::output::delete_direct_connect_gateway_output::Builder::default()
     }
@@ -5285,11 +5249,10 @@ impl std::fmt::Debug for DeleteConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+/// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
 
-    /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -5613,7 +5576,7 @@ pub mod delete_connection_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+        /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
             crate::output::DeleteConnectionOutput {
                 owner_account: self.owner_account,
@@ -5643,7 +5606,7 @@ pub mod delete_connection_output {
     }
 }
 impl DeleteConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     pub fn builder() -> crate::output::delete_connection_output::Builder {
         crate::output::delete_connection_output::Builder::default()
     }
@@ -5669,11 +5632,10 @@ impl std::fmt::Debug for DeleteBgpPeerOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput)
+/// See [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
 pub mod delete_bgp_peer_output {
 
-    /// A builder for [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -5692,7 +5654,7 @@ pub mod delete_bgp_peer_output {
             self.virtual_interface = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput)
+        /// Consumes the builder and constructs a [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
         pub fn build(self) -> crate::output::DeleteBgpPeerOutput {
             crate::output::DeleteBgpPeerOutput {
                 virtual_interface: self.virtual_interface,
@@ -5701,7 +5663,7 @@ pub mod delete_bgp_peer_output {
     }
 }
 impl DeleteBgpPeerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
     pub fn builder() -> crate::output::delete_bgp_peer_output::Builder {
         crate::output::delete_bgp_peer_output::Builder::default()
     }
@@ -5727,11 +5689,10 @@ impl std::fmt::Debug for CreateTransitVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput)
+/// See [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
 pub mod create_transit_virtual_interface_output {
 
-    /// A builder for [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -5750,7 +5711,7 @@ pub mod create_transit_virtual_interface_output {
             self.virtual_interface = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreateTransitVirtualInterfaceOutput {
             crate::output::CreateTransitVirtualInterfaceOutput {
                 virtual_interface: self.virtual_interface,
@@ -5759,7 +5720,7 @@ pub mod create_transit_virtual_interface_output {
     }
 }
 impl CreateTransitVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
     pub fn builder() -> crate::output::create_transit_virtual_interface_output::Builder {
         crate::output::create_transit_virtual_interface_output::Builder::default()
     }
@@ -5986,11 +5947,10 @@ impl std::fmt::Debug for CreatePublicVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput)
+/// See [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
 pub mod create_public_virtual_interface_output {
 
-    /// A builder for [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -6379,7 +6339,7 @@ pub mod create_public_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreatePublicVirtualInterfaceOutput {
             crate::output::CreatePublicVirtualInterfaceOutput {
                 owner_account: self.owner_account,
@@ -6413,7 +6373,7 @@ pub mod create_public_virtual_interface_output {
     }
 }
 impl CreatePublicVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
     pub fn builder() -> crate::output::create_public_virtual_interface_output::Builder {
         crate::output::create_public_virtual_interface_output::Builder::default()
     }
@@ -6640,11 +6600,10 @@ impl std::fmt::Debug for CreatePrivateVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput)
+/// See [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
 pub mod create_private_virtual_interface_output {
 
-    /// A builder for [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -7033,7 +6992,7 @@ pub mod create_private_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreatePrivateVirtualInterfaceOutput {
             crate::output::CreatePrivateVirtualInterfaceOutput {
                 owner_account: self.owner_account,
@@ -7067,7 +7026,7 @@ pub mod create_private_virtual_interface_output {
     }
 }
 impl CreatePrivateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
     pub fn builder() -> crate::output::create_private_virtual_interface_output::Builder {
         crate::output::create_private_virtual_interface_output::Builder::default()
     }
@@ -7255,11 +7214,10 @@ impl std::fmt::Debug for CreateLagOutput {
         formatter.finish()
     }
 }
-/// See [`CreateLagOutput`](crate::output::CreateLagOutput)
+/// See [`CreateLagOutput`](crate::output::CreateLagOutput).
 pub mod create_lag_output {
 
-    /// A builder for [`CreateLagOutput`](crate::output::CreateLagOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateLagOutput`](crate::output::CreateLagOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections_bandwidth: std::option::Option<std::string::String>,
@@ -7563,7 +7521,7 @@ pub mod create_lag_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateLagOutput`](crate::output::CreateLagOutput)
+        /// Consumes the builder and constructs a [`CreateLagOutput`](crate::output::CreateLagOutput).
         pub fn build(self) -> crate::output::CreateLagOutput {
             crate::output::CreateLagOutput {
                 connections_bandwidth: self.connections_bandwidth,
@@ -7592,7 +7550,7 @@ pub mod create_lag_output {
     }
 }
 impl CreateLagOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLagOutput`](crate::output::CreateLagOutput)
+    /// Creates a new builder-style object to manufacture [`CreateLagOutput`](crate::output::CreateLagOutput).
     pub fn builder() -> crate::output::create_lag_output::Builder {
         crate::output::create_lag_output::Builder::default()
     }
@@ -7736,11 +7694,10 @@ impl std::fmt::Debug for CreateInterconnectOutput {
         formatter.finish()
     }
 }
-/// See [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput)
+/// See [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
 pub mod create_interconnect_output {
 
-    /// A builder for [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_id: std::option::Option<std::string::String>,
@@ -7961,7 +7918,7 @@ pub mod create_interconnect_output {
             self.provider_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput)
+        /// Consumes the builder and constructs a [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
         pub fn build(self) -> crate::output::CreateInterconnectOutput {
             crate::output::CreateInterconnectOutput {
                 interconnect_id: self.interconnect_id,
@@ -7984,7 +7941,7 @@ pub mod create_interconnect_output {
     }
 }
 impl CreateInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput)
+    /// Creates a new builder-style object to manufacture [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
     pub fn builder() -> crate::output::create_interconnect_output::Builder {
         crate::output::create_interconnect_output::Builder::default()
     }
@@ -8016,11 +7973,10 @@ impl std::fmt::Debug for CreateDirectConnectGatewayAssociationProposalOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput)
+/// See [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
 pub mod create_direct_connect_gateway_association_proposal_output {
 
-    /// A builder for [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal:
@@ -8043,7 +7999,7 @@ pub mod create_direct_connect_gateway_association_proposal_output {
             self.direct_connect_gateway_association_proposal = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput)
+        /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayAssociationProposalOutput {
             crate::output::CreateDirectConnectGatewayAssociationProposalOutput {
                 direct_connect_gateway_association_proposal: self
@@ -8053,7 +8009,7 @@ pub mod create_direct_connect_gateway_association_proposal_output {
     }
 }
 impl CreateDirectConnectGatewayAssociationProposalOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
     pub fn builder(
     ) -> crate::output::create_direct_connect_gateway_association_proposal_output::Builder {
         crate::output::create_direct_connect_gateway_association_proposal_output::Builder::default()
@@ -8086,11 +8042,10 @@ impl std::fmt::Debug for CreateDirectConnectGatewayAssociationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput)
+/// See [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
 pub mod create_direct_connect_gateway_association_output {
 
-    /// A builder for [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
@@ -8113,7 +8068,7 @@ pub mod create_direct_connect_gateway_association_output {
             self.direct_connect_gateway_association = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput)
+        /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayAssociationOutput {
             crate::output::CreateDirectConnectGatewayAssociationOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
@@ -8122,7 +8077,7 @@ pub mod create_direct_connect_gateway_association_output {
     }
 }
 impl CreateDirectConnectGatewayAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
     pub fn builder() -> crate::output::create_direct_connect_gateway_association_output::Builder {
         crate::output::create_direct_connect_gateway_association_output::Builder::default()
     }
@@ -8150,11 +8105,10 @@ impl std::fmt::Debug for CreateDirectConnectGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput)
+/// See [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
 pub mod create_direct_connect_gateway_output {
 
-    /// A builder for [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
@@ -8173,7 +8127,7 @@ pub mod create_direct_connect_gateway_output {
             self.direct_connect_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput)
+        /// Consumes the builder and constructs a [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayOutput {
             crate::output::CreateDirectConnectGatewayOutput {
                 direct_connect_gateway: self.direct_connect_gateway,
@@ -8182,7 +8136,7 @@ pub mod create_direct_connect_gateway_output {
     }
 }
 impl CreateDirectConnectGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
     pub fn builder() -> crate::output::create_direct_connect_gateway_output::Builder {
         crate::output::create_direct_connect_gateway_output::Builder::default()
     }
@@ -8383,11 +8337,10 @@ impl std::fmt::Debug for CreateConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
+/// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
 
-    /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -8711,7 +8664,7 @@ pub mod create_connection_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
+        /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
         pub fn build(self) -> crate::output::CreateConnectionOutput {
             crate::output::CreateConnectionOutput {
                 owner_account: self.owner_account,
@@ -8741,7 +8694,7 @@ pub mod create_connection_output {
     }
 }
 impl CreateConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
     pub fn builder() -> crate::output::create_connection_output::Builder {
         crate::output::create_connection_output::Builder::default()
     }
@@ -8767,11 +8720,10 @@ impl std::fmt::Debug for CreateBgpPeerOutput {
         formatter.finish()
     }
 }
-/// See [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput)
+/// See [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
 pub mod create_bgp_peer_output {
 
-    /// A builder for [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -8790,7 +8742,7 @@ pub mod create_bgp_peer_output {
             self.virtual_interface = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput)
+        /// Consumes the builder and constructs a [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
         pub fn build(self) -> crate::output::CreateBgpPeerOutput {
             crate::output::CreateBgpPeerOutput {
                 virtual_interface: self.virtual_interface,
@@ -8799,7 +8751,7 @@ pub mod create_bgp_peer_output {
     }
 }
 impl CreateBgpPeerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput)
+    /// Creates a new builder-style object to manufacture [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
     pub fn builder() -> crate::output::create_bgp_peer_output::Builder {
         crate::output::create_bgp_peer_output::Builder::default()
     }
@@ -8849,11 +8801,10 @@ impl std::fmt::Debug for ConfirmTransitVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput)
+/// See [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
 pub mod confirm_transit_virtual_interface_output {
 
-    /// A builder for [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
@@ -8898,7 +8849,7 @@ pub mod confirm_transit_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmTransitVirtualInterfaceOutput {
             crate::output::ConfirmTransitVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
@@ -8907,7 +8858,7 @@ pub mod confirm_transit_virtual_interface_output {
     }
 }
 impl ConfirmTransitVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
     pub fn builder() -> crate::output::confirm_transit_virtual_interface_output::Builder {
         crate::output::confirm_transit_virtual_interface_output::Builder::default()
     }
@@ -8957,11 +8908,10 @@ impl std::fmt::Debug for ConfirmPublicVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput)
+/// See [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
 pub mod confirm_public_virtual_interface_output {
 
-    /// A builder for [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
@@ -9006,7 +8956,7 @@ pub mod confirm_public_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmPublicVirtualInterfaceOutput {
             crate::output::ConfirmPublicVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
@@ -9015,7 +8965,7 @@ pub mod confirm_public_virtual_interface_output {
     }
 }
 impl ConfirmPublicVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
     pub fn builder() -> crate::output::confirm_public_virtual_interface_output::Builder {
         crate::output::confirm_public_virtual_interface_output::Builder::default()
     }
@@ -9065,11 +9015,10 @@ impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput)
+/// See [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
 pub mod confirm_private_virtual_interface_output {
 
-    /// A builder for [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface_state:
@@ -9114,7 +9063,7 @@ pub mod confirm_private_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmPrivateVirtualInterfaceOutput {
             crate::output::ConfirmPrivateVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
@@ -9123,7 +9072,7 @@ pub mod confirm_private_virtual_interface_output {
     }
 }
 impl ConfirmPrivateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
     pub fn builder() -> crate::output::confirm_private_virtual_interface_output::Builder {
         crate::output::confirm_private_virtual_interface_output::Builder::default()
     }
@@ -9149,11 +9098,10 @@ impl std::fmt::Debug for ConfirmCustomerAgreementOutput {
         formatter.finish()
     }
 }
-/// See [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
+/// See [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
 pub mod confirm_customer_agreement_output {
 
-    /// A builder for [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
-    #[non_exhaustive]
+    /// A builder for [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -9169,7 +9117,7 @@ pub mod confirm_customer_agreement_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
+        /// Consumes the builder and constructs a [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
         pub fn build(self) -> crate::output::ConfirmCustomerAgreementOutput {
             crate::output::ConfirmCustomerAgreementOutput {
                 status: self.status,
@@ -9178,7 +9126,7 @@ pub mod confirm_customer_agreement_output {
     }
 }
 impl ConfirmCustomerAgreementOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput)
+    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
     pub fn builder() -> crate::output::confirm_customer_agreement_output::Builder {
         crate::output::confirm_customer_agreement_output::Builder::default()
     }
@@ -9226,11 +9174,10 @@ impl std::fmt::Debug for ConfirmConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput)
+/// See [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
 pub mod confirm_connection_output {
 
-    /// A builder for [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
@@ -9271,7 +9218,7 @@ pub mod confirm_connection_output {
             self.connection_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput)
+        /// Consumes the builder and constructs a [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
         pub fn build(self) -> crate::output::ConfirmConnectionOutput {
             crate::output::ConfirmConnectionOutput {
                 connection_state: self.connection_state,
@@ -9280,7 +9227,7 @@ pub mod confirm_connection_output {
     }
 }
 impl ConfirmConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
     pub fn builder() -> crate::output::confirm_connection_output::Builder {
         crate::output::confirm_connection_output::Builder::default()
     }
@@ -9507,11 +9454,10 @@ impl std::fmt::Debug for AssociateVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput)
+/// See [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
 pub mod associate_virtual_interface_output {
 
-    /// A builder for [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -9900,7 +9846,7 @@ pub mod associate_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AssociateVirtualInterfaceOutput {
             crate::output::AssociateVirtualInterfaceOutput {
                 owner_account: self.owner_account,
@@ -9934,7 +9880,7 @@ pub mod associate_virtual_interface_output {
     }
 }
 impl AssociateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
     pub fn builder() -> crate::output::associate_virtual_interface_output::Builder {
         crate::output::associate_virtual_interface_output::Builder::default()
     }
@@ -9967,11 +9913,10 @@ impl std::fmt::Debug for AssociateMacSecKeyOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput)
+/// See [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
 pub mod associate_mac_sec_key_output {
 
-    /// A builder for [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
@@ -10010,7 +9955,7 @@ pub mod associate_mac_sec_key_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput)
+        /// Consumes the builder and constructs a [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
         pub fn build(self) -> crate::output::AssociateMacSecKeyOutput {
             crate::output::AssociateMacSecKeyOutput {
                 connection_id: self.connection_id,
@@ -10020,7 +9965,7 @@ pub mod associate_mac_sec_key_output {
     }
 }
 impl AssociateMacSecKeyOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
     pub fn builder() -> crate::output::associate_mac_sec_key_output::Builder {
         crate::output::associate_mac_sec_key_output::Builder::default()
     }
@@ -10221,11 +10166,10 @@ impl std::fmt::Debug for AssociateHostedConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput)
+/// See [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
 pub mod associate_hosted_connection_output {
 
-    /// A builder for [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -10549,7 +10493,7 @@ pub mod associate_hosted_connection_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput)
+        /// Consumes the builder and constructs a [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
         pub fn build(self) -> crate::output::AssociateHostedConnectionOutput {
             crate::output::AssociateHostedConnectionOutput {
                 owner_account: self.owner_account,
@@ -10579,7 +10523,7 @@ pub mod associate_hosted_connection_output {
     }
 }
 impl AssociateHostedConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
     pub fn builder() -> crate::output::associate_hosted_connection_output::Builder {
         crate::output::associate_hosted_connection_output::Builder::default()
     }
@@ -10780,11 +10724,10 @@ impl std::fmt::Debug for AssociateConnectionWithLagOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput)
+/// See [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
 pub mod associate_connection_with_lag_output {
 
-    /// A builder for [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -11108,7 +11051,7 @@ pub mod associate_connection_with_lag_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput)
+        /// Consumes the builder and constructs a [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
         pub fn build(self) -> crate::output::AssociateConnectionWithLagOutput {
             crate::output::AssociateConnectionWithLagOutput {
                 owner_account: self.owner_account,
@@ -11138,7 +11081,7 @@ pub mod associate_connection_with_lag_output {
     }
 }
 impl AssociateConnectionWithLagOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
     pub fn builder() -> crate::output::associate_connection_with_lag_output::Builder {
         crate::output::associate_connection_with_lag_output::Builder::default()
     }
@@ -11164,11 +11107,10 @@ impl std::fmt::Debug for AllocateTransitVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput)
+/// See [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
 pub mod allocate_transit_virtual_interface_output {
 
-    /// A builder for [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
@@ -11187,7 +11129,7 @@ pub mod allocate_transit_virtual_interface_output {
             self.virtual_interface = input;
             self
         }
-        /// Consumes the builder and constructs a [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocateTransitVirtualInterfaceOutput {
             crate::output::AllocateTransitVirtualInterfaceOutput {
                 virtual_interface: self.virtual_interface,
@@ -11196,7 +11138,7 @@ pub mod allocate_transit_virtual_interface_output {
     }
 }
 impl AllocateTransitVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
     pub fn builder() -> crate::output::allocate_transit_virtual_interface_output::Builder {
         crate::output::allocate_transit_virtual_interface_output::Builder::default()
     }
@@ -11423,11 +11365,10 @@ impl std::fmt::Debug for AllocatePublicVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput)
+/// See [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
 pub mod allocate_public_virtual_interface_output {
 
-    /// A builder for [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -11816,7 +11757,7 @@ pub mod allocate_public_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocatePublicVirtualInterfaceOutput {
             crate::output::AllocatePublicVirtualInterfaceOutput {
                 owner_account: self.owner_account,
@@ -11850,7 +11791,7 @@ pub mod allocate_public_virtual_interface_output {
     }
 }
 impl AllocatePublicVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
     pub fn builder() -> crate::output::allocate_public_virtual_interface_output::Builder {
         crate::output::allocate_public_virtual_interface_output::Builder::default()
     }
@@ -12077,11 +12018,10 @@ impl std::fmt::Debug for AllocatePrivateVirtualInterfaceOutput {
         formatter.finish()
     }
 }
-/// See [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput)
+/// See [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
 pub mod allocate_private_virtual_interface_output {
 
-    /// A builder for [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -12470,7 +12410,7 @@ pub mod allocate_private_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput)
+        /// Consumes the builder and constructs a [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocatePrivateVirtualInterfaceOutput {
             crate::output::AllocatePrivateVirtualInterfaceOutput {
                 owner_account: self.owner_account,
@@ -12504,7 +12444,7 @@ pub mod allocate_private_virtual_interface_output {
     }
 }
 impl AllocatePrivateVirtualInterfaceOutput {
-    /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput)
+    /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
     pub fn builder() -> crate::output::allocate_private_virtual_interface_output::Builder {
         crate::output::allocate_private_virtual_interface_output::Builder::default()
     }
@@ -12705,11 +12645,10 @@ impl std::fmt::Debug for AllocateHostedConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput)
+/// See [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
 pub mod allocate_hosted_connection_output {
 
-    /// A builder for [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -13033,7 +12972,7 @@ pub mod allocate_hosted_connection_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput)
+        /// Consumes the builder and constructs a [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
         pub fn build(self) -> crate::output::AllocateHostedConnectionOutput {
             crate::output::AllocateHostedConnectionOutput {
                 owner_account: self.owner_account,
@@ -13063,7 +13002,7 @@ pub mod allocate_hosted_connection_output {
     }
 }
 impl AllocateHostedConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
     pub fn builder() -> crate::output::allocate_hosted_connection_output::Builder {
         crate::output::allocate_hosted_connection_output::Builder::default()
     }
@@ -13264,11 +13203,10 @@ impl std::fmt::Debug for AllocateConnectionOnInterconnectOutput {
         formatter.finish()
     }
 }
-/// See [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput)
+/// See [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
 pub mod allocate_connection_on_interconnect_output {
 
-    /// A builder for [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput)
-    #[non_exhaustive]
+    /// A builder for [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_account: std::option::Option<std::string::String>,
@@ -13592,7 +13530,7 @@ pub mod allocate_connection_on_interconnect_output {
             self.mac_sec_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput)
+        /// Consumes the builder and constructs a [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
         pub fn build(self) -> crate::output::AllocateConnectionOnInterconnectOutput {
             crate::output::AllocateConnectionOnInterconnectOutput {
                 owner_account: self.owner_account,
@@ -13622,7 +13560,7 @@ pub mod allocate_connection_on_interconnect_output {
     }
 }
 impl AllocateConnectionOnInterconnectOutput {
-    /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput)
+    /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
     pub fn builder() -> crate::output::allocate_connection_on_interconnect_output::Builder {
         crate::output::allocate_connection_on_interconnect_output::Builder::default()
     }
@@ -13654,11 +13592,10 @@ impl std::fmt::Debug for AcceptDirectConnectGatewayAssociationProposalOutput {
         formatter.finish()
     }
 }
-/// See [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput)
+/// See [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
 pub mod accept_direct_connect_gateway_association_proposal_output {
 
-    /// A builder for [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput)
-    #[non_exhaustive]
+    /// A builder for [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
@@ -13681,7 +13618,7 @@ pub mod accept_direct_connect_gateway_association_proposal_output {
             self.direct_connect_gateway_association = input;
             self
         }
-        /// Consumes the builder and constructs a [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput)
+        /// Consumes the builder and constructs a [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::AcceptDirectConnectGatewayAssociationProposalOutput {
             crate::output::AcceptDirectConnectGatewayAssociationProposalOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
@@ -13690,7 +13627,7 @@ pub mod accept_direct_connect_gateway_association_proposal_output {
     }
 }
 impl AcceptDirectConnectGatewayAssociationProposalOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput)
+    /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
     pub fn builder(
     ) -> crate::output::accept_direct_connect_gateway_association_proposal_output::Builder {
         crate::output::accept_direct_connect_gateway_association_proposal_output::Builder::default()

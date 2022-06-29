@@ -10,7 +10,7 @@ pub struct CreateCell {
     _private: (),
 }
 impl CreateCell {
-    /// Creates a new builder-style object to manufacture [`CreateCellInput`](crate::input::CreateCellInput)
+    /// Creates a new builder-style object to manufacture [`CreateCellInput`](crate::input::CreateCellInput).
     pub fn builder() -> crate::input::create_cell_input::Builder {
         crate::input::create_cell_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateCrossAccountAuthorization {
     _private: (),
 }
 impl CreateCrossAccountAuthorization {
-    /// Creates a new builder-style object to manufacture [`CreateCrossAccountAuthorizationInput`](crate::input::CreateCrossAccountAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`CreateCrossAccountAuthorizationInput`](crate::input::CreateCrossAccountAuthorizationInput).
     pub fn builder() -> crate::input::create_cross_account_authorization_input::Builder {
         crate::input::create_cross_account_authorization_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateReadinessCheck {
     _private: (),
 }
 impl CreateReadinessCheck {
-    /// Creates a new builder-style object to manufacture [`CreateReadinessCheckInput`](crate::input::CreateReadinessCheckInput)
+    /// Creates a new builder-style object to manufacture [`CreateReadinessCheckInput`](crate::input::CreateReadinessCheckInput).
     pub fn builder() -> crate::input::create_readiness_check_input::Builder {
         crate::input::create_readiness_check_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateRecoveryGroup {
     _private: (),
 }
 impl CreateRecoveryGroup {
-    /// Creates a new builder-style object to manufacture [`CreateRecoveryGroupInput`](crate::input::CreateRecoveryGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateRecoveryGroupInput`](crate::input::CreateRecoveryGroupInput).
     pub fn builder() -> crate::input::create_recovery_group_input::Builder {
         crate::input::create_recovery_group_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateResourceSet {
     _private: (),
 }
 impl CreateResourceSet {
-    /// Creates a new builder-style object to manufacture [`CreateResourceSetInput`](crate::input::CreateResourceSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateResourceSetInput`](crate::input::CreateResourceSetInput).
     pub fn builder() -> crate::input::create_resource_set_input::Builder {
         crate::input::create_resource_set_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeleteCell {
     _private: (),
 }
 impl DeleteCell {
-    /// Creates a new builder-style object to manufacture [`DeleteCellInput`](crate::input::DeleteCellInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCellInput`](crate::input::DeleteCellInput).
     pub fn builder() -> crate::input::delete_cell_input::Builder {
         crate::input::delete_cell_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteCrossAccountAuthorization {
     _private: (),
 }
 impl DeleteCrossAccountAuthorization {
-    /// Creates a new builder-style object to manufacture [`DeleteCrossAccountAuthorizationInput`](crate::input::DeleteCrossAccountAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCrossAccountAuthorizationInput`](crate::input::DeleteCrossAccountAuthorizationInput).
     pub fn builder() -> crate::input::delete_cross_account_authorization_input::Builder {
         crate::input::delete_cross_account_authorization_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteReadinessCheck {
     _private: (),
 }
 impl DeleteReadinessCheck {
-    /// Creates a new builder-style object to manufacture [`DeleteReadinessCheckInput`](crate::input::DeleteReadinessCheckInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReadinessCheckInput`](crate::input::DeleteReadinessCheckInput).
     pub fn builder() -> crate::input::delete_readiness_check_input::Builder {
         crate::input::delete_readiness_check_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteRecoveryGroup {
     _private: (),
 }
 impl DeleteRecoveryGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteRecoveryGroupInput`](crate::input::DeleteRecoveryGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRecoveryGroupInput`](crate::input::DeleteRecoveryGroupInput).
     pub fn builder() -> crate::input::delete_recovery_group_input::Builder {
         crate::input::delete_recovery_group_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DeleteResourceSet {
     _private: (),
 }
 impl DeleteResourceSet {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceSetInput`](crate::input::DeleteResourceSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourceSetInput`](crate::input::DeleteResourceSetInput).
     pub fn builder() -> crate::input::delete_resource_set_input::Builder {
         crate::input::delete_resource_set_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct GetArchitectureRecommendations {
     _private: (),
 }
 impl GetArchitectureRecommendations {
-    /// Creates a new builder-style object to manufacture [`GetArchitectureRecommendationsInput`](crate::input::GetArchitectureRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`GetArchitectureRecommendationsInput`](crate::input::GetArchitectureRecommendationsInput).
     pub fn builder() -> crate::input::get_architecture_recommendations_input::Builder {
         crate::input::get_architecture_recommendations_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct GetCell {
     _private: (),
 }
 impl GetCell {
-    /// Creates a new builder-style object to manufacture [`GetCellInput`](crate::input::GetCellInput)
+    /// Creates a new builder-style object to manufacture [`GetCellInput`](crate::input::GetCellInput).
     pub fn builder() -> crate::input::get_cell_input::Builder {
         crate::input::get_cell_input::Builder::default()
     }
@@ -411,7 +411,7 @@ pub struct GetCellReadinessSummary {
     _private: (),
 }
 impl GetCellReadinessSummary {
-    /// Creates a new builder-style object to manufacture [`GetCellReadinessSummaryInput`](crate::input::GetCellReadinessSummaryInput)
+    /// Creates a new builder-style object to manufacture [`GetCellReadinessSummaryInput`](crate::input::GetCellReadinessSummaryInput).
     pub fn builder() -> crate::input::get_cell_readiness_summary_input::Builder {
         crate::input::get_cell_readiness_summary_input::Builder::default()
     }
@@ -445,7 +445,7 @@ pub struct GetReadinessCheck {
     _private: (),
 }
 impl GetReadinessCheck {
-    /// Creates a new builder-style object to manufacture [`GetReadinessCheckInput`](crate::input::GetReadinessCheckInput)
+    /// Creates a new builder-style object to manufacture [`GetReadinessCheckInput`](crate::input::GetReadinessCheckInput).
     pub fn builder() -> crate::input::get_readiness_check_input::Builder {
         crate::input::get_readiness_check_input::Builder::default()
     }
@@ -479,7 +479,7 @@ pub struct GetReadinessCheckResourceStatus {
     _private: (),
 }
 impl GetReadinessCheckResourceStatus {
-    /// Creates a new builder-style object to manufacture [`GetReadinessCheckResourceStatusInput`](crate::input::GetReadinessCheckResourceStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetReadinessCheckResourceStatusInput`](crate::input::GetReadinessCheckResourceStatusInput).
     pub fn builder() -> crate::input::get_readiness_check_resource_status_input::Builder {
         crate::input::get_readiness_check_resource_status_input::Builder::default()
     }
@@ -513,7 +513,7 @@ pub struct GetReadinessCheckStatus {
     _private: (),
 }
 impl GetReadinessCheckStatus {
-    /// Creates a new builder-style object to manufacture [`GetReadinessCheckStatusInput`](crate::input::GetReadinessCheckStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetReadinessCheckStatusInput`](crate::input::GetReadinessCheckStatusInput).
     pub fn builder() -> crate::input::get_readiness_check_status_input::Builder {
         crate::input::get_readiness_check_status_input::Builder::default()
     }
@@ -547,7 +547,7 @@ pub struct GetRecoveryGroup {
     _private: (),
 }
 impl GetRecoveryGroup {
-    /// Creates a new builder-style object to manufacture [`GetRecoveryGroupInput`](crate::input::GetRecoveryGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetRecoveryGroupInput`](crate::input::GetRecoveryGroupInput).
     pub fn builder() -> crate::input::get_recovery_group_input::Builder {
         crate::input::get_recovery_group_input::Builder::default()
     }
@@ -581,7 +581,7 @@ pub struct GetRecoveryGroupReadinessSummary {
     _private: (),
 }
 impl GetRecoveryGroupReadinessSummary {
-    /// Creates a new builder-style object to manufacture [`GetRecoveryGroupReadinessSummaryInput`](crate::input::GetRecoveryGroupReadinessSummaryInput)
+    /// Creates a new builder-style object to manufacture [`GetRecoveryGroupReadinessSummaryInput`](crate::input::GetRecoveryGroupReadinessSummaryInput).
     pub fn builder() -> crate::input::get_recovery_group_readiness_summary_input::Builder {
         crate::input::get_recovery_group_readiness_summary_input::Builder::default()
     }
@@ -615,7 +615,7 @@ pub struct GetResourceSet {
     _private: (),
 }
 impl GetResourceSet {
-    /// Creates a new builder-style object to manufacture [`GetResourceSetInput`](crate::input::GetResourceSetInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceSetInput`](crate::input::GetResourceSetInput).
     pub fn builder() -> crate::input::get_resource_set_input::Builder {
         crate::input::get_resource_set_input::Builder::default()
     }
@@ -647,7 +647,7 @@ pub struct ListCells {
     _private: (),
 }
 impl ListCells {
-    /// Creates a new builder-style object to manufacture [`ListCellsInput`](crate::input::ListCellsInput)
+    /// Creates a new builder-style object to manufacture [`ListCellsInput`](crate::input::ListCellsInput).
     pub fn builder() -> crate::input::list_cells_input::Builder {
         crate::input::list_cells_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct ListCrossAccountAuthorizations {
     _private: (),
 }
 impl ListCrossAccountAuthorizations {
-    /// Creates a new builder-style object to manufacture [`ListCrossAccountAuthorizationsInput`](crate::input::ListCrossAccountAuthorizationsInput)
+    /// Creates a new builder-style object to manufacture [`ListCrossAccountAuthorizationsInput`](crate::input::ListCrossAccountAuthorizationsInput).
     pub fn builder() -> crate::input::list_cross_account_authorizations_input::Builder {
         crate::input::list_cross_account_authorizations_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct ListReadinessChecks {
     _private: (),
 }
 impl ListReadinessChecks {
-    /// Creates a new builder-style object to manufacture [`ListReadinessChecksInput`](crate::input::ListReadinessChecksInput)
+    /// Creates a new builder-style object to manufacture [`ListReadinessChecksInput`](crate::input::ListReadinessChecksInput).
     pub fn builder() -> crate::input::list_readiness_checks_input::Builder {
         crate::input::list_readiness_checks_input::Builder::default()
     }
@@ -746,7 +746,7 @@ pub struct ListRecoveryGroups {
     _private: (),
 }
 impl ListRecoveryGroups {
-    /// Creates a new builder-style object to manufacture [`ListRecoveryGroupsInput`](crate::input::ListRecoveryGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListRecoveryGroupsInput`](crate::input::ListRecoveryGroupsInput).
     pub fn builder() -> crate::input::list_recovery_groups_input::Builder {
         crate::input::list_recovery_groups_input::Builder::default()
     }
@@ -780,7 +780,7 @@ pub struct ListResourceSets {
     _private: (),
 }
 impl ListResourceSets {
-    /// Creates a new builder-style object to manufacture [`ListResourceSetsInput`](crate::input::ListResourceSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListResourceSetsInput`](crate::input::ListResourceSetsInput).
     pub fn builder() -> crate::input::list_resource_sets_input::Builder {
         crate::input::list_resource_sets_input::Builder::default()
     }
@@ -814,7 +814,7 @@ pub struct ListRules {
     _private: (),
 }
 impl ListRules {
-    /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput).
     pub fn builder() -> crate::input::list_rules_input::Builder {
         crate::input::list_rules_input::Builder::default()
     }
@@ -845,7 +845,7 @@ pub struct ListTagsForResources {
     _private: (),
 }
 impl ListTagsForResources {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput).
     pub fn builder() -> crate::input::list_tags_for_resources_input::Builder {
         crate::input::list_tags_for_resources_input::Builder::default()
     }
@@ -879,7 +879,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -911,7 +911,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -943,7 +943,7 @@ pub struct UpdateCell {
     _private: (),
 }
 impl UpdateCell {
-    /// Creates a new builder-style object to manufacture [`UpdateCellInput`](crate::input::UpdateCellInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCellInput`](crate::input::UpdateCellInput).
     pub fn builder() -> crate::input::update_cell_input::Builder {
         crate::input::update_cell_input::Builder::default()
     }
@@ -975,7 +975,7 @@ pub struct UpdateReadinessCheck {
     _private: (),
 }
 impl UpdateReadinessCheck {
-    /// Creates a new builder-style object to manufacture [`UpdateReadinessCheckInput`](crate::input::UpdateReadinessCheckInput)
+    /// Creates a new builder-style object to manufacture [`UpdateReadinessCheckInput`](crate::input::UpdateReadinessCheckInput).
     pub fn builder() -> crate::input::update_readiness_check_input::Builder {
         crate::input::update_readiness_check_input::Builder::default()
     }
@@ -1009,7 +1009,7 @@ pub struct UpdateRecoveryGroup {
     _private: (),
 }
 impl UpdateRecoveryGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateRecoveryGroupInput`](crate::input::UpdateRecoveryGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRecoveryGroupInput`](crate::input::UpdateRecoveryGroupInput).
     pub fn builder() -> crate::input::update_recovery_group_input::Builder {
         crate::input::update_recovery_group_input::Builder::default()
     }
@@ -1043,7 +1043,7 @@ pub struct UpdateResourceSet {
     _private: (),
 }
 impl UpdateResourceSet {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceSetInput`](crate::input::UpdateResourceSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceSetInput`](crate::input::UpdateResourceSetInput).
     pub fn builder() -> crate::input::update_resource_set_input::Builder {
         crate::input::update_resource_set_input::Builder::default()
     }

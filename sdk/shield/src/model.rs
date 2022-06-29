@@ -27,11 +27,10 @@ impl std::fmt::Debug for ValidationExceptionField {
         formatter.finish()
     }
 }
-/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
-    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField)
-    #[non_exhaustive]
+    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod validation_exception_field {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
                 name: self.name,
@@ -68,7 +67,7 @@ pub mod validation_exception_field {
     }
 }
 impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     pub fn builder() -> crate::model::validation_exception_field::Builder {
         crate::model::validation_exception_field::Builder::default()
     }
@@ -414,11 +413,10 @@ impl std::fmt::Debug for EmergencyContact {
         formatter.finish()
     }
 }
-/// See [`EmergencyContact`](crate::model::EmergencyContact)
+/// See [`EmergencyContact`](crate::model::EmergencyContact).
 pub mod emergency_contact {
 
-    /// A builder for [`EmergencyContact`](crate::model::EmergencyContact)
-    #[non_exhaustive]
+    /// A builder for [`EmergencyContact`](crate::model::EmergencyContact).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -462,7 +460,7 @@ pub mod emergency_contact {
             self.contact_notes = input;
             self
         }
-        /// Consumes the builder and constructs a [`EmergencyContact`](crate::model::EmergencyContact)
+        /// Consumes the builder and constructs a [`EmergencyContact`](crate::model::EmergencyContact).
         pub fn build(self) -> crate::model::EmergencyContact {
             crate::model::EmergencyContact {
                 email_address: self.email_address,
@@ -473,7 +471,7 @@ pub mod emergency_contact {
     }
 }
 impl EmergencyContact {
-    /// Creates a new builder-style object to manufacture [`EmergencyContact`](crate::model::EmergencyContact)
+    /// Creates a new builder-style object to manufacture [`EmergencyContact`](crate::model::EmergencyContact).
     pub fn builder() -> crate::model::emergency_contact::Builder {
         crate::model::emergency_contact::Builder::default()
     }
@@ -510,11 +508,10 @@ impl std::fmt::Debug for ResponseAction {
         formatter.finish()
     }
 }
-/// See [`ResponseAction`](crate::model::ResponseAction)
+/// See [`ResponseAction`](crate::model::ResponseAction).
 pub mod response_action {
 
-    /// A builder for [`ResponseAction`](crate::model::ResponseAction)
-    #[non_exhaustive]
+    /// A builder for [`ResponseAction`](crate::model::ResponseAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block: std::option::Option<crate::model::BlockAction>,
@@ -545,7 +542,7 @@ pub mod response_action {
             self.count = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResponseAction`](crate::model::ResponseAction)
+        /// Consumes the builder and constructs a [`ResponseAction`](crate::model::ResponseAction).
         pub fn build(self) -> crate::model::ResponseAction {
             crate::model::ResponseAction {
                 block: self.block,
@@ -555,7 +552,7 @@ pub mod response_action {
     }
 }
 impl ResponseAction {
-    /// Creates a new builder-style object to manufacture [`ResponseAction`](crate::model::ResponseAction)
+    /// Creates a new builder-style object to manufacture [`ResponseAction`](crate::model::ResponseAction).
     pub fn builder() -> crate::model::response_action::Builder {
         crate::model::response_action::Builder::default()
     }
@@ -573,22 +570,21 @@ impl std::fmt::Debug for CountAction {
         formatter.finish()
     }
 }
-/// See [`CountAction`](crate::model::CountAction)
+/// See [`CountAction`](crate::model::CountAction).
 pub mod count_action {
 
-    /// A builder for [`CountAction`](crate::model::CountAction)
-    #[non_exhaustive]
+    /// A builder for [`CountAction`](crate::model::CountAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CountAction`](crate::model::CountAction)
+        /// Consumes the builder and constructs a [`CountAction`](crate::model::CountAction).
         pub fn build(self) -> crate::model::CountAction {
             crate::model::CountAction {}
         }
     }
 }
 impl CountAction {
-    /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction)
+    /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction).
     pub fn builder() -> crate::model::count_action::Builder {
         crate::model::count_action::Builder::default()
     }
@@ -606,22 +602,21 @@ impl std::fmt::Debug for BlockAction {
         formatter.finish()
     }
 }
-/// See [`BlockAction`](crate::model::BlockAction)
+/// See [`BlockAction`](crate::model::BlockAction).
 pub mod block_action {
 
-    /// A builder for [`BlockAction`](crate::model::BlockAction)
-    #[non_exhaustive]
+    /// A builder for [`BlockAction`](crate::model::BlockAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BlockAction`](crate::model::BlockAction)
+        /// Consumes the builder and constructs a [`BlockAction`](crate::model::BlockAction).
         pub fn build(self) -> crate::model::BlockAction {
             crate::model::BlockAction {}
         }
     }
 }
 impl BlockAction {
-    /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction)
+    /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction).
     pub fn builder() -> crate::model::block_action::Builder {
         crate::model::block_action::Builder::default()
     }
@@ -654,11 +649,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -685,7 +679,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -695,7 +689,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -763,11 +757,10 @@ impl std::fmt::Debug for Protection {
         formatter.finish()
     }
 }
-/// See [`Protection`](crate::model::Protection)
+/// See [`Protection`](crate::model::Protection).
 pub mod protection {
 
-    /// A builder for [`Protection`](crate::model::Protection)
-    #[non_exhaustive]
+    /// A builder for [`Protection`](crate::model::Protection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -859,7 +852,7 @@ pub mod protection {
             self.application_layer_automatic_response_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`Protection`](crate::model::Protection)
+        /// Consumes the builder and constructs a [`Protection`](crate::model::Protection).
         pub fn build(self) -> crate::model::Protection {
             crate::model::Protection {
                 id: self.id,
@@ -874,7 +867,7 @@ pub mod protection {
     }
 }
 impl Protection {
-    /// Creates a new builder-style object to manufacture [`Protection`](crate::model::Protection)
+    /// Creates a new builder-style object to manufacture [`Protection`](crate::model::Protection).
     pub fn builder() -> crate::model::protection::Builder {
         crate::model::protection::Builder::default()
     }
@@ -909,11 +902,10 @@ impl std::fmt::Debug for ApplicationLayerAutomaticResponseConfiguration {
         formatter.finish()
     }
 }
-/// See [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
+/// See [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
 pub mod application_layer_automatic_response_configuration {
 
-    /// A builder for [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status:
@@ -950,7 +942,7 @@ pub mod application_layer_automatic_response_configuration {
             self.action = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
+        /// Consumes the builder and constructs a [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
         pub fn build(self) -> crate::model::ApplicationLayerAutomaticResponseConfiguration {
             crate::model::ApplicationLayerAutomaticResponseConfiguration {
                 status: self.status,
@@ -960,7 +952,7 @@ pub mod application_layer_automatic_response_configuration {
     }
 }
 impl ApplicationLayerAutomaticResponseConfiguration {
-    /// Creates a new builder-style object to manufacture [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration)
+    /// Creates a new builder-style object to manufacture [`ApplicationLayerAutomaticResponseConfiguration`](crate::model::ApplicationLayerAutomaticResponseConfiguration).
     pub fn builder() -> crate::model::application_layer_automatic_response_configuration::Builder {
         crate::model::application_layer_automatic_response_configuration::Builder::default()
     }
@@ -1086,11 +1078,10 @@ impl std::fmt::Debug for ProtectionGroup {
         formatter.finish()
     }
 }
-/// See [`ProtectionGroup`](crate::model::ProtectionGroup)
+/// See [`ProtectionGroup`](crate::model::ProtectionGroup).
 pub mod protection_group {
 
-    /// A builder for [`ProtectionGroup`](crate::model::ProtectionGroup)
-    #[non_exhaustive]
+    /// A builder for [`ProtectionGroup`](crate::model::ProtectionGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group_id: std::option::Option<std::string::String>,
@@ -1195,7 +1186,7 @@ pub mod protection_group {
             self.protection_group_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProtectionGroup`](crate::model::ProtectionGroup)
+        /// Consumes the builder and constructs a [`ProtectionGroup`](crate::model::ProtectionGroup).
         pub fn build(self) -> crate::model::ProtectionGroup {
             crate::model::ProtectionGroup {
                 protection_group_id: self.protection_group_id,
@@ -1209,7 +1200,7 @@ pub mod protection_group {
     }
 }
 impl ProtectionGroup {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroup`](crate::model::ProtectionGroup)
+    /// Creates a new builder-style object to manufacture [`ProtectionGroup`](crate::model::ProtectionGroup).
     pub fn builder() -> crate::model::protection_group::Builder {
         crate::model::protection_group::Builder::default()
     }
@@ -1263,11 +1254,10 @@ impl std::fmt::Debug for AttackSummary {
         formatter.finish()
     }
 }
-/// See [`AttackSummary`](crate::model::AttackSummary)
+/// See [`AttackSummary`](crate::model::AttackSummary).
 pub mod attack_summary {
 
-    /// A builder for [`AttackSummary`](crate::model::AttackSummary)
-    #[non_exhaustive]
+    /// A builder for [`AttackSummary`](crate::model::AttackSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_id: std::option::Option<std::string::String>,
@@ -1343,7 +1333,7 @@ pub mod attack_summary {
             self.attack_vectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttackSummary`](crate::model::AttackSummary)
+        /// Consumes the builder and constructs a [`AttackSummary`](crate::model::AttackSummary).
         pub fn build(self) -> crate::model::AttackSummary {
             crate::model::AttackSummary {
                 attack_id: self.attack_id,
@@ -1356,7 +1346,7 @@ pub mod attack_summary {
     }
 }
 impl AttackSummary {
-    /// Creates a new builder-style object to manufacture [`AttackSummary`](crate::model::AttackSummary)
+    /// Creates a new builder-style object to manufacture [`AttackSummary`](crate::model::AttackSummary).
     pub fn builder() -> crate::model::attack_summary::Builder {
         crate::model::attack_summary::Builder::default()
     }
@@ -1422,11 +1412,10 @@ impl std::fmt::Debug for AttackVectorDescription {
         formatter.finish()
     }
 }
-/// See [`AttackVectorDescription`](crate::model::AttackVectorDescription)
+/// See [`AttackVectorDescription`](crate::model::AttackVectorDescription).
 pub mod attack_vector_description {
 
-    /// A builder for [`AttackVectorDescription`](crate::model::AttackVectorDescription)
-    #[non_exhaustive]
+    /// A builder for [`AttackVectorDescription`](crate::model::AttackVectorDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vector_type: std::option::Option<std::string::String>,
@@ -1482,7 +1471,7 @@ pub mod attack_vector_description {
             self.vector_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttackVectorDescription`](crate::model::AttackVectorDescription)
+        /// Consumes the builder and constructs a [`AttackVectorDescription`](crate::model::AttackVectorDescription).
         pub fn build(self) -> crate::model::AttackVectorDescription {
             crate::model::AttackVectorDescription {
                 vector_type: self.vector_type,
@@ -1491,7 +1480,7 @@ pub mod attack_vector_description {
     }
 }
 impl AttackVectorDescription {
-    /// Creates a new builder-style object to manufacture [`AttackVectorDescription`](crate::model::AttackVectorDescription)
+    /// Creates a new builder-style object to manufacture [`AttackVectorDescription`](crate::model::AttackVectorDescription).
     pub fn builder() -> crate::model::attack_vector_description::Builder {
         crate::model::attack_vector_description::Builder::default()
     }
@@ -1524,11 +1513,10 @@ impl std::fmt::Debug for TimeRange {
         formatter.finish()
     }
 }
-/// See [`TimeRange`](crate::model::TimeRange)
+/// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
 
-    /// A builder for [`TimeRange`](crate::model::TimeRange)
-    #[non_exhaustive]
+    /// A builder for [`TimeRange`](crate::model::TimeRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) from_inclusive: std::option::Option<aws_smithy_types::DateTime>,
@@ -1561,7 +1549,7 @@ pub mod time_range {
             self.to_exclusive = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimeRange`](crate::model::TimeRange)
+        /// Consumes the builder and constructs a [`TimeRange`](crate::model::TimeRange).
         pub fn build(self) -> crate::model::TimeRange {
             crate::model::TimeRange {
                 from_inclusive: self.from_inclusive,
@@ -1571,7 +1559,7 @@ pub mod time_range {
     }
 }
 impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange)
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
     pub fn builder() -> crate::model::time_range::Builder {
         crate::model::time_range::Builder::default()
     }
@@ -1715,11 +1703,10 @@ impl std::fmt::Debug for Subscription {
         formatter.finish()
     }
 }
-/// See [`Subscription`](crate::model::Subscription)
+/// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
 
-    /// A builder for [`Subscription`](crate::model::Subscription)
-    #[non_exhaustive]
+    /// A builder for [`Subscription`](crate::model::Subscription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1849,7 +1836,7 @@ pub mod subscription {
             self.subscription_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription)
+        /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription).
         pub fn build(self) -> crate::model::Subscription {
             crate::model::Subscription {
                 start_time: self.start_time,
@@ -1865,7 +1852,7 @@ pub mod subscription {
     }
 }
 impl Subscription {
-    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription)
+    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
     pub fn builder() -> crate::model::subscription::Builder {
         crate::model::subscription::Builder::default()
     }
@@ -1900,11 +1887,10 @@ impl std::fmt::Debug for SubscriptionLimits {
         formatter.finish()
     }
 }
-/// See [`SubscriptionLimits`](crate::model::SubscriptionLimits)
+/// See [`SubscriptionLimits`](crate::model::SubscriptionLimits).
 pub mod subscription_limits {
 
-    /// A builder for [`SubscriptionLimits`](crate::model::SubscriptionLimits)
-    #[non_exhaustive]
+    /// A builder for [`SubscriptionLimits`](crate::model::SubscriptionLimits).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_limits: std::option::Option<crate::model::ProtectionLimits>,
@@ -1941,7 +1927,7 @@ pub mod subscription_limits {
             self.protection_group_limits = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubscriptionLimits`](crate::model::SubscriptionLimits)
+        /// Consumes the builder and constructs a [`SubscriptionLimits`](crate::model::SubscriptionLimits).
         pub fn build(self) -> crate::model::SubscriptionLimits {
             crate::model::SubscriptionLimits {
                 protection_limits: self.protection_limits,
@@ -1951,7 +1937,7 @@ pub mod subscription_limits {
     }
 }
 impl SubscriptionLimits {
-    /// Creates a new builder-style object to manufacture [`SubscriptionLimits`](crate::model::SubscriptionLimits)
+    /// Creates a new builder-style object to manufacture [`SubscriptionLimits`](crate::model::SubscriptionLimits).
     pub fn builder() -> crate::model::subscription_limits::Builder {
         crate::model::subscription_limits::Builder::default()
     }
@@ -1986,11 +1972,10 @@ impl std::fmt::Debug for ProtectionGroupLimits {
         formatter.finish()
     }
 }
-/// See [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits)
+/// See [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
 pub mod protection_group_limits {
 
-    /// A builder for [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits)
-    #[non_exhaustive]
+    /// A builder for [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_protection_groups: std::option::Option<i64>,
@@ -2024,7 +2009,7 @@ pub mod protection_group_limits {
             self.pattern_type_limits = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits)
+        /// Consumes the builder and constructs a [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
         pub fn build(self) -> crate::model::ProtectionGroupLimits {
             crate::model::ProtectionGroupLimits {
                 max_protection_groups: self.max_protection_groups.unwrap_or_default(),
@@ -2034,7 +2019,7 @@ pub mod protection_group_limits {
     }
 }
 impl ProtectionGroupLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits)
+    /// Creates a new builder-style object to manufacture [`ProtectionGroupLimits`](crate::model::ProtectionGroupLimits).
     pub fn builder() -> crate::model::protection_group_limits::Builder {
         crate::model::protection_group_limits::Builder::default()
     }
@@ -2063,11 +2048,10 @@ impl std::fmt::Debug for ProtectionGroupPatternTypeLimits {
         formatter.finish()
     }
 }
-/// See [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits)
+/// See [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
 pub mod protection_group_pattern_type_limits {
 
-    /// A builder for [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits)
-    #[non_exhaustive]
+    /// A builder for [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arbitrary_pattern_limits:
@@ -2090,7 +2074,7 @@ pub mod protection_group_pattern_type_limits {
             self.arbitrary_pattern_limits = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits)
+        /// Consumes the builder and constructs a [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
         pub fn build(self) -> crate::model::ProtectionGroupPatternTypeLimits {
             crate::model::ProtectionGroupPatternTypeLimits {
                 arbitrary_pattern_limits: self.arbitrary_pattern_limits,
@@ -2099,7 +2083,7 @@ pub mod protection_group_pattern_type_limits {
     }
 }
 impl ProtectionGroupPatternTypeLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits)
+    /// Creates a new builder-style object to manufacture [`ProtectionGroupPatternTypeLimits`](crate::model::ProtectionGroupPatternTypeLimits).
     pub fn builder() -> crate::model::protection_group_pattern_type_limits::Builder {
         crate::model::protection_group_pattern_type_limits::Builder::default()
     }
@@ -2125,11 +2109,10 @@ impl std::fmt::Debug for ProtectionGroupArbitraryPatternLimits {
         formatter.finish()
     }
 }
-/// See [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits)
+/// See [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
 pub mod protection_group_arbitrary_pattern_limits {
 
-    /// A builder for [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits)
-    #[non_exhaustive]
+    /// A builder for [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_members: std::option::Option<i64>,
@@ -2145,7 +2128,7 @@ pub mod protection_group_arbitrary_pattern_limits {
             self.max_members = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits)
+        /// Consumes the builder and constructs a [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
         pub fn build(self) -> crate::model::ProtectionGroupArbitraryPatternLimits {
             crate::model::ProtectionGroupArbitraryPatternLimits {
                 max_members: self.max_members.unwrap_or_default(),
@@ -2154,7 +2137,7 @@ pub mod protection_group_arbitrary_pattern_limits {
     }
 }
 impl ProtectionGroupArbitraryPatternLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits)
+    /// Creates a new builder-style object to manufacture [`ProtectionGroupArbitraryPatternLimits`](crate::model::ProtectionGroupArbitraryPatternLimits).
     pub fn builder() -> crate::model::protection_group_arbitrary_pattern_limits::Builder {
         crate::model::protection_group_arbitrary_pattern_limits::Builder::default()
     }
@@ -2183,11 +2166,10 @@ impl std::fmt::Debug for ProtectionLimits {
         formatter.finish()
     }
 }
-/// See [`ProtectionLimits`](crate::model::ProtectionLimits)
+/// See [`ProtectionLimits`](crate::model::ProtectionLimits).
 pub mod protection_limits {
 
-    /// A builder for [`ProtectionLimits`](crate::model::ProtectionLimits)
-    #[non_exhaustive]
+    /// A builder for [`ProtectionLimits`](crate::model::ProtectionLimits).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protected_resource_type_limits:
@@ -2213,7 +2195,7 @@ pub mod protection_limits {
             self.protected_resource_type_limits = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProtectionLimits`](crate::model::ProtectionLimits)
+        /// Consumes the builder and constructs a [`ProtectionLimits`](crate::model::ProtectionLimits).
         pub fn build(self) -> crate::model::ProtectionLimits {
             crate::model::ProtectionLimits {
                 protected_resource_type_limits: self.protected_resource_type_limits,
@@ -2222,7 +2204,7 @@ pub mod protection_limits {
     }
 }
 impl ProtectionLimits {
-    /// Creates a new builder-style object to manufacture [`ProtectionLimits`](crate::model::ProtectionLimits)
+    /// Creates a new builder-style object to manufacture [`ProtectionLimits`](crate::model::ProtectionLimits).
     pub fn builder() -> crate::model::protection_limits::Builder {
         crate::model::protection_limits::Builder::default()
     }
@@ -2255,11 +2237,10 @@ impl std::fmt::Debug for Limit {
         formatter.finish()
     }
 }
-/// See [`Limit`](crate::model::Limit)
+/// See [`Limit`](crate::model::Limit).
 pub mod limit {
 
-    /// A builder for [`Limit`](crate::model::Limit)
-    #[non_exhaustive]
+    /// A builder for [`Limit`](crate::model::Limit).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -2286,7 +2267,7 @@ pub mod limit {
             self.max = input;
             self
         }
-        /// Consumes the builder and constructs a [`Limit`](crate::model::Limit)
+        /// Consumes the builder and constructs a [`Limit`](crate::model::Limit).
         pub fn build(self) -> crate::model::Limit {
             crate::model::Limit {
                 r#type: self.r#type,
@@ -2296,7 +2277,7 @@ pub mod limit {
     }
 }
 impl Limit {
-    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit)
+    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
     pub fn builder() -> crate::model::limit::Builder {
         crate::model::limit::Builder::default()
     }
@@ -2388,11 +2369,10 @@ impl std::fmt::Debug for AttackStatisticsDataItem {
         formatter.finish()
     }
 }
-/// See [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem)
+/// See [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
 pub mod attack_statistics_data_item {
 
-    /// A builder for [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem)
-    #[non_exhaustive]
+    /// A builder for [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_volume: std::option::Option<crate::model::AttackVolume>,
@@ -2422,7 +2402,7 @@ pub mod attack_statistics_data_item {
             self.attack_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem)
+        /// Consumes the builder and constructs a [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
         pub fn build(self) -> crate::model::AttackStatisticsDataItem {
             crate::model::AttackStatisticsDataItem {
                 attack_volume: self.attack_volume,
@@ -2432,7 +2412,7 @@ pub mod attack_statistics_data_item {
     }
 }
 impl AttackStatisticsDataItem {
-    /// Creates a new builder-style object to manufacture [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem)
+    /// Creates a new builder-style object to manufacture [`AttackStatisticsDataItem`](crate::model::AttackStatisticsDataItem).
     pub fn builder() -> crate::model::attack_statistics_data_item::Builder {
         crate::model::attack_statistics_data_item::Builder::default()
     }
@@ -2474,11 +2454,10 @@ impl std::fmt::Debug for AttackVolume {
         formatter.finish()
     }
 }
-/// See [`AttackVolume`](crate::model::AttackVolume)
+/// See [`AttackVolume`](crate::model::AttackVolume).
 pub mod attack_volume {
 
-    /// A builder for [`AttackVolume`](crate::model::AttackVolume)
-    #[non_exhaustive]
+    /// A builder for [`AttackVolume`](crate::model::AttackVolume).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bits_per_second: std::option::Option<crate::model::AttackVolumeStatistics>,
@@ -2525,7 +2504,7 @@ pub mod attack_volume {
             self.requests_per_second = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttackVolume`](crate::model::AttackVolume)
+        /// Consumes the builder and constructs a [`AttackVolume`](crate::model::AttackVolume).
         pub fn build(self) -> crate::model::AttackVolume {
             crate::model::AttackVolume {
                 bits_per_second: self.bits_per_second,
@@ -2536,7 +2515,7 @@ pub mod attack_volume {
     }
 }
 impl AttackVolume {
-    /// Creates a new builder-style object to manufacture [`AttackVolume`](crate::model::AttackVolume)
+    /// Creates a new builder-style object to manufacture [`AttackVolume`](crate::model::AttackVolume).
     pub fn builder() -> crate::model::attack_volume::Builder {
         crate::model::attack_volume::Builder::default()
     }
@@ -2562,11 +2541,10 @@ impl std::fmt::Debug for AttackVolumeStatistics {
         formatter.finish()
     }
 }
-/// See [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics)
+/// See [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
 pub mod attack_volume_statistics {
 
-    /// A builder for [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics)
-    #[non_exhaustive]
+    /// A builder for [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max: std::option::Option<f64>,
@@ -2582,7 +2560,7 @@ pub mod attack_volume_statistics {
             self.max = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics)
+        /// Consumes the builder and constructs a [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
         pub fn build(self) -> crate::model::AttackVolumeStatistics {
             crate::model::AttackVolumeStatistics {
                 max: self.max.unwrap_or_default(),
@@ -2591,7 +2569,7 @@ pub mod attack_volume_statistics {
     }
 }
 impl AttackVolumeStatistics {
-    /// Creates a new builder-style object to manufacture [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics)
+    /// Creates a new builder-style object to manufacture [`AttackVolumeStatistics`](crate::model::AttackVolumeStatistics).
     pub fn builder() -> crate::model::attack_volume_statistics::Builder {
         crate::model::attack_volume_statistics::Builder::default()
     }
@@ -2668,11 +2646,10 @@ impl std::fmt::Debug for AttackDetail {
         formatter.finish()
     }
 }
-/// See [`AttackDetail`](crate::model::AttackDetail)
+/// See [`AttackDetail`](crate::model::AttackDetail).
 pub mod attack_detail {
 
-    /// A builder for [`AttackDetail`](crate::model::AttackDetail)
-    #[non_exhaustive]
+    /// A builder for [`AttackDetail`](crate::model::AttackDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_id: std::option::Option<std::string::String>,
@@ -2812,7 +2789,7 @@ pub mod attack_detail {
             self.mitigations = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttackDetail`](crate::model::AttackDetail)
+        /// Consumes the builder and constructs a [`AttackDetail`](crate::model::AttackDetail).
         pub fn build(self) -> crate::model::AttackDetail {
             crate::model::AttackDetail {
                 attack_id: self.attack_id,
@@ -2828,7 +2805,7 @@ pub mod attack_detail {
     }
 }
 impl AttackDetail {
-    /// Creates a new builder-style object to manufacture [`AttackDetail`](crate::model::AttackDetail)
+    /// Creates a new builder-style object to manufacture [`AttackDetail`](crate::model::AttackDetail).
     pub fn builder() -> crate::model::attack_detail::Builder {
         crate::model::attack_detail::Builder::default()
     }
@@ -2854,11 +2831,10 @@ impl std::fmt::Debug for Mitigation {
         formatter.finish()
     }
 }
-/// See [`Mitigation`](crate::model::Mitigation)
+/// See [`Mitigation`](crate::model::Mitigation).
 pub mod mitigation {
 
-    /// A builder for [`Mitigation`](crate::model::Mitigation)
-    #[non_exhaustive]
+    /// A builder for [`Mitigation`](crate::model::Mitigation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mitigation_name: std::option::Option<std::string::String>,
@@ -2877,7 +2853,7 @@ pub mod mitigation {
             self.mitigation_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Mitigation`](crate::model::Mitigation)
+        /// Consumes the builder and constructs a [`Mitigation`](crate::model::Mitigation).
         pub fn build(self) -> crate::model::Mitigation {
             crate::model::Mitigation {
                 mitigation_name: self.mitigation_name,
@@ -2886,7 +2862,7 @@ pub mod mitigation {
     }
 }
 impl Mitigation {
-    /// Creates a new builder-style object to manufacture [`Mitigation`](crate::model::Mitigation)
+    /// Creates a new builder-style object to manufacture [`Mitigation`](crate::model::Mitigation).
     pub fn builder() -> crate::model::mitigation::Builder {
         crate::model::mitigation::Builder::default()
     }
@@ -2947,11 +2923,10 @@ impl std::fmt::Debug for AttackProperty {
         formatter.finish()
     }
 }
-/// See [`AttackProperty`](crate::model::AttackProperty)
+/// See [`AttackProperty`](crate::model::AttackProperty).
 pub mod attack_property {
 
-    /// A builder for [`AttackProperty`](crate::model::AttackProperty)
-    #[non_exhaustive]
+    /// A builder for [`AttackProperty`](crate::model::AttackProperty).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_layer: std::option::Option<crate::model::AttackLayer>,
@@ -3032,7 +3007,7 @@ pub mod attack_property {
             self.total = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttackProperty`](crate::model::AttackProperty)
+        /// Consumes the builder and constructs a [`AttackProperty`](crate::model::AttackProperty).
         pub fn build(self) -> crate::model::AttackProperty {
             crate::model::AttackProperty {
                 attack_layer: self.attack_layer,
@@ -3045,7 +3020,7 @@ pub mod attack_property {
     }
 }
 impl AttackProperty {
-    /// Creates a new builder-style object to manufacture [`AttackProperty`](crate::model::AttackProperty)
+    /// Creates a new builder-style object to manufacture [`AttackProperty`](crate::model::AttackProperty).
     pub fn builder() -> crate::model::attack_property::Builder {
         crate::model::attack_property::Builder::default()
     }
@@ -3141,11 +3116,10 @@ impl std::fmt::Debug for Contributor {
         formatter.finish()
     }
 }
-/// See [`Contributor`](crate::model::Contributor)
+/// See [`Contributor`](crate::model::Contributor).
 pub mod contributor {
 
-    /// A builder for [`Contributor`](crate::model::Contributor)
-    #[non_exhaustive]
+    /// A builder for [`Contributor`](crate::model::Contributor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3172,7 +3146,7 @@ pub mod contributor {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Contributor`](crate::model::Contributor)
+        /// Consumes the builder and constructs a [`Contributor`](crate::model::Contributor).
         pub fn build(self) -> crate::model::Contributor {
             crate::model::Contributor {
                 name: self.name,
@@ -3182,7 +3156,7 @@ pub mod contributor {
     }
 }
 impl Contributor {
-    /// Creates a new builder-style object to manufacture [`Contributor`](crate::model::Contributor)
+    /// Creates a new builder-style object to manufacture [`Contributor`](crate::model::Contributor).
     pub fn builder() -> crate::model::contributor::Builder {
         crate::model::contributor::Builder::default()
     }
@@ -3386,11 +3360,10 @@ impl std::fmt::Debug for SummarizedCounter {
         formatter.finish()
     }
 }
-/// See [`SummarizedCounter`](crate::model::SummarizedCounter)
+/// See [`SummarizedCounter`](crate::model::SummarizedCounter).
 pub mod summarized_counter {
 
-    /// A builder for [`SummarizedCounter`](crate::model::SummarizedCounter)
-    #[non_exhaustive]
+    /// A builder for [`SummarizedCounter`](crate::model::SummarizedCounter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3461,7 +3434,7 @@ pub mod summarized_counter {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`SummarizedCounter`](crate::model::SummarizedCounter)
+        /// Consumes the builder and constructs a [`SummarizedCounter`](crate::model::SummarizedCounter).
         pub fn build(self) -> crate::model::SummarizedCounter {
             crate::model::SummarizedCounter {
                 name: self.name,
@@ -3475,7 +3448,7 @@ pub mod summarized_counter {
     }
 }
 impl SummarizedCounter {
-    /// Creates a new builder-style object to manufacture [`SummarizedCounter`](crate::model::SummarizedCounter)
+    /// Creates a new builder-style object to manufacture [`SummarizedCounter`](crate::model::SummarizedCounter).
     pub fn builder() -> crate::model::summarized_counter::Builder {
         crate::model::summarized_counter::Builder::default()
     }
@@ -3522,11 +3495,10 @@ impl std::fmt::Debug for SubResourceSummary {
         formatter.finish()
     }
 }
-/// See [`SubResourceSummary`](crate::model::SubResourceSummary)
+/// See [`SubResourceSummary`](crate::model::SubResourceSummary).
 pub mod sub_resource_summary {
 
-    /// A builder for [`SubResourceSummary`](crate::model::SubResourceSummary)
-    #[non_exhaustive]
+    /// A builder for [`SubResourceSummary`](crate::model::SubResourceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::SubResourceType>,
@@ -3597,7 +3569,7 @@ pub mod sub_resource_summary {
             self.counters = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubResourceSummary`](crate::model::SubResourceSummary)
+        /// Consumes the builder and constructs a [`SubResourceSummary`](crate::model::SubResourceSummary).
         pub fn build(self) -> crate::model::SubResourceSummary {
             crate::model::SubResourceSummary {
                 r#type: self.r#type,
@@ -3609,7 +3581,7 @@ pub mod sub_resource_summary {
     }
 }
 impl SubResourceSummary {
-    /// Creates a new builder-style object to manufacture [`SubResourceSummary`](crate::model::SubResourceSummary)
+    /// Creates a new builder-style object to manufacture [`SubResourceSummary`](crate::model::SubResourceSummary).
     pub fn builder() -> crate::model::sub_resource_summary::Builder {
         crate::model::sub_resource_summary::Builder::default()
     }
@@ -3642,11 +3614,10 @@ impl std::fmt::Debug for SummarizedAttackVector {
         formatter.finish()
     }
 }
-/// See [`SummarizedAttackVector`](crate::model::SummarizedAttackVector)
+/// See [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
 pub mod summarized_attack_vector {
 
-    /// A builder for [`SummarizedAttackVector`](crate::model::SummarizedAttackVector)
-    #[non_exhaustive]
+    /// A builder for [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vector_type: std::option::Option<std::string::String>,
@@ -3683,7 +3654,7 @@ pub mod summarized_attack_vector {
             self.vector_counters = input;
             self
         }
-        /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::model::SummarizedAttackVector)
+        /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
         pub fn build(self) -> crate::model::SummarizedAttackVector {
             crate::model::SummarizedAttackVector {
                 vector_type: self.vector_type,
@@ -3693,7 +3664,7 @@ pub mod summarized_attack_vector {
     }
 }
 impl SummarizedAttackVector {
-    /// Creates a new builder-style object to manufacture [`SummarizedAttackVector`](crate::model::SummarizedAttackVector)
+    /// Creates a new builder-style object to manufacture [`SummarizedAttackVector`](crate::model::SummarizedAttackVector).
     pub fn builder() -> crate::model::summarized_attack_vector::Builder {
         crate::model::summarized_attack_vector::Builder::default()
     }

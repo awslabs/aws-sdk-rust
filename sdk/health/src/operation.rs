@@ -10,7 +10,7 @@ pub struct DescribeAffectedAccountsForOrganization {
     _private: (),
 }
 impl DescribeAffectedAccountsForOrganization {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationInput`](crate::input::DescribeAffectedAccountsForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationInput`](crate::input::DescribeAffectedAccountsForOrganizationInput).
     pub fn builder() -> crate::input::describe_affected_accounts_for_organization_input::Builder {
         crate::input::describe_affected_accounts_for_organization_input::Builder::default()
     }
@@ -48,7 +48,7 @@ pub struct DescribeAffectedEntities {
     _private: (),
 }
 impl DescribeAffectedEntities {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesInput`](crate::input::DescribeAffectedEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesInput`](crate::input::DescribeAffectedEntitiesInput).
     pub fn builder() -> crate::input::describe_affected_entities_input::Builder {
         crate::input::describe_affected_entities_input::Builder::default()
     }
@@ -82,7 +82,7 @@ pub struct DescribeAffectedEntitiesForOrganization {
     _private: (),
 }
 impl DescribeAffectedEntitiesForOrganization {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationInput`](crate::input::DescribeAffectedEntitiesForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationInput`](crate::input::DescribeAffectedEntitiesForOrganizationInput).
     pub fn builder() -> crate::input::describe_affected_entities_for_organization_input::Builder {
         crate::input::describe_affected_entities_for_organization_input::Builder::default()
     }
@@ -120,7 +120,7 @@ pub struct DescribeEntityAggregates {
     _private: (),
 }
 impl DescribeEntityAggregates {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesInput`](crate::input::DescribeEntityAggregatesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesInput`](crate::input::DescribeEntityAggregatesInput).
     pub fn builder() -> crate::input::describe_entity_aggregates_input::Builder {
         crate::input::describe_entity_aggregates_input::Builder::default()
     }
@@ -154,7 +154,7 @@ pub struct DescribeEventAggregates {
     _private: (),
 }
 impl DescribeEventAggregates {
-    /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesInput`](crate::input::DescribeEventAggregatesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesInput`](crate::input::DescribeEventAggregatesInput).
     pub fn builder() -> crate::input::describe_event_aggregates_input::Builder {
         crate::input::describe_event_aggregates_input::Builder::default()
     }
@@ -188,7 +188,7 @@ pub struct DescribeEventDetails {
     _private: (),
 }
 impl DescribeEventDetails {
-    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsInput`](crate::input::DescribeEventDetailsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsInput`](crate::input::DescribeEventDetailsInput).
     pub fn builder() -> crate::input::describe_event_details_input::Builder {
         crate::input::describe_event_details_input::Builder::default()
     }
@@ -222,7 +222,7 @@ pub struct DescribeEventDetailsForOrganization {
     _private: (),
 }
 impl DescribeEventDetailsForOrganization {
-    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationInput`](crate::input::DescribeEventDetailsForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationInput`](crate::input::DescribeEventDetailsForOrganizationInput).
     pub fn builder() -> crate::input::describe_event_details_for_organization_input::Builder {
         crate::input::describe_event_details_for_organization_input::Builder::default()
     }
@@ -256,7 +256,7 @@ pub struct DescribeEvents {
     _private: (),
 }
 impl DescribeEvents {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput).
     pub fn builder() -> crate::input::describe_events_input::Builder {
         crate::input::describe_events_input::Builder::default()
     }
@@ -288,7 +288,7 @@ pub struct DescribeEventsForOrganization {
     _private: (),
 }
 impl DescribeEventsForOrganization {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationInput`](crate::input::DescribeEventsForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationInput`](crate::input::DescribeEventsForOrganizationInput).
     pub fn builder() -> crate::input::describe_events_for_organization_input::Builder {
         crate::input::describe_events_for_organization_input::Builder::default()
     }
@@ -322,7 +322,7 @@ pub struct DescribeEventTypes {
     _private: (),
 }
 impl DescribeEventTypes {
-    /// Creates a new builder-style object to manufacture [`DescribeEventTypesInput`](crate::input::DescribeEventTypesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventTypesInput`](crate::input::DescribeEventTypesInput).
     pub fn builder() -> crate::input::describe_event_types_input::Builder {
         crate::input::describe_event_types_input::Builder::default()
     }
@@ -356,7 +356,7 @@ pub struct DescribeHealthServiceStatusForOrganization {
     _private: (),
 }
 impl DescribeHealthServiceStatusForOrganization {
-    /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationInput`](crate::input::DescribeHealthServiceStatusForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationInput`](crate::input::DescribeHealthServiceStatusForOrganizationInput).
     pub fn builder() -> crate::input::describe_health_service_status_for_organization_input::Builder
     {
         crate::input::describe_health_service_status_for_organization_input::Builder::default()
@@ -395,7 +395,7 @@ pub struct DisableHealthServiceAccessForOrganization {
     _private: (),
 }
 impl DisableHealthServiceAccessForOrganization {
-    /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationInput`](crate::input::DisableHealthServiceAccessForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationInput`](crate::input::DisableHealthServiceAccessForOrganizationInput).
     pub fn builder() -> crate::input::disable_health_service_access_for_organization_input::Builder
     {
         crate::input::disable_health_service_access_for_organization_input::Builder::default()
@@ -434,7 +434,7 @@ pub struct EnableHealthServiceAccessForOrganization {
     _private: (),
 }
 impl EnableHealthServiceAccessForOrganization {
-    /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationInput`](crate::input::EnableHealthServiceAccessForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationInput`](crate::input::EnableHealthServiceAccessForOrganizationInput).
     pub fn builder() -> crate::input::enable_health_service_access_for_organization_input::Builder {
         crate::input::enable_health_service_access_for_organization_input::Builder::default()
     }

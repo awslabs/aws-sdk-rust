@@ -7221,11 +7221,10 @@ impl std::fmt::Display for DirectConnectServerException {
     }
 }
 impl std::error::Error for DirectConnectServerException {}
-/// See [`DirectConnectServerException`](crate::error::DirectConnectServerException)
+/// See [`DirectConnectServerException`](crate::error::DirectConnectServerException).
 pub mod direct_connect_server_exception {
 
-    /// A builder for [`DirectConnectServerException`](crate::error::DirectConnectServerException)
-    #[non_exhaustive]
+    /// A builder for [`DirectConnectServerException`](crate::error::DirectConnectServerException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7241,7 +7240,7 @@ pub mod direct_connect_server_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DirectConnectServerException`](crate::error::DirectConnectServerException)
+        /// Consumes the builder and constructs a [`DirectConnectServerException`](crate::error::DirectConnectServerException).
         pub fn build(self) -> crate::error::DirectConnectServerException {
             crate::error::DirectConnectServerException {
                 message: self.message,
@@ -7250,7 +7249,7 @@ pub mod direct_connect_server_exception {
     }
 }
 impl DirectConnectServerException {
-    /// Creates a new builder-style object to manufacture [`DirectConnectServerException`](crate::error::DirectConnectServerException)
+    /// Creates a new builder-style object to manufacture [`DirectConnectServerException`](crate::error::DirectConnectServerException).
     pub fn builder() -> crate::error::direct_connect_server_exception::Builder {
         crate::error::direct_connect_server_exception::Builder::default()
     }
@@ -7286,11 +7285,10 @@ impl std::fmt::Display for DirectConnectClientException {
     }
 }
 impl std::error::Error for DirectConnectClientException {}
-/// See [`DirectConnectClientException`](crate::error::DirectConnectClientException)
+/// See [`DirectConnectClientException`](crate::error::DirectConnectClientException).
 pub mod direct_connect_client_exception {
 
-    /// A builder for [`DirectConnectClientException`](crate::error::DirectConnectClientException)
-    #[non_exhaustive]
+    /// A builder for [`DirectConnectClientException`](crate::error::DirectConnectClientException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7306,7 +7304,7 @@ pub mod direct_connect_client_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DirectConnectClientException`](crate::error::DirectConnectClientException)
+        /// Consumes the builder and constructs a [`DirectConnectClientException`](crate::error::DirectConnectClientException).
         pub fn build(self) -> crate::error::DirectConnectClientException {
             crate::error::DirectConnectClientException {
                 message: self.message,
@@ -7315,7 +7313,7 @@ pub mod direct_connect_client_exception {
     }
 }
 impl DirectConnectClientException {
-    /// Creates a new builder-style object to manufacture [`DirectConnectClientException`](crate::error::DirectConnectClientException)
+    /// Creates a new builder-style object to manufacture [`DirectConnectClientException`](crate::error::DirectConnectClientException).
     pub fn builder() -> crate::error::direct_connect_client_exception::Builder {
         crate::error::direct_connect_client_exception::Builder::default()
     }
@@ -7351,11 +7349,10 @@ impl std::fmt::Display for TooManyTagsException {
     }
 }
 impl std::error::Error for TooManyTagsException {}
-/// See [`TooManyTagsException`](crate::error::TooManyTagsException)
+/// See [`TooManyTagsException`](crate::error::TooManyTagsException).
 pub mod too_many_tags_exception {
 
-    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException)
-    #[non_exhaustive]
+    /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7371,7 +7368,7 @@ pub mod too_many_tags_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException)
+        /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
         pub fn build(self) -> crate::error::TooManyTagsException {
             crate::error::TooManyTagsException {
                 message: self.message,
@@ -7380,7 +7377,7 @@ pub mod too_many_tags_exception {
     }
 }
 impl TooManyTagsException {
-    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException)
+    /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
     pub fn builder() -> crate::error::too_many_tags_exception::Builder {
         crate::error::too_many_tags_exception::Builder::default()
     }
@@ -7416,11 +7413,10 @@ impl std::fmt::Display for DuplicateTagKeysException {
     }
 }
 impl std::error::Error for DuplicateTagKeysException {}
-/// See [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
+/// See [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
 pub mod duplicate_tag_keys_exception {
 
-    /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
-    #[non_exhaustive]
+    /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7436,7 +7432,7 @@ pub mod duplicate_tag_keys_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
+        /// Consumes the builder and constructs a [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
         pub fn build(self) -> crate::error::DuplicateTagKeysException {
             crate::error::DuplicateTagKeysException {
                 message: self.message,
@@ -7445,7 +7441,7 @@ pub mod duplicate_tag_keys_exception {
     }
 }
 impl DuplicateTagKeysException {
-    /// Creates a new builder-style object to manufacture [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException)
+    /// Creates a new builder-style object to manufacture [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
     pub fn builder() -> crate::error::duplicate_tag_keys_exception::Builder {
         crate::error::duplicate_tag_keys_exception::Builder::default()
     }

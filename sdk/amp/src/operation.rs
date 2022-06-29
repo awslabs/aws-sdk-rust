@@ -10,7 +10,7 @@ pub struct CreateAlertManagerDefinition {
     _private: (),
 }
 impl CreateAlertManagerDefinition {
-    /// Creates a new builder-style object to manufacture [`CreateAlertManagerDefinitionInput`](crate::input::CreateAlertManagerDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`CreateAlertManagerDefinitionInput`](crate::input::CreateAlertManagerDefinitionInput).
     pub fn builder() -> crate::input::create_alert_manager_definition_input::Builder {
         crate::input::create_alert_manager_definition_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateRuleGroupsNamespace {
     _private: (),
 }
 impl CreateRuleGroupsNamespace {
-    /// Creates a new builder-style object to manufacture [`CreateRuleGroupsNamespaceInput`](crate::input::CreateRuleGroupsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleGroupsNamespaceInput`](crate::input::CreateRuleGroupsNamespaceInput).
     pub fn builder() -> crate::input::create_rule_groups_namespace_input::Builder {
         crate::input::create_rule_groups_namespace_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateWorkspace {
     _private: (),
 }
 impl CreateWorkspace {
-    /// Creates a new builder-style object to manufacture [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
     pub fn builder() -> crate::input::create_workspace_input::Builder {
         crate::input::create_workspace_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteAlertManagerDefinition {
     _private: (),
 }
 impl DeleteAlertManagerDefinition {
-    /// Creates a new builder-style object to manufacture [`DeleteAlertManagerDefinitionInput`](crate::input::DeleteAlertManagerDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAlertManagerDefinitionInput`](crate::input::DeleteAlertManagerDefinitionInput).
     pub fn builder() -> crate::input::delete_alert_manager_definition_input::Builder {
         crate::input::delete_alert_manager_definition_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteRuleGroupsNamespace {
     _private: (),
 }
 impl DeleteRuleGroupsNamespace {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupsNamespaceInput`](crate::input::DeleteRuleGroupsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupsNamespaceInput`](crate::input::DeleteRuleGroupsNamespaceInput).
     pub fn builder() -> crate::input::delete_rule_groups_namespace_input::Builder {
         crate::input::delete_rule_groups_namespace_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteWorkspace {
     _private: (),
 }
 impl DeleteWorkspace {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput).
     pub fn builder() -> crate::input::delete_workspace_input::Builder {
         crate::input::delete_workspace_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DescribeAlertManagerDefinition {
     _private: (),
 }
 impl DescribeAlertManagerDefinition {
-    /// Creates a new builder-style object to manufacture [`DescribeAlertManagerDefinitionInput`](crate::input::DescribeAlertManagerDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAlertManagerDefinitionInput`](crate::input::DescribeAlertManagerDefinitionInput).
     pub fn builder() -> crate::input::describe_alert_manager_definition_input::Builder {
         crate::input::describe_alert_manager_definition_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DescribeRuleGroupsNamespace {
     _private: (),
 }
 impl DescribeRuleGroupsNamespace {
-    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupsNamespaceInput`](crate::input::DescribeRuleGroupsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupsNamespaceInput`](crate::input::DescribeRuleGroupsNamespaceInput).
     pub fn builder() -> crate::input::describe_rule_groups_namespace_input::Builder {
         crate::input::describe_rule_groups_namespace_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DescribeWorkspace {
     _private: (),
 }
 impl DescribeWorkspace {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput).
     pub fn builder() -> crate::input::describe_workspace_input::Builder {
         crate::input::describe_workspace_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct ListRuleGroupsNamespaces {
     _private: (),
 }
 impl ListRuleGroupsNamespaces {
-    /// Creates a new builder-style object to manufacture [`ListRuleGroupsNamespacesInput`](crate::input::ListRuleGroupsNamespacesInput)
+    /// Creates a new builder-style object to manufacture [`ListRuleGroupsNamespacesInput`](crate::input::ListRuleGroupsNamespacesInput).
     pub fn builder() -> crate::input::list_rule_groups_namespaces_input::Builder {
         crate::input::list_rule_groups_namespaces_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct ListWorkspaces {
     _private: (),
 }
 impl ListWorkspaces {
-    /// Creates a new builder-style object to manufacture [`ListWorkspacesInput`](crate::input::ListWorkspacesInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkspacesInput`](crate::input::ListWorkspacesInput).
     pub fn builder() -> crate::input::list_workspaces_input::Builder {
         crate::input::list_workspaces_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct PutAlertManagerDefinition {
     _private: (),
 }
 impl PutAlertManagerDefinition {
-    /// Creates a new builder-style object to manufacture [`PutAlertManagerDefinitionInput`](crate::input::PutAlertManagerDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`PutAlertManagerDefinitionInput`](crate::input::PutAlertManagerDefinitionInput).
     pub fn builder() -> crate::input::put_alert_manager_definition_input::Builder {
         crate::input::put_alert_manager_definition_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct PutRuleGroupsNamespace {
     _private: (),
 }
 impl PutRuleGroupsNamespace {
-    /// Creates a new builder-style object to manufacture [`PutRuleGroupsNamespaceInput`](crate::input::PutRuleGroupsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`PutRuleGroupsNamespaceInput`](crate::input::PutRuleGroupsNamespaceInput).
     pub fn builder() -> crate::input::put_rule_groups_namespace_input::Builder {
         crate::input::put_rule_groups_namespace_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct UpdateWorkspaceAlias {
     _private: (),
 }
 impl UpdateWorkspaceAlias {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAliasInput`](crate::input::UpdateWorkspaceAliasInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceAliasInput`](crate::input::UpdateWorkspaceAliasInput).
     pub fn builder() -> crate::input::update_workspace_alias_input::Builder {
         crate::input::update_workspace_alias_input::Builder::default()
     }

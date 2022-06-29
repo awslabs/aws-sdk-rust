@@ -26,11 +26,10 @@ impl std::fmt::Debug for UpdateJobExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput)
+/// See [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
 pub mod update_job_execution_output {
 
-    /// A builder for [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_state: std::option::Option<crate::model::JobExecutionState>,
@@ -60,7 +59,7 @@ pub mod update_job_execution_output {
             self.job_document = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput)
+        /// Consumes the builder and constructs a [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
         pub fn build(self) -> crate::output::UpdateJobExecutionOutput {
             crate::output::UpdateJobExecutionOutput {
                 execution_state: self.execution_state,
@@ -70,7 +69,7 @@ pub mod update_job_execution_output {
     }
 }
 impl UpdateJobExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput).
     pub fn builder() -> crate::output::update_job_execution_output::Builder {
         crate::output::update_job_execution_output::Builder::default()
     }
@@ -96,11 +95,10 @@ impl std::fmt::Debug for StartNextPendingJobExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput)
+/// See [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
 pub mod start_next_pending_job_execution_output {
 
-    /// A builder for [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::JobExecution>,
@@ -119,7 +117,7 @@ pub mod start_next_pending_job_execution_output {
             self.execution = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput)
+        /// Consumes the builder and constructs a [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
         pub fn build(self) -> crate::output::StartNextPendingJobExecutionOutput {
             crate::output::StartNextPendingJobExecutionOutput {
                 execution: self.execution,
@@ -128,7 +126,7 @@ pub mod start_next_pending_job_execution_output {
     }
 }
 impl StartNextPendingJobExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput).
     pub fn builder() -> crate::output::start_next_pending_job_execution_output::Builder {
         crate::output::start_next_pending_job_execution_output::Builder::default()
     }
@@ -161,11 +159,10 @@ impl std::fmt::Debug for GetPendingJobExecutionsOutput {
         formatter.finish()
     }
 }
-/// See [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput)
+/// See [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
 pub mod get_pending_job_executions_output {
 
-    /// A builder for [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) in_progress_jobs:
@@ -212,7 +209,7 @@ pub mod get_pending_job_executions_output {
             self.queued_jobs = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput)
+        /// Consumes the builder and constructs a [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
         pub fn build(self) -> crate::output::GetPendingJobExecutionsOutput {
             crate::output::GetPendingJobExecutionsOutput {
                 in_progress_jobs: self.in_progress_jobs,
@@ -222,7 +219,7 @@ pub mod get_pending_job_executions_output {
     }
 }
 impl GetPendingJobExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput)
+    /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput).
     pub fn builder() -> crate::output::get_pending_job_executions_output::Builder {
         crate::output::get_pending_job_executions_output::Builder::default()
     }
@@ -248,11 +245,10 @@ impl std::fmt::Debug for DescribeJobExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput)
+/// See [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
 pub mod describe_job_execution_output {
 
-    /// A builder for [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::JobExecution>,
@@ -271,7 +267,7 @@ pub mod describe_job_execution_output {
             self.execution = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput)
+        /// Consumes the builder and constructs a [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
         pub fn build(self) -> crate::output::DescribeJobExecutionOutput {
             crate::output::DescribeJobExecutionOutput {
                 execution: self.execution,
@@ -280,7 +276,7 @@ pub mod describe_job_execution_output {
     }
 }
 impl DescribeJobExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput).
     pub fn builder() -> crate::output::describe_job_execution_output::Builder {
         crate::output::describe_job_execution_output::Builder::default()
     }

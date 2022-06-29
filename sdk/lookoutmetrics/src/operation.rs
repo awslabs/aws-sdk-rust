@@ -10,7 +10,7 @@ pub struct ActivateAnomalyDetector {
     _private: (),
 }
 impl ActivateAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorInput`](crate::input::ActivateAnomalyDetectorInput)
+    /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorInput`](crate::input::ActivateAnomalyDetectorInput).
     pub fn builder() -> crate::input::activate_anomaly_detector_input::Builder {
         crate::input::activate_anomaly_detector_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BackTestAnomalyDetector {
     _private: (),
 }
 impl BackTestAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorInput`](crate::input::BackTestAnomalyDetectorInput)
+    /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorInput`](crate::input::BackTestAnomalyDetectorInput).
     pub fn builder() -> crate::input::back_test_anomaly_detector_input::Builder {
         crate::input::back_test_anomaly_detector_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateAlert {
     _private: (),
 }
 impl CreateAlert {
-    /// Creates a new builder-style object to manufacture [`CreateAlertInput`](crate::input::CreateAlertInput)
+    /// Creates a new builder-style object to manufacture [`CreateAlertInput`](crate::input::CreateAlertInput).
     pub fn builder() -> crate::input::create_alert_input::Builder {
         crate::input::create_alert_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateAnomalyDetector {
     _private: (),
 }
 impl CreateAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`CreateAnomalyDetectorInput`](crate::input::CreateAnomalyDetectorInput)
+    /// Creates a new builder-style object to manufacture [`CreateAnomalyDetectorInput`](crate::input::CreateAnomalyDetectorInput).
     pub fn builder() -> crate::input::create_anomaly_detector_input::Builder {
         crate::input::create_anomaly_detector_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateMetricSet {
     _private: (),
 }
 impl CreateMetricSet {
-    /// Creates a new builder-style object to manufacture [`CreateMetricSetInput`](crate::input::CreateMetricSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateMetricSetInput`](crate::input::CreateMetricSetInput).
     pub fn builder() -> crate::input::create_metric_set_input::Builder {
         crate::input::create_metric_set_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeactivateAnomalyDetector {
     _private: (),
 }
 impl DeactivateAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput)
+    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorInput`](crate::input::DeactivateAnomalyDetectorInput).
     pub fn builder() -> crate::input::deactivate_anomaly_detector_input::Builder {
         crate::input::deactivate_anomaly_detector_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DeleteAlert {
     _private: (),
 }
 impl DeleteAlert {
-    /// Creates a new builder-style object to manufacture [`DeleteAlertInput`](crate::input::DeleteAlertInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAlertInput`](crate::input::DeleteAlertInput).
     pub fn builder() -> crate::input::delete_alert_input::Builder {
         crate::input::delete_alert_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteAnomalyDetector {
     _private: (),
 }
 impl DeleteAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput).
     pub fn builder() -> crate::input::delete_anomaly_detector_input::Builder {
         crate::input::delete_anomaly_detector_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DescribeAlert {
     _private: (),
 }
 impl DescribeAlert {
-    /// Creates a new builder-style object to manufacture [`DescribeAlertInput`](crate::input::DescribeAlertInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAlertInput`](crate::input::DescribeAlertInput).
     pub fn builder() -> crate::input::describe_alert_input::Builder {
         crate::input::describe_alert_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct DescribeAnomalyDetectionExecutions {
     _private: (),
 }
 impl DescribeAnomalyDetectionExecutions {
-    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsInput`](crate::input::DescribeAnomalyDetectionExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsInput`](crate::input::DescribeAnomalyDetectionExecutionsInput).
     pub fn builder() -> crate::input::describe_anomaly_detection_executions_input::Builder {
         crate::input::describe_anomaly_detection_executions_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct DescribeAnomalyDetector {
     _private: (),
 }
 impl DescribeAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorInput`](crate::input::DescribeAnomalyDetectorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorInput`](crate::input::DescribeAnomalyDetectorInput).
     pub fn builder() -> crate::input::describe_anomaly_detector_input::Builder {
         crate::input::describe_anomaly_detector_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct DescribeMetricSet {
     _private: (),
 }
 impl DescribeMetricSet {
-    /// Creates a new builder-style object to manufacture [`DescribeMetricSetInput`](crate::input::DescribeMetricSetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMetricSetInput`](crate::input::DescribeMetricSetInput).
     pub fn builder() -> crate::input::describe_metric_set_input::Builder {
         crate::input::describe_metric_set_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct DetectMetricSetConfig {
     _private: (),
 }
 impl DetectMetricSetConfig {
-    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigInput`](crate::input::DetectMetricSetConfigInput)
+    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigInput`](crate::input::DetectMetricSetConfigInput).
     pub fn builder() -> crate::input::detect_metric_set_config_input::Builder {
         crate::input::detect_metric_set_config_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct GetAnomalyGroup {
     _private: (),
 }
 impl GetAnomalyGroup {
-    /// Creates a new builder-style object to manufacture [`GetAnomalyGroupInput`](crate::input::GetAnomalyGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetAnomalyGroupInput`](crate::input::GetAnomalyGroupInput).
     pub fn builder() -> crate::input::get_anomaly_group_input::Builder {
         crate::input::get_anomaly_group_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct GetFeedback {
     _private: (),
 }
 impl GetFeedback {
-    /// Creates a new builder-style object to manufacture [`GetFeedbackInput`](crate::input::GetFeedbackInput)
+    /// Creates a new builder-style object to manufacture [`GetFeedbackInput`](crate::input::GetFeedbackInput).
     pub fn builder() -> crate::input::get_feedback_input::Builder {
         crate::input::get_feedback_input::Builder::default()
     }
@@ -512,7 +512,7 @@ pub struct GetSampleData {
     _private: (),
 }
 impl GetSampleData {
-    /// Creates a new builder-style object to manufacture [`GetSampleDataInput`](crate::input::GetSampleDataInput)
+    /// Creates a new builder-style object to manufacture [`GetSampleDataInput`](crate::input::GetSampleDataInput).
     pub fn builder() -> crate::input::get_sample_data_input::Builder {
         crate::input::get_sample_data_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct ListAlerts {
     _private: (),
 }
 impl ListAlerts {
-    /// Creates a new builder-style object to manufacture [`ListAlertsInput`](crate::input::ListAlertsInput)
+    /// Creates a new builder-style object to manufacture [`ListAlertsInput`](crate::input::ListAlertsInput).
     pub fn builder() -> crate::input::list_alerts_input::Builder {
         crate::input::list_alerts_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct ListAnomalyDetectors {
     _private: (),
 }
 impl ListAnomalyDetectors {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyDetectorsInput`](crate::input::ListAnomalyDetectorsInput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyDetectorsInput`](crate::input::ListAnomalyDetectorsInput).
     pub fn builder() -> crate::input::list_anomaly_detectors_input::Builder {
         crate::input::list_anomaly_detectors_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct ListAnomalyGroupRelatedMetrics {
     _private: (),
 }
 impl ListAnomalyGroupRelatedMetrics {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsInput`](crate::input::ListAnomalyGroupRelatedMetricsInput).
     pub fn builder() -> crate::input::list_anomaly_group_related_metrics_input::Builder {
         crate::input::list_anomaly_group_related_metrics_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct ListAnomalyGroupSummaries {
     _private: (),
 }
 impl ListAnomalyGroupSummaries {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesInput`](crate::input::ListAnomalyGroupSummariesInput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesInput`](crate::input::ListAnomalyGroupSummariesInput).
     pub fn builder() -> crate::input::list_anomaly_group_summaries_input::Builder {
         crate::input::list_anomaly_group_summaries_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct ListAnomalyGroupTimeSeries {
     _private: (),
 }
 impl ListAnomalyGroupTimeSeries {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesInput`](crate::input::ListAnomalyGroupTimeSeriesInput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesInput`](crate::input::ListAnomalyGroupTimeSeriesInput).
     pub fn builder() -> crate::input::list_anomaly_group_time_series_input::Builder {
         crate::input::list_anomaly_group_time_series_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct ListMetricSets {
     _private: (),
 }
 impl ListMetricSets {
-    /// Creates a new builder-style object to manufacture [`ListMetricSetsInput`](crate::input::ListMetricSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListMetricSetsInput`](crate::input::ListMetricSetsInput).
     pub fn builder() -> crate::input::list_metric_sets_input::Builder {
         crate::input::list_metric_sets_input::Builder::default()
     }
@@ -744,7 +744,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct PutFeedback {
     _private: (),
 }
 impl PutFeedback {
-    /// Creates a new builder-style object to manufacture [`PutFeedbackInput`](crate::input::PutFeedbackInput)
+    /// Creates a new builder-style object to manufacture [`PutFeedbackInput`](crate::input::PutFeedbackInput).
     pub fn builder() -> crate::input::put_feedback_input::Builder {
         crate::input::put_feedback_input::Builder::default()
     }
@@ -810,7 +810,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -842,7 +842,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -874,7 +874,7 @@ pub struct UpdateAlert {
     _private: (),
 }
 impl UpdateAlert {
-    /// Creates a new builder-style object to manufacture [`UpdateAlertInput`](crate::input::UpdateAlertInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAlertInput`](crate::input::UpdateAlertInput).
     pub fn builder() -> crate::input::update_alert_input::Builder {
         crate::input::update_alert_input::Builder::default()
     }
@@ -906,7 +906,7 @@ pub struct UpdateAnomalyDetector {
     _private: (),
 }
 impl UpdateAnomalyDetector {
-    /// Creates a new builder-style object to manufacture [`UpdateAnomalyDetectorInput`](crate::input::UpdateAnomalyDetectorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAnomalyDetectorInput`](crate::input::UpdateAnomalyDetectorInput).
     pub fn builder() -> crate::input::update_anomaly_detector_input::Builder {
         crate::input::update_anomaly_detector_input::Builder::default()
     }
@@ -940,7 +940,7 @@ pub struct UpdateMetricSet {
     _private: (),
 }
 impl UpdateMetricSet {
-    /// Creates a new builder-style object to manufacture [`UpdateMetricSetInput`](crate::input::UpdateMetricSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMetricSetInput`](crate::input::UpdateMetricSetInput).
     pub fn builder() -> crate::input::update_metric_set_input::Builder {
         crate::input::update_metric_set_input::Builder::default()
     }

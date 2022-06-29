@@ -10,7 +10,7 @@ pub struct AcceptHandshake {
     _private: (),
 }
 impl AcceptHandshake {
-    /// Creates a new builder-style object to manufacture [`AcceptHandshakeInput`](crate::input::AcceptHandshakeInput)
+    /// Creates a new builder-style object to manufacture [`AcceptHandshakeInput`](crate::input::AcceptHandshakeInput).
     pub fn builder() -> crate::input::accept_handshake_input::Builder {
         crate::input::accept_handshake_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AttachPolicy {
     _private: (),
 }
 impl AttachPolicy {
-    /// Creates a new builder-style object to manufacture [`AttachPolicyInput`](crate::input::AttachPolicyInput)
+    /// Creates a new builder-style object to manufacture [`AttachPolicyInput`](crate::input::AttachPolicyInput).
     pub fn builder() -> crate::input::attach_policy_input::Builder {
         crate::input::attach_policy_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CancelHandshake {
     _private: (),
 }
 impl CancelHandshake {
-    /// Creates a new builder-style object to manufacture [`CancelHandshakeInput`](crate::input::CancelHandshakeInput)
+    /// Creates a new builder-style object to manufacture [`CancelHandshakeInput`](crate::input::CancelHandshakeInput).
     pub fn builder() -> crate::input::cancel_handshake_input::Builder {
         crate::input::cancel_handshake_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CloseAccount {
     _private: (),
 }
 impl CloseAccount {
-    /// Creates a new builder-style object to manufacture [`CloseAccountInput`](crate::input::CloseAccountInput)
+    /// Creates a new builder-style object to manufacture [`CloseAccountInput`](crate::input::CloseAccountInput).
     pub fn builder() -> crate::input::close_account_input::Builder {
         crate::input::close_account_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateAccount {
     _private: (),
 }
 impl CreateAccount {
-    /// Creates a new builder-style object to manufacture [`CreateAccountInput`](crate::input::CreateAccountInput)
+    /// Creates a new builder-style object to manufacture [`CreateAccountInput`](crate::input::CreateAccountInput).
     pub fn builder() -> crate::input::create_account_input::Builder {
         crate::input::create_account_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct CreateGovCloudAccount {
     _private: (),
 }
 impl CreateGovCloudAccount {
-    /// Creates a new builder-style object to manufacture [`CreateGovCloudAccountInput`](crate::input::CreateGovCloudAccountInput)
+    /// Creates a new builder-style object to manufacture [`CreateGovCloudAccountInput`](crate::input::CreateGovCloudAccountInput).
     pub fn builder() -> crate::input::create_gov_cloud_account_input::Builder {
         crate::input::create_gov_cloud_account_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct CreateOrganization {
     _private: (),
 }
 impl CreateOrganization {
-    /// Creates a new builder-style object to manufacture [`CreateOrganizationInput`](crate::input::CreateOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`CreateOrganizationInput`](crate::input::CreateOrganizationInput).
     pub fn builder() -> crate::input::create_organization_input::Builder {
         crate::input::create_organization_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct CreateOrganizationalUnit {
     _private: (),
 }
 impl CreateOrganizationalUnit {
-    /// Creates a new builder-style object to manufacture [`CreateOrganizationalUnitInput`](crate::input::CreateOrganizationalUnitInput)
+    /// Creates a new builder-style object to manufacture [`CreateOrganizationalUnitInput`](crate::input::CreateOrganizationalUnitInput).
     pub fn builder() -> crate::input::create_organizational_unit_input::Builder {
         crate::input::create_organizational_unit_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct CreatePolicy {
     _private: (),
 }
 impl CreatePolicy {
-    /// Creates a new builder-style object to manufacture [`CreatePolicyInput`](crate::input::CreatePolicyInput)
+    /// Creates a new builder-style object to manufacture [`CreatePolicyInput`](crate::input::CreatePolicyInput).
     pub fn builder() -> crate::input::create_policy_input::Builder {
         crate::input::create_policy_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DeclineHandshake {
     _private: (),
 }
 impl DeclineHandshake {
-    /// Creates a new builder-style object to manufacture [`DeclineHandshakeInput`](crate::input::DeclineHandshakeInput)
+    /// Creates a new builder-style object to manufacture [`DeclineHandshakeInput`](crate::input::DeclineHandshakeInput).
     pub fn builder() -> crate::input::decline_handshake_input::Builder {
         crate::input::decline_handshake_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DeleteOrganization {
     _private: (),
 }
 impl DeleteOrganization {
-    /// Creates a new builder-style object to manufacture [`DeleteOrganizationInput`](crate::input::DeleteOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOrganizationInput`](crate::input::DeleteOrganizationInput).
     pub fn builder() -> crate::input::delete_organization_input::Builder {
         crate::input::delete_organization_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct DeleteOrganizationalUnit {
     _private: (),
 }
 impl DeleteOrganizationalUnit {
-    /// Creates a new builder-style object to manufacture [`DeleteOrganizationalUnitInput`](crate::input::DeleteOrganizationalUnitInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOrganizationalUnitInput`](crate::input::DeleteOrganizationalUnitInput).
     pub fn builder() -> crate::input::delete_organizational_unit_input::Builder {
         crate::input::delete_organizational_unit_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct DeletePolicy {
     _private: (),
 }
 impl DeletePolicy {
-    /// Creates a new builder-style object to manufacture [`DeletePolicyInput`](crate::input::DeletePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeletePolicyInput`](crate::input::DeletePolicyInput).
     pub fn builder() -> crate::input::delete_policy_input::Builder {
         crate::input::delete_policy_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct DeregisterDelegatedAdministrator {
     _private: (),
 }
 impl DeregisterDelegatedAdministrator {
-    /// Creates a new builder-style object to manufacture [`DeregisterDelegatedAdministratorInput`](crate::input::DeregisterDelegatedAdministratorInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterDelegatedAdministratorInput`](crate::input::DeregisterDelegatedAdministratorInput).
     pub fn builder() -> crate::input::deregister_delegated_administrator_input::Builder {
         crate::input::deregister_delegated_administrator_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct DescribeAccount {
     _private: (),
 }
 impl DescribeAccount {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountInput`](crate::input::DescribeAccountInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAccountInput`](crate::input::DescribeAccountInput).
     pub fn builder() -> crate::input::describe_account_input::Builder {
         crate::input::describe_account_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct DescribeCreateAccountStatus {
     _private: (),
 }
 impl DescribeCreateAccountStatus {
-    /// Creates a new builder-style object to manufacture [`DescribeCreateAccountStatusInput`](crate::input::DescribeCreateAccountStatusInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCreateAccountStatusInput`](crate::input::DescribeCreateAccountStatusInput).
     pub fn builder() -> crate::input::describe_create_account_status_input::Builder {
         crate::input::describe_create_account_status_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct DescribeEffectivePolicy {
     _private: (),
 }
 impl DescribeEffectivePolicy {
-    /// Creates a new builder-style object to manufacture [`DescribeEffectivePolicyInput`](crate::input::DescribeEffectivePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEffectivePolicyInput`](crate::input::DescribeEffectivePolicyInput).
     pub fn builder() -> crate::input::describe_effective_policy_input::Builder {
         crate::input::describe_effective_policy_input::Builder::default()
     }
@@ -578,7 +578,7 @@ pub struct DescribeHandshake {
     _private: (),
 }
 impl DescribeHandshake {
-    /// Creates a new builder-style object to manufacture [`DescribeHandshakeInput`](crate::input::DescribeHandshakeInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHandshakeInput`](crate::input::DescribeHandshakeInput).
     pub fn builder() -> crate::input::describe_handshake_input::Builder {
         crate::input::describe_handshake_input::Builder::default()
     }
@@ -612,7 +612,7 @@ pub struct DescribeOrganization {
     _private: (),
 }
 impl DescribeOrganization {
-    /// Creates a new builder-style object to manufacture [`DescribeOrganizationInput`](crate::input::DescribeOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationInput`](crate::input::DescribeOrganizationInput).
     pub fn builder() -> crate::input::describe_organization_input::Builder {
         crate::input::describe_organization_input::Builder::default()
     }
@@ -646,7 +646,7 @@ pub struct DescribeOrganizationalUnit {
     _private: (),
 }
 impl DescribeOrganizationalUnit {
-    /// Creates a new builder-style object to manufacture [`DescribeOrganizationalUnitInput`](crate::input::DescribeOrganizationalUnitInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationalUnitInput`](crate::input::DescribeOrganizationalUnitInput).
     pub fn builder() -> crate::input::describe_organizational_unit_input::Builder {
         crate::input::describe_organizational_unit_input::Builder::default()
     }
@@ -680,7 +680,7 @@ pub struct DescribePolicy {
     _private: (),
 }
 impl DescribePolicy {
-    /// Creates a new builder-style object to manufacture [`DescribePolicyInput`](crate::input::DescribePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DescribePolicyInput`](crate::input::DescribePolicyInput).
     pub fn builder() -> crate::input::describe_policy_input::Builder {
         crate::input::describe_policy_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct DetachPolicy {
     _private: (),
 }
 impl DetachPolicy {
-    /// Creates a new builder-style object to manufacture [`DetachPolicyInput`](crate::input::DetachPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DetachPolicyInput`](crate::input::DetachPolicyInput).
     pub fn builder() -> crate::input::detach_policy_input::Builder {
         crate::input::detach_policy_input::Builder::default()
     }
@@ -744,7 +744,7 @@ pub struct DisableAWSServiceAccess {
     _private: (),
 }
 impl DisableAWSServiceAccess {
-    /// Creates a new builder-style object to manufacture [`DisableAwsServiceAccessInput`](crate::input::DisableAwsServiceAccessInput)
+    /// Creates a new builder-style object to manufacture [`DisableAwsServiceAccessInput`](crate::input::DisableAwsServiceAccessInput).
     pub fn builder() -> crate::input::disable_aws_service_access_input::Builder {
         crate::input::disable_aws_service_access_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct DisablePolicyType {
     _private: (),
 }
 impl DisablePolicyType {
-    /// Creates a new builder-style object to manufacture [`DisablePolicyTypeInput`](crate::input::DisablePolicyTypeInput)
+    /// Creates a new builder-style object to manufacture [`DisablePolicyTypeInput`](crate::input::DisablePolicyTypeInput).
     pub fn builder() -> crate::input::disable_policy_type_input::Builder {
         crate::input::disable_policy_type_input::Builder::default()
     }
@@ -812,7 +812,7 @@ pub struct EnableAllFeatures {
     _private: (),
 }
 impl EnableAllFeatures {
-    /// Creates a new builder-style object to manufacture [`EnableAllFeaturesInput`](crate::input::EnableAllFeaturesInput)
+    /// Creates a new builder-style object to manufacture [`EnableAllFeaturesInput`](crate::input::EnableAllFeaturesInput).
     pub fn builder() -> crate::input::enable_all_features_input::Builder {
         crate::input::enable_all_features_input::Builder::default()
     }
@@ -846,7 +846,7 @@ pub struct EnableAWSServiceAccess {
     _private: (),
 }
 impl EnableAWSServiceAccess {
-    /// Creates a new builder-style object to manufacture [`EnableAwsServiceAccessInput`](crate::input::EnableAwsServiceAccessInput)
+    /// Creates a new builder-style object to manufacture [`EnableAwsServiceAccessInput`](crate::input::EnableAwsServiceAccessInput).
     pub fn builder() -> crate::input::enable_aws_service_access_input::Builder {
         crate::input::enable_aws_service_access_input::Builder::default()
     }
@@ -880,7 +880,7 @@ pub struct EnablePolicyType {
     _private: (),
 }
 impl EnablePolicyType {
-    /// Creates a new builder-style object to manufacture [`EnablePolicyTypeInput`](crate::input::EnablePolicyTypeInput)
+    /// Creates a new builder-style object to manufacture [`EnablePolicyTypeInput`](crate::input::EnablePolicyTypeInput).
     pub fn builder() -> crate::input::enable_policy_type_input::Builder {
         crate::input::enable_policy_type_input::Builder::default()
     }
@@ -914,7 +914,7 @@ pub struct InviteAccountToOrganization {
     _private: (),
 }
 impl InviteAccountToOrganization {
-    /// Creates a new builder-style object to manufacture [`InviteAccountToOrganizationInput`](crate::input::InviteAccountToOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`InviteAccountToOrganizationInput`](crate::input::InviteAccountToOrganizationInput).
     pub fn builder() -> crate::input::invite_account_to_organization_input::Builder {
         crate::input::invite_account_to_organization_input::Builder::default()
     }
@@ -948,7 +948,7 @@ pub struct LeaveOrganization {
     _private: (),
 }
 impl LeaveOrganization {
-    /// Creates a new builder-style object to manufacture [`LeaveOrganizationInput`](crate::input::LeaveOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`LeaveOrganizationInput`](crate::input::LeaveOrganizationInput).
     pub fn builder() -> crate::input::leave_organization_input::Builder {
         crate::input::leave_organization_input::Builder::default()
     }
@@ -982,7 +982,7 @@ pub struct ListAccounts {
     _private: (),
 }
 impl ListAccounts {
-    /// Creates a new builder-style object to manufacture [`ListAccountsInput`](crate::input::ListAccountsInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountsInput`](crate::input::ListAccountsInput).
     pub fn builder() -> crate::input::list_accounts_input::Builder {
         crate::input::list_accounts_input::Builder::default()
     }
@@ -1014,7 +1014,7 @@ pub struct ListAccountsForParent {
     _private: (),
 }
 impl ListAccountsForParent {
-    /// Creates a new builder-style object to manufacture [`ListAccountsForParentInput`](crate::input::ListAccountsForParentInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountsForParentInput`](crate::input::ListAccountsForParentInput).
     pub fn builder() -> crate::input::list_accounts_for_parent_input::Builder {
         crate::input::list_accounts_for_parent_input::Builder::default()
     }
@@ -1048,7 +1048,7 @@ pub struct ListAWSServiceAccessForOrganization {
     _private: (),
 }
 impl ListAWSServiceAccessForOrganization {
-    /// Creates a new builder-style object to manufacture [`ListAwsServiceAccessForOrganizationInput`](crate::input::ListAwsServiceAccessForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`ListAwsServiceAccessForOrganizationInput`](crate::input::ListAwsServiceAccessForOrganizationInput).
     pub fn builder() -> crate::input::list_aws_service_access_for_organization_input::Builder {
         crate::input::list_aws_service_access_for_organization_input::Builder::default()
     }
@@ -1084,7 +1084,7 @@ pub struct ListChildren {
     _private: (),
 }
 impl ListChildren {
-    /// Creates a new builder-style object to manufacture [`ListChildrenInput`](crate::input::ListChildrenInput)
+    /// Creates a new builder-style object to manufacture [`ListChildrenInput`](crate::input::ListChildrenInput).
     pub fn builder() -> crate::input::list_children_input::Builder {
         crate::input::list_children_input::Builder::default()
     }
@@ -1116,7 +1116,7 @@ pub struct ListCreateAccountStatus {
     _private: (),
 }
 impl ListCreateAccountStatus {
-    /// Creates a new builder-style object to manufacture [`ListCreateAccountStatusInput`](crate::input::ListCreateAccountStatusInput)
+    /// Creates a new builder-style object to manufacture [`ListCreateAccountStatusInput`](crate::input::ListCreateAccountStatusInput).
     pub fn builder() -> crate::input::list_create_account_status_input::Builder {
         crate::input::list_create_account_status_input::Builder::default()
     }
@@ -1150,7 +1150,7 @@ pub struct ListDelegatedAdministrators {
     _private: (),
 }
 impl ListDelegatedAdministrators {
-    /// Creates a new builder-style object to manufacture [`ListDelegatedAdministratorsInput`](crate::input::ListDelegatedAdministratorsInput)
+    /// Creates a new builder-style object to manufacture [`ListDelegatedAdministratorsInput`](crate::input::ListDelegatedAdministratorsInput).
     pub fn builder() -> crate::input::list_delegated_administrators_input::Builder {
         crate::input::list_delegated_administrators_input::Builder::default()
     }
@@ -1184,7 +1184,7 @@ pub struct ListDelegatedServicesForAccount {
     _private: (),
 }
 impl ListDelegatedServicesForAccount {
-    /// Creates a new builder-style object to manufacture [`ListDelegatedServicesForAccountInput`](crate::input::ListDelegatedServicesForAccountInput)
+    /// Creates a new builder-style object to manufacture [`ListDelegatedServicesForAccountInput`](crate::input::ListDelegatedServicesForAccountInput).
     pub fn builder() -> crate::input::list_delegated_services_for_account_input::Builder {
         crate::input::list_delegated_services_for_account_input::Builder::default()
     }
@@ -1218,7 +1218,7 @@ pub struct ListHandshakesForAccount {
     _private: (),
 }
 impl ListHandshakesForAccount {
-    /// Creates a new builder-style object to manufacture [`ListHandshakesForAccountInput`](crate::input::ListHandshakesForAccountInput)
+    /// Creates a new builder-style object to manufacture [`ListHandshakesForAccountInput`](crate::input::ListHandshakesForAccountInput).
     pub fn builder() -> crate::input::list_handshakes_for_account_input::Builder {
         crate::input::list_handshakes_for_account_input::Builder::default()
     }
@@ -1252,7 +1252,7 @@ pub struct ListHandshakesForOrganization {
     _private: (),
 }
 impl ListHandshakesForOrganization {
-    /// Creates a new builder-style object to manufacture [`ListHandshakesForOrganizationInput`](crate::input::ListHandshakesForOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`ListHandshakesForOrganizationInput`](crate::input::ListHandshakesForOrganizationInput).
     pub fn builder() -> crate::input::list_handshakes_for_organization_input::Builder {
         crate::input::list_handshakes_for_organization_input::Builder::default()
     }
@@ -1286,7 +1286,7 @@ pub struct ListOrganizationalUnitsForParent {
     _private: (),
 }
 impl ListOrganizationalUnitsForParent {
-    /// Creates a new builder-style object to manufacture [`ListOrganizationalUnitsForParentInput`](crate::input::ListOrganizationalUnitsForParentInput)
+    /// Creates a new builder-style object to manufacture [`ListOrganizationalUnitsForParentInput`](crate::input::ListOrganizationalUnitsForParentInput).
     pub fn builder() -> crate::input::list_organizational_units_for_parent_input::Builder {
         crate::input::list_organizational_units_for_parent_input::Builder::default()
     }
@@ -1320,7 +1320,7 @@ pub struct ListParents {
     _private: (),
 }
 impl ListParents {
-    /// Creates a new builder-style object to manufacture [`ListParentsInput`](crate::input::ListParentsInput)
+    /// Creates a new builder-style object to manufacture [`ListParentsInput`](crate::input::ListParentsInput).
     pub fn builder() -> crate::input::list_parents_input::Builder {
         crate::input::list_parents_input::Builder::default()
     }
@@ -1352,7 +1352,7 @@ pub struct ListPolicies {
     _private: (),
 }
 impl ListPolicies {
-    /// Creates a new builder-style object to manufacture [`ListPoliciesInput`](crate::input::ListPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`ListPoliciesInput`](crate::input::ListPoliciesInput).
     pub fn builder() -> crate::input::list_policies_input::Builder {
         crate::input::list_policies_input::Builder::default()
     }
@@ -1384,7 +1384,7 @@ pub struct ListPoliciesForTarget {
     _private: (),
 }
 impl ListPoliciesForTarget {
-    /// Creates a new builder-style object to manufacture [`ListPoliciesForTargetInput`](crate::input::ListPoliciesForTargetInput)
+    /// Creates a new builder-style object to manufacture [`ListPoliciesForTargetInput`](crate::input::ListPoliciesForTargetInput).
     pub fn builder() -> crate::input::list_policies_for_target_input::Builder {
         crate::input::list_policies_for_target_input::Builder::default()
     }
@@ -1418,7 +1418,7 @@ pub struct ListRoots {
     _private: (),
 }
 impl ListRoots {
-    /// Creates a new builder-style object to manufacture [`ListRootsInput`](crate::input::ListRootsInput)
+    /// Creates a new builder-style object to manufacture [`ListRootsInput`](crate::input::ListRootsInput).
     pub fn builder() -> crate::input::list_roots_input::Builder {
         crate::input::list_roots_input::Builder::default()
     }
@@ -1449,7 +1449,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1483,7 +1483,7 @@ pub struct ListTargetsForPolicy {
     _private: (),
 }
 impl ListTargetsForPolicy {
-    /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyInput`](crate::input::ListTargetsForPolicyInput)
+    /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyInput`](crate::input::ListTargetsForPolicyInput).
     pub fn builder() -> crate::input::list_targets_for_policy_input::Builder {
         crate::input::list_targets_for_policy_input::Builder::default()
     }
@@ -1517,7 +1517,7 @@ pub struct MoveAccount {
     _private: (),
 }
 impl MoveAccount {
-    /// Creates a new builder-style object to manufacture [`MoveAccountInput`](crate::input::MoveAccountInput)
+    /// Creates a new builder-style object to manufacture [`MoveAccountInput`](crate::input::MoveAccountInput).
     pub fn builder() -> crate::input::move_account_input::Builder {
         crate::input::move_account_input::Builder::default()
     }
@@ -1549,7 +1549,7 @@ pub struct RegisterDelegatedAdministrator {
     _private: (),
 }
 impl RegisterDelegatedAdministrator {
-    /// Creates a new builder-style object to manufacture [`RegisterDelegatedAdministratorInput`](crate::input::RegisterDelegatedAdministratorInput)
+    /// Creates a new builder-style object to manufacture [`RegisterDelegatedAdministratorInput`](crate::input::RegisterDelegatedAdministratorInput).
     pub fn builder() -> crate::input::register_delegated_administrator_input::Builder {
         crate::input::register_delegated_administrator_input::Builder::default()
     }
@@ -1583,7 +1583,7 @@ pub struct RemoveAccountFromOrganization {
     _private: (),
 }
 impl RemoveAccountFromOrganization {
-    /// Creates a new builder-style object to manufacture [`RemoveAccountFromOrganizationInput`](crate::input::RemoveAccountFromOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`RemoveAccountFromOrganizationInput`](crate::input::RemoveAccountFromOrganizationInput).
     pub fn builder() -> crate::input::remove_account_from_organization_input::Builder {
         crate::input::remove_account_from_organization_input::Builder::default()
     }
@@ -1617,7 +1617,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1649,7 +1649,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1681,7 +1681,7 @@ pub struct UpdateOrganizationalUnit {
     _private: (),
 }
 impl UpdateOrganizationalUnit {
-    /// Creates a new builder-style object to manufacture [`UpdateOrganizationalUnitInput`](crate::input::UpdateOrganizationalUnitInput)
+    /// Creates a new builder-style object to manufacture [`UpdateOrganizationalUnitInput`](crate::input::UpdateOrganizationalUnitInput).
     pub fn builder() -> crate::input::update_organizational_unit_input::Builder {
         crate::input::update_organizational_unit_input::Builder::default()
     }
@@ -1715,7 +1715,7 @@ pub struct UpdatePolicy {
     _private: (),
 }
 impl UpdatePolicy {
-    /// Creates a new builder-style object to manufacture [`UpdatePolicyInput`](crate::input::UpdatePolicyInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePolicyInput`](crate::input::UpdatePolicyInput).
     pub fn builder() -> crate::input::update_policy_input::Builder {
         crate::input::update_policy_input::Builder::default()
     }

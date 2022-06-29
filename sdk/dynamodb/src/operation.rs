@@ -10,7 +10,7 @@ pub struct BatchExecuteStatement {
     _private: (),
 }
 impl BatchExecuteStatement {
-    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
+    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
     pub fn builder() -> crate::input::batch_execute_statement_input::Builder {
         crate::input::batch_execute_statement_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchGetItem {
     _private: (),
 }
 impl BatchGetItem {
-    /// Creates a new builder-style object to manufacture [`BatchGetItemInput`](crate::input::BatchGetItemInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetItemInput`](crate::input::BatchGetItemInput).
     pub fn builder() -> crate::input::batch_get_item_input::Builder {
         crate::input::batch_get_item_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct BatchWriteItem {
     _private: (),
 }
 impl BatchWriteItem {
-    /// Creates a new builder-style object to manufacture [`BatchWriteItemInput`](crate::input::BatchWriteItemInput)
+    /// Creates a new builder-style object to manufacture [`BatchWriteItemInput`](crate::input::BatchWriteItemInput).
     pub fn builder() -> crate::input::batch_write_item_input::Builder {
         crate::input::batch_write_item_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateBackup {
     _private: (),
 }
 impl CreateBackup {
-    /// Creates a new builder-style object to manufacture [`CreateBackupInput`](crate::input::CreateBackupInput)
+    /// Creates a new builder-style object to manufacture [`CreateBackupInput`](crate::input::CreateBackupInput).
     pub fn builder() -> crate::input::create_backup_input::Builder {
         crate::input::create_backup_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct CreateGlobalTable {
     _private: (),
 }
 impl CreateGlobalTable {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalTableInput`](crate::input::CreateGlobalTableInput)
+    /// Creates a new builder-style object to manufacture [`CreateGlobalTableInput`](crate::input::CreateGlobalTableInput).
     pub fn builder() -> crate::input::create_global_table_input::Builder {
         crate::input::create_global_table_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct CreateTable {
     _private: (),
 }
 impl CreateTable {
-    /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::input::CreateTableInput)
+    /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::input::CreateTableInput).
     pub fn builder() -> crate::input::create_table_input::Builder {
         crate::input::create_table_input::Builder::default()
     }
@@ -206,7 +206,7 @@ pub struct DeleteBackup {
     _private: (),
 }
 impl DeleteBackup {
-    /// Creates a new builder-style object to manufacture [`DeleteBackupInput`](crate::input::DeleteBackupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBackupInput`](crate::input::DeleteBackupInput).
     pub fn builder() -> crate::input::delete_backup_input::Builder {
         crate::input::delete_backup_input::Builder::default()
     }
@@ -238,7 +238,7 @@ pub struct DeleteItem {
     _private: (),
 }
 impl DeleteItem {
-    /// Creates a new builder-style object to manufacture [`DeleteItemInput`](crate::input::DeleteItemInput)
+    /// Creates a new builder-style object to manufacture [`DeleteItemInput`](crate::input::DeleteItemInput).
     pub fn builder() -> crate::input::delete_item_input::Builder {
         crate::input::delete_item_input::Builder::default()
     }
@@ -270,7 +270,7 @@ pub struct DeleteTable {
     _private: (),
 }
 impl DeleteTable {
-    /// Creates a new builder-style object to manufacture [`DeleteTableInput`](crate::input::DeleteTableInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTableInput`](crate::input::DeleteTableInput).
     pub fn builder() -> crate::input::delete_table_input::Builder {
         crate::input::delete_table_input::Builder::default()
     }
@@ -302,7 +302,7 @@ pub struct DescribeBackup {
     _private: (),
 }
 impl DescribeBackup {
-    /// Creates a new builder-style object to manufacture [`DescribeBackupInput`](crate::input::DescribeBackupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBackupInput`](crate::input::DescribeBackupInput).
     pub fn builder() -> crate::input::describe_backup_input::Builder {
         crate::input::describe_backup_input::Builder::default()
     }
@@ -334,7 +334,7 @@ pub struct DescribeContinuousBackups {
     _private: (),
 }
 impl DescribeContinuousBackups {
-    /// Creates a new builder-style object to manufacture [`DescribeContinuousBackupsInput`](crate::input::DescribeContinuousBackupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeContinuousBackupsInput`](crate::input::DescribeContinuousBackupsInput).
     pub fn builder() -> crate::input::describe_continuous_backups_input::Builder {
         crate::input::describe_continuous_backups_input::Builder::default()
     }
@@ -368,7 +368,7 @@ pub struct DescribeContributorInsights {
     _private: (),
 }
 impl DescribeContributorInsights {
-    /// Creates a new builder-style object to manufacture [`DescribeContributorInsightsInput`](crate::input::DescribeContributorInsightsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeContributorInsightsInput`](crate::input::DescribeContributorInsightsInput).
     pub fn builder() -> crate::input::describe_contributor_insights_input::Builder {
         crate::input::describe_contributor_insights_input::Builder::default()
     }
@@ -402,7 +402,7 @@ pub struct DescribeEndpoints {
     _private: (),
 }
 impl DescribeEndpoints {
-    /// Creates a new builder-style object to manufacture [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput).
     pub fn builder() -> crate::input::describe_endpoints_input::Builder {
         crate::input::describe_endpoints_input::Builder::default()
     }
@@ -436,7 +436,7 @@ pub struct DescribeExport {
     _private: (),
 }
 impl DescribeExport {
-    /// Creates a new builder-style object to manufacture [`DescribeExportInput`](crate::input::DescribeExportInput)
+    /// Creates a new builder-style object to manufacture [`DescribeExportInput`](crate::input::DescribeExportInput).
     pub fn builder() -> crate::input::describe_export_input::Builder {
         crate::input::describe_export_input::Builder::default()
     }
@@ -468,7 +468,7 @@ pub struct DescribeGlobalTable {
     _private: (),
 }
 impl DescribeGlobalTable {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalTableInput`](crate::input::DescribeGlobalTableInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalTableInput`](crate::input::DescribeGlobalTableInput).
     pub fn builder() -> crate::input::describe_global_table_input::Builder {
         crate::input::describe_global_table_input::Builder::default()
     }
@@ -502,7 +502,7 @@ pub struct DescribeGlobalTableSettings {
     _private: (),
 }
 impl DescribeGlobalTableSettings {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalTableSettingsInput`](crate::input::DescribeGlobalTableSettingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalTableSettingsInput`](crate::input::DescribeGlobalTableSettingsInput).
     pub fn builder() -> crate::input::describe_global_table_settings_input::Builder {
         crate::input::describe_global_table_settings_input::Builder::default()
     }
@@ -536,7 +536,7 @@ pub struct DescribeKinesisStreamingDestination {
     _private: (),
 }
 impl DescribeKinesisStreamingDestination {
-    /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationInput`](crate::input::DescribeKinesisStreamingDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeKinesisStreamingDestinationInput`](crate::input::DescribeKinesisStreamingDestinationInput).
     pub fn builder() -> crate::input::describe_kinesis_streaming_destination_input::Builder {
         crate::input::describe_kinesis_streaming_destination_input::Builder::default()
     }
@@ -570,7 +570,7 @@ pub struct DescribeLimits {
     _private: (),
 }
 impl DescribeLimits {
-    /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput).
     pub fn builder() -> crate::input::describe_limits_input::Builder {
         crate::input::describe_limits_input::Builder::default()
     }
@@ -602,7 +602,7 @@ pub struct DescribeTable {
     _private: (),
 }
 impl DescribeTable {
-    /// Creates a new builder-style object to manufacture [`DescribeTableInput`](crate::input::DescribeTableInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTableInput`](crate::input::DescribeTableInput).
     pub fn builder() -> crate::input::describe_table_input::Builder {
         crate::input::describe_table_input::Builder::default()
     }
@@ -634,7 +634,7 @@ pub struct DescribeTableReplicaAutoScaling {
     _private: (),
 }
 impl DescribeTableReplicaAutoScaling {
-    /// Creates a new builder-style object to manufacture [`DescribeTableReplicaAutoScalingInput`](crate::input::DescribeTableReplicaAutoScalingInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTableReplicaAutoScalingInput`](crate::input::DescribeTableReplicaAutoScalingInput).
     pub fn builder() -> crate::input::describe_table_replica_auto_scaling_input::Builder {
         crate::input::describe_table_replica_auto_scaling_input::Builder::default()
     }
@@ -668,7 +668,7 @@ pub struct DescribeTimeToLive {
     _private: (),
 }
 impl DescribeTimeToLive {
-    /// Creates a new builder-style object to manufacture [`DescribeTimeToLiveInput`](crate::input::DescribeTimeToLiveInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTimeToLiveInput`](crate::input::DescribeTimeToLiveInput).
     pub fn builder() -> crate::input::describe_time_to_live_input::Builder {
         crate::input::describe_time_to_live_input::Builder::default()
     }
@@ -702,7 +702,7 @@ pub struct DisableKinesisStreamingDestination {
     _private: (),
 }
 impl DisableKinesisStreamingDestination {
-    /// Creates a new builder-style object to manufacture [`DisableKinesisStreamingDestinationInput`](crate::input::DisableKinesisStreamingDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DisableKinesisStreamingDestinationInput`](crate::input::DisableKinesisStreamingDestinationInput).
     pub fn builder() -> crate::input::disable_kinesis_streaming_destination_input::Builder {
         crate::input::disable_kinesis_streaming_destination_input::Builder::default()
     }
@@ -736,7 +736,7 @@ pub struct EnableKinesisStreamingDestination {
     _private: (),
 }
 impl EnableKinesisStreamingDestination {
-    /// Creates a new builder-style object to manufacture [`EnableKinesisStreamingDestinationInput`](crate::input::EnableKinesisStreamingDestinationInput)
+    /// Creates a new builder-style object to manufacture [`EnableKinesisStreamingDestinationInput`](crate::input::EnableKinesisStreamingDestinationInput).
     pub fn builder() -> crate::input::enable_kinesis_streaming_destination_input::Builder {
         crate::input::enable_kinesis_streaming_destination_input::Builder::default()
     }
@@ -770,7 +770,7 @@ pub struct ExecuteStatement {
     _private: (),
 }
 impl ExecuteStatement {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
     pub fn builder() -> crate::input::execute_statement_input::Builder {
         crate::input::execute_statement_input::Builder::default()
     }
@@ -804,7 +804,7 @@ pub struct ExecuteTransaction {
     _private: (),
 }
 impl ExecuteTransaction {
-    /// Creates a new builder-style object to manufacture [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput)
+    /// Creates a new builder-style object to manufacture [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput).
     pub fn builder() -> crate::input::execute_transaction_input::Builder {
         crate::input::execute_transaction_input::Builder::default()
     }
@@ -838,7 +838,7 @@ pub struct ExportTableToPointInTime {
     _private: (),
 }
 impl ExportTableToPointInTime {
-    /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeInput`](crate::input::ExportTableToPointInTimeInput)
+    /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeInput`](crate::input::ExportTableToPointInTimeInput).
     pub fn builder() -> crate::input::export_table_to_point_in_time_input::Builder {
         crate::input::export_table_to_point_in_time_input::Builder::default()
     }
@@ -872,7 +872,7 @@ pub struct GetItem {
     _private: (),
 }
 impl GetItem {
-    /// Creates a new builder-style object to manufacture [`GetItemInput`](crate::input::GetItemInput)
+    /// Creates a new builder-style object to manufacture [`GetItemInput`](crate::input::GetItemInput).
     pub fn builder() -> crate::input::get_item_input::Builder {
         crate::input::get_item_input::Builder::default()
     }
@@ -903,7 +903,7 @@ pub struct ListBackups {
     _private: (),
 }
 impl ListBackups {
-    /// Creates a new builder-style object to manufacture [`ListBackupsInput`](crate::input::ListBackupsInput)
+    /// Creates a new builder-style object to manufacture [`ListBackupsInput`](crate::input::ListBackupsInput).
     pub fn builder() -> crate::input::list_backups_input::Builder {
         crate::input::list_backups_input::Builder::default()
     }
@@ -935,7 +935,7 @@ pub struct ListContributorInsights {
     _private: (),
 }
 impl ListContributorInsights {
-    /// Creates a new builder-style object to manufacture [`ListContributorInsightsInput`](crate::input::ListContributorInsightsInput)
+    /// Creates a new builder-style object to manufacture [`ListContributorInsightsInput`](crate::input::ListContributorInsightsInput).
     pub fn builder() -> crate::input::list_contributor_insights_input::Builder {
         crate::input::list_contributor_insights_input::Builder::default()
     }
@@ -969,7 +969,7 @@ pub struct ListExports {
     _private: (),
 }
 impl ListExports {
-    /// Creates a new builder-style object to manufacture [`ListExportsInput`](crate::input::ListExportsInput)
+    /// Creates a new builder-style object to manufacture [`ListExportsInput`](crate::input::ListExportsInput).
     pub fn builder() -> crate::input::list_exports_input::Builder {
         crate::input::list_exports_input::Builder::default()
     }
@@ -1001,7 +1001,7 @@ pub struct ListGlobalTables {
     _private: (),
 }
 impl ListGlobalTables {
-    /// Creates a new builder-style object to manufacture [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput)
+    /// Creates a new builder-style object to manufacture [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput).
     pub fn builder() -> crate::input::list_global_tables_input::Builder {
         crate::input::list_global_tables_input::Builder::default()
     }
@@ -1035,7 +1035,7 @@ pub struct ListTables {
     _private: (),
 }
 impl ListTables {
-    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput)
+    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput).
     pub fn builder() -> crate::input::list_tables_input::Builder {
         crate::input::list_tables_input::Builder::default()
     }
@@ -1067,7 +1067,7 @@ pub struct ListTagsOfResource {
     _private: (),
 }
 impl ListTagsOfResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsOfResourceInput`](crate::input::ListTagsOfResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsOfResourceInput`](crate::input::ListTagsOfResourceInput).
     pub fn builder() -> crate::input::list_tags_of_resource_input::Builder {
         crate::input::list_tags_of_resource_input::Builder::default()
     }
@@ -1101,7 +1101,7 @@ pub struct PutItem {
     _private: (),
 }
 impl PutItem {
-    /// Creates a new builder-style object to manufacture [`PutItemInput`](crate::input::PutItemInput)
+    /// Creates a new builder-style object to manufacture [`PutItemInput`](crate::input::PutItemInput).
     pub fn builder() -> crate::input::put_item_input::Builder {
         crate::input::put_item_input::Builder::default()
     }
@@ -1132,7 +1132,7 @@ pub struct Query {
     _private: (),
 }
 impl Query {
-    /// Creates a new builder-style object to manufacture [`QueryInput`](crate::input::QueryInput)
+    /// Creates a new builder-style object to manufacture [`QueryInput`](crate::input::QueryInput).
     pub fn builder() -> crate::input::query_input::Builder {
         crate::input::query_input::Builder::default()
     }
@@ -1163,7 +1163,7 @@ pub struct RestoreTableFromBackup {
     _private: (),
 }
 impl RestoreTableFromBackup {
-    /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupInput`](crate::input::RestoreTableFromBackupInput)
+    /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupInput`](crate::input::RestoreTableFromBackupInput).
     pub fn builder() -> crate::input::restore_table_from_backup_input::Builder {
         crate::input::restore_table_from_backup_input::Builder::default()
     }
@@ -1197,7 +1197,7 @@ pub struct RestoreTableToPointInTime {
     _private: (),
 }
 impl RestoreTableToPointInTime {
-    /// Creates a new builder-style object to manufacture [`RestoreTableToPointInTimeInput`](crate::input::RestoreTableToPointInTimeInput)
+    /// Creates a new builder-style object to manufacture [`RestoreTableToPointInTimeInput`](crate::input::RestoreTableToPointInTimeInput).
     pub fn builder() -> crate::input::restore_table_to_point_in_time_input::Builder {
         crate::input::restore_table_to_point_in_time_input::Builder::default()
     }
@@ -1231,7 +1231,7 @@ pub struct Scan {
     _private: (),
 }
 impl Scan {
-    /// Creates a new builder-style object to manufacture [`ScanInput`](crate::input::ScanInput)
+    /// Creates a new builder-style object to manufacture [`ScanInput`](crate::input::ScanInput).
     pub fn builder() -> crate::input::scan_input::Builder {
         crate::input::scan_input::Builder::default()
     }
@@ -1262,7 +1262,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1294,7 +1294,7 @@ pub struct TransactGetItems {
     _private: (),
 }
 impl TransactGetItems {
-    /// Creates a new builder-style object to manufacture [`TransactGetItemsInput`](crate::input::TransactGetItemsInput)
+    /// Creates a new builder-style object to manufacture [`TransactGetItemsInput`](crate::input::TransactGetItemsInput).
     pub fn builder() -> crate::input::transact_get_items_input::Builder {
         crate::input::transact_get_items_input::Builder::default()
     }
@@ -1328,7 +1328,7 @@ pub struct TransactWriteItems {
     _private: (),
 }
 impl TransactWriteItems {
-    /// Creates a new builder-style object to manufacture [`TransactWriteItemsInput`](crate::input::TransactWriteItemsInput)
+    /// Creates a new builder-style object to manufacture [`TransactWriteItemsInput`](crate::input::TransactWriteItemsInput).
     pub fn builder() -> crate::input::transact_write_items_input::Builder {
         crate::input::transact_write_items_input::Builder::default()
     }
@@ -1362,7 +1362,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1394,7 +1394,7 @@ pub struct UpdateContinuousBackups {
     _private: (),
 }
 impl UpdateContinuousBackups {
-    /// Creates a new builder-style object to manufacture [`UpdateContinuousBackupsInput`](crate::input::UpdateContinuousBackupsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateContinuousBackupsInput`](crate::input::UpdateContinuousBackupsInput).
     pub fn builder() -> crate::input::update_continuous_backups_input::Builder {
         crate::input::update_continuous_backups_input::Builder::default()
     }
@@ -1428,7 +1428,7 @@ pub struct UpdateContributorInsights {
     _private: (),
 }
 impl UpdateContributorInsights {
-    /// Creates a new builder-style object to manufacture [`UpdateContributorInsightsInput`](crate::input::UpdateContributorInsightsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateContributorInsightsInput`](crate::input::UpdateContributorInsightsInput).
     pub fn builder() -> crate::input::update_contributor_insights_input::Builder {
         crate::input::update_contributor_insights_input::Builder::default()
     }
@@ -1462,7 +1462,7 @@ pub struct UpdateGlobalTable {
     _private: (),
 }
 impl UpdateGlobalTable {
-    /// Creates a new builder-style object to manufacture [`UpdateGlobalTableInput`](crate::input::UpdateGlobalTableInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGlobalTableInput`](crate::input::UpdateGlobalTableInput).
     pub fn builder() -> crate::input::update_global_table_input::Builder {
         crate::input::update_global_table_input::Builder::default()
     }
@@ -1496,7 +1496,7 @@ pub struct UpdateGlobalTableSettings {
     _private: (),
 }
 impl UpdateGlobalTableSettings {
-    /// Creates a new builder-style object to manufacture [`UpdateGlobalTableSettingsInput`](crate::input::UpdateGlobalTableSettingsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGlobalTableSettingsInput`](crate::input::UpdateGlobalTableSettingsInput).
     pub fn builder() -> crate::input::update_global_table_settings_input::Builder {
         crate::input::update_global_table_settings_input::Builder::default()
     }
@@ -1530,7 +1530,7 @@ pub struct UpdateItem {
     _private: (),
 }
 impl UpdateItem {
-    /// Creates a new builder-style object to manufacture [`UpdateItemInput`](crate::input::UpdateItemInput)
+    /// Creates a new builder-style object to manufacture [`UpdateItemInput`](crate::input::UpdateItemInput).
     pub fn builder() -> crate::input::update_item_input::Builder {
         crate::input::update_item_input::Builder::default()
     }
@@ -1562,7 +1562,7 @@ pub struct UpdateTable {
     _private: (),
 }
 impl UpdateTable {
-    /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::input::UpdateTableInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::input::UpdateTableInput).
     pub fn builder() -> crate::input::update_table_input::Builder {
         crate::input::update_table_input::Builder::default()
     }
@@ -1594,7 +1594,7 @@ pub struct UpdateTableReplicaAutoScaling {
     _private: (),
 }
 impl UpdateTableReplicaAutoScaling {
-    /// Creates a new builder-style object to manufacture [`UpdateTableReplicaAutoScalingInput`](crate::input::UpdateTableReplicaAutoScalingInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTableReplicaAutoScalingInput`](crate::input::UpdateTableReplicaAutoScalingInput).
     pub fn builder() -> crate::input::update_table_replica_auto_scaling_input::Builder {
         crate::input::update_table_replica_auto_scaling_input::Builder::default()
     }
@@ -1628,7 +1628,7 @@ pub struct UpdateTimeToLive {
     _private: (),
 }
 impl UpdateTimeToLive {
-    /// Creates a new builder-style object to manufacture [`UpdateTimeToLiveInput`](crate::input::UpdateTimeToLiveInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTimeToLiveInput`](crate::input::UpdateTimeToLiveInput).
     pub fn builder() -> crate::input::update_time_to_live_input::Builder {
         crate::input::update_time_to_live_input::Builder::default()
     }

@@ -9,22 +9,21 @@ impl std::fmt::Debug for PostToConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`PostToConnectionOutput`](crate::output::PostToConnectionOutput)
+/// See [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
 pub mod post_to_connection_output {
 
-    /// A builder for [`PostToConnectionOutput`](crate::output::PostToConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PostToConnectionOutput`](crate::output::PostToConnectionOutput)
+        /// Consumes the builder and constructs a [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
         pub fn build(self) -> crate::output::PostToConnectionOutput {
             crate::output::PostToConnectionOutput {}
         }
     }
 }
 impl PostToConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`PostToConnectionOutput`](crate::output::PostToConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
     pub fn builder() -> crate::output::post_to_connection_output::Builder {
         crate::output::post_to_connection_output::Builder::default()
     }
@@ -64,11 +63,10 @@ impl std::fmt::Debug for GetConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`GetConnectionOutput`](crate::output::GetConnectionOutput)
+/// See [`GetConnectionOutput`](crate::output::GetConnectionOutput).
 pub mod get_connection_output {
 
-    /// A builder for [`GetConnectionOutput`](crate::output::GetConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetConnectionOutput`](crate::output::GetConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connected_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -112,7 +110,7 @@ pub mod get_connection_output {
             self.last_active_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetConnectionOutput`](crate::output::GetConnectionOutput)
+        /// Consumes the builder and constructs a [`GetConnectionOutput`](crate::output::GetConnectionOutput).
         pub fn build(self) -> crate::output::GetConnectionOutput {
             crate::output::GetConnectionOutput {
                 connected_at: self.connected_at,
@@ -123,7 +121,7 @@ pub mod get_connection_output {
     }
 }
 impl GetConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::output::GetConnectionOutput).
     pub fn builder() -> crate::output::get_connection_output::Builder {
         crate::output::get_connection_output::Builder::default()
     }
@@ -139,22 +137,21 @@ impl std::fmt::Debug for DeleteConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+/// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
 
-    /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+        /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
             crate::output::DeleteConnectionOutput {}
         }
     }
 }
 impl DeleteConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     pub fn builder() -> crate::output::delete_connection_output::Builder {
         crate::output::delete_connection_output::Builder::default()
     }

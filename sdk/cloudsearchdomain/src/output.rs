@@ -41,11 +41,10 @@ impl std::fmt::Debug for UploadDocumentsOutput {
         formatter.finish()
     }
 }
-/// See [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput)
+/// See [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
 pub mod upload_documents_output {
 
-    /// A builder for [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -104,7 +103,7 @@ pub mod upload_documents_output {
             self.warnings = input;
             self
         }
-        /// Consumes the builder and constructs a [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput)
+        /// Consumes the builder and constructs a [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
         pub fn build(self) -> crate::output::UploadDocumentsOutput {
             crate::output::UploadDocumentsOutput {
                 status: self.status,
@@ -116,7 +115,7 @@ pub mod upload_documents_output {
     }
 }
 impl UploadDocumentsOutput {
-    /// Creates a new builder-style object to manufacture [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput)
+    /// Creates a new builder-style object to manufacture [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
     pub fn builder() -> crate::output::upload_documents_output::Builder {
         crate::output::upload_documents_output::Builder::default()
     }
@@ -149,11 +148,10 @@ impl std::fmt::Debug for SuggestOutput {
         formatter.finish()
     }
 }
-/// See [`SuggestOutput`](crate::output::SuggestOutput)
+/// See [`SuggestOutput`](crate::output::SuggestOutput).
 pub mod suggest_output {
 
-    /// A builder for [`SuggestOutput`](crate::output::SuggestOutput)
-    #[non_exhaustive]
+    /// A builder for [`SuggestOutput`](crate::output::SuggestOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SuggestStatus>,
@@ -186,7 +184,7 @@ pub mod suggest_output {
             self.suggest = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuggestOutput`](crate::output::SuggestOutput)
+        /// Consumes the builder and constructs a [`SuggestOutput`](crate::output::SuggestOutput).
         pub fn build(self) -> crate::output::SuggestOutput {
             crate::output::SuggestOutput {
                 status: self.status,
@@ -196,7 +194,7 @@ pub mod suggest_output {
     }
 }
 impl SuggestOutput {
-    /// Creates a new builder-style object to manufacture [`SuggestOutput`](crate::output::SuggestOutput)
+    /// Creates a new builder-style object to manufacture [`SuggestOutput`](crate::output::SuggestOutput).
     pub fn builder() -> crate::output::suggest_output::Builder {
         crate::output::suggest_output::Builder::default()
     }
@@ -255,11 +253,10 @@ impl std::fmt::Debug for SearchOutput {
         formatter.finish()
     }
 }
-/// See [`SearchOutput`](crate::output::SearchOutput)
+/// See [`SearchOutput`](crate::output::SearchOutput).
 pub mod search_output {
 
-    /// A builder for [`SearchOutput`](crate::output::SearchOutput)
-    #[non_exhaustive]
+    /// A builder for [`SearchOutput`](crate::output::SearchOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SearchStatus>,
@@ -345,7 +342,7 @@ pub mod search_output {
             self.stats = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchOutput`](crate::output::SearchOutput)
+        /// Consumes the builder and constructs a [`SearchOutput`](crate::output::SearchOutput).
         pub fn build(self) -> crate::output::SearchOutput {
             crate::output::SearchOutput {
                 status: self.status,
@@ -357,7 +354,7 @@ pub mod search_output {
     }
 }
 impl SearchOutput {
-    /// Creates a new builder-style object to manufacture [`SearchOutput`](crate::output::SearchOutput)
+    /// Creates a new builder-style object to manufacture [`SearchOutput`](crate::output::SearchOutput).
     pub fn builder() -> crate::output::search_output::Builder {
         crate::output::search_output::Builder::default()
     }

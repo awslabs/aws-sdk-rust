@@ -10,7 +10,7 @@ pub struct CreateAutoPredictor {
     _private: (),
 }
 impl CreateAutoPredictor {
-    /// Creates a new builder-style object to manufacture [`CreateAutoPredictorInput`](crate::input::CreateAutoPredictorInput)
+    /// Creates a new builder-style object to manufacture [`CreateAutoPredictorInput`](crate::input::CreateAutoPredictorInput).
     pub fn builder() -> crate::input::create_auto_predictor_input::Builder {
         crate::input::create_auto_predictor_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateDataset {
     _private: (),
 }
 impl CreateDataset {
-    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput).
     pub fn builder() -> crate::input::create_dataset_input::Builder {
         crate::input::create_dataset_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateDatasetGroup {
     _private: (),
 }
 impl CreateDatasetGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDatasetGroupInput`](crate::input::CreateDatasetGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDatasetGroupInput`](crate::input::CreateDatasetGroupInput).
     pub fn builder() -> crate::input::create_dataset_group_input::Builder {
         crate::input::create_dataset_group_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateDatasetImportJob {
     _private: (),
 }
 impl CreateDatasetImportJob {
-    /// Creates a new builder-style object to manufacture [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput).
     pub fn builder() -> crate::input::create_dataset_import_job_input::Builder {
         crate::input::create_dataset_import_job_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateExplainability {
     _private: (),
 }
 impl CreateExplainability {
-    /// Creates a new builder-style object to manufacture [`CreateExplainabilityInput`](crate::input::CreateExplainabilityInput)
+    /// Creates a new builder-style object to manufacture [`CreateExplainabilityInput`](crate::input::CreateExplainabilityInput).
     pub fn builder() -> crate::input::create_explainability_input::Builder {
         crate::input::create_explainability_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateExplainabilityExport {
     _private: (),
 }
 impl CreateExplainabilityExport {
-    /// Creates a new builder-style object to manufacture [`CreateExplainabilityExportInput`](crate::input::CreateExplainabilityExportInput)
+    /// Creates a new builder-style object to manufacture [`CreateExplainabilityExportInput`](crate::input::CreateExplainabilityExportInput).
     pub fn builder() -> crate::input::create_explainability_export_input::Builder {
         crate::input::create_explainability_export_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct CreateForecast {
     _private: (),
 }
 impl CreateForecast {
-    /// Creates a new builder-style object to manufacture [`CreateForecastInput`](crate::input::CreateForecastInput)
+    /// Creates a new builder-style object to manufacture [`CreateForecastInput`](crate::input::CreateForecastInput).
     pub fn builder() -> crate::input::create_forecast_input::Builder {
         crate::input::create_forecast_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct CreateForecastExportJob {
     _private: (),
 }
 impl CreateForecastExportJob {
-    /// Creates a new builder-style object to manufacture [`CreateForecastExportJobInput`](crate::input::CreateForecastExportJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateForecastExportJobInput`](crate::input::CreateForecastExportJobInput).
     pub fn builder() -> crate::input::create_forecast_export_job_input::Builder {
         crate::input::create_forecast_export_job_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct CreateMonitor {
     _private: (),
 }
 impl CreateMonitor {
-    /// Creates a new builder-style object to manufacture [`CreateMonitorInput`](crate::input::CreateMonitorInput)
+    /// Creates a new builder-style object to manufacture [`CreateMonitorInput`](crate::input::CreateMonitorInput).
     pub fn builder() -> crate::input::create_monitor_input::Builder {
         crate::input::create_monitor_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct CreatePredictor {
     _private: (),
 }
 impl CreatePredictor {
-    /// Creates a new builder-style object to manufacture [`CreatePredictorInput`](crate::input::CreatePredictorInput)
+    /// Creates a new builder-style object to manufacture [`CreatePredictorInput`](crate::input::CreatePredictorInput).
     pub fn builder() -> crate::input::create_predictor_input::Builder {
         crate::input::create_predictor_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct CreatePredictorBacktestExportJob {
     _private: (),
 }
 impl CreatePredictorBacktestExportJob {
-    /// Creates a new builder-style object to manufacture [`CreatePredictorBacktestExportJobInput`](crate::input::CreatePredictorBacktestExportJobInput)
+    /// Creates a new builder-style object to manufacture [`CreatePredictorBacktestExportJobInput`](crate::input::CreatePredictorBacktestExportJobInput).
     pub fn builder() -> crate::input::create_predictor_backtest_export_job_input::Builder {
         crate::input::create_predictor_backtest_export_job_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct DeleteDataset {
     _private: (),
 }
 impl DeleteDataset {
-    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
     pub fn builder() -> crate::input::delete_dataset_input::Builder {
         crate::input::delete_dataset_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct DeleteDatasetGroup {
     _private: (),
 }
 impl DeleteDatasetGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDatasetGroupInput`](crate::input::DeleteDatasetGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetGroupInput`](crate::input::DeleteDatasetGroupInput).
     pub fn builder() -> crate::input::delete_dataset_group_input::Builder {
         crate::input::delete_dataset_group_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct DeleteDatasetImportJob {
     _private: (),
 }
 impl DeleteDatasetImportJob {
-    /// Creates a new builder-style object to manufacture [`DeleteDatasetImportJobInput`](crate::input::DeleteDatasetImportJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetImportJobInput`](crate::input::DeleteDatasetImportJobInput).
     pub fn builder() -> crate::input::delete_dataset_import_job_input::Builder {
         crate::input::delete_dataset_import_job_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct DeleteExplainability {
     _private: (),
 }
 impl DeleteExplainability {
-    /// Creates a new builder-style object to manufacture [`DeleteExplainabilityInput`](crate::input::DeleteExplainabilityInput)
+    /// Creates a new builder-style object to manufacture [`DeleteExplainabilityInput`](crate::input::DeleteExplainabilityInput).
     pub fn builder() -> crate::input::delete_explainability_input::Builder {
         crate::input::delete_explainability_input::Builder::default()
     }
@@ -512,7 +512,7 @@ pub struct DeleteExplainabilityExport {
     _private: (),
 }
 impl DeleteExplainabilityExport {
-    /// Creates a new builder-style object to manufacture [`DeleteExplainabilityExportInput`](crate::input::DeleteExplainabilityExportInput)
+    /// Creates a new builder-style object to manufacture [`DeleteExplainabilityExportInput`](crate::input::DeleteExplainabilityExportInput).
     pub fn builder() -> crate::input::delete_explainability_export_input::Builder {
         crate::input::delete_explainability_export_input::Builder::default()
     }
@@ -546,7 +546,7 @@ pub struct DeleteForecast {
     _private: (),
 }
 impl DeleteForecast {
-    /// Creates a new builder-style object to manufacture [`DeleteForecastInput`](crate::input::DeleteForecastInput)
+    /// Creates a new builder-style object to manufacture [`DeleteForecastInput`](crate::input::DeleteForecastInput).
     pub fn builder() -> crate::input::delete_forecast_input::Builder {
         crate::input::delete_forecast_input::Builder::default()
     }
@@ -578,7 +578,7 @@ pub struct DeleteForecastExportJob {
     _private: (),
 }
 impl DeleteForecastExportJob {
-    /// Creates a new builder-style object to manufacture [`DeleteForecastExportJobInput`](crate::input::DeleteForecastExportJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteForecastExportJobInput`](crate::input::DeleteForecastExportJobInput).
     pub fn builder() -> crate::input::delete_forecast_export_job_input::Builder {
         crate::input::delete_forecast_export_job_input::Builder::default()
     }
@@ -612,7 +612,7 @@ pub struct DeleteMonitor {
     _private: (),
 }
 impl DeleteMonitor {
-    /// Creates a new builder-style object to manufacture [`DeleteMonitorInput`](crate::input::DeleteMonitorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMonitorInput`](crate::input::DeleteMonitorInput).
     pub fn builder() -> crate::input::delete_monitor_input::Builder {
         crate::input::delete_monitor_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct DeletePredictor {
     _private: (),
 }
 impl DeletePredictor {
-    /// Creates a new builder-style object to manufacture [`DeletePredictorInput`](crate::input::DeletePredictorInput)
+    /// Creates a new builder-style object to manufacture [`DeletePredictorInput`](crate::input::DeletePredictorInput).
     pub fn builder() -> crate::input::delete_predictor_input::Builder {
         crate::input::delete_predictor_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct DeletePredictorBacktestExportJob {
     _private: (),
 }
 impl DeletePredictorBacktestExportJob {
-    /// Creates a new builder-style object to manufacture [`DeletePredictorBacktestExportJobInput`](crate::input::DeletePredictorBacktestExportJobInput)
+    /// Creates a new builder-style object to manufacture [`DeletePredictorBacktestExportJobInput`](crate::input::DeletePredictorBacktestExportJobInput).
     pub fn builder() -> crate::input::delete_predictor_backtest_export_job_input::Builder {
         crate::input::delete_predictor_backtest_export_job_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct DeleteResourceTree {
     _private: (),
 }
 impl DeleteResourceTree {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceTreeInput`](crate::input::DeleteResourceTreeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourceTreeInput`](crate::input::DeleteResourceTreeInput).
     pub fn builder() -> crate::input::delete_resource_tree_input::Builder {
         crate::input::delete_resource_tree_input::Builder::default()
     }
@@ -746,7 +746,7 @@ pub struct DescribeAutoPredictor {
     _private: (),
 }
 impl DescribeAutoPredictor {
-    /// Creates a new builder-style object to manufacture [`DescribeAutoPredictorInput`](crate::input::DescribeAutoPredictorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAutoPredictorInput`](crate::input::DescribeAutoPredictorInput).
     pub fn builder() -> crate::input::describe_auto_predictor_input::Builder {
         crate::input::describe_auto_predictor_input::Builder::default()
     }
@@ -780,7 +780,7 @@ pub struct DescribeDataset {
     _private: (),
 }
 impl DescribeDataset {
-    /// Creates a new builder-style object to manufacture [`DescribeDatasetInput`](crate::input::DescribeDatasetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
     pub fn builder() -> crate::input::describe_dataset_input::Builder {
         crate::input::describe_dataset_input::Builder::default()
     }
@@ -814,7 +814,7 @@ pub struct DescribeDatasetGroup {
     _private: (),
 }
 impl DescribeDatasetGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeDatasetGroupInput`](crate::input::DescribeDatasetGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetGroupInput`](crate::input::DescribeDatasetGroupInput).
     pub fn builder() -> crate::input::describe_dataset_group_input::Builder {
         crate::input::describe_dataset_group_input::Builder::default()
     }
@@ -848,7 +848,7 @@ pub struct DescribeDatasetImportJob {
     _private: (),
 }
 impl DescribeDatasetImportJob {
-    /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobInput`](crate::input::DescribeDatasetImportJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobInput`](crate::input::DescribeDatasetImportJobInput).
     pub fn builder() -> crate::input::describe_dataset_import_job_input::Builder {
         crate::input::describe_dataset_import_job_input::Builder::default()
     }
@@ -882,7 +882,7 @@ pub struct DescribeExplainability {
     _private: (),
 }
 impl DescribeExplainability {
-    /// Creates a new builder-style object to manufacture [`DescribeExplainabilityInput`](crate::input::DescribeExplainabilityInput)
+    /// Creates a new builder-style object to manufacture [`DescribeExplainabilityInput`](crate::input::DescribeExplainabilityInput).
     pub fn builder() -> crate::input::describe_explainability_input::Builder {
         crate::input::describe_explainability_input::Builder::default()
     }
@@ -916,7 +916,7 @@ pub struct DescribeExplainabilityExport {
     _private: (),
 }
 impl DescribeExplainabilityExport {
-    /// Creates a new builder-style object to manufacture [`DescribeExplainabilityExportInput`](crate::input::DescribeExplainabilityExportInput)
+    /// Creates a new builder-style object to manufacture [`DescribeExplainabilityExportInput`](crate::input::DescribeExplainabilityExportInput).
     pub fn builder() -> crate::input::describe_explainability_export_input::Builder {
         crate::input::describe_explainability_export_input::Builder::default()
     }
@@ -950,7 +950,7 @@ pub struct DescribeForecast {
     _private: (),
 }
 impl DescribeForecast {
-    /// Creates a new builder-style object to manufacture [`DescribeForecastInput`](crate::input::DescribeForecastInput)
+    /// Creates a new builder-style object to manufacture [`DescribeForecastInput`](crate::input::DescribeForecastInput).
     pub fn builder() -> crate::input::describe_forecast_input::Builder {
         crate::input::describe_forecast_input::Builder::default()
     }
@@ -984,7 +984,7 @@ pub struct DescribeForecastExportJob {
     _private: (),
 }
 impl DescribeForecastExportJob {
-    /// Creates a new builder-style object to manufacture [`DescribeForecastExportJobInput`](crate::input::DescribeForecastExportJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeForecastExportJobInput`](crate::input::DescribeForecastExportJobInput).
     pub fn builder() -> crate::input::describe_forecast_export_job_input::Builder {
         crate::input::describe_forecast_export_job_input::Builder::default()
     }
@@ -1018,7 +1018,7 @@ pub struct DescribeMonitor {
     _private: (),
 }
 impl DescribeMonitor {
-    /// Creates a new builder-style object to manufacture [`DescribeMonitorInput`](crate::input::DescribeMonitorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMonitorInput`](crate::input::DescribeMonitorInput).
     pub fn builder() -> crate::input::describe_monitor_input::Builder {
         crate::input::describe_monitor_input::Builder::default()
     }
@@ -1052,7 +1052,7 @@ pub struct DescribePredictor {
     _private: (),
 }
 impl DescribePredictor {
-    /// Creates a new builder-style object to manufacture [`DescribePredictorInput`](crate::input::DescribePredictorInput)
+    /// Creates a new builder-style object to manufacture [`DescribePredictorInput`](crate::input::DescribePredictorInput).
     pub fn builder() -> crate::input::describe_predictor_input::Builder {
         crate::input::describe_predictor_input::Builder::default()
     }
@@ -1086,7 +1086,7 @@ pub struct DescribePredictorBacktestExportJob {
     _private: (),
 }
 impl DescribePredictorBacktestExportJob {
-    /// Creates a new builder-style object to manufacture [`DescribePredictorBacktestExportJobInput`](crate::input::DescribePredictorBacktestExportJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribePredictorBacktestExportJobInput`](crate::input::DescribePredictorBacktestExportJobInput).
     pub fn builder() -> crate::input::describe_predictor_backtest_export_job_input::Builder {
         crate::input::describe_predictor_backtest_export_job_input::Builder::default()
     }
@@ -1120,7 +1120,7 @@ pub struct GetAccuracyMetrics {
     _private: (),
 }
 impl GetAccuracyMetrics {
-    /// Creates a new builder-style object to manufacture [`GetAccuracyMetricsInput`](crate::input::GetAccuracyMetricsInput)
+    /// Creates a new builder-style object to manufacture [`GetAccuracyMetricsInput`](crate::input::GetAccuracyMetricsInput).
     pub fn builder() -> crate::input::get_accuracy_metrics_input::Builder {
         crate::input::get_accuracy_metrics_input::Builder::default()
     }
@@ -1154,7 +1154,7 @@ pub struct ListDatasetGroups {
     _private: (),
 }
 impl ListDatasetGroups {
-    /// Creates a new builder-style object to manufacture [`ListDatasetGroupsInput`](crate::input::ListDatasetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListDatasetGroupsInput`](crate::input::ListDatasetGroupsInput).
     pub fn builder() -> crate::input::list_dataset_groups_input::Builder {
         crate::input::list_dataset_groups_input::Builder::default()
     }
@@ -1188,7 +1188,7 @@ pub struct ListDatasetImportJobs {
     _private: (),
 }
 impl ListDatasetImportJobs {
-    /// Creates a new builder-style object to manufacture [`ListDatasetImportJobsInput`](crate::input::ListDatasetImportJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListDatasetImportJobsInput`](crate::input::ListDatasetImportJobsInput).
     pub fn builder() -> crate::input::list_dataset_import_jobs_input::Builder {
         crate::input::list_dataset_import_jobs_input::Builder::default()
     }
@@ -1222,7 +1222,7 @@ pub struct ListDatasets {
     _private: (),
 }
 impl ListDatasets {
-    /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput)
+    /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput).
     pub fn builder() -> crate::input::list_datasets_input::Builder {
         crate::input::list_datasets_input::Builder::default()
     }
@@ -1254,7 +1254,7 @@ pub struct ListExplainabilities {
     _private: (),
 }
 impl ListExplainabilities {
-    /// Creates a new builder-style object to manufacture [`ListExplainabilitiesInput`](crate::input::ListExplainabilitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListExplainabilitiesInput`](crate::input::ListExplainabilitiesInput).
     pub fn builder() -> crate::input::list_explainabilities_input::Builder {
         crate::input::list_explainabilities_input::Builder::default()
     }
@@ -1288,7 +1288,7 @@ pub struct ListExplainabilityExports {
     _private: (),
 }
 impl ListExplainabilityExports {
-    /// Creates a new builder-style object to manufacture [`ListExplainabilityExportsInput`](crate::input::ListExplainabilityExportsInput)
+    /// Creates a new builder-style object to manufacture [`ListExplainabilityExportsInput`](crate::input::ListExplainabilityExportsInput).
     pub fn builder() -> crate::input::list_explainability_exports_input::Builder {
         crate::input::list_explainability_exports_input::Builder::default()
     }
@@ -1322,7 +1322,7 @@ pub struct ListForecastExportJobs {
     _private: (),
 }
 impl ListForecastExportJobs {
-    /// Creates a new builder-style object to manufacture [`ListForecastExportJobsInput`](crate::input::ListForecastExportJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListForecastExportJobsInput`](crate::input::ListForecastExportJobsInput).
     pub fn builder() -> crate::input::list_forecast_export_jobs_input::Builder {
         crate::input::list_forecast_export_jobs_input::Builder::default()
     }
@@ -1356,7 +1356,7 @@ pub struct ListForecasts {
     _private: (),
 }
 impl ListForecasts {
-    /// Creates a new builder-style object to manufacture [`ListForecastsInput`](crate::input::ListForecastsInput)
+    /// Creates a new builder-style object to manufacture [`ListForecastsInput`](crate::input::ListForecastsInput).
     pub fn builder() -> crate::input::list_forecasts_input::Builder {
         crate::input::list_forecasts_input::Builder::default()
     }
@@ -1388,7 +1388,7 @@ pub struct ListMonitorEvaluations {
     _private: (),
 }
 impl ListMonitorEvaluations {
-    /// Creates a new builder-style object to manufacture [`ListMonitorEvaluationsInput`](crate::input::ListMonitorEvaluationsInput)
+    /// Creates a new builder-style object to manufacture [`ListMonitorEvaluationsInput`](crate::input::ListMonitorEvaluationsInput).
     pub fn builder() -> crate::input::list_monitor_evaluations_input::Builder {
         crate::input::list_monitor_evaluations_input::Builder::default()
     }
@@ -1422,7 +1422,7 @@ pub struct ListMonitors {
     _private: (),
 }
 impl ListMonitors {
-    /// Creates a new builder-style object to manufacture [`ListMonitorsInput`](crate::input::ListMonitorsInput)
+    /// Creates a new builder-style object to manufacture [`ListMonitorsInput`](crate::input::ListMonitorsInput).
     pub fn builder() -> crate::input::list_monitors_input::Builder {
         crate::input::list_monitors_input::Builder::default()
     }
@@ -1454,7 +1454,7 @@ pub struct ListPredictorBacktestExportJobs {
     _private: (),
 }
 impl ListPredictorBacktestExportJobs {
-    /// Creates a new builder-style object to manufacture [`ListPredictorBacktestExportJobsInput`](crate::input::ListPredictorBacktestExportJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListPredictorBacktestExportJobsInput`](crate::input::ListPredictorBacktestExportJobsInput).
     pub fn builder() -> crate::input::list_predictor_backtest_export_jobs_input::Builder {
         crate::input::list_predictor_backtest_export_jobs_input::Builder::default()
     }
@@ -1488,7 +1488,7 @@ pub struct ListPredictors {
     _private: (),
 }
 impl ListPredictors {
-    /// Creates a new builder-style object to manufacture [`ListPredictorsInput`](crate::input::ListPredictorsInput)
+    /// Creates a new builder-style object to manufacture [`ListPredictorsInput`](crate::input::ListPredictorsInput).
     pub fn builder() -> crate::input::list_predictors_input::Builder {
         crate::input::list_predictors_input::Builder::default()
     }
@@ -1520,7 +1520,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1554,7 +1554,7 @@ pub struct ResumeResource {
     _private: (),
 }
 impl ResumeResource {
-    /// Creates a new builder-style object to manufacture [`ResumeResourceInput`](crate::input::ResumeResourceInput)
+    /// Creates a new builder-style object to manufacture [`ResumeResourceInput`](crate::input::ResumeResourceInput).
     pub fn builder() -> crate::input::resume_resource_input::Builder {
         crate::input::resume_resource_input::Builder::default()
     }
@@ -1586,7 +1586,7 @@ pub struct StopResource {
     _private: (),
 }
 impl StopResource {
-    /// Creates a new builder-style object to manufacture [`StopResourceInput`](crate::input::StopResourceInput)
+    /// Creates a new builder-style object to manufacture [`StopResourceInput`](crate::input::StopResourceInput).
     pub fn builder() -> crate::input::stop_resource_input::Builder {
         crate::input::stop_resource_input::Builder::default()
     }
@@ -1618,7 +1618,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1650,7 +1650,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1682,7 +1682,7 @@ pub struct UpdateDatasetGroup {
     _private: (),
 }
 impl UpdateDatasetGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateDatasetGroupInput`](crate::input::UpdateDatasetGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDatasetGroupInput`](crate::input::UpdateDatasetGroupInput).
     pub fn builder() -> crate::input::update_dataset_group_input::Builder {
         crate::input::update_dataset_group_input::Builder::default()
     }

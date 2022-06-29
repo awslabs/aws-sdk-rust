@@ -27,11 +27,10 @@ impl std::fmt::Debug for FeatureValue {
         formatter.finish()
     }
 }
-/// See [`FeatureValue`](crate::model::FeatureValue)
+/// See [`FeatureValue`](crate::model::FeatureValue).
 pub mod feature_value {
 
-    /// A builder for [`FeatureValue`](crate::model::FeatureValue)
-    #[non_exhaustive]
+    /// A builder for [`FeatureValue`](crate::model::FeatureValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_name: std::option::Option<std::string::String>,
@@ -61,7 +60,7 @@ pub mod feature_value {
             self.value_as_string = input;
             self
         }
-        /// Consumes the builder and constructs a [`FeatureValue`](crate::model::FeatureValue)
+        /// Consumes the builder and constructs a [`FeatureValue`](crate::model::FeatureValue).
         pub fn build(self) -> crate::model::FeatureValue {
             crate::model::FeatureValue {
                 feature_name: self.feature_name,
@@ -71,7 +70,7 @@ pub mod feature_value {
     }
 }
 impl FeatureValue {
-    /// Creates a new builder-style object to manufacture [`FeatureValue`](crate::model::FeatureValue)
+    /// Creates a new builder-style object to manufacture [`FeatureValue`](crate::model::FeatureValue).
     pub fn builder() -> crate::model::feature_value::Builder {
         crate::model::feature_value::Builder::default()
     }
@@ -116,11 +115,10 @@ impl std::fmt::Debug for BatchGetRecordIdentifier {
         formatter.finish()
     }
 }
-/// See [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier)
+/// See [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
 pub mod batch_get_record_identifier {
 
-    /// A builder for [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
@@ -183,7 +181,7 @@ pub mod batch_get_record_identifier {
             self.feature_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier)
+        /// Consumes the builder and constructs a [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
         pub fn build(self) -> crate::model::BatchGetRecordIdentifier {
             crate::model::BatchGetRecordIdentifier {
                 feature_group_name: self.feature_group_name,
@@ -194,7 +192,7 @@ pub mod batch_get_record_identifier {
     }
 }
 impl BatchGetRecordIdentifier {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier)
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordIdentifier`](crate::model::BatchGetRecordIdentifier).
     pub fn builder() -> crate::model::batch_get_record_identifier::Builder {
         crate::model::batch_get_record_identifier::Builder::default()
     }
@@ -244,11 +242,10 @@ impl std::fmt::Debug for BatchGetRecordError {
         formatter.finish()
     }
 }
-/// See [`BatchGetRecordError`](crate::model::BatchGetRecordError)
+/// See [`BatchGetRecordError`](crate::model::BatchGetRecordError).
 pub mod batch_get_record_error {
 
-    /// A builder for [`BatchGetRecordError`](crate::model::BatchGetRecordError)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetRecordError`](crate::model::BatchGetRecordError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
@@ -309,7 +306,7 @@ pub mod batch_get_record_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetRecordError`](crate::model::BatchGetRecordError)
+        /// Consumes the builder and constructs a [`BatchGetRecordError`](crate::model::BatchGetRecordError).
         pub fn build(self) -> crate::model::BatchGetRecordError {
             crate::model::BatchGetRecordError {
                 feature_group_name: self.feature_group_name,
@@ -321,7 +318,7 @@ pub mod batch_get_record_error {
     }
 }
 impl BatchGetRecordError {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordError`](crate::model::BatchGetRecordError)
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordError`](crate::model::BatchGetRecordError).
     pub fn builder() -> crate::model::batch_get_record_error::Builder {
         crate::model::batch_get_record_error::Builder::default()
     }
@@ -364,11 +361,10 @@ impl std::fmt::Debug for BatchGetRecordResultDetail {
         formatter.finish()
     }
 }
-/// See [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail)
+/// See [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
 pub mod batch_get_record_result_detail {
 
-    /// A builder for [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature_group_name: std::option::Option<std::string::String>,
@@ -424,7 +420,7 @@ pub mod batch_get_record_result_detail {
             self.record = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail)
+        /// Consumes the builder and constructs a [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
         pub fn build(self) -> crate::model::BatchGetRecordResultDetail {
             crate::model::BatchGetRecordResultDetail {
                 feature_group_name: self.feature_group_name,
@@ -435,7 +431,7 @@ pub mod batch_get_record_result_detail {
     }
 }
 impl BatchGetRecordResultDetail {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail)
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordResultDetail`](crate::model::BatchGetRecordResultDetail).
     pub fn builder() -> crate::model::batch_get_record_result_detail::Builder {
         crate::model::batch_get_record_result_detail::Builder::default()
     }

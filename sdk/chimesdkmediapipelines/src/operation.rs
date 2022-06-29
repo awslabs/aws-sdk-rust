@@ -10,7 +10,7 @@ pub struct CreateMediaCapturePipeline {
     _private: (),
 }
 impl CreateMediaCapturePipeline {
-    /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput)
+    /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput).
     pub fn builder() -> crate::input::create_media_capture_pipeline_input::Builder {
         crate::input::create_media_capture_pipeline_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteMediaCapturePipeline {
     _private: (),
 }
 impl DeleteMediaCapturePipeline {
-    /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput).
     pub fn builder() -> crate::input::delete_media_capture_pipeline_input::Builder {
         crate::input::delete_media_capture_pipeline_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetMediaCapturePipeline {
     _private: (),
 }
 impl GetMediaCapturePipeline {
-    /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput)
+    /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput).
     pub fn builder() -> crate::input::get_media_capture_pipeline_input::Builder {
         crate::input::get_media_capture_pipeline_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ListMediaCapturePipelines {
     _private: (),
 }
 impl ListMediaCapturePipelines {
-    /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput)
+    /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput).
     pub fn builder() -> crate::input::list_media_capture_pipelines_input::Builder {
         crate::input::list_media_capture_pipelines_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

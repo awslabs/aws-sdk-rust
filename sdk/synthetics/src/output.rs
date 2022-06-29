@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateCanaryOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput)
+/// See [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
 pub mod update_canary_output {
 
-    /// A builder for [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput)
+        /// Consumes the builder and constructs a [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
         pub fn build(self) -> crate::output::UpdateCanaryOutput {
             crate::output::UpdateCanaryOutput {}
         }
     }
 }
 impl UpdateCanaryOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
     pub fn builder() -> crate::output::update_canary_output::Builder {
         crate::output::update_canary_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for StopCanaryOutput {
         formatter.finish()
     }
 }
-/// See [`StopCanaryOutput`](crate::output::StopCanaryOutput)
+/// See [`StopCanaryOutput`](crate::output::StopCanaryOutput).
 pub mod stop_canary_output {
 
-    /// A builder for [`StopCanaryOutput`](crate::output::StopCanaryOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopCanaryOutput`](crate::output::StopCanaryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StopCanaryOutput`](crate::output::StopCanaryOutput)
+        /// Consumes the builder and constructs a [`StopCanaryOutput`](crate::output::StopCanaryOutput).
         pub fn build(self) -> crate::output::StopCanaryOutput {
             crate::output::StopCanaryOutput {}
         }
     }
 }
 impl StopCanaryOutput {
-    /// Creates a new builder-style object to manufacture [`StopCanaryOutput`](crate::output::StopCanaryOutput)
+    /// Creates a new builder-style object to manufacture [`StopCanaryOutput`](crate::output::StopCanaryOutput).
     pub fn builder() -> crate::output::stop_canary_output::Builder {
         crate::output::stop_canary_output::Builder::default()
     }
@@ -133,22 +129,21 @@ impl std::fmt::Debug for StartCanaryOutput {
         formatter.finish()
     }
 }
-/// See [`StartCanaryOutput`](crate::output::StartCanaryOutput)
+/// See [`StartCanaryOutput`](crate::output::StartCanaryOutput).
 pub mod start_canary_output {
 
-    /// A builder for [`StartCanaryOutput`](crate::output::StartCanaryOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartCanaryOutput`](crate::output::StartCanaryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartCanaryOutput`](crate::output::StartCanaryOutput)
+        /// Consumes the builder and constructs a [`StartCanaryOutput`](crate::output::StartCanaryOutput).
         pub fn build(self) -> crate::output::StartCanaryOutput {
             crate::output::StartCanaryOutput {}
         }
     }
 }
 impl StartCanaryOutput {
-    /// Creates a new builder-style object to manufacture [`StartCanaryOutput`](crate::output::StartCanaryOutput)
+    /// Creates a new builder-style object to manufacture [`StartCanaryOutput`](crate::output::StartCanaryOutput).
     pub fn builder() -> crate::output::start_canary_output::Builder {
         crate::output::start_canary_output::Builder::default()
     }
@@ -178,11 +173,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -215,14 +209,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -255,11 +249,10 @@ impl std::fmt::Debug for GetCanaryRunsOutput {
         formatter.finish()
     }
 }
-/// See [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput)
+/// See [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
 pub mod get_canary_runs_output {
 
-    /// A builder for [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary_runs: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
@@ -295,7 +288,7 @@ pub mod get_canary_runs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput)
+        /// Consumes the builder and constructs a [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
         pub fn build(self) -> crate::output::GetCanaryRunsOutput {
             crate::output::GetCanaryRunsOutput {
                 canary_runs: self.canary_runs,
@@ -305,7 +298,7 @@ pub mod get_canary_runs_output {
     }
 }
 impl GetCanaryRunsOutput {
-    /// Creates a new builder-style object to manufacture [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput)
+    /// Creates a new builder-style object to manufacture [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
     pub fn builder() -> crate::output::get_canary_runs_output::Builder {
         crate::output::get_canary_runs_output::Builder::default()
     }
@@ -331,11 +324,10 @@ impl std::fmt::Debug for GetCanaryOutput {
         formatter.finish()
     }
 }
-/// See [`GetCanaryOutput`](crate::output::GetCanaryOutput)
+/// See [`GetCanaryOutput`](crate::output::GetCanaryOutput).
 pub mod get_canary_output {
 
-    /// A builder for [`GetCanaryOutput`](crate::output::GetCanaryOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCanaryOutput`](crate::output::GetCanaryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary: std::option::Option<crate::model::Canary>,
@@ -351,7 +343,7 @@ pub mod get_canary_output {
             self.canary = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCanaryOutput`](crate::output::GetCanaryOutput)
+        /// Consumes the builder and constructs a [`GetCanaryOutput`](crate::output::GetCanaryOutput).
         pub fn build(self) -> crate::output::GetCanaryOutput {
             crate::output::GetCanaryOutput {
                 canary: self.canary,
@@ -360,7 +352,7 @@ pub mod get_canary_output {
     }
 }
 impl GetCanaryOutput {
-    /// Creates a new builder-style object to manufacture [`GetCanaryOutput`](crate::output::GetCanaryOutput)
+    /// Creates a new builder-style object to manufacture [`GetCanaryOutput`](crate::output::GetCanaryOutput).
     pub fn builder() -> crate::output::get_canary_output::Builder {
         crate::output::get_canary_output::Builder::default()
     }
@@ -393,11 +385,10 @@ impl std::fmt::Debug for DescribeRuntimeVersionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput)
+/// See [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
 pub mod describe_runtime_versions_output {
 
-    /// A builder for [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) runtime_versions:
@@ -434,7 +425,7 @@ pub mod describe_runtime_versions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput)
+        /// Consumes the builder and constructs a [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
         pub fn build(self) -> crate::output::DescribeRuntimeVersionsOutput {
             crate::output::DescribeRuntimeVersionsOutput {
                 runtime_versions: self.runtime_versions,
@@ -444,7 +435,7 @@ pub mod describe_runtime_versions_output {
     }
 }
 impl DescribeRuntimeVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
     pub fn builder() -> crate::output::describe_runtime_versions_output::Builder {
         crate::output::describe_runtime_versions_output::Builder::default()
     }
@@ -477,11 +468,10 @@ impl std::fmt::Debug for DescribeCanariesLastRunOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput)
+/// See [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
 pub mod describe_canaries_last_run_output {
 
-    /// A builder for [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canaries_last_run:
@@ -518,7 +508,7 @@ pub mod describe_canaries_last_run_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput)
+        /// Consumes the builder and constructs a [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
         pub fn build(self) -> crate::output::DescribeCanariesLastRunOutput {
             crate::output::DescribeCanariesLastRunOutput {
                 canaries_last_run: self.canaries_last_run,
@@ -528,7 +518,7 @@ pub mod describe_canaries_last_run_output {
     }
 }
 impl DescribeCanariesLastRunOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
     pub fn builder() -> crate::output::describe_canaries_last_run_output::Builder {
         crate::output::describe_canaries_last_run_output::Builder::default()
     }
@@ -561,11 +551,10 @@ impl std::fmt::Debug for DescribeCanariesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput)
+/// See [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
 pub mod describe_canaries_output {
 
-    /// A builder for [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canaries: std::option::Option<std::vec::Vec<crate::model::Canary>>,
@@ -601,7 +590,7 @@ pub mod describe_canaries_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput)
+        /// Consumes the builder and constructs a [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
         pub fn build(self) -> crate::output::DescribeCanariesOutput {
             crate::output::DescribeCanariesOutput {
                 canaries: self.canaries,
@@ -611,7 +600,7 @@ pub mod describe_canaries_output {
     }
 }
 impl DescribeCanariesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
     pub fn builder() -> crate::output::describe_canaries_output::Builder {
         crate::output::describe_canaries_output::Builder::default()
     }
@@ -627,22 +616,21 @@ impl std::fmt::Debug for DeleteCanaryOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput)
+/// See [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
 pub mod delete_canary_output {
 
-    /// A builder for [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput)
+        /// Consumes the builder and constructs a [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
         pub fn build(self) -> crate::output::DeleteCanaryOutput {
             crate::output::DeleteCanaryOutput {}
         }
     }
 }
 impl DeleteCanaryOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
     pub fn builder() -> crate::output::delete_canary_output::Builder {
         crate::output::delete_canary_output::Builder::default()
     }
@@ -668,11 +656,10 @@ impl std::fmt::Debug for CreateCanaryOutput {
         formatter.finish()
     }
 }
-/// See [`CreateCanaryOutput`](crate::output::CreateCanaryOutput)
+/// See [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
 pub mod create_canary_output {
 
-    /// A builder for [`CreateCanaryOutput`](crate::output::CreateCanaryOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canary: std::option::Option<crate::model::Canary>,
@@ -688,7 +675,7 @@ pub mod create_canary_output {
             self.canary = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateCanaryOutput`](crate::output::CreateCanaryOutput)
+        /// Consumes the builder and constructs a [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
         pub fn build(self) -> crate::output::CreateCanaryOutput {
             crate::output::CreateCanaryOutput {
                 canary: self.canary,
@@ -697,7 +684,7 @@ pub mod create_canary_output {
     }
 }
 impl CreateCanaryOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCanaryOutput`](crate::output::CreateCanaryOutput)
+    /// Creates a new builder-style object to manufacture [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
     pub fn builder() -> crate::output::create_canary_output::Builder {
         crate::output::create_canary_output::Builder::default()
     }

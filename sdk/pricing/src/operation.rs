@@ -10,7 +10,7 @@ pub struct DescribeServices {
     _private: (),
 }
 impl DescribeServices {
-    /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::input::DescribeServicesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::input::DescribeServicesInput).
     pub fn builder() -> crate::input::describe_services_input::Builder {
         crate::input::describe_services_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetAttributeValues {
     _private: (),
 }
 impl GetAttributeValues {
-    /// Creates a new builder-style object to manufacture [`GetAttributeValuesInput`](crate::input::GetAttributeValuesInput)
+    /// Creates a new builder-style object to manufacture [`GetAttributeValuesInput`](crate::input::GetAttributeValuesInput).
     pub fn builder() -> crate::input::get_attribute_values_input::Builder {
         crate::input::get_attribute_values_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetProducts {
     _private: (),
 }
 impl GetProducts {
-    /// Creates a new builder-style object to manufacture [`GetProductsInput`](crate::input::GetProductsInput)
+    /// Creates a new builder-style object to manufacture [`GetProductsInput`](crate::input::GetProductsInput).
     pub fn builder() -> crate::input::get_products_input::Builder {
         crate::input::get_products_input::Builder::default()
     }

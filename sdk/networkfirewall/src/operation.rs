@@ -10,7 +10,7 @@ pub struct AssociateFirewallPolicy {
     _private: (),
 }
 impl AssociateFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`AssociateFirewallPolicyInput`](crate::input::AssociateFirewallPolicyInput)
+    /// Creates a new builder-style object to manufacture [`AssociateFirewallPolicyInput`](crate::input::AssociateFirewallPolicyInput).
     pub fn builder() -> crate::input::associate_firewall_policy_input::Builder {
         crate::input::associate_firewall_policy_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateSubnets {
     _private: (),
 }
 impl AssociateSubnets {
-    /// Creates a new builder-style object to manufacture [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput)
+    /// Creates a new builder-style object to manufacture [`AssociateSubnetsInput`](crate::input::AssociateSubnetsInput).
     pub fn builder() -> crate::input::associate_subnets_input::Builder {
         crate::input::associate_subnets_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateFirewall {
     _private: (),
 }
 impl CreateFirewall {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallInput`](crate::input::CreateFirewallInput)
+    /// Creates a new builder-style object to manufacture [`CreateFirewallInput`](crate::input::CreateFirewallInput).
     pub fn builder() -> crate::input::create_firewall_input::Builder {
         crate::input::create_firewall_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateFirewallPolicy {
     _private: (),
 }
 impl CreateFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput)
+    /// Creates a new builder-style object to manufacture [`CreateFirewallPolicyInput`](crate::input::CreateFirewallPolicyInput).
     pub fn builder() -> crate::input::create_firewall_policy_input::Builder {
         crate::input::create_firewall_policy_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateRuleGroup {
     _private: (),
 }
 impl CreateRuleGroup {
-    /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
     pub fn builder() -> crate::input::create_rule_group_input::Builder {
         crate::input::create_rule_group_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeleteFirewall {
     _private: (),
 }
 impl DeleteFirewall {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallInput`](crate::input::DeleteFirewallInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallInput`](crate::input::DeleteFirewallInput).
     pub fn builder() -> crate::input::delete_firewall_input::Builder {
         crate::input::delete_firewall_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteFirewallPolicy {
     _private: (),
 }
 impl DeleteFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallPolicyInput`](crate::input::DeleteFirewallPolicyInput).
     pub fn builder() -> crate::input::delete_firewall_policy_input::Builder {
         crate::input::delete_firewall_policy_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteRuleGroup {
     _private: (),
 }
 impl DeleteRuleGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
     pub fn builder() -> crate::input::delete_rule_group_input::Builder {
         crate::input::delete_rule_group_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DescribeFirewall {
     _private: (),
 }
 impl DescribeFirewall {
-    /// Creates a new builder-style object to manufacture [`DescribeFirewallInput`](crate::input::DescribeFirewallInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFirewallInput`](crate::input::DescribeFirewallInput).
     pub fn builder() -> crate::input::describe_firewall_input::Builder {
         crate::input::describe_firewall_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DescribeFirewallPolicy {
     _private: (),
 }
 impl DescribeFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFirewallPolicyInput`](crate::input::DescribeFirewallPolicyInput).
     pub fn builder() -> crate::input::describe_firewall_policy_input::Builder {
         crate::input::describe_firewall_policy_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DescribeLoggingConfiguration {
     _private: (),
 }
 impl DescribeLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationInput`](crate::input::DescribeLoggingConfigurationInput).
     pub fn builder() -> crate::input::describe_logging_configuration_input::Builder {
         crate::input::describe_logging_configuration_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DescribeResourcePolicy {
     _private: (),
 }
 impl DescribeResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
     pub fn builder() -> crate::input::describe_resource_policy_input::Builder {
         crate::input::describe_resource_policy_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct DescribeRuleGroup {
     _private: (),
 }
 impl DescribeRuleGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupInput`](crate::input::DescribeRuleGroupInput).
     pub fn builder() -> crate::input::describe_rule_group_input::Builder {
         crate::input::describe_rule_group_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DescribeRuleGroupMetadata {
     _private: (),
 }
 impl DescribeRuleGroupMetadata {
-    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataInput`](crate::input::DescribeRuleGroupMetadataInput).
     pub fn builder() -> crate::input::describe_rule_group_metadata_input::Builder {
         crate::input::describe_rule_group_metadata_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DisassociateSubnets {
     _private: (),
 }
 impl DisassociateSubnets {
-    /// Creates a new builder-style object to manufacture [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateSubnetsInput`](crate::input::DisassociateSubnetsInput).
     pub fn builder() -> crate::input::disassociate_subnets_input::Builder {
         crate::input::disassociate_subnets_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct ListFirewallPolicies {
     _private: (),
 }
 impl ListFirewallPolicies {
-    /// Creates a new builder-style object to manufacture [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallPoliciesInput`](crate::input::ListFirewallPoliciesInput).
     pub fn builder() -> crate::input::list_firewall_policies_input::Builder {
         crate::input::list_firewall_policies_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct ListFirewalls {
     _private: (),
 }
 impl ListFirewalls {
-    /// Creates a new builder-style object to manufacture [`ListFirewallsInput`](crate::input::ListFirewallsInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallsInput`](crate::input::ListFirewallsInput).
     pub fn builder() -> crate::input::list_firewalls_input::Builder {
         crate::input::list_firewalls_input::Builder::default()
     }
@@ -616,7 +616,7 @@ pub struct ListRuleGroups {
     _private: (),
 }
 impl ListRuleGroups {
-    /// Creates a new builder-style object to manufacture [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
     pub fn builder() -> crate::input::list_rule_groups_input::Builder {
         crate::input::list_rule_groups_input::Builder::default()
     }
@@ -648,7 +648,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -682,7 +682,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -716,7 +716,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -748,7 +748,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -780,7 +780,7 @@ pub struct UpdateFirewallDeleteProtection {
     _private: (),
 }
 impl UpdateFirewallDeleteProtection {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallDeleteProtectionInput`](crate::input::UpdateFirewallDeleteProtectionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallDeleteProtectionInput`](crate::input::UpdateFirewallDeleteProtectionInput).
     pub fn builder() -> crate::input::update_firewall_delete_protection_input::Builder {
         crate::input::update_firewall_delete_protection_input::Builder::default()
     }
@@ -814,7 +814,7 @@ pub struct UpdateFirewallDescription {
     _private: (),
 }
 impl UpdateFirewallDescription {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallDescriptionInput`](crate::input::UpdateFirewallDescriptionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallDescriptionInput`](crate::input::UpdateFirewallDescriptionInput).
     pub fn builder() -> crate::input::update_firewall_description_input::Builder {
         crate::input::update_firewall_description_input::Builder::default()
     }
@@ -848,7 +848,7 @@ pub struct UpdateFirewallEncryptionConfiguration {
     _private: (),
 }
 impl UpdateFirewallEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationInput`](crate::input::UpdateFirewallEncryptionConfigurationInput).
     pub fn builder() -> crate::input::update_firewall_encryption_configuration_input::Builder {
         crate::input::update_firewall_encryption_configuration_input::Builder::default()
     }
@@ -884,7 +884,7 @@ pub struct UpdateFirewallPolicy {
     _private: (),
 }
 impl UpdateFirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyInput`](crate::input::UpdateFirewallPolicyInput).
     pub fn builder() -> crate::input::update_firewall_policy_input::Builder {
         crate::input::update_firewall_policy_input::Builder::default()
     }
@@ -918,7 +918,7 @@ pub struct UpdateFirewallPolicyChangeProtection {
     _private: (),
 }
 impl UpdateFirewallPolicyChangeProtection {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyChangeProtectionInput`](crate::input::UpdateFirewallPolicyChangeProtectionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyChangeProtectionInput`](crate::input::UpdateFirewallPolicyChangeProtectionInput).
     pub fn builder() -> crate::input::update_firewall_policy_change_protection_input::Builder {
         crate::input::update_firewall_policy_change_protection_input::Builder::default()
     }
@@ -954,7 +954,7 @@ pub struct UpdateLoggingConfiguration {
     _private: (),
 }
 impl UpdateLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationInput`](crate::input::UpdateLoggingConfigurationInput).
     pub fn builder() -> crate::input::update_logging_configuration_input::Builder {
         crate::input::update_logging_configuration_input::Builder::default()
     }
@@ -988,7 +988,7 @@ pub struct UpdateRuleGroup {
     _private: (),
 }
 impl UpdateRuleGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
     pub fn builder() -> crate::input::update_rule_group_input::Builder {
         crate::input::update_rule_group_input::Builder::default()
     }
@@ -1022,7 +1022,7 @@ pub struct UpdateSubnetChangeProtection {
     _private: (),
 }
 impl UpdateSubnetChangeProtection {
-    /// Creates a new builder-style object to manufacture [`UpdateSubnetChangeProtectionInput`](crate::input::UpdateSubnetChangeProtectionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSubnetChangeProtectionInput`](crate::input::UpdateSubnetChangeProtectionInput).
     pub fn builder() -> crate::input::update_subnet_change_protection_input::Builder {
         crate::input::update_subnet_change_protection_input::Builder::default()
     }

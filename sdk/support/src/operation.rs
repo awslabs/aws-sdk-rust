@@ -10,7 +10,7 @@ pub struct AddAttachmentsToSet {
     _private: (),
 }
 impl AddAttachmentsToSet {
-    /// Creates a new builder-style object to manufacture [`AddAttachmentsToSetInput`](crate::input::AddAttachmentsToSetInput)
+    /// Creates a new builder-style object to manufacture [`AddAttachmentsToSetInput`](crate::input::AddAttachmentsToSetInput).
     pub fn builder() -> crate::input::add_attachments_to_set_input::Builder {
         crate::input::add_attachments_to_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AddCommunicationToCase {
     _private: (),
 }
 impl AddCommunicationToCase {
-    /// Creates a new builder-style object to manufacture [`AddCommunicationToCaseInput`](crate::input::AddCommunicationToCaseInput)
+    /// Creates a new builder-style object to manufacture [`AddCommunicationToCaseInput`](crate::input::AddCommunicationToCaseInput).
     pub fn builder() -> crate::input::add_communication_to_case_input::Builder {
         crate::input::add_communication_to_case_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateCase {
     _private: (),
 }
 impl CreateCase {
-    /// Creates a new builder-style object to manufacture [`CreateCaseInput`](crate::input::CreateCaseInput)
+    /// Creates a new builder-style object to manufacture [`CreateCaseInput`](crate::input::CreateCaseInput).
     pub fn builder() -> crate::input::create_case_input::Builder {
         crate::input::create_case_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DescribeAttachment {
     _private: (),
 }
 impl DescribeAttachment {
-    /// Creates a new builder-style object to manufacture [`DescribeAttachmentInput`](crate::input::DescribeAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAttachmentInput`](crate::input::DescribeAttachmentInput).
     pub fn builder() -> crate::input::describe_attachment_input::Builder {
         crate::input::describe_attachment_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DescribeCases {
     _private: (),
 }
 impl DescribeCases {
-    /// Creates a new builder-style object to manufacture [`DescribeCasesInput`](crate::input::DescribeCasesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCasesInput`](crate::input::DescribeCasesInput).
     pub fn builder() -> crate::input::describe_cases_input::Builder {
         crate::input::describe_cases_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DescribeCommunications {
     _private: (),
 }
 impl DescribeCommunications {
-    /// Creates a new builder-style object to manufacture [`DescribeCommunicationsInput`](crate::input::DescribeCommunicationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCommunicationsInput`](crate::input::DescribeCommunicationsInput).
     pub fn builder() -> crate::input::describe_communications_input::Builder {
         crate::input::describe_communications_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DescribeServices {
     _private: (),
 }
 impl DescribeServices {
-    /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::input::DescribeServicesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeServicesInput`](crate::input::DescribeServicesInput).
     pub fn builder() -> crate::input::describe_services_input::Builder {
         crate::input::describe_services_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DescribeSeverityLevels {
     _private: (),
 }
 impl DescribeSeverityLevels {
-    /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsInput`](crate::input::DescribeSeverityLevelsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsInput`](crate::input::DescribeSeverityLevelsInput).
     pub fn builder() -> crate::input::describe_severity_levels_input::Builder {
         crate::input::describe_severity_levels_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DescribeTrustedAdvisorCheckRefreshStatuses {
     _private: (),
 }
 impl DescribeTrustedAdvisorCheckRefreshStatuses {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckRefreshStatusesInput`](crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckRefreshStatusesInput`](crate::input::DescribeTrustedAdvisorCheckRefreshStatusesInput).
     pub fn builder() -> crate::input::describe_trusted_advisor_check_refresh_statuses_input::Builder
     {
         crate::input::describe_trusted_advisor_check_refresh_statuses_input::Builder::default()
@@ -317,7 +317,7 @@ pub struct DescribeTrustedAdvisorCheckResult {
     _private: (),
 }
 impl DescribeTrustedAdvisorCheckResult {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultInput`](crate::input::DescribeTrustedAdvisorCheckResultInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultInput`](crate::input::DescribeTrustedAdvisorCheckResultInput).
     pub fn builder() -> crate::input::describe_trusted_advisor_check_result_input::Builder {
         crate::input::describe_trusted_advisor_check_result_input::Builder::default()
     }
@@ -351,7 +351,7 @@ pub struct DescribeTrustedAdvisorChecks {
     _private: (),
 }
 impl DescribeTrustedAdvisorChecks {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorChecksInput`](crate::input::DescribeTrustedAdvisorChecksInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorChecksInput`](crate::input::DescribeTrustedAdvisorChecksInput).
     pub fn builder() -> crate::input::describe_trusted_advisor_checks_input::Builder {
         crate::input::describe_trusted_advisor_checks_input::Builder::default()
     }
@@ -385,7 +385,7 @@ pub struct DescribeTrustedAdvisorCheckSummaries {
     _private: (),
 }
 impl DescribeTrustedAdvisorCheckSummaries {
-    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesInput`](crate::input::DescribeTrustedAdvisorCheckSummariesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesInput`](crate::input::DescribeTrustedAdvisorCheckSummariesInput).
     pub fn builder() -> crate::input::describe_trusted_advisor_check_summaries_input::Builder {
         crate::input::describe_trusted_advisor_check_summaries_input::Builder::default()
     }
@@ -421,7 +421,7 @@ pub struct RefreshTrustedAdvisorCheck {
     _private: (),
 }
 impl RefreshTrustedAdvisorCheck {
-    /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckInput`](crate::input::RefreshTrustedAdvisorCheckInput)
+    /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckInput`](crate::input::RefreshTrustedAdvisorCheckInput).
     pub fn builder() -> crate::input::refresh_trusted_advisor_check_input::Builder {
         crate::input::refresh_trusted_advisor_check_input::Builder::default()
     }
@@ -455,7 +455,7 @@ pub struct ResolveCase {
     _private: (),
 }
 impl ResolveCase {
-    /// Creates a new builder-style object to manufacture [`ResolveCaseInput`](crate::input::ResolveCaseInput)
+    /// Creates a new builder-style object to manufacture [`ResolveCaseInput`](crate::input::ResolveCaseInput).
     pub fn builder() -> crate::input::resolve_case_input::Builder {
         crate::input::resolve_case_input::Builder::default()
     }

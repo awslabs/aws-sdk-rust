@@ -10,7 +10,7 @@ pub struct DeleteObject {
     _private: (),
 }
 impl DeleteObject {
-    /// Creates a new builder-style object to manufacture [`DeleteObjectInput`](crate::input::DeleteObjectInput)
+    /// Creates a new builder-style object to manufacture [`DeleteObjectInput`](crate::input::DeleteObjectInput).
     pub fn builder() -> crate::input::delete_object_input::Builder {
         crate::input::delete_object_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DescribeObject {
     _private: (),
 }
 impl DescribeObject {
-    /// Creates a new builder-style object to manufacture [`DescribeObjectInput`](crate::input::DescribeObjectInput)
+    /// Creates a new builder-style object to manufacture [`DescribeObjectInput`](crate::input::DescribeObjectInput).
     pub fn builder() -> crate::input::describe_object_input::Builder {
         crate::input::describe_object_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct GetObject {
     _private: (),
 }
 impl GetObject {
-    /// Creates a new builder-style object to manufacture [`GetObjectInput`](crate::input::GetObjectInput)
+    /// Creates a new builder-style object to manufacture [`GetObjectInput`](crate::input::GetObjectInput).
     pub fn builder() -> crate::input::get_object_input::Builder {
         crate::input::get_object_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ListItems {
     _private: (),
 }
 impl ListItems {
-    /// Creates a new builder-style object to manufacture [`ListItemsInput`](crate::input::ListItemsInput)
+    /// Creates a new builder-style object to manufacture [`ListItemsInput`](crate::input::ListItemsInput).
     pub fn builder() -> crate::input::list_items_input::Builder {
         crate::input::list_items_input::Builder::default()
     }
@@ -143,7 +143,7 @@ pub struct PutObject {
     _private: (),
 }
 impl PutObject {
-    /// Creates a new builder-style object to manufacture [`PutObjectInput`](crate::input::PutObjectInput)
+    /// Creates a new builder-style object to manufacture [`PutObjectInput`](crate::input::PutObjectInput).
     pub fn builder() -> crate::input::put_object_input::Builder {
         crate::input::put_object_input::Builder::default()
     }

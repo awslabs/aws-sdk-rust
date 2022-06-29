@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateReportDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput)
+/// See [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
 pub mod update_report_definition_output {
 
-    /// A builder for [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod update_report_definition_output {
             self.report_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput)
+        /// Consumes the builder and constructs a [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateReportDefinitionOutput {
             crate::output::UpdateReportDefinitionOutput {
                 report_id: self.report_id,
@@ -48,7 +47,7 @@ pub mod update_report_definition_output {
     }
 }
 impl UpdateReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
     pub fn builder() -> crate::output::update_report_definition_output::Builder {
         crate::output::update_report_definition_output::Builder::default()
     }
@@ -74,11 +73,10 @@ impl std::fmt::Debug for PutReportDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput)
+/// See [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
 pub mod put_report_definition_output {
 
-    /// A builder for [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -94,7 +92,7 @@ pub mod put_report_definition_output {
             self.report_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput)
+        /// Consumes the builder and constructs a [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
         pub fn build(self) -> crate::output::PutReportDefinitionOutput {
             crate::output::PutReportDefinitionOutput {
                 report_id: self.report_id,
@@ -103,7 +101,7 @@ pub mod put_report_definition_output {
     }
 }
 impl PutReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
     pub fn builder() -> crate::output::put_report_definition_output::Builder {
         crate::output::put_report_definition_output::Builder::default()
     }
@@ -136,11 +134,10 @@ impl std::fmt::Debug for ListReportDefinitionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput)
+/// See [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
 pub mod list_report_definitions_output {
 
-    /// A builder for [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_definitions:
@@ -177,7 +174,7 @@ pub mod list_report_definitions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput)
+        /// Consumes the builder and constructs a [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
         pub fn build(self) -> crate::output::ListReportDefinitionsOutput {
             crate::output::ListReportDefinitionsOutput {
                 report_definitions: self.report_definitions,
@@ -187,7 +184,7 @@ pub mod list_report_definitions_output {
     }
 }
 impl ListReportDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
     pub fn builder() -> crate::output::list_report_definitions_output::Builder {
         crate::output::list_report_definitions_output::Builder::default()
     }
@@ -213,11 +210,10 @@ impl std::fmt::Debug for ImportApplicationUsageOutput {
         formatter.finish()
     }
 }
-/// See [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput)
+/// See [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
 pub mod import_application_usage_output {
 
-    /// A builder for [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput)
-    #[non_exhaustive]
+    /// A builder for [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
@@ -233,7 +229,7 @@ pub mod import_application_usage_output {
             self.import_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput)
+        /// Consumes the builder and constructs a [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
         pub fn build(self) -> crate::output::ImportApplicationUsageOutput {
             crate::output::ImportApplicationUsageOutput {
                 import_id: self.import_id,
@@ -242,7 +238,7 @@ pub mod import_application_usage_output {
     }
 }
 impl ImportApplicationUsageOutput {
-    /// Creates a new builder-style object to manufacture [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput)
+    /// Creates a new builder-style object to manufacture [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
     pub fn builder() -> crate::output::import_application_usage_output::Builder {
         crate::output::import_application_usage_output::Builder::default()
     }
@@ -310,11 +306,10 @@ impl std::fmt::Debug for GetReportDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput)
+/// See [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
 pub mod get_report_definition_output {
 
-    /// A builder for [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -411,7 +406,7 @@ pub mod get_report_definition_output {
             self.last_updated = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput)
+        /// Consumes the builder and constructs a [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
         pub fn build(self) -> crate::output::GetReportDefinitionOutput {
             crate::output::GetReportDefinitionOutput {
                 report_id: self.report_id,
@@ -426,7 +421,7 @@ pub mod get_report_definition_output {
     }
 }
 impl GetReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
     pub fn builder() -> crate::output::get_report_definition_output::Builder {
         crate::output::get_report_definition_output::Builder::default()
     }
@@ -452,11 +447,10 @@ impl std::fmt::Debug for DeleteReportDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput)
+/// See [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
 pub mod delete_report_definition_output {
 
-    /// A builder for [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -472,7 +466,7 @@ pub mod delete_report_definition_output {
             self.report_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput)
+        /// Consumes the builder and constructs a [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteReportDefinitionOutput {
             crate::output::DeleteReportDefinitionOutput {
                 report_id: self.report_id,
@@ -481,7 +475,7 @@ pub mod delete_report_definition_output {
     }
 }
 impl DeleteReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
     pub fn builder() -> crate::output::delete_report_definition_output::Builder {
         crate::output::delete_report_definition_output::Builder::default()
     }

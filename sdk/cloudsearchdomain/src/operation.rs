@@ -10,7 +10,7 @@ pub struct Search {
     _private: (),
 }
 impl Search {
-    /// Creates a new builder-style object to manufacture [`SearchInput`](crate::input::SearchInput)
+    /// Creates a new builder-style object to manufacture [`SearchInput`](crate::input::SearchInput).
     pub fn builder() -> crate::input::search_input::Builder {
         crate::input::search_input::Builder::default()
     }
@@ -41,7 +41,7 @@ pub struct Suggest {
     _private: (),
 }
 impl Suggest {
-    /// Creates a new builder-style object to manufacture [`SuggestInput`](crate::input::SuggestInput)
+    /// Creates a new builder-style object to manufacture [`SuggestInput`](crate::input::SuggestInput).
     pub fn builder() -> crate::input::suggest_input::Builder {
         crate::input::suggest_input::Builder::default()
     }
@@ -72,7 +72,7 @@ pub struct UploadDocuments {
     _private: (),
 }
 impl UploadDocuments {
-    /// Creates a new builder-style object to manufacture [`UploadDocumentsInput`](crate::input::UploadDocumentsInput)
+    /// Creates a new builder-style object to manufacture [`UploadDocumentsInput`](crate::input::UploadDocumentsInput).
     pub fn builder() -> crate::input::upload_documents_input::Builder {
         crate::input::upload_documents_input::Builder::default()
     }

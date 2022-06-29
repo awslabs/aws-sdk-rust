@@ -41,11 +41,10 @@ impl std::fmt::Debug for Credentials {
         formatter.finish()
     }
 }
-/// See [`Credentials`](crate::model::Credentials)
+/// See [`Credentials`](crate::model::Credentials).
 pub mod credentials {
 
-    /// A builder for [`Credentials`](crate::model::Credentials)
-    #[non_exhaustive]
+    /// A builder for [`Credentials`](crate::model::Credentials).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -106,7 +105,7 @@ pub mod credentials {
             self.expiration = input;
             self
         }
-        /// Consumes the builder and constructs a [`Credentials`](crate::model::Credentials)
+        /// Consumes the builder and constructs a [`Credentials`](crate::model::Credentials).
         pub fn build(self) -> crate::model::Credentials {
             crate::model::Credentials {
                 access_key_id: self.access_key_id,
@@ -118,7 +117,7 @@ pub mod credentials {
     }
 }
 impl Credentials {
-    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials)
+    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
     pub fn builder() -> crate::model::credentials::Builder {
         crate::model::credentials::Builder::default()
     }
@@ -151,11 +150,10 @@ impl std::fmt::Debug for FederatedUser {
         formatter.finish()
     }
 }
-/// See [`FederatedUser`](crate::model::FederatedUser)
+/// See [`FederatedUser`](crate::model::FederatedUser).
 pub mod federated_user {
 
-    /// A builder for [`FederatedUser`](crate::model::FederatedUser)
-    #[non_exhaustive]
+    /// A builder for [`FederatedUser`](crate::model::FederatedUser).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) federated_user_id: std::option::Option<std::string::String>,
@@ -185,7 +183,7 @@ pub mod federated_user {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`FederatedUser`](crate::model::FederatedUser)
+        /// Consumes the builder and constructs a [`FederatedUser`](crate::model::FederatedUser).
         pub fn build(self) -> crate::model::FederatedUser {
             crate::model::FederatedUser {
                 federated_user_id: self.federated_user_id,
@@ -195,7 +193,7 @@ pub mod federated_user {
     }
 }
 impl FederatedUser {
-    /// Creates a new builder-style object to manufacture [`FederatedUser`](crate::model::FederatedUser)
+    /// Creates a new builder-style object to manufacture [`FederatedUser`](crate::model::FederatedUser).
     pub fn builder() -> crate::model::federated_user::Builder {
         crate::model::federated_user::Builder::default()
     }
@@ -232,11 +230,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -267,7 +264,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -277,7 +274,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -303,11 +300,10 @@ impl std::fmt::Debug for PolicyDescriptorType {
         formatter.finish()
     }
 }
-/// See [`PolicyDescriptorType`](crate::model::PolicyDescriptorType)
+/// See [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
 pub mod policy_descriptor_type {
 
-    /// A builder for [`PolicyDescriptorType`](crate::model::PolicyDescriptorType)
-    #[non_exhaustive]
+    /// A builder for [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -323,14 +319,14 @@ pub mod policy_descriptor_type {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyDescriptorType`](crate::model::PolicyDescriptorType)
+        /// Consumes the builder and constructs a [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
         pub fn build(self) -> crate::model::PolicyDescriptorType {
             crate::model::PolicyDescriptorType { arn: self.arn }
         }
     }
 }
 impl PolicyDescriptorType {
-    /// Creates a new builder-style object to manufacture [`PolicyDescriptorType`](crate::model::PolicyDescriptorType)
+    /// Creates a new builder-style object to manufacture [`PolicyDescriptorType`](crate::model::PolicyDescriptorType).
     pub fn builder() -> crate::model::policy_descriptor_type::Builder {
         crate::model::policy_descriptor_type::Builder::default()
     }
@@ -363,11 +359,10 @@ impl std::fmt::Debug for AssumedRoleUser {
         formatter.finish()
     }
 }
-/// See [`AssumedRoleUser`](crate::model::AssumedRoleUser)
+/// See [`AssumedRoleUser`](crate::model::AssumedRoleUser).
 pub mod assumed_role_user {
 
-    /// A builder for [`AssumedRoleUser`](crate::model::AssumedRoleUser)
-    #[non_exhaustive]
+    /// A builder for [`AssumedRoleUser`](crate::model::AssumedRoleUser).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assumed_role_id: std::option::Option<std::string::String>,
@@ -397,7 +392,7 @@ pub mod assumed_role_user {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssumedRoleUser`](crate::model::AssumedRoleUser)
+        /// Consumes the builder and constructs a [`AssumedRoleUser`](crate::model::AssumedRoleUser).
         pub fn build(self) -> crate::model::AssumedRoleUser {
             crate::model::AssumedRoleUser {
                 assumed_role_id: self.assumed_role_id,
@@ -407,7 +402,7 @@ pub mod assumed_role_user {
     }
 }
 impl AssumedRoleUser {
-    /// Creates a new builder-style object to manufacture [`AssumedRoleUser`](crate::model::AssumedRoleUser)
+    /// Creates a new builder-style object to manufacture [`AssumedRoleUser`](crate::model::AssumedRoleUser).
     pub fn builder() -> crate::model::assumed_role_user::Builder {
         crate::model::assumed_role_user::Builder::default()
     }

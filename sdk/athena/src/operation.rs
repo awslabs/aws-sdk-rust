@@ -10,7 +10,7 @@ pub struct BatchGetNamedQuery {
     _private: (),
 }
 impl BatchGetNamedQuery {
-    /// Creates a new builder-style object to manufacture [`BatchGetNamedQueryInput`](crate::input::BatchGetNamedQueryInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetNamedQueryInput`](crate::input::BatchGetNamedQueryInput).
     pub fn builder() -> crate::input::batch_get_named_query_input::Builder {
         crate::input::batch_get_named_query_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchGetQueryExecution {
     _private: (),
 }
 impl BatchGetQueryExecution {
-    /// Creates a new builder-style object to manufacture [`BatchGetQueryExecutionInput`](crate::input::BatchGetQueryExecutionInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetQueryExecutionInput`](crate::input::BatchGetQueryExecutionInput).
     pub fn builder() -> crate::input::batch_get_query_execution_input::Builder {
         crate::input::batch_get_query_execution_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateDataCatalog {
     _private: (),
 }
 impl CreateDataCatalog {
-    /// Creates a new builder-style object to manufacture [`CreateDataCatalogInput`](crate::input::CreateDataCatalogInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataCatalogInput`](crate::input::CreateDataCatalogInput).
     pub fn builder() -> crate::input::create_data_catalog_input::Builder {
         crate::input::create_data_catalog_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateNamedQuery {
     _private: (),
 }
 impl CreateNamedQuery {
-    /// Creates a new builder-style object to manufacture [`CreateNamedQueryInput`](crate::input::CreateNamedQueryInput)
+    /// Creates a new builder-style object to manufacture [`CreateNamedQueryInput`](crate::input::CreateNamedQueryInput).
     pub fn builder() -> crate::input::create_named_query_input::Builder {
         crate::input::create_named_query_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreatePreparedStatement {
     _private: (),
 }
 impl CreatePreparedStatement {
-    /// Creates a new builder-style object to manufacture [`CreatePreparedStatementInput`](crate::input::CreatePreparedStatementInput)
+    /// Creates a new builder-style object to manufacture [`CreatePreparedStatementInput`](crate::input::CreatePreparedStatementInput).
     pub fn builder() -> crate::input::create_prepared_statement_input::Builder {
         crate::input::create_prepared_statement_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateWorkGroup {
     _private: (),
 }
 impl CreateWorkGroup {
-    /// Creates a new builder-style object to manufacture [`CreateWorkGroupInput`](crate::input::CreateWorkGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkGroupInput`](crate::input::CreateWorkGroupInput).
     pub fn builder() -> crate::input::create_work_group_input::Builder {
         crate::input::create_work_group_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeleteDataCatalog {
     _private: (),
 }
 impl DeleteDataCatalog {
-    /// Creates a new builder-style object to manufacture [`DeleteDataCatalogInput`](crate::input::DeleteDataCatalogInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDataCatalogInput`](crate::input::DeleteDataCatalogInput).
     pub fn builder() -> crate::input::delete_data_catalog_input::Builder {
         crate::input::delete_data_catalog_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DeleteNamedQuery {
     _private: (),
 }
 impl DeleteNamedQuery {
-    /// Creates a new builder-style object to manufacture [`DeleteNamedQueryInput`](crate::input::DeleteNamedQueryInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNamedQueryInput`](crate::input::DeleteNamedQueryInput).
     pub fn builder() -> crate::input::delete_named_query_input::Builder {
         crate::input::delete_named_query_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DeletePreparedStatement {
     _private: (),
 }
 impl DeletePreparedStatement {
-    /// Creates a new builder-style object to manufacture [`DeletePreparedStatementInput`](crate::input::DeletePreparedStatementInput)
+    /// Creates a new builder-style object to manufacture [`DeletePreparedStatementInput`](crate::input::DeletePreparedStatementInput).
     pub fn builder() -> crate::input::delete_prepared_statement_input::Builder {
         crate::input::delete_prepared_statement_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct DeleteWorkGroup {
     _private: (),
 }
 impl DeleteWorkGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkGroupInput`](crate::input::DeleteWorkGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorkGroupInput`](crate::input::DeleteWorkGroupInput).
     pub fn builder() -> crate::input::delete_work_group_input::Builder {
         crate::input::delete_work_group_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct GetDatabase {
     _private: (),
 }
 impl GetDatabase {
-    /// Creates a new builder-style object to manufacture [`GetDatabaseInput`](crate::input::GetDatabaseInput)
+    /// Creates a new builder-style object to manufacture [`GetDatabaseInput`](crate::input::GetDatabaseInput).
     pub fn builder() -> crate::input::get_database_input::Builder {
         crate::input::get_database_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct GetDataCatalog {
     _private: (),
 }
 impl GetDataCatalog {
-    /// Creates a new builder-style object to manufacture [`GetDataCatalogInput`](crate::input::GetDataCatalogInput)
+    /// Creates a new builder-style object to manufacture [`GetDataCatalogInput`](crate::input::GetDataCatalogInput).
     pub fn builder() -> crate::input::get_data_catalog_input::Builder {
         crate::input::get_data_catalog_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct GetNamedQuery {
     _private: (),
 }
 impl GetNamedQuery {
-    /// Creates a new builder-style object to manufacture [`GetNamedQueryInput`](crate::input::GetNamedQueryInput)
+    /// Creates a new builder-style object to manufacture [`GetNamedQueryInput`](crate::input::GetNamedQueryInput).
     pub fn builder() -> crate::input::get_named_query_input::Builder {
         crate::input::get_named_query_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct GetPreparedStatement {
     _private: (),
 }
 impl GetPreparedStatement {
-    /// Creates a new builder-style object to manufacture [`GetPreparedStatementInput`](crate::input::GetPreparedStatementInput)
+    /// Creates a new builder-style object to manufacture [`GetPreparedStatementInput`](crate::input::GetPreparedStatementInput).
     pub fn builder() -> crate::input::get_prepared_statement_input::Builder {
         crate::input::get_prepared_statement_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct GetQueryExecution {
     _private: (),
 }
 impl GetQueryExecution {
-    /// Creates a new builder-style object to manufacture [`GetQueryExecutionInput`](crate::input::GetQueryExecutionInput)
+    /// Creates a new builder-style object to manufacture [`GetQueryExecutionInput`](crate::input::GetQueryExecutionInput).
     pub fn builder() -> crate::input::get_query_execution_input::Builder {
         crate::input::get_query_execution_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct GetQueryResults {
     _private: (),
 }
 impl GetQueryResults {
-    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput).
     pub fn builder() -> crate::input::get_query_results_input::Builder {
         crate::input::get_query_results_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct GetTableMetadata {
     _private: (),
 }
 impl GetTableMetadata {
-    /// Creates a new builder-style object to manufacture [`GetTableMetadataInput`](crate::input::GetTableMetadataInput)
+    /// Creates a new builder-style object to manufacture [`GetTableMetadataInput`](crate::input::GetTableMetadataInput).
     pub fn builder() -> crate::input::get_table_metadata_input::Builder {
         crate::input::get_table_metadata_input::Builder::default()
     }
@@ -582,7 +582,7 @@ pub struct GetWorkGroup {
     _private: (),
 }
 impl GetWorkGroup {
-    /// Creates a new builder-style object to manufacture [`GetWorkGroupInput`](crate::input::GetWorkGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkGroupInput`](crate::input::GetWorkGroupInput).
     pub fn builder() -> crate::input::get_work_group_input::Builder {
         crate::input::get_work_group_input::Builder::default()
     }
@@ -614,7 +614,7 @@ pub struct ListDatabases {
     _private: (),
 }
 impl ListDatabases {
-    /// Creates a new builder-style object to manufacture [`ListDatabasesInput`](crate::input::ListDatabasesInput)
+    /// Creates a new builder-style object to manufacture [`ListDatabasesInput`](crate::input::ListDatabasesInput).
     pub fn builder() -> crate::input::list_databases_input::Builder {
         crate::input::list_databases_input::Builder::default()
     }
@@ -646,7 +646,7 @@ pub struct ListDataCatalogs {
     _private: (),
 }
 impl ListDataCatalogs {
-    /// Creates a new builder-style object to manufacture [`ListDataCatalogsInput`](crate::input::ListDataCatalogsInput)
+    /// Creates a new builder-style object to manufacture [`ListDataCatalogsInput`](crate::input::ListDataCatalogsInput).
     pub fn builder() -> crate::input::list_data_catalogs_input::Builder {
         crate::input::list_data_catalogs_input::Builder::default()
     }
@@ -680,7 +680,7 @@ pub struct ListEngineVersions {
     _private: (),
 }
 impl ListEngineVersions {
-    /// Creates a new builder-style object to manufacture [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput).
     pub fn builder() -> crate::input::list_engine_versions_input::Builder {
         crate::input::list_engine_versions_input::Builder::default()
     }
@@ -714,7 +714,7 @@ pub struct ListNamedQueries {
     _private: (),
 }
 impl ListNamedQueries {
-    /// Creates a new builder-style object to manufacture [`ListNamedQueriesInput`](crate::input::ListNamedQueriesInput)
+    /// Creates a new builder-style object to manufacture [`ListNamedQueriesInput`](crate::input::ListNamedQueriesInput).
     pub fn builder() -> crate::input::list_named_queries_input::Builder {
         crate::input::list_named_queries_input::Builder::default()
     }
@@ -748,7 +748,7 @@ pub struct ListPreparedStatements {
     _private: (),
 }
 impl ListPreparedStatements {
-    /// Creates a new builder-style object to manufacture [`ListPreparedStatementsInput`](crate::input::ListPreparedStatementsInput)
+    /// Creates a new builder-style object to manufacture [`ListPreparedStatementsInput`](crate::input::ListPreparedStatementsInput).
     pub fn builder() -> crate::input::list_prepared_statements_input::Builder {
         crate::input::list_prepared_statements_input::Builder::default()
     }
@@ -782,7 +782,7 @@ pub struct ListQueryExecutions {
     _private: (),
 }
 impl ListQueryExecutions {
-    /// Creates a new builder-style object to manufacture [`ListQueryExecutionsInput`](crate::input::ListQueryExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListQueryExecutionsInput`](crate::input::ListQueryExecutionsInput).
     pub fn builder() -> crate::input::list_query_executions_input::Builder {
         crate::input::list_query_executions_input::Builder::default()
     }
@@ -816,7 +816,7 @@ pub struct ListTableMetadata {
     _private: (),
 }
 impl ListTableMetadata {
-    /// Creates a new builder-style object to manufacture [`ListTableMetadataInput`](crate::input::ListTableMetadataInput)
+    /// Creates a new builder-style object to manufacture [`ListTableMetadataInput`](crate::input::ListTableMetadataInput).
     pub fn builder() -> crate::input::list_table_metadata_input::Builder {
         crate::input::list_table_metadata_input::Builder::default()
     }
@@ -850,7 +850,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -884,7 +884,7 @@ pub struct ListWorkGroups {
     _private: (),
 }
 impl ListWorkGroups {
-    /// Creates a new builder-style object to manufacture [`ListWorkGroupsInput`](crate::input::ListWorkGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkGroupsInput`](crate::input::ListWorkGroupsInput).
     pub fn builder() -> crate::input::list_work_groups_input::Builder {
         crate::input::list_work_groups_input::Builder::default()
     }
@@ -916,7 +916,7 @@ pub struct StartQueryExecution {
     _private: (),
 }
 impl StartQueryExecution {
-    /// Creates a new builder-style object to manufacture [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput)
+    /// Creates a new builder-style object to manufacture [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput).
     pub fn builder() -> crate::input::start_query_execution_input::Builder {
         crate::input::start_query_execution_input::Builder::default()
     }
@@ -950,7 +950,7 @@ pub struct StopQueryExecution {
     _private: (),
 }
 impl StopQueryExecution {
-    /// Creates a new builder-style object to manufacture [`StopQueryExecutionInput`](crate::input::StopQueryExecutionInput)
+    /// Creates a new builder-style object to manufacture [`StopQueryExecutionInput`](crate::input::StopQueryExecutionInput).
     pub fn builder() -> crate::input::stop_query_execution_input::Builder {
         crate::input::stop_query_execution_input::Builder::default()
     }
@@ -984,7 +984,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1016,7 +1016,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1048,7 +1048,7 @@ pub struct UpdateDataCatalog {
     _private: (),
 }
 impl UpdateDataCatalog {
-    /// Creates a new builder-style object to manufacture [`UpdateDataCatalogInput`](crate::input::UpdateDataCatalogInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDataCatalogInput`](crate::input::UpdateDataCatalogInput).
     pub fn builder() -> crate::input::update_data_catalog_input::Builder {
         crate::input::update_data_catalog_input::Builder::default()
     }
@@ -1082,7 +1082,7 @@ pub struct UpdateNamedQuery {
     _private: (),
 }
 impl UpdateNamedQuery {
-    /// Creates a new builder-style object to manufacture [`UpdateNamedQueryInput`](crate::input::UpdateNamedQueryInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNamedQueryInput`](crate::input::UpdateNamedQueryInput).
     pub fn builder() -> crate::input::update_named_query_input::Builder {
         crate::input::update_named_query_input::Builder::default()
     }
@@ -1116,7 +1116,7 @@ pub struct UpdatePreparedStatement {
     _private: (),
 }
 impl UpdatePreparedStatement {
-    /// Creates a new builder-style object to manufacture [`UpdatePreparedStatementInput`](crate::input::UpdatePreparedStatementInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePreparedStatementInput`](crate::input::UpdatePreparedStatementInput).
     pub fn builder() -> crate::input::update_prepared_statement_input::Builder {
         crate::input::update_prepared_statement_input::Builder::default()
     }
@@ -1150,7 +1150,7 @@ pub struct UpdateWorkGroup {
     _private: (),
 }
 impl UpdateWorkGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkGroupInput`](crate::input::UpdateWorkGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWorkGroupInput`](crate::input::UpdateWorkGroupInput).
     pub fn builder() -> crate::input::update_work_group_input::Builder {
         crate::input::update_work_group_input::Builder::default()
     }

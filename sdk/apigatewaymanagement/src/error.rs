@@ -367,11 +367,10 @@ impl std::fmt::Display for PayloadTooLargeException {
     }
 }
 impl std::error::Error for PayloadTooLargeException {}
-/// See [`PayloadTooLargeException`](crate::error::PayloadTooLargeException)
+/// See [`PayloadTooLargeException`](crate::error::PayloadTooLargeException).
 pub mod payload_too_large_exception {
 
-    /// A builder for [`PayloadTooLargeException`](crate::error::PayloadTooLargeException)
-    #[non_exhaustive]
+    /// A builder for [`PayloadTooLargeException`](crate::error::PayloadTooLargeException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -387,7 +386,7 @@ pub mod payload_too_large_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PayloadTooLargeException`](crate::error::PayloadTooLargeException)
+        /// Consumes the builder and constructs a [`PayloadTooLargeException`](crate::error::PayloadTooLargeException).
         pub fn build(self) -> crate::error::PayloadTooLargeException {
             crate::error::PayloadTooLargeException {
                 message: self.message,
@@ -396,7 +395,7 @@ pub mod payload_too_large_exception {
     }
 }
 impl PayloadTooLargeException {
-    /// Creates a new builder-style object to manufacture [`PayloadTooLargeException`](crate::error::PayloadTooLargeException)
+    /// Creates a new builder-style object to manufacture [`PayloadTooLargeException`](crate::error::PayloadTooLargeException).
     pub fn builder() -> crate::error::payload_too_large_exception::Builder {
         crate::error::payload_too_large_exception::Builder::default()
     }
@@ -432,11 +431,10 @@ impl std::fmt::Display for LimitExceededException {
     }
 }
 impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
+/// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
 
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -452,7 +450,7 @@ pub mod limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
                 message: self.message,
@@ -461,7 +459,7 @@ pub mod limit_exceeded_exception {
     }
 }
 impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
     pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
         crate::error::limit_exceeded_exception::Builder::default()
     }
@@ -497,11 +495,10 @@ impl std::fmt::Display for GoneException {
     }
 }
 impl std::error::Error for GoneException {}
-/// See [`GoneException`](crate::error::GoneException)
+/// See [`GoneException`](crate::error::GoneException).
 pub mod gone_exception {
 
-    /// A builder for [`GoneException`](crate::error::GoneException)
-    #[non_exhaustive]
+    /// A builder for [`GoneException`](crate::error::GoneException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -517,7 +514,7 @@ pub mod gone_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GoneException`](crate::error::GoneException)
+        /// Consumes the builder and constructs a [`GoneException`](crate::error::GoneException).
         pub fn build(self) -> crate::error::GoneException {
             crate::error::GoneException {
                 message: self.message,
@@ -526,7 +523,7 @@ pub mod gone_exception {
     }
 }
 impl GoneException {
-    /// Creates a new builder-style object to manufacture [`GoneException`](crate::error::GoneException)
+    /// Creates a new builder-style object to manufacture [`GoneException`](crate::error::GoneException).
     pub fn builder() -> crate::error::gone_exception::Builder {
         crate::error::gone_exception::Builder::default()
     }
@@ -562,11 +559,10 @@ impl std::fmt::Display for ForbiddenException {
     }
 }
 impl std::error::Error for ForbiddenException {}
-/// See [`ForbiddenException`](crate::error::ForbiddenException)
+/// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
 
-    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException)
-    #[non_exhaustive]
+    /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -582,7 +578,7 @@ pub mod forbidden_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException)
+        /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
                 message: self.message,
@@ -591,7 +587,7 @@ pub mod forbidden_exception {
     }
 }
 impl ForbiddenException {
-    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException)
+    /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
     pub fn builder() -> crate::error::forbidden_exception::Builder {
         crate::error::forbidden_exception::Builder::default()
     }

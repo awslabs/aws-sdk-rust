@@ -6368,11 +6368,10 @@ impl std::fmt::Display for ServiceLinkedRoleFailure {
     }
 }
 impl std::error::Error for ServiceLinkedRoleFailure {}
-/// See [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure)
+/// See [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure).
 pub mod service_linked_role_failure {
 
-    /// A builder for [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure)
-    #[non_exhaustive]
+    /// A builder for [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6388,7 +6387,7 @@ pub mod service_linked_role_failure {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure)
+        /// Consumes the builder and constructs a [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure).
         pub fn build(self) -> crate::error::ServiceLinkedRoleFailure {
             crate::error::ServiceLinkedRoleFailure {
                 message: self.message,
@@ -6397,7 +6396,7 @@ pub mod service_linked_role_failure {
     }
 }
 impl ServiceLinkedRoleFailure {
-    /// Creates a new builder-style object to manufacture [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure)
+    /// Creates a new builder-style object to manufacture [`ServiceLinkedRoleFailure`](crate::error::ServiceLinkedRoleFailure).
     pub fn builder() -> crate::error::service_linked_role_failure::Builder {
         crate::error::service_linked_role_failure::Builder::default()
     }
@@ -6433,11 +6432,10 @@ impl std::fmt::Display for ScalingActivityInProgressFault {
     }
 }
 impl std::error::Error for ScalingActivityInProgressFault {}
-/// See [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault)
+/// See [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault).
 pub mod scaling_activity_in_progress_fault {
 
-    /// A builder for [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault)
-    #[non_exhaustive]
+    /// A builder for [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6453,7 +6451,7 @@ pub mod scaling_activity_in_progress_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault)
+        /// Consumes the builder and constructs a [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault).
         pub fn build(self) -> crate::error::ScalingActivityInProgressFault {
             crate::error::ScalingActivityInProgressFault {
                 message: self.message,
@@ -6462,7 +6460,7 @@ pub mod scaling_activity_in_progress_fault {
     }
 }
 impl ScalingActivityInProgressFault {
-    /// Creates a new builder-style object to manufacture [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault)
+    /// Creates a new builder-style object to manufacture [`ScalingActivityInProgressFault`](crate::error::ScalingActivityInProgressFault).
     pub fn builder() -> crate::error::scaling_activity_in_progress_fault::Builder {
         crate::error::scaling_activity_in_progress_fault::Builder::default()
     }
@@ -6498,11 +6496,10 @@ impl std::fmt::Display for ResourceContentionFault {
     }
 }
 impl std::error::Error for ResourceContentionFault {}
-/// See [`ResourceContentionFault`](crate::error::ResourceContentionFault)
+/// See [`ResourceContentionFault`](crate::error::ResourceContentionFault).
 pub mod resource_contention_fault {
 
-    /// A builder for [`ResourceContentionFault`](crate::error::ResourceContentionFault)
-    #[non_exhaustive]
+    /// A builder for [`ResourceContentionFault`](crate::error::ResourceContentionFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6518,7 +6515,7 @@ pub mod resource_contention_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceContentionFault`](crate::error::ResourceContentionFault)
+        /// Consumes the builder and constructs a [`ResourceContentionFault`](crate::error::ResourceContentionFault).
         pub fn build(self) -> crate::error::ResourceContentionFault {
             crate::error::ResourceContentionFault {
                 message: self.message,
@@ -6527,7 +6524,7 @@ pub mod resource_contention_fault {
     }
 }
 impl ResourceContentionFault {
-    /// Creates a new builder-style object to manufacture [`ResourceContentionFault`](crate::error::ResourceContentionFault)
+    /// Creates a new builder-style object to manufacture [`ResourceContentionFault`](crate::error::ResourceContentionFault).
     pub fn builder() -> crate::error::resource_contention_fault::Builder {
         crate::error::resource_contention_fault::Builder::default()
     }
@@ -6563,11 +6560,10 @@ impl std::fmt::Display for ResourceInUseFault {
     }
 }
 impl std::error::Error for ResourceInUseFault {}
-/// See [`ResourceInUseFault`](crate::error::ResourceInUseFault)
+/// See [`ResourceInUseFault`](crate::error::ResourceInUseFault).
 pub mod resource_in_use_fault {
 
-    /// A builder for [`ResourceInUseFault`](crate::error::ResourceInUseFault)
-    #[non_exhaustive]
+    /// A builder for [`ResourceInUseFault`](crate::error::ResourceInUseFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6583,7 +6579,7 @@ pub mod resource_in_use_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceInUseFault`](crate::error::ResourceInUseFault)
+        /// Consumes the builder and constructs a [`ResourceInUseFault`](crate::error::ResourceInUseFault).
         pub fn build(self) -> crate::error::ResourceInUseFault {
             crate::error::ResourceInUseFault {
                 message: self.message,
@@ -6592,7 +6588,7 @@ pub mod resource_in_use_fault {
     }
 }
 impl ResourceInUseFault {
-    /// Creates a new builder-style object to manufacture [`ResourceInUseFault`](crate::error::ResourceInUseFault)
+    /// Creates a new builder-style object to manufacture [`ResourceInUseFault`](crate::error::ResourceInUseFault).
     pub fn builder() -> crate::error::resource_in_use_fault::Builder {
         crate::error::resource_in_use_fault::Builder::default()
     }
@@ -6628,11 +6624,10 @@ impl std::fmt::Display for LimitExceededFault {
     }
 }
 impl std::error::Error for LimitExceededFault {}
-/// See [`LimitExceededFault`](crate::error::LimitExceededFault)
+/// See [`LimitExceededFault`](crate::error::LimitExceededFault).
 pub mod limit_exceeded_fault {
 
-    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`LimitExceededFault`](crate::error::LimitExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6648,7 +6643,7 @@ pub mod limit_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault)
+        /// Consumes the builder and constructs a [`LimitExceededFault`](crate::error::LimitExceededFault).
         pub fn build(self) -> crate::error::LimitExceededFault {
             crate::error::LimitExceededFault {
                 message: self.message,
@@ -6657,7 +6652,7 @@ pub mod limit_exceeded_fault {
     }
 }
 impl LimitExceededFault {
-    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault)
+    /// Creates a new builder-style object to manufacture [`LimitExceededFault`](crate::error::LimitExceededFault).
     pub fn builder() -> crate::error::limit_exceeded_fault::Builder {
         crate::error::limit_exceeded_fault::Builder::default()
     }
@@ -6693,11 +6688,10 @@ impl std::fmt::Display for InstanceRefreshInProgressFault {
     }
 }
 impl std::error::Error for InstanceRefreshInProgressFault {}
-/// See [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault)
+/// See [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault).
 pub mod instance_refresh_in_progress_fault {
 
-    /// A builder for [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault)
-    #[non_exhaustive]
+    /// A builder for [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6713,7 +6707,7 @@ pub mod instance_refresh_in_progress_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault)
+        /// Consumes the builder and constructs a [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault).
         pub fn build(self) -> crate::error::InstanceRefreshInProgressFault {
             crate::error::InstanceRefreshInProgressFault {
                 message: self.message,
@@ -6722,7 +6716,7 @@ pub mod instance_refresh_in_progress_fault {
     }
 }
 impl InstanceRefreshInProgressFault {
-    /// Creates a new builder-style object to manufacture [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault)
+    /// Creates a new builder-style object to manufacture [`InstanceRefreshInProgressFault`](crate::error::InstanceRefreshInProgressFault).
     pub fn builder() -> crate::error::instance_refresh_in_progress_fault::Builder {
         crate::error::instance_refresh_in_progress_fault::Builder::default()
     }
@@ -6758,11 +6752,10 @@ impl std::fmt::Display for AlreadyExistsFault {
     }
 }
 impl std::error::Error for AlreadyExistsFault {}
-/// See [`AlreadyExistsFault`](crate::error::AlreadyExistsFault)
+/// See [`AlreadyExistsFault`](crate::error::AlreadyExistsFault).
 pub mod already_exists_fault {
 
-    /// A builder for [`AlreadyExistsFault`](crate::error::AlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`AlreadyExistsFault`](crate::error::AlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6778,7 +6771,7 @@ pub mod already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AlreadyExistsFault`](crate::error::AlreadyExistsFault)
+        /// Consumes the builder and constructs a [`AlreadyExistsFault`](crate::error::AlreadyExistsFault).
         pub fn build(self) -> crate::error::AlreadyExistsFault {
             crate::error::AlreadyExistsFault {
                 message: self.message,
@@ -6787,7 +6780,7 @@ pub mod already_exists_fault {
     }
 }
 impl AlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`AlreadyExistsFault`](crate::error::AlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`AlreadyExistsFault`](crate::error::AlreadyExistsFault).
     pub fn builder() -> crate::error::already_exists_fault::Builder {
         crate::error::already_exists_fault::Builder::default()
     }
@@ -6823,11 +6816,10 @@ impl std::fmt::Display for InvalidNextToken {
     }
 }
 impl std::error::Error for InvalidNextToken {}
-/// See [`InvalidNextToken`](crate::error::InvalidNextToken)
+/// See [`InvalidNextToken`](crate::error::InvalidNextToken).
 pub mod invalid_next_token {
 
-    /// A builder for [`InvalidNextToken`](crate::error::InvalidNextToken)
-    #[non_exhaustive]
+    /// A builder for [`InvalidNextToken`](crate::error::InvalidNextToken).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6843,7 +6835,7 @@ pub mod invalid_next_token {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidNextToken`](crate::error::InvalidNextToken)
+        /// Consumes the builder and constructs a [`InvalidNextToken`](crate::error::InvalidNextToken).
         pub fn build(self) -> crate::error::InvalidNextToken {
             crate::error::InvalidNextToken {
                 message: self.message,
@@ -6852,7 +6844,7 @@ pub mod invalid_next_token {
     }
 }
 impl InvalidNextToken {
-    /// Creates a new builder-style object to manufacture [`InvalidNextToken`](crate::error::InvalidNextToken)
+    /// Creates a new builder-style object to manufacture [`InvalidNextToken`](crate::error::InvalidNextToken).
     pub fn builder() -> crate::error::invalid_next_token::Builder {
         crate::error::invalid_next_token::Builder::default()
     }
@@ -6888,11 +6880,10 @@ impl std::fmt::Display for ActiveInstanceRefreshNotFoundFault {
     }
 }
 impl std::error::Error for ActiveInstanceRefreshNotFoundFault {}
-/// See [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault)
+/// See [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault).
 pub mod active_instance_refresh_not_found_fault {
 
-    /// A builder for [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6908,7 +6899,7 @@ pub mod active_instance_refresh_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault)
+        /// Consumes the builder and constructs a [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault).
         pub fn build(self) -> crate::error::ActiveInstanceRefreshNotFoundFault {
             crate::error::ActiveInstanceRefreshNotFoundFault {
                 message: self.message,
@@ -6917,7 +6908,7 @@ pub mod active_instance_refresh_not_found_fault {
     }
 }
 impl ActiveInstanceRefreshNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`ActiveInstanceRefreshNotFoundFault`](crate::error::ActiveInstanceRefreshNotFoundFault).
     pub fn builder() -> crate::error::active_instance_refresh_not_found_fault::Builder {
         crate::error::active_instance_refresh_not_found_fault::Builder::default()
     }

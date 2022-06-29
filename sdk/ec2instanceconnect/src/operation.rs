@@ -10,7 +10,7 @@ pub struct SendSerialConsoleSSHPublicKey {
     _private: (),
 }
 impl SendSerialConsoleSSHPublicKey {
-    /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyInput`](crate::input::SendSerialConsoleSshPublicKeyInput)
+    /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyInput`](crate::input::SendSerialConsoleSshPublicKeyInput).
     pub fn builder() -> crate::input::send_serial_console_ssh_public_key_input::Builder {
         crate::input::send_serial_console_ssh_public_key_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct SendSSHPublicKey {
     _private: (),
 }
 impl SendSSHPublicKey {
-    /// Creates a new builder-style object to manufacture [`SendSshPublicKeyInput`](crate::input::SendSshPublicKeyInput)
+    /// Creates a new builder-style object to manufacture [`SendSshPublicKeyInput`](crate::input::SendSshPublicKeyInput).
     pub fn builder() -> crate::input::send_ssh_public_key_input::Builder {
         crate::input::send_ssh_public_key_input::Builder::default()
     }

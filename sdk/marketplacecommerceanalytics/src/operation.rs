@@ -10,7 +10,7 @@ pub struct GenerateDataSet {
     _private: (),
 }
 impl GenerateDataSet {
-    /// Creates a new builder-style object to manufacture [`GenerateDataSetInput`](crate::input::GenerateDataSetInput)
+    /// Creates a new builder-style object to manufacture [`GenerateDataSetInput`](crate::input::GenerateDataSetInput).
     pub fn builder() -> crate::input::generate_data_set_input::Builder {
         crate::input::generate_data_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct StartSupportDataExport {
     _private: (),
 }
 impl StartSupportDataExport {
-    /// Creates a new builder-style object to manufacture [`StartSupportDataExportInput`](crate::input::StartSupportDataExportInput)
+    /// Creates a new builder-style object to manufacture [`StartSupportDataExportInput`](crate::input::StartSupportDataExportInput).
     pub fn builder() -> crate::input::start_support_data_export_input::Builder {
         crate::input::start_support_data_export_input::Builder::default()
     }

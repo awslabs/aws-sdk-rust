@@ -10,7 +10,7 @@ pub struct CreateChatToken {
     _private: (),
 }
 impl CreateChatToken {
-    /// Creates a new builder-style object to manufacture [`CreateChatTokenInput`](crate::input::CreateChatTokenInput)
+    /// Creates a new builder-style object to manufacture [`CreateChatTokenInput`](crate::input::CreateChatTokenInput).
     pub fn builder() -> crate::input::create_chat_token_input::Builder {
         crate::input::create_chat_token_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateRoom {
     _private: (),
 }
 impl CreateRoom {
-    /// Creates a new builder-style object to manufacture [`CreateRoomInput`](crate::input::CreateRoomInput)
+    /// Creates a new builder-style object to manufacture [`CreateRoomInput`](crate::input::CreateRoomInput).
     pub fn builder() -> crate::input::create_room_input::Builder {
         crate::input::create_room_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteMessage {
     _private: (),
 }
 impl DeleteMessage {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageInput`](crate::input::DeleteMessageInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMessageInput`](crate::input::DeleteMessageInput).
     pub fn builder() -> crate::input::delete_message_input::Builder {
         crate::input::delete_message_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct DeleteRoom {
     _private: (),
 }
 impl DeleteRoom {
-    /// Creates a new builder-style object to manufacture [`DeleteRoomInput`](crate::input::DeleteRoomInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRoomInput`](crate::input::DeleteRoomInput).
     pub fn builder() -> crate::input::delete_room_input::Builder {
         crate::input::delete_room_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct DisconnectUser {
     _private: (),
 }
 impl DisconnectUser {
-    /// Creates a new builder-style object to manufacture [`DisconnectUserInput`](crate::input::DisconnectUserInput)
+    /// Creates a new builder-style object to manufacture [`DisconnectUserInput`](crate::input::DisconnectUserInput).
     pub fn builder() -> crate::input::disconnect_user_input::Builder {
         crate::input::disconnect_user_input::Builder::default()
     }
@@ -172,7 +172,7 @@ pub struct GetRoom {
     _private: (),
 }
 impl GetRoom {
-    /// Creates a new builder-style object to manufacture [`GetRoomInput`](crate::input::GetRoomInput)
+    /// Creates a new builder-style object to manufacture [`GetRoomInput`](crate::input::GetRoomInput).
     pub fn builder() -> crate::input::get_room_input::Builder {
         crate::input::get_room_input::Builder::default()
     }
@@ -203,7 +203,7 @@ pub struct ListRooms {
     _private: (),
 }
 impl ListRooms {
-    /// Creates a new builder-style object to manufacture [`ListRoomsInput`](crate::input::ListRoomsInput)
+    /// Creates a new builder-style object to manufacture [`ListRoomsInput`](crate::input::ListRoomsInput).
     pub fn builder() -> crate::input::list_rooms_input::Builder {
         crate::input::list_rooms_input::Builder::default()
     }
@@ -234,7 +234,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -268,7 +268,7 @@ pub struct SendEvent {
     _private: (),
 }
 impl SendEvent {
-    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput)
+    /// Creates a new builder-style object to manufacture [`SendEventInput`](crate::input::SendEventInput).
     pub fn builder() -> crate::input::send_event_input::Builder {
         crate::input::send_event_input::Builder::default()
     }
@@ -299,7 +299,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -331,7 +331,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -363,7 +363,7 @@ pub struct UpdateRoom {
     _private: (),
 }
 impl UpdateRoom {
-    /// Creates a new builder-style object to manufacture [`UpdateRoomInput`](crate::input::UpdateRoomInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRoomInput`](crate::input::UpdateRoomInput).
     pub fn builder() -> crate::input::update_room_input::Builder {
         crate::input::update_room_input::Builder::default()
     }

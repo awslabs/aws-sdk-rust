@@ -31,11 +31,10 @@ impl std::fmt::Debug for ListStreamsOutput {
         formatter.finish()
     }
 }
-/// See [`ListStreamsOutput`](crate::output::ListStreamsOutput)
+/// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
 
-    /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streams: std::option::Option<std::vec::Vec<crate::model::Stream>>,
@@ -78,7 +77,7 @@ pub mod list_streams_output {
             self.last_evaluated_stream_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::output::ListStreamsOutput)
+        /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::output::ListStreamsOutput).
         pub fn build(self) -> crate::output::ListStreamsOutput {
             crate::output::ListStreamsOutput {
                 streams: self.streams,
@@ -88,7 +87,7 @@ pub mod list_streams_output {
     }
 }
 impl ListStreamsOutput {
-    /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::output::ListStreamsOutput)
+    /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::output::ListStreamsOutput).
     pub fn builder() -> crate::output::list_streams_output::Builder {
         crate::output::list_streams_output::Builder::default()
     }
@@ -114,11 +113,10 @@ impl std::fmt::Debug for GetShardIteratorOutput {
         formatter.finish()
     }
 }
-/// See [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput)
+/// See [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
 pub mod get_shard_iterator_output {
 
-    /// A builder for [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
@@ -137,7 +135,7 @@ pub mod get_shard_iterator_output {
             self.shard_iterator = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput)
+        /// Consumes the builder and constructs a [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
         pub fn build(self) -> crate::output::GetShardIteratorOutput {
             crate::output::GetShardIteratorOutput {
                 shard_iterator: self.shard_iterator,
@@ -146,7 +144,7 @@ pub mod get_shard_iterator_output {
     }
 }
 impl GetShardIteratorOutput {
-    /// Creates a new builder-style object to manufacture [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput)
+    /// Creates a new builder-style object to manufacture [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
     pub fn builder() -> crate::output::get_shard_iterator_output::Builder {
         crate::output::get_shard_iterator_output::Builder::default()
     }
@@ -179,11 +177,10 @@ impl std::fmt::Debug for GetRecordsOutput {
         formatter.finish()
     }
 }
-/// See [`GetRecordsOutput`](crate::output::GetRecordsOutput)
+/// See [`GetRecordsOutput`](crate::output::GetRecordsOutput).
 pub mod get_records_output {
 
-    /// A builder for [`GetRecordsOutput`](crate::output::GetRecordsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRecordsOutput`](crate::output::GetRecordsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -222,7 +219,7 @@ pub mod get_records_output {
             self.next_shard_iterator = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::output::GetRecordsOutput)
+        /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::output::GetRecordsOutput).
         pub fn build(self) -> crate::output::GetRecordsOutput {
             crate::output::GetRecordsOutput {
                 records: self.records,
@@ -232,7 +229,7 @@ pub mod get_records_output {
     }
 }
 impl GetRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecordsOutput`](crate::output::GetRecordsOutput)
+    /// Creates a new builder-style object to manufacture [`GetRecordsOutput`](crate::output::GetRecordsOutput).
     pub fn builder() -> crate::output::get_records_output::Builder {
         crate::output::get_records_output::Builder::default()
     }
@@ -258,11 +255,10 @@ impl std::fmt::Debug for DescribeStreamOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput)
+/// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
 pub mod describe_stream_output {
 
-    /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_description: std::option::Option<crate::model::StreamDescription>,
@@ -281,7 +277,7 @@ pub mod describe_stream_output {
             self.stream_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeStreamOutput`](crate::output::DescribeStreamOutput)
+        /// Consumes the builder and constructs a [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
         pub fn build(self) -> crate::output::DescribeStreamOutput {
             crate::output::DescribeStreamOutput {
                 stream_description: self.stream_description,
@@ -290,7 +286,7 @@ pub mod describe_stream_output {
     }
 }
 impl DescribeStreamOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeStreamOutput`](crate::output::DescribeStreamOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
     pub fn builder() -> crate::output::describe_stream_output::Builder {
         crate::output::describe_stream_output::Builder::default()
     }

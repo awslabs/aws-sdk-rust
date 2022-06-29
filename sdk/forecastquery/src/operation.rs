@@ -10,7 +10,7 @@ pub struct QueryForecast {
     _private: (),
 }
 impl QueryForecast {
-    /// Creates a new builder-style object to manufacture [`QueryForecastInput`](crate::input::QueryForecastInput)
+    /// Creates a new builder-style object to manufacture [`QueryForecastInput`](crate::input::QueryForecastInput).
     pub fn builder() -> crate::input::query_forecast_input::Builder {
         crate::input::query_forecast_input::Builder::default()
     }

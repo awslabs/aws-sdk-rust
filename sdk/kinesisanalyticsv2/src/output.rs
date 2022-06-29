@@ -33,11 +33,10 @@ impl std::fmt::Debug for UpdateApplicationMaintenanceConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput)
+/// See [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
 pub mod update_application_maintenance_configuration_output {
 
-    /// A builder for [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -76,7 +75,7 @@ pub mod update_application_maintenance_configuration_output {
             self.application_maintenance_configuration_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput)
+        /// Consumes the builder and constructs a [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationMaintenanceConfigurationOutput {
             crate::output::UpdateApplicationMaintenanceConfigurationOutput {
                 application_arn: self.application_arn,
@@ -87,7 +86,7 @@ pub mod update_application_maintenance_configuration_output {
     }
 }
 impl UpdateApplicationMaintenanceConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
     pub fn builder() -> crate::output::update_application_maintenance_configuration_output::Builder
     {
         crate::output::update_application_maintenance_configuration_output::Builder::default()
@@ -114,11 +113,10 @@ impl std::fmt::Debug for UpdateApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+/// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
 
-    /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
@@ -137,7 +135,7 @@ pub mod update_application_output {
             self.application_detail = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+        /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
             crate::output::UpdateApplicationOutput {
                 application_detail: self.application_detail,
@@ -146,7 +144,7 @@ pub mod update_application_output {
     }
 }
 impl UpdateApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     pub fn builder() -> crate::output::update_application_output::Builder {
         crate::output::update_application_output::Builder::default()
     }
@@ -162,22 +160,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -193,22 +190,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -224,22 +220,21 @@ impl std::fmt::Debug for StopApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`StopApplicationOutput`](crate::output::StopApplicationOutput)
+/// See [`StopApplicationOutput`](crate::output::StopApplicationOutput).
 pub mod stop_application_output {
 
-    /// A builder for [`StopApplicationOutput`](crate::output::StopApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopApplicationOutput`](crate::output::StopApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StopApplicationOutput`](crate::output::StopApplicationOutput)
+        /// Consumes the builder and constructs a [`StopApplicationOutput`](crate::output::StopApplicationOutput).
         pub fn build(self) -> crate::output::StopApplicationOutput {
             crate::output::StopApplicationOutput {}
         }
     }
 }
 impl StopApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`StopApplicationOutput`](crate::output::StopApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`StopApplicationOutput`](crate::output::StopApplicationOutput).
     pub fn builder() -> crate::output::stop_application_output::Builder {
         crate::output::stop_application_output::Builder::default()
     }
@@ -255,22 +250,21 @@ impl std::fmt::Debug for StartApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`StartApplicationOutput`](crate::output::StartApplicationOutput)
+/// See [`StartApplicationOutput`](crate::output::StartApplicationOutput).
 pub mod start_application_output {
 
-    /// A builder for [`StartApplicationOutput`](crate::output::StartApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartApplicationOutput`](crate::output::StartApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartApplicationOutput`](crate::output::StartApplicationOutput)
+        /// Consumes the builder and constructs a [`StartApplicationOutput`](crate::output::StartApplicationOutput).
         pub fn build(self) -> crate::output::StartApplicationOutput {
             crate::output::StartApplicationOutput {}
         }
     }
 }
 impl StartApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::output::StartApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::output::StartApplicationOutput).
     pub fn builder() -> crate::output::start_application_output::Builder {
         crate::output::start_application_output::Builder::default()
     }
@@ -296,11 +290,10 @@ impl std::fmt::Debug for RollbackApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput)
+/// See [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
 pub mod rollback_application_output {
 
-    /// A builder for [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
@@ -319,7 +312,7 @@ pub mod rollback_application_output {
             self.application_detail = input;
             self
         }
-        /// Consumes the builder and constructs a [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput)
+        /// Consumes the builder and constructs a [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
         pub fn build(self) -> crate::output::RollbackApplicationOutput {
             crate::output::RollbackApplicationOutput {
                 application_detail: self.application_detail,
@@ -328,7 +321,7 @@ pub mod rollback_application_output {
     }
 }
 impl RollbackApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
     pub fn builder() -> crate::output::rollback_application_output::Builder {
         crate::output::rollback_application_output::Builder::default()
     }
@@ -354,11 +347,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -383,14 +375,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -431,11 +423,10 @@ impl std::fmt::Debug for ListApplicationVersionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput)
+/// See [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
 pub mod list_application_versions_output {
 
-    /// A builder for [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_version_summaries:
@@ -477,7 +468,7 @@ pub mod list_application_versions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput)
+        /// Consumes the builder and constructs a [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
         pub fn build(self) -> crate::output::ListApplicationVersionsOutput {
             crate::output::ListApplicationVersionsOutput {
                 application_version_summaries: self.application_version_summaries,
@@ -487,7 +478,7 @@ pub mod list_application_versions_output {
     }
 }
 impl ListApplicationVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
     pub fn builder() -> crate::output::list_application_versions_output::Builder {
         crate::output::list_application_versions_output::Builder::default()
     }
@@ -520,11 +511,10 @@ impl std::fmt::Debug for ListApplicationSnapshotsOutput {
         formatter.finish()
     }
 }
-/// See [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput)
+/// See [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
 pub mod list_application_snapshots_output {
 
-    /// A builder for [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_summaries:
@@ -561,7 +551,7 @@ pub mod list_application_snapshots_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput)
+        /// Consumes the builder and constructs a [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
         pub fn build(self) -> crate::output::ListApplicationSnapshotsOutput {
             crate::output::ListApplicationSnapshotsOutput {
                 snapshot_summaries: self.snapshot_summaries,
@@ -571,7 +561,7 @@ pub mod list_application_snapshots_output {
     }
 }
 impl ListApplicationSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
     pub fn builder() -> crate::output::list_application_snapshots_output::Builder {
         crate::output::list_application_snapshots_output::Builder::default()
     }
@@ -606,11 +596,10 @@ impl std::fmt::Debug for ListApplicationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
+/// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
 
-    /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_summaries:
@@ -647,7 +636,7 @@ pub mod list_applications_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
+        /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
                 application_summaries: self.application_summaries,
@@ -657,7 +646,7 @@ pub mod list_applications_output {
     }
 }
 impl ListApplicationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     pub fn builder() -> crate::output::list_applications_output::Builder {
         crate::output::list_applications_output::Builder::default()
     }
@@ -707,11 +696,10 @@ impl std::fmt::Debug for DiscoverInputSchemaOutput {
         formatter.finish()
     }
 }
-/// See [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput)
+/// See [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
 pub mod discover_input_schema_output {
 
-    /// A builder for [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput)
-    #[non_exhaustive]
+    /// A builder for [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_schema: std::option::Option<crate::model::SourceSchema>,
@@ -791,7 +779,7 @@ pub mod discover_input_schema_output {
             self.raw_input_records = input;
             self
         }
-        /// Consumes the builder and constructs a [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput)
+        /// Consumes the builder and constructs a [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
         pub fn build(self) -> crate::output::DiscoverInputSchemaOutput {
             crate::output::DiscoverInputSchemaOutput {
                 input_schema: self.input_schema,
@@ -803,7 +791,7 @@ pub mod discover_input_schema_output {
     }
 }
 impl DiscoverInputSchemaOutput {
-    /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput)
+    /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
     pub fn builder() -> crate::output::discover_input_schema_output::Builder {
         crate::output::discover_input_schema_output::Builder::default()
     }
@@ -834,11 +822,10 @@ impl std::fmt::Debug for DescribeApplicationVersionOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput)
+/// See [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
 pub mod describe_application_version_output {
 
-    /// A builder for [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_version_detail: std::option::Option<crate::model::ApplicationDetail>,
@@ -860,7 +847,7 @@ pub mod describe_application_version_output {
             self.application_version_detail = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput)
+        /// Consumes the builder and constructs a [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
         pub fn build(self) -> crate::output::DescribeApplicationVersionOutput {
             crate::output::DescribeApplicationVersionOutput {
                 application_version_detail: self.application_version_detail,
@@ -869,7 +856,7 @@ pub mod describe_application_version_output {
     }
 }
 impl DescribeApplicationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
     pub fn builder() -> crate::output::describe_application_version_output::Builder {
         crate::output::describe_application_version_output::Builder::default()
     }
@@ -895,11 +882,10 @@ impl std::fmt::Debug for DescribeApplicationSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput)
+/// See [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
 pub mod describe_application_snapshot_output {
 
-    /// A builder for [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_details: std::option::Option<crate::model::SnapshotDetails>,
@@ -918,7 +904,7 @@ pub mod describe_application_snapshot_output {
             self.snapshot_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput)
+        /// Consumes the builder and constructs a [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
         pub fn build(self) -> crate::output::DescribeApplicationSnapshotOutput {
             crate::output::DescribeApplicationSnapshotOutput {
                 snapshot_details: self.snapshot_details,
@@ -927,7 +913,7 @@ pub mod describe_application_snapshot_output {
     }
 }
 impl DescribeApplicationSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
     pub fn builder() -> crate::output::describe_application_snapshot_output::Builder {
         crate::output::describe_application_snapshot_output::Builder::default()
     }
@@ -953,11 +939,10 @@ impl std::fmt::Debug for DescribeApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput)
+/// See [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
 pub mod describe_application_output {
 
-    /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
@@ -976,7 +961,7 @@ pub mod describe_application_output {
             self.application_detail = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput)
+        /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
         pub fn build(self) -> crate::output::DescribeApplicationOutput {
             crate::output::DescribeApplicationOutput {
                 application_detail: self.application_detail,
@@ -985,7 +970,7 @@ pub mod describe_application_output {
     }
 }
 impl DescribeApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
     pub fn builder() -> crate::output::describe_application_output::Builder {
         crate::output::describe_application_output::Builder::default()
     }
@@ -1018,11 +1003,10 @@ impl std::fmt::Debug for DeleteApplicationVpcConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput)
+/// See [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
 pub mod delete_application_vpc_configuration_output {
 
-    /// A builder for [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1052,7 +1036,7 @@ pub mod delete_application_vpc_configuration_output {
             self.application_version_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput)
+        /// Consumes the builder and constructs a [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationVpcConfigurationOutput {
             crate::output::DeleteApplicationVpcConfigurationOutput {
                 application_arn: self.application_arn,
@@ -1062,7 +1046,7 @@ pub mod delete_application_vpc_configuration_output {
     }
 }
 impl DeleteApplicationVpcConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
     pub fn builder() -> crate::output::delete_application_vpc_configuration_output::Builder {
         crate::output::delete_application_vpc_configuration_output::Builder::default()
     }
@@ -1078,22 +1062,21 @@ impl std::fmt::Debug for DeleteApplicationSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput)
+/// See [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
 pub mod delete_application_snapshot_output {
 
-    /// A builder for [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput)
+        /// Consumes the builder and constructs a [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteApplicationSnapshotOutput {
             crate::output::DeleteApplicationSnapshotOutput {}
         }
     }
 }
 impl DeleteApplicationSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
     pub fn builder() -> crate::output::delete_application_snapshot_output::Builder {
         crate::output::delete_application_snapshot_output::Builder::default()
     }
@@ -1126,11 +1109,10 @@ impl std::fmt::Debug for DeleteApplicationReferenceDataSourceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput)
+/// See [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
 pub mod delete_application_reference_data_source_output {
 
-    /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1160,7 +1142,7 @@ pub mod delete_application_reference_data_source_output {
             self.application_version_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput)
+        /// Consumes the builder and constructs a [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
         pub fn build(self) -> crate::output::DeleteApplicationReferenceDataSourceOutput {
             crate::output::DeleteApplicationReferenceDataSourceOutput {
                 application_arn: self.application_arn,
@@ -1170,7 +1152,7 @@ pub mod delete_application_reference_data_source_output {
     }
 }
 impl DeleteApplicationReferenceDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
     pub fn builder() -> crate::output::delete_application_reference_data_source_output::Builder {
         crate::output::delete_application_reference_data_source_output::Builder::default()
     }
@@ -1203,11 +1185,10 @@ impl std::fmt::Debug for DeleteApplicationOutputOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput)
+/// See [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
 pub mod delete_application_output_output {
 
-    /// A builder for [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1237,7 +1218,7 @@ pub mod delete_application_output_output {
             self.application_version_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput)
+        /// Consumes the builder and constructs a [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutputOutput {
             crate::output::DeleteApplicationOutputOutput {
                 application_arn: self.application_arn,
@@ -1247,7 +1228,7 @@ pub mod delete_application_output_output {
     }
 }
 impl DeleteApplicationOutputOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
     pub fn builder() -> crate::output::delete_application_output_output::Builder {
         crate::output::delete_application_output_output::Builder::default()
     }
@@ -1280,11 +1261,10 @@ impl std::fmt::Debug for DeleteApplicationInputProcessingConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput)
+/// See [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
 pub mod delete_application_input_processing_configuration_output {
 
-    /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1314,7 +1294,7 @@ pub mod delete_application_input_processing_configuration_output {
             self.application_version_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput)
+        /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationInputProcessingConfigurationOutput {
             crate::output::DeleteApplicationInputProcessingConfigurationOutput {
                 application_arn: self.application_arn,
@@ -1324,7 +1304,7 @@ pub mod delete_application_input_processing_configuration_output {
     }
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
     pub fn builder(
     ) -> crate::output::delete_application_input_processing_configuration_output::Builder {
         crate::output::delete_application_input_processing_configuration_output::Builder::default()
@@ -1371,11 +1351,10 @@ impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput)
+/// See [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
 pub mod delete_application_cloud_watch_logging_option_output {
 
-    /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1433,7 +1412,7 @@ pub mod delete_application_cloud_watch_logging_option_output {
             self.cloud_watch_logging_option_descriptions = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput)
+        /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
         pub fn build(self) -> crate::output::DeleteApplicationCloudWatchLoggingOptionOutput {
             crate::output::DeleteApplicationCloudWatchLoggingOptionOutput {
                 application_arn: self.application_arn,
@@ -1445,7 +1424,7 @@ pub mod delete_application_cloud_watch_logging_option_output {
     }
 }
 impl DeleteApplicationCloudWatchLoggingOptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
     pub fn builder() -> crate::output::delete_application_cloud_watch_logging_option_output::Builder
     {
         crate::output::delete_application_cloud_watch_logging_option_output::Builder::default()
@@ -1462,22 +1441,21 @@ impl std::fmt::Debug for DeleteApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+/// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
 
-    /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+        /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
             crate::output::DeleteApplicationOutput {}
         }
     }
 }
 impl DeleteApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     pub fn builder() -> crate::output::delete_application_output::Builder {
         crate::output::delete_application_output::Builder::default()
     }
@@ -1493,22 +1471,21 @@ impl std::fmt::Debug for CreateApplicationSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput)
+/// See [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
 pub mod create_application_snapshot_output {
 
-    /// A builder for [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput)
+        /// Consumes the builder and constructs a [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
         pub fn build(self) -> crate::output::CreateApplicationSnapshotOutput {
             crate::output::CreateApplicationSnapshotOutput {}
         }
     }
 }
 impl CreateApplicationSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
     pub fn builder() -> crate::output::create_application_snapshot_output::Builder {
         crate::output::create_application_snapshot_output::Builder::default()
     }
@@ -1534,11 +1511,10 @@ impl std::fmt::Debug for CreateApplicationPresignedUrlOutput {
         formatter.finish()
     }
 }
-/// See [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput)
+/// See [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
 pub mod create_application_presigned_url_output {
 
-    /// A builder for [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorized_url: std::option::Option<std::string::String>,
@@ -1557,7 +1533,7 @@ pub mod create_application_presigned_url_output {
             self.authorized_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput)
+        /// Consumes the builder and constructs a [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
         pub fn build(self) -> crate::output::CreateApplicationPresignedUrlOutput {
             crate::output::CreateApplicationPresignedUrlOutput {
                 authorized_url: self.authorized_url,
@@ -1566,7 +1542,7 @@ pub mod create_application_presigned_url_output {
     }
 }
 impl CreateApplicationPresignedUrlOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
     pub fn builder() -> crate::output::create_application_presigned_url_output::Builder {
         crate::output::create_application_presigned_url_output::Builder::default()
     }
@@ -1592,11 +1568,10 @@ impl std::fmt::Debug for CreateApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
+/// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
 
-    /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_detail: std::option::Option<crate::model::ApplicationDetail>,
@@ -1615,7 +1590,7 @@ pub mod create_application_output {
             self.application_detail = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
+        /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
                 application_detail: self.application_detail,
@@ -1624,7 +1599,7 @@ pub mod create_application_output {
     }
 }
 impl CreateApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     pub fn builder() -> crate::output::create_application_output::Builder {
         crate::output::create_application_output::Builder::default()
     }
@@ -1670,11 +1645,10 @@ impl std::fmt::Debug for AddApplicationVpcConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput)
+/// See [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
 pub mod add_application_vpc_configuration_output {
 
-    /// A builder for [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1722,7 +1696,7 @@ pub mod add_application_vpc_configuration_output {
             self.vpc_configuration_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput)
+        /// Consumes the builder and constructs a [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
         pub fn build(self) -> crate::output::AddApplicationVpcConfigurationOutput {
             crate::output::AddApplicationVpcConfigurationOutput {
                 application_arn: self.application_arn,
@@ -1733,7 +1707,7 @@ pub mod add_application_vpc_configuration_output {
     }
 }
 impl AddApplicationVpcConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
     pub fn builder() -> crate::output::add_application_vpc_configuration_output::Builder {
         crate::output::add_application_vpc_configuration_output::Builder::default()
     }
@@ -1779,11 +1753,10 @@ impl std::fmt::Debug for AddApplicationReferenceDataSourceOutput {
         formatter.finish()
     }
 }
-/// See [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput)
+/// See [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
 pub mod add_application_reference_data_source_output {
 
-    /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1837,7 +1810,7 @@ pub mod add_application_reference_data_source_output {
             self.reference_data_source_descriptions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput)
+        /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
         pub fn build(self) -> crate::output::AddApplicationReferenceDataSourceOutput {
             crate::output::AddApplicationReferenceDataSourceOutput {
                 application_arn: self.application_arn,
@@ -1848,7 +1821,7 @@ pub mod add_application_reference_data_source_output {
     }
 }
 impl AddApplicationReferenceDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
     pub fn builder() -> crate::output::add_application_reference_data_source_output::Builder {
         crate::output::add_application_reference_data_source_output::Builder::default()
     }
@@ -1888,11 +1861,10 @@ impl std::fmt::Debug for AddApplicationOutputOutput {
         formatter.finish()
     }
 }
-/// See [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput)
+/// See [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
 pub mod add_application_output_output {
 
-    /// A builder for [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -1943,7 +1915,7 @@ pub mod add_application_output_output {
             self.output_descriptions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput)
+        /// Consumes the builder and constructs a [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
         pub fn build(self) -> crate::output::AddApplicationOutputOutput {
             crate::output::AddApplicationOutputOutput {
                 application_arn: self.application_arn,
@@ -1954,7 +1926,7 @@ pub mod add_application_output_output {
     }
 }
 impl AddApplicationOutputOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
     pub fn builder() -> crate::output::add_application_output_output::Builder {
         crate::output::add_application_output_output::Builder::default()
     }
@@ -2007,11 +1979,10 @@ impl std::fmt::Debug for AddApplicationInputProcessingConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput)
+/// See [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
 pub mod add_application_input_processing_configuration_output {
 
-    /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -2070,7 +2041,7 @@ pub mod add_application_input_processing_configuration_output {
             self.input_processing_configuration_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput)
+        /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
         pub fn build(self) -> crate::output::AddApplicationInputProcessingConfigurationOutput {
             crate::output::AddApplicationInputProcessingConfigurationOutput {
                 application_arn: self.application_arn,
@@ -2083,7 +2054,7 @@ pub mod add_application_input_processing_configuration_output {
     }
 }
 impl AddApplicationInputProcessingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
     pub fn builder() -> crate::output::add_application_input_processing_configuration_output::Builder
     {
         crate::output::add_application_input_processing_configuration_output::Builder::default()
@@ -2124,11 +2095,10 @@ impl std::fmt::Debug for AddApplicationInputOutput {
         formatter.finish()
     }
 }
-/// See [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput)
+/// See [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
 pub mod add_application_input_output {
 
-    /// A builder for [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -2179,7 +2149,7 @@ pub mod add_application_input_output {
             self.input_descriptions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput)
+        /// Consumes the builder and constructs a [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
         pub fn build(self) -> crate::output::AddApplicationInputOutput {
             crate::output::AddApplicationInputOutput {
                 application_arn: self.application_arn,
@@ -2190,7 +2160,7 @@ pub mod add_application_input_output {
     }
 }
 impl AddApplicationInputOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
     pub fn builder() -> crate::output::add_application_input_output::Builder {
         crate::output::add_application_input_output::Builder::default()
     }
@@ -2236,11 +2206,10 @@ impl std::fmt::Debug for AddApplicationCloudWatchLoggingOptionOutput {
         formatter.finish()
     }
 }
-/// See [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput)
+/// See [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
 pub mod add_application_cloud_watch_logging_option_output {
 
-    /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_arn: std::option::Option<std::string::String>,
@@ -2298,7 +2267,7 @@ pub mod add_application_cloud_watch_logging_option_output {
             self.cloud_watch_logging_option_descriptions = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput)
+        /// Consumes the builder and constructs a [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
         pub fn build(self) -> crate::output::AddApplicationCloudWatchLoggingOptionOutput {
             crate::output::AddApplicationCloudWatchLoggingOptionOutput {
                 application_arn: self.application_arn,
@@ -2310,7 +2279,7 @@ pub mod add_application_cloud_watch_logging_option_output {
     }
 }
 impl AddApplicationCloudWatchLoggingOptionOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
     pub fn builder() -> crate::output::add_application_cloud_watch_logging_option_output::Builder {
         crate::output::add_application_cloud_watch_logging_option_output::Builder::default()
     }

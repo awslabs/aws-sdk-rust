@@ -10,7 +10,7 @@ pub struct DeleteReportDefinition {
     _private: (),
 }
 impl DeleteReportDefinition {
-    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
     pub fn builder() -> crate::input::delete_report_definition_input::Builder {
         crate::input::delete_report_definition_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetReportDefinition {
     _private: (),
 }
 impl GetReportDefinition {
-    /// Creates a new builder-style object to manufacture [`GetReportDefinitionInput`](crate::input::GetReportDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`GetReportDefinitionInput`](crate::input::GetReportDefinitionInput).
     pub fn builder() -> crate::input::get_report_definition_input::Builder {
         crate::input::get_report_definition_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct ImportApplicationUsage {
     _private: (),
 }
 impl ImportApplicationUsage {
-    /// Creates a new builder-style object to manufacture [`ImportApplicationUsageInput`](crate::input::ImportApplicationUsageInput)
+    /// Creates a new builder-style object to manufacture [`ImportApplicationUsageInput`](crate::input::ImportApplicationUsageInput).
     pub fn builder() -> crate::input::import_application_usage_input::Builder {
         crate::input::import_application_usage_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ListReportDefinitions {
     _private: (),
 }
 impl ListReportDefinitions {
-    /// Creates a new builder-style object to manufacture [`ListReportDefinitionsInput`](crate::input::ListReportDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`ListReportDefinitionsInput`](crate::input::ListReportDefinitionsInput).
     pub fn builder() -> crate::input::list_report_definitions_input::Builder {
         crate::input::list_report_definitions_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct PutReportDefinition {
     _private: (),
 }
 impl PutReportDefinition {
-    /// Creates a new builder-style object to manufacture [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
     pub fn builder() -> crate::input::put_report_definition_input::Builder {
         crate::input::put_report_definition_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct UpdateReportDefinition {
     _private: (),
 }
 impl UpdateReportDefinition {
-    /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionInput`](crate::input::UpdateReportDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionInput`](crate::input::UpdateReportDefinitionInput).
     pub fn builder() -> crate::input::update_report_definition_input::Builder {
         crate::input::update_report_definition_input::Builder::default()
     }

@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateCertificateAuthorityOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput)
+/// See [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
 pub mod update_certificate_authority_output {
 
-    /// A builder for [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput)
+        /// Consumes the builder and constructs a [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::UpdateCertificateAuthorityOutput {
             crate::output::UpdateCertificateAuthorityOutput {}
         }
     }
 }
 impl UpdateCertificateAuthorityOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput).
     pub fn builder() -> crate::output::update_certificate_authority_output::Builder {
         crate::output::update_certificate_authority_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UntagCertificateAuthorityOutput {
         formatter.finish()
     }
 }
-/// See [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput)
+/// See [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
 pub mod untag_certificate_authority_output {
 
-    /// A builder for [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput)
+        /// Consumes the builder and constructs a [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::UntagCertificateAuthorityOutput {
             crate::output::UntagCertificateAuthorityOutput {}
         }
     }
 }
 impl UntagCertificateAuthorityOutput {
-    /// Creates a new builder-style object to manufacture [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput)
+    /// Creates a new builder-style object to manufacture [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput).
     pub fn builder() -> crate::output::untag_certificate_authority_output::Builder {
         crate::output::untag_certificate_authority_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for TagCertificateAuthorityOutput {
         formatter.finish()
     }
 }
-/// See [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput)
+/// See [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
 pub mod tag_certificate_authority_output {
 
-    /// A builder for [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput)
+        /// Consumes the builder and constructs a [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::TagCertificateAuthorityOutput {
             crate::output::TagCertificateAuthorityOutput {}
         }
     }
 }
 impl TagCertificateAuthorityOutput {
-    /// Creates a new builder-style object to manufacture [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput)
+    /// Creates a new builder-style object to manufacture [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput).
     pub fn builder() -> crate::output::tag_certificate_authority_output::Builder {
         crate::output::tag_certificate_authority_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for RevokeCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
+/// See [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
 pub mod revoke_certificate_output {
 
-    /// A builder for [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
+        /// Consumes the builder and constructs a [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
         pub fn build(self) -> crate::output::RevokeCertificateOutput {
             crate::output::RevokeCertificateOutput {}
         }
     }
 }
 impl RevokeCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput).
     pub fn builder() -> crate::output::revoke_certificate_output::Builder {
         crate::output::revoke_certificate_output::Builder::default()
     }
@@ -133,22 +129,21 @@ impl std::fmt::Debug for RestoreCertificateAuthorityOutput {
         formatter.finish()
     }
 }
-/// See [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput)
+/// See [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
 pub mod restore_certificate_authority_output {
 
-    /// A builder for [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput)
+        /// Consumes the builder and constructs a [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::RestoreCertificateAuthorityOutput {
             crate::output::RestoreCertificateAuthorityOutput {}
         }
     }
 }
 impl RestoreCertificateAuthorityOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput)
+    /// Creates a new builder-style object to manufacture [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput).
     pub fn builder() -> crate::output::restore_certificate_authority_output::Builder {
         crate::output::restore_certificate_authority_output::Builder::default()
     }
@@ -164,22 +159,21 @@ impl std::fmt::Debug for PutPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+/// See [`PutPolicyOutput`](crate::output::PutPolicyOutput).
 pub mod put_policy_output {
 
-    /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutPolicyOutput`](crate::output::PutPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+        /// Consumes the builder and constructs a [`PutPolicyOutput`](crate::output::PutPolicyOutput).
         pub fn build(self) -> crate::output::PutPolicyOutput {
             crate::output::PutPolicyOutput {}
         }
     }
 }
 impl PutPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutPolicyOutput`](crate::output::PutPolicyOutput).
     pub fn builder() -> crate::output::put_policy_output::Builder {
         crate::output::put_policy_output::Builder::default()
     }
@@ -212,11 +206,10 @@ impl std::fmt::Debug for ListTagsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsOutput`](crate::output::ListTagsOutput)
+/// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
 
-    /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -252,7 +245,7 @@ pub mod list_tags_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput)
+        /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
                 tags: self.tags,
@@ -262,7 +255,7 @@ pub mod list_tags_output {
     }
 }
 impl ListTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
     pub fn builder() -> crate::output::list_tags_output::Builder {
         crate::output::list_tags_output::Builder::default()
     }
@@ -295,11 +288,10 @@ impl std::fmt::Debug for ListPermissionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
+/// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
 pub mod list_permissions_output {
 
-    /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -335,7 +327,7 @@ pub mod list_permissions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
+        /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
         pub fn build(self) -> crate::output::ListPermissionsOutput {
             crate::output::ListPermissionsOutput {
                 permissions: self.permissions,
@@ -345,7 +337,7 @@ pub mod list_permissions_output {
     }
 }
 impl ListPermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
     pub fn builder() -> crate::output::list_permissions_output::Builder {
         crate::output::list_permissions_output::Builder::default()
     }
@@ -381,11 +373,10 @@ impl std::fmt::Debug for ListCertificateAuthoritiesOutput {
         formatter.finish()
     }
 }
-/// See [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput)
+/// See [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
 pub mod list_certificate_authorities_output {
 
-    /// A builder for [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authorities:
@@ -425,7 +416,7 @@ pub mod list_certificate_authorities_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput)
+        /// Consumes the builder and constructs a [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
         pub fn build(self) -> crate::output::ListCertificateAuthoritiesOutput {
             crate::output::ListCertificateAuthoritiesOutput {
                 certificate_authorities: self.certificate_authorities,
@@ -435,7 +426,7 @@ pub mod list_certificate_authorities_output {
     }
 }
 impl ListCertificateAuthoritiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput)
+    /// Creates a new builder-style object to manufacture [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput).
     pub fn builder() -> crate::output::list_certificate_authorities_output::Builder {
         crate::output::list_certificate_authorities_output::Builder::default()
     }
@@ -463,11 +454,10 @@ impl std::fmt::Debug for IssueCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`IssueCertificateOutput`](crate::output::IssueCertificateOutput)
+/// See [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
 pub mod issue_certificate_output {
 
-    /// A builder for [`IssueCertificateOutput`](crate::output::IssueCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -488,7 +478,7 @@ pub mod issue_certificate_output {
             self.certificate_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`IssueCertificateOutput`](crate::output::IssueCertificateOutput)
+        /// Consumes the builder and constructs a [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
         pub fn build(self) -> crate::output::IssueCertificateOutput {
             crate::output::IssueCertificateOutput {
                 certificate_arn: self.certificate_arn,
@@ -497,7 +487,7 @@ pub mod issue_certificate_output {
     }
 }
 impl IssueCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`IssueCertificateOutput`](crate::output::IssueCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`IssueCertificateOutput`](crate::output::IssueCertificateOutput).
     pub fn builder() -> crate::output::issue_certificate_output::Builder {
         crate::output::issue_certificate_output::Builder::default()
     }
@@ -513,22 +503,21 @@ impl std::fmt::Debug for ImportCertificateAuthorityCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput)
+/// See [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
 pub mod import_certificate_authority_certificate_output {
 
-    /// A builder for [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput)
+        /// Consumes the builder and constructs a [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
         pub fn build(self) -> crate::output::ImportCertificateAuthorityCertificateOutput {
             crate::output::ImportCertificateAuthorityCertificateOutput {}
         }
     }
 }
 impl ImportCertificateAuthorityCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput).
     pub fn builder() -> crate::output::import_certificate_authority_certificate_output::Builder {
         crate::output::import_certificate_authority_certificate_output::Builder::default()
     }
@@ -554,11 +543,10 @@ impl std::fmt::Debug for GetPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetPolicyOutput`](crate::output::GetPolicyOutput)
+/// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
 
-    /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -574,7 +562,7 @@ pub mod get_policy_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput)
+        /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
                 policy: self.policy,
@@ -583,7 +571,7 @@ pub mod get_policy_output {
     }
 }
 impl GetPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     pub fn builder() -> crate::output::get_policy_output::Builder {
         crate::output::get_policy_output::Builder::default()
     }
@@ -609,11 +597,10 @@ impl std::fmt::Debug for GetCertificateAuthorityCsrOutput {
         formatter.finish()
     }
 }
-/// See [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput)
+/// See [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
 pub mod get_certificate_authority_csr_output {
 
-    /// A builder for [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) csr: std::option::Option<std::string::String>,
@@ -629,14 +616,14 @@ pub mod get_certificate_authority_csr_output {
             self.csr = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput)
+        /// Consumes the builder and constructs a [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
         pub fn build(self) -> crate::output::GetCertificateAuthorityCsrOutput {
             crate::output::GetCertificateAuthorityCsrOutput { csr: self.csr }
         }
     }
 }
 impl GetCertificateAuthorityCsrOutput {
-    /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput)
+    /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput).
     pub fn builder() -> crate::output::get_certificate_authority_csr_output::Builder {
         crate::output::get_certificate_authority_csr_output::Builder::default()
     }
@@ -669,11 +656,10 @@ impl std::fmt::Debug for GetCertificateAuthorityCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput)
+/// See [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
 pub mod get_certificate_authority_certificate_output {
 
-    /// A builder for [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -703,7 +689,7 @@ pub mod get_certificate_authority_certificate_output {
             self.certificate_chain = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput)
+        /// Consumes the builder and constructs a [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
         pub fn build(self) -> crate::output::GetCertificateAuthorityCertificateOutput {
             crate::output::GetCertificateAuthorityCertificateOutput {
                 certificate: self.certificate,
@@ -713,7 +699,7 @@ pub mod get_certificate_authority_certificate_output {
     }
 }
 impl GetCertificateAuthorityCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput).
     pub fn builder() -> crate::output::get_certificate_authority_certificate_output::Builder {
         crate::output::get_certificate_authority_certificate_output::Builder::default()
     }
@@ -746,11 +732,10 @@ impl std::fmt::Debug for GetCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`GetCertificateOutput`](crate::output::GetCertificateOutput)
+/// See [`GetCertificateOutput`](crate::output::GetCertificateOutput).
 pub mod get_certificate_output {
 
-    /// A builder for [`GetCertificateOutput`](crate::output::GetCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCertificateOutput`](crate::output::GetCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<std::string::String>,
@@ -780,7 +765,7 @@ pub mod get_certificate_output {
             self.certificate_chain = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCertificateOutput`](crate::output::GetCertificateOutput)
+        /// Consumes the builder and constructs a [`GetCertificateOutput`](crate::output::GetCertificateOutput).
         pub fn build(self) -> crate::output::GetCertificateOutput {
             crate::output::GetCertificateOutput {
                 certificate: self.certificate,
@@ -790,7 +775,7 @@ pub mod get_certificate_output {
     }
 }
 impl GetCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GetCertificateOutput`](crate::output::GetCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`GetCertificateOutput`](crate::output::GetCertificateOutput).
     pub fn builder() -> crate::output::get_certificate_output::Builder {
         crate::output::get_certificate_output::Builder::default()
     }
@@ -837,11 +822,10 @@ impl std::fmt::Debug for DescribeCertificateAuthorityAuditReportOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput)
+/// See [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
 pub mod describe_certificate_authority_audit_report_output {
 
-    /// A builder for [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audit_report_status: std::option::Option<crate::model::AuditReportStatus>,
@@ -899,7 +883,7 @@ pub mod describe_certificate_authority_audit_report_output {
             self.created_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput)
+        /// Consumes the builder and constructs a [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
         pub fn build(self) -> crate::output::DescribeCertificateAuthorityAuditReportOutput {
             crate::output::DescribeCertificateAuthorityAuditReportOutput {
                 audit_report_status: self.audit_report_status,
@@ -911,7 +895,7 @@ pub mod describe_certificate_authority_audit_report_output {
     }
 }
 impl DescribeCertificateAuthorityAuditReportOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput).
     pub fn builder() -> crate::output::describe_certificate_authority_audit_report_output::Builder {
         crate::output::describe_certificate_authority_audit_report_output::Builder::default()
     }
@@ -939,11 +923,10 @@ impl std::fmt::Debug for DescribeCertificateAuthorityOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput)
+/// See [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
 pub mod describe_certificate_authority_output {
 
-    /// A builder for [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority: std::option::Option<crate::model::CertificateAuthority>,
@@ -962,7 +945,7 @@ pub mod describe_certificate_authority_output {
             self.certificate_authority = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput)
+        /// Consumes the builder and constructs a [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::DescribeCertificateAuthorityOutput {
             crate::output::DescribeCertificateAuthorityOutput {
                 certificate_authority: self.certificate_authority,
@@ -971,7 +954,7 @@ pub mod describe_certificate_authority_output {
     }
 }
 impl DescribeCertificateAuthorityOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput).
     pub fn builder() -> crate::output::describe_certificate_authority_output::Builder {
         crate::output::describe_certificate_authority_output::Builder::default()
     }
@@ -987,22 +970,21 @@ impl std::fmt::Debug for DeletePolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+/// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
 
-    /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+        /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
         pub fn build(self) -> crate::output::DeletePolicyOutput {
             crate::output::DeletePolicyOutput {}
         }
     }
 }
 impl DeletePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
     pub fn builder() -> crate::output::delete_policy_output::Builder {
         crate::output::delete_policy_output::Builder::default()
     }
@@ -1018,22 +1000,21 @@ impl std::fmt::Debug for DeletePermissionOutput {
         formatter.finish()
     }
 }
-/// See [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
+/// See [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
 pub mod delete_permission_output {
 
-    /// A builder for [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
+        /// Consumes the builder and constructs a [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
         pub fn build(self) -> crate::output::DeletePermissionOutput {
             crate::output::DeletePermissionOutput {}
         }
     }
 }
 impl DeletePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
+    /// Creates a new builder-style object to manufacture [`DeletePermissionOutput`](crate::output::DeletePermissionOutput).
     pub fn builder() -> crate::output::delete_permission_output::Builder {
         crate::output::delete_permission_output::Builder::default()
     }
@@ -1049,22 +1030,21 @@ impl std::fmt::Debug for DeleteCertificateAuthorityOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput)
+/// See [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
 pub mod delete_certificate_authority_output {
 
-    /// A builder for [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput)
+        /// Consumes the builder and constructs a [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::DeleteCertificateAuthorityOutput {
             crate::output::DeleteCertificateAuthorityOutput {}
         }
     }
 }
 impl DeleteCertificateAuthorityOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput).
     pub fn builder() -> crate::output::delete_certificate_authority_output::Builder {
         crate::output::delete_certificate_authority_output::Builder::default()
     }
@@ -1080,22 +1060,21 @@ impl std::fmt::Debug for CreatePermissionOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
+/// See [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
 pub mod create_permission_output {
 
-    /// A builder for [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
+        /// Consumes the builder and constructs a [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
         pub fn build(self) -> crate::output::CreatePermissionOutput {
             crate::output::CreatePermissionOutput {}
         }
     }
 }
 impl CreatePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePermissionOutput`](crate::output::CreatePermissionOutput).
     pub fn builder() -> crate::output::create_permission_output::Builder {
         crate::output::create_permission_output::Builder::default()
     }
@@ -1128,11 +1107,10 @@ impl std::fmt::Debug for CreateCertificateAuthorityAuditReportOutput {
         formatter.finish()
     }
 }
-/// See [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput)
+/// See [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
 pub mod create_certificate_authority_audit_report_output {
 
-    /// A builder for [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audit_report_id: std::option::Option<std::string::String>,
@@ -1162,7 +1140,7 @@ pub mod create_certificate_authority_audit_report_output {
             self.s3_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput)
+        /// Consumes the builder and constructs a [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
         pub fn build(self) -> crate::output::CreateCertificateAuthorityAuditReportOutput {
             crate::output::CreateCertificateAuthorityAuditReportOutput {
                 audit_report_id: self.audit_report_id,
@@ -1172,7 +1150,7 @@ pub mod create_certificate_authority_audit_report_output {
     }
 }
 impl CreateCertificateAuthorityAuditReportOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput)
+    /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput).
     pub fn builder() -> crate::output::create_certificate_authority_audit_report_output::Builder {
         crate::output::create_certificate_authority_audit_report_output::Builder::default()
     }
@@ -1200,11 +1178,10 @@ impl std::fmt::Debug for CreateCertificateAuthorityOutput {
         formatter.finish()
     }
 }
-/// See [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput)
+/// See [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
 pub mod create_certificate_authority_output {
 
-    /// A builder for [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
@@ -1225,7 +1202,7 @@ pub mod create_certificate_authority_output {
             self.certificate_authority_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput)
+        /// Consumes the builder and constructs a [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
         pub fn build(self) -> crate::output::CreateCertificateAuthorityOutput {
             crate::output::CreateCertificateAuthorityOutput {
                 certificate_authority_arn: self.certificate_authority_arn,
@@ -1234,7 +1211,7 @@ pub mod create_certificate_authority_output {
     }
 }
 impl CreateCertificateAuthorityOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput)
+    /// Creates a new builder-style object to manufacture [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput).
     pub fn builder() -> crate::output::create_certificate_authority_output::Builder {
         crate::output::create_certificate_authority_output::Builder::default()
     }

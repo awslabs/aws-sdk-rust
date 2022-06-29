@@ -10,7 +10,7 @@ pub struct CopyBackupToRegion {
     _private: (),
 }
 impl CopyBackupToRegion {
-    /// Creates a new builder-style object to manufacture [`CopyBackupToRegionInput`](crate::input::CopyBackupToRegionInput)
+    /// Creates a new builder-style object to manufacture [`CopyBackupToRegionInput`](crate::input::CopyBackupToRegionInput).
     pub fn builder() -> crate::input::copy_backup_to_region_input::Builder {
         crate::input::copy_backup_to_region_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateCluster {
     _private: (),
 }
 impl CreateCluster {
-    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput).
     pub fn builder() -> crate::input::create_cluster_input::Builder {
         crate::input::create_cluster_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateHsm {
     _private: (),
 }
 impl CreateHsm {
-    /// Creates a new builder-style object to manufacture [`CreateHsmInput`](crate::input::CreateHsmInput)
+    /// Creates a new builder-style object to manufacture [`CreateHsmInput`](crate::input::CreateHsmInput).
     pub fn builder() -> crate::input::create_hsm_input::Builder {
         crate::input::create_hsm_input::Builder::default()
     }
@@ -107,7 +107,7 @@ pub struct DeleteBackup {
     _private: (),
 }
 impl DeleteBackup {
-    /// Creates a new builder-style object to manufacture [`DeleteBackupInput`](crate::input::DeleteBackupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBackupInput`](crate::input::DeleteBackupInput).
     pub fn builder() -> crate::input::delete_backup_input::Builder {
         crate::input::delete_backup_input::Builder::default()
     }
@@ -139,7 +139,7 @@ pub struct DeleteCluster {
     _private: (),
 }
 impl DeleteCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput).
     pub fn builder() -> crate::input::delete_cluster_input::Builder {
         crate::input::delete_cluster_input::Builder::default()
     }
@@ -171,7 +171,7 @@ pub struct DeleteHsm {
     _private: (),
 }
 impl DeleteHsm {
-    /// Creates a new builder-style object to manufacture [`DeleteHsmInput`](crate::input::DeleteHsmInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHsmInput`](crate::input::DeleteHsmInput).
     pub fn builder() -> crate::input::delete_hsm_input::Builder {
         crate::input::delete_hsm_input::Builder::default()
     }
@@ -202,7 +202,7 @@ pub struct DescribeBackups {
     _private: (),
 }
 impl DescribeBackups {
-    /// Creates a new builder-style object to manufacture [`DescribeBackupsInput`](crate::input::DescribeBackupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBackupsInput`](crate::input::DescribeBackupsInput).
     pub fn builder() -> crate::input::describe_backups_input::Builder {
         crate::input::describe_backups_input::Builder::default()
     }
@@ -236,7 +236,7 @@ pub struct DescribeClusters {
     _private: (),
 }
 impl DescribeClusters {
-    /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::input::DescribeClustersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::input::DescribeClustersInput).
     pub fn builder() -> crate::input::describe_clusters_input::Builder {
         crate::input::describe_clusters_input::Builder::default()
     }
@@ -270,7 +270,7 @@ pub struct InitializeCluster {
     _private: (),
 }
 impl InitializeCluster {
-    /// Creates a new builder-style object to manufacture [`InitializeClusterInput`](crate::input::InitializeClusterInput)
+    /// Creates a new builder-style object to manufacture [`InitializeClusterInput`](crate::input::InitializeClusterInput).
     pub fn builder() -> crate::input::initialize_cluster_input::Builder {
         crate::input::initialize_cluster_input::Builder::default()
     }
@@ -304,7 +304,7 @@ pub struct ListTags {
     _private: (),
 }
 impl ListTags {
-    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
     }
@@ -335,7 +335,7 @@ pub struct ModifyBackupAttributes {
     _private: (),
 }
 impl ModifyBackupAttributes {
-    /// Creates a new builder-style object to manufacture [`ModifyBackupAttributesInput`](crate::input::ModifyBackupAttributesInput)
+    /// Creates a new builder-style object to manufacture [`ModifyBackupAttributesInput`](crate::input::ModifyBackupAttributesInput).
     pub fn builder() -> crate::input::modify_backup_attributes_input::Builder {
         crate::input::modify_backup_attributes_input::Builder::default()
     }
@@ -369,7 +369,7 @@ pub struct ModifyCluster {
     _private: (),
 }
 impl ModifyCluster {
-    /// Creates a new builder-style object to manufacture [`ModifyClusterInput`](crate::input::ModifyClusterInput)
+    /// Creates a new builder-style object to manufacture [`ModifyClusterInput`](crate::input::ModifyClusterInput).
     pub fn builder() -> crate::input::modify_cluster_input::Builder {
         crate::input::modify_cluster_input::Builder::default()
     }
@@ -401,7 +401,7 @@ pub struct RestoreBackup {
     _private: (),
 }
 impl RestoreBackup {
-    /// Creates a new builder-style object to manufacture [`RestoreBackupInput`](crate::input::RestoreBackupInput)
+    /// Creates a new builder-style object to manufacture [`RestoreBackupInput`](crate::input::RestoreBackupInput).
     pub fn builder() -> crate::input::restore_backup_input::Builder {
         crate::input::restore_backup_input::Builder::default()
     }
@@ -433,7 +433,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -465,7 +465,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

@@ -69,11 +69,10 @@ impl std::fmt::Debug for ProjectDetails {
         formatter.finish()
     }
 }
-/// See [`ProjectDetails`](crate::model::ProjectDetails)
+/// See [`ProjectDetails`](crate::model::ProjectDetails).
 pub mod project_details {
 
-    /// A builder for [`ProjectDetails`](crate::model::ProjectDetails)
-    #[non_exhaustive]
+    /// A builder for [`ProjectDetails`](crate::model::ProjectDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -181,7 +180,7 @@ pub mod project_details {
             self.resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProjectDetails`](crate::model::ProjectDetails)
+        /// Consumes the builder and constructs a [`ProjectDetails`](crate::model::ProjectDetails).
         pub fn build(self) -> crate::model::ProjectDetails {
             crate::model::ProjectDetails {
                 name: self.name,
@@ -197,7 +196,7 @@ pub mod project_details {
     }
 }
 impl ProjectDetails {
-    /// Creates a new builder-style object to manufacture [`ProjectDetails`](crate::model::ProjectDetails)
+    /// Creates a new builder-style object to manufacture [`ProjectDetails`](crate::model::ProjectDetails).
     pub fn builder() -> crate::model::project_details::Builder {
         crate::model::project_details::Builder::default()
     }
@@ -255,11 +254,10 @@ impl std::fmt::Debug for Resource {
         formatter.finish()
     }
 }
-/// See [`Resource`](crate::model::Resource)
+/// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
-    /// A builder for [`Resource`](crate::model::Resource)
-    #[non_exhaustive]
+    /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -336,7 +334,7 @@ pub mod resource {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource)
+        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
                 r#type: self.r#type,
@@ -349,7 +347,7 @@ pub mod resource {
     }
 }
 impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource)
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
     pub fn builder() -> crate::model::resource::Builder {
         crate::model::resource::Builder::default()
     }
@@ -443,11 +441,10 @@ impl std::fmt::Debug for ProjectSummary {
         formatter.finish()
     }
 }
-/// See [`ProjectSummary`](crate::model::ProjectSummary)
+/// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
 
-    /// A builder for [`ProjectSummary`](crate::model::ProjectSummary)
-    #[non_exhaustive]
+    /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -474,7 +471,7 @@ pub mod project_summary {
             self.project_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary)
+        /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary).
         pub fn build(self) -> crate::model::ProjectSummary {
             crate::model::ProjectSummary {
                 name: self.name,
@@ -484,7 +481,7 @@ pub mod project_summary {
     }
 }
 impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary)
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
     pub fn builder() -> crate::model::project_summary::Builder {
         crate::model::project_summary::Builder::default()
     }
@@ -545,11 +542,10 @@ impl std::fmt::Debug for BundleDetails {
         formatter.finish()
     }
 }
-/// See [`BundleDetails`](crate::model::BundleDetails)
+/// See [`BundleDetails`](crate::model::BundleDetails).
 pub mod bundle_details {
 
-    /// A builder for [`BundleDetails`](crate::model::BundleDetails)
-    #[non_exhaustive]
+    /// A builder for [`BundleDetails`](crate::model::BundleDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bundle_id: std::option::Option<std::string::String>,
@@ -629,7 +625,7 @@ pub mod bundle_details {
             self.available_platforms = input;
             self
         }
-        /// Consumes the builder and constructs a [`BundleDetails`](crate::model::BundleDetails)
+        /// Consumes the builder and constructs a [`BundleDetails`](crate::model::BundleDetails).
         pub fn build(self) -> crate::model::BundleDetails {
             crate::model::BundleDetails {
                 bundle_id: self.bundle_id,
@@ -643,7 +639,7 @@ pub mod bundle_details {
     }
 }
 impl BundleDetails {
-    /// Creates a new builder-style object to manufacture [`BundleDetails`](crate::model::BundleDetails)
+    /// Creates a new builder-style object to manufacture [`BundleDetails`](crate::model::BundleDetails).
     pub fn builder() -> crate::model::bundle_details::Builder {
         crate::model::bundle_details::Builder::default()
     }

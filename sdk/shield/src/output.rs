@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput)
+/// See [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
 pub mod update_subscription_output {
 
-    /// A builder for [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput)
+        /// Consumes the builder and constructs a [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
         pub fn build(self) -> crate::output::UpdateSubscriptionOutput {
             crate::output::UpdateSubscriptionOutput {}
         }
     }
 }
 impl UpdateSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
     pub fn builder() -> crate::output::update_subscription_output::Builder {
         crate::output::update_subscription_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UpdateProtectionGroupOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput)
+/// See [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
 pub mod update_protection_group_output {
 
-    /// A builder for [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput)
+        /// Consumes the builder and constructs a [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
         pub fn build(self) -> crate::output::UpdateProtectionGroupOutput {
             crate::output::UpdateProtectionGroupOutput {}
         }
     }
 }
 impl UpdateProtectionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
     pub fn builder() -> crate::output::update_protection_group_output::Builder {
         crate::output::update_protection_group_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for UpdateEmergencyContactSettingsOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput)
+/// See [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
 pub mod update_emergency_contact_settings_output {
 
-    /// A builder for [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput)
+        /// Consumes the builder and constructs a [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
         pub fn build(self) -> crate::output::UpdateEmergencyContactSettingsOutput {
             crate::output::UpdateEmergencyContactSettingsOutput {}
         }
     }
 }
 impl UpdateEmergencyContactSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
     pub fn builder() -> crate::output::update_emergency_contact_settings_output::Builder {
         crate::output::update_emergency_contact_settings_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for UpdateApplicationLayerAutomaticResponseOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+/// See [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
 pub mod update_application_layer_automatic_response_output {
 
-    /// A builder for [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+        /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
         pub fn build(self) -> crate::output::UpdateApplicationLayerAutomaticResponseOutput {
             crate::output::UpdateApplicationLayerAutomaticResponseOutput {}
         }
     }
 }
 impl UpdateApplicationLayerAutomaticResponseOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
     pub fn builder() -> crate::output::update_application_layer_automatic_response_output::Builder {
         crate::output::update_application_layer_automatic_response_output::Builder::default()
     }
@@ -133,22 +129,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -164,22 +159,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -205,11 +199,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -234,14 +227,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -278,11 +271,10 @@ impl std::fmt::Debug for ListResourcesInProtectionGroupOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput)
+/// See [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
 pub mod list_resources_in_protection_group_output {
 
-    /// A builder for [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -322,7 +314,7 @@ pub mod list_resources_in_protection_group_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput)
+        /// Consumes the builder and constructs a [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
         pub fn build(self) -> crate::output::ListResourcesInProtectionGroupOutput {
             crate::output::ListResourcesInProtectionGroupOutput {
                 resource_arns: self.resource_arns,
@@ -332,7 +324,7 @@ pub mod list_resources_in_protection_group_output {
     }
 }
 impl ListResourcesInProtectionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
     pub fn builder() -> crate::output::list_resources_in_protection_group_output::Builder {
         crate::output::list_resources_in_protection_group_output::Builder::default()
     }
@@ -369,11 +361,10 @@ impl std::fmt::Debug for ListProtectionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListProtectionsOutput`](crate::output::ListProtectionsOutput)
+/// See [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
 pub mod list_protections_output {
 
-    /// A builder for [`ListProtectionsOutput`](crate::output::ListProtectionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protections: std::option::Option<std::vec::Vec<crate::model::Protection>>,
@@ -413,7 +404,7 @@ pub mod list_protections_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListProtectionsOutput`](crate::output::ListProtectionsOutput)
+        /// Consumes the builder and constructs a [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
         pub fn build(self) -> crate::output::ListProtectionsOutput {
             crate::output::ListProtectionsOutput {
                 protections: self.protections,
@@ -423,7 +414,7 @@ pub mod list_protections_output {
     }
 }
 impl ListProtectionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListProtectionsOutput`](crate::output::ListProtectionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
     pub fn builder() -> crate::output::list_protections_output::Builder {
         crate::output::list_protections_output::Builder::default()
     }
@@ -460,11 +451,10 @@ impl std::fmt::Debug for ListProtectionGroupsOutput {
         formatter.finish()
     }
 }
-/// See [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput)
+/// See [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
 pub mod list_protection_groups_output {
 
-    /// A builder for [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_groups:
@@ -505,7 +495,7 @@ pub mod list_protection_groups_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput)
+        /// Consumes the builder and constructs a [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
         pub fn build(self) -> crate::output::ListProtectionGroupsOutput {
             crate::output::ListProtectionGroupsOutput {
                 protection_groups: self.protection_groups,
@@ -515,7 +505,7 @@ pub mod list_protection_groups_output {
     }
 }
 impl ListProtectionGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput)
+    /// Creates a new builder-style object to manufacture [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
     pub fn builder() -> crate::output::list_protection_groups_output::Builder {
         crate::output::list_protection_groups_output::Builder::default()
     }
@@ -552,11 +542,10 @@ impl std::fmt::Debug for ListAttacksOutput {
         formatter.finish()
     }
 }
-/// See [`ListAttacksOutput`](crate::output::ListAttacksOutput)
+/// See [`ListAttacksOutput`](crate::output::ListAttacksOutput).
 pub mod list_attacks_output {
 
-    /// A builder for [`ListAttacksOutput`](crate::output::ListAttacksOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAttacksOutput`](crate::output::ListAttacksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack_summaries:
@@ -597,7 +586,7 @@ pub mod list_attacks_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAttacksOutput`](crate::output::ListAttacksOutput)
+        /// Consumes the builder and constructs a [`ListAttacksOutput`](crate::output::ListAttacksOutput).
         pub fn build(self) -> crate::output::ListAttacksOutput {
             crate::output::ListAttacksOutput {
                 attack_summaries: self.attack_summaries,
@@ -607,7 +596,7 @@ pub mod list_attacks_output {
     }
 }
 impl ListAttacksOutput {
-    /// Creates a new builder-style object to manufacture [`ListAttacksOutput`](crate::output::ListAttacksOutput)
+    /// Creates a new builder-style object to manufacture [`ListAttacksOutput`](crate::output::ListAttacksOutput).
     pub fn builder() -> crate::output::list_attacks_output::Builder {
         crate::output::list_attacks_output::Builder::default()
     }
@@ -633,11 +622,10 @@ impl std::fmt::Debug for GetSubscriptionStateOutput {
         formatter.finish()
     }
 }
-/// See [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput)
+/// See [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
 pub mod get_subscription_state_output {
 
-    /// A builder for [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_state: std::option::Option<crate::model::SubscriptionState>,
@@ -656,7 +644,7 @@ pub mod get_subscription_state_output {
             self.subscription_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput)
+        /// Consumes the builder and constructs a [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
         pub fn build(self) -> crate::output::GetSubscriptionStateOutput {
             crate::output::GetSubscriptionStateOutput {
                 subscription_state: self.subscription_state,
@@ -665,7 +653,7 @@ pub mod get_subscription_state_output {
     }
 }
 impl GetSubscriptionStateOutput {
-    /// Creates a new builder-style object to manufacture [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput)
+    /// Creates a new builder-style object to manufacture [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
     pub fn builder() -> crate::output::get_subscription_state_output::Builder {
         crate::output::get_subscription_state_output::Builder::default()
     }
@@ -681,22 +669,21 @@ impl std::fmt::Debug for EnableProactiveEngagementOutput {
         formatter.finish()
     }
 }
-/// See [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
+/// See [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
 pub mod enable_proactive_engagement_output {
 
-    /// A builder for [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
+        /// Consumes the builder and constructs a [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
         pub fn build(self) -> crate::output::EnableProactiveEngagementOutput {
             crate::output::EnableProactiveEngagementOutput {}
         }
     }
 }
 impl EnableProactiveEngagementOutput {
-    /// Creates a new builder-style object to manufacture [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
+    /// Creates a new builder-style object to manufacture [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
     pub fn builder() -> crate::output::enable_proactive_engagement_output::Builder {
         crate::output::enable_proactive_engagement_output::Builder::default()
     }
@@ -712,22 +699,21 @@ impl std::fmt::Debug for EnableApplicationLayerAutomaticResponseOutput {
         formatter.finish()
     }
 }
-/// See [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+/// See [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
 pub mod enable_application_layer_automatic_response_output {
 
-    /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+        /// Consumes the builder and constructs a [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
         pub fn build(self) -> crate::output::EnableApplicationLayerAutomaticResponseOutput {
             crate::output::EnableApplicationLayerAutomaticResponseOutput {}
         }
     }
 }
 impl EnableApplicationLayerAutomaticResponseOutput {
-    /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+    /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
     pub fn builder() -> crate::output::enable_application_layer_automatic_response_output::Builder {
         crate::output::enable_application_layer_automatic_response_output::Builder::default()
     }
@@ -743,22 +729,21 @@ impl std::fmt::Debug for DisassociateHealthCheckOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput)
+/// See [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
 pub mod disassociate_health_check_output {
 
-    /// A builder for [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput)
+        /// Consumes the builder and constructs a [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
         pub fn build(self) -> crate::output::DisassociateHealthCheckOutput {
             crate::output::DisassociateHealthCheckOutput {}
         }
     }
 }
 impl DisassociateHealthCheckOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
     pub fn builder() -> crate::output::disassociate_health_check_output::Builder {
         crate::output::disassociate_health_check_output::Builder::default()
     }
@@ -774,22 +759,21 @@ impl std::fmt::Debug for DisassociateDrtRoleOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput)
+/// See [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
 pub mod disassociate_drt_role_output {
 
-    /// A builder for [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput)
+        /// Consumes the builder and constructs a [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
         pub fn build(self) -> crate::output::DisassociateDrtRoleOutput {
             crate::output::DisassociateDrtRoleOutput {}
         }
     }
 }
 impl DisassociateDrtRoleOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
     pub fn builder() -> crate::output::disassociate_drt_role_output::Builder {
         crate::output::disassociate_drt_role_output::Builder::default()
     }
@@ -805,22 +789,21 @@ impl std::fmt::Debug for DisassociateDrtLogBucketOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput)
+/// See [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
 pub mod disassociate_drt_log_bucket_output {
 
-    /// A builder for [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput)
+        /// Consumes the builder and constructs a [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
         pub fn build(self) -> crate::output::DisassociateDrtLogBucketOutput {
             crate::output::DisassociateDrtLogBucketOutput {}
         }
     }
 }
 impl DisassociateDrtLogBucketOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
     pub fn builder() -> crate::output::disassociate_drt_log_bucket_output::Builder {
         crate::output::disassociate_drt_log_bucket_output::Builder::default()
     }
@@ -836,22 +819,21 @@ impl std::fmt::Debug for DisableProactiveEngagementOutput {
         formatter.finish()
     }
 }
-/// See [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
+/// See [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
 pub mod disable_proactive_engagement_output {
 
-    /// A builder for [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
+        /// Consumes the builder and constructs a [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
         pub fn build(self) -> crate::output::DisableProactiveEngagementOutput {
             crate::output::DisableProactiveEngagementOutput {}
         }
     }
 }
 impl DisableProactiveEngagementOutput {
-    /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
+    /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
     pub fn builder() -> crate::output::disable_proactive_engagement_output::Builder {
         crate::output::disable_proactive_engagement_output::Builder::default()
     }
@@ -867,22 +849,21 @@ impl std::fmt::Debug for DisableApplicationLayerAutomaticResponseOutput {
         formatter.finish()
     }
 }
-/// See [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+/// See [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
 pub mod disable_application_layer_automatic_response_output {
 
-    /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+        /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
         pub fn build(self) -> crate::output::DisableApplicationLayerAutomaticResponseOutput {
             crate::output::DisableApplicationLayerAutomaticResponseOutput {}
         }
     }
 }
 impl DisableApplicationLayerAutomaticResponseOutput {
-    /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+    /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
     pub fn builder() -> crate::output::disable_application_layer_automatic_response_output::Builder
     {
         crate::output::disable_application_layer_automatic_response_output::Builder::default()
@@ -909,11 +890,10 @@ impl std::fmt::Debug for DescribeSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput)
+/// See [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
 pub mod describe_subscription_output {
 
-    /// A builder for [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription: std::option::Option<crate::model::Subscription>,
@@ -932,7 +912,7 @@ pub mod describe_subscription_output {
             self.subscription = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput)
+        /// Consumes the builder and constructs a [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
         pub fn build(self) -> crate::output::DescribeSubscriptionOutput {
             crate::output::DescribeSubscriptionOutput {
                 subscription: self.subscription,
@@ -941,7 +921,7 @@ pub mod describe_subscription_output {
     }
 }
 impl DescribeSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
     pub fn builder() -> crate::output::describe_subscription_output::Builder {
         crate::output::describe_subscription_output::Builder::default()
     }
@@ -967,11 +947,10 @@ impl std::fmt::Debug for DescribeProtectionGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput)
+/// See [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
 pub mod describe_protection_group_output {
 
-    /// A builder for [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_group: std::option::Option<crate::model::ProtectionGroup>,
@@ -990,7 +969,7 @@ pub mod describe_protection_group_output {
             self.protection_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput)
+        /// Consumes the builder and constructs a [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
         pub fn build(self) -> crate::output::DescribeProtectionGroupOutput {
             crate::output::DescribeProtectionGroupOutput {
                 protection_group: self.protection_group,
@@ -999,7 +978,7 @@ pub mod describe_protection_group_output {
     }
 }
 impl DescribeProtectionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
     pub fn builder() -> crate::output::describe_protection_group_output::Builder {
         crate::output::describe_protection_group_output::Builder::default()
     }
@@ -1025,11 +1004,10 @@ impl std::fmt::Debug for DescribeProtectionOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput)
+/// See [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
 pub mod describe_protection_output {
 
-    /// A builder for [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection: std::option::Option<crate::model::Protection>,
@@ -1048,7 +1026,7 @@ pub mod describe_protection_output {
             self.protection = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput)
+        /// Consumes the builder and constructs a [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
         pub fn build(self) -> crate::output::DescribeProtectionOutput {
             crate::output::DescribeProtectionOutput {
                 protection: self.protection,
@@ -1057,7 +1035,7 @@ pub mod describe_protection_output {
     }
 }
 impl DescribeProtectionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
     pub fn builder() -> crate::output::describe_protection_output::Builder {
         crate::output::describe_protection_output::Builder::default()
     }
@@ -1083,11 +1061,10 @@ impl std::fmt::Debug for DescribeEmergencyContactSettingsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput)
+/// See [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
 pub mod describe_emergency_contact_settings_output {
 
-    /// A builder for [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emergency_contact_list:
@@ -1113,7 +1090,7 @@ pub mod describe_emergency_contact_settings_output {
             self.emergency_contact_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput)
+        /// Consumes the builder and constructs a [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
         pub fn build(self) -> crate::output::DescribeEmergencyContactSettingsOutput {
             crate::output::DescribeEmergencyContactSettingsOutput {
                 emergency_contact_list: self.emergency_contact_list,
@@ -1122,7 +1099,7 @@ pub mod describe_emergency_contact_settings_output {
     }
 }
 impl DescribeEmergencyContactSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
     pub fn builder() -> crate::output::describe_emergency_contact_settings_output::Builder {
         crate::output::describe_emergency_contact_settings_output::Builder::default()
     }
@@ -1155,11 +1132,10 @@ impl std::fmt::Debug for DescribeDrtAccessOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput)
+/// See [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
 pub mod describe_drt_access_output {
 
-    /// A builder for [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -1195,7 +1171,7 @@ pub mod describe_drt_access_output {
             self.log_bucket_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput)
+        /// Consumes the builder and constructs a [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
         pub fn build(self) -> crate::output::DescribeDrtAccessOutput {
             crate::output::DescribeDrtAccessOutput {
                 role_arn: self.role_arn,
@@ -1205,7 +1181,7 @@ pub mod describe_drt_access_output {
     }
 }
 impl DescribeDrtAccessOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
     pub fn builder() -> crate::output::describe_drt_access_output::Builder {
         crate::output::describe_drt_access_output::Builder::default()
     }
@@ -1238,11 +1214,10 @@ impl std::fmt::Debug for DescribeAttackStatisticsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput)
+/// See [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
 pub mod describe_attack_statistics_output {
 
-    /// A builder for [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_range: std::option::Option<crate::model::TimeRange>,
@@ -1282,7 +1257,7 @@ pub mod describe_attack_statistics_output {
             self.data_items = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput)
+        /// Consumes the builder and constructs a [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
         pub fn build(self) -> crate::output::DescribeAttackStatisticsOutput {
             crate::output::DescribeAttackStatisticsOutput {
                 time_range: self.time_range,
@@ -1292,7 +1267,7 @@ pub mod describe_attack_statistics_output {
     }
 }
 impl DescribeAttackStatisticsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
     pub fn builder() -> crate::output::describe_attack_statistics_output::Builder {
         crate::output::describe_attack_statistics_output::Builder::default()
     }
@@ -1318,11 +1293,10 @@ impl std::fmt::Debug for DescribeAttackOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAttackOutput`](crate::output::DescribeAttackOutput)
+/// See [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
 pub mod describe_attack_output {
 
-    /// A builder for [`DescribeAttackOutput`](crate::output::DescribeAttackOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attack: std::option::Option<crate::model::AttackDetail>,
@@ -1341,7 +1315,7 @@ pub mod describe_attack_output {
             self.attack = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAttackOutput`](crate::output::DescribeAttackOutput)
+        /// Consumes the builder and constructs a [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
         pub fn build(self) -> crate::output::DescribeAttackOutput {
             crate::output::DescribeAttackOutput {
                 attack: self.attack,
@@ -1350,7 +1324,7 @@ pub mod describe_attack_output {
     }
 }
 impl DescribeAttackOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAttackOutput`](crate::output::DescribeAttackOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
     pub fn builder() -> crate::output::describe_attack_output::Builder {
         crate::output::describe_attack_output::Builder::default()
     }
@@ -1366,22 +1340,21 @@ impl std::fmt::Debug for DeleteSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
+/// See [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
 pub mod delete_subscription_output {
 
-    /// A builder for [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
+        /// Consumes the builder and constructs a [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteSubscriptionOutput {
             crate::output::DeleteSubscriptionOutput {}
         }
     }
 }
 impl DeleteSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
     pub fn builder() -> crate::output::delete_subscription_output::Builder {
         crate::output::delete_subscription_output::Builder::default()
     }
@@ -1397,22 +1370,21 @@ impl std::fmt::Debug for DeleteProtectionGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput)
+/// See [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
 pub mod delete_protection_group_output {
 
-    /// A builder for [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput)
+        /// Consumes the builder and constructs a [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
         pub fn build(self) -> crate::output::DeleteProtectionGroupOutput {
             crate::output::DeleteProtectionGroupOutput {}
         }
     }
 }
 impl DeleteProtectionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
     pub fn builder() -> crate::output::delete_protection_group_output::Builder {
         crate::output::delete_protection_group_output::Builder::default()
     }
@@ -1428,22 +1400,21 @@ impl std::fmt::Debug for DeleteProtectionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput)
+/// See [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
 pub mod delete_protection_output {
 
-    /// A builder for [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput)
+        /// Consumes the builder and constructs a [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
         pub fn build(self) -> crate::output::DeleteProtectionOutput {
             crate::output::DeleteProtectionOutput {}
         }
     }
 }
 impl DeleteProtectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
     pub fn builder() -> crate::output::delete_protection_output::Builder {
         crate::output::delete_protection_output::Builder::default()
     }
@@ -1459,22 +1430,21 @@ impl std::fmt::Debug for CreateSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput)
+/// See [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
 pub mod create_subscription_output {
 
-    /// A builder for [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput)
+        /// Consumes the builder and constructs a [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateSubscriptionOutput {
             crate::output::CreateSubscriptionOutput {}
         }
     }
 }
 impl CreateSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
     pub fn builder() -> crate::output::create_subscription_output::Builder {
         crate::output::create_subscription_output::Builder::default()
     }
@@ -1490,22 +1460,21 @@ impl std::fmt::Debug for CreateProtectionGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput)
+/// See [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
 pub mod create_protection_group_output {
 
-    /// A builder for [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput)
+        /// Consumes the builder and constructs a [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
         pub fn build(self) -> crate::output::CreateProtectionGroupOutput {
             crate::output::CreateProtectionGroupOutput {}
         }
     }
 }
 impl CreateProtectionGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
     pub fn builder() -> crate::output::create_protection_group_output::Builder {
         crate::output::create_protection_group_output::Builder::default()
     }
@@ -1531,11 +1500,10 @@ impl std::fmt::Debug for CreateProtectionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateProtectionOutput`](crate::output::CreateProtectionOutput)
+/// See [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
 pub mod create_protection_output {
 
-    /// A builder for [`CreateProtectionOutput`](crate::output::CreateProtectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) protection_id: std::option::Option<std::string::String>,
@@ -1554,7 +1522,7 @@ pub mod create_protection_output {
             self.protection_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateProtectionOutput`](crate::output::CreateProtectionOutput)
+        /// Consumes the builder and constructs a [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
         pub fn build(self) -> crate::output::CreateProtectionOutput {
             crate::output::CreateProtectionOutput {
                 protection_id: self.protection_id,
@@ -1563,7 +1531,7 @@ pub mod create_protection_output {
     }
 }
 impl CreateProtectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateProtectionOutput`](crate::output::CreateProtectionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
     pub fn builder() -> crate::output::create_protection_output::Builder {
         crate::output::create_protection_output::Builder::default()
     }
@@ -1579,22 +1547,21 @@ impl std::fmt::Debug for AssociateProactiveEngagementDetailsOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput)
+/// See [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
 pub mod associate_proactive_engagement_details_output {
 
-    /// A builder for [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput)
+        /// Consumes the builder and constructs a [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
         pub fn build(self) -> crate::output::AssociateProactiveEngagementDetailsOutput {
             crate::output::AssociateProactiveEngagementDetailsOutput {}
         }
     }
 }
 impl AssociateProactiveEngagementDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
     pub fn builder() -> crate::output::associate_proactive_engagement_details_output::Builder {
         crate::output::associate_proactive_engagement_details_output::Builder::default()
     }
@@ -1610,22 +1577,21 @@ impl std::fmt::Debug for AssociateHealthCheckOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput)
+/// See [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
 pub mod associate_health_check_output {
 
-    /// A builder for [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput)
+        /// Consumes the builder and constructs a [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
         pub fn build(self) -> crate::output::AssociateHealthCheckOutput {
             crate::output::AssociateHealthCheckOutput {}
         }
     }
 }
 impl AssociateHealthCheckOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
     pub fn builder() -> crate::output::associate_health_check_output::Builder {
         crate::output::associate_health_check_output::Builder::default()
     }
@@ -1641,22 +1607,21 @@ impl std::fmt::Debug for AssociateDrtRoleOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput)
+/// See [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
 pub mod associate_drt_role_output {
 
-    /// A builder for [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput)
+        /// Consumes the builder and constructs a [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
         pub fn build(self) -> crate::output::AssociateDrtRoleOutput {
             crate::output::AssociateDrtRoleOutput {}
         }
     }
 }
 impl AssociateDrtRoleOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
     pub fn builder() -> crate::output::associate_drt_role_output::Builder {
         crate::output::associate_drt_role_output::Builder::default()
     }
@@ -1672,22 +1637,21 @@ impl std::fmt::Debug for AssociateDrtLogBucketOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput)
+/// See [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
 pub mod associate_drt_log_bucket_output {
 
-    /// A builder for [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput)
+        /// Consumes the builder and constructs a [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
         pub fn build(self) -> crate::output::AssociateDrtLogBucketOutput {
             crate::output::AssociateDrtLogBucketOutput {}
         }
     }
 }
 impl AssociateDrtLogBucketOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
     pub fn builder() -> crate::output::associate_drt_log_bucket_output::Builder {
         crate::output::associate_drt_log_bucket_output::Builder::default()
     }

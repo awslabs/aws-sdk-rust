@@ -55,11 +55,10 @@ impl std::fmt::Debug for Prediction {
         formatter.finish()
     }
 }
-/// See [`Prediction`](crate::model::Prediction)
+/// See [`Prediction`](crate::model::Prediction).
 pub mod prediction {
 
-    /// A builder for [`Prediction`](crate::model::Prediction)
-    #[non_exhaustive]
+    /// A builder for [`Prediction`](crate::model::Prediction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predicted_label: std::option::Option<std::string::String>,
@@ -138,7 +137,7 @@ pub mod prediction {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`Prediction`](crate::model::Prediction)
+        /// Consumes the builder and constructs a [`Prediction`](crate::model::Prediction).
         pub fn build(self) -> crate::model::Prediction {
             crate::model::Prediction {
                 predicted_label: self.predicted_label,
@@ -150,7 +149,7 @@ pub mod prediction {
     }
 }
 impl Prediction {
-    /// Creates a new builder-style object to manufacture [`Prediction`](crate::model::Prediction)
+    /// Creates a new builder-style object to manufacture [`Prediction`](crate::model::Prediction).
     pub fn builder() -> crate::model::prediction::Builder {
         crate::model::prediction::Builder::default()
     }
@@ -333,11 +332,10 @@ impl std::fmt::Debug for RealtimeEndpointInfo {
         formatter.finish()
     }
 }
-/// See [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo)
+/// See [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
 pub mod realtime_endpoint_info {
 
-    /// A builder for [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo)
-    #[non_exhaustive]
+    /// A builder for [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) peak_requests_per_second: std::option::Option<i32>,
@@ -404,7 +402,7 @@ pub mod realtime_endpoint_info {
             self.endpoint_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo)
+        /// Consumes the builder and constructs a [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
         pub fn build(self) -> crate::model::RealtimeEndpointInfo {
             crate::model::RealtimeEndpointInfo {
                 peak_requests_per_second: self.peak_requests_per_second.unwrap_or_default(),
@@ -416,7 +414,7 @@ pub mod realtime_endpoint_info {
     }
 }
 impl RealtimeEndpointInfo {
-    /// Creates a new builder-style object to manufacture [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo)
+    /// Creates a new builder-style object to manufacture [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
     pub fn builder() -> crate::model::realtime_endpoint_info::Builder {
         crate::model::realtime_endpoint_info::Builder::default()
     }
@@ -609,11 +607,10 @@ impl std::fmt::Debug for PerformanceMetrics {
         formatter.finish()
     }
 }
-/// See [`PerformanceMetrics`](crate::model::PerformanceMetrics)
+/// See [`PerformanceMetrics`](crate::model::PerformanceMetrics).
 pub mod performance_metrics {
 
-    /// A builder for [`PerformanceMetrics`](crate::model::PerformanceMetrics)
-    #[non_exhaustive]
+    /// A builder for [`PerformanceMetrics`](crate::model::PerformanceMetrics).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) properties: std::option::Option<
@@ -645,7 +642,7 @@ pub mod performance_metrics {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`PerformanceMetrics`](crate::model::PerformanceMetrics)
+        /// Consumes the builder and constructs a [`PerformanceMetrics`](crate::model::PerformanceMetrics).
         pub fn build(self) -> crate::model::PerformanceMetrics {
             crate::model::PerformanceMetrics {
                 properties: self.properties,
@@ -654,7 +651,7 @@ pub mod performance_metrics {
     }
 }
 impl PerformanceMetrics {
-    /// Creates a new builder-style object to manufacture [`PerformanceMetrics`](crate::model::PerformanceMetrics)
+    /// Creates a new builder-style object to manufacture [`PerformanceMetrics`](crate::model::PerformanceMetrics).
     pub fn builder() -> crate::model::performance_metrics::Builder {
         crate::model::performance_metrics::Builder::default()
     }
@@ -715,11 +712,10 @@ impl std::fmt::Debug for RdsMetadata {
         formatter.finish()
     }
 }
-/// See [`RdsMetadata`](crate::model::RdsMetadata)
+/// See [`RdsMetadata`](crate::model::RdsMetadata).
 pub mod rds_metadata {
 
-    /// A builder for [`RdsMetadata`](crate::model::RdsMetadata)
-    #[non_exhaustive]
+    /// A builder for [`RdsMetadata`](crate::model::RdsMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database: std::option::Option<crate::model::RdsDatabase>,
@@ -805,7 +801,7 @@ pub mod rds_metadata {
             self.data_pipeline_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RdsMetadata`](crate::model::RdsMetadata)
+        /// Consumes the builder and constructs a [`RdsMetadata`](crate::model::RdsMetadata).
         pub fn build(self) -> crate::model::RdsMetadata {
             crate::model::RdsMetadata {
                 database: self.database,
@@ -819,7 +815,7 @@ pub mod rds_metadata {
     }
 }
 impl RdsMetadata {
-    /// Creates a new builder-style object to manufacture [`RdsMetadata`](crate::model::RdsMetadata)
+    /// Creates a new builder-style object to manufacture [`RdsMetadata`](crate::model::RdsMetadata).
     pub fn builder() -> crate::model::rds_metadata::Builder {
         crate::model::rds_metadata::Builder::default()
     }
@@ -852,11 +848,10 @@ impl std::fmt::Debug for RdsDatabase {
         formatter.finish()
     }
 }
-/// See [`RdsDatabase`](crate::model::RdsDatabase)
+/// See [`RdsDatabase`](crate::model::RdsDatabase).
 pub mod rds_database {
 
-    /// A builder for [`RdsDatabase`](crate::model::RdsDatabase)
-    #[non_exhaustive]
+    /// A builder for [`RdsDatabase`](crate::model::RdsDatabase).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_identifier: std::option::Option<std::string::String>,
@@ -889,7 +884,7 @@ pub mod rds_database {
             self.database_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`RdsDatabase`](crate::model::RdsDatabase)
+        /// Consumes the builder and constructs a [`RdsDatabase`](crate::model::RdsDatabase).
         pub fn build(self) -> crate::model::RdsDatabase {
             crate::model::RdsDatabase {
                 instance_identifier: self.instance_identifier,
@@ -899,7 +894,7 @@ pub mod rds_database {
     }
 }
 impl RdsDatabase {
-    /// Creates a new builder-style object to manufacture [`RdsDatabase`](crate::model::RdsDatabase)
+    /// Creates a new builder-style object to manufacture [`RdsDatabase`](crate::model::RdsDatabase).
     pub fn builder() -> crate::model::rds_database::Builder {
         crate::model::rds_database::Builder::default()
     }
@@ -939,11 +934,10 @@ impl std::fmt::Debug for RedshiftMetadata {
         formatter.finish()
     }
 }
-/// See [`RedshiftMetadata`](crate::model::RedshiftMetadata)
+/// See [`RedshiftMetadata`](crate::model::RedshiftMetadata).
 pub mod redshift_metadata {
 
-    /// A builder for [`RedshiftMetadata`](crate::model::RedshiftMetadata)
-    #[non_exhaustive]
+    /// A builder for [`RedshiftMetadata`](crate::model::RedshiftMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) redshift_database: std::option::Option<crate::model::RedshiftDatabase>,
@@ -990,7 +984,7 @@ pub mod redshift_metadata {
             self.select_sql_query = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedshiftMetadata`](crate::model::RedshiftMetadata)
+        /// Consumes the builder and constructs a [`RedshiftMetadata`](crate::model::RedshiftMetadata).
         pub fn build(self) -> crate::model::RedshiftMetadata {
             crate::model::RedshiftMetadata {
                 redshift_database: self.redshift_database,
@@ -1001,7 +995,7 @@ pub mod redshift_metadata {
     }
 }
 impl RedshiftMetadata {
-    /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::model::RedshiftMetadata)
+    /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::model::RedshiftMetadata).
     pub fn builder() -> crate::model::redshift_metadata::Builder {
         crate::model::redshift_metadata::Builder::default()
     }
@@ -1034,11 +1028,10 @@ impl std::fmt::Debug for RedshiftDatabase {
         formatter.finish()
     }
 }
-/// See [`RedshiftDatabase`](crate::model::RedshiftDatabase)
+/// See [`RedshiftDatabase`](crate::model::RedshiftDatabase).
 pub mod redshift_database {
 
-    /// A builder for [`RedshiftDatabase`](crate::model::RedshiftDatabase)
-    #[non_exhaustive]
+    /// A builder for [`RedshiftDatabase`](crate::model::RedshiftDatabase).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_name: std::option::Option<std::string::String>,
@@ -1071,7 +1064,7 @@ pub mod redshift_database {
             self.cluster_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedshiftDatabase`](crate::model::RedshiftDatabase)
+        /// Consumes the builder and constructs a [`RedshiftDatabase`](crate::model::RedshiftDatabase).
         pub fn build(self) -> crate::model::RedshiftDatabase {
             crate::model::RedshiftDatabase {
                 database_name: self.database_name,
@@ -1081,7 +1074,7 @@ pub mod redshift_database {
     }
 }
 impl RedshiftDatabase {
-    /// Creates a new builder-style object to manufacture [`RedshiftDatabase`](crate::model::RedshiftDatabase)
+    /// Creates a new builder-style object to manufacture [`RedshiftDatabase`](crate::model::RedshiftDatabase).
     pub fn builder() -> crate::model::redshift_database::Builder {
         crate::model::redshift_database::Builder::default()
     }
@@ -1114,11 +1107,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1145,7 +1137,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -1155,7 +1147,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -1426,11 +1418,10 @@ impl std::fmt::Debug for MlModel {
         formatter.finish()
     }
 }
-/// See [`MlModel`](crate::model::MlModel)
+/// See [`MlModel`](crate::model::MlModel).
 pub mod ml_model {
 
-    /// A builder for [`MlModel`](crate::model::MlModel)
-    #[non_exhaustive]
+    /// A builder for [`MlModel`](crate::model::MlModel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ml_model_id: std::option::Option<std::string::String>,
@@ -1746,7 +1737,7 @@ pub mod ml_model {
             self.started_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`MlModel`](crate::model::MlModel)
+        /// Consumes the builder and constructs a [`MlModel`](crate::model::MlModel).
         pub fn build(self) -> crate::model::MlModel {
             crate::model::MlModel {
                 ml_model_id: self.ml_model_id,
@@ -1773,7 +1764,7 @@ pub mod ml_model {
     }
 }
 impl MlModel {
-    /// Creates a new builder-style object to manufacture [`MlModel`](crate::model::MlModel)
+    /// Creates a new builder-style object to manufacture [`MlModel`](crate::model::MlModel).
     pub fn builder() -> crate::model::ml_model::Builder {
         crate::model::ml_model::Builder::default()
     }
@@ -2141,11 +2132,10 @@ impl std::fmt::Debug for Evaluation {
         formatter.finish()
     }
 }
-/// See [`Evaluation`](crate::model::Evaluation)
+/// See [`Evaluation`](crate::model::Evaluation).
 pub mod evaluation {
 
-    /// A builder for [`Evaluation`](crate::model::Evaluation)
-    #[non_exhaustive]
+    /// A builder for [`Evaluation`](crate::model::Evaluation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation_id: std::option::Option<std::string::String>,
@@ -2360,7 +2350,7 @@ pub mod evaluation {
             self.started_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`Evaluation`](crate::model::Evaluation)
+        /// Consumes the builder and constructs a [`Evaluation`](crate::model::Evaluation).
         pub fn build(self) -> crate::model::Evaluation {
             crate::model::Evaluation {
                 evaluation_id: self.evaluation_id,
@@ -2382,7 +2372,7 @@ pub mod evaluation {
     }
 }
 impl Evaluation {
-    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation)
+    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
     pub fn builder() -> crate::model::evaluation::Builder {
         crate::model::evaluation::Builder::default()
     }
@@ -2662,11 +2652,10 @@ impl std::fmt::Debug for DataSource {
         formatter.finish()
     }
 }
-/// See [`DataSource`](crate::model::DataSource)
+/// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
 
-    /// A builder for [`DataSource`](crate::model::DataSource)
-    #[non_exhaustive]
+    /// A builder for [`DataSource`](crate::model::DataSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_id: std::option::Option<std::string::String>,
@@ -2916,7 +2905,7 @@ pub mod data_source {
             self.started_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource)
+        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
         pub fn build(self) -> crate::model::DataSource {
             crate::model::DataSource {
                 data_source_id: self.data_source_id,
@@ -2942,7 +2931,7 @@ pub mod data_source {
     }
 }
 impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource)
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
     pub fn builder() -> crate::model::data_source::Builder {
         crate::model::data_source::Builder::default()
     }
@@ -3196,11 +3185,10 @@ impl std::fmt::Debug for BatchPrediction {
         formatter.finish()
     }
 }
-/// See [`BatchPrediction`](crate::model::BatchPrediction)
+/// See [`BatchPrediction`](crate::model::BatchPrediction).
 pub mod batch_prediction {
 
-    /// A builder for [`BatchPrediction`](crate::model::BatchPrediction)
-    #[non_exhaustive]
+    /// A builder for [`BatchPrediction`](crate::model::BatchPrediction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
@@ -3425,7 +3413,7 @@ pub mod batch_prediction {
             self.invalid_record_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchPrediction`](crate::model::BatchPrediction)
+        /// Consumes the builder and constructs a [`BatchPrediction`](crate::model::BatchPrediction).
         pub fn build(self) -> crate::model::BatchPrediction {
             crate::model::BatchPrediction {
                 batch_prediction_id: self.batch_prediction_id,
@@ -3449,7 +3437,7 @@ pub mod batch_prediction {
     }
 }
 impl BatchPrediction {
-    /// Creates a new builder-style object to manufacture [`BatchPrediction`](crate::model::BatchPrediction)
+    /// Creates a new builder-style object to manufacture [`BatchPrediction`](crate::model::BatchPrediction).
     pub fn builder() -> crate::model::batch_prediction::Builder {
         crate::model::batch_prediction::Builder::default()
     }
@@ -3652,11 +3640,10 @@ impl std::fmt::Debug for S3DataSpec {
         formatter.finish()
     }
 }
-/// See [`S3DataSpec`](crate::model::S3DataSpec)
+/// See [`S3DataSpec`](crate::model::S3DataSpec).
 pub mod s3_data_spec {
 
-    /// A builder for [`S3DataSpec`](crate::model::S3DataSpec)
-    #[non_exhaustive]
+    /// A builder for [`S3DataSpec`](crate::model::S3DataSpec).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_location_s3: std::option::Option<std::string::String>,
@@ -3750,7 +3737,7 @@ pub mod s3_data_spec {
             self.data_schema_location_s3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3DataSpec`](crate::model::S3DataSpec)
+        /// Consumes the builder and constructs a [`S3DataSpec`](crate::model::S3DataSpec).
         pub fn build(self) -> crate::model::S3DataSpec {
             crate::model::S3DataSpec {
                 data_location_s3: self.data_location_s3,
@@ -3762,7 +3749,7 @@ pub mod s3_data_spec {
     }
 }
 impl S3DataSpec {
-    /// Creates a new builder-style object to manufacture [`S3DataSpec`](crate::model::S3DataSpec)
+    /// Creates a new builder-style object to manufacture [`S3DataSpec`](crate::model::S3DataSpec).
     pub fn builder() -> crate::model::s3_data_spec::Builder {
         crate::model::s3_data_spec::Builder::default()
     }
@@ -3868,11 +3855,10 @@ impl std::fmt::Debug for RedshiftDataSpec {
         formatter.finish()
     }
 }
-/// See [`RedshiftDataSpec`](crate::model::RedshiftDataSpec)
+/// See [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
 pub mod redshift_data_spec {
 
-    /// A builder for [`RedshiftDataSpec`](crate::model::RedshiftDataSpec)
-    #[non_exhaustive]
+    /// A builder for [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_information: std::option::Option<crate::model::RedshiftDatabase>,
@@ -4012,7 +3998,7 @@ pub mod redshift_data_spec {
             self.data_schema_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedshiftDataSpec`](crate::model::RedshiftDataSpec)
+        /// Consumes the builder and constructs a [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
         pub fn build(self) -> crate::model::RedshiftDataSpec {
             crate::model::RedshiftDataSpec {
                 database_information: self.database_information,
@@ -4027,7 +4013,7 @@ pub mod redshift_data_spec {
     }
 }
 impl RedshiftDataSpec {
-    /// Creates a new builder-style object to manufacture [`RedshiftDataSpec`](crate::model::RedshiftDataSpec)
+    /// Creates a new builder-style object to manufacture [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
     pub fn builder() -> crate::model::redshift_data_spec::Builder {
         crate::model::redshift_data_spec::Builder::default()
     }
@@ -4060,11 +4046,10 @@ impl std::fmt::Debug for RedshiftDatabaseCredentials {
         formatter.finish()
     }
 }
-/// See [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials)
+/// See [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
 pub mod redshift_database_credentials {
 
-    /// A builder for [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials)
-    #[non_exhaustive]
+    /// A builder for [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4091,7 +4076,7 @@ pub mod redshift_database_credentials {
             self.password = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials)
+        /// Consumes the builder and constructs a [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
         pub fn build(self) -> crate::model::RedshiftDatabaseCredentials {
             crate::model::RedshiftDatabaseCredentials {
                 username: self.username,
@@ -4101,7 +4086,7 @@ pub mod redshift_database_credentials {
     }
 }
 impl RedshiftDatabaseCredentials {
-    /// Creates a new builder-style object to manufacture [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials)
+    /// Creates a new builder-style object to manufacture [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
     pub fn builder() -> crate::model::redshift_database_credentials::Builder {
         crate::model::redshift_database_credentials::Builder::default()
     }
@@ -4235,11 +4220,10 @@ impl std::fmt::Debug for RdsDataSpec {
         formatter.finish()
     }
 }
-/// See [`RdsDataSpec`](crate::model::RdsDataSpec)
+/// See [`RdsDataSpec`](crate::model::RdsDataSpec).
 pub mod rds_data_spec {
 
-    /// A builder for [`RdsDataSpec`](crate::model::RdsDataSpec)
-    #[non_exhaustive]
+    /// A builder for [`RdsDataSpec`](crate::model::RdsDataSpec).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) database_information: std::option::Option<crate::model::RdsDatabase>,
@@ -4431,7 +4415,7 @@ pub mod rds_data_spec {
             self.security_group_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`RdsDataSpec`](crate::model::RdsDataSpec)
+        /// Consumes the builder and constructs a [`RdsDataSpec`](crate::model::RdsDataSpec).
         pub fn build(self) -> crate::model::RdsDataSpec {
             crate::model::RdsDataSpec {
                 database_information: self.database_information,
@@ -4450,7 +4434,7 @@ pub mod rds_data_spec {
     }
 }
 impl RdsDataSpec {
-    /// Creates a new builder-style object to manufacture [`RdsDataSpec`](crate::model::RdsDataSpec)
+    /// Creates a new builder-style object to manufacture [`RdsDataSpec`](crate::model::RdsDataSpec).
     pub fn builder() -> crate::model::rds_data_spec::Builder {
         crate::model::rds_data_spec::Builder::default()
     }
@@ -4483,11 +4467,10 @@ impl std::fmt::Debug for RdsDatabaseCredentials {
         formatter.finish()
     }
 }
-/// See [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials)
+/// See [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
 pub mod rds_database_credentials {
 
-    /// A builder for [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials)
-    #[non_exhaustive]
+    /// A builder for [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) username: std::option::Option<std::string::String>,
@@ -4514,7 +4497,7 @@ pub mod rds_database_credentials {
             self.password = input;
             self
         }
-        /// Consumes the builder and constructs a [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials)
+        /// Consumes the builder and constructs a [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
         pub fn build(self) -> crate::model::RdsDatabaseCredentials {
             crate::model::RdsDatabaseCredentials {
                 username: self.username,
@@ -4524,7 +4507,7 @@ pub mod rds_database_credentials {
     }
 }
 impl RdsDatabaseCredentials {
-    /// Creates a new builder-style object to manufacture [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials)
+    /// Creates a new builder-style object to manufacture [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
     pub fn builder() -> crate::model::rds_database_credentials::Builder {
         crate::model::rds_database_credentials::Builder::default()
     }

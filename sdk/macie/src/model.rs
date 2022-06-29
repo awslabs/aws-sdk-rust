@@ -34,11 +34,10 @@ impl std::fmt::Debug for FailedS3Resource {
         formatter.finish()
     }
 }
-/// See [`FailedS3Resource`](crate::model::FailedS3Resource)
+/// See [`FailedS3Resource`](crate::model::FailedS3Resource).
 pub mod failed_s3_resource {
 
-    /// A builder for [`FailedS3Resource`](crate::model::FailedS3Resource)
-    #[non_exhaustive]
+    /// A builder for [`FailedS3Resource`](crate::model::FailedS3Resource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_item: std::option::Option<crate::model::S3Resource>,
@@ -82,7 +81,7 @@ pub mod failed_s3_resource {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailedS3Resource`](crate::model::FailedS3Resource)
+        /// Consumes the builder and constructs a [`FailedS3Resource`](crate::model::FailedS3Resource).
         pub fn build(self) -> crate::model::FailedS3Resource {
             crate::model::FailedS3Resource {
                 failed_item: self.failed_item,
@@ -93,7 +92,7 @@ pub mod failed_s3_resource {
     }
 }
 impl FailedS3Resource {
-    /// Creates a new builder-style object to manufacture [`FailedS3Resource`](crate::model::FailedS3Resource)
+    /// Creates a new builder-style object to manufacture [`FailedS3Resource`](crate::model::FailedS3Resource).
     pub fn builder() -> crate::model::failed_s3_resource::Builder {
         crate::model::failed_s3_resource::Builder::default()
     }
@@ -126,11 +125,10 @@ impl std::fmt::Debug for S3Resource {
         formatter.finish()
     }
 }
-/// See [`S3Resource`](crate::model::S3Resource)
+/// See [`S3Resource`](crate::model::S3Resource).
 pub mod s3_resource {
 
-    /// A builder for [`S3Resource`](crate::model::S3Resource)
-    #[non_exhaustive]
+    /// A builder for [`S3Resource`](crate::model::S3Resource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -157,7 +155,7 @@ pub mod s3_resource {
             self.prefix = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3Resource`](crate::model::S3Resource)
+        /// Consumes the builder and constructs a [`S3Resource`](crate::model::S3Resource).
         pub fn build(self) -> crate::model::S3Resource {
             crate::model::S3Resource {
                 bucket_name: self.bucket_name,
@@ -167,7 +165,7 @@ pub mod s3_resource {
     }
 }
 impl S3Resource {
-    /// Creates a new builder-style object to manufacture [`S3Resource`](crate::model::S3Resource)
+    /// Creates a new builder-style object to manufacture [`S3Resource`](crate::model::S3Resource).
     pub fn builder() -> crate::model::s3_resource::Builder {
         crate::model::s3_resource::Builder::default()
     }
@@ -212,11 +210,10 @@ impl std::fmt::Debug for S3ResourceClassificationUpdate {
         formatter.finish()
     }
 }
-/// See [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate)
+/// See [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
 pub mod s3_resource_classification_update {
 
-    /// A builder for [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate)
-    #[non_exhaustive]
+    /// A builder for [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -261,7 +258,7 @@ pub mod s3_resource_classification_update {
             self.classification_type_update = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate)
+        /// Consumes the builder and constructs a [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
         pub fn build(self) -> crate::model::S3ResourceClassificationUpdate {
             crate::model::S3ResourceClassificationUpdate {
                 bucket_name: self.bucket_name,
@@ -272,7 +269,7 @@ pub mod s3_resource_classification_update {
     }
 }
 impl S3ResourceClassificationUpdate {
-    /// Creates a new builder-style object to manufacture [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate)
+    /// Creates a new builder-style object to manufacture [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
     pub fn builder() -> crate::model::s3_resource_classification_update::Builder {
         crate::model::s3_resource_classification_update::Builder::default()
     }
@@ -305,11 +302,10 @@ impl std::fmt::Debug for ClassificationTypeUpdate {
         formatter.finish()
     }
 }
-/// See [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate)
+/// See [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
 pub mod classification_type_update {
 
-    /// A builder for [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate)
-    #[non_exhaustive]
+    /// A builder for [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
@@ -342,7 +338,7 @@ pub mod classification_type_update {
             self.continuous = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate)
+        /// Consumes the builder and constructs a [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
         pub fn build(self) -> crate::model::ClassificationTypeUpdate {
             crate::model::ClassificationTypeUpdate {
                 one_time: self.one_time,
@@ -352,7 +348,7 @@ pub mod classification_type_update {
     }
 }
 impl ClassificationTypeUpdate {
-    /// Creates a new builder-style object to manufacture [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate)
+    /// Creates a new builder-style object to manufacture [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
     pub fn builder() -> crate::model::classification_type_update::Builder {
         crate::model::classification_type_update::Builder::default()
     }
@@ -498,11 +494,10 @@ impl std::fmt::Debug for S3ResourceClassification {
         formatter.finish()
     }
 }
-/// See [`S3ResourceClassification`](crate::model::S3ResourceClassification)
+/// See [`S3ResourceClassification`](crate::model::S3ResourceClassification).
 pub mod s3_resource_classification {
 
-    /// A builder for [`S3ResourceClassification`](crate::model::S3ResourceClassification)
-    #[non_exhaustive]
+    /// A builder for [`S3ResourceClassification`](crate::model::S3ResourceClassification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_name: std::option::Option<std::string::String>,
@@ -543,7 +538,7 @@ pub mod s3_resource_classification {
             self.classification_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3ResourceClassification`](crate::model::S3ResourceClassification)
+        /// Consumes the builder and constructs a [`S3ResourceClassification`](crate::model::S3ResourceClassification).
         pub fn build(self) -> crate::model::S3ResourceClassification {
             crate::model::S3ResourceClassification {
                 bucket_name: self.bucket_name,
@@ -554,7 +549,7 @@ pub mod s3_resource_classification {
     }
 }
 impl S3ResourceClassification {
-    /// Creates a new builder-style object to manufacture [`S3ResourceClassification`](crate::model::S3ResourceClassification)
+    /// Creates a new builder-style object to manufacture [`S3ResourceClassification`](crate::model::S3ResourceClassification).
     pub fn builder() -> crate::model::s3_resource_classification::Builder {
         crate::model::s3_resource_classification::Builder::default()
     }
@@ -587,11 +582,10 @@ impl std::fmt::Debug for ClassificationType {
         formatter.finish()
     }
 }
-/// See [`ClassificationType`](crate::model::ClassificationType)
+/// See [`ClassificationType`](crate::model::ClassificationType).
 pub mod classification_type {
 
-    /// A builder for [`ClassificationType`](crate::model::ClassificationType)
-    #[non_exhaustive]
+    /// A builder for [`ClassificationType`](crate::model::ClassificationType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) one_time: std::option::Option<crate::model::S3OneTimeClassificationType>,
@@ -624,7 +618,7 @@ pub mod classification_type {
             self.continuous = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClassificationType`](crate::model::ClassificationType)
+        /// Consumes the builder and constructs a [`ClassificationType`](crate::model::ClassificationType).
         pub fn build(self) -> crate::model::ClassificationType {
             crate::model::ClassificationType {
                 one_time: self.one_time,
@@ -634,7 +628,7 @@ pub mod classification_type {
     }
 }
 impl ClassificationType {
-    /// Creates a new builder-style object to manufacture [`ClassificationType`](crate::model::ClassificationType)
+    /// Creates a new builder-style object to manufacture [`ClassificationType`](crate::model::ClassificationType).
     pub fn builder() -> crate::model::classification_type::Builder {
         crate::model::classification_type::Builder::default()
     }
@@ -660,11 +654,10 @@ impl std::fmt::Debug for MemberAccount {
         formatter.finish()
     }
 }
-/// See [`MemberAccount`](crate::model::MemberAccount)
+/// See [`MemberAccount`](crate::model::MemberAccount).
 pub mod member_account {
 
-    /// A builder for [`MemberAccount`](crate::model::MemberAccount)
-    #[non_exhaustive]
+    /// A builder for [`MemberAccount`](crate::model::MemberAccount).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -680,7 +673,7 @@ pub mod member_account {
             self.account_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`MemberAccount`](crate::model::MemberAccount)
+        /// Consumes the builder and constructs a [`MemberAccount`](crate::model::MemberAccount).
         pub fn build(self) -> crate::model::MemberAccount {
             crate::model::MemberAccount {
                 account_id: self.account_id,
@@ -689,7 +682,7 @@ pub mod member_account {
     }
 }
 impl MemberAccount {
-    /// Creates a new builder-style object to manufacture [`MemberAccount`](crate::model::MemberAccount)
+    /// Creates a new builder-style object to manufacture [`MemberAccount`](crate::model::MemberAccount).
     pub fn builder() -> crate::model::member_account::Builder {
         crate::model::member_account::Builder::default()
     }

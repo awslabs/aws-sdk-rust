@@ -34,11 +34,10 @@ impl std::fmt::Debug for AccountInfo {
         formatter.finish()
     }
 }
-/// See [`AccountInfo`](crate::model::AccountInfo)
+/// See [`AccountInfo`](crate::model::AccountInfo).
 pub mod account_info {
 
-    /// A builder for [`AccountInfo`](crate::model::AccountInfo)
-    #[non_exhaustive]
+    /// A builder for [`AccountInfo`](crate::model::AccountInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -79,7 +78,7 @@ pub mod account_info {
             self.email_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountInfo`](crate::model::AccountInfo)
+        /// Consumes the builder and constructs a [`AccountInfo`](crate::model::AccountInfo).
         pub fn build(self) -> crate::model::AccountInfo {
             crate::model::AccountInfo {
                 account_id: self.account_id,
@@ -90,7 +89,7 @@ pub mod account_info {
     }
 }
 impl AccountInfo {
-    /// Creates a new builder-style object to manufacture [`AccountInfo`](crate::model::AccountInfo)
+    /// Creates a new builder-style object to manufacture [`AccountInfo`](crate::model::AccountInfo).
     pub fn builder() -> crate::model::account_info::Builder {
         crate::model::account_info::Builder::default()
     }
@@ -123,11 +122,10 @@ impl std::fmt::Debug for RoleInfo {
         formatter.finish()
     }
 }
-/// See [`RoleInfo`](crate::model::RoleInfo)
+/// See [`RoleInfo`](crate::model::RoleInfo).
 pub mod role_info {
 
-    /// A builder for [`RoleInfo`](crate::model::RoleInfo)
-    #[non_exhaustive]
+    /// A builder for [`RoleInfo`](crate::model::RoleInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_name: std::option::Option<std::string::String>,
@@ -154,7 +152,7 @@ pub mod role_info {
             self.account_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoleInfo`](crate::model::RoleInfo)
+        /// Consumes the builder and constructs a [`RoleInfo`](crate::model::RoleInfo).
         pub fn build(self) -> crate::model::RoleInfo {
             crate::model::RoleInfo {
                 role_name: self.role_name,
@@ -164,7 +162,7 @@ pub mod role_info {
     }
 }
 impl RoleInfo {
-    /// Creates a new builder-style object to manufacture [`RoleInfo`](crate::model::RoleInfo)
+    /// Creates a new builder-style object to manufacture [`RoleInfo`](crate::model::RoleInfo).
     pub fn builder() -> crate::model::role_info::Builder {
         crate::model::role_info::Builder::default()
     }
@@ -211,11 +209,10 @@ impl std::fmt::Debug for RoleCredentials {
         formatter.finish()
     }
 }
-/// See [`RoleCredentials`](crate::model::RoleCredentials)
+/// See [`RoleCredentials`](crate::model::RoleCredentials).
 pub mod role_credentials {
 
-    /// A builder for [`RoleCredentials`](crate::model::RoleCredentials)
-    #[non_exhaustive]
+    /// A builder for [`RoleCredentials`](crate::model::RoleCredentials).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
@@ -273,7 +270,7 @@ pub mod role_credentials {
             self.expiration = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoleCredentials`](crate::model::RoleCredentials)
+        /// Consumes the builder and constructs a [`RoleCredentials`](crate::model::RoleCredentials).
         pub fn build(self) -> crate::model::RoleCredentials {
             crate::model::RoleCredentials {
                 access_key_id: self.access_key_id,
@@ -285,7 +282,7 @@ pub mod role_credentials {
     }
 }
 impl RoleCredentials {
-    /// Creates a new builder-style object to manufacture [`RoleCredentials`](crate::model::RoleCredentials)
+    /// Creates a new builder-style object to manufacture [`RoleCredentials`](crate::model::RoleCredentials).
     pub fn builder() -> crate::model::role_credentials::Builder {
         crate::model::role_credentials::Builder::default()
     }

@@ -75,11 +75,10 @@ impl std::fmt::Debug for GetMediaOutput {
         formatter.finish()
     }
 }
-/// See [`GetMediaOutput`](crate::output::GetMediaOutput)
+/// See [`GetMediaOutput`](crate::output::GetMediaOutput).
 pub mod get_media_output {
 
-    /// A builder for [`GetMediaOutput`](crate::output::GetMediaOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetMediaOutput`](crate::output::GetMediaOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -159,7 +158,7 @@ pub mod get_media_output {
             self.payload = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetMediaOutput`](crate::output::GetMediaOutput)
+        /// Consumes the builder and constructs a [`GetMediaOutput`](crate::output::GetMediaOutput).
         pub fn build(self) -> crate::output::GetMediaOutput {
             crate::output::GetMediaOutput {
                 content_type: self.content_type,
@@ -169,7 +168,7 @@ pub mod get_media_output {
     }
 }
 impl GetMediaOutput {
-    /// Creates a new builder-style object to manufacture [`GetMediaOutput`](crate::output::GetMediaOutput)
+    /// Creates a new builder-style object to manufacture [`GetMediaOutput`](crate::output::GetMediaOutput).
     pub fn builder() -> crate::output::get_media_output::Builder {
         crate::output::get_media_output::Builder::default()
     }

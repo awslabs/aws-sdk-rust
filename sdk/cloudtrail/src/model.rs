@@ -36,11 +36,10 @@ impl std::fmt::Debug for AdvancedEventSelector {
         formatter.finish()
     }
 }
-/// See [`AdvancedEventSelector`](crate::model::AdvancedEventSelector)
+/// See [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
 pub mod advanced_event_selector {
 
-    /// A builder for [`AdvancedEventSelector`](crate::model::AdvancedEventSelector)
-    #[non_exhaustive]
+    /// A builder for [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -77,7 +76,7 @@ pub mod advanced_event_selector {
             self.field_selectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`AdvancedEventSelector`](crate::model::AdvancedEventSelector)
+        /// Consumes the builder and constructs a [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
         pub fn build(self) -> crate::model::AdvancedEventSelector {
             crate::model::AdvancedEventSelector {
                 name: self.name,
@@ -87,7 +86,7 @@ pub mod advanced_event_selector {
     }
 }
 impl AdvancedEventSelector {
-    /// Creates a new builder-style object to manufacture [`AdvancedEventSelector`](crate::model::AdvancedEventSelector)
+    /// Creates a new builder-style object to manufacture [`AdvancedEventSelector`](crate::model::AdvancedEventSelector).
     pub fn builder() -> crate::model::advanced_event_selector::Builder {
         crate::model::advanced_event_selector::Builder::default()
     }
@@ -501,11 +500,10 @@ impl std::fmt::Debug for AdvancedFieldSelector {
         formatter.finish()
     }
 }
-/// See [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector)
+/// See [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
 pub mod advanced_field_selector {
 
-    /// A builder for [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector)
-    #[non_exhaustive]
+    /// A builder for [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field: std::option::Option<std::string::String>,
@@ -987,7 +985,7 @@ pub mod advanced_field_selector {
             self.not_ends_with = input;
             self
         }
-        /// Consumes the builder and constructs a [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector)
+        /// Consumes the builder and constructs a [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
         pub fn build(self) -> crate::model::AdvancedFieldSelector {
             crate::model::AdvancedFieldSelector {
                 field: self.field,
@@ -1002,7 +1000,7 @@ pub mod advanced_field_selector {
     }
 }
 impl AdvancedFieldSelector {
-    /// Creates a new builder-style object to manufacture [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector)
+    /// Creates a new builder-style object to manufacture [`AdvancedFieldSelector`](crate::model::AdvancedFieldSelector).
     pub fn builder() -> crate::model::advanced_field_selector::Builder {
         crate::model::advanced_field_selector::Builder::default()
     }
@@ -1094,11 +1092,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1125,7 +1122,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -1135,7 +1132,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -1161,11 +1158,10 @@ impl std::fmt::Debug for InsightSelector {
         formatter.finish()
     }
 }
-/// See [`InsightSelector`](crate::model::InsightSelector)
+/// See [`InsightSelector`](crate::model::InsightSelector).
 pub mod insight_selector {
 
-    /// A builder for [`InsightSelector`](crate::model::InsightSelector)
-    #[non_exhaustive]
+    /// A builder for [`InsightSelector`](crate::model::InsightSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) insight_type: std::option::Option<crate::model::InsightType>,
@@ -1184,7 +1180,7 @@ pub mod insight_selector {
             self.insight_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsightSelector`](crate::model::InsightSelector)
+        /// Consumes the builder and constructs a [`InsightSelector`](crate::model::InsightSelector).
         pub fn build(self) -> crate::model::InsightSelector {
             crate::model::InsightSelector {
                 insight_type: self.insight_type,
@@ -1193,7 +1189,7 @@ pub mod insight_selector {
     }
 }
 impl InsightSelector {
-    /// Creates a new builder-style object to manufacture [`InsightSelector`](crate::model::InsightSelector)
+    /// Creates a new builder-style object to manufacture [`InsightSelector`](crate::model::InsightSelector).
     pub fn builder() -> crate::model::insight_selector::Builder {
         crate::model::insight_selector::Builder::default()
     }
@@ -1310,11 +1306,10 @@ impl std::fmt::Debug for EventSelector {
         formatter.finish()
     }
 }
-/// See [`EventSelector`](crate::model::EventSelector)
+/// See [`EventSelector`](crate::model::EventSelector).
 pub mod event_selector {
 
-    /// A builder for [`EventSelector`](crate::model::EventSelector)
-    #[non_exhaustive]
+    /// A builder for [`EventSelector`](crate::model::EventSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_write_type: std::option::Option<crate::model::ReadWriteType>,
@@ -1398,7 +1393,7 @@ pub mod event_selector {
             self.exclude_management_event_sources = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventSelector`](crate::model::EventSelector)
+        /// Consumes the builder and constructs a [`EventSelector`](crate::model::EventSelector).
         pub fn build(self) -> crate::model::EventSelector {
             crate::model::EventSelector {
                 read_write_type: self.read_write_type,
@@ -1410,7 +1405,7 @@ pub mod event_selector {
     }
 }
 impl EventSelector {
-    /// Creates a new builder-style object to manufacture [`EventSelector`](crate::model::EventSelector)
+    /// Creates a new builder-style object to manufacture [`EventSelector`](crate::model::EventSelector).
     pub fn builder() -> crate::model::event_selector::Builder {
         crate::model::event_selector::Builder::default()
     }
@@ -1517,11 +1512,10 @@ impl std::fmt::Debug for DataResource {
         formatter.finish()
     }
 }
-/// See [`DataResource`](crate::model::DataResource)
+/// See [`DataResource`](crate::model::DataResource).
 pub mod data_resource {
 
-    /// A builder for [`DataResource`](crate::model::DataResource)
-    #[non_exhaustive]
+    /// A builder for [`DataResource`](crate::model::DataResource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -1615,7 +1609,7 @@ pub mod data_resource {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataResource`](crate::model::DataResource)
+        /// Consumes the builder and constructs a [`DataResource`](crate::model::DataResource).
         pub fn build(self) -> crate::model::DataResource {
             crate::model::DataResource {
                 r#type: self.r#type,
@@ -1625,7 +1619,7 @@ pub mod data_resource {
     }
 }
 impl DataResource {
-    /// Creates a new builder-style object to manufacture [`DataResource`](crate::model::DataResource)
+    /// Creates a new builder-style object to manufacture [`DataResource`](crate::model::DataResource).
     pub fn builder() -> crate::model::data_resource::Builder {
         crate::model::data_resource::Builder::default()
     }
@@ -1766,11 +1760,10 @@ impl std::fmt::Debug for Event {
         formatter.finish()
     }
 }
-/// See [`Event`](crate::model::Event)
+/// See [`Event`](crate::model::Event).
 pub mod event {
 
-    /// A builder for [`Event`](crate::model::Event)
-    #[non_exhaustive]
+    /// A builder for [`Event`](crate::model::Event).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_id: std::option::Option<std::string::String>,
@@ -1892,7 +1885,7 @@ pub mod event {
             self.cloud_trail_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`Event`](crate::model::Event)
+        /// Consumes the builder and constructs a [`Event`](crate::model::Event).
         pub fn build(self) -> crate::model::Event {
             crate::model::Event {
                 event_id: self.event_id,
@@ -1909,7 +1902,7 @@ pub mod event {
     }
 }
 impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event)
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
     pub fn builder() -> crate::model::event::Builder {
         crate::model::event::Builder::default()
     }
@@ -1942,11 +1935,10 @@ impl std::fmt::Debug for Resource {
         formatter.finish()
     }
 }
-/// See [`Resource`](crate::model::Resource)
+/// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
-    /// A builder for [`Resource`](crate::model::Resource)
-    #[non_exhaustive]
+    /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -1979,7 +1971,7 @@ pub mod resource {
             self.resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource)
+        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
                 resource_type: self.resource_type,
@@ -1989,7 +1981,7 @@ pub mod resource {
     }
 }
 impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource)
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
     pub fn builder() -> crate::model::resource::Builder {
         crate::model::resource::Builder::default()
     }
@@ -2073,11 +2065,10 @@ impl std::fmt::Debug for LookupAttribute {
         formatter.finish()
     }
 }
-/// See [`LookupAttribute`](crate::model::LookupAttribute)
+/// See [`LookupAttribute`](crate::model::LookupAttribute).
 pub mod lookup_attribute {
 
-    /// A builder for [`LookupAttribute`](crate::model::LookupAttribute)
-    #[non_exhaustive]
+    /// A builder for [`LookupAttribute`](crate::model::LookupAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_key: std::option::Option<crate::model::LookupAttributeKey>,
@@ -2110,7 +2101,7 @@ pub mod lookup_attribute {
             self.attribute_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`LookupAttribute`](crate::model::LookupAttribute)
+        /// Consumes the builder and constructs a [`LookupAttribute`](crate::model::LookupAttribute).
         pub fn build(self) -> crate::model::LookupAttribute {
             crate::model::LookupAttribute {
                 attribute_key: self.attribute_key,
@@ -2120,7 +2111,7 @@ pub mod lookup_attribute {
     }
 }
 impl LookupAttribute {
-    /// Creates a new builder-style object to manufacture [`LookupAttribute`](crate::model::LookupAttribute)
+    /// Creates a new builder-style object to manufacture [`LookupAttribute`](crate::model::LookupAttribute).
     pub fn builder() -> crate::model::lookup_attribute::Builder {
         crate::model::lookup_attribute::Builder::default()
     }
@@ -2248,11 +2239,10 @@ impl std::fmt::Debug for TrailInfo {
         formatter.finish()
     }
 }
-/// See [`TrailInfo`](crate::model::TrailInfo)
+/// See [`TrailInfo`](crate::model::TrailInfo).
 pub mod trail_info {
 
-    /// A builder for [`TrailInfo`](crate::model::TrailInfo)
-    #[non_exhaustive]
+    /// A builder for [`TrailInfo`](crate::model::TrailInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
@@ -2290,7 +2280,7 @@ pub mod trail_info {
             self.home_region = input;
             self
         }
-        /// Consumes the builder and constructs a [`TrailInfo`](crate::model::TrailInfo)
+        /// Consumes the builder and constructs a [`TrailInfo`](crate::model::TrailInfo).
         pub fn build(self) -> crate::model::TrailInfo {
             crate::model::TrailInfo {
                 trail_arn: self.trail_arn,
@@ -2301,7 +2291,7 @@ pub mod trail_info {
     }
 }
 impl TrailInfo {
-    /// Creates a new builder-style object to manufacture [`TrailInfo`](crate::model::TrailInfo)
+    /// Creates a new builder-style object to manufacture [`TrailInfo`](crate::model::TrailInfo).
     pub fn builder() -> crate::model::trail_info::Builder {
         crate::model::trail_info::Builder::default()
     }
@@ -2334,11 +2324,10 @@ impl std::fmt::Debug for ResourceTag {
         formatter.finish()
     }
 }
-/// See [`ResourceTag`](crate::model::ResourceTag)
+/// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
-    /// A builder for [`ResourceTag`](crate::model::ResourceTag)
-    #[non_exhaustive]
+    /// A builder for [`ResourceTag`](crate::model::ResourceTag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_id: std::option::Option<std::string::String>,
@@ -2374,7 +2363,7 @@ pub mod resource_tag {
             self.tags_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag)
+        /// Consumes the builder and constructs a [`ResourceTag`](crate::model::ResourceTag).
         pub fn build(self) -> crate::model::ResourceTag {
             crate::model::ResourceTag {
                 resource_id: self.resource_id,
@@ -2384,7 +2373,7 @@ pub mod resource_tag {
     }
 }
 impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag)
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
     pub fn builder() -> crate::model::resource_tag::Builder {
         crate::model::resource_tag::Builder::default()
     }
@@ -2424,11 +2413,10 @@ impl std::fmt::Debug for Query {
         formatter.finish()
     }
 }
-/// See [`Query`](crate::model::Query)
+/// See [`Query`](crate::model::Query).
 pub mod query {
 
-    /// A builder for [`Query`](crate::model::Query)
-    #[non_exhaustive]
+    /// A builder for [`Query`](crate::model::Query).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -2472,7 +2460,7 @@ pub mod query {
             self.creation_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Query`](crate::model::Query)
+        /// Consumes the builder and constructs a [`Query`](crate::model::Query).
         pub fn build(self) -> crate::model::Query {
             crate::model::Query {
                 query_id: self.query_id,
@@ -2483,7 +2471,7 @@ pub mod query {
     }
 }
 impl Query {
-    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query)
+    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
     pub fn builder() -> crate::model::query::Builder {
         crate::model::query::Builder::default()
     }
@@ -2608,11 +2596,10 @@ impl std::fmt::Debug for PublicKey {
         formatter.finish()
     }
 }
-/// See [`PublicKey`](crate::model::PublicKey)
+/// See [`PublicKey`](crate::model::PublicKey).
 pub mod public_key {
 
-    /// A builder for [`PublicKey`](crate::model::PublicKey)
-    #[non_exhaustive]
+    /// A builder for [`PublicKey`](crate::model::PublicKey).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<aws_smithy_types::Blob>,
@@ -2667,7 +2654,7 @@ pub mod public_key {
             self.fingerprint = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicKey`](crate::model::PublicKey)
+        /// Consumes the builder and constructs a [`PublicKey`](crate::model::PublicKey).
         pub fn build(self) -> crate::model::PublicKey {
             crate::model::PublicKey {
                 value: self.value,
@@ -2679,7 +2666,7 @@ pub mod public_key {
     }
 }
 impl PublicKey {
-    /// Creates a new builder-style object to manufacture [`PublicKey`](crate::model::PublicKey)
+    /// Creates a new builder-style object to manufacture [`PublicKey`](crate::model::PublicKey).
     pub fn builder() -> crate::model::public_key::Builder {
         crate::model::public_key::Builder::default()
     }
@@ -2774,11 +2761,10 @@ impl std::fmt::Debug for EventDataStore {
         formatter.finish()
     }
 }
-/// See [`EventDataStore`](crate::model::EventDataStore)
+/// See [`EventDataStore`](crate::model::EventDataStore).
 pub mod event_data_store {
 
-    /// A builder for [`EventDataStore`](crate::model::EventDataStore)
-    #[non_exhaustive]
+    /// A builder for [`EventDataStore`](crate::model::EventDataStore).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
@@ -2921,7 +2907,7 @@ pub mod event_data_store {
             self.updated_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventDataStore`](crate::model::EventDataStore)
+        /// Consumes the builder and constructs a [`EventDataStore`](crate::model::EventDataStore).
         pub fn build(self) -> crate::model::EventDataStore {
             crate::model::EventDataStore {
                 event_data_store_arn: self.event_data_store_arn,
@@ -2939,7 +2925,7 @@ pub mod event_data_store {
     }
 }
 impl EventDataStore {
-    /// Creates a new builder-style object to manufacture [`EventDataStore`](crate::model::EventDataStore)
+    /// Creates a new builder-style object to manufacture [`EventDataStore`](crate::model::EventDataStore).
     pub fn builder() -> crate::model::event_data_store::Builder {
         crate::model::event_data_store::Builder::default()
     }
@@ -3088,11 +3074,10 @@ impl std::fmt::Debug for Trail {
         formatter.finish()
     }
 }
-/// See [`Trail`](crate::model::Trail)
+/// See [`Trail`](crate::model::Trail).
 pub mod trail {
 
-    /// A builder for [`Trail`](crate::model::Trail)
-    #[non_exhaustive]
+    /// A builder for [`Trail`](crate::model::Trail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3303,7 +3288,7 @@ pub mod trail {
             self.is_organization_trail = input;
             self
         }
-        /// Consumes the builder and constructs a [`Trail`](crate::model::Trail)
+        /// Consumes the builder and constructs a [`Trail`](crate::model::Trail).
         pub fn build(self) -> crate::model::Trail {
             crate::model::Trail {
                 name: self.name,
@@ -3327,7 +3312,7 @@ pub mod trail {
     }
 }
 impl Trail {
-    /// Creates a new builder-style object to manufacture [`Trail`](crate::model::Trail)
+    /// Creates a new builder-style object to manufacture [`Trail`](crate::model::Trail).
     pub fn builder() -> crate::model::trail::Builder {
         crate::model::trail::Builder::default()
     }
@@ -3367,11 +3352,10 @@ impl std::fmt::Debug for QueryStatistics {
         formatter.finish()
     }
 }
-/// See [`QueryStatistics`](crate::model::QueryStatistics)
+/// See [`QueryStatistics`](crate::model::QueryStatistics).
 pub mod query_statistics {
 
-    /// A builder for [`QueryStatistics`](crate::model::QueryStatistics)
-    #[non_exhaustive]
+    /// A builder for [`QueryStatistics`](crate::model::QueryStatistics).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results_count: std::option::Option<i32>,
@@ -3409,7 +3393,7 @@ pub mod query_statistics {
             self.bytes_scanned = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryStatistics`](crate::model::QueryStatistics)
+        /// Consumes the builder and constructs a [`QueryStatistics`](crate::model::QueryStatistics).
         pub fn build(self) -> crate::model::QueryStatistics {
             crate::model::QueryStatistics {
                 results_count: self.results_count,
@@ -3420,7 +3404,7 @@ pub mod query_statistics {
     }
 }
 impl QueryStatistics {
-    /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics)
+    /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics).
     pub fn builder() -> crate::model::query_statistics::Builder {
         crate::model::query_statistics::Builder::default()
     }
@@ -3474,11 +3458,10 @@ impl std::fmt::Debug for QueryStatisticsForDescribeQuery {
         formatter.finish()
     }
 }
-/// See [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery)
+/// See [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).
 pub mod query_statistics_for_describe_query {
 
-    /// A builder for [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery)
-    #[non_exhaustive]
+    /// A builder for [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events_matched: std::option::Option<i64>,
@@ -3541,7 +3524,7 @@ pub mod query_statistics_for_describe_query {
             self.creation_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery)
+        /// Consumes the builder and constructs a [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).
         pub fn build(self) -> crate::model::QueryStatisticsForDescribeQuery {
             crate::model::QueryStatisticsForDescribeQuery {
                 events_matched: self.events_matched,
@@ -3554,7 +3537,7 @@ pub mod query_statistics_for_describe_query {
     }
 }
 impl QueryStatisticsForDescribeQuery {
-    /// Creates a new builder-style object to manufacture [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery)
+    /// Creates a new builder-style object to manufacture [`QueryStatisticsForDescribeQuery`](crate::model::QueryStatisticsForDescribeQuery).
     pub fn builder() -> crate::model::query_statistics_for_describe_query::Builder {
         crate::model::query_statistics_for_describe_query::Builder::default()
     }

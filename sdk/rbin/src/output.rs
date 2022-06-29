@@ -54,11 +54,10 @@ impl std::fmt::Debug for UpdateRuleOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput)
+/// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
 pub mod update_rule_output {
 
-    /// A builder for [`UpdateRuleOutput`](crate::output::UpdateRuleOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -144,7 +143,7 @@ pub mod update_rule_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateRuleOutput`](crate::output::UpdateRuleOutput)
+        /// Consumes the builder and constructs a [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
         pub fn build(self) -> crate::output::UpdateRuleOutput {
             crate::output::UpdateRuleOutput {
                 identifier: self.identifier,
@@ -158,7 +157,7 @@ pub mod update_rule_output {
     }
 }
 impl UpdateRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
     pub fn builder() -> crate::output::update_rule_output::Builder {
         crate::output::update_rule_output::Builder::default()
     }
@@ -174,22 +173,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -205,22 +203,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -246,11 +243,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -275,14 +271,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -315,11 +311,10 @@ impl std::fmt::Debug for ListRulesOutput {
         formatter.finish()
     }
 }
-/// See [`ListRulesOutput`](crate::output::ListRulesOutput)
+/// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
 
-    /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRulesOutput`](crate::output::ListRulesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
@@ -355,7 +350,7 @@ pub mod list_rules_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput)
+        /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
         pub fn build(self) -> crate::output::ListRulesOutput {
             crate::output::ListRulesOutput {
                 rules: self.rules,
@@ -365,7 +360,7 @@ pub mod list_rules_output {
     }
 }
 impl ListRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput)
+    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
     pub fn builder() -> crate::output::list_rules_output::Builder {
         crate::output::list_rules_output::Builder::default()
     }
@@ -426,11 +421,10 @@ impl std::fmt::Debug for GetRuleOutput {
         formatter.finish()
     }
 }
-/// See [`GetRuleOutput`](crate::output::GetRuleOutput)
+/// See [`GetRuleOutput`](crate::output::GetRuleOutput).
 pub mod get_rule_output {
 
-    /// A builder for [`GetRuleOutput`](crate::output::GetRuleOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRuleOutput`](crate::output::GetRuleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -516,7 +510,7 @@ pub mod get_rule_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRuleOutput`](crate::output::GetRuleOutput)
+        /// Consumes the builder and constructs a [`GetRuleOutput`](crate::output::GetRuleOutput).
         pub fn build(self) -> crate::output::GetRuleOutput {
             crate::output::GetRuleOutput {
                 identifier: self.identifier,
@@ -530,7 +524,7 @@ pub mod get_rule_output {
     }
 }
 impl GetRuleOutput {
-    /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::output::GetRuleOutput)
+    /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::output::GetRuleOutput).
     pub fn builder() -> crate::output::get_rule_output::Builder {
         crate::output::get_rule_output::Builder::default()
     }
@@ -546,22 +540,21 @@ impl std::fmt::Debug for DeleteRuleOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
+/// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
 
-    /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
+        /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
         pub fn build(self) -> crate::output::DeleteRuleOutput {
             crate::output::DeleteRuleOutput {}
         }
     }
 }
 impl DeleteRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
     pub fn builder() -> crate::output::delete_rule_output::Builder {
         crate::output::delete_rule_output::Builder::default()
     }
@@ -629,11 +622,10 @@ impl std::fmt::Debug for CreateRuleOutput {
         formatter.finish()
     }
 }
-/// See [`CreateRuleOutput`](crate::output::CreateRuleOutput)
+/// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
 
-    /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -739,7 +731,7 @@ pub mod create_rule_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::output::CreateRuleOutput)
+        /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::output::CreateRuleOutput).
         pub fn build(self) -> crate::output::CreateRuleOutput {
             crate::output::CreateRuleOutput {
                 identifier: self.identifier,
@@ -754,7 +746,7 @@ pub mod create_rule_output {
     }
 }
 impl CreateRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
     pub fn builder() -> crate::output::create_rule_output::Builder {
         crate::output::create_rule_output::Builder::default()
     }

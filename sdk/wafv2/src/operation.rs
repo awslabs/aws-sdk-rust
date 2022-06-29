@@ -10,7 +10,7 @@ pub struct AssociateWebACL {
     _private: (),
 }
 impl AssociateWebACL {
-    /// Creates a new builder-style object to manufacture [`AssociateWebAclInput`](crate::input::AssociateWebAclInput)
+    /// Creates a new builder-style object to manufacture [`AssociateWebAclInput`](crate::input::AssociateWebAclInput).
     pub fn builder() -> crate::input::associate_web_acl_input::Builder {
         crate::input::associate_web_acl_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CheckCapacity {
     _private: (),
 }
 impl CheckCapacity {
-    /// Creates a new builder-style object to manufacture [`CheckCapacityInput`](crate::input::CheckCapacityInput)
+    /// Creates a new builder-style object to manufacture [`CheckCapacityInput`](crate::input::CheckCapacityInput).
     pub fn builder() -> crate::input::check_capacity_input::Builder {
         crate::input::check_capacity_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateIPSet {
     _private: (),
 }
 impl CreateIPSet {
-    /// Creates a new builder-style object to manufacture [`CreateIpSetInput`](crate::input::CreateIpSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateIpSetInput`](crate::input::CreateIpSetInput).
     pub fn builder() -> crate::input::create_ip_set_input::Builder {
         crate::input::create_ip_set_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateRegexPatternSet {
     _private: (),
 }
 impl CreateRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetInput`](crate::input::CreateRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetInput`](crate::input::CreateRegexPatternSetInput).
     pub fn builder() -> crate::input::create_regex_pattern_set_input::Builder {
         crate::input::create_regex_pattern_set_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateRuleGroup {
     _private: (),
 }
 impl CreateRuleGroup {
-    /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
     pub fn builder() -> crate::input::create_rule_group_input::Builder {
         crate::input::create_rule_group_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct CreateWebACL {
     _private: (),
 }
 impl CreateWebACL {
-    /// Creates a new builder-style object to manufacture [`CreateWebAclInput`](crate::input::CreateWebAclInput)
+    /// Creates a new builder-style object to manufacture [`CreateWebAclInput`](crate::input::CreateWebAclInput).
     pub fn builder() -> crate::input::create_web_acl_input::Builder {
         crate::input::create_web_acl_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DeleteFirewallManagerRuleGroups {
     _private: (),
 }
 impl DeleteFirewallManagerRuleGroups {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallManagerRuleGroupsInput`](crate::input::DeleteFirewallManagerRuleGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallManagerRuleGroupsInput`](crate::input::DeleteFirewallManagerRuleGroupsInput).
     pub fn builder() -> crate::input::delete_firewall_manager_rule_groups_input::Builder {
         crate::input::delete_firewall_manager_rule_groups_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DeleteIPSet {
     _private: (),
 }
 impl DeleteIPSet {
-    /// Creates a new builder-style object to manufacture [`DeleteIpSetInput`](crate::input::DeleteIpSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIpSetInput`](crate::input::DeleteIpSetInput).
     pub fn builder() -> crate::input::delete_ip_set_input::Builder {
         crate::input::delete_ip_set_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DeleteLoggingConfiguration {
     _private: (),
 }
 impl DeleteLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput).
     pub fn builder() -> crate::input::delete_logging_configuration_input::Builder {
         crate::input::delete_logging_configuration_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DeletePermissionPolicy {
     _private: (),
 }
 impl DeletePermissionPolicy {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyInput`](crate::input::DeletePermissionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyInput`](crate::input::DeletePermissionPolicyInput).
     pub fn builder() -> crate::input::delete_permission_policy_input::Builder {
         crate::input::delete_permission_policy_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DeleteRegexPatternSet {
     _private: (),
 }
 impl DeleteRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetInput`](crate::input::DeleteRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetInput`](crate::input::DeleteRegexPatternSetInput).
     pub fn builder() -> crate::input::delete_regex_pattern_set_input::Builder {
         crate::input::delete_regex_pattern_set_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct DeleteRuleGroup {
     _private: (),
 }
 impl DeleteRuleGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
     pub fn builder() -> crate::input::delete_rule_group_input::Builder {
         crate::input::delete_rule_group_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct DeleteWebACL {
     _private: (),
 }
 impl DeleteWebACL {
-    /// Creates a new builder-style object to manufacture [`DeleteWebAclInput`](crate::input::DeleteWebAclInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWebAclInput`](crate::input::DeleteWebAclInput).
     pub fn builder() -> crate::input::delete_web_acl_input::Builder {
         crate::input::delete_web_acl_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct DescribeManagedRuleGroup {
     _private: (),
 }
 impl DescribeManagedRuleGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeManagedRuleGroupInput`](crate::input::DescribeManagedRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeManagedRuleGroupInput`](crate::input::DescribeManagedRuleGroupInput).
     pub fn builder() -> crate::input::describe_managed_rule_group_input::Builder {
         crate::input::describe_managed_rule_group_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct DisassociateWebACL {
     _private: (),
 }
 impl DisassociateWebACL {
-    /// Creates a new builder-style object to manufacture [`DisassociateWebAclInput`](crate::input::DisassociateWebAclInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWebAclInput`](crate::input::DisassociateWebAclInput).
     pub fn builder() -> crate::input::disassociate_web_acl_input::Builder {
         crate::input::disassociate_web_acl_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct GenerateMobileSdkReleaseUrl {
     _private: (),
 }
 impl GenerateMobileSdkReleaseUrl {
-    /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput)
+    /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlInput`](crate::input::GenerateMobileSdkReleaseUrlInput).
     pub fn builder() -> crate::input::generate_mobile_sdk_release_url_input::Builder {
         crate::input::generate_mobile_sdk_release_url_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct GetIPSet {
     _private: (),
 }
 impl GetIPSet {
-    /// Creates a new builder-style object to manufacture [`GetIpSetInput`](crate::input::GetIpSetInput)
+    /// Creates a new builder-style object to manufacture [`GetIpSetInput`](crate::input::GetIpSetInput).
     pub fn builder() -> crate::input::get_ip_set_input::Builder {
         crate::input::get_ip_set_input::Builder::default()
     }
@@ -575,7 +575,7 @@ pub struct GetLoggingConfiguration {
     _private: (),
 }
 impl GetLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput).
     pub fn builder() -> crate::input::get_logging_configuration_input::Builder {
         crate::input::get_logging_configuration_input::Builder::default()
     }
@@ -609,7 +609,7 @@ pub struct GetManagedRuleSet {
     _private: (),
 }
 impl GetManagedRuleSet {
-    /// Creates a new builder-style object to manufacture [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput)
+    /// Creates a new builder-style object to manufacture [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput).
     pub fn builder() -> crate::input::get_managed_rule_set_input::Builder {
         crate::input::get_managed_rule_set_input::Builder::default()
     }
@@ -643,7 +643,7 @@ pub struct GetMobileSdkRelease {
     _private: (),
 }
 impl GetMobileSdkRelease {
-    /// Creates a new builder-style object to manufacture [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput)
+    /// Creates a new builder-style object to manufacture [`GetMobileSdkReleaseInput`](crate::input::GetMobileSdkReleaseInput).
     pub fn builder() -> crate::input::get_mobile_sdk_release_input::Builder {
         crate::input::get_mobile_sdk_release_input::Builder::default()
     }
@@ -677,7 +677,7 @@ pub struct GetPermissionPolicy {
     _private: (),
 }
 impl GetPermissionPolicy {
-    /// Creates a new builder-style object to manufacture [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput).
     pub fn builder() -> crate::input::get_permission_policy_input::Builder {
         crate::input::get_permission_policy_input::Builder::default()
     }
@@ -711,7 +711,7 @@ pub struct GetRateBasedStatementManagedKeys {
     _private: (),
 }
 impl GetRateBasedStatementManagedKeys {
-    /// Creates a new builder-style object to manufacture [`GetRateBasedStatementManagedKeysInput`](crate::input::GetRateBasedStatementManagedKeysInput)
+    /// Creates a new builder-style object to manufacture [`GetRateBasedStatementManagedKeysInput`](crate::input::GetRateBasedStatementManagedKeysInput).
     pub fn builder() -> crate::input::get_rate_based_statement_managed_keys_input::Builder {
         crate::input::get_rate_based_statement_managed_keys_input::Builder::default()
     }
@@ -745,7 +745,7 @@ pub struct GetRegexPatternSet {
     _private: (),
 }
 impl GetRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`GetRegexPatternSetInput`](crate::input::GetRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`GetRegexPatternSetInput`](crate::input::GetRegexPatternSetInput).
     pub fn builder() -> crate::input::get_regex_pattern_set_input::Builder {
         crate::input::get_regex_pattern_set_input::Builder::default()
     }
@@ -779,7 +779,7 @@ pub struct GetRuleGroup {
     _private: (),
 }
 impl GetRuleGroup {
-    /// Creates a new builder-style object to manufacture [`GetRuleGroupInput`](crate::input::GetRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetRuleGroupInput`](crate::input::GetRuleGroupInput).
     pub fn builder() -> crate::input::get_rule_group_input::Builder {
         crate::input::get_rule_group_input::Builder::default()
     }
@@ -811,7 +811,7 @@ pub struct GetSampledRequests {
     _private: (),
 }
 impl GetSampledRequests {
-    /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::input::GetSampledRequestsInput)
+    /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::input::GetSampledRequestsInput).
     pub fn builder() -> crate::input::get_sampled_requests_input::Builder {
         crate::input::get_sampled_requests_input::Builder::default()
     }
@@ -845,7 +845,7 @@ pub struct GetWebACL {
     _private: (),
 }
 impl GetWebACL {
-    /// Creates a new builder-style object to manufacture [`GetWebAclInput`](crate::input::GetWebAclInput)
+    /// Creates a new builder-style object to manufacture [`GetWebAclInput`](crate::input::GetWebAclInput).
     pub fn builder() -> crate::input::get_web_acl_input::Builder {
         crate::input::get_web_acl_input::Builder::default()
     }
@@ -876,7 +876,7 @@ pub struct GetWebACLForResource {
     _private: (),
 }
 impl GetWebACLForResource {
-    /// Creates a new builder-style object to manufacture [`GetWebAclForResourceInput`](crate::input::GetWebAclForResourceInput)
+    /// Creates a new builder-style object to manufacture [`GetWebAclForResourceInput`](crate::input::GetWebAclForResourceInput).
     pub fn builder() -> crate::input::get_web_acl_for_resource_input::Builder {
         crate::input::get_web_acl_for_resource_input::Builder::default()
     }
@@ -910,7 +910,7 @@ pub struct ListAvailableManagedRuleGroups {
     _private: (),
 }
 impl ListAvailableManagedRuleGroups {
-    /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupsInput`](crate::input::ListAvailableManagedRuleGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupsInput`](crate::input::ListAvailableManagedRuleGroupsInput).
     pub fn builder() -> crate::input::list_available_managed_rule_groups_input::Builder {
         crate::input::list_available_managed_rule_groups_input::Builder::default()
     }
@@ -944,7 +944,7 @@ pub struct ListAvailableManagedRuleGroupVersions {
     _private: (),
 }
 impl ListAvailableManagedRuleGroupVersions {
-    /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupVersionsInput`](crate::input::ListAvailableManagedRuleGroupVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupVersionsInput`](crate::input::ListAvailableManagedRuleGroupVersionsInput).
     pub fn builder() -> crate::input::list_available_managed_rule_group_versions_input::Builder {
         crate::input::list_available_managed_rule_group_versions_input::Builder::default()
     }
@@ -980,7 +980,7 @@ pub struct ListIPSets {
     _private: (),
 }
 impl ListIPSets {
-    /// Creates a new builder-style object to manufacture [`ListIpSetsInput`](crate::input::ListIpSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListIpSetsInput`](crate::input::ListIpSetsInput).
     pub fn builder() -> crate::input::list_ip_sets_input::Builder {
         crate::input::list_ip_sets_input::Builder::default()
     }
@@ -1012,7 +1012,7 @@ pub struct ListLoggingConfigurations {
     _private: (),
 }
 impl ListLoggingConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput).
     pub fn builder() -> crate::input::list_logging_configurations_input::Builder {
         crate::input::list_logging_configurations_input::Builder::default()
     }
@@ -1046,7 +1046,7 @@ pub struct ListManagedRuleSets {
     _private: (),
 }
 impl ListManagedRuleSets {
-    /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput).
     pub fn builder() -> crate::input::list_managed_rule_sets_input::Builder {
         crate::input::list_managed_rule_sets_input::Builder::default()
     }
@@ -1080,7 +1080,7 @@ pub struct ListMobileSdkReleases {
     _private: (),
 }
 impl ListMobileSdkReleases {
-    /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput)
+    /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesInput`](crate::input::ListMobileSdkReleasesInput).
     pub fn builder() -> crate::input::list_mobile_sdk_releases_input::Builder {
         crate::input::list_mobile_sdk_releases_input::Builder::default()
     }
@@ -1114,7 +1114,7 @@ pub struct ListRegexPatternSets {
     _private: (),
 }
 impl ListRegexPatternSets {
-    /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput).
     pub fn builder() -> crate::input::list_regex_pattern_sets_input::Builder {
         crate::input::list_regex_pattern_sets_input::Builder::default()
     }
@@ -1148,7 +1148,7 @@ pub struct ListResourcesForWebACL {
     _private: (),
 }
 impl ListResourcesForWebACL {
-    /// Creates a new builder-style object to manufacture [`ListResourcesForWebAclInput`](crate::input::ListResourcesForWebAclInput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesForWebAclInput`](crate::input::ListResourcesForWebAclInput).
     pub fn builder() -> crate::input::list_resources_for_web_acl_input::Builder {
         crate::input::list_resources_for_web_acl_input::Builder::default()
     }
@@ -1182,7 +1182,7 @@ pub struct ListRuleGroups {
     _private: (),
 }
 impl ListRuleGroups {
-    /// Creates a new builder-style object to manufacture [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
     pub fn builder() -> crate::input::list_rule_groups_input::Builder {
         crate::input::list_rule_groups_input::Builder::default()
     }
@@ -1214,7 +1214,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1248,7 +1248,7 @@ pub struct ListWebACLs {
     _private: (),
 }
 impl ListWebACLs {
-    /// Creates a new builder-style object to manufacture [`ListWebAcLsInput`](crate::input::ListWebAcLsInput)
+    /// Creates a new builder-style object to manufacture [`ListWebAcLsInput`](crate::input::ListWebAcLsInput).
     pub fn builder() -> crate::input::list_web_ac_ls_input::Builder {
         crate::input::list_web_ac_ls_input::Builder::default()
     }
@@ -1280,7 +1280,7 @@ pub struct PutLoggingConfiguration {
     _private: (),
 }
 impl PutLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationInput`](crate::input::PutLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationInput`](crate::input::PutLoggingConfigurationInput).
     pub fn builder() -> crate::input::put_logging_configuration_input::Builder {
         crate::input::put_logging_configuration_input::Builder::default()
     }
@@ -1314,7 +1314,7 @@ pub struct PutManagedRuleSetVersions {
     _private: (),
 }
 impl PutManagedRuleSetVersions {
-    /// Creates a new builder-style object to manufacture [`PutManagedRuleSetVersionsInput`](crate::input::PutManagedRuleSetVersionsInput)
+    /// Creates a new builder-style object to manufacture [`PutManagedRuleSetVersionsInput`](crate::input::PutManagedRuleSetVersionsInput).
     pub fn builder() -> crate::input::put_managed_rule_set_versions_input::Builder {
         crate::input::put_managed_rule_set_versions_input::Builder::default()
     }
@@ -1348,7 +1348,7 @@ pub struct PutPermissionPolicy {
     _private: (),
 }
 impl PutPermissionPolicy {
-    /// Creates a new builder-style object to manufacture [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput).
     pub fn builder() -> crate::input::put_permission_policy_input::Builder {
         crate::input::put_permission_policy_input::Builder::default()
     }
@@ -1382,7 +1382,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1414,7 +1414,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1446,7 +1446,7 @@ pub struct UpdateIPSet {
     _private: (),
 }
 impl UpdateIPSet {
-    /// Creates a new builder-style object to manufacture [`UpdateIpSetInput`](crate::input::UpdateIpSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateIpSetInput`](crate::input::UpdateIpSetInput).
     pub fn builder() -> crate::input::update_ip_set_input::Builder {
         crate::input::update_ip_set_input::Builder::default()
     }
@@ -1478,7 +1478,7 @@ pub struct UpdateManagedRuleSetVersionExpiryDate {
     _private: (),
 }
 impl UpdateManagedRuleSetVersionExpiryDate {
-    /// Creates a new builder-style object to manufacture [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::input::UpdateManagedRuleSetVersionExpiryDateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::input::UpdateManagedRuleSetVersionExpiryDateInput).
     pub fn builder() -> crate::input::update_managed_rule_set_version_expiry_date_input::Builder {
         crate::input::update_managed_rule_set_version_expiry_date_input::Builder::default()
     }
@@ -1516,7 +1516,7 @@ pub struct UpdateRegexPatternSet {
     _private: (),
 }
 impl UpdateRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput).
     pub fn builder() -> crate::input::update_regex_pattern_set_input::Builder {
         crate::input::update_regex_pattern_set_input::Builder::default()
     }
@@ -1550,7 +1550,7 @@ pub struct UpdateRuleGroup {
     _private: (),
 }
 impl UpdateRuleGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
     pub fn builder() -> crate::input::update_rule_group_input::Builder {
         crate::input::update_rule_group_input::Builder::default()
     }
@@ -1584,7 +1584,7 @@ pub struct UpdateWebACL {
     _private: (),
 }
 impl UpdateWebACL {
-    /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::input::UpdateWebAclInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::input::UpdateWebAclInput).
     pub fn builder() -> crate::input::update_web_acl_input::Builder {
         crate::input::update_web_acl_input::Builder::default()
     }

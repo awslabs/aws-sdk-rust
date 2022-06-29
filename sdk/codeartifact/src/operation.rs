@@ -10,7 +10,7 @@ pub struct AssociateExternalConnection {
     _private: (),
 }
 impl AssociateExternalConnection {
-    /// Creates a new builder-style object to manufacture [`AssociateExternalConnectionInput`](crate::input::AssociateExternalConnectionInput)
+    /// Creates a new builder-style object to manufacture [`AssociateExternalConnectionInput`](crate::input::AssociateExternalConnectionInput).
     pub fn builder() -> crate::input::associate_external_connection_input::Builder {
         crate::input::associate_external_connection_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CopyPackageVersions {
     _private: (),
 }
 impl CopyPackageVersions {
-    /// Creates a new builder-style object to manufacture [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput)
+    /// Creates a new builder-style object to manufacture [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput).
     pub fn builder() -> crate::input::copy_package_versions_input::Builder {
         crate::input::copy_package_versions_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateDomain {
     _private: (),
 }
 impl CreateDomain {
-    /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::input::CreateDomainInput)
+    /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::input::CreateDomainInput).
     pub fn builder() -> crate::input::create_domain_input::Builder {
         crate::input::create_domain_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateRepository {
     _private: (),
 }
 impl CreateRepository {
-    /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::input::CreateRepositoryInput).
     pub fn builder() -> crate::input::create_repository_input::Builder {
         crate::input::create_repository_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DeleteDomain {
     _private: (),
 }
 impl DeleteDomain {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput).
     pub fn builder() -> crate::input::delete_domain_input::Builder {
         crate::input::delete_domain_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeleteDomainPermissionsPolicy {
     _private: (),
 }
 impl DeleteDomainPermissionsPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainPermissionsPolicyInput`](crate::input::DeleteDomainPermissionsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainPermissionsPolicyInput`](crate::input::DeleteDomainPermissionsPolicyInput).
     pub fn builder() -> crate::input::delete_domain_permissions_policy_input::Builder {
         crate::input::delete_domain_permissions_policy_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeletePackageVersions {
     _private: (),
 }
 impl DeletePackageVersions {
-    /// Creates a new builder-style object to manufacture [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput).
     pub fn builder() -> crate::input::delete_package_versions_input::Builder {
         crate::input::delete_package_versions_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteRepository {
     _private: (),
 }
 impl DeleteRepository {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput).
     pub fn builder() -> crate::input::delete_repository_input::Builder {
         crate::input::delete_repository_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteRepositoryPermissionsPolicy {
     _private: (),
 }
 impl DeleteRepositoryPermissionsPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryPermissionsPolicyInput`](crate::input::DeleteRepositoryPermissionsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryPermissionsPolicyInput`](crate::input::DeleteRepositoryPermissionsPolicyInput).
     pub fn builder() -> crate::input::delete_repository_permissions_policy_input::Builder {
         crate::input::delete_repository_permissions_policy_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DescribeDomain {
     _private: (),
 }
 impl DescribeDomain {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainInput`](crate::input::DescribeDomainInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainInput`](crate::input::DescribeDomainInput).
     pub fn builder() -> crate::input::describe_domain_input::Builder {
         crate::input::describe_domain_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct DescribePackageVersion {
     _private: (),
 }
 impl DescribePackageVersion {
-    /// Creates a new builder-style object to manufacture [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput)
+    /// Creates a new builder-style object to manufacture [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput).
     pub fn builder() -> crate::input::describe_package_version_input::Builder {
         crate::input::describe_package_version_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct DescribeRepository {
     _private: (),
 }
 impl DescribeRepository {
-    /// Creates a new builder-style object to manufacture [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput).
     pub fn builder() -> crate::input::describe_repository_input::Builder {
         crate::input::describe_repository_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct DisassociateExternalConnection {
     _private: (),
 }
 impl DisassociateExternalConnection {
-    /// Creates a new builder-style object to manufacture [`DisassociateExternalConnectionInput`](crate::input::DisassociateExternalConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateExternalConnectionInput`](crate::input::DisassociateExternalConnectionInput).
     pub fn builder() -> crate::input::disassociate_external_connection_input::Builder {
         crate::input::disassociate_external_connection_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct DisposePackageVersions {
     _private: (),
 }
 impl DisposePackageVersions {
-    /// Creates a new builder-style object to manufacture [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput).
     pub fn builder() -> crate::input::dispose_package_versions_input::Builder {
         crate::input::dispose_package_versions_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct GetAuthorizationToken {
     _private: (),
 }
 impl GetAuthorizationToken {
-    /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput).
     pub fn builder() -> crate::input::get_authorization_token_input::Builder {
         crate::input::get_authorization_token_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct GetDomainPermissionsPolicy {
     _private: (),
 }
 impl GetDomainPermissionsPolicy {
-    /// Creates a new builder-style object to manufacture [`GetDomainPermissionsPolicyInput`](crate::input::GetDomainPermissionsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetDomainPermissionsPolicyInput`](crate::input::GetDomainPermissionsPolicyInput).
     pub fn builder() -> crate::input::get_domain_permissions_policy_input::Builder {
         crate::input::get_domain_permissions_policy_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct GetPackageVersionAsset {
     _private: (),
 }
 impl GetPackageVersionAsset {
-    /// Creates a new builder-style object to manufacture [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput)
+    /// Creates a new builder-style object to manufacture [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput).
     pub fn builder() -> crate::input::get_package_version_asset_input::Builder {
         crate::input::get_package_version_asset_input::Builder::default()
     }
@@ -591,7 +591,7 @@ pub struct GetPackageVersionReadme {
     _private: (),
 }
 impl GetPackageVersionReadme {
-    /// Creates a new builder-style object to manufacture [`GetPackageVersionReadmeInput`](crate::input::GetPackageVersionReadmeInput)
+    /// Creates a new builder-style object to manufacture [`GetPackageVersionReadmeInput`](crate::input::GetPackageVersionReadmeInput).
     pub fn builder() -> crate::input::get_package_version_readme_input::Builder {
         crate::input::get_package_version_readme_input::Builder::default()
     }
@@ -625,7 +625,7 @@ pub struct GetRepositoryEndpoint {
     _private: (),
 }
 impl GetRepositoryEndpoint {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput)
+    /// Creates a new builder-style object to manufacture [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput).
     pub fn builder() -> crate::input::get_repository_endpoint_input::Builder {
         crate::input::get_repository_endpoint_input::Builder::default()
     }
@@ -659,7 +659,7 @@ pub struct GetRepositoryPermissionsPolicy {
     _private: (),
 }
 impl GetRepositoryPermissionsPolicy {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryPermissionsPolicyInput`](crate::input::GetRepositoryPermissionsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetRepositoryPermissionsPolicyInput`](crate::input::GetRepositoryPermissionsPolicyInput).
     pub fn builder() -> crate::input::get_repository_permissions_policy_input::Builder {
         crate::input::get_repository_permissions_policy_input::Builder::default()
     }
@@ -693,7 +693,7 @@ pub struct ListDomains {
     _private: (),
 }
 impl ListDomains {
-    /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput).
     pub fn builder() -> crate::input::list_domains_input::Builder {
         crate::input::list_domains_input::Builder::default()
     }
@@ -725,7 +725,7 @@ pub struct ListPackages {
     _private: (),
 }
 impl ListPackages {
-    /// Creates a new builder-style object to manufacture [`ListPackagesInput`](crate::input::ListPackagesInput)
+    /// Creates a new builder-style object to manufacture [`ListPackagesInput`](crate::input::ListPackagesInput).
     pub fn builder() -> crate::input::list_packages_input::Builder {
         crate::input::list_packages_input::Builder::default()
     }
@@ -757,7 +757,7 @@ pub struct ListPackageVersionAssets {
     _private: (),
 }
 impl ListPackageVersionAssets {
-    /// Creates a new builder-style object to manufacture [`ListPackageVersionAssetsInput`](crate::input::ListPackageVersionAssetsInput)
+    /// Creates a new builder-style object to manufacture [`ListPackageVersionAssetsInput`](crate::input::ListPackageVersionAssetsInput).
     pub fn builder() -> crate::input::list_package_version_assets_input::Builder {
         crate::input::list_package_version_assets_input::Builder::default()
     }
@@ -791,7 +791,7 @@ pub struct ListPackageVersionDependencies {
     _private: (),
 }
 impl ListPackageVersionDependencies {
-    /// Creates a new builder-style object to manufacture [`ListPackageVersionDependenciesInput`](crate::input::ListPackageVersionDependenciesInput)
+    /// Creates a new builder-style object to manufacture [`ListPackageVersionDependenciesInput`](crate::input::ListPackageVersionDependenciesInput).
     pub fn builder() -> crate::input::list_package_version_dependencies_input::Builder {
         crate::input::list_package_version_dependencies_input::Builder::default()
     }
@@ -825,7 +825,7 @@ pub struct ListPackageVersions {
     _private: (),
 }
 impl ListPackageVersions {
-    /// Creates a new builder-style object to manufacture [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput).
     pub fn builder() -> crate::input::list_package_versions_input::Builder {
         crate::input::list_package_versions_input::Builder::default()
     }
@@ -859,7 +859,7 @@ pub struct ListRepositories {
     _private: (),
 }
 impl ListRepositories {
-    /// Creates a new builder-style object to manufacture [`ListRepositoriesInput`](crate::input::ListRepositoriesInput)
+    /// Creates a new builder-style object to manufacture [`ListRepositoriesInput`](crate::input::ListRepositoriesInput).
     pub fn builder() -> crate::input::list_repositories_input::Builder {
         crate::input::list_repositories_input::Builder::default()
     }
@@ -893,7 +893,7 @@ pub struct ListRepositoriesInDomain {
     _private: (),
 }
 impl ListRepositoriesInDomain {
-    /// Creates a new builder-style object to manufacture [`ListRepositoriesInDomainInput`](crate::input::ListRepositoriesInDomainInput)
+    /// Creates a new builder-style object to manufacture [`ListRepositoriesInDomainInput`](crate::input::ListRepositoriesInDomainInput).
     pub fn builder() -> crate::input::list_repositories_in_domain_input::Builder {
         crate::input::list_repositories_in_domain_input::Builder::default()
     }
@@ -927,7 +927,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -961,7 +961,7 @@ pub struct PutDomainPermissionsPolicy {
     _private: (),
 }
 impl PutDomainPermissionsPolicy {
-    /// Creates a new builder-style object to manufacture [`PutDomainPermissionsPolicyInput`](crate::input::PutDomainPermissionsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutDomainPermissionsPolicyInput`](crate::input::PutDomainPermissionsPolicyInput).
     pub fn builder() -> crate::input::put_domain_permissions_policy_input::Builder {
         crate::input::put_domain_permissions_policy_input::Builder::default()
     }
@@ -995,7 +995,7 @@ pub struct PutRepositoryPermissionsPolicy {
     _private: (),
 }
 impl PutRepositoryPermissionsPolicy {
-    /// Creates a new builder-style object to manufacture [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput).
     pub fn builder() -> crate::input::put_repository_permissions_policy_input::Builder {
         crate::input::put_repository_permissions_policy_input::Builder::default()
     }
@@ -1029,7 +1029,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1061,7 +1061,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1093,7 +1093,7 @@ pub struct UpdatePackageVersionsStatus {
     _private: (),
 }
 impl UpdatePackageVersionsStatus {
-    /// Creates a new builder-style object to manufacture [`UpdatePackageVersionsStatusInput`](crate::input::UpdatePackageVersionsStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePackageVersionsStatusInput`](crate::input::UpdatePackageVersionsStatusInput).
     pub fn builder() -> crate::input::update_package_versions_status_input::Builder {
         crate::input::update_package_versions_status_input::Builder::default()
     }
@@ -1127,7 +1127,7 @@ pub struct UpdateRepository {
     _private: (),
 }
 impl UpdateRepository {
-    /// Creates a new builder-style object to manufacture [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput).
     pub fn builder() -> crate::input::update_repository_input::Builder {
         crate::input::update_repository_input::Builder::default()
     }

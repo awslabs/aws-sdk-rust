@@ -19,11 +19,10 @@ impl std::fmt::Debug for CancelTaskOutput {
         formatter.finish()
     }
 }
-/// See [`CancelTaskOutput`](crate::output::CancelTaskOutput)
+/// See [`CancelTaskOutput`](crate::output::CancelTaskOutput).
 pub mod cancel_task_output {
 
-    /// A builder for [`CancelTaskOutput`](crate::output::CancelTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelTaskOutput`](crate::output::CancelTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod cancel_task_output {
             self.task_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelTaskOutput`](crate::output::CancelTaskOutput)
+        /// Consumes the builder and constructs a [`CancelTaskOutput`](crate::output::CancelTaskOutput).
         pub fn build(self) -> crate::output::CancelTaskOutput {
             crate::output::CancelTaskOutput {
                 task_id: self.task_id,
@@ -48,7 +47,7 @@ pub mod cancel_task_output {
     }
 }
 impl CancelTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CancelTaskOutput`](crate::output::CancelTaskOutput)
+    /// Creates a new builder-style object to manufacture [`CancelTaskOutput`](crate::output::CancelTaskOutput).
     pub fn builder() -> crate::output::cancel_task_output::Builder {
         crate::output::cancel_task_output::Builder::default()
     }
@@ -81,11 +80,10 @@ impl std::fmt::Debug for ListTasksOutput {
         formatter.finish()
     }
 }
-/// See [`ListTasksOutput`](crate::output::ListTasksOutput)
+/// See [`ListTasksOutput`](crate::output::ListTasksOutput).
 pub mod list_tasks_output {
 
-    /// A builder for [`ListTasksOutput`](crate::output::ListTasksOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTasksOutput`](crate::output::ListTasksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::TaskSummary>>,
@@ -121,7 +119,7 @@ pub mod list_tasks_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTasksOutput`](crate::output::ListTasksOutput)
+        /// Consumes the builder and constructs a [`ListTasksOutput`](crate::output::ListTasksOutput).
         pub fn build(self) -> crate::output::ListTasksOutput {
             crate::output::ListTasksOutput {
                 tasks: self.tasks,
@@ -131,7 +129,7 @@ pub mod list_tasks_output {
     }
 }
 impl ListTasksOutput {
-    /// Creates a new builder-style object to manufacture [`ListTasksOutput`](crate::output::ListTasksOutput)
+    /// Creates a new builder-style object to manufacture [`ListTasksOutput`](crate::output::ListTasksOutput).
     pub fn builder() -> crate::output::list_tasks_output::Builder {
         crate::output::list_tasks_output::Builder::default()
     }
@@ -164,11 +162,10 @@ impl std::fmt::Debug for CreateTaskOutput {
         formatter.finish()
     }
 }
-/// See [`CreateTaskOutput`](crate::output::CreateTaskOutput)
+/// See [`CreateTaskOutput`](crate::output::CreateTaskOutput).
 pub mod create_task_output {
 
-    /// A builder for [`CreateTaskOutput`](crate::output::CreateTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateTaskOutput`](crate::output::CreateTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -195,7 +192,7 @@ pub mod create_task_output {
             self.task_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateTaskOutput`](crate::output::CreateTaskOutput)
+        /// Consumes the builder and constructs a [`CreateTaskOutput`](crate::output::CreateTaskOutput).
         pub fn build(self) -> crate::output::CreateTaskOutput {
             crate::output::CreateTaskOutput {
                 task_id: self.task_id,
@@ -205,7 +202,7 @@ pub mod create_task_output {
     }
 }
 impl CreateTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTaskOutput`](crate::output::CreateTaskOutput)
+    /// Creates a new builder-style object to manufacture [`CreateTaskOutput`](crate::output::CreateTaskOutput).
     pub fn builder() -> crate::output::create_task_output::Builder {
         crate::output::create_task_output::Builder::default()
     }
@@ -291,11 +288,10 @@ impl std::fmt::Debug for DescribeTaskOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeTaskOutput`](crate::output::DescribeTaskOutput)
+/// See [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
 pub mod describe_task_output {
 
-    /// A builder for [`DescribeTaskOutput`](crate::output::DescribeTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -434,7 +430,7 @@ pub mod describe_task_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeTaskOutput`](crate::output::DescribeTaskOutput)
+        /// Consumes the builder and constructs a [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
         pub fn build(self) -> crate::output::DescribeTaskOutput {
             crate::output::DescribeTaskOutput {
                 task_id: self.task_id,
@@ -451,7 +447,7 @@ pub mod describe_task_output {
     }
 }
 impl DescribeTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTaskOutput`](crate::output::DescribeTaskOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
     pub fn builder() -> crate::output::describe_task_output::Builder {
         crate::output::describe_task_output::Builder::default()
     }
@@ -484,11 +480,10 @@ impl std::fmt::Debug for ListExecutionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
+/// See [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
 pub mod list_executions_output {
 
-    /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) executions: std::option::Option<std::vec::Vec<crate::model::ExecutionSummary>>,
@@ -524,7 +519,7 @@ pub mod list_executions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
+        /// Consumes the builder and constructs a [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
         pub fn build(self) -> crate::output::ListExecutionsOutput {
             crate::output::ListExecutionsOutput {
                 executions: self.executions,
@@ -534,7 +529,7 @@ pub mod list_executions_output {
     }
 }
 impl ListExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::output::ListExecutionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListExecutionsOutput`](crate::output::ListExecutionsOutput).
     pub fn builder() -> crate::output::list_executions_output::Builder {
         crate::output::list_executions_output::Builder::default()
     }
@@ -595,11 +590,10 @@ impl std::fmt::Debug for DescribeExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
+/// See [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
 pub mod describe_execution_output {
 
-    /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -682,7 +676,7 @@ pub mod describe_execution_output {
             self.last_updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
+        /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
         pub fn build(self) -> crate::output::DescribeExecutionOutput {
             crate::output::DescribeExecutionOutput {
                 task_id: self.task_id,
@@ -696,7 +690,7 @@ pub mod describe_execution_output {
     }
 }
 impl DescribeExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput).
     pub fn builder() -> crate::output::describe_execution_output::Builder {
         crate::output::describe_execution_output::Builder::default()
     }
@@ -729,11 +723,10 @@ impl std::fmt::Debug for ListDeviceResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput)
+/// See [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput).
 pub mod list_device_resources_output {
 
-    /// A builder for [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::ResourceSummary>>,
@@ -769,7 +762,7 @@ pub mod list_device_resources_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput)
+        /// Consumes the builder and constructs a [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput).
         pub fn build(self) -> crate::output::ListDeviceResourcesOutput {
             crate::output::ListDeviceResourcesOutput {
                 resources: self.resources,
@@ -779,7 +772,7 @@ pub mod list_device_resources_output {
     }
 }
 impl ListDeviceResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`ListDeviceResourcesOutput`](crate::output::ListDeviceResourcesOutput).
     pub fn builder() -> crate::output::list_device_resources_output::Builder {
         crate::output::list_device_resources_output::Builder::default()
     }
@@ -805,11 +798,10 @@ impl std::fmt::Debug for DescribeDeviceEc2InstancesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput)
+/// See [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput).
 pub mod describe_device_ec2_instances_output {
 
-    /// A builder for [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
@@ -834,7 +826,7 @@ pub mod describe_device_ec2_instances_output {
             self.instances = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput)
+        /// Consumes the builder and constructs a [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput).
         pub fn build(self) -> crate::output::DescribeDeviceEc2InstancesOutput {
             crate::output::DescribeDeviceEc2InstancesOutput {
                 instances: self.instances,
@@ -843,7 +835,7 @@ pub mod describe_device_ec2_instances_output {
     }
 }
 impl DescribeDeviceEc2InstancesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeviceEc2InstancesOutput`](crate::output::DescribeDeviceEc2InstancesOutput).
     pub fn builder() -> crate::output::describe_device_ec2_instances_output::Builder {
         crate::output::describe_device_ec2_instances_output::Builder::default()
     }
@@ -876,11 +868,10 @@ impl std::fmt::Debug for ListDevicesOutput {
         formatter.finish()
     }
 }
-/// See [`ListDevicesOutput`](crate::output::ListDevicesOutput)
+/// See [`ListDevicesOutput`](crate::output::ListDevicesOutput).
 pub mod list_devices_output {
 
-    /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
@@ -916,7 +907,7 @@ pub mod list_devices_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::output::ListDevicesOutput)
+        /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::output::ListDevicesOutput).
         pub fn build(self) -> crate::output::ListDevicesOutput {
             crate::output::ListDevicesOutput {
                 devices: self.devices,
@@ -926,7 +917,7 @@ pub mod list_devices_output {
     }
 }
 impl ListDevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::output::ListDevicesOutput)
+    /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::output::ListDevicesOutput).
     pub fn builder() -> crate::output::list_devices_output::Builder {
         crate::output::list_devices_output::Builder::default()
     }
@@ -1032,11 +1023,10 @@ impl std::fmt::Debug for DescribeDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
+/// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
 pub mod describe_device_output {
 
-    /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_reached_out_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1222,7 +1212,7 @@ pub mod describe_device_output {
             self.software = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
+        /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
         pub fn build(self) -> crate::output::DescribeDeviceOutput {
             crate::output::DescribeDeviceOutput {
                 last_reached_out_at: self.last_reached_out_at,
@@ -1241,7 +1231,7 @@ pub mod describe_device_output {
     }
 }
 impl DescribeDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
     pub fn builder() -> crate::output::describe_device_output::Builder {
         crate::output::describe_device_output::Builder::default()
     }
@@ -1257,22 +1247,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -1288,22 +1277,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -1333,11 +1321,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -1370,14 +1357,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }

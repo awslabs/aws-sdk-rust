@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateCampaignOutboundCallConfigOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput)
+/// See [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput).
 pub mod update_campaign_outbound_call_config_output {
 
-    /// A builder for [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput)
+        /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput).
         pub fn build(self) -> crate::output::UpdateCampaignOutboundCallConfigOutput {
             crate::output::UpdateCampaignOutboundCallConfigOutput {}
         }
     }
 }
 impl UpdateCampaignOutboundCallConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput).
     pub fn builder() -> crate::output::update_campaign_outbound_call_config_output::Builder {
         crate::output::update_campaign_outbound_call_config_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UpdateCampaignNameOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput)
+/// See [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput).
 pub mod update_campaign_name_output {
 
-    /// A builder for [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput)
+        /// Consumes the builder and constructs a [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput).
         pub fn build(self) -> crate::output::UpdateCampaignNameOutput {
             crate::output::UpdateCampaignNameOutput {}
         }
     }
 }
 impl UpdateCampaignNameOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput).
     pub fn builder() -> crate::output::update_campaign_name_output::Builder {
         crate::output::update_campaign_name_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for UpdateCampaignDialerConfigOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput)
+/// See [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput).
 pub mod update_campaign_dialer_config_output {
 
-    /// A builder for [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput)
+        /// Consumes the builder and constructs a [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput).
         pub fn build(self) -> crate::output::UpdateCampaignDialerConfigOutput {
             crate::output::UpdateCampaignDialerConfigOutput {}
         }
     }
 }
 impl UpdateCampaignDialerConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput).
     pub fn builder() -> crate::output::update_campaign_dialer_config_output::Builder {
         crate::output::update_campaign_dialer_config_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -133,22 +129,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -164,22 +159,21 @@ impl std::fmt::Debug for StopCampaignOutput {
         formatter.finish()
     }
 }
-/// See [`StopCampaignOutput`](crate::output::StopCampaignOutput)
+/// See [`StopCampaignOutput`](crate::output::StopCampaignOutput).
 pub mod stop_campaign_output {
 
-    /// A builder for [`StopCampaignOutput`](crate::output::StopCampaignOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopCampaignOutput`](crate::output::StopCampaignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StopCampaignOutput`](crate::output::StopCampaignOutput)
+        /// Consumes the builder and constructs a [`StopCampaignOutput`](crate::output::StopCampaignOutput).
         pub fn build(self) -> crate::output::StopCampaignOutput {
             crate::output::StopCampaignOutput {}
         }
     }
 }
 impl StopCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`StopCampaignOutput`](crate::output::StopCampaignOutput)
+    /// Creates a new builder-style object to manufacture [`StopCampaignOutput`](crate::output::StopCampaignOutput).
     pub fn builder() -> crate::output::stop_campaign_output::Builder {
         crate::output::stop_campaign_output::Builder::default()
     }
@@ -211,11 +205,10 @@ impl std::fmt::Debug for StartInstanceOnboardingJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput)
+/// See [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput).
 pub mod start_instance_onboarding_job_output {
 
-    /// A builder for [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_onboarding_job_status:
@@ -238,7 +231,7 @@ pub mod start_instance_onboarding_job_output {
             self.connect_instance_onboarding_job_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput)
+        /// Consumes the builder and constructs a [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput).
         pub fn build(self) -> crate::output::StartInstanceOnboardingJobOutput {
             crate::output::StartInstanceOnboardingJobOutput {
                 connect_instance_onboarding_job_status: self.connect_instance_onboarding_job_status,
@@ -247,7 +240,7 @@ pub mod start_instance_onboarding_job_output {
     }
 }
 impl StartInstanceOnboardingJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput).
     pub fn builder() -> crate::output::start_instance_onboarding_job_output::Builder {
         crate::output::start_instance_onboarding_job_output::Builder::default()
     }
@@ -263,22 +256,21 @@ impl std::fmt::Debug for StartCampaignOutput {
         formatter.finish()
     }
 }
-/// See [`StartCampaignOutput`](crate::output::StartCampaignOutput)
+/// See [`StartCampaignOutput`](crate::output::StartCampaignOutput).
 pub mod start_campaign_output {
 
-    /// A builder for [`StartCampaignOutput`](crate::output::StartCampaignOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartCampaignOutput`](crate::output::StartCampaignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartCampaignOutput`](crate::output::StartCampaignOutput)
+        /// Consumes the builder and constructs a [`StartCampaignOutput`](crate::output::StartCampaignOutput).
         pub fn build(self) -> crate::output::StartCampaignOutput {
             crate::output::StartCampaignOutput {}
         }
     }
 }
 impl StartCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`StartCampaignOutput`](crate::output::StartCampaignOutput)
+    /// Creates a new builder-style object to manufacture [`StartCampaignOutput`](crate::output::StartCampaignOutput).
     pub fn builder() -> crate::output::start_campaign_output::Builder {
         crate::output::start_campaign_output::Builder::default()
     }
@@ -294,22 +286,21 @@ impl std::fmt::Debug for ResumeCampaignOutput {
         formatter.finish()
     }
 }
-/// See [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput)
+/// See [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput).
 pub mod resume_campaign_output {
 
-    /// A builder for [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput)
-    #[non_exhaustive]
+    /// A builder for [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput)
+        /// Consumes the builder and constructs a [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput).
         pub fn build(self) -> crate::output::ResumeCampaignOutput {
             crate::output::ResumeCampaignOutput {}
         }
     }
 }
 impl ResumeCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput)
+    /// Creates a new builder-style object to manufacture [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput).
     pub fn builder() -> crate::output::resume_campaign_output::Builder {
         crate::output::resume_campaign_output::Builder::default()
     }
@@ -342,11 +333,10 @@ impl std::fmt::Debug for PutDialRequestBatchOutput {
         formatter.finish()
     }
 }
-/// See [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput)
+/// See [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput).
 pub mod put_dial_request_batch_output {
 
-    /// A builder for [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_requests:
@@ -392,7 +382,7 @@ pub mod put_dial_request_batch_output {
             self.failed_requests = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput)
+        /// Consumes the builder and constructs a [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput).
         pub fn build(self) -> crate::output::PutDialRequestBatchOutput {
             crate::output::PutDialRequestBatchOutput {
                 successful_requests: self.successful_requests,
@@ -402,7 +392,7 @@ pub mod put_dial_request_batch_output {
     }
 }
 impl PutDialRequestBatchOutput {
-    /// Creates a new builder-style object to manufacture [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput)
+    /// Creates a new builder-style object to manufacture [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput).
     pub fn builder() -> crate::output::put_dial_request_batch_output::Builder {
         crate::output::put_dial_request_batch_output::Builder::default()
     }
@@ -418,22 +408,21 @@ impl std::fmt::Debug for PauseCampaignOutput {
         formatter.finish()
     }
 }
-/// See [`PauseCampaignOutput`](crate::output::PauseCampaignOutput)
+/// See [`PauseCampaignOutput`](crate::output::PauseCampaignOutput).
 pub mod pause_campaign_output {
 
-    /// A builder for [`PauseCampaignOutput`](crate::output::PauseCampaignOutput)
-    #[non_exhaustive]
+    /// A builder for [`PauseCampaignOutput`](crate::output::PauseCampaignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PauseCampaignOutput`](crate::output::PauseCampaignOutput)
+        /// Consumes the builder and constructs a [`PauseCampaignOutput`](crate::output::PauseCampaignOutput).
         pub fn build(self) -> crate::output::PauseCampaignOutput {
             crate::output::PauseCampaignOutput {}
         }
     }
 }
 impl PauseCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`PauseCampaignOutput`](crate::output::PauseCampaignOutput)
+    /// Creates a new builder-style object to manufacture [`PauseCampaignOutput`](crate::output::PauseCampaignOutput).
     pub fn builder() -> crate::output::pause_campaign_output::Builder {
         crate::output::pause_campaign_output::Builder::default()
     }
@@ -463,11 +452,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -500,14 +488,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -540,11 +528,10 @@ impl std::fmt::Debug for ListCampaignsOutput {
         formatter.finish()
     }
 }
-/// See [`ListCampaignsOutput`](crate::output::ListCampaignsOutput)
+/// See [`ListCampaignsOutput`](crate::output::ListCampaignsOutput).
 pub mod list_campaigns_output {
 
-    /// A builder for [`ListCampaignsOutput`](crate::output::ListCampaignsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListCampaignsOutput`](crate::output::ListCampaignsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -581,7 +568,7 @@ pub mod list_campaigns_output {
             self.campaign_summary_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListCampaignsOutput`](crate::output::ListCampaignsOutput)
+        /// Consumes the builder and constructs a [`ListCampaignsOutput`](crate::output::ListCampaignsOutput).
         pub fn build(self) -> crate::output::ListCampaignsOutput {
             crate::output::ListCampaignsOutput {
                 next_token: self.next_token,
@@ -591,7 +578,7 @@ pub mod list_campaigns_output {
     }
 }
 impl ListCampaignsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCampaignsOutput`](crate::output::ListCampaignsOutput)
+    /// Creates a new builder-style object to manufacture [`ListCampaignsOutput`](crate::output::ListCampaignsOutput).
     pub fn builder() -> crate::output::list_campaigns_output::Builder {
         crate::output::list_campaigns_output::Builder::default()
     }
@@ -623,11 +610,10 @@ impl std::fmt::Debug for GetInstanceOnboardingJobStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput)
+/// See [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput).
 pub mod get_instance_onboarding_job_status_output {
 
-    /// A builder for [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_onboarding_job_status:
@@ -650,7 +636,7 @@ pub mod get_instance_onboarding_job_status_output {
             self.connect_instance_onboarding_job_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput)
+        /// Consumes the builder and constructs a [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput).
         pub fn build(self) -> crate::output::GetInstanceOnboardingJobStatusOutput {
             crate::output::GetInstanceOnboardingJobStatusOutput {
                 connect_instance_onboarding_job_status: self.connect_instance_onboarding_job_status,
@@ -659,7 +645,7 @@ pub mod get_instance_onboarding_job_status_output {
     }
 }
 impl GetInstanceOnboardingJobStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput).
     pub fn builder() -> crate::output::get_instance_onboarding_job_status_output::Builder {
         crate::output::get_instance_onboarding_job_status_output::Builder::default()
     }
@@ -685,11 +671,10 @@ impl std::fmt::Debug for GetConnectInstanceConfigOutput {
         formatter.finish()
     }
 }
-/// See [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput)
+/// See [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput).
 pub mod get_connect_instance_config_output {
 
-    /// A builder for [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_config: std::option::Option<crate::model::InstanceConfig>,
@@ -708,7 +693,7 @@ pub mod get_connect_instance_config_output {
             self.connect_instance_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput)
+        /// Consumes the builder and constructs a [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput).
         pub fn build(self) -> crate::output::GetConnectInstanceConfigOutput {
             crate::output::GetConnectInstanceConfigOutput {
                 connect_instance_config: self.connect_instance_config,
@@ -717,7 +702,7 @@ pub mod get_connect_instance_config_output {
     }
 }
 impl GetConnectInstanceConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput)
+    /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput).
     pub fn builder() -> crate::output::get_connect_instance_config_output::Builder {
         crate::output::get_connect_instance_config_output::Builder::default()
     }
@@ -756,11 +741,10 @@ impl std::fmt::Debug for GetCampaignStateBatchOutput {
         formatter.finish()
     }
 }
-/// See [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput)
+/// See [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput).
 pub mod get_campaign_state_batch_output {
 
-    /// A builder for [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_requests:
@@ -812,7 +796,7 @@ pub mod get_campaign_state_batch_output {
             self.failed_requests = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput)
+        /// Consumes the builder and constructs a [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput).
         pub fn build(self) -> crate::output::GetCampaignStateBatchOutput {
             crate::output::GetCampaignStateBatchOutput {
                 successful_requests: self.successful_requests,
@@ -822,7 +806,7 @@ pub mod get_campaign_state_batch_output {
     }
 }
 impl GetCampaignStateBatchOutput {
-    /// Creates a new builder-style object to manufacture [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput)
+    /// Creates a new builder-style object to manufacture [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput).
     pub fn builder() -> crate::output::get_campaign_state_batch_output::Builder {
         crate::output::get_campaign_state_batch_output::Builder::default()
     }
@@ -848,11 +832,10 @@ impl std::fmt::Debug for GetCampaignStateOutput {
         formatter.finish()
     }
 }
-/// See [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput)
+/// See [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput).
 pub mod get_campaign_state_output {
 
-    /// A builder for [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::CampaignState>,
@@ -871,14 +854,14 @@ pub mod get_campaign_state_output {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput)
+        /// Consumes the builder and constructs a [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput).
         pub fn build(self) -> crate::output::GetCampaignStateOutput {
             crate::output::GetCampaignStateOutput { state: self.state }
         }
     }
 }
 impl GetCampaignStateOutput {
-    /// Creates a new builder-style object to manufacture [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput)
+    /// Creates a new builder-style object to manufacture [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput).
     pub fn builder() -> crate::output::get_campaign_state_output::Builder {
         crate::output::get_campaign_state_output::Builder::default()
     }
@@ -904,11 +887,10 @@ impl std::fmt::Debug for DescribeCampaignOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput)
+/// See [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput).
 pub mod describe_campaign_output {
 
-    /// A builder for [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign: std::option::Option<crate::model::Campaign>,
@@ -924,7 +906,7 @@ pub mod describe_campaign_output {
             self.campaign = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput)
+        /// Consumes the builder and constructs a [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput).
         pub fn build(self) -> crate::output::DescribeCampaignOutput {
             crate::output::DescribeCampaignOutput {
                 campaign: self.campaign,
@@ -933,7 +915,7 @@ pub mod describe_campaign_output {
     }
 }
 impl DescribeCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput).
     pub fn builder() -> crate::output::describe_campaign_output::Builder {
         crate::output::describe_campaign_output::Builder::default()
     }
@@ -949,22 +931,21 @@ impl std::fmt::Debug for DeleteInstanceOnboardingJobOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput)
+/// See [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput).
 pub mod delete_instance_onboarding_job_output {
 
-    /// A builder for [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput)
+        /// Consumes the builder and constructs a [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput).
         pub fn build(self) -> crate::output::DeleteInstanceOnboardingJobOutput {
             crate::output::DeleteInstanceOnboardingJobOutput {}
         }
     }
 }
 impl DeleteInstanceOnboardingJobOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput).
     pub fn builder() -> crate::output::delete_instance_onboarding_job_output::Builder {
         crate::output::delete_instance_onboarding_job_output::Builder::default()
     }
@@ -980,22 +961,21 @@ impl std::fmt::Debug for DeleteConnectInstanceConfigOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput)
+/// See [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput).
 pub mod delete_connect_instance_config_output {
 
-    /// A builder for [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput)
+        /// Consumes the builder and constructs a [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput).
         pub fn build(self) -> crate::output::DeleteConnectInstanceConfigOutput {
             crate::output::DeleteConnectInstanceConfigOutput {}
         }
     }
 }
 impl DeleteConnectInstanceConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput).
     pub fn builder() -> crate::output::delete_connect_instance_config_output::Builder {
         crate::output::delete_connect_instance_config_output::Builder::default()
     }
@@ -1011,22 +991,21 @@ impl std::fmt::Debug for DeleteCampaignOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput)
+/// See [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
 pub mod delete_campaign_output {
 
-    /// A builder for [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput)
+        /// Consumes the builder and constructs a [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
         pub fn build(self) -> crate::output::DeleteCampaignOutput {
             crate::output::DeleteCampaignOutput {}
         }
     }
 }
 impl DeleteCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput).
     pub fn builder() -> crate::output::delete_campaign_output::Builder {
         crate::output::delete_campaign_output::Builder::default()
     }
@@ -1070,11 +1049,10 @@ impl std::fmt::Debug for CreateCampaignOutput {
         formatter.finish()
     }
 }
-/// See [`CreateCampaignOutput`](crate::output::CreateCampaignOutput)
+/// See [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
 pub mod create_campaign_output {
 
-    /// A builder for [`CreateCampaignOutput`](crate::output::CreateCampaignOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1129,7 +1107,7 @@ pub mod create_campaign_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateCampaignOutput`](crate::output::CreateCampaignOutput)
+        /// Consumes the builder and constructs a [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
         pub fn build(self) -> crate::output::CreateCampaignOutput {
             crate::output::CreateCampaignOutput {
                 id: self.id,
@@ -1140,7 +1118,7 @@ pub mod create_campaign_output {
     }
 }
 impl CreateCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCampaignOutput`](crate::output::CreateCampaignOutput)
+    /// Creates a new builder-style object to manufacture [`CreateCampaignOutput`](crate::output::CreateCampaignOutput).
     pub fn builder() -> crate::output::create_campaign_output::Builder {
         crate::output::create_campaign_output::Builder::default()
     }

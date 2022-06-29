@@ -23759,11 +23759,10 @@ impl std::fmt::Display for UnauthenticatedException {
     }
 }
 impl std::error::Error for UnauthenticatedException {}
-/// See [`UnauthenticatedException`](crate::error::UnauthenticatedException)
+/// See [`UnauthenticatedException`](crate::error::UnauthenticatedException).
 pub mod unauthenticated_exception {
 
-    /// A builder for [`UnauthenticatedException`](crate::error::UnauthenticatedException)
-    #[non_exhaustive]
+    /// A builder for [`UnauthenticatedException`](crate::error::UnauthenticatedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -23812,7 +23811,7 @@ pub mod unauthenticated_exception {
             self.tip = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnauthenticatedException`](crate::error::UnauthenticatedException)
+        /// Consumes the builder and constructs a [`UnauthenticatedException`](crate::error::UnauthenticatedException).
         pub fn build(self) -> crate::error::UnauthenticatedException {
             crate::error::UnauthenticatedException {
                 code: self.code,
@@ -23824,7 +23823,7 @@ pub mod unauthenticated_exception {
     }
 }
 impl UnauthenticatedException {
-    /// Creates a new builder-style object to manufacture [`UnauthenticatedException`](crate::error::UnauthenticatedException)
+    /// Creates a new builder-style object to manufacture [`UnauthenticatedException`](crate::error::UnauthenticatedException).
     pub fn builder() -> crate::error::unauthenticated_exception::Builder {
         crate::error::unauthenticated_exception::Builder::default()
     }
@@ -23883,11 +23882,10 @@ impl std::fmt::Display for ServiceException {
     }
 }
 impl std::error::Error for ServiceException {}
-/// See [`ServiceException`](crate::error::ServiceException)
+/// See [`ServiceException`](crate::error::ServiceException).
 pub mod service_exception {
 
-    /// A builder for [`ServiceException`](crate::error::ServiceException)
-    #[non_exhaustive]
+    /// A builder for [`ServiceException`](crate::error::ServiceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -23936,7 +23934,7 @@ pub mod service_exception {
             self.tip = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceException`](crate::error::ServiceException)
+        /// Consumes the builder and constructs a [`ServiceException`](crate::error::ServiceException).
         pub fn build(self) -> crate::error::ServiceException {
             crate::error::ServiceException {
                 code: self.code,
@@ -23948,7 +23946,7 @@ pub mod service_exception {
     }
 }
 impl ServiceException {
-    /// Creates a new builder-style object to manufacture [`ServiceException`](crate::error::ServiceException)
+    /// Creates a new builder-style object to manufacture [`ServiceException`](crate::error::ServiceException).
     pub fn builder() -> crate::error::service_exception::Builder {
         crate::error::service_exception::Builder::default()
     }
@@ -24007,11 +24005,10 @@ impl std::fmt::Display for OperationFailureException {
     }
 }
 impl std::error::Error for OperationFailureException {}
-/// See [`OperationFailureException`](crate::error::OperationFailureException)
+/// See [`OperationFailureException`](crate::error::OperationFailureException).
 pub mod operation_failure_exception {
 
-    /// A builder for [`OperationFailureException`](crate::error::OperationFailureException)
-    #[non_exhaustive]
+    /// A builder for [`OperationFailureException`](crate::error::OperationFailureException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -24060,7 +24057,7 @@ pub mod operation_failure_exception {
             self.tip = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationFailureException`](crate::error::OperationFailureException)
+        /// Consumes the builder and constructs a [`OperationFailureException`](crate::error::OperationFailureException).
         pub fn build(self) -> crate::error::OperationFailureException {
             crate::error::OperationFailureException {
                 code: self.code,
@@ -24072,7 +24069,7 @@ pub mod operation_failure_exception {
     }
 }
 impl OperationFailureException {
-    /// Creates a new builder-style object to manufacture [`OperationFailureException`](crate::error::OperationFailureException)
+    /// Creates a new builder-style object to manufacture [`OperationFailureException`](crate::error::OperationFailureException).
     pub fn builder() -> crate::error::operation_failure_exception::Builder {
         crate::error::operation_failure_exception::Builder::default()
     }
@@ -24131,11 +24128,10 @@ impl std::fmt::Display for NotFoundException {
     }
 }
 impl std::error::Error for NotFoundException {}
-/// See [`NotFoundException`](crate::error::NotFoundException)
+/// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
 
-    /// A builder for [`NotFoundException`](crate::error::NotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -24184,7 +24180,7 @@ pub mod not_found_exception {
             self.tip = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException)
+        /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
                 code: self.code,
@@ -24196,7 +24192,7 @@ pub mod not_found_exception {
     }
 }
 impl NotFoundException {
-    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException)
+    /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
     pub fn builder() -> crate::error::not_found_exception::Builder {
         crate::error::not_found_exception::Builder::default()
     }
@@ -24257,11 +24253,10 @@ impl std::fmt::Display for InvalidInputException {
     }
 }
 impl std::error::Error for InvalidInputException {}
-/// See [`InvalidInputException`](crate::error::InvalidInputException)
+/// See [`InvalidInputException`](crate::error::InvalidInputException).
 pub mod invalid_input_exception {
 
-    /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -24310,7 +24305,7 @@ pub mod invalid_input_exception {
             self.tip = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidInputException`](crate::error::InvalidInputException)
+        /// Consumes the builder and constructs a [`InvalidInputException`](crate::error::InvalidInputException).
         pub fn build(self) -> crate::error::InvalidInputException {
             crate::error::InvalidInputException {
                 code: self.code,
@@ -24322,7 +24317,7 @@ pub mod invalid_input_exception {
     }
 }
 impl InvalidInputException {
-    /// Creates a new builder-style object to manufacture [`InvalidInputException`](crate::error::InvalidInputException)
+    /// Creates a new builder-style object to manufacture [`InvalidInputException`](crate::error::InvalidInputException).
     pub fn builder() -> crate::error::invalid_input_exception::Builder {
         crate::error::invalid_input_exception::Builder::default()
     }
@@ -24381,11 +24376,10 @@ impl std::fmt::Display for AccountSetupInProgressException {
     }
 }
 impl std::error::Error for AccountSetupInProgressException {}
-/// See [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException)
+/// See [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException).
 pub mod account_setup_in_progress_exception {
 
-    /// A builder for [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException)
-    #[non_exhaustive]
+    /// A builder for [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -24434,7 +24428,7 @@ pub mod account_setup_in_progress_exception {
             self.tip = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException)
+        /// Consumes the builder and constructs a [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException).
         pub fn build(self) -> crate::error::AccountSetupInProgressException {
             crate::error::AccountSetupInProgressException {
                 code: self.code,
@@ -24446,7 +24440,7 @@ pub mod account_setup_in_progress_exception {
     }
 }
 impl AccountSetupInProgressException {
-    /// Creates a new builder-style object to manufacture [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException)
+    /// Creates a new builder-style object to manufacture [`AccountSetupInProgressException`](crate::error::AccountSetupInProgressException).
     pub fn builder() -> crate::error::account_setup_in_progress_exception::Builder {
         crate::error::account_setup_in_progress_exception::Builder::default()
     }
@@ -24505,11 +24499,10 @@ impl std::fmt::Display for AccessDeniedException {
     }
 }
 impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
 
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
-    #[non_exhaustive]
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<std::string::String>,
@@ -24558,7 +24551,7 @@ pub mod access_denied_exception {
             self.tip = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
                 code: self.code,
@@ -24570,7 +24563,7 @@ pub mod access_denied_exception {
     }
 }
 impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
     }

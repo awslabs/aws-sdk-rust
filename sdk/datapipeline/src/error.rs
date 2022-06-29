@@ -2308,11 +2308,10 @@ impl std::fmt::Display for PipelineNotFoundException {
     }
 }
 impl std::error::Error for PipelineNotFoundException {}
-/// See [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
+/// See [`PipelineNotFoundException`](crate::error::PipelineNotFoundException).
 pub mod pipeline_not_found_exception {
 
-    /// A builder for [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`PipelineNotFoundException`](crate::error::PipelineNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2328,7 +2327,7 @@ pub mod pipeline_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
+        /// Consumes the builder and constructs a [`PipelineNotFoundException`](crate::error::PipelineNotFoundException).
         pub fn build(self) -> crate::error::PipelineNotFoundException {
             crate::error::PipelineNotFoundException {
                 message: self.message,
@@ -2337,7 +2336,7 @@ pub mod pipeline_not_found_exception {
     }
 }
 impl PipelineNotFoundException {
-    /// Creates a new builder-style object to manufacture [`PipelineNotFoundException`](crate::error::PipelineNotFoundException)
+    /// Creates a new builder-style object to manufacture [`PipelineNotFoundException`](crate::error::PipelineNotFoundException).
     pub fn builder() -> crate::error::pipeline_not_found_exception::Builder {
         crate::error::pipeline_not_found_exception::Builder::default()
     }
@@ -2373,11 +2372,10 @@ impl std::fmt::Display for PipelineDeletedException {
     }
 }
 impl std::error::Error for PipelineDeletedException {}
-/// See [`PipelineDeletedException`](crate::error::PipelineDeletedException)
+/// See [`PipelineDeletedException`](crate::error::PipelineDeletedException).
 pub mod pipeline_deleted_exception {
 
-    /// A builder for [`PipelineDeletedException`](crate::error::PipelineDeletedException)
-    #[non_exhaustive]
+    /// A builder for [`PipelineDeletedException`](crate::error::PipelineDeletedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2393,7 +2391,7 @@ pub mod pipeline_deleted_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PipelineDeletedException`](crate::error::PipelineDeletedException)
+        /// Consumes the builder and constructs a [`PipelineDeletedException`](crate::error::PipelineDeletedException).
         pub fn build(self) -> crate::error::PipelineDeletedException {
             crate::error::PipelineDeletedException {
                 message: self.message,
@@ -2402,7 +2400,7 @@ pub mod pipeline_deleted_exception {
     }
 }
 impl PipelineDeletedException {
-    /// Creates a new builder-style object to manufacture [`PipelineDeletedException`](crate::error::PipelineDeletedException)
+    /// Creates a new builder-style object to manufacture [`PipelineDeletedException`](crate::error::PipelineDeletedException).
     pub fn builder() -> crate::error::pipeline_deleted_exception::Builder {
         crate::error::pipeline_deleted_exception::Builder::default()
     }
@@ -2438,11 +2436,10 @@ impl std::fmt::Display for InvalidRequestException {
     }
 }
 impl std::error::Error for InvalidRequestException {}
-/// See [`InvalidRequestException`](crate::error::InvalidRequestException)
+/// See [`InvalidRequestException`](crate::error::InvalidRequestException).
 pub mod invalid_request_exception {
 
-    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2458,7 +2455,7 @@ pub mod invalid_request_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException)
+        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
         pub fn build(self) -> crate::error::InvalidRequestException {
             crate::error::InvalidRequestException {
                 message: self.message,
@@ -2467,7 +2464,7 @@ pub mod invalid_request_exception {
     }
 }
 impl InvalidRequestException {
-    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException)
+    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException).
     pub fn builder() -> crate::error::invalid_request_exception::Builder {
         crate::error::invalid_request_exception::Builder::default()
     }
@@ -2503,11 +2500,10 @@ impl std::fmt::Display for InternalServiceError {
     }
 }
 impl std::error::Error for InternalServiceError {}
-/// See [`InternalServiceError`](crate::error::InternalServiceError)
+/// See [`InternalServiceError`](crate::error::InternalServiceError).
 pub mod internal_service_error {
 
-    /// A builder for [`InternalServiceError`](crate::error::InternalServiceError)
-    #[non_exhaustive]
+    /// A builder for [`InternalServiceError`](crate::error::InternalServiceError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2523,7 +2519,7 @@ pub mod internal_service_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServiceError`](crate::error::InternalServiceError)
+        /// Consumes the builder and constructs a [`InternalServiceError`](crate::error::InternalServiceError).
         pub fn build(self) -> crate::error::InternalServiceError {
             crate::error::InternalServiceError {
                 message: self.message,
@@ -2532,7 +2528,7 @@ pub mod internal_service_error {
     }
 }
 impl InternalServiceError {
-    /// Creates a new builder-style object to manufacture [`InternalServiceError`](crate::error::InternalServiceError)
+    /// Creates a new builder-style object to manufacture [`InternalServiceError`](crate::error::InternalServiceError).
     pub fn builder() -> crate::error::internal_service_error::Builder {
         crate::error::internal_service_error::Builder::default()
     }
@@ -2568,11 +2564,10 @@ impl std::fmt::Display for TaskNotFoundException {
     }
 }
 impl std::error::Error for TaskNotFoundException {}
-/// See [`TaskNotFoundException`](crate::error::TaskNotFoundException)
+/// See [`TaskNotFoundException`](crate::error::TaskNotFoundException).
 pub mod task_not_found_exception {
 
-    /// A builder for [`TaskNotFoundException`](crate::error::TaskNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`TaskNotFoundException`](crate::error::TaskNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2588,7 +2583,7 @@ pub mod task_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TaskNotFoundException`](crate::error::TaskNotFoundException)
+        /// Consumes the builder and constructs a [`TaskNotFoundException`](crate::error::TaskNotFoundException).
         pub fn build(self) -> crate::error::TaskNotFoundException {
             crate::error::TaskNotFoundException {
                 message: self.message,
@@ -2597,7 +2592,7 @@ pub mod task_not_found_exception {
     }
 }
 impl TaskNotFoundException {
-    /// Creates a new builder-style object to manufacture [`TaskNotFoundException`](crate::error::TaskNotFoundException)
+    /// Creates a new builder-style object to manufacture [`TaskNotFoundException`](crate::error::TaskNotFoundException).
     pub fn builder() -> crate::error::task_not_found_exception::Builder {
         crate::error::task_not_found_exception::Builder::default()
     }

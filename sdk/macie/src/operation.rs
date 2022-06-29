@@ -10,7 +10,7 @@ pub struct AssociateMemberAccount {
     _private: (),
 }
 impl AssociateMemberAccount {
-    /// Creates a new builder-style object to manufacture [`AssociateMemberAccountInput`](crate::input::AssociateMemberAccountInput)
+    /// Creates a new builder-style object to manufacture [`AssociateMemberAccountInput`](crate::input::AssociateMemberAccountInput).
     pub fn builder() -> crate::input::associate_member_account_input::Builder {
         crate::input::associate_member_account_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateS3Resources {
     _private: (),
 }
 impl AssociateS3Resources {
-    /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesInput`](crate::input::AssociateS3ResourcesInput)
+    /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesInput`](crate::input::AssociateS3ResourcesInput).
     pub fn builder() -> crate::input::associate_s3_resources_input::Builder {
         crate::input::associate_s3_resources_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DisassociateMemberAccount {
     _private: (),
 }
 impl DisassociateMemberAccount {
-    /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountInput`](crate::input::DisassociateMemberAccountInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountInput`](crate::input::DisassociateMemberAccountInput).
     pub fn builder() -> crate::input::disassociate_member_account_input::Builder {
         crate::input::disassociate_member_account_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DisassociateS3Resources {
     _private: (),
 }
 impl DisassociateS3Resources {
-    /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesInput`](crate::input::DisassociateS3ResourcesInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesInput`](crate::input::DisassociateS3ResourcesInput).
     pub fn builder() -> crate::input::disassociate_s3_resources_input::Builder {
         crate::input::disassociate_s3_resources_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct ListMemberAccounts {
     _private: (),
 }
 impl ListMemberAccounts {
-    /// Creates a new builder-style object to manufacture [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput)
+    /// Creates a new builder-style object to manufacture [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput).
     pub fn builder() -> crate::input::list_member_accounts_input::Builder {
         crate::input::list_member_accounts_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct ListS3Resources {
     _private: (),
 }
 impl ListS3Resources {
-    /// Creates a new builder-style object to manufacture [`ListS3ResourcesInput`](crate::input::ListS3ResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListS3ResourcesInput`](crate::input::ListS3ResourcesInput).
     pub fn builder() -> crate::input::list_s3_resources_input::Builder {
         crate::input::list_s3_resources_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct UpdateS3Resources {
     _private: (),
 }
 impl UpdateS3Resources {
-    /// Creates a new builder-style object to manufacture [`UpdateS3ResourcesInput`](crate::input::UpdateS3ResourcesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateS3ResourcesInput`](crate::input::UpdateS3ResourcesInput).
     pub fn builder() -> crate::input::update_s3_resources_input::Builder {
         crate::input::update_s3_resources_input::Builder::default()
     }

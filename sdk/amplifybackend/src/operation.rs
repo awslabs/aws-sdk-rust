@@ -10,7 +10,7 @@ pub struct CloneBackend {
     _private: (),
 }
 impl CloneBackend {
-    /// Creates a new builder-style object to manufacture [`CloneBackendInput`](crate::input::CloneBackendInput)
+    /// Creates a new builder-style object to manufacture [`CloneBackendInput`](crate::input::CloneBackendInput).
     pub fn builder() -> crate::input::clone_backend_input::Builder {
         crate::input::clone_backend_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateBackend {
     _private: (),
 }
 impl CreateBackend {
-    /// Creates a new builder-style object to manufacture [`CreateBackendInput`](crate::input::CreateBackendInput)
+    /// Creates a new builder-style object to manufacture [`CreateBackendInput`](crate::input::CreateBackendInput).
     pub fn builder() -> crate::input::create_backend_input::Builder {
         crate::input::create_backend_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreateBackendAPI {
     _private: (),
 }
 impl CreateBackendAPI {
-    /// Creates a new builder-style object to manufacture [`CreateBackendApiInput`](crate::input::CreateBackendApiInput)
+    /// Creates a new builder-style object to manufacture [`CreateBackendApiInput`](crate::input::CreateBackendApiInput).
     pub fn builder() -> crate::input::create_backend_api_input::Builder {
         crate::input::create_backend_api_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateBackendAuth {
     _private: (),
 }
 impl CreateBackendAuth {
-    /// Creates a new builder-style object to manufacture [`CreateBackendAuthInput`](crate::input::CreateBackendAuthInput)
+    /// Creates a new builder-style object to manufacture [`CreateBackendAuthInput`](crate::input::CreateBackendAuthInput).
     pub fn builder() -> crate::input::create_backend_auth_input::Builder {
         crate::input::create_backend_auth_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateBackendConfig {
     _private: (),
 }
 impl CreateBackendConfig {
-    /// Creates a new builder-style object to manufacture [`CreateBackendConfigInput`](crate::input::CreateBackendConfigInput)
+    /// Creates a new builder-style object to manufacture [`CreateBackendConfigInput`](crate::input::CreateBackendConfigInput).
     pub fn builder() -> crate::input::create_backend_config_input::Builder {
         crate::input::create_backend_config_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct CreateBackendStorage {
     _private: (),
 }
 impl CreateBackendStorage {
-    /// Creates a new builder-style object to manufacture [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput)
+    /// Creates a new builder-style object to manufacture [`CreateBackendStorageInput`](crate::input::CreateBackendStorageInput).
     pub fn builder() -> crate::input::create_backend_storage_input::Builder {
         crate::input::create_backend_storage_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct CreateToken {
     _private: (),
 }
 impl CreateToken {
-    /// Creates a new builder-style object to manufacture [`CreateTokenInput`](crate::input::CreateTokenInput)
+    /// Creates a new builder-style object to manufacture [`CreateTokenInput`](crate::input::CreateTokenInput).
     pub fn builder() -> crate::input::create_token_input::Builder {
         crate::input::create_token_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DeleteBackend {
     _private: (),
 }
 impl DeleteBackend {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendInput`](crate::input::DeleteBackendInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBackendInput`](crate::input::DeleteBackendInput).
     pub fn builder() -> crate::input::delete_backend_input::Builder {
         crate::input::delete_backend_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DeleteBackendAPI {
     _private: (),
 }
 impl DeleteBackendAPI {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendApiInput`](crate::input::DeleteBackendApiInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBackendApiInput`](crate::input::DeleteBackendApiInput).
     pub fn builder() -> crate::input::delete_backend_api_input::Builder {
         crate::input::delete_backend_api_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DeleteBackendAuth {
     _private: (),
 }
 impl DeleteBackendAuth {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendAuthInput`](crate::input::DeleteBackendAuthInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBackendAuthInput`](crate::input::DeleteBackendAuthInput).
     pub fn builder() -> crate::input::delete_backend_auth_input::Builder {
         crate::input::delete_backend_auth_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DeleteBackendStorage {
     _private: (),
 }
 impl DeleteBackendStorage {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBackendStorageInput`](crate::input::DeleteBackendStorageInput).
     pub fn builder() -> crate::input::delete_backend_storage_input::Builder {
         crate::input::delete_backend_storage_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct DeleteToken {
     _private: (),
 }
 impl DeleteToken {
-    /// Creates a new builder-style object to manufacture [`DeleteTokenInput`](crate::input::DeleteTokenInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTokenInput`](crate::input::DeleteTokenInput).
     pub fn builder() -> crate::input::delete_token_input::Builder {
         crate::input::delete_token_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct GenerateBackendAPIModels {
     _private: (),
 }
 impl GenerateBackendAPIModels {
-    /// Creates a new builder-style object to manufacture [`GenerateBackendApiModelsInput`](crate::input::GenerateBackendApiModelsInput)
+    /// Creates a new builder-style object to manufacture [`GenerateBackendApiModelsInput`](crate::input::GenerateBackendApiModelsInput).
     pub fn builder() -> crate::input::generate_backend_api_models_input::Builder {
         crate::input::generate_backend_api_models_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct GetBackend {
     _private: (),
 }
 impl GetBackend {
-    /// Creates a new builder-style object to manufacture [`GetBackendInput`](crate::input::GetBackendInput)
+    /// Creates a new builder-style object to manufacture [`GetBackendInput`](crate::input::GetBackendInput).
     pub fn builder() -> crate::input::get_backend_input::Builder {
         crate::input::get_backend_input::Builder::default()
     }
@@ -474,7 +474,7 @@ pub struct GetBackendAPI {
     _private: (),
 }
 impl GetBackendAPI {
-    /// Creates a new builder-style object to manufacture [`GetBackendApiInput`](crate::input::GetBackendApiInput)
+    /// Creates a new builder-style object to manufacture [`GetBackendApiInput`](crate::input::GetBackendApiInput).
     pub fn builder() -> crate::input::get_backend_api_input::Builder {
         crate::input::get_backend_api_input::Builder::default()
     }
@@ -506,7 +506,7 @@ pub struct GetBackendAPIModels {
     _private: (),
 }
 impl GetBackendAPIModels {
-    /// Creates a new builder-style object to manufacture [`GetBackendApiModelsInput`](crate::input::GetBackendApiModelsInput)
+    /// Creates a new builder-style object to manufacture [`GetBackendApiModelsInput`](crate::input::GetBackendApiModelsInput).
     pub fn builder() -> crate::input::get_backend_api_models_input::Builder {
         crate::input::get_backend_api_models_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct GetBackendAuth {
     _private: (),
 }
 impl GetBackendAuth {
-    /// Creates a new builder-style object to manufacture [`GetBackendAuthInput`](crate::input::GetBackendAuthInput)
+    /// Creates a new builder-style object to manufacture [`GetBackendAuthInput`](crate::input::GetBackendAuthInput).
     pub fn builder() -> crate::input::get_backend_auth_input::Builder {
         crate::input::get_backend_auth_input::Builder::default()
     }
@@ -572,7 +572,7 @@ pub struct GetBackendJob {
     _private: (),
 }
 impl GetBackendJob {
-    /// Creates a new builder-style object to manufacture [`GetBackendJobInput`](crate::input::GetBackendJobInput)
+    /// Creates a new builder-style object to manufacture [`GetBackendJobInput`](crate::input::GetBackendJobInput).
     pub fn builder() -> crate::input::get_backend_job_input::Builder {
         crate::input::get_backend_job_input::Builder::default()
     }
@@ -604,7 +604,7 @@ pub struct GetBackendStorage {
     _private: (),
 }
 impl GetBackendStorage {
-    /// Creates a new builder-style object to manufacture [`GetBackendStorageInput`](crate::input::GetBackendStorageInput)
+    /// Creates a new builder-style object to manufacture [`GetBackendStorageInput`](crate::input::GetBackendStorageInput).
     pub fn builder() -> crate::input::get_backend_storage_input::Builder {
         crate::input::get_backend_storage_input::Builder::default()
     }
@@ -638,7 +638,7 @@ pub struct GetToken {
     _private: (),
 }
 impl GetToken {
-    /// Creates a new builder-style object to manufacture [`GetTokenInput`](crate::input::GetTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetTokenInput`](crate::input::GetTokenInput).
     pub fn builder() -> crate::input::get_token_input::Builder {
         crate::input::get_token_input::Builder::default()
     }
@@ -669,7 +669,7 @@ pub struct ImportBackendAuth {
     _private: (),
 }
 impl ImportBackendAuth {
-    /// Creates a new builder-style object to manufacture [`ImportBackendAuthInput`](crate::input::ImportBackendAuthInput)
+    /// Creates a new builder-style object to manufacture [`ImportBackendAuthInput`](crate::input::ImportBackendAuthInput).
     pub fn builder() -> crate::input::import_backend_auth_input::Builder {
         crate::input::import_backend_auth_input::Builder::default()
     }
@@ -703,7 +703,7 @@ pub struct ImportBackendStorage {
     _private: (),
 }
 impl ImportBackendStorage {
-    /// Creates a new builder-style object to manufacture [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput)
+    /// Creates a new builder-style object to manufacture [`ImportBackendStorageInput`](crate::input::ImportBackendStorageInput).
     pub fn builder() -> crate::input::import_backend_storage_input::Builder {
         crate::input::import_backend_storage_input::Builder::default()
     }
@@ -737,7 +737,7 @@ pub struct ListBackendJobs {
     _private: (),
 }
 impl ListBackendJobs {
-    /// Creates a new builder-style object to manufacture [`ListBackendJobsInput`](crate::input::ListBackendJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListBackendJobsInput`](crate::input::ListBackendJobsInput).
     pub fn builder() -> crate::input::list_backend_jobs_input::Builder {
         crate::input::list_backend_jobs_input::Builder::default()
     }
@@ -771,7 +771,7 @@ pub struct ListS3Buckets {
     _private: (),
 }
 impl ListS3Buckets {
-    /// Creates a new builder-style object to manufacture [`ListS3BucketsInput`](crate::input::ListS3BucketsInput)
+    /// Creates a new builder-style object to manufacture [`ListS3BucketsInput`](crate::input::ListS3BucketsInput).
     pub fn builder() -> crate::input::list_s3_buckets_input::Builder {
         crate::input::list_s3_buckets_input::Builder::default()
     }
@@ -803,7 +803,7 @@ pub struct RemoveAllBackends {
     _private: (),
 }
 impl RemoveAllBackends {
-    /// Creates a new builder-style object to manufacture [`RemoveAllBackendsInput`](crate::input::RemoveAllBackendsInput)
+    /// Creates a new builder-style object to manufacture [`RemoveAllBackendsInput`](crate::input::RemoveAllBackendsInput).
     pub fn builder() -> crate::input::remove_all_backends_input::Builder {
         crate::input::remove_all_backends_input::Builder::default()
     }
@@ -837,7 +837,7 @@ pub struct RemoveBackendConfig {
     _private: (),
 }
 impl RemoveBackendConfig {
-    /// Creates a new builder-style object to manufacture [`RemoveBackendConfigInput`](crate::input::RemoveBackendConfigInput)
+    /// Creates a new builder-style object to manufacture [`RemoveBackendConfigInput`](crate::input::RemoveBackendConfigInput).
     pub fn builder() -> crate::input::remove_backend_config_input::Builder {
         crate::input::remove_backend_config_input::Builder::default()
     }
@@ -871,7 +871,7 @@ pub struct UpdateBackendAPI {
     _private: (),
 }
 impl UpdateBackendAPI {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendApiInput`](crate::input::UpdateBackendApiInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBackendApiInput`](crate::input::UpdateBackendApiInput).
     pub fn builder() -> crate::input::update_backend_api_input::Builder {
         crate::input::update_backend_api_input::Builder::default()
     }
@@ -905,7 +905,7 @@ pub struct UpdateBackendAuth {
     _private: (),
 }
 impl UpdateBackendAuth {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthInput`](crate::input::UpdateBackendAuthInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBackendAuthInput`](crate::input::UpdateBackendAuthInput).
     pub fn builder() -> crate::input::update_backend_auth_input::Builder {
         crate::input::update_backend_auth_input::Builder::default()
     }
@@ -939,7 +939,7 @@ pub struct UpdateBackendConfig {
     _private: (),
 }
 impl UpdateBackendConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendConfigInput`](crate::input::UpdateBackendConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBackendConfigInput`](crate::input::UpdateBackendConfigInput).
     pub fn builder() -> crate::input::update_backend_config_input::Builder {
         crate::input::update_backend_config_input::Builder::default()
     }
@@ -973,7 +973,7 @@ pub struct UpdateBackendJob {
     _private: (),
 }
 impl UpdateBackendJob {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendJobInput`](crate::input::UpdateBackendJobInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBackendJobInput`](crate::input::UpdateBackendJobInput).
     pub fn builder() -> crate::input::update_backend_job_input::Builder {
         crate::input::update_backend_job_input::Builder::default()
     }
@@ -1007,7 +1007,7 @@ pub struct UpdateBackendStorage {
     _private: (),
 }
 impl UpdateBackendStorage {
-    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBackendStorageInput`](crate::input::UpdateBackendStorageInput).
     pub fn builder() -> crate::input::update_backend_storage_input::Builder {
         crate::input::update_backend_storage_input::Builder::default()
     }

@@ -141,11 +141,10 @@ impl std::fmt::Debug for Event {
         formatter.finish()
     }
 }
-/// See [`Event`](crate::model::Event)
+/// See [`Event`](crate::model::Event).
 pub mod event {
 
-    /// A builder for [`Event`](crate::model::Event)
-    #[non_exhaustive]
+    /// A builder for [`Event`](crate::model::Event).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_published: std::option::Option<crate::model::RevisionPublished>,
@@ -164,7 +163,7 @@ pub mod event {
             self.revision_published = input;
             self
         }
-        /// Consumes the builder and constructs a [`Event`](crate::model::Event)
+        /// Consumes the builder and constructs a [`Event`](crate::model::Event).
         pub fn build(self) -> crate::model::Event {
             crate::model::Event {
                 revision_published: self.revision_published,
@@ -173,7 +172,7 @@ pub mod event {
     }
 }
 impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event)
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
     pub fn builder() -> crate::model::event::Builder {
         crate::model::event::Builder::default()
     }
@@ -199,11 +198,10 @@ impl std::fmt::Debug for RevisionPublished {
         formatter.finish()
     }
 }
-/// See [`RevisionPublished`](crate::model::RevisionPublished)
+/// See [`RevisionPublished`](crate::model::RevisionPublished).
 pub mod revision_published {
 
-    /// A builder for [`RevisionPublished`](crate::model::RevisionPublished)
-    #[non_exhaustive]
+    /// A builder for [`RevisionPublished`](crate::model::RevisionPublished).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -219,7 +217,7 @@ pub mod revision_published {
             self.data_set_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RevisionPublished`](crate::model::RevisionPublished)
+        /// Consumes the builder and constructs a [`RevisionPublished`](crate::model::RevisionPublished).
         pub fn build(self) -> crate::model::RevisionPublished {
             crate::model::RevisionPublished {
                 data_set_id: self.data_set_id,
@@ -228,7 +226,7 @@ pub mod revision_published {
     }
 }
 impl RevisionPublished {
-    /// Creates a new builder-style object to manufacture [`RevisionPublished`](crate::model::RevisionPublished)
+    /// Creates a new builder-style object to manufacture [`RevisionPublished`](crate::model::RevisionPublished).
     pub fn builder() -> crate::model::revision_published::Builder {
         crate::model::revision_published::Builder::default()
     }
@@ -257,11 +255,10 @@ impl std::fmt::Debug for Action {
         formatter.finish()
     }
 }
-/// See [`Action`](crate::model::Action)
+/// See [`Action`](crate::model::Action).
 pub mod action {
 
-    /// A builder for [`Action`](crate::model::Action)
-    #[non_exhaustive]
+    /// A builder for [`Action`](crate::model::Action).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_revision_to_s3:
@@ -284,7 +281,7 @@ pub mod action {
             self.export_revision_to_s3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`Action`](crate::model::Action)
+        /// Consumes the builder and constructs a [`Action`](crate::model::Action).
         pub fn build(self) -> crate::model::Action {
             crate::model::Action {
                 export_revision_to_s3: self.export_revision_to_s3,
@@ -293,7 +290,7 @@ pub mod action {
     }
 }
 impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action)
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
     pub fn builder() -> crate::model::action::Builder {
         crate::model::action::Builder::default()
     }
@@ -328,11 +325,10 @@ impl std::fmt::Debug for AutoExportRevisionToS3RequestDetails {
         formatter.finish()
     }
 }
-/// See [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
+/// See [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
 pub mod auto_export_revision_to_s3_request_details {
 
-    /// A builder for [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::ExportServerSideEncryption>,
@@ -369,7 +365,7 @@ pub mod auto_export_revision_to_s3_request_details {
             self.revision_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
+        /// Consumes the builder and constructs a [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
         pub fn build(self) -> crate::model::AutoExportRevisionToS3RequestDetails {
             crate::model::AutoExportRevisionToS3RequestDetails {
                 encryption: self.encryption,
@@ -379,7 +375,7 @@ pub mod auto_export_revision_to_s3_request_details {
     }
 }
 impl AutoExportRevisionToS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails)
+    /// Creates a new builder-style object to manufacture [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
     pub fn builder() -> crate::model::auto_export_revision_to_s3_request_details::Builder {
         crate::model::auto_export_revision_to_s3_request_details::Builder::default()
     }
@@ -412,11 +408,10 @@ impl std::fmt::Debug for AutoExportRevisionDestinationEntry {
         formatter.finish()
     }
 }
-/// See [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
+/// See [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
 pub mod auto_export_revision_destination_entry {
 
-    /// A builder for [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
-    #[non_exhaustive]
+    /// A builder for [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -443,7 +438,7 @@ pub mod auto_export_revision_destination_entry {
             self.key_pattern = input;
             self
         }
-        /// Consumes the builder and constructs a [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
+        /// Consumes the builder and constructs a [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
         pub fn build(self) -> crate::model::AutoExportRevisionDestinationEntry {
             crate::model::AutoExportRevisionDestinationEntry {
                 bucket: self.bucket,
@@ -453,7 +448,7 @@ pub mod auto_export_revision_destination_entry {
     }
 }
 impl AutoExportRevisionDestinationEntry {
-    /// Creates a new builder-style object to manufacture [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry)
+    /// Creates a new builder-style object to manufacture [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
     pub fn builder() -> crate::model::auto_export_revision_destination_entry::Builder {
         crate::model::auto_export_revision_destination_entry::Builder::default()
     }
@@ -486,11 +481,10 @@ impl std::fmt::Debug for ExportServerSideEncryption {
         formatter.finish()
     }
 }
-/// See [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
+/// See [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
 pub mod export_server_side_encryption {
 
-    /// A builder for [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
-    #[non_exhaustive]
+    /// A builder for [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -520,7 +514,7 @@ pub mod export_server_side_encryption {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
+        /// Consumes the builder and constructs a [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
         pub fn build(self) -> crate::model::ExportServerSideEncryption {
             crate::model::ExportServerSideEncryption {
                 kms_key_arn: self.kms_key_arn,
@@ -530,7 +524,7 @@ pub mod export_server_side_encryption {
     }
 }
 impl ExportServerSideEncryption {
-    /// Creates a new builder-style object to manufacture [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption)
+    /// Creates a new builder-style object to manufacture [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
     pub fn builder() -> crate::model::export_server_side_encryption::Builder {
         crate::model::export_server_side_encryption::Builder::default()
     }
@@ -611,11 +605,10 @@ impl std::fmt::Debug for OriginDetails {
         formatter.finish()
     }
 }
-/// See [`OriginDetails`](crate::model::OriginDetails)
+/// See [`OriginDetails`](crate::model::OriginDetails).
 pub mod origin_details {
 
-    /// A builder for [`OriginDetails`](crate::model::OriginDetails)
-    #[non_exhaustive]
+    /// A builder for [`OriginDetails`](crate::model::OriginDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_id: std::option::Option<std::string::String>,
@@ -631,7 +624,7 @@ pub mod origin_details {
             self.product_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`OriginDetails`](crate::model::OriginDetails)
+        /// Consumes the builder and constructs a [`OriginDetails`](crate::model::OriginDetails).
         pub fn build(self) -> crate::model::OriginDetails {
             crate::model::OriginDetails {
                 product_id: self.product_id,
@@ -640,7 +633,7 @@ pub mod origin_details {
     }
 }
 impl OriginDetails {
-    /// Creates a new builder-style object to manufacture [`OriginDetails`](crate::model::OriginDetails)
+    /// Creates a new builder-style object to manufacture [`OriginDetails`](crate::model::OriginDetails).
     pub fn builder() -> crate::model::origin_details::Builder {
         crate::model::origin_details::Builder::default()
     }
@@ -796,11 +789,10 @@ impl std::fmt::Debug for AssetDetails {
         formatter.finish()
     }
 }
-/// See [`AssetDetails`](crate::model::AssetDetails)
+/// See [`AssetDetails`](crate::model::AssetDetails).
 pub mod asset_details {
 
-    /// A builder for [`AssetDetails`](crate::model::AssetDetails)
-    #[non_exhaustive]
+    /// A builder for [`AssetDetails`](crate::model::AssetDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_snapshot_asset: std::option::Option<crate::model::S3SnapshotAsset>,
@@ -851,7 +843,7 @@ pub mod asset_details {
             self.api_gateway_api_asset = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssetDetails`](crate::model::AssetDetails)
+        /// Consumes the builder and constructs a [`AssetDetails`](crate::model::AssetDetails).
         pub fn build(self) -> crate::model::AssetDetails {
             crate::model::AssetDetails {
                 s3_snapshot_asset: self.s3_snapshot_asset,
@@ -862,7 +854,7 @@ pub mod asset_details {
     }
 }
 impl AssetDetails {
-    /// Creates a new builder-style object to manufacture [`AssetDetails`](crate::model::AssetDetails)
+    /// Creates a new builder-style object to manufacture [`AssetDetails`](crate::model::AssetDetails).
     pub fn builder() -> crate::model::asset_details::Builder {
         crate::model::asset_details::Builder::default()
     }
@@ -952,11 +944,10 @@ impl std::fmt::Debug for ApiGatewayApiAsset {
         formatter.finish()
     }
 }
-/// See [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
+/// See [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
 pub mod api_gateway_api_asset {
 
-    /// A builder for [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
-    #[non_exhaustive]
+    /// A builder for [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_description: std::option::Option<std::string::String>,
@@ -1079,7 +1070,7 @@ pub mod api_gateway_api_asset {
             self.stage = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
+        /// Consumes the builder and constructs a [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
         pub fn build(self) -> crate::model::ApiGatewayApiAsset {
             crate::model::ApiGatewayApiAsset {
                 api_description: self.api_description,
@@ -1097,7 +1088,7 @@ pub mod api_gateway_api_asset {
     }
 }
 impl ApiGatewayApiAsset {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset)
+    /// Creates a new builder-style object to manufacture [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
     pub fn builder() -> crate::model::api_gateway_api_asset::Builder {
         crate::model::api_gateway_api_asset::Builder::default()
     }
@@ -1174,11 +1165,10 @@ impl std::fmt::Debug for RedshiftDataShareAsset {
         formatter.finish()
     }
 }
-/// See [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset)
+/// See [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
 pub mod redshift_data_share_asset {
 
-    /// A builder for [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset)
-    #[non_exhaustive]
+    /// A builder for [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1194,14 +1184,14 @@ pub mod redshift_data_share_asset {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset)
+        /// Consumes the builder and constructs a [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
         pub fn build(self) -> crate::model::RedshiftDataShareAsset {
             crate::model::RedshiftDataShareAsset { arn: self.arn }
         }
     }
 }
 impl RedshiftDataShareAsset {
-    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset)
+    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
     pub fn builder() -> crate::model::redshift_data_share_asset::Builder {
         crate::model::redshift_data_share_asset::Builder::default()
     }
@@ -1227,11 +1217,10 @@ impl std::fmt::Debug for S3SnapshotAsset {
         formatter.finish()
     }
 }
-/// See [`S3SnapshotAsset`](crate::model::S3SnapshotAsset)
+/// See [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
 pub mod s3_snapshot_asset {
 
-    /// A builder for [`S3SnapshotAsset`](crate::model::S3SnapshotAsset)
-    #[non_exhaustive]
+    /// A builder for [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size: std::option::Option<f64>,
@@ -1247,7 +1236,7 @@ pub mod s3_snapshot_asset {
             self.size = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3SnapshotAsset`](crate::model::S3SnapshotAsset)
+        /// Consumes the builder and constructs a [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
         pub fn build(self) -> crate::model::S3SnapshotAsset {
             crate::model::S3SnapshotAsset {
                 size: self.size.unwrap_or_default(),
@@ -1256,7 +1245,7 @@ pub mod s3_snapshot_asset {
     }
 }
 impl S3SnapshotAsset {
-    /// Creates a new builder-style object to manufacture [`S3SnapshotAsset`](crate::model::S3SnapshotAsset)
+    /// Creates a new builder-style object to manufacture [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
     pub fn builder() -> crate::model::s3_snapshot_asset::Builder {
         crate::model::s3_snapshot_asset::Builder::default()
     }
@@ -1345,11 +1334,10 @@ impl std::fmt::Debug for AssetEntry {
         formatter.finish()
     }
 }
-/// See [`AssetEntry`](crate::model::AssetEntry)
+/// See [`AssetEntry`](crate::model::AssetEntry).
 pub mod asset_entry {
 
-    /// A builder for [`AssetEntry`](crate::model::AssetEntry)
-    #[non_exhaustive]
+    /// A builder for [`AssetEntry`](crate::model::AssetEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1476,7 +1464,7 @@ pub mod asset_entry {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssetEntry`](crate::model::AssetEntry)
+        /// Consumes the builder and constructs a [`AssetEntry`](crate::model::AssetEntry).
         pub fn build(self) -> crate::model::AssetEntry {
             crate::model::AssetEntry {
                 arn: self.arn,
@@ -1494,7 +1482,7 @@ pub mod asset_entry {
     }
 }
 impl AssetEntry {
-    /// Creates a new builder-style object to manufacture [`AssetEntry`](crate::model::AssetEntry)
+    /// Creates a new builder-style object to manufacture [`AssetEntry`](crate::model::AssetEntry).
     pub fn builder() -> crate::model::asset_entry::Builder {
         crate::model::asset_entry::Builder::default()
     }
@@ -1569,11 +1557,10 @@ impl std::fmt::Debug for JobEntry {
         formatter.finish()
     }
 }
-/// See [`JobEntry`](crate::model::JobEntry)
+/// See [`JobEntry`](crate::model::JobEntry).
 pub mod job_entry {
 
-    /// A builder for [`JobEntry`](crate::model::JobEntry)
-    #[non_exhaustive]
+    /// A builder for [`JobEntry`](crate::model::JobEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1684,7 +1671,7 @@ pub mod job_entry {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`JobEntry`](crate::model::JobEntry)
+        /// Consumes the builder and constructs a [`JobEntry`](crate::model::JobEntry).
         pub fn build(self) -> crate::model::JobEntry {
             crate::model::JobEntry {
                 arn: self.arn,
@@ -1700,7 +1687,7 @@ pub mod job_entry {
     }
 }
 impl JobEntry {
-    /// Creates a new builder-style object to manufacture [`JobEntry`](crate::model::JobEntry)
+    /// Creates a new builder-style object to manufacture [`JobEntry`](crate::model::JobEntry).
     pub fn builder() -> crate::model::job_entry::Builder {
         crate::model::job_entry::Builder::default()
     }
@@ -1929,11 +1916,10 @@ impl std::fmt::Debug for JobError {
         formatter.finish()
     }
 }
-/// See [`JobError`](crate::model::JobError)
+/// See [`JobError`](crate::model::JobError).
 pub mod job_error {
 
-    /// A builder for [`JobError`](crate::model::JobError)
-    #[non_exhaustive]
+    /// A builder for [`JobError`](crate::model::JobError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::Code>,
@@ -2021,7 +2007,7 @@ pub mod job_error {
             self.resource_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`JobError`](crate::model::JobError)
+        /// Consumes the builder and constructs a [`JobError`](crate::model::JobError).
         pub fn build(self) -> crate::model::JobError {
             crate::model::JobError {
                 code: self.code,
@@ -2036,7 +2022,7 @@ pub mod job_error {
     }
 }
 impl JobError {
-    /// Creates a new builder-style object to manufacture [`JobError`](crate::model::JobError)
+    /// Creates a new builder-style object to manufacture [`JobError`](crate::model::JobError).
     pub fn builder() -> crate::model::job_error::Builder {
         crate::model::job_error::Builder::default()
     }
@@ -2207,11 +2193,10 @@ impl std::fmt::Debug for Details {
         formatter.finish()
     }
 }
-/// See [`Details`](crate::model::Details)
+/// See [`Details`](crate::model::Details).
 pub mod details {
 
-    /// A builder for [`Details`](crate::model::Details)
-    #[non_exhaustive]
+    /// A builder for [`Details`](crate::model::Details).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_asset_from_signed_url_job_error_details:
@@ -2260,7 +2245,7 @@ pub mod details {
             self.import_assets_from_s3_job_error_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`Details`](crate::model::Details)
+        /// Consumes the builder and constructs a [`Details`](crate::model::Details).
         pub fn build(self) -> crate::model::Details {
             crate::model::Details {
                 import_asset_from_signed_url_job_error_details: self
@@ -2272,7 +2257,7 @@ pub mod details {
     }
 }
 impl Details {
-    /// Creates a new builder-style object to manufacture [`Details`](crate::model::Details)
+    /// Creates a new builder-style object to manufacture [`Details`](crate::model::Details).
     pub fn builder() -> crate::model::details::Builder {
         crate::model::details::Builder::default()
     }
@@ -2305,11 +2290,10 @@ impl std::fmt::Debug for AssetSourceEntry {
         formatter.finish()
     }
 }
-/// See [`AssetSourceEntry`](crate::model::AssetSourceEntry)
+/// See [`AssetSourceEntry`](crate::model::AssetSourceEntry).
 pub mod asset_source_entry {
 
-    /// A builder for [`AssetSourceEntry`](crate::model::AssetSourceEntry)
-    #[non_exhaustive]
+    /// A builder for [`AssetSourceEntry`](crate::model::AssetSourceEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -2336,7 +2320,7 @@ pub mod asset_source_entry {
             self.key = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssetSourceEntry`](crate::model::AssetSourceEntry)
+        /// Consumes the builder and constructs a [`AssetSourceEntry`](crate::model::AssetSourceEntry).
         pub fn build(self) -> crate::model::AssetSourceEntry {
             crate::model::AssetSourceEntry {
                 bucket: self.bucket,
@@ -2346,7 +2330,7 @@ pub mod asset_source_entry {
     }
 }
 impl AssetSourceEntry {
-    /// Creates a new builder-style object to manufacture [`AssetSourceEntry`](crate::model::AssetSourceEntry)
+    /// Creates a new builder-style object to manufacture [`AssetSourceEntry`](crate::model::AssetSourceEntry).
     pub fn builder() -> crate::model::asset_source_entry::Builder {
         crate::model::asset_source_entry::Builder::default()
     }
@@ -2372,11 +2356,10 @@ impl std::fmt::Debug for ImportAssetFromSignedUrlJobErrorDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails)
+/// See [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
 pub mod import_asset_from_signed_url_job_error_details {
 
-    /// A builder for [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_name: std::option::Option<std::string::String>,
@@ -2392,7 +2375,7 @@ pub mod import_asset_from_signed_url_job_error_details {
             self.asset_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails)
+        /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
         pub fn build(self) -> crate::model::ImportAssetFromSignedUrlJobErrorDetails {
             crate::model::ImportAssetFromSignedUrlJobErrorDetails {
                 asset_name: self.asset_name,
@@ -2401,7 +2384,7 @@ pub mod import_asset_from_signed_url_job_error_details {
     }
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
     pub fn builder() -> crate::model::import_asset_from_signed_url_job_error_details::Builder {
         crate::model::import_asset_from_signed_url_job_error_details::Builder::default()
     }
@@ -2583,11 +2566,10 @@ impl std::fmt::Debug for ResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ResponseDetails`](crate::model::ResponseDetails)
+/// See [`ResponseDetails`](crate::model::ResponseDetails).
 pub mod response_details {
 
-    /// A builder for [`ResponseDetails`](crate::model::ResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ResponseDetails`](crate::model::ResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_asset_to_signed_url:
@@ -2720,7 +2702,7 @@ pub mod response_details {
             self.import_asset_from_api_gateway_api = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResponseDetails`](crate::model::ResponseDetails)
+        /// Consumes the builder and constructs a [`ResponseDetails`](crate::model::ResponseDetails).
         pub fn build(self) -> crate::model::ResponseDetails {
             crate::model::ResponseDetails {
                 export_asset_to_signed_url: self.export_asset_to_signed_url,
@@ -2736,7 +2718,7 @@ pub mod response_details {
     }
 }
 impl ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ResponseDetails`](crate::model::ResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ResponseDetails`](crate::model::ResponseDetails).
     pub fn builder() -> crate::model::response_details::Builder {
         crate::model::response_details::Builder::default()
     }
@@ -2843,11 +2825,10 @@ impl std::fmt::Debug for ImportAssetFromApiGatewayApiResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
+/// See [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
 pub mod import_asset_from_api_gateway_api_response_details {
 
-    /// A builder for [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_description: std::option::Option<std::string::String>,
@@ -2995,7 +2976,7 @@ pub mod import_asset_from_api_gateway_api_response_details {
             self.stage = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
+        /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
         pub fn build(self) -> crate::model::ImportAssetFromApiGatewayApiResponseDetails {
             crate::model::ImportAssetFromApiGatewayApiResponseDetails {
                 api_description: self.api_description,
@@ -3015,7 +2996,7 @@ pub mod import_asset_from_api_gateway_api_response_details {
     }
 }
 impl ImportAssetFromApiGatewayApiResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
     pub fn builder() -> crate::model::import_asset_from_api_gateway_api_response_details::Builder {
         crate::model::import_asset_from_api_gateway_api_response_details::Builder::default()
     }
@@ -3058,11 +3039,10 @@ impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails)
+/// See [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
 pub mod import_assets_from_redshift_data_shares_response_details {
 
-    /// A builder for [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources:
@@ -3115,7 +3095,7 @@ pub mod import_assets_from_redshift_data_shares_response_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails)
+        /// Consumes the builder and constructs a [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
         pub fn build(self) -> crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails {
             crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails {
                 asset_sources: self.asset_sources,
@@ -3126,7 +3106,7 @@ pub mod import_assets_from_redshift_data_shares_response_details {
     }
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
     pub fn builder(
     ) -> crate::model::import_assets_from_redshift_data_shares_response_details::Builder {
         crate::model::import_assets_from_redshift_data_shares_response_details::Builder::default()
@@ -3153,11 +3133,10 @@ impl std::fmt::Debug for RedshiftDataShareAssetSourceEntry {
         formatter.finish()
     }
 }
-/// See [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry)
+/// See [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
 pub mod redshift_data_share_asset_source_entry {
 
-    /// A builder for [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry)
-    #[non_exhaustive]
+    /// A builder for [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_share_arn: std::option::Option<std::string::String>,
@@ -3176,7 +3155,7 @@ pub mod redshift_data_share_asset_source_entry {
             self.data_share_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry)
+        /// Consumes the builder and constructs a [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
         pub fn build(self) -> crate::model::RedshiftDataShareAssetSourceEntry {
             crate::model::RedshiftDataShareAssetSourceEntry {
                 data_share_arn: self.data_share_arn,
@@ -3185,7 +3164,7 @@ pub mod redshift_data_share_asset_source_entry {
     }
 }
 impl RedshiftDataShareAssetSourceEntry {
-    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry)
+    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
     pub fn builder() -> crate::model::redshift_data_share_asset_source_entry::Builder {
         crate::model::redshift_data_share_asset_source_entry::Builder::default()
     }
@@ -3225,11 +3204,10 @@ impl std::fmt::Debug for ImportAssetsFromS3ResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails)
+/// See [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
 pub mod import_assets_from_s3_response_details {
 
-    /// A builder for [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources:
@@ -3277,7 +3255,7 @@ pub mod import_assets_from_s3_response_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails)
+        /// Consumes the builder and constructs a [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
         pub fn build(self) -> crate::model::ImportAssetsFromS3ResponseDetails {
             crate::model::ImportAssetsFromS3ResponseDetails {
                 asset_sources: self.asset_sources,
@@ -3288,7 +3266,7 @@ pub mod import_assets_from_s3_response_details {
     }
 }
 impl ImportAssetsFromS3ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
     pub fn builder() -> crate::model::import_assets_from_s3_response_details::Builder {
         crate::model::import_assets_from_s3_response_details::Builder::default()
     }
@@ -3349,11 +3327,10 @@ impl std::fmt::Debug for ImportAssetFromSignedUrlResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails)
+/// See [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
 pub mod import_asset_from_signed_url_response_details {
 
-    /// A builder for [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_name: std::option::Option<std::string::String>,
@@ -3427,7 +3404,7 @@ pub mod import_asset_from_signed_url_response_details {
             self.signed_url_expires_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails)
+        /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
         pub fn build(self) -> crate::model::ImportAssetFromSignedUrlResponseDetails {
             crate::model::ImportAssetFromSignedUrlResponseDetails {
                 asset_name: self.asset_name,
@@ -3441,7 +3418,7 @@ pub mod import_asset_from_signed_url_response_details {
     }
 }
 impl ImportAssetFromSignedUrlResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
     pub fn builder() -> crate::model::import_asset_from_signed_url_response_details::Builder {
         crate::model::import_asset_from_signed_url_response_details::Builder::default()
     }
@@ -3491,11 +3468,10 @@ impl std::fmt::Debug for ExportRevisionsToS3ResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails)
+/// See [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
 pub mod export_revisions_to_s3_response_details {
 
-    /// A builder for [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -3563,7 +3539,7 @@ pub mod export_revisions_to_s3_response_details {
             self.event_action_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails)
+        /// Consumes the builder and constructs a [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
         pub fn build(self) -> crate::model::ExportRevisionsToS3ResponseDetails {
             crate::model::ExportRevisionsToS3ResponseDetails {
                 data_set_id: self.data_set_id,
@@ -3575,7 +3551,7 @@ pub mod export_revisions_to_s3_response_details {
     }
 }
 impl ExportRevisionsToS3ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
     pub fn builder() -> crate::model::export_revisions_to_s3_response_details::Builder {
         crate::model::export_revisions_to_s3_response_details::Builder::default()
     }
@@ -3615,11 +3591,10 @@ impl std::fmt::Debug for RevisionDestinationEntry {
         formatter.finish()
     }
 }
-/// See [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry)
+/// See [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
 pub mod revision_destination_entry {
 
-    /// A builder for [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry)
-    #[non_exhaustive]
+    /// A builder for [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -3657,7 +3632,7 @@ pub mod revision_destination_entry {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry)
+        /// Consumes the builder and constructs a [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
         pub fn build(self) -> crate::model::RevisionDestinationEntry {
             crate::model::RevisionDestinationEntry {
                 bucket: self.bucket,
@@ -3668,7 +3643,7 @@ pub mod revision_destination_entry {
     }
 }
 impl RevisionDestinationEntry {
-    /// Creates a new builder-style object to manufacture [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry)
+    /// Creates a new builder-style object to manufacture [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
     pub fn builder() -> crate::model::revision_destination_entry::Builder {
         crate::model::revision_destination_entry::Builder::default()
     }
@@ -3717,11 +3692,10 @@ impl std::fmt::Debug for ExportAssetsToS3ResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails)
+/// See [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
 pub mod export_assets_to_s3_response_details {
 
-    /// A builder for [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_destinations:
@@ -3783,7 +3757,7 @@ pub mod export_assets_to_s3_response_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails)
+        /// Consumes the builder and constructs a [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
         pub fn build(self) -> crate::model::ExportAssetsToS3ResponseDetails {
             crate::model::ExportAssetsToS3ResponseDetails {
                 asset_destinations: self.asset_destinations,
@@ -3795,7 +3769,7 @@ pub mod export_assets_to_s3_response_details {
     }
 }
 impl ExportAssetsToS3ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
     pub fn builder() -> crate::model::export_assets_to_s3_response_details::Builder {
         crate::model::export_assets_to_s3_response_details::Builder::default()
     }
@@ -3835,11 +3809,10 @@ impl std::fmt::Debug for AssetDestinationEntry {
         formatter.finish()
     }
 }
-/// See [`AssetDestinationEntry`](crate::model::AssetDestinationEntry)
+/// See [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
 pub mod asset_destination_entry {
 
-    /// A builder for [`AssetDestinationEntry`](crate::model::AssetDestinationEntry)
-    #[non_exhaustive]
+    /// A builder for [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -3877,7 +3850,7 @@ pub mod asset_destination_entry {
             self.key = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssetDestinationEntry`](crate::model::AssetDestinationEntry)
+        /// Consumes the builder and constructs a [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
         pub fn build(self) -> crate::model::AssetDestinationEntry {
             crate::model::AssetDestinationEntry {
                 asset_id: self.asset_id,
@@ -3888,7 +3861,7 @@ pub mod asset_destination_entry {
     }
 }
 impl AssetDestinationEntry {
-    /// Creates a new builder-style object to manufacture [`AssetDestinationEntry`](crate::model::AssetDestinationEntry)
+    /// Creates a new builder-style object to manufacture [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
     pub fn builder() -> crate::model::asset_destination_entry::Builder {
         crate::model::asset_destination_entry::Builder::default()
     }
@@ -3942,11 +3915,10 @@ impl std::fmt::Debug for ExportAssetToSignedUrlResponseDetails {
         formatter.finish()
     }
 }
-/// See [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails)
+/// See [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
 pub mod export_asset_to_signed_url_response_details {
 
-    /// A builder for [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails)
-    #[non_exhaustive]
+    /// A builder for [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -4009,7 +3981,7 @@ pub mod export_asset_to_signed_url_response_details {
             self.signed_url_expires_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails)
+        /// Consumes the builder and constructs a [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
         pub fn build(self) -> crate::model::ExportAssetToSignedUrlResponseDetails {
             crate::model::ExportAssetToSignedUrlResponseDetails {
                 asset_id: self.asset_id,
@@ -4022,7 +3994,7 @@ pub mod export_asset_to_signed_url_response_details {
     }
 }
 impl ExportAssetToSignedUrlResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails)
+    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
     pub fn builder() -> crate::model::export_asset_to_signed_url_response_details::Builder {
         crate::model::export_asset_to_signed_url_response_details::Builder::default()
     }
@@ -4083,11 +4055,10 @@ impl std::fmt::Debug for EventActionEntry {
         formatter.finish()
     }
 }
-/// See [`EventActionEntry`](crate::model::EventActionEntry)
+/// See [`EventActionEntry`](crate::model::EventActionEntry).
 pub mod event_action_entry {
 
-    /// A builder for [`EventActionEntry`](crate::model::EventActionEntry)
-    #[non_exhaustive]
+    /// A builder for [`EventActionEntry`](crate::model::EventActionEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::Action>,
@@ -4164,7 +4135,7 @@ pub mod event_action_entry {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventActionEntry`](crate::model::EventActionEntry)
+        /// Consumes the builder and constructs a [`EventActionEntry`](crate::model::EventActionEntry).
         pub fn build(self) -> crate::model::EventActionEntry {
             crate::model::EventActionEntry {
                 action: self.action,
@@ -4178,7 +4149,7 @@ pub mod event_action_entry {
     }
 }
 impl EventActionEntry {
-    /// Creates a new builder-style object to manufacture [`EventActionEntry`](crate::model::EventActionEntry)
+    /// Creates a new builder-style object to manufacture [`EventActionEntry`](crate::model::EventActionEntry).
     pub fn builder() -> crate::model::event_action_entry::Builder {
         crate::model::event_action_entry::Builder::default()
     }
@@ -4267,11 +4238,10 @@ impl std::fmt::Debug for DataSetEntry {
         formatter.finish()
     }
 }
-/// See [`DataSetEntry`](crate::model::DataSetEntry)
+/// See [`DataSetEntry`](crate::model::DataSetEntry).
 pub mod data_set_entry {
 
-    /// A builder for [`DataSetEntry`](crate::model::DataSetEntry)
-    #[non_exhaustive]
+    /// A builder for [`DataSetEntry`](crate::model::DataSetEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4398,7 +4368,7 @@ pub mod data_set_entry {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataSetEntry`](crate::model::DataSetEntry)
+        /// Consumes the builder and constructs a [`DataSetEntry`](crate::model::DataSetEntry).
         pub fn build(self) -> crate::model::DataSetEntry {
             crate::model::DataSetEntry {
                 arn: self.arn,
@@ -4416,7 +4386,7 @@ pub mod data_set_entry {
     }
 }
 impl DataSetEntry {
-    /// Creates a new builder-style object to manufacture [`DataSetEntry`](crate::model::DataSetEntry)
+    /// Creates a new builder-style object to manufacture [`DataSetEntry`](crate::model::DataSetEntry).
     pub fn builder() -> crate::model::data_set_entry::Builder {
         crate::model::data_set_entry::Builder::default()
     }
@@ -4514,11 +4484,10 @@ impl std::fmt::Debug for RevisionEntry {
         formatter.finish()
     }
 }
-/// See [`RevisionEntry`](crate::model::RevisionEntry)
+/// See [`RevisionEntry`](crate::model::RevisionEntry).
 pub mod revision_entry {
 
-    /// A builder for [`RevisionEntry`](crate::model::RevisionEntry)
-    #[non_exhaustive]
+    /// A builder for [`RevisionEntry`](crate::model::RevisionEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4658,7 +4627,7 @@ pub mod revision_entry {
             self.revoked_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`RevisionEntry`](crate::model::RevisionEntry)
+        /// Consumes the builder and constructs a [`RevisionEntry`](crate::model::RevisionEntry).
         pub fn build(self) -> crate::model::RevisionEntry {
             crate::model::RevisionEntry {
                 arn: self.arn,
@@ -4677,7 +4646,7 @@ pub mod revision_entry {
     }
 }
 impl RevisionEntry {
-    /// Creates a new builder-style object to manufacture [`RevisionEntry`](crate::model::RevisionEntry)
+    /// Creates a new builder-style object to manufacture [`RevisionEntry`](crate::model::RevisionEntry).
     pub fn builder() -> crate::model::revision_entry::Builder {
         crate::model::revision_entry::Builder::default()
     }
@@ -4776,11 +4745,10 @@ impl std::fmt::Debug for RequestDetails {
         formatter.finish()
     }
 }
-/// See [`RequestDetails`](crate::model::RequestDetails)
+/// See [`RequestDetails`](crate::model::RequestDetails).
 pub mod request_details {
 
-    /// A builder for [`RequestDetails`](crate::model::RequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`RequestDetails`](crate::model::RequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_asset_to_signed_url:
@@ -4913,7 +4881,7 @@ pub mod request_details {
             self.import_asset_from_api_gateway_api = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestDetails`](crate::model::RequestDetails)
+        /// Consumes the builder and constructs a [`RequestDetails`](crate::model::RequestDetails).
         pub fn build(self) -> crate::model::RequestDetails {
             crate::model::RequestDetails {
                 export_asset_to_signed_url: self.export_asset_to_signed_url,
@@ -4929,7 +4897,7 @@ pub mod request_details {
     }
 }
 impl RequestDetails {
-    /// Creates a new builder-style object to manufacture [`RequestDetails`](crate::model::RequestDetails)
+    /// Creates a new builder-style object to manufacture [`RequestDetails`](crate::model::RequestDetails).
     pub fn builder() -> crate::model::request_details::Builder {
         crate::model::request_details::Builder::default()
     }
@@ -5014,11 +4982,10 @@ impl std::fmt::Debug for ImportAssetFromApiGatewayApiRequestDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
+/// See [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
 pub mod import_asset_from_api_gateway_api_request_details {
 
-    /// A builder for [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_description: std::option::Option<std::string::String>,
@@ -5131,7 +5098,7 @@ pub mod import_asset_from_api_gateway_api_request_details {
             self.stage = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
+        /// Consumes the builder and constructs a [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
         pub fn build(self) -> crate::model::ImportAssetFromApiGatewayApiRequestDetails {
             crate::model::ImportAssetFromApiGatewayApiRequestDetails {
                 api_description: self.api_description,
@@ -5148,7 +5115,7 @@ pub mod import_asset_from_api_gateway_api_request_details {
     }
 }
 impl ImportAssetFromApiGatewayApiRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
     pub fn builder() -> crate::model::import_asset_from_api_gateway_api_request_details::Builder {
         crate::model::import_asset_from_api_gateway_api_request_details::Builder::default()
     }
@@ -5191,11 +5158,10 @@ impl std::fmt::Debug for ImportAssetsFromRedshiftDataSharesRequestDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails)
+/// See [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
 pub mod import_assets_from_redshift_data_shares_request_details {
 
-    /// A builder for [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources:
@@ -5248,7 +5214,7 @@ pub mod import_assets_from_redshift_data_shares_request_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails)
+        /// Consumes the builder and constructs a [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
         pub fn build(self) -> crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails {
             crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails {
                 asset_sources: self.asset_sources,
@@ -5259,7 +5225,7 @@ pub mod import_assets_from_redshift_data_shares_request_details {
     }
 }
 impl ImportAssetsFromRedshiftDataSharesRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
     pub fn builder(
     ) -> crate::model::import_assets_from_redshift_data_shares_request_details::Builder {
         crate::model::import_assets_from_redshift_data_shares_request_details::Builder::default()
@@ -5300,11 +5266,10 @@ impl std::fmt::Debug for ImportAssetsFromS3RequestDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails)
+/// See [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
 pub mod import_assets_from_s3_request_details {
 
-    /// A builder for [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_sources:
@@ -5352,7 +5317,7 @@ pub mod import_assets_from_s3_request_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails)
+        /// Consumes the builder and constructs a [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
         pub fn build(self) -> crate::model::ImportAssetsFromS3RequestDetails {
             crate::model::ImportAssetsFromS3RequestDetails {
                 asset_sources: self.asset_sources,
@@ -5363,7 +5328,7 @@ pub mod import_assets_from_s3_request_details {
     }
 }
 impl ImportAssetsFromS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
     pub fn builder() -> crate::model::import_assets_from_s3_request_details::Builder {
         crate::model::import_assets_from_s3_request_details::Builder::default()
     }
@@ -5410,11 +5375,10 @@ impl std::fmt::Debug for ImportAssetFromSignedUrlRequestDetails {
         formatter.finish()
     }
 }
-/// See [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails)
+/// See [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
 pub mod import_asset_from_signed_url_request_details {
 
-    /// A builder for [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_name: std::option::Option<std::string::String>,
@@ -5463,7 +5427,7 @@ pub mod import_asset_from_signed_url_request_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails)
+        /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
         pub fn build(self) -> crate::model::ImportAssetFromSignedUrlRequestDetails {
             crate::model::ImportAssetFromSignedUrlRequestDetails {
                 asset_name: self.asset_name,
@@ -5475,7 +5439,7 @@ pub mod import_asset_from_signed_url_request_details {
     }
 }
 impl ImportAssetFromSignedUrlRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails)
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
     pub fn builder() -> crate::model::import_asset_from_signed_url_request_details::Builder {
         crate::model::import_asset_from_signed_url_request_details::Builder::default()
     }
@@ -5518,11 +5482,10 @@ impl std::fmt::Debug for ExportRevisionsToS3RequestDetails {
         formatter.finish()
     }
 }
-/// See [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails)
+/// See [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
 pub mod export_revisions_to_s3_request_details {
 
-    /// A builder for [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_set_id: std::option::Option<std::string::String>,
@@ -5576,7 +5539,7 @@ pub mod export_revisions_to_s3_request_details {
             self.revision_destinations = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails)
+        /// Consumes the builder and constructs a [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
         pub fn build(self) -> crate::model::ExportRevisionsToS3RequestDetails {
             crate::model::ExportRevisionsToS3RequestDetails {
                 data_set_id: self.data_set_id,
@@ -5587,7 +5550,7 @@ pub mod export_revisions_to_s3_request_details {
     }
 }
 impl ExportRevisionsToS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails)
+    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
     pub fn builder() -> crate::model::export_revisions_to_s3_request_details::Builder {
         crate::model::export_revisions_to_s3_request_details::Builder::default()
     }
@@ -5636,11 +5599,10 @@ impl std::fmt::Debug for ExportAssetsToS3RequestDetails {
         formatter.finish()
     }
 }
-/// See [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails)
+/// See [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
 pub mod export_assets_to_s3_request_details {
 
-    /// A builder for [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_destinations:
@@ -5702,7 +5664,7 @@ pub mod export_assets_to_s3_request_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails)
+        /// Consumes the builder and constructs a [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
         pub fn build(self) -> crate::model::ExportAssetsToS3RequestDetails {
             crate::model::ExportAssetsToS3RequestDetails {
                 asset_destinations: self.asset_destinations,
@@ -5714,7 +5676,7 @@ pub mod export_assets_to_s3_request_details {
     }
 }
 impl ExportAssetsToS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails)
+    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
     pub fn builder() -> crate::model::export_assets_to_s3_request_details::Builder {
         crate::model::export_assets_to_s3_request_details::Builder::default()
     }
@@ -5754,11 +5716,10 @@ impl std::fmt::Debug for ExportAssetToSignedUrlRequestDetails {
         formatter.finish()
     }
 }
-/// See [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails)
+/// See [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
 pub mod export_asset_to_signed_url_request_details {
 
-    /// A builder for [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails)
-    #[non_exhaustive]
+    /// A builder for [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asset_id: std::option::Option<std::string::String>,
@@ -5796,7 +5757,7 @@ pub mod export_asset_to_signed_url_request_details {
             self.revision_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails)
+        /// Consumes the builder and constructs a [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
         pub fn build(self) -> crate::model::ExportAssetToSignedUrlRequestDetails {
             crate::model::ExportAssetToSignedUrlRequestDetails {
                 asset_id: self.asset_id,
@@ -5807,7 +5768,7 @@ pub mod export_asset_to_signed_url_request_details {
     }
 }
 impl ExportAssetToSignedUrlRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails)
+    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
     pub fn builder() -> crate::model::export_asset_to_signed_url_request_details::Builder {
         crate::model::export_asset_to_signed_url_request_details::Builder::default()
     }

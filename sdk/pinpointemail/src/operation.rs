@@ -10,7 +10,7 @@ pub struct CreateConfigurationSet {
     _private: (),
 }
 impl CreateConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
     pub fn builder() -> crate::input::create_configuration_set_input::Builder {
         crate::input::create_configuration_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateConfigurationSetEventDestination {
     _private: (),
 }
 impl CreateConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::create_configuration_set_event_destination_input::Builder {
         crate::input::create_configuration_set_event_destination_input::Builder::default()
     }
@@ -80,7 +80,7 @@ pub struct CreateDedicatedIpPool {
     _private: (),
 }
 impl CreateDedicatedIpPool {
-    /// Creates a new builder-style object to manufacture [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput)
+    /// Creates a new builder-style object to manufacture [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput).
     pub fn builder() -> crate::input::create_dedicated_ip_pool_input::Builder {
         crate::input::create_dedicated_ip_pool_input::Builder::default()
     }
@@ -114,7 +114,7 @@ pub struct CreateDeliverabilityTestReport {
     _private: (),
 }
 impl CreateDeliverabilityTestReport {
-    /// Creates a new builder-style object to manufacture [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput).
     pub fn builder() -> crate::input::create_deliverability_test_report_input::Builder {
         crate::input::create_deliverability_test_report_input::Builder::default()
     }
@@ -148,7 +148,7 @@ pub struct CreateEmailIdentity {
     _private: (),
 }
 impl CreateEmailIdentity {
-    /// Creates a new builder-style object to manufacture [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput)
+    /// Creates a new builder-style object to manufacture [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput).
     pub fn builder() -> crate::input::create_email_identity_input::Builder {
         crate::input::create_email_identity_input::Builder::default()
     }
@@ -182,7 +182,7 @@ pub struct DeleteConfigurationSet {
     _private: (),
 }
 impl DeleteConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
     pub fn builder() -> crate::input::delete_configuration_set_input::Builder {
         crate::input::delete_configuration_set_input::Builder::default()
     }
@@ -216,7 +216,7 @@ pub struct DeleteConfigurationSetEventDestination {
     _private: (),
 }
 impl DeleteConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::delete_configuration_set_event_destination_input::Builder {
         crate::input::delete_configuration_set_event_destination_input::Builder::default()
     }
@@ -252,7 +252,7 @@ pub struct DeleteDedicatedIpPool {
     _private: (),
 }
 impl DeleteDedicatedIpPool {
-    /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput).
     pub fn builder() -> crate::input::delete_dedicated_ip_pool_input::Builder {
         crate::input::delete_dedicated_ip_pool_input::Builder::default()
     }
@@ -286,7 +286,7 @@ pub struct DeleteEmailIdentity {
     _private: (),
 }
 impl DeleteEmailIdentity {
-    /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput).
     pub fn builder() -> crate::input::delete_email_identity_input::Builder {
         crate::input::delete_email_identity_input::Builder::default()
     }
@@ -320,7 +320,7 @@ pub struct GetAccount {
     _private: (),
 }
 impl GetAccount {
-    /// Creates a new builder-style object to manufacture [`GetAccountInput`](crate::input::GetAccountInput)
+    /// Creates a new builder-style object to manufacture [`GetAccountInput`](crate::input::GetAccountInput).
     pub fn builder() -> crate::input::get_account_input::Builder {
         crate::input::get_account_input::Builder::default()
     }
@@ -352,7 +352,7 @@ pub struct GetBlacklistReports {
     _private: (),
 }
 impl GetBlacklistReports {
-    /// Creates a new builder-style object to manufacture [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput)
+    /// Creates a new builder-style object to manufacture [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput).
     pub fn builder() -> crate::input::get_blacklist_reports_input::Builder {
         crate::input::get_blacklist_reports_input::Builder::default()
     }
@@ -386,7 +386,7 @@ pub struct GetConfigurationSet {
     _private: (),
 }
 impl GetConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput).
     pub fn builder() -> crate::input::get_configuration_set_input::Builder {
         crate::input::get_configuration_set_input::Builder::default()
     }
@@ -420,7 +420,7 @@ pub struct GetConfigurationSetEventDestinations {
     _private: (),
 }
 impl GetConfigurationSetEventDestinations {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput)
+    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput).
     pub fn builder() -> crate::input::get_configuration_set_event_destinations_input::Builder {
         crate::input::get_configuration_set_event_destinations_input::Builder::default()
     }
@@ -456,7 +456,7 @@ pub struct GetDedicatedIp {
     _private: (),
 }
 impl GetDedicatedIp {
-    /// Creates a new builder-style object to manufacture [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput)
+    /// Creates a new builder-style object to manufacture [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput).
     pub fn builder() -> crate::input::get_dedicated_ip_input::Builder {
         crate::input::get_dedicated_ip_input::Builder::default()
     }
@@ -488,7 +488,7 @@ pub struct GetDedicatedIps {
     _private: (),
 }
 impl GetDedicatedIps {
-    /// Creates a new builder-style object to manufacture [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput)
+    /// Creates a new builder-style object to manufacture [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput).
     pub fn builder() -> crate::input::get_dedicated_ips_input::Builder {
         crate::input::get_dedicated_ips_input::Builder::default()
     }
@@ -522,7 +522,7 @@ pub struct GetDeliverabilityDashboardOptions {
     _private: (),
 }
 impl GetDeliverabilityDashboardOptions {
-    /// Creates a new builder-style object to manufacture [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput)
+    /// Creates a new builder-style object to manufacture [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput).
     pub fn builder() -> crate::input::get_deliverability_dashboard_options_input::Builder {
         crate::input::get_deliverability_dashboard_options_input::Builder::default()
     }
@@ -556,7 +556,7 @@ pub struct GetDeliverabilityTestReport {
     _private: (),
 }
 impl GetDeliverabilityTestReport {
-    /// Creates a new builder-style object to manufacture [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput)
+    /// Creates a new builder-style object to manufacture [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput).
     pub fn builder() -> crate::input::get_deliverability_test_report_input::Builder {
         crate::input::get_deliverability_test_report_input::Builder::default()
     }
@@ -590,7 +590,7 @@ pub struct GetDomainDeliverabilityCampaign {
     _private: (),
 }
 impl GetDomainDeliverabilityCampaign {
-    /// Creates a new builder-style object to manufacture [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput)
+    /// Creates a new builder-style object to manufacture [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput).
     pub fn builder() -> crate::input::get_domain_deliverability_campaign_input::Builder {
         crate::input::get_domain_deliverability_campaign_input::Builder::default()
     }
@@ -624,7 +624,7 @@ pub struct GetDomainStatisticsReport {
     _private: (),
 }
 impl GetDomainStatisticsReport {
-    /// Creates a new builder-style object to manufacture [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput)
+    /// Creates a new builder-style object to manufacture [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput).
     pub fn builder() -> crate::input::get_domain_statistics_report_input::Builder {
         crate::input::get_domain_statistics_report_input::Builder::default()
     }
@@ -658,7 +658,7 @@ pub struct GetEmailIdentity {
     _private: (),
 }
 impl GetEmailIdentity {
-    /// Creates a new builder-style object to manufacture [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput)
+    /// Creates a new builder-style object to manufacture [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput).
     pub fn builder() -> crate::input::get_email_identity_input::Builder {
         crate::input::get_email_identity_input::Builder::default()
     }
@@ -692,7 +692,7 @@ pub struct ListConfigurationSets {
     _private: (),
 }
 impl ListConfigurationSets {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput).
     pub fn builder() -> crate::input::list_configuration_sets_input::Builder {
         crate::input::list_configuration_sets_input::Builder::default()
     }
@@ -726,7 +726,7 @@ pub struct ListDedicatedIpPools {
     _private: (),
 }
 impl ListDedicatedIpPools {
-    /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput)
+    /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput).
     pub fn builder() -> crate::input::list_dedicated_ip_pools_input::Builder {
         crate::input::list_dedicated_ip_pools_input::Builder::default()
     }
@@ -760,7 +760,7 @@ pub struct ListDeliverabilityTestReports {
     _private: (),
 }
 impl ListDeliverabilityTestReports {
-    /// Creates a new builder-style object to manufacture [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput).
     pub fn builder() -> crate::input::list_deliverability_test_reports_input::Builder {
         crate::input::list_deliverability_test_reports_input::Builder::default()
     }
@@ -794,7 +794,7 @@ pub struct ListDomainDeliverabilityCampaigns {
     _private: (),
 }
 impl ListDomainDeliverabilityCampaigns {
-    /// Creates a new builder-style object to manufacture [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput).
     pub fn builder() -> crate::input::list_domain_deliverability_campaigns_input::Builder {
         crate::input::list_domain_deliverability_campaigns_input::Builder::default()
     }
@@ -828,7 +828,7 @@ pub struct ListEmailIdentities {
     _private: (),
 }
 impl ListEmailIdentities {
-    /// Creates a new builder-style object to manufacture [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput).
     pub fn builder() -> crate::input::list_email_identities_input::Builder {
         crate::input::list_email_identities_input::Builder::default()
     }
@@ -862,7 +862,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -896,7 +896,7 @@ pub struct PutAccountDedicatedIpWarmupAttributes {
     _private: (),
 }
 impl PutAccountDedicatedIpWarmupAttributes {
-    /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput)
+    /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput).
     pub fn builder() -> crate::input::put_account_dedicated_ip_warmup_attributes_input::Builder {
         crate::input::put_account_dedicated_ip_warmup_attributes_input::Builder::default()
     }
@@ -932,7 +932,7 @@ pub struct PutAccountSendingAttributes {
     _private: (),
 }
 impl PutAccountSendingAttributes {
-    /// Creates a new builder-style object to manufacture [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput)
+    /// Creates a new builder-style object to manufacture [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput).
     pub fn builder() -> crate::input::put_account_sending_attributes_input::Builder {
         crate::input::put_account_sending_attributes_input::Builder::default()
     }
@@ -966,7 +966,7 @@ pub struct PutConfigurationSetDeliveryOptions {
     _private: (),
 }
 impl PutConfigurationSetDeliveryOptions {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput)
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput).
     pub fn builder() -> crate::input::put_configuration_set_delivery_options_input::Builder {
         crate::input::put_configuration_set_delivery_options_input::Builder::default()
     }
@@ -1000,7 +1000,7 @@ pub struct PutConfigurationSetReputationOptions {
     _private: (),
 }
 impl PutConfigurationSetReputationOptions {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput)
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput).
     pub fn builder() -> crate::input::put_configuration_set_reputation_options_input::Builder {
         crate::input::put_configuration_set_reputation_options_input::Builder::default()
     }
@@ -1036,7 +1036,7 @@ pub struct PutConfigurationSetSendingOptions {
     _private: (),
 }
 impl PutConfigurationSetSendingOptions {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput)
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput).
     pub fn builder() -> crate::input::put_configuration_set_sending_options_input::Builder {
         crate::input::put_configuration_set_sending_options_input::Builder::default()
     }
@@ -1070,7 +1070,7 @@ pub struct PutConfigurationSetTrackingOptions {
     _private: (),
 }
 impl PutConfigurationSetTrackingOptions {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput)
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput).
     pub fn builder() -> crate::input::put_configuration_set_tracking_options_input::Builder {
         crate::input::put_configuration_set_tracking_options_input::Builder::default()
     }
@@ -1104,7 +1104,7 @@ pub struct PutDedicatedIpInPool {
     _private: (),
 }
 impl PutDedicatedIpInPool {
-    /// Creates a new builder-style object to manufacture [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput)
+    /// Creates a new builder-style object to manufacture [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput).
     pub fn builder() -> crate::input::put_dedicated_ip_in_pool_input::Builder {
         crate::input::put_dedicated_ip_in_pool_input::Builder::default()
     }
@@ -1138,7 +1138,7 @@ pub struct PutDedicatedIpWarmupAttributes {
     _private: (),
 }
 impl PutDedicatedIpWarmupAttributes {
-    /// Creates a new builder-style object to manufacture [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput)
+    /// Creates a new builder-style object to manufacture [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput).
     pub fn builder() -> crate::input::put_dedicated_ip_warmup_attributes_input::Builder {
         crate::input::put_dedicated_ip_warmup_attributes_input::Builder::default()
     }
@@ -1172,7 +1172,7 @@ pub struct PutDeliverabilityDashboardOption {
     _private: (),
 }
 impl PutDeliverabilityDashboardOption {
-    /// Creates a new builder-style object to manufacture [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput)
+    /// Creates a new builder-style object to manufacture [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput).
     pub fn builder() -> crate::input::put_deliverability_dashboard_option_input::Builder {
         crate::input::put_deliverability_dashboard_option_input::Builder::default()
     }
@@ -1206,7 +1206,7 @@ pub struct PutEmailIdentityDkimAttributes {
     _private: (),
 }
 impl PutEmailIdentityDkimAttributes {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput)
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput).
     pub fn builder() -> crate::input::put_email_identity_dkim_attributes_input::Builder {
         crate::input::put_email_identity_dkim_attributes_input::Builder::default()
     }
@@ -1240,7 +1240,7 @@ pub struct PutEmailIdentityFeedbackAttributes {
     _private: (),
 }
 impl PutEmailIdentityFeedbackAttributes {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput)
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput).
     pub fn builder() -> crate::input::put_email_identity_feedback_attributes_input::Builder {
         crate::input::put_email_identity_feedback_attributes_input::Builder::default()
     }
@@ -1274,7 +1274,7 @@ pub struct PutEmailIdentityMailFromAttributes {
     _private: (),
 }
 impl PutEmailIdentityMailFromAttributes {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput)
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput).
     pub fn builder() -> crate::input::put_email_identity_mail_from_attributes_input::Builder {
         crate::input::put_email_identity_mail_from_attributes_input::Builder::default()
     }
@@ -1308,7 +1308,7 @@ pub struct SendEmail {
     _private: (),
 }
 impl SendEmail {
-    /// Creates a new builder-style object to manufacture [`SendEmailInput`](crate::input::SendEmailInput)
+    /// Creates a new builder-style object to manufacture [`SendEmailInput`](crate::input::SendEmailInput).
     pub fn builder() -> crate::input::send_email_input::Builder {
         crate::input::send_email_input::Builder::default()
     }
@@ -1339,7 +1339,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1371,7 +1371,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1403,7 +1403,7 @@ pub struct UpdateConfigurationSetEventDestination {
     _private: (),
 }
 impl UpdateConfigurationSetEventDestination {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput).
     pub fn builder() -> crate::input::update_configuration_set_event_destination_input::Builder {
         crate::input::update_configuration_set_event_destination_input::Builder::default()
     }

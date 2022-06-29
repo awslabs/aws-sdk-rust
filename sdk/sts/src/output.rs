@@ -24,11 +24,10 @@ impl std::fmt::Debug for GetSessionTokenOutput {
         formatter.finish()
     }
 }
-/// See [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput)
+/// See [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
 pub mod get_session_token_output {
 
-    /// A builder for [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
@@ -51,7 +50,7 @@ pub mod get_session_token_output {
             self.credentials = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput)
+        /// Consumes the builder and constructs a [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
         pub fn build(self) -> crate::output::GetSessionTokenOutput {
             crate::output::GetSessionTokenOutput {
                 credentials: self.credentials,
@@ -60,7 +59,7 @@ pub mod get_session_token_output {
     }
 }
 impl GetSessionTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput)
+    /// Creates a new builder-style object to manufacture [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
     pub fn builder() -> crate::output::get_session_token_output::Builder {
         crate::output::get_session_token_output::Builder::default()
     }
@@ -104,11 +103,10 @@ impl std::fmt::Debug for GetFederationTokenOutput {
         formatter.finish()
     }
 }
-/// See [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
+/// See [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
 pub mod get_federation_token_output {
 
-    /// A builder for [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
@@ -156,7 +154,7 @@ pub mod get_federation_token_output {
             self.packed_policy_size = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
+        /// Consumes the builder and constructs a [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
         pub fn build(self) -> crate::output::GetFederationTokenOutput {
             crate::output::GetFederationTokenOutput {
                 credentials: self.credentials,
@@ -167,7 +165,7 @@ pub mod get_federation_token_output {
     }
 }
 impl GetFederationTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput)
+    /// Creates a new builder-style object to manufacture [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
     pub fn builder() -> crate::output::get_federation_token_output::Builder {
         crate::output::get_federation_token_output::Builder::default()
     }
@@ -207,11 +205,10 @@ impl std::fmt::Debug for GetCallerIdentityOutput {
         formatter.finish()
     }
 }
-/// See [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput)
+/// See [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
 pub mod get_caller_identity_output {
 
-    /// A builder for [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_id: std::option::Option<std::string::String>,
@@ -249,7 +246,7 @@ pub mod get_caller_identity_output {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput)
+        /// Consumes the builder and constructs a [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
         pub fn build(self) -> crate::output::GetCallerIdentityOutput {
             crate::output::GetCallerIdentityOutput {
                 user_id: self.user_id,
@@ -260,7 +257,7 @@ pub mod get_caller_identity_output {
     }
 }
 impl GetCallerIdentityOutput {
-    /// Creates a new builder-style object to manufacture [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput)
+    /// Creates a new builder-style object to manufacture [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
     pub fn builder() -> crate::output::get_caller_identity_output::Builder {
         crate::output::get_caller_identity_output::Builder::default()
     }
@@ -286,11 +283,10 @@ impl std::fmt::Debug for GetAccessKeyInfoOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput)
+/// See [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
 pub mod get_access_key_info_output {
 
-    /// A builder for [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<std::string::String>,
@@ -306,7 +302,7 @@ pub mod get_access_key_info_output {
             self.account = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput)
+        /// Consumes the builder and constructs a [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
         pub fn build(self) -> crate::output::GetAccessKeyInfoOutput {
             crate::output::GetAccessKeyInfoOutput {
                 account: self.account,
@@ -315,7 +311,7 @@ pub mod get_access_key_info_output {
     }
 }
 impl GetAccessKeyInfoOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
     pub fn builder() -> crate::output::get_access_key_info_output::Builder {
         crate::output::get_access_key_info_output::Builder::default()
     }
@@ -341,11 +337,10 @@ impl std::fmt::Debug for DecodeAuthorizationMessageOutput {
         formatter.finish()
     }
 }
-/// See [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput)
+/// See [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
 pub mod decode_authorization_message_output {
 
-    /// A builder for [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput)
-    #[non_exhaustive]
+    /// A builder for [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decoded_message: std::option::Option<std::string::String>,
@@ -364,7 +359,7 @@ pub mod decode_authorization_message_output {
             self.decoded_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput)
+        /// Consumes the builder and constructs a [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
         pub fn build(self) -> crate::output::DecodeAuthorizationMessageOutput {
             crate::output::DecodeAuthorizationMessageOutput {
                 decoded_message: self.decoded_message,
@@ -373,7 +368,7 @@ pub mod decode_authorization_message_output {
     }
 }
 impl DecodeAuthorizationMessageOutput {
-    /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput)
+    /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
     pub fn builder() -> crate::output::decode_authorization_message_output::Builder {
         crate::output::decode_authorization_message_output::Builder::default()
     }
@@ -452,11 +447,10 @@ impl std::fmt::Debug for AssumeRoleWithWebIdentityOutput {
         formatter.finish()
     }
 }
-/// See [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput)
+/// See [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
 pub mod assume_role_with_web_identity_output {
 
-    /// A builder for [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
@@ -561,7 +555,7 @@ pub mod assume_role_with_web_identity_output {
             self.source_identity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput)
+        /// Consumes the builder and constructs a [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
         pub fn build(self) -> crate::output::AssumeRoleWithWebIdentityOutput {
             crate::output::AssumeRoleWithWebIdentityOutput {
                 credentials: self.credentials,
@@ -576,7 +570,7 @@ pub mod assume_role_with_web_identity_output {
     }
 }
 impl AssumeRoleWithWebIdentityOutput {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
     pub fn builder() -> crate::output::assume_role_with_web_identity_output::Builder {
         crate::output::assume_role_with_web_identity_output::Builder::default()
     }
@@ -684,11 +678,10 @@ impl std::fmt::Debug for AssumeRoleWithSamlOutput {
         formatter.finish()
     }
 }
-/// See [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
+/// See [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
 pub mod assume_role_with_saml_output {
 
-    /// A builder for [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
@@ -830,7 +823,7 @@ pub mod assume_role_with_saml_output {
             self.source_identity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
+        /// Consumes the builder and constructs a [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
         pub fn build(self) -> crate::output::AssumeRoleWithSamlOutput {
             crate::output::AssumeRoleWithSamlOutput {
                 credentials: self.credentials,
@@ -847,7 +840,7 @@ pub mod assume_role_with_saml_output {
     }
 }
 impl AssumeRoleWithSamlOutput {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
     pub fn builder() -> crate::output::assume_role_with_saml_output::Builder {
         crate::output::assume_role_with_saml_output::Builder::default()
     }
@@ -902,11 +895,10 @@ impl std::fmt::Debug for AssumeRoleOutput {
         formatter.finish()
     }
 }
-/// See [`AssumeRoleOutput`](crate::output::AssumeRoleOutput)
+/// See [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
 pub mod assume_role_output {
 
-    /// A builder for [`AssumeRoleOutput`](crate::output::AssumeRoleOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
@@ -972,7 +964,7 @@ pub mod assume_role_output {
             self.source_identity = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssumeRoleOutput`](crate::output::AssumeRoleOutput)
+        /// Consumes the builder and constructs a [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
         pub fn build(self) -> crate::output::AssumeRoleOutput {
             crate::output::AssumeRoleOutput {
                 credentials: self.credentials,
@@ -984,7 +976,7 @@ pub mod assume_role_output {
     }
 }
 impl AssumeRoleOutput {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleOutput`](crate::output::AssumeRoleOutput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
     pub fn builder() -> crate::output::assume_role_output::Builder {
         crate::output::assume_role_output::Builder::default()
     }

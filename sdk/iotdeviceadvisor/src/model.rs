@@ -54,11 +54,10 @@ impl std::fmt::Debug for SuiteDefinitionConfiguration {
         formatter.finish()
     }
 }
-/// See [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration)
+/// See [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
 pub mod suite_definition_configuration {
 
-    /// A builder for [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_name: std::option::Option<std::string::String>,
@@ -133,7 +132,7 @@ pub mod suite_definition_configuration {
             self.device_permission_role_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration)
+        /// Consumes the builder and constructs a [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
         pub fn build(self) -> crate::model::SuiteDefinitionConfiguration {
             crate::model::SuiteDefinitionConfiguration {
                 suite_definition_name: self.suite_definition_name,
@@ -146,7 +145,7 @@ pub mod suite_definition_configuration {
     }
 }
 impl SuiteDefinitionConfiguration {
-    /// Creates a new builder-style object to manufacture [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration)
+    /// Creates a new builder-style object to manufacture [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
     pub fn builder() -> crate::model::suite_definition_configuration::Builder {
         crate::model::suite_definition_configuration::Builder::default()
     }
@@ -179,11 +178,10 @@ impl std::fmt::Debug for DeviceUnderTest {
         formatter.finish()
     }
 }
-/// See [`DeviceUnderTest`](crate::model::DeviceUnderTest)
+/// See [`DeviceUnderTest`](crate::model::DeviceUnderTest).
 pub mod device_under_test {
 
-    /// A builder for [`DeviceUnderTest`](crate::model::DeviceUnderTest)
-    #[non_exhaustive]
+    /// A builder for [`DeviceUnderTest`](crate::model::DeviceUnderTest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_arn: std::option::Option<std::string::String>,
@@ -213,7 +211,7 @@ pub mod device_under_test {
             self.certificate_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceUnderTest`](crate::model::DeviceUnderTest)
+        /// Consumes the builder and constructs a [`DeviceUnderTest`](crate::model::DeviceUnderTest).
         pub fn build(self) -> crate::model::DeviceUnderTest {
             crate::model::DeviceUnderTest {
                 thing_arn: self.thing_arn,
@@ -223,7 +221,7 @@ pub mod device_under_test {
     }
 }
 impl DeviceUnderTest {
-    /// Creates a new builder-style object to manufacture [`DeviceUnderTest`](crate::model::DeviceUnderTest)
+    /// Creates a new builder-style object to manufacture [`DeviceUnderTest`](crate::model::DeviceUnderTest).
     pub fn builder() -> crate::model::device_under_test::Builder {
         crate::model::device_under_test::Builder::default()
     }
@@ -263,11 +261,10 @@ impl std::fmt::Debug for SuiteRunConfiguration {
         formatter.finish()
     }
 }
-/// See [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration)
+/// See [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
 pub mod suite_run_configuration {
 
-    /// A builder for [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_device: std::option::Option<crate::model::DeviceUnderTest>,
@@ -317,7 +314,7 @@ pub mod suite_run_configuration {
             self.parallel_run = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration)
+        /// Consumes the builder and constructs a [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
         pub fn build(self) -> crate::model::SuiteRunConfiguration {
             crate::model::SuiteRunConfiguration {
                 primary_device: self.primary_device,
@@ -328,7 +325,7 @@ pub mod suite_run_configuration {
     }
 }
 impl SuiteRunConfiguration {
-    /// Creates a new builder-style object to manufacture [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration)
+    /// Creates a new builder-style object to manufacture [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
     pub fn builder() -> crate::model::suite_run_configuration::Builder {
         crate::model::suite_run_configuration::Builder::default()
     }
@@ -418,11 +415,10 @@ impl std::fmt::Debug for SuiteRunInformation {
         formatter.finish()
     }
 }
-/// See [`SuiteRunInformation`](crate::model::SuiteRunInformation)
+/// See [`SuiteRunInformation`](crate::model::SuiteRunInformation).
 pub mod suite_run_information {
 
-    /// A builder for [`SuiteRunInformation`](crate::model::SuiteRunInformation)
-    #[non_exhaustive]
+    /// A builder for [`SuiteRunInformation`](crate::model::SuiteRunInformation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -558,7 +554,7 @@ pub mod suite_run_information {
             self.failed = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuiteRunInformation`](crate::model::SuiteRunInformation)
+        /// Consumes the builder and constructs a [`SuiteRunInformation`](crate::model::SuiteRunInformation).
         pub fn build(self) -> crate::model::SuiteRunInformation {
             crate::model::SuiteRunInformation {
                 suite_definition_id: self.suite_definition_id,
@@ -576,7 +572,7 @@ pub mod suite_run_information {
     }
 }
 impl SuiteRunInformation {
-    /// Creates a new builder-style object to manufacture [`SuiteRunInformation`](crate::model::SuiteRunInformation)
+    /// Creates a new builder-style object to manufacture [`SuiteRunInformation`](crate::model::SuiteRunInformation).
     pub fn builder() -> crate::model::suite_run_information::Builder {
         crate::model::suite_run_information::Builder::default()
     }
@@ -726,11 +722,10 @@ impl std::fmt::Debug for SuiteDefinitionInformation {
         formatter.finish()
     }
 }
-/// See [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation)
+/// See [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
 pub mod suite_definition_information {
 
-    /// A builder for [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation)
-    #[non_exhaustive]
+    /// A builder for [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suite_definition_id: std::option::Option<std::string::String>,
@@ -809,7 +804,7 @@ pub mod suite_definition_information {
             self.created_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation)
+        /// Consumes the builder and constructs a [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
         pub fn build(self) -> crate::model::SuiteDefinitionInformation {
             crate::model::SuiteDefinitionInformation {
                 suite_definition_id: self.suite_definition_id,
@@ -822,7 +817,7 @@ pub mod suite_definition_information {
     }
 }
 impl SuiteDefinitionInformation {
-    /// Creates a new builder-style object to manufacture [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation)
+    /// Creates a new builder-style object to manufacture [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
     pub fn builder() -> crate::model::suite_definition_information::Builder {
         crate::model::suite_definition_information::Builder::default()
     }
@@ -848,11 +843,10 @@ impl std::fmt::Debug for TestResult {
         formatter.finish()
     }
 }
-/// See [`TestResult`](crate::model::TestResult)
+/// See [`TestResult`](crate::model::TestResult).
 pub mod test_result {
 
-    /// A builder for [`TestResult`](crate::model::TestResult)
-    #[non_exhaustive]
+    /// A builder for [`TestResult`](crate::model::TestResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
@@ -877,7 +871,7 @@ pub mod test_result {
             self.groups = input;
             self
         }
-        /// Consumes the builder and constructs a [`TestResult`](crate::model::TestResult)
+        /// Consumes the builder and constructs a [`TestResult`](crate::model::TestResult).
         pub fn build(self) -> crate::model::TestResult {
             crate::model::TestResult {
                 groups: self.groups,
@@ -886,7 +880,7 @@ pub mod test_result {
     }
 }
 impl TestResult {
-    /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult)
+    /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
     pub fn builder() -> crate::model::test_result::Builder {
         crate::model::test_result::Builder::default()
     }
@@ -926,11 +920,10 @@ impl std::fmt::Debug for GroupResult {
         formatter.finish()
     }
 }
-/// See [`GroupResult`](crate::model::GroupResult)
+/// See [`GroupResult`](crate::model::GroupResult).
 pub mod group_result {
 
-    /// A builder for [`GroupResult`](crate::model::GroupResult)
-    #[non_exhaustive]
+    /// A builder for [`GroupResult`](crate::model::GroupResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -977,7 +970,7 @@ pub mod group_result {
             self.tests = input;
             self
         }
-        /// Consumes the builder and constructs a [`GroupResult`](crate::model::GroupResult)
+        /// Consumes the builder and constructs a [`GroupResult`](crate::model::GroupResult).
         pub fn build(self) -> crate::model::GroupResult {
             crate::model::GroupResult {
                 group_id: self.group_id,
@@ -988,7 +981,7 @@ pub mod group_result {
     }
 }
 impl GroupResult {
-    /// Creates a new builder-style object to manufacture [`GroupResult`](crate::model::GroupResult)
+    /// Creates a new builder-style object to manufacture [`GroupResult`](crate::model::GroupResult).
     pub fn builder() -> crate::model::group_result::Builder {
         crate::model::group_result::Builder::default()
     }
@@ -1090,11 +1083,10 @@ impl std::fmt::Debug for TestCaseRun {
         formatter.finish()
     }
 }
-/// See [`TestCaseRun`](crate::model::TestCaseRun)
+/// See [`TestCaseRun`](crate::model::TestCaseRun).
 pub mod test_case_run {
 
-    /// A builder for [`TestCaseRun`](crate::model::TestCaseRun)
-    #[non_exhaustive]
+    /// A builder for [`TestCaseRun`](crate::model::TestCaseRun).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) test_case_run_id: std::option::Option<std::string::String>,
@@ -1233,7 +1225,7 @@ pub mod test_case_run {
             self.failure = input;
             self
         }
-        /// Consumes the builder and constructs a [`TestCaseRun`](crate::model::TestCaseRun)
+        /// Consumes the builder and constructs a [`TestCaseRun`](crate::model::TestCaseRun).
         pub fn build(self) -> crate::model::TestCaseRun {
             crate::model::TestCaseRun {
                 test_case_run_id: self.test_case_run_id,
@@ -1250,7 +1242,7 @@ pub mod test_case_run {
     }
 }
 impl TestCaseRun {
-    /// Creates a new builder-style object to manufacture [`TestCaseRun`](crate::model::TestCaseRun)
+    /// Creates a new builder-style object to manufacture [`TestCaseRun`](crate::model::TestCaseRun).
     pub fn builder() -> crate::model::test_case_run::Builder {
         crate::model::test_case_run::Builder::default()
     }

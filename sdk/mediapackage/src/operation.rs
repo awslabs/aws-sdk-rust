@@ -10,7 +10,7 @@ pub struct ConfigureLogs {
     _private: (),
 }
 impl ConfigureLogs {
-    /// Creates a new builder-style object to manufacture [`ConfigureLogsInput`](crate::input::ConfigureLogsInput)
+    /// Creates a new builder-style object to manufacture [`ConfigureLogsInput`](crate::input::ConfigureLogsInput).
     pub fn builder() -> crate::input::configure_logs_input::Builder {
         crate::input::configure_logs_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateChannel {
     _private: (),
 }
 impl CreateChannel {
-    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput).
     pub fn builder() -> crate::input::create_channel_input::Builder {
         crate::input::create_channel_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreateHarvestJob {
     _private: (),
 }
 impl CreateHarvestJob {
-    /// Creates a new builder-style object to manufacture [`CreateHarvestJobInput`](crate::input::CreateHarvestJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateHarvestJobInput`](crate::input::CreateHarvestJobInput).
     pub fn builder() -> crate::input::create_harvest_job_input::Builder {
         crate::input::create_harvest_job_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateOriginEndpoint {
     _private: (),
 }
 impl CreateOriginEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateOriginEndpointInput`](crate::input::CreateOriginEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateOriginEndpointInput`](crate::input::CreateOriginEndpointInput).
     pub fn builder() -> crate::input::create_origin_endpoint_input::Builder {
         crate::input::create_origin_endpoint_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DeleteChannel {
     _private: (),
 }
 impl DeleteChannel {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput).
     pub fn builder() -> crate::input::delete_channel_input::Builder {
         crate::input::delete_channel_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct DeleteOriginEndpoint {
     _private: (),
 }
 impl DeleteOriginEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointInput`](crate::input::DeleteOriginEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointInput`](crate::input::DeleteOriginEndpointInput).
     pub fn builder() -> crate::input::delete_origin_endpoint_input::Builder {
         crate::input::delete_origin_endpoint_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DescribeChannel {
     _private: (),
 }
 impl DescribeChannel {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelInput`](crate::input::DescribeChannelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelInput`](crate::input::DescribeChannelInput).
     pub fn builder() -> crate::input::describe_channel_input::Builder {
         crate::input::describe_channel_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DescribeHarvestJob {
     _private: (),
 }
 impl DescribeHarvestJob {
-    /// Creates a new builder-style object to manufacture [`DescribeHarvestJobInput`](crate::input::DescribeHarvestJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHarvestJobInput`](crate::input::DescribeHarvestJobInput).
     pub fn builder() -> crate::input::describe_harvest_job_input::Builder {
         crate::input::describe_harvest_job_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct DescribeOriginEndpoint {
     _private: (),
 }
 impl DescribeOriginEndpoint {
-    /// Creates a new builder-style object to manufacture [`DescribeOriginEndpointInput`](crate::input::DescribeOriginEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOriginEndpointInput`](crate::input::DescribeOriginEndpointInput).
     pub fn builder() -> crate::input::describe_origin_endpoint_input::Builder {
         crate::input::describe_origin_endpoint_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct ListChannels {
     _private: (),
 }
 impl ListChannels {
-    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput).
     pub fn builder() -> crate::input::list_channels_input::Builder {
         crate::input::list_channels_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct ListHarvestJobs {
     _private: (),
 }
 impl ListHarvestJobs {
-    /// Creates a new builder-style object to manufacture [`ListHarvestJobsInput`](crate::input::ListHarvestJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListHarvestJobsInput`](crate::input::ListHarvestJobsInput).
     pub fn builder() -> crate::input::list_harvest_jobs_input::Builder {
         crate::input::list_harvest_jobs_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct ListOriginEndpoints {
     _private: (),
 }
 impl ListOriginEndpoints {
-    /// Creates a new builder-style object to manufacture [`ListOriginEndpointsInput`](crate::input::ListOriginEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`ListOriginEndpointsInput`](crate::input::ListOriginEndpointsInput).
     pub fn builder() -> crate::input::list_origin_endpoints_input::Builder {
         crate::input::list_origin_endpoints_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct RotateChannelCredentials {
     _private: (),
 }
 impl RotateChannelCredentials {
-    /// Creates a new builder-style object to manufacture [`RotateChannelCredentialsInput`](crate::input::RotateChannelCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`RotateChannelCredentialsInput`](crate::input::RotateChannelCredentialsInput).
     pub fn builder() -> crate::input::rotate_channel_credentials_input::Builder {
         crate::input::rotate_channel_credentials_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct RotateIngestEndpointCredentials {
     _private: (),
 }
 impl RotateIngestEndpointCredentials {
-    /// Creates a new builder-style object to manufacture [`RotateIngestEndpointCredentialsInput`](crate::input::RotateIngestEndpointCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`RotateIngestEndpointCredentialsInput`](crate::input::RotateIngestEndpointCredentialsInput).
     pub fn builder() -> crate::input::rotate_ingest_endpoint_credentials_input::Builder {
         crate::input::rotate_ingest_endpoint_credentials_input::Builder::default()
     }
@@ -512,7 +512,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct UpdateChannel {
     _private: (),
 }
 impl UpdateChannel {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput).
     pub fn builder() -> crate::input::update_channel_input::Builder {
         crate::input::update_channel_input::Builder::default()
     }
@@ -608,7 +608,7 @@ pub struct UpdateOriginEndpoint {
     _private: (),
 }
 impl UpdateOriginEndpoint {
-    /// Creates a new builder-style object to manufacture [`UpdateOriginEndpointInput`](crate::input::UpdateOriginEndpointInput)
+    /// Creates a new builder-style object to manufacture [`UpdateOriginEndpointInput`](crate::input::UpdateOriginEndpointInput).
     pub fn builder() -> crate::input::update_origin_endpoint_input::Builder {
         crate::input::update_origin_endpoint_input::Builder::default()
     }

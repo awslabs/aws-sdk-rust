@@ -10,7 +10,7 @@ pub struct DescribeEntitiesDetectionV2Job {
     _private: (),
 }
 impl DescribeEntitiesDetectionV2Job {
-    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobInput`](crate::input::DescribeEntitiesDetectionV2JobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobInput`](crate::input::DescribeEntitiesDetectionV2JobInput).
     pub fn builder() -> crate::input::describe_entities_detection_v2_job_input::Builder {
         crate::input::describe_entities_detection_v2_job_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeICD10CMInferenceJob {
     _private: (),
 }
 impl DescribeICD10CMInferenceJob {
-    /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobInput`](crate::input::DescribeIcd10CmInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobInput`](crate::input::DescribeIcd10CmInferenceJobInput).
     pub fn builder() -> crate::input::describe_icd10_cm_inference_job_input::Builder {
         crate::input::describe_icd10_cm_inference_job_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribePHIDetectionJob {
     _private: (),
 }
 impl DescribePHIDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobInput`](crate::input::DescribePhiDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobInput`](crate::input::DescribePhiDetectionJobInput).
     pub fn builder() -> crate::input::describe_phi_detection_job_input::Builder {
         crate::input::describe_phi_detection_job_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeRxNormInferenceJob {
     _private: (),
 }
 impl DescribeRxNormInferenceJob {
-    /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobInput`](crate::input::DescribeRxNormInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobInput`](crate::input::DescribeRxNormInferenceJobInput).
     pub fn builder() -> crate::input::describe_rx_norm_inference_job_input::Builder {
         crate::input::describe_rx_norm_inference_job_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeSNOMEDCTInferenceJob {
     _private: (),
 }
 impl DescribeSNOMEDCTInferenceJob {
-    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobInput`](crate::input::DescribeSnomedctInferenceJobInput).
     pub fn builder() -> crate::input::describe_snomedct_inference_job_input::Builder {
         crate::input::describe_snomedct_inference_job_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DetectEntities {
     _private: (),
 }
 impl DetectEntities {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesInput`](crate::input::DetectEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
     pub fn builder() -> crate::input::detect_entities_input::Builder {
         crate::input::detect_entities_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DetectEntitiesV2 {
     _private: (),
 }
 impl DetectEntitiesV2 {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Input`](crate::input::DetectEntitiesV2Input)
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Input`](crate::input::DetectEntitiesV2Input).
     pub fn builder() -> crate::input::detect_entities_v2_input::Builder {
         crate::input::detect_entities_v2_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct DetectPHI {
     _private: (),
 }
 impl DetectPHI {
-    /// Creates a new builder-style object to manufacture [`DetectPhiInput`](crate::input::DetectPhiInput)
+    /// Creates a new builder-style object to manufacture [`DetectPhiInput`](crate::input::DetectPhiInput).
     pub fn builder() -> crate::input::detect_phi_input::Builder {
         crate::input::detect_phi_input::Builder::default()
     }
@@ -277,7 +277,7 @@ pub struct InferICD10CM {
     _private: (),
 }
 impl InferICD10CM {
-    /// Creates a new builder-style object to manufacture [`InferIcd10CmInput`](crate::input::InferIcd10CmInput)
+    /// Creates a new builder-style object to manufacture [`InferIcd10CmInput`](crate::input::InferIcd10CmInput).
     pub fn builder() -> crate::input::infer_icd10_cm_input::Builder {
         crate::input::infer_icd10_cm_input::Builder::default()
     }
@@ -309,7 +309,7 @@ pub struct InferRxNorm {
     _private: (),
 }
 impl InferRxNorm {
-    /// Creates a new builder-style object to manufacture [`InferRxNormInput`](crate::input::InferRxNormInput)
+    /// Creates a new builder-style object to manufacture [`InferRxNormInput`](crate::input::InferRxNormInput).
     pub fn builder() -> crate::input::infer_rx_norm_input::Builder {
         crate::input::infer_rx_norm_input::Builder::default()
     }
@@ -341,7 +341,7 @@ pub struct InferSNOMEDCT {
     _private: (),
 }
 impl InferSNOMEDCT {
-    /// Creates a new builder-style object to manufacture [`InferSnomedctInput`](crate::input::InferSnomedctInput)
+    /// Creates a new builder-style object to manufacture [`InferSnomedctInput`](crate::input::InferSnomedctInput).
     pub fn builder() -> crate::input::infer_snomedct_input::Builder {
         crate::input::infer_snomedct_input::Builder::default()
     }
@@ -373,7 +373,7 @@ pub struct ListEntitiesDetectionV2Jobs {
     _private: (),
 }
 impl ListEntitiesDetectionV2Jobs {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput)
+    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsInput`](crate::input::ListEntitiesDetectionV2JobsInput).
     pub fn builder() -> crate::input::list_entities_detection_v2_jobs_input::Builder {
         crate::input::list_entities_detection_v2_jobs_input::Builder::default()
     }
@@ -407,7 +407,7 @@ pub struct ListICD10CMInferenceJobs {
     _private: (),
 }
 impl ListICD10CMInferenceJobs {
-    /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsInput`](crate::input::ListIcd10CmInferenceJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsInput`](crate::input::ListIcd10CmInferenceJobsInput).
     pub fn builder() -> crate::input::list_icd10_cm_inference_jobs_input::Builder {
         crate::input::list_icd10_cm_inference_jobs_input::Builder::default()
     }
@@ -441,7 +441,7 @@ pub struct ListPHIDetectionJobs {
     _private: (),
 }
 impl ListPHIDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsInput`](crate::input::ListPhiDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsInput`](crate::input::ListPhiDetectionJobsInput).
     pub fn builder() -> crate::input::list_phi_detection_jobs_input::Builder {
         crate::input::list_phi_detection_jobs_input::Builder::default()
     }
@@ -475,7 +475,7 @@ pub struct ListRxNormInferenceJobs {
     _private: (),
 }
 impl ListRxNormInferenceJobs {
-    /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsInput`](crate::input::ListRxNormInferenceJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsInput`](crate::input::ListRxNormInferenceJobsInput).
     pub fn builder() -> crate::input::list_rx_norm_inference_jobs_input::Builder {
         crate::input::list_rx_norm_inference_jobs_input::Builder::default()
     }
@@ -509,7 +509,7 @@ pub struct ListSNOMEDCTInferenceJobs {
     _private: (),
 }
 impl ListSNOMEDCTInferenceJobs {
-    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsInput`](crate::input::ListSnomedctInferenceJobsInput).
     pub fn builder() -> crate::input::list_snomedct_inference_jobs_input::Builder {
         crate::input::list_snomedct_inference_jobs_input::Builder::default()
     }
@@ -543,7 +543,7 @@ pub struct StartEntitiesDetectionV2Job {
     _private: (),
 }
 impl StartEntitiesDetectionV2Job {
-    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput)
+    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobInput`](crate::input::StartEntitiesDetectionV2JobInput).
     pub fn builder() -> crate::input::start_entities_detection_v2_job_input::Builder {
         crate::input::start_entities_detection_v2_job_input::Builder::default()
     }
@@ -577,7 +577,7 @@ pub struct StartICD10CMInferenceJob {
     _private: (),
 }
 impl StartICD10CMInferenceJob {
-    /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobInput`](crate::input::StartIcd10CmInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobInput`](crate::input::StartIcd10CmInferenceJobInput).
     pub fn builder() -> crate::input::start_icd10_cm_inference_job_input::Builder {
         crate::input::start_icd10_cm_inference_job_input::Builder::default()
     }
@@ -611,7 +611,7 @@ pub struct StartPHIDetectionJob {
     _private: (),
 }
 impl StartPHIDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobInput`](crate::input::StartPhiDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobInput`](crate::input::StartPhiDetectionJobInput).
     pub fn builder() -> crate::input::start_phi_detection_job_input::Builder {
         crate::input::start_phi_detection_job_input::Builder::default()
     }
@@ -645,7 +645,7 @@ pub struct StartRxNormInferenceJob {
     _private: (),
 }
 impl StartRxNormInferenceJob {
-    /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobInput`](crate::input::StartRxNormInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobInput`](crate::input::StartRxNormInferenceJobInput).
     pub fn builder() -> crate::input::start_rx_norm_inference_job_input::Builder {
         crate::input::start_rx_norm_inference_job_input::Builder::default()
     }
@@ -679,7 +679,7 @@ pub struct StartSNOMEDCTInferenceJob {
     _private: (),
 }
 impl StartSNOMEDCTInferenceJob {
-    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobInput`](crate::input::StartSnomedctInferenceJobInput).
     pub fn builder() -> crate::input::start_snomedct_inference_job_input::Builder {
         crate::input::start_snomedct_inference_job_input::Builder::default()
     }
@@ -713,7 +713,7 @@ pub struct StopEntitiesDetectionV2Job {
     _private: (),
 }
 impl StopEntitiesDetectionV2Job {
-    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobInput`](crate::input::StopEntitiesDetectionV2JobInput)
+    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobInput`](crate::input::StopEntitiesDetectionV2JobInput).
     pub fn builder() -> crate::input::stop_entities_detection_v2_job_input::Builder {
         crate::input::stop_entities_detection_v2_job_input::Builder::default()
     }
@@ -747,7 +747,7 @@ pub struct StopICD10CMInferenceJob {
     _private: (),
 }
 impl StopICD10CMInferenceJob {
-    /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobInput`](crate::input::StopIcd10CmInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobInput`](crate::input::StopIcd10CmInferenceJobInput).
     pub fn builder() -> crate::input::stop_icd10_cm_inference_job_input::Builder {
         crate::input::stop_icd10_cm_inference_job_input::Builder::default()
     }
@@ -781,7 +781,7 @@ pub struct StopPHIDetectionJob {
     _private: (),
 }
 impl StopPHIDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobInput`](crate::input::StopPhiDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobInput`](crate::input::StopPhiDetectionJobInput).
     pub fn builder() -> crate::input::stop_phi_detection_job_input::Builder {
         crate::input::stop_phi_detection_job_input::Builder::default()
     }
@@ -815,7 +815,7 @@ pub struct StopRxNormInferenceJob {
     _private: (),
 }
 impl StopRxNormInferenceJob {
-    /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobInput`](crate::input::StopRxNormInferenceJobInput).
     pub fn builder() -> crate::input::stop_rx_norm_inference_job_input::Builder {
         crate::input::stop_rx_norm_inference_job_input::Builder::default()
     }
@@ -849,7 +849,7 @@ pub struct StopSNOMEDCTInferenceJob {
     _private: (),
 }
 impl StopSNOMEDCTInferenceJob {
-    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput)
+    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobInput`](crate::input::StopSnomedctInferenceJobInput).
     pub fn builder() -> crate::input::stop_snomedct_inference_job_input::Builder {
         crate::input::stop_snomedct_inference_job_input::Builder::default()
     }

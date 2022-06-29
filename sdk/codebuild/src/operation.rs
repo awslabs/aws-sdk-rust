@@ -10,7 +10,7 @@ pub struct BatchDeleteBuilds {
     _private: (),
 }
 impl BatchDeleteBuilds {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteBuildsInput`](crate::input::BatchDeleteBuildsInput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteBuildsInput`](crate::input::BatchDeleteBuildsInput).
     pub fn builder() -> crate::input::batch_delete_builds_input::Builder {
         crate::input::batch_delete_builds_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchGetBuildBatches {
     _private: (),
 }
 impl BatchGetBuildBatches {
-    /// Creates a new builder-style object to manufacture [`BatchGetBuildBatchesInput`](crate::input::BatchGetBuildBatchesInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetBuildBatchesInput`](crate::input::BatchGetBuildBatchesInput).
     pub fn builder() -> crate::input::batch_get_build_batches_input::Builder {
         crate::input::batch_get_build_batches_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchGetBuilds {
     _private: (),
 }
 impl BatchGetBuilds {
-    /// Creates a new builder-style object to manufacture [`BatchGetBuildsInput`](crate::input::BatchGetBuildsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetBuildsInput`](crate::input::BatchGetBuildsInput).
     pub fn builder() -> crate::input::batch_get_builds_input::Builder {
         crate::input::batch_get_builds_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct BatchGetProjects {
     _private: (),
 }
 impl BatchGetProjects {
-    /// Creates a new builder-style object to manufacture [`BatchGetProjectsInput`](crate::input::BatchGetProjectsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetProjectsInput`](crate::input::BatchGetProjectsInput).
     pub fn builder() -> crate::input::batch_get_projects_input::Builder {
         crate::input::batch_get_projects_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct BatchGetReportGroups {
     _private: (),
 }
 impl BatchGetReportGroups {
-    /// Creates a new builder-style object to manufacture [`BatchGetReportGroupsInput`](crate::input::BatchGetReportGroupsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetReportGroupsInput`](crate::input::BatchGetReportGroupsInput).
     pub fn builder() -> crate::input::batch_get_report_groups_input::Builder {
         crate::input::batch_get_report_groups_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct BatchGetReports {
     _private: (),
 }
 impl BatchGetReports {
-    /// Creates a new builder-style object to manufacture [`BatchGetReportsInput`](crate::input::BatchGetReportsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetReportsInput`](crate::input::BatchGetReportsInput).
     pub fn builder() -> crate::input::batch_get_reports_input::Builder {
         crate::input::batch_get_reports_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct CreateProject {
     _private: (),
 }
 impl CreateProject {
-    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput)
+    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput).
     pub fn builder() -> crate::input::create_project_input::Builder {
         crate::input::create_project_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct CreateReportGroup {
     _private: (),
 }
 impl CreateReportGroup {
-    /// Creates a new builder-style object to manufacture [`CreateReportGroupInput`](crate::input::CreateReportGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateReportGroupInput`](crate::input::CreateReportGroupInput).
     pub fn builder() -> crate::input::create_report_group_input::Builder {
         crate::input::create_report_group_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct CreateWebhook {
     _private: (),
 }
 impl CreateWebhook {
-    /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::input::CreateWebhookInput)
+    /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::input::CreateWebhookInput).
     pub fn builder() -> crate::input::create_webhook_input::Builder {
         crate::input::create_webhook_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct DeleteBuildBatch {
     _private: (),
 }
 impl DeleteBuildBatch {
-    /// Creates a new builder-style object to manufacture [`DeleteBuildBatchInput`](crate::input::DeleteBuildBatchInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBuildBatchInput`](crate::input::DeleteBuildBatchInput).
     pub fn builder() -> crate::input::delete_build_batch_input::Builder {
         crate::input::delete_build_batch_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct DeleteProject {
     _private: (),
 }
 impl DeleteProject {
-    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput).
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct DeleteReport {
     _private: (),
 }
 impl DeleteReport {
-    /// Creates a new builder-style object to manufacture [`DeleteReportInput`](crate::input::DeleteReportInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReportInput`](crate::input::DeleteReportInput).
     pub fn builder() -> crate::input::delete_report_input::Builder {
         crate::input::delete_report_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct DeleteReportGroup {
     _private: (),
 }
 impl DeleteReportGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteReportGroupInput`](crate::input::DeleteReportGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReportGroupInput`](crate::input::DeleteReportGroupInput).
     pub fn builder() -> crate::input::delete_report_group_input::Builder {
         crate::input::delete_report_group_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct DeleteSourceCredentials {
     _private: (),
 }
 impl DeleteSourceCredentials {
-    /// Creates a new builder-style object to manufacture [`DeleteSourceCredentialsInput`](crate::input::DeleteSourceCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSourceCredentialsInput`](crate::input::DeleteSourceCredentialsInput).
     pub fn builder() -> crate::input::delete_source_credentials_input::Builder {
         crate::input::delete_source_credentials_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct DeleteWebhook {
     _private: (),
 }
 impl DeleteWebhook {
-    /// Creates a new builder-style object to manufacture [`DeleteWebhookInput`](crate::input::DeleteWebhookInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
     pub fn builder() -> crate::input::delete_webhook_input::Builder {
         crate::input::delete_webhook_input::Builder::default()
     }
@@ -542,7 +542,7 @@ pub struct DescribeCodeCoverages {
     _private: (),
 }
 impl DescribeCodeCoverages {
-    /// Creates a new builder-style object to manufacture [`DescribeCodeCoveragesInput`](crate::input::DescribeCodeCoveragesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCodeCoveragesInput`](crate::input::DescribeCodeCoveragesInput).
     pub fn builder() -> crate::input::describe_code_coverages_input::Builder {
         crate::input::describe_code_coverages_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct DescribeTestCases {
     _private: (),
 }
 impl DescribeTestCases {
-    /// Creates a new builder-style object to manufacture [`DescribeTestCasesInput`](crate::input::DescribeTestCasesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTestCasesInput`](crate::input::DescribeTestCasesInput).
     pub fn builder() -> crate::input::describe_test_cases_input::Builder {
         crate::input::describe_test_cases_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct GetReportGroupTrend {
     _private: (),
 }
 impl GetReportGroupTrend {
-    /// Creates a new builder-style object to manufacture [`GetReportGroupTrendInput`](crate::input::GetReportGroupTrendInput)
+    /// Creates a new builder-style object to manufacture [`GetReportGroupTrendInput`](crate::input::GetReportGroupTrendInput).
     pub fn builder() -> crate::input::get_report_group_trend_input::Builder {
         crate::input::get_report_group_trend_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct GetResourcePolicy {
     _private: (),
 }
 impl GetResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
         crate::input::get_resource_policy_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct ImportSourceCredentials {
     _private: (),
 }
 impl ImportSourceCredentials {
-    /// Creates a new builder-style object to manufacture [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput).
     pub fn builder() -> crate::input::import_source_credentials_input::Builder {
         crate::input::import_source_credentials_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct InvalidateProjectCache {
     _private: (),
 }
 impl InvalidateProjectCache {
-    /// Creates a new builder-style object to manufacture [`InvalidateProjectCacheInput`](crate::input::InvalidateProjectCacheInput)
+    /// Creates a new builder-style object to manufacture [`InvalidateProjectCacheInput`](crate::input::InvalidateProjectCacheInput).
     pub fn builder() -> crate::input::invalidate_project_cache_input::Builder {
         crate::input::invalidate_project_cache_input::Builder::default()
     }
@@ -746,7 +746,7 @@ pub struct ListBuildBatches {
     _private: (),
 }
 impl ListBuildBatches {
-    /// Creates a new builder-style object to manufacture [`ListBuildBatchesInput`](crate::input::ListBuildBatchesInput)
+    /// Creates a new builder-style object to manufacture [`ListBuildBatchesInput`](crate::input::ListBuildBatchesInput).
     pub fn builder() -> crate::input::list_build_batches_input::Builder {
         crate::input::list_build_batches_input::Builder::default()
     }
@@ -780,7 +780,7 @@ pub struct ListBuildBatchesForProject {
     _private: (),
 }
 impl ListBuildBatchesForProject {
-    /// Creates a new builder-style object to manufacture [`ListBuildBatchesForProjectInput`](crate::input::ListBuildBatchesForProjectInput)
+    /// Creates a new builder-style object to manufacture [`ListBuildBatchesForProjectInput`](crate::input::ListBuildBatchesForProjectInput).
     pub fn builder() -> crate::input::list_build_batches_for_project_input::Builder {
         crate::input::list_build_batches_for_project_input::Builder::default()
     }
@@ -814,7 +814,7 @@ pub struct ListBuilds {
     _private: (),
 }
 impl ListBuilds {
-    /// Creates a new builder-style object to manufacture [`ListBuildsInput`](crate::input::ListBuildsInput)
+    /// Creates a new builder-style object to manufacture [`ListBuildsInput`](crate::input::ListBuildsInput).
     pub fn builder() -> crate::input::list_builds_input::Builder {
         crate::input::list_builds_input::Builder::default()
     }
@@ -846,7 +846,7 @@ pub struct ListBuildsForProject {
     _private: (),
 }
 impl ListBuildsForProject {
-    /// Creates a new builder-style object to manufacture [`ListBuildsForProjectInput`](crate::input::ListBuildsForProjectInput)
+    /// Creates a new builder-style object to manufacture [`ListBuildsForProjectInput`](crate::input::ListBuildsForProjectInput).
     pub fn builder() -> crate::input::list_builds_for_project_input::Builder {
         crate::input::list_builds_for_project_input::Builder::default()
     }
@@ -880,7 +880,7 @@ pub struct ListCuratedEnvironmentImages {
     _private: (),
 }
 impl ListCuratedEnvironmentImages {
-    /// Creates a new builder-style object to manufacture [`ListCuratedEnvironmentImagesInput`](crate::input::ListCuratedEnvironmentImagesInput)
+    /// Creates a new builder-style object to manufacture [`ListCuratedEnvironmentImagesInput`](crate::input::ListCuratedEnvironmentImagesInput).
     pub fn builder() -> crate::input::list_curated_environment_images_input::Builder {
         crate::input::list_curated_environment_images_input::Builder::default()
     }
@@ -914,7 +914,7 @@ pub struct ListProjects {
     _private: (),
 }
 impl ListProjects {
-    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput)
+    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput).
     pub fn builder() -> crate::input::list_projects_input::Builder {
         crate::input::list_projects_input::Builder::default()
     }
@@ -946,7 +946,7 @@ pub struct ListReportGroups {
     _private: (),
 }
 impl ListReportGroups {
-    /// Creates a new builder-style object to manufacture [`ListReportGroupsInput`](crate::input::ListReportGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListReportGroupsInput`](crate::input::ListReportGroupsInput).
     pub fn builder() -> crate::input::list_report_groups_input::Builder {
         crate::input::list_report_groups_input::Builder::default()
     }
@@ -980,7 +980,7 @@ pub struct ListReports {
     _private: (),
 }
 impl ListReports {
-    /// Creates a new builder-style object to manufacture [`ListReportsInput`](crate::input::ListReportsInput)
+    /// Creates a new builder-style object to manufacture [`ListReportsInput`](crate::input::ListReportsInput).
     pub fn builder() -> crate::input::list_reports_input::Builder {
         crate::input::list_reports_input::Builder::default()
     }
@@ -1012,7 +1012,7 @@ pub struct ListReportsForReportGroup {
     _private: (),
 }
 impl ListReportsForReportGroup {
-    /// Creates a new builder-style object to manufacture [`ListReportsForReportGroupInput`](crate::input::ListReportsForReportGroupInput)
+    /// Creates a new builder-style object to manufacture [`ListReportsForReportGroupInput`](crate::input::ListReportsForReportGroupInput).
     pub fn builder() -> crate::input::list_reports_for_report_group_input::Builder {
         crate::input::list_reports_for_report_group_input::Builder::default()
     }
@@ -1046,7 +1046,7 @@ pub struct ListSharedProjects {
     _private: (),
 }
 impl ListSharedProjects {
-    /// Creates a new builder-style object to manufacture [`ListSharedProjectsInput`](crate::input::ListSharedProjectsInput)
+    /// Creates a new builder-style object to manufacture [`ListSharedProjectsInput`](crate::input::ListSharedProjectsInput).
     pub fn builder() -> crate::input::list_shared_projects_input::Builder {
         crate::input::list_shared_projects_input::Builder::default()
     }
@@ -1080,7 +1080,7 @@ pub struct ListSharedReportGroups {
     _private: (),
 }
 impl ListSharedReportGroups {
-    /// Creates a new builder-style object to manufacture [`ListSharedReportGroupsInput`](crate::input::ListSharedReportGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListSharedReportGroupsInput`](crate::input::ListSharedReportGroupsInput).
     pub fn builder() -> crate::input::list_shared_report_groups_input::Builder {
         crate::input::list_shared_report_groups_input::Builder::default()
     }
@@ -1114,7 +1114,7 @@ pub struct ListSourceCredentials {
     _private: (),
 }
 impl ListSourceCredentials {
-    /// Creates a new builder-style object to manufacture [`ListSourceCredentialsInput`](crate::input::ListSourceCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`ListSourceCredentialsInput`](crate::input::ListSourceCredentialsInput).
     pub fn builder() -> crate::input::list_source_credentials_input::Builder {
         crate::input::list_source_credentials_input::Builder::default()
     }
@@ -1148,7 +1148,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -1182,7 +1182,7 @@ pub struct RetryBuild {
     _private: (),
 }
 impl RetryBuild {
-    /// Creates a new builder-style object to manufacture [`RetryBuildInput`](crate::input::RetryBuildInput)
+    /// Creates a new builder-style object to manufacture [`RetryBuildInput`](crate::input::RetryBuildInput).
     pub fn builder() -> crate::input::retry_build_input::Builder {
         crate::input::retry_build_input::Builder::default()
     }
@@ -1214,7 +1214,7 @@ pub struct RetryBuildBatch {
     _private: (),
 }
 impl RetryBuildBatch {
-    /// Creates a new builder-style object to manufacture [`RetryBuildBatchInput`](crate::input::RetryBuildBatchInput)
+    /// Creates a new builder-style object to manufacture [`RetryBuildBatchInput`](crate::input::RetryBuildBatchInput).
     pub fn builder() -> crate::input::retry_build_batch_input::Builder {
         crate::input::retry_build_batch_input::Builder::default()
     }
@@ -1248,7 +1248,7 @@ pub struct StartBuild {
     _private: (),
 }
 impl StartBuild {
-    /// Creates a new builder-style object to manufacture [`StartBuildInput`](crate::input::StartBuildInput)
+    /// Creates a new builder-style object to manufacture [`StartBuildInput`](crate::input::StartBuildInput).
     pub fn builder() -> crate::input::start_build_input::Builder {
         crate::input::start_build_input::Builder::default()
     }
@@ -1280,7 +1280,7 @@ pub struct StartBuildBatch {
     _private: (),
 }
 impl StartBuildBatch {
-    /// Creates a new builder-style object to manufacture [`StartBuildBatchInput`](crate::input::StartBuildBatchInput)
+    /// Creates a new builder-style object to manufacture [`StartBuildBatchInput`](crate::input::StartBuildBatchInput).
     pub fn builder() -> crate::input::start_build_batch_input::Builder {
         crate::input::start_build_batch_input::Builder::default()
     }
@@ -1314,7 +1314,7 @@ pub struct StopBuild {
     _private: (),
 }
 impl StopBuild {
-    /// Creates a new builder-style object to manufacture [`StopBuildInput`](crate::input::StopBuildInput)
+    /// Creates a new builder-style object to manufacture [`StopBuildInput`](crate::input::StopBuildInput).
     pub fn builder() -> crate::input::stop_build_input::Builder {
         crate::input::stop_build_input::Builder::default()
     }
@@ -1345,7 +1345,7 @@ pub struct StopBuildBatch {
     _private: (),
 }
 impl StopBuildBatch {
-    /// Creates a new builder-style object to manufacture [`StopBuildBatchInput`](crate::input::StopBuildBatchInput)
+    /// Creates a new builder-style object to manufacture [`StopBuildBatchInput`](crate::input::StopBuildBatchInput).
     pub fn builder() -> crate::input::stop_build_batch_input::Builder {
         crate::input::stop_build_batch_input::Builder::default()
     }
@@ -1377,7 +1377,7 @@ pub struct UpdateProject {
     _private: (),
 }
 impl UpdateProject {
-    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput)
+    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput).
     pub fn builder() -> crate::input::update_project_input::Builder {
         crate::input::update_project_input::Builder::default()
     }
@@ -1409,7 +1409,7 @@ pub struct UpdateProjectVisibility {
     _private: (),
 }
 impl UpdateProjectVisibility {
-    /// Creates a new builder-style object to manufacture [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput)
+    /// Creates a new builder-style object to manufacture [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput).
     pub fn builder() -> crate::input::update_project_visibility_input::Builder {
         crate::input::update_project_visibility_input::Builder::default()
     }
@@ -1443,7 +1443,7 @@ pub struct UpdateReportGroup {
     _private: (),
 }
 impl UpdateReportGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateReportGroupInput`](crate::input::UpdateReportGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateReportGroupInput`](crate::input::UpdateReportGroupInput).
     pub fn builder() -> crate::input::update_report_group_input::Builder {
         crate::input::update_report_group_input::Builder::default()
     }
@@ -1477,7 +1477,7 @@ pub struct UpdateWebhook {
     _private: (),
 }
 impl UpdateWebhook {
-    /// Creates a new builder-style object to manufacture [`UpdateWebhookInput`](crate::input::UpdateWebhookInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
     pub fn builder() -> crate::input::update_webhook_input::Builder {
         crate::input::update_webhook_input::Builder::default()
     }

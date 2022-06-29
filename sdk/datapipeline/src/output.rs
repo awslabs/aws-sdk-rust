@@ -34,11 +34,10 @@ impl std::fmt::Debug for ValidatePipelineDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput)
+/// See [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
 pub mod validate_pipeline_definition_output {
 
-    /// A builder for [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_errors:
@@ -96,7 +95,7 @@ pub mod validate_pipeline_definition_output {
             self.errored = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput)
+        /// Consumes the builder and constructs a [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
         pub fn build(self) -> crate::output::ValidatePipelineDefinitionOutput {
             crate::output::ValidatePipelineDefinitionOutput {
                 validation_errors: self.validation_errors,
@@ -107,7 +106,7 @@ pub mod validate_pipeline_definition_output {
     }
 }
 impl ValidatePipelineDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
     pub fn builder() -> crate::output::validate_pipeline_definition_output::Builder {
         crate::output::validate_pipeline_definition_output::Builder::default()
     }
@@ -123,22 +122,21 @@ impl std::fmt::Debug for SetTaskStatusOutput {
         formatter.finish()
     }
 }
-/// See [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput)
+/// See [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
 pub mod set_task_status_output {
 
-    /// A builder for [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput)
+        /// Consumes the builder and constructs a [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
         pub fn build(self) -> crate::output::SetTaskStatusOutput {
             crate::output::SetTaskStatusOutput {}
         }
     }
 }
 impl SetTaskStatusOutput {
-    /// Creates a new builder-style object to manufacture [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput)
+    /// Creates a new builder-style object to manufacture [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
     pub fn builder() -> crate::output::set_task_status_output::Builder {
         crate::output::set_task_status_output::Builder::default()
     }
@@ -154,22 +152,21 @@ impl std::fmt::Debug for SetStatusOutput {
         formatter.finish()
     }
 }
-/// See [`SetStatusOutput`](crate::output::SetStatusOutput)
+/// See [`SetStatusOutput`](crate::output::SetStatusOutput).
 pub mod set_status_output {
 
-    /// A builder for [`SetStatusOutput`](crate::output::SetStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`SetStatusOutput`](crate::output::SetStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SetStatusOutput`](crate::output::SetStatusOutput)
+        /// Consumes the builder and constructs a [`SetStatusOutput`](crate::output::SetStatusOutput).
         pub fn build(self) -> crate::output::SetStatusOutput {
             crate::output::SetStatusOutput {}
         }
     }
 }
 impl SetStatusOutput {
-    /// Creates a new builder-style object to manufacture [`SetStatusOutput`](crate::output::SetStatusOutput)
+    /// Creates a new builder-style object to manufacture [`SetStatusOutput`](crate::output::SetStatusOutput).
     pub fn builder() -> crate::output::set_status_output::Builder {
         crate::output::set_status_output::Builder::default()
     }
@@ -195,11 +192,10 @@ impl std::fmt::Debug for ReportTaskRunnerHeartbeatOutput {
         formatter.finish()
     }
 }
-/// See [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput)
+/// See [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
 pub mod report_task_runner_heartbeat_output {
 
-    /// A builder for [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput)
-    #[non_exhaustive]
+    /// A builder for [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) terminate: std::option::Option<bool>,
@@ -215,7 +211,7 @@ pub mod report_task_runner_heartbeat_output {
             self.terminate = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput)
+        /// Consumes the builder and constructs a [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
         pub fn build(self) -> crate::output::ReportTaskRunnerHeartbeatOutput {
             crate::output::ReportTaskRunnerHeartbeatOutput {
                 terminate: self.terminate.unwrap_or_default(),
@@ -224,7 +220,7 @@ pub mod report_task_runner_heartbeat_output {
     }
 }
 impl ReportTaskRunnerHeartbeatOutput {
-    /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput)
+    /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
     pub fn builder() -> crate::output::report_task_runner_heartbeat_output::Builder {
         crate::output::report_task_runner_heartbeat_output::Builder::default()
     }
@@ -250,11 +246,10 @@ impl std::fmt::Debug for ReportTaskProgressOutput {
         formatter.finish()
     }
 }
-/// See [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput)
+/// See [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
 pub mod report_task_progress_output {
 
-    /// A builder for [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput)
-    #[non_exhaustive]
+    /// A builder for [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canceled: std::option::Option<bool>,
@@ -270,7 +265,7 @@ pub mod report_task_progress_output {
             self.canceled = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput)
+        /// Consumes the builder and constructs a [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
         pub fn build(self) -> crate::output::ReportTaskProgressOutput {
             crate::output::ReportTaskProgressOutput {
                 canceled: self.canceled.unwrap_or_default(),
@@ -279,7 +274,7 @@ pub mod report_task_progress_output {
     }
 }
 impl ReportTaskProgressOutput {
-    /// Creates a new builder-style object to manufacture [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput)
+    /// Creates a new builder-style object to manufacture [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
     pub fn builder() -> crate::output::report_task_progress_output::Builder {
         crate::output::report_task_progress_output::Builder::default()
     }
@@ -295,22 +290,21 @@ impl std::fmt::Debug for RemoveTagsOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+/// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
-    /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+        /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
             crate::output::RemoveTagsOutput {}
         }
     }
 }
 impl RemoveTagsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     pub fn builder() -> crate::output::remove_tags_output::Builder {
         crate::output::remove_tags_output::Builder::default()
     }
@@ -350,11 +344,10 @@ impl std::fmt::Debug for QueryObjectsOutput {
         formatter.finish()
     }
 }
-/// See [`QueryObjectsOutput`](crate::output::QueryObjectsOutput)
+/// See [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
 pub mod query_objects_output {
 
-    /// A builder for [`QueryObjectsOutput`](crate::output::QueryObjectsOutput)
-    #[non_exhaustive]
+    /// A builder for [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -401,7 +394,7 @@ pub mod query_objects_output {
             self.has_more_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryObjectsOutput`](crate::output::QueryObjectsOutput)
+        /// Consumes the builder and constructs a [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
         pub fn build(self) -> crate::output::QueryObjectsOutput {
             crate::output::QueryObjectsOutput {
                 ids: self.ids,
@@ -412,7 +405,7 @@ pub mod query_objects_output {
     }
 }
 impl QueryObjectsOutput {
-    /// Creates a new builder-style object to manufacture [`QueryObjectsOutput`](crate::output::QueryObjectsOutput)
+    /// Creates a new builder-style object to manufacture [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
     pub fn builder() -> crate::output::query_objects_output::Builder {
         crate::output::query_objects_output::Builder::default()
     }
@@ -452,11 +445,10 @@ impl std::fmt::Debug for PutPipelineDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput)
+/// See [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
 pub mod put_pipeline_definition_output {
 
-    /// A builder for [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) validation_errors:
@@ -514,7 +506,7 @@ pub mod put_pipeline_definition_output {
             self.errored = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput)
+        /// Consumes the builder and constructs a [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
         pub fn build(self) -> crate::output::PutPipelineDefinitionOutput {
             crate::output::PutPipelineDefinitionOutput {
                 validation_errors: self.validation_errors,
@@ -525,7 +517,7 @@ pub mod put_pipeline_definition_output {
     }
 }
 impl PutPipelineDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
     pub fn builder() -> crate::output::put_pipeline_definition_output::Builder {
         crate::output::put_pipeline_definition_output::Builder::default()
     }
@@ -551,11 +543,10 @@ impl std::fmt::Debug for PollForTaskOutput {
         formatter.finish()
     }
 }
-/// See [`PollForTaskOutput`](crate::output::PollForTaskOutput)
+/// See [`PollForTaskOutput`](crate::output::PollForTaskOutput).
 pub mod poll_for_task_output {
 
-    /// A builder for [`PollForTaskOutput`](crate::output::PollForTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`PollForTaskOutput`](crate::output::PollForTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_object: std::option::Option<crate::model::TaskObject>,
@@ -574,7 +565,7 @@ pub mod poll_for_task_output {
             self.task_object = input;
             self
         }
-        /// Consumes the builder and constructs a [`PollForTaskOutput`](crate::output::PollForTaskOutput)
+        /// Consumes the builder and constructs a [`PollForTaskOutput`](crate::output::PollForTaskOutput).
         pub fn build(self) -> crate::output::PollForTaskOutput {
             crate::output::PollForTaskOutput {
                 task_object: self.task_object,
@@ -583,7 +574,7 @@ pub mod poll_for_task_output {
     }
 }
 impl PollForTaskOutput {
-    /// Creates a new builder-style object to manufacture [`PollForTaskOutput`](crate::output::PollForTaskOutput)
+    /// Creates a new builder-style object to manufacture [`PollForTaskOutput`](crate::output::PollForTaskOutput).
     pub fn builder() -> crate::output::poll_for_task_output::Builder {
         crate::output::poll_for_task_output::Builder::default()
     }
@@ -623,11 +614,10 @@ impl std::fmt::Debug for ListPipelinesOutput {
         formatter.finish()
     }
 }
-/// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput)
+/// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
 pub mod list_pipelines_output {
 
-    /// A builder for [`ListPipelinesOutput`](crate::output::ListPipelinesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id_list:
@@ -675,7 +665,7 @@ pub mod list_pipelines_output {
             self.has_more_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::output::ListPipelinesOutput)
+        /// Consumes the builder and constructs a [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
         pub fn build(self) -> crate::output::ListPipelinesOutput {
             crate::output::ListPipelinesOutput {
                 pipeline_id_list: self.pipeline_id_list,
@@ -686,7 +676,7 @@ pub mod list_pipelines_output {
     }
 }
 impl ListPipelinesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput)
+    /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
     pub fn builder() -> crate::output::list_pipelines_output::Builder {
         crate::output::list_pipelines_output::Builder::default()
     }
@@ -726,11 +716,10 @@ impl std::fmt::Debug for GetPipelineDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput)
+/// See [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
 pub mod get_pipeline_definition_output {
 
-    /// A builder for [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_objects:
@@ -798,7 +787,7 @@ pub mod get_pipeline_definition_output {
             self.parameter_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput)
+        /// Consumes the builder and constructs a [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
         pub fn build(self) -> crate::output::GetPipelineDefinitionOutput {
             crate::output::GetPipelineDefinitionOutput {
                 pipeline_objects: self.pipeline_objects,
@@ -809,7 +798,7 @@ pub mod get_pipeline_definition_output {
     }
 }
 impl GetPipelineDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
     pub fn builder() -> crate::output::get_pipeline_definition_output::Builder {
         crate::output::get_pipeline_definition_output::Builder::default()
     }
@@ -835,11 +824,10 @@ impl std::fmt::Debug for EvaluateExpressionOutput {
         formatter.finish()
     }
 }
-/// See [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput)
+/// See [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
 pub mod evaluate_expression_output {
 
-    /// A builder for [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput)
-    #[non_exhaustive]
+    /// A builder for [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluated_expression: std::option::Option<std::string::String>,
@@ -858,7 +846,7 @@ pub mod evaluate_expression_output {
             self.evaluated_expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput)
+        /// Consumes the builder and constructs a [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
         pub fn build(self) -> crate::output::EvaluateExpressionOutput {
             crate::output::EvaluateExpressionOutput {
                 evaluated_expression: self.evaluated_expression,
@@ -867,7 +855,7 @@ pub mod evaluate_expression_output {
     }
 }
 impl EvaluateExpressionOutput {
-    /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput)
+    /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
     pub fn builder() -> crate::output::evaluate_expression_output::Builder {
         crate::output::evaluate_expression_output::Builder::default()
     }
@@ -896,11 +884,10 @@ impl std::fmt::Debug for DescribePipelinesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput)
+/// See [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
 pub mod describe_pipelines_output {
 
-    /// A builder for [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_description_list:
@@ -929,7 +916,7 @@ pub mod describe_pipelines_output {
             self.pipeline_description_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput)
+        /// Consumes the builder and constructs a [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
         pub fn build(self) -> crate::output::DescribePipelinesOutput {
             crate::output::DescribePipelinesOutput {
                 pipeline_description_list: self.pipeline_description_list,
@@ -938,7 +925,7 @@ pub mod describe_pipelines_output {
     }
 }
 impl DescribePipelinesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
     pub fn builder() -> crate::output::describe_pipelines_output::Builder {
         crate::output::describe_pipelines_output::Builder::default()
     }
@@ -978,11 +965,10 @@ impl std::fmt::Debug for DescribeObjectsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput)
+/// See [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
 pub mod describe_objects_output {
 
-    /// A builder for [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_objects:
@@ -1030,7 +1016,7 @@ pub mod describe_objects_output {
             self.has_more_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput)
+        /// Consumes the builder and constructs a [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
         pub fn build(self) -> crate::output::DescribeObjectsOutput {
             crate::output::DescribeObjectsOutput {
                 pipeline_objects: self.pipeline_objects,
@@ -1041,7 +1027,7 @@ pub mod describe_objects_output {
     }
 }
 impl DescribeObjectsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
     pub fn builder() -> crate::output::describe_objects_output::Builder {
         crate::output::describe_objects_output::Builder::default()
     }
@@ -1057,22 +1043,21 @@ impl std::fmt::Debug for DeletePipelineOutput {
         formatter.finish()
     }
 }
-/// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
+/// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
 
-    /// A builder for [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
+        /// Consumes the builder and constructs a [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
         pub fn build(self) -> crate::output::DeletePipelineOutput {
             crate::output::DeletePipelineOutput {}
         }
     }
 }
 impl DeletePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
+    /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
     pub fn builder() -> crate::output::delete_pipeline_output::Builder {
         crate::output::delete_pipeline_output::Builder::default()
     }
@@ -1088,22 +1073,21 @@ impl std::fmt::Debug for DeactivatePipelineOutput {
         formatter.finish()
     }
 }
-/// See [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput)
+/// See [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
 pub mod deactivate_pipeline_output {
 
-    /// A builder for [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput)
+        /// Consumes the builder and constructs a [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
         pub fn build(self) -> crate::output::DeactivatePipelineOutput {
             crate::output::DeactivatePipelineOutput {}
         }
     }
 }
 impl DeactivatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput)
+    /// Creates a new builder-style object to manufacture [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
     pub fn builder() -> crate::output::deactivate_pipeline_output::Builder {
         crate::output::deactivate_pipeline_output::Builder::default()
     }
@@ -1129,11 +1113,10 @@ impl std::fmt::Debug for CreatePipelineOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput)
+/// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
 pub mod create_pipeline_output {
 
-    /// A builder for [`CreatePipelineOutput`](crate::output::CreatePipelineOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
@@ -1149,7 +1132,7 @@ pub mod create_pipeline_output {
             self.pipeline_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::output::CreatePipelineOutput)
+        /// Consumes the builder and constructs a [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
         pub fn build(self) -> crate::output::CreatePipelineOutput {
             crate::output::CreatePipelineOutput {
                 pipeline_id: self.pipeline_id,
@@ -1158,7 +1141,7 @@ pub mod create_pipeline_output {
     }
 }
 impl CreatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
     pub fn builder() -> crate::output::create_pipeline_output::Builder {
         crate::output::create_pipeline_output::Builder::default()
     }
@@ -1174,22 +1157,21 @@ impl std::fmt::Debug for AddTagsOutput {
         formatter.finish()
     }
 }
-/// See [`AddTagsOutput`](crate::output::AddTagsOutput)
+/// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
-    /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput)
+        /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
             crate::output::AddTagsOutput {}
         }
     }
 }
 impl AddTagsOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput)
+    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
     pub fn builder() -> crate::output::add_tags_output::Builder {
         crate::output::add_tags_output::Builder::default()
     }
@@ -1205,22 +1187,21 @@ impl std::fmt::Debug for ActivatePipelineOutput {
         formatter.finish()
     }
 }
-/// See [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput)
+/// See [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
 pub mod activate_pipeline_output {
 
-    /// A builder for [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput)
-    #[non_exhaustive]
+    /// A builder for [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput)
+        /// Consumes the builder and constructs a [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
         pub fn build(self) -> crate::output::ActivatePipelineOutput {
             crate::output::ActivatePipelineOutput {}
         }
     }
 }
 impl ActivatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput)
+    /// Creates a new builder-style object to manufacture [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
     pub fn builder() -> crate::output::activate_pipeline_output::Builder {
         crate::output::activate_pipeline_output::Builder::default()
     }

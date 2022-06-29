@@ -38,11 +38,10 @@ impl std::fmt::Debug for UploadMetadata {
         formatter.finish()
     }
 }
-/// See [`UploadMetadata`](crate::model::UploadMetadata)
+/// See [`UploadMetadata`](crate::model::UploadMetadata).
 pub mod upload_metadata {
 
-    /// A builder for [`UploadMetadata`](crate::model::UploadMetadata)
-    #[non_exhaustive]
+    /// A builder for [`UploadMetadata`](crate::model::UploadMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -97,7 +96,7 @@ pub mod upload_metadata {
             self.headers_to_include = input;
             self
         }
-        /// Consumes the builder and constructs a [`UploadMetadata`](crate::model::UploadMetadata)
+        /// Consumes the builder and constructs a [`UploadMetadata`](crate::model::UploadMetadata).
         pub fn build(self) -> crate::model::UploadMetadata {
             crate::model::UploadMetadata {
                 url: self.url,
@@ -108,7 +107,7 @@ pub mod upload_metadata {
     }
 }
 impl UploadMetadata {
-    /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata)
+    /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata).
     pub fn builder() -> crate::model::upload_metadata::Builder {
         crate::model::upload_metadata::Builder::default()
     }
@@ -192,11 +191,10 @@ impl std::fmt::Debug for Item {
         formatter.finish()
     }
 }
-/// See [`Item`](crate::model::Item)
+/// See [`Item`](crate::model::Item).
 pub mod item {
 
-    /// A builder for [`Item`](crate::model::Item)
-    #[non_exhaustive]
+    /// A builder for [`Item`](crate::model::Item).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) absolute_time: std::option::Option<std::string::String>,
@@ -320,7 +318,7 @@ pub mod item {
             self.attachments = input;
             self
         }
-        /// Consumes the builder and constructs a [`Item`](crate::model::Item)
+        /// Consumes the builder and constructs a [`Item`](crate::model::Item).
         pub fn build(self) -> crate::model::Item {
             crate::model::Item {
                 absolute_time: self.absolute_time,
@@ -337,7 +335,7 @@ pub mod item {
     }
 }
 impl Item {
-    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item)
+    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
     pub fn builder() -> crate::model::item::Builder {
         crate::model::item::Builder::default()
     }
@@ -384,11 +382,10 @@ impl std::fmt::Debug for AttachmentItem {
         formatter.finish()
     }
 }
-/// See [`AttachmentItem`](crate::model::AttachmentItem)
+/// See [`AttachmentItem`](crate::model::AttachmentItem).
 pub mod attachment_item {
 
-    /// A builder for [`AttachmentItem`](crate::model::AttachmentItem)
-    #[non_exhaustive]
+    /// A builder for [`AttachmentItem`](crate::model::AttachmentItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -446,7 +443,7 @@ pub mod attachment_item {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttachmentItem`](crate::model::AttachmentItem)
+        /// Consumes the builder and constructs a [`AttachmentItem`](crate::model::AttachmentItem).
         pub fn build(self) -> crate::model::AttachmentItem {
             crate::model::AttachmentItem {
                 content_type: self.content_type,
@@ -458,7 +455,7 @@ pub mod attachment_item {
     }
 }
 impl AttachmentItem {
-    /// Creates a new builder-style object to manufacture [`AttachmentItem`](crate::model::AttachmentItem)
+    /// Creates a new builder-style object to manufacture [`AttachmentItem`](crate::model::AttachmentItem).
     pub fn builder() -> crate::model::attachment_item::Builder {
         crate::model::attachment_item::Builder::default()
     }
@@ -716,11 +713,10 @@ impl std::fmt::Debug for StartPosition {
         formatter.finish()
     }
 }
-/// See [`StartPosition`](crate::model::StartPosition)
+/// See [`StartPosition`](crate::model::StartPosition).
 pub mod start_position {
 
-    /// A builder for [`StartPosition`](crate::model::StartPosition)
-    #[non_exhaustive]
+    /// A builder for [`StartPosition`](crate::model::StartPosition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -763,7 +759,7 @@ pub mod start_position {
             self.most_recent = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartPosition`](crate::model::StartPosition)
+        /// Consumes the builder and constructs a [`StartPosition`](crate::model::StartPosition).
         pub fn build(self) -> crate::model::StartPosition {
             crate::model::StartPosition {
                 id: self.id,
@@ -774,7 +770,7 @@ pub mod start_position {
     }
 }
 impl StartPosition {
-    /// Creates a new builder-style object to manufacture [`StartPosition`](crate::model::StartPosition)
+    /// Creates a new builder-style object to manufacture [`StartPosition`](crate::model::StartPosition).
     pub fn builder() -> crate::model::start_position::Builder {
         crate::model::start_position::Builder::default()
     }
@@ -919,11 +915,10 @@ impl std::fmt::Debug for ConnectionCredentials {
         formatter.finish()
     }
 }
-/// See [`ConnectionCredentials`](crate::model::ConnectionCredentials)
+/// See [`ConnectionCredentials`](crate::model::ConnectionCredentials).
 pub mod connection_credentials {
 
-    /// A builder for [`ConnectionCredentials`](crate::model::ConnectionCredentials)
-    #[non_exhaustive]
+    /// A builder for [`ConnectionCredentials`](crate::model::ConnectionCredentials).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_token: std::option::Option<std::string::String>,
@@ -955,7 +950,7 @@ pub mod connection_credentials {
             self.expiry = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectionCredentials`](crate::model::ConnectionCredentials)
+        /// Consumes the builder and constructs a [`ConnectionCredentials`](crate::model::ConnectionCredentials).
         pub fn build(self) -> crate::model::ConnectionCredentials {
             crate::model::ConnectionCredentials {
                 connection_token: self.connection_token,
@@ -965,7 +960,7 @@ pub mod connection_credentials {
     }
 }
 impl ConnectionCredentials {
-    /// Creates a new builder-style object to manufacture [`ConnectionCredentials`](crate::model::ConnectionCredentials)
+    /// Creates a new builder-style object to manufacture [`ConnectionCredentials`](crate::model::ConnectionCredentials).
     pub fn builder() -> crate::model::connection_credentials::Builder {
         crate::model::connection_credentials::Builder::default()
     }
@@ -1000,11 +995,10 @@ impl std::fmt::Debug for Websocket {
         formatter.finish()
     }
 }
-/// See [`Websocket`](crate::model::Websocket)
+/// See [`Websocket`](crate::model::Websocket).
 pub mod websocket {
 
-    /// A builder for [`Websocket`](crate::model::Websocket)
-    #[non_exhaustive]
+    /// A builder for [`Websocket`](crate::model::Websocket).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -1036,7 +1030,7 @@ pub mod websocket {
             self.connection_expiry = input;
             self
         }
-        /// Consumes the builder and constructs a [`Websocket`](crate::model::Websocket)
+        /// Consumes the builder and constructs a [`Websocket`](crate::model::Websocket).
         pub fn build(self) -> crate::model::Websocket {
             crate::model::Websocket {
                 url: self.url,
@@ -1046,7 +1040,7 @@ pub mod websocket {
     }
 }
 impl Websocket {
-    /// Creates a new builder-style object to manufacture [`Websocket`](crate::model::Websocket)
+    /// Creates a new builder-style object to manufacture [`Websocket`](crate::model::Websocket).
     pub fn builder() -> crate::model::websocket::Builder {
         crate::model::websocket::Builder::default()
     }

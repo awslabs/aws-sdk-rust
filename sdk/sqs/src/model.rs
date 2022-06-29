@@ -206,11 +206,10 @@ impl std::fmt::Debug for BatchResultErrorEntry {
         formatter.finish()
     }
 }
-/// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
+/// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
 pub mod batch_result_error_entry {
 
-    /// A builder for [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
-    #[non_exhaustive]
+    /// A builder for [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -259,7 +258,7 @@ pub mod batch_result_error_entry {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
+        /// Consumes the builder and constructs a [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
         pub fn build(self) -> crate::model::BatchResultErrorEntry {
             crate::model::BatchResultErrorEntry {
                 id: self.id,
@@ -271,7 +270,7 @@ pub mod batch_result_error_entry {
     }
 }
 impl BatchResultErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
+    /// Creates a new builder-style object to manufacture [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
     pub fn builder() -> crate::model::batch_result_error_entry::Builder {
         crate::model::batch_result_error_entry::Builder::default()
     }
@@ -339,11 +338,10 @@ impl std::fmt::Debug for SendMessageBatchResultEntry {
         formatter.finish()
     }
 }
-/// See [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry)
+/// See [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
 pub mod send_message_batch_result_entry {
 
-    /// A builder for [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry)
-    #[non_exhaustive]
+    /// A builder for [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -433,7 +431,7 @@ pub mod send_message_batch_result_entry {
             self.sequence_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry)
+        /// Consumes the builder and constructs a [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
         pub fn build(self) -> crate::model::SendMessageBatchResultEntry {
             crate::model::SendMessageBatchResultEntry {
                 id: self.id,
@@ -447,7 +445,7 @@ pub mod send_message_batch_result_entry {
     }
 }
 impl SendMessageBatchResultEntry {
-    /// Creates a new builder-style object to manufacture [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry)
+    /// Creates a new builder-style object to manufacture [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
     pub fn builder() -> crate::model::send_message_batch_result_entry::Builder {
         crate::model::send_message_batch_result_entry::Builder::default()
     }
@@ -607,11 +605,10 @@ impl std::fmt::Debug for SendMessageBatchRequestEntry {
         formatter.finish()
     }
 }
-/// See [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry)
+/// See [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
 pub mod send_message_batch_request_entry {
 
-    /// A builder for [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry)
-    #[non_exhaustive]
+    /// A builder for [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -813,7 +810,7 @@ pub mod send_message_batch_request_entry {
             self.message_group_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry)
+        /// Consumes the builder and constructs a [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
         pub fn build(self) -> crate::model::SendMessageBatchRequestEntry {
             crate::model::SendMessageBatchRequestEntry {
                 id: self.id,
@@ -828,7 +825,7 @@ pub mod send_message_batch_request_entry {
     }
 }
 impl SendMessageBatchRequestEntry {
-    /// Creates a new builder-style object to manufacture [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry)
+    /// Creates a new builder-style object to manufacture [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
     pub fn builder() -> crate::model::send_message_batch_request_entry::Builder {
         crate::model::send_message_batch_request_entry::Builder::default()
     }
@@ -885,11 +882,10 @@ impl std::fmt::Debug for MessageSystemAttributeValue {
         formatter.finish()
     }
 }
-/// See [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue)
+/// See [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
 pub mod message_system_attribute_value {
 
-    /// A builder for [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue)
-    #[non_exhaustive]
+    /// A builder for [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_value: std::option::Option<std::string::String>,
@@ -972,7 +968,7 @@ pub mod message_system_attribute_value {
             self.data_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue)
+        /// Consumes the builder and constructs a [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
         pub fn build(self) -> crate::model::MessageSystemAttributeValue {
             crate::model::MessageSystemAttributeValue {
                 string_value: self.string_value,
@@ -985,7 +981,7 @@ pub mod message_system_attribute_value {
     }
 }
 impl MessageSystemAttributeValue {
-    /// Creates a new builder-style object to manufacture [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue)
+    /// Creates a new builder-style object to manufacture [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
     pub fn builder() -> crate::model::message_system_attribute_value::Builder {
         crate::model::message_system_attribute_value::Builder::default()
     }
@@ -1093,11 +1089,10 @@ impl std::fmt::Debug for MessageAttributeValue {
         formatter.finish()
     }
 }
-/// See [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+/// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
 pub mod message_attribute_value {
 
-    /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue)
-    #[non_exhaustive]
+    /// A builder for [`MessageAttributeValue`](crate::model::MessageAttributeValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) string_value: std::option::Option<std::string::String>,
@@ -1180,7 +1175,7 @@ pub mod message_attribute_value {
             self.data_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+        /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::model::MessageAttributeValue).
         pub fn build(self) -> crate::model::MessageAttributeValue {
             crate::model::MessageAttributeValue {
                 string_value: self.string_value,
@@ -1193,7 +1188,7 @@ pub mod message_attribute_value {
     }
 }
 impl MessageAttributeValue {
-    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue)
+    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
     pub fn builder() -> crate::model::message_attribute_value::Builder {
         crate::model::message_attribute_value::Builder::default()
     }
@@ -1293,11 +1288,10 @@ impl std::fmt::Debug for Message {
         formatter.finish()
     }
 }
-/// See [`Message`](crate::model::Message)
+/// See [`Message`](crate::model::Message).
 pub mod message {
 
-    /// A builder for [`Message`](crate::model::Message)
-    #[non_exhaustive]
+    /// A builder for [`Message`](crate::model::Message).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -1445,7 +1439,7 @@ pub mod message {
             self.message_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`Message`](crate::model::Message)
+        /// Consumes the builder and constructs a [`Message`](crate::model::Message).
         pub fn build(self) -> crate::model::Message {
             crate::model::Message {
                 message_id: self.message_id,
@@ -1460,7 +1454,7 @@ pub mod message {
     }
 }
 impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message)
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
     pub fn builder() -> crate::model::message::Builder {
         crate::model::message::Builder::default()
     }
@@ -1578,11 +1572,10 @@ impl std::fmt::Debug for DeleteMessageBatchResultEntry {
         formatter.finish()
     }
 }
-/// See [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry)
+/// See [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
 pub mod delete_message_batch_result_entry {
 
-    /// A builder for [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry)
-    #[non_exhaustive]
+    /// A builder for [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1598,14 +1591,14 @@ pub mod delete_message_batch_result_entry {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry)
+        /// Consumes the builder and constructs a [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
         pub fn build(self) -> crate::model::DeleteMessageBatchResultEntry {
             crate::model::DeleteMessageBatchResultEntry { id: self.id }
         }
     }
 }
 impl DeleteMessageBatchResultEntry {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry)
+    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
     pub fn builder() -> crate::model::delete_message_batch_result_entry::Builder {
         crate::model::delete_message_batch_result_entry::Builder::default()
     }
@@ -1644,11 +1637,10 @@ impl std::fmt::Debug for DeleteMessageBatchRequestEntry {
         formatter.finish()
     }
 }
-/// See [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry)
+/// See [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
 pub mod delete_message_batch_request_entry {
 
-    /// A builder for [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry)
-    #[non_exhaustive]
+    /// A builder for [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1684,7 +1676,7 @@ pub mod delete_message_batch_request_entry {
             self.receipt_handle = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry)
+        /// Consumes the builder and constructs a [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
         pub fn build(self) -> crate::model::DeleteMessageBatchRequestEntry {
             crate::model::DeleteMessageBatchRequestEntry {
                 id: self.id,
@@ -1694,7 +1686,7 @@ pub mod delete_message_batch_request_entry {
     }
 }
 impl DeleteMessageBatchRequestEntry {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry)
+    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
     pub fn builder() -> crate::model::delete_message_batch_request_entry::Builder {
         crate::model::delete_message_batch_request_entry::Builder::default()
     }
@@ -1720,11 +1712,10 @@ impl std::fmt::Debug for ChangeMessageVisibilityBatchResultEntry {
         formatter.finish()
     }
 }
-/// See [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry)
+/// See [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
 pub mod change_message_visibility_batch_result_entry {
 
-    /// A builder for [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry)
-    #[non_exhaustive]
+    /// A builder for [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1740,14 +1731,14 @@ pub mod change_message_visibility_batch_result_entry {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry)
+        /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
         pub fn build(self) -> crate::model::ChangeMessageVisibilityBatchResultEntry {
             crate::model::ChangeMessageVisibilityBatchResultEntry { id: self.id }
         }
     }
 }
 impl ChangeMessageVisibilityBatchResultEntry {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry)
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
     pub fn builder() -> crate::model::change_message_visibility_batch_result_entry::Builder {
         crate::model::change_message_visibility_batch_result_entry::Builder::default()
     }
@@ -1798,11 +1789,10 @@ impl std::fmt::Debug for ChangeMessageVisibilityBatchRequestEntry {
         formatter.finish()
     }
 }
-/// See [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry)
+/// See [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
 pub mod change_message_visibility_batch_request_entry {
 
-    /// A builder for [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry)
-    #[non_exhaustive]
+    /// A builder for [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1849,7 +1839,7 @@ pub mod change_message_visibility_batch_request_entry {
             self.visibility_timeout = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry)
+        /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
         pub fn build(self) -> crate::model::ChangeMessageVisibilityBatchRequestEntry {
             crate::model::ChangeMessageVisibilityBatchRequestEntry {
                 id: self.id,
@@ -1860,7 +1850,7 @@ pub mod change_message_visibility_batch_request_entry {
     }
 }
 impl ChangeMessageVisibilityBatchRequestEntry {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry)
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
     pub fn builder() -> crate::model::change_message_visibility_batch_request_entry::Builder {
         crate::model::change_message_visibility_batch_request_entry::Builder::default()
     }

@@ -3488,11 +3488,10 @@ impl std::fmt::Display for InvalidInput {
     }
 }
 impl std::error::Error for InvalidInput {}
-/// See [`InvalidInput`](crate::error::InvalidInput)
+/// See [`InvalidInput`](crate::error::InvalidInput).
 pub mod invalid_input {
 
-    /// A builder for [`InvalidInput`](crate::error::InvalidInput)
-    #[non_exhaustive]
+    /// A builder for [`InvalidInput`](crate::error::InvalidInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3508,7 +3507,7 @@ pub mod invalid_input {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidInput`](crate::error::InvalidInput)
+        /// Consumes the builder and constructs a [`InvalidInput`](crate::error::InvalidInput).
         pub fn build(self) -> crate::error::InvalidInput {
             crate::error::InvalidInput {
                 message: self.message,
@@ -3517,7 +3516,7 @@ pub mod invalid_input {
     }
 }
 impl InvalidInput {
-    /// Creates a new builder-style object to manufacture [`InvalidInput`](crate::error::InvalidInput)
+    /// Creates a new builder-style object to manufacture [`InvalidInput`](crate::error::InvalidInput).
     pub fn builder() -> crate::error::invalid_input::Builder {
         crate::error::invalid_input::Builder::default()
     }
@@ -3553,11 +3552,10 @@ impl std::fmt::Display for UnsupportedTld {
     }
 }
 impl std::error::Error for UnsupportedTld {}
-/// See [`UnsupportedTld`](crate::error::UnsupportedTld)
+/// See [`UnsupportedTld`](crate::error::UnsupportedTld).
 pub mod unsupported_tld {
 
-    /// A builder for [`UnsupportedTld`](crate::error::UnsupportedTld)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedTld`](crate::error::UnsupportedTld).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3573,7 +3571,7 @@ pub mod unsupported_tld {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedTld`](crate::error::UnsupportedTld)
+        /// Consumes the builder and constructs a [`UnsupportedTld`](crate::error::UnsupportedTld).
         pub fn build(self) -> crate::error::UnsupportedTld {
             crate::error::UnsupportedTld {
                 message: self.message,
@@ -3582,7 +3580,7 @@ pub mod unsupported_tld {
     }
 }
 impl UnsupportedTld {
-    /// Creates a new builder-style object to manufacture [`UnsupportedTld`](crate::error::UnsupportedTld)
+    /// Creates a new builder-style object to manufacture [`UnsupportedTld`](crate::error::UnsupportedTld).
     pub fn builder() -> crate::error::unsupported_tld::Builder {
         crate::error::unsupported_tld::Builder::default()
     }
@@ -3618,11 +3616,10 @@ impl std::fmt::Display for OperationLimitExceeded {
     }
 }
 impl std::error::Error for OperationLimitExceeded {}
-/// See [`OperationLimitExceeded`](crate::error::OperationLimitExceeded)
+/// See [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
 pub mod operation_limit_exceeded {
 
-    /// A builder for [`OperationLimitExceeded`](crate::error::OperationLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3638,7 +3635,7 @@ pub mod operation_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationLimitExceeded`](crate::error::OperationLimitExceeded)
+        /// Consumes the builder and constructs a [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
         pub fn build(self) -> crate::error::OperationLimitExceeded {
             crate::error::OperationLimitExceeded {
                 message: self.message,
@@ -3647,7 +3644,7 @@ pub mod operation_limit_exceeded {
     }
 }
 impl OperationLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`OperationLimitExceeded`](crate::error::OperationLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
     pub fn builder() -> crate::error::operation_limit_exceeded::Builder {
         crate::error::operation_limit_exceeded::Builder::default()
     }
@@ -3683,11 +3680,10 @@ impl std::fmt::Display for TldRulesViolation {
     }
 }
 impl std::error::Error for TldRulesViolation {}
-/// See [`TldRulesViolation`](crate::error::TldRulesViolation)
+/// See [`TldRulesViolation`](crate::error::TldRulesViolation).
 pub mod tld_rules_violation {
 
-    /// A builder for [`TldRulesViolation`](crate::error::TldRulesViolation)
-    #[non_exhaustive]
+    /// A builder for [`TldRulesViolation`](crate::error::TldRulesViolation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3703,7 +3699,7 @@ pub mod tld_rules_violation {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TldRulesViolation`](crate::error::TldRulesViolation)
+        /// Consumes the builder and constructs a [`TldRulesViolation`](crate::error::TldRulesViolation).
         pub fn build(self) -> crate::error::TldRulesViolation {
             crate::error::TldRulesViolation {
                 message: self.message,
@@ -3712,7 +3708,7 @@ pub mod tld_rules_violation {
     }
 }
 impl TldRulesViolation {
-    /// Creates a new builder-style object to manufacture [`TldRulesViolation`](crate::error::TldRulesViolation)
+    /// Creates a new builder-style object to manufacture [`TldRulesViolation`](crate::error::TldRulesViolation).
     pub fn builder() -> crate::error::tld_rules_violation::Builder {
         crate::error::tld_rules_violation::Builder::default()
     }
@@ -3748,11 +3744,10 @@ impl std::fmt::Display for DuplicateRequest {
     }
 }
 impl std::error::Error for DuplicateRequest {}
-/// See [`DuplicateRequest`](crate::error::DuplicateRequest)
+/// See [`DuplicateRequest`](crate::error::DuplicateRequest).
 pub mod duplicate_request {
 
-    /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest)
-    #[non_exhaustive]
+    /// A builder for [`DuplicateRequest`](crate::error::DuplicateRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3768,7 +3763,7 @@ pub mod duplicate_request {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DuplicateRequest`](crate::error::DuplicateRequest)
+        /// Consumes the builder and constructs a [`DuplicateRequest`](crate::error::DuplicateRequest).
         pub fn build(self) -> crate::error::DuplicateRequest {
             crate::error::DuplicateRequest {
                 message: self.message,
@@ -3777,7 +3772,7 @@ pub mod duplicate_request {
     }
 }
 impl DuplicateRequest {
-    /// Creates a new builder-style object to manufacture [`DuplicateRequest`](crate::error::DuplicateRequest)
+    /// Creates a new builder-style object to manufacture [`DuplicateRequest`](crate::error::DuplicateRequest).
     pub fn builder() -> crate::error::duplicate_request::Builder {
         crate::error::duplicate_request::Builder::default()
     }
@@ -3813,11 +3808,10 @@ impl std::fmt::Display for DomainLimitExceeded {
     }
 }
 impl std::error::Error for DomainLimitExceeded {}
-/// See [`DomainLimitExceeded`](crate::error::DomainLimitExceeded)
+/// See [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
 pub mod domain_limit_exceeded {
 
-    /// A builder for [`DomainLimitExceeded`](crate::error::DomainLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3833,7 +3827,7 @@ pub mod domain_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainLimitExceeded`](crate::error::DomainLimitExceeded)
+        /// Consumes the builder and constructs a [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
         pub fn build(self) -> crate::error::DomainLimitExceeded {
             crate::error::DomainLimitExceeded {
                 message: self.message,
@@ -3842,7 +3836,7 @@ pub mod domain_limit_exceeded {
     }
 }
 impl DomainLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`DomainLimitExceeded`](crate::error::DomainLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
     pub fn builder() -> crate::error::domain_limit_exceeded::Builder {
         crate::error::domain_limit_exceeded::Builder::default()
     }

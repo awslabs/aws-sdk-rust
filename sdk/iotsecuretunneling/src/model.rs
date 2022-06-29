@@ -27,11 +27,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -68,7 +67,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -101,11 +100,10 @@ impl std::fmt::Debug for DestinationConfig {
         formatter.finish()
     }
 }
-/// See [`DestinationConfig`](crate::model::DestinationConfig)
+/// See [`DestinationConfig`](crate::model::DestinationConfig).
 pub mod destination_config {
 
-    /// A builder for [`DestinationConfig`](crate::model::DestinationConfig)
-    #[non_exhaustive]
+    /// A builder for [`DestinationConfig`](crate::model::DestinationConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
@@ -141,7 +139,7 @@ pub mod destination_config {
             self.services = input;
             self
         }
-        /// Consumes the builder and constructs a [`DestinationConfig`](crate::model::DestinationConfig)
+        /// Consumes the builder and constructs a [`DestinationConfig`](crate::model::DestinationConfig).
         pub fn build(self) -> crate::model::DestinationConfig {
             crate::model::DestinationConfig {
                 thing_name: self.thing_name,
@@ -151,7 +149,7 @@ pub mod destination_config {
     }
 }
 impl DestinationConfig {
-    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig)
+    /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::model::DestinationConfig).
     pub fn builder() -> crate::model::destination_config::Builder {
         crate::model::destination_config::Builder::default()
     }
@@ -239,11 +237,10 @@ impl std::fmt::Debug for TimeoutConfig {
         formatter.finish()
     }
 }
-/// See [`TimeoutConfig`](crate::model::TimeoutConfig)
+/// See [`TimeoutConfig`](crate::model::TimeoutConfig).
 pub mod timeout_config {
 
-    /// A builder for [`TimeoutConfig`](crate::model::TimeoutConfig)
-    #[non_exhaustive]
+    /// A builder for [`TimeoutConfig`](crate::model::TimeoutConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_lifetime_timeout_minutes: std::option::Option<i32>,
@@ -259,7 +256,7 @@ pub mod timeout_config {
             self.max_lifetime_timeout_minutes = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimeoutConfig`](crate::model::TimeoutConfig)
+        /// Consumes the builder and constructs a [`TimeoutConfig`](crate::model::TimeoutConfig).
         pub fn build(self) -> crate::model::TimeoutConfig {
             crate::model::TimeoutConfig {
                 max_lifetime_timeout_minutes: self.max_lifetime_timeout_minutes,
@@ -268,7 +265,7 @@ pub mod timeout_config {
     }
 }
 impl TimeoutConfig {
-    /// Creates a new builder-style object to manufacture [`TimeoutConfig`](crate::model::TimeoutConfig)
+    /// Creates a new builder-style object to manufacture [`TimeoutConfig`](crate::model::TimeoutConfig).
     pub fn builder() -> crate::model::timeout_config::Builder {
         crate::model::timeout_config::Builder::default()
     }
@@ -329,11 +326,10 @@ impl std::fmt::Debug for TunnelSummary {
         formatter.finish()
     }
 }
-/// See [`TunnelSummary`](crate::model::TunnelSummary)
+/// See [`TunnelSummary`](crate::model::TunnelSummary).
 pub mod tunnel_summary {
 
-    /// A builder for [`TunnelSummary`](crate::model::TunnelSummary)
-    #[non_exhaustive]
+    /// A builder for [`TunnelSummary`](crate::model::TunnelSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -413,7 +409,7 @@ pub mod tunnel_summary {
             self.last_updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`TunnelSummary`](crate::model::TunnelSummary)
+        /// Consumes the builder and constructs a [`TunnelSummary`](crate::model::TunnelSummary).
         pub fn build(self) -> crate::model::TunnelSummary {
             crate::model::TunnelSummary {
                 tunnel_id: self.tunnel_id,
@@ -427,7 +423,7 @@ pub mod tunnel_summary {
     }
 }
 impl TunnelSummary {
-    /// Creates a new builder-style object to manufacture [`TunnelSummary`](crate::model::TunnelSummary)
+    /// Creates a new builder-style object to manufacture [`TunnelSummary`](crate::model::TunnelSummary).
     pub fn builder() -> crate::model::tunnel_summary::Builder {
         crate::model::tunnel_summary::Builder::default()
     }
@@ -583,11 +579,10 @@ impl std::fmt::Debug for Tunnel {
         formatter.finish()
     }
 }
-/// See [`Tunnel`](crate::model::Tunnel)
+/// See [`Tunnel`](crate::model::Tunnel).
 pub mod tunnel {
 
-    /// A builder for [`Tunnel`](crate::model::Tunnel)
-    #[non_exhaustive]
+    /// A builder for [`Tunnel`](crate::model::Tunnel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -746,7 +741,7 @@ pub mod tunnel {
             self.last_updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tunnel`](crate::model::Tunnel)
+        /// Consumes the builder and constructs a [`Tunnel`](crate::model::Tunnel).
         pub fn build(self) -> crate::model::Tunnel {
             crate::model::Tunnel {
                 tunnel_id: self.tunnel_id,
@@ -765,7 +760,7 @@ pub mod tunnel {
     }
 }
 impl Tunnel {
-    /// Creates a new builder-style object to manufacture [`Tunnel`](crate::model::Tunnel)
+    /// Creates a new builder-style object to manufacture [`Tunnel`](crate::model::Tunnel).
     pub fn builder() -> crate::model::tunnel::Builder {
         crate::model::tunnel::Builder::default()
     }
@@ -798,11 +793,10 @@ impl std::fmt::Debug for ConnectionState {
         formatter.finish()
     }
 }
-/// See [`ConnectionState`](crate::model::ConnectionState)
+/// See [`ConnectionState`](crate::model::ConnectionState).
 pub mod connection_state {
 
-    /// A builder for [`ConnectionState`](crate::model::ConnectionState)
-    #[non_exhaustive]
+    /// A builder for [`ConnectionState`](crate::model::ConnectionState).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
@@ -835,7 +829,7 @@ pub mod connection_state {
             self.last_updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConnectionState`](crate::model::ConnectionState)
+        /// Consumes the builder and constructs a [`ConnectionState`](crate::model::ConnectionState).
         pub fn build(self) -> crate::model::ConnectionState {
             crate::model::ConnectionState {
                 status: self.status,
@@ -845,7 +839,7 @@ pub mod connection_state {
     }
 }
 impl ConnectionState {
-    /// Creates a new builder-style object to manufacture [`ConnectionState`](crate::model::ConnectionState)
+    /// Creates a new builder-style object to manufacture [`ConnectionState`](crate::model::ConnectionState).
     pub fn builder() -> crate::model::connection_state::Builder {
         crate::model::connection_state::Builder::default()
     }

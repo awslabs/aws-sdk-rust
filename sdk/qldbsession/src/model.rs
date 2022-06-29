@@ -34,11 +34,10 @@ impl std::fmt::Debug for FetchPageResult {
         formatter.finish()
     }
 }
-/// See [`FetchPageResult`](crate::model::FetchPageResult)
+/// See [`FetchPageResult`](crate::model::FetchPageResult).
 pub mod fetch_page_result {
 
-    /// A builder for [`FetchPageResult`](crate::model::FetchPageResult)
-    #[non_exhaustive]
+    /// A builder for [`FetchPageResult`](crate::model::FetchPageResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page: std::option::Option<crate::model::Page>,
@@ -82,7 +81,7 @@ pub mod fetch_page_result {
             self.consumed_i_os = input;
             self
         }
-        /// Consumes the builder and constructs a [`FetchPageResult`](crate::model::FetchPageResult)
+        /// Consumes the builder and constructs a [`FetchPageResult`](crate::model::FetchPageResult).
         pub fn build(self) -> crate::model::FetchPageResult {
             crate::model::FetchPageResult {
                 page: self.page,
@@ -93,7 +92,7 @@ pub mod fetch_page_result {
     }
 }
 impl FetchPageResult {
-    /// Creates a new builder-style object to manufacture [`FetchPageResult`](crate::model::FetchPageResult)
+    /// Creates a new builder-style object to manufacture [`FetchPageResult`](crate::model::FetchPageResult).
     pub fn builder() -> crate::model::fetch_page_result::Builder {
         crate::model::fetch_page_result::Builder::default()
     }
@@ -126,11 +125,10 @@ impl std::fmt::Debug for IoUsage {
         formatter.finish()
     }
 }
-/// See [`IoUsage`](crate::model::IoUsage)
+/// See [`IoUsage`](crate::model::IoUsage).
 pub mod io_usage {
 
-    /// A builder for [`IoUsage`](crate::model::IoUsage)
-    #[non_exhaustive]
+    /// A builder for [`IoUsage`](crate::model::IoUsage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) read_i_os: std::option::Option<i64>,
@@ -157,7 +155,7 @@ pub mod io_usage {
             self.write_i_os = input;
             self
         }
-        /// Consumes the builder and constructs a [`IoUsage`](crate::model::IoUsage)
+        /// Consumes the builder and constructs a [`IoUsage`](crate::model::IoUsage).
         pub fn build(self) -> crate::model::IoUsage {
             crate::model::IoUsage {
                 read_i_os: self.read_i_os.unwrap_or_default(),
@@ -167,7 +165,7 @@ pub mod io_usage {
     }
 }
 impl IoUsage {
-    /// Creates a new builder-style object to manufacture [`IoUsage`](crate::model::IoUsage)
+    /// Creates a new builder-style object to manufacture [`IoUsage`](crate::model::IoUsage).
     pub fn builder() -> crate::model::io_usage::Builder {
         crate::model::io_usage::Builder::default()
     }
@@ -196,11 +194,10 @@ impl std::fmt::Debug for TimingInformation {
         formatter.finish()
     }
 }
-/// See [`TimingInformation`](crate::model::TimingInformation)
+/// See [`TimingInformation`](crate::model::TimingInformation).
 pub mod timing_information {
 
-    /// A builder for [`TimingInformation`](crate::model::TimingInformation)
-    #[non_exhaustive]
+    /// A builder for [`TimingInformation`](crate::model::TimingInformation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) processing_time_milliseconds: std::option::Option<i64>,
@@ -216,7 +213,7 @@ pub mod timing_information {
             self.processing_time_milliseconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimingInformation`](crate::model::TimingInformation)
+        /// Consumes the builder and constructs a [`TimingInformation`](crate::model::TimingInformation).
         pub fn build(self) -> crate::model::TimingInformation {
             crate::model::TimingInformation {
                 processing_time_milliseconds: self.processing_time_milliseconds.unwrap_or_default(),
@@ -225,7 +222,7 @@ pub mod timing_information {
     }
 }
 impl TimingInformation {
-    /// Creates a new builder-style object to manufacture [`TimingInformation`](crate::model::TimingInformation)
+    /// Creates a new builder-style object to manufacture [`TimingInformation`](crate::model::TimingInformation).
     pub fn builder() -> crate::model::timing_information::Builder {
         crate::model::timing_information::Builder::default()
     }
@@ -258,11 +255,10 @@ impl std::fmt::Debug for Page {
         formatter.finish()
     }
 }
-/// See [`Page`](crate::model::Page)
+/// See [`Page`](crate::model::Page).
 pub mod page {
 
-    /// A builder for [`Page`](crate::model::Page)
-    #[non_exhaustive]
+    /// A builder for [`Page`](crate::model::Page).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ValueHolder>>,
@@ -301,7 +297,7 @@ pub mod page {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`Page`](crate::model::Page)
+        /// Consumes the builder and constructs a [`Page`](crate::model::Page).
         pub fn build(self) -> crate::model::Page {
             crate::model::Page {
                 values: self.values,
@@ -311,7 +307,7 @@ pub mod page {
     }
 }
 impl Page {
-    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page)
+    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
     pub fn builder() -> crate::model::page::Builder {
         crate::model::page::Builder::default()
     }
@@ -344,11 +340,10 @@ impl std::fmt::Debug for ValueHolder {
         formatter.finish()
     }
 }
-/// See [`ValueHolder`](crate::model::ValueHolder)
+/// See [`ValueHolder`](crate::model::ValueHolder).
 pub mod value_holder {
 
-    /// A builder for [`ValueHolder`](crate::model::ValueHolder)
-    #[non_exhaustive]
+    /// A builder for [`ValueHolder`](crate::model::ValueHolder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ion_binary: std::option::Option<aws_smithy_types::Blob>,
@@ -378,7 +373,7 @@ pub mod value_holder {
             self.ion_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValueHolder`](crate::model::ValueHolder)
+        /// Consumes the builder and constructs a [`ValueHolder`](crate::model::ValueHolder).
         pub fn build(self) -> crate::model::ValueHolder {
             crate::model::ValueHolder {
                 ion_binary: self.ion_binary,
@@ -388,7 +383,7 @@ pub mod value_holder {
     }
 }
 impl ValueHolder {
-    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder)
+    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
     pub fn builder() -> crate::model::value_holder::Builder {
         crate::model::value_holder::Builder::default()
     }
@@ -428,11 +423,10 @@ impl std::fmt::Debug for ExecuteStatementResult {
         formatter.finish()
     }
 }
-/// See [`ExecuteStatementResult`](crate::model::ExecuteStatementResult)
+/// See [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
 pub mod execute_statement_result {
 
-    /// A builder for [`ExecuteStatementResult`](crate::model::ExecuteStatementResult)
-    #[non_exhaustive]
+    /// A builder for [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) first_page: std::option::Option<crate::model::Page>,
@@ -476,7 +470,7 @@ pub mod execute_statement_result {
             self.consumed_i_os = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExecuteStatementResult`](crate::model::ExecuteStatementResult)
+        /// Consumes the builder and constructs a [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
         pub fn build(self) -> crate::model::ExecuteStatementResult {
             crate::model::ExecuteStatementResult {
                 first_page: self.first_page,
@@ -487,7 +481,7 @@ pub mod execute_statement_result {
     }
 }
 impl ExecuteStatementResult {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementResult`](crate::model::ExecuteStatementResult)
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementResult`](crate::model::ExecuteStatementResult).
     pub fn builder() -> crate::model::execute_statement_result::Builder {
         crate::model::execute_statement_result::Builder::default()
     }
@@ -513,11 +507,10 @@ impl std::fmt::Debug for AbortTransactionResult {
         formatter.finish()
     }
 }
-/// See [`AbortTransactionResult`](crate::model::AbortTransactionResult)
+/// See [`AbortTransactionResult`](crate::model::AbortTransactionResult).
 pub mod abort_transaction_result {
 
-    /// A builder for [`AbortTransactionResult`](crate::model::AbortTransactionResult)
-    #[non_exhaustive]
+    /// A builder for [`AbortTransactionResult`](crate::model::AbortTransactionResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -536,7 +529,7 @@ pub mod abort_transaction_result {
             self.timing_information = input;
             self
         }
-        /// Consumes the builder and constructs a [`AbortTransactionResult`](crate::model::AbortTransactionResult)
+        /// Consumes the builder and constructs a [`AbortTransactionResult`](crate::model::AbortTransactionResult).
         pub fn build(self) -> crate::model::AbortTransactionResult {
             crate::model::AbortTransactionResult {
                 timing_information: self.timing_information,
@@ -545,7 +538,7 @@ pub mod abort_transaction_result {
     }
 }
 impl AbortTransactionResult {
-    /// Creates a new builder-style object to manufacture [`AbortTransactionResult`](crate::model::AbortTransactionResult)
+    /// Creates a new builder-style object to manufacture [`AbortTransactionResult`](crate::model::AbortTransactionResult).
     pub fn builder() -> crate::model::abort_transaction_result::Builder {
         crate::model::abort_transaction_result::Builder::default()
     }
@@ -592,11 +585,10 @@ impl std::fmt::Debug for CommitTransactionResult {
         formatter.finish()
     }
 }
-/// See [`CommitTransactionResult`](crate::model::CommitTransactionResult)
+/// See [`CommitTransactionResult`](crate::model::CommitTransactionResult).
 pub mod commit_transaction_result {
 
-    /// A builder for [`CommitTransactionResult`](crate::model::CommitTransactionResult)
-    #[non_exhaustive]
+    /// A builder for [`CommitTransactionResult`](crate::model::CommitTransactionResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -657,7 +649,7 @@ pub mod commit_transaction_result {
             self.consumed_i_os = input;
             self
         }
-        /// Consumes the builder and constructs a [`CommitTransactionResult`](crate::model::CommitTransactionResult)
+        /// Consumes the builder and constructs a [`CommitTransactionResult`](crate::model::CommitTransactionResult).
         pub fn build(self) -> crate::model::CommitTransactionResult {
             crate::model::CommitTransactionResult {
                 transaction_id: self.transaction_id,
@@ -669,7 +661,7 @@ pub mod commit_transaction_result {
     }
 }
 impl CommitTransactionResult {
-    /// Creates a new builder-style object to manufacture [`CommitTransactionResult`](crate::model::CommitTransactionResult)
+    /// Creates a new builder-style object to manufacture [`CommitTransactionResult`](crate::model::CommitTransactionResult).
     pub fn builder() -> crate::model::commit_transaction_result::Builder {
         crate::model::commit_transaction_result::Builder::default()
     }
@@ -695,11 +687,10 @@ impl std::fmt::Debug for EndSessionResult {
         formatter.finish()
     }
 }
-/// See [`EndSessionResult`](crate::model::EndSessionResult)
+/// See [`EndSessionResult`](crate::model::EndSessionResult).
 pub mod end_session_result {
 
-    /// A builder for [`EndSessionResult`](crate::model::EndSessionResult)
-    #[non_exhaustive]
+    /// A builder for [`EndSessionResult`](crate::model::EndSessionResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timing_information: std::option::Option<crate::model::TimingInformation>,
@@ -718,7 +709,7 @@ pub mod end_session_result {
             self.timing_information = input;
             self
         }
-        /// Consumes the builder and constructs a [`EndSessionResult`](crate::model::EndSessionResult)
+        /// Consumes the builder and constructs a [`EndSessionResult`](crate::model::EndSessionResult).
         pub fn build(self) -> crate::model::EndSessionResult {
             crate::model::EndSessionResult {
                 timing_information: self.timing_information,
@@ -727,7 +718,7 @@ pub mod end_session_result {
     }
 }
 impl EndSessionResult {
-    /// Creates a new builder-style object to manufacture [`EndSessionResult`](crate::model::EndSessionResult)
+    /// Creates a new builder-style object to manufacture [`EndSessionResult`](crate::model::EndSessionResult).
     pub fn builder() -> crate::model::end_session_result::Builder {
         crate::model::end_session_result::Builder::default()
     }
@@ -760,11 +751,10 @@ impl std::fmt::Debug for StartTransactionResult {
         formatter.finish()
     }
 }
-/// See [`StartTransactionResult`](crate::model::StartTransactionResult)
+/// See [`StartTransactionResult`](crate::model::StartTransactionResult).
 pub mod start_transaction_result {
 
-    /// A builder for [`StartTransactionResult`](crate::model::StartTransactionResult)
-    #[non_exhaustive]
+    /// A builder for [`StartTransactionResult`](crate::model::StartTransactionResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -797,7 +787,7 @@ pub mod start_transaction_result {
             self.timing_information = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartTransactionResult`](crate::model::StartTransactionResult)
+        /// Consumes the builder and constructs a [`StartTransactionResult`](crate::model::StartTransactionResult).
         pub fn build(self) -> crate::model::StartTransactionResult {
             crate::model::StartTransactionResult {
                 transaction_id: self.transaction_id,
@@ -807,7 +797,7 @@ pub mod start_transaction_result {
     }
 }
 impl StartTransactionResult {
-    /// Creates a new builder-style object to manufacture [`StartTransactionResult`](crate::model::StartTransactionResult)
+    /// Creates a new builder-style object to manufacture [`StartTransactionResult`](crate::model::StartTransactionResult).
     pub fn builder() -> crate::model::start_transaction_result::Builder {
         crate::model::start_transaction_result::Builder::default()
     }
@@ -840,11 +830,10 @@ impl std::fmt::Debug for StartSessionResult {
         formatter.finish()
     }
 }
-/// See [`StartSessionResult`](crate::model::StartSessionResult)
+/// See [`StartSessionResult`](crate::model::StartSessionResult).
 pub mod start_session_result {
 
-    /// A builder for [`StartSessionResult`](crate::model::StartSessionResult)
-    #[non_exhaustive]
+    /// A builder for [`StartSessionResult`](crate::model::StartSessionResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) session_token: std::option::Option<std::string::String>,
@@ -877,7 +866,7 @@ pub mod start_session_result {
             self.timing_information = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartSessionResult`](crate::model::StartSessionResult)
+        /// Consumes the builder and constructs a [`StartSessionResult`](crate::model::StartSessionResult).
         pub fn build(self) -> crate::model::StartSessionResult {
             crate::model::StartSessionResult {
                 session_token: self.session_token,
@@ -887,7 +876,7 @@ pub mod start_session_result {
     }
 }
 impl StartSessionResult {
-    /// Creates a new builder-style object to manufacture [`StartSessionResult`](crate::model::StartSessionResult)
+    /// Creates a new builder-style object to manufacture [`StartSessionResult`](crate::model::StartSessionResult).
     pub fn builder() -> crate::model::start_session_result::Builder {
         crate::model::start_session_result::Builder::default()
     }
@@ -920,11 +909,10 @@ impl std::fmt::Debug for FetchPageRequest {
         formatter.finish()
     }
 }
-/// See [`FetchPageRequest`](crate::model::FetchPageRequest)
+/// See [`FetchPageRequest`](crate::model::FetchPageRequest).
 pub mod fetch_page_request {
 
-    /// A builder for [`FetchPageRequest`](crate::model::FetchPageRequest)
-    #[non_exhaustive]
+    /// A builder for [`FetchPageRequest`](crate::model::FetchPageRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -957,7 +945,7 @@ pub mod fetch_page_request {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`FetchPageRequest`](crate::model::FetchPageRequest)
+        /// Consumes the builder and constructs a [`FetchPageRequest`](crate::model::FetchPageRequest).
         pub fn build(self) -> crate::model::FetchPageRequest {
             crate::model::FetchPageRequest {
                 transaction_id: self.transaction_id,
@@ -967,7 +955,7 @@ pub mod fetch_page_request {
     }
 }
 impl FetchPageRequest {
-    /// Creates a new builder-style object to manufacture [`FetchPageRequest`](crate::model::FetchPageRequest)
+    /// Creates a new builder-style object to manufacture [`FetchPageRequest`](crate::model::FetchPageRequest).
     pub fn builder() -> crate::model::fetch_page_request::Builder {
         crate::model::fetch_page_request::Builder::default()
     }
@@ -1007,11 +995,10 @@ impl std::fmt::Debug for ExecuteStatementRequest {
         formatter.finish()
     }
 }
-/// See [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest)
+/// See [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
 pub mod execute_statement_request {
 
-    /// A builder for [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest)
-    #[non_exhaustive]
+    /// A builder for [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -1061,7 +1048,7 @@ pub mod execute_statement_request {
             self.parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest)
+        /// Consumes the builder and constructs a [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
         pub fn build(self) -> crate::model::ExecuteStatementRequest {
             crate::model::ExecuteStatementRequest {
                 transaction_id: self.transaction_id,
@@ -1072,7 +1059,7 @@ pub mod execute_statement_request {
     }
 }
 impl ExecuteStatementRequest {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest)
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementRequest`](crate::model::ExecuteStatementRequest).
     pub fn builder() -> crate::model::execute_statement_request::Builder {
         crate::model::execute_statement_request::Builder::default()
     }
@@ -1088,22 +1075,21 @@ impl std::fmt::Debug for AbortTransactionRequest {
         formatter.finish()
     }
 }
-/// See [`AbortTransactionRequest`](crate::model::AbortTransactionRequest)
+/// See [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
 pub mod abort_transaction_request {
 
-    /// A builder for [`AbortTransactionRequest`](crate::model::AbortTransactionRequest)
-    #[non_exhaustive]
+    /// A builder for [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AbortTransactionRequest`](crate::model::AbortTransactionRequest)
+        /// Consumes the builder and constructs a [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
         pub fn build(self) -> crate::model::AbortTransactionRequest {
             crate::model::AbortTransactionRequest {}
         }
     }
 }
 impl AbortTransactionRequest {
-    /// Creates a new builder-style object to manufacture [`AbortTransactionRequest`](crate::model::AbortTransactionRequest)
+    /// Creates a new builder-style object to manufacture [`AbortTransactionRequest`](crate::model::AbortTransactionRequest).
     pub fn builder() -> crate::model::abort_transaction_request::Builder {
         crate::model::abort_transaction_request::Builder::default()
     }
@@ -1138,11 +1124,10 @@ impl std::fmt::Debug for CommitTransactionRequest {
         formatter.finish()
     }
 }
-/// See [`CommitTransactionRequest`](crate::model::CommitTransactionRequest)
+/// See [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
 pub mod commit_transaction_request {
 
-    /// A builder for [`CommitTransactionRequest`](crate::model::CommitTransactionRequest)
-    #[non_exhaustive]
+    /// A builder for [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transaction_id: std::option::Option<std::string::String>,
@@ -1177,7 +1162,7 @@ pub mod commit_transaction_request {
             self.commit_digest = input;
             self
         }
-        /// Consumes the builder and constructs a [`CommitTransactionRequest`](crate::model::CommitTransactionRequest)
+        /// Consumes the builder and constructs a [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
         pub fn build(self) -> crate::model::CommitTransactionRequest {
             crate::model::CommitTransactionRequest {
                 transaction_id: self.transaction_id,
@@ -1187,7 +1172,7 @@ pub mod commit_transaction_request {
     }
 }
 impl CommitTransactionRequest {
-    /// Creates a new builder-style object to manufacture [`CommitTransactionRequest`](crate::model::CommitTransactionRequest)
+    /// Creates a new builder-style object to manufacture [`CommitTransactionRequest`](crate::model::CommitTransactionRequest).
     pub fn builder() -> crate::model::commit_transaction_request::Builder {
         crate::model::commit_transaction_request::Builder::default()
     }
@@ -1203,22 +1188,21 @@ impl std::fmt::Debug for EndSessionRequest {
         formatter.finish()
     }
 }
-/// See [`EndSessionRequest`](crate::model::EndSessionRequest)
+/// See [`EndSessionRequest`](crate::model::EndSessionRequest).
 pub mod end_session_request {
 
-    /// A builder for [`EndSessionRequest`](crate::model::EndSessionRequest)
-    #[non_exhaustive]
+    /// A builder for [`EndSessionRequest`](crate::model::EndSessionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EndSessionRequest`](crate::model::EndSessionRequest)
+        /// Consumes the builder and constructs a [`EndSessionRequest`](crate::model::EndSessionRequest).
         pub fn build(self) -> crate::model::EndSessionRequest {
             crate::model::EndSessionRequest {}
         }
     }
 }
 impl EndSessionRequest {
-    /// Creates a new builder-style object to manufacture [`EndSessionRequest`](crate::model::EndSessionRequest)
+    /// Creates a new builder-style object to manufacture [`EndSessionRequest`](crate::model::EndSessionRequest).
     pub fn builder() -> crate::model::end_session_request::Builder {
         crate::model::end_session_request::Builder::default()
     }
@@ -1234,22 +1218,21 @@ impl std::fmt::Debug for StartTransactionRequest {
         formatter.finish()
     }
 }
-/// See [`StartTransactionRequest`](crate::model::StartTransactionRequest)
+/// See [`StartTransactionRequest`](crate::model::StartTransactionRequest).
 pub mod start_transaction_request {
 
-    /// A builder for [`StartTransactionRequest`](crate::model::StartTransactionRequest)
-    #[non_exhaustive]
+    /// A builder for [`StartTransactionRequest`](crate::model::StartTransactionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartTransactionRequest`](crate::model::StartTransactionRequest)
+        /// Consumes the builder and constructs a [`StartTransactionRequest`](crate::model::StartTransactionRequest).
         pub fn build(self) -> crate::model::StartTransactionRequest {
             crate::model::StartTransactionRequest {}
         }
     }
 }
 impl StartTransactionRequest {
-    /// Creates a new builder-style object to manufacture [`StartTransactionRequest`](crate::model::StartTransactionRequest)
+    /// Creates a new builder-style object to manufacture [`StartTransactionRequest`](crate::model::StartTransactionRequest).
     pub fn builder() -> crate::model::start_transaction_request::Builder {
         crate::model::start_transaction_request::Builder::default()
     }
@@ -1275,11 +1258,10 @@ impl std::fmt::Debug for StartSessionRequest {
         formatter.finish()
     }
 }
-/// See [`StartSessionRequest`](crate::model::StartSessionRequest)
+/// See [`StartSessionRequest`](crate::model::StartSessionRequest).
 pub mod start_session_request {
 
-    /// A builder for [`StartSessionRequest`](crate::model::StartSessionRequest)
-    #[non_exhaustive]
+    /// A builder for [`StartSessionRequest`](crate::model::StartSessionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
@@ -1295,7 +1277,7 @@ pub mod start_session_request {
             self.ledger_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartSessionRequest`](crate::model::StartSessionRequest)
+        /// Consumes the builder and constructs a [`StartSessionRequest`](crate::model::StartSessionRequest).
         pub fn build(self) -> crate::model::StartSessionRequest {
             crate::model::StartSessionRequest {
                 ledger_name: self.ledger_name,
@@ -1304,7 +1286,7 @@ pub mod start_session_request {
     }
 }
 impl StartSessionRequest {
-    /// Creates a new builder-style object to manufacture [`StartSessionRequest`](crate::model::StartSessionRequest)
+    /// Creates a new builder-style object to manufacture [`StartSessionRequest`](crate::model::StartSessionRequest).
     pub fn builder() -> crate::model::start_session_request::Builder {
         crate::model::start_session_request::Builder::default()
     }

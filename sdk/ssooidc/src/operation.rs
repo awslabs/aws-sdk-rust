@@ -10,7 +10,7 @@ pub struct CreateToken {
     _private: (),
 }
 impl CreateToken {
-    /// Creates a new builder-style object to manufacture [`CreateTokenInput`](crate::input::CreateTokenInput)
+    /// Creates a new builder-style object to manufacture [`CreateTokenInput`](crate::input::CreateTokenInput).
     pub fn builder() -> crate::input::create_token_input::Builder {
         crate::input::create_token_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct RegisterClient {
     _private: (),
 }
 impl RegisterClient {
-    /// Creates a new builder-style object to manufacture [`RegisterClientInput`](crate::input::RegisterClientInput)
+    /// Creates a new builder-style object to manufacture [`RegisterClientInput`](crate::input::RegisterClientInput).
     pub fn builder() -> crate::input::register_client_input::Builder {
         crate::input::register_client_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct StartDeviceAuthorization {
     _private: (),
 }
 impl StartDeviceAuthorization {
-    /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationInput`](crate::input::StartDeviceAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationInput`](crate::input::StartDeviceAuthorizationInput).
     pub fn builder() -> crate::input::start_device_authorization_input::Builder {
         crate::input::start_device_authorization_input::Builder::default()
     }

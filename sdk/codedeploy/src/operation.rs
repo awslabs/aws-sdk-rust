@@ -10,7 +10,7 @@ pub struct AddTagsToOnPremisesInstances {
     _private: (),
 }
 impl AddTagsToOnPremisesInstances {
-    /// Creates a new builder-style object to manufacture [`AddTagsToOnPremisesInstancesInput`](crate::input::AddTagsToOnPremisesInstancesInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToOnPremisesInstancesInput`](crate::input::AddTagsToOnPremisesInstancesInput).
     pub fn builder() -> crate::input::add_tags_to_on_premises_instances_input::Builder {
         crate::input::add_tags_to_on_premises_instances_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchGetApplicationRevisions {
     _private: (),
 }
 impl BatchGetApplicationRevisions {
-    /// Creates a new builder-style object to manufacture [`BatchGetApplicationRevisionsInput`](crate::input::BatchGetApplicationRevisionsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetApplicationRevisionsInput`](crate::input::BatchGetApplicationRevisionsInput).
     pub fn builder() -> crate::input::batch_get_application_revisions_input::Builder {
         crate::input::batch_get_application_revisions_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchGetApplications {
     _private: (),
 }
 impl BatchGetApplications {
-    /// Creates a new builder-style object to manufacture [`BatchGetApplicationsInput`](crate::input::BatchGetApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetApplicationsInput`](crate::input::BatchGetApplicationsInput).
     pub fn builder() -> crate::input::batch_get_applications_input::Builder {
         crate::input::batch_get_applications_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct BatchGetDeploymentGroups {
     _private: (),
 }
 impl BatchGetDeploymentGroups {
-    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentGroupsInput`](crate::input::BatchGetDeploymentGroupsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentGroupsInput`](crate::input::BatchGetDeploymentGroupsInput).
     pub fn builder() -> crate::input::batch_get_deployment_groups_input::Builder {
         crate::input::batch_get_deployment_groups_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct BatchGetDeploymentInstances {
     _private: (),
 }
 impl BatchGetDeploymentInstances {
-    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentInstancesInput`](crate::input::BatchGetDeploymentInstancesInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentInstancesInput`](crate::input::BatchGetDeploymentInstancesInput).
     pub fn builder() -> crate::input::batch_get_deployment_instances_input::Builder {
         crate::input::batch_get_deployment_instances_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct BatchGetDeployments {
     _private: (),
 }
 impl BatchGetDeployments {
-    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentsInput`](crate::input::BatchGetDeploymentsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentsInput`](crate::input::BatchGetDeploymentsInput).
     pub fn builder() -> crate::input::batch_get_deployments_input::Builder {
         crate::input::batch_get_deployments_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct BatchGetDeploymentTargets {
     _private: (),
 }
 impl BatchGetDeploymentTargets {
-    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentTargetsInput`](crate::input::BatchGetDeploymentTargetsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetDeploymentTargetsInput`](crate::input::BatchGetDeploymentTargetsInput).
     pub fn builder() -> crate::input::batch_get_deployment_targets_input::Builder {
         crate::input::batch_get_deployment_targets_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct BatchGetOnPremisesInstances {
     _private: (),
 }
 impl BatchGetOnPremisesInstances {
-    /// Creates a new builder-style object to manufacture [`BatchGetOnPremisesInstancesInput`](crate::input::BatchGetOnPremisesInstancesInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetOnPremisesInstancesInput`](crate::input::BatchGetOnPremisesInstancesInput).
     pub fn builder() -> crate::input::batch_get_on_premises_instances_input::Builder {
         crate::input::batch_get_on_premises_instances_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ContinueDeployment {
     _private: (),
 }
 impl ContinueDeployment {
-    /// Creates a new builder-style object to manufacture [`ContinueDeploymentInput`](crate::input::ContinueDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`ContinueDeploymentInput`](crate::input::ContinueDeploymentInput).
     pub fn builder() -> crate::input::continue_deployment_input::Builder {
         crate::input::continue_deployment_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct CreateDeployment {
     _private: (),
 }
 impl CreateDeployment {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
     pub fn builder() -> crate::input::create_deployment_input::Builder {
         crate::input::create_deployment_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct CreateDeploymentConfig {
     _private: (),
 }
 impl CreateDeploymentConfig {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentConfigInput`](crate::input::CreateDeploymentConfigInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentConfigInput`](crate::input::CreateDeploymentConfigInput).
     pub fn builder() -> crate::input::create_deployment_config_input::Builder {
         crate::input::create_deployment_config_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct CreateDeploymentGroup {
     _private: (),
 }
 impl CreateDeploymentGroup {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentGroupInput`](crate::input::CreateDeploymentGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentGroupInput`](crate::input::CreateDeploymentGroupInput).
     pub fn builder() -> crate::input::create_deployment_group_input::Builder {
         crate::input::create_deployment_group_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct DeleteDeploymentConfig {
     _private: (),
 }
 impl DeleteDeploymentConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteDeploymentConfigInput`](crate::input::DeleteDeploymentConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentConfigInput`](crate::input::DeleteDeploymentConfigInput).
     pub fn builder() -> crate::input::delete_deployment_config_input::Builder {
         crate::input::delete_deployment_config_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct DeleteDeploymentGroup {
     _private: (),
 }
 impl DeleteDeploymentGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteDeploymentGroupInput`](crate::input::DeleteDeploymentGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentGroupInput`](crate::input::DeleteDeploymentGroupInput).
     pub fn builder() -> crate::input::delete_deployment_group_input::Builder {
         crate::input::delete_deployment_group_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct DeleteGitHubAccountToken {
     _private: (),
 }
 impl DeleteGitHubAccountToken {
-    /// Creates a new builder-style object to manufacture [`DeleteGitHubAccountTokenInput`](crate::input::DeleteGitHubAccountTokenInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGitHubAccountTokenInput`](crate::input::DeleteGitHubAccountTokenInput).
     pub fn builder() -> crate::input::delete_git_hub_account_token_input::Builder {
         crate::input::delete_git_hub_account_token_input::Builder::default()
     }
@@ -588,7 +588,7 @@ pub struct DeleteResourcesByExternalId {
     _private: (),
 }
 impl DeleteResourcesByExternalId {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcesByExternalIdInput`](crate::input::DeleteResourcesByExternalIdInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcesByExternalIdInput`](crate::input::DeleteResourcesByExternalIdInput).
     pub fn builder() -> crate::input::delete_resources_by_external_id_input::Builder {
         crate::input::delete_resources_by_external_id_input::Builder::default()
     }
@@ -622,7 +622,7 @@ pub struct DeregisterOnPremisesInstance {
     _private: (),
 }
 impl DeregisterOnPremisesInstance {
-    /// Creates a new builder-style object to manufacture [`DeregisterOnPremisesInstanceInput`](crate::input::DeregisterOnPremisesInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterOnPremisesInstanceInput`](crate::input::DeregisterOnPremisesInstanceInput).
     pub fn builder() -> crate::input::deregister_on_premises_instance_input::Builder {
         crate::input::deregister_on_premises_instance_input::Builder::default()
     }
@@ -656,7 +656,7 @@ pub struct GetApplication {
     _private: (),
 }
 impl GetApplication {
-    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput).
     pub fn builder() -> crate::input::get_application_input::Builder {
         crate::input::get_application_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct GetApplicationRevision {
     _private: (),
 }
 impl GetApplicationRevision {
-    /// Creates a new builder-style object to manufacture [`GetApplicationRevisionInput`](crate::input::GetApplicationRevisionInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationRevisionInput`](crate::input::GetApplicationRevisionInput).
     pub fn builder() -> crate::input::get_application_revision_input::Builder {
         crate::input::get_application_revision_input::Builder::default()
     }
@@ -722,7 +722,7 @@ pub struct GetDeployment {
     _private: (),
 }
 impl GetDeployment {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput).
     pub fn builder() -> crate::input::get_deployment_input::Builder {
         crate::input::get_deployment_input::Builder::default()
     }
@@ -754,7 +754,7 @@ pub struct GetDeploymentConfig {
     _private: (),
 }
 impl GetDeploymentConfig {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentConfigInput`](crate::input::GetDeploymentConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentConfigInput`](crate::input::GetDeploymentConfigInput).
     pub fn builder() -> crate::input::get_deployment_config_input::Builder {
         crate::input::get_deployment_config_input::Builder::default()
     }
@@ -788,7 +788,7 @@ pub struct GetDeploymentGroup {
     _private: (),
 }
 impl GetDeploymentGroup {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentGroupInput`](crate::input::GetDeploymentGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentGroupInput`](crate::input::GetDeploymentGroupInput).
     pub fn builder() -> crate::input::get_deployment_group_input::Builder {
         crate::input::get_deployment_group_input::Builder::default()
     }
@@ -822,7 +822,7 @@ pub struct GetDeploymentInstance {
     _private: (),
 }
 impl GetDeploymentInstance {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentInstanceInput`](crate::input::GetDeploymentInstanceInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentInstanceInput`](crate::input::GetDeploymentInstanceInput).
     pub fn builder() -> crate::input::get_deployment_instance_input::Builder {
         crate::input::get_deployment_instance_input::Builder::default()
     }
@@ -856,7 +856,7 @@ pub struct GetDeploymentTarget {
     _private: (),
 }
 impl GetDeploymentTarget {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentTargetInput`](crate::input::GetDeploymentTargetInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentTargetInput`](crate::input::GetDeploymentTargetInput).
     pub fn builder() -> crate::input::get_deployment_target_input::Builder {
         crate::input::get_deployment_target_input::Builder::default()
     }
@@ -890,7 +890,7 @@ pub struct GetOnPremisesInstance {
     _private: (),
 }
 impl GetOnPremisesInstance {
-    /// Creates a new builder-style object to manufacture [`GetOnPremisesInstanceInput`](crate::input::GetOnPremisesInstanceInput)
+    /// Creates a new builder-style object to manufacture [`GetOnPremisesInstanceInput`](crate::input::GetOnPremisesInstanceInput).
     pub fn builder() -> crate::input::get_on_premises_instance_input::Builder {
         crate::input::get_on_premises_instance_input::Builder::default()
     }
@@ -924,7 +924,7 @@ pub struct ListApplicationRevisions {
     _private: (),
 }
 impl ListApplicationRevisions {
-    /// Creates a new builder-style object to manufacture [`ListApplicationRevisionsInput`](crate::input::ListApplicationRevisionsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationRevisionsInput`](crate::input::ListApplicationRevisionsInput).
     pub fn builder() -> crate::input::list_application_revisions_input::Builder {
         crate::input::list_application_revisions_input::Builder::default()
     }
@@ -958,7 +958,7 @@ pub struct ListApplications {
     _private: (),
 }
 impl ListApplications {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
     pub fn builder() -> crate::input::list_applications_input::Builder {
         crate::input::list_applications_input::Builder::default()
     }
@@ -992,7 +992,7 @@ pub struct ListDeploymentConfigs {
     _private: (),
 }
 impl ListDeploymentConfigs {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentConfigsInput`](crate::input::ListDeploymentConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentConfigsInput`](crate::input::ListDeploymentConfigsInput).
     pub fn builder() -> crate::input::list_deployment_configs_input::Builder {
         crate::input::list_deployment_configs_input::Builder::default()
     }
@@ -1026,7 +1026,7 @@ pub struct ListDeploymentGroups {
     _private: (),
 }
 impl ListDeploymentGroups {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentGroupsInput`](crate::input::ListDeploymentGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentGroupsInput`](crate::input::ListDeploymentGroupsInput).
     pub fn builder() -> crate::input::list_deployment_groups_input::Builder {
         crate::input::list_deployment_groups_input::Builder::default()
     }
@@ -1060,7 +1060,7 @@ pub struct ListDeploymentInstances {
     _private: (),
 }
 impl ListDeploymentInstances {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentInstancesInput`](crate::input::ListDeploymentInstancesInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentInstancesInput`](crate::input::ListDeploymentInstancesInput).
     pub fn builder() -> crate::input::list_deployment_instances_input::Builder {
         crate::input::list_deployment_instances_input::Builder::default()
     }
@@ -1094,7 +1094,7 @@ pub struct ListDeployments {
     _private: (),
 }
 impl ListDeployments {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
     pub fn builder() -> crate::input::list_deployments_input::Builder {
         crate::input::list_deployments_input::Builder::default()
     }
@@ -1128,7 +1128,7 @@ pub struct ListDeploymentTargets {
     _private: (),
 }
 impl ListDeploymentTargets {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentTargetsInput`](crate::input::ListDeploymentTargetsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentTargetsInput`](crate::input::ListDeploymentTargetsInput).
     pub fn builder() -> crate::input::list_deployment_targets_input::Builder {
         crate::input::list_deployment_targets_input::Builder::default()
     }
@@ -1162,7 +1162,7 @@ pub struct ListGitHubAccountTokenNames {
     _private: (),
 }
 impl ListGitHubAccountTokenNames {
-    /// Creates a new builder-style object to manufacture [`ListGitHubAccountTokenNamesInput`](crate::input::ListGitHubAccountTokenNamesInput)
+    /// Creates a new builder-style object to manufacture [`ListGitHubAccountTokenNamesInput`](crate::input::ListGitHubAccountTokenNamesInput).
     pub fn builder() -> crate::input::list_git_hub_account_token_names_input::Builder {
         crate::input::list_git_hub_account_token_names_input::Builder::default()
     }
@@ -1196,7 +1196,7 @@ pub struct ListOnPremisesInstances {
     _private: (),
 }
 impl ListOnPremisesInstances {
-    /// Creates a new builder-style object to manufacture [`ListOnPremisesInstancesInput`](crate::input::ListOnPremisesInstancesInput)
+    /// Creates a new builder-style object to manufacture [`ListOnPremisesInstancesInput`](crate::input::ListOnPremisesInstancesInput).
     pub fn builder() -> crate::input::list_on_premises_instances_input::Builder {
         crate::input::list_on_premises_instances_input::Builder::default()
     }
@@ -1230,7 +1230,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1264,7 +1264,7 @@ pub struct PutLifecycleEventHookExecutionStatus {
     _private: (),
 }
 impl PutLifecycleEventHookExecutionStatus {
-    /// Creates a new builder-style object to manufacture [`PutLifecycleEventHookExecutionStatusInput`](crate::input::PutLifecycleEventHookExecutionStatusInput)
+    /// Creates a new builder-style object to manufacture [`PutLifecycleEventHookExecutionStatusInput`](crate::input::PutLifecycleEventHookExecutionStatusInput).
     pub fn builder() -> crate::input::put_lifecycle_event_hook_execution_status_input::Builder {
         crate::input::put_lifecycle_event_hook_execution_status_input::Builder::default()
     }
@@ -1300,7 +1300,7 @@ pub struct RegisterApplicationRevision {
     _private: (),
 }
 impl RegisterApplicationRevision {
-    /// Creates a new builder-style object to manufacture [`RegisterApplicationRevisionInput`](crate::input::RegisterApplicationRevisionInput)
+    /// Creates a new builder-style object to manufacture [`RegisterApplicationRevisionInput`](crate::input::RegisterApplicationRevisionInput).
     pub fn builder() -> crate::input::register_application_revision_input::Builder {
         crate::input::register_application_revision_input::Builder::default()
     }
@@ -1334,7 +1334,7 @@ pub struct RegisterOnPremisesInstance {
     _private: (),
 }
 impl RegisterOnPremisesInstance {
-    /// Creates a new builder-style object to manufacture [`RegisterOnPremisesInstanceInput`](crate::input::RegisterOnPremisesInstanceInput)
+    /// Creates a new builder-style object to manufacture [`RegisterOnPremisesInstanceInput`](crate::input::RegisterOnPremisesInstanceInput).
     pub fn builder() -> crate::input::register_on_premises_instance_input::Builder {
         crate::input::register_on_premises_instance_input::Builder::default()
     }
@@ -1368,7 +1368,7 @@ pub struct RemoveTagsFromOnPremisesInstances {
     _private: (),
 }
 impl RemoveTagsFromOnPremisesInstances {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromOnPremisesInstancesInput`](crate::input::RemoveTagsFromOnPremisesInstancesInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromOnPremisesInstancesInput`](crate::input::RemoveTagsFromOnPremisesInstancesInput).
     pub fn builder() -> crate::input::remove_tags_from_on_premises_instances_input::Builder {
         crate::input::remove_tags_from_on_premises_instances_input::Builder::default()
     }
@@ -1402,7 +1402,7 @@ pub struct SkipWaitTimeForInstanceTermination {
     _private: (),
 }
 impl SkipWaitTimeForInstanceTermination {
-    /// Creates a new builder-style object to manufacture [`SkipWaitTimeForInstanceTerminationInput`](crate::input::SkipWaitTimeForInstanceTerminationInput)
+    /// Creates a new builder-style object to manufacture [`SkipWaitTimeForInstanceTerminationInput`](crate::input::SkipWaitTimeForInstanceTerminationInput).
     pub fn builder() -> crate::input::skip_wait_time_for_instance_termination_input::Builder {
         crate::input::skip_wait_time_for_instance_termination_input::Builder::default()
     }
@@ -1436,7 +1436,7 @@ pub struct StopDeployment {
     _private: (),
 }
 impl StopDeployment {
-    /// Creates a new builder-style object to manufacture [`StopDeploymentInput`](crate::input::StopDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`StopDeploymentInput`](crate::input::StopDeploymentInput).
     pub fn builder() -> crate::input::stop_deployment_input::Builder {
         crate::input::stop_deployment_input::Builder::default()
     }
@@ -1468,7 +1468,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1500,7 +1500,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1532,7 +1532,7 @@ pub struct UpdateApplication {
     _private: (),
 }
 impl UpdateApplication {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
     pub fn builder() -> crate::input::update_application_input::Builder {
         crate::input::update_application_input::Builder::default()
     }
@@ -1566,7 +1566,7 @@ pub struct UpdateDeploymentGroup {
     _private: (),
 }
 impl UpdateDeploymentGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateDeploymentGroupInput`](crate::input::UpdateDeploymentGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDeploymentGroupInput`](crate::input::UpdateDeploymentGroupInput).
     pub fn builder() -> crate::input::update_deployment_group_input::Builder {
         crate::input::update_deployment_group_input::Builder::default()
     }

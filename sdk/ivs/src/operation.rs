@@ -10,7 +10,7 @@ pub struct BatchGetChannel {
     _private: (),
 }
 impl BatchGetChannel {
-    /// Creates a new builder-style object to manufacture [`BatchGetChannelInput`](crate::input::BatchGetChannelInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetChannelInput`](crate::input::BatchGetChannelInput).
     pub fn builder() -> crate::input::batch_get_channel_input::Builder {
         crate::input::batch_get_channel_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchGetStreamKey {
     _private: (),
 }
 impl BatchGetStreamKey {
-    /// Creates a new builder-style object to manufacture [`BatchGetStreamKeyInput`](crate::input::BatchGetStreamKeyInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetStreamKeyInput`](crate::input::BatchGetStreamKeyInput).
     pub fn builder() -> crate::input::batch_get_stream_key_input::Builder {
         crate::input::batch_get_stream_key_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateChannel {
     _private: (),
 }
 impl CreateChannel {
-    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput).
     pub fn builder() -> crate::input::create_channel_input::Builder {
         crate::input::create_channel_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateRecordingConfiguration {
     _private: (),
 }
 impl CreateRecordingConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateRecordingConfigurationInput`](crate::input::CreateRecordingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateRecordingConfigurationInput`](crate::input::CreateRecordingConfigurationInput).
     pub fn builder() -> crate::input::create_recording_configuration_input::Builder {
         crate::input::create_recording_configuration_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateStreamKey {
     _private: (),
 }
 impl CreateStreamKey {
-    /// Creates a new builder-style object to manufacture [`CreateStreamKeyInput`](crate::input::CreateStreamKeyInput)
+    /// Creates a new builder-style object to manufacture [`CreateStreamKeyInput`](crate::input::CreateStreamKeyInput).
     pub fn builder() -> crate::input::create_stream_key_input::Builder {
         crate::input::create_stream_key_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeleteChannel {
     _private: (),
 }
 impl DeleteChannel {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput).
     pub fn builder() -> crate::input::delete_channel_input::Builder {
         crate::input::delete_channel_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeletePlaybackKeyPair {
     _private: (),
 }
 impl DeletePlaybackKeyPair {
-    /// Creates a new builder-style object to manufacture [`DeletePlaybackKeyPairInput`](crate::input::DeletePlaybackKeyPairInput)
+    /// Creates a new builder-style object to manufacture [`DeletePlaybackKeyPairInput`](crate::input::DeletePlaybackKeyPairInput).
     pub fn builder() -> crate::input::delete_playback_key_pair_input::Builder {
         crate::input::delete_playback_key_pair_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteRecordingConfiguration {
     _private: (),
 }
 impl DeleteRecordingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteRecordingConfigurationInput`](crate::input::DeleteRecordingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRecordingConfigurationInput`](crate::input::DeleteRecordingConfigurationInput).
     pub fn builder() -> crate::input::delete_recording_configuration_input::Builder {
         crate::input::delete_recording_configuration_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteStreamKey {
     _private: (),
 }
 impl DeleteStreamKey {
-    /// Creates a new builder-style object to manufacture [`DeleteStreamKeyInput`](crate::input::DeleteStreamKeyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteStreamKeyInput`](crate::input::DeleteStreamKeyInput).
     pub fn builder() -> crate::input::delete_stream_key_input::Builder {
         crate::input::delete_stream_key_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct GetChannel {
     _private: (),
 }
 impl GetChannel {
-    /// Creates a new builder-style object to manufacture [`GetChannelInput`](crate::input::GetChannelInput)
+    /// Creates a new builder-style object to manufacture [`GetChannelInput`](crate::input::GetChannelInput).
     pub fn builder() -> crate::input::get_channel_input::Builder {
         crate::input::get_channel_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct GetPlaybackKeyPair {
     _private: (),
 }
 impl GetPlaybackKeyPair {
-    /// Creates a new builder-style object to manufacture [`GetPlaybackKeyPairInput`](crate::input::GetPlaybackKeyPairInput)
+    /// Creates a new builder-style object to manufacture [`GetPlaybackKeyPairInput`](crate::input::GetPlaybackKeyPairInput).
     pub fn builder() -> crate::input::get_playback_key_pair_input::Builder {
         crate::input::get_playback_key_pair_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct GetRecordingConfiguration {
     _private: (),
 }
 impl GetRecordingConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetRecordingConfigurationInput`](crate::input::GetRecordingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetRecordingConfigurationInput`](crate::input::GetRecordingConfigurationInput).
     pub fn builder() -> crate::input::get_recording_configuration_input::Builder {
         crate::input::get_recording_configuration_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct GetStream {
     _private: (),
 }
 impl GetStream {
-    /// Creates a new builder-style object to manufacture [`GetStreamInput`](crate::input::GetStreamInput)
+    /// Creates a new builder-style object to manufacture [`GetStreamInput`](crate::input::GetStreamInput).
     pub fn builder() -> crate::input::get_stream_input::Builder {
         crate::input::get_stream_input::Builder::default()
     }
@@ -443,7 +443,7 @@ pub struct GetStreamKey {
     _private: (),
 }
 impl GetStreamKey {
-    /// Creates a new builder-style object to manufacture [`GetStreamKeyInput`](crate::input::GetStreamKeyInput)
+    /// Creates a new builder-style object to manufacture [`GetStreamKeyInput`](crate::input::GetStreamKeyInput).
     pub fn builder() -> crate::input::get_stream_key_input::Builder {
         crate::input::get_stream_key_input::Builder::default()
     }
@@ -475,7 +475,7 @@ pub struct GetStreamSession {
     _private: (),
 }
 impl GetStreamSession {
-    /// Creates a new builder-style object to manufacture [`GetStreamSessionInput`](crate::input::GetStreamSessionInput)
+    /// Creates a new builder-style object to manufacture [`GetStreamSessionInput`](crate::input::GetStreamSessionInput).
     pub fn builder() -> crate::input::get_stream_session_input::Builder {
         crate::input::get_stream_session_input::Builder::default()
     }
@@ -509,7 +509,7 @@ pub struct ImportPlaybackKeyPair {
     _private: (),
 }
 impl ImportPlaybackKeyPair {
-    /// Creates a new builder-style object to manufacture [`ImportPlaybackKeyPairInput`](crate::input::ImportPlaybackKeyPairInput)
+    /// Creates a new builder-style object to manufacture [`ImportPlaybackKeyPairInput`](crate::input::ImportPlaybackKeyPairInput).
     pub fn builder() -> crate::input::import_playback_key_pair_input::Builder {
         crate::input::import_playback_key_pair_input::Builder::default()
     }
@@ -543,7 +543,7 @@ pub struct ListChannels {
     _private: (),
 }
 impl ListChannels {
-    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput).
     pub fn builder() -> crate::input::list_channels_input::Builder {
         crate::input::list_channels_input::Builder::default()
     }
@@ -575,7 +575,7 @@ pub struct ListPlaybackKeyPairs {
     _private: (),
 }
 impl ListPlaybackKeyPairs {
-    /// Creates a new builder-style object to manufacture [`ListPlaybackKeyPairsInput`](crate::input::ListPlaybackKeyPairsInput)
+    /// Creates a new builder-style object to manufacture [`ListPlaybackKeyPairsInput`](crate::input::ListPlaybackKeyPairsInput).
     pub fn builder() -> crate::input::list_playback_key_pairs_input::Builder {
         crate::input::list_playback_key_pairs_input::Builder::default()
     }
@@ -609,7 +609,7 @@ pub struct ListRecordingConfigurations {
     _private: (),
 }
 impl ListRecordingConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListRecordingConfigurationsInput`](crate::input::ListRecordingConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListRecordingConfigurationsInput`](crate::input::ListRecordingConfigurationsInput).
     pub fn builder() -> crate::input::list_recording_configurations_input::Builder {
         crate::input::list_recording_configurations_input::Builder::default()
     }
@@ -643,7 +643,7 @@ pub struct ListStreamKeys {
     _private: (),
 }
 impl ListStreamKeys {
-    /// Creates a new builder-style object to manufacture [`ListStreamKeysInput`](crate::input::ListStreamKeysInput)
+    /// Creates a new builder-style object to manufacture [`ListStreamKeysInput`](crate::input::ListStreamKeysInput).
     pub fn builder() -> crate::input::list_stream_keys_input::Builder {
         crate::input::list_stream_keys_input::Builder::default()
     }
@@ -675,7 +675,7 @@ pub struct ListStreams {
     _private: (),
 }
 impl ListStreams {
-    /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput)
+    /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput).
     pub fn builder() -> crate::input::list_streams_input::Builder {
         crate::input::list_streams_input::Builder::default()
     }
@@ -707,7 +707,7 @@ pub struct ListStreamSessions {
     _private: (),
 }
 impl ListStreamSessions {
-    /// Creates a new builder-style object to manufacture [`ListStreamSessionsInput`](crate::input::ListStreamSessionsInput)
+    /// Creates a new builder-style object to manufacture [`ListStreamSessionsInput`](crate::input::ListStreamSessionsInput).
     pub fn builder() -> crate::input::list_stream_sessions_input::Builder {
         crate::input::list_stream_sessions_input::Builder::default()
     }
@@ -741,7 +741,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -775,7 +775,7 @@ pub struct PutMetadata {
     _private: (),
 }
 impl PutMetadata {
-    /// Creates a new builder-style object to manufacture [`PutMetadataInput`](crate::input::PutMetadataInput)
+    /// Creates a new builder-style object to manufacture [`PutMetadataInput`](crate::input::PutMetadataInput).
     pub fn builder() -> crate::input::put_metadata_input::Builder {
         crate::input::put_metadata_input::Builder::default()
     }
@@ -807,7 +807,7 @@ pub struct StopStream {
     _private: (),
 }
 impl StopStream {
-    /// Creates a new builder-style object to manufacture [`StopStreamInput`](crate::input::StopStreamInput)
+    /// Creates a new builder-style object to manufacture [`StopStreamInput`](crate::input::StopStreamInput).
     pub fn builder() -> crate::input::stop_stream_input::Builder {
         crate::input::stop_stream_input::Builder::default()
     }
@@ -839,7 +839,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -871,7 +871,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -903,7 +903,7 @@ pub struct UpdateChannel {
     _private: (),
 }
 impl UpdateChannel {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput).
     pub fn builder() -> crate::input::update_channel_input::Builder {
         crate::input::update_channel_input::Builder::default()
     }

@@ -63,11 +63,10 @@ impl std::fmt::Debug for SendCommandOutput {
         formatter.finish()
     }
 }
-/// See [`SendCommandOutput`](crate::output::SendCommandOutput)
+/// See [`SendCommandOutput`](crate::output::SendCommandOutput).
 pub mod send_command_output {
 
-    /// A builder for [`SendCommandOutput`](crate::output::SendCommandOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendCommandOutput`](crate::output::SendCommandOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_session: std::option::Option<crate::model::StartSessionResult>,
@@ -170,7 +169,7 @@ pub mod send_command_output {
             self.fetch_page = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendCommandOutput`](crate::output::SendCommandOutput)
+        /// Consumes the builder and constructs a [`SendCommandOutput`](crate::output::SendCommandOutput).
         pub fn build(self) -> crate::output::SendCommandOutput {
             crate::output::SendCommandOutput {
                 start_session: self.start_session,
@@ -185,7 +184,7 @@ pub mod send_command_output {
     }
 }
 impl SendCommandOutput {
-    /// Creates a new builder-style object to manufacture [`SendCommandOutput`](crate::output::SendCommandOutput)
+    /// Creates a new builder-style object to manufacture [`SendCommandOutput`](crate::output::SendCommandOutput).
     pub fn builder() -> crate::output::send_command_output::Builder {
         crate::output::send_command_output::Builder::default()
     }

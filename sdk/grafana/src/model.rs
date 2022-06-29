@@ -97,11 +97,10 @@ impl std::fmt::Debug for WorkspaceSummary {
         formatter.finish()
     }
 }
-/// See [`WorkspaceSummary`](crate::model::WorkspaceSummary)
+/// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
 pub mod workspace_summary {
 
-    /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary)
-    #[non_exhaustive]
+    /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
@@ -272,7 +271,7 @@ pub mod workspace_summary {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary)
+        /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary).
         pub fn build(self) -> crate::model::WorkspaceSummary {
             crate::model::WorkspaceSummary {
                 created: self.created,
@@ -291,7 +290,7 @@ pub mod workspace_summary {
     }
 }
 impl WorkspaceSummary {
-    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary)
+    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
     pub fn builder() -> crate::model::workspace_summary::Builder {
         crate::model::workspace_summary::Builder::default()
     }
@@ -326,11 +325,10 @@ impl std::fmt::Debug for AuthenticationSummary {
         formatter.finish()
     }
 }
-/// See [`AuthenticationSummary`](crate::model::AuthenticationSummary)
+/// See [`AuthenticationSummary`](crate::model::AuthenticationSummary).
 pub mod authentication_summary {
 
-    /// A builder for [`AuthenticationSummary`](crate::model::AuthenticationSummary)
-    #[non_exhaustive]
+    /// A builder for [`AuthenticationSummary`](crate::model::AuthenticationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) providers:
@@ -374,7 +372,7 @@ pub mod authentication_summary {
             self.saml_configuration_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthenticationSummary`](crate::model::AuthenticationSummary)
+        /// Consumes the builder and constructs a [`AuthenticationSummary`](crate::model::AuthenticationSummary).
         pub fn build(self) -> crate::model::AuthenticationSummary {
             crate::model::AuthenticationSummary {
                 providers: self.providers,
@@ -384,7 +382,7 @@ pub mod authentication_summary {
     }
 }
 impl AuthenticationSummary {
-    /// Creates a new builder-style object to manufacture [`AuthenticationSummary`](crate::model::AuthenticationSummary)
+    /// Creates a new builder-style object to manufacture [`AuthenticationSummary`](crate::model::AuthenticationSummary).
     pub fn builder() -> crate::model::authentication_summary::Builder {
         crate::model::authentication_summary::Builder::default()
     }
@@ -681,11 +679,10 @@ impl std::fmt::Debug for ValidationExceptionField {
         formatter.finish()
     }
 }
-/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
-    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField)
-    #[non_exhaustive]
+    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -712,7 +709,7 @@ pub mod validation_exception_field {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
                 name: self.name,
@@ -722,7 +719,7 @@ pub mod validation_exception_field {
     }
 }
 impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     pub fn builder() -> crate::model::validation_exception_field::Builder {
         crate::model::validation_exception_field::Builder::default()
     }
@@ -974,11 +971,10 @@ impl std::fmt::Debug for WorkspaceDescription {
         formatter.finish()
     }
 }
-/// See [`WorkspaceDescription`](crate::model::WorkspaceDescription)
+/// See [`WorkspaceDescription`](crate::model::WorkspaceDescription).
 pub mod workspace_description {
 
-    /// A builder for [`WorkspaceDescription`](crate::model::WorkspaceDescription)
-    #[non_exhaustive]
+    /// A builder for [`WorkspaceDescription`](crate::model::WorkspaceDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_access_type: std::option::Option<crate::model::AccountAccessType>,
@@ -1316,7 +1312,7 @@ pub mod workspace_description {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::model::WorkspaceDescription)
+        /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::model::WorkspaceDescription).
         pub fn build(self) -> crate::model::WorkspaceDescription {
             crate::model::WorkspaceDescription {
                 account_access_type: self.account_access_type,
@@ -1346,7 +1342,7 @@ pub mod workspace_description {
     }
 }
 impl WorkspaceDescription {
-    /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription)
+    /// Creates a new builder-style object to manufacture [`WorkspaceDescription`](crate::model::WorkspaceDescription).
     pub fn builder() -> crate::model::workspace_description::Builder {
         crate::model::workspace_description::Builder::default()
     }
@@ -1639,11 +1635,10 @@ impl std::fmt::Debug for UpdateError {
         formatter.finish()
     }
 }
-/// See [`UpdateError`](crate::model::UpdateError)
+/// See [`UpdateError`](crate::model::UpdateError).
 pub mod update_error {
 
-    /// A builder for [`UpdateError`](crate::model::UpdateError)
-    #[non_exhaustive]
+    /// A builder for [`UpdateError`](crate::model::UpdateError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<i32>,
@@ -1684,7 +1679,7 @@ pub mod update_error {
             self.caused_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateError`](crate::model::UpdateError)
+        /// Consumes the builder and constructs a [`UpdateError`](crate::model::UpdateError).
         pub fn build(self) -> crate::model::UpdateError {
             crate::model::UpdateError {
                 code: self.code,
@@ -1695,7 +1690,7 @@ pub mod update_error {
     }
 }
 impl UpdateError {
-    /// Creates a new builder-style object to manufacture [`UpdateError`](crate::model::UpdateError)
+    /// Creates a new builder-style object to manufacture [`UpdateError`](crate::model::UpdateError).
     pub fn builder() -> crate::model::update_error::Builder {
         crate::model::update_error::Builder::default()
     }
@@ -1735,11 +1730,10 @@ impl std::fmt::Debug for UpdateInstruction {
         formatter.finish()
     }
 }
-/// See [`UpdateInstruction`](crate::model::UpdateInstruction)
+/// See [`UpdateInstruction`](crate::model::UpdateInstruction).
 pub mod update_instruction {
 
-    /// A builder for [`UpdateInstruction`](crate::model::UpdateInstruction)
-    #[non_exhaustive]
+    /// A builder for [`UpdateInstruction`](crate::model::UpdateInstruction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::UpdateAction>,
@@ -1789,7 +1783,7 @@ pub mod update_instruction {
             self.users = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateInstruction`](crate::model::UpdateInstruction)
+        /// Consumes the builder and constructs a [`UpdateInstruction`](crate::model::UpdateInstruction).
         pub fn build(self) -> crate::model::UpdateInstruction {
             crate::model::UpdateInstruction {
                 action: self.action,
@@ -1800,7 +1794,7 @@ pub mod update_instruction {
     }
 }
 impl UpdateInstruction {
-    /// Creates a new builder-style object to manufacture [`UpdateInstruction`](crate::model::UpdateInstruction)
+    /// Creates a new builder-style object to manufacture [`UpdateInstruction`](crate::model::UpdateInstruction).
     pub fn builder() -> crate::model::update_instruction::Builder {
         crate::model::update_instruction::Builder::default()
     }
@@ -1835,11 +1829,10 @@ impl std::fmt::Debug for User {
         formatter.finish()
     }
 }
-/// See [`User`](crate::model::User)
+/// See [`User`](crate::model::User).
 pub mod user {
 
-    /// A builder for [`User`](crate::model::User)
-    #[non_exhaustive]
+    /// A builder for [`User`](crate::model::User).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1868,7 +1861,7 @@ pub mod user {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`User`](crate::model::User)
+        /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
                 id: self.id,
@@ -1878,7 +1871,7 @@ pub mod user {
     }
 }
 impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User)
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
     pub fn builder() -> crate::model::user::Builder {
         crate::model::user::Builder::default()
     }
@@ -2080,11 +2073,10 @@ impl std::fmt::Debug for PermissionEntry {
         formatter.finish()
     }
 }
-/// See [`PermissionEntry`](crate::model::PermissionEntry)
+/// See [`PermissionEntry`](crate::model::PermissionEntry).
 pub mod permission_entry {
 
-    /// A builder for [`PermissionEntry`](crate::model::PermissionEntry)
-    #[non_exhaustive]
+    /// A builder for [`PermissionEntry`](crate::model::PermissionEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user: std::option::Option<crate::model::User>,
@@ -2111,7 +2103,7 @@ pub mod permission_entry {
             self.role = input;
             self
         }
-        /// Consumes the builder and constructs a [`PermissionEntry`](crate::model::PermissionEntry)
+        /// Consumes the builder and constructs a [`PermissionEntry`](crate::model::PermissionEntry).
         pub fn build(self) -> crate::model::PermissionEntry {
             crate::model::PermissionEntry {
                 user: self.user,
@@ -2121,7 +2113,7 @@ pub mod permission_entry {
     }
 }
 impl PermissionEntry {
-    /// Creates a new builder-style object to manufacture [`PermissionEntry`](crate::model::PermissionEntry)
+    /// Creates a new builder-style object to manufacture [`PermissionEntry`](crate::model::PermissionEntry).
     pub fn builder() -> crate::model::permission_entry::Builder {
         crate::model::permission_entry::Builder::default()
     }
@@ -2161,11 +2153,10 @@ impl std::fmt::Debug for AuthenticationDescription {
         formatter.finish()
     }
 }
-/// See [`AuthenticationDescription`](crate::model::AuthenticationDescription)
+/// See [`AuthenticationDescription`](crate::model::AuthenticationDescription).
 pub mod authentication_description {
 
-    /// A builder for [`AuthenticationDescription`](crate::model::AuthenticationDescription)
-    #[non_exhaustive]
+    /// A builder for [`AuthenticationDescription`](crate::model::AuthenticationDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) providers:
@@ -2219,7 +2210,7 @@ pub mod authentication_description {
             self.aws_sso = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthenticationDescription`](crate::model::AuthenticationDescription)
+        /// Consumes the builder and constructs a [`AuthenticationDescription`](crate::model::AuthenticationDescription).
         pub fn build(self) -> crate::model::AuthenticationDescription {
             crate::model::AuthenticationDescription {
                 providers: self.providers,
@@ -2230,7 +2221,7 @@ pub mod authentication_description {
     }
 }
 impl AuthenticationDescription {
-    /// Creates a new builder-style object to manufacture [`AuthenticationDescription`](crate::model::AuthenticationDescription)
+    /// Creates a new builder-style object to manufacture [`AuthenticationDescription`](crate::model::AuthenticationDescription).
     pub fn builder() -> crate::model::authentication_description::Builder {
         crate::model::authentication_description::Builder::default()
     }
@@ -2256,11 +2247,10 @@ impl std::fmt::Debug for AwsSsoAuthentication {
         formatter.finish()
     }
 }
-/// See [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication)
+/// See [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
 pub mod aws_sso_authentication {
 
-    /// A builder for [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication)
-    #[non_exhaustive]
+    /// A builder for [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sso_client_id: std::option::Option<std::string::String>,
@@ -2279,7 +2269,7 @@ pub mod aws_sso_authentication {
             self.sso_client_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication)
+        /// Consumes the builder and constructs a [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
         pub fn build(self) -> crate::model::AwsSsoAuthentication {
             crate::model::AwsSsoAuthentication {
                 sso_client_id: self.sso_client_id,
@@ -2288,7 +2278,7 @@ pub mod aws_sso_authentication {
     }
 }
 impl AwsSsoAuthentication {
-    /// Creates a new builder-style object to manufacture [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication)
+    /// Creates a new builder-style object to manufacture [`AwsSsoAuthentication`](crate::model::AwsSsoAuthentication).
     pub fn builder() -> crate::model::aws_sso_authentication::Builder {
         crate::model::aws_sso_authentication::Builder::default()
     }
@@ -2321,11 +2311,10 @@ impl std::fmt::Debug for SamlAuthentication {
         formatter.finish()
     }
 }
-/// See [`SamlAuthentication`](crate::model::SamlAuthentication)
+/// See [`SamlAuthentication`](crate::model::SamlAuthentication).
 pub mod saml_authentication {
 
-    /// A builder for [`SamlAuthentication`](crate::model::SamlAuthentication)
-    #[non_exhaustive]
+    /// A builder for [`SamlAuthentication`](crate::model::SamlAuthentication).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::SamlConfigurationStatus>,
@@ -2358,7 +2347,7 @@ pub mod saml_authentication {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`SamlAuthentication`](crate::model::SamlAuthentication)
+        /// Consumes the builder and constructs a [`SamlAuthentication`](crate::model::SamlAuthentication).
         pub fn build(self) -> crate::model::SamlAuthentication {
             crate::model::SamlAuthentication {
                 status: self.status,
@@ -2368,7 +2357,7 @@ pub mod saml_authentication {
     }
 }
 impl SamlAuthentication {
-    /// Creates a new builder-style object to manufacture [`SamlAuthentication`](crate::model::SamlAuthentication)
+    /// Creates a new builder-style object to manufacture [`SamlAuthentication`](crate::model::SamlAuthentication).
     pub fn builder() -> crate::model::saml_authentication::Builder {
         crate::model::saml_authentication::Builder::default()
     }
@@ -2422,11 +2411,10 @@ impl std::fmt::Debug for SamlConfiguration {
         formatter.finish()
     }
 }
-/// See [`SamlConfiguration`](crate::model::SamlConfiguration)
+/// See [`SamlConfiguration`](crate::model::SamlConfiguration).
 pub mod saml_configuration {
 
-    /// A builder for [`SamlConfiguration`](crate::model::SamlConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`SamlConfiguration`](crate::model::SamlConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) idp_metadata: std::option::Option<crate::model::IdpMetadata>,
@@ -2504,7 +2492,7 @@ pub mod saml_configuration {
             self.login_validity_duration = input;
             self
         }
-        /// Consumes the builder and constructs a [`SamlConfiguration`](crate::model::SamlConfiguration)
+        /// Consumes the builder and constructs a [`SamlConfiguration`](crate::model::SamlConfiguration).
         pub fn build(self) -> crate::model::SamlConfiguration {
             crate::model::SamlConfiguration {
                 idp_metadata: self.idp_metadata,
@@ -2517,7 +2505,7 @@ pub mod saml_configuration {
     }
 }
 impl SamlConfiguration {
-    /// Creates a new builder-style object to manufacture [`SamlConfiguration`](crate::model::SamlConfiguration)
+    /// Creates a new builder-style object to manufacture [`SamlConfiguration`](crate::model::SamlConfiguration).
     pub fn builder() -> crate::model::saml_configuration::Builder {
         crate::model::saml_configuration::Builder::default()
     }
@@ -2550,11 +2538,10 @@ impl std::fmt::Debug for RoleValues {
         formatter.finish()
     }
 }
-/// See [`RoleValues`](crate::model::RoleValues)
+/// See [`RoleValues`](crate::model::RoleValues).
 pub mod role_values {
 
-    /// A builder for [`RoleValues`](crate::model::RoleValues)
-    #[non_exhaustive]
+    /// A builder for [`RoleValues`](crate::model::RoleValues).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) editor: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2599,7 +2586,7 @@ pub mod role_values {
             self.admin = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoleValues`](crate::model::RoleValues)
+        /// Consumes the builder and constructs a [`RoleValues`](crate::model::RoleValues).
         pub fn build(self) -> crate::model::RoleValues {
             crate::model::RoleValues {
                 editor: self.editor,
@@ -2609,7 +2596,7 @@ pub mod role_values {
     }
 }
 impl RoleValues {
-    /// Creates a new builder-style object to manufacture [`RoleValues`](crate::model::RoleValues)
+    /// Creates a new builder-style object to manufacture [`RoleValues`](crate::model::RoleValues).
     pub fn builder() -> crate::model::role_values::Builder {
         crate::model::role_values::Builder::default()
     }
@@ -2670,11 +2657,10 @@ impl std::fmt::Debug for AssertionAttributes {
         formatter.finish()
     }
 }
-/// See [`AssertionAttributes`](crate::model::AssertionAttributes)
+/// See [`AssertionAttributes`](crate::model::AssertionAttributes).
 pub mod assertion_attributes {
 
-    /// A builder for [`AssertionAttributes`](crate::model::AssertionAttributes)
-    #[non_exhaustive]
+    /// A builder for [`AssertionAttributes`](crate::model::AssertionAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2745,7 +2731,7 @@ pub mod assertion_attributes {
             self.org = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssertionAttributes`](crate::model::AssertionAttributes)
+        /// Consumes the builder and constructs a [`AssertionAttributes`](crate::model::AssertionAttributes).
         pub fn build(self) -> crate::model::AssertionAttributes {
             crate::model::AssertionAttributes {
                 name: self.name,
@@ -2759,7 +2745,7 @@ pub mod assertion_attributes {
     }
 }
 impl AssertionAttributes {
-    /// Creates a new builder-style object to manufacture [`AssertionAttributes`](crate::model::AssertionAttributes)
+    /// Creates a new builder-style object to manufacture [`AssertionAttributes`](crate::model::AssertionAttributes).
     pub fn builder() -> crate::model::assertion_attributes::Builder {
         crate::model::assertion_attributes::Builder::default()
     }

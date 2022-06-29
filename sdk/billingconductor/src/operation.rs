@@ -10,7 +10,7 @@ pub struct AssociateAccounts {
     _private: (),
 }
 impl AssociateAccounts {
-    /// Creates a new builder-style object to manufacture [`AssociateAccountsInput`](crate::input::AssociateAccountsInput)
+    /// Creates a new builder-style object to manufacture [`AssociateAccountsInput`](crate::input::AssociateAccountsInput).
     pub fn builder() -> crate::input::associate_accounts_input::Builder {
         crate::input::associate_accounts_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociatePricingRules {
     _private: (),
 }
 impl AssociatePricingRules {
-    /// Creates a new builder-style object to manufacture [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput)
+    /// Creates a new builder-style object to manufacture [`AssociatePricingRulesInput`](crate::input::AssociatePricingRulesInput).
     pub fn builder() -> crate::input::associate_pricing_rules_input::Builder {
         crate::input::associate_pricing_rules_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchAssociateResourcesToCustomLineItem {
     _private: (),
 }
 impl BatchAssociateResourcesToCustomLineItem {
-    /// Creates a new builder-style object to manufacture [`BatchAssociateResourcesToCustomLineItemInput`](crate::input::BatchAssociateResourcesToCustomLineItemInput)
+    /// Creates a new builder-style object to manufacture [`BatchAssociateResourcesToCustomLineItemInput`](crate::input::BatchAssociateResourcesToCustomLineItemInput).
     pub fn builder() -> crate::input::batch_associate_resources_to_custom_line_item_input::Builder {
         crate::input::batch_associate_resources_to_custom_line_item_input::Builder::default()
     }
@@ -116,7 +116,7 @@ pub struct BatchDisassociateResourcesFromCustomLineItem {
     _private: (),
 }
 impl BatchDisassociateResourcesFromCustomLineItem {
-    /// Creates a new builder-style object to manufacture [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput)
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateResourcesFromCustomLineItemInput`](crate::input::BatchDisassociateResourcesFromCustomLineItemInput).
     pub fn builder(
     ) -> crate::input::batch_disassociate_resources_from_custom_line_item_input::Builder {
         crate::input::batch_disassociate_resources_from_custom_line_item_input::Builder::default()
@@ -155,7 +155,7 @@ pub struct CreateBillingGroup {
     _private: (),
 }
 impl CreateBillingGroup {
-    /// Creates a new builder-style object to manufacture [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateBillingGroupInput`](crate::input::CreateBillingGroupInput).
     pub fn builder() -> crate::input::create_billing_group_input::Builder {
         crate::input::create_billing_group_input::Builder::default()
     }
@@ -189,7 +189,7 @@ pub struct CreateCustomLineItem {
     _private: (),
 }
 impl CreateCustomLineItem {
-    /// Creates a new builder-style object to manufacture [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomLineItemInput`](crate::input::CreateCustomLineItemInput).
     pub fn builder() -> crate::input::create_custom_line_item_input::Builder {
         crate::input::create_custom_line_item_input::Builder::default()
     }
@@ -223,7 +223,7 @@ pub struct CreatePricingPlan {
     _private: (),
 }
 impl CreatePricingPlan {
-    /// Creates a new builder-style object to manufacture [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput)
+    /// Creates a new builder-style object to manufacture [`CreatePricingPlanInput`](crate::input::CreatePricingPlanInput).
     pub fn builder() -> crate::input::create_pricing_plan_input::Builder {
         crate::input::create_pricing_plan_input::Builder::default()
     }
@@ -257,7 +257,7 @@ pub struct CreatePricingRule {
     _private: (),
 }
 impl CreatePricingRule {
-    /// Creates a new builder-style object to manufacture [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreatePricingRuleInput`](crate::input::CreatePricingRuleInput).
     pub fn builder() -> crate::input::create_pricing_rule_input::Builder {
         crate::input::create_pricing_rule_input::Builder::default()
     }
@@ -291,7 +291,7 @@ pub struct DeleteBillingGroup {
     _private: (),
 }
 impl DeleteBillingGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBillingGroupInput`](crate::input::DeleteBillingGroupInput).
     pub fn builder() -> crate::input::delete_billing_group_input::Builder {
         crate::input::delete_billing_group_input::Builder::default()
     }
@@ -325,7 +325,7 @@ pub struct DeleteCustomLineItem {
     _private: (),
 }
 impl DeleteCustomLineItem {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomLineItemInput`](crate::input::DeleteCustomLineItemInput).
     pub fn builder() -> crate::input::delete_custom_line_item_input::Builder {
         crate::input::delete_custom_line_item_input::Builder::default()
     }
@@ -359,7 +359,7 @@ pub struct DeletePricingPlan {
     _private: (),
 }
 impl DeletePricingPlan {
-    /// Creates a new builder-style object to manufacture [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput)
+    /// Creates a new builder-style object to manufacture [`DeletePricingPlanInput`](crate::input::DeletePricingPlanInput).
     pub fn builder() -> crate::input::delete_pricing_plan_input::Builder {
         crate::input::delete_pricing_plan_input::Builder::default()
     }
@@ -393,7 +393,7 @@ pub struct DeletePricingRule {
     _private: (),
 }
 impl DeletePricingRule {
-    /// Creates a new builder-style object to manufacture [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeletePricingRuleInput`](crate::input::DeletePricingRuleInput).
     pub fn builder() -> crate::input::delete_pricing_rule_input::Builder {
         crate::input::delete_pricing_rule_input::Builder::default()
     }
@@ -427,7 +427,7 @@ pub struct DisassociateAccounts {
     _private: (),
 }
 impl DisassociateAccounts {
-    /// Creates a new builder-style object to manufacture [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateAccountsInput`](crate::input::DisassociateAccountsInput).
     pub fn builder() -> crate::input::disassociate_accounts_input::Builder {
         crate::input::disassociate_accounts_input::Builder::default()
     }
@@ -461,7 +461,7 @@ pub struct DisassociatePricingRules {
     _private: (),
 }
 impl DisassociatePricingRules {
-    /// Creates a new builder-style object to manufacture [`DisassociatePricingRulesInput`](crate::input::DisassociatePricingRulesInput)
+    /// Creates a new builder-style object to manufacture [`DisassociatePricingRulesInput`](crate::input::DisassociatePricingRulesInput).
     pub fn builder() -> crate::input::disassociate_pricing_rules_input::Builder {
         crate::input::disassociate_pricing_rules_input::Builder::default()
     }
@@ -495,7 +495,7 @@ pub struct ListAccountAssociations {
     _private: (),
 }
 impl ListAccountAssociations {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssociationsInput`](crate::input::ListAccountAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountAssociationsInput`](crate::input::ListAccountAssociationsInput).
     pub fn builder() -> crate::input::list_account_associations_input::Builder {
         crate::input::list_account_associations_input::Builder::default()
     }
@@ -529,7 +529,7 @@ pub struct ListBillingGroupCostReports {
     _private: (),
 }
 impl ListBillingGroupCostReports {
-    /// Creates a new builder-style object to manufacture [`ListBillingGroupCostReportsInput`](crate::input::ListBillingGroupCostReportsInput)
+    /// Creates a new builder-style object to manufacture [`ListBillingGroupCostReportsInput`](crate::input::ListBillingGroupCostReportsInput).
     pub fn builder() -> crate::input::list_billing_group_cost_reports_input::Builder {
         crate::input::list_billing_group_cost_reports_input::Builder::default()
     }
@@ -563,7 +563,7 @@ pub struct ListBillingGroups {
     _private: (),
 }
 impl ListBillingGroups {
-    /// Creates a new builder-style object to manufacture [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListBillingGroupsInput`](crate::input::ListBillingGroupsInput).
     pub fn builder() -> crate::input::list_billing_groups_input::Builder {
         crate::input::list_billing_groups_input::Builder::default()
     }
@@ -597,7 +597,7 @@ pub struct ListCustomLineItems {
     _private: (),
 }
 impl ListCustomLineItems {
-    /// Creates a new builder-style object to manufacture [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomLineItemsInput`](crate::input::ListCustomLineItemsInput).
     pub fn builder() -> crate::input::list_custom_line_items_input::Builder {
         crate::input::list_custom_line_items_input::Builder::default()
     }
@@ -631,7 +631,7 @@ pub struct ListPricingPlans {
     _private: (),
 }
 impl ListPricingPlans {
-    /// Creates a new builder-style object to manufacture [`ListPricingPlansInput`](crate::input::ListPricingPlansInput)
+    /// Creates a new builder-style object to manufacture [`ListPricingPlansInput`](crate::input::ListPricingPlansInput).
     pub fn builder() -> crate::input::list_pricing_plans_input::Builder {
         crate::input::list_pricing_plans_input::Builder::default()
     }
@@ -665,7 +665,7 @@ pub struct ListPricingPlansAssociatedWithPricingRule {
     _private: (),
 }
 impl ListPricingPlansAssociatedWithPricingRule {
-    /// Creates a new builder-style object to manufacture [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput)
+    /// Creates a new builder-style object to manufacture [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::input::ListPricingPlansAssociatedWithPricingRuleInput).
     pub fn builder() -> crate::input::list_pricing_plans_associated_with_pricing_rule_input::Builder
     {
         crate::input::list_pricing_plans_associated_with_pricing_rule_input::Builder::default()
@@ -704,7 +704,7 @@ pub struct ListPricingRules {
     _private: (),
 }
 impl ListPricingRules {
-    /// Creates a new builder-style object to manufacture [`ListPricingRulesInput`](crate::input::ListPricingRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListPricingRulesInput`](crate::input::ListPricingRulesInput).
     pub fn builder() -> crate::input::list_pricing_rules_input::Builder {
         crate::input::list_pricing_rules_input::Builder::default()
     }
@@ -738,7 +738,7 @@ pub struct ListPricingRulesAssociatedToPricingPlan {
     _private: (),
 }
 impl ListPricingRulesAssociatedToPricingPlan {
-    /// Creates a new builder-style object to manufacture [`ListPricingRulesAssociatedToPricingPlanInput`](crate::input::ListPricingRulesAssociatedToPricingPlanInput)
+    /// Creates a new builder-style object to manufacture [`ListPricingRulesAssociatedToPricingPlanInput`](crate::input::ListPricingRulesAssociatedToPricingPlanInput).
     pub fn builder() -> crate::input::list_pricing_rules_associated_to_pricing_plan_input::Builder {
         crate::input::list_pricing_rules_associated_to_pricing_plan_input::Builder::default()
     }
@@ -776,7 +776,7 @@ pub struct ListResourcesAssociatedToCustomLineItem {
     _private: (),
 }
 impl ListResourcesAssociatedToCustomLineItem {
-    /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemInput`](crate::input::ListResourcesAssociatedToCustomLineItemInput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemInput`](crate::input::ListResourcesAssociatedToCustomLineItemInput).
     pub fn builder() -> crate::input::list_resources_associated_to_custom_line_item_input::Builder {
         crate::input::list_resources_associated_to_custom_line_item_input::Builder::default()
     }
@@ -814,7 +814,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -848,7 +848,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -880,7 +880,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -912,7 +912,7 @@ pub struct UpdateBillingGroup {
     _private: (),
 }
 impl UpdateBillingGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBillingGroupInput`](crate::input::UpdateBillingGroupInput).
     pub fn builder() -> crate::input::update_billing_group_input::Builder {
         crate::input::update_billing_group_input::Builder::default()
     }
@@ -946,7 +946,7 @@ pub struct UpdateCustomLineItem {
     _private: (),
 }
 impl UpdateCustomLineItem {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemInput`](crate::input::UpdateCustomLineItemInput).
     pub fn builder() -> crate::input::update_custom_line_item_input::Builder {
         crate::input::update_custom_line_item_input::Builder::default()
     }
@@ -980,7 +980,7 @@ pub struct UpdatePricingPlan {
     _private: (),
 }
 impl UpdatePricingPlan {
-    /// Creates a new builder-style object to manufacture [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePricingPlanInput`](crate::input::UpdatePricingPlanInput).
     pub fn builder() -> crate::input::update_pricing_plan_input::Builder {
         crate::input::update_pricing_plan_input::Builder::default()
     }
@@ -1014,7 +1014,7 @@ pub struct UpdatePricingRule {
     _private: (),
 }
 impl UpdatePricingRule {
-    /// Creates a new builder-style object to manufacture [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePricingRuleInput`](crate::input::UpdatePricingRuleInput).
     pub fn builder() -> crate::input::update_pricing_rule_input::Builder {
         crate::input::update_pricing_rule_input::Builder::default()
     }

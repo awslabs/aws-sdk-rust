@@ -136,11 +136,10 @@ impl std::fmt::Debug for ServiceSummary {
         formatter.finish()
     }
 }
-/// See [`ServiceSummary`](crate::model::ServiceSummary)
+/// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
 
-    /// A builder for [`ServiceSummary`](crate::model::ServiceSummary)
-    #[non_exhaustive]
+    /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_id: std::option::Option<std::string::String>,
@@ -379,7 +378,7 @@ pub mod service_summary {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceSummary`](crate::model::ServiceSummary)
+        /// Consumes the builder and constructs a [`ServiceSummary`](crate::model::ServiceSummary).
         pub fn build(self) -> crate::model::ServiceSummary {
             crate::model::ServiceSummary {
                 service_id: self.service_id,
@@ -404,7 +403,7 @@ pub mod service_summary {
     }
 }
 impl ServiceSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary)
+    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
     pub fn builder() -> crate::model::service_summary::Builder {
         crate::model::service_summary::Builder::default()
     }
@@ -469,11 +468,10 @@ impl std::fmt::Debug for ErrorResponse {
         formatter.finish()
     }
 }
-/// See [`ErrorResponse`](crate::model::ErrorResponse)
+/// See [`ErrorResponse`](crate::model::ErrorResponse).
 pub mod error_response {
 
-    /// A builder for [`ErrorResponse`](crate::model::ErrorResponse)
-    #[non_exhaustive]
+    /// A builder for [`ErrorResponse`](crate::model::ErrorResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
@@ -567,7 +565,7 @@ pub mod error_response {
             self.additional_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`ErrorResponse`](crate::model::ErrorResponse)
+        /// Consumes the builder and constructs a [`ErrorResponse`](crate::model::ErrorResponse).
         pub fn build(self) -> crate::model::ErrorResponse {
             crate::model::ErrorResponse {
                 code: self.code,
@@ -581,7 +579,7 @@ pub mod error_response {
     }
 }
 impl ErrorResponse {
-    /// Creates a new builder-style object to manufacture [`ErrorResponse`](crate::model::ErrorResponse)
+    /// Creates a new builder-style object to manufacture [`ErrorResponse`](crate::model::ErrorResponse).
     pub fn builder() -> crate::model::error_response::Builder {
         crate::model::error_response::Builder::default()
     }
@@ -925,11 +923,10 @@ impl std::fmt::Debug for LambdaEndpointSummary {
         formatter.finish()
     }
 }
-/// See [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary)
+/// See [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
 pub mod lambda_endpoint_summary {
 
-    /// A builder for [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary)
-    #[non_exhaustive]
+    /// A builder for [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -945,14 +942,14 @@ pub mod lambda_endpoint_summary {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary)
+        /// Consumes the builder and constructs a [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
         pub fn build(self) -> crate::model::LambdaEndpointSummary {
             crate::model::LambdaEndpointSummary { arn: self.arn }
         }
     }
 }
 impl LambdaEndpointSummary {
-    /// Creates a new builder-style object to manufacture [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary)
+    /// Creates a new builder-style object to manufacture [`LambdaEndpointSummary`](crate::model::LambdaEndpointSummary).
     pub fn builder() -> crate::model::lambda_endpoint_summary::Builder {
         crate::model::lambda_endpoint_summary::Builder::default()
     }
@@ -985,11 +982,10 @@ impl std::fmt::Debug for UrlEndpointSummary {
         formatter.finish()
     }
 }
-/// See [`UrlEndpointSummary`](crate::model::UrlEndpointSummary)
+/// See [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
 pub mod url_endpoint_summary {
 
-    /// A builder for [`UrlEndpointSummary`](crate::model::UrlEndpointSummary)
-    #[non_exhaustive]
+    /// A builder for [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -1016,7 +1012,7 @@ pub mod url_endpoint_summary {
             self.health_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`UrlEndpointSummary`](crate::model::UrlEndpointSummary)
+        /// Consumes the builder and constructs a [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
         pub fn build(self) -> crate::model::UrlEndpointSummary {
             crate::model::UrlEndpointSummary {
                 url: self.url,
@@ -1026,7 +1022,7 @@ pub mod url_endpoint_summary {
     }
 }
 impl UrlEndpointSummary {
-    /// Creates a new builder-style object to manufacture [`UrlEndpointSummary`](crate::model::UrlEndpointSummary)
+    /// Creates a new builder-style object to manufacture [`UrlEndpointSummary`](crate::model::UrlEndpointSummary).
     pub fn builder() -> crate::model::url_endpoint_summary::Builder {
         crate::model::url_endpoint_summary::Builder::default()
     }
@@ -1227,11 +1223,10 @@ impl std::fmt::Debug for RouteSummary {
         formatter.finish()
     }
 }
-/// See [`RouteSummary`](crate::model::RouteSummary)
+/// See [`RouteSummary`](crate::model::RouteSummary).
 pub mod route_summary {
 
-    /// A builder for [`RouteSummary`](crate::model::RouteSummary)
-    #[non_exhaustive]
+    /// A builder for [`RouteSummary`](crate::model::RouteSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_id: std::option::Option<std::string::String>,
@@ -1490,7 +1485,7 @@ pub mod route_summary {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteSummary`](crate::model::RouteSummary)
+        /// Consumes the builder and constructs a [`RouteSummary`](crate::model::RouteSummary).
         pub fn build(self) -> crate::model::RouteSummary {
             crate::model::RouteSummary {
                 route_id: self.route_id,
@@ -1515,7 +1510,7 @@ pub mod route_summary {
     }
 }
 impl RouteSummary {
-    /// Creates a new builder-style object to manufacture [`RouteSummary`](crate::model::RouteSummary)
+    /// Creates a new builder-style object to manufacture [`RouteSummary`](crate::model::RouteSummary).
     pub fn builder() -> crate::model::route_summary::Builder {
         crate::model::route_summary::Builder::default()
     }
@@ -1786,11 +1781,10 @@ impl std::fmt::Debug for EnvironmentVpc {
         formatter.finish()
     }
 }
-/// See [`EnvironmentVpc`](crate::model::EnvironmentVpc)
+/// See [`EnvironmentVpc`](crate::model::EnvironmentVpc).
 pub mod environment_vpc {
 
-    /// A builder for [`EnvironmentVpc`](crate::model::EnvironmentVpc)
-    #[non_exhaustive]
+    /// A builder for [`EnvironmentVpc`](crate::model::EnvironmentVpc).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -1890,7 +1884,7 @@ pub mod environment_vpc {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnvironmentVpc`](crate::model::EnvironmentVpc)
+        /// Consumes the builder and constructs a [`EnvironmentVpc`](crate::model::EnvironmentVpc).
         pub fn build(self) -> crate::model::EnvironmentVpc {
             crate::model::EnvironmentVpc {
                 environment_id: self.environment_id,
@@ -1905,7 +1899,7 @@ pub mod environment_vpc {
     }
 }
 impl EnvironmentVpc {
-    /// Creates a new builder-style object to manufacture [`EnvironmentVpc`](crate::model::EnvironmentVpc)
+    /// Creates a new builder-style object to manufacture [`EnvironmentVpc`](crate::model::EnvironmentVpc).
     pub fn builder() -> crate::model::environment_vpc::Builder {
         crate::model::environment_vpc::Builder::default()
     }
@@ -2012,11 +2006,10 @@ impl std::fmt::Debug for EnvironmentSummary {
         formatter.finish()
     }
 }
-/// See [`EnvironmentSummary`](crate::model::EnvironmentSummary)
+/// See [`EnvironmentSummary`](crate::model::EnvironmentSummary).
 pub mod environment_summary {
 
-    /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary)
-    #[non_exhaustive]
+    /// A builder for [`EnvironmentSummary`](crate::model::EnvironmentSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2194,7 +2187,7 @@ pub mod environment_summary {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::model::EnvironmentSummary)
+        /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::model::EnvironmentSummary).
         pub fn build(self) -> crate::model::EnvironmentSummary {
             crate::model::EnvironmentSummary {
                 name: self.name,
@@ -2214,7 +2207,7 @@ pub mod environment_summary {
     }
 }
 impl EnvironmentSummary {
-    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary)
+    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
     pub fn builder() -> crate::model::environment_summary::Builder {
         crate::model::environment_summary::Builder::default()
     }
@@ -2449,11 +2442,10 @@ impl std::fmt::Debug for ApplicationSummary {
         formatter.finish()
     }
 }
-/// See [`ApplicationSummary`](crate::model::ApplicationSummary)
+/// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
-    /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary)
-    #[non_exhaustive]
+    /// A builder for [`ApplicationSummary`](crate::model::ApplicationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2659,7 +2651,7 @@ pub mod application_summary {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApplicationSummary`](crate::model::ApplicationSummary)
+        /// Consumes the builder and constructs a [`ApplicationSummary`](crate::model::ApplicationSummary).
         pub fn build(self) -> crate::model::ApplicationSummary {
             crate::model::ApplicationSummary {
                 name: self.name,
@@ -2681,7 +2673,7 @@ pub mod application_summary {
     }
 }
 impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary)
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
     pub fn builder() -> crate::model::application_summary::Builder {
         crate::model::application_summary::Builder::default()
     }
@@ -2816,11 +2808,10 @@ impl std::fmt::Debug for ApiGatewayProxySummary {
         formatter.finish()
     }
 }
-/// See [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary)
+/// See [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
 pub mod api_gateway_proxy_summary {
 
-    /// A builder for [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary)
-    #[non_exhaustive]
+    /// A builder for [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_url: std::option::Option<std::string::String>,
@@ -2908,7 +2899,7 @@ pub mod api_gateway_proxy_summary {
             self.stage_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary)
+        /// Consumes the builder and constructs a [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
         pub fn build(self) -> crate::model::ApiGatewayProxySummary {
             crate::model::ApiGatewayProxySummary {
                 proxy_url: self.proxy_url,
@@ -2923,7 +2914,7 @@ pub mod api_gateway_proxy_summary {
     }
 }
 impl ApiGatewayProxySummary {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary)
+    /// Creates a new builder-style object to manufacture [`ApiGatewayProxySummary`](crate::model::ApiGatewayProxySummary).
     pub fn builder() -> crate::model::api_gateway_proxy_summary::Builder {
         crate::model::api_gateway_proxy_summary::Builder::default()
     }
@@ -3055,11 +3046,10 @@ impl std::fmt::Debug for LambdaEndpointConfig {
         formatter.finish()
     }
 }
-/// See [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig)
+/// See [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
 pub mod lambda_endpoint_config {
 
-    /// A builder for [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig)
-    #[non_exhaustive]
+    /// A builder for [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3075,14 +3065,14 @@ pub mod lambda_endpoint_config {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig)
+        /// Consumes the builder and constructs a [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
         pub fn build(self) -> crate::model::LambdaEndpointConfig {
             crate::model::LambdaEndpointConfig { arn: self.arn }
         }
     }
 }
 impl LambdaEndpointConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig)
+    /// Creates a new builder-style object to manufacture [`LambdaEndpointConfig`](crate::model::LambdaEndpointConfig).
     pub fn builder() -> crate::model::lambda_endpoint_config::Builder {
         crate::model::lambda_endpoint_config::Builder::default()
     }
@@ -3115,11 +3105,10 @@ impl std::fmt::Debug for UrlEndpointConfig {
         formatter.finish()
     }
 }
-/// See [`UrlEndpointConfig`](crate::model::UrlEndpointConfig)
+/// See [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
 pub mod url_endpoint_config {
 
-    /// A builder for [`UrlEndpointConfig`](crate::model::UrlEndpointConfig)
-    #[non_exhaustive]
+    /// A builder for [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -3146,7 +3135,7 @@ pub mod url_endpoint_config {
             self.health_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`UrlEndpointConfig`](crate::model::UrlEndpointConfig)
+        /// Consumes the builder and constructs a [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
         pub fn build(self) -> crate::model::UrlEndpointConfig {
             crate::model::UrlEndpointConfig {
                 url: self.url,
@@ -3156,7 +3145,7 @@ pub mod url_endpoint_config {
     }
 }
 impl UrlEndpointConfig {
-    /// Creates a new builder-style object to manufacture [`UrlEndpointConfig`](crate::model::UrlEndpointConfig)
+    /// Creates a new builder-style object to manufacture [`UrlEndpointConfig`](crate::model::UrlEndpointConfig).
     pub fn builder() -> crate::model::url_endpoint_config::Builder {
         crate::model::url_endpoint_config::Builder::default()
     }
@@ -3224,11 +3213,10 @@ impl std::fmt::Debug for ApiGatewayProxyConfig {
         formatter.finish()
     }
 }
-/// See [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig)
+/// See [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
 pub mod api_gateway_proxy_config {
 
-    /// A builder for [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig)
-    #[non_exhaustive]
+    /// A builder for [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proxy_url: std::option::Option<std::string::String>,
@@ -3316,7 +3304,7 @@ pub mod api_gateway_proxy_config {
             self.stage_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig)
+        /// Consumes the builder and constructs a [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
         pub fn build(self) -> crate::model::ApiGatewayProxyConfig {
             crate::model::ApiGatewayProxyConfig {
                 proxy_url: self.proxy_url,
@@ -3331,7 +3319,7 @@ pub mod api_gateway_proxy_config {
     }
 }
 impl ApiGatewayProxyConfig {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig)
+    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyConfig`](crate::model::ApiGatewayProxyConfig).
     pub fn builder() -> crate::model::api_gateway_proxy_config::Builder {
         crate::model::api_gateway_proxy_config::Builder::default()
     }
@@ -3357,11 +3345,10 @@ impl std::fmt::Debug for LambdaEndpointInput {
         formatter.finish()
     }
 }
-/// See [`LambdaEndpointInput`](crate::model::LambdaEndpointInput)
+/// See [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
 pub mod lambda_endpoint_input {
 
-    /// A builder for [`LambdaEndpointInput`](crate::model::LambdaEndpointInput)
-    #[non_exhaustive]
+    /// A builder for [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3377,14 +3364,14 @@ pub mod lambda_endpoint_input {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaEndpointInput`](crate::model::LambdaEndpointInput)
+        /// Consumes the builder and constructs a [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
         pub fn build(self) -> crate::model::LambdaEndpointInput {
             crate::model::LambdaEndpointInput { arn: self.arn }
         }
     }
 }
 impl LambdaEndpointInput {
-    /// Creates a new builder-style object to manufacture [`LambdaEndpointInput`](crate::model::LambdaEndpointInput)
+    /// Creates a new builder-style object to manufacture [`LambdaEndpointInput`](crate::model::LambdaEndpointInput).
     pub fn builder() -> crate::model::lambda_endpoint_input::Builder {
         crate::model::lambda_endpoint_input::Builder::default()
     }
@@ -3417,11 +3404,10 @@ impl std::fmt::Debug for UrlEndpointInput {
         formatter.finish()
     }
 }
-/// See [`UrlEndpointInput`](crate::model::UrlEndpointInput)
+/// See [`UrlEndpointInput`](crate::model::UrlEndpointInput).
 pub mod url_endpoint_input {
 
-    /// A builder for [`UrlEndpointInput`](crate::model::UrlEndpointInput)
-    #[non_exhaustive]
+    /// A builder for [`UrlEndpointInput`](crate::model::UrlEndpointInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) url: std::option::Option<std::string::String>,
@@ -3448,7 +3434,7 @@ pub mod url_endpoint_input {
             self.health_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`UrlEndpointInput`](crate::model::UrlEndpointInput)
+        /// Consumes the builder and constructs a [`UrlEndpointInput`](crate::model::UrlEndpointInput).
         pub fn build(self) -> crate::model::UrlEndpointInput {
             crate::model::UrlEndpointInput {
                 url: self.url,
@@ -3458,7 +3444,7 @@ pub mod url_endpoint_input {
     }
 }
 impl UrlEndpointInput {
-    /// Creates a new builder-style object to manufacture [`UrlEndpointInput`](crate::model::UrlEndpointInput)
+    /// Creates a new builder-style object to manufacture [`UrlEndpointInput`](crate::model::UrlEndpointInput).
     pub fn builder() -> crate::model::url_endpoint_input::Builder {
         crate::model::url_endpoint_input::Builder::default()
     }
@@ -3505,11 +3491,10 @@ impl std::fmt::Debug for UriPathRouteInput {
         formatter.finish()
     }
 }
-/// See [`UriPathRouteInput`](crate::model::UriPathRouteInput)
+/// See [`UriPathRouteInput`](crate::model::UriPathRouteInput).
 pub mod uri_path_route_input {
 
-    /// A builder for [`UriPathRouteInput`](crate::model::UriPathRouteInput)
-    #[non_exhaustive]
+    /// A builder for [`UriPathRouteInput`](crate::model::UriPathRouteInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_path: std::option::Option<std::string::String>,
@@ -3570,7 +3555,7 @@ pub mod uri_path_route_input {
             self.include_child_paths = input;
             self
         }
-        /// Consumes the builder and constructs a [`UriPathRouteInput`](crate::model::UriPathRouteInput)
+        /// Consumes the builder and constructs a [`UriPathRouteInput`](crate::model::UriPathRouteInput).
         pub fn build(self) -> crate::model::UriPathRouteInput {
             crate::model::UriPathRouteInput {
                 source_path: self.source_path,
@@ -3582,7 +3567,7 @@ pub mod uri_path_route_input {
     }
 }
 impl UriPathRouteInput {
-    /// Creates a new builder-style object to manufacture [`UriPathRouteInput`](crate::model::UriPathRouteInput)
+    /// Creates a new builder-style object to manufacture [`UriPathRouteInput`](crate::model::UriPathRouteInput).
     pub fn builder() -> crate::model::uri_path_route_input::Builder {
         crate::model::uri_path_route_input::Builder::default()
     }
@@ -3668,11 +3653,10 @@ impl std::fmt::Debug for ApiGatewayProxyInput {
         formatter.finish()
     }
 }
-/// See [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput)
+/// See [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
 pub mod api_gateway_proxy_input {
 
-    /// A builder for [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput)
-    #[non_exhaustive]
+    /// A builder for [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_type: std::option::Option<crate::model::ApiGatewayEndpointType>,
@@ -3704,7 +3688,7 @@ pub mod api_gateway_proxy_input {
             self.stage_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput)
+        /// Consumes the builder and constructs a [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
         pub fn build(self) -> crate::model::ApiGatewayProxyInput {
             crate::model::ApiGatewayProxyInput {
                 endpoint_type: self.endpoint_type,
@@ -3714,7 +3698,7 @@ pub mod api_gateway_proxy_input {
     }
 }
 impl ApiGatewayProxyInput {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput)
+    /// Creates a new builder-style object to manufacture [`ApiGatewayProxyInput`](crate::model::ApiGatewayProxyInput).
     pub fn builder() -> crate::model::api_gateway_proxy_input::Builder {
         crate::model::api_gateway_proxy_input::Builder::default()
     }

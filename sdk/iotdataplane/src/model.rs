@@ -41,11 +41,10 @@ impl std::fmt::Debug for RetainedMessageSummary {
         formatter.finish()
     }
 }
-/// See [`RetainedMessageSummary`](crate::model::RetainedMessageSummary)
+/// See [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
 pub mod retained_message_summary {
 
-    /// A builder for [`RetainedMessageSummary`](crate::model::RetainedMessageSummary)
-    #[non_exhaustive]
+    /// A builder for [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
@@ -94,7 +93,7 @@ pub mod retained_message_summary {
             self.last_modified_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`RetainedMessageSummary`](crate::model::RetainedMessageSummary)
+        /// Consumes the builder and constructs a [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
         pub fn build(self) -> crate::model::RetainedMessageSummary {
             crate::model::RetainedMessageSummary {
                 topic: self.topic,
@@ -106,7 +105,7 @@ pub mod retained_message_summary {
     }
 }
 impl RetainedMessageSummary {
-    /// Creates a new builder-style object to manufacture [`RetainedMessageSummary`](crate::model::RetainedMessageSummary)
+    /// Creates a new builder-style object to manufacture [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
     pub fn builder() -> crate::model::retained_message_summary::Builder {
         crate::model::retained_message_summary::Builder::default()
     }

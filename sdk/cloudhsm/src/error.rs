@@ -2241,11 +2241,10 @@ impl std::fmt::Display for InvalidRequestException {
     }
 }
 impl std::error::Error for InvalidRequestException {}
-/// See [`InvalidRequestException`](crate::error::InvalidRequestException)
+/// See [`InvalidRequestException`](crate::error::InvalidRequestException).
 pub mod invalid_request_exception {
 
-    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2272,7 +2271,7 @@ pub mod invalid_request_exception {
             self.retryable = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException)
+        /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
         pub fn build(self) -> crate::error::InvalidRequestException {
             crate::error::InvalidRequestException {
                 message: self.message,
@@ -2282,7 +2281,7 @@ pub mod invalid_request_exception {
     }
 }
 impl InvalidRequestException {
-    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException)
+    /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException).
     pub fn builder() -> crate::error::invalid_request_exception::Builder {
         crate::error::invalid_request_exception::Builder::default()
     }
@@ -2327,11 +2326,10 @@ impl std::fmt::Display for CloudHsmServiceException {
     }
 }
 impl std::error::Error for CloudHsmServiceException {}
-/// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
+/// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
 pub mod cloud_hsm_service_exception {
 
-    /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2358,7 +2356,7 @@ pub mod cloud_hsm_service_exception {
             self.retryable = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
+        /// Consumes the builder and constructs a [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
         pub fn build(self) -> crate::error::CloudHsmServiceException {
             crate::error::CloudHsmServiceException {
                 message: self.message,
@@ -2368,7 +2366,7 @@ pub mod cloud_hsm_service_exception {
     }
 }
 impl CloudHsmServiceException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
     pub fn builder() -> crate::error::cloud_hsm_service_exception::Builder {
         crate::error::cloud_hsm_service_exception::Builder::default()
     }
@@ -2413,11 +2411,10 @@ impl std::fmt::Display for CloudHsmInternalException {
     }
 }
 impl std::error::Error for CloudHsmInternalException {}
-/// See [`CloudHsmInternalException`](crate::error::CloudHsmInternalException)
+/// See [`CloudHsmInternalException`](crate::error::CloudHsmInternalException).
 pub mod cloud_hsm_internal_exception {
 
-    /// A builder for [`CloudHsmInternalException`](crate::error::CloudHsmInternalException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmInternalException`](crate::error::CloudHsmInternalException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2444,7 +2441,7 @@ pub mod cloud_hsm_internal_exception {
             self.retryable = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmInternalException`](crate::error::CloudHsmInternalException)
+        /// Consumes the builder and constructs a [`CloudHsmInternalException`](crate::error::CloudHsmInternalException).
         pub fn build(self) -> crate::error::CloudHsmInternalException {
             crate::error::CloudHsmInternalException {
                 message: self.message,
@@ -2454,7 +2451,7 @@ pub mod cloud_hsm_internal_exception {
     }
 }
 impl CloudHsmInternalException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmInternalException`](crate::error::CloudHsmInternalException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmInternalException`](crate::error::CloudHsmInternalException).
     pub fn builder() -> crate::error::cloud_hsm_internal_exception::Builder {
         crate::error::cloud_hsm_internal_exception::Builder::default()
     }

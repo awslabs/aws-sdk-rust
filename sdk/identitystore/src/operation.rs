@@ -10,7 +10,7 @@ pub struct DescribeGroup {
     _private: (),
 }
 impl DescribeGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeGroupInput`](crate::input::DescribeGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGroupInput`](crate::input::DescribeGroupInput).
     pub fn builder() -> crate::input::describe_group_input::Builder {
         crate::input::describe_group_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DescribeUser {
     _private: (),
 }
 impl DescribeUser {
-    /// Creates a new builder-style object to manufacture [`DescribeUserInput`](crate::input::DescribeUserInput)
+    /// Creates a new builder-style object to manufacture [`DescribeUserInput`](crate::input::DescribeUserInput).
     pub fn builder() -> crate::input::describe_user_input::Builder {
         crate::input::describe_user_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct ListGroups {
     _private: (),
 }
 impl ListGroups {
-    /// Creates a new builder-style object to manufacture [`ListGroupsInput`](crate::input::ListGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListGroupsInput`](crate::input::ListGroupsInput).
     pub fn builder() -> crate::input::list_groups_input::Builder {
         crate::input::list_groups_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct ListUsers {
     _private: (),
 }
 impl ListUsers {
-    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput)
+    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput).
     pub fn builder() -> crate::input::list_users_input::Builder {
         crate::input::list_users_input::Builder::default()
     }

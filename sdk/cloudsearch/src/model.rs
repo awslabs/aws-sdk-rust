@@ -27,11 +27,10 @@ impl std::fmt::Debug for AccessPoliciesStatus {
         formatter.finish()
     }
 }
-/// See [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus)
+/// See [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
 pub mod access_policies_status {
 
-    /// A builder for [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus)
-    #[non_exhaustive]
+    /// A builder for [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<std::string::String>,
@@ -61,7 +60,7 @@ pub mod access_policies_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus)
+        /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
         pub fn build(self) -> crate::model::AccessPoliciesStatus {
             crate::model::AccessPoliciesStatus {
                 options: self.options,
@@ -71,7 +70,7 @@ pub mod access_policies_status {
     }
 }
 impl AccessPoliciesStatus {
-    /// Creates a new builder-style object to manufacture [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus)
+    /// Creates a new builder-style object to manufacture [`AccessPoliciesStatus`](crate::model::AccessPoliciesStatus).
     pub fn builder() -> crate::model::access_policies_status::Builder {
         crate::model::access_policies_status::Builder::default()
     }
@@ -137,11 +136,10 @@ impl std::fmt::Debug for OptionStatus {
         formatter.finish()
     }
 }
-/// See [`OptionStatus`](crate::model::OptionStatus)
+/// See [`OptionStatus`](crate::model::OptionStatus).
 pub mod option_status {
 
-    /// A builder for [`OptionStatus`](crate::model::OptionStatus)
-    #[non_exhaustive]
+    /// A builder for [`OptionStatus`](crate::model::OptionStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -219,7 +217,7 @@ pub mod option_status {
             self.pending_deletion = input;
             self
         }
-        /// Consumes the builder and constructs a [`OptionStatus`](crate::model::OptionStatus)
+        /// Consumes the builder and constructs a [`OptionStatus`](crate::model::OptionStatus).
         pub fn build(self) -> crate::model::OptionStatus {
             crate::model::OptionStatus {
                 creation_date: self.creation_date,
@@ -232,7 +230,7 @@ pub mod option_status {
     }
 }
 impl OptionStatus {
-    /// Creates a new builder-style object to manufacture [`OptionStatus`](crate::model::OptionStatus)
+    /// Creates a new builder-style object to manufacture [`OptionStatus`](crate::model::OptionStatus).
     pub fn builder() -> crate::model::option_status::Builder {
         crate::model::option_status::Builder::default()
     }
@@ -339,11 +337,10 @@ impl std::fmt::Debug for ScalingParametersStatus {
         formatter.finish()
     }
 }
-/// See [`ScalingParametersStatus`](crate::model::ScalingParametersStatus)
+/// See [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
 pub mod scaling_parameters_status {
 
-    /// A builder for [`ScalingParametersStatus`](crate::model::ScalingParametersStatus)
-    #[non_exhaustive]
+    /// A builder for [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::ScalingParameters>,
@@ -376,7 +373,7 @@ pub mod scaling_parameters_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingParametersStatus`](crate::model::ScalingParametersStatus)
+        /// Consumes the builder and constructs a [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
         pub fn build(self) -> crate::model::ScalingParametersStatus {
             crate::model::ScalingParametersStatus {
                 options: self.options,
@@ -386,7 +383,7 @@ pub mod scaling_parameters_status {
     }
 }
 impl ScalingParametersStatus {
-    /// Creates a new builder-style object to manufacture [`ScalingParametersStatus`](crate::model::ScalingParametersStatus)
+    /// Creates a new builder-style object to manufacture [`ScalingParametersStatus`](crate::model::ScalingParametersStatus).
     pub fn builder() -> crate::model::scaling_parameters_status::Builder {
         crate::model::scaling_parameters_status::Builder::default()
     }
@@ -428,11 +425,10 @@ impl std::fmt::Debug for ScalingParameters {
         formatter.finish()
     }
 }
-/// See [`ScalingParameters`](crate::model::ScalingParameters)
+/// See [`ScalingParameters`](crate::model::ScalingParameters).
 pub mod scaling_parameters {
 
-    /// A builder for [`ScalingParameters`](crate::model::ScalingParameters)
-    #[non_exhaustive]
+    /// A builder for [`ScalingParameters`](crate::model::ScalingParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) desired_instance_type: std::option::Option<crate::model::PartitionInstanceType>,
@@ -473,7 +469,7 @@ pub mod scaling_parameters {
             self.desired_partition_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingParameters`](crate::model::ScalingParameters)
+        /// Consumes the builder and constructs a [`ScalingParameters`](crate::model::ScalingParameters).
         pub fn build(self) -> crate::model::ScalingParameters {
             crate::model::ScalingParameters {
                 desired_instance_type: self.desired_instance_type,
@@ -484,7 +480,7 @@ pub mod scaling_parameters {
     }
 }
 impl ScalingParameters {
-    /// Creates a new builder-style object to manufacture [`ScalingParameters`](crate::model::ScalingParameters)
+    /// Creates a new builder-style object to manufacture [`ScalingParameters`](crate::model::ScalingParameters).
     pub fn builder() -> crate::model::scaling_parameters::Builder {
         crate::model::scaling_parameters::Builder::default()
     }
@@ -666,11 +662,10 @@ impl std::fmt::Debug for DomainEndpointOptionsStatus {
         formatter.finish()
     }
 }
-/// See [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus)
+/// See [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
 pub mod domain_endpoint_options_status {
 
-    /// A builder for [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus)
-    #[non_exhaustive]
+    /// A builder for [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -703,7 +698,7 @@ pub mod domain_endpoint_options_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus)
+        /// Consumes the builder and constructs a [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
         pub fn build(self) -> crate::model::DomainEndpointOptionsStatus {
             crate::model::DomainEndpointOptionsStatus {
                 options: self.options,
@@ -713,7 +708,7 @@ pub mod domain_endpoint_options_status {
     }
 }
 impl DomainEndpointOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus)
+    /// Creates a new builder-style object to manufacture [`DomainEndpointOptionsStatus`](crate::model::DomainEndpointOptionsStatus).
     pub fn builder() -> crate::model::domain_endpoint_options_status::Builder {
         crate::model::domain_endpoint_options_status::Builder::default()
     }
@@ -746,11 +741,10 @@ impl std::fmt::Debug for DomainEndpointOptions {
         formatter.finish()
     }
 }
-/// See [`DomainEndpointOptions`](crate::model::DomainEndpointOptions)
+/// See [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
 pub mod domain_endpoint_options {
 
-    /// A builder for [`DomainEndpointOptions`](crate::model::DomainEndpointOptions)
-    #[non_exhaustive]
+    /// A builder for [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce_https: std::option::Option<bool>,
@@ -780,7 +774,7 @@ pub mod domain_endpoint_options {
             self.tls_security_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::model::DomainEndpointOptions)
+        /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
         pub fn build(self) -> crate::model::DomainEndpointOptions {
             crate::model::DomainEndpointOptions {
                 enforce_https: self.enforce_https,
@@ -790,7 +784,7 @@ pub mod domain_endpoint_options {
     }
 }
 impl DomainEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`DomainEndpointOptions`](crate::model::DomainEndpointOptions)
+    /// Creates a new builder-style object to manufacture [`DomainEndpointOptions`](crate::model::DomainEndpointOptions).
     pub fn builder() -> crate::model::domain_endpoint_options::Builder {
         crate::model::domain_endpoint_options::Builder::default()
     }
@@ -878,11 +872,10 @@ impl std::fmt::Debug for AvailabilityOptionsStatus {
         formatter.finish()
     }
 }
-/// See [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus)
+/// See [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
 pub mod availability_options_status {
 
-    /// A builder for [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus)
-    #[non_exhaustive]
+    /// A builder for [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<bool>,
@@ -912,7 +905,7 @@ pub mod availability_options_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus)
+        /// Consumes the builder and constructs a [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
         pub fn build(self) -> crate::model::AvailabilityOptionsStatus {
             crate::model::AvailabilityOptionsStatus {
                 options: self.options.unwrap_or_default(),
@@ -922,7 +915,7 @@ pub mod availability_options_status {
     }
 }
 impl AvailabilityOptionsStatus {
-    /// Creates a new builder-style object to manufacture [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus)
+    /// Creates a new builder-style object to manufacture [`AvailabilityOptionsStatus`](crate::model::AvailabilityOptionsStatus).
     pub fn builder() -> crate::model::availability_options_status::Builder {
         crate::model::availability_options_status::Builder::default()
     }
@@ -955,11 +948,10 @@ impl std::fmt::Debug for SuggesterStatus {
         formatter.finish()
     }
 }
-/// See [`SuggesterStatus`](crate::model::SuggesterStatus)
+/// See [`SuggesterStatus`](crate::model::SuggesterStatus).
 pub mod suggester_status {
 
-    /// A builder for [`SuggesterStatus`](crate::model::SuggesterStatus)
-    #[non_exhaustive]
+    /// A builder for [`SuggesterStatus`](crate::model::SuggesterStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::Suggester>,
@@ -989,7 +981,7 @@ pub mod suggester_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuggesterStatus`](crate::model::SuggesterStatus)
+        /// Consumes the builder and constructs a [`SuggesterStatus`](crate::model::SuggesterStatus).
         pub fn build(self) -> crate::model::SuggesterStatus {
             crate::model::SuggesterStatus {
                 options: self.options,
@@ -999,7 +991,7 @@ pub mod suggester_status {
     }
 }
 impl SuggesterStatus {
-    /// Creates a new builder-style object to manufacture [`SuggesterStatus`](crate::model::SuggesterStatus)
+    /// Creates a new builder-style object to manufacture [`SuggesterStatus`](crate::model::SuggesterStatus).
     pub fn builder() -> crate::model::suggester_status::Builder {
         crate::model::suggester_status::Builder::default()
     }
@@ -1037,11 +1029,10 @@ impl std::fmt::Debug for Suggester {
         formatter.finish()
     }
 }
-/// See [`Suggester`](crate::model::Suggester)
+/// See [`Suggester`](crate::model::Suggester).
 pub mod suggester {
 
-    /// A builder for [`Suggester`](crate::model::Suggester)
-    #[non_exhaustive]
+    /// A builder for [`Suggester`](crate::model::Suggester).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester_name: std::option::Option<std::string::String>,
@@ -1078,7 +1069,7 @@ pub mod suggester {
             self.document_suggester_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`Suggester`](crate::model::Suggester)
+        /// Consumes the builder and constructs a [`Suggester`](crate::model::Suggester).
         pub fn build(self) -> crate::model::Suggester {
             crate::model::Suggester {
                 suggester_name: self.suggester_name,
@@ -1088,7 +1079,7 @@ pub mod suggester {
     }
 }
 impl Suggester {
-    /// Creates a new builder-style object to manufacture [`Suggester`](crate::model::Suggester)
+    /// Creates a new builder-style object to manufacture [`Suggester`](crate::model::Suggester).
     pub fn builder() -> crate::model::suggester::Builder {
         crate::model::suggester::Builder::default()
     }
@@ -1128,11 +1119,10 @@ impl std::fmt::Debug for DocumentSuggesterOptions {
         formatter.finish()
     }
 }
-/// See [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions)
+/// See [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
 pub mod document_suggester_options {
 
-    /// A builder for [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions)
-    #[non_exhaustive]
+    /// A builder for [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_field: std::option::Option<std::string::String>,
@@ -1176,7 +1166,7 @@ pub mod document_suggester_options {
             self.sort_expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions)
+        /// Consumes the builder and constructs a [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
         pub fn build(self) -> crate::model::DocumentSuggesterOptions {
             crate::model::DocumentSuggesterOptions {
                 source_field: self.source_field,
@@ -1187,7 +1177,7 @@ pub mod document_suggester_options {
     }
 }
 impl DocumentSuggesterOptions {
-    /// Creates a new builder-style object to manufacture [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions)
+    /// Creates a new builder-style object to manufacture [`DocumentSuggesterOptions`](crate::model::DocumentSuggesterOptions).
     pub fn builder() -> crate::model::document_suggester_options::Builder {
         crate::model::document_suggester_options::Builder::default()
     }
@@ -1279,11 +1269,10 @@ impl std::fmt::Debug for IndexFieldStatus {
         formatter.finish()
     }
 }
-/// See [`IndexFieldStatus`](crate::model::IndexFieldStatus)
+/// See [`IndexFieldStatus`](crate::model::IndexFieldStatus).
 pub mod index_field_status {
 
-    /// A builder for [`IndexFieldStatus`](crate::model::IndexFieldStatus)
-    #[non_exhaustive]
+    /// A builder for [`IndexFieldStatus`](crate::model::IndexFieldStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::IndexField>,
@@ -1313,7 +1302,7 @@ pub mod index_field_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`IndexFieldStatus`](crate::model::IndexFieldStatus)
+        /// Consumes the builder and constructs a [`IndexFieldStatus`](crate::model::IndexFieldStatus).
         pub fn build(self) -> crate::model::IndexFieldStatus {
             crate::model::IndexFieldStatus {
                 options: self.options,
@@ -1323,7 +1312,7 @@ pub mod index_field_status {
     }
 }
 impl IndexFieldStatus {
-    /// Creates a new builder-style object to manufacture [`IndexFieldStatus`](crate::model::IndexFieldStatus)
+    /// Creates a new builder-style object to manufacture [`IndexFieldStatus`](crate::model::IndexFieldStatus).
     pub fn builder() -> crate::model::index_field_status::Builder {
         crate::model::index_field_status::Builder::default()
     }
@@ -1437,11 +1426,10 @@ impl std::fmt::Debug for IndexField {
         formatter.finish()
     }
 }
-/// See [`IndexField`](crate::model::IndexField)
+/// See [`IndexField`](crate::model::IndexField).
 pub mod index_field {
 
-    /// A builder for [`IndexField`](crate::model::IndexField)
-    #[non_exhaustive]
+    /// A builder for [`IndexField`](crate::model::IndexField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field_name: std::option::Option<std::string::String>,
@@ -1632,7 +1620,7 @@ pub mod index_field {
             self.date_array_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`IndexField`](crate::model::IndexField)
+        /// Consumes the builder and constructs a [`IndexField`](crate::model::IndexField).
         pub fn build(self) -> crate::model::IndexField {
             crate::model::IndexField {
                 index_field_name: self.index_field_name,
@@ -1653,7 +1641,7 @@ pub mod index_field {
     }
 }
 impl IndexField {
-    /// Creates a new builder-style object to manufacture [`IndexField`](crate::model::IndexField)
+    /// Creates a new builder-style object to manufacture [`IndexField`](crate::model::IndexField).
     pub fn builder() -> crate::model::index_field::Builder {
         crate::model::index_field::Builder::default()
     }
@@ -1707,11 +1695,10 @@ impl std::fmt::Debug for DateArrayOptions {
         formatter.finish()
     }
 }
-/// See [`DateArrayOptions`](crate::model::DateArrayOptions)
+/// See [`DateArrayOptions`](crate::model::DateArrayOptions).
 pub mod date_array_options {
 
-    /// A builder for [`DateArrayOptions`](crate::model::DateArrayOptions)
-    #[non_exhaustive]
+    /// A builder for [`DateArrayOptions`](crate::model::DateArrayOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -1777,7 +1764,7 @@ pub mod date_array_options {
             self.return_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`DateArrayOptions`](crate::model::DateArrayOptions)
+        /// Consumes the builder and constructs a [`DateArrayOptions`](crate::model::DateArrayOptions).
         pub fn build(self) -> crate::model::DateArrayOptions {
             crate::model::DateArrayOptions {
                 default_value: self.default_value,
@@ -1790,7 +1777,7 @@ pub mod date_array_options {
     }
 }
 impl DateArrayOptions {
-    /// Creates a new builder-style object to manufacture [`DateArrayOptions`](crate::model::DateArrayOptions)
+    /// Creates a new builder-style object to manufacture [`DateArrayOptions`](crate::model::DateArrayOptions).
     pub fn builder() -> crate::model::date_array_options::Builder {
         crate::model::date_array_options::Builder::default()
     }
@@ -1844,11 +1831,10 @@ impl std::fmt::Debug for TextArrayOptions {
         formatter.finish()
     }
 }
-/// See [`TextArrayOptions`](crate::model::TextArrayOptions)
+/// See [`TextArrayOptions`](crate::model::TextArrayOptions).
 pub mod text_array_options {
 
-    /// A builder for [`TextArrayOptions`](crate::model::TextArrayOptions)
-    #[non_exhaustive]
+    /// A builder for [`TextArrayOptions`](crate::model::TextArrayOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -1917,7 +1903,7 @@ pub mod text_array_options {
             self.analysis_scheme = input;
             self
         }
-        /// Consumes the builder and constructs a [`TextArrayOptions`](crate::model::TextArrayOptions)
+        /// Consumes the builder and constructs a [`TextArrayOptions`](crate::model::TextArrayOptions).
         pub fn build(self) -> crate::model::TextArrayOptions {
             crate::model::TextArrayOptions {
                 default_value: self.default_value,
@@ -1930,7 +1916,7 @@ pub mod text_array_options {
     }
 }
 impl TextArrayOptions {
-    /// Creates a new builder-style object to manufacture [`TextArrayOptions`](crate::model::TextArrayOptions)
+    /// Creates a new builder-style object to manufacture [`TextArrayOptions`](crate::model::TextArrayOptions).
     pub fn builder() -> crate::model::text_array_options::Builder {
         crate::model::text_array_options::Builder::default()
     }
@@ -1984,11 +1970,10 @@ impl std::fmt::Debug for LiteralArrayOptions {
         formatter.finish()
     }
 }
-/// See [`LiteralArrayOptions`](crate::model::LiteralArrayOptions)
+/// See [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
 pub mod literal_array_options {
 
-    /// A builder for [`LiteralArrayOptions`](crate::model::LiteralArrayOptions)
-    #[non_exhaustive]
+    /// A builder for [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2054,7 +2039,7 @@ pub mod literal_array_options {
             self.return_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`LiteralArrayOptions`](crate::model::LiteralArrayOptions)
+        /// Consumes the builder and constructs a [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
         pub fn build(self) -> crate::model::LiteralArrayOptions {
             crate::model::LiteralArrayOptions {
                 default_value: self.default_value,
@@ -2067,7 +2052,7 @@ pub mod literal_array_options {
     }
 }
 impl LiteralArrayOptions {
-    /// Creates a new builder-style object to manufacture [`LiteralArrayOptions`](crate::model::LiteralArrayOptions)
+    /// Creates a new builder-style object to manufacture [`LiteralArrayOptions`](crate::model::LiteralArrayOptions).
     pub fn builder() -> crate::model::literal_array_options::Builder {
         crate::model::literal_array_options::Builder::default()
     }
@@ -2121,11 +2106,10 @@ impl std::fmt::Debug for DoubleArrayOptions {
         formatter.finish()
     }
 }
-/// See [`DoubleArrayOptions`](crate::model::DoubleArrayOptions)
+/// See [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
 pub mod double_array_options {
 
-    /// A builder for [`DoubleArrayOptions`](crate::model::DoubleArrayOptions)
-    #[non_exhaustive]
+    /// A builder for [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<f64>,
@@ -2188,7 +2172,7 @@ pub mod double_array_options {
             self.return_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`DoubleArrayOptions`](crate::model::DoubleArrayOptions)
+        /// Consumes the builder and constructs a [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
         pub fn build(self) -> crate::model::DoubleArrayOptions {
             crate::model::DoubleArrayOptions {
                 default_value: self.default_value,
@@ -2201,7 +2185,7 @@ pub mod double_array_options {
     }
 }
 impl DoubleArrayOptions {
-    /// Creates a new builder-style object to manufacture [`DoubleArrayOptions`](crate::model::DoubleArrayOptions)
+    /// Creates a new builder-style object to manufacture [`DoubleArrayOptions`](crate::model::DoubleArrayOptions).
     pub fn builder() -> crate::model::double_array_options::Builder {
         crate::model::double_array_options::Builder::default()
     }
@@ -2255,11 +2239,10 @@ impl std::fmt::Debug for IntArrayOptions {
         formatter.finish()
     }
 }
-/// See [`IntArrayOptions`](crate::model::IntArrayOptions)
+/// See [`IntArrayOptions`](crate::model::IntArrayOptions).
 pub mod int_array_options {
 
-    /// A builder for [`IntArrayOptions`](crate::model::IntArrayOptions)
-    #[non_exhaustive]
+    /// A builder for [`IntArrayOptions`](crate::model::IntArrayOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<i64>,
@@ -2322,7 +2305,7 @@ pub mod int_array_options {
             self.return_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`IntArrayOptions`](crate::model::IntArrayOptions)
+        /// Consumes the builder and constructs a [`IntArrayOptions`](crate::model::IntArrayOptions).
         pub fn build(self) -> crate::model::IntArrayOptions {
             crate::model::IntArrayOptions {
                 default_value: self.default_value,
@@ -2335,7 +2318,7 @@ pub mod int_array_options {
     }
 }
 impl IntArrayOptions {
-    /// Creates a new builder-style object to manufacture [`IntArrayOptions`](crate::model::IntArrayOptions)
+    /// Creates a new builder-style object to manufacture [`IntArrayOptions`](crate::model::IntArrayOptions).
     pub fn builder() -> crate::model::int_array_options::Builder {
         crate::model::int_array_options::Builder::default()
     }
@@ -2400,11 +2383,10 @@ impl std::fmt::Debug for LatLonOptions {
         formatter.finish()
     }
 }
-/// See [`LatLonOptions`](crate::model::LatLonOptions)
+/// See [`LatLonOptions`](crate::model::LatLonOptions).
 pub mod lat_lon_options {
 
-    /// A builder for [`LatLonOptions`](crate::model::LatLonOptions)
-    #[non_exhaustive]
+    /// A builder for [`LatLonOptions`](crate::model::LatLonOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2482,7 +2464,7 @@ pub mod lat_lon_options {
             self.sort_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`LatLonOptions`](crate::model::LatLonOptions)
+        /// Consumes the builder and constructs a [`LatLonOptions`](crate::model::LatLonOptions).
         pub fn build(self) -> crate::model::LatLonOptions {
             crate::model::LatLonOptions {
                 default_value: self.default_value,
@@ -2496,7 +2478,7 @@ pub mod lat_lon_options {
     }
 }
 impl LatLonOptions {
-    /// Creates a new builder-style object to manufacture [`LatLonOptions`](crate::model::LatLonOptions)
+    /// Creates a new builder-style object to manufacture [`LatLonOptions`](crate::model::LatLonOptions).
     pub fn builder() -> crate::model::lat_lon_options::Builder {
         crate::model::lat_lon_options::Builder::default()
     }
@@ -2561,11 +2543,10 @@ impl std::fmt::Debug for DateOptions {
         formatter.finish()
     }
 }
-/// See [`DateOptions`](crate::model::DateOptions)
+/// See [`DateOptions`](crate::model::DateOptions).
 pub mod date_options {
 
-    /// A builder for [`DateOptions`](crate::model::DateOptions)
-    #[non_exhaustive]
+    /// A builder for [`DateOptions`](crate::model::DateOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2643,7 +2624,7 @@ pub mod date_options {
             self.sort_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`DateOptions`](crate::model::DateOptions)
+        /// Consumes the builder and constructs a [`DateOptions`](crate::model::DateOptions).
         pub fn build(self) -> crate::model::DateOptions {
             crate::model::DateOptions {
                 default_value: self.default_value,
@@ -2657,7 +2638,7 @@ pub mod date_options {
     }
 }
 impl DateOptions {
-    /// Creates a new builder-style object to manufacture [`DateOptions`](crate::model::DateOptions)
+    /// Creates a new builder-style object to manufacture [`DateOptions`](crate::model::DateOptions).
     pub fn builder() -> crate::model::date_options::Builder {
         crate::model::date_options::Builder::default()
     }
@@ -2722,11 +2703,10 @@ impl std::fmt::Debug for TextOptions {
         formatter.finish()
     }
 }
-/// See [`TextOptions`](crate::model::TextOptions)
+/// See [`TextOptions`](crate::model::TextOptions).
 pub mod text_options {
 
-    /// A builder for [`TextOptions`](crate::model::TextOptions)
-    #[non_exhaustive]
+    /// A builder for [`TextOptions`](crate::model::TextOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2807,7 +2787,7 @@ pub mod text_options {
             self.analysis_scheme = input;
             self
         }
-        /// Consumes the builder and constructs a [`TextOptions`](crate::model::TextOptions)
+        /// Consumes the builder and constructs a [`TextOptions`](crate::model::TextOptions).
         pub fn build(self) -> crate::model::TextOptions {
             crate::model::TextOptions {
                 default_value: self.default_value,
@@ -2821,7 +2801,7 @@ pub mod text_options {
     }
 }
 impl TextOptions {
-    /// Creates a new builder-style object to manufacture [`TextOptions`](crate::model::TextOptions)
+    /// Creates a new builder-style object to manufacture [`TextOptions`](crate::model::TextOptions).
     pub fn builder() -> crate::model::text_options::Builder {
         crate::model::text_options::Builder::default()
     }
@@ -2886,11 +2866,10 @@ impl std::fmt::Debug for LiteralOptions {
         formatter.finish()
     }
 }
-/// See [`LiteralOptions`](crate::model::LiteralOptions)
+/// See [`LiteralOptions`](crate::model::LiteralOptions).
 pub mod literal_options {
 
-    /// A builder for [`LiteralOptions`](crate::model::LiteralOptions)
-    #[non_exhaustive]
+    /// A builder for [`LiteralOptions`](crate::model::LiteralOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<std::string::String>,
@@ -2968,7 +2947,7 @@ pub mod literal_options {
             self.sort_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`LiteralOptions`](crate::model::LiteralOptions)
+        /// Consumes the builder and constructs a [`LiteralOptions`](crate::model::LiteralOptions).
         pub fn build(self) -> crate::model::LiteralOptions {
             crate::model::LiteralOptions {
                 default_value: self.default_value,
@@ -2982,7 +2961,7 @@ pub mod literal_options {
     }
 }
 impl LiteralOptions {
-    /// Creates a new builder-style object to manufacture [`LiteralOptions`](crate::model::LiteralOptions)
+    /// Creates a new builder-style object to manufacture [`LiteralOptions`](crate::model::LiteralOptions).
     pub fn builder() -> crate::model::literal_options::Builder {
         crate::model::literal_options::Builder::default()
     }
@@ -3043,11 +3022,10 @@ impl std::fmt::Debug for DoubleOptions {
         formatter.finish()
     }
 }
-/// See [`DoubleOptions`](crate::model::DoubleOptions)
+/// See [`DoubleOptions`](crate::model::DoubleOptions).
 pub mod double_options {
 
-    /// A builder for [`DoubleOptions`](crate::model::DoubleOptions)
-    #[non_exhaustive]
+    /// A builder for [`DoubleOptions`](crate::model::DoubleOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<f64>,
@@ -3118,7 +3096,7 @@ pub mod double_options {
             self.sort_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`DoubleOptions`](crate::model::DoubleOptions)
+        /// Consumes the builder and constructs a [`DoubleOptions`](crate::model::DoubleOptions).
         pub fn build(self) -> crate::model::DoubleOptions {
             crate::model::DoubleOptions {
                 default_value: self.default_value,
@@ -3132,7 +3110,7 @@ pub mod double_options {
     }
 }
 impl DoubleOptions {
-    /// Creates a new builder-style object to manufacture [`DoubleOptions`](crate::model::DoubleOptions)
+    /// Creates a new builder-style object to manufacture [`DoubleOptions`](crate::model::DoubleOptions).
     pub fn builder() -> crate::model::double_options::Builder {
         crate::model::double_options::Builder::default()
     }
@@ -3193,11 +3171,10 @@ impl std::fmt::Debug for IntOptions {
         formatter.finish()
     }
 }
-/// See [`IntOptions`](crate::model::IntOptions)
+/// See [`IntOptions`](crate::model::IntOptions).
 pub mod int_options {
 
-    /// A builder for [`IntOptions`](crate::model::IntOptions)
-    #[non_exhaustive]
+    /// A builder for [`IntOptions`](crate::model::IntOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_value: std::option::Option<i64>,
@@ -3268,7 +3245,7 @@ pub mod int_options {
             self.sort_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`IntOptions`](crate::model::IntOptions)
+        /// Consumes the builder and constructs a [`IntOptions`](crate::model::IntOptions).
         pub fn build(self) -> crate::model::IntOptions {
             crate::model::IntOptions {
                 default_value: self.default_value,
@@ -3282,7 +3259,7 @@ pub mod int_options {
     }
 }
 impl IntOptions {
-    /// Creates a new builder-style object to manufacture [`IntOptions`](crate::model::IntOptions)
+    /// Creates a new builder-style object to manufacture [`IntOptions`](crate::model::IntOptions).
     pub fn builder() -> crate::model::int_options::Builder {
         crate::model::int_options::Builder::default()
     }
@@ -3418,11 +3395,10 @@ impl std::fmt::Debug for ExpressionStatus {
         formatter.finish()
     }
 }
-/// See [`ExpressionStatus`](crate::model::ExpressionStatus)
+/// See [`ExpressionStatus`](crate::model::ExpressionStatus).
 pub mod expression_status {
 
-    /// A builder for [`ExpressionStatus`](crate::model::ExpressionStatus)
-    #[non_exhaustive]
+    /// A builder for [`ExpressionStatus`](crate::model::ExpressionStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::Expression>,
@@ -3452,7 +3428,7 @@ pub mod expression_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExpressionStatus`](crate::model::ExpressionStatus)
+        /// Consumes the builder and constructs a [`ExpressionStatus`](crate::model::ExpressionStatus).
         pub fn build(self) -> crate::model::ExpressionStatus {
             crate::model::ExpressionStatus {
                 options: self.options,
@@ -3462,7 +3438,7 @@ pub mod expression_status {
     }
 }
 impl ExpressionStatus {
-    /// Creates a new builder-style object to manufacture [`ExpressionStatus`](crate::model::ExpressionStatus)
+    /// Creates a new builder-style object to manufacture [`ExpressionStatus`](crate::model::ExpressionStatus).
     pub fn builder() -> crate::model::expression_status::Builder {
         crate::model::expression_status::Builder::default()
     }
@@ -3495,11 +3471,10 @@ impl std::fmt::Debug for Expression {
         formatter.finish()
     }
 }
-/// See [`Expression`](crate::model::Expression)
+/// See [`Expression`](crate::model::Expression).
 pub mod expression {
 
-    /// A builder for [`Expression`](crate::model::Expression)
-    #[non_exhaustive]
+    /// A builder for [`Expression`](crate::model::Expression).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression_name: std::option::Option<std::string::String>,
@@ -3532,7 +3507,7 @@ pub mod expression {
             self.expression_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Expression`](crate::model::Expression)
+        /// Consumes the builder and constructs a [`Expression`](crate::model::Expression).
         pub fn build(self) -> crate::model::Expression {
             crate::model::Expression {
                 expression_name: self.expression_name,
@@ -3542,7 +3517,7 @@ pub mod expression {
     }
 }
 impl Expression {
-    /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression)
+    /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression).
     pub fn builder() -> crate::model::expression::Builder {
         crate::model::expression::Builder::default()
     }
@@ -3652,11 +3627,10 @@ impl std::fmt::Debug for DomainStatus {
         formatter.finish()
     }
 }
-/// See [`DomainStatus`](crate::model::DomainStatus)
+/// See [`DomainStatus`](crate::model::DomainStatus).
 pub mod domain_status {
 
-    /// A builder for [`DomainStatus`](crate::model::DomainStatus)
-    #[non_exhaustive]
+    /// A builder for [`DomainStatus`](crate::model::DomainStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_id: std::option::Option<std::string::String>,
@@ -3813,7 +3787,7 @@ pub mod domain_status {
             self.limits = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainStatus`](crate::model::DomainStatus)
+        /// Consumes the builder and constructs a [`DomainStatus`](crate::model::DomainStatus).
         pub fn build(self) -> crate::model::DomainStatus {
             crate::model::DomainStatus {
                 domain_id: self.domain_id,
@@ -3834,7 +3808,7 @@ pub mod domain_status {
     }
 }
 impl DomainStatus {
-    /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::model::DomainStatus)
+    /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::model::DomainStatus).
     pub fn builder() -> crate::model::domain_status::Builder {
         crate::model::domain_status::Builder::default()
     }
@@ -3867,11 +3841,10 @@ impl std::fmt::Debug for Limits {
         formatter.finish()
     }
 }
-/// See [`Limits`](crate::model::Limits)
+/// See [`Limits`](crate::model::Limits).
 pub mod limits {
 
-    /// A builder for [`Limits`](crate::model::Limits)
-    #[non_exhaustive]
+    /// A builder for [`Limits`](crate::model::Limits).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maximum_replication_count: std::option::Option<i32>,
@@ -3898,7 +3871,7 @@ pub mod limits {
             self.maximum_partition_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`Limits`](crate::model::Limits)
+        /// Consumes the builder and constructs a [`Limits`](crate::model::Limits).
         pub fn build(self) -> crate::model::Limits {
             crate::model::Limits {
                 maximum_replication_count: self.maximum_replication_count.unwrap_or_default(),
@@ -3908,7 +3881,7 @@ pub mod limits {
     }
 }
 impl Limits {
-    /// Creates a new builder-style object to manufacture [`Limits`](crate::model::Limits)
+    /// Creates a new builder-style object to manufacture [`Limits`](crate::model::Limits).
     pub fn builder() -> crate::model::limits::Builder {
         crate::model::limits::Builder::default()
     }
@@ -3934,11 +3907,10 @@ impl std::fmt::Debug for ServiceEndpoint {
         formatter.finish()
     }
 }
-/// See [`ServiceEndpoint`](crate::model::ServiceEndpoint)
+/// See [`ServiceEndpoint`](crate::model::ServiceEndpoint).
 pub mod service_endpoint {
 
-    /// A builder for [`ServiceEndpoint`](crate::model::ServiceEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`ServiceEndpoint`](crate::model::ServiceEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -3954,7 +3926,7 @@ pub mod service_endpoint {
             self.endpoint = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceEndpoint`](crate::model::ServiceEndpoint)
+        /// Consumes the builder and constructs a [`ServiceEndpoint`](crate::model::ServiceEndpoint).
         pub fn build(self) -> crate::model::ServiceEndpoint {
             crate::model::ServiceEndpoint {
                 endpoint: self.endpoint,
@@ -3963,7 +3935,7 @@ pub mod service_endpoint {
     }
 }
 impl ServiceEndpoint {
-    /// Creates a new builder-style object to manufacture [`ServiceEndpoint`](crate::model::ServiceEndpoint)
+    /// Creates a new builder-style object to manufacture [`ServiceEndpoint`](crate::model::ServiceEndpoint).
     pub fn builder() -> crate::model::service_endpoint::Builder {
         crate::model::service_endpoint::Builder::default()
     }
@@ -3996,11 +3968,10 @@ impl std::fmt::Debug for AnalysisSchemeStatus {
         formatter.finish()
     }
 }
-/// See [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus)
+/// See [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
 pub mod analysis_scheme_status {
 
-    /// A builder for [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus)
-    #[non_exhaustive]
+    /// A builder for [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options: std::option::Option<crate::model::AnalysisScheme>,
@@ -4033,7 +4004,7 @@ pub mod analysis_scheme_status {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus)
+        /// Consumes the builder and constructs a [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
         pub fn build(self) -> crate::model::AnalysisSchemeStatus {
             crate::model::AnalysisSchemeStatus {
                 options: self.options,
@@ -4043,7 +4014,7 @@ pub mod analysis_scheme_status {
     }
 }
 impl AnalysisSchemeStatus {
-    /// Creates a new builder-style object to manufacture [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus)
+    /// Creates a new builder-style object to manufacture [`AnalysisSchemeStatus`](crate::model::AnalysisSchemeStatus).
     pub fn builder() -> crate::model::analysis_scheme_status::Builder {
         crate::model::analysis_scheme_status::Builder::default()
     }
@@ -4085,11 +4056,10 @@ impl std::fmt::Debug for AnalysisScheme {
         formatter.finish()
     }
 }
-/// See [`AnalysisScheme`](crate::model::AnalysisScheme)
+/// See [`AnalysisScheme`](crate::model::AnalysisScheme).
 pub mod analysis_scheme {
 
-    /// A builder for [`AnalysisScheme`](crate::model::AnalysisScheme)
-    #[non_exhaustive]
+    /// A builder for [`AnalysisScheme`](crate::model::AnalysisScheme).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme_name: std::option::Option<std::string::String>,
@@ -4140,7 +4110,7 @@ pub mod analysis_scheme {
             self.analysis_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnalysisScheme`](crate::model::AnalysisScheme)
+        /// Consumes the builder and constructs a [`AnalysisScheme`](crate::model::AnalysisScheme).
         pub fn build(self) -> crate::model::AnalysisScheme {
             crate::model::AnalysisScheme {
                 analysis_scheme_name: self.analysis_scheme_name,
@@ -4151,7 +4121,7 @@ pub mod analysis_scheme {
     }
 }
 impl AnalysisScheme {
-    /// Creates a new builder-style object to manufacture [`AnalysisScheme`](crate::model::AnalysisScheme)
+    /// Creates a new builder-style object to manufacture [`AnalysisScheme`](crate::model::AnalysisScheme).
     pub fn builder() -> crate::model::analysis_scheme::Builder {
         crate::model::analysis_scheme::Builder::default()
     }
@@ -4208,11 +4178,10 @@ impl std::fmt::Debug for AnalysisOptions {
         formatter.finish()
     }
 }
-/// See [`AnalysisOptions`](crate::model::AnalysisOptions)
+/// See [`AnalysisOptions`](crate::model::AnalysisOptions).
 pub mod analysis_options {
 
-    /// A builder for [`AnalysisOptions`](crate::model::AnalysisOptions)
-    #[non_exhaustive]
+    /// A builder for [`AnalysisOptions`](crate::model::AnalysisOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synonyms: std::option::Option<std::string::String>,
@@ -4284,7 +4253,7 @@ pub mod analysis_options {
             self.algorithmic_stemming = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnalysisOptions`](crate::model::AnalysisOptions)
+        /// Consumes the builder and constructs a [`AnalysisOptions`](crate::model::AnalysisOptions).
         pub fn build(self) -> crate::model::AnalysisOptions {
             crate::model::AnalysisOptions {
                 synonyms: self.synonyms,
@@ -4297,7 +4266,7 @@ pub mod analysis_options {
     }
 }
 impl AnalysisOptions {
-    /// Creates a new builder-style object to manufacture [`AnalysisOptions`](crate::model::AnalysisOptions)
+    /// Creates a new builder-style object to manufacture [`AnalysisOptions`](crate::model::AnalysisOptions).
     pub fn builder() -> crate::model::analysis_options::Builder {
         crate::model::analysis_options::Builder::default()
     }

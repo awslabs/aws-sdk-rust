@@ -26,11 +26,10 @@ impl std::fmt::Debug for CertificateOptions {
         formatter.finish()
     }
 }
-/// See [`CertificateOptions`](crate::model::CertificateOptions)
+/// See [`CertificateOptions`](crate::model::CertificateOptions).
 pub mod certificate_options {
 
-    /// A builder for [`CertificateOptions`](crate::model::CertificateOptions)
-    #[non_exhaustive]
+    /// A builder for [`CertificateOptions`](crate::model::CertificateOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_transparency_logging_preference:
@@ -53,7 +52,7 @@ pub mod certificate_options {
             self.certificate_transparency_logging_preference = input;
             self
         }
-        /// Consumes the builder and constructs a [`CertificateOptions`](crate::model::CertificateOptions)
+        /// Consumes the builder and constructs a [`CertificateOptions`](crate::model::CertificateOptions).
         pub fn build(self) -> crate::model::CertificateOptions {
             crate::model::CertificateOptions {
                 certificate_transparency_logging_preference: self
@@ -63,7 +62,7 @@ pub mod certificate_options {
     }
 }
 impl CertificateOptions {
-    /// Creates a new builder-style object to manufacture [`CertificateOptions`](crate::model::CertificateOptions)
+    /// Creates a new builder-style object to manufacture [`CertificateOptions`](crate::model::CertificateOptions).
     pub fn builder() -> crate::model::certificate_options::Builder {
         crate::model::certificate_options::Builder::default()
     }
@@ -151,11 +150,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -182,7 +180,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -192,7 +190,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -239,11 +237,10 @@ impl std::fmt::Debug for DomainValidationOption {
         formatter.finish()
     }
 }
-/// See [`DomainValidationOption`](crate::model::DomainValidationOption)
+/// See [`DomainValidationOption`](crate::model::DomainValidationOption).
 pub mod domain_validation_option {
 
-    /// A builder for [`DomainValidationOption`](crate::model::DomainValidationOption)
-    #[non_exhaustive]
+    /// A builder for [`DomainValidationOption`](crate::model::DomainValidationOption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -287,7 +284,7 @@ pub mod domain_validation_option {
             self.validation_domain = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainValidationOption`](crate::model::DomainValidationOption)
+        /// Consumes the builder and constructs a [`DomainValidationOption`](crate::model::DomainValidationOption).
         pub fn build(self) -> crate::model::DomainValidationOption {
             crate::model::DomainValidationOption {
                 domain_name: self.domain_name,
@@ -297,7 +294,7 @@ pub mod domain_validation_option {
     }
 }
 impl DomainValidationOption {
-    /// Creates a new builder-style object to manufacture [`DomainValidationOption`](crate::model::DomainValidationOption)
+    /// Creates a new builder-style object to manufacture [`DomainValidationOption`](crate::model::DomainValidationOption).
     pub fn builder() -> crate::model::domain_validation_option::Builder {
         crate::model::domain_validation_option::Builder::default()
     }
@@ -378,11 +375,10 @@ impl std::fmt::Debug for ExpiryEventsConfiguration {
         formatter.finish()
     }
 }
-/// See [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration)
+/// See [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
 pub mod expiry_events_configuration {
 
-    /// A builder for [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) days_before_expiry: std::option::Option<i32>,
@@ -398,7 +394,7 @@ pub mod expiry_events_configuration {
             self.days_before_expiry = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration)
+        /// Consumes the builder and constructs a [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
         pub fn build(self) -> crate::model::ExpiryEventsConfiguration {
             crate::model::ExpiryEventsConfiguration {
                 days_before_expiry: self.days_before_expiry,
@@ -407,7 +403,7 @@ pub mod expiry_events_configuration {
     }
 }
 impl ExpiryEventsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration)
+    /// Creates a new builder-style object to manufacture [`ExpiryEventsConfiguration`](crate::model::ExpiryEventsConfiguration).
     pub fn builder() -> crate::model::expiry_events_configuration::Builder {
         crate::model::expiry_events_configuration::Builder::default()
     }
@@ -444,11 +440,10 @@ impl std::fmt::Debug for CertificateSummary {
         formatter.finish()
     }
 }
-/// See [`CertificateSummary`](crate::model::CertificateSummary)
+/// See [`CertificateSummary`](crate::model::CertificateSummary).
 pub mod certificate_summary {
 
-    /// A builder for [`CertificateSummary`](crate::model::CertificateSummary)
-    #[non_exhaustive]
+    /// A builder for [`CertificateSummary`](crate::model::CertificateSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -482,7 +477,7 @@ pub mod certificate_summary {
             self.domain_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`CertificateSummary`](crate::model::CertificateSummary)
+        /// Consumes the builder and constructs a [`CertificateSummary`](crate::model::CertificateSummary).
         pub fn build(self) -> crate::model::CertificateSummary {
             crate::model::CertificateSummary {
                 certificate_arn: self.certificate_arn,
@@ -492,7 +487,7 @@ pub mod certificate_summary {
     }
 }
 impl CertificateSummary {
-    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary)
+    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary).
     pub fn builder() -> crate::model::certificate_summary::Builder {
         crate::model::certificate_summary::Builder::default()
     }
@@ -534,11 +529,10 @@ impl std::fmt::Debug for Filters {
         formatter.finish()
     }
 }
-/// See [`Filters`](crate::model::Filters)
+/// See [`Filters`](crate::model::Filters).
 pub mod filters {
 
-    /// A builder for [`Filters`](crate::model::Filters)
-    #[non_exhaustive]
+    /// A builder for [`Filters`](crate::model::Filters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) extended_key_usage:
@@ -606,7 +600,7 @@ pub mod filters {
             self.key_types = input;
             self
         }
-        /// Consumes the builder and constructs a [`Filters`](crate::model::Filters)
+        /// Consumes the builder and constructs a [`Filters`](crate::model::Filters).
         pub fn build(self) -> crate::model::Filters {
             crate::model::Filters {
                 extended_key_usage: self.extended_key_usage,
@@ -617,7 +611,7 @@ pub mod filters {
     }
 }
 impl Filters {
-    /// Creates a new builder-style object to manufacture [`Filters`](crate::model::Filters)
+    /// Creates a new builder-style object to manufacture [`Filters`](crate::model::Filters).
     pub fn builder() -> crate::model::filters::Builder {
         crate::model::filters::Builder::default()
     }
@@ -1200,11 +1194,10 @@ impl std::fmt::Debug for CertificateDetail {
         formatter.finish()
     }
 }
-/// See [`CertificateDetail`](crate::model::CertificateDetail)
+/// See [`CertificateDetail`](crate::model::CertificateDetail).
 pub mod certificate_detail {
 
-    /// A builder for [`CertificateDetail`](crate::model::CertificateDetail)
-    #[non_exhaustive]
+    /// A builder for [`CertificateDetail`](crate::model::CertificateDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
@@ -1596,7 +1589,7 @@ pub mod certificate_detail {
             self.options = input;
             self
         }
-        /// Consumes the builder and constructs a [`CertificateDetail`](crate::model::CertificateDetail)
+        /// Consumes the builder and constructs a [`CertificateDetail`](crate::model::CertificateDetail).
         pub fn build(self) -> crate::model::CertificateDetail {
             crate::model::CertificateDetail {
                 certificate_arn: self.certificate_arn,
@@ -1630,7 +1623,7 @@ pub mod certificate_detail {
     }
 }
 impl CertificateDetail {
-    /// Creates a new builder-style object to manufacture [`CertificateDetail`](crate::model::CertificateDetail)
+    /// Creates a new builder-style object to manufacture [`CertificateDetail`](crate::model::CertificateDetail).
     pub fn builder() -> crate::model::certificate_detail::Builder {
         crate::model::certificate_detail::Builder::default()
     }
@@ -1740,11 +1733,10 @@ impl std::fmt::Debug for ExtendedKeyUsage {
         formatter.finish()
     }
 }
-/// See [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage)
+/// See [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
 pub mod extended_key_usage {
 
-    /// A builder for [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage)
-    #[non_exhaustive]
+    /// A builder for [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ExtendedKeyUsageName>,
@@ -1796,7 +1788,7 @@ pub mod extended_key_usage {
             self.oid = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage)
+        /// Consumes the builder and constructs a [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
         pub fn build(self) -> crate::model::ExtendedKeyUsage {
             crate::model::ExtendedKeyUsage {
                 name: self.name,
@@ -1806,7 +1798,7 @@ pub mod extended_key_usage {
     }
 }
 impl ExtendedKeyUsage {
-    /// Creates a new builder-style object to manufacture [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage)
+    /// Creates a new builder-style object to manufacture [`ExtendedKeyUsage`](crate::model::ExtendedKeyUsage).
     pub fn builder() -> crate::model::extended_key_usage::Builder {
         crate::model::extended_key_usage::Builder::default()
     }
@@ -1832,11 +1824,10 @@ impl std::fmt::Debug for KeyUsage {
         formatter.finish()
     }
 }
-/// See [`KeyUsage`](crate::model::KeyUsage)
+/// See [`KeyUsage`](crate::model::KeyUsage).
 pub mod key_usage {
 
-    /// A builder for [`KeyUsage`](crate::model::KeyUsage)
-    #[non_exhaustive]
+    /// A builder for [`KeyUsage`](crate::model::KeyUsage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::KeyUsageName>,
@@ -1852,14 +1843,14 @@ pub mod key_usage {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyUsage`](crate::model::KeyUsage)
+        /// Consumes the builder and constructs a [`KeyUsage`](crate::model::KeyUsage).
         pub fn build(self) -> crate::model::KeyUsage {
             crate::model::KeyUsage { name: self.name }
         }
     }
 }
 impl KeyUsage {
-    /// Creates a new builder-style object to manufacture [`KeyUsage`](crate::model::KeyUsage)
+    /// Creates a new builder-style object to manufacture [`KeyUsage`](crate::model::KeyUsage).
     pub fn builder() -> crate::model::key_usage::Builder {
         crate::model::key_usage::Builder::default()
     }
@@ -1909,11 +1900,10 @@ impl std::fmt::Debug for RenewalSummary {
         formatter.finish()
     }
 }
-/// See [`RenewalSummary`](crate::model::RenewalSummary)
+/// See [`RenewalSummary`](crate::model::RenewalSummary).
 pub mod renewal_summary {
 
-    /// A builder for [`RenewalSummary`](crate::model::RenewalSummary)
-    #[non_exhaustive]
+    /// A builder for [`RenewalSummary`](crate::model::RenewalSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) renewal_status: std::option::Option<crate::model::RenewalStatus>,
@@ -1981,7 +1971,7 @@ pub mod renewal_summary {
             self.updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`RenewalSummary`](crate::model::RenewalSummary)
+        /// Consumes the builder and constructs a [`RenewalSummary`](crate::model::RenewalSummary).
         pub fn build(self) -> crate::model::RenewalSummary {
             crate::model::RenewalSummary {
                 renewal_status: self.renewal_status,
@@ -1993,7 +1983,7 @@ pub mod renewal_summary {
     }
 }
 impl RenewalSummary {
-    /// Creates a new builder-style object to manufacture [`RenewalSummary`](crate::model::RenewalSummary)
+    /// Creates a new builder-style object to manufacture [`RenewalSummary`](crate::model::RenewalSummary).
     pub fn builder() -> crate::model::renewal_summary::Builder {
         crate::model::renewal_summary::Builder::default()
     }
@@ -2199,11 +2189,10 @@ impl std::fmt::Debug for DomainValidation {
         formatter.finish()
     }
 }
-/// See [`DomainValidation`](crate::model::DomainValidation)
+/// See [`DomainValidation`](crate::model::DomainValidation).
 pub mod domain_validation {
 
-    /// A builder for [`DomainValidation`](crate::model::DomainValidation)
-    #[non_exhaustive]
+    /// A builder for [`DomainValidation`](crate::model::DomainValidation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2307,7 +2296,7 @@ pub mod domain_validation {
             self.validation_method = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainValidation`](crate::model::DomainValidation)
+        /// Consumes the builder and constructs a [`DomainValidation`](crate::model::DomainValidation).
         pub fn build(self) -> crate::model::DomainValidation {
             crate::model::DomainValidation {
                 domain_name: self.domain_name,
@@ -2321,7 +2310,7 @@ pub mod domain_validation {
     }
 }
 impl DomainValidation {
-    /// Creates a new builder-style object to manufacture [`DomainValidation`](crate::model::DomainValidation)
+    /// Creates a new builder-style object to manufacture [`DomainValidation`](crate::model::DomainValidation).
     pub fn builder() -> crate::model::domain_validation::Builder {
         crate::model::domain_validation::Builder::default()
     }
@@ -2361,11 +2350,10 @@ impl std::fmt::Debug for ResourceRecord {
         formatter.finish()
     }
 }
-/// See [`ResourceRecord`](crate::model::ResourceRecord)
+/// See [`ResourceRecord`](crate::model::ResourceRecord).
 pub mod resource_record {
 
-    /// A builder for [`ResourceRecord`](crate::model::ResourceRecord)
-    #[non_exhaustive]
+    /// A builder for [`ResourceRecord`](crate::model::ResourceRecord).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2403,7 +2391,7 @@ pub mod resource_record {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceRecord`](crate::model::ResourceRecord)
+        /// Consumes the builder and constructs a [`ResourceRecord`](crate::model::ResourceRecord).
         pub fn build(self) -> crate::model::ResourceRecord {
             crate::model::ResourceRecord {
                 name: self.name,
@@ -2414,7 +2402,7 @@ pub mod resource_record {
     }
 }
 impl ResourceRecord {
-    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord)
+    /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
     pub fn builder() -> crate::model::resource_record::Builder {
         crate::model::resource_record::Builder::default()
     }

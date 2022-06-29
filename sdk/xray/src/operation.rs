@@ -10,7 +10,7 @@ pub struct BatchGetTraces {
     _private: (),
 }
 impl BatchGetTraces {
-    /// Creates a new builder-style object to manufacture [`BatchGetTracesInput`](crate::input::BatchGetTracesInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetTracesInput`](crate::input::BatchGetTracesInput).
     pub fn builder() -> crate::input::batch_get_traces_input::Builder {
         crate::input::batch_get_traces_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateGroup {
     _private: (),
 }
 impl CreateGroup {
-    /// Creates a new builder-style object to manufacture [`CreateGroupInput`](crate::input::CreateGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateGroupInput`](crate::input::CreateGroupInput).
     pub fn builder() -> crate::input::create_group_input::Builder {
         crate::input::create_group_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreateSamplingRule {
     _private: (),
 }
 impl CreateSamplingRule {
-    /// Creates a new builder-style object to manufacture [`CreateSamplingRuleInput`](crate::input::CreateSamplingRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateSamplingRuleInput`](crate::input::CreateSamplingRuleInput).
     pub fn builder() -> crate::input::create_sampling_rule_input::Builder {
         crate::input::create_sampling_rule_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct DeleteGroup {
     _private: (),
 }
 impl DeleteGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteGroupInput`](crate::input::DeleteGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGroupInput`](crate::input::DeleteGroupInput).
     pub fn builder() -> crate::input::delete_group_input::Builder {
         crate::input::delete_group_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct DeleteSamplingRule {
     _private: (),
 }
 impl DeleteSamplingRule {
-    /// Creates a new builder-style object to manufacture [`DeleteSamplingRuleInput`](crate::input::DeleteSamplingRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSamplingRuleInput`](crate::input::DeleteSamplingRuleInput).
     pub fn builder() -> crate::input::delete_sampling_rule_input::Builder {
         crate::input::delete_sampling_rule_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct GetEncryptionConfig {
     _private: (),
 }
 impl GetEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`GetEncryptionConfigInput`](crate::input::GetEncryptionConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetEncryptionConfigInput`](crate::input::GetEncryptionConfigInput).
     pub fn builder() -> crate::input::get_encryption_config_input::Builder {
         crate::input::get_encryption_config_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct GetGroup {
     _private: (),
 }
 impl GetGroup {
-    /// Creates a new builder-style object to manufacture [`GetGroupInput`](crate::input::GetGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetGroupInput`](crate::input::GetGroupInput).
     pub fn builder() -> crate::input::get_group_input::Builder {
         crate::input::get_group_input::Builder::default()
     }
@@ -239,7 +239,7 @@ pub struct GetGroups {
     _private: (),
 }
 impl GetGroups {
-    /// Creates a new builder-style object to manufacture [`GetGroupsInput`](crate::input::GetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`GetGroupsInput`](crate::input::GetGroupsInput).
     pub fn builder() -> crate::input::get_groups_input::Builder {
         crate::input::get_groups_input::Builder::default()
     }
@@ -270,7 +270,7 @@ pub struct GetInsight {
     _private: (),
 }
 impl GetInsight {
-    /// Creates a new builder-style object to manufacture [`GetInsightInput`](crate::input::GetInsightInput)
+    /// Creates a new builder-style object to manufacture [`GetInsightInput`](crate::input::GetInsightInput).
     pub fn builder() -> crate::input::get_insight_input::Builder {
         crate::input::get_insight_input::Builder::default()
     }
@@ -302,7 +302,7 @@ pub struct GetInsightEvents {
     _private: (),
 }
 impl GetInsightEvents {
-    /// Creates a new builder-style object to manufacture [`GetInsightEventsInput`](crate::input::GetInsightEventsInput)
+    /// Creates a new builder-style object to manufacture [`GetInsightEventsInput`](crate::input::GetInsightEventsInput).
     pub fn builder() -> crate::input::get_insight_events_input::Builder {
         crate::input::get_insight_events_input::Builder::default()
     }
@@ -336,7 +336,7 @@ pub struct GetInsightImpactGraph {
     _private: (),
 }
 impl GetInsightImpactGraph {
-    /// Creates a new builder-style object to manufacture [`GetInsightImpactGraphInput`](crate::input::GetInsightImpactGraphInput)
+    /// Creates a new builder-style object to manufacture [`GetInsightImpactGraphInput`](crate::input::GetInsightImpactGraphInput).
     pub fn builder() -> crate::input::get_insight_impact_graph_input::Builder {
         crate::input::get_insight_impact_graph_input::Builder::default()
     }
@@ -370,7 +370,7 @@ pub struct GetInsightSummaries {
     _private: (),
 }
 impl GetInsightSummaries {
-    /// Creates a new builder-style object to manufacture [`GetInsightSummariesInput`](crate::input::GetInsightSummariesInput)
+    /// Creates a new builder-style object to manufacture [`GetInsightSummariesInput`](crate::input::GetInsightSummariesInput).
     pub fn builder() -> crate::input::get_insight_summaries_input::Builder {
         crate::input::get_insight_summaries_input::Builder::default()
     }
@@ -404,7 +404,7 @@ pub struct GetSamplingRules {
     _private: (),
 }
 impl GetSamplingRules {
-    /// Creates a new builder-style object to manufacture [`GetSamplingRulesInput`](crate::input::GetSamplingRulesInput)
+    /// Creates a new builder-style object to manufacture [`GetSamplingRulesInput`](crate::input::GetSamplingRulesInput).
     pub fn builder() -> crate::input::get_sampling_rules_input::Builder {
         crate::input::get_sampling_rules_input::Builder::default()
     }
@@ -438,7 +438,7 @@ pub struct GetSamplingStatisticSummaries {
     _private: (),
 }
 impl GetSamplingStatisticSummaries {
-    /// Creates a new builder-style object to manufacture [`GetSamplingStatisticSummariesInput`](crate::input::GetSamplingStatisticSummariesInput)
+    /// Creates a new builder-style object to manufacture [`GetSamplingStatisticSummariesInput`](crate::input::GetSamplingStatisticSummariesInput).
     pub fn builder() -> crate::input::get_sampling_statistic_summaries_input::Builder {
         crate::input::get_sampling_statistic_summaries_input::Builder::default()
     }
@@ -472,7 +472,7 @@ pub struct GetSamplingTargets {
     _private: (),
 }
 impl GetSamplingTargets {
-    /// Creates a new builder-style object to manufacture [`GetSamplingTargetsInput`](crate::input::GetSamplingTargetsInput)
+    /// Creates a new builder-style object to manufacture [`GetSamplingTargetsInput`](crate::input::GetSamplingTargetsInput).
     pub fn builder() -> crate::input::get_sampling_targets_input::Builder {
         crate::input::get_sampling_targets_input::Builder::default()
     }
@@ -506,7 +506,7 @@ pub struct GetServiceGraph {
     _private: (),
 }
 impl GetServiceGraph {
-    /// Creates a new builder-style object to manufacture [`GetServiceGraphInput`](crate::input::GetServiceGraphInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceGraphInput`](crate::input::GetServiceGraphInput).
     pub fn builder() -> crate::input::get_service_graph_input::Builder {
         crate::input::get_service_graph_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct GetTimeSeriesServiceStatistics {
     _private: (),
 }
 impl GetTimeSeriesServiceStatistics {
-    /// Creates a new builder-style object to manufacture [`GetTimeSeriesServiceStatisticsInput`](crate::input::GetTimeSeriesServiceStatisticsInput)
+    /// Creates a new builder-style object to manufacture [`GetTimeSeriesServiceStatisticsInput`](crate::input::GetTimeSeriesServiceStatisticsInput).
     pub fn builder() -> crate::input::get_time_series_service_statistics_input::Builder {
         crate::input::get_time_series_service_statistics_input::Builder::default()
     }
@@ -574,7 +574,7 @@ pub struct GetTraceGraph {
     _private: (),
 }
 impl GetTraceGraph {
-    /// Creates a new builder-style object to manufacture [`GetTraceGraphInput`](crate::input::GetTraceGraphInput)
+    /// Creates a new builder-style object to manufacture [`GetTraceGraphInput`](crate::input::GetTraceGraphInput).
     pub fn builder() -> crate::input::get_trace_graph_input::Builder {
         crate::input::get_trace_graph_input::Builder::default()
     }
@@ -606,7 +606,7 @@ pub struct GetTraceSummaries {
     _private: (),
 }
 impl GetTraceSummaries {
-    /// Creates a new builder-style object to manufacture [`GetTraceSummariesInput`](crate::input::GetTraceSummariesInput)
+    /// Creates a new builder-style object to manufacture [`GetTraceSummariesInput`](crate::input::GetTraceSummariesInput).
     pub fn builder() -> crate::input::get_trace_summaries_input::Builder {
         crate::input::get_trace_summaries_input::Builder::default()
     }
@@ -640,7 +640,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -674,7 +674,7 @@ pub struct PutEncryptionConfig {
     _private: (),
 }
 impl PutEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`PutEncryptionConfigInput`](crate::input::PutEncryptionConfigInput)
+    /// Creates a new builder-style object to manufacture [`PutEncryptionConfigInput`](crate::input::PutEncryptionConfigInput).
     pub fn builder() -> crate::input::put_encryption_config_input::Builder {
         crate::input::put_encryption_config_input::Builder::default()
     }
@@ -708,7 +708,7 @@ pub struct PutTelemetryRecords {
     _private: (),
 }
 impl PutTelemetryRecords {
-    /// Creates a new builder-style object to manufacture [`PutTelemetryRecordsInput`](crate::input::PutTelemetryRecordsInput)
+    /// Creates a new builder-style object to manufacture [`PutTelemetryRecordsInput`](crate::input::PutTelemetryRecordsInput).
     pub fn builder() -> crate::input::put_telemetry_records_input::Builder {
         crate::input::put_telemetry_records_input::Builder::default()
     }
@@ -742,7 +742,7 @@ pub struct PutTraceSegments {
     _private: (),
 }
 impl PutTraceSegments {
-    /// Creates a new builder-style object to manufacture [`PutTraceSegmentsInput`](crate::input::PutTraceSegmentsInput)
+    /// Creates a new builder-style object to manufacture [`PutTraceSegmentsInput`](crate::input::PutTraceSegmentsInput).
     pub fn builder() -> crate::input::put_trace_segments_input::Builder {
         crate::input::put_trace_segments_input::Builder::default()
     }
@@ -776,7 +776,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -808,7 +808,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -840,7 +840,7 @@ pub struct UpdateGroup {
     _private: (),
 }
 impl UpdateGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateGroupInput`](crate::input::UpdateGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGroupInput`](crate::input::UpdateGroupInput).
     pub fn builder() -> crate::input::update_group_input::Builder {
         crate::input::update_group_input::Builder::default()
     }
@@ -872,7 +872,7 @@ pub struct UpdateSamplingRule {
     _private: (),
 }
 impl UpdateSamplingRule {
-    /// Creates a new builder-style object to manufacture [`UpdateSamplingRuleInput`](crate::input::UpdateSamplingRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSamplingRuleInput`](crate::input::UpdateSamplingRuleInput).
     pub fn builder() -> crate::input::update_sampling_rule_input::Builder {
         crate::input::update_sampling_rule_input::Builder::default()
     }

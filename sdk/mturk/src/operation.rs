@@ -10,7 +10,7 @@ pub struct AcceptQualificationRequest {
     _private: (),
 }
 impl AcceptQualificationRequest {
-    /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestInput`](crate::input::AcceptQualificationRequestInput)
+    /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestInput`](crate::input::AcceptQualificationRequestInput).
     pub fn builder() -> crate::input::accept_qualification_request_input::Builder {
         crate::input::accept_qualification_request_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct ApproveAssignment {
     _private: (),
 }
 impl ApproveAssignment {
-    /// Creates a new builder-style object to manufacture [`ApproveAssignmentInput`](crate::input::ApproveAssignmentInput)
+    /// Creates a new builder-style object to manufacture [`ApproveAssignmentInput`](crate::input::ApproveAssignmentInput).
     pub fn builder() -> crate::input::approve_assignment_input::Builder {
         crate::input::approve_assignment_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AssociateQualificationWithWorker {
     _private: (),
 }
 impl AssociateQualificationWithWorker {
-    /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerInput`](crate::input::AssociateQualificationWithWorkerInput)
+    /// Creates a new builder-style object to manufacture [`AssociateQualificationWithWorkerInput`](crate::input::AssociateQualificationWithWorkerInput).
     pub fn builder() -> crate::input::associate_qualification_with_worker_input::Builder {
         crate::input::associate_qualification_with_worker_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateAdditionalAssignmentsForHIT {
     _private: (),
 }
 impl CreateAdditionalAssignmentsForHIT {
-    /// Creates a new builder-style object to manufacture [`CreateAdditionalAssignmentsForHitInput`](crate::input::CreateAdditionalAssignmentsForHitInput)
+    /// Creates a new builder-style object to manufacture [`CreateAdditionalAssignmentsForHitInput`](crate::input::CreateAdditionalAssignmentsForHitInput).
     pub fn builder() -> crate::input::create_additional_assignments_for_hit_input::Builder {
         crate::input::create_additional_assignments_for_hit_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateHIT {
     _private: (),
 }
 impl CreateHIT {
-    /// Creates a new builder-style object to manufacture [`CreateHitInput`](crate::input::CreateHitInput)
+    /// Creates a new builder-style object to manufacture [`CreateHitInput`](crate::input::CreateHitInput).
     pub fn builder() -> crate::input::create_hit_input::Builder {
         crate::input::create_hit_input::Builder::default()
     }
@@ -177,7 +177,7 @@ pub struct CreateHITType {
     _private: (),
 }
 impl CreateHITType {
-    /// Creates a new builder-style object to manufacture [`CreateHitTypeInput`](crate::input::CreateHitTypeInput)
+    /// Creates a new builder-style object to manufacture [`CreateHitTypeInput`](crate::input::CreateHitTypeInput).
     pub fn builder() -> crate::input::create_hit_type_input::Builder {
         crate::input::create_hit_type_input::Builder::default()
     }
@@ -209,7 +209,7 @@ pub struct CreateHITWithHITType {
     _private: (),
 }
 impl CreateHITWithHITType {
-    /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeInput`](crate::input::CreateHitWithHitTypeInput)
+    /// Creates a new builder-style object to manufacture [`CreateHitWithHitTypeInput`](crate::input::CreateHitWithHitTypeInput).
     pub fn builder() -> crate::input::create_hit_with_hit_type_input::Builder {
         crate::input::create_hit_with_hit_type_input::Builder::default()
     }
@@ -243,7 +243,7 @@ pub struct CreateQualificationType {
     _private: (),
 }
 impl CreateQualificationType {
-    /// Creates a new builder-style object to manufacture [`CreateQualificationTypeInput`](crate::input::CreateQualificationTypeInput)
+    /// Creates a new builder-style object to manufacture [`CreateQualificationTypeInput`](crate::input::CreateQualificationTypeInput).
     pub fn builder() -> crate::input::create_qualification_type_input::Builder {
         crate::input::create_qualification_type_input::Builder::default()
     }
@@ -277,7 +277,7 @@ pub struct CreateWorkerBlock {
     _private: (),
 }
 impl CreateWorkerBlock {
-    /// Creates a new builder-style object to manufacture [`CreateWorkerBlockInput`](crate::input::CreateWorkerBlockInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkerBlockInput`](crate::input::CreateWorkerBlockInput).
     pub fn builder() -> crate::input::create_worker_block_input::Builder {
         crate::input::create_worker_block_input::Builder::default()
     }
@@ -311,7 +311,7 @@ pub struct DeleteHIT {
     _private: (),
 }
 impl DeleteHIT {
-    /// Creates a new builder-style object to manufacture [`DeleteHitInput`](crate::input::DeleteHitInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHitInput`](crate::input::DeleteHitInput).
     pub fn builder() -> crate::input::delete_hit_input::Builder {
         crate::input::delete_hit_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DeleteQualificationType {
     _private: (),
 }
 impl DeleteQualificationType {
-    /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeInput`](crate::input::DeleteQualificationTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeInput`](crate::input::DeleteQualificationTypeInput).
     pub fn builder() -> crate::input::delete_qualification_type_input::Builder {
         crate::input::delete_qualification_type_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct DeleteWorkerBlock {
     _private: (),
 }
 impl DeleteWorkerBlock {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkerBlockInput`](crate::input::DeleteWorkerBlockInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorkerBlockInput`](crate::input::DeleteWorkerBlockInput).
     pub fn builder() -> crate::input::delete_worker_block_input::Builder {
         crate::input::delete_worker_block_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct DisassociateQualificationFromWorker {
     _private: (),
 }
 impl DisassociateQualificationFromWorker {
-    /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerInput`](crate::input::DisassociateQualificationFromWorkerInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerInput`](crate::input::DisassociateQualificationFromWorkerInput).
     pub fn builder() -> crate::input::disassociate_qualification_from_worker_input::Builder {
         crate::input::disassociate_qualification_from_worker_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct GetAccountBalance {
     _private: (),
 }
 impl GetAccountBalance {
-    /// Creates a new builder-style object to manufacture [`GetAccountBalanceInput`](crate::input::GetAccountBalanceInput)
+    /// Creates a new builder-style object to manufacture [`GetAccountBalanceInput`](crate::input::GetAccountBalanceInput).
     pub fn builder() -> crate::input::get_account_balance_input::Builder {
         crate::input::get_account_balance_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct GetAssignment {
     _private: (),
 }
 impl GetAssignment {
-    /// Creates a new builder-style object to manufacture [`GetAssignmentInput`](crate::input::GetAssignmentInput)
+    /// Creates a new builder-style object to manufacture [`GetAssignmentInput`](crate::input::GetAssignmentInput).
     pub fn builder() -> crate::input::get_assignment_input::Builder {
         crate::input::get_assignment_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct GetFileUploadURL {
     _private: (),
 }
 impl GetFileUploadURL {
-    /// Creates a new builder-style object to manufacture [`GetFileUploadUrlInput`](crate::input::GetFileUploadUrlInput)
+    /// Creates a new builder-style object to manufacture [`GetFileUploadUrlInput`](crate::input::GetFileUploadUrlInput).
     pub fn builder() -> crate::input::get_file_upload_url_input::Builder {
         crate::input::get_file_upload_url_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct GetHIT {
     _private: (),
 }
 impl GetHIT {
-    /// Creates a new builder-style object to manufacture [`GetHitInput`](crate::input::GetHitInput)
+    /// Creates a new builder-style object to manufacture [`GetHitInput`](crate::input::GetHitInput).
     pub fn builder() -> crate::input::get_hit_input::Builder {
         crate::input::get_hit_input::Builder::default()
     }
@@ -575,7 +575,7 @@ pub struct GetQualificationScore {
     _private: (),
 }
 impl GetQualificationScore {
-    /// Creates a new builder-style object to manufacture [`GetQualificationScoreInput`](crate::input::GetQualificationScoreInput)
+    /// Creates a new builder-style object to manufacture [`GetQualificationScoreInput`](crate::input::GetQualificationScoreInput).
     pub fn builder() -> crate::input::get_qualification_score_input::Builder {
         crate::input::get_qualification_score_input::Builder::default()
     }
@@ -609,7 +609,7 @@ pub struct GetQualificationType {
     _private: (),
 }
 impl GetQualificationType {
-    /// Creates a new builder-style object to manufacture [`GetQualificationTypeInput`](crate::input::GetQualificationTypeInput)
+    /// Creates a new builder-style object to manufacture [`GetQualificationTypeInput`](crate::input::GetQualificationTypeInput).
     pub fn builder() -> crate::input::get_qualification_type_input::Builder {
         crate::input::get_qualification_type_input::Builder::default()
     }
@@ -643,7 +643,7 @@ pub struct ListAssignmentsForHIT {
     _private: (),
 }
 impl ListAssignmentsForHIT {
-    /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitInput`](crate::input::ListAssignmentsForHitInput)
+    /// Creates a new builder-style object to manufacture [`ListAssignmentsForHitInput`](crate::input::ListAssignmentsForHitInput).
     pub fn builder() -> crate::input::list_assignments_for_hit_input::Builder {
         crate::input::list_assignments_for_hit_input::Builder::default()
     }
@@ -677,7 +677,7 @@ pub struct ListBonusPayments {
     _private: (),
 }
 impl ListBonusPayments {
-    /// Creates a new builder-style object to manufacture [`ListBonusPaymentsInput`](crate::input::ListBonusPaymentsInput)
+    /// Creates a new builder-style object to manufacture [`ListBonusPaymentsInput`](crate::input::ListBonusPaymentsInput).
     pub fn builder() -> crate::input::list_bonus_payments_input::Builder {
         crate::input::list_bonus_payments_input::Builder::default()
     }
@@ -711,7 +711,7 @@ pub struct ListHITs {
     _private: (),
 }
 impl ListHITs {
-    /// Creates a new builder-style object to manufacture [`ListHiTsInput`](crate::input::ListHiTsInput)
+    /// Creates a new builder-style object to manufacture [`ListHiTsInput`](crate::input::ListHiTsInput).
     pub fn builder() -> crate::input::list_hi_ts_input::Builder {
         crate::input::list_hi_ts_input::Builder::default()
     }
@@ -742,7 +742,7 @@ pub struct ListHITsForQualificationType {
     _private: (),
 }
 impl ListHITsForQualificationType {
-    /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeInput`](crate::input::ListHiTsForQualificationTypeInput)
+    /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeInput`](crate::input::ListHiTsForQualificationTypeInput).
     pub fn builder() -> crate::input::list_hi_ts_for_qualification_type_input::Builder {
         crate::input::list_hi_ts_for_qualification_type_input::Builder::default()
     }
@@ -776,7 +776,7 @@ pub struct ListQualificationRequests {
     _private: (),
 }
 impl ListQualificationRequests {
-    /// Creates a new builder-style object to manufacture [`ListQualificationRequestsInput`](crate::input::ListQualificationRequestsInput)
+    /// Creates a new builder-style object to manufacture [`ListQualificationRequestsInput`](crate::input::ListQualificationRequestsInput).
     pub fn builder() -> crate::input::list_qualification_requests_input::Builder {
         crate::input::list_qualification_requests_input::Builder::default()
     }
@@ -810,7 +810,7 @@ pub struct ListQualificationTypes {
     _private: (),
 }
 impl ListQualificationTypes {
-    /// Creates a new builder-style object to manufacture [`ListQualificationTypesInput`](crate::input::ListQualificationTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListQualificationTypesInput`](crate::input::ListQualificationTypesInput).
     pub fn builder() -> crate::input::list_qualification_types_input::Builder {
         crate::input::list_qualification_types_input::Builder::default()
     }
@@ -844,7 +844,7 @@ pub struct ListReviewableHITs {
     _private: (),
 }
 impl ListReviewableHITs {
-    /// Creates a new builder-style object to manufacture [`ListReviewableHiTsInput`](crate::input::ListReviewableHiTsInput)
+    /// Creates a new builder-style object to manufacture [`ListReviewableHiTsInput`](crate::input::ListReviewableHiTsInput).
     pub fn builder() -> crate::input::list_reviewable_hi_ts_input::Builder {
         crate::input::list_reviewable_hi_ts_input::Builder::default()
     }
@@ -878,7 +878,7 @@ pub struct ListReviewPolicyResultsForHIT {
     _private: (),
 }
 impl ListReviewPolicyResultsForHIT {
-    /// Creates a new builder-style object to manufacture [`ListReviewPolicyResultsForHitInput`](crate::input::ListReviewPolicyResultsForHitInput)
+    /// Creates a new builder-style object to manufacture [`ListReviewPolicyResultsForHitInput`](crate::input::ListReviewPolicyResultsForHitInput).
     pub fn builder() -> crate::input::list_review_policy_results_for_hit_input::Builder {
         crate::input::list_review_policy_results_for_hit_input::Builder::default()
     }
@@ -912,7 +912,7 @@ pub struct ListWorkerBlocks {
     _private: (),
 }
 impl ListWorkerBlocks {
-    /// Creates a new builder-style object to manufacture [`ListWorkerBlocksInput`](crate::input::ListWorkerBlocksInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkerBlocksInput`](crate::input::ListWorkerBlocksInput).
     pub fn builder() -> crate::input::list_worker_blocks_input::Builder {
         crate::input::list_worker_blocks_input::Builder::default()
     }
@@ -946,7 +946,7 @@ pub struct ListWorkersWithQualificationType {
     _private: (),
 }
 impl ListWorkersWithQualificationType {
-    /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeInput`](crate::input::ListWorkersWithQualificationTypeInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeInput`](crate::input::ListWorkersWithQualificationTypeInput).
     pub fn builder() -> crate::input::list_workers_with_qualification_type_input::Builder {
         crate::input::list_workers_with_qualification_type_input::Builder::default()
     }
@@ -980,7 +980,7 @@ pub struct NotifyWorkers {
     _private: (),
 }
 impl NotifyWorkers {
-    /// Creates a new builder-style object to manufacture [`NotifyWorkersInput`](crate::input::NotifyWorkersInput)
+    /// Creates a new builder-style object to manufacture [`NotifyWorkersInput`](crate::input::NotifyWorkersInput).
     pub fn builder() -> crate::input::notify_workers_input::Builder {
         crate::input::notify_workers_input::Builder::default()
     }
@@ -1012,7 +1012,7 @@ pub struct RejectAssignment {
     _private: (),
 }
 impl RejectAssignment {
-    /// Creates a new builder-style object to manufacture [`RejectAssignmentInput`](crate::input::RejectAssignmentInput)
+    /// Creates a new builder-style object to manufacture [`RejectAssignmentInput`](crate::input::RejectAssignmentInput).
     pub fn builder() -> crate::input::reject_assignment_input::Builder {
         crate::input::reject_assignment_input::Builder::default()
     }
@@ -1046,7 +1046,7 @@ pub struct RejectQualificationRequest {
     _private: (),
 }
 impl RejectQualificationRequest {
-    /// Creates a new builder-style object to manufacture [`RejectQualificationRequestInput`](crate::input::RejectQualificationRequestInput)
+    /// Creates a new builder-style object to manufacture [`RejectQualificationRequestInput`](crate::input::RejectQualificationRequestInput).
     pub fn builder() -> crate::input::reject_qualification_request_input::Builder {
         crate::input::reject_qualification_request_input::Builder::default()
     }
@@ -1080,7 +1080,7 @@ pub struct SendBonus {
     _private: (),
 }
 impl SendBonus {
-    /// Creates a new builder-style object to manufacture [`SendBonusInput`](crate::input::SendBonusInput)
+    /// Creates a new builder-style object to manufacture [`SendBonusInput`](crate::input::SendBonusInput).
     pub fn builder() -> crate::input::send_bonus_input::Builder {
         crate::input::send_bonus_input::Builder::default()
     }
@@ -1111,7 +1111,7 @@ pub struct SendTestEventNotification {
     _private: (),
 }
 impl SendTestEventNotification {
-    /// Creates a new builder-style object to manufacture [`SendTestEventNotificationInput`](crate::input::SendTestEventNotificationInput)
+    /// Creates a new builder-style object to manufacture [`SendTestEventNotificationInput`](crate::input::SendTestEventNotificationInput).
     pub fn builder() -> crate::input::send_test_event_notification_input::Builder {
         crate::input::send_test_event_notification_input::Builder::default()
     }
@@ -1145,7 +1145,7 @@ pub struct UpdateExpirationForHIT {
     _private: (),
 }
 impl UpdateExpirationForHIT {
-    /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitInput`](crate::input::UpdateExpirationForHitInput)
+    /// Creates a new builder-style object to manufacture [`UpdateExpirationForHitInput`](crate::input::UpdateExpirationForHitInput).
     pub fn builder() -> crate::input::update_expiration_for_hit_input::Builder {
         crate::input::update_expiration_for_hit_input::Builder::default()
     }
@@ -1179,7 +1179,7 @@ pub struct UpdateHITReviewStatus {
     _private: (),
 }
 impl UpdateHITReviewStatus {
-    /// Creates a new builder-style object to manufacture [`UpdateHitReviewStatusInput`](crate::input::UpdateHitReviewStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateHitReviewStatusInput`](crate::input::UpdateHitReviewStatusInput).
     pub fn builder() -> crate::input::update_hit_review_status_input::Builder {
         crate::input::update_hit_review_status_input::Builder::default()
     }
@@ -1213,7 +1213,7 @@ pub struct UpdateHITTypeOfHIT {
     _private: (),
 }
 impl UpdateHITTypeOfHIT {
-    /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitInput`](crate::input::UpdateHitTypeOfHitInput)
+    /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitInput`](crate::input::UpdateHitTypeOfHitInput).
     pub fn builder() -> crate::input::update_hit_type_of_hit_input::Builder {
         crate::input::update_hit_type_of_hit_input::Builder::default()
     }
@@ -1247,7 +1247,7 @@ pub struct UpdateNotificationSettings {
     _private: (),
 }
 impl UpdateNotificationSettings {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsInput`](crate::input::UpdateNotificationSettingsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationSettingsInput`](crate::input::UpdateNotificationSettingsInput).
     pub fn builder() -> crate::input::update_notification_settings_input::Builder {
         crate::input::update_notification_settings_input::Builder::default()
     }
@@ -1281,7 +1281,7 @@ pub struct UpdateQualificationType {
     _private: (),
 }
 impl UpdateQualificationType {
-    /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeInput`](crate::input::UpdateQualificationTypeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateQualificationTypeInput`](crate::input::UpdateQualificationTypeInput).
     pub fn builder() -> crate::input::update_qualification_type_input::Builder {
         crate::input::update_qualification_type_input::Builder::default()
     }

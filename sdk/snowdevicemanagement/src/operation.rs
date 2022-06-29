@@ -10,7 +10,7 @@ pub struct CancelTask {
     _private: (),
 }
 impl CancelTask {
-    /// Creates a new builder-style object to manufacture [`CancelTaskInput`](crate::input::CancelTaskInput)
+    /// Creates a new builder-style object to manufacture [`CancelTaskInput`](crate::input::CancelTaskInput).
     pub fn builder() -> crate::input::cancel_task_input::Builder {
         crate::input::cancel_task_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateTask {
     _private: (),
 }
 impl CreateTask {
-    /// Creates a new builder-style object to manufacture [`CreateTaskInput`](crate::input::CreateTaskInput)
+    /// Creates a new builder-style object to manufacture [`CreateTaskInput`](crate::input::CreateTaskInput).
     pub fn builder() -> crate::input::create_task_input::Builder {
         crate::input::create_task_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct DescribeDevice {
     _private: (),
 }
 impl DescribeDevice {
-    /// Creates a new builder-style object to manufacture [`DescribeDeviceInput`](crate::input::DescribeDeviceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
     pub fn builder() -> crate::input::describe_device_input::Builder {
         crate::input::describe_device_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct DescribeDeviceEc2Instances {
     _private: (),
 }
 impl DescribeDeviceEc2Instances {
-    /// Creates a new builder-style object to manufacture [`DescribeDeviceEc2InstancesInput`](crate::input::DescribeDeviceEc2InstancesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeviceEc2InstancesInput`](crate::input::DescribeDeviceEc2InstancesInput).
     pub fn builder() -> crate::input::describe_device_ec2_instances_input::Builder {
         crate::input::describe_device_ec2_instances_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct DescribeExecution {
     _private: (),
 }
 impl DescribeExecution {
-    /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::input::DescribeExecutionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeExecutionInput`](crate::input::DescribeExecutionInput).
     pub fn builder() -> crate::input::describe_execution_input::Builder {
         crate::input::describe_execution_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct DescribeTask {
     _private: (),
 }
 impl DescribeTask {
-    /// Creates a new builder-style object to manufacture [`DescribeTaskInput`](crate::input::DescribeTaskInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTaskInput`](crate::input::DescribeTaskInput).
     pub fn builder() -> crate::input::describe_task_input::Builder {
         crate::input::describe_task_input::Builder::default()
     }
@@ -206,7 +206,7 @@ pub struct ListDeviceResources {
     _private: (),
 }
 impl ListDeviceResources {
-    /// Creates a new builder-style object to manufacture [`ListDeviceResourcesInput`](crate::input::ListDeviceResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListDeviceResourcesInput`](crate::input::ListDeviceResourcesInput).
     pub fn builder() -> crate::input::list_device_resources_input::Builder {
         crate::input::list_device_resources_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct ListDevices {
     _private: (),
 }
 impl ListDevices {
-    /// Creates a new builder-style object to manufacture [`ListDevicesInput`](crate::input::ListDevicesInput)
+    /// Creates a new builder-style object to manufacture [`ListDevicesInput`](crate::input::ListDevicesInput).
     pub fn builder() -> crate::input::list_devices_input::Builder {
         crate::input::list_devices_input::Builder::default()
     }
@@ -272,7 +272,7 @@ pub struct ListExecutions {
     _private: (),
 }
 impl ListExecutions {
-    /// Creates a new builder-style object to manufacture [`ListExecutionsInput`](crate::input::ListExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListExecutionsInput`](crate::input::ListExecutionsInput).
     pub fn builder() -> crate::input::list_executions_input::Builder {
         crate::input::list_executions_input::Builder::default()
     }
@@ -304,7 +304,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -338,7 +338,7 @@ pub struct ListTasks {
     _private: (),
 }
 impl ListTasks {
-    /// Creates a new builder-style object to manufacture [`ListTasksInput`](crate::input::ListTasksInput)
+    /// Creates a new builder-style object to manufacture [`ListTasksInput`](crate::input::ListTasksInput).
     pub fn builder() -> crate::input::list_tasks_input::Builder {
         crate::input::list_tasks_input::Builder::default()
     }
@@ -369,7 +369,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -401,7 +401,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

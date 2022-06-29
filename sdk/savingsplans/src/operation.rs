@@ -10,7 +10,7 @@ pub struct CreateSavingsPlan {
     _private: (),
 }
 impl CreateSavingsPlan {
-    /// Creates a new builder-style object to manufacture [`CreateSavingsPlanInput`](crate::input::CreateSavingsPlanInput)
+    /// Creates a new builder-style object to manufacture [`CreateSavingsPlanInput`](crate::input::CreateSavingsPlanInput).
     pub fn builder() -> crate::input::create_savings_plan_input::Builder {
         crate::input::create_savings_plan_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteQueuedSavingsPlan {
     _private: (),
 }
 impl DeleteQueuedSavingsPlan {
-    /// Creates a new builder-style object to manufacture [`DeleteQueuedSavingsPlanInput`](crate::input::DeleteQueuedSavingsPlanInput)
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedSavingsPlanInput`](crate::input::DeleteQueuedSavingsPlanInput).
     pub fn builder() -> crate::input::delete_queued_savings_plan_input::Builder {
         crate::input::delete_queued_savings_plan_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeSavingsPlanRates {
     _private: (),
 }
 impl DescribeSavingsPlanRates {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlanRatesInput`](crate::input::DescribeSavingsPlanRatesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlanRatesInput`](crate::input::DescribeSavingsPlanRatesInput).
     pub fn builder() -> crate::input::describe_savings_plan_rates_input::Builder {
         crate::input::describe_savings_plan_rates_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeSavingsPlans {
     _private: (),
 }
 impl DescribeSavingsPlans {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansInput`](crate::input::DescribeSavingsPlansInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansInput`](crate::input::DescribeSavingsPlansInput).
     pub fn builder() -> crate::input::describe_savings_plans_input::Builder {
         crate::input::describe_savings_plans_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeSavingsPlansOfferingRates {
     _private: (),
 }
 impl DescribeSavingsPlansOfferingRates {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingRatesInput`](crate::input::DescribeSavingsPlansOfferingRatesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingRatesInput`](crate::input::DescribeSavingsPlansOfferingRatesInput).
     pub fn builder() -> crate::input::describe_savings_plans_offering_rates_input::Builder {
         crate::input::describe_savings_plans_offering_rates_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DescribeSavingsPlansOfferings {
     _private: (),
 }
 impl DescribeSavingsPlansOfferings {
-    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingsInput`](crate::input::DescribeSavingsPlansOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingsInput`](crate::input::DescribeSavingsPlansOfferingsInput).
     pub fn builder() -> crate::input::describe_savings_plans_offerings_input::Builder {
         crate::input::describe_savings_plans_offerings_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

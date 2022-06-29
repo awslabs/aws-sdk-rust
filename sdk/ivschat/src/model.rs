@@ -27,11 +27,10 @@ impl std::fmt::Debug for ValidationExceptionField {
         formatter.finish()
     }
 }
-/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
-    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField)
-    #[non_exhaustive]
+    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod validation_exception_field {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
                 name: self.name,
@@ -68,7 +67,7 @@ pub mod validation_exception_field {
     }
 }
 impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     pub fn builder() -> crate::model::validation_exception_field::Builder {
         crate::model::validation_exception_field::Builder::default()
     }
@@ -211,11 +210,10 @@ impl std::fmt::Debug for MessageReviewHandler {
         formatter.finish()
     }
 }
-/// See [`MessageReviewHandler`](crate::model::MessageReviewHandler)
+/// See [`MessageReviewHandler`](crate::model::MessageReviewHandler).
 pub mod message_review_handler {
 
-    /// A builder for [`MessageReviewHandler`](crate::model::MessageReviewHandler)
-    #[non_exhaustive]
+    /// A builder for [`MessageReviewHandler`](crate::model::MessageReviewHandler).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -245,7 +243,7 @@ pub mod message_review_handler {
             self.fallback_result = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessageReviewHandler`](crate::model::MessageReviewHandler)
+        /// Consumes the builder and constructs a [`MessageReviewHandler`](crate::model::MessageReviewHandler).
         pub fn build(self) -> crate::model::MessageReviewHandler {
             crate::model::MessageReviewHandler {
                 uri: self.uri,
@@ -255,7 +253,7 @@ pub mod message_review_handler {
     }
 }
 impl MessageReviewHandler {
-    /// Creates a new builder-style object to manufacture [`MessageReviewHandler`](crate::model::MessageReviewHandler)
+    /// Creates a new builder-style object to manufacture [`MessageReviewHandler`](crate::model::MessageReviewHandler).
     pub fn builder() -> crate::model::message_review_handler::Builder {
         crate::model::message_review_handler::Builder::default()
     }
@@ -384,11 +382,10 @@ impl std::fmt::Debug for RoomSummary {
         formatter.finish()
     }
 }
-/// See [`RoomSummary`](crate::model::RoomSummary)
+/// See [`RoomSummary`](crate::model::RoomSummary).
 pub mod room_summary {
 
-    /// A builder for [`RoomSummary`](crate::model::RoomSummary)
-    #[non_exhaustive]
+    /// A builder for [`RoomSummary`](crate::model::RoomSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -496,7 +493,7 @@ pub mod room_summary {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoomSummary`](crate::model::RoomSummary)
+        /// Consumes the builder and constructs a [`RoomSummary`](crate::model::RoomSummary).
         pub fn build(self) -> crate::model::RoomSummary {
             crate::model::RoomSummary {
                 arn: self.arn,
@@ -511,7 +508,7 @@ pub mod room_summary {
     }
 }
 impl RoomSummary {
-    /// Creates a new builder-style object to manufacture [`RoomSummary`](crate::model::RoomSummary)
+    /// Creates a new builder-style object to manufacture [`RoomSummary`](crate::model::RoomSummary).
     pub fn builder() -> crate::model::room_summary::Builder {
         crate::model::room_summary::Builder::default()
     }

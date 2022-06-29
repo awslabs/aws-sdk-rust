@@ -10,7 +10,7 @@ pub struct BatchPutPropertyValues {
     _private: (),
 }
 impl BatchPutPropertyValues {
-    /// Creates a new builder-style object to manufacture [`BatchPutPropertyValuesInput`](crate::input::BatchPutPropertyValuesInput)
+    /// Creates a new builder-style object to manufacture [`BatchPutPropertyValuesInput`](crate::input::BatchPutPropertyValuesInput).
     pub fn builder() -> crate::input::batch_put_property_values_input::Builder {
         crate::input::batch_put_property_values_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateComponentType {
     _private: (),
 }
 impl CreateComponentType {
-    /// Creates a new builder-style object to manufacture [`CreateComponentTypeInput`](crate::input::CreateComponentTypeInput)
+    /// Creates a new builder-style object to manufacture [`CreateComponentTypeInput`](crate::input::CreateComponentTypeInput).
     pub fn builder() -> crate::input::create_component_type_input::Builder {
         crate::input::create_component_type_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateEntity {
     _private: (),
 }
 impl CreateEntity {
-    /// Creates a new builder-style object to manufacture [`CreateEntityInput`](crate::input::CreateEntityInput)
+    /// Creates a new builder-style object to manufacture [`CreateEntityInput`](crate::input::CreateEntityInput).
     pub fn builder() -> crate::input::create_entity_input::Builder {
         crate::input::create_entity_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateScene {
     _private: (),
 }
 impl CreateScene {
-    /// Creates a new builder-style object to manufacture [`CreateSceneInput`](crate::input::CreateSceneInput)
+    /// Creates a new builder-style object to manufacture [`CreateSceneInput`](crate::input::CreateSceneInput).
     pub fn builder() -> crate::input::create_scene_input::Builder {
         crate::input::create_scene_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateWorkspace {
     _private: (),
 }
 impl CreateWorkspace {
-    /// Creates a new builder-style object to manufacture [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput).
     pub fn builder() -> crate::input::create_workspace_input::Builder {
         crate::input::create_workspace_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeleteComponentType {
     _private: (),
 }
 impl DeleteComponentType {
-    /// Creates a new builder-style object to manufacture [`DeleteComponentTypeInput`](crate::input::DeleteComponentTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteComponentTypeInput`](crate::input::DeleteComponentTypeInput).
     pub fn builder() -> crate::input::delete_component_type_input::Builder {
         crate::input::delete_component_type_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteEntity {
     _private: (),
 }
 impl DeleteEntity {
-    /// Creates a new builder-style object to manufacture [`DeleteEntityInput`](crate::input::DeleteEntityInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEntityInput`](crate::input::DeleteEntityInput).
     pub fn builder() -> crate::input::delete_entity_input::Builder {
         crate::input::delete_entity_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DeleteScene {
     _private: (),
 }
 impl DeleteScene {
-    /// Creates a new builder-style object to manufacture [`DeleteSceneInput`](crate::input::DeleteSceneInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSceneInput`](crate::input::DeleteSceneInput).
     pub fn builder() -> crate::input::delete_scene_input::Builder {
         crate::input::delete_scene_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DeleteWorkspace {
     _private: (),
 }
 impl DeleteWorkspace {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput).
     pub fn builder() -> crate::input::delete_workspace_input::Builder {
         crate::input::delete_workspace_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct GetComponentType {
     _private: (),
 }
 impl GetComponentType {
-    /// Creates a new builder-style object to manufacture [`GetComponentTypeInput`](crate::input::GetComponentTypeInput)
+    /// Creates a new builder-style object to manufacture [`GetComponentTypeInput`](crate::input::GetComponentTypeInput).
     pub fn builder() -> crate::input::get_component_type_input::Builder {
         crate::input::get_component_type_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct GetEntity {
     _private: (),
 }
 impl GetEntity {
-    /// Creates a new builder-style object to manufacture [`GetEntityInput`](crate::input::GetEntityInput)
+    /// Creates a new builder-style object to manufacture [`GetEntityInput`](crate::input::GetEntityInput).
     pub fn builder() -> crate::input::get_entity_input::Builder {
         crate::input::get_entity_input::Builder::default()
     }
@@ -373,7 +373,7 @@ pub struct GetPropertyValue {
     _private: (),
 }
 impl GetPropertyValue {
-    /// Creates a new builder-style object to manufacture [`GetPropertyValueInput`](crate::input::GetPropertyValueInput)
+    /// Creates a new builder-style object to manufacture [`GetPropertyValueInput`](crate::input::GetPropertyValueInput).
     pub fn builder() -> crate::input::get_property_value_input::Builder {
         crate::input::get_property_value_input::Builder::default()
     }
@@ -407,7 +407,7 @@ pub struct GetPropertyValueHistory {
     _private: (),
 }
 impl GetPropertyValueHistory {
-    /// Creates a new builder-style object to manufacture [`GetPropertyValueHistoryInput`](crate::input::GetPropertyValueHistoryInput)
+    /// Creates a new builder-style object to manufacture [`GetPropertyValueHistoryInput`](crate::input::GetPropertyValueHistoryInput).
     pub fn builder() -> crate::input::get_property_value_history_input::Builder {
         crate::input::get_property_value_history_input::Builder::default()
     }
@@ -441,7 +441,7 @@ pub struct GetScene {
     _private: (),
 }
 impl GetScene {
-    /// Creates a new builder-style object to manufacture [`GetSceneInput`](crate::input::GetSceneInput)
+    /// Creates a new builder-style object to manufacture [`GetSceneInput`](crate::input::GetSceneInput).
     pub fn builder() -> crate::input::get_scene_input::Builder {
         crate::input::get_scene_input::Builder::default()
     }
@@ -472,7 +472,7 @@ pub struct GetWorkspace {
     _private: (),
 }
 impl GetWorkspace {
-    /// Creates a new builder-style object to manufacture [`GetWorkspaceInput`](crate::input::GetWorkspaceInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkspaceInput`](crate::input::GetWorkspaceInput).
     pub fn builder() -> crate::input::get_workspace_input::Builder {
         crate::input::get_workspace_input::Builder::default()
     }
@@ -504,7 +504,7 @@ pub struct ListComponentTypes {
     _private: (),
 }
 impl ListComponentTypes {
-    /// Creates a new builder-style object to manufacture [`ListComponentTypesInput`](crate::input::ListComponentTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListComponentTypesInput`](crate::input::ListComponentTypesInput).
     pub fn builder() -> crate::input::list_component_types_input::Builder {
         crate::input::list_component_types_input::Builder::default()
     }
@@ -538,7 +538,7 @@ pub struct ListEntities {
     _private: (),
 }
 impl ListEntities {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesInput`](crate::input::ListEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListEntitiesInput`](crate::input::ListEntitiesInput).
     pub fn builder() -> crate::input::list_entities_input::Builder {
         crate::input::list_entities_input::Builder::default()
     }
@@ -570,7 +570,7 @@ pub struct ListScenes {
     _private: (),
 }
 impl ListScenes {
-    /// Creates a new builder-style object to manufacture [`ListScenesInput`](crate::input::ListScenesInput)
+    /// Creates a new builder-style object to manufacture [`ListScenesInput`](crate::input::ListScenesInput).
     pub fn builder() -> crate::input::list_scenes_input::Builder {
         crate::input::list_scenes_input::Builder::default()
     }
@@ -602,7 +602,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -636,7 +636,7 @@ pub struct ListWorkspaces {
     _private: (),
 }
 impl ListWorkspaces {
-    /// Creates a new builder-style object to manufacture [`ListWorkspacesInput`](crate::input::ListWorkspacesInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkspacesInput`](crate::input::ListWorkspacesInput).
     pub fn builder() -> crate::input::list_workspaces_input::Builder {
         crate::input::list_workspaces_input::Builder::default()
     }
@@ -668,7 +668,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -700,7 +700,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -732,7 +732,7 @@ pub struct UpdateComponentType {
     _private: (),
 }
 impl UpdateComponentType {
-    /// Creates a new builder-style object to manufacture [`UpdateComponentTypeInput`](crate::input::UpdateComponentTypeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateComponentTypeInput`](crate::input::UpdateComponentTypeInput).
     pub fn builder() -> crate::input::update_component_type_input::Builder {
         crate::input::update_component_type_input::Builder::default()
     }
@@ -766,7 +766,7 @@ pub struct UpdateEntity {
     _private: (),
 }
 impl UpdateEntity {
-    /// Creates a new builder-style object to manufacture [`UpdateEntityInput`](crate::input::UpdateEntityInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEntityInput`](crate::input::UpdateEntityInput).
     pub fn builder() -> crate::input::update_entity_input::Builder {
         crate::input::update_entity_input::Builder::default()
     }
@@ -798,7 +798,7 @@ pub struct UpdateScene {
     _private: (),
 }
 impl UpdateScene {
-    /// Creates a new builder-style object to manufacture [`UpdateSceneInput`](crate::input::UpdateSceneInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSceneInput`](crate::input::UpdateSceneInput).
     pub fn builder() -> crate::input::update_scene_input::Builder {
         crate::input::update_scene_input::Builder::default()
     }
@@ -830,7 +830,7 @@ pub struct UpdateWorkspace {
     _private: (),
 }
 impl UpdateWorkspace {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput).
     pub fn builder() -> crate::input::update_workspace_input::Builder {
         crate::input::update_workspace_input::Builder::default()
     }

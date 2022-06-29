@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateWirelessGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput)
+/// See [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
 pub mod update_wireless_gateway_output {
 
-    /// A builder for [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput)
+        /// Consumes the builder and constructs a [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
         pub fn build(self) -> crate::output::UpdateWirelessGatewayOutput {
             crate::output::UpdateWirelessGatewayOutput {}
         }
     }
 }
 impl UpdateWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
     pub fn builder() -> crate::output::update_wireless_gateway_output::Builder {
         crate::output::update_wireless_gateway_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UpdateWirelessDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
+/// See [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
 pub mod update_wireless_device_output {
 
-    /// A builder for [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
+        /// Consumes the builder and constructs a [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
         pub fn build(self) -> crate::output::UpdateWirelessDeviceOutput {
             crate::output::UpdateWirelessDeviceOutput {}
         }
     }
 }
 impl UpdateWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
     pub fn builder() -> crate::output::update_wireless_device_output::Builder {
         crate::output::update_wireless_device_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for UpdateResourceEventConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
+/// See [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
 pub mod update_resource_event_configuration_output {
 
-    /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
+        /// Consumes the builder and constructs a [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateResourceEventConfigurationOutput {
             crate::output::UpdateResourceEventConfigurationOutput {}
         }
     }
 }
 impl UpdateResourceEventConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
     pub fn builder() -> crate::output::update_resource_event_configuration_output::Builder {
         crate::output::update_resource_event_configuration_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for UpdatePartnerAccountOutput {
         formatter.finish()
     }
 }
-/// See [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput)
+/// See [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
 pub mod update_partner_account_output {
 
-    /// A builder for [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput)
+        /// Consumes the builder and constructs a [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
         pub fn build(self) -> crate::output::UpdatePartnerAccountOutput {
             crate::output::UpdatePartnerAccountOutput {}
         }
     }
 }
 impl UpdatePartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput)
+    /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
     pub fn builder() -> crate::output::update_partner_account_output::Builder {
         crate::output::update_partner_account_output::Builder::default()
     }
@@ -133,22 +129,21 @@ impl std::fmt::Debug for UpdateNetworkAnalyzerConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
+/// See [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
 pub mod update_network_analyzer_configuration_output {
 
-    /// A builder for [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
+        /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateNetworkAnalyzerConfigurationOutput {
             crate::output::UpdateNetworkAnalyzerConfigurationOutput {}
         }
     }
 }
 impl UpdateNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
     pub fn builder() -> crate::output::update_network_analyzer_configuration_output::Builder {
         crate::output::update_network_analyzer_configuration_output::Builder::default()
     }
@@ -164,22 +159,21 @@ impl std::fmt::Debug for UpdateMulticastGroupOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
+/// See [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
 pub mod update_multicast_group_output {
 
-    /// A builder for [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
         pub fn build(self) -> crate::output::UpdateMulticastGroupOutput {
             crate::output::UpdateMulticastGroupOutput {}
         }
     }
 }
 impl UpdateMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
     pub fn builder() -> crate::output::update_multicast_group_output::Builder {
         crate::output::update_multicast_group_output::Builder::default()
     }
@@ -195,22 +189,21 @@ impl std::fmt::Debug for UpdateLogLevelsByResourceTypesOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
+/// See [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
 pub mod update_log_levels_by_resource_types_output {
 
-    /// A builder for [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
+        /// Consumes the builder and constructs a [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
         pub fn build(self) -> crate::output::UpdateLogLevelsByResourceTypesOutput {
             crate::output::UpdateLogLevelsByResourceTypesOutput {}
         }
     }
 }
 impl UpdateLogLevelsByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
     pub fn builder() -> crate::output::update_log_levels_by_resource_types_output::Builder {
         crate::output::update_log_levels_by_resource_types_output::Builder::default()
     }
@@ -226,22 +219,21 @@ impl std::fmt::Debug for UpdateFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
+/// See [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
 pub mod update_fuota_task_output {
 
-    /// A builder for [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
         pub fn build(self) -> crate::output::UpdateFuotaTaskOutput {
             crate::output::UpdateFuotaTaskOutput {}
         }
     }
 }
 impl UpdateFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
     pub fn builder() -> crate::output::update_fuota_task_output::Builder {
         crate::output::update_fuota_task_output::Builder::default()
     }
@@ -257,22 +249,21 @@ impl std::fmt::Debug for UpdateEventConfigurationByResourceTypesOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
+/// See [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
 pub mod update_event_configuration_by_resource_types_output {
 
-    /// A builder for [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
+        /// Consumes the builder and constructs a [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
         pub fn build(self) -> crate::output::UpdateEventConfigurationByResourceTypesOutput {
             crate::output::UpdateEventConfigurationByResourceTypesOutput {}
         }
     }
 }
 impl UpdateEventConfigurationByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
     pub fn builder() -> crate::output::update_event_configuration_by_resource_types_output::Builder
     {
         crate::output::update_event_configuration_by_resource_types_output::Builder::default()
@@ -289,22 +280,21 @@ impl std::fmt::Debug for UpdateDestinationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
+/// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
 pub mod update_destination_output {
 
-    /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
+        /// Consumes the builder and constructs a [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
         pub fn build(self) -> crate::output::UpdateDestinationOutput {
             crate::output::UpdateDestinationOutput {}
         }
     }
 }
 impl UpdateDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
     pub fn builder() -> crate::output::update_destination_output::Builder {
         crate::output::update_destination_output::Builder::default()
     }
@@ -320,22 +310,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -361,11 +350,10 @@ impl std::fmt::Debug for TestWirelessDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput)
+/// See [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
 pub mod test_wireless_device_output {
 
-    /// A builder for [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) result: std::option::Option<std::string::String>,
@@ -381,7 +369,7 @@ pub mod test_wireless_device_output {
             self.result = input;
             self
         }
-        /// Consumes the builder and constructs a [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput)
+        /// Consumes the builder and constructs a [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
         pub fn build(self) -> crate::output::TestWirelessDeviceOutput {
             crate::output::TestWirelessDeviceOutput {
                 result: self.result,
@@ -390,7 +378,7 @@ pub mod test_wireless_device_output {
     }
 }
 impl TestWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
     pub fn builder() -> crate::output::test_wireless_device_output::Builder {
         crate::output::test_wireless_device_output::Builder::default()
     }
@@ -406,22 +394,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -437,22 +424,21 @@ impl std::fmt::Debug for StartMulticastGroupSessionOutput {
         formatter.finish()
     }
 }
-/// See [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
+/// See [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
 pub mod start_multicast_group_session_output {
 
-    /// A builder for [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
+        /// Consumes the builder and constructs a [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
         pub fn build(self) -> crate::output::StartMulticastGroupSessionOutput {
             crate::output::StartMulticastGroupSessionOutput {}
         }
     }
 }
 impl StartMulticastGroupSessionOutput {
-    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput)
+    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
     pub fn builder() -> crate::output::start_multicast_group_session_output::Builder {
         crate::output::start_multicast_group_session_output::Builder::default()
     }
@@ -468,22 +454,21 @@ impl std::fmt::Debug for StartFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
+/// See [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
 pub mod start_fuota_task_output {
 
-    /// A builder for [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
         pub fn build(self) -> crate::output::StartFuotaTaskOutput {
             crate::output::StartFuotaTaskOutput {}
         }
     }
 }
 impl StartFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
     pub fn builder() -> crate::output::start_fuota_task_output::Builder {
         crate::output::start_fuota_task_output::Builder::default()
     }
@@ -500,15 +485,14 @@ impl std::fmt::Debug for StartBulkDisassociateWirelessDeviceFromMulticastGroupOu
         formatter.finish()
     }
 }
-/// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
+/// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
 pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
 
-    /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
         pub fn build(
             self,
         ) -> crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
@@ -517,7 +501,7 @@ pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
     }
 }
 impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
     pub fn builder(
     ) -> crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder
     {
@@ -536,15 +520,14 @@ impl std::fmt::Debug for StartBulkAssociateWirelessDeviceWithMulticastGroupOutpu
         formatter.finish()
     }
 }
-/// See [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
+/// See [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
 pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
 
-    /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
         pub fn build(
             self,
         ) -> crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
@@ -553,7 +536,7 @@ pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
     }
 }
 impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
     pub fn builder(
     ) -> crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder
     {
@@ -581,11 +564,10 @@ impl std::fmt::Debug for SendDataToWirelessDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput)
+/// See [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
 pub mod send_data_to_wireless_device_output {
 
-    /// A builder for [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -601,7 +583,7 @@ pub mod send_data_to_wireless_device_output {
             self.message_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput)
+        /// Consumes the builder and constructs a [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
         pub fn build(self) -> crate::output::SendDataToWirelessDeviceOutput {
             crate::output::SendDataToWirelessDeviceOutput {
                 message_id: self.message_id,
@@ -610,7 +592,7 @@ pub mod send_data_to_wireless_device_output {
     }
 }
 impl SendDataToWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
     pub fn builder() -> crate::output::send_data_to_wireless_device_output::Builder {
         crate::output::send_data_to_wireless_device_output::Builder::default()
     }
@@ -636,11 +618,10 @@ impl std::fmt::Debug for SendDataToMulticastGroupOutput {
         formatter.finish()
     }
 }
-/// See [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
+/// See [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
 pub mod send_data_to_multicast_group_output {
 
-    /// A builder for [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -656,7 +637,7 @@ pub mod send_data_to_multicast_group_output {
             self.message_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
         pub fn build(self) -> crate::output::SendDataToMulticastGroupOutput {
             crate::output::SendDataToMulticastGroupOutput {
                 message_id: self.message_id,
@@ -665,7 +646,7 @@ pub mod send_data_to_multicast_group_output {
     }
 }
 impl SendDataToMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
     pub fn builder() -> crate::output::send_data_to_multicast_group_output::Builder {
         crate::output::send_data_to_multicast_group_output::Builder::default()
     }
@@ -681,22 +662,21 @@ impl std::fmt::Debug for ResetResourceLogLevelOutput {
         formatter.finish()
     }
 }
-/// See [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput)
+/// See [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
 pub mod reset_resource_log_level_output {
 
-    /// A builder for [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput)
-    #[non_exhaustive]
+    /// A builder for [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput)
+        /// Consumes the builder and constructs a [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
         pub fn build(self) -> crate::output::ResetResourceLogLevelOutput {
             crate::output::ResetResourceLogLevelOutput {}
         }
     }
 }
 impl ResetResourceLogLevelOutput {
-    /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput)
+    /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
     pub fn builder() -> crate::output::reset_resource_log_level_output::Builder {
         crate::output::reset_resource_log_level_output::Builder::default()
     }
@@ -712,22 +692,21 @@ impl std::fmt::Debug for ResetAllResourceLogLevelsOutput {
         formatter.finish()
     }
 }
-/// See [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput)
+/// See [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
 pub mod reset_all_resource_log_levels_output {
 
-    /// A builder for [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput)
+        /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
         pub fn build(self) -> crate::output::ResetAllResourceLogLevelsOutput {
             crate::output::ResetAllResourceLogLevelsOutput {}
         }
     }
 }
 impl ResetAllResourceLogLevelsOutput {
-    /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput)
+    /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
     pub fn builder() -> crate::output::reset_all_resource_log_levels_output::Builder {
         crate::output::reset_all_resource_log_levels_output::Builder::default()
     }
@@ -743,22 +722,21 @@ impl std::fmt::Debug for PutResourceLogLevelOutput {
         formatter.finish()
     }
 }
-/// See [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
+/// See [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
 pub mod put_resource_log_level_output {
 
-    /// A builder for [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
+        /// Consumes the builder and constructs a [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
         pub fn build(self) -> crate::output::PutResourceLogLevelOutput {
             crate::output::PutResourceLogLevelOutput {}
         }
     }
 }
 impl PutResourceLogLevelOutput {
-    /// Creates a new builder-style object to manufacture [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput)
+    /// Creates a new builder-style object to manufacture [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
     pub fn builder() -> crate::output::put_resource_log_level_output::Builder {
         crate::output::put_resource_log_level_output::Builder::default()
     }
@@ -794,11 +772,10 @@ impl std::fmt::Debug for ListWirelessGatewayTaskDefinitionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput)
+/// See [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
 pub mod list_wireless_gateway_task_definitions_output {
 
-    /// A builder for [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -838,7 +815,7 @@ pub mod list_wireless_gateway_task_definitions_output {
             self.task_definitions = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput)
+        /// Consumes the builder and constructs a [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
         pub fn build(self) -> crate::output::ListWirelessGatewayTaskDefinitionsOutput {
             crate::output::ListWirelessGatewayTaskDefinitionsOutput {
                 next_token: self.next_token,
@@ -848,7 +825,7 @@ pub mod list_wireless_gateway_task_definitions_output {
     }
 }
 impl ListWirelessGatewayTaskDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
     pub fn builder() -> crate::output::list_wireless_gateway_task_definitions_output::Builder {
         crate::output::list_wireless_gateway_task_definitions_output::Builder::default()
     }
@@ -884,11 +861,10 @@ impl std::fmt::Debug for ListWirelessGatewaysOutput {
         formatter.finish()
     }
 }
-/// See [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput)
+/// See [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
 pub mod list_wireless_gateways_output {
 
-    /// A builder for [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -928,7 +904,7 @@ pub mod list_wireless_gateways_output {
             self.wireless_gateway_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput)
+        /// Consumes the builder and constructs a [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
         pub fn build(self) -> crate::output::ListWirelessGatewaysOutput {
             crate::output::ListWirelessGatewaysOutput {
                 next_token: self.next_token,
@@ -938,7 +914,7 @@ pub mod list_wireless_gateways_output {
     }
 }
 impl ListWirelessGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput)
+    /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
     pub fn builder() -> crate::output::list_wireless_gateways_output::Builder {
         crate::output::list_wireless_gateways_output::Builder::default()
     }
@@ -974,11 +950,10 @@ impl std::fmt::Debug for ListWirelessDevicesOutput {
         formatter.finish()
     }
 }
-/// See [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput)
+/// See [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
 pub mod list_wireless_devices_output {
 
-    /// A builder for [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1018,7 +993,7 @@ pub mod list_wireless_devices_output {
             self.wireless_device_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput)
+        /// Consumes the builder and constructs a [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
         pub fn build(self) -> crate::output::ListWirelessDevicesOutput {
             crate::output::ListWirelessDevicesOutput {
                 next_token: self.next_token,
@@ -1028,7 +1003,7 @@ pub mod list_wireless_devices_output {
     }
 }
 impl ListWirelessDevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput)
+    /// Creates a new builder-style object to manufacture [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
     pub fn builder() -> crate::output::list_wireless_devices_output::Builder {
         crate::output::list_wireless_devices_output::Builder::default()
     }
@@ -1054,11 +1029,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1083,14 +1057,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -1123,11 +1097,10 @@ impl std::fmt::Debug for ListServiceProfilesOutput {
         formatter.finish()
     }
 }
-/// See [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput)
+/// See [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
 pub mod list_service_profiles_output {
 
-    /// A builder for [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1164,7 +1137,7 @@ pub mod list_service_profiles_output {
             self.service_profile_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput)
+        /// Consumes the builder and constructs a [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
         pub fn build(self) -> crate::output::ListServiceProfilesOutput {
             crate::output::ListServiceProfilesOutput {
                 next_token: self.next_token,
@@ -1174,7 +1147,7 @@ pub mod list_service_profiles_output {
     }
 }
 impl ListServiceProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput)
+    /// Creates a new builder-style object to manufacture [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
     pub fn builder() -> crate::output::list_service_profiles_output::Builder {
         crate::output::list_service_profiles_output::Builder::default()
     }
@@ -1213,11 +1186,10 @@ impl std::fmt::Debug for ListQueuedMessagesOutput {
         formatter.finish()
     }
 }
-/// See [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
+/// See [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
 pub mod list_queued_messages_output {
 
-    /// A builder for [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1257,7 +1229,7 @@ pub mod list_queued_messages_output {
             self.downlink_queue_messages_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
+        /// Consumes the builder and constructs a [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
         pub fn build(self) -> crate::output::ListQueuedMessagesOutput {
             crate::output::ListQueuedMessagesOutput {
                 next_token: self.next_token,
@@ -1267,7 +1239,7 @@ pub mod list_queued_messages_output {
     }
 }
 impl ListQueuedMessagesOutput {
-    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput)
+    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
     pub fn builder() -> crate::output::list_queued_messages_output::Builder {
         crate::output::list_queued_messages_output::Builder::default()
     }
@@ -1303,11 +1275,10 @@ impl std::fmt::Debug for ListPartnerAccountsOutput {
         formatter.finish()
     }
 }
-/// See [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput)
+/// See [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
 pub mod list_partner_accounts_output {
 
-    /// A builder for [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1346,7 +1317,7 @@ pub mod list_partner_accounts_output {
             self.sidewalk = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput)
+        /// Consumes the builder and constructs a [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
         pub fn build(self) -> crate::output::ListPartnerAccountsOutput {
             crate::output::ListPartnerAccountsOutput {
                 next_token: self.next_token,
@@ -1356,7 +1327,7 @@ pub mod list_partner_accounts_output {
     }
 }
 impl ListPartnerAccountsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput)
+    /// Creates a new builder-style object to manufacture [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
     pub fn builder() -> crate::output::list_partner_accounts_output::Builder {
         crate::output::list_partner_accounts_output::Builder::default()
     }
@@ -1395,11 +1366,10 @@ impl std::fmt::Debug for ListNetworkAnalyzerConfigurationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput)
+/// See [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
 pub mod list_network_analyzer_configurations_output {
 
-    /// A builder for [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1439,7 +1409,7 @@ pub mod list_network_analyzer_configurations_output {
             self.network_analyzer_configuration_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput)
+        /// Consumes the builder and constructs a [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
         pub fn build(self) -> crate::output::ListNetworkAnalyzerConfigurationsOutput {
             crate::output::ListNetworkAnalyzerConfigurationsOutput {
                 next_token: self.next_token,
@@ -1449,7 +1419,7 @@ pub mod list_network_analyzer_configurations_output {
     }
 }
 impl ListNetworkAnalyzerConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
     pub fn builder() -> crate::output::list_network_analyzer_configurations_output::Builder {
         crate::output::list_network_analyzer_configurations_output::Builder::default()
     }
@@ -1485,11 +1455,10 @@ impl std::fmt::Debug for ListMulticastGroupsByFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
+/// See [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
 pub mod list_multicast_groups_by_fuota_task_output {
 
-    /// A builder for [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1529,7 +1498,7 @@ pub mod list_multicast_groups_by_fuota_task_output {
             self.multicast_group_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
         pub fn build(self) -> crate::output::ListMulticastGroupsByFuotaTaskOutput {
             crate::output::ListMulticastGroupsByFuotaTaskOutput {
                 next_token: self.next_token,
@@ -1539,7 +1508,7 @@ pub mod list_multicast_groups_by_fuota_task_output {
     }
 }
 impl ListMulticastGroupsByFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
     pub fn builder() -> crate::output::list_multicast_groups_by_fuota_task_output::Builder {
         crate::output::list_multicast_groups_by_fuota_task_output::Builder::default()
     }
@@ -1572,11 +1541,10 @@ impl std::fmt::Debug for ListMulticastGroupsOutput {
         formatter.finish()
     }
 }
-/// See [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
+/// See [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
 pub mod list_multicast_groups_output {
 
-    /// A builder for [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1613,7 +1581,7 @@ pub mod list_multicast_groups_output {
             self.multicast_group_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
+        /// Consumes the builder and constructs a [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
         pub fn build(self) -> crate::output::ListMulticastGroupsOutput {
             crate::output::ListMulticastGroupsOutput {
                 next_token: self.next_token,
@@ -1623,7 +1591,7 @@ pub mod list_multicast_groups_output {
     }
 }
 impl ListMulticastGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput)
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
     pub fn builder() -> crate::output::list_multicast_groups_output::Builder {
         crate::output::list_multicast_groups_output::Builder::default()
     }
@@ -1656,11 +1624,10 @@ impl std::fmt::Debug for ListFuotaTasksOutput {
         formatter.finish()
     }
 }
-/// See [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
+/// See [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
 pub mod list_fuota_tasks_output {
 
-    /// A builder for [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1696,7 +1663,7 @@ pub mod list_fuota_tasks_output {
             self.fuota_task_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
+        /// Consumes the builder and constructs a [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
         pub fn build(self) -> crate::output::ListFuotaTasksOutput {
             crate::output::ListFuotaTasksOutput {
                 next_token: self.next_token,
@@ -1706,7 +1673,7 @@ pub mod list_fuota_tasks_output {
     }
 }
 impl ListFuotaTasksOutput {
-    /// Creates a new builder-style object to manufacture [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput)
+    /// Creates a new builder-style object to manufacture [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
     pub fn builder() -> crate::output::list_fuota_tasks_output::Builder {
         crate::output::list_fuota_tasks_output::Builder::default()
     }
@@ -1742,11 +1709,10 @@ impl std::fmt::Debug for ListEventConfigurationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput)
+/// See [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
 pub mod list_event_configurations_output {
 
-    /// A builder for [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1786,7 +1752,7 @@ pub mod list_event_configurations_output {
             self.event_configurations_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput)
+        /// Consumes the builder and constructs a [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
         pub fn build(self) -> crate::output::ListEventConfigurationsOutput {
             crate::output::ListEventConfigurationsOutput {
                 next_token: self.next_token,
@@ -1796,7 +1762,7 @@ pub mod list_event_configurations_output {
     }
 }
 impl ListEventConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
     pub fn builder() -> crate::output::list_event_configurations_output::Builder {
         crate::output::list_event_configurations_output::Builder::default()
     }
@@ -1829,11 +1795,10 @@ impl std::fmt::Debug for ListDeviceProfilesOutput {
         formatter.finish()
     }
 }
-/// See [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput)
+/// See [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
 pub mod list_device_profiles_output {
 
-    /// A builder for [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1870,7 +1835,7 @@ pub mod list_device_profiles_output {
             self.device_profile_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput)
+        /// Consumes the builder and constructs a [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
         pub fn build(self) -> crate::output::ListDeviceProfilesOutput {
             crate::output::ListDeviceProfilesOutput {
                 next_token: self.next_token,
@@ -1880,7 +1845,7 @@ pub mod list_device_profiles_output {
     }
 }
 impl ListDeviceProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput)
+    /// Creates a new builder-style object to manufacture [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
     pub fn builder() -> crate::output::list_device_profiles_output::Builder {
         crate::output::list_device_profiles_output::Builder::default()
     }
@@ -1913,11 +1878,10 @@ impl std::fmt::Debug for ListDestinationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListDestinationsOutput`](crate::output::ListDestinationsOutput)
+/// See [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
 pub mod list_destinations_output {
 
-    /// A builder for [`ListDestinationsOutput`](crate::output::ListDestinationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1953,7 +1917,7 @@ pub mod list_destinations_output {
             self.destination_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDestinationsOutput`](crate::output::ListDestinationsOutput)
+        /// Consumes the builder and constructs a [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
         pub fn build(self) -> crate::output::ListDestinationsOutput {
             crate::output::ListDestinationsOutput {
                 next_token: self.next_token,
@@ -1963,7 +1927,7 @@ pub mod list_destinations_output {
     }
 }
 impl ListDestinationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDestinationsOutput`](crate::output::ListDestinationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
     pub fn builder() -> crate::output::list_destinations_output::Builder {
         crate::output::list_destinations_output::Builder::default()
     }
@@ -2010,11 +1974,10 @@ impl std::fmt::Debug for GetWirelessGatewayTaskDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput)
+/// See [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
 pub mod get_wireless_gateway_task_definition_output {
 
-    /// A builder for [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_create_tasks: std::option::Option<bool>,
@@ -2066,7 +2029,7 @@ pub mod get_wireless_gateway_task_definition_output {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput)
+        /// Consumes the builder and constructs a [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayTaskDefinitionOutput {
             crate::output::GetWirelessGatewayTaskDefinitionOutput {
                 auto_create_tasks: self.auto_create_tasks.unwrap_or_default(),
@@ -2078,7 +2041,7 @@ pub mod get_wireless_gateway_task_definition_output {
     }
 }
 impl GetWirelessGatewayTaskDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
     pub fn builder() -> crate::output::get_wireless_gateway_task_definition_output::Builder {
         crate::output::get_wireless_gateway_task_definition_output::Builder::default()
     }
@@ -2135,11 +2098,10 @@ impl std::fmt::Debug for GetWirelessGatewayTaskOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput)
+/// See [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
 pub mod get_wireless_gateway_task_output {
 
-    /// A builder for [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_id: std::option::Option<std::string::String>,
@@ -2217,7 +2179,7 @@ pub mod get_wireless_gateway_task_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput)
+        /// Consumes the builder and constructs a [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayTaskOutput {
             crate::output::GetWirelessGatewayTaskOutput {
                 wireless_gateway_id: self.wireless_gateway_id,
@@ -2230,7 +2192,7 @@ pub mod get_wireless_gateway_task_output {
     }
 }
 impl GetWirelessGatewayTaskOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
     pub fn builder() -> crate::output::get_wireless_gateway_task_output::Builder {
         crate::output::get_wireless_gateway_task_output::Builder::default()
     }
@@ -2270,11 +2232,10 @@ impl std::fmt::Debug for GetWirelessGatewayStatisticsOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput)
+/// See [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
 pub mod get_wireless_gateway_statistics_output {
 
-    /// A builder for [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_id: std::option::Option<std::string::String>,
@@ -2321,7 +2282,7 @@ pub mod get_wireless_gateway_statistics_output {
             self.connection_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput)
+        /// Consumes the builder and constructs a [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayStatisticsOutput {
             crate::output::GetWirelessGatewayStatisticsOutput {
                 wireless_gateway_id: self.wireless_gateway_id,
@@ -2332,7 +2293,7 @@ pub mod get_wireless_gateway_statistics_output {
     }
 }
 impl GetWirelessGatewayStatisticsOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
     pub fn builder() -> crate::output::get_wireless_gateway_statistics_output::Builder {
         crate::output::get_wireless_gateway_statistics_output::Builder::default()
     }
@@ -2358,11 +2319,10 @@ impl std::fmt::Debug for GetWirelessGatewayFirmwareInformationOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput)
+/// See [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
 pub mod get_wireless_gateway_firmware_information_output {
 
-    /// A builder for [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanGatewayCurrentVersion>,
@@ -2381,7 +2341,7 @@ pub mod get_wireless_gateway_firmware_information_output {
             self.lo_ra_wan = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput)
+        /// Consumes the builder and constructs a [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayFirmwareInformationOutput {
             crate::output::GetWirelessGatewayFirmwareInformationOutput {
                 lo_ra_wan: self.lo_ra_wan,
@@ -2390,7 +2350,7 @@ pub mod get_wireless_gateway_firmware_information_output {
     }
 }
 impl GetWirelessGatewayFirmwareInformationOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
     pub fn builder() -> crate::output::get_wireless_gateway_firmware_information_output::Builder {
         crate::output::get_wireless_gateway_firmware_information_output::Builder::default()
     }
@@ -2426,11 +2386,10 @@ impl std::fmt::Debug for GetWirelessGatewayCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput)
+/// See [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
 pub mod get_wireless_gateway_certificate_output {
 
-    /// A builder for [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_certificate_id: std::option::Option<std::string::String>,
@@ -2467,7 +2426,7 @@ pub mod get_wireless_gateway_certificate_output {
             self.lo_ra_wan_network_server_certificate_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput)
+        /// Consumes the builder and constructs a [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayCertificateOutput {
             crate::output::GetWirelessGatewayCertificateOutput {
                 iot_certificate_id: self.iot_certificate_id,
@@ -2478,7 +2437,7 @@ pub mod get_wireless_gateway_certificate_output {
     }
 }
 impl GetWirelessGatewayCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
     pub fn builder() -> crate::output::get_wireless_gateway_certificate_output::Builder {
         crate::output::get_wireless_gateway_certificate_output::Builder::default()
     }
@@ -2546,11 +2505,10 @@ impl std::fmt::Debug for GetWirelessGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput)
+/// See [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
 pub mod get_wireless_gateway_output {
 
-    /// A builder for [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2635,7 +2593,7 @@ pub mod get_wireless_gateway_output {
             self.thing_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput)
+        /// Consumes the builder and constructs a [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
         pub fn build(self) -> crate::output::GetWirelessGatewayOutput {
             crate::output::GetWirelessGatewayOutput {
                 name: self.name,
@@ -2650,7 +2608,7 @@ pub mod get_wireless_gateway_output {
     }
 }
 impl GetWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
     pub fn builder() -> crate::output::get_wireless_gateway_output::Builder {
         crate::output::get_wireless_gateway_output::Builder::default()
     }
@@ -2697,11 +2655,10 @@ impl std::fmt::Debug for GetWirelessDeviceStatisticsOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput)
+/// See [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
 pub mod get_wireless_device_statistics_output {
 
-    /// A builder for [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_device_id: std::option::Option<std::string::String>,
@@ -2762,7 +2719,7 @@ pub mod get_wireless_device_statistics_output {
             self.sidewalk = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput)
+        /// Consumes the builder and constructs a [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
         pub fn build(self) -> crate::output::GetWirelessDeviceStatisticsOutput {
             crate::output::GetWirelessDeviceStatisticsOutput {
                 wireless_device_id: self.wireless_device_id,
@@ -2774,7 +2731,7 @@ pub mod get_wireless_device_statistics_output {
     }
 }
 impl GetWirelessDeviceStatisticsOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
     pub fn builder() -> crate::output::get_wireless_device_statistics_output::Builder {
         crate::output::get_wireless_device_statistics_output::Builder::default()
     }
@@ -2863,11 +2820,10 @@ impl std::fmt::Debug for GetWirelessDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput)
+/// See [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
 pub mod get_wireless_device_output {
 
-    /// A builder for [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WirelessDeviceType>,
@@ -2994,7 +2950,7 @@ pub mod get_wireless_device_output {
             self.sidewalk = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput)
+        /// Consumes the builder and constructs a [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
         pub fn build(self) -> crate::output::GetWirelessDeviceOutput {
             crate::output::GetWirelessDeviceOutput {
                 r#type: self.r#type,
@@ -3012,7 +2968,7 @@ pub mod get_wireless_device_output {
     }
 }
 impl GetWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
     pub fn builder() -> crate::output::get_wireless_device_output::Builder {
         crate::output::get_wireless_device_output::Builder::default()
     }
@@ -3059,11 +3015,10 @@ impl std::fmt::Debug for GetServiceProfileOutput {
         formatter.finish()
     }
 }
-/// See [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput)
+/// See [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
 pub mod get_service_profile_output {
 
-    /// A builder for [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3115,7 +3070,7 @@ pub mod get_service_profile_output {
             self.lo_ra_wan = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput)
+        /// Consumes the builder and constructs a [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
         pub fn build(self) -> crate::output::GetServiceProfileOutput {
             crate::output::GetServiceProfileOutput {
                 arn: self.arn,
@@ -3127,7 +3082,7 @@ pub mod get_service_profile_output {
     }
 }
 impl GetServiceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput)
+    /// Creates a new builder-style object to manufacture [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
     pub fn builder() -> crate::output::get_service_profile_output::Builder {
         crate::output::get_service_profile_output::Builder::default()
     }
@@ -3167,11 +3122,10 @@ impl std::fmt::Debug for GetServiceEndpointOutput {
         formatter.finish()
     }
 }
-/// See [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput)
+/// See [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
 pub mod get_service_endpoint_output {
 
-    /// A builder for [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::WirelessGatewayServiceType>,
@@ -3215,7 +3169,7 @@ pub mod get_service_endpoint_output {
             self.server_trust = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput)
+        /// Consumes the builder and constructs a [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
         pub fn build(self) -> crate::output::GetServiceEndpointOutput {
             crate::output::GetServiceEndpointOutput {
                 service_type: self.service_type,
@@ -3226,7 +3180,7 @@ pub mod get_service_endpoint_output {
     }
 }
 impl GetServiceEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput)
+    /// Creates a new builder-style object to manufacture [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
     pub fn builder() -> crate::output::get_service_endpoint_output::Builder {
         crate::output::get_service_endpoint_output::Builder::default()
     }
@@ -3252,11 +3206,10 @@ impl std::fmt::Debug for GetResourceLogLevelOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput)
+/// See [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
 pub mod get_resource_log_level_output {
 
-    /// A builder for [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
@@ -3272,7 +3225,7 @@ pub mod get_resource_log_level_output {
             self.log_level = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput)
+        /// Consumes the builder and constructs a [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
         pub fn build(self) -> crate::output::GetResourceLogLevelOutput {
             crate::output::GetResourceLogLevelOutput {
                 log_level: self.log_level,
@@ -3281,7 +3234,7 @@ pub mod get_resource_log_level_output {
     }
 }
 impl GetResourceLogLevelOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
     pub fn builder() -> crate::output::get_resource_log_level_output::Builder {
         crate::output::get_resource_log_level_output::Builder::default()
     }
@@ -3333,11 +3286,10 @@ impl std::fmt::Debug for GetResourceEventConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
+/// See [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
 pub mod get_resource_event_configuration_output {
 
-    /// A builder for [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration_state:
@@ -3406,7 +3358,7 @@ pub mod get_resource_event_configuration_output {
             self.connection_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
+        /// Consumes the builder and constructs a [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
         pub fn build(self) -> crate::output::GetResourceEventConfigurationOutput {
             crate::output::GetResourceEventConfigurationOutput {
                 device_registration_state: self.device_registration_state,
@@ -3418,7 +3370,7 @@ pub mod get_resource_event_configuration_output {
     }
 }
 impl GetResourceEventConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
     pub fn builder() -> crate::output::get_resource_event_configuration_output::Builder {
         crate::output::get_resource_event_configuration_output::Builder::default()
     }
@@ -3453,11 +3405,10 @@ impl std::fmt::Debug for GetPartnerAccountOutput {
         formatter.finish()
     }
 }
-/// See [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
+/// See [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
 pub mod get_partner_account_output {
 
-    /// A builder for [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkAccountInfoWithFingerprint>,
@@ -3487,7 +3438,7 @@ pub mod get_partner_account_output {
             self.account_linked = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
+        /// Consumes the builder and constructs a [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
         pub fn build(self) -> crate::output::GetPartnerAccountOutput {
             crate::output::GetPartnerAccountOutput {
                 sidewalk: self.sidewalk,
@@ -3497,7 +3448,7 @@ pub mod get_partner_account_output {
     }
 }
 impl GetPartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput)
+    /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
     pub fn builder() -> crate::output::get_partner_account_output::Builder {
         crate::output::get_partner_account_output::Builder::default()
     }
@@ -3558,11 +3509,10 @@ impl std::fmt::Debug for GetNetworkAnalyzerConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
+/// See [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
 pub mod get_network_analyzer_configuration_output {
 
-    /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trace_content: std::option::Option<crate::model::TraceContent>,
@@ -3654,7 +3604,7 @@ pub mod get_network_analyzer_configuration_output {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
+        /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::GetNetworkAnalyzerConfigurationOutput {
             crate::output::GetNetworkAnalyzerConfigurationOutput {
                 trace_content: self.trace_content,
@@ -3668,7 +3618,7 @@ pub mod get_network_analyzer_configuration_output {
     }
 }
 impl GetNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
     pub fn builder() -> crate::output::get_network_analyzer_configuration_output::Builder {
         crate::output::get_network_analyzer_configuration_output::Builder::default()
     }
@@ -3694,11 +3644,10 @@ impl std::fmt::Debug for GetMulticastGroupSessionOutput {
         formatter.finish()
     }
 }
-/// See [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
+/// See [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
 pub mod get_multicast_group_session_output {
 
-    /// A builder for [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticastSession>,
@@ -3717,7 +3666,7 @@ pub mod get_multicast_group_session_output {
             self.lo_ra_wan = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
+        /// Consumes the builder and constructs a [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
         pub fn build(self) -> crate::output::GetMulticastGroupSessionOutput {
             crate::output::GetMulticastGroupSessionOutput {
                 lo_ra_wan: self.lo_ra_wan,
@@ -3726,7 +3675,7 @@ pub mod get_multicast_group_session_output {
     }
 }
 impl GetMulticastGroupSessionOutput {
-    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput)
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
     pub fn builder() -> crate::output::get_multicast_group_session_output::Builder {
         crate::output::get_multicast_group_session_output::Builder::default()
     }
@@ -3794,11 +3743,10 @@ impl std::fmt::Debug for GetMulticastGroupOutput {
         formatter.finish()
     }
 }
-/// See [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
+/// See [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
 pub mod get_multicast_group_output {
 
-    /// A builder for [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3886,7 +3834,7 @@ pub mod get_multicast_group_output {
             self.created_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
         pub fn build(self) -> crate::output::GetMulticastGroupOutput {
             crate::output::GetMulticastGroupOutput {
                 arn: self.arn,
@@ -3901,7 +3849,7 @@ pub mod get_multicast_group_output {
     }
 }
 impl GetMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
     pub fn builder() -> crate::output::get_multicast_group_output::Builder {
         crate::output::get_multicast_group_output::Builder::default()
     }
@@ -3953,11 +3901,10 @@ impl std::fmt::Debug for GetLogLevelsByResourceTypesOutput {
         formatter.finish()
     }
 }
-/// See [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput)
+/// See [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
 pub mod get_log_levels_by_resource_types_output {
 
-    /// A builder for [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_log_level: std::option::Option<crate::model::LogLevel>,
@@ -4024,7 +3971,7 @@ pub mod get_log_levels_by_resource_types_output {
             self.wireless_device_log_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput)
+        /// Consumes the builder and constructs a [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
         pub fn build(self) -> crate::output::GetLogLevelsByResourceTypesOutput {
             crate::output::GetLogLevelsByResourceTypesOutput {
                 default_log_level: self.default_log_level,
@@ -4035,7 +3982,7 @@ pub mod get_log_levels_by_resource_types_output {
     }
 }
 impl GetLogLevelsByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput)
+    /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
     pub fn builder() -> crate::output::get_log_levels_by_resource_types_output::Builder {
         crate::output::get_log_levels_by_resource_types_output::Builder::default()
     }
@@ -4117,11 +4064,10 @@ impl std::fmt::Debug for GetFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
+/// See [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
 pub mod get_fuota_task_output {
 
-    /// A builder for [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4240,7 +4186,7 @@ pub mod get_fuota_task_output {
             self.created_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
         pub fn build(self) -> crate::output::GetFuotaTaskOutput {
             crate::output::GetFuotaTaskOutput {
                 arn: self.arn,
@@ -4257,7 +4203,7 @@ pub mod get_fuota_task_output {
     }
 }
 impl GetFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
     pub fn builder() -> crate::output::get_fuota_task_output::Builder {
         crate::output::get_fuota_task_output::Builder::default()
     }
@@ -4313,11 +4259,10 @@ impl std::fmt::Debug for GetEventConfigurationByResourceTypesOutput {
         formatter.finish()
     }
 }
-/// See [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput)
+/// See [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
 pub mod get_event_configuration_by_resource_types_output {
 
-    /// A builder for [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration_state: std::option::Option<
@@ -4395,7 +4340,7 @@ pub mod get_event_configuration_by_resource_types_output {
             self.connection_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput)
+        /// Consumes the builder and constructs a [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
         pub fn build(self) -> crate::output::GetEventConfigurationByResourceTypesOutput {
             crate::output::GetEventConfigurationByResourceTypesOutput {
                 device_registration_state: self.device_registration_state,
@@ -4407,7 +4352,7 @@ pub mod get_event_configuration_by_resource_types_output {
     }
 }
 impl GetEventConfigurationByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput)
+    /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
     pub fn builder() -> crate::output::get_event_configuration_by_resource_types_output::Builder {
         crate::output::get_event_configuration_by_resource_types_output::Builder::default()
     }
@@ -4454,11 +4399,10 @@ impl std::fmt::Debug for GetDeviceProfileOutput {
         formatter.finish()
     }
 }
-/// See [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput)
+/// See [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
 pub mod get_device_profile_output {
 
-    /// A builder for [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4510,7 +4454,7 @@ pub mod get_device_profile_output {
             self.lo_ra_wan = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput)
+        /// Consumes the builder and constructs a [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
         pub fn build(self) -> crate::output::GetDeviceProfileOutput {
             crate::output::GetDeviceProfileOutput {
                 arn: self.arn,
@@ -4522,7 +4466,7 @@ pub mod get_device_profile_output {
     }
 }
 impl GetDeviceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput)
+    /// Creates a new builder-style object to manufacture [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
     pub fn builder() -> crate::output::get_device_profile_output::Builder {
         crate::output::get_device_profile_output::Builder::default()
     }
@@ -4583,11 +4527,10 @@ impl std::fmt::Debug for GetDestinationOutput {
         formatter.finish()
     }
 }
-/// See [`GetDestinationOutput`](crate::output::GetDestinationOutput)
+/// See [`GetDestinationOutput`](crate::output::GetDestinationOutput).
 pub mod get_destination_output {
 
-    /// A builder for [`GetDestinationOutput`](crate::output::GetDestinationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDestinationOutput`](crate::output::GetDestinationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4661,7 +4604,7 @@ pub mod get_destination_output {
             self.role_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDestinationOutput`](crate::output::GetDestinationOutput)
+        /// Consumes the builder and constructs a [`GetDestinationOutput`](crate::output::GetDestinationOutput).
         pub fn build(self) -> crate::output::GetDestinationOutput {
             crate::output::GetDestinationOutput {
                 arn: self.arn,
@@ -4675,7 +4618,7 @@ pub mod get_destination_output {
     }
 }
 impl GetDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`GetDestinationOutput`](crate::output::GetDestinationOutput)
+    /// Creates a new builder-style object to manufacture [`GetDestinationOutput`](crate::output::GetDestinationOutput).
     pub fn builder() -> crate::output::get_destination_output::Builder {
         crate::output::get_destination_output::Builder::default()
     }
@@ -4691,22 +4634,21 @@ impl std::fmt::Debug for DisassociateWirelessGatewayFromThingOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput)
+/// See [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
 pub mod disassociate_wireless_gateway_from_thing_output {
 
-    /// A builder for [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput)
+        /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessGatewayFromThingOutput {
             crate::output::DisassociateWirelessGatewayFromThingOutput {}
         }
     }
 }
 impl DisassociateWirelessGatewayFromThingOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
     pub fn builder() -> crate::output::disassociate_wireless_gateway_from_thing_output::Builder {
         crate::output::disassociate_wireless_gateway_from_thing_output::Builder::default()
     }
@@ -4722,22 +4664,21 @@ impl std::fmt::Debug for DisassociateWirelessGatewayFromCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput)
+/// See [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
 pub mod disassociate_wireless_gateway_from_certificate_output {
 
-    /// A builder for [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput)
+        /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessGatewayFromCertificateOutput {
             crate::output::DisassociateWirelessGatewayFromCertificateOutput {}
         }
     }
 }
 impl DisassociateWirelessGatewayFromCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
     pub fn builder() -> crate::output::disassociate_wireless_gateway_from_certificate_output::Builder
     {
         crate::output::disassociate_wireless_gateway_from_certificate_output::Builder::default()
@@ -4754,22 +4695,21 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromThingOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput)
+/// See [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
 pub mod disassociate_wireless_device_from_thing_output {
 
-    /// A builder for [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput)
+        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromThingOutput {
             crate::output::DisassociateWirelessDeviceFromThingOutput {}
         }
     }
 }
 impl DisassociateWirelessDeviceFromThingOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
     pub fn builder() -> crate::output::disassociate_wireless_device_from_thing_output::Builder {
         crate::output::disassociate_wireless_device_from_thing_output::Builder::default()
     }
@@ -4785,22 +4725,21 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromMulticastGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
+/// See [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
 pub mod disassociate_wireless_device_from_multicast_group_output {
 
-    /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput {
             crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput {}
         }
     }
 }
 impl DisassociateWirelessDeviceFromMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
     pub fn builder(
     ) -> crate::output::disassociate_wireless_device_from_multicast_group_output::Builder {
         crate::output::disassociate_wireless_device_from_multicast_group_output::Builder::default()
@@ -4817,22 +4756,21 @@ impl std::fmt::Debug for DisassociateWirelessDeviceFromFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
+/// See [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
 pub mod disassociate_wireless_device_from_fuota_task_output {
 
-    /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
         pub fn build(self) -> crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput {
             crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput {}
         }
     }
 }
 impl DisassociateWirelessDeviceFromFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
     pub fn builder() -> crate::output::disassociate_wireless_device_from_fuota_task_output::Builder
     {
         crate::output::disassociate_wireless_device_from_fuota_task_output::Builder::default()
@@ -4849,22 +4787,21 @@ impl std::fmt::Debug for DisassociateMulticastGroupFromFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
+/// See [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
 pub mod disassociate_multicast_group_from_fuota_task_output {
 
-    /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
         pub fn build(self) -> crate::output::DisassociateMulticastGroupFromFuotaTaskOutput {
             crate::output::DisassociateMulticastGroupFromFuotaTaskOutput {}
         }
     }
 }
 impl DisassociateMulticastGroupFromFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
     pub fn builder() -> crate::output::disassociate_multicast_group_from_fuota_task_output::Builder
     {
         crate::output::disassociate_multicast_group_from_fuota_task_output::Builder::default()
@@ -4881,22 +4818,21 @@ impl std::fmt::Debug for DisassociateAwsAccountFromPartnerAccountOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput)
+/// See [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
 pub mod disassociate_aws_account_from_partner_account_output {
 
-    /// A builder for [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput)
+        /// Consumes the builder and constructs a [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
         pub fn build(self) -> crate::output::DisassociateAwsAccountFromPartnerAccountOutput {
             crate::output::DisassociateAwsAccountFromPartnerAccountOutput {}
         }
     }
 }
 impl DisassociateAwsAccountFromPartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
     pub fn builder() -> crate::output::disassociate_aws_account_from_partner_account_output::Builder
     {
         crate::output::disassociate_aws_account_from_partner_account_output::Builder::default()
@@ -4913,22 +4849,21 @@ impl std::fmt::Debug for DeleteWirelessGatewayTaskDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput)
+/// See [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
 pub mod delete_wireless_gateway_task_definition_output {
 
-    /// A builder for [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput)
+        /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteWirelessGatewayTaskDefinitionOutput {
             crate::output::DeleteWirelessGatewayTaskDefinitionOutput {}
         }
     }
 }
 impl DeleteWirelessGatewayTaskDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
     pub fn builder() -> crate::output::delete_wireless_gateway_task_definition_output::Builder {
         crate::output::delete_wireless_gateway_task_definition_output::Builder::default()
     }
@@ -4944,22 +4879,21 @@ impl std::fmt::Debug for DeleteWirelessGatewayTaskOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput)
+/// See [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
 pub mod delete_wireless_gateway_task_output {
 
-    /// A builder for [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput)
+        /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
         pub fn build(self) -> crate::output::DeleteWirelessGatewayTaskOutput {
             crate::output::DeleteWirelessGatewayTaskOutput {}
         }
     }
 }
 impl DeleteWirelessGatewayTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
     pub fn builder() -> crate::output::delete_wireless_gateway_task_output::Builder {
         crate::output::delete_wireless_gateway_task_output::Builder::default()
     }
@@ -4975,22 +4909,21 @@ impl std::fmt::Debug for DeleteWirelessGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput)
+/// See [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
 pub mod delete_wireless_gateway_output {
 
-    /// A builder for [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput)
+        /// Consumes the builder and constructs a [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
         pub fn build(self) -> crate::output::DeleteWirelessGatewayOutput {
             crate::output::DeleteWirelessGatewayOutput {}
         }
     }
 }
 impl DeleteWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
     pub fn builder() -> crate::output::delete_wireless_gateway_output::Builder {
         crate::output::delete_wireless_gateway_output::Builder::default()
     }
@@ -5006,22 +4939,21 @@ impl std::fmt::Debug for DeleteWirelessDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput)
+/// See [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
 pub mod delete_wireless_device_output {
 
-    /// A builder for [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput)
+        /// Consumes the builder and constructs a [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
         pub fn build(self) -> crate::output::DeleteWirelessDeviceOutput {
             crate::output::DeleteWirelessDeviceOutput {}
         }
     }
 }
 impl DeleteWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
     pub fn builder() -> crate::output::delete_wireless_device_output::Builder {
         crate::output::delete_wireless_device_output::Builder::default()
     }
@@ -5037,22 +4969,21 @@ impl std::fmt::Debug for DeleteServiceProfileOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
+/// See [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
 pub mod delete_service_profile_output {
 
-    /// A builder for [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
+        /// Consumes the builder and constructs a [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
         pub fn build(self) -> crate::output::DeleteServiceProfileOutput {
             crate::output::DeleteServiceProfileOutput {}
         }
     }
 }
 impl DeleteServiceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
     pub fn builder() -> crate::output::delete_service_profile_output::Builder {
         crate::output::delete_service_profile_output::Builder::default()
     }
@@ -5068,22 +4999,21 @@ impl std::fmt::Debug for DeleteQueuedMessagesOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+/// See [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
 pub mod delete_queued_messages_output {
 
-    /// A builder for [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+        /// Consumes the builder and constructs a [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
         pub fn build(self) -> crate::output::DeleteQueuedMessagesOutput {
             crate::output::DeleteQueuedMessagesOutput {}
         }
     }
 }
 impl DeleteQueuedMessagesOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
     pub fn builder() -> crate::output::delete_queued_messages_output::Builder {
         crate::output::delete_queued_messages_output::Builder::default()
     }
@@ -5099,22 +5029,21 @@ impl std::fmt::Debug for DeleteNetworkAnalyzerConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput)
+/// See [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
 pub mod delete_network_analyzer_configuration_output {
 
-    /// A builder for [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput)
+        /// Consumes the builder and constructs a [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteNetworkAnalyzerConfigurationOutput {
             crate::output::DeleteNetworkAnalyzerConfigurationOutput {}
         }
     }
 }
 impl DeleteNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
     pub fn builder() -> crate::output::delete_network_analyzer_configuration_output::Builder {
         crate::output::delete_network_analyzer_configuration_output::Builder::default()
     }
@@ -5130,22 +5059,21 @@ impl std::fmt::Debug for DeleteMulticastGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
+/// See [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
 pub mod delete_multicast_group_output {
 
-    /// A builder for [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
         pub fn build(self) -> crate::output::DeleteMulticastGroupOutput {
             crate::output::DeleteMulticastGroupOutput {}
         }
     }
 }
 impl DeleteMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
     pub fn builder() -> crate::output::delete_multicast_group_output::Builder {
         crate::output::delete_multicast_group_output::Builder::default()
     }
@@ -5161,22 +5089,21 @@ impl std::fmt::Debug for DeleteFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
+/// See [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
 pub mod delete_fuota_task_output {
 
-    /// A builder for [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
         pub fn build(self) -> crate::output::DeleteFuotaTaskOutput {
             crate::output::DeleteFuotaTaskOutput {}
         }
     }
 }
 impl DeleteFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
     pub fn builder() -> crate::output::delete_fuota_task_output::Builder {
         crate::output::delete_fuota_task_output::Builder::default()
     }
@@ -5192,22 +5119,21 @@ impl std::fmt::Debug for DeleteDeviceProfileOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput)
+/// See [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
 pub mod delete_device_profile_output {
 
-    /// A builder for [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput)
+        /// Consumes the builder and constructs a [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
         pub fn build(self) -> crate::output::DeleteDeviceProfileOutput {
             crate::output::DeleteDeviceProfileOutput {}
         }
     }
 }
 impl DeleteDeviceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
     pub fn builder() -> crate::output::delete_device_profile_output::Builder {
         crate::output::delete_device_profile_output::Builder::default()
     }
@@ -5223,22 +5149,21 @@ impl std::fmt::Debug for DeleteDestinationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
+/// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
 pub mod delete_destination_output {
 
-    /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
+        /// Consumes the builder and constructs a [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
         pub fn build(self) -> crate::output::DeleteDestinationOutput {
             crate::output::DeleteDestinationOutput {}
         }
     }
 }
 impl DeleteDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
     pub fn builder() -> crate::output::delete_destination_output::Builder {
         crate::output::delete_destination_output::Builder::default()
     }
@@ -5271,11 +5196,10 @@ impl std::fmt::Debug for CreateWirelessGatewayTaskDefinitionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput)
+/// See [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
 pub mod create_wireless_gateway_task_definition_output {
 
-    /// A builder for [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5302,7 +5226,7 @@ pub mod create_wireless_gateway_task_definition_output {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput)
+        /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
         pub fn build(self) -> crate::output::CreateWirelessGatewayTaskDefinitionOutput {
             crate::output::CreateWirelessGatewayTaskDefinitionOutput {
                 id: self.id,
@@ -5312,7 +5236,7 @@ pub mod create_wireless_gateway_task_definition_output {
     }
 }
 impl CreateWirelessGatewayTaskDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
     pub fn builder() -> crate::output::create_wireless_gateway_task_definition_output::Builder {
         crate::output::create_wireless_gateway_task_definition_output::Builder::default()
     }
@@ -5348,11 +5272,10 @@ impl std::fmt::Debug for CreateWirelessGatewayTaskOutput {
         formatter.finish()
     }
 }
-/// See [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput)
+/// See [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
 pub mod create_wireless_gateway_task_output {
 
-    /// A builder for [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) wireless_gateway_task_definition_id: std::option::Option<std::string::String>,
@@ -5388,7 +5311,7 @@ pub mod create_wireless_gateway_task_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput)
+        /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
         pub fn build(self) -> crate::output::CreateWirelessGatewayTaskOutput {
             crate::output::CreateWirelessGatewayTaskOutput {
                 wireless_gateway_task_definition_id: self.wireless_gateway_task_definition_id,
@@ -5398,7 +5321,7 @@ pub mod create_wireless_gateway_task_output {
     }
 }
 impl CreateWirelessGatewayTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
     pub fn builder() -> crate::output::create_wireless_gateway_task_output::Builder {
         crate::output::create_wireless_gateway_task_output::Builder::default()
     }
@@ -5431,11 +5354,10 @@ impl std::fmt::Debug for CreateWirelessGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput)
+/// See [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
 pub mod create_wireless_gateway_output {
 
-    /// A builder for [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5462,7 +5384,7 @@ pub mod create_wireless_gateway_output {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput)
+        /// Consumes the builder and constructs a [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
         pub fn build(self) -> crate::output::CreateWirelessGatewayOutput {
             crate::output::CreateWirelessGatewayOutput {
                 arn: self.arn,
@@ -5472,7 +5394,7 @@ pub mod create_wireless_gateway_output {
     }
 }
 impl CreateWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
     pub fn builder() -> crate::output::create_wireless_gateway_output::Builder {
         crate::output::create_wireless_gateway_output::Builder::default()
     }
@@ -5505,11 +5427,10 @@ impl std::fmt::Debug for CreateWirelessDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput)
+/// See [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
 pub mod create_wireless_device_output {
 
-    /// A builder for [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5536,7 +5457,7 @@ pub mod create_wireless_device_output {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput)
+        /// Consumes the builder and constructs a [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
         pub fn build(self) -> crate::output::CreateWirelessDeviceOutput {
             crate::output::CreateWirelessDeviceOutput {
                 arn: self.arn,
@@ -5546,7 +5467,7 @@ pub mod create_wireless_device_output {
     }
 }
 impl CreateWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
     pub fn builder() -> crate::output::create_wireless_device_output::Builder {
         crate::output::create_wireless_device_output::Builder::default()
     }
@@ -5579,11 +5500,10 @@ impl std::fmt::Debug for CreateServiceProfileOutput {
         formatter.finish()
     }
 }
-/// See [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput)
+/// See [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
 pub mod create_service_profile_output {
 
-    /// A builder for [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5610,7 +5530,7 @@ pub mod create_service_profile_output {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput)
+        /// Consumes the builder and constructs a [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
         pub fn build(self) -> crate::output::CreateServiceProfileOutput {
             crate::output::CreateServiceProfileOutput {
                 arn: self.arn,
@@ -5620,7 +5540,7 @@ pub mod create_service_profile_output {
     }
 }
 impl CreateServiceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput)
+    /// Creates a new builder-style object to manufacture [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
     pub fn builder() -> crate::output::create_service_profile_output::Builder {
         crate::output::create_service_profile_output::Builder::default()
     }
@@ -5653,11 +5573,10 @@ impl std::fmt::Debug for CreateNetworkAnalyzerConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput)
+/// See [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
 pub mod create_network_analyzer_configuration_output {
 
-    /// A builder for [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5684,7 +5603,7 @@ pub mod create_network_analyzer_configuration_output {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput)
+        /// Consumes the builder and constructs a [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
         pub fn build(self) -> crate::output::CreateNetworkAnalyzerConfigurationOutput {
             crate::output::CreateNetworkAnalyzerConfigurationOutput {
                 arn: self.arn,
@@ -5694,7 +5613,7 @@ pub mod create_network_analyzer_configuration_output {
     }
 }
 impl CreateNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
     pub fn builder() -> crate::output::create_network_analyzer_configuration_output::Builder {
         crate::output::create_network_analyzer_configuration_output::Builder::default()
     }
@@ -5727,11 +5646,10 @@ impl std::fmt::Debug for CreateMulticastGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
+/// See [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
 pub mod create_multicast_group_output {
 
-    /// A builder for [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5758,7 +5676,7 @@ pub mod create_multicast_group_output {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
         pub fn build(self) -> crate::output::CreateMulticastGroupOutput {
             crate::output::CreateMulticastGroupOutput {
                 arn: self.arn,
@@ -5768,7 +5686,7 @@ pub mod create_multicast_group_output {
     }
 }
 impl CreateMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
     pub fn builder() -> crate::output::create_multicast_group_output::Builder {
         crate::output::create_multicast_group_output::Builder::default()
     }
@@ -5801,11 +5719,10 @@ impl std::fmt::Debug for CreateFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
+/// See [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
 pub mod create_fuota_task_output {
 
-    /// A builder for [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5832,7 +5749,7 @@ pub mod create_fuota_task_output {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
         pub fn build(self) -> crate::output::CreateFuotaTaskOutput {
             crate::output::CreateFuotaTaskOutput {
                 arn: self.arn,
@@ -5842,7 +5759,7 @@ pub mod create_fuota_task_output {
     }
 }
 impl CreateFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
     pub fn builder() -> crate::output::create_fuota_task_output::Builder {
         crate::output::create_fuota_task_output::Builder::default()
     }
@@ -5875,11 +5792,10 @@ impl std::fmt::Debug for CreateDeviceProfileOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput)
+/// See [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
 pub mod create_device_profile_output {
 
-    /// A builder for [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5906,7 +5822,7 @@ pub mod create_device_profile_output {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput)
+        /// Consumes the builder and constructs a [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
         pub fn build(self) -> crate::output::CreateDeviceProfileOutput {
             crate::output::CreateDeviceProfileOutput {
                 arn: self.arn,
@@ -5916,7 +5832,7 @@ pub mod create_device_profile_output {
     }
 }
 impl CreateDeviceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
     pub fn builder() -> crate::output::create_device_profile_output::Builder {
         crate::output::create_device_profile_output::Builder::default()
     }
@@ -5949,11 +5865,10 @@ impl std::fmt::Debug for CreateDestinationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDestinationOutput`](crate::output::CreateDestinationOutput)
+/// See [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
 pub mod create_destination_output {
 
-    /// A builder for [`CreateDestinationOutput`](crate::output::CreateDestinationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5980,7 +5895,7 @@ pub mod create_destination_output {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDestinationOutput`](crate::output::CreateDestinationOutput)
+        /// Consumes the builder and constructs a [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
         pub fn build(self) -> crate::output::CreateDestinationOutput {
             crate::output::CreateDestinationOutput {
                 arn: self.arn,
@@ -5990,7 +5905,7 @@ pub mod create_destination_output {
     }
 }
 impl CreateDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::output::CreateDestinationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
     pub fn builder() -> crate::output::create_destination_output::Builder {
         crate::output::create_destination_output::Builder::default()
     }
@@ -6006,22 +5921,21 @@ impl std::fmt::Debug for CancelMulticastGroupSessionOutput {
         formatter.finish()
     }
 }
-/// See [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
+/// See [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
 pub mod cancel_multicast_group_session_output {
 
-    /// A builder for [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
+        /// Consumes the builder and constructs a [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
         pub fn build(self) -> crate::output::CancelMulticastGroupSessionOutput {
             crate::output::CancelMulticastGroupSessionOutput {}
         }
     }
 }
 impl CancelMulticastGroupSessionOutput {
-    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput)
+    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
     pub fn builder() -> crate::output::cancel_multicast_group_session_output::Builder {
         crate::output::cancel_multicast_group_session_output::Builder::default()
     }
@@ -6037,22 +5951,21 @@ impl std::fmt::Debug for AssociateWirelessGatewayWithThingOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput)
+/// See [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
 pub mod associate_wireless_gateway_with_thing_output {
 
-    /// A builder for [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput)
+        /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
         pub fn build(self) -> crate::output::AssociateWirelessGatewayWithThingOutput {
             crate::output::AssociateWirelessGatewayWithThingOutput {}
         }
     }
 }
 impl AssociateWirelessGatewayWithThingOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
     pub fn builder() -> crate::output::associate_wireless_gateway_with_thing_output::Builder {
         crate::output::associate_wireless_gateway_with_thing_output::Builder::default()
     }
@@ -6078,11 +5991,10 @@ impl std::fmt::Debug for AssociateWirelessGatewayWithCertificateOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput)
+/// See [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
 pub mod associate_wireless_gateway_with_certificate_output {
 
-    /// A builder for [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iot_certificate_id: std::option::Option<std::string::String>,
@@ -6101,7 +6013,7 @@ pub mod associate_wireless_gateway_with_certificate_output {
             self.iot_certificate_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput)
+        /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
         pub fn build(self) -> crate::output::AssociateWirelessGatewayWithCertificateOutput {
             crate::output::AssociateWirelessGatewayWithCertificateOutput {
                 iot_certificate_id: self.iot_certificate_id,
@@ -6110,7 +6022,7 @@ pub mod associate_wireless_gateway_with_certificate_output {
     }
 }
 impl AssociateWirelessGatewayWithCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
     pub fn builder() -> crate::output::associate_wireless_gateway_with_certificate_output::Builder {
         crate::output::associate_wireless_gateway_with_certificate_output::Builder::default()
     }
@@ -6126,22 +6038,21 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithThingOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
+/// See [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
 pub mod associate_wireless_device_with_thing_output {
 
-    /// A builder for [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
+        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
         pub fn build(self) -> crate::output::AssociateWirelessDeviceWithThingOutput {
             crate::output::AssociateWirelessDeviceWithThingOutput {}
         }
     }
 }
 impl AssociateWirelessDeviceWithThingOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
     pub fn builder() -> crate::output::associate_wireless_device_with_thing_output::Builder {
         crate::output::associate_wireless_device_with_thing_output::Builder::default()
     }
@@ -6157,22 +6068,21 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithMulticastGroupOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
+/// See [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
 pub mod associate_wireless_device_with_multicast_group_output {
 
-    /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
+        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
         pub fn build(self) -> crate::output::AssociateWirelessDeviceWithMulticastGroupOutput {
             crate::output::AssociateWirelessDeviceWithMulticastGroupOutput {}
         }
     }
 }
 impl AssociateWirelessDeviceWithMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
     pub fn builder() -> crate::output::associate_wireless_device_with_multicast_group_output::Builder
     {
         crate::output::associate_wireless_device_with_multicast_group_output::Builder::default()
@@ -6189,22 +6099,21 @@ impl std::fmt::Debug for AssociateWirelessDeviceWithFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
+/// See [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
 pub mod associate_wireless_device_with_fuota_task_output {
 
-    /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
         pub fn build(self) -> crate::output::AssociateWirelessDeviceWithFuotaTaskOutput {
             crate::output::AssociateWirelessDeviceWithFuotaTaskOutput {}
         }
     }
 }
 impl AssociateWirelessDeviceWithFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
     pub fn builder() -> crate::output::associate_wireless_device_with_fuota_task_output::Builder {
         crate::output::associate_wireless_device_with_fuota_task_output::Builder::default()
     }
@@ -6220,22 +6129,21 @@ impl std::fmt::Debug for AssociateMulticastGroupWithFuotaTaskOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
+/// See [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
 pub mod associate_multicast_group_with_fuota_task_output {
 
-    /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
+        /// Consumes the builder and constructs a [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
         pub fn build(self) -> crate::output::AssociateMulticastGroupWithFuotaTaskOutput {
             crate::output::AssociateMulticastGroupWithFuotaTaskOutput {}
         }
     }
 }
 impl AssociateMulticastGroupWithFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
     pub fn builder() -> crate::output::associate_multicast_group_with_fuota_task_output::Builder {
         crate::output::associate_multicast_group_with_fuota_task_output::Builder::default()
     }
@@ -6268,11 +6176,10 @@ impl std::fmt::Debug for AssociateAwsAccountWithPartnerAccountOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput)
+/// See [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
 pub mod associate_aws_account_with_partner_account_output {
 
-    /// A builder for [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sidewalk: std::option::Option<crate::model::SidewalkAccountInfo>,
@@ -6302,7 +6209,7 @@ pub mod associate_aws_account_with_partner_account_output {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput)
+        /// Consumes the builder and constructs a [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
         pub fn build(self) -> crate::output::AssociateAwsAccountWithPartnerAccountOutput {
             crate::output::AssociateAwsAccountWithPartnerAccountOutput {
                 sidewalk: self.sidewalk,
@@ -6312,7 +6219,7 @@ pub mod associate_aws_account_with_partner_account_output {
     }
 }
 impl AssociateAwsAccountWithPartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
     pub fn builder() -> crate::output::associate_aws_account_with_partner_account_output::Builder {
         crate::output::associate_aws_account_with_partner_account_output::Builder::default()
     }

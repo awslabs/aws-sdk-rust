@@ -955,11 +955,10 @@ impl std::fmt::Debug for SynthesisTask {
         formatter.finish()
     }
 }
-/// See [`SynthesisTask`](crate::model::SynthesisTask)
+/// See [`SynthesisTask`](crate::model::SynthesisTask).
 pub mod synthesis_task {
 
-    /// A builder for [`SynthesisTask`](crate::model::SynthesisTask)
-    #[non_exhaustive]
+    /// A builder for [`SynthesisTask`](crate::model::SynthesisTask).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine: std::option::Option<crate::model::Engine>,
@@ -1172,7 +1171,7 @@ pub mod synthesis_task {
             self.language_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`SynthesisTask`](crate::model::SynthesisTask)
+        /// Consumes the builder and constructs a [`SynthesisTask`](crate::model::SynthesisTask).
         pub fn build(self) -> crate::model::SynthesisTask {
             crate::model::SynthesisTask {
                 engine: self.engine,
@@ -1195,7 +1194,7 @@ pub mod synthesis_task {
     }
 }
 impl SynthesisTask {
-    /// Creates a new builder-style object to manufacture [`SynthesisTask`](crate::model::SynthesisTask)
+    /// Creates a new builder-style object to manufacture [`SynthesisTask`](crate::model::SynthesisTask).
     pub fn builder() -> crate::model::synthesis_task::Builder {
         crate::model::synthesis_task::Builder::default()
     }
@@ -1291,11 +1290,10 @@ impl std::fmt::Debug for LexiconDescription {
         formatter.finish()
     }
 }
-/// See [`LexiconDescription`](crate::model::LexiconDescription)
+/// See [`LexiconDescription`](crate::model::LexiconDescription).
 pub mod lexicon_description {
 
-    /// A builder for [`LexiconDescription`](crate::model::LexiconDescription)
-    #[non_exhaustive]
+    /// A builder for [`LexiconDescription`](crate::model::LexiconDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1325,7 +1323,7 @@ pub mod lexicon_description {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`LexiconDescription`](crate::model::LexiconDescription)
+        /// Consumes the builder and constructs a [`LexiconDescription`](crate::model::LexiconDescription).
         pub fn build(self) -> crate::model::LexiconDescription {
             crate::model::LexiconDescription {
                 name: self.name,
@@ -1335,7 +1333,7 @@ pub mod lexicon_description {
     }
 }
 impl LexiconDescription {
-    /// Creates a new builder-style object to manufacture [`LexiconDescription`](crate::model::LexiconDescription)
+    /// Creates a new builder-style object to manufacture [`LexiconDescription`](crate::model::LexiconDescription).
     pub fn builder() -> crate::model::lexicon_description::Builder {
         crate::model::lexicon_description::Builder::default()
     }
@@ -1396,11 +1394,10 @@ impl std::fmt::Debug for LexiconAttributes {
         formatter.finish()
     }
 }
-/// See [`LexiconAttributes`](crate::model::LexiconAttributes)
+/// See [`LexiconAttributes`](crate::model::LexiconAttributes).
 pub mod lexicon_attributes {
 
-    /// A builder for [`LexiconAttributes`](crate::model::LexiconAttributes)
-    #[non_exhaustive]
+    /// A builder for [`LexiconAttributes`](crate::model::LexiconAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alphabet: std::option::Option<std::string::String>,
@@ -1477,7 +1474,7 @@ pub mod lexicon_attributes {
             self.size = input;
             self
         }
-        /// Consumes the builder and constructs a [`LexiconAttributes`](crate::model::LexiconAttributes)
+        /// Consumes the builder and constructs a [`LexiconAttributes`](crate::model::LexiconAttributes).
         pub fn build(self) -> crate::model::LexiconAttributes {
             crate::model::LexiconAttributes {
                 alphabet: self.alphabet,
@@ -1491,7 +1488,7 @@ pub mod lexicon_attributes {
     }
 }
 impl LexiconAttributes {
-    /// Creates a new builder-style object to manufacture [`LexiconAttributes`](crate::model::LexiconAttributes)
+    /// Creates a new builder-style object to manufacture [`LexiconAttributes`](crate::model::LexiconAttributes).
     pub fn builder() -> crate::model::lexicon_attributes::Builder {
         crate::model::lexicon_attributes::Builder::default()
     }
@@ -1524,11 +1521,10 @@ impl std::fmt::Debug for Lexicon {
         formatter.finish()
     }
 }
-/// See [`Lexicon`](crate::model::Lexicon)
+/// See [`Lexicon`](crate::model::Lexicon).
 pub mod lexicon {
 
-    /// A builder for [`Lexicon`](crate::model::Lexicon)
-    #[non_exhaustive]
+    /// A builder for [`Lexicon`](crate::model::Lexicon).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<std::string::String>,
@@ -1555,7 +1551,7 @@ pub mod lexicon {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Lexicon`](crate::model::Lexicon)
+        /// Consumes the builder and constructs a [`Lexicon`](crate::model::Lexicon).
         pub fn build(self) -> crate::model::Lexicon {
             crate::model::Lexicon {
                 content: self.content,
@@ -1565,7 +1561,7 @@ pub mod lexicon {
     }
 }
 impl Lexicon {
-    /// Creates a new builder-style object to manufacture [`Lexicon`](crate::model::Lexicon)
+    /// Creates a new builder-style object to manufacture [`Lexicon`](crate::model::Lexicon).
     pub fn builder() -> crate::model::lexicon::Builder {
         crate::model::lexicon::Builder::default()
     }
@@ -1635,11 +1631,10 @@ impl std::fmt::Debug for Voice {
         formatter.finish()
     }
 }
-/// See [`Voice`](crate::model::Voice)
+/// See [`Voice`](crate::model::Voice).
 pub mod voice {
 
-    /// A builder for [`Voice`](crate::model::Voice)
-    #[non_exhaustive]
+    /// A builder for [`Voice`](crate::model::Voice).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gender: std::option::Option<crate::model::Gender>,
@@ -1748,7 +1743,7 @@ pub mod voice {
             self.supported_engines = input;
             self
         }
-        /// Consumes the builder and constructs a [`Voice`](crate::model::Voice)
+        /// Consumes the builder and constructs a [`Voice`](crate::model::Voice).
         pub fn build(self) -> crate::model::Voice {
             crate::model::Voice {
                 gender: self.gender,
@@ -1763,7 +1758,7 @@ pub mod voice {
     }
 }
 impl Voice {
-    /// Creates a new builder-style object to manufacture [`Voice`](crate::model::Voice)
+    /// Creates a new builder-style object to manufacture [`Voice`](crate::model::Voice).
     pub fn builder() -> crate::model::voice::Builder {
         crate::model::voice::Builder::default()
     }

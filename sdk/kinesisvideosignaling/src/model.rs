@@ -41,11 +41,10 @@ impl std::fmt::Debug for IceServer {
         formatter.finish()
     }
 }
-/// See [`IceServer`](crate::model::IceServer)
+/// See [`IceServer`](crate::model::IceServer).
 pub mod ice_server {
 
-    /// A builder for [`IceServer`](crate::model::IceServer)
-    #[non_exhaustive]
+    /// A builder for [`IceServer`](crate::model::IceServer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uris: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -103,7 +102,7 @@ pub mod ice_server {
             self.ttl = input;
             self
         }
-        /// Consumes the builder and constructs a [`IceServer`](crate::model::IceServer)
+        /// Consumes the builder and constructs a [`IceServer`](crate::model::IceServer).
         pub fn build(self) -> crate::model::IceServer {
             crate::model::IceServer {
                 uris: self.uris,
@@ -115,7 +114,7 @@ pub mod ice_server {
     }
 }
 impl IceServer {
-    /// Creates a new builder-style object to manufacture [`IceServer`](crate::model::IceServer)
+    /// Creates a new builder-style object to manufacture [`IceServer`](crate::model::IceServer).
     pub fn builder() -> crate::model::ice_server::Builder {
         crate::model::ice_server::Builder::default()
     }

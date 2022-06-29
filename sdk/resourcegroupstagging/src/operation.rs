@@ -10,7 +10,7 @@ pub struct DescribeReportCreation {
     _private: (),
 }
 impl DescribeReportCreation {
-    /// Creates a new builder-style object to manufacture [`DescribeReportCreationInput`](crate::input::DescribeReportCreationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReportCreationInput`](crate::input::DescribeReportCreationInput).
     pub fn builder() -> crate::input::describe_report_creation_input::Builder {
         crate::input::describe_report_creation_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetComplianceSummary {
     _private: (),
 }
 impl GetComplianceSummary {
-    /// Creates a new builder-style object to manufacture [`GetComplianceSummaryInput`](crate::input::GetComplianceSummaryInput)
+    /// Creates a new builder-style object to manufacture [`GetComplianceSummaryInput`](crate::input::GetComplianceSummaryInput).
     pub fn builder() -> crate::input::get_compliance_summary_input::Builder {
         crate::input::get_compliance_summary_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetResources {
     _private: (),
 }
 impl GetResources {
-    /// Creates a new builder-style object to manufacture [`GetResourcesInput`](crate::input::GetResourcesInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcesInput`](crate::input::GetResourcesInput).
     pub fn builder() -> crate::input::get_resources_input::Builder {
         crate::input::get_resources_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct GetTagKeys {
     _private: (),
 }
 impl GetTagKeys {
-    /// Creates a new builder-style object to manufacture [`GetTagKeysInput`](crate::input::GetTagKeysInput)
+    /// Creates a new builder-style object to manufacture [`GetTagKeysInput`](crate::input::GetTagKeysInput).
     pub fn builder() -> crate::input::get_tag_keys_input::Builder {
         crate::input::get_tag_keys_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct GetTagValues {
     _private: (),
 }
 impl GetTagValues {
-    /// Creates a new builder-style object to manufacture [`GetTagValuesInput`](crate::input::GetTagValuesInput)
+    /// Creates a new builder-style object to manufacture [`GetTagValuesInput`](crate::input::GetTagValuesInput).
     pub fn builder() -> crate::input::get_tag_values_input::Builder {
         crate::input::get_tag_values_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct StartReportCreation {
     _private: (),
 }
 impl StartReportCreation {
-    /// Creates a new builder-style object to manufacture [`StartReportCreationInput`](crate::input::StartReportCreationInput)
+    /// Creates a new builder-style object to manufacture [`StartReportCreationInput`](crate::input::StartReportCreationInput).
     pub fn builder() -> crate::input::start_report_creation_input::Builder {
         crate::input::start_report_creation_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct TagResources {
     _private: (),
 }
 impl TagResources {
-    /// Creates a new builder-style object to manufacture [`TagResourcesInput`](crate::input::TagResourcesInput)
+    /// Creates a new builder-style object to manufacture [`TagResourcesInput`](crate::input::TagResourcesInput).
     pub fn builder() -> crate::input::tag_resources_input::Builder {
         crate::input::tag_resources_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct UntagResources {
     _private: (),
 }
 impl UntagResources {
-    /// Creates a new builder-style object to manufacture [`UntagResourcesInput`](crate::input::UntagResourcesInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourcesInput`](crate::input::UntagResourcesInput).
     pub fn builder() -> crate::input::untag_resources_input::Builder {
         crate::input::untag_resources_input::Builder::default()
     }

@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateMetricSetOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput)
+/// See [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
 pub mod update_metric_set_output {
 
-    /// A builder for [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
@@ -42,7 +41,7 @@ pub mod update_metric_set_output {
             self.metric_set_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput)
+        /// Consumes the builder and constructs a [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
         pub fn build(self) -> crate::output::UpdateMetricSetOutput {
             crate::output::UpdateMetricSetOutput {
                 metric_set_arn: self.metric_set_arn,
@@ -51,7 +50,7 @@ pub mod update_metric_set_output {
     }
 }
 impl UpdateMetricSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateMetricSetOutput`](crate::output::UpdateMetricSetOutput).
     pub fn builder() -> crate::output::update_metric_set_output::Builder {
         crate::output::update_metric_set_output::Builder::default()
     }
@@ -77,11 +76,10 @@ impl std::fmt::Debug for UpdateAnomalyDetectorOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput)
+/// See [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
 pub mod update_anomaly_detector_output {
 
-    /// A builder for [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -100,7 +98,7 @@ pub mod update_anomaly_detector_output {
             self.anomaly_detector_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput)
+        /// Consumes the builder and constructs a [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::UpdateAnomalyDetectorOutput {
             crate::output::UpdateAnomalyDetectorOutput {
                 anomaly_detector_arn: self.anomaly_detector_arn,
@@ -109,7 +107,7 @@ pub mod update_anomaly_detector_output {
     }
 }
 impl UpdateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateAnomalyDetectorOutput`](crate::output::UpdateAnomalyDetectorOutput).
     pub fn builder() -> crate::output::update_anomaly_detector_output::Builder {
         crate::output::update_anomaly_detector_output::Builder::default()
     }
@@ -135,11 +133,10 @@ impl std::fmt::Debug for UpdateAlertOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
+/// See [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
 pub mod update_alert_output {
 
-    /// A builder for [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
@@ -155,7 +152,7 @@ pub mod update_alert_output {
             self.alert_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
+        /// Consumes the builder and constructs a [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
         pub fn build(self) -> crate::output::UpdateAlertOutput {
             crate::output::UpdateAlertOutput {
                 alert_arn: self.alert_arn,
@@ -164,7 +161,7 @@ pub mod update_alert_output {
     }
 }
 impl UpdateAlertOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAlertOutput`](crate::output::UpdateAlertOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateAlertOutput`](crate::output::UpdateAlertOutput).
     pub fn builder() -> crate::output::update_alert_output::Builder {
         crate::output::update_alert_output::Builder::default()
     }
@@ -180,22 +177,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -211,22 +207,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -242,22 +237,21 @@ impl std::fmt::Debug for PutFeedbackOutput {
         formatter.finish()
     }
 }
-/// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
+/// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
 pub mod put_feedback_output {
 
-    /// A builder for [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
+        /// Consumes the builder and constructs a [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
         pub fn build(self) -> crate::output::PutFeedbackOutput {
             crate::output::PutFeedbackOutput {}
         }
     }
 }
 impl PutFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`PutFeedbackOutput`](crate::output::PutFeedbackOutput)
+    /// Creates a new builder-style object to manufacture [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
     pub fn builder() -> crate::output::put_feedback_output::Builder {
         crate::output::put_feedback_output::Builder::default()
     }
@@ -287,11 +281,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -324,14 +317,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -366,11 +359,10 @@ impl std::fmt::Debug for ListMetricSetsOutput {
         formatter.finish()
     }
 }
-/// See [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput)
+/// See [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
 pub mod list_metric_sets_output {
 
-    /// A builder for [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_summary_list:
@@ -407,7 +399,7 @@ pub mod list_metric_sets_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput)
+        /// Consumes the builder and constructs a [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
         pub fn build(self) -> crate::output::ListMetricSetsOutput {
             crate::output::ListMetricSetsOutput {
                 metric_set_summary_list: self.metric_set_summary_list,
@@ -417,7 +409,7 @@ pub mod list_metric_sets_output {
     }
 }
 impl ListMetricSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput)
+    /// Creates a new builder-style object to manufacture [`ListMetricSetsOutput`](crate::output::ListMetricSetsOutput).
     pub fn builder() -> crate::output::list_metric_sets_output::Builder {
         crate::output::list_metric_sets_output::Builder::default()
     }
@@ -471,11 +463,10 @@ impl std::fmt::Debug for ListAnomalyGroupTimeSeriesOutput {
         formatter.finish()
     }
 }
-/// See [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput)
+/// See [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
 pub mod list_anomaly_group_time_series_output {
 
-    /// A builder for [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
@@ -556,7 +547,7 @@ pub mod list_anomaly_group_time_series_output {
             self.time_series_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput)
+        /// Consumes the builder and constructs a [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
         pub fn build(self) -> crate::output::ListAnomalyGroupTimeSeriesOutput {
             crate::output::ListAnomalyGroupTimeSeriesOutput {
                 anomaly_group_id: self.anomaly_group_id,
@@ -569,7 +560,7 @@ pub mod list_anomaly_group_time_series_output {
     }
 }
 impl ListAnomalyGroupTimeSeriesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupTimeSeriesOutput`](crate::output::ListAnomalyGroupTimeSeriesOutput).
     pub fn builder() -> crate::output::list_anomaly_group_time_series_output::Builder {
         crate::output::list_anomaly_group_time_series_output::Builder::default()
     }
@@ -617,11 +608,10 @@ impl std::fmt::Debug for ListAnomalyGroupSummariesOutput {
         formatter.finish()
     }
 }
-/// See [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput)
+/// See [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
 pub mod list_anomaly_group_summaries_output {
 
-    /// A builder for [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group_summary_list:
@@ -679,7 +669,7 @@ pub mod list_anomaly_group_summaries_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput)
+        /// Consumes the builder and constructs a [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
         pub fn build(self) -> crate::output::ListAnomalyGroupSummariesOutput {
             crate::output::ListAnomalyGroupSummariesOutput {
                 anomaly_group_summary_list: self.anomaly_group_summary_list,
@@ -690,7 +680,7 @@ pub mod list_anomaly_group_summaries_output {
     }
 }
 impl ListAnomalyGroupSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupSummariesOutput`](crate::output::ListAnomalyGroupSummariesOutput).
     pub fn builder() -> crate::output::list_anomaly_group_summaries_output::Builder {
         crate::output::list_anomaly_group_summaries_output::Builder::default()
     }
@@ -726,11 +716,10 @@ impl std::fmt::Debug for ListAnomalyGroupRelatedMetricsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
+/// See [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
 pub mod list_anomaly_group_related_metrics_output {
 
-    /// A builder for [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inter_metric_impact_list:
@@ -770,7 +759,7 @@ pub mod list_anomaly_group_related_metrics_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
+        /// Consumes the builder and constructs a [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
         pub fn build(self) -> crate::output::ListAnomalyGroupRelatedMetricsOutput {
             crate::output::ListAnomalyGroupRelatedMetricsOutput {
                 inter_metric_impact_list: self.inter_metric_impact_list,
@@ -780,7 +769,7 @@ pub mod list_anomaly_group_related_metrics_output {
     }
 }
 impl ListAnomalyGroupRelatedMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyGroupRelatedMetricsOutput`](crate::output::ListAnomalyGroupRelatedMetricsOutput).
     pub fn builder() -> crate::output::list_anomaly_group_related_metrics_output::Builder {
         crate::output::list_anomaly_group_related_metrics_output::Builder::default()
     }
@@ -819,11 +808,10 @@ impl std::fmt::Debug for ListAnomalyDetectorsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput)
+/// See [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
 pub mod list_anomaly_detectors_output {
 
-    /// A builder for [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_summary_list:
@@ -863,7 +851,7 @@ pub mod list_anomaly_detectors_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput)
+        /// Consumes the builder and constructs a [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
         pub fn build(self) -> crate::output::ListAnomalyDetectorsOutput {
             crate::output::ListAnomalyDetectorsOutput {
                 anomaly_detector_summary_list: self.anomaly_detector_summary_list,
@@ -873,7 +861,7 @@ pub mod list_anomaly_detectors_output {
     }
 }
 impl ListAnomalyDetectorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAnomalyDetectorsOutput`](crate::output::ListAnomalyDetectorsOutput).
     pub fn builder() -> crate::output::list_anomaly_detectors_output::Builder {
         crate::output::list_anomaly_detectors_output::Builder::default()
     }
@@ -906,11 +894,10 @@ impl std::fmt::Debug for ListAlertsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAlertsOutput`](crate::output::ListAlertsOutput)
+/// See [`ListAlertsOutput`](crate::output::ListAlertsOutput).
 pub mod list_alerts_output {
 
-    /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAlertsOutput`](crate::output::ListAlertsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_summary_list:
@@ -947,7 +934,7 @@ pub mod list_alerts_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAlertsOutput`](crate::output::ListAlertsOutput)
+        /// Consumes the builder and constructs a [`ListAlertsOutput`](crate::output::ListAlertsOutput).
         pub fn build(self) -> crate::output::ListAlertsOutput {
             crate::output::ListAlertsOutput {
                 alert_summary_list: self.alert_summary_list,
@@ -957,7 +944,7 @@ pub mod list_alerts_output {
     }
 }
 impl ListAlertsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAlertsOutput`](crate::output::ListAlertsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAlertsOutput`](crate::output::ListAlertsOutput).
     pub fn builder() -> crate::output::list_alerts_output::Builder {
         crate::output::list_alerts_output::Builder::default()
     }
@@ -990,11 +977,10 @@ impl std::fmt::Debug for GetSampleDataOutput {
         formatter.finish()
     }
 }
-/// See [`GetSampleDataOutput`](crate::output::GetSampleDataOutput)
+/// See [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
 pub mod get_sample_data_output {
 
-    /// A builder for [`GetSampleDataOutput`](crate::output::GetSampleDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) header_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1040,7 +1026,7 @@ pub mod get_sample_data_output {
             self.sample_rows = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSampleDataOutput`](crate::output::GetSampleDataOutput)
+        /// Consumes the builder and constructs a [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
         pub fn build(self) -> crate::output::GetSampleDataOutput {
             crate::output::GetSampleDataOutput {
                 header_values: self.header_values,
@@ -1050,7 +1036,7 @@ pub mod get_sample_data_output {
     }
 }
 impl GetSampleDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetSampleDataOutput`](crate::output::GetSampleDataOutput)
+    /// Creates a new builder-style object to manufacture [`GetSampleDataOutput`](crate::output::GetSampleDataOutput).
     pub fn builder() -> crate::output::get_sample_data_output::Builder {
         crate::output::get_sample_data_output::Builder::default()
     }
@@ -1089,11 +1075,10 @@ impl std::fmt::Debug for GetFeedbackOutput {
         formatter.finish()
     }
 }
-/// See [`GetFeedbackOutput`](crate::output::GetFeedbackOutput)
+/// See [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
 pub mod get_feedback_output {
 
-    /// A builder for [`GetFeedbackOutput`](crate::output::GetFeedbackOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group_time_series_feedback:
@@ -1133,7 +1118,7 @@ pub mod get_feedback_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetFeedbackOutput`](crate::output::GetFeedbackOutput)
+        /// Consumes the builder and constructs a [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
         pub fn build(self) -> crate::output::GetFeedbackOutput {
             crate::output::GetFeedbackOutput {
                 anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback,
@@ -1143,7 +1128,7 @@ pub mod get_feedback_output {
     }
 }
 impl GetFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`GetFeedbackOutput`](crate::output::GetFeedbackOutput)
+    /// Creates a new builder-style object to manufacture [`GetFeedbackOutput`](crate::output::GetFeedbackOutput).
     pub fn builder() -> crate::output::get_feedback_output::Builder {
         crate::output::get_feedback_output::Builder::default()
     }
@@ -1169,11 +1154,10 @@ impl std::fmt::Debug for GetAnomalyGroupOutput {
         formatter.finish()
     }
 }
-/// See [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput)
+/// See [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
 pub mod get_anomaly_group_output {
 
-    /// A builder for [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_group: std::option::Option<crate::model::AnomalyGroup>,
@@ -1192,7 +1176,7 @@ pub mod get_anomaly_group_output {
             self.anomaly_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput)
+        /// Consumes the builder and constructs a [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
         pub fn build(self) -> crate::output::GetAnomalyGroupOutput {
             crate::output::GetAnomalyGroupOutput {
                 anomaly_group: self.anomaly_group,
@@ -1201,7 +1185,7 @@ pub mod get_anomaly_group_output {
     }
 }
 impl GetAnomalyGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput)
+    /// Creates a new builder-style object to manufacture [`GetAnomalyGroupOutput`](crate::output::GetAnomalyGroupOutput).
     pub fn builder() -> crate::output::get_anomaly_group_output::Builder {
         crate::output::get_anomaly_group_output::Builder::default()
     }
@@ -1232,11 +1216,10 @@ impl std::fmt::Debug for DetectMetricSetConfigOutput {
         formatter.finish()
     }
 }
-/// See [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
+/// See [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
 pub mod detect_metric_set_config_output {
 
-    /// A builder for [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detected_metric_set_config:
@@ -1259,7 +1242,7 @@ pub mod detect_metric_set_config_output {
             self.detected_metric_set_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
+        /// Consumes the builder and constructs a [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
         pub fn build(self) -> crate::output::DetectMetricSetConfigOutput {
             crate::output::DetectMetricSetConfigOutput {
                 detected_metric_set_config: self.detected_metric_set_config,
@@ -1268,7 +1251,7 @@ pub mod detect_metric_set_config_output {
     }
 }
 impl DetectMetricSetConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput)
+    /// Creates a new builder-style object to manufacture [`DetectMetricSetConfigOutput`](crate::output::DetectMetricSetConfigOutput).
     pub fn builder() -> crate::output::detect_metric_set_config_output::Builder {
         crate::output::detect_metric_set_config_output::Builder::default()
     }
@@ -1378,11 +1361,10 @@ impl std::fmt::Debug for DescribeMetricSetOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput)
+/// See [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
 pub mod describe_metric_set_output {
 
-    /// A builder for [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
@@ -1575,7 +1557,7 @@ pub mod describe_metric_set_output {
             self.metric_source = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput)
+        /// Consumes the builder and constructs a [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
         pub fn build(self) -> crate::output::DescribeMetricSetOutput {
             crate::output::DescribeMetricSetOutput {
                 metric_set_arn: self.metric_set_arn,
@@ -1596,7 +1578,7 @@ pub mod describe_metric_set_output {
     }
 }
 impl DescribeMetricSetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeMetricSetOutput`](crate::output::DescribeMetricSetOutput).
     pub fn builder() -> crate::output::describe_metric_set_output::Builder {
         crate::output::describe_metric_set_output::Builder::default()
     }
@@ -1690,11 +1672,10 @@ impl std::fmt::Debug for DescribeAnomalyDetectorOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput)
+/// See [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
 pub mod describe_anomaly_detector_output {
 
-    /// A builder for [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -1843,7 +1824,7 @@ pub mod describe_anomaly_detector_output {
             self.failure_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput)
+        /// Consumes the builder and constructs a [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::DescribeAnomalyDetectorOutput {
             crate::output::DescribeAnomalyDetectorOutput {
                 anomaly_detector_arn: self.anomaly_detector_arn,
@@ -1861,7 +1842,7 @@ pub mod describe_anomaly_detector_output {
     }
 }
 impl DescribeAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectorOutput`](crate::output::DescribeAnomalyDetectorOutput).
     pub fn builder() -> crate::output::describe_anomaly_detector_output::Builder {
         crate::output::describe_anomaly_detector_output::Builder::default()
     }
@@ -1894,11 +1875,10 @@ impl std::fmt::Debug for DescribeAnomalyDetectionExecutionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput)
+/// See [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
 pub mod describe_anomaly_detection_executions_output {
 
-    /// A builder for [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_list:
@@ -1935,7 +1915,7 @@ pub mod describe_anomaly_detection_executions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput)
+        /// Consumes the builder and constructs a [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
         pub fn build(self) -> crate::output::DescribeAnomalyDetectionExecutionsOutput {
             crate::output::DescribeAnomalyDetectionExecutionsOutput {
                 execution_list: self.execution_list,
@@ -1945,7 +1925,7 @@ pub mod describe_anomaly_detection_executions_output {
     }
 }
 impl DescribeAnomalyDetectionExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAnomalyDetectionExecutionsOutput`](crate::output::DescribeAnomalyDetectionExecutionsOutput).
     pub fn builder() -> crate::output::describe_anomaly_detection_executions_output::Builder {
         crate::output::describe_anomaly_detection_executions_output::Builder::default()
     }
@@ -1971,11 +1951,10 @@ impl std::fmt::Debug for DescribeAlertOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAlertOutput`](crate::output::DescribeAlertOutput)
+/// See [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
 pub mod describe_alert_output {
 
-    /// A builder for [`DescribeAlertOutput`](crate::output::DescribeAlertOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert: std::option::Option<crate::model::Alert>,
@@ -1991,14 +1970,14 @@ pub mod describe_alert_output {
             self.alert = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAlertOutput`](crate::output::DescribeAlertOutput)
+        /// Consumes the builder and constructs a [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
         pub fn build(self) -> crate::output::DescribeAlertOutput {
             crate::output::DescribeAlertOutput { alert: self.alert }
         }
     }
 }
 impl DescribeAlertOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAlertOutput`](crate::output::DescribeAlertOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAlertOutput`](crate::output::DescribeAlertOutput).
     pub fn builder() -> crate::output::describe_alert_output::Builder {
         crate::output::describe_alert_output::Builder::default()
     }
@@ -2014,22 +1993,21 @@ impl std::fmt::Debug for DeleteAnomalyDetectorOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
+/// See [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
 pub mod delete_anomaly_detector_output {
 
-    /// A builder for [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
+        /// Consumes the builder and constructs a [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::DeleteAnomalyDetectorOutput {
             crate::output::DeleteAnomalyDetectorOutput {}
         }
     }
 }
 impl DeleteAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput).
     pub fn builder() -> crate::output::delete_anomaly_detector_output::Builder {
         crate::output::delete_anomaly_detector_output::Builder::default()
     }
@@ -2045,22 +2023,21 @@ impl std::fmt::Debug for DeleteAlertOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
+/// See [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
 pub mod delete_alert_output {
 
-    /// A builder for [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
+        /// Consumes the builder and constructs a [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
         pub fn build(self) -> crate::output::DeleteAlertOutput {
             crate::output::DeleteAlertOutput {}
         }
     }
 }
 impl DeleteAlertOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAlertOutput`](crate::output::DeleteAlertOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAlertOutput`](crate::output::DeleteAlertOutput).
     pub fn builder() -> crate::output::delete_alert_output::Builder {
         crate::output::delete_alert_output::Builder::default()
     }
@@ -2076,22 +2053,21 @@ impl std::fmt::Debug for DeactivateAnomalyDetectorOutput {
         formatter.finish()
     }
 }
-/// See [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+/// See [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
 pub mod deactivate_anomaly_detector_output {
 
-    /// A builder for [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+        /// Consumes the builder and constructs a [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::DeactivateAnomalyDetectorOutput {
             crate::output::DeactivateAnomalyDetectorOutput {}
         }
     }
 }
 impl DeactivateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput)
+    /// Creates a new builder-style object to manufacture [`DeactivateAnomalyDetectorOutput`](crate::output::DeactivateAnomalyDetectorOutput).
     pub fn builder() -> crate::output::deactivate_anomaly_detector_output::Builder {
         crate::output::deactivate_anomaly_detector_output::Builder::default()
     }
@@ -2117,11 +2093,10 @@ impl std::fmt::Debug for CreateMetricSetOutput {
         formatter.finish()
     }
 }
-/// See [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput)
+/// See [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
 pub mod create_metric_set_output {
 
-    /// A builder for [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_set_arn: std::option::Option<std::string::String>,
@@ -2140,7 +2115,7 @@ pub mod create_metric_set_output {
             self.metric_set_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput)
+        /// Consumes the builder and constructs a [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
         pub fn build(self) -> crate::output::CreateMetricSetOutput {
             crate::output::CreateMetricSetOutput {
                 metric_set_arn: self.metric_set_arn,
@@ -2149,7 +2124,7 @@ pub mod create_metric_set_output {
     }
 }
 impl CreateMetricSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput)
+    /// Creates a new builder-style object to manufacture [`CreateMetricSetOutput`](crate::output::CreateMetricSetOutput).
     pub fn builder() -> crate::output::create_metric_set_output::Builder {
         crate::output::create_metric_set_output::Builder::default()
     }
@@ -2175,11 +2150,10 @@ impl std::fmt::Debug for CreateAnomalyDetectorOutput {
         formatter.finish()
     }
 }
-/// See [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput)
+/// See [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
 pub mod create_anomaly_detector_output {
 
-    /// A builder for [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
@@ -2198,7 +2172,7 @@ pub mod create_anomaly_detector_output {
             self.anomaly_detector_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput)
+        /// Consumes the builder and constructs a [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::CreateAnomalyDetectorOutput {
             crate::output::CreateAnomalyDetectorOutput {
                 anomaly_detector_arn: self.anomaly_detector_arn,
@@ -2207,7 +2181,7 @@ pub mod create_anomaly_detector_output {
     }
 }
 impl CreateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput)
+    /// Creates a new builder-style object to manufacture [`CreateAnomalyDetectorOutput`](crate::output::CreateAnomalyDetectorOutput).
     pub fn builder() -> crate::output::create_anomaly_detector_output::Builder {
         crate::output::create_anomaly_detector_output::Builder::default()
     }
@@ -2233,11 +2207,10 @@ impl std::fmt::Debug for CreateAlertOutput {
         formatter.finish()
     }
 }
-/// See [`CreateAlertOutput`](crate::output::CreateAlertOutput)
+/// See [`CreateAlertOutput`](crate::output::CreateAlertOutput).
 pub mod create_alert_output {
 
-    /// A builder for [`CreateAlertOutput`](crate::output::CreateAlertOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateAlertOutput`](crate::output::CreateAlertOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alert_arn: std::option::Option<std::string::String>,
@@ -2253,7 +2226,7 @@ pub mod create_alert_output {
             self.alert_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAlertOutput`](crate::output::CreateAlertOutput)
+        /// Consumes the builder and constructs a [`CreateAlertOutput`](crate::output::CreateAlertOutput).
         pub fn build(self) -> crate::output::CreateAlertOutput {
             crate::output::CreateAlertOutput {
                 alert_arn: self.alert_arn,
@@ -2262,7 +2235,7 @@ pub mod create_alert_output {
     }
 }
 impl CreateAlertOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAlertOutput`](crate::output::CreateAlertOutput)
+    /// Creates a new builder-style object to manufacture [`CreateAlertOutput`](crate::output::CreateAlertOutput).
     pub fn builder() -> crate::output::create_alert_output::Builder {
         crate::output::create_alert_output::Builder::default()
     }
@@ -2278,22 +2251,21 @@ impl std::fmt::Debug for BackTestAnomalyDetectorOutput {
         formatter.finish()
     }
 }
-/// See [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
+/// See [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
 pub mod back_test_anomaly_detector_output {
 
-    /// A builder for [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
+        /// Consumes the builder and constructs a [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::BackTestAnomalyDetectorOutput {
             crate::output::BackTestAnomalyDetectorOutput {}
         }
     }
 }
 impl BackTestAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput)
+    /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorOutput`](crate::output::BackTestAnomalyDetectorOutput).
     pub fn builder() -> crate::output::back_test_anomaly_detector_output::Builder {
         crate::output::back_test_anomaly_detector_output::Builder::default()
     }
@@ -2309,22 +2281,21 @@ impl std::fmt::Debug for ActivateAnomalyDetectorOutput {
         formatter.finish()
     }
 }
-/// See [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
+/// See [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
 pub mod activate_anomaly_detector_output {
 
-    /// A builder for [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
+        /// Consumes the builder and constructs a [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
         pub fn build(self) -> crate::output::ActivateAnomalyDetectorOutput {
             crate::output::ActivateAnomalyDetectorOutput {}
         }
     }
 }
 impl ActivateAnomalyDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput)
+    /// Creates a new builder-style object to manufacture [`ActivateAnomalyDetectorOutput`](crate::output::ActivateAnomalyDetectorOutput).
     pub fn builder() -> crate::output::activate_anomaly_detector_output::Builder {
         crate::output::activate_anomaly_detector_output::Builder::default()
     }

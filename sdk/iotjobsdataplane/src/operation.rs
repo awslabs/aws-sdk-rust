@@ -10,7 +10,7 @@ pub struct DescribeJobExecution {
     _private: (),
 }
 impl DescribeJobExecution {
-    /// Creates a new builder-style object to manufacture [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput).
     pub fn builder() -> crate::input::describe_job_execution_input::Builder {
         crate::input::describe_job_execution_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetPendingJobExecutions {
     _private: (),
 }
 impl GetPendingJobExecutions {
-    /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsInput`](crate::input::GetPendingJobExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsInput`](crate::input::GetPendingJobExecutionsInput).
     pub fn builder() -> crate::input::get_pending_job_executions_input::Builder {
         crate::input::get_pending_job_executions_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct StartNextPendingJobExecution {
     _private: (),
 }
 impl StartNextPendingJobExecution {
-    /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionInput`](crate::input::StartNextPendingJobExecutionInput)
+    /// Creates a new builder-style object to manufacture [`StartNextPendingJobExecutionInput`](crate::input::StartNextPendingJobExecutionInput).
     pub fn builder() -> crate::input::start_next_pending_job_execution_input::Builder {
         crate::input::start_next_pending_job_execution_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct UpdateJobExecution {
     _private: (),
 }
 impl UpdateJobExecution {
-    /// Creates a new builder-style object to manufacture [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput).
     pub fn builder() -> crate::input::update_job_execution_input::Builder {
         crate::input::update_job_execution_input::Builder::default()
     }

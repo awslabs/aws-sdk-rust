@@ -215,11 +215,10 @@ impl std::fmt::Display for InternalServiceException {
     }
 }
 impl std::error::Error for InternalServiceException {}
-/// See [`InternalServiceException`](crate::error::InternalServiceException)
+/// See [`InternalServiceException`](crate::error::InternalServiceException).
 pub mod internal_service_exception {
 
-    /// A builder for [`InternalServiceException`](crate::error::InternalServiceException)
-    #[non_exhaustive]
+    /// A builder for [`InternalServiceException`](crate::error::InternalServiceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -235,7 +234,7 @@ pub mod internal_service_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServiceException`](crate::error::InternalServiceException)
+        /// Consumes the builder and constructs a [`InternalServiceException`](crate::error::InternalServiceException).
         pub fn build(self) -> crate::error::InternalServiceException {
             crate::error::InternalServiceException {
                 message: self.message,
@@ -244,7 +243,7 @@ pub mod internal_service_exception {
     }
 }
 impl InternalServiceException {
-    /// Creates a new builder-style object to manufacture [`InternalServiceException`](crate::error::InternalServiceException)
+    /// Creates a new builder-style object to manufacture [`InternalServiceException`](crate::error::InternalServiceException).
     pub fn builder() -> crate::error::internal_service_exception::Builder {
         crate::error::internal_service_exception::Builder::default()
     }

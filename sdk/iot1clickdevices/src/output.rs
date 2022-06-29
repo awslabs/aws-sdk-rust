@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateDeviceStateOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
+/// See [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
 pub mod update_device_state_output {
 
-    /// A builder for [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
+        /// Consumes the builder and constructs a [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
         pub fn build(self) -> crate::output::UpdateDeviceStateOutput {
             crate::output::UpdateDeviceStateOutput {}
         }
     }
 }
 impl UpdateDeviceStateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDeviceStateOutput`](crate::output::UpdateDeviceStateOutput).
     pub fn builder() -> crate::output::update_device_state_output::Builder {
         crate::output::update_device_state_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -81,11 +79,10 @@ impl std::fmt::Debug for UnclaimDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput)
+/// See [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
 pub mod unclaim_device_output {
 
-    /// A builder for [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
@@ -101,14 +98,14 @@ pub mod unclaim_device_output {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput)
+        /// Consumes the builder and constructs a [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
         pub fn build(self) -> crate::output::UnclaimDeviceOutput {
             crate::output::UnclaimDeviceOutput { state: self.state }
         }
     }
 }
 impl UnclaimDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`UnclaimDeviceOutput`](crate::output::UnclaimDeviceOutput).
     pub fn builder() -> crate::output::unclaim_device_output::Builder {
         crate::output::unclaim_device_output::Builder::default()
     }
@@ -124,22 +121,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -171,11 +167,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -210,14 +205,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -250,11 +245,10 @@ impl std::fmt::Debug for ListDevicesOutput {
         formatter.finish()
     }
 }
-/// See [`ListDevicesOutput`](crate::output::ListDevicesOutput)
+/// See [`ListDevicesOutput`](crate::output::ListDevicesOutput).
 pub mod list_devices_output {
 
-    /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDevicesOutput`](crate::output::ListDevicesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceDescription>>,
@@ -290,7 +284,7 @@ pub mod list_devices_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::output::ListDevicesOutput)
+        /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::output::ListDevicesOutput).
         pub fn build(self) -> crate::output::ListDevicesOutput {
             crate::output::ListDevicesOutput {
                 devices: self.devices,
@@ -300,7 +294,7 @@ pub mod list_devices_output {
     }
 }
 impl ListDevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::output::ListDevicesOutput)
+    /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::output::ListDevicesOutput).
     pub fn builder() -> crate::output::list_devices_output::Builder {
         crate::output::list_devices_output::Builder::default()
     }
@@ -333,11 +327,10 @@ impl std::fmt::Debug for ListDeviceEventsOutput {
         formatter.finish()
     }
 }
-/// See [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
+/// See [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
 pub mod list_device_events_output {
 
-    /// A builder for [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
@@ -373,7 +366,7 @@ pub mod list_device_events_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
+        /// Consumes the builder and constructs a [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
         pub fn build(self) -> crate::output::ListDeviceEventsOutput {
             crate::output::ListDeviceEventsOutput {
                 events: self.events,
@@ -383,7 +376,7 @@ pub mod list_device_events_output {
     }
 }
 impl ListDeviceEventsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput)
+    /// Creates a new builder-style object to manufacture [`ListDeviceEventsOutput`](crate::output::ListDeviceEventsOutput).
     pub fn builder() -> crate::output::list_device_events_output::Builder {
         crate::output::list_device_events_output::Builder::default()
     }
@@ -409,11 +402,10 @@ impl std::fmt::Debug for InvokeDeviceMethodOutput {
         formatter.finish()
     }
 }
-/// See [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput)
+/// See [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
 pub mod invoke_device_method_output {
 
-    /// A builder for [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput)
-    #[non_exhaustive]
+    /// A builder for [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_method_response: std::option::Option<std::string::String>,
@@ -432,7 +424,7 @@ pub mod invoke_device_method_output {
             self.device_method_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput)
+        /// Consumes the builder and constructs a [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
         pub fn build(self) -> crate::output::InvokeDeviceMethodOutput {
             crate::output::InvokeDeviceMethodOutput {
                 device_method_response: self.device_method_response,
@@ -441,7 +433,7 @@ pub mod invoke_device_method_output {
     }
 }
 impl InvokeDeviceMethodOutput {
-    /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput)
+    /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodOutput`](crate::output::InvokeDeviceMethodOutput).
     pub fn builder() -> crate::output::invoke_device_method_output::Builder {
         crate::output::invoke_device_method_output::Builder::default()
     }
@@ -467,11 +459,10 @@ impl std::fmt::Debug for InitiateDeviceClaimOutput {
         formatter.finish()
     }
 }
-/// See [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput)
+/// See [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
 pub mod initiate_device_claim_output {
 
-    /// A builder for [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput)
-    #[non_exhaustive]
+    /// A builder for [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
@@ -487,14 +478,14 @@ pub mod initiate_device_claim_output {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput)
+        /// Consumes the builder and constructs a [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
         pub fn build(self) -> crate::output::InitiateDeviceClaimOutput {
             crate::output::InitiateDeviceClaimOutput { state: self.state }
         }
     }
 }
 impl InitiateDeviceClaimOutput {
-    /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput)
+    /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimOutput`](crate::output::InitiateDeviceClaimOutput).
     pub fn builder() -> crate::output::initiate_device_claim_output::Builder {
         crate::output::initiate_device_claim_output::Builder::default()
     }
@@ -520,11 +511,10 @@ impl std::fmt::Debug for GetDeviceMethodsOutput {
         formatter.finish()
     }
 }
-/// See [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput)
+/// See [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
 pub mod get_device_methods_output {
 
-    /// A builder for [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_methods: std::option::Option<std::vec::Vec<crate::model::DeviceMethod>>,
@@ -549,7 +539,7 @@ pub mod get_device_methods_output {
             self.device_methods = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput)
+        /// Consumes the builder and constructs a [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
         pub fn build(self) -> crate::output::GetDeviceMethodsOutput {
             crate::output::GetDeviceMethodsOutput {
                 device_methods: self.device_methods,
@@ -558,7 +548,7 @@ pub mod get_device_methods_output {
     }
 }
 impl GetDeviceMethodsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput)
+    /// Creates a new builder-style object to manufacture [`GetDeviceMethodsOutput`](crate::output::GetDeviceMethodsOutput).
     pub fn builder() -> crate::output::get_device_methods_output::Builder {
         crate::output::get_device_methods_output::Builder::default()
     }
@@ -584,11 +574,10 @@ impl std::fmt::Debug for FinalizeDeviceClaimOutput {
         formatter.finish()
     }
 }
-/// See [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput)
+/// See [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
 pub mod finalize_device_claim_output {
 
-    /// A builder for [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput)
-    #[non_exhaustive]
+    /// A builder for [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<std::string::String>,
@@ -604,14 +593,14 @@ pub mod finalize_device_claim_output {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput)
+        /// Consumes the builder and constructs a [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
         pub fn build(self) -> crate::output::FinalizeDeviceClaimOutput {
             crate::output::FinalizeDeviceClaimOutput { state: self.state }
         }
     }
 }
 impl FinalizeDeviceClaimOutput {
-    /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput)
+    /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimOutput`](crate::output::FinalizeDeviceClaimOutput).
     pub fn builder() -> crate::output::finalize_device_claim_output::Builder {
         crate::output::finalize_device_claim_output::Builder::default()
     }
@@ -637,11 +626,10 @@ impl std::fmt::Debug for DescribeDeviceOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
+/// See [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
 pub mod describe_device_output {
 
-    /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_description: std::option::Option<crate::model::DeviceDescription>,
@@ -660,7 +648,7 @@ pub mod describe_device_output {
             self.device_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
+        /// Consumes the builder and constructs a [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
         pub fn build(self) -> crate::output::DescribeDeviceOutput {
             crate::output::DescribeDeviceOutput {
                 device_description: self.device_description,
@@ -669,7 +657,7 @@ pub mod describe_device_output {
     }
 }
 impl DescribeDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput).
     pub fn builder() -> crate::output::describe_device_output::Builder {
         crate::output::describe_device_output::Builder::default()
     }
@@ -702,11 +690,10 @@ impl std::fmt::Debug for ClaimDevicesByClaimCodeOutput {
         formatter.finish()
     }
 }
-/// See [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput)
+/// See [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
 pub mod claim_devices_by_claim_code_output {
 
-    /// A builder for [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) claim_code: std::option::Option<std::string::String>,
@@ -733,7 +720,7 @@ pub mod claim_devices_by_claim_code_output {
             self.total = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput)
+        /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
         pub fn build(self) -> crate::output::ClaimDevicesByClaimCodeOutput {
             crate::output::ClaimDevicesByClaimCodeOutput {
                 claim_code: self.claim_code,
@@ -743,7 +730,7 @@ pub mod claim_devices_by_claim_code_output {
     }
 }
 impl ClaimDevicesByClaimCodeOutput {
-    /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput)
+    /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeOutput`](crate::output::ClaimDevicesByClaimCodeOutput).
     pub fn builder() -> crate::output::claim_devices_by_claim_code_output::Builder {
         crate::output::claim_devices_by_claim_code_output::Builder::default()
     }

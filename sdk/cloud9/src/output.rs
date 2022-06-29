@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateEnvironmentMembershipOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput)
+/// See [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput).
 pub mod update_environment_membership_output {
 
-    /// A builder for [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership: std::option::Option<crate::model::EnvironmentMember>,
@@ -42,7 +41,7 @@ pub mod update_environment_membership_output {
             self.membership = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput)
+        /// Consumes the builder and constructs a [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput).
         pub fn build(self) -> crate::output::UpdateEnvironmentMembershipOutput {
             crate::output::UpdateEnvironmentMembershipOutput {
                 membership: self.membership,
@@ -51,7 +50,7 @@ pub mod update_environment_membership_output {
     }
 }
 impl UpdateEnvironmentMembershipOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput).
     pub fn builder() -> crate::output::update_environment_membership_output::Builder {
         crate::output::update_environment_membership_output::Builder::default()
     }
@@ -67,22 +66,21 @@ impl std::fmt::Debug for UpdateEnvironmentOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput)
+/// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
 pub mod update_environment_output {
 
-    /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput)
+        /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
         pub fn build(self) -> crate::output::UpdateEnvironmentOutput {
             crate::output::UpdateEnvironmentOutput {}
         }
     }
 }
 impl UpdateEnvironmentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
     pub fn builder() -> crate::output::update_environment_output::Builder {
         crate::output::update_environment_output::Builder::default()
     }
@@ -98,22 +96,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -129,22 +126,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -170,11 +166,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -199,14 +194,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -239,11 +234,10 @@ impl std::fmt::Debug for ListEnvironmentsOutput {
         formatter.finish()
     }
 }
-/// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput)
+/// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
 pub mod list_environments_output {
 
-    /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -279,7 +273,7 @@ pub mod list_environments_output {
             self.environment_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput)
+        /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentsOutput {
             crate::output::ListEnvironmentsOutput {
                 next_token: self.next_token,
@@ -289,7 +283,7 @@ pub mod list_environments_output {
     }
 }
 impl ListEnvironmentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput)
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
     pub fn builder() -> crate::output::list_environments_output::Builder {
         crate::output::list_environments_output::Builder::default()
     }
@@ -340,11 +334,10 @@ impl std::fmt::Debug for DescribeEnvironmentStatusOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput)
+/// See [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput).
 pub mod describe_environment_status_output {
 
-    /// A builder for [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
@@ -392,7 +385,7 @@ pub mod describe_environment_status_output {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput)
+        /// Consumes the builder and constructs a [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput).
         pub fn build(self) -> crate::output::DescribeEnvironmentStatusOutput {
             crate::output::DescribeEnvironmentStatusOutput {
                 status: self.status,
@@ -402,7 +395,7 @@ pub mod describe_environment_status_output {
     }
 }
 impl DescribeEnvironmentStatusOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput).
     pub fn builder() -> crate::output::describe_environment_status_output::Builder {
         crate::output::describe_environment_status_output::Builder::default()
     }
@@ -428,11 +421,10 @@ impl std::fmt::Debug for DescribeEnvironmentsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput)
+/// See [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput).
 pub mod describe_environments_output {
 
-    /// A builder for [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environments: std::option::Option<std::vec::Vec<crate::model::Environment>>,
@@ -457,7 +449,7 @@ pub mod describe_environments_output {
             self.environments = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput)
+        /// Consumes the builder and constructs a [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput).
         pub fn build(self) -> crate::output::DescribeEnvironmentsOutput {
             crate::output::DescribeEnvironmentsOutput {
                 environments: self.environments,
@@ -466,7 +458,7 @@ pub mod describe_environments_output {
     }
 }
 impl DescribeEnvironmentsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput).
     pub fn builder() -> crate::output::describe_environments_output::Builder {
         crate::output::describe_environments_output::Builder::default()
     }
@@ -499,11 +491,10 @@ impl std::fmt::Debug for DescribeEnvironmentMembershipsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput)
+/// See [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput).
 pub mod describe_environment_memberships_output {
 
-    /// A builder for [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) memberships: std::option::Option<std::vec::Vec<crate::model::EnvironmentMember>>,
@@ -539,7 +530,7 @@ pub mod describe_environment_memberships_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput)
+        /// Consumes the builder and constructs a [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput).
         pub fn build(self) -> crate::output::DescribeEnvironmentMembershipsOutput {
             crate::output::DescribeEnvironmentMembershipsOutput {
                 memberships: self.memberships,
@@ -549,7 +540,7 @@ pub mod describe_environment_memberships_output {
     }
 }
 impl DescribeEnvironmentMembershipsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput).
     pub fn builder() -> crate::output::describe_environment_memberships_output::Builder {
         crate::output::describe_environment_memberships_output::Builder::default()
     }
@@ -565,22 +556,21 @@ impl std::fmt::Debug for DeleteEnvironmentMembershipOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput)
+/// See [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput).
 pub mod delete_environment_membership_output {
 
-    /// A builder for [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput)
+        /// Consumes the builder and constructs a [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput).
         pub fn build(self) -> crate::output::DeleteEnvironmentMembershipOutput {
             crate::output::DeleteEnvironmentMembershipOutput {}
         }
     }
 }
 impl DeleteEnvironmentMembershipOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput).
     pub fn builder() -> crate::output::delete_environment_membership_output::Builder {
         crate::output::delete_environment_membership_output::Builder::default()
     }
@@ -596,22 +586,21 @@ impl std::fmt::Debug for DeleteEnvironmentOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
+/// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
 pub mod delete_environment_output {
 
-    /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
+        /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteEnvironmentOutput {
             crate::output::DeleteEnvironmentOutput {}
         }
     }
 }
 impl DeleteEnvironmentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
     pub fn builder() -> crate::output::delete_environment_output::Builder {
         crate::output::delete_environment_output::Builder::default()
     }
@@ -637,11 +626,10 @@ impl std::fmt::Debug for CreateEnvironmentMembershipOutput {
         formatter.finish()
     }
 }
-/// See [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput)
+/// See [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput).
 pub mod create_environment_membership_output {
 
-    /// A builder for [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) membership: std::option::Option<crate::model::EnvironmentMember>,
@@ -660,7 +648,7 @@ pub mod create_environment_membership_output {
             self.membership = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput)
+        /// Consumes the builder and constructs a [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput).
         pub fn build(self) -> crate::output::CreateEnvironmentMembershipOutput {
             crate::output::CreateEnvironmentMembershipOutput {
                 membership: self.membership,
@@ -669,7 +657,7 @@ pub mod create_environment_membership_output {
     }
 }
 impl CreateEnvironmentMembershipOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput).
     pub fn builder() -> crate::output::create_environment_membership_output::Builder {
         crate::output::create_environment_membership_output::Builder::default()
     }
@@ -695,11 +683,10 @@ impl std::fmt::Debug for CreateEnvironmentEc2Output {
         formatter.finish()
     }
 }
-/// See [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output)
+/// See [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output).
 pub mod create_environment_ec2_output {
 
-    /// A builder for [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output)
-    #[non_exhaustive]
+    /// A builder for [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) environment_id: std::option::Option<std::string::String>,
@@ -718,7 +705,7 @@ pub mod create_environment_ec2_output {
             self.environment_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output)
+        /// Consumes the builder and constructs a [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output).
         pub fn build(self) -> crate::output::CreateEnvironmentEc2Output {
             crate::output::CreateEnvironmentEc2Output {
                 environment_id: self.environment_id,
@@ -727,7 +714,7 @@ pub mod create_environment_ec2_output {
     }
 }
 impl CreateEnvironmentEc2Output {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output).
     pub fn builder() -> crate::output::create_environment_ec2_output::Builder {
         crate::output::create_environment_ec2_output::Builder::default()
     }

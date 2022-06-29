@@ -34,11 +34,10 @@ impl std::fmt::Debug for Administrator {
         formatter.finish()
     }
 }
-/// See [`Administrator`](crate::model::Administrator)
+/// See [`Administrator`](crate::model::Administrator).
 pub mod administrator {
 
-    /// A builder for [`Administrator`](crate::model::Administrator)
-    #[non_exhaustive]
+    /// A builder for [`Administrator`](crate::model::Administrator).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -79,7 +78,7 @@ pub mod administrator {
             self.delegation_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Administrator`](crate::model::Administrator)
+        /// Consumes the builder and constructs a [`Administrator`](crate::model::Administrator).
         pub fn build(self) -> crate::model::Administrator {
             crate::model::Administrator {
                 account_id: self.account_id,
@@ -90,7 +89,7 @@ pub mod administrator {
     }
 }
 impl Administrator {
-    /// Creates a new builder-style object to manufacture [`Administrator`](crate::model::Administrator)
+    /// Creates a new builder-style object to manufacture [`Administrator`](crate::model::Administrator).
     pub fn builder() -> crate::model::administrator::Builder {
         crate::model::administrator::Builder::default()
     }
@@ -249,11 +248,10 @@ impl std::fmt::Debug for MemberDetail {
         formatter.finish()
     }
 }
-/// See [`MemberDetail`](crate::model::MemberDetail)
+/// See [`MemberDetail`](crate::model::MemberDetail).
 pub mod member_detail {
 
-    /// A builder for [`MemberDetail`](crate::model::MemberDetail)
-    #[non_exhaustive]
+    /// A builder for [`MemberDetail`](crate::model::MemberDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -477,7 +475,7 @@ pub mod member_detail {
             self.invitation_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`MemberDetail`](crate::model::MemberDetail)
+        /// Consumes the builder and constructs a [`MemberDetail`](crate::model::MemberDetail).
         pub fn build(self) -> crate::model::MemberDetail {
             crate::model::MemberDetail {
                 account_id: self.account_id,
@@ -500,7 +498,7 @@ pub mod member_detail {
     }
 }
 impl MemberDetail {
-    /// Creates a new builder-style object to manufacture [`MemberDetail`](crate::model::MemberDetail)
+    /// Creates a new builder-style object to manufacture [`MemberDetail`](crate::model::MemberDetail).
     pub fn builder() -> crate::model::member_detail::Builder {
         crate::model::member_detail::Builder::default()
     }
@@ -716,11 +714,10 @@ impl std::fmt::Debug for Graph {
         formatter.finish()
     }
 }
-/// See [`Graph`](crate::model::Graph)
+/// See [`Graph`](crate::model::Graph).
 pub mod graph {
 
-    /// A builder for [`Graph`](crate::model::Graph)
-    #[non_exhaustive]
+    /// A builder for [`Graph`](crate::model::Graph).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -750,7 +747,7 @@ pub mod graph {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Graph`](crate::model::Graph)
+        /// Consumes the builder and constructs a [`Graph`](crate::model::Graph).
         pub fn build(self) -> crate::model::Graph {
             crate::model::Graph {
                 arn: self.arn,
@@ -760,7 +757,7 @@ pub mod graph {
     }
 }
 impl Graph {
-    /// Creates a new builder-style object to manufacture [`Graph`](crate::model::Graph)
+    /// Creates a new builder-style object to manufacture [`Graph`](crate::model::Graph).
     pub fn builder() -> crate::model::graph::Builder {
         crate::model::graph::Builder::default()
     }
@@ -793,11 +790,10 @@ impl std::fmt::Debug for UnprocessedAccount {
         formatter.finish()
     }
 }
-/// See [`UnprocessedAccount`](crate::model::UnprocessedAccount)
+/// See [`UnprocessedAccount`](crate::model::UnprocessedAccount).
 pub mod unprocessed_account {
 
-    /// A builder for [`UnprocessedAccount`](crate::model::UnprocessedAccount)
-    #[non_exhaustive]
+    /// A builder for [`UnprocessedAccount`](crate::model::UnprocessedAccount).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -824,7 +820,7 @@ pub mod unprocessed_account {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnprocessedAccount`](crate::model::UnprocessedAccount)
+        /// Consumes the builder and constructs a [`UnprocessedAccount`](crate::model::UnprocessedAccount).
         pub fn build(self) -> crate::model::UnprocessedAccount {
             crate::model::UnprocessedAccount {
                 account_id: self.account_id,
@@ -834,7 +830,7 @@ pub mod unprocessed_account {
     }
 }
 impl UnprocessedAccount {
-    /// Creates a new builder-style object to manufacture [`UnprocessedAccount`](crate::model::UnprocessedAccount)
+    /// Creates a new builder-style object to manufacture [`UnprocessedAccount`](crate::model::UnprocessedAccount).
     pub fn builder() -> crate::model::unprocessed_account::Builder {
         crate::model::unprocessed_account::Builder::default()
     }
@@ -867,11 +863,10 @@ impl std::fmt::Debug for Account {
         formatter.finish()
     }
 }
-/// See [`Account`](crate::model::Account)
+/// See [`Account`](crate::model::Account).
 pub mod account {
 
-    /// A builder for [`Account`](crate::model::Account)
-    #[non_exhaustive]
+    /// A builder for [`Account`](crate::model::Account).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -901,7 +896,7 @@ pub mod account {
             self.email_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`Account`](crate::model::Account)
+        /// Consumes the builder and constructs a [`Account`](crate::model::Account).
         pub fn build(self) -> crate::model::Account {
             crate::model::Account {
                 account_id: self.account_id,
@@ -911,7 +906,7 @@ pub mod account {
     }
 }
 impl Account {
-    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account)
+    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
     pub fn builder() -> crate::model::account::Builder {
         crate::model::account::Builder::default()
     }

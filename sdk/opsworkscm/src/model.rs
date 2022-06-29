@@ -207,11 +207,10 @@ impl std::fmt::Debug for Server {
         formatter.finish()
     }
 }
-/// See [`Server`](crate::model::Server)
+/// See [`Server`](crate::model::Server).
 pub mod server {
 
-    /// A builder for [`Server`](crate::model::Server)
-    #[non_exhaustive]
+    /// A builder for [`Server`](crate::model::Server).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
@@ -567,7 +566,7 @@ pub mod server {
             self.server_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`Server`](crate::model::Server)
+        /// Consumes the builder and constructs a [`Server`](crate::model::Server).
         pub fn build(self) -> crate::model::Server {
             crate::model::Server {
                 associate_public_ip_address: self.associate_public_ip_address,
@@ -599,7 +598,7 @@ pub mod server {
     }
 }
 impl Server {
-    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server)
+    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server).
     pub fn builder() -> crate::model::server::Builder {
         crate::model::server::Builder::default()
     }
@@ -800,11 +799,10 @@ impl std::fmt::Debug for EngineAttribute {
         formatter.finish()
     }
 }
-/// See [`EngineAttribute`](crate::model::EngineAttribute)
+/// See [`EngineAttribute`](crate::model::EngineAttribute).
 pub mod engine_attribute {
 
-    /// A builder for [`EngineAttribute`](crate::model::EngineAttribute)
-    #[non_exhaustive]
+    /// A builder for [`EngineAttribute`](crate::model::EngineAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -831,7 +829,7 @@ pub mod engine_attribute {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`EngineAttribute`](crate::model::EngineAttribute)
+        /// Consumes the builder and constructs a [`EngineAttribute`](crate::model::EngineAttribute).
         pub fn build(self) -> crate::model::EngineAttribute {
             crate::model::EngineAttribute {
                 name: self.name,
@@ -841,7 +839,7 @@ pub mod engine_attribute {
     }
 }
 impl EngineAttribute {
-    /// Creates a new builder-style object to manufacture [`EngineAttribute`](crate::model::EngineAttribute)
+    /// Creates a new builder-style object to manufacture [`EngineAttribute`](crate::model::EngineAttribute).
     pub fn builder() -> crate::model::engine_attribute::Builder {
         crate::model::engine_attribute::Builder::default()
     }
@@ -874,11 +872,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -905,7 +902,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -915,7 +912,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -1042,11 +1039,10 @@ impl std::fmt::Debug for ServerEvent {
         formatter.finish()
     }
 }
-/// See [`ServerEvent`](crate::model::ServerEvent)
+/// See [`ServerEvent`](crate::model::ServerEvent).
 pub mod server_event {
 
-    /// A builder for [`ServerEvent`](crate::model::ServerEvent)
-    #[non_exhaustive]
+    /// A builder for [`ServerEvent`](crate::model::ServerEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1098,7 +1094,7 @@ pub mod server_event {
             self.log_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerEvent`](crate::model::ServerEvent)
+        /// Consumes the builder and constructs a [`ServerEvent`](crate::model::ServerEvent).
         pub fn build(self) -> crate::model::ServerEvent {
             crate::model::ServerEvent {
                 created_at: self.created_at,
@@ -1110,7 +1106,7 @@ pub mod server_event {
     }
 }
 impl ServerEvent {
-    /// Creates a new builder-style object to manufacture [`ServerEvent`](crate::model::ServerEvent)
+    /// Creates a new builder-style object to manufacture [`ServerEvent`](crate::model::ServerEvent).
     pub fn builder() -> crate::model::server_event::Builder {
         crate::model::server_event::Builder::default()
     }
@@ -1300,11 +1296,10 @@ impl std::fmt::Debug for Backup {
         formatter.finish()
     }
 }
-/// See [`Backup`](crate::model::Backup)
+/// See [`Backup`](crate::model::Backup).
 pub mod backup {
 
-    /// A builder for [`Backup`](crate::model::Backup)
-    #[non_exhaustive]
+    /// A builder for [`Backup`](crate::model::Backup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
@@ -1627,7 +1622,7 @@ pub mod backup {
             self.user_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`Backup`](crate::model::Backup)
+        /// Consumes the builder and constructs a [`Backup`](crate::model::Backup).
         pub fn build(self) -> crate::model::Backup {
             crate::model::Backup {
                 backup_arn: self.backup_arn,
@@ -1659,7 +1654,7 @@ pub mod backup {
     }
 }
 impl Backup {
-    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup)
+    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
     pub fn builder() -> crate::model::backup::Builder {
         crate::model::backup::Builder::default()
     }
@@ -1825,11 +1820,10 @@ impl std::fmt::Debug for AccountAttribute {
         formatter.finish()
     }
 }
-/// See [`AccountAttribute`](crate::model::AccountAttribute)
+/// See [`AccountAttribute`](crate::model::AccountAttribute).
 pub mod account_attribute {
 
-    /// A builder for [`AccountAttribute`](crate::model::AccountAttribute)
-    #[non_exhaustive]
+    /// A builder for [`AccountAttribute`](crate::model::AccountAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1875,7 +1869,7 @@ pub mod account_attribute {
             self.used = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountAttribute`](crate::model::AccountAttribute)
+        /// Consumes the builder and constructs a [`AccountAttribute`](crate::model::AccountAttribute).
         pub fn build(self) -> crate::model::AccountAttribute {
             crate::model::AccountAttribute {
                 name: self.name,
@@ -1886,7 +1880,7 @@ pub mod account_attribute {
     }
 }
 impl AccountAttribute {
-    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute)
+    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
     pub fn builder() -> crate::model::account_attribute::Builder {
         crate::model::account_attribute::Builder::default()
     }

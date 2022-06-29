@@ -10,7 +10,7 @@ pub struct CancelJobRun {
     _private: (),
 }
 impl CancelJobRun {
-    /// Creates a new builder-style object to manufacture [`CancelJobRunInput`](crate::input::CancelJobRunInput)
+    /// Creates a new builder-style object to manufacture [`CancelJobRunInput`](crate::input::CancelJobRunInput).
     pub fn builder() -> crate::input::cancel_job_run_input::Builder {
         crate::input::cancel_job_run_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateManagedEndpoint {
     _private: (),
 }
 impl CreateManagedEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput).
     pub fn builder() -> crate::input::create_managed_endpoint_input::Builder {
         crate::input::create_managed_endpoint_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateVirtualCluster {
     _private: (),
 }
 impl CreateVirtualCluster {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput).
     pub fn builder() -> crate::input::create_virtual_cluster_input::Builder {
         crate::input::create_virtual_cluster_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteManagedEndpoint {
     _private: (),
 }
 impl DeleteManagedEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput).
     pub fn builder() -> crate::input::delete_managed_endpoint_input::Builder {
         crate::input::delete_managed_endpoint_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DeleteVirtualCluster {
     _private: (),
 }
 impl DeleteVirtualCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput).
     pub fn builder() -> crate::input::delete_virtual_cluster_input::Builder {
         crate::input::delete_virtual_cluster_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DescribeJobRun {
     _private: (),
 }
 impl DescribeJobRun {
-    /// Creates a new builder-style object to manufacture [`DescribeJobRunInput`](crate::input::DescribeJobRunInput)
+    /// Creates a new builder-style object to manufacture [`DescribeJobRunInput`](crate::input::DescribeJobRunInput).
     pub fn builder() -> crate::input::describe_job_run_input::Builder {
         crate::input::describe_job_run_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DescribeManagedEndpoint {
     _private: (),
 }
 impl DescribeManagedEndpoint {
-    /// Creates a new builder-style object to manufacture [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput).
     pub fn builder() -> crate::input::describe_managed_endpoint_input::Builder {
         crate::input::describe_managed_endpoint_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DescribeVirtualCluster {
     _private: (),
 }
 impl DescribeVirtualCluster {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput).
     pub fn builder() -> crate::input::describe_virtual_cluster_input::Builder {
         crate::input::describe_virtual_cluster_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct ListJobRuns {
     _private: (),
 }
 impl ListJobRuns {
-    /// Creates a new builder-style object to manufacture [`ListJobRunsInput`](crate::input::ListJobRunsInput)
+    /// Creates a new builder-style object to manufacture [`ListJobRunsInput`](crate::input::ListJobRunsInput).
     pub fn builder() -> crate::input::list_job_runs_input::Builder {
         crate::input::list_job_runs_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct ListManagedEndpoints {
     _private: (),
 }
 impl ListManagedEndpoints {
-    /// Creates a new builder-style object to manufacture [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput).
     pub fn builder() -> crate::input::list_managed_endpoints_input::Builder {
         crate::input::list_managed_endpoints_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct ListVirtualClusters {
     _private: (),
 }
 impl ListVirtualClusters {
-    /// Creates a new builder-style object to manufacture [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput).
     pub fn builder() -> crate::input::list_virtual_clusters_input::Builder {
         crate::input::list_virtual_clusters_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct StartJobRun {
     _private: (),
 }
 impl StartJobRun {
-    /// Creates a new builder-style object to manufacture [`StartJobRunInput`](crate::input::StartJobRunInput)
+    /// Creates a new builder-style object to manufacture [`StartJobRunInput`](crate::input::StartJobRunInput).
     pub fn builder() -> crate::input::start_job_run_input::Builder {
         crate::input::start_job_run_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

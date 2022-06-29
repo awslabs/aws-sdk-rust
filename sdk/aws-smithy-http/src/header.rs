@@ -73,6 +73,8 @@ pub fn many_dates(
     Ok(out)
 }
 
+/// Returns an iterator over pairs where the first element is the unprefixed header name that
+/// starts with the input `key` prefix, and the second element is the full header name.
 pub fn headers_for_prefix<'a>(
     headers: &'a http::HeaderMap,
     key: &'a str,

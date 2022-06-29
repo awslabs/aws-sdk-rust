@@ -10,7 +10,7 @@ pub struct CreateAppMonitor {
     _private: (),
 }
 impl CreateAppMonitor {
-    /// Creates a new builder-style object to manufacture [`CreateAppMonitorInput`](crate::input::CreateAppMonitorInput)
+    /// Creates a new builder-style object to manufacture [`CreateAppMonitorInput`](crate::input::CreateAppMonitorInput).
     pub fn builder() -> crate::input::create_app_monitor_input::Builder {
         crate::input::create_app_monitor_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteAppMonitor {
     _private: (),
 }
 impl DeleteAppMonitor {
-    /// Creates a new builder-style object to manufacture [`DeleteAppMonitorInput`](crate::input::DeleteAppMonitorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppMonitorInput`](crate::input::DeleteAppMonitorInput).
     pub fn builder() -> crate::input::delete_app_monitor_input::Builder {
         crate::input::delete_app_monitor_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetAppMonitor {
     _private: (),
 }
 impl GetAppMonitor {
-    /// Creates a new builder-style object to manufacture [`GetAppMonitorInput`](crate::input::GetAppMonitorInput)
+    /// Creates a new builder-style object to manufacture [`GetAppMonitorInput`](crate::input::GetAppMonitorInput).
     pub fn builder() -> crate::input::get_app_monitor_input::Builder {
         crate::input::get_app_monitor_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct GetAppMonitorData {
     _private: (),
 }
 impl GetAppMonitorData {
-    /// Creates a new builder-style object to manufacture [`GetAppMonitorDataInput`](crate::input::GetAppMonitorDataInput)
+    /// Creates a new builder-style object to manufacture [`GetAppMonitorDataInput`](crate::input::GetAppMonitorDataInput).
     pub fn builder() -> crate::input::get_app_monitor_data_input::Builder {
         crate::input::get_app_monitor_data_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct ListAppMonitors {
     _private: (),
 }
 impl ListAppMonitors {
-    /// Creates a new builder-style object to manufacture [`ListAppMonitorsInput`](crate::input::ListAppMonitorsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppMonitorsInput`](crate::input::ListAppMonitorsInput).
     pub fn builder() -> crate::input::list_app_monitors_input::Builder {
         crate::input::list_app_monitors_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct PutRumEvents {
     _private: (),
 }
 impl PutRumEvents {
-    /// Creates a new builder-style object to manufacture [`PutRumEventsInput`](crate::input::PutRumEventsInput)
+    /// Creates a new builder-style object to manufacture [`PutRumEventsInput`](crate::input::PutRumEventsInput).
     pub fn builder() -> crate::input::put_rum_events_input::Builder {
         crate::input::put_rum_events_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct UpdateAppMonitor {
     _private: (),
 }
 impl UpdateAppMonitor {
-    /// Creates a new builder-style object to manufacture [`UpdateAppMonitorInput`](crate::input::UpdateAppMonitorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppMonitorInput`](crate::input::UpdateAppMonitorInput).
     pub fn builder() -> crate::input::update_app_monitor_input::Builder {
         crate::input::update_app_monitor_input::Builder::default()
     }

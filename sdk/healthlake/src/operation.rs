@@ -10,7 +10,7 @@ pub struct CreateFHIRDatastore {
     _private: (),
 }
 impl CreateFHIRDatastore {
-    /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreInput`](crate::input::CreateFhirDatastoreInput)
+    /// Creates a new builder-style object to manufacture [`CreateFhirDatastoreInput`](crate::input::CreateFhirDatastoreInput).
     pub fn builder() -> crate::input::create_fhir_datastore_input::Builder {
         crate::input::create_fhir_datastore_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteFHIRDatastore {
     _private: (),
 }
 impl DeleteFHIRDatastore {
-    /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreInput`](crate::input::DeleteFhirDatastoreInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreInput`](crate::input::DeleteFhirDatastoreInput).
     pub fn builder() -> crate::input::delete_fhir_datastore_input::Builder {
         crate::input::delete_fhir_datastore_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeFHIRDatastore {
     _private: (),
 }
 impl DescribeFHIRDatastore {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreInput`](crate::input::DescribeFhirDatastoreInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFhirDatastoreInput`](crate::input::DescribeFhirDatastoreInput).
     pub fn builder() -> crate::input::describe_fhir_datastore_input::Builder {
         crate::input::describe_fhir_datastore_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeFHIRExportJob {
     _private: (),
 }
 impl DescribeFHIRExportJob {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobInput`](crate::input::DescribeFhirExportJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFhirExportJobInput`](crate::input::DescribeFhirExportJobInput).
     pub fn builder() -> crate::input::describe_fhir_export_job_input::Builder {
         crate::input::describe_fhir_export_job_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeFHIRImportJob {
     _private: (),
 }
 impl DescribeFHIRImportJob {
-    /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobInput`](crate::input::DescribeFhirImportJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFhirImportJobInput`](crate::input::DescribeFhirImportJobInput).
     pub fn builder() -> crate::input::describe_fhir_import_job_input::Builder {
         crate::input::describe_fhir_import_job_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct ListFHIRDatastores {
     _private: (),
 }
 impl ListFHIRDatastores {
-    /// Creates a new builder-style object to manufacture [`ListFhirDatastoresInput`](crate::input::ListFhirDatastoresInput)
+    /// Creates a new builder-style object to manufacture [`ListFhirDatastoresInput`](crate::input::ListFhirDatastoresInput).
     pub fn builder() -> crate::input::list_fhir_datastores_input::Builder {
         crate::input::list_fhir_datastores_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct ListFHIRExportJobs {
     _private: (),
 }
 impl ListFHIRExportJobs {
-    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput).
     pub fn builder() -> crate::input::list_fhir_export_jobs_input::Builder {
         crate::input::list_fhir_export_jobs_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct ListFHIRImportJobs {
     _private: (),
 }
 impl ListFHIRImportJobs {
-    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput).
     pub fn builder() -> crate::input::list_fhir_import_jobs_input::Builder {
         crate::input::list_fhir_import_jobs_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct StartFHIRExportJob {
     _private: (),
 }
 impl StartFHIRExportJob {
-    /// Creates a new builder-style object to manufacture [`StartFhirExportJobInput`](crate::input::StartFhirExportJobInput)
+    /// Creates a new builder-style object to manufacture [`StartFhirExportJobInput`](crate::input::StartFhirExportJobInput).
     pub fn builder() -> crate::input::start_fhir_export_job_input::Builder {
         crate::input::start_fhir_export_job_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct StartFHIRImportJob {
     _private: (),
 }
 impl StartFHIRImportJob {
-    /// Creates a new builder-style object to manufacture [`StartFhirImportJobInput`](crate::input::StartFhirImportJobInput)
+    /// Creates a new builder-style object to manufacture [`StartFhirImportJobInput`](crate::input::StartFhirImportJobInput).
     pub fn builder() -> crate::input::start_fhir_import_job_input::Builder {
         crate::input::start_fhir_import_job_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

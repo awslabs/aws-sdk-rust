@@ -10,7 +10,7 @@ pub struct CreateDataIntegration {
     _private: (),
 }
 impl CreateDataIntegration {
-    /// Creates a new builder-style object to manufacture [`CreateDataIntegrationInput`](crate::input::CreateDataIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataIntegrationInput`](crate::input::CreateDataIntegrationInput).
     pub fn builder() -> crate::input::create_data_integration_input::Builder {
         crate::input::create_data_integration_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateEventIntegration {
     _private: (),
 }
 impl CreateEventIntegration {
-    /// Creates a new builder-style object to manufacture [`CreateEventIntegrationInput`](crate::input::CreateEventIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`CreateEventIntegrationInput`](crate::input::CreateEventIntegrationInput).
     pub fn builder() -> crate::input::create_event_integration_input::Builder {
         crate::input::create_event_integration_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DeleteDataIntegration {
     _private: (),
 }
 impl DeleteDataIntegration {
-    /// Creates a new builder-style object to manufacture [`DeleteDataIntegrationInput`](crate::input::DeleteDataIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDataIntegrationInput`](crate::input::DeleteDataIntegrationInput).
     pub fn builder() -> crate::input::delete_data_integration_input::Builder {
         crate::input::delete_data_integration_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteEventIntegration {
     _private: (),
 }
 impl DeleteEventIntegration {
-    /// Creates a new builder-style object to manufacture [`DeleteEventIntegrationInput`](crate::input::DeleteEventIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventIntegrationInput`](crate::input::DeleteEventIntegrationInput).
     pub fn builder() -> crate::input::delete_event_integration_input::Builder {
         crate::input::delete_event_integration_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct GetDataIntegration {
     _private: (),
 }
 impl GetDataIntegration {
-    /// Creates a new builder-style object to manufacture [`GetDataIntegrationInput`](crate::input::GetDataIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`GetDataIntegrationInput`](crate::input::GetDataIntegrationInput).
     pub fn builder() -> crate::input::get_data_integration_input::Builder {
         crate::input::get_data_integration_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct GetEventIntegration {
     _private: (),
 }
 impl GetEventIntegration {
-    /// Creates a new builder-style object to manufacture [`GetEventIntegrationInput`](crate::input::GetEventIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`GetEventIntegrationInput`](crate::input::GetEventIntegrationInput).
     pub fn builder() -> crate::input::get_event_integration_input::Builder {
         crate::input::get_event_integration_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct ListDataIntegrationAssociations {
     _private: (),
 }
 impl ListDataIntegrationAssociations {
-    /// Creates a new builder-style object to manufacture [`ListDataIntegrationAssociationsInput`](crate::input::ListDataIntegrationAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListDataIntegrationAssociationsInput`](crate::input::ListDataIntegrationAssociationsInput).
     pub fn builder() -> crate::input::list_data_integration_associations_input::Builder {
         crate::input::list_data_integration_associations_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct ListDataIntegrations {
     _private: (),
 }
 impl ListDataIntegrations {
-    /// Creates a new builder-style object to manufacture [`ListDataIntegrationsInput`](crate::input::ListDataIntegrationsInput)
+    /// Creates a new builder-style object to manufacture [`ListDataIntegrationsInput`](crate::input::ListDataIntegrationsInput).
     pub fn builder() -> crate::input::list_data_integrations_input::Builder {
         crate::input::list_data_integrations_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ListEventIntegrationAssociations {
     _private: (),
 }
 impl ListEventIntegrationAssociations {
-    /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsInput`](crate::input::ListEventIntegrationAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsInput`](crate::input::ListEventIntegrationAssociationsInput).
     pub fn builder() -> crate::input::list_event_integration_associations_input::Builder {
         crate::input::list_event_integration_associations_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct ListEventIntegrations {
     _private: (),
 }
 impl ListEventIntegrations {
-    /// Creates a new builder-style object to manufacture [`ListEventIntegrationsInput`](crate::input::ListEventIntegrationsInput)
+    /// Creates a new builder-style object to manufacture [`ListEventIntegrationsInput`](crate::input::ListEventIntegrationsInput).
     pub fn builder() -> crate::input::list_event_integrations_input::Builder {
         crate::input::list_event_integrations_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct UpdateDataIntegration {
     _private: (),
 }
 impl UpdateDataIntegration {
-    /// Creates a new builder-style object to manufacture [`UpdateDataIntegrationInput`](crate::input::UpdateDataIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDataIntegrationInput`](crate::input::UpdateDataIntegrationInput).
     pub fn builder() -> crate::input::update_data_integration_input::Builder {
         crate::input::update_data_integration_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct UpdateEventIntegration {
     _private: (),
 }
 impl UpdateEventIntegration {
-    /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationInput`](crate::input::UpdateEventIntegrationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationInput`](crate::input::UpdateEventIntegrationInput).
     pub fn builder() -> crate::input::update_event_integration_input::Builder {
         crate::input::update_event_integration_input::Builder::default()
     }

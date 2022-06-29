@@ -27,11 +27,10 @@ impl std::fmt::Debug for RealtimeContactAnalysisSegment {
         formatter.finish()
     }
 }
-/// See [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment)
+/// See [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
 pub mod realtime_contact_analysis_segment {
 
-    /// A builder for [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment)
-    #[non_exhaustive]
+    /// A builder for [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transcript: std::option::Option<crate::model::Transcript>,
@@ -64,7 +63,7 @@ pub mod realtime_contact_analysis_segment {
             self.categories = input;
             self
         }
-        /// Consumes the builder and constructs a [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment)
+        /// Consumes the builder and constructs a [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
         pub fn build(self) -> crate::model::RealtimeContactAnalysisSegment {
             crate::model::RealtimeContactAnalysisSegment {
                 transcript: self.transcript,
@@ -74,7 +73,7 @@ pub mod realtime_contact_analysis_segment {
     }
 }
 impl RealtimeContactAnalysisSegment {
-    /// Creates a new builder-style object to manufacture [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment)
+    /// Creates a new builder-style object to manufacture [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
     pub fn builder() -> crate::model::realtime_contact_analysis_segment::Builder {
         crate::model::realtime_contact_analysis_segment::Builder::default()
     }
@@ -113,11 +112,10 @@ impl std::fmt::Debug for Categories {
         formatter.finish()
     }
 }
-/// See [`Categories`](crate::model::Categories)
+/// See [`Categories`](crate::model::Categories).
 pub mod categories {
 
-    /// A builder for [`Categories`](crate::model::Categories)
-    #[non_exhaustive]
+    /// A builder for [`Categories`](crate::model::Categories).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -170,7 +168,7 @@ pub mod categories {
             self.matched_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`Categories`](crate::model::Categories)
+        /// Consumes the builder and constructs a [`Categories`](crate::model::Categories).
         pub fn build(self) -> crate::model::Categories {
             crate::model::Categories {
                 matched_categories: self.matched_categories,
@@ -180,7 +178,7 @@ pub mod categories {
     }
 }
 impl Categories {
-    /// Creates a new builder-style object to manufacture [`Categories`](crate::model::Categories)
+    /// Creates a new builder-style object to manufacture [`Categories`](crate::model::Categories).
     pub fn builder() -> crate::model::categories::Builder {
         crate::model::categories::Builder::default()
     }
@@ -206,11 +204,10 @@ impl std::fmt::Debug for CategoryDetails {
         formatter.finish()
     }
 }
-/// See [`CategoryDetails`](crate::model::CategoryDetails)
+/// See [`CategoryDetails`](crate::model::CategoryDetails).
 pub mod category_details {
 
-    /// A builder for [`CategoryDetails`](crate::model::CategoryDetails)
-    #[non_exhaustive]
+    /// A builder for [`CategoryDetails`](crate::model::CategoryDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) points_of_interest:
@@ -236,7 +233,7 @@ pub mod category_details {
             self.points_of_interest = input;
             self
         }
-        /// Consumes the builder and constructs a [`CategoryDetails`](crate::model::CategoryDetails)
+        /// Consumes the builder and constructs a [`CategoryDetails`](crate::model::CategoryDetails).
         pub fn build(self) -> crate::model::CategoryDetails {
             crate::model::CategoryDetails {
                 points_of_interest: self.points_of_interest,
@@ -245,7 +242,7 @@ pub mod category_details {
     }
 }
 impl CategoryDetails {
-    /// Creates a new builder-style object to manufacture [`CategoryDetails`](crate::model::CategoryDetails)
+    /// Creates a new builder-style object to manufacture [`CategoryDetails`](crate::model::CategoryDetails).
     pub fn builder() -> crate::model::category_details::Builder {
         crate::model::category_details::Builder::default()
     }
@@ -278,11 +275,10 @@ impl std::fmt::Debug for PointOfInterest {
         formatter.finish()
     }
 }
-/// See [`PointOfInterest`](crate::model::PointOfInterest)
+/// See [`PointOfInterest`](crate::model::PointOfInterest).
 pub mod point_of_interest {
 
-    /// A builder for [`PointOfInterest`](crate::model::PointOfInterest)
-    #[non_exhaustive]
+    /// A builder for [`PointOfInterest`](crate::model::PointOfInterest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_millis: std::option::Option<i32>,
@@ -309,7 +305,7 @@ pub mod point_of_interest {
             self.end_offset_millis = input;
             self
         }
-        /// Consumes the builder and constructs a [`PointOfInterest`](crate::model::PointOfInterest)
+        /// Consumes the builder and constructs a [`PointOfInterest`](crate::model::PointOfInterest).
         pub fn build(self) -> crate::model::PointOfInterest {
             crate::model::PointOfInterest {
                 begin_offset_millis: self.begin_offset_millis.unwrap_or_default(),
@@ -319,7 +315,7 @@ pub mod point_of_interest {
     }
 }
 impl PointOfInterest {
-    /// Creates a new builder-style object to manufacture [`PointOfInterest`](crate::model::PointOfInterest)
+    /// Creates a new builder-style object to manufacture [`PointOfInterest`](crate::model::PointOfInterest).
     pub fn builder() -> crate::model::point_of_interest::Builder {
         crate::model::point_of_interest::Builder::default()
     }
@@ -394,11 +390,10 @@ impl std::fmt::Debug for Transcript {
         formatter.finish()
     }
 }
-/// See [`Transcript`](crate::model::Transcript)
+/// See [`Transcript`](crate::model::Transcript).
 pub mod transcript {
 
-    /// A builder for [`Transcript`](crate::model::Transcript)
-    #[non_exhaustive]
+    /// A builder for [`Transcript`](crate::model::Transcript).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -509,7 +504,7 @@ pub mod transcript {
             self.issues_detected = input;
             self
         }
-        /// Consumes the builder and constructs a [`Transcript`](crate::model::Transcript)
+        /// Consumes the builder and constructs a [`Transcript`](crate::model::Transcript).
         pub fn build(self) -> crate::model::Transcript {
             crate::model::Transcript {
                 id: self.id,
@@ -525,7 +520,7 @@ pub mod transcript {
     }
 }
 impl Transcript {
-    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript)
+    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
     pub fn builder() -> crate::model::transcript::Builder {
         crate::model::transcript::Builder::default()
     }
@@ -551,11 +546,10 @@ impl std::fmt::Debug for IssueDetected {
         formatter.finish()
     }
 }
-/// See [`IssueDetected`](crate::model::IssueDetected)
+/// See [`IssueDetected`](crate::model::IssueDetected).
 pub mod issue_detected {
 
-    /// A builder for [`IssueDetected`](crate::model::IssueDetected)
-    #[non_exhaustive]
+    /// A builder for [`IssueDetected`](crate::model::IssueDetected).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) character_offsets: std::option::Option<crate::model::CharacterOffsets>,
@@ -574,7 +568,7 @@ pub mod issue_detected {
             self.character_offsets = input;
             self
         }
-        /// Consumes the builder and constructs a [`IssueDetected`](crate::model::IssueDetected)
+        /// Consumes the builder and constructs a [`IssueDetected`](crate::model::IssueDetected).
         pub fn build(self) -> crate::model::IssueDetected {
             crate::model::IssueDetected {
                 character_offsets: self.character_offsets,
@@ -583,7 +577,7 @@ pub mod issue_detected {
     }
 }
 impl IssueDetected {
-    /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected)
+    /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
     pub fn builder() -> crate::model::issue_detected::Builder {
         crate::model::issue_detected::Builder::default()
     }
@@ -616,11 +610,10 @@ impl std::fmt::Debug for CharacterOffsets {
         formatter.finish()
     }
 }
-/// See [`CharacterOffsets`](crate::model::CharacterOffsets)
+/// See [`CharacterOffsets`](crate::model::CharacterOffsets).
 pub mod character_offsets {
 
-    /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets)
-    #[non_exhaustive]
+    /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) begin_offset_char: std::option::Option<i32>,
@@ -647,7 +640,7 @@ pub mod character_offsets {
             self.end_offset_char = input;
             self
         }
-        /// Consumes the builder and constructs a [`CharacterOffsets`](crate::model::CharacterOffsets)
+        /// Consumes the builder and constructs a [`CharacterOffsets`](crate::model::CharacterOffsets).
         pub fn build(self) -> crate::model::CharacterOffsets {
             crate::model::CharacterOffsets {
                 begin_offset_char: self.begin_offset_char.unwrap_or_default(),
@@ -657,7 +650,7 @@ pub mod character_offsets {
     }
 }
 impl CharacterOffsets {
-    /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets)
+    /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
     pub fn builder() -> crate::model::character_offsets::Builder {
         crate::model::character_offsets::Builder::default()
     }

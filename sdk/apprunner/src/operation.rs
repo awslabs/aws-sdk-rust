@@ -10,7 +10,7 @@ pub struct AssociateCustomDomain {
     _private: (),
 }
 impl AssociateCustomDomain {
-    /// Creates a new builder-style object to manufacture [`AssociateCustomDomainInput`](crate::input::AssociateCustomDomainInput)
+    /// Creates a new builder-style object to manufacture [`AssociateCustomDomainInput`](crate::input::AssociateCustomDomainInput).
     pub fn builder() -> crate::input::associate_custom_domain_input::Builder {
         crate::input::associate_custom_domain_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateAutoScalingConfiguration {
     _private: (),
 }
 impl CreateAutoScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateAutoScalingConfigurationInput`](crate::input::CreateAutoScalingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateAutoScalingConfigurationInput`](crate::input::CreateAutoScalingConfigurationInput).
     pub fn builder() -> crate::input::create_auto_scaling_configuration_input::Builder {
         crate::input::create_auto_scaling_configuration_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateConnection {
     _private: (),
 }
 impl CreateConnection {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput).
     pub fn builder() -> crate::input::create_connection_input::Builder {
         crate::input::create_connection_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateObservabilityConfiguration {
     _private: (),
 }
 impl CreateObservabilityConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateObservabilityConfigurationInput`](crate::input::CreateObservabilityConfigurationInput).
     pub fn builder() -> crate::input::create_observability_configuration_input::Builder {
         crate::input::create_observability_configuration_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateService {
     _private: (),
 }
 impl CreateService {
-    /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::input::CreateServiceInput)
+    /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::input::CreateServiceInput).
     pub fn builder() -> crate::input::create_service_input::Builder {
         crate::input::create_service_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateVpcConnector {
     _private: (),
 }
 impl CreateVpcConnector {
-    /// Creates a new builder-style object to manufacture [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput)
+    /// Creates a new builder-style object to manufacture [`CreateVpcConnectorInput`](crate::input::CreateVpcConnectorInput).
     pub fn builder() -> crate::input::create_vpc_connector_input::Builder {
         crate::input::create_vpc_connector_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DeleteAutoScalingConfiguration {
     _private: (),
 }
 impl DeleteAutoScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteAutoScalingConfigurationInput`](crate::input::DeleteAutoScalingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAutoScalingConfigurationInput`](crate::input::DeleteAutoScalingConfigurationInput).
     pub fn builder() -> crate::input::delete_auto_scaling_configuration_input::Builder {
         crate::input::delete_auto_scaling_configuration_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct DeleteConnection {
     _private: (),
 }
 impl DeleteConnection {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
     pub fn builder() -> crate::input::delete_connection_input::Builder {
         crate::input::delete_connection_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct DeleteObservabilityConfiguration {
     _private: (),
 }
 impl DeleteObservabilityConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteObservabilityConfigurationInput`](crate::input::DeleteObservabilityConfigurationInput).
     pub fn builder() -> crate::input::delete_observability_configuration_input::Builder {
         crate::input::delete_observability_configuration_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct DeleteService {
     _private: (),
 }
 impl DeleteService {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceInput`](crate::input::DeleteServiceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteServiceInput`](crate::input::DeleteServiceInput).
     pub fn builder() -> crate::input::delete_service_input::Builder {
         crate::input::delete_service_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DeleteVpcConnector {
     _private: (),
 }
 impl DeleteVpcConnector {
-    /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVpcConnectorInput`](crate::input::DeleteVpcConnectorInput).
     pub fn builder() -> crate::input::delete_vpc_connector_input::Builder {
         crate::input::delete_vpc_connector_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DescribeAutoScalingConfiguration {
     _private: (),
 }
 impl DescribeAutoScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeAutoScalingConfigurationInput`](crate::input::DescribeAutoScalingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAutoScalingConfigurationInput`](crate::input::DescribeAutoScalingConfigurationInput).
     pub fn builder() -> crate::input::describe_auto_scaling_configuration_input::Builder {
         crate::input::describe_auto_scaling_configuration_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DescribeCustomDomains {
     _private: (),
 }
 impl DescribeCustomDomains {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomDomainsInput`](crate::input::DescribeCustomDomainsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomDomainsInput`](crate::input::DescribeCustomDomainsInput).
     pub fn builder() -> crate::input::describe_custom_domains_input::Builder {
         crate::input::describe_custom_domains_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct DescribeObservabilityConfiguration {
     _private: (),
 }
 impl DescribeObservabilityConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeObservabilityConfigurationInput`](crate::input::DescribeObservabilityConfigurationInput).
     pub fn builder() -> crate::input::describe_observability_configuration_input::Builder {
         crate::input::describe_observability_configuration_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DescribeService {
     _private: (),
 }
 impl DescribeService {
-    /// Creates a new builder-style object to manufacture [`DescribeServiceInput`](crate::input::DescribeServiceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeServiceInput`](crate::input::DescribeServiceInput).
     pub fn builder() -> crate::input::describe_service_input::Builder {
         crate::input::describe_service_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DescribeVpcConnector {
     _private: (),
 }
 impl DescribeVpcConnector {
-    /// Creates a new builder-style object to manufacture [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVpcConnectorInput`](crate::input::DescribeVpcConnectorInput).
     pub fn builder() -> crate::input::describe_vpc_connector_input::Builder {
         crate::input::describe_vpc_connector_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct DisassociateCustomDomain {
     _private: (),
 }
 impl DisassociateCustomDomain {
-    /// Creates a new builder-style object to manufacture [`DisassociateCustomDomainInput`](crate::input::DisassociateCustomDomainInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateCustomDomainInput`](crate::input::DisassociateCustomDomainInput).
     pub fn builder() -> crate::input::disassociate_custom_domain_input::Builder {
         crate::input::disassociate_custom_domain_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct ListAutoScalingConfigurations {
     _private: (),
 }
 impl ListAutoScalingConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListAutoScalingConfigurationsInput`](crate::input::ListAutoScalingConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListAutoScalingConfigurationsInput`](crate::input::ListAutoScalingConfigurationsInput).
     pub fn builder() -> crate::input::list_auto_scaling_configurations_input::Builder {
         crate::input::list_auto_scaling_configurations_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct ListConnections {
     _private: (),
 }
 impl ListConnections {
-    /// Creates a new builder-style object to manufacture [`ListConnectionsInput`](crate::input::ListConnectionsInput)
+    /// Creates a new builder-style object to manufacture [`ListConnectionsInput`](crate::input::ListConnectionsInput).
     pub fn builder() -> crate::input::list_connections_input::Builder {
         crate::input::list_connections_input::Builder::default()
     }
@@ -652,7 +652,7 @@ pub struct ListObservabilityConfigurations {
     _private: (),
 }
 impl ListObservabilityConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListObservabilityConfigurationsInput`](crate::input::ListObservabilityConfigurationsInput).
     pub fn builder() -> crate::input::list_observability_configurations_input::Builder {
         crate::input::list_observability_configurations_input::Builder::default()
     }
@@ -686,7 +686,7 @@ pub struct ListOperations {
     _private: (),
 }
 impl ListOperations {
-    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput)
+    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput).
     pub fn builder() -> crate::input::list_operations_input::Builder {
         crate::input::list_operations_input::Builder::default()
     }
@@ -718,7 +718,7 @@ pub struct ListServices {
     _private: (),
 }
 impl ListServices {
-    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput)
+    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput).
     pub fn builder() -> crate::input::list_services_input::Builder {
         crate::input::list_services_input::Builder::default()
     }
@@ -750,7 +750,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -784,7 +784,7 @@ pub struct ListVpcConnectors {
     _private: (),
 }
 impl ListVpcConnectors {
-    /// Creates a new builder-style object to manufacture [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput)
+    /// Creates a new builder-style object to manufacture [`ListVpcConnectorsInput`](crate::input::ListVpcConnectorsInput).
     pub fn builder() -> crate::input::list_vpc_connectors_input::Builder {
         crate::input::list_vpc_connectors_input::Builder::default()
     }
@@ -818,7 +818,7 @@ pub struct PauseService {
     _private: (),
 }
 impl PauseService {
-    /// Creates a new builder-style object to manufacture [`PauseServiceInput`](crate::input::PauseServiceInput)
+    /// Creates a new builder-style object to manufacture [`PauseServiceInput`](crate::input::PauseServiceInput).
     pub fn builder() -> crate::input::pause_service_input::Builder {
         crate::input::pause_service_input::Builder::default()
     }
@@ -850,7 +850,7 @@ pub struct ResumeService {
     _private: (),
 }
 impl ResumeService {
-    /// Creates a new builder-style object to manufacture [`ResumeServiceInput`](crate::input::ResumeServiceInput)
+    /// Creates a new builder-style object to manufacture [`ResumeServiceInput`](crate::input::ResumeServiceInput).
     pub fn builder() -> crate::input::resume_service_input::Builder {
         crate::input::resume_service_input::Builder::default()
     }
@@ -882,7 +882,7 @@ pub struct StartDeployment {
     _private: (),
 }
 impl StartDeployment {
-    /// Creates a new builder-style object to manufacture [`StartDeploymentInput`](crate::input::StartDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`StartDeploymentInput`](crate::input::StartDeploymentInput).
     pub fn builder() -> crate::input::start_deployment_input::Builder {
         crate::input::start_deployment_input::Builder::default()
     }
@@ -916,7 +916,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -948,7 +948,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -980,7 +980,7 @@ pub struct UpdateService {
     _private: (),
 }
 impl UpdateService {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::input::UpdateServiceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::input::UpdateServiceInput).
     pub fn builder() -> crate::input::update_service_input::Builder {
         crate::input::update_service_input::Builder::default()
     }

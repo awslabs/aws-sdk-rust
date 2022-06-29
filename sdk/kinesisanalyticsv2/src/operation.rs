@@ -10,7 +10,7 @@ pub struct AddApplicationCloudWatchLoggingOption {
     _private: (),
 }
 impl AddApplicationCloudWatchLoggingOption {
-    /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionInput`](crate::input::AddApplicationCloudWatchLoggingOptionInput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionInput`](crate::input::AddApplicationCloudWatchLoggingOptionInput).
     pub fn builder() -> crate::input::add_application_cloud_watch_logging_option_input::Builder {
         crate::input::add_application_cloud_watch_logging_option_input::Builder::default()
     }
@@ -46,7 +46,7 @@ pub struct AddApplicationInput {
     _private: (),
 }
 impl AddApplicationInput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationInputInput`](crate::input::AddApplicationInputInput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationInputInput`](crate::input::AddApplicationInputInput).
     pub fn builder() -> crate::input::add_application_input_input::Builder {
         crate::input::add_application_input_input::Builder::default()
     }
@@ -80,7 +80,7 @@ pub struct AddApplicationInputProcessingConfiguration {
     _private: (),
 }
 impl AddApplicationInputProcessingConfiguration {
-    /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationInput`](crate::input::AddApplicationInputProcessingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationInput`](crate::input::AddApplicationInputProcessingConfigurationInput).
     pub fn builder() -> crate::input::add_application_input_processing_configuration_input::Builder
     {
         crate::input::add_application_input_processing_configuration_input::Builder::default()
@@ -119,7 +119,7 @@ pub struct AddApplicationOutput {
     _private: (),
 }
 impl AddApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationOutputInput`](crate::input::AddApplicationOutputInput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationOutputInput`](crate::input::AddApplicationOutputInput).
     pub fn builder() -> crate::input::add_application_output_input::Builder {
         crate::input::add_application_output_input::Builder::default()
     }
@@ -153,7 +153,7 @@ pub struct AddApplicationReferenceDataSource {
     _private: (),
 }
 impl AddApplicationReferenceDataSource {
-    /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceInput`](crate::input::AddApplicationReferenceDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceInput`](crate::input::AddApplicationReferenceDataSourceInput).
     pub fn builder() -> crate::input::add_application_reference_data_source_input::Builder {
         crate::input::add_application_reference_data_source_input::Builder::default()
     }
@@ -187,7 +187,7 @@ pub struct AddApplicationVpcConfiguration {
     _private: (),
 }
 impl AddApplicationVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationInput`](crate::input::AddApplicationVpcConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationInput`](crate::input::AddApplicationVpcConfigurationInput).
     pub fn builder() -> crate::input::add_application_vpc_configuration_input::Builder {
         crate::input::add_application_vpc_configuration_input::Builder::default()
     }
@@ -221,7 +221,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -255,7 +255,7 @@ pub struct CreateApplicationPresignedUrl {
     _private: (),
 }
 impl CreateApplicationPresignedUrl {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlInput`](crate::input::CreateApplicationPresignedUrlInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlInput`](crate::input::CreateApplicationPresignedUrlInput).
     pub fn builder() -> crate::input::create_application_presigned_url_input::Builder {
         crate::input::create_application_presigned_url_input::Builder::default()
     }
@@ -289,7 +289,7 @@ pub struct CreateApplicationSnapshot {
     _private: (),
 }
 impl CreateApplicationSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotInput`](crate::input::CreateApplicationSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotInput`](crate::input::CreateApplicationSnapshotInput).
     pub fn builder() -> crate::input::create_application_snapshot_input::Builder {
         crate::input::create_application_snapshot_input::Builder::default()
     }
@@ -323,7 +323,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -357,7 +357,7 @@ pub struct DeleteApplicationCloudWatchLoggingOption {
     _private: (),
 }
 impl DeleteApplicationCloudWatchLoggingOption {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::input::DeleteApplicationCloudWatchLoggingOptionInput).
     pub fn builder() -> crate::input::delete_application_cloud_watch_logging_option_input::Builder {
         crate::input::delete_application_cloud_watch_logging_option_input::Builder::default()
     }
@@ -395,7 +395,7 @@ pub struct DeleteApplicationInputProcessingConfiguration {
     _private: (),
 }
 impl DeleteApplicationInputProcessingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationInput`](crate::input::DeleteApplicationInputProcessingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationInput`](crate::input::DeleteApplicationInputProcessingConfigurationInput).
     pub fn builder(
     ) -> crate::input::delete_application_input_processing_configuration_input::Builder {
         crate::input::delete_application_input_processing_configuration_input::Builder::default()
@@ -436,7 +436,7 @@ pub struct DeleteApplicationOutput {
     _private: (),
 }
 impl DeleteApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputInput`](crate::input::DeleteApplicationOutputInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputInput`](crate::input::DeleteApplicationOutputInput).
     pub fn builder() -> crate::input::delete_application_output_input::Builder {
         crate::input::delete_application_output_input::Builder::default()
     }
@@ -470,7 +470,7 @@ pub struct DeleteApplicationReferenceDataSource {
     _private: (),
 }
 impl DeleteApplicationReferenceDataSource {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceInput`](crate::input::DeleteApplicationReferenceDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceInput`](crate::input::DeleteApplicationReferenceDataSourceInput).
     pub fn builder() -> crate::input::delete_application_reference_data_source_input::Builder {
         crate::input::delete_application_reference_data_source_input::Builder::default()
     }
@@ -506,7 +506,7 @@ pub struct DeleteApplicationSnapshot {
     _private: (),
 }
 impl DeleteApplicationSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotInput`](crate::input::DeleteApplicationSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotInput`](crate::input::DeleteApplicationSnapshotInput).
     pub fn builder() -> crate::input::delete_application_snapshot_input::Builder {
         crate::input::delete_application_snapshot_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct DeleteApplicationVpcConfiguration {
     _private: (),
 }
 impl DeleteApplicationVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationInput`](crate::input::DeleteApplicationVpcConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationInput`](crate::input::DeleteApplicationVpcConfigurationInput).
     pub fn builder() -> crate::input::delete_application_vpc_configuration_input::Builder {
         crate::input::delete_application_vpc_configuration_input::Builder::default()
     }
@@ -574,7 +574,7 @@ pub struct DescribeApplication {
     _private: (),
 }
 impl DescribeApplication {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationInput`](crate::input::DescribeApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationInput`](crate::input::DescribeApplicationInput).
     pub fn builder() -> crate::input::describe_application_input::Builder {
         crate::input::describe_application_input::Builder::default()
     }
@@ -608,7 +608,7 @@ pub struct DescribeApplicationSnapshot {
     _private: (),
 }
 impl DescribeApplicationSnapshot {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotInput`](crate::input::DescribeApplicationSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotInput`](crate::input::DescribeApplicationSnapshotInput).
     pub fn builder() -> crate::input::describe_application_snapshot_input::Builder {
         crate::input::describe_application_snapshot_input::Builder::default()
     }
@@ -642,7 +642,7 @@ pub struct DescribeApplicationVersion {
     _private: (),
 }
 impl DescribeApplicationVersion {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionInput`](crate::input::DescribeApplicationVersionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionInput`](crate::input::DescribeApplicationVersionInput).
     pub fn builder() -> crate::input::describe_application_version_input::Builder {
         crate::input::describe_application_version_input::Builder::default()
     }
@@ -676,7 +676,7 @@ pub struct DiscoverInputSchema {
     _private: (),
 }
 impl DiscoverInputSchema {
-    /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaInput`](crate::input::DiscoverInputSchemaInput)
+    /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaInput`](crate::input::DiscoverInputSchemaInput).
     pub fn builder() -> crate::input::discover_input_schema_input::Builder {
         crate::input::discover_input_schema_input::Builder::default()
     }
@@ -710,7 +710,7 @@ pub struct ListApplications {
     _private: (),
 }
 impl ListApplications {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
     pub fn builder() -> crate::input::list_applications_input::Builder {
         crate::input::list_applications_input::Builder::default()
     }
@@ -744,7 +744,7 @@ pub struct ListApplicationSnapshots {
     _private: (),
 }
 impl ListApplicationSnapshots {
-    /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsInput`](crate::input::ListApplicationSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsInput`](crate::input::ListApplicationSnapshotsInput).
     pub fn builder() -> crate::input::list_application_snapshots_input::Builder {
         crate::input::list_application_snapshots_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct ListApplicationVersions {
     _private: (),
 }
 impl ListApplicationVersions {
-    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput).
     pub fn builder() -> crate::input::list_application_versions_input::Builder {
         crate::input::list_application_versions_input::Builder::default()
     }
@@ -812,7 +812,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -846,7 +846,7 @@ pub struct RollbackApplication {
     _private: (),
 }
 impl RollbackApplication {
-    /// Creates a new builder-style object to manufacture [`RollbackApplicationInput`](crate::input::RollbackApplicationInput)
+    /// Creates a new builder-style object to manufacture [`RollbackApplicationInput`](crate::input::RollbackApplicationInput).
     pub fn builder() -> crate::input::rollback_application_input::Builder {
         crate::input::rollback_application_input::Builder::default()
     }
@@ -880,7 +880,7 @@ pub struct StartApplication {
     _private: (),
 }
 impl StartApplication {
-    /// Creates a new builder-style object to manufacture [`StartApplicationInput`](crate::input::StartApplicationInput)
+    /// Creates a new builder-style object to manufacture [`StartApplicationInput`](crate::input::StartApplicationInput).
     pub fn builder() -> crate::input::start_application_input::Builder {
         crate::input::start_application_input::Builder::default()
     }
@@ -914,7 +914,7 @@ pub struct StopApplication {
     _private: (),
 }
 impl StopApplication {
-    /// Creates a new builder-style object to manufacture [`StopApplicationInput`](crate::input::StopApplicationInput)
+    /// Creates a new builder-style object to manufacture [`StopApplicationInput`](crate::input::StopApplicationInput).
     pub fn builder() -> crate::input::stop_application_input::Builder {
         crate::input::stop_application_input::Builder::default()
     }
@@ -948,7 +948,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -980,7 +980,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1012,7 +1012,7 @@ pub struct UpdateApplication {
     _private: (),
 }
 impl UpdateApplication {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
     pub fn builder() -> crate::input::update_application_input::Builder {
         crate::input::update_application_input::Builder::default()
     }
@@ -1046,7 +1046,7 @@ pub struct UpdateApplicationMaintenanceConfiguration {
     _private: (),
 }
 impl UpdateApplicationMaintenanceConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationInput`](crate::input::UpdateApplicationMaintenanceConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationInput`](crate::input::UpdateApplicationMaintenanceConfigurationInput).
     pub fn builder() -> crate::input::update_application_maintenance_configuration_input::Builder {
         crate::input::update_application_maintenance_configuration_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CreateKeyspace {
     _private: (),
 }
 impl CreateKeyspace {
-    /// Creates a new builder-style object to manufacture [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput)
+    /// Creates a new builder-style object to manufacture [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput).
     pub fn builder() -> crate::input::create_keyspace_input::Builder {
         crate::input::create_keyspace_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateTable {
     _private: (),
 }
 impl CreateTable {
-    /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::input::CreateTableInput)
+    /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::input::CreateTableInput).
     pub fn builder() -> crate::input::create_table_input::Builder {
         crate::input::create_table_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct DeleteKeyspace {
     _private: (),
 }
 impl DeleteKeyspace {
-    /// Creates a new builder-style object to manufacture [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput).
     pub fn builder() -> crate::input::delete_keyspace_input::Builder {
         crate::input::delete_keyspace_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct DeleteTable {
     _private: (),
 }
 impl DeleteTable {
-    /// Creates a new builder-style object to manufacture [`DeleteTableInput`](crate::input::DeleteTableInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTableInput`](crate::input::DeleteTableInput).
     pub fn builder() -> crate::input::delete_table_input::Builder {
         crate::input::delete_table_input::Builder::default()
     }
@@ -138,7 +138,7 @@ pub struct GetKeyspace {
     _private: (),
 }
 impl GetKeyspace {
-    /// Creates a new builder-style object to manufacture [`GetKeyspaceInput`](crate::input::GetKeyspaceInput)
+    /// Creates a new builder-style object to manufacture [`GetKeyspaceInput`](crate::input::GetKeyspaceInput).
     pub fn builder() -> crate::input::get_keyspace_input::Builder {
         crate::input::get_keyspace_input::Builder::default()
     }
@@ -170,7 +170,7 @@ pub struct GetTable {
     _private: (),
 }
 impl GetTable {
-    /// Creates a new builder-style object to manufacture [`GetTableInput`](crate::input::GetTableInput)
+    /// Creates a new builder-style object to manufacture [`GetTableInput`](crate::input::GetTableInput).
     pub fn builder() -> crate::input::get_table_input::Builder {
         crate::input::get_table_input::Builder::default()
     }
@@ -201,7 +201,7 @@ pub struct ListKeyspaces {
     _private: (),
 }
 impl ListKeyspaces {
-    /// Creates a new builder-style object to manufacture [`ListKeyspacesInput`](crate::input::ListKeyspacesInput)
+    /// Creates a new builder-style object to manufacture [`ListKeyspacesInput`](crate::input::ListKeyspacesInput).
     pub fn builder() -> crate::input::list_keyspaces_input::Builder {
         crate::input::list_keyspaces_input::Builder::default()
     }
@@ -233,7 +233,7 @@ pub struct ListTables {
     _private: (),
 }
 impl ListTables {
-    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput)
+    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput).
     pub fn builder() -> crate::input::list_tables_input::Builder {
         crate::input::list_tables_input::Builder::default()
     }
@@ -265,7 +265,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -299,7 +299,7 @@ pub struct RestoreTable {
     _private: (),
 }
 impl RestoreTable {
-    /// Creates a new builder-style object to manufacture [`RestoreTableInput`](crate::input::RestoreTableInput)
+    /// Creates a new builder-style object to manufacture [`RestoreTableInput`](crate::input::RestoreTableInput).
     pub fn builder() -> crate::input::restore_table_input::Builder {
         crate::input::restore_table_input::Builder::default()
     }
@@ -331,7 +331,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -363,7 +363,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -395,7 +395,7 @@ pub struct UpdateTable {
     _private: (),
 }
 impl UpdateTable {
-    /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::input::UpdateTableInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::input::UpdateTableInput).
     pub fn builder() -> crate::input::update_table_input::Builder {
         crate::input::update_table_input::Builder::default()
     }

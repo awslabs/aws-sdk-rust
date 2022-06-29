@@ -10,7 +10,7 @@ pub struct AddFlowMediaStreams {
     _private: (),
 }
 impl AddFlowMediaStreams {
-    /// Creates a new builder-style object to manufacture [`AddFlowMediaStreamsInput`](crate::input::AddFlowMediaStreamsInput)
+    /// Creates a new builder-style object to manufacture [`AddFlowMediaStreamsInput`](crate::input::AddFlowMediaStreamsInput).
     pub fn builder() -> crate::input::add_flow_media_streams_input::Builder {
         crate::input::add_flow_media_streams_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AddFlowOutputs {
     _private: (),
 }
 impl AddFlowOutputs {
-    /// Creates a new builder-style object to manufacture [`AddFlowOutputsInput`](crate::input::AddFlowOutputsInput)
+    /// Creates a new builder-style object to manufacture [`AddFlowOutputsInput`](crate::input::AddFlowOutputsInput).
     pub fn builder() -> crate::input::add_flow_outputs_input::Builder {
         crate::input::add_flow_outputs_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct AddFlowSources {
     _private: (),
 }
 impl AddFlowSources {
-    /// Creates a new builder-style object to manufacture [`AddFlowSourcesInput`](crate::input::AddFlowSourcesInput)
+    /// Creates a new builder-style object to manufacture [`AddFlowSourcesInput`](crate::input::AddFlowSourcesInput).
     pub fn builder() -> crate::input::add_flow_sources_input::Builder {
         crate::input::add_flow_sources_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct AddFlowVpcInterfaces {
     _private: (),
 }
 impl AddFlowVpcInterfaces {
-    /// Creates a new builder-style object to manufacture [`AddFlowVpcInterfacesInput`](crate::input::AddFlowVpcInterfacesInput)
+    /// Creates a new builder-style object to manufacture [`AddFlowVpcInterfacesInput`](crate::input::AddFlowVpcInterfacesInput).
     pub fn builder() -> crate::input::add_flow_vpc_interfaces_input::Builder {
         crate::input::add_flow_vpc_interfaces_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateFlow {
     _private: (),
 }
 impl CreateFlow {
-    /// Creates a new builder-style object to manufacture [`CreateFlowInput`](crate::input::CreateFlowInput)
+    /// Creates a new builder-style object to manufacture [`CreateFlowInput`](crate::input::CreateFlowInput).
     pub fn builder() -> crate::input::create_flow_input::Builder {
         crate::input::create_flow_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct DeleteFlow {
     _private: (),
 }
 impl DeleteFlow {
-    /// Creates a new builder-style object to manufacture [`DeleteFlowInput`](crate::input::DeleteFlowInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFlowInput`](crate::input::DeleteFlowInput).
     pub fn builder() -> crate::input::delete_flow_input::Builder {
         crate::input::delete_flow_input::Builder::default()
     }
@@ -206,7 +206,7 @@ pub struct DescribeFlow {
     _private: (),
 }
 impl DescribeFlow {
-    /// Creates a new builder-style object to manufacture [`DescribeFlowInput`](crate::input::DescribeFlowInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFlowInput`](crate::input::DescribeFlowInput).
     pub fn builder() -> crate::input::describe_flow_input::Builder {
         crate::input::describe_flow_input::Builder::default()
     }
@@ -238,7 +238,7 @@ pub struct DescribeOffering {
     _private: (),
 }
 impl DescribeOffering {
-    /// Creates a new builder-style object to manufacture [`DescribeOfferingInput`](crate::input::DescribeOfferingInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOfferingInput`](crate::input::DescribeOfferingInput).
     pub fn builder() -> crate::input::describe_offering_input::Builder {
         crate::input::describe_offering_input::Builder::default()
     }
@@ -272,7 +272,7 @@ pub struct DescribeReservation {
     _private: (),
 }
 impl DescribeReservation {
-    /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::input::DescribeReservationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::input::DescribeReservationInput).
     pub fn builder() -> crate::input::describe_reservation_input::Builder {
         crate::input::describe_reservation_input::Builder::default()
     }
@@ -306,7 +306,7 @@ pub struct GrantFlowEntitlements {
     _private: (),
 }
 impl GrantFlowEntitlements {
-    /// Creates a new builder-style object to manufacture [`GrantFlowEntitlementsInput`](crate::input::GrantFlowEntitlementsInput)
+    /// Creates a new builder-style object to manufacture [`GrantFlowEntitlementsInput`](crate::input::GrantFlowEntitlementsInput).
     pub fn builder() -> crate::input::grant_flow_entitlements_input::Builder {
         crate::input::grant_flow_entitlements_input::Builder::default()
     }
@@ -340,7 +340,7 @@ pub struct ListEntitlements {
     _private: (),
 }
 impl ListEntitlements {
-    /// Creates a new builder-style object to manufacture [`ListEntitlementsInput`](crate::input::ListEntitlementsInput)
+    /// Creates a new builder-style object to manufacture [`ListEntitlementsInput`](crate::input::ListEntitlementsInput).
     pub fn builder() -> crate::input::list_entitlements_input::Builder {
         crate::input::list_entitlements_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct ListFlows {
     _private: (),
 }
 impl ListFlows {
-    /// Creates a new builder-style object to manufacture [`ListFlowsInput`](crate::input::ListFlowsInput)
+    /// Creates a new builder-style object to manufacture [`ListFlowsInput`](crate::input::ListFlowsInput).
     pub fn builder() -> crate::input::list_flows_input::Builder {
         crate::input::list_flows_input::Builder::default()
     }
@@ -405,7 +405,7 @@ pub struct ListOfferings {
     _private: (),
 }
 impl ListOfferings {
-    /// Creates a new builder-style object to manufacture [`ListOfferingsInput`](crate::input::ListOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`ListOfferingsInput`](crate::input::ListOfferingsInput).
     pub fn builder() -> crate::input::list_offerings_input::Builder {
         crate::input::list_offerings_input::Builder::default()
     }
@@ -437,7 +437,7 @@ pub struct ListReservations {
     _private: (),
 }
 impl ListReservations {
-    /// Creates a new builder-style object to manufacture [`ListReservationsInput`](crate::input::ListReservationsInput)
+    /// Creates a new builder-style object to manufacture [`ListReservationsInput`](crate::input::ListReservationsInput).
     pub fn builder() -> crate::input::list_reservations_input::Builder {
         crate::input::list_reservations_input::Builder::default()
     }
@@ -471,7 +471,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -505,7 +505,7 @@ pub struct PurchaseOffering {
     _private: (),
 }
 impl PurchaseOffering {
-    /// Creates a new builder-style object to manufacture [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput)
+    /// Creates a new builder-style object to manufacture [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput).
     pub fn builder() -> crate::input::purchase_offering_input::Builder {
         crate::input::purchase_offering_input::Builder::default()
     }
@@ -539,7 +539,7 @@ pub struct RemoveFlowMediaStream {
     _private: (),
 }
 impl RemoveFlowMediaStream {
-    /// Creates a new builder-style object to manufacture [`RemoveFlowMediaStreamInput`](crate::input::RemoveFlowMediaStreamInput)
+    /// Creates a new builder-style object to manufacture [`RemoveFlowMediaStreamInput`](crate::input::RemoveFlowMediaStreamInput).
     pub fn builder() -> crate::input::remove_flow_media_stream_input::Builder {
         crate::input::remove_flow_media_stream_input::Builder::default()
     }
@@ -573,7 +573,7 @@ pub struct RemoveFlowOutput {
     _private: (),
 }
 impl RemoveFlowOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveFlowOutputInput`](crate::input::RemoveFlowOutputInput)
+    /// Creates a new builder-style object to manufacture [`RemoveFlowOutputInput`](crate::input::RemoveFlowOutputInput).
     pub fn builder() -> crate::input::remove_flow_output_input::Builder {
         crate::input::remove_flow_output_input::Builder::default()
     }
@@ -607,7 +607,7 @@ pub struct RemoveFlowSource {
     _private: (),
 }
 impl RemoveFlowSource {
-    /// Creates a new builder-style object to manufacture [`RemoveFlowSourceInput`](crate::input::RemoveFlowSourceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveFlowSourceInput`](crate::input::RemoveFlowSourceInput).
     pub fn builder() -> crate::input::remove_flow_source_input::Builder {
         crate::input::remove_flow_source_input::Builder::default()
     }
@@ -641,7 +641,7 @@ pub struct RemoveFlowVpcInterface {
     _private: (),
 }
 impl RemoveFlowVpcInterface {
-    /// Creates a new builder-style object to manufacture [`RemoveFlowVpcInterfaceInput`](crate::input::RemoveFlowVpcInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveFlowVpcInterfaceInput`](crate::input::RemoveFlowVpcInterfaceInput).
     pub fn builder() -> crate::input::remove_flow_vpc_interface_input::Builder {
         crate::input::remove_flow_vpc_interface_input::Builder::default()
     }
@@ -675,7 +675,7 @@ pub struct RevokeFlowEntitlement {
     _private: (),
 }
 impl RevokeFlowEntitlement {
-    /// Creates a new builder-style object to manufacture [`RevokeFlowEntitlementInput`](crate::input::RevokeFlowEntitlementInput)
+    /// Creates a new builder-style object to manufacture [`RevokeFlowEntitlementInput`](crate::input::RevokeFlowEntitlementInput).
     pub fn builder() -> crate::input::revoke_flow_entitlement_input::Builder {
         crate::input::revoke_flow_entitlement_input::Builder::default()
     }
@@ -709,7 +709,7 @@ pub struct StartFlow {
     _private: (),
 }
 impl StartFlow {
-    /// Creates a new builder-style object to manufacture [`StartFlowInput`](crate::input::StartFlowInput)
+    /// Creates a new builder-style object to manufacture [`StartFlowInput`](crate::input::StartFlowInput).
     pub fn builder() -> crate::input::start_flow_input::Builder {
         crate::input::start_flow_input::Builder::default()
     }
@@ -740,7 +740,7 @@ pub struct StopFlow {
     _private: (),
 }
 impl StopFlow {
-    /// Creates a new builder-style object to manufacture [`StopFlowInput`](crate::input::StopFlowInput)
+    /// Creates a new builder-style object to manufacture [`StopFlowInput`](crate::input::StopFlowInput).
     pub fn builder() -> crate::input::stop_flow_input::Builder {
         crate::input::stop_flow_input::Builder::default()
     }
@@ -771,7 +771,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -803,7 +803,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -835,7 +835,7 @@ pub struct UpdateFlow {
     _private: (),
 }
 impl UpdateFlow {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowInput`](crate::input::UpdateFlowInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowInput`](crate::input::UpdateFlowInput).
     pub fn builder() -> crate::input::update_flow_input::Builder {
         crate::input::update_flow_input::Builder::default()
     }
@@ -867,7 +867,7 @@ pub struct UpdateFlowEntitlement {
     _private: (),
 }
 impl UpdateFlowEntitlement {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementInput`](crate::input::UpdateFlowEntitlementInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementInput`](crate::input::UpdateFlowEntitlementInput).
     pub fn builder() -> crate::input::update_flow_entitlement_input::Builder {
         crate::input::update_flow_entitlement_input::Builder::default()
     }
@@ -901,7 +901,7 @@ pub struct UpdateFlowMediaStream {
     _private: (),
 }
 impl UpdateFlowMediaStream {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowMediaStreamInput`](crate::input::UpdateFlowMediaStreamInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowMediaStreamInput`](crate::input::UpdateFlowMediaStreamInput).
     pub fn builder() -> crate::input::update_flow_media_stream_input::Builder {
         crate::input::update_flow_media_stream_input::Builder::default()
     }
@@ -935,7 +935,7 @@ pub struct UpdateFlowOutput {
     _private: (),
 }
 impl UpdateFlowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::input::UpdateFlowOutputInput).
     pub fn builder() -> crate::input::update_flow_output_input::Builder {
         crate::input::update_flow_output_input::Builder::default()
     }
@@ -969,7 +969,7 @@ pub struct UpdateFlowSource {
     _private: (),
 }
 impl UpdateFlowSource {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowSourceInput`](crate::input::UpdateFlowSourceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowSourceInput`](crate::input::UpdateFlowSourceInput).
     pub fn builder() -> crate::input::update_flow_source_input::Builder {
         crate::input::update_flow_source_input::Builder::default()
     }

@@ -19,11 +19,10 @@ impl std::fmt::Debug for StopSnomedctInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput)
+/// See [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
 pub mod stop_snomedct_inference_job_output {
 
-    /// A builder for [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod stop_snomedct_inference_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput)
+        /// Consumes the builder and constructs a [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::StopSnomedctInferenceJobOutput {
             crate::output::StopSnomedctInferenceJobOutput {
                 job_id: self.job_id,
@@ -48,7 +47,7 @@ pub mod stop_snomedct_inference_job_output {
     }
 }
 impl StopSnomedctInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`StopSnomedctInferenceJobOutput`](crate::output::StopSnomedctInferenceJobOutput).
     pub fn builder() -> crate::output::stop_snomedct_inference_job_output::Builder {
         crate::output::stop_snomedct_inference_job_output::Builder::default()
     }
@@ -74,11 +73,10 @@ impl std::fmt::Debug for StopRxNormInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput)
+/// See [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
 pub mod stop_rx_norm_inference_job_output {
 
-    /// A builder for [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -94,7 +92,7 @@ pub mod stop_rx_norm_inference_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput)
+        /// Consumes the builder and constructs a [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::StopRxNormInferenceJobOutput {
             crate::output::StopRxNormInferenceJobOutput {
                 job_id: self.job_id,
@@ -103,7 +101,7 @@ pub mod stop_rx_norm_inference_job_output {
     }
 }
 impl StopRxNormInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobOutput`](crate::output::StopRxNormInferenceJobOutput).
     pub fn builder() -> crate::output::stop_rx_norm_inference_job_output::Builder {
         crate::output::stop_rx_norm_inference_job_output::Builder::default()
     }
@@ -129,11 +127,10 @@ impl std::fmt::Debug for StopPhiDetectionJobOutput {
         formatter.finish()
     }
 }
-/// See [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput)
+/// See [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
 pub mod stop_phi_detection_job_output {
 
-    /// A builder for [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -149,7 +146,7 @@ pub mod stop_phi_detection_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput)
+        /// Consumes the builder and constructs a [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
         pub fn build(self) -> crate::output::StopPhiDetectionJobOutput {
             crate::output::StopPhiDetectionJobOutput {
                 job_id: self.job_id,
@@ -158,7 +155,7 @@ pub mod stop_phi_detection_job_output {
     }
 }
 impl StopPhiDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput)
+    /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobOutput`](crate::output::StopPhiDetectionJobOutput).
     pub fn builder() -> crate::output::stop_phi_detection_job_output::Builder {
         crate::output::stop_phi_detection_job_output::Builder::default()
     }
@@ -184,11 +181,10 @@ impl std::fmt::Debug for StopIcd10CmInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput)
+/// See [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
 pub mod stop_icd10_cm_inference_job_output {
 
-    /// A builder for [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -204,7 +200,7 @@ pub mod stop_icd10_cm_inference_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput)
+        /// Consumes the builder and constructs a [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::StopIcd10CmInferenceJobOutput {
             crate::output::StopIcd10CmInferenceJobOutput {
                 job_id: self.job_id,
@@ -213,7 +209,7 @@ pub mod stop_icd10_cm_inference_job_output {
     }
 }
 impl StopIcd10CmInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`StopIcd10CmInferenceJobOutput`](crate::output::StopIcd10CmInferenceJobOutput).
     pub fn builder() -> crate::output::stop_icd10_cm_inference_job_output::Builder {
         crate::output::stop_icd10_cm_inference_job_output::Builder::default()
     }
@@ -239,11 +235,10 @@ impl std::fmt::Debug for StopEntitiesDetectionV2JobOutput {
         formatter.finish()
     }
 }
-/// See [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput)
+/// See [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
 pub mod stop_entities_detection_v2_job_output {
 
-    /// A builder for [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -259,7 +254,7 @@ pub mod stop_entities_detection_v2_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput)
+        /// Consumes the builder and constructs a [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::StopEntitiesDetectionV2JobOutput {
             crate::output::StopEntitiesDetectionV2JobOutput {
                 job_id: self.job_id,
@@ -268,7 +263,7 @@ pub mod stop_entities_detection_v2_job_output {
     }
 }
 impl StopEntitiesDetectionV2JobOutput {
-    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput)
+    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobOutput`](crate::output::StopEntitiesDetectionV2JobOutput).
     pub fn builder() -> crate::output::stop_entities_detection_v2_job_output::Builder {
         crate::output::stop_entities_detection_v2_job_output::Builder::default()
     }
@@ -294,11 +289,10 @@ impl std::fmt::Debug for StartSnomedctInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput)
+/// See [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
 pub mod start_snomedct_inference_job_output {
 
-    /// A builder for [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -314,7 +308,7 @@ pub mod start_snomedct_inference_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput)
+        /// Consumes the builder and constructs a [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::StartSnomedctInferenceJobOutput {
             crate::output::StartSnomedctInferenceJobOutput {
                 job_id: self.job_id,
@@ -323,7 +317,7 @@ pub mod start_snomedct_inference_job_output {
     }
 }
 impl StartSnomedctInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartSnomedctInferenceJobOutput`](crate::output::StartSnomedctInferenceJobOutput).
     pub fn builder() -> crate::output::start_snomedct_inference_job_output::Builder {
         crate::output::start_snomedct_inference_job_output::Builder::default()
     }
@@ -349,11 +343,10 @@ impl std::fmt::Debug for StartRxNormInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput)
+/// See [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
 pub mod start_rx_norm_inference_job_output {
 
-    /// A builder for [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -369,7 +362,7 @@ pub mod start_rx_norm_inference_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput)
+        /// Consumes the builder and constructs a [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::StartRxNormInferenceJobOutput {
             crate::output::StartRxNormInferenceJobOutput {
                 job_id: self.job_id,
@@ -378,7 +371,7 @@ pub mod start_rx_norm_inference_job_output {
     }
 }
 impl StartRxNormInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartRxNormInferenceJobOutput`](crate::output::StartRxNormInferenceJobOutput).
     pub fn builder() -> crate::output::start_rx_norm_inference_job_output::Builder {
         crate::output::start_rx_norm_inference_job_output::Builder::default()
     }
@@ -404,11 +397,10 @@ impl std::fmt::Debug for StartPhiDetectionJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput)
+/// See [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
 pub mod start_phi_detection_job_output {
 
-    /// A builder for [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -424,7 +416,7 @@ pub mod start_phi_detection_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput)
+        /// Consumes the builder and constructs a [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
         pub fn build(self) -> crate::output::StartPhiDetectionJobOutput {
             crate::output::StartPhiDetectionJobOutput {
                 job_id: self.job_id,
@@ -433,7 +425,7 @@ pub mod start_phi_detection_job_output {
     }
 }
 impl StartPhiDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartPhiDetectionJobOutput`](crate::output::StartPhiDetectionJobOutput).
     pub fn builder() -> crate::output::start_phi_detection_job_output::Builder {
         crate::output::start_phi_detection_job_output::Builder::default()
     }
@@ -459,11 +451,10 @@ impl std::fmt::Debug for StartIcd10CmInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput)
+/// See [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
 pub mod start_icd10_cm_inference_job_output {
 
-    /// A builder for [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -479,7 +470,7 @@ pub mod start_icd10_cm_inference_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput)
+        /// Consumes the builder and constructs a [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::StartIcd10CmInferenceJobOutput {
             crate::output::StartIcd10CmInferenceJobOutput {
                 job_id: self.job_id,
@@ -488,7 +479,7 @@ pub mod start_icd10_cm_inference_job_output {
     }
 }
 impl StartIcd10CmInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartIcd10CmInferenceJobOutput`](crate::output::StartIcd10CmInferenceJobOutput).
     pub fn builder() -> crate::output::start_icd10_cm_inference_job_output::Builder {
         crate::output::start_icd10_cm_inference_job_output::Builder::default()
     }
@@ -514,11 +505,10 @@ impl std::fmt::Debug for StartEntitiesDetectionV2JobOutput {
         formatter.finish()
     }
 }
-/// See [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput)
+/// See [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
 pub mod start_entities_detection_v2_job_output {
 
-    /// A builder for [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -534,7 +524,7 @@ pub mod start_entities_detection_v2_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput)
+        /// Consumes the builder and constructs a [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::StartEntitiesDetectionV2JobOutput {
             crate::output::StartEntitiesDetectionV2JobOutput {
                 job_id: self.job_id,
@@ -543,7 +533,7 @@ pub mod start_entities_detection_v2_job_output {
     }
 }
 impl StartEntitiesDetectionV2JobOutput {
-    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput)
+    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionV2JobOutput`](crate::output::StartEntitiesDetectionV2JobOutput).
     pub fn builder() -> crate::output::start_entities_detection_v2_job_output::Builder {
         crate::output::start_entities_detection_v2_job_output::Builder::default()
     }
@@ -582,11 +572,10 @@ impl std::fmt::Debug for ListSnomedctInferenceJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput)
+/// See [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
 pub mod list_snomedct_inference_jobs_output {
 
-    /// A builder for [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
@@ -630,7 +619,7 @@ pub mod list_snomedct_inference_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput)
+        /// Consumes the builder and constructs a [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListSnomedctInferenceJobsOutput {
             crate::output::ListSnomedctInferenceJobsOutput {
                 comprehend_medical_async_job_properties_list: self
@@ -641,7 +630,7 @@ pub mod list_snomedct_inference_jobs_output {
     }
 }
 impl ListSnomedctInferenceJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListSnomedctInferenceJobsOutput`](crate::output::ListSnomedctInferenceJobsOutput).
     pub fn builder() -> crate::output::list_snomedct_inference_jobs_output::Builder {
         crate::output::list_snomedct_inference_jobs_output::Builder::default()
     }
@@ -680,11 +669,10 @@ impl std::fmt::Debug for ListRxNormInferenceJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput)
+/// See [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
 pub mod list_rx_norm_inference_jobs_output {
 
-    /// A builder for [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
@@ -728,7 +716,7 @@ pub mod list_rx_norm_inference_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput)
+        /// Consumes the builder and constructs a [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListRxNormInferenceJobsOutput {
             crate::output::ListRxNormInferenceJobsOutput {
                 comprehend_medical_async_job_properties_list: self
@@ -739,7 +727,7 @@ pub mod list_rx_norm_inference_jobs_output {
     }
 }
 impl ListRxNormInferenceJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRxNormInferenceJobsOutput`](crate::output::ListRxNormInferenceJobsOutput).
     pub fn builder() -> crate::output::list_rx_norm_inference_jobs_output::Builder {
         crate::output::list_rx_norm_inference_jobs_output::Builder::default()
     }
@@ -778,11 +766,10 @@ impl std::fmt::Debug for ListPhiDetectionJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput)
+/// See [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
 pub mod list_phi_detection_jobs_output {
 
-    /// A builder for [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
@@ -826,7 +813,7 @@ pub mod list_phi_detection_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput)
+        /// Consumes the builder and constructs a [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListPhiDetectionJobsOutput {
             crate::output::ListPhiDetectionJobsOutput {
                 comprehend_medical_async_job_properties_list: self
@@ -837,7 +824,7 @@ pub mod list_phi_detection_jobs_output {
     }
 }
 impl ListPhiDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListPhiDetectionJobsOutput`](crate::output::ListPhiDetectionJobsOutput).
     pub fn builder() -> crate::output::list_phi_detection_jobs_output::Builder {
         crate::output::list_phi_detection_jobs_output::Builder::default()
     }
@@ -876,11 +863,10 @@ impl std::fmt::Debug for ListIcd10CmInferenceJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput)
+/// See [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
 pub mod list_icd10_cm_inference_jobs_output {
 
-    /// A builder for [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
@@ -924,7 +910,7 @@ pub mod list_icd10_cm_inference_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput)
+        /// Consumes the builder and constructs a [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
         pub fn build(self) -> crate::output::ListIcd10CmInferenceJobsOutput {
             crate::output::ListIcd10CmInferenceJobsOutput {
                 comprehend_medical_async_job_properties_list: self
@@ -935,7 +921,7 @@ pub mod list_icd10_cm_inference_jobs_output {
     }
 }
 impl ListIcd10CmInferenceJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListIcd10CmInferenceJobsOutput`](crate::output::ListIcd10CmInferenceJobsOutput).
     pub fn builder() -> crate::output::list_icd10_cm_inference_jobs_output::Builder {
         crate::output::list_icd10_cm_inference_jobs_output::Builder::default()
     }
@@ -974,11 +960,10 @@ impl std::fmt::Debug for ListEntitiesDetectionV2JobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput)
+/// See [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
 pub mod list_entities_detection_v2_jobs_output {
 
-    /// A builder for [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties_list:
@@ -1022,7 +1007,7 @@ pub mod list_entities_detection_v2_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput)
+        /// Consumes the builder and constructs a [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
         pub fn build(self) -> crate::output::ListEntitiesDetectionV2JobsOutput {
             crate::output::ListEntitiesDetectionV2JobsOutput {
                 comprehend_medical_async_job_properties_list: self
@@ -1033,7 +1018,7 @@ pub mod list_entities_detection_v2_jobs_output {
     }
 }
 impl ListEntitiesDetectionV2JobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionV2JobsOutput`](crate::output::ListEntitiesDetectionV2JobsOutput).
     pub fn builder() -> crate::output::list_entities_detection_v2_jobs_output::Builder {
         crate::output::list_entities_detection_v2_jobs_output::Builder::default()
     }
@@ -1087,11 +1072,10 @@ impl std::fmt::Debug for InferSnomedctOutput {
         formatter.finish()
     }
 }
-/// See [`InferSnomedctOutput`](crate::output::InferSnomedctOutput)
+/// See [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
 pub mod infer_snomedct_output {
 
-    /// A builder for [`InferSnomedctOutput`](crate::output::InferSnomedctOutput)
-    #[non_exhaustive]
+    /// A builder for [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::SnomedctEntity>>,
@@ -1172,7 +1156,7 @@ pub mod infer_snomedct_output {
             self.characters = input;
             self
         }
-        /// Consumes the builder and constructs a [`InferSnomedctOutput`](crate::output::InferSnomedctOutput)
+        /// Consumes the builder and constructs a [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
         pub fn build(self) -> crate::output::InferSnomedctOutput {
             crate::output::InferSnomedctOutput {
                 entities: self.entities,
@@ -1185,7 +1169,7 @@ pub mod infer_snomedct_output {
     }
 }
 impl InferSnomedctOutput {
-    /// Creates a new builder-style object to manufacture [`InferSnomedctOutput`](crate::output::InferSnomedctOutput)
+    /// Creates a new builder-style object to manufacture [`InferSnomedctOutput`](crate::output::InferSnomedctOutput).
     pub fn builder() -> crate::output::infer_snomedct_output::Builder {
         crate::output::infer_snomedct_output::Builder::default()
     }
@@ -1225,11 +1209,10 @@ impl std::fmt::Debug for InferRxNormOutput {
         formatter.finish()
     }
 }
-/// See [`InferRxNormOutput`](crate::output::InferRxNormOutput)
+/// See [`InferRxNormOutput`](crate::output::InferRxNormOutput).
 pub mod infer_rx_norm_output {
 
-    /// A builder for [`InferRxNormOutput`](crate::output::InferRxNormOutput)
-    #[non_exhaustive]
+    /// A builder for [`InferRxNormOutput`](crate::output::InferRxNormOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::RxNormEntity>>,
@@ -1282,7 +1265,7 @@ pub mod infer_rx_norm_output {
             self.model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`InferRxNormOutput`](crate::output::InferRxNormOutput)
+        /// Consumes the builder and constructs a [`InferRxNormOutput`](crate::output::InferRxNormOutput).
         pub fn build(self) -> crate::output::InferRxNormOutput {
             crate::output::InferRxNormOutput {
                 entities: self.entities,
@@ -1293,7 +1276,7 @@ pub mod infer_rx_norm_output {
     }
 }
 impl InferRxNormOutput {
-    /// Creates a new builder-style object to manufacture [`InferRxNormOutput`](crate::output::InferRxNormOutput)
+    /// Creates a new builder-style object to manufacture [`InferRxNormOutput`](crate::output::InferRxNormOutput).
     pub fn builder() -> crate::output::infer_rx_norm_output::Builder {
         crate::output::infer_rx_norm_output::Builder::default()
     }
@@ -1333,11 +1316,10 @@ impl std::fmt::Debug for InferIcd10CmOutput {
         formatter.finish()
     }
 }
-/// See [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput)
+/// See [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
 pub mod infer_icd10_cm_output {
 
-    /// A builder for [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput)
-    #[non_exhaustive]
+    /// A builder for [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Icd10CmEntity>>,
@@ -1390,7 +1372,7 @@ pub mod infer_icd10_cm_output {
             self.model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput)
+        /// Consumes the builder and constructs a [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
         pub fn build(self) -> crate::output::InferIcd10CmOutput {
             crate::output::InferIcd10CmOutput {
                 entities: self.entities,
@@ -1401,7 +1383,7 @@ pub mod infer_icd10_cm_output {
     }
 }
 impl InferIcd10CmOutput {
-    /// Creates a new builder-style object to manufacture [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput)
+    /// Creates a new builder-style object to manufacture [`InferIcd10CmOutput`](crate::output::InferIcd10CmOutput).
     pub fn builder() -> crate::output::infer_icd10_cm_output::Builder {
         crate::output::infer_icd10_cm_output::Builder::default()
     }
@@ -1441,11 +1423,10 @@ impl std::fmt::Debug for DetectPhiOutput {
         formatter.finish()
     }
 }
-/// See [`DetectPhiOutput`](crate::output::DetectPhiOutput)
+/// See [`DetectPhiOutput`](crate::output::DetectPhiOutput).
 pub mod detect_phi_output {
 
-    /// A builder for [`DetectPhiOutput`](crate::output::DetectPhiOutput)
-    #[non_exhaustive]
+    /// A builder for [`DetectPhiOutput`](crate::output::DetectPhiOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -1498,7 +1479,7 @@ pub mod detect_phi_output {
             self.model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectPhiOutput`](crate::output::DetectPhiOutput)
+        /// Consumes the builder and constructs a [`DetectPhiOutput`](crate::output::DetectPhiOutput).
         pub fn build(self) -> crate::output::DetectPhiOutput {
             crate::output::DetectPhiOutput {
                 entities: self.entities,
@@ -1509,7 +1490,7 @@ pub mod detect_phi_output {
     }
 }
 impl DetectPhiOutput {
-    /// Creates a new builder-style object to manufacture [`DetectPhiOutput`](crate::output::DetectPhiOutput)
+    /// Creates a new builder-style object to manufacture [`DetectPhiOutput`](crate::output::DetectPhiOutput).
     pub fn builder() -> crate::output::detect_phi_output::Builder {
         crate::output::detect_phi_output::Builder::default()
     }
@@ -1556,11 +1537,10 @@ impl std::fmt::Debug for DetectEntitiesV2Output {
         formatter.finish()
     }
 }
-/// See [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output)
+/// See [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
 pub mod detect_entities_v2_output {
 
-    /// A builder for [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output)
-    #[non_exhaustive]
+    /// A builder for [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -1634,7 +1614,7 @@ pub mod detect_entities_v2_output {
             self.model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output)
+        /// Consumes the builder and constructs a [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
         pub fn build(self) -> crate::output::DetectEntitiesV2Output {
             crate::output::DetectEntitiesV2Output {
                 entities: self.entities,
@@ -1646,7 +1626,7 @@ pub mod detect_entities_v2_output {
     }
 }
 impl DetectEntitiesV2Output {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output)
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesV2Output`](crate::output::DetectEntitiesV2Output).
     pub fn builder() -> crate::output::detect_entities_v2_output::Builder {
         crate::output::detect_entities_v2_output::Builder::default()
     }
@@ -1693,11 +1673,10 @@ impl std::fmt::Debug for DetectEntitiesOutput {
         formatter.finish()
     }
 }
-/// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
+/// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
 pub mod detect_entities_output {
 
-    /// A builder for [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -1771,7 +1750,7 @@ pub mod detect_entities_output {
             self.model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
+        /// Consumes the builder and constructs a [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
         pub fn build(self) -> crate::output::DetectEntitiesOutput {
             crate::output::DetectEntitiesOutput {
                 entities: self.entities,
@@ -1783,7 +1762,7 @@ pub mod detect_entities_output {
     }
 }
 impl DetectEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput)
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
     pub fn builder() -> crate::output::detect_entities_output::Builder {
         crate::output::detect_entities_output::Builder::default()
     }
@@ -1815,11 +1794,10 @@ impl std::fmt::Debug for DescribeSnomedctInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput)
+/// See [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
 pub mod describe_snomedct_inference_job_output {
 
-    /// A builder for [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
@@ -1842,7 +1820,7 @@ pub mod describe_snomedct_inference_job_output {
             self.comprehend_medical_async_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput)
+        /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeSnomedctInferenceJobOutput {
             crate::output::DescribeSnomedctInferenceJobOutput {
                 comprehend_medical_async_job_properties: self
@@ -1852,7 +1830,7 @@ pub mod describe_snomedct_inference_job_output {
     }
 }
 impl DescribeSnomedctInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobOutput`](crate::output::DescribeSnomedctInferenceJobOutput).
     pub fn builder() -> crate::output::describe_snomedct_inference_job_output::Builder {
         crate::output::describe_snomedct_inference_job_output::Builder::default()
     }
@@ -1884,11 +1862,10 @@ impl std::fmt::Debug for DescribeRxNormInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput)
+/// See [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
 pub mod describe_rx_norm_inference_job_output {
 
-    /// A builder for [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
@@ -1911,7 +1888,7 @@ pub mod describe_rx_norm_inference_job_output {
             self.comprehend_medical_async_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput)
+        /// Consumes the builder and constructs a [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeRxNormInferenceJobOutput {
             crate::output::DescribeRxNormInferenceJobOutput {
                 comprehend_medical_async_job_properties: self
@@ -1921,7 +1898,7 @@ pub mod describe_rx_norm_inference_job_output {
     }
 }
 impl DescribeRxNormInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRxNormInferenceJobOutput`](crate::output::DescribeRxNormInferenceJobOutput).
     pub fn builder() -> crate::output::describe_rx_norm_inference_job_output::Builder {
         crate::output::describe_rx_norm_inference_job_output::Builder::default()
     }
@@ -1953,11 +1930,10 @@ impl std::fmt::Debug for DescribePhiDetectionJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput)
+/// See [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
 pub mod describe_phi_detection_job_output {
 
-    /// A builder for [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
@@ -1980,7 +1956,7 @@ pub mod describe_phi_detection_job_output {
             self.comprehend_medical_async_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput)
+        /// Consumes the builder and constructs a [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribePhiDetectionJobOutput {
             crate::output::DescribePhiDetectionJobOutput {
                 comprehend_medical_async_job_properties: self
@@ -1990,7 +1966,7 @@ pub mod describe_phi_detection_job_output {
     }
 }
 impl DescribePhiDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribePhiDetectionJobOutput`](crate::output::DescribePhiDetectionJobOutput).
     pub fn builder() -> crate::output::describe_phi_detection_job_output::Builder {
         crate::output::describe_phi_detection_job_output::Builder::default()
     }
@@ -2022,11 +1998,10 @@ impl std::fmt::Debug for DescribeIcd10CmInferenceJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput)
+/// See [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
 pub mod describe_icd10_cm_inference_job_output {
 
-    /// A builder for [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
@@ -2049,7 +2024,7 @@ pub mod describe_icd10_cm_inference_job_output {
             self.comprehend_medical_async_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput)
+        /// Consumes the builder and constructs a [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
         pub fn build(self) -> crate::output::DescribeIcd10CmInferenceJobOutput {
             crate::output::DescribeIcd10CmInferenceJobOutput {
                 comprehend_medical_async_job_properties: self
@@ -2059,7 +2034,7 @@ pub mod describe_icd10_cm_inference_job_output {
     }
 }
 impl DescribeIcd10CmInferenceJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeIcd10CmInferenceJobOutput`](crate::output::DescribeIcd10CmInferenceJobOutput).
     pub fn builder() -> crate::output::describe_icd10_cm_inference_job_output::Builder {
         crate::output::describe_icd10_cm_inference_job_output::Builder::default()
     }
@@ -2091,11 +2066,10 @@ impl std::fmt::Debug for DescribeEntitiesDetectionV2JobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput)
+/// See [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
 pub mod describe_entities_detection_v2_job_output {
 
-    /// A builder for [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comprehend_medical_async_job_properties:
@@ -2118,7 +2092,7 @@ pub mod describe_entities_detection_v2_job_output {
             self.comprehend_medical_async_job_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput)
+        /// Consumes the builder and constructs a [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
         pub fn build(self) -> crate::output::DescribeEntitiesDetectionV2JobOutput {
             crate::output::DescribeEntitiesDetectionV2JobOutput {
                 comprehend_medical_async_job_properties: self
@@ -2128,7 +2102,7 @@ pub mod describe_entities_detection_v2_job_output {
     }
 }
 impl DescribeEntitiesDetectionV2JobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionV2JobOutput`](crate::output::DescribeEntitiesDetectionV2JobOutput).
     pub fn builder() -> crate::output::describe_entities_detection_v2_job_output::Builder {
         crate::output::describe_entities_detection_v2_job_output::Builder::default()
     }

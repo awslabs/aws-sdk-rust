@@ -10,7 +10,7 @@ pub struct CreateScalingPlan {
     _private: (),
 }
 impl CreateScalingPlan {
-    /// Creates a new builder-style object to manufacture [`CreateScalingPlanInput`](crate::input::CreateScalingPlanInput)
+    /// Creates a new builder-style object to manufacture [`CreateScalingPlanInput`](crate::input::CreateScalingPlanInput).
     pub fn builder() -> crate::input::create_scaling_plan_input::Builder {
         crate::input::create_scaling_plan_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteScalingPlan {
     _private: (),
 }
 impl DeleteScalingPlan {
-    /// Creates a new builder-style object to manufacture [`DeleteScalingPlanInput`](crate::input::DeleteScalingPlanInput)
+    /// Creates a new builder-style object to manufacture [`DeleteScalingPlanInput`](crate::input::DeleteScalingPlanInput).
     pub fn builder() -> crate::input::delete_scaling_plan_input::Builder {
         crate::input::delete_scaling_plan_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeScalingPlanResources {
     _private: (),
 }
 impl DescribeScalingPlanResources {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesInput`](crate::input::DescribeScalingPlanResourcesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesInput`](crate::input::DescribeScalingPlanResourcesInput).
     pub fn builder() -> crate::input::describe_scaling_plan_resources_input::Builder {
         crate::input::describe_scaling_plan_resources_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeScalingPlans {
     _private: (),
 }
 impl DescribeScalingPlans {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPlansInput`](crate::input::DescribeScalingPlansInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPlansInput`](crate::input::DescribeScalingPlansInput).
     pub fn builder() -> crate::input::describe_scaling_plans_input::Builder {
         crate::input::describe_scaling_plans_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct GetScalingPlanResourceForecastData {
     _private: (),
 }
 impl GetScalingPlanResourceForecastData {
-    /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataInput`](crate::input::GetScalingPlanResourceForecastDataInput)
+    /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataInput`](crate::input::GetScalingPlanResourceForecastDataInput).
     pub fn builder() -> crate::input::get_scaling_plan_resource_forecast_data_input::Builder {
         crate::input::get_scaling_plan_resource_forecast_data_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct UpdateScalingPlan {
     _private: (),
 }
 impl UpdateScalingPlan {
-    /// Creates a new builder-style object to manufacture [`UpdateScalingPlanInput`](crate::input::UpdateScalingPlanInput)
+    /// Creates a new builder-style object to manufacture [`UpdateScalingPlanInput`](crate::input::UpdateScalingPlanInput).
     pub fn builder() -> crate::input::update_scaling_plan_input::Builder {
         crate::input::update_scaling_plan_input::Builder::default()
     }

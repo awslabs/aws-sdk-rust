@@ -35,11 +35,10 @@ impl std::fmt::Debug for VerifyMacOutput {
         formatter.finish()
     }
 }
-/// See [`VerifyMacOutput`](crate::output::VerifyMacOutput)
+/// See [`VerifyMacOutput`](crate::output::VerifyMacOutput).
 pub mod verify_mac_output {
 
-    /// A builder for [`VerifyMacOutput`](crate::output::VerifyMacOutput)
-    #[non_exhaustive]
+    /// A builder for [`VerifyMacOutput`](crate::output::VerifyMacOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -82,7 +81,7 @@ pub mod verify_mac_output {
             self.mac_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`VerifyMacOutput`](crate::output::VerifyMacOutput)
+        /// Consumes the builder and constructs a [`VerifyMacOutput`](crate::output::VerifyMacOutput).
         pub fn build(self) -> crate::output::VerifyMacOutput {
             crate::output::VerifyMacOutput {
                 key_id: self.key_id,
@@ -93,7 +92,7 @@ pub mod verify_mac_output {
     }
 }
 impl VerifyMacOutput {
-    /// Creates a new builder-style object to manufacture [`VerifyMacOutput`](crate::output::VerifyMacOutput)
+    /// Creates a new builder-style object to manufacture [`VerifyMacOutput`](crate::output::VerifyMacOutput).
     pub fn builder() -> crate::output::verify_mac_output::Builder {
         crate::output::verify_mac_output::Builder::default()
     }
@@ -133,11 +132,10 @@ impl std::fmt::Debug for VerifyOutput {
         formatter.finish()
     }
 }
-/// See [`VerifyOutput`](crate::output::VerifyOutput)
+/// See [`VerifyOutput`](crate::output::VerifyOutput).
 pub mod verify_output {
 
-    /// A builder for [`VerifyOutput`](crate::output::VerifyOutput)
-    #[non_exhaustive]
+    /// A builder for [`VerifyOutput`](crate::output::VerifyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -178,7 +176,7 @@ pub mod verify_output {
             self.signing_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`VerifyOutput`](crate::output::VerifyOutput)
+        /// Consumes the builder and constructs a [`VerifyOutput`](crate::output::VerifyOutput).
         pub fn build(self) -> crate::output::VerifyOutput {
             crate::output::VerifyOutput {
                 key_id: self.key_id,
@@ -189,7 +187,7 @@ pub mod verify_output {
     }
 }
 impl VerifyOutput {
-    /// Creates a new builder-style object to manufacture [`VerifyOutput`](crate::output::VerifyOutput)
+    /// Creates a new builder-style object to manufacture [`VerifyOutput`](crate::output::VerifyOutput).
     pub fn builder() -> crate::output::verify_output::Builder {
         crate::output::verify_output::Builder::default()
     }
@@ -205,22 +203,21 @@ impl std::fmt::Debug for UpdatePrimaryRegionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
+/// See [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput).
 pub mod update_primary_region_output {
 
-    /// A builder for [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
+        /// Consumes the builder and constructs a [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput).
         pub fn build(self) -> crate::output::UpdatePrimaryRegionOutput {
             crate::output::UpdatePrimaryRegionOutput {}
         }
     }
 }
 impl UpdatePrimaryRegionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdatePrimaryRegionOutput`](crate::output::UpdatePrimaryRegionOutput).
     pub fn builder() -> crate::output::update_primary_region_output::Builder {
         crate::output::update_primary_region_output::Builder::default()
     }
@@ -236,22 +233,21 @@ impl std::fmt::Debug for UpdateKeyDescriptionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput)
+/// See [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput).
 pub mod update_key_description_output {
 
-    /// A builder for [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput)
+        /// Consumes the builder and constructs a [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput).
         pub fn build(self) -> crate::output::UpdateKeyDescriptionOutput {
             crate::output::UpdateKeyDescriptionOutput {}
         }
     }
 }
 impl UpdateKeyDescriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateKeyDescriptionOutput`](crate::output::UpdateKeyDescriptionOutput).
     pub fn builder() -> crate::output::update_key_description_output::Builder {
         crate::output::update_key_description_output::Builder::default()
     }
@@ -267,22 +263,21 @@ impl std::fmt::Debug for UpdateCustomKeyStoreOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput)
+/// See [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput).
 pub mod update_custom_key_store_output {
 
-    /// A builder for [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput)
+        /// Consumes the builder and constructs a [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::UpdateCustomKeyStoreOutput {
             crate::output::UpdateCustomKeyStoreOutput {}
         }
     }
 }
 impl UpdateCustomKeyStoreOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateCustomKeyStoreOutput`](crate::output::UpdateCustomKeyStoreOutput).
     pub fn builder() -> crate::output::update_custom_key_store_output::Builder {
         crate::output::update_custom_key_store_output::Builder::default()
     }
@@ -298,22 +293,21 @@ impl std::fmt::Debug for UpdateAliasOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
+/// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
 pub mod update_alias_output {
 
-    /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
+        /// Consumes the builder and constructs a [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
         pub fn build(self) -> crate::output::UpdateAliasOutput {
             crate::output::UpdateAliasOutput {}
         }
     }
 }
 impl UpdateAliasOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAliasOutput`](crate::output::UpdateAliasOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
     pub fn builder() -> crate::output::update_alias_output::Builder {
         crate::output::update_alias_output::Builder::default()
     }
@@ -329,22 +323,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -360,22 +353,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -425,11 +417,10 @@ impl std::fmt::Debug for SignOutput {
         formatter.finish()
     }
 }
-/// See [`SignOutput`](crate::output::SignOutput)
+/// See [`SignOutput`](crate::output::SignOutput).
 pub mod sign_output {
 
-    /// A builder for [`SignOutput`](crate::output::SignOutput)
-    #[non_exhaustive]
+    /// A builder for [`SignOutput`](crate::output::SignOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -480,7 +471,7 @@ pub mod sign_output {
             self.signing_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`SignOutput`](crate::output::SignOutput)
+        /// Consumes the builder and constructs a [`SignOutput`](crate::output::SignOutput).
         pub fn build(self) -> crate::output::SignOutput {
             crate::output::SignOutput {
                 key_id: self.key_id,
@@ -491,7 +482,7 @@ pub mod sign_output {
     }
 }
 impl SignOutput {
-    /// Creates a new builder-style object to manufacture [`SignOutput`](crate::output::SignOutput)
+    /// Creates a new builder-style object to manufacture [`SignOutput`](crate::output::SignOutput).
     pub fn builder() -> crate::output::sign_output::Builder {
         crate::output::sign_output::Builder::default()
     }
@@ -544,11 +535,10 @@ impl std::fmt::Debug for ScheduleKeyDeletionOutput {
         formatter.finish()
     }
 }
-/// See [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput)
+/// See [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput).
 pub mod schedule_key_deletion_output {
 
-    /// A builder for [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -606,7 +596,7 @@ pub mod schedule_key_deletion_output {
             self.pending_window_in_days = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput)
+        /// Consumes the builder and constructs a [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput).
         pub fn build(self) -> crate::output::ScheduleKeyDeletionOutput {
             crate::output::ScheduleKeyDeletionOutput {
                 key_id: self.key_id,
@@ -618,7 +608,7 @@ pub mod schedule_key_deletion_output {
     }
 }
 impl ScheduleKeyDeletionOutput {
-    /// Creates a new builder-style object to manufacture [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput)
+    /// Creates a new builder-style object to manufacture [`ScheduleKeyDeletionOutput`](crate::output::ScheduleKeyDeletionOutput).
     pub fn builder() -> crate::output::schedule_key_deletion_output::Builder {
         crate::output::schedule_key_deletion_output::Builder::default()
     }
@@ -634,22 +624,21 @@ impl std::fmt::Debug for RevokeGrantOutput {
         formatter.finish()
     }
 }
-/// See [`RevokeGrantOutput`](crate::output::RevokeGrantOutput)
+/// See [`RevokeGrantOutput`](crate::output::RevokeGrantOutput).
 pub mod revoke_grant_output {
 
-    /// A builder for [`RevokeGrantOutput`](crate::output::RevokeGrantOutput)
-    #[non_exhaustive]
+    /// A builder for [`RevokeGrantOutput`](crate::output::RevokeGrantOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RevokeGrantOutput`](crate::output::RevokeGrantOutput)
+        /// Consumes the builder and constructs a [`RevokeGrantOutput`](crate::output::RevokeGrantOutput).
         pub fn build(self) -> crate::output::RevokeGrantOutput {
             crate::output::RevokeGrantOutput {}
         }
     }
 }
 impl RevokeGrantOutput {
-    /// Creates a new builder-style object to manufacture [`RevokeGrantOutput`](crate::output::RevokeGrantOutput)
+    /// Creates a new builder-style object to manufacture [`RevokeGrantOutput`](crate::output::RevokeGrantOutput).
     pub fn builder() -> crate::output::revoke_grant_output::Builder {
         crate::output::revoke_grant_output::Builder::default()
     }
@@ -665,22 +654,21 @@ impl std::fmt::Debug for RetireGrantOutput {
         formatter.finish()
     }
 }
-/// See [`RetireGrantOutput`](crate::output::RetireGrantOutput)
+/// See [`RetireGrantOutput`](crate::output::RetireGrantOutput).
 pub mod retire_grant_output {
 
-    /// A builder for [`RetireGrantOutput`](crate::output::RetireGrantOutput)
-    #[non_exhaustive]
+    /// A builder for [`RetireGrantOutput`](crate::output::RetireGrantOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RetireGrantOutput`](crate::output::RetireGrantOutput)
+        /// Consumes the builder and constructs a [`RetireGrantOutput`](crate::output::RetireGrantOutput).
         pub fn build(self) -> crate::output::RetireGrantOutput {
             crate::output::RetireGrantOutput {}
         }
     }
 }
 impl RetireGrantOutput {
-    /// Creates a new builder-style object to manufacture [`RetireGrantOutput`](crate::output::RetireGrantOutput)
+    /// Creates a new builder-style object to manufacture [`RetireGrantOutput`](crate::output::RetireGrantOutput).
     pub fn builder() -> crate::output::retire_grant_output::Builder {
         crate::output::retire_grant_output::Builder::default()
     }
@@ -720,11 +708,10 @@ impl std::fmt::Debug for ReplicateKeyOutput {
         formatter.finish()
     }
 }
-/// See [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
+/// See [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput).
 pub mod replicate_key_output {
 
-    /// A builder for [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replica_key_metadata: std::option::Option<crate::model::KeyMetadata>,
@@ -777,7 +764,7 @@ pub mod replicate_key_output {
             self.replica_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
+        /// Consumes the builder and constructs a [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput).
         pub fn build(self) -> crate::output::ReplicateKeyOutput {
             crate::output::ReplicateKeyOutput {
                 replica_key_metadata: self.replica_key_metadata,
@@ -788,7 +775,7 @@ pub mod replicate_key_output {
     }
 }
 impl ReplicateKeyOutput {
-    /// Creates a new builder-style object to manufacture [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput)
+    /// Creates a new builder-style object to manufacture [`ReplicateKeyOutput`](crate::output::ReplicateKeyOutput).
     pub fn builder() -> crate::output::replicate_key_output::Builder {
         crate::output::replicate_key_output::Builder::default()
     }
@@ -853,11 +840,10 @@ impl std::fmt::Debug for ReEncryptOutput {
         formatter.finish()
     }
 }
-/// See [`ReEncryptOutput`](crate::output::ReEncryptOutput)
+/// See [`ReEncryptOutput`](crate::output::ReEncryptOutput).
 pub mod re_encrypt_output {
 
-    /// A builder for [`ReEncryptOutput`](crate::output::ReEncryptOutput)
-    #[non_exhaustive]
+    /// A builder for [`ReEncryptOutput`](crate::output::ReEncryptOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -937,7 +923,7 @@ pub mod re_encrypt_output {
             self.destination_encryption_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReEncryptOutput`](crate::output::ReEncryptOutput)
+        /// Consumes the builder and constructs a [`ReEncryptOutput`](crate::output::ReEncryptOutput).
         pub fn build(self) -> crate::output::ReEncryptOutput {
             crate::output::ReEncryptOutput {
                 ciphertext_blob: self.ciphertext_blob,
@@ -950,7 +936,7 @@ pub mod re_encrypt_output {
     }
 }
 impl ReEncryptOutput {
-    /// Creates a new builder-style object to manufacture [`ReEncryptOutput`](crate::output::ReEncryptOutput)
+    /// Creates a new builder-style object to manufacture [`ReEncryptOutput`](crate::output::ReEncryptOutput).
     pub fn builder() -> crate::output::re_encrypt_output::Builder {
         crate::output::re_encrypt_output::Builder::default()
     }
@@ -966,22 +952,21 @@ impl std::fmt::Debug for PutKeyPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput)
+/// See [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput).
 pub mod put_key_policy_output {
 
-    /// A builder for [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput)
+        /// Consumes the builder and constructs a [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput).
         pub fn build(self) -> crate::output::PutKeyPolicyOutput {
             crate::output::PutKeyPolicyOutput {}
         }
     }
 }
 impl PutKeyPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutKeyPolicyOutput`](crate::output::PutKeyPolicyOutput).
     pub fn builder() -> crate::output::put_key_policy_output::Builder {
         crate::output::put_key_policy_output::Builder::default()
     }
@@ -1021,11 +1006,10 @@ impl std::fmt::Debug for ListRetirableGrantsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput)
+/// See [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput).
 pub mod list_retirable_grants_output {
 
-    /// A builder for [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
@@ -1072,7 +1056,7 @@ pub mod list_retirable_grants_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput)
+        /// Consumes the builder and constructs a [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput).
         pub fn build(self) -> crate::output::ListRetirableGrantsOutput {
             crate::output::ListRetirableGrantsOutput {
                 grants: self.grants,
@@ -1083,7 +1067,7 @@ pub mod list_retirable_grants_output {
     }
 }
 impl ListRetirableGrantsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRetirableGrantsOutput`](crate::output::ListRetirableGrantsOutput).
     pub fn builder() -> crate::output::list_retirable_grants_output::Builder {
         crate::output::list_retirable_grants_output::Builder::default()
     }
@@ -1129,11 +1113,10 @@ impl std::fmt::Debug for ListResourceTagsOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput)
+/// See [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput).
 pub mod list_resource_tags_output {
 
-    /// A builder for [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1186,7 +1169,7 @@ pub mod list_resource_tags_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput)
+        /// Consumes the builder and constructs a [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput).
         pub fn build(self) -> crate::output::ListResourceTagsOutput {
             crate::output::ListResourceTagsOutput {
                 tags: self.tags,
@@ -1197,7 +1180,7 @@ pub mod list_resource_tags_output {
     }
 }
 impl ListResourceTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourceTagsOutput`](crate::output::ListResourceTagsOutput).
     pub fn builder() -> crate::output::list_resource_tags_output::Builder {
         crate::output::list_resource_tags_output::Builder::default()
     }
@@ -1237,11 +1220,10 @@ impl std::fmt::Debug for ListKeysOutput {
         formatter.finish()
     }
 }
-/// See [`ListKeysOutput`](crate::output::ListKeysOutput)
+/// See [`ListKeysOutput`](crate::output::ListKeysOutput).
 pub mod list_keys_output {
 
-    /// A builder for [`ListKeysOutput`](crate::output::ListKeysOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListKeysOutput`](crate::output::ListKeysOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) keys: std::option::Option<std::vec::Vec<crate::model::KeyListEntry>>,
@@ -1288,7 +1270,7 @@ pub mod list_keys_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListKeysOutput`](crate::output::ListKeysOutput)
+        /// Consumes the builder and constructs a [`ListKeysOutput`](crate::output::ListKeysOutput).
         pub fn build(self) -> crate::output::ListKeysOutput {
             crate::output::ListKeysOutput {
                 keys: self.keys,
@@ -1299,7 +1281,7 @@ pub mod list_keys_output {
     }
 }
 impl ListKeysOutput {
-    /// Creates a new builder-style object to manufacture [`ListKeysOutput`](crate::output::ListKeysOutput)
+    /// Creates a new builder-style object to manufacture [`ListKeysOutput`](crate::output::ListKeysOutput).
     pub fn builder() -> crate::output::list_keys_output::Builder {
         crate::output::list_keys_output::Builder::default()
     }
@@ -1339,11 +1321,10 @@ impl std::fmt::Debug for ListKeyPoliciesOutput {
         formatter.finish()
     }
 }
-/// See [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput)
+/// See [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput).
 pub mod list_key_policies_output {
 
-    /// A builder for [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1390,7 +1371,7 @@ pub mod list_key_policies_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput)
+        /// Consumes the builder and constructs a [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput).
         pub fn build(self) -> crate::output::ListKeyPoliciesOutput {
             crate::output::ListKeyPoliciesOutput {
                 policy_names: self.policy_names,
@@ -1401,7 +1382,7 @@ pub mod list_key_policies_output {
     }
 }
 impl ListKeyPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput)
+    /// Creates a new builder-style object to manufacture [`ListKeyPoliciesOutput`](crate::output::ListKeyPoliciesOutput).
     pub fn builder() -> crate::output::list_key_policies_output::Builder {
         crate::output::list_key_policies_output::Builder::default()
     }
@@ -1441,11 +1422,10 @@ impl std::fmt::Debug for ListGrantsOutput {
         formatter.finish()
     }
 }
-/// See [`ListGrantsOutput`](crate::output::ListGrantsOutput)
+/// See [`ListGrantsOutput`](crate::output::ListGrantsOutput).
 pub mod list_grants_output {
 
-    /// A builder for [`ListGrantsOutput`](crate::output::ListGrantsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListGrantsOutput`](crate::output::ListGrantsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::GrantListEntry>>,
@@ -1492,7 +1472,7 @@ pub mod list_grants_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListGrantsOutput`](crate::output::ListGrantsOutput)
+        /// Consumes the builder and constructs a [`ListGrantsOutput`](crate::output::ListGrantsOutput).
         pub fn build(self) -> crate::output::ListGrantsOutput {
             crate::output::ListGrantsOutput {
                 grants: self.grants,
@@ -1503,7 +1483,7 @@ pub mod list_grants_output {
     }
 }
 impl ListGrantsOutput {
-    /// Creates a new builder-style object to manufacture [`ListGrantsOutput`](crate::output::ListGrantsOutput)
+    /// Creates a new builder-style object to manufacture [`ListGrantsOutput`](crate::output::ListGrantsOutput).
     pub fn builder() -> crate::output::list_grants_output::Builder {
         crate::output::list_grants_output::Builder::default()
     }
@@ -1543,11 +1523,10 @@ impl std::fmt::Debug for ListAliasesOutput {
         formatter.finish()
     }
 }
-/// See [`ListAliasesOutput`](crate::output::ListAliasesOutput)
+/// See [`ListAliasesOutput`](crate::output::ListAliasesOutput).
 pub mod list_aliases_output {
 
-    /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::AliasListEntry>>,
@@ -1594,7 +1573,7 @@ pub mod list_aliases_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::output::ListAliasesOutput)
+        /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::output::ListAliasesOutput).
         pub fn build(self) -> crate::output::ListAliasesOutput {
             crate::output::ListAliasesOutput {
                 aliases: self.aliases,
@@ -1605,7 +1584,7 @@ pub mod list_aliases_output {
     }
 }
 impl ListAliasesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAliasesOutput`](crate::output::ListAliasesOutput)
+    /// Creates a new builder-style object to manufacture [`ListAliasesOutput`](crate::output::ListAliasesOutput).
     pub fn builder() -> crate::output::list_aliases_output::Builder {
         crate::output::list_aliases_output::Builder::default()
     }
@@ -1621,22 +1600,21 @@ impl std::fmt::Debug for ImportKeyMaterialOutput {
         formatter.finish()
     }
 }
-/// See [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput)
+/// See [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput).
 pub mod import_key_material_output {
 
-    /// A builder for [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput)
-    #[non_exhaustive]
+    /// A builder for [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput)
+        /// Consumes the builder and constructs a [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput).
         pub fn build(self) -> crate::output::ImportKeyMaterialOutput {
             crate::output::ImportKeyMaterialOutput {}
         }
     }
 }
 impl ImportKeyMaterialOutput {
-    /// Creates a new builder-style object to manufacture [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput)
+    /// Creates a new builder-style object to manufacture [`ImportKeyMaterialOutput`](crate::output::ImportKeyMaterialOutput).
     pub fn builder() -> crate::output::import_key_material_output::Builder {
         crate::output::import_key_material_output::Builder::default()
     }
@@ -1723,11 +1701,10 @@ impl std::fmt::Debug for GetPublicKeyOutput {
         formatter.finish()
     }
 }
-/// See [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput)
+/// See [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
 pub mod get_public_key_output {
 
-    /// A builder for [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -1859,7 +1836,7 @@ pub mod get_public_key_output {
             self.signing_algorithms = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput)
+        /// Consumes the builder and constructs a [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
         pub fn build(self) -> crate::output::GetPublicKeyOutput {
             crate::output::GetPublicKeyOutput {
                 key_id: self.key_id,
@@ -1874,7 +1851,7 @@ pub mod get_public_key_output {
     }
 }
 impl GetPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput)
+    /// Creates a new builder-style object to manufacture [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput).
     pub fn builder() -> crate::output::get_public_key_output::Builder {
         crate::output::get_public_key_output::Builder::default()
     }
@@ -1921,11 +1898,10 @@ impl std::fmt::Debug for GetParametersForImportOutput {
         formatter.finish()
     }
 }
-/// See [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput)
+/// See [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput).
 pub mod get_parameters_for_import_output {
 
-    /// A builder for [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -1983,7 +1959,7 @@ pub mod get_parameters_for_import_output {
             self.parameters_valid_to = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput)
+        /// Consumes the builder and constructs a [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput).
         pub fn build(self) -> crate::output::GetParametersForImportOutput {
             crate::output::GetParametersForImportOutput {
                 key_id: self.key_id,
@@ -1995,7 +1971,7 @@ pub mod get_parameters_for_import_output {
     }
 }
 impl GetParametersForImportOutput {
-    /// Creates a new builder-style object to manufacture [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput)
+    /// Creates a new builder-style object to manufacture [`GetParametersForImportOutput`](crate::output::GetParametersForImportOutput).
     pub fn builder() -> crate::output::get_parameters_for_import_output::Builder {
         crate::output::get_parameters_for_import_output::Builder::default()
     }
@@ -2021,11 +1997,10 @@ impl std::fmt::Debug for GetKeyRotationStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput)
+/// See [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput).
 pub mod get_key_rotation_status_output {
 
-    /// A builder for [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_rotation_enabled: std::option::Option<bool>,
@@ -2041,7 +2016,7 @@ pub mod get_key_rotation_status_output {
             self.key_rotation_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput)
+        /// Consumes the builder and constructs a [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput).
         pub fn build(self) -> crate::output::GetKeyRotationStatusOutput {
             crate::output::GetKeyRotationStatusOutput {
                 key_rotation_enabled: self.key_rotation_enabled.unwrap_or_default(),
@@ -2050,7 +2025,7 @@ pub mod get_key_rotation_status_output {
     }
 }
 impl GetKeyRotationStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetKeyRotationStatusOutput`](crate::output::GetKeyRotationStatusOutput).
     pub fn builder() -> crate::output::get_key_rotation_status_output::Builder {
         crate::output::get_key_rotation_status_output::Builder::default()
     }
@@ -2076,11 +2051,10 @@ impl std::fmt::Debug for GetKeyPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput)
+/// See [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput).
 pub mod get_key_policy_output {
 
-    /// A builder for [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -2096,7 +2070,7 @@ pub mod get_key_policy_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput)
+        /// Consumes the builder and constructs a [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput).
         pub fn build(self) -> crate::output::GetKeyPolicyOutput {
             crate::output::GetKeyPolicyOutput {
                 policy: self.policy,
@@ -2105,7 +2079,7 @@ pub mod get_key_policy_output {
     }
 }
 impl GetKeyPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetKeyPolicyOutput`](crate::output::GetKeyPolicyOutput).
     pub fn builder() -> crate::output::get_key_policy_output::Builder {
         crate::output::get_key_policy_output::Builder::default()
     }
@@ -2131,11 +2105,10 @@ impl std::fmt::Debug for GenerateRandomOutput {
         formatter.finish()
     }
 }
-/// See [`GenerateRandomOutput`](crate::output::GenerateRandomOutput)
+/// See [`GenerateRandomOutput`](crate::output::GenerateRandomOutput).
 pub mod generate_random_output {
 
-    /// A builder for [`GenerateRandomOutput`](crate::output::GenerateRandomOutput)
-    #[non_exhaustive]
+    /// A builder for [`GenerateRandomOutput`](crate::output::GenerateRandomOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) plaintext: std::option::Option<aws_smithy_types::Blob>,
@@ -2151,7 +2124,7 @@ pub mod generate_random_output {
             self.plaintext = input;
             self
         }
-        /// Consumes the builder and constructs a [`GenerateRandomOutput`](crate::output::GenerateRandomOutput)
+        /// Consumes the builder and constructs a [`GenerateRandomOutput`](crate::output::GenerateRandomOutput).
         pub fn build(self) -> crate::output::GenerateRandomOutput {
             crate::output::GenerateRandomOutput {
                 plaintext: self.plaintext,
@@ -2160,7 +2133,7 @@ pub mod generate_random_output {
     }
 }
 impl GenerateRandomOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateRandomOutput`](crate::output::GenerateRandomOutput)
+    /// Creates a new builder-style object to manufacture [`GenerateRandomOutput`](crate::output::GenerateRandomOutput).
     pub fn builder() -> crate::output::generate_random_output::Builder {
         crate::output::generate_random_output::Builder::default()
     }
@@ -2200,11 +2173,10 @@ impl std::fmt::Debug for GenerateMacOutput {
         formatter.finish()
     }
 }
-/// See [`GenerateMacOutput`](crate::output::GenerateMacOutput)
+/// See [`GenerateMacOutput`](crate::output::GenerateMacOutput).
 pub mod generate_mac_output {
 
-    /// A builder for [`GenerateMacOutput`](crate::output::GenerateMacOutput)
-    #[non_exhaustive]
+    /// A builder for [`GenerateMacOutput`](crate::output::GenerateMacOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mac: std::option::Option<aws_smithy_types::Blob>,
@@ -2245,7 +2217,7 @@ pub mod generate_mac_output {
             self.key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`GenerateMacOutput`](crate::output::GenerateMacOutput)
+        /// Consumes the builder and constructs a [`GenerateMacOutput`](crate::output::GenerateMacOutput).
         pub fn build(self) -> crate::output::GenerateMacOutput {
             crate::output::GenerateMacOutput {
                 mac: self.mac,
@@ -2256,7 +2228,7 @@ pub mod generate_mac_output {
     }
 }
 impl GenerateMacOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateMacOutput`](crate::output::GenerateMacOutput)
+    /// Creates a new builder-style object to manufacture [`GenerateMacOutput`](crate::output::GenerateMacOutput).
     pub fn builder() -> crate::output::generate_mac_output::Builder {
         crate::output::generate_mac_output::Builder::default()
     }
@@ -2289,11 +2261,10 @@ impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextOutput {
         formatter.finish()
     }
 }
-/// See [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput)
+/// See [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput).
 pub mod generate_data_key_without_plaintext_output {
 
-    /// A builder for [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput)
-    #[non_exhaustive]
+    /// A builder for [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2323,7 +2294,7 @@ pub mod generate_data_key_without_plaintext_output {
             self.key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput)
+        /// Consumes the builder and constructs a [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyWithoutPlaintextOutput {
             crate::output::GenerateDataKeyWithoutPlaintextOutput {
                 ciphertext_blob: self.ciphertext_blob,
@@ -2333,7 +2304,7 @@ pub mod generate_data_key_without_plaintext_output {
     }
 }
 impl GenerateDataKeyWithoutPlaintextOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput)
+    /// Creates a new builder-style object to manufacture [`GenerateDataKeyWithoutPlaintextOutput`](crate::output::GenerateDataKeyWithoutPlaintextOutput).
     pub fn builder() -> crate::output::generate_data_key_without_plaintext_output::Builder {
         crate::output::generate_data_key_without_plaintext_output::Builder::default()
     }
@@ -2383,11 +2354,10 @@ impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextOutput {
         formatter.finish()
     }
 }
-/// See [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput)
+/// See [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput).
 pub mod generate_data_key_pair_without_plaintext_output {
 
-    /// A builder for [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput)
-    #[non_exhaustive]
+    /// A builder for [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) private_key_ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2445,7 +2415,7 @@ pub mod generate_data_key_pair_without_plaintext_output {
             self.key_pair_spec = input;
             self
         }
-        /// Consumes the builder and constructs a [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput)
+        /// Consumes the builder and constructs a [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyPairWithoutPlaintextOutput {
             crate::output::GenerateDataKeyPairWithoutPlaintextOutput {
                 private_key_ciphertext_blob: self.private_key_ciphertext_blob,
@@ -2457,7 +2427,7 @@ pub mod generate_data_key_pair_without_plaintext_output {
     }
 }
 impl GenerateDataKeyPairWithoutPlaintextOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput)
+    /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairWithoutPlaintextOutput`](crate::output::GenerateDataKeyPairWithoutPlaintextOutput).
     pub fn builder() -> crate::output::generate_data_key_pair_without_plaintext_output::Builder {
         crate::output::generate_data_key_pair_without_plaintext_output::Builder::default()
     }
@@ -2514,11 +2484,10 @@ impl std::fmt::Debug for GenerateDataKeyPairOutput {
         formatter.finish()
     }
 }
-/// See [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput)
+/// See [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput).
 pub mod generate_data_key_pair_output {
 
-    /// A builder for [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput)
-    #[non_exhaustive]
+    /// A builder for [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) private_key_ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2590,7 +2559,7 @@ pub mod generate_data_key_pair_output {
             self.key_pair_spec = input;
             self
         }
-        /// Consumes the builder and constructs a [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput)
+        /// Consumes the builder and constructs a [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyPairOutput {
             crate::output::GenerateDataKeyPairOutput {
                 private_key_ciphertext_blob: self.private_key_ciphertext_blob,
@@ -2603,7 +2572,7 @@ pub mod generate_data_key_pair_output {
     }
 }
 impl GenerateDataKeyPairOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput)
+    /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairOutput`](crate::output::GenerateDataKeyPairOutput).
     pub fn builder() -> crate::output::generate_data_key_pair_output::Builder {
         crate::output::generate_data_key_pair_output::Builder::default()
     }
@@ -2643,11 +2612,10 @@ impl std::fmt::Debug for GenerateDataKeyOutput {
         formatter.finish()
     }
 }
-/// See [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput)
+/// See [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput).
 pub mod generate_data_key_output {
 
-    /// A builder for [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2688,7 +2656,7 @@ pub mod generate_data_key_output {
             self.key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput)
+        /// Consumes the builder and constructs a [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput).
         pub fn build(self) -> crate::output::GenerateDataKeyOutput {
             crate::output::GenerateDataKeyOutput {
                 ciphertext_blob: self.ciphertext_blob,
@@ -2699,7 +2667,7 @@ pub mod generate_data_key_output {
     }
 }
 impl GenerateDataKeyOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput)
+    /// Creates a new builder-style object to manufacture [`GenerateDataKeyOutput`](crate::output::GenerateDataKeyOutput).
     pub fn builder() -> crate::output::generate_data_key_output::Builder {
         crate::output::generate_data_key_output::Builder::default()
     }
@@ -2741,11 +2709,10 @@ impl std::fmt::Debug for EncryptOutput {
         formatter.finish()
     }
 }
-/// See [`EncryptOutput`](crate::output::EncryptOutput)
+/// See [`EncryptOutput`](crate::output::EncryptOutput).
 pub mod encrypt_output {
 
-    /// A builder for [`EncryptOutput`](crate::output::EncryptOutput)
-    #[non_exhaustive]
+    /// A builder for [`EncryptOutput`](crate::output::EncryptOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -2792,7 +2759,7 @@ pub mod encrypt_output {
             self.encryption_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`EncryptOutput`](crate::output::EncryptOutput)
+        /// Consumes the builder and constructs a [`EncryptOutput`](crate::output::EncryptOutput).
         pub fn build(self) -> crate::output::EncryptOutput {
             crate::output::EncryptOutput {
                 ciphertext_blob: self.ciphertext_blob,
@@ -2803,7 +2770,7 @@ pub mod encrypt_output {
     }
 }
 impl EncryptOutput {
-    /// Creates a new builder-style object to manufacture [`EncryptOutput`](crate::output::EncryptOutput)
+    /// Creates a new builder-style object to manufacture [`EncryptOutput`](crate::output::EncryptOutput).
     pub fn builder() -> crate::output::encrypt_output::Builder {
         crate::output::encrypt_output::Builder::default()
     }
@@ -2819,22 +2786,21 @@ impl std::fmt::Debug for EnableKeyRotationOutput {
         formatter.finish()
     }
 }
-/// See [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput)
+/// See [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput).
 pub mod enable_key_rotation_output {
 
-    /// A builder for [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput)
+        /// Consumes the builder and constructs a [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput).
         pub fn build(self) -> crate::output::EnableKeyRotationOutput {
             crate::output::EnableKeyRotationOutput {}
         }
     }
 }
 impl EnableKeyRotationOutput {
-    /// Creates a new builder-style object to manufacture [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput)
+    /// Creates a new builder-style object to manufacture [`EnableKeyRotationOutput`](crate::output::EnableKeyRotationOutput).
     pub fn builder() -> crate::output::enable_key_rotation_output::Builder {
         crate::output::enable_key_rotation_output::Builder::default()
     }
@@ -2850,22 +2816,21 @@ impl std::fmt::Debug for EnableKeyOutput {
         formatter.finish()
     }
 }
-/// See [`EnableKeyOutput`](crate::output::EnableKeyOutput)
+/// See [`EnableKeyOutput`](crate::output::EnableKeyOutput).
 pub mod enable_key_output {
 
-    /// A builder for [`EnableKeyOutput`](crate::output::EnableKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableKeyOutput`](crate::output::EnableKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableKeyOutput`](crate::output::EnableKeyOutput)
+        /// Consumes the builder and constructs a [`EnableKeyOutput`](crate::output::EnableKeyOutput).
         pub fn build(self) -> crate::output::EnableKeyOutput {
             crate::output::EnableKeyOutput {}
         }
     }
 }
 impl EnableKeyOutput {
-    /// Creates a new builder-style object to manufacture [`EnableKeyOutput`](crate::output::EnableKeyOutput)
+    /// Creates a new builder-style object to manufacture [`EnableKeyOutput`](crate::output::EnableKeyOutput).
     pub fn builder() -> crate::output::enable_key_output::Builder {
         crate::output::enable_key_output::Builder::default()
     }
@@ -2881,22 +2846,21 @@ impl std::fmt::Debug for DisconnectCustomKeyStoreOutput {
         formatter.finish()
     }
 }
-/// See [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput)
+/// See [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput).
 pub mod disconnect_custom_key_store_output {
 
-    /// A builder for [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput)
+        /// Consumes the builder and constructs a [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::DisconnectCustomKeyStoreOutput {
             crate::output::DisconnectCustomKeyStoreOutput {}
         }
     }
 }
 impl DisconnectCustomKeyStoreOutput {
-    /// Creates a new builder-style object to manufacture [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput)
+    /// Creates a new builder-style object to manufacture [`DisconnectCustomKeyStoreOutput`](crate::output::DisconnectCustomKeyStoreOutput).
     pub fn builder() -> crate::output::disconnect_custom_key_store_output::Builder {
         crate::output::disconnect_custom_key_store_output::Builder::default()
     }
@@ -2912,22 +2876,21 @@ impl std::fmt::Debug for DisableKeyRotationOutput {
         formatter.finish()
     }
 }
-/// See [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput)
+/// See [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput).
 pub mod disable_key_rotation_output {
 
-    /// A builder for [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput)
+        /// Consumes the builder and constructs a [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput).
         pub fn build(self) -> crate::output::DisableKeyRotationOutput {
             crate::output::DisableKeyRotationOutput {}
         }
     }
 }
 impl DisableKeyRotationOutput {
-    /// Creates a new builder-style object to manufacture [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput)
+    /// Creates a new builder-style object to manufacture [`DisableKeyRotationOutput`](crate::output::DisableKeyRotationOutput).
     pub fn builder() -> crate::output::disable_key_rotation_output::Builder {
         crate::output::disable_key_rotation_output::Builder::default()
     }
@@ -2943,22 +2906,21 @@ impl std::fmt::Debug for DisableKeyOutput {
         formatter.finish()
     }
 }
-/// See [`DisableKeyOutput`](crate::output::DisableKeyOutput)
+/// See [`DisableKeyOutput`](crate::output::DisableKeyOutput).
 pub mod disable_key_output {
 
-    /// A builder for [`DisableKeyOutput`](crate::output::DisableKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableKeyOutput`](crate::output::DisableKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisableKeyOutput`](crate::output::DisableKeyOutput)
+        /// Consumes the builder and constructs a [`DisableKeyOutput`](crate::output::DisableKeyOutput).
         pub fn build(self) -> crate::output::DisableKeyOutput {
             crate::output::DisableKeyOutput {}
         }
     }
 }
 impl DisableKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DisableKeyOutput`](crate::output::DisableKeyOutput)
+    /// Creates a new builder-style object to manufacture [`DisableKeyOutput`](crate::output::DisableKeyOutput).
     pub fn builder() -> crate::output::disable_key_output::Builder {
         crate::output::disable_key_output::Builder::default()
     }
@@ -2984,11 +2946,10 @@ impl std::fmt::Debug for DescribeKeyOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeKeyOutput`](crate::output::DescribeKeyOutput)
+/// See [`DescribeKeyOutput`](crate::output::DescribeKeyOutput).
 pub mod describe_key_output {
 
-    /// A builder for [`DescribeKeyOutput`](crate::output::DescribeKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeKeyOutput`](crate::output::DescribeKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
@@ -3007,7 +2968,7 @@ pub mod describe_key_output {
             self.key_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeKeyOutput`](crate::output::DescribeKeyOutput)
+        /// Consumes the builder and constructs a [`DescribeKeyOutput`](crate::output::DescribeKeyOutput).
         pub fn build(self) -> crate::output::DescribeKeyOutput {
             crate::output::DescribeKeyOutput {
                 key_metadata: self.key_metadata,
@@ -3016,7 +2977,7 @@ pub mod describe_key_output {
     }
 }
 impl DescribeKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeKeyOutput`](crate::output::DescribeKeyOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeKeyOutput`](crate::output::DescribeKeyOutput).
     pub fn builder() -> crate::output::describe_key_output::Builder {
         crate::output::describe_key_output::Builder::default()
     }
@@ -3059,11 +3020,10 @@ impl std::fmt::Debug for DescribeCustomKeyStoresOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput)
+/// See [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput).
 pub mod describe_custom_key_stores_output {
 
-    /// A builder for [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_stores:
@@ -3111,7 +3071,7 @@ pub mod describe_custom_key_stores_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput)
+        /// Consumes the builder and constructs a [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput).
         pub fn build(self) -> crate::output::DescribeCustomKeyStoresOutput {
             crate::output::DescribeCustomKeyStoresOutput {
                 custom_key_stores: self.custom_key_stores,
@@ -3122,7 +3082,7 @@ pub mod describe_custom_key_stores_output {
     }
 }
 impl DescribeCustomKeyStoresOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomKeyStoresOutput`](crate::output::DescribeCustomKeyStoresOutput).
     pub fn builder() -> crate::output::describe_custom_key_stores_output::Builder {
         crate::output::describe_custom_key_stores_output::Builder::default()
     }
@@ -3138,22 +3098,21 @@ impl std::fmt::Debug for DeleteImportedKeyMaterialOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput)
+/// See [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput).
 pub mod delete_imported_key_material_output {
 
-    /// A builder for [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput)
+        /// Consumes the builder and constructs a [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput).
         pub fn build(self) -> crate::output::DeleteImportedKeyMaterialOutput {
             crate::output::DeleteImportedKeyMaterialOutput {}
         }
     }
 }
 impl DeleteImportedKeyMaterialOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteImportedKeyMaterialOutput`](crate::output::DeleteImportedKeyMaterialOutput).
     pub fn builder() -> crate::output::delete_imported_key_material_output::Builder {
         crate::output::delete_imported_key_material_output::Builder::default()
     }
@@ -3169,22 +3128,21 @@ impl std::fmt::Debug for DeleteCustomKeyStoreOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput)
+/// See [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput).
 pub mod delete_custom_key_store_output {
 
-    /// A builder for [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput)
+        /// Consumes the builder and constructs a [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::DeleteCustomKeyStoreOutput {
             crate::output::DeleteCustomKeyStoreOutput {}
         }
     }
 }
 impl DeleteCustomKeyStoreOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomKeyStoreOutput`](crate::output::DeleteCustomKeyStoreOutput).
     pub fn builder() -> crate::output::delete_custom_key_store_output::Builder {
         crate::output::delete_custom_key_store_output::Builder::default()
     }
@@ -3200,22 +3158,21 @@ impl std::fmt::Debug for DeleteAliasOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
+/// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
 pub mod delete_alias_output {
 
-    /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
+        /// Consumes the builder and constructs a [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
         pub fn build(self) -> crate::output::DeleteAliasOutput {
             crate::output::DeleteAliasOutput {}
         }
     }
 }
 impl DeleteAliasOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
     pub fn builder() -> crate::output::delete_alias_output::Builder {
         crate::output::delete_alias_output::Builder::default()
     }
@@ -3257,11 +3214,10 @@ impl std::fmt::Debug for DecryptOutput {
         formatter.finish()
     }
 }
-/// See [`DecryptOutput`](crate::output::DecryptOutput)
+/// See [`DecryptOutput`](crate::output::DecryptOutput).
 pub mod decrypt_output {
 
-    /// A builder for [`DecryptOutput`](crate::output::DecryptOutput)
-    #[non_exhaustive]
+    /// A builder for [`DecryptOutput`](crate::output::DecryptOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -3305,7 +3261,7 @@ pub mod decrypt_output {
             self.encryption_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`DecryptOutput`](crate::output::DecryptOutput)
+        /// Consumes the builder and constructs a [`DecryptOutput`](crate::output::DecryptOutput).
         pub fn build(self) -> crate::output::DecryptOutput {
             crate::output::DecryptOutput {
                 key_id: self.key_id,
@@ -3316,7 +3272,7 @@ pub mod decrypt_output {
     }
 }
 impl DecryptOutput {
-    /// Creates a new builder-style object to manufacture [`DecryptOutput`](crate::output::DecryptOutput)
+    /// Creates a new builder-style object to manufacture [`DecryptOutput`](crate::output::DecryptOutput).
     pub fn builder() -> crate::output::decrypt_output::Builder {
         crate::output::decrypt_output::Builder::default()
     }
@@ -3342,11 +3298,10 @@ impl std::fmt::Debug for CreateKeyOutput {
         formatter.finish()
     }
 }
-/// See [`CreateKeyOutput`](crate::output::CreateKeyOutput)
+/// See [`CreateKeyOutput`](crate::output::CreateKeyOutput).
 pub mod create_key_output {
 
-    /// A builder for [`CreateKeyOutput`](crate::output::CreateKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateKeyOutput`](crate::output::CreateKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_metadata: std::option::Option<crate::model::KeyMetadata>,
@@ -3365,7 +3320,7 @@ pub mod create_key_output {
             self.key_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateKeyOutput`](crate::output::CreateKeyOutput)
+        /// Consumes the builder and constructs a [`CreateKeyOutput`](crate::output::CreateKeyOutput).
         pub fn build(self) -> crate::output::CreateKeyOutput {
             crate::output::CreateKeyOutput {
                 key_metadata: self.key_metadata,
@@ -3374,7 +3329,7 @@ pub mod create_key_output {
     }
 }
 impl CreateKeyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateKeyOutput`](crate::output::CreateKeyOutput)
+    /// Creates a new builder-style object to manufacture [`CreateKeyOutput`](crate::output::CreateKeyOutput).
     pub fn builder() -> crate::output::create_key_output::Builder {
         crate::output::create_key_output::Builder::default()
     }
@@ -3411,11 +3366,10 @@ impl std::fmt::Debug for CreateGrantOutput {
         formatter.finish()
     }
 }
-/// See [`CreateGrantOutput`](crate::output::CreateGrantOutput)
+/// See [`CreateGrantOutput`](crate::output::CreateGrantOutput).
 pub mod create_grant_output {
 
-    /// A builder for [`CreateGrantOutput`](crate::output::CreateGrantOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateGrantOutput`](crate::output::CreateGrantOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) grant_token: std::option::Option<std::string::String>,
@@ -3446,7 +3400,7 @@ pub mod create_grant_output {
             self.grant_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateGrantOutput`](crate::output::CreateGrantOutput)
+        /// Consumes the builder and constructs a [`CreateGrantOutput`](crate::output::CreateGrantOutput).
         pub fn build(self) -> crate::output::CreateGrantOutput {
             crate::output::CreateGrantOutput {
                 grant_token: self.grant_token,
@@ -3456,7 +3410,7 @@ pub mod create_grant_output {
     }
 }
 impl CreateGrantOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGrantOutput`](crate::output::CreateGrantOutput)
+    /// Creates a new builder-style object to manufacture [`CreateGrantOutput`](crate::output::CreateGrantOutput).
     pub fn builder() -> crate::output::create_grant_output::Builder {
         crate::output::create_grant_output::Builder::default()
     }
@@ -3482,11 +3436,10 @@ impl std::fmt::Debug for CreateCustomKeyStoreOutput {
         formatter.finish()
     }
 }
-/// See [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput)
+/// See [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput).
 pub mod create_custom_key_store_output {
 
-    /// A builder for [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
@@ -3505,7 +3458,7 @@ pub mod create_custom_key_store_output {
             self.custom_key_store_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput)
+        /// Consumes the builder and constructs a [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::CreateCustomKeyStoreOutput {
             crate::output::CreateCustomKeyStoreOutput {
                 custom_key_store_id: self.custom_key_store_id,
@@ -3514,7 +3467,7 @@ pub mod create_custom_key_store_output {
     }
 }
 impl CreateCustomKeyStoreOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomKeyStoreOutput`](crate::output::CreateCustomKeyStoreOutput).
     pub fn builder() -> crate::output::create_custom_key_store_output::Builder {
         crate::output::create_custom_key_store_output::Builder::default()
     }
@@ -3530,22 +3483,21 @@ impl std::fmt::Debug for CreateAliasOutput {
         formatter.finish()
     }
 }
-/// See [`CreateAliasOutput`](crate::output::CreateAliasOutput)
+/// See [`CreateAliasOutput`](crate::output::CreateAliasOutput).
 pub mod create_alias_output {
 
-    /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateAliasOutput`](crate::output::CreateAliasOutput)
+        /// Consumes the builder and constructs a [`CreateAliasOutput`](crate::output::CreateAliasOutput).
         pub fn build(self) -> crate::output::CreateAliasOutput {
             crate::output::CreateAliasOutput {}
         }
     }
 }
 impl CreateAliasOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAliasOutput`](crate::output::CreateAliasOutput)
+    /// Creates a new builder-style object to manufacture [`CreateAliasOutput`](crate::output::CreateAliasOutput).
     pub fn builder() -> crate::output::create_alias_output::Builder {
         crate::output::create_alias_output::Builder::default()
     }
@@ -3561,22 +3513,21 @@ impl std::fmt::Debug for ConnectCustomKeyStoreOutput {
         formatter.finish()
     }
 }
-/// See [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput)
+/// See [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput).
 pub mod connect_custom_key_store_output {
 
-    /// A builder for [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput)
+        /// Consumes the builder and constructs a [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput).
         pub fn build(self) -> crate::output::ConnectCustomKeyStoreOutput {
             crate::output::ConnectCustomKeyStoreOutput {}
         }
     }
 }
 impl ConnectCustomKeyStoreOutput {
-    /// Creates a new builder-style object to manufacture [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput)
+    /// Creates a new builder-style object to manufacture [`ConnectCustomKeyStoreOutput`](crate::output::ConnectCustomKeyStoreOutput).
     pub fn builder() -> crate::output::connect_custom_key_store_output::Builder {
         crate::output::connect_custom_key_store_output::Builder::default()
     }
@@ -3602,11 +3553,10 @@ impl std::fmt::Debug for CancelKeyDeletionOutput {
         formatter.finish()
     }
 }
-/// See [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput)
+/// See [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput).
 pub mod cancel_key_deletion_output {
 
-    /// A builder for [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -3622,7 +3572,7 @@ pub mod cancel_key_deletion_output {
             self.key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput)
+        /// Consumes the builder and constructs a [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput).
         pub fn build(self) -> crate::output::CancelKeyDeletionOutput {
             crate::output::CancelKeyDeletionOutput {
                 key_id: self.key_id,
@@ -3631,7 +3581,7 @@ pub mod cancel_key_deletion_output {
     }
 }
 impl CancelKeyDeletionOutput {
-    /// Creates a new builder-style object to manufacture [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput)
+    /// Creates a new builder-style object to manufacture [`CancelKeyDeletionOutput`](crate::output::CancelKeyDeletionOutput).
     pub fn builder() -> crate::output::cancel_key_deletion_output::Builder {
         crate::output::cancel_key_deletion_output::Builder::default()
     }

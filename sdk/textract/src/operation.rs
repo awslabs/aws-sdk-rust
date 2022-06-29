@@ -10,7 +10,7 @@ pub struct AnalyzeDocument {
     _private: (),
 }
 impl AnalyzeDocument {
-    /// Creates a new builder-style object to manufacture [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput)
+    /// Creates a new builder-style object to manufacture [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput).
     pub fn builder() -> crate::input::analyze_document_input::Builder {
         crate::input::analyze_document_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AnalyzeExpense {
     _private: (),
 }
 impl AnalyzeExpense {
-    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput)
+    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput).
     pub fn builder() -> crate::input::analyze_expense_input::Builder {
         crate::input::analyze_expense_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct AnalyzeID {
     _private: (),
 }
 impl AnalyzeID {
-    /// Creates a new builder-style object to manufacture [`AnalyzeIdInput`](crate::input::AnalyzeIdInput)
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdInput`](crate::input::AnalyzeIdInput).
     pub fn builder() -> crate::input::analyze_id_input::Builder {
         crate::input::analyze_id_input::Builder::default()
     }
@@ -107,7 +107,7 @@ pub struct DetectDocumentText {
     _private: (),
 }
 impl DetectDocumentText {
-    /// Creates a new builder-style object to manufacture [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput)
+    /// Creates a new builder-style object to manufacture [`DetectDocumentTextInput`](crate::input::DetectDocumentTextInput).
     pub fn builder() -> crate::input::detect_document_text_input::Builder {
         crate::input::detect_document_text_input::Builder::default()
     }
@@ -141,7 +141,7 @@ pub struct GetDocumentAnalysis {
     _private: (),
 }
 impl GetDocumentAnalysis {
-    /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput)
+    /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisInput`](crate::input::GetDocumentAnalysisInput).
     pub fn builder() -> crate::input::get_document_analysis_input::Builder {
         crate::input::get_document_analysis_input::Builder::default()
     }
@@ -175,7 +175,7 @@ pub struct GetDocumentTextDetection {
     _private: (),
 }
 impl GetDocumentTextDetection {
-    /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput)
+    /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionInput`](crate::input::GetDocumentTextDetectionInput).
     pub fn builder() -> crate::input::get_document_text_detection_input::Builder {
         crate::input::get_document_text_detection_input::Builder::default()
     }
@@ -209,7 +209,7 @@ pub struct GetExpenseAnalysis {
     _private: (),
 }
 impl GetExpenseAnalysis {
-    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput)
+    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisInput`](crate::input::GetExpenseAnalysisInput).
     pub fn builder() -> crate::input::get_expense_analysis_input::Builder {
         crate::input::get_expense_analysis_input::Builder::default()
     }
@@ -243,7 +243,7 @@ pub struct StartDocumentAnalysis {
     _private: (),
 }
 impl StartDocumentAnalysis {
-    /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput)
+    /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisInput`](crate::input::StartDocumentAnalysisInput).
     pub fn builder() -> crate::input::start_document_analysis_input::Builder {
         crate::input::start_document_analysis_input::Builder::default()
     }
@@ -277,7 +277,7 @@ pub struct StartDocumentTextDetection {
     _private: (),
 }
 impl StartDocumentTextDetection {
-    /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput)
+    /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionInput`](crate::input::StartDocumentTextDetectionInput).
     pub fn builder() -> crate::input::start_document_text_detection_input::Builder {
         crate::input::start_document_text_detection_input::Builder::default()
     }
@@ -311,7 +311,7 @@ pub struct StartExpenseAnalysis {
     _private: (),
 }
 impl StartExpenseAnalysis {
-    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput)
+    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisInput`](crate::input::StartExpenseAnalysisInput).
     pub fn builder() -> crate::input::start_expense_analysis_input::Builder {
         crate::input::start_expense_analysis_input::Builder::default()
     }

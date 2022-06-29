@@ -10,7 +10,7 @@ pub struct CreateCallAnalyticsCategory {
     _private: (),
 }
 impl CreateCallAnalyticsCategory {
-    /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryInput`](crate::input::CreateCallAnalyticsCategoryInput)
+    /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryInput`](crate::input::CreateCallAnalyticsCategoryInput).
     pub fn builder() -> crate::input::create_call_analytics_category_input::Builder {
         crate::input::create_call_analytics_category_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateLanguageModel {
     _private: (),
 }
 impl CreateLanguageModel {
-    /// Creates a new builder-style object to manufacture [`CreateLanguageModelInput`](crate::input::CreateLanguageModelInput)
+    /// Creates a new builder-style object to manufacture [`CreateLanguageModelInput`](crate::input::CreateLanguageModelInput).
     pub fn builder() -> crate::input::create_language_model_input::Builder {
         crate::input::create_language_model_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateMedicalVocabulary {
     _private: (),
 }
 impl CreateMedicalVocabulary {
-    /// Creates a new builder-style object to manufacture [`CreateMedicalVocabularyInput`](crate::input::CreateMedicalVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`CreateMedicalVocabularyInput`](crate::input::CreateMedicalVocabularyInput).
     pub fn builder() -> crate::input::create_medical_vocabulary_input::Builder {
         crate::input::create_medical_vocabulary_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateVocabulary {
     _private: (),
 }
 impl CreateVocabulary {
-    /// Creates a new builder-style object to manufacture [`CreateVocabularyInput`](crate::input::CreateVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`CreateVocabularyInput`](crate::input::CreateVocabularyInput).
     pub fn builder() -> crate::input::create_vocabulary_input::Builder {
         crate::input::create_vocabulary_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateVocabularyFilter {
     _private: (),
 }
 impl CreateVocabularyFilter {
-    /// Creates a new builder-style object to manufacture [`CreateVocabularyFilterInput`](crate::input::CreateVocabularyFilterInput)
+    /// Creates a new builder-style object to manufacture [`CreateVocabularyFilterInput`](crate::input::CreateVocabularyFilterInput).
     pub fn builder() -> crate::input::create_vocabulary_filter_input::Builder {
         crate::input::create_vocabulary_filter_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteCallAnalyticsCategory {
     _private: (),
 }
 impl DeleteCallAnalyticsCategory {
-    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryInput`](crate::input::DeleteCallAnalyticsCategoryInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryInput`](crate::input::DeleteCallAnalyticsCategoryInput).
     pub fn builder() -> crate::input::delete_call_analytics_category_input::Builder {
         crate::input::delete_call_analytics_category_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeleteCallAnalyticsJob {
     _private: (),
 }
 impl DeleteCallAnalyticsJob {
-    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobInput`](crate::input::DeleteCallAnalyticsJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobInput`](crate::input::DeleteCallAnalyticsJobInput).
     pub fn builder() -> crate::input::delete_call_analytics_job_input::Builder {
         crate::input::delete_call_analytics_job_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DeleteLanguageModel {
     _private: (),
 }
 impl DeleteLanguageModel {
-    /// Creates a new builder-style object to manufacture [`DeleteLanguageModelInput`](crate::input::DeleteLanguageModelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLanguageModelInput`](crate::input::DeleteLanguageModelInput).
     pub fn builder() -> crate::input::delete_language_model_input::Builder {
         crate::input::delete_language_model_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DeleteMedicalTranscriptionJob {
     _private: (),
 }
 impl DeleteMedicalTranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`DeleteMedicalTranscriptionJobInput`](crate::input::DeleteMedicalTranscriptionJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMedicalTranscriptionJobInput`](crate::input::DeleteMedicalTranscriptionJobInput).
     pub fn builder() -> crate::input::delete_medical_transcription_job_input::Builder {
         crate::input::delete_medical_transcription_job_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct DeleteMedicalVocabulary {
     _private: (),
 }
 impl DeleteMedicalVocabulary {
-    /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyInput`](crate::input::DeleteMedicalVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyInput`](crate::input::DeleteMedicalVocabularyInput).
     pub fn builder() -> crate::input::delete_medical_vocabulary_input::Builder {
         crate::input::delete_medical_vocabulary_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct DeleteTranscriptionJob {
     _private: (),
 }
 impl DeleteTranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`DeleteTranscriptionJobInput`](crate::input::DeleteTranscriptionJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTranscriptionJobInput`](crate::input::DeleteTranscriptionJobInput).
     pub fn builder() -> crate::input::delete_transcription_job_input::Builder {
         crate::input::delete_transcription_job_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct DeleteVocabulary {
     _private: (),
 }
 impl DeleteVocabulary {
-    /// Creates a new builder-style object to manufacture [`DeleteVocabularyInput`](crate::input::DeleteVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVocabularyInput`](crate::input::DeleteVocabularyInput).
     pub fn builder() -> crate::input::delete_vocabulary_input::Builder {
         crate::input::delete_vocabulary_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct DeleteVocabularyFilter {
     _private: (),
 }
 impl DeleteVocabularyFilter {
-    /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterInput`](crate::input::DeleteVocabularyFilterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterInput`](crate::input::DeleteVocabularyFilterInput).
     pub fn builder() -> crate::input::delete_vocabulary_filter_input::Builder {
         crate::input::delete_vocabulary_filter_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct DescribeLanguageModel {
     _private: (),
 }
 impl DescribeLanguageModel {
-    /// Creates a new builder-style object to manufacture [`DescribeLanguageModelInput`](crate::input::DescribeLanguageModelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLanguageModelInput`](crate::input::DescribeLanguageModelInput).
     pub fn builder() -> crate::input::describe_language_model_input::Builder {
         crate::input::describe_language_model_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct GetCallAnalyticsCategory {
     _private: (),
 }
 impl GetCallAnalyticsCategory {
-    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryInput`](crate::input::GetCallAnalyticsCategoryInput)
+    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryInput`](crate::input::GetCallAnalyticsCategoryInput).
     pub fn builder() -> crate::input::get_call_analytics_category_input::Builder {
         crate::input::get_call_analytics_category_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct GetCallAnalyticsJob {
     _private: (),
 }
 impl GetCallAnalyticsJob {
-    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsJobInput`](crate::input::GetCallAnalyticsJobInput)
+    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsJobInput`](crate::input::GetCallAnalyticsJobInput).
     pub fn builder() -> crate::input::get_call_analytics_job_input::Builder {
         crate::input::get_call_analytics_job_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct GetMedicalTranscriptionJob {
     _private: (),
 }
 impl GetMedicalTranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`GetMedicalTranscriptionJobInput`](crate::input::GetMedicalTranscriptionJobInput)
+    /// Creates a new builder-style object to manufacture [`GetMedicalTranscriptionJobInput`](crate::input::GetMedicalTranscriptionJobInput).
     pub fn builder() -> crate::input::get_medical_transcription_job_input::Builder {
         crate::input::get_medical_transcription_job_input::Builder::default()
     }
@@ -588,7 +588,7 @@ pub struct GetMedicalVocabulary {
     _private: (),
 }
 impl GetMedicalVocabulary {
-    /// Creates a new builder-style object to manufacture [`GetMedicalVocabularyInput`](crate::input::GetMedicalVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`GetMedicalVocabularyInput`](crate::input::GetMedicalVocabularyInput).
     pub fn builder() -> crate::input::get_medical_vocabulary_input::Builder {
         crate::input::get_medical_vocabulary_input::Builder::default()
     }
@@ -622,7 +622,7 @@ pub struct GetTranscriptionJob {
     _private: (),
 }
 impl GetTranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`GetTranscriptionJobInput`](crate::input::GetTranscriptionJobInput)
+    /// Creates a new builder-style object to manufacture [`GetTranscriptionJobInput`](crate::input::GetTranscriptionJobInput).
     pub fn builder() -> crate::input::get_transcription_job_input::Builder {
         crate::input::get_transcription_job_input::Builder::default()
     }
@@ -656,7 +656,7 @@ pub struct GetVocabulary {
     _private: (),
 }
 impl GetVocabulary {
-    /// Creates a new builder-style object to manufacture [`GetVocabularyInput`](crate::input::GetVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`GetVocabularyInput`](crate::input::GetVocabularyInput).
     pub fn builder() -> crate::input::get_vocabulary_input::Builder {
         crate::input::get_vocabulary_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct GetVocabularyFilter {
     _private: (),
 }
 impl GetVocabularyFilter {
-    /// Creates a new builder-style object to manufacture [`GetVocabularyFilterInput`](crate::input::GetVocabularyFilterInput)
+    /// Creates a new builder-style object to manufacture [`GetVocabularyFilterInput`](crate::input::GetVocabularyFilterInput).
     pub fn builder() -> crate::input::get_vocabulary_filter_input::Builder {
         crate::input::get_vocabulary_filter_input::Builder::default()
     }
@@ -722,7 +722,7 @@ pub struct ListCallAnalyticsCategories {
     _private: (),
 }
 impl ListCallAnalyticsCategories {
-    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesInput`](crate::input::ListCallAnalyticsCategoriesInput)
+    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesInput`](crate::input::ListCallAnalyticsCategoriesInput).
     pub fn builder() -> crate::input::list_call_analytics_categories_input::Builder {
         crate::input::list_call_analytics_categories_input::Builder::default()
     }
@@ -756,7 +756,7 @@ pub struct ListCallAnalyticsJobs {
     _private: (),
 }
 impl ListCallAnalyticsJobs {
-    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsJobsInput`](crate::input::ListCallAnalyticsJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsJobsInput`](crate::input::ListCallAnalyticsJobsInput).
     pub fn builder() -> crate::input::list_call_analytics_jobs_input::Builder {
         crate::input::list_call_analytics_jobs_input::Builder::default()
     }
@@ -790,7 +790,7 @@ pub struct ListLanguageModels {
     _private: (),
 }
 impl ListLanguageModels {
-    /// Creates a new builder-style object to manufacture [`ListLanguageModelsInput`](crate::input::ListLanguageModelsInput)
+    /// Creates a new builder-style object to manufacture [`ListLanguageModelsInput`](crate::input::ListLanguageModelsInput).
     pub fn builder() -> crate::input::list_language_models_input::Builder {
         crate::input::list_language_models_input::Builder::default()
     }
@@ -824,7 +824,7 @@ pub struct ListMedicalTranscriptionJobs {
     _private: (),
 }
 impl ListMedicalTranscriptionJobs {
-    /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsInput`](crate::input::ListMedicalTranscriptionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsInput`](crate::input::ListMedicalTranscriptionJobsInput).
     pub fn builder() -> crate::input::list_medical_transcription_jobs_input::Builder {
         crate::input::list_medical_transcription_jobs_input::Builder::default()
     }
@@ -858,7 +858,7 @@ pub struct ListMedicalVocabularies {
     _private: (),
 }
 impl ListMedicalVocabularies {
-    /// Creates a new builder-style object to manufacture [`ListMedicalVocabulariesInput`](crate::input::ListMedicalVocabulariesInput)
+    /// Creates a new builder-style object to manufacture [`ListMedicalVocabulariesInput`](crate::input::ListMedicalVocabulariesInput).
     pub fn builder() -> crate::input::list_medical_vocabularies_input::Builder {
         crate::input::list_medical_vocabularies_input::Builder::default()
     }
@@ -892,7 +892,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -926,7 +926,7 @@ pub struct ListTranscriptionJobs {
     _private: (),
 }
 impl ListTranscriptionJobs {
-    /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsInput`](crate::input::ListTranscriptionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsInput`](crate::input::ListTranscriptionJobsInput).
     pub fn builder() -> crate::input::list_transcription_jobs_input::Builder {
         crate::input::list_transcription_jobs_input::Builder::default()
     }
@@ -960,7 +960,7 @@ pub struct ListVocabularies {
     _private: (),
 }
 impl ListVocabularies {
-    /// Creates a new builder-style object to manufacture [`ListVocabulariesInput`](crate::input::ListVocabulariesInput)
+    /// Creates a new builder-style object to manufacture [`ListVocabulariesInput`](crate::input::ListVocabulariesInput).
     pub fn builder() -> crate::input::list_vocabularies_input::Builder {
         crate::input::list_vocabularies_input::Builder::default()
     }
@@ -994,7 +994,7 @@ pub struct ListVocabularyFilters {
     _private: (),
 }
 impl ListVocabularyFilters {
-    /// Creates a new builder-style object to manufacture [`ListVocabularyFiltersInput`](crate::input::ListVocabularyFiltersInput)
+    /// Creates a new builder-style object to manufacture [`ListVocabularyFiltersInput`](crate::input::ListVocabularyFiltersInput).
     pub fn builder() -> crate::input::list_vocabulary_filters_input::Builder {
         crate::input::list_vocabulary_filters_input::Builder::default()
     }
@@ -1028,7 +1028,7 @@ pub struct StartCallAnalyticsJob {
     _private: (),
 }
 impl StartCallAnalyticsJob {
-    /// Creates a new builder-style object to manufacture [`StartCallAnalyticsJobInput`](crate::input::StartCallAnalyticsJobInput)
+    /// Creates a new builder-style object to manufacture [`StartCallAnalyticsJobInput`](crate::input::StartCallAnalyticsJobInput).
     pub fn builder() -> crate::input::start_call_analytics_job_input::Builder {
         crate::input::start_call_analytics_job_input::Builder::default()
     }
@@ -1062,7 +1062,7 @@ pub struct StartMedicalTranscriptionJob {
     _private: (),
 }
 impl StartMedicalTranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`StartMedicalTranscriptionJobInput`](crate::input::StartMedicalTranscriptionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartMedicalTranscriptionJobInput`](crate::input::StartMedicalTranscriptionJobInput).
     pub fn builder() -> crate::input::start_medical_transcription_job_input::Builder {
         crate::input::start_medical_transcription_job_input::Builder::default()
     }
@@ -1096,7 +1096,7 @@ pub struct StartTranscriptionJob {
     _private: (),
 }
 impl StartTranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`StartTranscriptionJobInput`](crate::input::StartTranscriptionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartTranscriptionJobInput`](crate::input::StartTranscriptionJobInput).
     pub fn builder() -> crate::input::start_transcription_job_input::Builder {
         crate::input::start_transcription_job_input::Builder::default()
     }
@@ -1130,7 +1130,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1162,7 +1162,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1194,7 +1194,7 @@ pub struct UpdateCallAnalyticsCategory {
     _private: (),
 }
 impl UpdateCallAnalyticsCategory {
-    /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryInput`](crate::input::UpdateCallAnalyticsCategoryInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryInput`](crate::input::UpdateCallAnalyticsCategoryInput).
     pub fn builder() -> crate::input::update_call_analytics_category_input::Builder {
         crate::input::update_call_analytics_category_input::Builder::default()
     }
@@ -1228,7 +1228,7 @@ pub struct UpdateMedicalVocabulary {
     _private: (),
 }
 impl UpdateMedicalVocabulary {
-    /// Creates a new builder-style object to manufacture [`UpdateMedicalVocabularyInput`](crate::input::UpdateMedicalVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMedicalVocabularyInput`](crate::input::UpdateMedicalVocabularyInput).
     pub fn builder() -> crate::input::update_medical_vocabulary_input::Builder {
         crate::input::update_medical_vocabulary_input::Builder::default()
     }
@@ -1262,7 +1262,7 @@ pub struct UpdateVocabulary {
     _private: (),
 }
 impl UpdateVocabulary {
-    /// Creates a new builder-style object to manufacture [`UpdateVocabularyInput`](crate::input::UpdateVocabularyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVocabularyInput`](crate::input::UpdateVocabularyInput).
     pub fn builder() -> crate::input::update_vocabulary_input::Builder {
         crate::input::update_vocabulary_input::Builder::default()
     }
@@ -1296,7 +1296,7 @@ pub struct UpdateVocabularyFilter {
     _private: (),
 }
 impl UpdateVocabularyFilter {
-    /// Creates a new builder-style object to manufacture [`UpdateVocabularyFilterInput`](crate::input::UpdateVocabularyFilterInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVocabularyFilterInput`](crate::input::UpdateVocabularyFilterInput).
     pub fn builder() -> crate::input::update_vocabulary_filter_input::Builder {
         crate::input::update_vocabulary_filter_input::Builder::default()
     }

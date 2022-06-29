@@ -26,11 +26,10 @@ impl std::fmt::Debug for SendSshPublicKeyOutput {
         formatter.finish()
     }
 }
-/// See [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput)
+/// See [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
 pub mod send_ssh_public_key_output {
 
-    /// A builder for [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -57,7 +56,7 @@ pub mod send_ssh_public_key_output {
             self.success = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput)
+        /// Consumes the builder and constructs a [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
         pub fn build(self) -> crate::output::SendSshPublicKeyOutput {
             crate::output::SendSshPublicKeyOutput {
                 request_id: self.request_id,
@@ -67,7 +66,7 @@ pub mod send_ssh_public_key_output {
     }
 }
 impl SendSshPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput)
+    /// Creates a new builder-style object to manufacture [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
     pub fn builder() -> crate::output::send_ssh_public_key_output::Builder {
         crate::output::send_ssh_public_key_output::Builder::default()
     }
@@ -100,11 +99,10 @@ impl std::fmt::Debug for SendSerialConsoleSshPublicKeyOutput {
         formatter.finish()
     }
 }
-/// See [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput)
+/// See [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
 pub mod send_serial_console_ssh_public_key_output {
 
-    /// A builder for [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -131,7 +129,7 @@ pub mod send_serial_console_ssh_public_key_output {
             self.success = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput)
+        /// Consumes the builder and constructs a [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
         pub fn build(self) -> crate::output::SendSerialConsoleSshPublicKeyOutput {
             crate::output::SendSerialConsoleSshPublicKeyOutput {
                 request_id: self.request_id,
@@ -141,7 +139,7 @@ pub mod send_serial_console_ssh_public_key_output {
     }
 }
 impl SendSerialConsoleSshPublicKeyOutput {
-    /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput)
+    /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
     pub fn builder() -> crate::output::send_serial_console_ssh_public_key_output::Builder {
         crate::output::send_serial_console_ssh_public_key_output::Builder::default()
     }

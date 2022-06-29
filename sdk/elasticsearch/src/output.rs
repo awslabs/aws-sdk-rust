@@ -43,11 +43,10 @@ impl std::fmt::Debug for UpgradeElasticsearchDomainOutput {
         formatter.finish()
     }
 }
-/// See [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput)
+/// See [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
 pub mod upgrade_elasticsearch_domain_output {
 
-    /// A builder for [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -106,7 +105,7 @@ pub mod upgrade_elasticsearch_domain_output {
             self.change_progress_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput)
+        /// Consumes the builder and constructs a [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
         pub fn build(self) -> crate::output::UpgradeElasticsearchDomainOutput {
             crate::output::UpgradeElasticsearchDomainOutput {
                 domain_name: self.domain_name,
@@ -118,7 +117,7 @@ pub mod upgrade_elasticsearch_domain_output {
     }
 }
 impl UpgradeElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput)
+    /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
     pub fn builder() -> crate::output::upgrade_elasticsearch_domain_output::Builder {
         crate::output::upgrade_elasticsearch_domain_output::Builder::default()
     }
@@ -144,11 +143,10 @@ impl std::fmt::Debug for UpdatePackageOutput {
         formatter.finish()
     }
 }
-/// See [`UpdatePackageOutput`](crate::output::UpdatePackageOutput)
+/// See [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
 pub mod update_package_output {
 
-    /// A builder for [`UpdatePackageOutput`](crate::output::UpdatePackageOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
@@ -167,7 +165,7 @@ pub mod update_package_output {
             self.package_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdatePackageOutput`](crate::output::UpdatePackageOutput)
+        /// Consumes the builder and constructs a [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
         pub fn build(self) -> crate::output::UpdatePackageOutput {
             crate::output::UpdatePackageOutput {
                 package_details: self.package_details,
@@ -176,7 +174,7 @@ pub mod update_package_output {
     }
 }
 impl UpdatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePackageOutput`](crate::output::UpdatePackageOutput)
+    /// Creates a new builder-style object to manufacture [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
     pub fn builder() -> crate::output::update_package_output::Builder {
         crate::output::update_package_output::Builder::default()
     }
@@ -209,11 +207,10 @@ impl std::fmt::Debug for UpdateElasticsearchDomainConfigOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput)
+/// See [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
 pub mod update_elasticsearch_domain_config_output {
 
-    /// A builder for [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
@@ -246,7 +243,7 @@ pub mod update_elasticsearch_domain_config_output {
             self.dry_run_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput)
+        /// Consumes the builder and constructs a [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
         pub fn build(self) -> crate::output::UpdateElasticsearchDomainConfigOutput {
             crate::output::UpdateElasticsearchDomainConfigOutput {
                 domain_config: self.domain_config,
@@ -256,7 +253,7 @@ pub mod update_elasticsearch_domain_config_output {
     }
 }
 impl UpdateElasticsearchDomainConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
     pub fn builder() -> crate::output::update_elasticsearch_domain_config_output::Builder {
         crate::output::update_elasticsearch_domain_config_output::Builder::default()
     }
@@ -284,11 +281,10 @@ impl std::fmt::Debug for StartElasticsearchServiceSoftwareUpdateOutput {
         formatter.finish()
     }
 }
-/// See [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput)
+/// See [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
 pub mod start_elasticsearch_service_software_update_output {
 
-    /// A builder for [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_software_options:
@@ -311,7 +307,7 @@ pub mod start_elasticsearch_service_software_update_output {
             self.service_software_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput)
+        /// Consumes the builder and constructs a [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
         pub fn build(self) -> crate::output::StartElasticsearchServiceSoftwareUpdateOutput {
             crate::output::StartElasticsearchServiceSoftwareUpdateOutput {
                 service_software_options: self.service_software_options,
@@ -320,7 +316,7 @@ pub mod start_elasticsearch_service_software_update_output {
     }
 }
 impl StartElasticsearchServiceSoftwareUpdateOutput {
-    /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput)
+    /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
     pub fn builder() -> crate::output::start_elasticsearch_service_software_update_output::Builder {
         crate::output::start_elasticsearch_service_software_update_output::Builder::default()
     }
@@ -336,22 +332,21 @@ impl std::fmt::Debug for RemoveTagsOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+/// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
-    /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+        /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
             crate::output::RemoveTagsOutput {}
         }
     }
 }
 impl RemoveTagsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     pub fn builder() -> crate::output::remove_tags_output::Builder {
         crate::output::remove_tags_output::Builder::default()
     }
@@ -383,11 +378,10 @@ impl std::fmt::Debug for RejectInboundCrossClusterSearchConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput)
+/// See [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
 pub mod reject_inbound_cross_cluster_search_connection_output {
 
-    /// A builder for [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection:
@@ -410,7 +404,7 @@ pub mod reject_inbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = input;
             self
         }
-        /// Consumes the builder and constructs a [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput)
+        /// Consumes the builder and constructs a [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
         pub fn build(self) -> crate::output::RejectInboundCrossClusterSearchConnectionOutput {
             crate::output::RejectInboundCrossClusterSearchConnectionOutput {
                 cross_cluster_search_connection: self.cross_cluster_search_connection,
@@ -419,7 +413,7 @@ pub mod reject_inbound_cross_cluster_search_connection_output {
     }
 }
 impl RejectInboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
     pub fn builder() -> crate::output::reject_inbound_cross_cluster_search_connection_output::Builder
     {
         crate::output::reject_inbound_cross_cluster_search_connection_output::Builder::default()
@@ -456,11 +450,10 @@ impl std::fmt::Debug for PurchaseReservedElasticsearchInstanceOfferingOutput {
         formatter.finish()
     }
 }
-/// See [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput)
+/// See [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
 pub mod purchase_reserved_elasticsearch_instance_offering_output {
 
-    /// A builder for [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput)
-    #[non_exhaustive]
+    /// A builder for [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
@@ -496,7 +489,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_output {
             self.reservation_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput)
+        /// Consumes the builder and constructs a [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
         pub fn build(self) -> crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput {
             crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput {
                 reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id,
@@ -506,7 +499,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_output {
     }
 }
 impl PurchaseReservedElasticsearchInstanceOfferingOutput {
-    /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput)
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
     pub fn builder(
     ) -> crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder {
         crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder::default()
@@ -533,11 +526,10 @@ impl std::fmt::Debug for ListTagsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsOutput`](crate::output::ListTagsOutput)
+/// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
 
-    /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -562,7 +554,7 @@ pub mod list_tags_output {
             self.tag_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput)
+        /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
                 tag_list: self.tag_list,
@@ -571,7 +563,7 @@ pub mod list_tags_output {
     }
 }
 impl ListTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
     pub fn builder() -> crate::output::list_tags_output::Builder {
         crate::output::list_tags_output::Builder::default()
     }
@@ -610,11 +602,10 @@ impl std::fmt::Debug for ListPackagesForDomainOutput {
         formatter.finish()
     }
 }
-/// See [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput)
+/// See [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
 pub mod list_packages_for_domain_output {
 
-    /// A builder for [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details_list:
@@ -654,7 +645,7 @@ pub mod list_packages_for_domain_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput)
+        /// Consumes the builder and constructs a [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
         pub fn build(self) -> crate::output::ListPackagesForDomainOutput {
             crate::output::ListPackagesForDomainOutput {
                 domain_package_details_list: self.domain_package_details_list,
@@ -664,7 +655,7 @@ pub mod list_packages_for_domain_output {
     }
 }
 impl ListPackagesForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput)
+    /// Creates a new builder-style object to manufacture [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
     pub fn builder() -> crate::output::list_packages_for_domain_output::Builder {
         crate::output::list_packages_for_domain_output::Builder::default()
     }
@@ -697,11 +688,10 @@ impl std::fmt::Debug for ListElasticsearchVersionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput)
+/// See [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
 pub mod list_elasticsearch_versions_output {
 
-    /// A builder for [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elasticsearch_versions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -737,7 +727,7 @@ pub mod list_elasticsearch_versions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput)
+        /// Consumes the builder and constructs a [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
         pub fn build(self) -> crate::output::ListElasticsearchVersionsOutput {
             crate::output::ListElasticsearchVersionsOutput {
                 elasticsearch_versions: self.elasticsearch_versions,
@@ -747,7 +737,7 @@ pub mod list_elasticsearch_versions_output {
     }
 }
 impl ListElasticsearchVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
     pub fn builder() -> crate::output::list_elasticsearch_versions_output::Builder {
         crate::output::list_elasticsearch_versions_output::Builder::default()
     }
@@ -786,11 +776,10 @@ impl std::fmt::Debug for ListElasticsearchInstanceTypesOutput {
         formatter.finish()
     }
 }
-/// See [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput)
+/// See [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
 pub mod list_elasticsearch_instance_types_output {
 
-    /// A builder for [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) elasticsearch_instance_types:
@@ -830,7 +819,7 @@ pub mod list_elasticsearch_instance_types_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput)
+        /// Consumes the builder and constructs a [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
         pub fn build(self) -> crate::output::ListElasticsearchInstanceTypesOutput {
             crate::output::ListElasticsearchInstanceTypesOutput {
                 elasticsearch_instance_types: self.elasticsearch_instance_types,
@@ -840,7 +829,7 @@ pub mod list_elasticsearch_instance_types_output {
     }
 }
 impl ListElasticsearchInstanceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput)
+    /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
     pub fn builder() -> crate::output::list_elasticsearch_instance_types_output::Builder {
         crate::output::list_elasticsearch_instance_types_output::Builder::default()
     }
@@ -879,11 +868,10 @@ impl std::fmt::Debug for ListDomainsForPackageOutput {
         formatter.finish()
     }
 }
-/// See [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput)
+/// See [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
 pub mod list_domains_for_package_output {
 
-    /// A builder for [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details_list:
@@ -923,7 +911,7 @@ pub mod list_domains_for_package_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput)
+        /// Consumes the builder and constructs a [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
         pub fn build(self) -> crate::output::ListDomainsForPackageOutput {
             crate::output::ListDomainsForPackageOutput {
                 domain_package_details_list: self.domain_package_details_list,
@@ -933,7 +921,7 @@ pub mod list_domains_for_package_output {
     }
 }
 impl ListDomainsForPackageOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput)
+    /// Creates a new builder-style object to manufacture [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
     pub fn builder() -> crate::output::list_domains_for_package_output::Builder {
         crate::output::list_domains_for_package_output::Builder::default()
     }
@@ -959,11 +947,10 @@ impl std::fmt::Debug for ListDomainNamesOutput {
         formatter.finish()
     }
 }
-/// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+/// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
 pub mod list_domain_names_output {
 
-    /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
@@ -988,7 +975,7 @@ pub mod list_domain_names_output {
             self.domain_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+        /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
         pub fn build(self) -> crate::output::ListDomainNamesOutput {
             crate::output::ListDomainNamesOutput {
                 domain_names: self.domain_names,
@@ -997,7 +984,7 @@ pub mod list_domain_names_output {
     }
 }
 impl ListDomainNamesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
     pub fn builder() -> crate::output::list_domain_names_output::Builder {
         crate::output::list_domain_names_output::Builder::default()
     }
@@ -1063,11 +1050,10 @@ impl std::fmt::Debug for GetUpgradeStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput)
+/// See [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
 pub mod get_upgrade_status_output {
 
-    /// A builder for [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_step: std::option::Option<crate::model::UpgradeStep>,
@@ -1137,7 +1123,7 @@ pub mod get_upgrade_status_output {
             self.upgrade_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput)
+        /// Consumes the builder and constructs a [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
         pub fn build(self) -> crate::output::GetUpgradeStatusOutput {
             crate::output::GetUpgradeStatusOutput {
                 upgrade_step: self.upgrade_step,
@@ -1148,7 +1134,7 @@ pub mod get_upgrade_status_output {
     }
 }
 impl GetUpgradeStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
     pub fn builder() -> crate::output::get_upgrade_status_output::Builder {
         crate::output::get_upgrade_status_output::Builder::default()
     }
@@ -1181,11 +1167,10 @@ impl std::fmt::Debug for GetUpgradeHistoryOutput {
         formatter.finish()
     }
 }
-/// See [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput)
+/// See [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
 pub mod get_upgrade_history_output {
 
-    /// A builder for [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upgrade_histories:
@@ -1222,7 +1207,7 @@ pub mod get_upgrade_history_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput)
+        /// Consumes the builder and constructs a [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
         pub fn build(self) -> crate::output::GetUpgradeHistoryOutput {
             crate::output::GetUpgradeHistoryOutput {
                 upgrade_histories: self.upgrade_histories,
@@ -1232,7 +1217,7 @@ pub mod get_upgrade_history_output {
     }
 }
 impl GetUpgradeHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput)
+    /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
     pub fn builder() -> crate::output::get_upgrade_history_output::Builder {
         crate::output::get_upgrade_history_output::Builder::default()
     }
@@ -1278,11 +1263,10 @@ impl std::fmt::Debug for GetPackageVersionHistoryOutput {
         formatter.finish()
     }
 }
-/// See [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput)
+/// See [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
 pub mod get_package_version_history_output {
 
-    /// A builder for [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_id: std::option::Option<std::string::String>,
@@ -1333,7 +1317,7 @@ pub mod get_package_version_history_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput)
+        /// Consumes the builder and constructs a [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
         pub fn build(self) -> crate::output::GetPackageVersionHistoryOutput {
             crate::output::GetPackageVersionHistoryOutput {
                 package_id: self.package_id,
@@ -1344,7 +1328,7 @@ pub mod get_package_version_history_output {
     }
 }
 impl GetPackageVersionHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput)
+    /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
     pub fn builder() -> crate::output::get_package_version_history_output::Builder {
         crate::output::get_package_version_history_output::Builder::default()
     }
@@ -1376,11 +1360,10 @@ impl std::fmt::Debug for GetCompatibleElasticsearchVersionsOutput {
         formatter.finish()
     }
 }
-/// See [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput)
+/// See [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
 pub mod get_compatible_elasticsearch_versions_output {
 
-    /// A builder for [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_elasticsearch_versions:
@@ -1409,7 +1392,7 @@ pub mod get_compatible_elasticsearch_versions_output {
             self.compatible_elasticsearch_versions = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput)
+        /// Consumes the builder and constructs a [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
         pub fn build(self) -> crate::output::GetCompatibleElasticsearchVersionsOutput {
             crate::output::GetCompatibleElasticsearchVersionsOutput {
                 compatible_elasticsearch_versions: self.compatible_elasticsearch_versions,
@@ -1418,7 +1401,7 @@ pub mod get_compatible_elasticsearch_versions_output {
     }
 }
 impl GetCompatibleElasticsearchVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput)
+    /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
     pub fn builder() -> crate::output::get_compatible_elasticsearch_versions_output::Builder {
         crate::output::get_compatible_elasticsearch_versions_output::Builder::default()
     }
@@ -1446,11 +1429,10 @@ impl std::fmt::Debug for DissociatePackageOutput {
         formatter.finish()
     }
 }
-/// See [`DissociatePackageOutput`](crate::output::DissociatePackageOutput)
+/// See [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
 pub mod dissociate_package_output {
 
-    /// A builder for [`DissociatePackageOutput`](crate::output::DissociatePackageOutput)
-    #[non_exhaustive]
+    /// A builder for [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
@@ -1469,7 +1451,7 @@ pub mod dissociate_package_output {
             self.domain_package_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`DissociatePackageOutput`](crate::output::DissociatePackageOutput)
+        /// Consumes the builder and constructs a [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
         pub fn build(self) -> crate::output::DissociatePackageOutput {
             crate::output::DissociatePackageOutput {
                 domain_package_details: self.domain_package_details,
@@ -1478,7 +1460,7 @@ pub mod dissociate_package_output {
     }
 }
 impl DissociatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`DissociatePackageOutput`](crate::output::DissociatePackageOutput)
+    /// Creates a new builder-style object to manufacture [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
     pub fn builder() -> crate::output::dissociate_package_output::Builder {
         crate::output::dissociate_package_output::Builder::default()
     }
@@ -1517,11 +1499,10 @@ impl std::fmt::Debug for DescribeReservedElasticsearchInstancesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput)
+/// See [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
 pub mod describe_reserved_elasticsearch_instances_output {
 
-    /// A builder for [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1561,7 +1542,7 @@ pub mod describe_reserved_elasticsearch_instances_output {
             self.reserved_elasticsearch_instances = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput)
+        /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
         pub fn build(self) -> crate::output::DescribeReservedElasticsearchInstancesOutput {
             crate::output::DescribeReservedElasticsearchInstancesOutput {
                 next_token: self.next_token,
@@ -1571,7 +1552,7 @@ pub mod describe_reserved_elasticsearch_instances_output {
     }
 }
 impl DescribeReservedElasticsearchInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
     pub fn builder() -> crate::output::describe_reserved_elasticsearch_instances_output::Builder {
         crate::output::describe_reserved_elasticsearch_instances_output::Builder::default()
     }
@@ -1610,11 +1591,10 @@ impl std::fmt::Debug for DescribeReservedElasticsearchInstanceOfferingsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput)
+/// See [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
 pub mod describe_reserved_elasticsearch_instance_offerings_output {
 
-    /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1658,7 +1638,7 @@ pub mod describe_reserved_elasticsearch_instance_offerings_output {
             self.reserved_elasticsearch_instance_offerings = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput)
+        /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
         pub fn build(self) -> crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput {
             crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput {
                 next_token: self.next_token,
@@ -1669,7 +1649,7 @@ pub mod describe_reserved_elasticsearch_instance_offerings_output {
     }
 }
 impl DescribeReservedElasticsearchInstanceOfferingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
     pub fn builder(
     ) -> crate::output::describe_reserved_elasticsearch_instance_offerings_output::Builder {
         crate::output::describe_reserved_elasticsearch_instance_offerings_output::Builder::default()
@@ -1703,11 +1683,10 @@ impl std::fmt::Debug for DescribePackagesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribePackagesOutput`](crate::output::DescribePackagesOutput)
+/// See [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
 pub mod describe_packages_output {
 
-    /// A builder for [`DescribePackagesOutput`](crate::output::DescribePackagesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details_list:
@@ -1744,7 +1723,7 @@ pub mod describe_packages_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribePackagesOutput`](crate::output::DescribePackagesOutput)
+        /// Consumes the builder and constructs a [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
         pub fn build(self) -> crate::output::DescribePackagesOutput {
             crate::output::DescribePackagesOutput {
                 package_details_list: self.package_details_list,
@@ -1754,7 +1733,7 @@ pub mod describe_packages_output {
     }
 }
 impl DescribePackagesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePackagesOutput`](crate::output::DescribePackagesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
     pub fn builder() -> crate::output::describe_packages_output::Builder {
         crate::output::describe_packages_output::Builder::default()
     }
@@ -1793,11 +1772,10 @@ impl std::fmt::Debug for DescribeOutboundCrossClusterSearchConnectionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput)
+/// See [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
 pub mod describe_outbound_cross_cluster_search_connections_output {
 
-    /// A builder for [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connections:
@@ -1839,7 +1817,7 @@ pub mod describe_outbound_cross_cluster_search_connections_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput)
+        /// Consumes the builder and constructs a [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput {
             crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput {
                 cross_cluster_search_connections: self.cross_cluster_search_connections,
@@ -1849,7 +1827,7 @@ pub mod describe_outbound_cross_cluster_search_connections_output {
     }
 }
 impl DescribeOutboundCrossClusterSearchConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
     pub fn builder(
     ) -> crate::output::describe_outbound_cross_cluster_search_connections_output::Builder {
         crate::output::describe_outbound_cross_cluster_search_connections_output::Builder::default()
@@ -1889,11 +1867,10 @@ impl std::fmt::Debug for DescribeInboundCrossClusterSearchConnectionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput)
+/// See [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
 pub mod describe_inbound_cross_cluster_search_connections_output {
 
-    /// A builder for [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connections:
@@ -1935,7 +1912,7 @@ pub mod describe_inbound_cross_cluster_search_connections_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput)
+        /// Consumes the builder and constructs a [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeInboundCrossClusterSearchConnectionsOutput {
             crate::output::DescribeInboundCrossClusterSearchConnectionsOutput {
                 cross_cluster_search_connections: self.cross_cluster_search_connections,
@@ -1945,7 +1922,7 @@ pub mod describe_inbound_cross_cluster_search_connections_output {
     }
 }
 impl DescribeInboundCrossClusterSearchConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
     pub fn builder(
     ) -> crate::output::describe_inbound_cross_cluster_search_connections_output::Builder {
         crate::output::describe_inbound_cross_cluster_search_connections_output::Builder::default()
@@ -1988,11 +1965,10 @@ impl std::fmt::Debug for DescribeElasticsearchInstanceTypeLimitsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput)
+/// See [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
 pub mod describe_elasticsearch_instance_type_limits_output {
 
-    /// A builder for [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) limits_by_role: std::option::Option<
@@ -2037,7 +2013,7 @@ pub mod describe_elasticsearch_instance_type_limits_output {
             self.limits_by_role = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput)
+        /// Consumes the builder and constructs a [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
         pub fn build(self) -> crate::output::DescribeElasticsearchInstanceTypeLimitsOutput {
             crate::output::DescribeElasticsearchInstanceTypeLimitsOutput {
                 limits_by_role: self.limits_by_role,
@@ -2046,7 +2022,7 @@ pub mod describe_elasticsearch_instance_type_limits_output {
     }
 }
 impl DescribeElasticsearchInstanceTypeLimitsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
     pub fn builder() -> crate::output::describe_elasticsearch_instance_type_limits_output::Builder {
         crate::output::describe_elasticsearch_instance_type_limits_output::Builder::default()
     }
@@ -2075,11 +2051,10 @@ impl std::fmt::Debug for DescribeElasticsearchDomainsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput)
+/// See [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
 pub mod describe_elasticsearch_domains_output {
 
-    /// A builder for [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status_list:
@@ -2108,7 +2083,7 @@ pub mod describe_elasticsearch_domains_output {
             self.domain_status_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput)
+        /// Consumes the builder and constructs a [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
         pub fn build(self) -> crate::output::DescribeElasticsearchDomainsOutput {
             crate::output::DescribeElasticsearchDomainsOutput {
                 domain_status_list: self.domain_status_list,
@@ -2117,7 +2092,7 @@ pub mod describe_elasticsearch_domains_output {
     }
 }
 impl DescribeElasticsearchDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
     pub fn builder() -> crate::output::describe_elasticsearch_domains_output::Builder {
         crate::output::describe_elasticsearch_domains_output::Builder::default()
     }
@@ -2143,11 +2118,10 @@ impl std::fmt::Debug for DescribeElasticsearchDomainConfigOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput)
+/// See [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
 pub mod describe_elasticsearch_domain_config_output {
 
-    /// A builder for [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_config: std::option::Option<crate::model::ElasticsearchDomainConfig>,
@@ -2166,7 +2140,7 @@ pub mod describe_elasticsearch_domain_config_output {
             self.domain_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput)
+        /// Consumes the builder and constructs a [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
         pub fn build(self) -> crate::output::DescribeElasticsearchDomainConfigOutput {
             crate::output::DescribeElasticsearchDomainConfigOutput {
                 domain_config: self.domain_config,
@@ -2175,7 +2149,7 @@ pub mod describe_elasticsearch_domain_config_output {
     }
 }
 impl DescribeElasticsearchDomainConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
     pub fn builder() -> crate::output::describe_elasticsearch_domain_config_output::Builder {
         crate::output::describe_elasticsearch_domain_config_output::Builder::default()
     }
@@ -2201,11 +2175,10 @@ impl std::fmt::Debug for DescribeElasticsearchDomainOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput)
+/// See [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
 pub mod describe_elasticsearch_domain_output {
 
-    /// A builder for [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
@@ -2224,7 +2197,7 @@ pub mod describe_elasticsearch_domain_output {
             self.domain_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput)
+        /// Consumes the builder and constructs a [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
         pub fn build(self) -> crate::output::DescribeElasticsearchDomainOutput {
             crate::output::DescribeElasticsearchDomainOutput {
                 domain_status: self.domain_status,
@@ -2233,7 +2206,7 @@ pub mod describe_elasticsearch_domain_output {
     }
 }
 impl DescribeElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
     pub fn builder() -> crate::output::describe_elasticsearch_domain_output::Builder {
         crate::output::describe_elasticsearch_domain_output::Builder::default()
     }
@@ -2261,11 +2234,10 @@ impl std::fmt::Debug for DescribeDomainChangeProgressOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
+/// See [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
 pub mod describe_domain_change_progress_output {
 
-    /// A builder for [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_progress_status:
@@ -2288,7 +2260,7 @@ pub mod describe_domain_change_progress_output {
             self.change_progress_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
+        /// Consumes the builder and constructs a [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
         pub fn build(self) -> crate::output::DescribeDomainChangeProgressOutput {
             crate::output::DescribeDomainChangeProgressOutput {
                 change_progress_status: self.change_progress_status,
@@ -2297,7 +2269,7 @@ pub mod describe_domain_change_progress_output {
     }
 }
 impl DescribeDomainChangeProgressOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
     pub fn builder() -> crate::output::describe_domain_change_progress_output::Builder {
         crate::output::describe_domain_change_progress_output::Builder::default()
     }
@@ -2330,11 +2302,10 @@ impl std::fmt::Debug for DescribeDomainAutoTunesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput)
+/// See [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
 pub mod describe_domain_auto_tunes_output {
 
-    /// A builder for [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_tunes: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
@@ -2370,7 +2341,7 @@ pub mod describe_domain_auto_tunes_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput)
+        /// Consumes the builder and constructs a [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
         pub fn build(self) -> crate::output::DescribeDomainAutoTunesOutput {
             crate::output::DescribeDomainAutoTunesOutput {
                 auto_tunes: self.auto_tunes,
@@ -2380,7 +2351,7 @@ pub mod describe_domain_auto_tunes_output {
     }
 }
 impl DescribeDomainAutoTunesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
     pub fn builder() -> crate::output::describe_domain_auto_tunes_output::Builder {
         crate::output::describe_domain_auto_tunes_output::Builder::default()
     }
@@ -2406,11 +2377,10 @@ impl std::fmt::Debug for DeletePackageOutput {
         formatter.finish()
     }
 }
-/// See [`DeletePackageOutput`](crate::output::DeletePackageOutput)
+/// See [`DeletePackageOutput`](crate::output::DeletePackageOutput).
 pub mod delete_package_output {
 
-    /// A builder for [`DeletePackageOutput`](crate::output::DeletePackageOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeletePackageOutput`](crate::output::DeletePackageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
@@ -2429,7 +2399,7 @@ pub mod delete_package_output {
             self.package_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeletePackageOutput`](crate::output::DeletePackageOutput)
+        /// Consumes the builder and constructs a [`DeletePackageOutput`](crate::output::DeletePackageOutput).
         pub fn build(self) -> crate::output::DeletePackageOutput {
             crate::output::DeletePackageOutput {
                 package_details: self.package_details,
@@ -2438,7 +2408,7 @@ pub mod delete_package_output {
     }
 }
 impl DeletePackageOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePackageOutput`](crate::output::DeletePackageOutput)
+    /// Creates a new builder-style object to manufacture [`DeletePackageOutput`](crate::output::DeletePackageOutput).
     pub fn builder() -> crate::output::delete_package_output::Builder {
         crate::output::delete_package_output::Builder::default()
     }
@@ -2470,11 +2440,10 @@ impl std::fmt::Debug for DeleteOutboundCrossClusterSearchConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput)
+/// See [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
 pub mod delete_outbound_cross_cluster_search_connection_output {
 
-    /// A builder for [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection:
@@ -2497,7 +2466,7 @@ pub mod delete_outbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput)
+        /// Consumes the builder and constructs a [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
         pub fn build(self) -> crate::output::DeleteOutboundCrossClusterSearchConnectionOutput {
             crate::output::DeleteOutboundCrossClusterSearchConnectionOutput {
                 cross_cluster_search_connection: self.cross_cluster_search_connection,
@@ -2506,7 +2475,7 @@ pub mod delete_outbound_cross_cluster_search_connection_output {
     }
 }
 impl DeleteOutboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
     pub fn builder(
     ) -> crate::output::delete_outbound_cross_cluster_search_connection_output::Builder {
         crate::output::delete_outbound_cross_cluster_search_connection_output::Builder::default()
@@ -2539,11 +2508,10 @@ impl std::fmt::Debug for DeleteInboundCrossClusterSearchConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput)
+/// See [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
 pub mod delete_inbound_cross_cluster_search_connection_output {
 
-    /// A builder for [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection:
@@ -2566,7 +2534,7 @@ pub mod delete_inbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput)
+        /// Consumes the builder and constructs a [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
         pub fn build(self) -> crate::output::DeleteInboundCrossClusterSearchConnectionOutput {
             crate::output::DeleteInboundCrossClusterSearchConnectionOutput {
                 cross_cluster_search_connection: self.cross_cluster_search_connection,
@@ -2575,7 +2543,7 @@ pub mod delete_inbound_cross_cluster_search_connection_output {
     }
 }
 impl DeleteInboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
     pub fn builder() -> crate::output::delete_inbound_cross_cluster_search_connection_output::Builder
     {
         crate::output::delete_inbound_cross_cluster_search_connection_output::Builder::default()
@@ -2592,22 +2560,21 @@ impl std::fmt::Debug for DeleteElasticsearchServiceRoleOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput)
+/// See [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
 pub mod delete_elasticsearch_service_role_output {
 
-    /// A builder for [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput)
+        /// Consumes the builder and constructs a [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
         pub fn build(self) -> crate::output::DeleteElasticsearchServiceRoleOutput {
             crate::output::DeleteElasticsearchServiceRoleOutput {}
         }
     }
 }
 impl DeleteElasticsearchServiceRoleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
     pub fn builder() -> crate::output::delete_elasticsearch_service_role_output::Builder {
         crate::output::delete_elasticsearch_service_role_output::Builder::default()
     }
@@ -2633,11 +2600,10 @@ impl std::fmt::Debug for DeleteElasticsearchDomainOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput)
+/// See [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
 pub mod delete_elasticsearch_domain_output {
 
-    /// A builder for [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
@@ -2656,7 +2622,7 @@ pub mod delete_elasticsearch_domain_output {
             self.domain_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput)
+        /// Consumes the builder and constructs a [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
         pub fn build(self) -> crate::output::DeleteElasticsearchDomainOutput {
             crate::output::DeleteElasticsearchDomainOutput {
                 domain_status: self.domain_status,
@@ -2665,7 +2631,7 @@ pub mod delete_elasticsearch_domain_output {
     }
 }
 impl DeleteElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
     pub fn builder() -> crate::output::delete_elasticsearch_domain_output::Builder {
         crate::output::delete_elasticsearch_domain_output::Builder::default()
     }
@@ -2691,11 +2657,10 @@ impl std::fmt::Debug for CreatePackageOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePackageOutput`](crate::output::CreatePackageOutput)
+/// See [`CreatePackageOutput`](crate::output::CreatePackageOutput).
 pub mod create_package_output {
 
-    /// A builder for [`CreatePackageOutput`](crate::output::CreatePackageOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePackageOutput`](crate::output::CreatePackageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) package_details: std::option::Option<crate::model::PackageDetails>,
@@ -2714,7 +2679,7 @@ pub mod create_package_output {
             self.package_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatePackageOutput`](crate::output::CreatePackageOutput)
+        /// Consumes the builder and constructs a [`CreatePackageOutput`](crate::output::CreatePackageOutput).
         pub fn build(self) -> crate::output::CreatePackageOutput {
             crate::output::CreatePackageOutput {
                 package_details: self.package_details,
@@ -2723,7 +2688,7 @@ pub mod create_package_output {
     }
 }
 impl CreatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::output::CreatePackageOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::output::CreatePackageOutput).
     pub fn builder() -> crate::output::create_package_output::Builder {
         crate::output::create_package_output::Builder::default()
     }
@@ -2783,11 +2748,10 @@ impl std::fmt::Debug for CreateOutboundCrossClusterSearchConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput)
+/// See [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
 pub mod create_outbound_cross_cluster_search_connection_output {
 
-    /// A builder for [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_domain_info: std::option::Option<crate::model::DomainInformation>,
@@ -2869,7 +2833,7 @@ pub mod create_outbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput)
+        /// Consumes the builder and constructs a [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
         pub fn build(self) -> crate::output::CreateOutboundCrossClusterSearchConnectionOutput {
             crate::output::CreateOutboundCrossClusterSearchConnectionOutput {
                 source_domain_info: self.source_domain_info,
@@ -2882,7 +2846,7 @@ pub mod create_outbound_cross_cluster_search_connection_output {
     }
 }
 impl CreateOutboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
     pub fn builder(
     ) -> crate::output::create_outbound_cross_cluster_search_connection_output::Builder {
         crate::output::create_outbound_cross_cluster_search_connection_output::Builder::default()
@@ -2909,11 +2873,10 @@ impl std::fmt::Debug for CreateElasticsearchDomainOutput {
         formatter.finish()
     }
 }
-/// See [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput)
+/// See [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
 pub mod create_elasticsearch_domain_output {
 
-    /// A builder for [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::ElasticsearchDomainStatus>,
@@ -2932,7 +2895,7 @@ pub mod create_elasticsearch_domain_output {
             self.domain_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput)
+        /// Consumes the builder and constructs a [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
         pub fn build(self) -> crate::output::CreateElasticsearchDomainOutput {
             crate::output::CreateElasticsearchDomainOutput {
                 domain_status: self.domain_status,
@@ -2941,7 +2904,7 @@ pub mod create_elasticsearch_domain_output {
     }
 }
 impl CreateElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput)
+    /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
     pub fn builder() -> crate::output::create_elasticsearch_domain_output::Builder {
         crate::output::create_elasticsearch_domain_output::Builder::default()
     }
@@ -2969,11 +2932,10 @@ impl std::fmt::Debug for CancelElasticsearchServiceSoftwareUpdateOutput {
         formatter.finish()
     }
 }
-/// See [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput)
+/// See [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
 pub mod cancel_elasticsearch_service_software_update_output {
 
-    /// A builder for [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_software_options:
@@ -2996,7 +2958,7 @@ pub mod cancel_elasticsearch_service_software_update_output {
             self.service_software_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput)
+        /// Consumes the builder and constructs a [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
         pub fn build(self) -> crate::output::CancelElasticsearchServiceSoftwareUpdateOutput {
             crate::output::CancelElasticsearchServiceSoftwareUpdateOutput {
                 service_software_options: self.service_software_options,
@@ -3005,7 +2967,7 @@ pub mod cancel_elasticsearch_service_software_update_output {
     }
 }
 impl CancelElasticsearchServiceSoftwareUpdateOutput {
-    /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput)
+    /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
     pub fn builder() -> crate::output::cancel_elasticsearch_service_software_update_output::Builder
     {
         crate::output::cancel_elasticsearch_service_software_update_output::Builder::default()
@@ -3034,11 +2996,10 @@ impl std::fmt::Debug for AssociatePackageOutput {
         formatter.finish()
     }
 }
-/// See [`AssociatePackageOutput`](crate::output::AssociatePackageOutput)
+/// See [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
 pub mod associate_package_output {
 
-    /// A builder for [`AssociatePackageOutput`](crate::output::AssociatePackageOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_package_details: std::option::Option<crate::model::DomainPackageDetails>,
@@ -3057,7 +3018,7 @@ pub mod associate_package_output {
             self.domain_package_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociatePackageOutput`](crate::output::AssociatePackageOutput)
+        /// Consumes the builder and constructs a [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
         pub fn build(self) -> crate::output::AssociatePackageOutput {
             crate::output::AssociatePackageOutput {
                 domain_package_details: self.domain_package_details,
@@ -3066,7 +3027,7 @@ pub mod associate_package_output {
     }
 }
 impl AssociatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`AssociatePackageOutput`](crate::output::AssociatePackageOutput)
+    /// Creates a new builder-style object to manufacture [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
     pub fn builder() -> crate::output::associate_package_output::Builder {
         crate::output::associate_package_output::Builder::default()
     }
@@ -3082,22 +3043,21 @@ impl std::fmt::Debug for AddTagsOutput {
         formatter.finish()
     }
 }
-/// See [`AddTagsOutput`](crate::output::AddTagsOutput)
+/// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
-    /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput)
+        /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
             crate::output::AddTagsOutput {}
         }
     }
 }
 impl AddTagsOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput)
+    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
     pub fn builder() -> crate::output::add_tags_output::Builder {
         crate::output::add_tags_output::Builder::default()
     }
@@ -3129,11 +3089,10 @@ impl std::fmt::Debug for AcceptInboundCrossClusterSearchConnectionOutput {
         formatter.finish()
     }
 }
-/// See [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput)
+/// See [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).
 pub mod accept_inbound_cross_cluster_search_connection_output {
 
-    /// A builder for [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cross_cluster_search_connection:
@@ -3156,7 +3115,7 @@ pub mod accept_inbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = input;
             self
         }
-        /// Consumes the builder and constructs a [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput)
+        /// Consumes the builder and constructs a [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).
         pub fn build(self) -> crate::output::AcceptInboundCrossClusterSearchConnectionOutput {
             crate::output::AcceptInboundCrossClusterSearchConnectionOutput {
                 cross_cluster_search_connection: self.cross_cluster_search_connection,
@@ -3165,7 +3124,7 @@ pub mod accept_inbound_cross_cluster_search_connection_output {
     }
 }
 impl AcceptInboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput)
+    /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).
     pub fn builder() -> crate::output::accept_inbound_cross_cluster_search_connection_output::Builder
     {
         crate::output::accept_inbound_cross_cluster_search_connection_output::Builder::default()

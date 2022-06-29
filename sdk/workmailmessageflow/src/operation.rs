@@ -10,7 +10,7 @@ pub struct GetRawMessageContent {
     _private: (),
 }
 impl GetRawMessageContent {
-    /// Creates a new builder-style object to manufacture [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput)
+    /// Creates a new builder-style object to manufacture [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput).
     pub fn builder() -> crate::input::get_raw_message_content_input::Builder {
         crate::input::get_raw_message_content_input::Builder::default()
     }
@@ -53,7 +53,7 @@ pub struct PutRawMessageContent {
     _private: (),
 }
 impl PutRawMessageContent {
-    /// Creates a new builder-style object to manufacture [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput)
+    /// Creates a new builder-style object to manufacture [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput).
     pub fn builder() -> crate::input::put_raw_message_content_input::Builder {
         crate::input::put_raw_message_content_input::Builder::default()
     }

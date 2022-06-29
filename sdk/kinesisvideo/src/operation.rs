@@ -10,7 +10,7 @@ pub struct CreateSignalingChannel {
     _private: (),
 }
 impl CreateSignalingChannel {
-    /// Creates a new builder-style object to manufacture [`CreateSignalingChannelInput`](crate::input::CreateSignalingChannelInput)
+    /// Creates a new builder-style object to manufacture [`CreateSignalingChannelInput`](crate::input::CreateSignalingChannelInput).
     pub fn builder() -> crate::input::create_signaling_channel_input::Builder {
         crate::input::create_signaling_channel_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateStream {
     _private: (),
 }
 impl CreateStream {
-    /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::input::CreateStreamInput)
+    /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::input::CreateStreamInput).
     pub fn builder() -> crate::input::create_stream_input::Builder {
         crate::input::create_stream_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteSignalingChannel {
     _private: (),
 }
 impl DeleteSignalingChannel {
-    /// Creates a new builder-style object to manufacture [`DeleteSignalingChannelInput`](crate::input::DeleteSignalingChannelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSignalingChannelInput`](crate::input::DeleteSignalingChannelInput).
     pub fn builder() -> crate::input::delete_signaling_channel_input::Builder {
         crate::input::delete_signaling_channel_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteStream {
     _private: (),
 }
 impl DeleteStream {
-    /// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::input::DeleteStreamInput)
+    /// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::input::DeleteStreamInput).
     pub fn builder() -> crate::input::delete_stream_input::Builder {
         crate::input::delete_stream_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DescribeImageGenerationConfiguration {
     _private: (),
 }
 impl DescribeImageGenerationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationInput`](crate::input::DescribeImageGenerationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationInput`](crate::input::DescribeImageGenerationConfigurationInput).
     pub fn builder() -> crate::input::describe_image_generation_configuration_input::Builder {
         crate::input::describe_image_generation_configuration_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DescribeNotificationConfiguration {
     _private: (),
 }
 impl DescribeNotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationInput`](crate::input::DescribeNotificationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationInput`](crate::input::DescribeNotificationConfigurationInput).
     pub fn builder() -> crate::input::describe_notification_configuration_input::Builder {
         crate::input::describe_notification_configuration_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DescribeSignalingChannel {
     _private: (),
 }
 impl DescribeSignalingChannel {
-    /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelInput`](crate::input::DescribeSignalingChannelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelInput`](crate::input::DescribeSignalingChannelInput).
     pub fn builder() -> crate::input::describe_signaling_channel_input::Builder {
         crate::input::describe_signaling_channel_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DescribeStream {
     _private: (),
 }
 impl DescribeStream {
-    /// Creates a new builder-style object to manufacture [`DescribeStreamInput`](crate::input::DescribeStreamInput)
+    /// Creates a new builder-style object to manufacture [`DescribeStreamInput`](crate::input::DescribeStreamInput).
     pub fn builder() -> crate::input::describe_stream_input::Builder {
         crate::input::describe_stream_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct GetDataEndpoint {
     _private: (),
 }
 impl GetDataEndpoint {
-    /// Creates a new builder-style object to manufacture [`GetDataEndpointInput`](crate::input::GetDataEndpointInput)
+    /// Creates a new builder-style object to manufacture [`GetDataEndpointInput`](crate::input::GetDataEndpointInput).
     pub fn builder() -> crate::input::get_data_endpoint_input::Builder {
         crate::input::get_data_endpoint_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct GetSignalingChannelEndpoint {
     _private: (),
 }
 impl GetSignalingChannelEndpoint {
-    /// Creates a new builder-style object to manufacture [`GetSignalingChannelEndpointInput`](crate::input::GetSignalingChannelEndpointInput)
+    /// Creates a new builder-style object to manufacture [`GetSignalingChannelEndpointInput`](crate::input::GetSignalingChannelEndpointInput).
     pub fn builder() -> crate::input::get_signaling_channel_endpoint_input::Builder {
         crate::input::get_signaling_channel_endpoint_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct ListSignalingChannels {
     _private: (),
 }
 impl ListSignalingChannels {
-    /// Creates a new builder-style object to manufacture [`ListSignalingChannelsInput`](crate::input::ListSignalingChannelsInput)
+    /// Creates a new builder-style object to manufacture [`ListSignalingChannelsInput`](crate::input::ListSignalingChannelsInput).
     pub fn builder() -> crate::input::list_signaling_channels_input::Builder {
         crate::input::list_signaling_channels_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct ListStreams {
     _private: (),
 }
 impl ListStreams {
-    /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput)
+    /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput).
     pub fn builder() -> crate::input::list_streams_input::Builder {
         crate::input::list_streams_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct ListTagsForStream {
     _private: (),
 }
 impl ListTagsForStream {
-    /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput).
     pub fn builder() -> crate::input::list_tags_for_stream_input::Builder {
         crate::input::list_tags_for_stream_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct TagStream {
     _private: (),
 }
 impl TagStream {
-    /// Creates a new builder-style object to manufacture [`TagStreamInput`](crate::input::TagStreamInput)
+    /// Creates a new builder-style object to manufacture [`TagStreamInput`](crate::input::TagStreamInput).
     pub fn builder() -> crate::input::tag_stream_input::Builder {
         crate::input::tag_stream_input::Builder::default()
     }
@@ -541,7 +541,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -573,7 +573,7 @@ pub struct UntagStream {
     _private: (),
 }
 impl UntagStream {
-    /// Creates a new builder-style object to manufacture [`UntagStreamInput`](crate::input::UntagStreamInput)
+    /// Creates a new builder-style object to manufacture [`UntagStreamInput`](crate::input::UntagStreamInput).
     pub fn builder() -> crate::input::untag_stream_input::Builder {
         crate::input::untag_stream_input::Builder::default()
     }
@@ -605,7 +605,7 @@ pub struct UpdateDataRetention {
     _private: (),
 }
 impl UpdateDataRetention {
-    /// Creates a new builder-style object to manufacture [`UpdateDataRetentionInput`](crate::input::UpdateDataRetentionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDataRetentionInput`](crate::input::UpdateDataRetentionInput).
     pub fn builder() -> crate::input::update_data_retention_input::Builder {
         crate::input::update_data_retention_input::Builder::default()
     }
@@ -639,7 +639,7 @@ pub struct UpdateImageGenerationConfiguration {
     _private: (),
 }
 impl UpdateImageGenerationConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateImageGenerationConfigurationInput`](crate::input::UpdateImageGenerationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateImageGenerationConfigurationInput`](crate::input::UpdateImageGenerationConfigurationInput).
     pub fn builder() -> crate::input::update_image_generation_configuration_input::Builder {
         crate::input::update_image_generation_configuration_input::Builder::default()
     }
@@ -673,7 +673,7 @@ pub struct UpdateNotificationConfiguration {
     _private: (),
 }
 impl UpdateNotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationConfigurationInput`](crate::input::UpdateNotificationConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationConfigurationInput`](crate::input::UpdateNotificationConfigurationInput).
     pub fn builder() -> crate::input::update_notification_configuration_input::Builder {
         crate::input::update_notification_configuration_input::Builder::default()
     }
@@ -707,7 +707,7 @@ pub struct UpdateSignalingChannel {
     _private: (),
 }
 impl UpdateSignalingChannel {
-    /// Creates a new builder-style object to manufacture [`UpdateSignalingChannelInput`](crate::input::UpdateSignalingChannelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSignalingChannelInput`](crate::input::UpdateSignalingChannelInput).
     pub fn builder() -> crate::input::update_signaling_channel_input::Builder {
         crate::input::update_signaling_channel_input::Builder::default()
     }
@@ -741,7 +741,7 @@ pub struct UpdateStream {
     _private: (),
 }
 impl UpdateStream {
-    /// Creates a new builder-style object to manufacture [`UpdateStreamInput`](crate::input::UpdateStreamInput)
+    /// Creates a new builder-style object to manufacture [`UpdateStreamInput`](crate::input::UpdateStreamInput).
     pub fn builder() -> crate::input::update_stream_input::Builder {
         crate::input::update_stream_input::Builder::default()
     }

@@ -54,11 +54,10 @@ impl std::fmt::Debug for UpdateUserProfileOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput)
+/// See [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
 pub mod update_user_profile_output {
 
-    /// A builder for [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -141,7 +140,7 @@ pub mod update_user_profile_output {
             self.last_modified_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput)
+        /// Consumes the builder and constructs a [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
         pub fn build(self) -> crate::output::UpdateUserProfileOutput {
             crate::output::UpdateUserProfileOutput {
                 user_arn: self.user_arn,
@@ -155,7 +154,7 @@ pub mod update_user_profile_output {
     }
 }
 impl UpdateUserProfileOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
     pub fn builder() -> crate::output::update_user_profile_output::Builder {
         crate::output::update_user_profile_output::Builder::default()
     }
@@ -195,11 +194,10 @@ impl std::fmt::Debug for UpdateTeamMemberOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput)
+/// See [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
 pub mod update_team_member_output {
 
-    /// A builder for [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -237,7 +235,7 @@ pub mod update_team_member_output {
             self.remote_access_allowed = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput)
+        /// Consumes the builder and constructs a [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
         pub fn build(self) -> crate::output::UpdateTeamMemberOutput {
             crate::output::UpdateTeamMemberOutput {
                 user_arn: self.user_arn,
@@ -248,7 +246,7 @@ pub mod update_team_member_output {
     }
 }
 impl UpdateTeamMemberOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
     pub fn builder() -> crate::output::update_team_member_output::Builder {
         crate::output::update_team_member_output::Builder::default()
     }
@@ -264,22 +262,21 @@ impl std::fmt::Debug for UpdateProjectOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+/// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
 pub mod update_project_output {
 
-    /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+        /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
         pub fn build(self) -> crate::output::UpdateProjectOutput {
             crate::output::UpdateProjectOutput {}
         }
     }
 }
 impl UpdateProjectOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
     pub fn builder() -> crate::output::update_project_output::Builder {
         crate::output::update_project_output::Builder::default()
     }
@@ -295,22 +292,21 @@ impl std::fmt::Debug for UntagProjectOutput {
         formatter.finish()
     }
 }
-/// See [`UntagProjectOutput`](crate::output::UntagProjectOutput)
+/// See [`UntagProjectOutput`](crate::output::UntagProjectOutput).
 pub mod untag_project_output {
 
-    /// A builder for [`UntagProjectOutput`](crate::output::UntagProjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagProjectOutput`](crate::output::UntagProjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagProjectOutput`](crate::output::UntagProjectOutput)
+        /// Consumes the builder and constructs a [`UntagProjectOutput`](crate::output::UntagProjectOutput).
         pub fn build(self) -> crate::output::UntagProjectOutput {
             crate::output::UntagProjectOutput {}
         }
     }
 }
 impl UntagProjectOutput {
-    /// Creates a new builder-style object to manufacture [`UntagProjectOutput`](crate::output::UntagProjectOutput)
+    /// Creates a new builder-style object to manufacture [`UntagProjectOutput`](crate::output::UntagProjectOutput).
     pub fn builder() -> crate::output::untag_project_output::Builder {
         crate::output::untag_project_output::Builder::default()
     }
@@ -340,11 +336,10 @@ impl std::fmt::Debug for TagProjectOutput {
         formatter.finish()
     }
 }
-/// See [`TagProjectOutput`](crate::output::TagProjectOutput)
+/// See [`TagProjectOutput`](crate::output::TagProjectOutput).
 pub mod tag_project_output {
 
-    /// A builder for [`TagProjectOutput`](crate::output::TagProjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagProjectOutput`](crate::output::TagProjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -377,14 +372,14 @@ pub mod tag_project_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagProjectOutput`](crate::output::TagProjectOutput)
+        /// Consumes the builder and constructs a [`TagProjectOutput`](crate::output::TagProjectOutput).
         pub fn build(self) -> crate::output::TagProjectOutput {
             crate::output::TagProjectOutput { tags: self.tags }
         }
     }
 }
 impl TagProjectOutput {
-    /// Creates a new builder-style object to manufacture [`TagProjectOutput`](crate::output::TagProjectOutput)
+    /// Creates a new builder-style object to manufacture [`TagProjectOutput`](crate::output::TagProjectOutput).
     pub fn builder() -> crate::output::tag_project_output::Builder {
         crate::output::tag_project_output::Builder::default()
     }
@@ -417,11 +412,10 @@ impl std::fmt::Debug for ListUserProfilesOutput {
         formatter.finish()
     }
 }
-/// See [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput)
+/// See [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
 pub mod list_user_profiles_output {
 
-    /// A builder for [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_profiles:
@@ -458,7 +452,7 @@ pub mod list_user_profiles_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput)
+        /// Consumes the builder and constructs a [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
         pub fn build(self) -> crate::output::ListUserProfilesOutput {
             crate::output::ListUserProfilesOutput {
                 user_profiles: self.user_profiles,
@@ -468,7 +462,7 @@ pub mod list_user_profiles_output {
     }
 }
 impl ListUserProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput)
+    /// Creates a new builder-style object to manufacture [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
     pub fn builder() -> crate::output::list_user_profiles_output::Builder {
         crate::output::list_user_profiles_output::Builder::default()
     }
@@ -501,11 +495,10 @@ impl std::fmt::Debug for ListTeamMembersOutput {
         formatter.finish()
     }
 }
-/// See [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput)
+/// See [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
 pub mod list_team_members_output {
 
-    /// A builder for [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) team_members: std::option::Option<std::vec::Vec<crate::model::TeamMember>>,
@@ -541,7 +534,7 @@ pub mod list_team_members_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput)
+        /// Consumes the builder and constructs a [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
         pub fn build(self) -> crate::output::ListTeamMembersOutput {
             crate::output::ListTeamMembersOutput {
                 team_members: self.team_members,
@@ -551,7 +544,7 @@ pub mod list_team_members_output {
     }
 }
 impl ListTeamMembersOutput {
-    /// Creates a new builder-style object to manufacture [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput)
+    /// Creates a new builder-style object to manufacture [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
     pub fn builder() -> crate::output::list_team_members_output::Builder {
         crate::output::list_team_members_output::Builder::default()
     }
@@ -588,11 +581,10 @@ impl std::fmt::Debug for ListTagsForProjectOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput)
+/// See [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
 pub mod list_tags_for_project_output {
 
-    /// A builder for [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -636,7 +628,7 @@ pub mod list_tags_for_project_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput)
+        /// Consumes the builder and constructs a [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
         pub fn build(self) -> crate::output::ListTagsForProjectOutput {
             crate::output::ListTagsForProjectOutput {
                 tags: self.tags,
@@ -646,7 +638,7 @@ pub mod list_tags_for_project_output {
     }
 }
 impl ListTagsForProjectOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
     pub fn builder() -> crate::output::list_tags_for_project_output::Builder {
         crate::output::list_tags_for_project_output::Builder::default()
     }
@@ -679,11 +671,10 @@ impl std::fmt::Debug for ListResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+/// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
 
-    /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -719,7 +710,7 @@ pub mod list_resources_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+        /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput).
         pub fn build(self) -> crate::output::ListResourcesOutput {
             crate::output::ListResourcesOutput {
                 resources: self.resources,
@@ -729,7 +720,7 @@ pub mod list_resources_output {
     }
 }
 impl ListResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput).
     pub fn builder() -> crate::output::list_resources_output::Builder {
         crate::output::list_resources_output::Builder::default()
     }
@@ -762,11 +753,10 @@ impl std::fmt::Debug for ListProjectsOutput {
         formatter.finish()
     }
 }
-/// See [`ListProjectsOutput`](crate::output::ListProjectsOutput)
+/// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
 
-    /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
@@ -802,7 +792,7 @@ pub mod list_projects_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::output::ListProjectsOutput)
+        /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::output::ListProjectsOutput).
         pub fn build(self) -> crate::output::ListProjectsOutput {
             crate::output::ListProjectsOutput {
                 projects: self.projects,
@@ -812,7 +802,7 @@ pub mod list_projects_output {
     }
 }
 impl ListProjectsOutput {
-    /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::output::ListProjectsOutput)
+    /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::output::ListProjectsOutput).
     pub fn builder() -> crate::output::list_projects_output::Builder {
         crate::output::list_projects_output::Builder::default()
     }
@@ -828,22 +818,21 @@ impl std::fmt::Debug for DisassociateTeamMemberOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput)
+/// See [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
 pub mod disassociate_team_member_output {
 
-    /// A builder for [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput)
+        /// Consumes the builder and constructs a [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
         pub fn build(self) -> crate::output::DisassociateTeamMemberOutput {
             crate::output::DisassociateTeamMemberOutput {}
         }
     }
 }
 impl DisassociateTeamMemberOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
     pub fn builder() -> crate::output::disassociate_team_member_output::Builder {
         crate::output::disassociate_team_member_output::Builder::default()
     }
@@ -904,11 +893,10 @@ impl std::fmt::Debug for DescribeUserProfileOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput)
+/// See [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
 pub mod describe_user_profile_output {
 
-    /// A builder for [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -991,7 +979,7 @@ pub mod describe_user_profile_output {
             self.last_modified_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput)
+        /// Consumes the builder and constructs a [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
         pub fn build(self) -> crate::output::DescribeUserProfileOutput {
             crate::output::DescribeUserProfileOutput {
                 user_arn: self.user_arn,
@@ -1005,7 +993,7 @@ pub mod describe_user_profile_output {
     }
 }
 impl DescribeUserProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
     pub fn builder() -> crate::output::describe_user_profile_output::Builder {
         crate::output::describe_user_profile_output::Builder::default()
     }
@@ -1087,11 +1075,10 @@ impl std::fmt::Debug for DescribeProjectOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
+/// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
 pub mod describe_project_output {
 
-    /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1207,7 +1194,7 @@ pub mod describe_project_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
+        /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
         pub fn build(self) -> crate::output::DescribeProjectOutput {
             crate::output::DescribeProjectOutput {
                 name: self.name,
@@ -1224,7 +1211,7 @@ pub mod describe_project_output {
     }
 }
 impl DescribeProjectOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
     pub fn builder() -> crate::output::describe_project_output::Builder {
         crate::output::describe_project_output::Builder::default()
     }
@@ -1250,11 +1237,10 @@ impl std::fmt::Debug for DeleteUserProfileOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
+/// See [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
 pub mod delete_user_profile_output {
 
-    /// A builder for [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -1270,7 +1256,7 @@ pub mod delete_user_profile_output {
             self.user_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
+        /// Consumes the builder and constructs a [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
         pub fn build(self) -> crate::output::DeleteUserProfileOutput {
             crate::output::DeleteUserProfileOutput {
                 user_arn: self.user_arn,
@@ -1279,7 +1265,7 @@ pub mod delete_user_profile_output {
     }
 }
 impl DeleteUserProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
     pub fn builder() -> crate::output::delete_user_profile_output::Builder {
         crate::output::delete_user_profile_output::Builder::default()
     }
@@ -1312,11 +1298,10 @@ impl std::fmt::Debug for DeleteProjectOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
+/// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
 
-    /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
@@ -1343,7 +1328,7 @@ pub mod delete_project_output {
             self.project_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
+        /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
         pub fn build(self) -> crate::output::DeleteProjectOutput {
             crate::output::DeleteProjectOutput {
                 stack_id: self.stack_id,
@@ -1353,7 +1338,7 @@ pub mod delete_project_output {
     }
 }
 impl DeleteProjectOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
     pub fn builder() -> crate::output::delete_project_output::Builder {
         crate::output::delete_project_output::Builder::default()
     }
@@ -1414,11 +1399,10 @@ impl std::fmt::Debug for CreateUserProfileOutput {
         formatter.finish()
     }
 }
-/// See [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput)
+/// See [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
 pub mod create_user_profile_output {
 
-    /// A builder for [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -1501,7 +1485,7 @@ pub mod create_user_profile_output {
             self.last_modified_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput)
+        /// Consumes the builder and constructs a [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
         pub fn build(self) -> crate::output::CreateUserProfileOutput {
             crate::output::CreateUserProfileOutput {
                 user_arn: self.user_arn,
@@ -1515,7 +1499,7 @@ pub mod create_user_profile_output {
     }
 }
 impl CreateUserProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput)
+    /// Creates a new builder-style object to manufacture [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
     pub fn builder() -> crate::output::create_user_profile_output::Builder {
         crate::output::create_user_profile_output::Builder::default()
     }
@@ -1562,11 +1546,10 @@ impl std::fmt::Debug for CreateProjectOutput {
         formatter.finish()
     }
 }
-/// See [`CreateProjectOutput`](crate::output::CreateProjectOutput)
+/// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
 
-    /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1621,7 +1604,7 @@ pub mod create_project_output {
             self.project_template_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::output::CreateProjectOutput)
+        /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::output::CreateProjectOutput).
         pub fn build(self) -> crate::output::CreateProjectOutput {
             crate::output::CreateProjectOutput {
                 id: self.id,
@@ -1633,7 +1616,7 @@ pub mod create_project_output {
     }
 }
 impl CreateProjectOutput {
-    /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput)
+    /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput).
     pub fn builder() -> crate::output::create_project_output::Builder {
         crate::output::create_project_output::Builder::default()
     }
@@ -1659,11 +1642,10 @@ impl std::fmt::Debug for AssociateTeamMemberOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput)
+/// See [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
 pub mod associate_team_member_output {
 
-    /// A builder for [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -1682,7 +1664,7 @@ pub mod associate_team_member_output {
             self.client_request_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput)
+        /// Consumes the builder and constructs a [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
         pub fn build(self) -> crate::output::AssociateTeamMemberOutput {
             crate::output::AssociateTeamMemberOutput {
                 client_request_token: self.client_request_token,
@@ -1691,7 +1673,7 @@ pub mod associate_team_member_output {
     }
 }
 impl AssociateTeamMemberOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
     pub fn builder() -> crate::output::associate_team_member_output::Builder {
         crate::output::associate_team_member_output::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct AcceptInboundCrossClusterSearchConnection {
     _private: (),
 }
 impl AcceptInboundCrossClusterSearchConnection {
-    /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionInput`](crate::input::AcceptInboundCrossClusterSearchConnectionInput)
+    /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionInput`](crate::input::AcceptInboundCrossClusterSearchConnectionInput).
     pub fn builder() -> crate::input::accept_inbound_cross_cluster_search_connection_input::Builder
     {
         crate::input::accept_inbound_cross_cluster_search_connection_input::Builder::default()
@@ -49,7 +49,7 @@ pub struct AddTags {
     _private: (),
 }
 impl AddTags {
-    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
     pub fn builder() -> crate::input::add_tags_input::Builder {
         crate::input::add_tags_input::Builder::default()
     }
@@ -80,7 +80,7 @@ pub struct AssociatePackage {
     _private: (),
 }
 impl AssociatePackage {
-    /// Creates a new builder-style object to manufacture [`AssociatePackageInput`](crate::input::AssociatePackageInput)
+    /// Creates a new builder-style object to manufacture [`AssociatePackageInput`](crate::input::AssociatePackageInput).
     pub fn builder() -> crate::input::associate_package_input::Builder {
         crate::input::associate_package_input::Builder::default()
     }
@@ -114,7 +114,7 @@ pub struct CancelElasticsearchServiceSoftwareUpdate {
     _private: (),
 }
 impl CancelElasticsearchServiceSoftwareUpdate {
-    /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::input::CancelElasticsearchServiceSoftwareUpdateInput)
+    /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::input::CancelElasticsearchServiceSoftwareUpdateInput).
     pub fn builder() -> crate::input::cancel_elasticsearch_service_software_update_input::Builder {
         crate::input::cancel_elasticsearch_service_software_update_input::Builder::default()
     }
@@ -152,7 +152,7 @@ pub struct CreateElasticsearchDomain {
     _private: (),
 }
 impl CreateElasticsearchDomain {
-    /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainInput`](crate::input::CreateElasticsearchDomainInput)
+    /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainInput`](crate::input::CreateElasticsearchDomainInput).
     pub fn builder() -> crate::input::create_elasticsearch_domain_input::Builder {
         crate::input::create_elasticsearch_domain_input::Builder::default()
     }
@@ -186,7 +186,7 @@ pub struct CreateOutboundCrossClusterSearchConnection {
     _private: (),
 }
 impl CreateOutboundCrossClusterSearchConnection {
-    /// Creates a new builder-style object to manufacture [`CreateOutboundCrossClusterSearchConnectionInput`](crate::input::CreateOutboundCrossClusterSearchConnectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateOutboundCrossClusterSearchConnectionInput`](crate::input::CreateOutboundCrossClusterSearchConnectionInput).
     pub fn builder() -> crate::input::create_outbound_cross_cluster_search_connection_input::Builder
     {
         crate::input::create_outbound_cross_cluster_search_connection_input::Builder::default()
@@ -225,7 +225,7 @@ pub struct CreatePackage {
     _private: (),
 }
 impl CreatePackage {
-    /// Creates a new builder-style object to manufacture [`CreatePackageInput`](crate::input::CreatePackageInput)
+    /// Creates a new builder-style object to manufacture [`CreatePackageInput`](crate::input::CreatePackageInput).
     pub fn builder() -> crate::input::create_package_input::Builder {
         crate::input::create_package_input::Builder::default()
     }
@@ -257,7 +257,7 @@ pub struct DeleteElasticsearchDomain {
     _private: (),
 }
 impl DeleteElasticsearchDomain {
-    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainInput`](crate::input::DeleteElasticsearchDomainInput)
+    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainInput`](crate::input::DeleteElasticsearchDomainInput).
     pub fn builder() -> crate::input::delete_elasticsearch_domain_input::Builder {
         crate::input::delete_elasticsearch_domain_input::Builder::default()
     }
@@ -291,7 +291,7 @@ pub struct DeleteElasticsearchServiceRole {
     _private: (),
 }
 impl DeleteElasticsearchServiceRole {
-    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleInput`](crate::input::DeleteElasticsearchServiceRoleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleInput`](crate::input::DeleteElasticsearchServiceRoleInput).
     pub fn builder() -> crate::input::delete_elasticsearch_service_role_input::Builder {
         crate::input::delete_elasticsearch_service_role_input::Builder::default()
     }
@@ -325,7 +325,7 @@ pub struct DeleteInboundCrossClusterSearchConnection {
     _private: (),
 }
 impl DeleteInboundCrossClusterSearchConnection {
-    /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionInput`](crate::input::DeleteInboundCrossClusterSearchConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionInput`](crate::input::DeleteInboundCrossClusterSearchConnectionInput).
     pub fn builder() -> crate::input::delete_inbound_cross_cluster_search_connection_input::Builder
     {
         crate::input::delete_inbound_cross_cluster_search_connection_input::Builder::default()
@@ -364,7 +364,7 @@ pub struct DeleteOutboundCrossClusterSearchConnection {
     _private: (),
 }
 impl DeleteOutboundCrossClusterSearchConnection {
-    /// Creates a new builder-style object to manufacture [`DeleteOutboundCrossClusterSearchConnectionInput`](crate::input::DeleteOutboundCrossClusterSearchConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOutboundCrossClusterSearchConnectionInput`](crate::input::DeleteOutboundCrossClusterSearchConnectionInput).
     pub fn builder() -> crate::input::delete_outbound_cross_cluster_search_connection_input::Builder
     {
         crate::input::delete_outbound_cross_cluster_search_connection_input::Builder::default()
@@ -403,7 +403,7 @@ pub struct DeletePackage {
     _private: (),
 }
 impl DeletePackage {
-    /// Creates a new builder-style object to manufacture [`DeletePackageInput`](crate::input::DeletePackageInput)
+    /// Creates a new builder-style object to manufacture [`DeletePackageInput`](crate::input::DeletePackageInput).
     pub fn builder() -> crate::input::delete_package_input::Builder {
         crate::input::delete_package_input::Builder::default()
     }
@@ -435,7 +435,7 @@ pub struct DescribeDomainAutoTunes {
     _private: (),
 }
 impl DescribeDomainAutoTunes {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesInput`](crate::input::DescribeDomainAutoTunesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesInput`](crate::input::DescribeDomainAutoTunesInput).
     pub fn builder() -> crate::input::describe_domain_auto_tunes_input::Builder {
         crate::input::describe_domain_auto_tunes_input::Builder::default()
     }
@@ -469,7 +469,7 @@ pub struct DescribeDomainChangeProgress {
     _private: (),
 }
 impl DescribeDomainChangeProgress {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressInput`](crate::input::DescribeDomainChangeProgressInput).
     pub fn builder() -> crate::input::describe_domain_change_progress_input::Builder {
         crate::input::describe_domain_change_progress_input::Builder::default()
     }
@@ -503,7 +503,7 @@ pub struct DescribeElasticsearchDomain {
     _private: (),
 }
 impl DescribeElasticsearchDomain {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainInput`](crate::input::DescribeElasticsearchDomainInput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainInput`](crate::input::DescribeElasticsearchDomainInput).
     pub fn builder() -> crate::input::describe_elasticsearch_domain_input::Builder {
         crate::input::describe_elasticsearch_domain_input::Builder::default()
     }
@@ -537,7 +537,7 @@ pub struct DescribeElasticsearchDomainConfig {
     _private: (),
 }
 impl DescribeElasticsearchDomainConfig {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigInput`](crate::input::DescribeElasticsearchDomainConfigInput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigInput`](crate::input::DescribeElasticsearchDomainConfigInput).
     pub fn builder() -> crate::input::describe_elasticsearch_domain_config_input::Builder {
         crate::input::describe_elasticsearch_domain_config_input::Builder::default()
     }
@@ -571,7 +571,7 @@ pub struct DescribeElasticsearchDomains {
     _private: (),
 }
 impl DescribeElasticsearchDomains {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsInput`](crate::input::DescribeElasticsearchDomainsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsInput`](crate::input::DescribeElasticsearchDomainsInput).
     pub fn builder() -> crate::input::describe_elasticsearch_domains_input::Builder {
         crate::input::describe_elasticsearch_domains_input::Builder::default()
     }
@@ -605,7 +605,7 @@ pub struct DescribeElasticsearchInstanceTypeLimits {
     _private: (),
 }
 impl DescribeElasticsearchInstanceTypeLimits {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput).
     pub fn builder() -> crate::input::describe_elasticsearch_instance_type_limits_input::Builder {
         crate::input::describe_elasticsearch_instance_type_limits_input::Builder::default()
     }
@@ -643,7 +643,7 @@ pub struct DescribeInboundCrossClusterSearchConnections {
     _private: (),
 }
 impl DescribeInboundCrossClusterSearchConnections {
-    /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput).
     pub fn builder(
     ) -> crate::input::describe_inbound_cross_cluster_search_connections_input::Builder {
         crate::input::describe_inbound_cross_cluster_search_connections_input::Builder::default()
@@ -684,7 +684,7 @@ pub struct DescribeOutboundCrossClusterSearchConnections {
     _private: (),
 }
 impl DescribeOutboundCrossClusterSearchConnections {
-    /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput).
     pub fn builder(
     ) -> crate::input::describe_outbound_cross_cluster_search_connections_input::Builder {
         crate::input::describe_outbound_cross_cluster_search_connections_input::Builder::default()
@@ -723,7 +723,7 @@ pub struct DescribePackages {
     _private: (),
 }
 impl DescribePackages {
-    /// Creates a new builder-style object to manufacture [`DescribePackagesInput`](crate::input::DescribePackagesInput)
+    /// Creates a new builder-style object to manufacture [`DescribePackagesInput`](crate::input::DescribePackagesInput).
     pub fn builder() -> crate::input::describe_packages_input::Builder {
         crate::input::describe_packages_input::Builder::default()
     }
@@ -757,7 +757,7 @@ pub struct DescribeReservedElasticsearchInstanceOfferings {
     _private: (),
 }
 impl DescribeReservedElasticsearchInstanceOfferings {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput).
     pub fn builder(
     ) -> crate::input::describe_reserved_elasticsearch_instance_offerings_input::Builder {
         crate::input::describe_reserved_elasticsearch_instance_offerings_input::Builder::default()
@@ -796,7 +796,7 @@ pub struct DescribeReservedElasticsearchInstances {
     _private: (),
 }
 impl DescribeReservedElasticsearchInstances {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesInput`](crate::input::DescribeReservedElasticsearchInstancesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesInput`](crate::input::DescribeReservedElasticsearchInstancesInput).
     pub fn builder() -> crate::input::describe_reserved_elasticsearch_instances_input::Builder {
         crate::input::describe_reserved_elasticsearch_instances_input::Builder::default()
     }
@@ -832,7 +832,7 @@ pub struct DissociatePackage {
     _private: (),
 }
 impl DissociatePackage {
-    /// Creates a new builder-style object to manufacture [`DissociatePackageInput`](crate::input::DissociatePackageInput)
+    /// Creates a new builder-style object to manufacture [`DissociatePackageInput`](crate::input::DissociatePackageInput).
     pub fn builder() -> crate::input::dissociate_package_input::Builder {
         crate::input::dissociate_package_input::Builder::default()
     }
@@ -866,7 +866,7 @@ pub struct GetCompatibleElasticsearchVersions {
     _private: (),
 }
 impl GetCompatibleElasticsearchVersions {
-    /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsInput`](crate::input::GetCompatibleElasticsearchVersionsInput)
+    /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsInput`](crate::input::GetCompatibleElasticsearchVersionsInput).
     pub fn builder() -> crate::input::get_compatible_elasticsearch_versions_input::Builder {
         crate::input::get_compatible_elasticsearch_versions_input::Builder::default()
     }
@@ -900,7 +900,7 @@ pub struct GetPackageVersionHistory {
     _private: (),
 }
 impl GetPackageVersionHistory {
-    /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryInput`](crate::input::GetPackageVersionHistoryInput)
+    /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryInput`](crate::input::GetPackageVersionHistoryInput).
     pub fn builder() -> crate::input::get_package_version_history_input::Builder {
         crate::input::get_package_version_history_input::Builder::default()
     }
@@ -934,7 +934,7 @@ pub struct GetUpgradeHistory {
     _private: (),
 }
 impl GetUpgradeHistory {
-    /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryInput`](crate::input::GetUpgradeHistoryInput)
+    /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryInput`](crate::input::GetUpgradeHistoryInput).
     pub fn builder() -> crate::input::get_upgrade_history_input::Builder {
         crate::input::get_upgrade_history_input::Builder::default()
     }
@@ -968,7 +968,7 @@ pub struct GetUpgradeStatus {
     _private: (),
 }
 impl GetUpgradeStatus {
-    /// Creates a new builder-style object to manufacture [`GetUpgradeStatusInput`](crate::input::GetUpgradeStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetUpgradeStatusInput`](crate::input::GetUpgradeStatusInput).
     pub fn builder() -> crate::input::get_upgrade_status_input::Builder {
         crate::input::get_upgrade_status_input::Builder::default()
     }
@@ -1002,7 +1002,7 @@ pub struct ListDomainNames {
     _private: (),
 }
 impl ListDomainNames {
-    /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
     pub fn builder() -> crate::input::list_domain_names_input::Builder {
         crate::input::list_domain_names_input::Builder::default()
     }
@@ -1036,7 +1036,7 @@ pub struct ListDomainsForPackage {
     _private: (),
 }
 impl ListDomainsForPackage {
-    /// Creates a new builder-style object to manufacture [`ListDomainsForPackageInput`](crate::input::ListDomainsForPackageInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainsForPackageInput`](crate::input::ListDomainsForPackageInput).
     pub fn builder() -> crate::input::list_domains_for_package_input::Builder {
         crate::input::list_domains_for_package_input::Builder::default()
     }
@@ -1070,7 +1070,7 @@ pub struct ListElasticsearchInstanceTypes {
     _private: (),
 }
 impl ListElasticsearchInstanceTypes {
-    /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesInput`](crate::input::ListElasticsearchInstanceTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesInput`](crate::input::ListElasticsearchInstanceTypesInput).
     pub fn builder() -> crate::input::list_elasticsearch_instance_types_input::Builder {
         crate::input::list_elasticsearch_instance_types_input::Builder::default()
     }
@@ -1104,7 +1104,7 @@ pub struct ListElasticsearchVersions {
     _private: (),
 }
 impl ListElasticsearchVersions {
-    /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsInput`](crate::input::ListElasticsearchVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsInput`](crate::input::ListElasticsearchVersionsInput).
     pub fn builder() -> crate::input::list_elasticsearch_versions_input::Builder {
         crate::input::list_elasticsearch_versions_input::Builder::default()
     }
@@ -1138,7 +1138,7 @@ pub struct ListPackagesForDomain {
     _private: (),
 }
 impl ListPackagesForDomain {
-    /// Creates a new builder-style object to manufacture [`ListPackagesForDomainInput`](crate::input::ListPackagesForDomainInput)
+    /// Creates a new builder-style object to manufacture [`ListPackagesForDomainInput`](crate::input::ListPackagesForDomainInput).
     pub fn builder() -> crate::input::list_packages_for_domain_input::Builder {
         crate::input::list_packages_for_domain_input::Builder::default()
     }
@@ -1172,7 +1172,7 @@ pub struct ListTags {
     _private: (),
 }
 impl ListTags {
-    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
     }
@@ -1203,7 +1203,7 @@ pub struct PurchaseReservedElasticsearchInstanceOffering {
     _private: (),
 }
 impl PurchaseReservedElasticsearchInstanceOffering {
-    /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingInput`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput)
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingInput`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput).
     pub fn builder(
     ) -> crate::input::purchase_reserved_elasticsearch_instance_offering_input::Builder {
         crate::input::purchase_reserved_elasticsearch_instance_offering_input::Builder::default()
@@ -1244,7 +1244,7 @@ pub struct RejectInboundCrossClusterSearchConnection {
     _private: (),
 }
 impl RejectInboundCrossClusterSearchConnection {
-    /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionInput`](crate::input::RejectInboundCrossClusterSearchConnectionInput)
+    /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionInput`](crate::input::RejectInboundCrossClusterSearchConnectionInput).
     pub fn builder() -> crate::input::reject_inbound_cross_cluster_search_connection_input::Builder
     {
         crate::input::reject_inbound_cross_cluster_search_connection_input::Builder::default()
@@ -1283,7 +1283,7 @@ pub struct RemoveTags {
     _private: (),
 }
 impl RemoveTags {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput).
     pub fn builder() -> crate::input::remove_tags_input::Builder {
         crate::input::remove_tags_input::Builder::default()
     }
@@ -1315,7 +1315,7 @@ pub struct StartElasticsearchServiceSoftwareUpdate {
     _private: (),
 }
 impl StartElasticsearchServiceSoftwareUpdate {
-    /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateInput`](crate::input::StartElasticsearchServiceSoftwareUpdateInput)
+    /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateInput`](crate::input::StartElasticsearchServiceSoftwareUpdateInput).
     pub fn builder() -> crate::input::start_elasticsearch_service_software_update_input::Builder {
         crate::input::start_elasticsearch_service_software_update_input::Builder::default()
     }
@@ -1353,7 +1353,7 @@ pub struct UpdateElasticsearchDomainConfig {
     _private: (),
 }
 impl UpdateElasticsearchDomainConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigInput`](crate::input::UpdateElasticsearchDomainConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigInput`](crate::input::UpdateElasticsearchDomainConfigInput).
     pub fn builder() -> crate::input::update_elasticsearch_domain_config_input::Builder {
         crate::input::update_elasticsearch_domain_config_input::Builder::default()
     }
@@ -1387,7 +1387,7 @@ pub struct UpdatePackage {
     _private: (),
 }
 impl UpdatePackage {
-    /// Creates a new builder-style object to manufacture [`UpdatePackageInput`](crate::input::UpdatePackageInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePackageInput`](crate::input::UpdatePackageInput).
     pub fn builder() -> crate::input::update_package_input::Builder {
         crate::input::update_package_input::Builder::default()
     }
@@ -1419,7 +1419,7 @@ pub struct UpgradeElasticsearchDomain {
     _private: (),
 }
 impl UpgradeElasticsearchDomain {
-    /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainInput`](crate::input::UpgradeElasticsearchDomainInput)
+    /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainInput`](crate::input::UpgradeElasticsearchDomainInput).
     pub fn builder() -> crate::input::upgrade_elasticsearch_domain_input::Builder {
         crate::input::upgrade_elasticsearch_domain_input::Builder::default()
     }

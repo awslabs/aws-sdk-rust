@@ -10,7 +10,7 @@ pub struct AddLFTagsToResource {
     _private: (),
 }
 impl AddLFTagsToResource {
-    /// Creates a new builder-style object to manufacture [`AddLfTagsToResourceInput`](crate::input::AddLfTagsToResourceInput)
+    /// Creates a new builder-style object to manufacture [`AddLfTagsToResourceInput`](crate::input::AddLfTagsToResourceInput).
     pub fn builder() -> crate::input::add_lf_tags_to_resource_input::Builder {
         crate::input::add_lf_tags_to_resource_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchGrantPermissions {
     _private: (),
 }
 impl BatchGrantPermissions {
-    /// Creates a new builder-style object to manufacture [`BatchGrantPermissionsInput`](crate::input::BatchGrantPermissionsInput)
+    /// Creates a new builder-style object to manufacture [`BatchGrantPermissionsInput`](crate::input::BatchGrantPermissionsInput).
     pub fn builder() -> crate::input::batch_grant_permissions_input::Builder {
         crate::input::batch_grant_permissions_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchRevokePermissions {
     _private: (),
 }
 impl BatchRevokePermissions {
-    /// Creates a new builder-style object to manufacture [`BatchRevokePermissionsInput`](crate::input::BatchRevokePermissionsInput)
+    /// Creates a new builder-style object to manufacture [`BatchRevokePermissionsInput`](crate::input::BatchRevokePermissionsInput).
     pub fn builder() -> crate::input::batch_revoke_permissions_input::Builder {
         crate::input::batch_revoke_permissions_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CancelTransaction {
     _private: (),
 }
 impl CancelTransaction {
-    /// Creates a new builder-style object to manufacture [`CancelTransactionInput`](crate::input::CancelTransactionInput)
+    /// Creates a new builder-style object to manufacture [`CancelTransactionInput`](crate::input::CancelTransactionInput).
     pub fn builder() -> crate::input::cancel_transaction_input::Builder {
         crate::input::cancel_transaction_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CommitTransaction {
     _private: (),
 }
 impl CommitTransaction {
-    /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput)
+    /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput).
     pub fn builder() -> crate::input::commit_transaction_input::Builder {
         crate::input::commit_transaction_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateDataCellsFilter {
     _private: (),
 }
 impl CreateDataCellsFilter {
-    /// Creates a new builder-style object to manufacture [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataCellsFilterInput`](crate::input::CreateDataCellsFilterInput).
     pub fn builder() -> crate::input::create_data_cells_filter_input::Builder {
         crate::input::create_data_cells_filter_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct CreateLFTag {
     _private: (),
 }
 impl CreateLFTag {
-    /// Creates a new builder-style object to manufacture [`CreateLfTagInput`](crate::input::CreateLfTagInput)
+    /// Creates a new builder-style object to manufacture [`CreateLfTagInput`](crate::input::CreateLfTagInput).
     pub fn builder() -> crate::input::create_lf_tag_input::Builder {
         crate::input::create_lf_tag_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct DeleteDataCellsFilter {
     _private: (),
 }
 impl DeleteDataCellsFilter {
-    /// Creates a new builder-style object to manufacture [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDataCellsFilterInput`](crate::input::DeleteDataCellsFilterInput).
     pub fn builder() -> crate::input::delete_data_cells_filter_input::Builder {
         crate::input::delete_data_cells_filter_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct DeleteLFTag {
     _private: (),
 }
 impl DeleteLFTag {
-    /// Creates a new builder-style object to manufacture [`DeleteLfTagInput`](crate::input::DeleteLfTagInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLfTagInput`](crate::input::DeleteLfTagInput).
     pub fn builder() -> crate::input::delete_lf_tag_input::Builder {
         crate::input::delete_lf_tag_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DeleteObjectsOnCancel {
     _private: (),
 }
 impl DeleteObjectsOnCancel {
-    /// Creates a new builder-style object to manufacture [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteObjectsOnCancelInput`](crate::input::DeleteObjectsOnCancelInput).
     pub fn builder() -> crate::input::delete_objects_on_cancel_input::Builder {
         crate::input::delete_objects_on_cancel_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DeregisterResource {
     _private: (),
 }
 impl DeregisterResource {
-    /// Creates a new builder-style object to manufacture [`DeregisterResourceInput`](crate::input::DeregisterResourceInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterResourceInput`](crate::input::DeregisterResourceInput).
     pub fn builder() -> crate::input::deregister_resource_input::Builder {
         crate::input::deregister_resource_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DescribeResource {
     _private: (),
 }
 impl DescribeResource {
-    /// Creates a new builder-style object to manufacture [`DescribeResourceInput`](crate::input::DescribeResourceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeResourceInput`](crate::input::DescribeResourceInput).
     pub fn builder() -> crate::input::describe_resource_input::Builder {
         crate::input::describe_resource_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DescribeTransaction {
     _private: (),
 }
 impl DescribeTransaction {
-    /// Creates a new builder-style object to manufacture [`DescribeTransactionInput`](crate::input::DescribeTransactionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTransactionInput`](crate::input::DescribeTransactionInput).
     pub fn builder() -> crate::input::describe_transaction_input::Builder {
         crate::input::describe_transaction_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct ExtendTransaction {
     _private: (),
 }
 impl ExtendTransaction {
-    /// Creates a new builder-style object to manufacture [`ExtendTransactionInput`](crate::input::ExtendTransactionInput)
+    /// Creates a new builder-style object to manufacture [`ExtendTransactionInput`](crate::input::ExtendTransactionInput).
     pub fn builder() -> crate::input::extend_transaction_input::Builder {
         crate::input::extend_transaction_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct GetDataLakeSettings {
     _private: (),
 }
 impl GetDataLakeSettings {
-    /// Creates a new builder-style object to manufacture [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput)
+    /// Creates a new builder-style object to manufacture [`GetDataLakeSettingsInput`](crate::input::GetDataLakeSettingsInput).
     pub fn builder() -> crate::input::get_data_lake_settings_input::Builder {
         crate::input::get_data_lake_settings_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct GetEffectivePermissionsForPath {
     _private: (),
 }
 impl GetEffectivePermissionsForPath {
-    /// Creates a new builder-style object to manufacture [`GetEffectivePermissionsForPathInput`](crate::input::GetEffectivePermissionsForPathInput)
+    /// Creates a new builder-style object to manufacture [`GetEffectivePermissionsForPathInput`](crate::input::GetEffectivePermissionsForPathInput).
     pub fn builder() -> crate::input::get_effective_permissions_for_path_input::Builder {
         crate::input::get_effective_permissions_for_path_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct GetLFTag {
     _private: (),
 }
 impl GetLFTag {
-    /// Creates a new builder-style object to manufacture [`GetLfTagInput`](crate::input::GetLfTagInput)
+    /// Creates a new builder-style object to manufacture [`GetLfTagInput`](crate::input::GetLfTagInput).
     pub fn builder() -> crate::input::get_lf_tag_input::Builder {
         crate::input::get_lf_tag_input::Builder::default()
     }
@@ -581,7 +581,7 @@ pub struct GetQueryState {
     _private: (),
 }
 impl GetQueryState {
-    /// Creates a new builder-style object to manufacture [`GetQueryStateInput`](crate::input::GetQueryStateInput)
+    /// Creates a new builder-style object to manufacture [`GetQueryStateInput`](crate::input::GetQueryStateInput).
     pub fn builder() -> crate::input::get_query_state_input::Builder {
         crate::input::get_query_state_input::Builder::default()
     }
@@ -613,7 +613,7 @@ pub struct GetQueryStatistics {
     _private: (),
 }
 impl GetQueryStatistics {
-    /// Creates a new builder-style object to manufacture [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput)
+    /// Creates a new builder-style object to manufacture [`GetQueryStatisticsInput`](crate::input::GetQueryStatisticsInput).
     pub fn builder() -> crate::input::get_query_statistics_input::Builder {
         crate::input::get_query_statistics_input::Builder::default()
     }
@@ -647,7 +647,7 @@ pub struct GetResourceLFTags {
     _private: (),
 }
 impl GetResourceLFTags {
-    /// Creates a new builder-style object to manufacture [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceLfTagsInput`](crate::input::GetResourceLfTagsInput).
     pub fn builder() -> crate::input::get_resource_lf_tags_input::Builder {
         crate::input::get_resource_lf_tags_input::Builder::default()
     }
@@ -681,7 +681,7 @@ pub struct GetTableObjects {
     _private: (),
 }
 impl GetTableObjects {
-    /// Creates a new builder-style object to manufacture [`GetTableObjectsInput`](crate::input::GetTableObjectsInput)
+    /// Creates a new builder-style object to manufacture [`GetTableObjectsInput`](crate::input::GetTableObjectsInput).
     pub fn builder() -> crate::input::get_table_objects_input::Builder {
         crate::input::get_table_objects_input::Builder::default()
     }
@@ -715,7 +715,7 @@ pub struct GetTemporaryGluePartitionCredentials {
     _private: (),
 }
 impl GetTemporaryGluePartitionCredentials {
-    /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsInput`](crate::input::GetTemporaryGluePartitionCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`GetTemporaryGluePartitionCredentialsInput`](crate::input::GetTemporaryGluePartitionCredentialsInput).
     pub fn builder() -> crate::input::get_temporary_glue_partition_credentials_input::Builder {
         crate::input::get_temporary_glue_partition_credentials_input::Builder::default()
     }
@@ -751,7 +751,7 @@ pub struct GetTemporaryGlueTableCredentials {
     _private: (),
 }
 impl GetTemporaryGlueTableCredentials {
-    /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsInput`](crate::input::GetTemporaryGlueTableCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsInput`](crate::input::GetTemporaryGlueTableCredentialsInput).
     pub fn builder() -> crate::input::get_temporary_glue_table_credentials_input::Builder {
         crate::input::get_temporary_glue_table_credentials_input::Builder::default()
     }
@@ -785,7 +785,7 @@ pub struct GetWorkUnitResults {
     _private: (),
 }
 impl GetWorkUnitResults {
-    /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkUnitResultsInput`](crate::input::GetWorkUnitResultsInput).
     pub fn builder() -> crate::input::get_work_unit_results_input::Builder {
         crate::input::get_work_unit_results_input::Builder::default()
     }
@@ -828,7 +828,7 @@ pub struct GetWorkUnits {
     _private: (),
 }
 impl GetWorkUnits {
-    /// Creates a new builder-style object to manufacture [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkUnitsInput`](crate::input::GetWorkUnitsInput).
     pub fn builder() -> crate::input::get_work_units_input::Builder {
         crate::input::get_work_units_input::Builder::default()
     }
@@ -860,7 +860,7 @@ pub struct GrantPermissions {
     _private: (),
 }
 impl GrantPermissions {
-    /// Creates a new builder-style object to manufacture [`GrantPermissionsInput`](crate::input::GrantPermissionsInput)
+    /// Creates a new builder-style object to manufacture [`GrantPermissionsInput`](crate::input::GrantPermissionsInput).
     pub fn builder() -> crate::input::grant_permissions_input::Builder {
         crate::input::grant_permissions_input::Builder::default()
     }
@@ -894,7 +894,7 @@ pub struct ListDataCellsFilter {
     _private: (),
 }
 impl ListDataCellsFilter {
-    /// Creates a new builder-style object to manufacture [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput)
+    /// Creates a new builder-style object to manufacture [`ListDataCellsFilterInput`](crate::input::ListDataCellsFilterInput).
     pub fn builder() -> crate::input::list_data_cells_filter_input::Builder {
         crate::input::list_data_cells_filter_input::Builder::default()
     }
@@ -928,7 +928,7 @@ pub struct ListLFTags {
     _private: (),
 }
 impl ListLFTags {
-    /// Creates a new builder-style object to manufacture [`ListLfTagsInput`](crate::input::ListLfTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListLfTagsInput`](crate::input::ListLfTagsInput).
     pub fn builder() -> crate::input::list_lf_tags_input::Builder {
         crate::input::list_lf_tags_input::Builder::default()
     }
@@ -960,7 +960,7 @@ pub struct ListPermissions {
     _private: (),
 }
 impl ListPermissions {
-    /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::input::ListPermissionsInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::input::ListPermissionsInput).
     pub fn builder() -> crate::input::list_permissions_input::Builder {
         crate::input::list_permissions_input::Builder::default()
     }
@@ -994,7 +994,7 @@ pub struct ListResources {
     _private: (),
 }
 impl ListResources {
-    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput).
     pub fn builder() -> crate::input::list_resources_input::Builder {
         crate::input::list_resources_input::Builder::default()
     }
@@ -1026,7 +1026,7 @@ pub struct ListTableStorageOptimizers {
     _private: (),
 }
 impl ListTableStorageOptimizers {
-    /// Creates a new builder-style object to manufacture [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput)
+    /// Creates a new builder-style object to manufacture [`ListTableStorageOptimizersInput`](crate::input::ListTableStorageOptimizersInput).
     pub fn builder() -> crate::input::list_table_storage_optimizers_input::Builder {
         crate::input::list_table_storage_optimizers_input::Builder::default()
     }
@@ -1060,7 +1060,7 @@ pub struct ListTransactions {
     _private: (),
 }
 impl ListTransactions {
-    /// Creates a new builder-style object to manufacture [`ListTransactionsInput`](crate::input::ListTransactionsInput)
+    /// Creates a new builder-style object to manufacture [`ListTransactionsInput`](crate::input::ListTransactionsInput).
     pub fn builder() -> crate::input::list_transactions_input::Builder {
         crate::input::list_transactions_input::Builder::default()
     }
@@ -1094,7 +1094,7 @@ pub struct PutDataLakeSettings {
     _private: (),
 }
 impl PutDataLakeSettings {
-    /// Creates a new builder-style object to manufacture [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput)
+    /// Creates a new builder-style object to manufacture [`PutDataLakeSettingsInput`](crate::input::PutDataLakeSettingsInput).
     pub fn builder() -> crate::input::put_data_lake_settings_input::Builder {
         crate::input::put_data_lake_settings_input::Builder::default()
     }
@@ -1128,7 +1128,7 @@ pub struct RegisterResource {
     _private: (),
 }
 impl RegisterResource {
-    /// Creates a new builder-style object to manufacture [`RegisterResourceInput`](crate::input::RegisterResourceInput)
+    /// Creates a new builder-style object to manufacture [`RegisterResourceInput`](crate::input::RegisterResourceInput).
     pub fn builder() -> crate::input::register_resource_input::Builder {
         crate::input::register_resource_input::Builder::default()
     }
@@ -1162,7 +1162,7 @@ pub struct RemoveLFTagsFromResource {
     _private: (),
 }
 impl RemoveLFTagsFromResource {
-    /// Creates a new builder-style object to manufacture [`RemoveLfTagsFromResourceInput`](crate::input::RemoveLfTagsFromResourceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveLfTagsFromResourceInput`](crate::input::RemoveLfTagsFromResourceInput).
     pub fn builder() -> crate::input::remove_lf_tags_from_resource_input::Builder {
         crate::input::remove_lf_tags_from_resource_input::Builder::default()
     }
@@ -1196,7 +1196,7 @@ pub struct RevokePermissions {
     _private: (),
 }
 impl RevokePermissions {
-    /// Creates a new builder-style object to manufacture [`RevokePermissionsInput`](crate::input::RevokePermissionsInput)
+    /// Creates a new builder-style object to manufacture [`RevokePermissionsInput`](crate::input::RevokePermissionsInput).
     pub fn builder() -> crate::input::revoke_permissions_input::Builder {
         crate::input::revoke_permissions_input::Builder::default()
     }
@@ -1230,7 +1230,7 @@ pub struct SearchDatabasesByLFTags {
     _private: (),
 }
 impl SearchDatabasesByLFTags {
-    /// Creates a new builder-style object to manufacture [`SearchDatabasesByLfTagsInput`](crate::input::SearchDatabasesByLfTagsInput)
+    /// Creates a new builder-style object to manufacture [`SearchDatabasesByLfTagsInput`](crate::input::SearchDatabasesByLfTagsInput).
     pub fn builder() -> crate::input::search_databases_by_lf_tags_input::Builder {
         crate::input::search_databases_by_lf_tags_input::Builder::default()
     }
@@ -1264,7 +1264,7 @@ pub struct SearchTablesByLFTags {
     _private: (),
 }
 impl SearchTablesByLFTags {
-    /// Creates a new builder-style object to manufacture [`SearchTablesByLfTagsInput`](crate::input::SearchTablesByLfTagsInput)
+    /// Creates a new builder-style object to manufacture [`SearchTablesByLfTagsInput`](crate::input::SearchTablesByLfTagsInput).
     pub fn builder() -> crate::input::search_tables_by_lf_tags_input::Builder {
         crate::input::search_tables_by_lf_tags_input::Builder::default()
     }
@@ -1298,7 +1298,7 @@ pub struct StartQueryPlanning {
     _private: (),
 }
 impl StartQueryPlanning {
-    /// Creates a new builder-style object to manufacture [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput)
+    /// Creates a new builder-style object to manufacture [`StartQueryPlanningInput`](crate::input::StartQueryPlanningInput).
     pub fn builder() -> crate::input::start_query_planning_input::Builder {
         crate::input::start_query_planning_input::Builder::default()
     }
@@ -1332,7 +1332,7 @@ pub struct StartTransaction {
     _private: (),
 }
 impl StartTransaction {
-    /// Creates a new builder-style object to manufacture [`StartTransactionInput`](crate::input::StartTransactionInput)
+    /// Creates a new builder-style object to manufacture [`StartTransactionInput`](crate::input::StartTransactionInput).
     pub fn builder() -> crate::input::start_transaction_input::Builder {
         crate::input::start_transaction_input::Builder::default()
     }
@@ -1366,7 +1366,7 @@ pub struct UpdateLFTag {
     _private: (),
 }
 impl UpdateLFTag {
-    /// Creates a new builder-style object to manufacture [`UpdateLfTagInput`](crate::input::UpdateLfTagInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLfTagInput`](crate::input::UpdateLfTagInput).
     pub fn builder() -> crate::input::update_lf_tag_input::Builder {
         crate::input::update_lf_tag_input::Builder::default()
     }
@@ -1398,7 +1398,7 @@ pub struct UpdateResource {
     _private: (),
 }
 impl UpdateResource {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceInput`](crate::input::UpdateResourceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceInput`](crate::input::UpdateResourceInput).
     pub fn builder() -> crate::input::update_resource_input::Builder {
         crate::input::update_resource_input::Builder::default()
     }
@@ -1430,7 +1430,7 @@ pub struct UpdateTableObjects {
     _private: (),
 }
 impl UpdateTableObjects {
-    /// Creates a new builder-style object to manufacture [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTableObjectsInput`](crate::input::UpdateTableObjectsInput).
     pub fn builder() -> crate::input::update_table_objects_input::Builder {
         crate::input::update_table_objects_input::Builder::default()
     }
@@ -1464,7 +1464,7 @@ pub struct UpdateTableStorageOptimizer {
     _private: (),
 }
 impl UpdateTableStorageOptimizer {
-    /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerInput`](crate::input::UpdateTableStorageOptimizerInput).
     pub fn builder() -> crate::input::update_table_storage_optimizer_input::Builder {
         crate::input::update_table_storage_optimizer_input::Builder::default()
     }

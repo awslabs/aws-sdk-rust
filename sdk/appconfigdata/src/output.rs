@@ -26,11 +26,10 @@ impl std::fmt::Debug for StartConfigurationSessionOutput {
         formatter.finish()
     }
 }
-/// See [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput)
+/// See [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
 pub mod start_configuration_session_output {
 
-    /// A builder for [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_configuration_token: std::option::Option<std::string::String>,
@@ -56,7 +55,7 @@ pub mod start_configuration_session_output {
             self.initial_configuration_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput)
+        /// Consumes the builder and constructs a [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
         pub fn build(self) -> crate::output::StartConfigurationSessionOutput {
             crate::output::StartConfigurationSessionOutput {
                 initial_configuration_token: self.initial_configuration_token,
@@ -65,7 +64,7 @@ pub mod start_configuration_session_output {
     }
 }
 impl StartConfigurationSessionOutput {
-    /// Creates a new builder-style object to manufacture [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput)
+    /// Creates a new builder-style object to manufacture [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
     pub fn builder() -> crate::output::start_configuration_session_output::Builder {
         crate::output::start_configuration_session_output::Builder::default()
     }
@@ -118,11 +117,10 @@ impl std::fmt::Debug for GetLatestConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput)
+/// See [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
 pub mod get_latest_configuration_output {
 
-    /// A builder for [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_poll_configuration_token: std::option::Option<std::string::String>,
@@ -183,7 +181,7 @@ pub mod get_latest_configuration_output {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput)
+        /// Consumes the builder and constructs a [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
         pub fn build(self) -> crate::output::GetLatestConfigurationOutput {
             crate::output::GetLatestConfigurationOutput {
                 next_poll_configuration_token: self.next_poll_configuration_token,
@@ -197,7 +195,7 @@ pub mod get_latest_configuration_output {
     }
 }
 impl GetLatestConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
     pub fn builder() -> crate::output::get_latest_configuration_output::Builder {
         crate::output::get_latest_configuration_output::Builder::default()
     }

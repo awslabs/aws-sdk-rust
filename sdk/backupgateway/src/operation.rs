@@ -10,7 +10,7 @@ pub struct AssociateGatewayToServer {
     _private: (),
 }
 impl AssociateGatewayToServer {
-    /// Creates a new builder-style object to manufacture [`AssociateGatewayToServerInput`](crate::input::AssociateGatewayToServerInput)
+    /// Creates a new builder-style object to manufacture [`AssociateGatewayToServerInput`](crate::input::AssociateGatewayToServerInput).
     pub fn builder() -> crate::input::associate_gateway_to_server_input::Builder {
         crate::input::associate_gateway_to_server_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateGateway {
     _private: (),
 }
 impl CreateGateway {
-    /// Creates a new builder-style object to manufacture [`CreateGatewayInput`](crate::input::CreateGatewayInput)
+    /// Creates a new builder-style object to manufacture [`CreateGatewayInput`](crate::input::CreateGatewayInput).
     pub fn builder() -> crate::input::create_gateway_input::Builder {
         crate::input::create_gateway_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteGateway {
     _private: (),
 }
 impl DeleteGateway {
-    /// Creates a new builder-style object to manufacture [`DeleteGatewayInput`](crate::input::DeleteGatewayInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGatewayInput`](crate::input::DeleteGatewayInput).
     pub fn builder() -> crate::input::delete_gateway_input::Builder {
         crate::input::delete_gateway_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct DeleteHypervisor {
     _private: (),
 }
 impl DeleteHypervisor {
-    /// Creates a new builder-style object to manufacture [`DeleteHypervisorInput`](crate::input::DeleteHypervisorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHypervisorInput`](crate::input::DeleteHypervisorInput).
     pub fn builder() -> crate::input::delete_hypervisor_input::Builder {
         crate::input::delete_hypervisor_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DisassociateGatewayFromServer {
     _private: (),
 }
 impl DisassociateGatewayFromServer {
-    /// Creates a new builder-style object to manufacture [`DisassociateGatewayFromServerInput`](crate::input::DisassociateGatewayFromServerInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateGatewayFromServerInput`](crate::input::DisassociateGatewayFromServerInput).
     pub fn builder() -> crate::input::disassociate_gateway_from_server_input::Builder {
         crate::input::disassociate_gateway_from_server_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct GetGateway {
     _private: (),
 }
 impl GetGateway {
-    /// Creates a new builder-style object to manufacture [`GetGatewayInput`](crate::input::GetGatewayInput)
+    /// Creates a new builder-style object to manufacture [`GetGatewayInput`](crate::input::GetGatewayInput).
     pub fn builder() -> crate::input::get_gateway_input::Builder {
         crate::input::get_gateway_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct ImportHypervisorConfiguration {
     _private: (),
 }
 impl ImportHypervisorConfiguration {
-    /// Creates a new builder-style object to manufacture [`ImportHypervisorConfigurationInput`](crate::input::ImportHypervisorConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`ImportHypervisorConfigurationInput`](crate::input::ImportHypervisorConfigurationInput).
     pub fn builder() -> crate::input::import_hypervisor_configuration_input::Builder {
         crate::input::import_hypervisor_configuration_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct ListGateways {
     _private: (),
 }
 impl ListGateways {
-    /// Creates a new builder-style object to manufacture [`ListGatewaysInput`](crate::input::ListGatewaysInput)
+    /// Creates a new builder-style object to manufacture [`ListGatewaysInput`](crate::input::ListGatewaysInput).
     pub fn builder() -> crate::input::list_gateways_input::Builder {
         crate::input::list_gateways_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct ListHypervisors {
     _private: (),
 }
 impl ListHypervisors {
-    /// Creates a new builder-style object to manufacture [`ListHypervisorsInput`](crate::input::ListHypervisorsInput)
+    /// Creates a new builder-style object to manufacture [`ListHypervisorsInput`](crate::input::ListHypervisorsInput).
     pub fn builder() -> crate::input::list_hypervisors_input::Builder {
         crate::input::list_hypervisors_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct ListVirtualMachines {
     _private: (),
 }
 impl ListVirtualMachines {
-    /// Creates a new builder-style object to manufacture [`ListVirtualMachinesInput`](crate::input::ListVirtualMachinesInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualMachinesInput`](crate::input::ListVirtualMachinesInput).
     pub fn builder() -> crate::input::list_virtual_machines_input::Builder {
         crate::input::list_virtual_machines_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct PutMaintenanceStartTime {
     _private: (),
 }
 impl PutMaintenanceStartTime {
-    /// Creates a new builder-style object to manufacture [`PutMaintenanceStartTimeInput`](crate::input::PutMaintenanceStartTimeInput)
+    /// Creates a new builder-style object to manufacture [`PutMaintenanceStartTimeInput`](crate::input::PutMaintenanceStartTimeInput).
     pub fn builder() -> crate::input::put_maintenance_start_time_input::Builder {
         crate::input::put_maintenance_start_time_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct TestHypervisorConfiguration {
     _private: (),
 }
 impl TestHypervisorConfiguration {
-    /// Creates a new builder-style object to manufacture [`TestHypervisorConfigurationInput`](crate::input::TestHypervisorConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`TestHypervisorConfigurationInput`](crate::input::TestHypervisorConfigurationInput).
     pub fn builder() -> crate::input::test_hypervisor_configuration_input::Builder {
         crate::input::test_hypervisor_configuration_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -508,7 +508,7 @@ pub struct UpdateGatewayInformation {
     _private: (),
 }
 impl UpdateGatewayInformation {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationInput`](crate::input::UpdateGatewayInformationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationInput`](crate::input::UpdateGatewayInformationInput).
     pub fn builder() -> crate::input::update_gateway_information_input::Builder {
         crate::input::update_gateway_information_input::Builder::default()
     }
@@ -542,7 +542,7 @@ pub struct UpdateGatewaySoftwareNow {
     _private: (),
 }
 impl UpdateGatewaySoftwareNow {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput).
     pub fn builder() -> crate::input::update_gateway_software_now_input::Builder {
         crate::input::update_gateway_software_now_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct UpdateHypervisor {
     _private: (),
 }
 impl UpdateHypervisor {
-    /// Creates a new builder-style object to manufacture [`UpdateHypervisorInput`](crate::input::UpdateHypervisorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateHypervisorInput`](crate::input::UpdateHypervisorInput).
     pub fn builder() -> crate::input::update_hypervisor_input::Builder {
         crate::input::update_hypervisor_input::Builder::default()
     }

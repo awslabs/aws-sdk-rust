@@ -10,7 +10,7 @@ pub struct CreateHttpNamespace {
     _private: (),
 }
 impl CreateHttpNamespace {
-    /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceInput`](crate::input::CreateHttpNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceInput`](crate::input::CreateHttpNamespaceInput).
     pub fn builder() -> crate::input::create_http_namespace_input::Builder {
         crate::input::create_http_namespace_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreatePrivateDnsNamespace {
     _private: (),
 }
 impl CreatePrivateDnsNamespace {
-    /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceInput`](crate::input::CreatePrivateDnsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceInput`](crate::input::CreatePrivateDnsNamespaceInput).
     pub fn builder() -> crate::input::create_private_dns_namespace_input::Builder {
         crate::input::create_private_dns_namespace_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreatePublicDnsNamespace {
     _private: (),
 }
 impl CreatePublicDnsNamespace {
-    /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceInput`](crate::input::CreatePublicDnsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceInput`](crate::input::CreatePublicDnsNamespaceInput).
     pub fn builder() -> crate::input::create_public_dns_namespace_input::Builder {
         crate::input::create_public_dns_namespace_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateService {
     _private: (),
 }
 impl CreateService {
-    /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::input::CreateServiceInput)
+    /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::input::CreateServiceInput).
     pub fn builder() -> crate::input::create_service_input::Builder {
         crate::input::create_service_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DeleteNamespace {
     _private: (),
 }
 impl DeleteNamespace {
-    /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
     pub fn builder() -> crate::input::delete_namespace_input::Builder {
         crate::input::delete_namespace_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeleteService {
     _private: (),
 }
 impl DeleteService {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceInput`](crate::input::DeleteServiceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteServiceInput`](crate::input::DeleteServiceInput).
     pub fn builder() -> crate::input::delete_service_input::Builder {
         crate::input::delete_service_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeregisterInstance {
     _private: (),
 }
 impl DeregisterInstance {
-    /// Creates a new builder-style object to manufacture [`DeregisterInstanceInput`](crate::input::DeregisterInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterInstanceInput`](crate::input::DeregisterInstanceInput).
     pub fn builder() -> crate::input::deregister_instance_input::Builder {
         crate::input::deregister_instance_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DiscoverInstances {
     _private: (),
 }
 impl DiscoverInstances {
-    /// Creates a new builder-style object to manufacture [`DiscoverInstancesInput`](crate::input::DiscoverInstancesInput)
+    /// Creates a new builder-style object to manufacture [`DiscoverInstancesInput`](crate::input::DiscoverInstancesInput).
     pub fn builder() -> crate::input::discover_instances_input::Builder {
         crate::input::discover_instances_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct GetInstance {
     _private: (),
 }
 impl GetInstance {
-    /// Creates a new builder-style object to manufacture [`GetInstanceInput`](crate::input::GetInstanceInput)
+    /// Creates a new builder-style object to manufacture [`GetInstanceInput`](crate::input::GetInstanceInput).
     pub fn builder() -> crate::input::get_instance_input::Builder {
         crate::input::get_instance_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct GetInstancesHealthStatus {
     _private: (),
 }
 impl GetInstancesHealthStatus {
-    /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusInput`](crate::input::GetInstancesHealthStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusInput`](crate::input::GetInstancesHealthStatusInput).
     pub fn builder() -> crate::input::get_instances_health_status_input::Builder {
         crate::input::get_instances_health_status_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct GetNamespace {
     _private: (),
 }
 impl GetNamespace {
-    /// Creates a new builder-style object to manufacture [`GetNamespaceInput`](crate::input::GetNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`GetNamespaceInput`](crate::input::GetNamespaceInput).
     pub fn builder() -> crate::input::get_namespace_input::Builder {
         crate::input::get_namespace_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct GetOperation {
     _private: (),
 }
 impl GetOperation {
-    /// Creates a new builder-style object to manufacture [`GetOperationInput`](crate::input::GetOperationInput)
+    /// Creates a new builder-style object to manufacture [`GetOperationInput`](crate::input::GetOperationInput).
     pub fn builder() -> crate::input::get_operation_input::Builder {
         crate::input::get_operation_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct GetService {
     _private: (),
 }
 impl GetService {
-    /// Creates a new builder-style object to manufacture [`GetServiceInput`](crate::input::GetServiceInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceInput`](crate::input::GetServiceInput).
     pub fn builder() -> crate::input::get_service_input::Builder {
         crate::input::get_service_input::Builder::default()
     }
@@ -440,7 +440,7 @@ pub struct ListInstances {
     _private: (),
 }
 impl ListInstances {
-    /// Creates a new builder-style object to manufacture [`ListInstancesInput`](crate::input::ListInstancesInput)
+    /// Creates a new builder-style object to manufacture [`ListInstancesInput`](crate::input::ListInstancesInput).
     pub fn builder() -> crate::input::list_instances_input::Builder {
         crate::input::list_instances_input::Builder::default()
     }
@@ -472,7 +472,7 @@ pub struct ListNamespaces {
     _private: (),
 }
 impl ListNamespaces {
-    /// Creates a new builder-style object to manufacture [`ListNamespacesInput`](crate::input::ListNamespacesInput)
+    /// Creates a new builder-style object to manufacture [`ListNamespacesInput`](crate::input::ListNamespacesInput).
     pub fn builder() -> crate::input::list_namespaces_input::Builder {
         crate::input::list_namespaces_input::Builder::default()
     }
@@ -504,7 +504,7 @@ pub struct ListOperations {
     _private: (),
 }
 impl ListOperations {
-    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput)
+    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput).
     pub fn builder() -> crate::input::list_operations_input::Builder {
         crate::input::list_operations_input::Builder::default()
     }
@@ -536,7 +536,7 @@ pub struct ListServices {
     _private: (),
 }
 impl ListServices {
-    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput)
+    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput).
     pub fn builder() -> crate::input::list_services_input::Builder {
         crate::input::list_services_input::Builder::default()
     }
@@ -568,7 +568,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -602,7 +602,7 @@ pub struct RegisterInstance {
     _private: (),
 }
 impl RegisterInstance {
-    /// Creates a new builder-style object to manufacture [`RegisterInstanceInput`](crate::input::RegisterInstanceInput)
+    /// Creates a new builder-style object to manufacture [`RegisterInstanceInput`](crate::input::RegisterInstanceInput).
     pub fn builder() -> crate::input::register_instance_input::Builder {
         crate::input::register_instance_input::Builder::default()
     }
@@ -636,7 +636,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -668,7 +668,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -700,7 +700,7 @@ pub struct UpdateHttpNamespace {
     _private: (),
 }
 impl UpdateHttpNamespace {
-    /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceInput`](crate::input::UpdateHttpNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceInput`](crate::input::UpdateHttpNamespaceInput).
     pub fn builder() -> crate::input::update_http_namespace_input::Builder {
         crate::input::update_http_namespace_input::Builder::default()
     }
@@ -734,7 +734,7 @@ pub struct UpdateInstanceCustomHealthStatus {
     _private: (),
 }
 impl UpdateInstanceCustomHealthStatus {
-    /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusInput`](crate::input::UpdateInstanceCustomHealthStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusInput`](crate::input::UpdateInstanceCustomHealthStatusInput).
     pub fn builder() -> crate::input::update_instance_custom_health_status_input::Builder {
         crate::input::update_instance_custom_health_status_input::Builder::default()
     }
@@ -768,7 +768,7 @@ pub struct UpdatePrivateDnsNamespace {
     _private: (),
 }
 impl UpdatePrivateDnsNamespace {
-    /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceInput`](crate::input::UpdatePrivateDnsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceInput`](crate::input::UpdatePrivateDnsNamespaceInput).
     pub fn builder() -> crate::input::update_private_dns_namespace_input::Builder {
         crate::input::update_private_dns_namespace_input::Builder::default()
     }
@@ -802,7 +802,7 @@ pub struct UpdatePublicDnsNamespace {
     _private: (),
 }
 impl UpdatePublicDnsNamespace {
-    /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceInput`](crate::input::UpdatePublicDnsNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceInput`](crate::input::UpdatePublicDnsNamespaceInput).
     pub fn builder() -> crate::input::update_public_dns_namespace_input::Builder {
         crate::input::update_public_dns_namespace_input::Builder::default()
     }
@@ -836,7 +836,7 @@ pub struct UpdateService {
     _private: (),
 }
 impl UpdateService {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::input::UpdateServiceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::input::UpdateServiceInput).
     pub fn builder() -> crate::input::update_service_input::Builder {
         crate::input::update_service_input::Builder::default()
     }

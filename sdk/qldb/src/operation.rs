@@ -10,7 +10,7 @@ pub struct CancelJournalKinesisStream {
     _private: (),
 }
 impl CancelJournalKinesisStream {
-    /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamInput`](crate::input::CancelJournalKinesisStreamInput)
+    /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamInput`](crate::input::CancelJournalKinesisStreamInput).
     pub fn builder() -> crate::input::cancel_journal_kinesis_stream_input::Builder {
         crate::input::cancel_journal_kinesis_stream_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateLedger {
     _private: (),
 }
 impl CreateLedger {
-    /// Creates a new builder-style object to manufacture [`CreateLedgerInput`](crate::input::CreateLedgerInput)
+    /// Creates a new builder-style object to manufacture [`CreateLedgerInput`](crate::input::CreateLedgerInput).
     pub fn builder() -> crate::input::create_ledger_input::Builder {
         crate::input::create_ledger_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteLedger {
     _private: (),
 }
 impl DeleteLedger {
-    /// Creates a new builder-style object to manufacture [`DeleteLedgerInput`](crate::input::DeleteLedgerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLedgerInput`](crate::input::DeleteLedgerInput).
     pub fn builder() -> crate::input::delete_ledger_input::Builder {
         crate::input::delete_ledger_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct DescribeJournalKinesisStream {
     _private: (),
 }
 impl DescribeJournalKinesisStream {
-    /// Creates a new builder-style object to manufacture [`DescribeJournalKinesisStreamInput`](crate::input::DescribeJournalKinesisStreamInput)
+    /// Creates a new builder-style object to manufacture [`DescribeJournalKinesisStreamInput`](crate::input::DescribeJournalKinesisStreamInput).
     pub fn builder() -> crate::input::describe_journal_kinesis_stream_input::Builder {
         crate::input::describe_journal_kinesis_stream_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DescribeJournalS3Export {
     _private: (),
 }
 impl DescribeJournalS3Export {
-    /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportInput`](crate::input::DescribeJournalS3ExportInput)
+    /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportInput`](crate::input::DescribeJournalS3ExportInput).
     pub fn builder() -> crate::input::describe_journal_s3_export_input::Builder {
         crate::input::describe_journal_s3_export_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DescribeLedger {
     _private: (),
 }
 impl DescribeLedger {
-    /// Creates a new builder-style object to manufacture [`DescribeLedgerInput`](crate::input::DescribeLedgerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLedgerInput`](crate::input::DescribeLedgerInput).
     pub fn builder() -> crate::input::describe_ledger_input::Builder {
         crate::input::describe_ledger_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct ExportJournalToS3 {
     _private: (),
 }
 impl ExportJournalToS3 {
-    /// Creates a new builder-style object to manufacture [`ExportJournalToS3Input`](crate::input::ExportJournalToS3Input)
+    /// Creates a new builder-style object to manufacture [`ExportJournalToS3Input`](crate::input::ExportJournalToS3Input).
     pub fn builder() -> crate::input::export_journal_to_s3_input::Builder {
         crate::input::export_journal_to_s3_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct GetBlock {
     _private: (),
 }
 impl GetBlock {
-    /// Creates a new builder-style object to manufacture [`GetBlockInput`](crate::input::GetBlockInput)
+    /// Creates a new builder-style object to manufacture [`GetBlockInput`](crate::input::GetBlockInput).
     pub fn builder() -> crate::input::get_block_input::Builder {
         crate::input::get_block_input::Builder::default()
     }
@@ -273,7 +273,7 @@ pub struct GetDigest {
     _private: (),
 }
 impl GetDigest {
-    /// Creates a new builder-style object to manufacture [`GetDigestInput`](crate::input::GetDigestInput)
+    /// Creates a new builder-style object to manufacture [`GetDigestInput`](crate::input::GetDigestInput).
     pub fn builder() -> crate::input::get_digest_input::Builder {
         crate::input::get_digest_input::Builder::default()
     }
@@ -304,7 +304,7 @@ pub struct GetRevision {
     _private: (),
 }
 impl GetRevision {
-    /// Creates a new builder-style object to manufacture [`GetRevisionInput`](crate::input::GetRevisionInput)
+    /// Creates a new builder-style object to manufacture [`GetRevisionInput`](crate::input::GetRevisionInput).
     pub fn builder() -> crate::input::get_revision_input::Builder {
         crate::input::get_revision_input::Builder::default()
     }
@@ -336,7 +336,7 @@ pub struct ListJournalKinesisStreamsForLedger {
     _private: (),
 }
 impl ListJournalKinesisStreamsForLedger {
-    /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerInput`](crate::input::ListJournalKinesisStreamsForLedgerInput)
+    /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerInput`](crate::input::ListJournalKinesisStreamsForLedgerInput).
     pub fn builder() -> crate::input::list_journal_kinesis_streams_for_ledger_input::Builder {
         crate::input::list_journal_kinesis_streams_for_ledger_input::Builder::default()
     }
@@ -370,7 +370,7 @@ pub struct ListJournalS3Exports {
     _private: (),
 }
 impl ListJournalS3Exports {
-    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsInput`](crate::input::ListJournalS3ExportsInput)
+    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsInput`](crate::input::ListJournalS3ExportsInput).
     pub fn builder() -> crate::input::list_journal_s3_exports_input::Builder {
         crate::input::list_journal_s3_exports_input::Builder::default()
     }
@@ -404,7 +404,7 @@ pub struct ListJournalS3ExportsForLedger {
     _private: (),
 }
 impl ListJournalS3ExportsForLedger {
-    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsForLedgerInput`](crate::input::ListJournalS3ExportsForLedgerInput)
+    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsForLedgerInput`](crate::input::ListJournalS3ExportsForLedgerInput).
     pub fn builder() -> crate::input::list_journal_s3_exports_for_ledger_input::Builder {
         crate::input::list_journal_s3_exports_for_ledger_input::Builder::default()
     }
@@ -438,7 +438,7 @@ pub struct ListLedgers {
     _private: (),
 }
 impl ListLedgers {
-    /// Creates a new builder-style object to manufacture [`ListLedgersInput`](crate::input::ListLedgersInput)
+    /// Creates a new builder-style object to manufacture [`ListLedgersInput`](crate::input::ListLedgersInput).
     pub fn builder() -> crate::input::list_ledgers_input::Builder {
         crate::input::list_ledgers_input::Builder::default()
     }
@@ -470,7 +470,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -504,7 +504,7 @@ pub struct StreamJournalToKinesis {
     _private: (),
 }
 impl StreamJournalToKinesis {
-    /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisInput`](crate::input::StreamJournalToKinesisInput)
+    /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisInput`](crate::input::StreamJournalToKinesisInput).
     pub fn builder() -> crate::input::stream_journal_to_kinesis_input::Builder {
         crate::input::stream_journal_to_kinesis_input::Builder::default()
     }
@@ -538,7 +538,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -570,7 +570,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -602,7 +602,7 @@ pub struct UpdateLedger {
     _private: (),
 }
 impl UpdateLedger {
-    /// Creates a new builder-style object to manufacture [`UpdateLedgerInput`](crate::input::UpdateLedgerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLedgerInput`](crate::input::UpdateLedgerInput).
     pub fn builder() -> crate::input::update_ledger_input::Builder {
         crate::input::update_ledger_input::Builder::default()
     }
@@ -634,7 +634,7 @@ pub struct UpdateLedgerPermissionsMode {
     _private: (),
 }
 impl UpdateLedgerPermissionsMode {
-    /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeInput`](crate::input::UpdateLedgerPermissionsModeInput).
     pub fn builder() -> crate::input::update_ledger_permissions_mode_input::Builder {
         crate::input::update_ledger_permissions_mode_input::Builder::default()
     }

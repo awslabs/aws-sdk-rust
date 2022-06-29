@@ -54,11 +54,10 @@ impl std::fmt::Debug for StartDeviceAuthorizationOutput {
         formatter.finish()
     }
 }
-/// See [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput)
+/// See [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
 pub mod start_device_authorization_output {
 
-    /// A builder for [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_code: std::option::Option<std::string::String>,
@@ -135,7 +134,7 @@ pub mod start_device_authorization_output {
             self.interval = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput)
+        /// Consumes the builder and constructs a [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
         pub fn build(self) -> crate::output::StartDeviceAuthorizationOutput {
             crate::output::StartDeviceAuthorizationOutput {
                 device_code: self.device_code,
@@ -149,7 +148,7 @@ pub mod start_device_authorization_output {
     }
 }
 impl StartDeviceAuthorizationOutput {
-    /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput)
+    /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
     pub fn builder() -> crate::output::start_device_authorization_output::Builder {
         crate::output::start_device_authorization_output::Builder::default()
     }
@@ -210,11 +209,10 @@ impl std::fmt::Debug for RegisterClientOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterClientOutput`](crate::output::RegisterClientOutput)
+/// See [`RegisterClientOutput`](crate::output::RegisterClientOutput).
 pub mod register_client_output {
 
-    /// A builder for [`RegisterClientOutput`](crate::output::RegisterClientOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterClientOutput`](crate::output::RegisterClientOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_id: std::option::Option<std::string::String>,
@@ -294,7 +292,7 @@ pub mod register_client_output {
             self.token_endpoint = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegisterClientOutput`](crate::output::RegisterClientOutput)
+        /// Consumes the builder and constructs a [`RegisterClientOutput`](crate::output::RegisterClientOutput).
         pub fn build(self) -> crate::output::RegisterClientOutput {
             crate::output::RegisterClientOutput {
                 client_id: self.client_id,
@@ -308,7 +306,7 @@ pub mod register_client_output {
     }
 }
 impl RegisterClientOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterClientOutput`](crate::output::RegisterClientOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterClientOutput`](crate::output::RegisterClientOutput).
     pub fn builder() -> crate::output::register_client_output::Builder {
         crate::output::register_client_output::Builder::default()
     }
@@ -362,11 +360,10 @@ impl std::fmt::Debug for CreateTokenOutput {
         formatter.finish()
     }
 }
-/// See [`CreateTokenOutput`](crate::output::CreateTokenOutput)
+/// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
 
-    /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateTokenOutput`](crate::output::CreateTokenOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -429,7 +426,7 @@ pub mod create_token_output {
             self.id_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput)
+        /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput).
         pub fn build(self) -> crate::output::CreateTokenOutput {
             crate::output::CreateTokenOutput {
                 access_token: self.access_token,
@@ -442,7 +439,7 @@ pub mod create_token_output {
     }
 }
 impl CreateTokenOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput)
+    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
     pub fn builder() -> crate::output::create_token_output::Builder {
         crate::output::create_token_output::Builder::default()
     }

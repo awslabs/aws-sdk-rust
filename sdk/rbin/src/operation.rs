@@ -10,7 +10,7 @@ pub struct CreateRule {
     _private: (),
 }
 impl CreateRule {
-    /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput).
     pub fn builder() -> crate::input::create_rule_input::Builder {
         crate::input::create_rule_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DeleteRule {
     _private: (),
 }
 impl DeleteRule {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput).
     pub fn builder() -> crate::input::delete_rule_input::Builder {
         crate::input::delete_rule_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct GetRule {
     _private: (),
 }
 impl GetRule {
-    /// Creates a new builder-style object to manufacture [`GetRuleInput`](crate::input::GetRuleInput)
+    /// Creates a new builder-style object to manufacture [`GetRuleInput`](crate::input::GetRuleInput).
     pub fn builder() -> crate::input::get_rule_input::Builder {
         crate::input::get_rule_input::Builder::default()
     }
@@ -105,7 +105,7 @@ pub struct ListRules {
     _private: (),
 }
 impl ListRules {
-    /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput).
     pub fn builder() -> crate::input::list_rules_input::Builder {
         crate::input::list_rules_input::Builder::default()
     }
@@ -136,7 +136,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -170,7 +170,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -202,7 +202,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -234,7 +234,7 @@ pub struct UpdateRule {
     _private: (),
 }
 impl UpdateRule {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleInput`](crate::input::UpdateRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleInput`](crate::input::UpdateRuleInput).
     pub fn builder() -> crate::input::update_rule_input::Builder {
         crate::input::update_rule_input::Builder::default()
     }

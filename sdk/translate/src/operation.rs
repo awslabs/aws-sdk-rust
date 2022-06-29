@@ -10,7 +10,7 @@ pub struct CreateParallelData {
     _private: (),
 }
 impl CreateParallelData {
-    /// Creates a new builder-style object to manufacture [`CreateParallelDataInput`](crate::input::CreateParallelDataInput)
+    /// Creates a new builder-style object to manufacture [`CreateParallelDataInput`](crate::input::CreateParallelDataInput).
     pub fn builder() -> crate::input::create_parallel_data_input::Builder {
         crate::input::create_parallel_data_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteParallelData {
     _private: (),
 }
 impl DeleteParallelData {
-    /// Creates a new builder-style object to manufacture [`DeleteParallelDataInput`](crate::input::DeleteParallelDataInput)
+    /// Creates a new builder-style object to manufacture [`DeleteParallelDataInput`](crate::input::DeleteParallelDataInput).
     pub fn builder() -> crate::input::delete_parallel_data_input::Builder {
         crate::input::delete_parallel_data_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DeleteTerminology {
     _private: (),
 }
 impl DeleteTerminology {
-    /// Creates a new builder-style object to manufacture [`DeleteTerminologyInput`](crate::input::DeleteTerminologyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTerminologyInput`](crate::input::DeleteTerminologyInput).
     pub fn builder() -> crate::input::delete_terminology_input::Builder {
         crate::input::delete_terminology_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeTextTranslationJob {
     _private: (),
 }
 impl DescribeTextTranslationJob {
-    /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobInput`](crate::input::DescribeTextTranslationJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTextTranslationJobInput`](crate::input::DescribeTextTranslationJobInput).
     pub fn builder() -> crate::input::describe_text_translation_job_input::Builder {
         crate::input::describe_text_translation_job_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct GetParallelData {
     _private: (),
 }
 impl GetParallelData {
-    /// Creates a new builder-style object to manufacture [`GetParallelDataInput`](crate::input::GetParallelDataInput)
+    /// Creates a new builder-style object to manufacture [`GetParallelDataInput`](crate::input::GetParallelDataInput).
     pub fn builder() -> crate::input::get_parallel_data_input::Builder {
         crate::input::get_parallel_data_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct GetTerminology {
     _private: (),
 }
 impl GetTerminology {
-    /// Creates a new builder-style object to manufacture [`GetTerminologyInput`](crate::input::GetTerminologyInput)
+    /// Creates a new builder-style object to manufacture [`GetTerminologyInput`](crate::input::GetTerminologyInput).
     pub fn builder() -> crate::input::get_terminology_input::Builder {
         crate::input::get_terminology_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct ImportTerminology {
     _private: (),
 }
 impl ImportTerminology {
-    /// Creates a new builder-style object to manufacture [`ImportTerminologyInput`](crate::input::ImportTerminologyInput)
+    /// Creates a new builder-style object to manufacture [`ImportTerminologyInput`](crate::input::ImportTerminologyInput).
     pub fn builder() -> crate::input::import_terminology_input::Builder {
         crate::input::import_terminology_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct ListParallelData {
     _private: (),
 }
 impl ListParallelData {
-    /// Creates a new builder-style object to manufacture [`ListParallelDataInput`](crate::input::ListParallelDataInput)
+    /// Creates a new builder-style object to manufacture [`ListParallelDataInput`](crate::input::ListParallelDataInput).
     pub fn builder() -> crate::input::list_parallel_data_input::Builder {
         crate::input::list_parallel_data_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct ListTerminologies {
     _private: (),
 }
 impl ListTerminologies {
-    /// Creates a new builder-style object to manufacture [`ListTerminologiesInput`](crate::input::ListTerminologiesInput)
+    /// Creates a new builder-style object to manufacture [`ListTerminologiesInput`](crate::input::ListTerminologiesInput).
     pub fn builder() -> crate::input::list_terminologies_input::Builder {
         crate::input::list_terminologies_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct ListTextTranslationJobs {
     _private: (),
 }
 impl ListTextTranslationJobs {
-    /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsInput`](crate::input::ListTextTranslationJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListTextTranslationJobsInput`](crate::input::ListTextTranslationJobsInput).
     pub fn builder() -> crate::input::list_text_translation_jobs_input::Builder {
         crate::input::list_text_translation_jobs_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct StartTextTranslationJob {
     _private: (),
 }
 impl StartTextTranslationJob {
-    /// Creates a new builder-style object to manufacture [`StartTextTranslationJobInput`](crate::input::StartTextTranslationJobInput)
+    /// Creates a new builder-style object to manufacture [`StartTextTranslationJobInput`](crate::input::StartTextTranslationJobInput).
     pub fn builder() -> crate::input::start_text_translation_job_input::Builder {
         crate::input::start_text_translation_job_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct StopTextTranslationJob {
     _private: (),
 }
 impl StopTextTranslationJob {
-    /// Creates a new builder-style object to manufacture [`StopTextTranslationJobInput`](crate::input::StopTextTranslationJobInput)
+    /// Creates a new builder-style object to manufacture [`StopTextTranslationJobInput`](crate::input::StopTextTranslationJobInput).
     pub fn builder() -> crate::input::stop_text_translation_job_input::Builder {
         crate::input::stop_text_translation_job_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct TranslateText {
     _private: (),
 }
 impl TranslateText {
-    /// Creates a new builder-style object to manufacture [`TranslateTextInput`](crate::input::TranslateTextInput)
+    /// Creates a new builder-style object to manufacture [`TranslateTextInput`](crate::input::TranslateTextInput).
     pub fn builder() -> crate::input::translate_text_input::Builder {
         crate::input::translate_text_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct UpdateParallelData {
     _private: (),
 }
 impl UpdateParallelData {
-    /// Creates a new builder-style object to manufacture [`UpdateParallelDataInput`](crate::input::UpdateParallelDataInput)
+    /// Creates a new builder-style object to manufacture [`UpdateParallelDataInput`](crate::input::UpdateParallelDataInput).
     pub fn builder() -> crate::input::update_parallel_data_input::Builder {
         crate::input::update_parallel_data_input::Builder::default()
     }

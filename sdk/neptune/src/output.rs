@@ -21,11 +21,10 @@ impl std::fmt::Debug for StopDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`StopDbClusterOutput`](crate::output::StopDbClusterOutput)
+/// See [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
 pub mod stop_db_cluster_output {
 
-    /// A builder for [`StopDbClusterOutput`](crate::output::StopDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -46,7 +45,7 @@ pub mod stop_db_cluster_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopDbClusterOutput`](crate::output::StopDbClusterOutput)
+        /// Consumes the builder and constructs a [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
         pub fn build(self) -> crate::output::StopDbClusterOutput {
             crate::output::StopDbClusterOutput {
                 db_cluster: self.db_cluster,
@@ -55,7 +54,7 @@ pub mod stop_db_cluster_output {
     }
 }
 impl StopDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`StopDbClusterOutput`](crate::output::StopDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
     pub fn builder() -> crate::output::stop_db_cluster_output::Builder {
         crate::output::stop_db_cluster_output::Builder::default()
     }
@@ -83,11 +82,10 @@ impl std::fmt::Debug for StartDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`StartDbClusterOutput`](crate::output::StartDbClusterOutput)
+/// See [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
 pub mod start_db_cluster_output {
 
-    /// A builder for [`StartDbClusterOutput`](crate::output::StartDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -108,7 +106,7 @@ pub mod start_db_cluster_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartDbClusterOutput`](crate::output::StartDbClusterOutput)
+        /// Consumes the builder and constructs a [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
         pub fn build(self) -> crate::output::StartDbClusterOutput {
             crate::output::StartDbClusterOutput {
                 db_cluster: self.db_cluster,
@@ -117,7 +115,7 @@ pub mod start_db_cluster_output {
     }
 }
 impl StartDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`StartDbClusterOutput`](crate::output::StartDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
     pub fn builder() -> crate::output::start_db_cluster_output::Builder {
         crate::output::start_db_cluster_output::Builder::default()
     }
@@ -145,11 +143,10 @@ impl std::fmt::Debug for RestoreDbClusterToPointInTimeOutput {
         formatter.finish()
     }
 }
-/// See [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput)
+/// See [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
 pub mod restore_db_cluster_to_point_in_time_output {
 
-    /// A builder for [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput)
-    #[non_exhaustive]
+    /// A builder for [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -170,7 +167,7 @@ pub mod restore_db_cluster_to_point_in_time_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput)
+        /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterToPointInTimeOutput {
             crate::output::RestoreDbClusterToPointInTimeOutput {
                 db_cluster: self.db_cluster,
@@ -179,7 +176,7 @@ pub mod restore_db_cluster_to_point_in_time_output {
     }
 }
 impl RestoreDbClusterToPointInTimeOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
     pub fn builder() -> crate::output::restore_db_cluster_to_point_in_time_output::Builder {
         crate::output::restore_db_cluster_to_point_in_time_output::Builder::default()
     }
@@ -207,11 +204,10 @@ impl std::fmt::Debug for RestoreDbClusterFromSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput)
+/// See [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
 pub mod restore_db_cluster_from_snapshot_output {
 
-    /// A builder for [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -232,7 +228,7 @@ pub mod restore_db_cluster_from_snapshot_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput)
+        /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterFromSnapshotOutput {
             crate::output::RestoreDbClusterFromSnapshotOutput {
                 db_cluster: self.db_cluster,
@@ -241,7 +237,7 @@ pub mod restore_db_cluster_from_snapshot_output {
     }
 }
 impl RestoreDbClusterFromSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
     pub fn builder() -> crate::output::restore_db_cluster_from_snapshot_output::Builder {
         crate::output::restore_db_cluster_from_snapshot_output::Builder::default()
     }
@@ -267,11 +263,10 @@ impl std::fmt::Debug for ResetDbParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput)
+/// See [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
 pub mod reset_db_parameter_group_output {
 
-    /// A builder for [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
@@ -290,7 +285,7 @@ pub mod reset_db_parameter_group_output {
             self.db_parameter_group_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput)
+        /// Consumes the builder and constructs a [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetDbParameterGroupOutput {
             crate::output::ResetDbParameterGroupOutput {
                 db_parameter_group_name: self.db_parameter_group_name,
@@ -299,7 +294,7 @@ pub mod reset_db_parameter_group_output {
     }
 }
 impl ResetDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
     pub fn builder() -> crate::output::reset_db_parameter_group_output::Builder {
         crate::output::reset_db_parameter_group_output::Builder::default()
     }
@@ -344,11 +339,10 @@ impl std::fmt::Debug for ResetDbClusterParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput)
+/// See [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
 pub mod reset_db_cluster_parameter_group_output {
 
-    /// A builder for [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -386,7 +380,7 @@ pub mod reset_db_cluster_parameter_group_output {
             self.db_cluster_parameter_group_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput)
+        /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetDbClusterParameterGroupOutput {
             crate::output::ResetDbClusterParameterGroupOutput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
@@ -395,7 +389,7 @@ pub mod reset_db_cluster_parameter_group_output {
     }
 }
 impl ResetDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
     pub fn builder() -> crate::output::reset_db_cluster_parameter_group_output::Builder {
         crate::output::reset_db_cluster_parameter_group_output::Builder::default()
     }
@@ -411,22 +405,21 @@ impl std::fmt::Debug for RemoveTagsFromResourceOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+/// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
 
-    /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+        /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
             crate::output::RemoveTagsFromResourceOutput {}
         }
     }
 }
 impl RemoveTagsFromResourceOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     pub fn builder() -> crate::output::remove_tags_from_resource_output::Builder {
         crate::output::remove_tags_from_resource_output::Builder::default()
     }
@@ -452,11 +445,10 @@ impl std::fmt::Debug for RemoveSourceIdentifierFromSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput)
+/// See [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
 pub mod remove_source_identifier_from_subscription_output {
 
-    /// A builder for [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
@@ -475,7 +467,7 @@ pub mod remove_source_identifier_from_subscription_output {
             self.event_subscription = input;
             self
         }
-        /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput)
+        /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
         pub fn build(self) -> crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
             crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
                 event_subscription: self.event_subscription,
@@ -484,7 +476,7 @@ pub mod remove_source_identifier_from_subscription_output {
     }
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
     pub fn builder() -> crate::output::remove_source_identifier_from_subscription_output::Builder {
         crate::output::remove_source_identifier_from_subscription_output::Builder::default()
     }
@@ -500,22 +492,21 @@ impl std::fmt::Debug for RemoveRoleFromDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput)
+/// See [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
 pub mod remove_role_from_db_cluster_output {
 
-    /// A builder for [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput)
+        /// Consumes the builder and constructs a [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
         pub fn build(self) -> crate::output::RemoveRoleFromDbClusterOutput {
             crate::output::RemoveRoleFromDbClusterOutput {}
         }
     }
 }
 impl RemoveRoleFromDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
     pub fn builder() -> crate::output::remove_role_from_db_cluster_output::Builder {
         crate::output::remove_role_from_db_cluster_output::Builder::default()
     }
@@ -543,11 +534,10 @@ impl std::fmt::Debug for RemoveFromGlobalClusterOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
+/// See [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
 pub mod remove_from_global_cluster_output {
 
-    /// A builder for [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
@@ -568,7 +558,7 @@ pub mod remove_from_global_cluster_output {
             self.global_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
+        /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
         pub fn build(self) -> crate::output::RemoveFromGlobalClusterOutput {
             crate::output::RemoveFromGlobalClusterOutput {
                 global_cluster: self.global_cluster,
@@ -577,7 +567,7 @@ pub mod remove_from_global_cluster_output {
     }
 }
 impl RemoveFromGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
     pub fn builder() -> crate::output::remove_from_global_cluster_output::Builder {
         crate::output::remove_from_global_cluster_output::Builder::default()
     }
@@ -605,11 +595,10 @@ impl std::fmt::Debug for RebootDbInstanceOutput {
         formatter.finish()
     }
 }
-/// See [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput)
+/// See [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
 pub mod reboot_db_instance_output {
 
-    /// A builder for [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput)
-    #[non_exhaustive]
+    /// A builder for [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
@@ -630,7 +619,7 @@ pub mod reboot_db_instance_output {
             self.db_instance = input;
             self
         }
-        /// Consumes the builder and constructs a [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput)
+        /// Consumes the builder and constructs a [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
         pub fn build(self) -> crate::output::RebootDbInstanceOutput {
             crate::output::RebootDbInstanceOutput {
                 db_instance: self.db_instance,
@@ -639,7 +628,7 @@ pub mod reboot_db_instance_output {
     }
 }
 impl RebootDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput)
+    /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
     pub fn builder() -> crate::output::reboot_db_instance_output::Builder {
         crate::output::reboot_db_instance_output::Builder::default()
     }
@@ -667,11 +656,10 @@ impl std::fmt::Debug for PromoteReadReplicaDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput)
+/// See [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
 pub mod promote_read_replica_db_cluster_output {
 
-    /// A builder for [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -692,7 +680,7 @@ pub mod promote_read_replica_db_cluster_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput)
+        /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
         pub fn build(self) -> crate::output::PromoteReadReplicaDbClusterOutput {
             crate::output::PromoteReadReplicaDbClusterOutput {
                 db_cluster: self.db_cluster,
@@ -701,7 +689,7 @@ pub mod promote_read_replica_db_cluster_output {
     }
 }
 impl PromoteReadReplicaDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
     pub fn builder() -> crate::output::promote_read_replica_db_cluster_output::Builder {
         crate::output::promote_read_replica_db_cluster_output::Builder::default()
     }
@@ -729,11 +717,10 @@ impl std::fmt::Debug for ModifyGlobalClusterOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
+/// See [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
 pub mod modify_global_cluster_output {
 
-    /// A builder for [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
@@ -754,7 +741,7 @@ pub mod modify_global_cluster_output {
             self.global_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
+        /// Consumes the builder and constructs a [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
         pub fn build(self) -> crate::output::ModifyGlobalClusterOutput {
             crate::output::ModifyGlobalClusterOutput {
                 global_cluster: self.global_cluster,
@@ -763,7 +750,7 @@ pub mod modify_global_cluster_output {
     }
 }
 impl ModifyGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
     pub fn builder() -> crate::output::modify_global_cluster_output::Builder {
         crate::output::modify_global_cluster_output::Builder::default()
     }
@@ -789,11 +776,10 @@ impl std::fmt::Debug for ModifyEventSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput)
+/// See [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
 pub mod modify_event_subscription_output {
 
-    /// A builder for [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
@@ -812,7 +798,7 @@ pub mod modify_event_subscription_output {
             self.event_subscription = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput)
+        /// Consumes the builder and constructs a [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
         pub fn build(self) -> crate::output::ModifyEventSubscriptionOutput {
             crate::output::ModifyEventSubscriptionOutput {
                 event_subscription: self.event_subscription,
@@ -821,7 +807,7 @@ pub mod modify_event_subscription_output {
     }
 }
 impl ModifyEventSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
     pub fn builder() -> crate::output::modify_event_subscription_output::Builder {
         crate::output::modify_event_subscription_output::Builder::default()
     }
@@ -849,11 +835,10 @@ impl std::fmt::Debug for ModifyDbSubnetGroupOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput)
+/// See [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
 pub mod modify_db_subnet_group_output {
 
-    /// A builder for [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
@@ -874,7 +859,7 @@ pub mod modify_db_subnet_group_output {
             self.db_subnet_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput)
+        /// Consumes the builder and constructs a [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbSubnetGroupOutput {
             crate::output::ModifyDbSubnetGroupOutput {
                 db_subnet_group: self.db_subnet_group,
@@ -883,7 +868,7 @@ pub mod modify_db_subnet_group_output {
     }
 }
 impl ModifyDbSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
     pub fn builder() -> crate::output::modify_db_subnet_group_output::Builder {
         crate::output::modify_db_subnet_group_output::Builder::default()
     }
@@ -909,11 +894,10 @@ impl std::fmt::Debug for ModifyDbParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput)
+/// See [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
 pub mod modify_db_parameter_group_output {
 
-    /// A builder for [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
@@ -932,7 +916,7 @@ pub mod modify_db_parameter_group_output {
             self.db_parameter_group_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput)
+        /// Consumes the builder and constructs a [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbParameterGroupOutput {
             crate::output::ModifyDbParameterGroupOutput {
                 db_parameter_group_name: self.db_parameter_group_name,
@@ -941,7 +925,7 @@ pub mod modify_db_parameter_group_output {
     }
 }
 impl ModifyDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
     pub fn builder() -> crate::output::modify_db_parameter_group_output::Builder {
         crate::output::modify_db_parameter_group_output::Builder::default()
     }
@@ -969,11 +953,10 @@ impl std::fmt::Debug for ModifyDbInstanceOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput)
+/// See [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
 pub mod modify_db_instance_output {
 
-    /// A builder for [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
@@ -994,7 +977,7 @@ pub mod modify_db_instance_output {
             self.db_instance = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput)
+        /// Consumes the builder and constructs a [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
         pub fn build(self) -> crate::output::ModifyDbInstanceOutput {
             crate::output::ModifyDbInstanceOutput {
                 db_instance: self.db_instance,
@@ -1003,7 +986,7 @@ pub mod modify_db_instance_output {
     }
 }
 impl ModifyDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
     pub fn builder() -> crate::output::modify_db_instance_output::Builder {
         crate::output::modify_db_instance_output::Builder::default()
     }
@@ -1037,11 +1020,10 @@ impl std::fmt::Debug for ModifyDbClusterSnapshotAttributeOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput)
+/// See [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
 pub mod modify_db_cluster_snapshot_attribute_output {
 
-    /// A builder for [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_attributes_result:
@@ -1066,7 +1048,7 @@ pub mod modify_db_cluster_snapshot_attribute_output {
             self.db_cluster_snapshot_attributes_result = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput)
+        /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterSnapshotAttributeOutput {
             crate::output::ModifyDbClusterSnapshotAttributeOutput {
                 db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result,
@@ -1075,7 +1057,7 @@ pub mod modify_db_cluster_snapshot_attribute_output {
     }
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
     pub fn builder() -> crate::output::modify_db_cluster_snapshot_attribute_output::Builder {
         crate::output::modify_db_cluster_snapshot_attribute_output::Builder::default()
     }
@@ -1120,11 +1102,10 @@ impl std::fmt::Debug for ModifyDbClusterParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput)
+/// See [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
 pub mod modify_db_cluster_parameter_group_output {
 
-    /// A builder for [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -1162,7 +1143,7 @@ pub mod modify_db_cluster_parameter_group_output {
             self.db_cluster_parameter_group_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput)
+        /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterParameterGroupOutput {
             crate::output::ModifyDbClusterParameterGroupOutput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
@@ -1171,7 +1152,7 @@ pub mod modify_db_cluster_parameter_group_output {
     }
 }
 impl ModifyDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
     pub fn builder() -> crate::output::modify_db_cluster_parameter_group_output::Builder {
         crate::output::modify_db_cluster_parameter_group_output::Builder::default()
     }
@@ -1273,11 +1254,10 @@ impl std::fmt::Debug for ModifyDbClusterEndpointOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput)
+/// See [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
 pub mod modify_db_cluster_endpoint_output {
 
-    /// A builder for [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -1435,7 +1415,7 @@ pub mod modify_db_cluster_endpoint_output {
             self.db_cluster_endpoint_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput)
+        /// Consumes the builder and constructs a [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterEndpointOutput {
             crate::output::ModifyDbClusterEndpointOutput {
                 db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
@@ -1454,7 +1434,7 @@ pub mod modify_db_cluster_endpoint_output {
     }
 }
 impl ModifyDbClusterEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
     pub fn builder() -> crate::output::modify_db_cluster_endpoint_output::Builder {
         crate::output::modify_db_cluster_endpoint_output::Builder::default()
     }
@@ -1482,11 +1462,10 @@ impl std::fmt::Debug for ModifyDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput)
+/// See [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
 pub mod modify_db_cluster_output {
 
-    /// A builder for [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -1507,7 +1486,7 @@ pub mod modify_db_cluster_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput)
+        /// Consumes the builder and constructs a [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterOutput {
             crate::output::ModifyDbClusterOutput {
                 db_cluster: self.db_cluster,
@@ -1516,7 +1495,7 @@ pub mod modify_db_cluster_output {
     }
 }
 impl ModifyDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
     pub fn builder() -> crate::output::modify_db_cluster_output::Builder {
         crate::output::modify_db_cluster_output::Builder::default()
     }
@@ -1542,11 +1521,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1571,7 +1549,7 @@ pub mod list_tags_for_resource_output {
             self.tag_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tag_list: self.tag_list,
@@ -1580,7 +1558,7 @@ pub mod list_tags_for_resource_output {
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -1608,11 +1586,10 @@ impl std::fmt::Debug for FailoverGlobalClusterOutput {
         formatter.finish()
     }
 }
-/// See [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
+/// See [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
 pub mod failover_global_cluster_output {
 
-    /// A builder for [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
@@ -1633,7 +1610,7 @@ pub mod failover_global_cluster_output {
             self.global_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
+        /// Consumes the builder and constructs a [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
         pub fn build(self) -> crate::output::FailoverGlobalClusterOutput {
             crate::output::FailoverGlobalClusterOutput {
                 global_cluster: self.global_cluster,
@@ -1642,7 +1619,7 @@ pub mod failover_global_cluster_output {
     }
 }
 impl FailoverGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput)
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
     pub fn builder() -> crate::output::failover_global_cluster_output::Builder {
         crate::output::failover_global_cluster_output::Builder::default()
     }
@@ -1670,11 +1647,10 @@ impl std::fmt::Debug for FailoverDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput)
+/// See [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
 pub mod failover_db_cluster_output {
 
-    /// A builder for [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -1695,7 +1671,7 @@ pub mod failover_db_cluster_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput)
+        /// Consumes the builder and constructs a [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
         pub fn build(self) -> crate::output::FailoverDbClusterOutput {
             crate::output::FailoverDbClusterOutput {
                 db_cluster: self.db_cluster,
@@ -1704,7 +1680,7 @@ pub mod failover_db_cluster_output {
     }
 }
 impl FailoverDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
     pub fn builder() -> crate::output::failover_db_cluster_output::Builder {
         crate::output::failover_db_cluster_output::Builder::default()
     }
@@ -1736,11 +1712,10 @@ impl std::fmt::Debug for DescribeValidDbInstanceModificationsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput)
+/// See [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
 pub mod describe_valid_db_instance_modifications_output {
 
-    /// A builder for [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) valid_db_instance_modifications_message:
@@ -1763,7 +1738,7 @@ pub mod describe_valid_db_instance_modifications_output {
             self.valid_db_instance_modifications_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput)
+        /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
         pub fn build(self) -> crate::output::DescribeValidDbInstanceModificationsOutput {
             crate::output::DescribeValidDbInstanceModificationsOutput {
                 valid_db_instance_modifications_message: self
@@ -1773,7 +1748,7 @@ pub mod describe_valid_db_instance_modifications_output {
     }
 }
 impl DescribeValidDbInstanceModificationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
     pub fn builder() -> crate::output::describe_valid_db_instance_modifications_output::Builder {
         crate::output::describe_valid_db_instance_modifications_output::Builder::default()
     }
@@ -1812,11 +1787,10 @@ impl std::fmt::Debug for DescribePendingMaintenanceActionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput)
+/// See [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
 pub mod describe_pending_maintenance_actions_output {
 
-    /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pending_maintenance_actions:
@@ -1858,7 +1832,7 @@ pub mod describe_pending_maintenance_actions_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput)
+        /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
         pub fn build(self) -> crate::output::DescribePendingMaintenanceActionsOutput {
             crate::output::DescribePendingMaintenanceActionsOutput {
                 pending_maintenance_actions: self.pending_maintenance_actions,
@@ -1868,7 +1842,7 @@ pub mod describe_pending_maintenance_actions_output {
     }
 }
 impl DescribePendingMaintenanceActionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
     pub fn builder() -> crate::output::describe_pending_maintenance_actions_output::Builder {
         crate::output::describe_pending_maintenance_actions_output::Builder::default()
     }
@@ -1907,11 +1881,10 @@ impl std::fmt::Debug for DescribeOrderableDbInstanceOptionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput)
+/// See [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
 pub mod describe_orderable_db_instance_options_output {
 
-    /// A builder for [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) orderable_db_instance_options:
@@ -1951,7 +1924,7 @@ pub mod describe_orderable_db_instance_options_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput)
+        /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
         pub fn build(self) -> crate::output::DescribeOrderableDbInstanceOptionsOutput {
             crate::output::DescribeOrderableDbInstanceOptionsOutput {
                 orderable_db_instance_options: self.orderable_db_instance_options,
@@ -1961,7 +1934,7 @@ pub mod describe_orderable_db_instance_options_output {
     }
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
     pub fn builder() -> crate::output::describe_orderable_db_instance_options_output::Builder {
         crate::output::describe_orderable_db_instance_options_output::Builder::default()
     }
@@ -1994,11 +1967,10 @@ impl std::fmt::Debug for DescribeGlobalClustersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
+/// See [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
 pub mod describe_global_clusters_output {
 
-    /// A builder for [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2034,7 +2006,7 @@ pub mod describe_global_clusters_output {
             self.global_clusters = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
+        /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
         pub fn build(self) -> crate::output::DescribeGlobalClustersOutput {
             crate::output::DescribeGlobalClustersOutput {
                 marker: self.marker,
@@ -2044,7 +2016,7 @@ pub mod describe_global_clusters_output {
     }
 }
 impl DescribeGlobalClustersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
     pub fn builder() -> crate::output::describe_global_clusters_output::Builder {
         crate::output::describe_global_clusters_output::Builder::default()
     }
@@ -2080,11 +2052,10 @@ impl std::fmt::Debug for DescribeEventSubscriptionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput)
+/// See [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
 pub mod describe_event_subscriptions_output {
 
-    /// A builder for [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2121,7 +2092,7 @@ pub mod describe_event_subscriptions_output {
             self.event_subscriptions_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput)
+        /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
         pub fn build(self) -> crate::output::DescribeEventSubscriptionsOutput {
             crate::output::DescribeEventSubscriptionsOutput {
                 marker: self.marker,
@@ -2131,7 +2102,7 @@ pub mod describe_event_subscriptions_output {
     }
 }
 impl DescribeEventSubscriptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
     pub fn builder() -> crate::output::describe_event_subscriptions_output::Builder {
         crate::output::describe_event_subscriptions_output::Builder::default()
     }
@@ -2164,11 +2135,10 @@ impl std::fmt::Debug for DescribeEventsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
+/// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
 
-    /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2204,7 +2174,7 @@ pub mod describe_events_output {
             self.events = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
+        /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
                 marker: self.marker,
@@ -2214,7 +2184,7 @@ pub mod describe_events_output {
     }
 }
 impl DescribeEventsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     pub fn builder() -> crate::output::describe_events_output::Builder {
         crate::output::describe_events_output::Builder::default()
     }
@@ -2243,11 +2213,10 @@ impl std::fmt::Debug for DescribeEventCategoriesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput)
+/// See [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
 pub mod describe_event_categories_output {
 
-    /// A builder for [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_categories_map_list:
@@ -2276,7 +2245,7 @@ pub mod describe_event_categories_output {
             self.event_categories_map_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput)
+        /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
         pub fn build(self) -> crate::output::DescribeEventCategoriesOutput {
             crate::output::DescribeEventCategoriesOutput {
                 event_categories_map_list: self.event_categories_map_list,
@@ -2285,7 +2254,7 @@ pub mod describe_event_categories_output {
     }
 }
 impl DescribeEventCategoriesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
     pub fn builder() -> crate::output::describe_event_categories_output::Builder {
         crate::output::describe_event_categories_output::Builder::default()
     }
@@ -2311,11 +2280,10 @@ impl std::fmt::Debug for DescribeEngineDefaultParametersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput)
+/// See [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
 pub mod describe_engine_default_parameters_output {
 
-    /// A builder for [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
@@ -2334,7 +2302,7 @@ pub mod describe_engine_default_parameters_output {
             self.engine_defaults = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput)
+        /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultParametersOutput {
             crate::output::DescribeEngineDefaultParametersOutput {
                 engine_defaults: self.engine_defaults,
@@ -2343,7 +2311,7 @@ pub mod describe_engine_default_parameters_output {
     }
 }
 impl DescribeEngineDefaultParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
     pub fn builder() -> crate::output::describe_engine_default_parameters_output::Builder {
         crate::output::describe_engine_default_parameters_output::Builder::default()
     }
@@ -2369,11 +2337,10 @@ impl std::fmt::Debug for DescribeEngineDefaultClusterParametersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput)
+/// See [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
 pub mod describe_engine_default_cluster_parameters_output {
 
-    /// A builder for [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engine_defaults: std::option::Option<crate::model::EngineDefaults>,
@@ -2392,7 +2359,7 @@ pub mod describe_engine_default_cluster_parameters_output {
             self.engine_defaults = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput)
+        /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultClusterParametersOutput {
             crate::output::DescribeEngineDefaultClusterParametersOutput {
                 engine_defaults: self.engine_defaults,
@@ -2401,7 +2368,7 @@ pub mod describe_engine_default_cluster_parameters_output {
     }
 }
 impl DescribeEngineDefaultClusterParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
     pub fn builder() -> crate::output::describe_engine_default_cluster_parameters_output::Builder {
         crate::output::describe_engine_default_cluster_parameters_output::Builder::default()
     }
@@ -2434,11 +2401,10 @@ impl std::fmt::Debug for DescribeDbSubnetGroupsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput)
+/// See [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
 pub mod describe_db_subnet_groups_output {
 
-    /// A builder for [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2475,7 +2441,7 @@ pub mod describe_db_subnet_groups_output {
             self.db_subnet_groups = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput)
+        /// Consumes the builder and constructs a [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbSubnetGroupsOutput {
             crate::output::DescribeDbSubnetGroupsOutput {
                 marker: self.marker,
@@ -2485,7 +2451,7 @@ pub mod describe_db_subnet_groups_output {
     }
 }
 impl DescribeDbSubnetGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
     pub fn builder() -> crate::output::describe_db_subnet_groups_output::Builder {
         crate::output::describe_db_subnet_groups_output::Builder::default()
     }
@@ -2518,11 +2484,10 @@ impl std::fmt::Debug for DescribeDbParametersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput)
+/// See [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
 pub mod describe_db_parameters_output {
 
-    /// A builder for [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -2558,7 +2523,7 @@ pub mod describe_db_parameters_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput)
+        /// Consumes the builder and constructs a [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
         pub fn build(self) -> crate::output::DescribeDbParametersOutput {
             crate::output::DescribeDbParametersOutput {
                 parameters: self.parameters,
@@ -2568,7 +2533,7 @@ pub mod describe_db_parameters_output {
     }
 }
 impl DescribeDbParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
     pub fn builder() -> crate::output::describe_db_parameters_output::Builder {
         crate::output::describe_db_parameters_output::Builder::default()
     }
@@ -2601,11 +2566,10 @@ impl std::fmt::Debug for DescribeDbParameterGroupsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput)
+/// See [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
 pub mod describe_db_parameter_groups_output {
 
-    /// A builder for [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2642,7 +2606,7 @@ pub mod describe_db_parameter_groups_output {
             self.db_parameter_groups = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput)
+        /// Consumes the builder and constructs a [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbParameterGroupsOutput {
             crate::output::DescribeDbParameterGroupsOutput {
                 marker: self.marker,
@@ -2652,7 +2616,7 @@ pub mod describe_db_parameter_groups_output {
     }
 }
 impl DescribeDbParameterGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
     pub fn builder() -> crate::output::describe_db_parameter_groups_output::Builder {
         crate::output::describe_db_parameter_groups_output::Builder::default()
     }
@@ -2685,11 +2649,10 @@ impl std::fmt::Debug for DescribeDbInstancesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput)
+/// See [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
 pub mod describe_db_instances_output {
 
-    /// A builder for [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2725,7 +2688,7 @@ pub mod describe_db_instances_output {
             self.db_instances = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput)
+        /// Consumes the builder and constructs a [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
         pub fn build(self) -> crate::output::DescribeDbInstancesOutput {
             crate::output::DescribeDbInstancesOutput {
                 marker: self.marker,
@@ -2735,7 +2698,7 @@ pub mod describe_db_instances_output {
     }
 }
 impl DescribeDbInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
     pub fn builder() -> crate::output::describe_db_instances_output::Builder {
         crate::output::describe_db_instances_output::Builder::default()
     }
@@ -2768,11 +2731,10 @@ impl std::fmt::Debug for DescribeDbEngineVersionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput)
+/// See [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
 pub mod describe_db_engine_versions_output {
 
-    /// A builder for [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2809,7 +2771,7 @@ pub mod describe_db_engine_versions_output {
             self.db_engine_versions = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput)
+        /// Consumes the builder and constructs a [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
         pub fn build(self) -> crate::output::DescribeDbEngineVersionsOutput {
             crate::output::DescribeDbEngineVersionsOutput {
                 marker: self.marker,
@@ -2819,7 +2781,7 @@ pub mod describe_db_engine_versions_output {
     }
 }
 impl DescribeDbEngineVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
     pub fn builder() -> crate::output::describe_db_engine_versions_output::Builder {
         crate::output::describe_db_engine_versions_output::Builder::default()
     }
@@ -2852,11 +2814,10 @@ impl std::fmt::Debug for DescribeDbClusterSnapshotsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput)
+/// See [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
 pub mod describe_db_cluster_snapshots_output {
 
-    /// A builder for [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -2893,7 +2854,7 @@ pub mod describe_db_cluster_snapshots_output {
             self.db_cluster_snapshots = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput)
+        /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotsOutput {
             crate::output::DescribeDbClusterSnapshotsOutput {
                 marker: self.marker,
@@ -2903,7 +2864,7 @@ pub mod describe_db_cluster_snapshots_output {
     }
 }
 impl DescribeDbClusterSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
     pub fn builder() -> crate::output::describe_db_cluster_snapshots_output::Builder {
         crate::output::describe_db_cluster_snapshots_output::Builder::default()
     }
@@ -2937,11 +2898,10 @@ impl std::fmt::Debug for DescribeDbClusterSnapshotAttributesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput)
+/// See [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
 pub mod describe_db_cluster_snapshot_attributes_output {
 
-    /// A builder for [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot_attributes_result:
@@ -2966,7 +2926,7 @@ pub mod describe_db_cluster_snapshot_attributes_output {
             self.db_cluster_snapshot_attributes_result = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput)
+        /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotAttributesOutput {
             crate::output::DescribeDbClusterSnapshotAttributesOutput {
                 db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result,
@@ -2975,7 +2935,7 @@ pub mod describe_db_cluster_snapshot_attributes_output {
     }
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
     pub fn builder() -> crate::output::describe_db_cluster_snapshot_attributes_output::Builder {
         crate::output::describe_db_cluster_snapshot_attributes_output::Builder::default()
     }
@@ -3008,11 +2968,10 @@ impl std::fmt::Debug for DescribeDbClustersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput)
+/// See [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
 pub mod describe_db_clusters_output {
 
-    /// A builder for [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3048,7 +3007,7 @@ pub mod describe_db_clusters_output {
             self.db_clusters = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput)
+        /// Consumes the builder and constructs a [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
         pub fn build(self) -> crate::output::DescribeDbClustersOutput {
             crate::output::DescribeDbClustersOutput {
                 marker: self.marker,
@@ -3058,7 +3017,7 @@ pub mod describe_db_clusters_output {
     }
 }
 impl DescribeDbClustersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
     pub fn builder() -> crate::output::describe_db_clusters_output::Builder {
         crate::output::describe_db_clusters_output::Builder::default()
     }
@@ -3091,11 +3050,10 @@ impl std::fmt::Debug for DescribeDbClusterParametersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput)
+/// See [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
 pub mod describe_db_cluster_parameters_output {
 
-    /// A builder for [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -3131,7 +3089,7 @@ pub mod describe_db_cluster_parameters_output {
             self.marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput)
+        /// Consumes the builder and constructs a [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParametersOutput {
             crate::output::DescribeDbClusterParametersOutput {
                 parameters: self.parameters,
@@ -3141,7 +3099,7 @@ pub mod describe_db_cluster_parameters_output {
     }
 }
 impl DescribeDbClusterParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
     pub fn builder() -> crate::output::describe_db_cluster_parameters_output::Builder {
         crate::output::describe_db_cluster_parameters_output::Builder::default()
     }
@@ -3180,11 +3138,10 @@ impl std::fmt::Debug for DescribeDbClusterParameterGroupsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput)
+/// See [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
 pub mod describe_db_cluster_parameter_groups_output {
 
-    /// A builder for [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3224,7 +3181,7 @@ pub mod describe_db_cluster_parameter_groups_output {
             self.db_cluster_parameter_groups = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput)
+        /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParameterGroupsOutput {
             crate::output::DescribeDbClusterParameterGroupsOutput {
                 marker: self.marker,
@@ -3234,7 +3191,7 @@ pub mod describe_db_cluster_parameter_groups_output {
     }
 }
 impl DescribeDbClusterParameterGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
     pub fn builder() -> crate::output::describe_db_cluster_parameter_groups_output::Builder {
         crate::output::describe_db_cluster_parameter_groups_output::Builder::default()
     }
@@ -3267,11 +3224,10 @@ impl std::fmt::Debug for DescribeDbClusterEndpointsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput)
+/// See [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
 pub mod describe_db_cluster_endpoints_output {
 
-    /// A builder for [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -3308,7 +3264,7 @@ pub mod describe_db_cluster_endpoints_output {
             self.db_cluster_endpoints = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput)
+        /// Consumes the builder and constructs a [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterEndpointsOutput {
             crate::output::DescribeDbClusterEndpointsOutput {
                 marker: self.marker,
@@ -3318,7 +3274,7 @@ pub mod describe_db_cluster_endpoints_output {
     }
 }
 impl DescribeDbClusterEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
     pub fn builder() -> crate::output::describe_db_cluster_endpoints_output::Builder {
         crate::output::describe_db_cluster_endpoints_output::Builder::default()
     }
@@ -3346,11 +3302,10 @@ impl std::fmt::Debug for DeleteGlobalClusterOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
+/// See [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
 pub mod delete_global_cluster_output {
 
-    /// A builder for [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
@@ -3371,7 +3326,7 @@ pub mod delete_global_cluster_output {
             self.global_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
+        /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
         pub fn build(self) -> crate::output::DeleteGlobalClusterOutput {
             crate::output::DeleteGlobalClusterOutput {
                 global_cluster: self.global_cluster,
@@ -3380,7 +3335,7 @@ pub mod delete_global_cluster_output {
     }
 }
 impl DeleteGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
     pub fn builder() -> crate::output::delete_global_cluster_output::Builder {
         crate::output::delete_global_cluster_output::Builder::default()
     }
@@ -3406,11 +3361,10 @@ impl std::fmt::Debug for DeleteEventSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput)
+/// See [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
 pub mod delete_event_subscription_output {
 
-    /// A builder for [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
@@ -3429,7 +3383,7 @@ pub mod delete_event_subscription_output {
             self.event_subscription = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput)
+        /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteEventSubscriptionOutput {
             crate::output::DeleteEventSubscriptionOutput {
                 event_subscription: self.event_subscription,
@@ -3438,7 +3392,7 @@ pub mod delete_event_subscription_output {
     }
 }
 impl DeleteEventSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
     pub fn builder() -> crate::output::delete_event_subscription_output::Builder {
         crate::output::delete_event_subscription_output::Builder::default()
     }
@@ -3454,22 +3408,21 @@ impl std::fmt::Debug for DeleteDbSubnetGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput)
+/// See [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
 pub mod delete_db_subnet_group_output {
 
-    /// A builder for [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput)
+        /// Consumes the builder and constructs a [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbSubnetGroupOutput {
             crate::output::DeleteDbSubnetGroupOutput {}
         }
     }
 }
 impl DeleteDbSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
     pub fn builder() -> crate::output::delete_db_subnet_group_output::Builder {
         crate::output::delete_db_subnet_group_output::Builder::default()
     }
@@ -3485,22 +3438,21 @@ impl std::fmt::Debug for DeleteDbParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput)
+/// See [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
 pub mod delete_db_parameter_group_output {
 
-    /// A builder for [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput)
+        /// Consumes the builder and constructs a [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbParameterGroupOutput {
             crate::output::DeleteDbParameterGroupOutput {}
         }
     }
 }
 impl DeleteDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
     pub fn builder() -> crate::output::delete_db_parameter_group_output::Builder {
         crate::output::delete_db_parameter_group_output::Builder::default()
     }
@@ -3528,11 +3480,10 @@ impl std::fmt::Debug for DeleteDbInstanceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput)
+/// See [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
 pub mod delete_db_instance_output {
 
-    /// A builder for [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
@@ -3553,7 +3504,7 @@ pub mod delete_db_instance_output {
             self.db_instance = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput)
+        /// Consumes the builder and constructs a [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
         pub fn build(self) -> crate::output::DeleteDbInstanceOutput {
             crate::output::DeleteDbInstanceOutput {
                 db_instance: self.db_instance,
@@ -3562,7 +3513,7 @@ pub mod delete_db_instance_output {
     }
 }
 impl DeleteDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
     pub fn builder() -> crate::output::delete_db_instance_output::Builder {
         crate::output::delete_db_instance_output::Builder::default()
     }
@@ -3590,11 +3541,10 @@ impl std::fmt::Debug for DeleteDbClusterSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput)
+/// See [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
 pub mod delete_db_cluster_snapshot_output {
 
-    /// A builder for [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
@@ -3615,7 +3565,7 @@ pub mod delete_db_cluster_snapshot_output {
             self.db_cluster_snapshot = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput)
+        /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterSnapshotOutput {
             crate::output::DeleteDbClusterSnapshotOutput {
                 db_cluster_snapshot: self.db_cluster_snapshot,
@@ -3624,7 +3574,7 @@ pub mod delete_db_cluster_snapshot_output {
     }
 }
 impl DeleteDbClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
     pub fn builder() -> crate::output::delete_db_cluster_snapshot_output::Builder {
         crate::output::delete_db_cluster_snapshot_output::Builder::default()
     }
@@ -3640,22 +3590,21 @@ impl std::fmt::Debug for DeleteDbClusterParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput)
+/// See [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
 pub mod delete_db_cluster_parameter_group_output {
 
-    /// A builder for [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput)
+        /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterParameterGroupOutput {
             crate::output::DeleteDbClusterParameterGroupOutput {}
         }
     }
 }
 impl DeleteDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
     pub fn builder() -> crate::output::delete_db_cluster_parameter_group_output::Builder {
         crate::output::delete_db_cluster_parameter_group_output::Builder::default()
     }
@@ -3757,11 +3706,10 @@ impl std::fmt::Debug for DeleteDbClusterEndpointOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput)
+/// See [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
 pub mod delete_db_cluster_endpoint_output {
 
-    /// A builder for [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -3919,7 +3867,7 @@ pub mod delete_db_cluster_endpoint_output {
             self.db_cluster_endpoint_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput)
+        /// Consumes the builder and constructs a [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterEndpointOutput {
             crate::output::DeleteDbClusterEndpointOutput {
                 db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
@@ -3938,7 +3886,7 @@ pub mod delete_db_cluster_endpoint_output {
     }
 }
 impl DeleteDbClusterEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
     pub fn builder() -> crate::output::delete_db_cluster_endpoint_output::Builder {
         crate::output::delete_db_cluster_endpoint_output::Builder::default()
     }
@@ -3966,11 +3914,10 @@ impl std::fmt::Debug for DeleteDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput)
+/// See [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
 pub mod delete_db_cluster_output {
 
-    /// A builder for [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -3991,7 +3938,7 @@ pub mod delete_db_cluster_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput)
+        /// Consumes the builder and constructs a [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterOutput {
             crate::output::DeleteDbClusterOutput {
                 db_cluster: self.db_cluster,
@@ -4000,7 +3947,7 @@ pub mod delete_db_cluster_output {
     }
 }
 impl DeleteDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
     pub fn builder() -> crate::output::delete_db_cluster_output::Builder {
         crate::output::delete_db_cluster_output::Builder::default()
     }
@@ -4028,11 +3975,10 @@ impl std::fmt::Debug for CreateGlobalClusterOutput {
         formatter.finish()
     }
 }
-/// See [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
+/// See [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
 pub mod create_global_cluster_output {
 
-    /// A builder for [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) global_cluster: std::option::Option<crate::model::GlobalCluster>,
@@ -4053,7 +3999,7 @@ pub mod create_global_cluster_output {
             self.global_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
+        /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
         pub fn build(self) -> crate::output::CreateGlobalClusterOutput {
             crate::output::CreateGlobalClusterOutput {
                 global_cluster: self.global_cluster,
@@ -4062,7 +4008,7 @@ pub mod create_global_cluster_output {
     }
 }
 impl CreateGlobalClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput)
+    /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
     pub fn builder() -> crate::output::create_global_cluster_output::Builder {
         crate::output::create_global_cluster_output::Builder::default()
     }
@@ -4088,11 +4034,10 @@ impl std::fmt::Debug for CreateEventSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput)
+/// See [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
 pub mod create_event_subscription_output {
 
-    /// A builder for [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
@@ -4111,7 +4056,7 @@ pub mod create_event_subscription_output {
             self.event_subscription = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput)
+        /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateEventSubscriptionOutput {
             crate::output::CreateEventSubscriptionOutput {
                 event_subscription: self.event_subscription,
@@ -4120,7 +4065,7 @@ pub mod create_event_subscription_output {
     }
 }
 impl CreateEventSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
     pub fn builder() -> crate::output::create_event_subscription_output::Builder {
         crate::output::create_event_subscription_output::Builder::default()
     }
@@ -4148,11 +4093,10 @@ impl std::fmt::Debug for CreateDbSubnetGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput)
+/// See [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
 pub mod create_db_subnet_group_output {
 
-    /// A builder for [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
@@ -4173,7 +4117,7 @@ pub mod create_db_subnet_group_output {
             self.db_subnet_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput)
+        /// Consumes the builder and constructs a [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::CreateDbSubnetGroupOutput {
             crate::output::CreateDbSubnetGroupOutput {
                 db_subnet_group: self.db_subnet_group,
@@ -4182,7 +4126,7 @@ pub mod create_db_subnet_group_output {
     }
 }
 impl CreateDbSubnetGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
     pub fn builder() -> crate::output::create_db_subnet_group_output::Builder {
         crate::output::create_db_subnet_group_output::Builder::default()
     }
@@ -4210,11 +4154,10 @@ impl std::fmt::Debug for CreateDbParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput)
+/// See [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
 pub mod create_db_parameter_group_output {
 
-    /// A builder for [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
@@ -4235,7 +4178,7 @@ pub mod create_db_parameter_group_output {
             self.db_parameter_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput)
+        /// Consumes the builder and constructs a [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateDbParameterGroupOutput {
             crate::output::CreateDbParameterGroupOutput {
                 db_parameter_group: self.db_parameter_group,
@@ -4244,7 +4187,7 @@ pub mod create_db_parameter_group_output {
     }
 }
 impl CreateDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
     pub fn builder() -> crate::output::create_db_parameter_group_output::Builder {
         crate::output::create_db_parameter_group_output::Builder::default()
     }
@@ -4272,11 +4215,10 @@ impl std::fmt::Debug for CreateDbInstanceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput)
+/// See [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
 pub mod create_db_instance_output {
 
-    /// A builder for [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
@@ -4297,7 +4239,7 @@ pub mod create_db_instance_output {
             self.db_instance = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput)
+        /// Consumes the builder and constructs a [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
         pub fn build(self) -> crate::output::CreateDbInstanceOutput {
             crate::output::CreateDbInstanceOutput {
                 db_instance: self.db_instance,
@@ -4306,7 +4248,7 @@ pub mod create_db_instance_output {
     }
 }
 impl CreateDbInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
     pub fn builder() -> crate::output::create_db_instance_output::Builder {
         crate::output::create_db_instance_output::Builder::default()
     }
@@ -4334,11 +4276,10 @@ impl std::fmt::Debug for CreateDbClusterSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput)
+/// See [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
 pub mod create_db_cluster_snapshot_output {
 
-    /// A builder for [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
@@ -4359,7 +4300,7 @@ pub mod create_db_cluster_snapshot_output {
             self.db_cluster_snapshot = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput)
+        /// Consumes the builder and constructs a [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CreateDbClusterSnapshotOutput {
             crate::output::CreateDbClusterSnapshotOutput {
                 db_cluster_snapshot: self.db_cluster_snapshot,
@@ -4368,7 +4309,7 @@ pub mod create_db_cluster_snapshot_output {
     }
 }
 impl CreateDbClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
     pub fn builder() -> crate::output::create_db_cluster_snapshot_output::Builder {
         crate::output::create_db_cluster_snapshot_output::Builder::default()
     }
@@ -4401,11 +4342,10 @@ impl std::fmt::Debug for CreateDbClusterParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput)
+/// See [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
 pub mod create_db_cluster_parameter_group_output {
 
-    /// A builder for [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group:
@@ -4430,7 +4370,7 @@ pub mod create_db_cluster_parameter_group_output {
             self.db_cluster_parameter_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput)
+        /// Consumes the builder and constructs a [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateDbClusterParameterGroupOutput {
             crate::output::CreateDbClusterParameterGroupOutput {
                 db_cluster_parameter_group: self.db_cluster_parameter_group,
@@ -4439,7 +4379,7 @@ pub mod create_db_cluster_parameter_group_output {
     }
 }
 impl CreateDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
     pub fn builder() -> crate::output::create_db_cluster_parameter_group_output::Builder {
         crate::output::create_db_cluster_parameter_group_output::Builder::default()
     }
@@ -4541,11 +4481,10 @@ impl std::fmt::Debug for CreateDbClusterEndpointOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput)
+/// See [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
 pub mod create_db_cluster_endpoint_output {
 
-    /// A builder for [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -4703,7 +4642,7 @@ pub mod create_db_cluster_endpoint_output {
             self.db_cluster_endpoint_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput)
+        /// Consumes the builder and constructs a [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::CreateDbClusterEndpointOutput {
             crate::output::CreateDbClusterEndpointOutput {
                 db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
@@ -4722,7 +4661,7 @@ pub mod create_db_cluster_endpoint_output {
     }
 }
 impl CreateDbClusterEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
     pub fn builder() -> crate::output::create_db_cluster_endpoint_output::Builder {
         crate::output::create_db_cluster_endpoint_output::Builder::default()
     }
@@ -4750,11 +4689,10 @@ impl std::fmt::Debug for CreateDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput)
+/// See [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
 pub mod create_db_cluster_output {
 
-    /// A builder for [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
@@ -4775,7 +4713,7 @@ pub mod create_db_cluster_output {
             self.db_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput)
+        /// Consumes the builder and constructs a [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
         pub fn build(self) -> crate::output::CreateDbClusterOutput {
             crate::output::CreateDbClusterOutput {
                 db_cluster: self.db_cluster,
@@ -4784,7 +4722,7 @@ pub mod create_db_cluster_output {
     }
 }
 impl CreateDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
     pub fn builder() -> crate::output::create_db_cluster_output::Builder {
         crate::output::create_db_cluster_output::Builder::default()
     }
@@ -4812,11 +4750,10 @@ impl std::fmt::Debug for CopyDbParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput)
+/// See [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
 pub mod copy_db_parameter_group_output {
 
-    /// A builder for [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
@@ -4837,7 +4774,7 @@ pub mod copy_db_parameter_group_output {
             self.db_parameter_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput)
+        /// Consumes the builder and constructs a [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
         pub fn build(self) -> crate::output::CopyDbParameterGroupOutput {
             crate::output::CopyDbParameterGroupOutput {
                 db_parameter_group: self.db_parameter_group,
@@ -4846,7 +4783,7 @@ pub mod copy_db_parameter_group_output {
     }
 }
 impl CopyDbParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
     pub fn builder() -> crate::output::copy_db_parameter_group_output::Builder {
         crate::output::copy_db_parameter_group_output::Builder::default()
     }
@@ -4874,11 +4811,10 @@ impl std::fmt::Debug for CopyDbClusterSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput)
+/// See [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
 pub mod copy_db_cluster_snapshot_output {
 
-    /// A builder for [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
@@ -4899,7 +4835,7 @@ pub mod copy_db_cluster_snapshot_output {
             self.db_cluster_snapshot = input;
             self
         }
-        /// Consumes the builder and constructs a [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput)
+        /// Consumes the builder and constructs a [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CopyDbClusterSnapshotOutput {
             crate::output::CopyDbClusterSnapshotOutput {
                 db_cluster_snapshot: self.db_cluster_snapshot,
@@ -4908,7 +4844,7 @@ pub mod copy_db_cluster_snapshot_output {
     }
 }
 impl CopyDbClusterSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
     pub fn builder() -> crate::output::copy_db_cluster_snapshot_output::Builder {
         crate::output::copy_db_cluster_snapshot_output::Builder::default()
     }
@@ -4941,11 +4877,10 @@ impl std::fmt::Debug for CopyDbClusterParameterGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput)
+/// See [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
 pub mod copy_db_cluster_parameter_group_output {
 
-    /// A builder for [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group:
@@ -4970,7 +4905,7 @@ pub mod copy_db_cluster_parameter_group_output {
             self.db_cluster_parameter_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput)
+        /// Consumes the builder and constructs a [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CopyDbClusterParameterGroupOutput {
             crate::output::CopyDbClusterParameterGroupOutput {
                 db_cluster_parameter_group: self.db_cluster_parameter_group,
@@ -4979,7 +4914,7 @@ pub mod copy_db_cluster_parameter_group_output {
     }
 }
 impl CopyDbClusterParameterGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
     pub fn builder() -> crate::output::copy_db_cluster_parameter_group_output::Builder {
         crate::output::copy_db_cluster_parameter_group_output::Builder::default()
     }
@@ -5011,11 +4946,10 @@ impl std::fmt::Debug for ApplyPendingMaintenanceActionOutput {
         formatter.finish()
     }
 }
-/// See [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput)
+/// See [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
 pub mod apply_pending_maintenance_action_output {
 
-    /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput)
-    #[non_exhaustive]
+    /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_pending_maintenance_actions:
@@ -5038,7 +4972,7 @@ pub mod apply_pending_maintenance_action_output {
             self.resource_pending_maintenance_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput)
+        /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
         pub fn build(self) -> crate::output::ApplyPendingMaintenanceActionOutput {
             crate::output::ApplyPendingMaintenanceActionOutput {
                 resource_pending_maintenance_actions: self.resource_pending_maintenance_actions,
@@ -5047,7 +4981,7 @@ pub mod apply_pending_maintenance_action_output {
     }
 }
 impl ApplyPendingMaintenanceActionOutput {
-    /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput)
+    /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
     pub fn builder() -> crate::output::apply_pending_maintenance_action_output::Builder {
         crate::output::apply_pending_maintenance_action_output::Builder::default()
     }
@@ -5063,22 +4997,21 @@ impl std::fmt::Debug for AddTagsToResourceOutput {
         formatter.finish()
     }
 }
-/// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+/// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
 
-    /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+        /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
             crate::output::AddTagsToResourceOutput {}
         }
     }
 }
 impl AddTagsToResourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     pub fn builder() -> crate::output::add_tags_to_resource_output::Builder {
         crate::output::add_tags_to_resource_output::Builder::default()
     }
@@ -5104,11 +5037,10 @@ impl std::fmt::Debug for AddSourceIdentifierToSubscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput)
+/// See [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
 pub mod add_source_identifier_to_subscription_output {
 
-    /// A builder for [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_subscription: std::option::Option<crate::model::EventSubscription>,
@@ -5127,7 +5059,7 @@ pub mod add_source_identifier_to_subscription_output {
             self.event_subscription = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput)
+        /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
         pub fn build(self) -> crate::output::AddSourceIdentifierToSubscriptionOutput {
             crate::output::AddSourceIdentifierToSubscriptionOutput {
                 event_subscription: self.event_subscription,
@@ -5136,7 +5068,7 @@ pub mod add_source_identifier_to_subscription_output {
     }
 }
 impl AddSourceIdentifierToSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
     pub fn builder() -> crate::output::add_source_identifier_to_subscription_output::Builder {
         crate::output::add_source_identifier_to_subscription_output::Builder::default()
     }
@@ -5152,22 +5084,21 @@ impl std::fmt::Debug for AddRoleToDbClusterOutput {
         formatter.finish()
     }
 }
-/// See [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput)
+/// See [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
 pub mod add_role_to_db_cluster_output {
 
-    /// A builder for [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput)
+        /// Consumes the builder and constructs a [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
         pub fn build(self) -> crate::output::AddRoleToDbClusterOutput {
             crate::output::AddRoleToDbClusterOutput {}
         }
     }
 }
 impl AddRoleToDbClusterOutput {
-    /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput)
+    /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
     pub fn builder() -> crate::output::add_role_to_db_cluster_output::Builder {
         crate::output::add_role_to_db_cluster_output::Builder::default()
     }

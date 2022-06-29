@@ -3961,11 +3961,10 @@ impl std::fmt::Display for ServiceFault {
     }
 }
 impl std::error::Error for ServiceFault {}
-/// See [`ServiceFault`](crate::error::ServiceFault)
+/// See [`ServiceFault`](crate::error::ServiceFault).
 pub mod service_fault {
 
-    /// A builder for [`ServiceFault`](crate::error::ServiceFault)
-    #[non_exhaustive]
+    /// A builder for [`ServiceFault`](crate::error::ServiceFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3995,7 +3994,7 @@ pub mod service_fault {
             self.turk_error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceFault`](crate::error::ServiceFault)
+        /// Consumes the builder and constructs a [`ServiceFault`](crate::error::ServiceFault).
         pub fn build(self) -> crate::error::ServiceFault {
             crate::error::ServiceFault {
                 message: self.message,
@@ -4005,7 +4004,7 @@ pub mod service_fault {
     }
 }
 impl ServiceFault {
-    /// Creates a new builder-style object to manufacture [`ServiceFault`](crate::error::ServiceFault)
+    /// Creates a new builder-style object to manufacture [`ServiceFault`](crate::error::ServiceFault).
     pub fn builder() -> crate::error::service_fault::Builder {
         crate::error::service_fault::Builder::default()
     }
@@ -4050,11 +4049,10 @@ impl std::fmt::Display for RequestError {
     }
 }
 impl std::error::Error for RequestError {}
-/// See [`RequestError`](crate::error::RequestError)
+/// See [`RequestError`](crate::error::RequestError).
 pub mod request_error {
 
-    /// A builder for [`RequestError`](crate::error::RequestError)
-    #[non_exhaustive]
+    /// A builder for [`RequestError`](crate::error::RequestError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4084,7 +4082,7 @@ pub mod request_error {
             self.turk_error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestError`](crate::error::RequestError)
+        /// Consumes the builder and constructs a [`RequestError`](crate::error::RequestError).
         pub fn build(self) -> crate::error::RequestError {
             crate::error::RequestError {
                 message: self.message,
@@ -4094,7 +4092,7 @@ pub mod request_error {
     }
 }
 impl RequestError {
-    /// Creates a new builder-style object to manufacture [`RequestError`](crate::error::RequestError)
+    /// Creates a new builder-style object to manufacture [`RequestError`](crate::error::RequestError).
     pub fn builder() -> crate::error::request_error::Builder {
         crate::error::request_error::Builder::default()
     }

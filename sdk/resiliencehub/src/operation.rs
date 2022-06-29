@@ -10,7 +10,7 @@ pub struct AddDraftAppVersionResourceMappings {
     _private: (),
 }
 impl AddDraftAppVersionResourceMappings {
-    /// Creates a new builder-style object to manufacture [`AddDraftAppVersionResourceMappingsInput`](crate::input::AddDraftAppVersionResourceMappingsInput)
+    /// Creates a new builder-style object to manufacture [`AddDraftAppVersionResourceMappingsInput`](crate::input::AddDraftAppVersionResourceMappingsInput).
     pub fn builder() -> crate::input::add_draft_app_version_resource_mappings_input::Builder {
         crate::input::add_draft_app_version_resource_mappings_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateApp {
     _private: (),
 }
 impl CreateApp {
-    /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput)
+    /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput).
     pub fn builder() -> crate::input::create_app_input::Builder {
         crate::input::create_app_input::Builder::default()
     }
@@ -75,7 +75,7 @@ pub struct CreateRecommendationTemplate {
     _private: (),
 }
 impl CreateRecommendationTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateRecommendationTemplateInput`](crate::input::CreateRecommendationTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateRecommendationTemplateInput`](crate::input::CreateRecommendationTemplateInput).
     pub fn builder() -> crate::input::create_recommendation_template_input::Builder {
         crate::input::create_recommendation_template_input::Builder::default()
     }
@@ -109,7 +109,7 @@ pub struct CreateResiliencyPolicy {
     _private: (),
 }
 impl CreateResiliencyPolicy {
-    /// Creates a new builder-style object to manufacture [`CreateResiliencyPolicyInput`](crate::input::CreateResiliencyPolicyInput)
+    /// Creates a new builder-style object to manufacture [`CreateResiliencyPolicyInput`](crate::input::CreateResiliencyPolicyInput).
     pub fn builder() -> crate::input::create_resiliency_policy_input::Builder {
         crate::input::create_resiliency_policy_input::Builder::default()
     }
@@ -143,7 +143,7 @@ pub struct DeleteApp {
     _private: (),
 }
 impl DeleteApp {
-    /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput).
     pub fn builder() -> crate::input::delete_app_input::Builder {
         crate::input::delete_app_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct DeleteAppAssessment {
     _private: (),
 }
 impl DeleteAppAssessment {
-    /// Creates a new builder-style object to manufacture [`DeleteAppAssessmentInput`](crate::input::DeleteAppAssessmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppAssessmentInput`](crate::input::DeleteAppAssessmentInput).
     pub fn builder() -> crate::input::delete_app_assessment_input::Builder {
         crate::input::delete_app_assessment_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DeleteRecommendationTemplate {
     _private: (),
 }
 impl DeleteRecommendationTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteRecommendationTemplateInput`](crate::input::DeleteRecommendationTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRecommendationTemplateInput`](crate::input::DeleteRecommendationTemplateInput).
     pub fn builder() -> crate::input::delete_recommendation_template_input::Builder {
         crate::input::delete_recommendation_template_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DeleteResiliencyPolicy {
     _private: (),
 }
 impl DeleteResiliencyPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResiliencyPolicyInput`](crate::input::DeleteResiliencyPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResiliencyPolicyInput`](crate::input::DeleteResiliencyPolicyInput).
     pub fn builder() -> crate::input::delete_resiliency_policy_input::Builder {
         crate::input::delete_resiliency_policy_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct DescribeApp {
     _private: (),
 }
 impl DescribeApp {
-    /// Creates a new builder-style object to manufacture [`DescribeAppInput`](crate::input::DescribeAppInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppInput`](crate::input::DescribeAppInput).
     pub fn builder() -> crate::input::describe_app_input::Builder {
         crate::input::describe_app_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DescribeAppAssessment {
     _private: (),
 }
 impl DescribeAppAssessment {
-    /// Creates a new builder-style object to manufacture [`DescribeAppAssessmentInput`](crate::input::DescribeAppAssessmentInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppAssessmentInput`](crate::input::DescribeAppAssessmentInput).
     pub fn builder() -> crate::input::describe_app_assessment_input::Builder {
         crate::input::describe_app_assessment_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DescribeAppVersionResourcesResolutionStatus {
     _private: (),
 }
 impl DescribeAppVersionResourcesResolutionStatus {
-    /// Creates a new builder-style object to manufacture [`DescribeAppVersionResourcesResolutionStatusInput`](crate::input::DescribeAppVersionResourcesResolutionStatusInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppVersionResourcesResolutionStatusInput`](crate::input::DescribeAppVersionResourcesResolutionStatusInput).
     pub fn builder() -> crate::input::describe_app_version_resources_resolution_status_input::Builder
     {
         crate::input::describe_app_version_resources_resolution_status_input::Builder::default()
@@ -383,7 +383,7 @@ pub struct DescribeAppVersionTemplate {
     _private: (),
 }
 impl DescribeAppVersionTemplate {
-    /// Creates a new builder-style object to manufacture [`DescribeAppVersionTemplateInput`](crate::input::DescribeAppVersionTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAppVersionTemplateInput`](crate::input::DescribeAppVersionTemplateInput).
     pub fn builder() -> crate::input::describe_app_version_template_input::Builder {
         crate::input::describe_app_version_template_input::Builder::default()
     }
@@ -417,7 +417,7 @@ pub struct DescribeDraftAppVersionResourcesImportStatus {
     _private: (),
 }
 impl DescribeDraftAppVersionResourcesImportStatus {
-    /// Creates a new builder-style object to manufacture [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::input::DescribeDraftAppVersionResourcesImportStatusInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::input::DescribeDraftAppVersionResourcesImportStatusInput).
     pub fn builder(
     ) -> crate::input::describe_draft_app_version_resources_import_status_input::Builder {
         crate::input::describe_draft_app_version_resources_import_status_input::Builder::default()
@@ -456,7 +456,7 @@ pub struct DescribeResiliencyPolicy {
     _private: (),
 }
 impl DescribeResiliencyPolicy {
-    /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyInput`](crate::input::DescribeResiliencyPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyInput`](crate::input::DescribeResiliencyPolicyInput).
     pub fn builder() -> crate::input::describe_resiliency_policy_input::Builder {
         crate::input::describe_resiliency_policy_input::Builder::default()
     }
@@ -490,7 +490,7 @@ pub struct ImportResourcesToDraftAppVersion {
     _private: (),
 }
 impl ImportResourcesToDraftAppVersion {
-    /// Creates a new builder-style object to manufacture [`ImportResourcesToDraftAppVersionInput`](crate::input::ImportResourcesToDraftAppVersionInput)
+    /// Creates a new builder-style object to manufacture [`ImportResourcesToDraftAppVersionInput`](crate::input::ImportResourcesToDraftAppVersionInput).
     pub fn builder() -> crate::input::import_resources_to_draft_app_version_input::Builder {
         crate::input::import_resources_to_draft_app_version_input::Builder::default()
     }
@@ -524,7 +524,7 @@ pub struct ListAlarmRecommendations {
     _private: (),
 }
 impl ListAlarmRecommendations {
-    /// Creates a new builder-style object to manufacture [`ListAlarmRecommendationsInput`](crate::input::ListAlarmRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ListAlarmRecommendationsInput`](crate::input::ListAlarmRecommendationsInput).
     pub fn builder() -> crate::input::list_alarm_recommendations_input::Builder {
         crate::input::list_alarm_recommendations_input::Builder::default()
     }
@@ -558,7 +558,7 @@ pub struct ListAppAssessments {
     _private: (),
 }
 impl ListAppAssessments {
-    /// Creates a new builder-style object to manufacture [`ListAppAssessmentsInput`](crate::input::ListAppAssessmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppAssessmentsInput`](crate::input::ListAppAssessmentsInput).
     pub fn builder() -> crate::input::list_app_assessments_input::Builder {
         crate::input::list_app_assessments_input::Builder::default()
     }
@@ -592,7 +592,7 @@ pub struct ListAppComponentCompliances {
     _private: (),
 }
 impl ListAppComponentCompliances {
-    /// Creates a new builder-style object to manufacture [`ListAppComponentCompliancesInput`](crate::input::ListAppComponentCompliancesInput)
+    /// Creates a new builder-style object to manufacture [`ListAppComponentCompliancesInput`](crate::input::ListAppComponentCompliancesInput).
     pub fn builder() -> crate::input::list_app_component_compliances_input::Builder {
         crate::input::list_app_component_compliances_input::Builder::default()
     }
@@ -626,7 +626,7 @@ pub struct ListAppComponentRecommendations {
     _private: (),
 }
 impl ListAppComponentRecommendations {
-    /// Creates a new builder-style object to manufacture [`ListAppComponentRecommendationsInput`](crate::input::ListAppComponentRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppComponentRecommendationsInput`](crate::input::ListAppComponentRecommendationsInput).
     pub fn builder() -> crate::input::list_app_component_recommendations_input::Builder {
         crate::input::list_app_component_recommendations_input::Builder::default()
     }
@@ -660,7 +660,7 @@ pub struct ListApps {
     _private: (),
 }
 impl ListApps {
-    /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput).
     pub fn builder() -> crate::input::list_apps_input::Builder {
         crate::input::list_apps_input::Builder::default()
     }
@@ -691,7 +691,7 @@ pub struct ListAppVersionResourceMappings {
     _private: (),
 }
 impl ListAppVersionResourceMappings {
-    /// Creates a new builder-style object to manufacture [`ListAppVersionResourceMappingsInput`](crate::input::ListAppVersionResourceMappingsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppVersionResourceMappingsInput`](crate::input::ListAppVersionResourceMappingsInput).
     pub fn builder() -> crate::input::list_app_version_resource_mappings_input::Builder {
         crate::input::list_app_version_resource_mappings_input::Builder::default()
     }
@@ -725,7 +725,7 @@ pub struct ListAppVersionResources {
     _private: (),
 }
 impl ListAppVersionResources {
-    /// Creates a new builder-style object to manufacture [`ListAppVersionResourcesInput`](crate::input::ListAppVersionResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListAppVersionResourcesInput`](crate::input::ListAppVersionResourcesInput).
     pub fn builder() -> crate::input::list_app_version_resources_input::Builder {
         crate::input::list_app_version_resources_input::Builder::default()
     }
@@ -759,7 +759,7 @@ pub struct ListAppVersions {
     _private: (),
 }
 impl ListAppVersions {
-    /// Creates a new builder-style object to manufacture [`ListAppVersionsInput`](crate::input::ListAppVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppVersionsInput`](crate::input::ListAppVersionsInput).
     pub fn builder() -> crate::input::list_app_versions_input::Builder {
         crate::input::list_app_versions_input::Builder::default()
     }
@@ -793,7 +793,7 @@ pub struct ListRecommendationTemplates {
     _private: (),
 }
 impl ListRecommendationTemplates {
-    /// Creates a new builder-style object to manufacture [`ListRecommendationTemplatesInput`](crate::input::ListRecommendationTemplatesInput)
+    /// Creates a new builder-style object to manufacture [`ListRecommendationTemplatesInput`](crate::input::ListRecommendationTemplatesInput).
     pub fn builder() -> crate::input::list_recommendation_templates_input::Builder {
         crate::input::list_recommendation_templates_input::Builder::default()
     }
@@ -827,7 +827,7 @@ pub struct ListResiliencyPolicies {
     _private: (),
 }
 impl ListResiliencyPolicies {
-    /// Creates a new builder-style object to manufacture [`ListResiliencyPoliciesInput`](crate::input::ListResiliencyPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`ListResiliencyPoliciesInput`](crate::input::ListResiliencyPoliciesInput).
     pub fn builder() -> crate::input::list_resiliency_policies_input::Builder {
         crate::input::list_resiliency_policies_input::Builder::default()
     }
@@ -861,7 +861,7 @@ pub struct ListSopRecommendations {
     _private: (),
 }
 impl ListSopRecommendations {
-    /// Creates a new builder-style object to manufacture [`ListSopRecommendationsInput`](crate::input::ListSopRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ListSopRecommendationsInput`](crate::input::ListSopRecommendationsInput).
     pub fn builder() -> crate::input::list_sop_recommendations_input::Builder {
         crate::input::list_sop_recommendations_input::Builder::default()
     }
@@ -895,7 +895,7 @@ pub struct ListSuggestedResiliencyPolicies {
     _private: (),
 }
 impl ListSuggestedResiliencyPolicies {
-    /// Creates a new builder-style object to manufacture [`ListSuggestedResiliencyPoliciesInput`](crate::input::ListSuggestedResiliencyPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`ListSuggestedResiliencyPoliciesInput`](crate::input::ListSuggestedResiliencyPoliciesInput).
     pub fn builder() -> crate::input::list_suggested_resiliency_policies_input::Builder {
         crate::input::list_suggested_resiliency_policies_input::Builder::default()
     }
@@ -929,7 +929,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -963,7 +963,7 @@ pub struct ListTestRecommendations {
     _private: (),
 }
 impl ListTestRecommendations {
-    /// Creates a new builder-style object to manufacture [`ListTestRecommendationsInput`](crate::input::ListTestRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`ListTestRecommendationsInput`](crate::input::ListTestRecommendationsInput).
     pub fn builder() -> crate::input::list_test_recommendations_input::Builder {
         crate::input::list_test_recommendations_input::Builder::default()
     }
@@ -997,7 +997,7 @@ pub struct ListUnsupportedAppVersionResources {
     _private: (),
 }
 impl ListUnsupportedAppVersionResources {
-    /// Creates a new builder-style object to manufacture [`ListUnsupportedAppVersionResourcesInput`](crate::input::ListUnsupportedAppVersionResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListUnsupportedAppVersionResourcesInput`](crate::input::ListUnsupportedAppVersionResourcesInput).
     pub fn builder() -> crate::input::list_unsupported_app_version_resources_input::Builder {
         crate::input::list_unsupported_app_version_resources_input::Builder::default()
     }
@@ -1031,7 +1031,7 @@ pub struct PublishAppVersion {
     _private: (),
 }
 impl PublishAppVersion {
-    /// Creates a new builder-style object to manufacture [`PublishAppVersionInput`](crate::input::PublishAppVersionInput)
+    /// Creates a new builder-style object to manufacture [`PublishAppVersionInput`](crate::input::PublishAppVersionInput).
     pub fn builder() -> crate::input::publish_app_version_input::Builder {
         crate::input::publish_app_version_input::Builder::default()
     }
@@ -1065,7 +1065,7 @@ pub struct PutDraftAppVersionTemplate {
     _private: (),
 }
 impl PutDraftAppVersionTemplate {
-    /// Creates a new builder-style object to manufacture [`PutDraftAppVersionTemplateInput`](crate::input::PutDraftAppVersionTemplateInput)
+    /// Creates a new builder-style object to manufacture [`PutDraftAppVersionTemplateInput`](crate::input::PutDraftAppVersionTemplateInput).
     pub fn builder() -> crate::input::put_draft_app_version_template_input::Builder {
         crate::input::put_draft_app_version_template_input::Builder::default()
     }
@@ -1099,7 +1099,7 @@ pub struct RemoveDraftAppVersionResourceMappings {
     _private: (),
 }
 impl RemoveDraftAppVersionResourceMappings {
-    /// Creates a new builder-style object to manufacture [`RemoveDraftAppVersionResourceMappingsInput`](crate::input::RemoveDraftAppVersionResourceMappingsInput)
+    /// Creates a new builder-style object to manufacture [`RemoveDraftAppVersionResourceMappingsInput`](crate::input::RemoveDraftAppVersionResourceMappingsInput).
     pub fn builder() -> crate::input::remove_draft_app_version_resource_mappings_input::Builder {
         crate::input::remove_draft_app_version_resource_mappings_input::Builder::default()
     }
@@ -1135,7 +1135,7 @@ pub struct ResolveAppVersionResources {
     _private: (),
 }
 impl ResolveAppVersionResources {
-    /// Creates a new builder-style object to manufacture [`ResolveAppVersionResourcesInput`](crate::input::ResolveAppVersionResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ResolveAppVersionResourcesInput`](crate::input::ResolveAppVersionResourcesInput).
     pub fn builder() -> crate::input::resolve_app_version_resources_input::Builder {
         crate::input::resolve_app_version_resources_input::Builder::default()
     }
@@ -1169,7 +1169,7 @@ pub struct StartAppAssessment {
     _private: (),
 }
 impl StartAppAssessment {
-    /// Creates a new builder-style object to manufacture [`StartAppAssessmentInput`](crate::input::StartAppAssessmentInput)
+    /// Creates a new builder-style object to manufacture [`StartAppAssessmentInput`](crate::input::StartAppAssessmentInput).
     pub fn builder() -> crate::input::start_app_assessment_input::Builder {
         crate::input::start_app_assessment_input::Builder::default()
     }
@@ -1203,7 +1203,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1235,7 +1235,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1267,7 +1267,7 @@ pub struct UpdateApp {
     _private: (),
 }
 impl UpdateApp {
-    /// Creates a new builder-style object to manufacture [`UpdateAppInput`](crate::input::UpdateAppInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppInput`](crate::input::UpdateAppInput).
     pub fn builder() -> crate::input::update_app_input::Builder {
         crate::input::update_app_input::Builder::default()
     }
@@ -1298,7 +1298,7 @@ pub struct UpdateResiliencyPolicy {
     _private: (),
 }
 impl UpdateResiliencyPolicy {
-    /// Creates a new builder-style object to manufacture [`UpdateResiliencyPolicyInput`](crate::input::UpdateResiliencyPolicyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResiliencyPolicyInput`](crate::input::UpdateResiliencyPolicyInput).
     pub fn builder() -> crate::input::update_resiliency_policy_input::Builder {
         crate::input::update_resiliency_policy_input::Builder::default()
     }

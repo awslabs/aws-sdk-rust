@@ -40,11 +40,10 @@ impl std::fmt::Debug for UploadLayerPartOutput {
         formatter.finish()
     }
 }
-/// See [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput)
+/// See [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
 pub mod upload_layer_part_output {
 
-    /// A builder for [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput)
-    #[non_exhaustive]
+    /// A builder for [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -96,7 +95,7 @@ pub mod upload_layer_part_output {
             self.last_byte_received = input;
             self
         }
-        /// Consumes the builder and constructs a [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput)
+        /// Consumes the builder and constructs a [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
         pub fn build(self) -> crate::output::UploadLayerPartOutput {
             crate::output::UploadLayerPartOutput {
                 registry_id: self.registry_id,
@@ -108,7 +107,7 @@ pub mod upload_layer_part_output {
     }
 }
 impl UploadLayerPartOutput {
-    /// Creates a new builder-style object to manufacture [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput)
+    /// Creates a new builder-style object to manufacture [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput).
     pub fn builder() -> crate::output::upload_layer_part_output::Builder {
         crate::output::upload_layer_part_output::Builder::default()
     }
@@ -124,22 +123,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -155,22 +153,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -217,11 +214,10 @@ impl std::fmt::Debug for StartLifecyclePolicyPreviewOutput {
         formatter.finish()
     }
 }
-/// See [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput)
+/// See [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput).
 pub mod start_lifecycle_policy_preview_output {
 
-    /// A builder for [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -279,7 +275,7 @@ pub mod start_lifecycle_policy_preview_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput)
+        /// Consumes the builder and constructs a [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput).
         pub fn build(self) -> crate::output::StartLifecyclePolicyPreviewOutput {
             crate::output::StartLifecyclePolicyPreviewOutput {
                 registry_id: self.registry_id,
@@ -291,7 +287,7 @@ pub mod start_lifecycle_policy_preview_output {
     }
 }
 impl StartLifecyclePolicyPreviewOutput {
-    /// Creates a new builder-style object to manufacture [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput)
+    /// Creates a new builder-style object to manufacture [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput).
     pub fn builder() -> crate::output::start_lifecycle_policy_preview_output::Builder {
         crate::output::start_lifecycle_policy_preview_output::Builder::default()
     }
@@ -338,11 +334,10 @@ impl std::fmt::Debug for StartImageScanOutput {
         formatter.finish()
     }
 }
-/// See [`StartImageScanOutput`](crate::output::StartImageScanOutput)
+/// See [`StartImageScanOutput`](crate::output::StartImageScanOutput).
 pub mod start_image_scan_output {
 
-    /// A builder for [`StartImageScanOutput`](crate::output::StartImageScanOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartImageScanOutput`](crate::output::StartImageScanOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -400,7 +395,7 @@ pub mod start_image_scan_output {
             self.image_scan_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartImageScanOutput`](crate::output::StartImageScanOutput)
+        /// Consumes the builder and constructs a [`StartImageScanOutput`](crate::output::StartImageScanOutput).
         pub fn build(self) -> crate::output::StartImageScanOutput {
             crate::output::StartImageScanOutput {
                 registry_id: self.registry_id,
@@ -412,7 +407,7 @@ pub mod start_image_scan_output {
     }
 }
 impl StartImageScanOutput {
-    /// Creates a new builder-style object to manufacture [`StartImageScanOutput`](crate::output::StartImageScanOutput)
+    /// Creates a new builder-style object to manufacture [`StartImageScanOutput`](crate::output::StartImageScanOutput).
     pub fn builder() -> crate::output::start_image_scan_output::Builder {
         crate::output::start_image_scan_output::Builder::default()
     }
@@ -452,11 +447,10 @@ impl std::fmt::Debug for SetRepositoryPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput)
+/// See [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
 pub mod set_repository_policy_output {
 
-    /// A builder for [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -497,7 +491,7 @@ pub mod set_repository_policy_output {
             self.policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput)
+        /// Consumes the builder and constructs a [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
         pub fn build(self) -> crate::output::SetRepositoryPolicyOutput {
             crate::output::SetRepositoryPolicyOutput {
                 registry_id: self.registry_id,
@@ -508,7 +502,7 @@ pub mod set_repository_policy_output {
     }
 }
 impl SetRepositoryPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput).
     pub fn builder() -> crate::output::set_repository_policy_output::Builder {
         crate::output::set_repository_policy_output::Builder::default()
     }
@@ -536,11 +530,10 @@ impl std::fmt::Debug for PutReplicationConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput)
+/// See [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput).
 pub mod put_replication_configuration_output {
 
-    /// A builder for [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replication_configuration:
@@ -563,7 +556,7 @@ pub mod put_replication_configuration_output {
             self.replication_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput)
+        /// Consumes the builder and constructs a [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput).
         pub fn build(self) -> crate::output::PutReplicationConfigurationOutput {
             crate::output::PutReplicationConfigurationOutput {
                 replication_configuration: self.replication_configuration,
@@ -572,7 +565,7 @@ pub mod put_replication_configuration_output {
     }
 }
 impl PutReplicationConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput).
     pub fn builder() -> crate::output::put_replication_configuration_output::Builder {
         crate::output::put_replication_configuration_output::Builder::default()
     }
@@ -604,11 +597,10 @@ impl std::fmt::Debug for PutRegistryScanningConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
+/// See [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput).
 pub mod put_registry_scanning_configuration_output {
 
-    /// A builder for [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_scanning_configuration:
@@ -631,7 +623,7 @@ pub mod put_registry_scanning_configuration_output {
             self.registry_scanning_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
+        /// Consumes the builder and constructs a [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput).
         pub fn build(self) -> crate::output::PutRegistryScanningConfigurationOutput {
             crate::output::PutRegistryScanningConfigurationOutput {
                 registry_scanning_configuration: self.registry_scanning_configuration,
@@ -640,7 +632,7 @@ pub mod put_registry_scanning_configuration_output {
     }
 }
 impl PutRegistryScanningConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput).
     pub fn builder() -> crate::output::put_registry_scanning_configuration_output::Builder {
         crate::output::put_registry_scanning_configuration_output::Builder::default()
     }
@@ -673,11 +665,10 @@ impl std::fmt::Debug for PutRegistryPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput)
+/// See [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput).
 pub mod put_registry_policy_output {
 
-    /// A builder for [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -704,7 +695,7 @@ pub mod put_registry_policy_output {
             self.policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput)
+        /// Consumes the builder and constructs a [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput).
         pub fn build(self) -> crate::output::PutRegistryPolicyOutput {
             crate::output::PutRegistryPolicyOutput {
                 registry_id: self.registry_id,
@@ -714,7 +705,7 @@ pub mod put_registry_policy_output {
     }
 }
 impl PutRegistryPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput).
     pub fn builder() -> crate::output::put_registry_policy_output::Builder {
         crate::output::put_registry_policy_output::Builder::default()
     }
@@ -754,11 +745,10 @@ impl std::fmt::Debug for PutLifecyclePolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
+/// See [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
 pub mod put_lifecycle_policy_output {
 
-    /// A builder for [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -802,7 +792,7 @@ pub mod put_lifecycle_policy_output {
             self.lifecycle_policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
+        /// Consumes the builder and constructs a [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::PutLifecyclePolicyOutput {
             crate::output::PutLifecyclePolicyOutput {
                 registry_id: self.registry_id,
@@ -813,7 +803,7 @@ pub mod put_lifecycle_policy_output {
     }
 }
 impl PutLifecyclePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput).
     pub fn builder() -> crate::output::put_lifecycle_policy_output::Builder {
         crate::output::put_lifecycle_policy_output::Builder::default()
     }
@@ -853,11 +843,10 @@ impl std::fmt::Debug for PutImageTagMutabilityOutput {
         formatter.finish()
     }
 }
-/// See [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput)
+/// See [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput).
 pub mod put_image_tag_mutability_output {
 
-    /// A builder for [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -901,7 +890,7 @@ pub mod put_image_tag_mutability_output {
             self.image_tag_mutability = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput)
+        /// Consumes the builder and constructs a [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput).
         pub fn build(self) -> crate::output::PutImageTagMutabilityOutput {
             crate::output::PutImageTagMutabilityOutput {
                 registry_id: self.registry_id,
@@ -912,7 +901,7 @@ pub mod put_image_tag_mutability_output {
     }
 }
 impl PutImageTagMutabilityOutput {
-    /// Creates a new builder-style object to manufacture [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput)
+    /// Creates a new builder-style object to manufacture [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput).
     pub fn builder() -> crate::output::put_image_tag_mutability_output::Builder {
         crate::output::put_image_tag_mutability_output::Builder::default()
     }
@@ -957,11 +946,10 @@ impl std::fmt::Debug for PutImageScanningConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput)
+/// See [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput).
 pub mod put_image_scanning_configuration_output {
 
-    /// A builder for [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1009,7 +997,7 @@ pub mod put_image_scanning_configuration_output {
             self.image_scanning_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput)
+        /// Consumes the builder and constructs a [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput).
         pub fn build(self) -> crate::output::PutImageScanningConfigurationOutput {
             crate::output::PutImageScanningConfigurationOutput {
                 registry_id: self.registry_id,
@@ -1020,7 +1008,7 @@ pub mod put_image_scanning_configuration_output {
     }
 }
 impl PutImageScanningConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput).
     pub fn builder() -> crate::output::put_image_scanning_configuration_output::Builder {
         crate::output::put_image_scanning_configuration_output::Builder::default()
     }
@@ -1046,11 +1034,10 @@ impl std::fmt::Debug for PutImageOutput {
         formatter.finish()
     }
 }
-/// See [`PutImageOutput`](crate::output::PutImageOutput)
+/// See [`PutImageOutput`](crate::output::PutImageOutput).
 pub mod put_image_output {
 
-    /// A builder for [`PutImageOutput`](crate::output::PutImageOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutImageOutput`](crate::output::PutImageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image: std::option::Option<crate::model::Image>,
@@ -1066,14 +1053,14 @@ pub mod put_image_output {
             self.image = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutImageOutput`](crate::output::PutImageOutput)
+        /// Consumes the builder and constructs a [`PutImageOutput`](crate::output::PutImageOutput).
         pub fn build(self) -> crate::output::PutImageOutput {
             crate::output::PutImageOutput { image: self.image }
         }
     }
 }
 impl PutImageOutput {
-    /// Creates a new builder-style object to manufacture [`PutImageOutput`](crate::output::PutImageOutput)
+    /// Creates a new builder-style object to manufacture [`PutImageOutput`](crate::output::PutImageOutput).
     pub fn builder() -> crate::output::put_image_output::Builder {
         crate::output::put_image_output::Builder::default()
     }
@@ -1099,11 +1086,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1128,14 +1114,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -1168,11 +1154,10 @@ impl std::fmt::Debug for ListImagesOutput {
         formatter.finish()
     }
 }
-/// See [`ListImagesOutput`](crate::output::ListImagesOutput)
+/// See [`ListImagesOutput`](crate::output::ListImagesOutput).
 pub mod list_images_output {
 
-    /// A builder for [`ListImagesOutput`](crate::output::ListImagesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListImagesOutput`](crate::output::ListImagesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -1208,7 +1193,7 @@ pub mod list_images_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListImagesOutput`](crate::output::ListImagesOutput)
+        /// Consumes the builder and constructs a [`ListImagesOutput`](crate::output::ListImagesOutput).
         pub fn build(self) -> crate::output::ListImagesOutput {
             crate::output::ListImagesOutput {
                 image_ids: self.image_ids,
@@ -1218,7 +1203,7 @@ pub mod list_images_output {
     }
 }
 impl ListImagesOutput {
-    /// Creates a new builder-style object to manufacture [`ListImagesOutput`](crate::output::ListImagesOutput)
+    /// Creates a new builder-style object to manufacture [`ListImagesOutput`](crate::output::ListImagesOutput).
     pub fn builder() -> crate::output::list_images_output::Builder {
         crate::output::list_images_output::Builder::default()
     }
@@ -1251,11 +1236,10 @@ impl std::fmt::Debug for InitiateLayerUploadOutput {
         formatter.finish()
     }
 }
-/// See [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput)
+/// See [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
 pub mod initiate_layer_upload_output {
 
-    /// A builder for [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput)
-    #[non_exhaustive]
+    /// A builder for [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) upload_id: std::option::Option<std::string::String>,
@@ -1282,7 +1266,7 @@ pub mod initiate_layer_upload_output {
             self.part_size = input;
             self
         }
-        /// Consumes the builder and constructs a [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput)
+        /// Consumes the builder and constructs a [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
         pub fn build(self) -> crate::output::InitiateLayerUploadOutput {
             crate::output::InitiateLayerUploadOutput {
                 upload_id: self.upload_id,
@@ -1292,7 +1276,7 @@ pub mod initiate_layer_upload_output {
     }
 }
 impl InitiateLayerUploadOutput {
-    /// Creates a new builder-style object to manufacture [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput)
+    /// Creates a new builder-style object to manufacture [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput).
     pub fn builder() -> crate::output::initiate_layer_upload_output::Builder {
         crate::output::initiate_layer_upload_output::Builder::default()
     }
@@ -1332,11 +1316,10 @@ impl std::fmt::Debug for GetRepositoryPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput)
+/// See [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
 pub mod get_repository_policy_output {
 
-    /// A builder for [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1377,7 +1360,7 @@ pub mod get_repository_policy_output {
             self.policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput)
+        /// Consumes the builder and constructs a [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
         pub fn build(self) -> crate::output::GetRepositoryPolicyOutput {
             crate::output::GetRepositoryPolicyOutput {
                 registry_id: self.registry_id,
@@ -1388,7 +1371,7 @@ pub mod get_repository_policy_output {
     }
 }
 impl GetRepositoryPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput).
     pub fn builder() -> crate::output::get_repository_policy_output::Builder {
         crate::output::get_repository_policy_output::Builder::default()
     }
@@ -1423,11 +1406,10 @@ impl std::fmt::Debug for GetRegistryScanningConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
+/// See [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput).
 pub mod get_registry_scanning_configuration_output {
 
-    /// A builder for [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1461,7 +1443,7 @@ pub mod get_registry_scanning_configuration_output {
             self.scanning_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
+        /// Consumes the builder and constructs a [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput).
         pub fn build(self) -> crate::output::GetRegistryScanningConfigurationOutput {
             crate::output::GetRegistryScanningConfigurationOutput {
                 registry_id: self.registry_id,
@@ -1471,7 +1453,7 @@ pub mod get_registry_scanning_configuration_output {
     }
 }
 impl GetRegistryScanningConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput).
     pub fn builder() -> crate::output::get_registry_scanning_configuration_output::Builder {
         crate::output::get_registry_scanning_configuration_output::Builder::default()
     }
@@ -1504,11 +1486,10 @@ impl std::fmt::Debug for GetRegistryPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput)
+/// See [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput).
 pub mod get_registry_policy_output {
 
-    /// A builder for [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1535,7 +1516,7 @@ pub mod get_registry_policy_output {
             self.policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput)
+        /// Consumes the builder and constructs a [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput).
         pub fn build(self) -> crate::output::GetRegistryPolicyOutput {
             crate::output::GetRegistryPolicyOutput {
                 registry_id: self.registry_id,
@@ -1545,7 +1526,7 @@ pub mod get_registry_policy_output {
     }
 }
 impl GetRegistryPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput).
     pub fn builder() -> crate::output::get_registry_policy_output::Builder {
         crate::output::get_registry_policy_output::Builder::default()
     }
@@ -1616,11 +1597,10 @@ impl std::fmt::Debug for GetLifecyclePolicyPreviewOutput {
         formatter.finish()
     }
 }
-/// See [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput)
+/// See [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput).
 pub mod get_lifecycle_policy_preview_output {
 
-    /// A builder for [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1727,7 +1707,7 @@ pub mod get_lifecycle_policy_preview_output {
             self.summary = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput)
+        /// Consumes the builder and constructs a [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput).
         pub fn build(self) -> crate::output::GetLifecyclePolicyPreviewOutput {
             crate::output::GetLifecyclePolicyPreviewOutput {
                 registry_id: self.registry_id,
@@ -1742,7 +1722,7 @@ pub mod get_lifecycle_policy_preview_output {
     }
 }
 impl GetLifecyclePolicyPreviewOutput {
-    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput)
+    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput).
     pub fn builder() -> crate::output::get_lifecycle_policy_preview_output::Builder {
         crate::output::get_lifecycle_policy_preview_output::Builder::default()
     }
@@ -1789,11 +1769,10 @@ impl std::fmt::Debug for GetLifecyclePolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
+/// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
 pub mod get_lifecycle_policy_output {
 
-    /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -1851,7 +1830,7 @@ pub mod get_lifecycle_policy_output {
             self.last_evaluated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
+        /// Consumes the builder and constructs a [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::GetLifecyclePolicyOutput {
             crate::output::GetLifecyclePolicyOutput {
                 registry_id: self.registry_id,
@@ -1863,7 +1842,7 @@ pub mod get_lifecycle_policy_output {
     }
 }
 impl GetLifecyclePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
     pub fn builder() -> crate::output::get_lifecycle_policy_output::Builder {
         crate::output::get_lifecycle_policy_output::Builder::default()
     }
@@ -1896,11 +1875,10 @@ impl std::fmt::Debug for GetDownloadUrlForLayerOutput {
         formatter.finish()
     }
 }
-/// See [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput)
+/// See [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput).
 pub mod get_download_url_for_layer_output {
 
-    /// A builder for [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) download_url: std::option::Option<std::string::String>,
@@ -1927,7 +1905,7 @@ pub mod get_download_url_for_layer_output {
             self.layer_digest = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput)
+        /// Consumes the builder and constructs a [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput).
         pub fn build(self) -> crate::output::GetDownloadUrlForLayerOutput {
             crate::output::GetDownloadUrlForLayerOutput {
                 download_url: self.download_url,
@@ -1937,7 +1915,7 @@ pub mod get_download_url_for_layer_output {
     }
 }
 impl GetDownloadUrlForLayerOutput {
-    /// Creates a new builder-style object to manufacture [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput)
+    /// Creates a new builder-style object to manufacture [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput).
     pub fn builder() -> crate::output::get_download_url_for_layer_output::Builder {
         crate::output::get_download_url_for_layer_output::Builder::default()
     }
@@ -1963,11 +1941,10 @@ impl std::fmt::Debug for GetAuthorizationTokenOutput {
         formatter.finish()
     }
 }
-/// See [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
+/// See [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
 pub mod get_authorization_token_output {
 
-    /// A builder for [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_data:
@@ -1993,7 +1970,7 @@ pub mod get_authorization_token_output {
             self.authorization_data = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
+        /// Consumes the builder and constructs a [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
         pub fn build(self) -> crate::output::GetAuthorizationTokenOutput {
             crate::output::GetAuthorizationTokenOutput {
                 authorization_data: self.authorization_data,
@@ -2002,7 +1979,7 @@ pub mod get_authorization_token_output {
     }
 }
 impl GetAuthorizationTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput)
+    /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput).
     pub fn builder() -> crate::output::get_authorization_token_output::Builder {
         crate::output::get_authorization_token_output::Builder::default()
     }
@@ -2035,11 +2012,10 @@ impl std::fmt::Debug for DescribeRepositoriesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput)
+/// See [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
 pub mod describe_repositories_output {
 
-    /// A builder for [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repositories: std::option::Option<std::vec::Vec<crate::model::Repository>>,
@@ -2075,7 +2051,7 @@ pub mod describe_repositories_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput)
+        /// Consumes the builder and constructs a [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
         pub fn build(self) -> crate::output::DescribeRepositoriesOutput {
             crate::output::DescribeRepositoriesOutput {
                 repositories: self.repositories,
@@ -2085,7 +2061,7 @@ pub mod describe_repositories_output {
     }
 }
 impl DescribeRepositoriesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput).
     pub fn builder() -> crate::output::describe_repositories_output::Builder {
         crate::output::describe_repositories_output::Builder::default()
     }
@@ -2120,11 +2096,10 @@ impl std::fmt::Debug for DescribeRegistryOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
+/// See [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
 pub mod describe_registry_output {
 
-    /// A builder for [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2158,7 +2133,7 @@ pub mod describe_registry_output {
             self.replication_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
+        /// Consumes the builder and constructs a [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
         pub fn build(self) -> crate::output::DescribeRegistryOutput {
             crate::output::DescribeRegistryOutput {
                 registry_id: self.registry_id,
@@ -2168,7 +2143,7 @@ pub mod describe_registry_output {
     }
 }
 impl DescribeRegistryOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput).
     pub fn builder() -> crate::output::describe_registry_output::Builder {
         crate::output::describe_registry_output::Builder::default()
     }
@@ -2204,11 +2179,10 @@ impl std::fmt::Debug for DescribePullThroughCacheRulesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
+/// See [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput).
 pub mod describe_pull_through_cache_rules_output {
 
-    /// A builder for [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_through_cache_rules:
@@ -2248,7 +2222,7 @@ pub mod describe_pull_through_cache_rules_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
+        /// Consumes the builder and constructs a [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput).
         pub fn build(self) -> crate::output::DescribePullThroughCacheRulesOutput {
             crate::output::DescribePullThroughCacheRulesOutput {
                 pull_through_cache_rules: self.pull_through_cache_rules,
@@ -2258,7 +2232,7 @@ pub mod describe_pull_through_cache_rules_output {
     }
 }
 impl DescribePullThroughCacheRulesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput).
     pub fn builder() -> crate::output::describe_pull_through_cache_rules_output::Builder {
         crate::output::describe_pull_through_cache_rules_output::Builder::default()
     }
@@ -2319,11 +2293,10 @@ impl std::fmt::Debug for DescribeImageScanFindingsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput)
+/// See [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput).
 pub mod describe_image_scan_findings_output {
 
-    /// A builder for [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2406,7 +2379,7 @@ pub mod describe_image_scan_findings_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput)
+        /// Consumes the builder and constructs a [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput).
         pub fn build(self) -> crate::output::DescribeImageScanFindingsOutput {
             crate::output::DescribeImageScanFindingsOutput {
                 registry_id: self.registry_id,
@@ -2420,7 +2393,7 @@ pub mod describe_image_scan_findings_output {
     }
 }
 impl DescribeImageScanFindingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput).
     pub fn builder() -> crate::output::describe_image_scan_findings_output::Builder {
         crate::output::describe_image_scan_findings_output::Builder::default()
     }
@@ -2453,11 +2426,10 @@ impl std::fmt::Debug for DescribeImagesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
+/// See [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
 pub mod describe_images_output {
 
-    /// A builder for [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_details: std::option::Option<std::vec::Vec<crate::model::ImageDetail>>,
@@ -2493,7 +2465,7 @@ pub mod describe_images_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
+        /// Consumes the builder and constructs a [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
         pub fn build(self) -> crate::output::DescribeImagesOutput {
             crate::output::DescribeImagesOutput {
                 image_details: self.image_details,
@@ -2503,7 +2475,7 @@ pub mod describe_images_output {
     }
 }
 impl DescribeImagesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeImagesOutput`](crate::output::DescribeImagesOutput).
     pub fn builder() -> crate::output::describe_images_output::Builder {
         crate::output::describe_images_output::Builder::default()
     }
@@ -2546,11 +2518,10 @@ impl std::fmt::Debug for DescribeImageReplicationStatusOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
+/// See [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput).
 pub mod describe_image_replication_status_output {
 
-    /// A builder for [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2604,7 +2575,7 @@ pub mod describe_image_replication_status_output {
             self.replication_statuses = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
+        /// Consumes the builder and constructs a [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput).
         pub fn build(self) -> crate::output::DescribeImageReplicationStatusOutput {
             crate::output::DescribeImageReplicationStatusOutput {
                 repository_name: self.repository_name,
@@ -2615,7 +2586,7 @@ pub mod describe_image_replication_status_output {
     }
 }
 impl DescribeImageReplicationStatusOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput).
     pub fn builder() -> crate::output::describe_image_replication_status_output::Builder {
         crate::output::describe_image_replication_status_output::Builder::default()
     }
@@ -2655,11 +2626,10 @@ impl std::fmt::Debug for DeleteRepositoryPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput)
+/// See [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
 pub mod delete_repository_policy_output {
 
-    /// A builder for [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2700,7 +2670,7 @@ pub mod delete_repository_policy_output {
             self.policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput)
+        /// Consumes the builder and constructs a [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
         pub fn build(self) -> crate::output::DeleteRepositoryPolicyOutput {
             crate::output::DeleteRepositoryPolicyOutput {
                 registry_id: self.registry_id,
@@ -2711,7 +2681,7 @@ pub mod delete_repository_policy_output {
     }
 }
 impl DeleteRepositoryPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput).
     pub fn builder() -> crate::output::delete_repository_policy_output::Builder {
         crate::output::delete_repository_policy_output::Builder::default()
     }
@@ -2737,11 +2707,10 @@ impl std::fmt::Debug for DeleteRepositoryOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
+/// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
 pub mod delete_repository_output {
 
-    /// A builder for [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::Repository>,
@@ -2760,7 +2729,7 @@ pub mod delete_repository_output {
             self.repository = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
+        /// Consumes the builder and constructs a [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
         pub fn build(self) -> crate::output::DeleteRepositoryOutput {
             crate::output::DeleteRepositoryOutput {
                 repository: self.repository,
@@ -2769,7 +2738,7 @@ pub mod delete_repository_output {
     }
 }
 impl DeleteRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
     pub fn builder() -> crate::output::delete_repository_output::Builder {
         crate::output::delete_repository_output::Builder::default()
     }
@@ -2802,11 +2771,10 @@ impl std::fmt::Debug for DeleteRegistryPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput)
+/// See [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput).
 pub mod delete_registry_policy_output {
 
-    /// A builder for [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -2833,7 +2801,7 @@ pub mod delete_registry_policy_output {
             self.policy_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput)
+        /// Consumes the builder and constructs a [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput).
         pub fn build(self) -> crate::output::DeleteRegistryPolicyOutput {
             crate::output::DeleteRegistryPolicyOutput {
                 registry_id: self.registry_id,
@@ -2843,7 +2811,7 @@ pub mod delete_registry_policy_output {
     }
 }
 impl DeleteRegistryPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput).
     pub fn builder() -> crate::output::delete_registry_policy_output::Builder {
         crate::output::delete_registry_policy_output::Builder::default()
     }
@@ -2890,11 +2858,10 @@ impl std::fmt::Debug for DeletePullThroughCacheRuleOutput {
         formatter.finish()
     }
 }
-/// See [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
+/// See [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput).
 pub mod delete_pull_through_cache_rule_output {
 
-    /// A builder for [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
@@ -2952,7 +2919,7 @@ pub mod delete_pull_through_cache_rule_output {
             self.registry_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
+        /// Consumes the builder and constructs a [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput).
         pub fn build(self) -> crate::output::DeletePullThroughCacheRuleOutput {
             crate::output::DeletePullThroughCacheRuleOutput {
                 ecr_repository_prefix: self.ecr_repository_prefix,
@@ -2964,7 +2931,7 @@ pub mod delete_pull_through_cache_rule_output {
     }
 }
 impl DeletePullThroughCacheRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput)
+    /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput).
     pub fn builder() -> crate::output::delete_pull_through_cache_rule_output::Builder {
         crate::output::delete_pull_through_cache_rule_output::Builder::default()
     }
@@ -3011,11 +2978,10 @@ impl std::fmt::Debug for DeleteLifecyclePolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
+/// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
 pub mod delete_lifecycle_policy_output {
 
-    /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -3073,7 +3039,7 @@ pub mod delete_lifecycle_policy_output {
             self.last_evaluated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
+        /// Consumes the builder and constructs a [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::DeleteLifecyclePolicyOutput {
             crate::output::DeleteLifecyclePolicyOutput {
                 registry_id: self.registry_id,
@@ -3085,7 +3051,7 @@ pub mod delete_lifecycle_policy_output {
     }
 }
 impl DeleteLifecyclePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
     pub fn builder() -> crate::output::delete_lifecycle_policy_output::Builder {
         crate::output::delete_lifecycle_policy_output::Builder::default()
     }
@@ -3111,11 +3077,10 @@ impl std::fmt::Debug for CreateRepositoryOutput {
         formatter.finish()
     }
 }
-/// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
+/// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
 pub mod create_repository_output {
 
-    /// A builder for [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository: std::option::Option<crate::model::Repository>,
@@ -3134,7 +3099,7 @@ pub mod create_repository_output {
             self.repository = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
+        /// Consumes the builder and constructs a [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
         pub fn build(self) -> crate::output::CreateRepositoryOutput {
             crate::output::CreateRepositoryOutput {
                 repository: self.repository,
@@ -3143,7 +3108,7 @@ pub mod create_repository_output {
     }
 }
 impl CreateRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput)
+    /// Creates a new builder-style object to manufacture [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
     pub fn builder() -> crate::output::create_repository_output::Builder {
         crate::output::create_repository_output::Builder::default()
     }
@@ -3190,11 +3155,10 @@ impl std::fmt::Debug for CreatePullThroughCacheRuleOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
+/// See [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput).
 pub mod create_pull_through_cache_rule_output {
 
-    /// A builder for [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ecr_repository_prefix: std::option::Option<std::string::String>,
@@ -3252,7 +3216,7 @@ pub mod create_pull_through_cache_rule_output {
             self.registry_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
+        /// Consumes the builder and constructs a [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput).
         pub fn build(self) -> crate::output::CreatePullThroughCacheRuleOutput {
             crate::output::CreatePullThroughCacheRuleOutput {
                 ecr_repository_prefix: self.ecr_repository_prefix,
@@ -3264,7 +3228,7 @@ pub mod create_pull_through_cache_rule_output {
     }
 }
 impl CreatePullThroughCacheRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput).
     pub fn builder() -> crate::output::create_pull_through_cache_rule_output::Builder {
         crate::output::create_pull_through_cache_rule_output::Builder::default()
     }
@@ -3311,11 +3275,10 @@ impl std::fmt::Debug for CompleteLayerUploadOutput {
         formatter.finish()
     }
 }
-/// See [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput)
+/// See [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
 pub mod complete_layer_upload_output {
 
-    /// A builder for [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput)
-    #[non_exhaustive]
+    /// A builder for [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) registry_id: std::option::Option<std::string::String>,
@@ -3367,7 +3330,7 @@ pub mod complete_layer_upload_output {
             self.layer_digest = input;
             self
         }
-        /// Consumes the builder and constructs a [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput)
+        /// Consumes the builder and constructs a [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
         pub fn build(self) -> crate::output::CompleteLayerUploadOutput {
             crate::output::CompleteLayerUploadOutput {
                 registry_id: self.registry_id,
@@ -3379,7 +3342,7 @@ pub mod complete_layer_upload_output {
     }
 }
 impl CompleteLayerUploadOutput {
-    /// Creates a new builder-style object to manufacture [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput)
+    /// Creates a new builder-style object to manufacture [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput).
     pub fn builder() -> crate::output::complete_layer_upload_output::Builder {
         crate::output::complete_layer_upload_output::Builder::default()
     }
@@ -3418,11 +3381,10 @@ impl std::fmt::Debug for BatchGetRepositoryScanningConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
+/// See [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput).
 pub mod batch_get_repository_scanning_configuration_output {
 
-    /// A builder for [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scanning_configurations:
@@ -3480,7 +3442,7 @@ pub mod batch_get_repository_scanning_configuration_output {
             self.failures = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
+        /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput).
         pub fn build(self) -> crate::output::BatchGetRepositoryScanningConfigurationOutput {
             crate::output::BatchGetRepositoryScanningConfigurationOutput {
                 scanning_configurations: self.scanning_configurations,
@@ -3490,7 +3452,7 @@ pub mod batch_get_repository_scanning_configuration_output {
     }
 }
 impl BatchGetRepositoryScanningConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput).
     pub fn builder() -> crate::output::batch_get_repository_scanning_configuration_output::Builder {
         crate::output::batch_get_repository_scanning_configuration_output::Builder::default()
     }
@@ -3523,11 +3485,10 @@ impl std::fmt::Debug for BatchGetImageOutput {
         formatter.finish()
     }
 }
-/// See [`BatchGetImageOutput`](crate::output::BatchGetImageOutput)
+/// See [`BatchGetImageOutput`](crate::output::BatchGetImageOutput).
 pub mod batch_get_image_output {
 
-    /// A builder for [`BatchGetImageOutput`](crate::output::BatchGetImageOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetImageOutput`](crate::output::BatchGetImageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::Image>>,
@@ -3572,7 +3533,7 @@ pub mod batch_get_image_output {
             self.failures = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetImageOutput`](crate::output::BatchGetImageOutput)
+        /// Consumes the builder and constructs a [`BatchGetImageOutput`](crate::output::BatchGetImageOutput).
         pub fn build(self) -> crate::output::BatchGetImageOutput {
             crate::output::BatchGetImageOutput {
                 images: self.images,
@@ -3582,7 +3543,7 @@ pub mod batch_get_image_output {
     }
 }
 impl BatchGetImageOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetImageOutput`](crate::output::BatchGetImageOutput)
+    /// Creates a new builder-style object to manufacture [`BatchGetImageOutput`](crate::output::BatchGetImageOutput).
     pub fn builder() -> crate::output::batch_get_image_output::Builder {
         crate::output::batch_get_image_output::Builder::default()
     }
@@ -3615,11 +3576,10 @@ impl std::fmt::Debug for BatchDeleteImageOutput {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput)
+/// See [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
 pub mod batch_delete_image_output {
 
-    /// A builder for [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -3664,7 +3624,7 @@ pub mod batch_delete_image_output {
             self.failures = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput)
+        /// Consumes the builder and constructs a [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
         pub fn build(self) -> crate::output::BatchDeleteImageOutput {
             crate::output::BatchDeleteImageOutput {
                 image_ids: self.image_ids,
@@ -3674,7 +3634,7 @@ pub mod batch_delete_image_output {
     }
 }
 impl BatchDeleteImageOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput).
     pub fn builder() -> crate::output::batch_delete_image_output::Builder {
         crate::output::batch_delete_image_output::Builder::default()
     }
@@ -3707,11 +3667,10 @@ impl std::fmt::Debug for BatchCheckLayerAvailabilityOutput {
         formatter.finish()
     }
 }
-/// See [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput)
+/// See [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
 pub mod batch_check_layer_availability_output {
 
-    /// A builder for [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) layers: std::option::Option<std::vec::Vec<crate::model::Layer>>,
@@ -3756,7 +3715,7 @@ pub mod batch_check_layer_availability_output {
             self.failures = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput)
+        /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
         pub fn build(self) -> crate::output::BatchCheckLayerAvailabilityOutput {
             crate::output::BatchCheckLayerAvailabilityOutput {
                 layers: self.layers,
@@ -3766,7 +3725,7 @@ pub mod batch_check_layer_availability_output {
     }
 }
 impl BatchCheckLayerAvailabilityOutput {
-    /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput)
+    /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput).
     pub fn builder() -> crate::output::batch_check_layer_availability_output::Builder {
         crate::output::batch_check_layer_availability_output::Builder::default()
     }

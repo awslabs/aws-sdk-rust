@@ -10,7 +10,7 @@ pub struct AssociateEntityToThing {
     _private: (),
 }
 impl AssociateEntityToThing {
-    /// Creates a new builder-style object to manufacture [`AssociateEntityToThingInput`](crate::input::AssociateEntityToThingInput)
+    /// Creates a new builder-style object to manufacture [`AssociateEntityToThingInput`](crate::input::AssociateEntityToThingInput).
     pub fn builder() -> crate::input::associate_entity_to_thing_input::Builder {
         crate::input::associate_entity_to_thing_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateFlowTemplate {
     _private: (),
 }
 impl CreateFlowTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateFlowTemplateInput`](crate::input::CreateFlowTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateFlowTemplateInput`](crate::input::CreateFlowTemplateInput).
     pub fn builder() -> crate::input::create_flow_template_input::Builder {
         crate::input::create_flow_template_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateSystemInstance {
     _private: (),
 }
 impl CreateSystemInstance {
-    /// Creates a new builder-style object to manufacture [`CreateSystemInstanceInput`](crate::input::CreateSystemInstanceInput)
+    /// Creates a new builder-style object to manufacture [`CreateSystemInstanceInput`](crate::input::CreateSystemInstanceInput).
     pub fn builder() -> crate::input::create_system_instance_input::Builder {
         crate::input::create_system_instance_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateSystemTemplate {
     _private: (),
 }
 impl CreateSystemTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateSystemTemplateInput`](crate::input::CreateSystemTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateSystemTemplateInput`](crate::input::CreateSystemTemplateInput).
     pub fn builder() -> crate::input::create_system_template_input::Builder {
         crate::input::create_system_template_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteFlowTemplate {
     _private: (),
 }
 impl DeleteFlowTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteFlowTemplateInput`](crate::input::DeleteFlowTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFlowTemplateInput`](crate::input::DeleteFlowTemplateInput).
     pub fn builder() -> crate::input::delete_flow_template_input::Builder {
         crate::input::delete_flow_template_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteNamespace {
     _private: (),
 }
 impl DeleteNamespace {
-    /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
     pub fn builder() -> crate::input::delete_namespace_input::Builder {
         crate::input::delete_namespace_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeleteSystemInstance {
     _private: (),
 }
 impl DeleteSystemInstance {
-    /// Creates a new builder-style object to manufacture [`DeleteSystemInstanceInput`](crate::input::DeleteSystemInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSystemInstanceInput`](crate::input::DeleteSystemInstanceInput).
     pub fn builder() -> crate::input::delete_system_instance_input::Builder {
         crate::input::delete_system_instance_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DeleteSystemTemplate {
     _private: (),
 }
 impl DeleteSystemTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteSystemTemplateInput`](crate::input::DeleteSystemTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSystemTemplateInput`](crate::input::DeleteSystemTemplateInput).
     pub fn builder() -> crate::input::delete_system_template_input::Builder {
         crate::input::delete_system_template_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DeploySystemInstance {
     _private: (),
 }
 impl DeploySystemInstance {
-    /// Creates a new builder-style object to manufacture [`DeploySystemInstanceInput`](crate::input::DeploySystemInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeploySystemInstanceInput`](crate::input::DeploySystemInstanceInput).
     pub fn builder() -> crate::input::deploy_system_instance_input::Builder {
         crate::input::deploy_system_instance_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct DeprecateFlowTemplate {
     _private: (),
 }
 impl DeprecateFlowTemplate {
-    /// Creates a new builder-style object to manufacture [`DeprecateFlowTemplateInput`](crate::input::DeprecateFlowTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeprecateFlowTemplateInput`](crate::input::DeprecateFlowTemplateInput).
     pub fn builder() -> crate::input::deprecate_flow_template_input::Builder {
         crate::input::deprecate_flow_template_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct DeprecateSystemTemplate {
     _private: (),
 }
 impl DeprecateSystemTemplate {
-    /// Creates a new builder-style object to manufacture [`DeprecateSystemTemplateInput`](crate::input::DeprecateSystemTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeprecateSystemTemplateInput`](crate::input::DeprecateSystemTemplateInput).
     pub fn builder() -> crate::input::deprecate_system_template_input::Builder {
         crate::input::deprecate_system_template_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct DescribeNamespace {
     _private: (),
 }
 impl DescribeNamespace {
-    /// Creates a new builder-style object to manufacture [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput).
     pub fn builder() -> crate::input::describe_namespace_input::Builder {
         crate::input::describe_namespace_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct DissociateEntityFromThing {
     _private: (),
 }
 impl DissociateEntityFromThing {
-    /// Creates a new builder-style object to manufacture [`DissociateEntityFromThingInput`](crate::input::DissociateEntityFromThingInput)
+    /// Creates a new builder-style object to manufacture [`DissociateEntityFromThingInput`](crate::input::DissociateEntityFromThingInput).
     pub fn builder() -> crate::input::dissociate_entity_from_thing_input::Builder {
         crate::input::dissociate_entity_from_thing_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct GetEntities {
     _private: (),
 }
 impl GetEntities {
-    /// Creates a new builder-style object to manufacture [`GetEntitiesInput`](crate::input::GetEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`GetEntitiesInput`](crate::input::GetEntitiesInput).
     pub fn builder() -> crate::input::get_entities_input::Builder {
         crate::input::get_entities_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct GetFlowTemplate {
     _private: (),
 }
 impl GetFlowTemplate {
-    /// Creates a new builder-style object to manufacture [`GetFlowTemplateInput`](crate::input::GetFlowTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetFlowTemplateInput`](crate::input::GetFlowTemplateInput).
     pub fn builder() -> crate::input::get_flow_template_input::Builder {
         crate::input::get_flow_template_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct GetFlowTemplateRevisions {
     _private: (),
 }
 impl GetFlowTemplateRevisions {
-    /// Creates a new builder-style object to manufacture [`GetFlowTemplateRevisionsInput`](crate::input::GetFlowTemplateRevisionsInput)
+    /// Creates a new builder-style object to manufacture [`GetFlowTemplateRevisionsInput`](crate::input::GetFlowTemplateRevisionsInput).
     pub fn builder() -> crate::input::get_flow_template_revisions_input::Builder {
         crate::input::get_flow_template_revisions_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct GetNamespaceDeletionStatus {
     _private: (),
 }
 impl GetNamespaceDeletionStatus {
-    /// Creates a new builder-style object to manufacture [`GetNamespaceDeletionStatusInput`](crate::input::GetNamespaceDeletionStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetNamespaceDeletionStatusInput`](crate::input::GetNamespaceDeletionStatusInput).
     pub fn builder() -> crate::input::get_namespace_deletion_status_input::Builder {
         crate::input::get_namespace_deletion_status_input::Builder::default()
     }
@@ -586,7 +586,7 @@ pub struct GetSystemInstance {
     _private: (),
 }
 impl GetSystemInstance {
-    /// Creates a new builder-style object to manufacture [`GetSystemInstanceInput`](crate::input::GetSystemInstanceInput)
+    /// Creates a new builder-style object to manufacture [`GetSystemInstanceInput`](crate::input::GetSystemInstanceInput).
     pub fn builder() -> crate::input::get_system_instance_input::Builder {
         crate::input::get_system_instance_input::Builder::default()
     }
@@ -620,7 +620,7 @@ pub struct GetSystemTemplate {
     _private: (),
 }
 impl GetSystemTemplate {
-    /// Creates a new builder-style object to manufacture [`GetSystemTemplateInput`](crate::input::GetSystemTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetSystemTemplateInput`](crate::input::GetSystemTemplateInput).
     pub fn builder() -> crate::input::get_system_template_input::Builder {
         crate::input::get_system_template_input::Builder::default()
     }
@@ -654,7 +654,7 @@ pub struct GetSystemTemplateRevisions {
     _private: (),
 }
 impl GetSystemTemplateRevisions {
-    /// Creates a new builder-style object to manufacture [`GetSystemTemplateRevisionsInput`](crate::input::GetSystemTemplateRevisionsInput)
+    /// Creates a new builder-style object to manufacture [`GetSystemTemplateRevisionsInput`](crate::input::GetSystemTemplateRevisionsInput).
     pub fn builder() -> crate::input::get_system_template_revisions_input::Builder {
         crate::input::get_system_template_revisions_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct GetUploadStatus {
     _private: (),
 }
 impl GetUploadStatus {
-    /// Creates a new builder-style object to manufacture [`GetUploadStatusInput`](crate::input::GetUploadStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetUploadStatusInput`](crate::input::GetUploadStatusInput).
     pub fn builder() -> crate::input::get_upload_status_input::Builder {
         crate::input::get_upload_status_input::Builder::default()
     }
@@ -722,7 +722,7 @@ pub struct ListFlowExecutionMessages {
     _private: (),
 }
 impl ListFlowExecutionMessages {
-    /// Creates a new builder-style object to manufacture [`ListFlowExecutionMessagesInput`](crate::input::ListFlowExecutionMessagesInput)
+    /// Creates a new builder-style object to manufacture [`ListFlowExecutionMessagesInput`](crate::input::ListFlowExecutionMessagesInput).
     pub fn builder() -> crate::input::list_flow_execution_messages_input::Builder {
         crate::input::list_flow_execution_messages_input::Builder::default()
     }
@@ -756,7 +756,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -790,7 +790,7 @@ pub struct SearchEntities {
     _private: (),
 }
 impl SearchEntities {
-    /// Creates a new builder-style object to manufacture [`SearchEntitiesInput`](crate::input::SearchEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`SearchEntitiesInput`](crate::input::SearchEntitiesInput).
     pub fn builder() -> crate::input::search_entities_input::Builder {
         crate::input::search_entities_input::Builder::default()
     }
@@ -822,7 +822,7 @@ pub struct SearchFlowExecutions {
     _private: (),
 }
 impl SearchFlowExecutions {
-    /// Creates a new builder-style object to manufacture [`SearchFlowExecutionsInput`](crate::input::SearchFlowExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`SearchFlowExecutionsInput`](crate::input::SearchFlowExecutionsInput).
     pub fn builder() -> crate::input::search_flow_executions_input::Builder {
         crate::input::search_flow_executions_input::Builder::default()
     }
@@ -856,7 +856,7 @@ pub struct SearchFlowTemplates {
     _private: (),
 }
 impl SearchFlowTemplates {
-    /// Creates a new builder-style object to manufacture [`SearchFlowTemplatesInput`](crate::input::SearchFlowTemplatesInput)
+    /// Creates a new builder-style object to manufacture [`SearchFlowTemplatesInput`](crate::input::SearchFlowTemplatesInput).
     pub fn builder() -> crate::input::search_flow_templates_input::Builder {
         crate::input::search_flow_templates_input::Builder::default()
     }
@@ -890,7 +890,7 @@ pub struct SearchSystemInstances {
     _private: (),
 }
 impl SearchSystemInstances {
-    /// Creates a new builder-style object to manufacture [`SearchSystemInstancesInput`](crate::input::SearchSystemInstancesInput)
+    /// Creates a new builder-style object to manufacture [`SearchSystemInstancesInput`](crate::input::SearchSystemInstancesInput).
     pub fn builder() -> crate::input::search_system_instances_input::Builder {
         crate::input::search_system_instances_input::Builder::default()
     }
@@ -924,7 +924,7 @@ pub struct SearchSystemTemplates {
     _private: (),
 }
 impl SearchSystemTemplates {
-    /// Creates a new builder-style object to manufacture [`SearchSystemTemplatesInput`](crate::input::SearchSystemTemplatesInput)
+    /// Creates a new builder-style object to manufacture [`SearchSystemTemplatesInput`](crate::input::SearchSystemTemplatesInput).
     pub fn builder() -> crate::input::search_system_templates_input::Builder {
         crate::input::search_system_templates_input::Builder::default()
     }
@@ -958,7 +958,7 @@ pub struct SearchThings {
     _private: (),
 }
 impl SearchThings {
-    /// Creates a new builder-style object to manufacture [`SearchThingsInput`](crate::input::SearchThingsInput)
+    /// Creates a new builder-style object to manufacture [`SearchThingsInput`](crate::input::SearchThingsInput).
     pub fn builder() -> crate::input::search_things_input::Builder {
         crate::input::search_things_input::Builder::default()
     }
@@ -990,7 +990,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1022,7 +1022,7 @@ pub struct UndeploySystemInstance {
     _private: (),
 }
 impl UndeploySystemInstance {
-    /// Creates a new builder-style object to manufacture [`UndeploySystemInstanceInput`](crate::input::UndeploySystemInstanceInput)
+    /// Creates a new builder-style object to manufacture [`UndeploySystemInstanceInput`](crate::input::UndeploySystemInstanceInput).
     pub fn builder() -> crate::input::undeploy_system_instance_input::Builder {
         crate::input::undeploy_system_instance_input::Builder::default()
     }
@@ -1056,7 +1056,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1088,7 +1088,7 @@ pub struct UpdateFlowTemplate {
     _private: (),
 }
 impl UpdateFlowTemplate {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowTemplateInput`](crate::input::UpdateFlowTemplateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowTemplateInput`](crate::input::UpdateFlowTemplateInput).
     pub fn builder() -> crate::input::update_flow_template_input::Builder {
         crate::input::update_flow_template_input::Builder::default()
     }
@@ -1122,7 +1122,7 @@ pub struct UpdateSystemTemplate {
     _private: (),
 }
 impl UpdateSystemTemplate {
-    /// Creates a new builder-style object to manufacture [`UpdateSystemTemplateInput`](crate::input::UpdateSystemTemplateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSystemTemplateInput`](crate::input::UpdateSystemTemplateInput).
     pub fn builder() -> crate::input::update_system_template_input::Builder {
         crate::input::update_system_template_input::Builder::default()
     }
@@ -1156,7 +1156,7 @@ pub struct UploadEntityDefinitions {
     _private: (),
 }
 impl UploadEntityDefinitions {
-    /// Creates a new builder-style object to manufacture [`UploadEntityDefinitionsInput`](crate::input::UploadEntityDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`UploadEntityDefinitionsInput`](crate::input::UploadEntityDefinitionsInput).
     pub fn builder() -> crate::input::upload_entity_definitions_input::Builder {
         crate::input::upload_entity_definitions_input::Builder::default()
     }

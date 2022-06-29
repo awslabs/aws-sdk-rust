@@ -27,11 +27,10 @@ impl std::fmt::Debug for TypedLinkFacetAttributeUpdate {
         formatter.finish()
     }
 }
-/// See [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate)
+/// See [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
 pub mod typed_link_facet_attribute_update {
 
-    /// A builder for [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate)
-    #[non_exhaustive]
+    /// A builder for [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<crate::model::TypedLinkAttributeDefinition>,
@@ -64,7 +63,7 @@ pub mod typed_link_facet_attribute_update {
             self.action = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate)
+        /// Consumes the builder and constructs a [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
         pub fn build(self) -> crate::model::TypedLinkFacetAttributeUpdate {
             crate::model::TypedLinkFacetAttributeUpdate {
                 attribute: self.attribute,
@@ -74,7 +73,7 @@ pub mod typed_link_facet_attribute_update {
     }
 }
 impl TypedLinkFacetAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate)
+    /// Creates a new builder-style object to manufacture [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
     pub fn builder() -> crate::model::typed_link_facet_attribute_update::Builder {
         crate::model::typed_link_facet_attribute_update::Builder::default()
     }
@@ -196,11 +195,10 @@ impl std::fmt::Debug for TypedLinkAttributeDefinition {
         formatter.finish()
     }
 }
-/// See [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition)
+/// See [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
 pub mod typed_link_attribute_definition {
 
-    /// A builder for [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition)
-    #[non_exhaustive]
+    /// A builder for [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -292,7 +290,7 @@ pub mod typed_link_attribute_definition {
             self.required_behavior = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition)
+        /// Consumes the builder and constructs a [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
         pub fn build(self) -> crate::model::TypedLinkAttributeDefinition {
             crate::model::TypedLinkAttributeDefinition {
                 name: self.name,
@@ -306,7 +304,7 @@ pub mod typed_link_attribute_definition {
     }
 }
 impl TypedLinkAttributeDefinition {
-    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition)
+    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
     pub fn builder() -> crate::model::typed_link_attribute_definition::Builder {
         crate::model::typed_link_attribute_definition::Builder::default()
     }
@@ -398,11 +396,10 @@ impl std::fmt::Debug for Rule {
         formatter.finish()
     }
 }
-/// See [`Rule`](crate::model::Rule)
+/// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
-    /// A builder for [`Rule`](crate::model::Rule)
-    #[non_exhaustive]
+    /// A builder for [`Rule`](crate::model::Rule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RuleType>,
@@ -446,7 +443,7 @@ pub mod rule {
             self.parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`Rule`](crate::model::Rule)
+        /// Consumes the builder and constructs a [`Rule`](crate::model::Rule).
         pub fn build(self) -> crate::model::Rule {
             crate::model::Rule {
                 r#type: self.r#type,
@@ -456,7 +453,7 @@ pub mod rule {
     }
 }
 impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule)
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
     pub fn builder() -> crate::model::rule::Builder {
         crate::model::rule::Builder::default()
     }
@@ -728,11 +725,10 @@ impl std::fmt::Debug for ObjectAttributeUpdate {
         formatter.finish()
     }
 }
-/// See [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate)
+/// See [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
 pub mod object_attribute_update {
 
-    /// A builder for [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate)
-    #[non_exhaustive]
+    /// A builder for [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_attribute_key: std::option::Option<crate::model::AttributeKey>,
@@ -769,7 +765,7 @@ pub mod object_attribute_update {
             self.object_attribute_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate)
+        /// Consumes the builder and constructs a [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
         pub fn build(self) -> crate::model::ObjectAttributeUpdate {
             crate::model::ObjectAttributeUpdate {
                 object_attribute_key: self.object_attribute_key,
@@ -779,7 +775,7 @@ pub mod object_attribute_update {
     }
 }
 impl ObjectAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate)
+    /// Creates a new builder-style object to manufacture [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
     pub fn builder() -> crate::model::object_attribute_update::Builder {
         crate::model::object_attribute_update::Builder::default()
     }
@@ -822,11 +818,10 @@ impl std::fmt::Debug for ObjectAttributeAction {
         formatter.finish()
     }
 }
-/// See [`ObjectAttributeAction`](crate::model::ObjectAttributeAction)
+/// See [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
 pub mod object_attribute_action {
 
-    /// A builder for [`ObjectAttributeAction`](crate::model::ObjectAttributeAction)
-    #[non_exhaustive]
+    /// A builder for [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_attribute_action_type:
@@ -867,7 +862,7 @@ pub mod object_attribute_action {
             self.object_attribute_update_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectAttributeAction`](crate::model::ObjectAttributeAction)
+        /// Consumes the builder and constructs a [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
         pub fn build(self) -> crate::model::ObjectAttributeAction {
             crate::model::ObjectAttributeAction {
                 object_attribute_action_type: self.object_attribute_action_type,
@@ -877,7 +872,7 @@ pub mod object_attribute_action {
     }
 }
 impl ObjectAttributeAction {
-    /// Creates a new builder-style object to manufacture [`ObjectAttributeAction`](crate::model::ObjectAttributeAction)
+    /// Creates a new builder-style object to manufacture [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
     pub fn builder() -> crate::model::object_attribute_action::Builder {
         crate::model::object_attribute_action::Builder::default()
     }
@@ -917,11 +912,10 @@ impl std::fmt::Debug for AttributeKey {
         formatter.finish()
     }
 }
-/// See [`AttributeKey`](crate::model::AttributeKey)
+/// See [`AttributeKey`](crate::model::AttributeKey).
 pub mod attribute_key {
 
-    /// A builder for [`AttributeKey`](crate::model::AttributeKey)
-    #[non_exhaustive]
+    /// A builder for [`AttributeKey`](crate::model::AttributeKey).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -959,7 +953,7 @@ pub mod attribute_key {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttributeKey`](crate::model::AttributeKey)
+        /// Consumes the builder and constructs a [`AttributeKey`](crate::model::AttributeKey).
         pub fn build(self) -> crate::model::AttributeKey {
             crate::model::AttributeKey {
                 schema_arn: self.schema_arn,
@@ -970,7 +964,7 @@ pub mod attribute_key {
     }
 }
 impl AttributeKey {
-    /// Creates a new builder-style object to manufacture [`AttributeKey`](crate::model::AttributeKey)
+    /// Creates a new builder-style object to manufacture [`AttributeKey`](crate::model::AttributeKey).
     pub fn builder() -> crate::model::attribute_key::Builder {
         crate::model::attribute_key::Builder::default()
     }
@@ -1006,11 +1000,10 @@ impl std::fmt::Debug for ObjectReference {
         formatter.finish()
     }
 }
-/// See [`ObjectReference`](crate::model::ObjectReference)
+/// See [`ObjectReference`](crate::model::ObjectReference).
 pub mod object_reference {
 
-    /// A builder for [`ObjectReference`](crate::model::ObjectReference)
-    #[non_exhaustive]
+    /// A builder for [`ObjectReference`](crate::model::ObjectReference).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selector: std::option::Option<std::string::String>,
@@ -1036,7 +1029,7 @@ pub mod object_reference {
             self.selector = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectReference`](crate::model::ObjectReference)
+        /// Consumes the builder and constructs a [`ObjectReference`](crate::model::ObjectReference).
         pub fn build(self) -> crate::model::ObjectReference {
             crate::model::ObjectReference {
                 selector: self.selector,
@@ -1045,7 +1038,7 @@ pub mod object_reference {
     }
 }
 impl ObjectReference {
-    /// Creates a new builder-style object to manufacture [`ObjectReference`](crate::model::ObjectReference)
+    /// Creates a new builder-style object to manufacture [`ObjectReference`](crate::model::ObjectReference).
     pub fn builder() -> crate::model::object_reference::Builder {
         crate::model::object_reference::Builder::default()
     }
@@ -1078,11 +1071,10 @@ impl std::fmt::Debug for LinkAttributeUpdate {
         formatter.finish()
     }
 }
-/// See [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate)
+/// See [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
 pub mod link_attribute_update {
 
-    /// A builder for [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate)
-    #[non_exhaustive]
+    /// A builder for [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_key: std::option::Option<crate::model::AttributeKey>,
@@ -1115,7 +1107,7 @@ pub mod link_attribute_update {
             self.attribute_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate)
+        /// Consumes the builder and constructs a [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
         pub fn build(self) -> crate::model::LinkAttributeUpdate {
             crate::model::LinkAttributeUpdate {
                 attribute_key: self.attribute_key,
@@ -1125,7 +1117,7 @@ pub mod link_attribute_update {
     }
 }
 impl LinkAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate)
+    /// Creates a new builder-style object to manufacture [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
     pub fn builder() -> crate::model::link_attribute_update::Builder {
         crate::model::link_attribute_update::Builder::default()
     }
@@ -1160,11 +1152,10 @@ impl std::fmt::Debug for LinkAttributeAction {
         formatter.finish()
     }
 }
-/// See [`LinkAttributeAction`](crate::model::LinkAttributeAction)
+/// See [`LinkAttributeAction`](crate::model::LinkAttributeAction).
 pub mod link_attribute_action {
 
-    /// A builder for [`LinkAttributeAction`](crate::model::LinkAttributeAction)
-    #[non_exhaustive]
+    /// A builder for [`LinkAttributeAction`](crate::model::LinkAttributeAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
@@ -1197,7 +1188,7 @@ pub mod link_attribute_action {
             self.attribute_update_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`LinkAttributeAction`](crate::model::LinkAttributeAction)
+        /// Consumes the builder and constructs a [`LinkAttributeAction`](crate::model::LinkAttributeAction).
         pub fn build(self) -> crate::model::LinkAttributeAction {
             crate::model::LinkAttributeAction {
                 attribute_action_type: self.attribute_action_type,
@@ -1207,7 +1198,7 @@ pub mod link_attribute_action {
     }
 }
 impl LinkAttributeAction {
-    /// Creates a new builder-style object to manufacture [`LinkAttributeAction`](crate::model::LinkAttributeAction)
+    /// Creates a new builder-style object to manufacture [`LinkAttributeAction`](crate::model::LinkAttributeAction).
     pub fn builder() -> crate::model::link_attribute_action::Builder {
         crate::model::link_attribute_action::Builder::default()
     }
@@ -1259,11 +1250,10 @@ impl std::fmt::Debug for TypedLinkSpecifier {
         formatter.finish()
     }
 }
-/// See [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier)
+/// See [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
 pub mod typed_link_specifier {
 
-    /// A builder for [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier)
-    #[non_exhaustive]
+    /// A builder for [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -1337,7 +1327,7 @@ pub mod typed_link_specifier {
             self.identity_attribute_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier)
+        /// Consumes the builder and constructs a [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
         pub fn build(self) -> crate::model::TypedLinkSpecifier {
             crate::model::TypedLinkSpecifier {
                 typed_link_facet: self.typed_link_facet,
@@ -1349,7 +1339,7 @@ pub mod typed_link_specifier {
     }
 }
 impl TypedLinkSpecifier {
-    /// Creates a new builder-style object to manufacture [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier)
+    /// Creates a new builder-style object to manufacture [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
     pub fn builder() -> crate::model::typed_link_specifier::Builder {
         crate::model::typed_link_specifier::Builder::default()
     }
@@ -1382,11 +1372,10 @@ impl std::fmt::Debug for AttributeNameAndValue {
         formatter.finish()
     }
 }
-/// See [`AttributeNameAndValue`](crate::model::AttributeNameAndValue)
+/// See [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
 pub mod attribute_name_and_value {
 
-    /// A builder for [`AttributeNameAndValue`](crate::model::AttributeNameAndValue)
-    #[non_exhaustive]
+    /// A builder for [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -1419,7 +1408,7 @@ pub mod attribute_name_and_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttributeNameAndValue`](crate::model::AttributeNameAndValue)
+        /// Consumes the builder and constructs a [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
         pub fn build(self) -> crate::model::AttributeNameAndValue {
             crate::model::AttributeNameAndValue {
                 attribute_name: self.attribute_name,
@@ -1429,7 +1418,7 @@ pub mod attribute_name_and_value {
     }
 }
 impl AttributeNameAndValue {
-    /// Creates a new builder-style object to manufacture [`AttributeNameAndValue`](crate::model::AttributeNameAndValue)
+    /// Creates a new builder-style object to manufacture [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
     pub fn builder() -> crate::model::attribute_name_and_value::Builder {
         crate::model::attribute_name_and_value::Builder::default()
     }
@@ -1462,11 +1451,10 @@ impl std::fmt::Debug for TypedLinkSchemaAndFacetName {
         formatter.finish()
     }
 }
-/// See [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName)
+/// See [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
 pub mod typed_link_schema_and_facet_name {
 
-    /// A builder for [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName)
-    #[non_exhaustive]
+    /// A builder for [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -1496,7 +1484,7 @@ pub mod typed_link_schema_and_facet_name {
             self.typed_link_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName)
+        /// Consumes the builder and constructs a [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
         pub fn build(self) -> crate::model::TypedLinkSchemaAndFacetName {
             crate::model::TypedLinkSchemaAndFacetName {
                 schema_arn: self.schema_arn,
@@ -1506,7 +1494,7 @@ pub mod typed_link_schema_and_facet_name {
     }
 }
 impl TypedLinkSchemaAndFacetName {
-    /// Creates a new builder-style object to manufacture [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName)
+    /// Creates a new builder-style object to manufacture [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
     pub fn builder() -> crate::model::typed_link_schema_and_facet_name::Builder {
         crate::model::typed_link_schema_and_facet_name::Builder::default()
     }
@@ -1602,11 +1590,10 @@ impl std::fmt::Debug for FacetAttributeUpdate {
         formatter.finish()
     }
 }
-/// See [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate)
+/// See [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
 pub mod facet_attribute_update {
 
-    /// A builder for [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate)
-    #[non_exhaustive]
+    /// A builder for [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute: std::option::Option<crate::model::FacetAttribute>,
@@ -1639,7 +1626,7 @@ pub mod facet_attribute_update {
             self.action = input;
             self
         }
-        /// Consumes the builder and constructs a [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate)
+        /// Consumes the builder and constructs a [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
         pub fn build(self) -> crate::model::FacetAttributeUpdate {
             crate::model::FacetAttributeUpdate {
                 attribute: self.attribute,
@@ -1649,7 +1636,7 @@ pub mod facet_attribute_update {
     }
 }
 impl FacetAttributeUpdate {
-    /// Creates a new builder-style object to manufacture [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate)
+    /// Creates a new builder-style object to manufacture [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
     pub fn builder() -> crate::model::facet_attribute_update::Builder {
         crate::model::facet_attribute_update::Builder::default()
     }
@@ -1702,11 +1689,10 @@ impl std::fmt::Debug for FacetAttribute {
         formatter.finish()
     }
 }
-/// See [`FacetAttribute`](crate::model::FacetAttribute)
+/// See [`FacetAttribute`](crate::model::FacetAttribute).
 pub mod facet_attribute {
 
-    /// A builder for [`FacetAttribute`](crate::model::FacetAttribute)
-    #[non_exhaustive]
+    /// A builder for [`FacetAttribute`](crate::model::FacetAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1768,7 +1754,7 @@ pub mod facet_attribute {
             self.required_behavior = input;
             self
         }
-        /// Consumes the builder and constructs a [`FacetAttribute`](crate::model::FacetAttribute)
+        /// Consumes the builder and constructs a [`FacetAttribute`](crate::model::FacetAttribute).
         pub fn build(self) -> crate::model::FacetAttribute {
             crate::model::FacetAttribute {
                 name: self.name,
@@ -1780,7 +1766,7 @@ pub mod facet_attribute {
     }
 }
 impl FacetAttribute {
-    /// Creates a new builder-style object to manufacture [`FacetAttribute`](crate::model::FacetAttribute)
+    /// Creates a new builder-style object to manufacture [`FacetAttribute`](crate::model::FacetAttribute).
     pub fn builder() -> crate::model::facet_attribute::Builder {
         crate::model::facet_attribute::Builder::default()
     }
@@ -1813,11 +1799,10 @@ impl std::fmt::Debug for FacetAttributeReference {
         formatter.finish()
     }
 }
-/// See [`FacetAttributeReference`](crate::model::FacetAttributeReference)
+/// See [`FacetAttributeReference`](crate::model::FacetAttributeReference).
 pub mod facet_attribute_reference {
 
-    /// A builder for [`FacetAttributeReference`](crate::model::FacetAttributeReference)
-    #[non_exhaustive]
+    /// A builder for [`FacetAttributeReference`](crate::model::FacetAttributeReference).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_facet_name: std::option::Option<std::string::String>,
@@ -1850,7 +1835,7 @@ pub mod facet_attribute_reference {
             self.target_attribute_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`FacetAttributeReference`](crate::model::FacetAttributeReference)
+        /// Consumes the builder and constructs a [`FacetAttributeReference`](crate::model::FacetAttributeReference).
         pub fn build(self) -> crate::model::FacetAttributeReference {
             crate::model::FacetAttributeReference {
                 target_facet_name: self.target_facet_name,
@@ -1860,7 +1845,7 @@ pub mod facet_attribute_reference {
     }
 }
 impl FacetAttributeReference {
-    /// Creates a new builder-style object to manufacture [`FacetAttributeReference`](crate::model::FacetAttributeReference)
+    /// Creates a new builder-style object to manufacture [`FacetAttributeReference`](crate::model::FacetAttributeReference).
     pub fn builder() -> crate::model::facet_attribute_reference::Builder {
         crate::model::facet_attribute_reference::Builder::default()
     }
@@ -1911,11 +1896,10 @@ impl std::fmt::Debug for FacetAttributeDefinition {
         formatter.finish()
     }
 }
-/// See [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition)
+/// See [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
 pub mod facet_attribute_definition {
 
-    /// A builder for [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition)
-    #[non_exhaustive]
+    /// A builder for [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FacetAttributeType>,
@@ -1982,7 +1966,7 @@ pub mod facet_attribute_definition {
             self.rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition)
+        /// Consumes the builder and constructs a [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
         pub fn build(self) -> crate::model::FacetAttributeDefinition {
             crate::model::FacetAttributeDefinition {
                 r#type: self.r#type,
@@ -1994,7 +1978,7 @@ pub mod facet_attribute_definition {
     }
 }
 impl FacetAttributeDefinition {
-    /// Creates a new builder-style object to manufacture [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition)
+    /// Creates a new builder-style object to manufacture [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
     pub fn builder() -> crate::model::facet_attribute_definition::Builder {
         crate::model::facet_attribute_definition::Builder::default()
     }
@@ -2027,11 +2011,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2058,7 +2041,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -2068,7 +2051,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -2101,11 +2084,10 @@ impl std::fmt::Debug for SchemaFacet {
         formatter.finish()
     }
 }
-/// See [`SchemaFacet`](crate::model::SchemaFacet)
+/// See [`SchemaFacet`](crate::model::SchemaFacet).
 pub mod schema_facet {
 
-    /// A builder for [`SchemaFacet`](crate::model::SchemaFacet)
-    #[non_exhaustive]
+    /// A builder for [`SchemaFacet`](crate::model::SchemaFacet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_arn: std::option::Option<std::string::String>,
@@ -2132,7 +2114,7 @@ pub mod schema_facet {
             self.facet_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`SchemaFacet`](crate::model::SchemaFacet)
+        /// Consumes the builder and constructs a [`SchemaFacet`](crate::model::SchemaFacet).
         pub fn build(self) -> crate::model::SchemaFacet {
             crate::model::SchemaFacet {
                 schema_arn: self.schema_arn,
@@ -2142,7 +2124,7 @@ pub mod schema_facet {
     }
 }
 impl SchemaFacet {
-    /// Creates a new builder-style object to manufacture [`SchemaFacet`](crate::model::SchemaFacet)
+    /// Creates a new builder-style object to manufacture [`SchemaFacet`](crate::model::SchemaFacet).
     pub fn builder() -> crate::model::schema_facet::Builder {
         crate::model::schema_facet::Builder::default()
     }
@@ -2175,11 +2157,10 @@ impl std::fmt::Debug for PolicyToPath {
         formatter.finish()
     }
 }
-/// See [`PolicyToPath`](crate::model::PolicyToPath)
+/// See [`PolicyToPath`](crate::model::PolicyToPath).
 pub mod policy_to_path {
 
-    /// A builder for [`PolicyToPath`](crate::model::PolicyToPath)
-    #[non_exhaustive]
+    /// A builder for [`PolicyToPath`](crate::model::PolicyToPath).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -2215,7 +2196,7 @@ pub mod policy_to_path {
             self.policies = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyToPath`](crate::model::PolicyToPath)
+        /// Consumes the builder and constructs a [`PolicyToPath`](crate::model::PolicyToPath).
         pub fn build(self) -> crate::model::PolicyToPath {
             crate::model::PolicyToPath {
                 path: self.path,
@@ -2225,7 +2206,7 @@ pub mod policy_to_path {
     }
 }
 impl PolicyToPath {
-    /// Creates a new builder-style object to manufacture [`PolicyToPath`](crate::model::PolicyToPath)
+    /// Creates a new builder-style object to manufacture [`PolicyToPath`](crate::model::PolicyToPath).
     pub fn builder() -> crate::model::policy_to_path::Builder {
         crate::model::policy_to_path::Builder::default()
     }
@@ -2265,11 +2246,10 @@ impl std::fmt::Debug for PolicyAttachment {
         formatter.finish()
     }
 }
-/// See [`PolicyAttachment`](crate::model::PolicyAttachment)
+/// See [`PolicyAttachment`](crate::model::PolicyAttachment).
 pub mod policy_attachment {
 
-    /// A builder for [`PolicyAttachment`](crate::model::PolicyAttachment)
-    #[non_exhaustive]
+    /// A builder for [`PolicyAttachment`](crate::model::PolicyAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
@@ -2310,7 +2290,7 @@ pub mod policy_attachment {
             self.policy_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`PolicyAttachment`](crate::model::PolicyAttachment)
+        /// Consumes the builder and constructs a [`PolicyAttachment`](crate::model::PolicyAttachment).
         pub fn build(self) -> crate::model::PolicyAttachment {
             crate::model::PolicyAttachment {
                 policy_id: self.policy_id,
@@ -2321,7 +2301,7 @@ pub mod policy_attachment {
     }
 }
 impl PolicyAttachment {
-    /// Creates a new builder-style object to manufacture [`PolicyAttachment`](crate::model::PolicyAttachment)
+    /// Creates a new builder-style object to manufacture [`PolicyAttachment`](crate::model::PolicyAttachment).
     pub fn builder() -> crate::model::policy_attachment::Builder {
         crate::model::policy_attachment::Builder::default()
     }
@@ -2409,11 +2389,10 @@ impl std::fmt::Debug for TypedLinkAttributeRange {
         formatter.finish()
     }
 }
-/// See [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange)
+/// See [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
 pub mod typed_link_attribute_range {
 
-    /// A builder for [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange)
-    #[non_exhaustive]
+    /// A builder for [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
@@ -2446,7 +2425,7 @@ pub mod typed_link_attribute_range {
             self.range = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange)
+        /// Consumes the builder and constructs a [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
         pub fn build(self) -> crate::model::TypedLinkAttributeRange {
             crate::model::TypedLinkAttributeRange {
                 attribute_name: self.attribute_name,
@@ -2456,7 +2435,7 @@ pub mod typed_link_attribute_range {
     }
 }
 impl TypedLinkAttributeRange {
-    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange)
+    /// Creates a new builder-style object to manufacture [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
     pub fn builder() -> crate::model::typed_link_attribute_range::Builder {
         crate::model::typed_link_attribute_range::Builder::default()
     }
@@ -2503,11 +2482,10 @@ impl std::fmt::Debug for TypedAttributeValueRange {
         formatter.finish()
     }
 }
-/// See [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange)
+/// See [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
 pub mod typed_attribute_value_range {
 
-    /// A builder for [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange)
-    #[non_exhaustive]
+    /// A builder for [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_mode: std::option::Option<crate::model::RangeMode>,
@@ -2565,7 +2543,7 @@ pub mod typed_attribute_value_range {
             self.end_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange)
+        /// Consumes the builder and constructs a [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
         pub fn build(self) -> crate::model::TypedAttributeValueRange {
             crate::model::TypedAttributeValueRange {
                 start_mode: self.start_mode,
@@ -2577,7 +2555,7 @@ pub mod typed_attribute_value_range {
     }
 }
 impl TypedAttributeValueRange {
-    /// Creates a new builder-style object to manufacture [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange)
+    /// Creates a new builder-style object to manufacture [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
     pub fn builder() -> crate::model::typed_attribute_value_range::Builder {
         crate::model::typed_attribute_value_range::Builder::default()
     }
@@ -2683,11 +2661,10 @@ impl std::fmt::Debug for ObjectIdentifierAndLinkNameTuple {
         formatter.finish()
     }
 }
-/// See [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple)
+/// See [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
 pub mod object_identifier_and_link_name_tuple {
 
-    /// A builder for [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple)
-    #[non_exhaustive]
+    /// A builder for [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -2717,7 +2694,7 @@ pub mod object_identifier_and_link_name_tuple {
             self.link_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple)
+        /// Consumes the builder and constructs a [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
         pub fn build(self) -> crate::model::ObjectIdentifierAndLinkNameTuple {
             crate::model::ObjectIdentifierAndLinkNameTuple {
                 object_identifier: self.object_identifier,
@@ -2727,7 +2704,7 @@ pub mod object_identifier_and_link_name_tuple {
     }
 }
 impl ObjectIdentifierAndLinkNameTuple {
-    /// Creates a new builder-style object to manufacture [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple)
+    /// Creates a new builder-style object to manufacture [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
     pub fn builder() -> crate::model::object_identifier_and_link_name_tuple::Builder {
         crate::model::object_identifier_and_link_name_tuple::Builder::default()
     }
@@ -2760,11 +2737,10 @@ impl std::fmt::Debug for PathToObjectIdentifiers {
         formatter.finish()
     }
 }
-/// See [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers)
+/// See [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
 pub mod path_to_object_identifiers {
 
-    /// A builder for [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers)
-    #[non_exhaustive]
+    /// A builder for [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -2800,7 +2776,7 @@ pub mod path_to_object_identifiers {
             self.object_identifiers = input;
             self
         }
-        /// Consumes the builder and constructs a [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers)
+        /// Consumes the builder and constructs a [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
         pub fn build(self) -> crate::model::PathToObjectIdentifiers {
             crate::model::PathToObjectIdentifiers {
                 path: self.path,
@@ -2810,7 +2786,7 @@ pub mod path_to_object_identifiers {
     }
 }
 impl PathToObjectIdentifiers {
-    /// Creates a new builder-style object to manufacture [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers)
+    /// Creates a new builder-style object to manufacture [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
     pub fn builder() -> crate::model::path_to_object_identifiers::Builder {
         crate::model::path_to_object_identifiers::Builder::default()
     }
@@ -2843,11 +2819,10 @@ impl std::fmt::Debug for AttributeKeyAndValue {
         formatter.finish()
     }
 }
-/// See [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue)
+/// See [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
 pub mod attribute_key_and_value {
 
-    /// A builder for [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue)
-    #[non_exhaustive]
+    /// A builder for [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::AttributeKey>,
@@ -2877,7 +2852,7 @@ pub mod attribute_key_and_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue)
+        /// Consumes the builder and constructs a [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
         pub fn build(self) -> crate::model::AttributeKeyAndValue {
             crate::model::AttributeKeyAndValue {
                 key: self.key,
@@ -2887,7 +2862,7 @@ pub mod attribute_key_and_value {
     }
 }
 impl AttributeKeyAndValue {
-    /// Creates a new builder-style object to manufacture [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue)
+    /// Creates a new builder-style object to manufacture [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
     pub fn builder() -> crate::model::attribute_key_and_value::Builder {
         crate::model::attribute_key_and_value::Builder::default()
     }
@@ -2920,11 +2895,10 @@ impl std::fmt::Debug for IndexAttachment {
         formatter.finish()
     }
 }
-/// See [`IndexAttachment`](crate::model::IndexAttachment)
+/// See [`IndexAttachment`](crate::model::IndexAttachment).
 pub mod index_attachment {
 
-    /// A builder for [`IndexAttachment`](crate::model::IndexAttachment)
-    #[non_exhaustive]
+    /// A builder for [`IndexAttachment`](crate::model::IndexAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) indexed_attributes:
@@ -2964,7 +2938,7 @@ pub mod index_attachment {
             self.object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`IndexAttachment`](crate::model::IndexAttachment)
+        /// Consumes the builder and constructs a [`IndexAttachment`](crate::model::IndexAttachment).
         pub fn build(self) -> crate::model::IndexAttachment {
             crate::model::IndexAttachment {
                 indexed_attributes: self.indexed_attributes,
@@ -2974,7 +2948,7 @@ pub mod index_attachment {
     }
 }
 impl IndexAttachment {
-    /// Creates a new builder-style object to manufacture [`IndexAttachment`](crate::model::IndexAttachment)
+    /// Creates a new builder-style object to manufacture [`IndexAttachment`](crate::model::IndexAttachment).
     pub fn builder() -> crate::model::index_attachment::Builder {
         crate::model::index_attachment::Builder::default()
     }
@@ -3007,11 +2981,10 @@ impl std::fmt::Debug for ObjectAttributeRange {
         formatter.finish()
     }
 }
-/// See [`ObjectAttributeRange`](crate::model::ObjectAttributeRange)
+/// See [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
 pub mod object_attribute_range {
 
-    /// A builder for [`ObjectAttributeRange`](crate::model::ObjectAttributeRange)
-    #[non_exhaustive]
+    /// A builder for [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attribute_key: std::option::Option<crate::model::AttributeKey>,
@@ -3044,7 +3017,7 @@ pub mod object_attribute_range {
             self.range = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectAttributeRange`](crate::model::ObjectAttributeRange)
+        /// Consumes the builder and constructs a [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
         pub fn build(self) -> crate::model::ObjectAttributeRange {
             crate::model::ObjectAttributeRange {
                 attribute_key: self.attribute_key,
@@ -3054,7 +3027,7 @@ pub mod object_attribute_range {
     }
 }
 impl ObjectAttributeRange {
-    /// Creates a new builder-style object to manufacture [`ObjectAttributeRange`](crate::model::ObjectAttributeRange)
+    /// Creates a new builder-style object to manufacture [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
     pub fn builder() -> crate::model::object_attribute_range::Builder {
         crate::model::object_attribute_range::Builder::default()
     }
@@ -3101,11 +3074,10 @@ impl std::fmt::Debug for Directory {
         formatter.finish()
     }
 }
-/// See [`Directory`](crate::model::Directory)
+/// See [`Directory`](crate::model::Directory).
 pub mod directory {
 
-    /// A builder for [`Directory`](crate::model::Directory)
-    #[non_exhaustive]
+    /// A builder for [`Directory`](crate::model::Directory).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3163,7 +3135,7 @@ pub mod directory {
             self.creation_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Directory`](crate::model::Directory)
+        /// Consumes the builder and constructs a [`Directory`](crate::model::Directory).
         pub fn build(self) -> crate::model::Directory {
             crate::model::Directory {
                 name: self.name,
@@ -3175,7 +3147,7 @@ pub mod directory {
     }
 }
 impl Directory {
-    /// Creates a new builder-style object to manufacture [`Directory`](crate::model::Directory)
+    /// Creates a new builder-style object to manufacture [`Directory`](crate::model::Directory).
     pub fn builder() -> crate::model::directory::Builder {
         crate::model::directory::Builder::default()
     }
@@ -3274,11 +3246,10 @@ impl std::fmt::Debug for Facet {
         formatter.finish()
     }
 }
-/// See [`Facet`](crate::model::Facet)
+/// See [`Facet`](crate::model::Facet).
 pub mod facet {
 
-    /// A builder for [`Facet`](crate::model::Facet)
-    #[non_exhaustive]
+    /// A builder for [`Facet`](crate::model::Facet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3322,7 +3293,7 @@ pub mod facet {
             self.facet_style = input;
             self
         }
-        /// Consumes the builder and constructs a [`Facet`](crate::model::Facet)
+        /// Consumes the builder and constructs a [`Facet`](crate::model::Facet).
         pub fn build(self) -> crate::model::Facet {
             crate::model::Facet {
                 name: self.name,
@@ -3333,7 +3304,7 @@ pub mod facet {
     }
 }
 impl Facet {
-    /// Creates a new builder-style object to manufacture [`Facet`](crate::model::Facet)
+    /// Creates a new builder-style object to manufacture [`Facet`](crate::model::Facet).
     pub fn builder() -> crate::model::facet::Builder {
         crate::model::facet::Builder::default()
     }
@@ -3428,11 +3399,10 @@ impl std::fmt::Debug for TypedLinkFacet {
         formatter.finish()
     }
 }
-/// See [`TypedLinkFacet`](crate::model::TypedLinkFacet)
+/// See [`TypedLinkFacet`](crate::model::TypedLinkFacet).
 pub mod typed_link_facet {
 
-    /// A builder for [`TypedLinkFacet`](crate::model::TypedLinkFacet)
-    #[non_exhaustive]
+    /// A builder for [`TypedLinkFacet`](crate::model::TypedLinkFacet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3490,7 +3460,7 @@ pub mod typed_link_facet {
             self.identity_attribute_order = input;
             self
         }
-        /// Consumes the builder and constructs a [`TypedLinkFacet`](crate::model::TypedLinkFacet)
+        /// Consumes the builder and constructs a [`TypedLinkFacet`](crate::model::TypedLinkFacet).
         pub fn build(self) -> crate::model::TypedLinkFacet {
             crate::model::TypedLinkFacet {
                 name: self.name,
@@ -3501,7 +3471,7 @@ pub mod typed_link_facet {
     }
 }
 impl TypedLinkFacet {
-    /// Creates a new builder-style object to manufacture [`TypedLinkFacet`](crate::model::TypedLinkFacet)
+    /// Creates a new builder-style object to manufacture [`TypedLinkFacet`](crate::model::TypedLinkFacet).
     pub fn builder() -> crate::model::typed_link_facet::Builder {
         crate::model::typed_link_facet::Builder::default()
     }
@@ -3798,11 +3768,10 @@ impl std::fmt::Debug for BatchWriteOperationResponse {
         formatter.finish()
     }
 }
-/// See [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse)
+/// See [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
 pub mod batch_write_operation_response {
 
-    /// A builder for [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObjectResponse>,
@@ -4045,7 +4014,7 @@ pub mod batch_write_operation_response {
             self.update_link_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse)
+        /// Consumes the builder and constructs a [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
         pub fn build(self) -> crate::model::BatchWriteOperationResponse {
             crate::model::BatchWriteOperationResponse {
                 create_object: self.create_object,
@@ -4068,7 +4037,7 @@ pub mod batch_write_operation_response {
     }
 }
 impl BatchWriteOperationResponse {
-    /// Creates a new builder-style object to manufacture [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse)
+    /// Creates a new builder-style object to manufacture [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
     pub fn builder() -> crate::model::batch_write_operation_response::Builder {
         crate::model::batch_write_operation_response::Builder::default()
     }
@@ -4084,22 +4053,21 @@ impl std::fmt::Debug for BatchUpdateLinkAttributesResponse {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse)
+/// See [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
 pub mod batch_update_link_attributes_response {
 
-    /// A builder for [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse)
+        /// Consumes the builder and constructs a [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
         pub fn build(self) -> crate::model::BatchUpdateLinkAttributesResponse {
             crate::model::BatchUpdateLinkAttributesResponse {}
         }
     }
 }
 impl BatchUpdateLinkAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
     pub fn builder() -> crate::model::batch_update_link_attributes_response::Builder {
         crate::model::batch_update_link_attributes_response::Builder::default()
     }
@@ -4115,22 +4083,21 @@ impl std::fmt::Debug for BatchDetachTypedLinkResponse {
         formatter.finish()
     }
 }
-/// See [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse)
+/// See [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
 pub mod batch_detach_typed_link_response {
 
-    /// A builder for [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse)
+        /// Consumes the builder and constructs a [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
         pub fn build(self) -> crate::model::BatchDetachTypedLinkResponse {
             crate::model::BatchDetachTypedLinkResponse {}
         }
     }
 }
 impl BatchDetachTypedLinkResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse)
+    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
     pub fn builder() -> crate::model::batch_detach_typed_link_response::Builder {
         crate::model::batch_detach_typed_link_response::Builder::default()
     }
@@ -4156,11 +4123,10 @@ impl std::fmt::Debug for BatchAttachTypedLinkResponse {
         formatter.finish()
     }
 }
-/// See [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse)
+/// See [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
 pub mod batch_attach_typed_link_response {
 
-    /// A builder for [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -4179,7 +4145,7 @@ pub mod batch_attach_typed_link_response {
             self.typed_link_specifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse)
+        /// Consumes the builder and constructs a [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
         pub fn build(self) -> crate::model::BatchAttachTypedLinkResponse {
             crate::model::BatchAttachTypedLinkResponse {
                 typed_link_specifier: self.typed_link_specifier,
@@ -4188,7 +4154,7 @@ pub mod batch_attach_typed_link_response {
     }
 }
 impl BatchAttachTypedLinkResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse)
+    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
     pub fn builder() -> crate::model::batch_attach_typed_link_response::Builder {
         crate::model::batch_attach_typed_link_response::Builder::default()
     }
@@ -4217,11 +4183,10 @@ impl std::fmt::Debug for BatchDetachFromIndexResponse {
         formatter.finish()
     }
 }
-/// See [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse)
+/// See [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
 pub mod batch_detach_from_index_response {
 
-    /// A builder for [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
@@ -4240,7 +4205,7 @@ pub mod batch_detach_from_index_response {
             self.detached_object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse)
+        /// Consumes the builder and constructs a [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
         pub fn build(self) -> crate::model::BatchDetachFromIndexResponse {
             crate::model::BatchDetachFromIndexResponse {
                 detached_object_identifier: self.detached_object_identifier,
@@ -4249,7 +4214,7 @@ pub mod batch_detach_from_index_response {
     }
 }
 impl BatchDetachFromIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse)
+    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
     pub fn builder() -> crate::model::batch_detach_from_index_response::Builder {
         crate::model::batch_detach_from_index_response::Builder::default()
     }
@@ -4278,11 +4243,10 @@ impl std::fmt::Debug for BatchAttachToIndexResponse {
         formatter.finish()
     }
 }
-/// See [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse)
+/// See [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
 pub mod batch_attach_to_index_response {
 
-    /// A builder for [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
@@ -4301,7 +4265,7 @@ pub mod batch_attach_to_index_response {
             self.attached_object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse)
+        /// Consumes the builder and constructs a [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
         pub fn build(self) -> crate::model::BatchAttachToIndexResponse {
             crate::model::BatchAttachToIndexResponse {
                 attached_object_identifier: self.attached_object_identifier,
@@ -4310,7 +4274,7 @@ pub mod batch_attach_to_index_response {
     }
 }
 impl BatchAttachToIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse)
+    /// Creates a new builder-style object to manufacture [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
     pub fn builder() -> crate::model::batch_attach_to_index_response::Builder {
         crate::model::batch_attach_to_index_response::Builder::default()
     }
@@ -4336,11 +4300,10 @@ impl std::fmt::Debug for BatchCreateIndexResponse {
         formatter.finish()
     }
 }
-/// See [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse)
+/// See [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
 pub mod batch_create_index_response {
 
-    /// A builder for [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -4359,7 +4322,7 @@ pub mod batch_create_index_response {
             self.object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse)
+        /// Consumes the builder and constructs a [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
         pub fn build(self) -> crate::model::BatchCreateIndexResponse {
             crate::model::BatchCreateIndexResponse {
                 object_identifier: self.object_identifier,
@@ -4368,7 +4331,7 @@ pub mod batch_create_index_response {
     }
 }
 impl BatchCreateIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse)
+    /// Creates a new builder-style object to manufacture [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
     pub fn builder() -> crate::model::batch_create_index_response::Builder {
         crate::model::batch_create_index_response::Builder::default()
     }
@@ -4384,22 +4347,21 @@ impl std::fmt::Debug for BatchDetachPolicyResponse {
         formatter.finish()
     }
 }
-/// See [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse)
+/// See [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
 pub mod batch_detach_policy_response {
 
-    /// A builder for [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse)
+        /// Consumes the builder and constructs a [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
         pub fn build(self) -> crate::model::BatchDetachPolicyResponse {
             crate::model::BatchDetachPolicyResponse {}
         }
     }
 }
 impl BatchDetachPolicyResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse)
+    /// Creates a new builder-style object to manufacture [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
     pub fn builder() -> crate::model::batch_detach_policy_response::Builder {
         crate::model::batch_detach_policy_response::Builder::default()
     }
@@ -4415,22 +4377,21 @@ impl std::fmt::Debug for BatchAttachPolicyResponse {
         formatter.finish()
     }
 }
-/// See [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse)
+/// See [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
 pub mod batch_attach_policy_response {
 
-    /// A builder for [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse)
+        /// Consumes the builder and constructs a [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
         pub fn build(self) -> crate::model::BatchAttachPolicyResponse {
             crate::model::BatchAttachPolicyResponse {}
         }
     }
 }
 impl BatchAttachPolicyResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse)
+    /// Creates a new builder-style object to manufacture [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
     pub fn builder() -> crate::model::batch_attach_policy_response::Builder {
         crate::model::batch_attach_policy_response::Builder::default()
     }
@@ -4446,22 +4407,21 @@ impl std::fmt::Debug for BatchRemoveFacetFromObjectResponse {
         formatter.finish()
     }
 }
-/// See [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse)
+/// See [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
 pub mod batch_remove_facet_from_object_response {
 
-    /// A builder for [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse)
+        /// Consumes the builder and constructs a [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
         pub fn build(self) -> crate::model::BatchRemoveFacetFromObjectResponse {
             crate::model::BatchRemoveFacetFromObjectResponse {}
         }
     }
 }
 impl BatchRemoveFacetFromObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse)
+    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
     pub fn builder() -> crate::model::batch_remove_facet_from_object_response::Builder {
         crate::model::batch_remove_facet_from_object_response::Builder::default()
     }
@@ -4477,22 +4437,21 @@ impl std::fmt::Debug for BatchAddFacetToObjectResponse {
         formatter.finish()
     }
 }
-/// See [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse)
+/// See [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
 pub mod batch_add_facet_to_object_response {
 
-    /// A builder for [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse)
+        /// Consumes the builder and constructs a [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
         pub fn build(self) -> crate::model::BatchAddFacetToObjectResponse {
             crate::model::BatchAddFacetToObjectResponse {}
         }
     }
 }
 impl BatchAddFacetToObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse)
+    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
     pub fn builder() -> crate::model::batch_add_facet_to_object_response::Builder {
         crate::model::batch_add_facet_to_object_response::Builder::default()
     }
@@ -4508,22 +4467,21 @@ impl std::fmt::Debug for BatchDeleteObjectResponse {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse)
+/// See [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
 pub mod batch_delete_object_response {
 
-    /// A builder for [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse)
+        /// Consumes the builder and constructs a [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
         pub fn build(self) -> crate::model::BatchDeleteObjectResponse {
             crate::model::BatchDeleteObjectResponse {}
         }
     }
 }
 impl BatchDeleteObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
     pub fn builder() -> crate::model::batch_delete_object_response::Builder {
         crate::model::batch_delete_object_response::Builder::default()
     }
@@ -4549,11 +4507,10 @@ impl std::fmt::Debug for BatchUpdateObjectAttributesResponse {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse)
+/// See [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
 pub mod batch_update_object_attributes_response {
 
-    /// A builder for [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -4572,7 +4529,7 @@ pub mod batch_update_object_attributes_response {
             self.object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse)
+        /// Consumes the builder and constructs a [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
         pub fn build(self) -> crate::model::BatchUpdateObjectAttributesResponse {
             crate::model::BatchUpdateObjectAttributesResponse {
                 object_identifier: self.object_identifier,
@@ -4581,7 +4538,7 @@ pub mod batch_update_object_attributes_response {
     }
 }
 impl BatchUpdateObjectAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
     pub fn builder() -> crate::model::batch_update_object_attributes_response::Builder {
         crate::model::batch_update_object_attributes_response::Builder::default()
     }
@@ -4610,11 +4567,10 @@ impl std::fmt::Debug for BatchDetachObjectResponse {
         formatter.finish()
     }
 }
-/// See [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse)
+/// See [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
 pub mod batch_detach_object_response {
 
-    /// A builder for [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detached_object_identifier: std::option::Option<std::string::String>,
@@ -4633,7 +4589,7 @@ pub mod batch_detach_object_response {
             self.detached_object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse)
+        /// Consumes the builder and constructs a [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
         pub fn build(self) -> crate::model::BatchDetachObjectResponse {
             crate::model::BatchDetachObjectResponse {
                 detached_object_identifier: self.detached_object_identifier,
@@ -4642,7 +4598,7 @@ pub mod batch_detach_object_response {
     }
 }
 impl BatchDetachObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse)
+    /// Creates a new builder-style object to manufacture [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
     pub fn builder() -> crate::model::batch_detach_object_response::Builder {
         crate::model::batch_detach_object_response::Builder::default()
     }
@@ -4671,11 +4627,10 @@ impl std::fmt::Debug for BatchAttachObjectResponse {
         formatter.finish()
     }
 }
-/// See [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse)
+/// See [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
 pub mod batch_attach_object_response {
 
-    /// A builder for [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
@@ -4694,7 +4649,7 @@ pub mod batch_attach_object_response {
             self.attached_object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse)
+        /// Consumes the builder and constructs a [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
         pub fn build(self) -> crate::model::BatchAttachObjectResponse {
             crate::model::BatchAttachObjectResponse {
                 attached_object_identifier: self.attached_object_identifier,
@@ -4703,7 +4658,7 @@ pub mod batch_attach_object_response {
     }
 }
 impl BatchAttachObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse)
+    /// Creates a new builder-style object to manufacture [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
     pub fn builder() -> crate::model::batch_attach_object_response::Builder {
         crate::model::batch_attach_object_response::Builder::default()
     }
@@ -4729,11 +4684,10 @@ impl std::fmt::Debug for BatchCreateObjectResponse {
         formatter.finish()
     }
 }
-/// See [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse)
+/// See [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
 pub mod batch_create_object_response {
 
-    /// A builder for [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifier: std::option::Option<std::string::String>,
@@ -4752,7 +4706,7 @@ pub mod batch_create_object_response {
             self.object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse)
+        /// Consumes the builder and constructs a [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
         pub fn build(self) -> crate::model::BatchCreateObjectResponse {
             crate::model::BatchCreateObjectResponse {
                 object_identifier: self.object_identifier,
@@ -4761,7 +4715,7 @@ pub mod batch_create_object_response {
     }
 }
 impl BatchCreateObjectResponse {
-    /// Creates a new builder-style object to manufacture [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse)
+    /// Creates a new builder-style object to manufacture [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
     pub fn builder() -> crate::model::batch_create_object_response::Builder {
         crate::model::batch_create_object_response::Builder::default()
     }
@@ -4891,11 +4845,10 @@ impl std::fmt::Debug for BatchWriteOperation {
         formatter.finish()
     }
 }
-/// See [`BatchWriteOperation`](crate::model::BatchWriteOperation)
+/// See [`BatchWriteOperation`](crate::model::BatchWriteOperation).
 pub mod batch_write_operation {
 
-    /// A builder for [`BatchWriteOperation`](crate::model::BatchWriteOperation)
-    #[non_exhaustive]
+    /// A builder for [`BatchWriteOperation`](crate::model::BatchWriteOperation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObject>,
@@ -5122,7 +5075,7 @@ pub mod batch_write_operation {
             self.update_link_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchWriteOperation`](crate::model::BatchWriteOperation)
+        /// Consumes the builder and constructs a [`BatchWriteOperation`](crate::model::BatchWriteOperation).
         pub fn build(self) -> crate::model::BatchWriteOperation {
             crate::model::BatchWriteOperation {
                 create_object: self.create_object,
@@ -5145,7 +5098,7 @@ pub mod batch_write_operation {
     }
 }
 impl BatchWriteOperation {
-    /// Creates a new builder-style object to manufacture [`BatchWriteOperation`](crate::model::BatchWriteOperation)
+    /// Creates a new builder-style object to manufacture [`BatchWriteOperation`](crate::model::BatchWriteOperation).
     pub fn builder() -> crate::model::batch_write_operation::Builder {
         crate::model::batch_write_operation::Builder::default()
     }
@@ -5178,11 +5131,10 @@ impl std::fmt::Debug for BatchUpdateLinkAttributes {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes)
+/// See [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
 pub mod batch_update_link_attributes {
 
-    /// A builder for [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -5222,7 +5174,7 @@ pub mod batch_update_link_attributes {
             self.attribute_updates = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes)
+        /// Consumes the builder and constructs a [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
         pub fn build(self) -> crate::model::BatchUpdateLinkAttributes {
             crate::model::BatchUpdateLinkAttributes {
                 typed_link_specifier: self.typed_link_specifier,
@@ -5232,7 +5184,7 @@ pub mod batch_update_link_attributes {
     }
 }
 impl BatchUpdateLinkAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
     pub fn builder() -> crate::model::batch_update_link_attributes::Builder {
         crate::model::batch_update_link_attributes::Builder::default()
     }
@@ -5258,11 +5210,10 @@ impl std::fmt::Debug for BatchDetachTypedLink {
         formatter.finish()
     }
 }
-/// See [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink)
+/// See [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
 pub mod batch_detach_typed_link {
 
-    /// A builder for [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -5281,7 +5232,7 @@ pub mod batch_detach_typed_link {
             self.typed_link_specifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink)
+        /// Consumes the builder and constructs a [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
         pub fn build(self) -> crate::model::BatchDetachTypedLink {
             crate::model::BatchDetachTypedLink {
                 typed_link_specifier: self.typed_link_specifier,
@@ -5290,7 +5241,7 @@ pub mod batch_detach_typed_link {
     }
 }
 impl BatchDetachTypedLink {
-    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink)
+    /// Creates a new builder-style object to manufacture [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
     pub fn builder() -> crate::model::batch_detach_typed_link::Builder {
         crate::model::batch_detach_typed_link::Builder::default()
     }
@@ -5339,11 +5290,10 @@ impl std::fmt::Debug for BatchAttachTypedLink {
         formatter.finish()
     }
 }
-/// See [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink)
+/// See [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
 pub mod batch_attach_typed_link {
 
-    /// A builder for [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5414,7 +5364,7 @@ pub mod batch_attach_typed_link {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink)
+        /// Consumes the builder and constructs a [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
         pub fn build(self) -> crate::model::BatchAttachTypedLink {
             crate::model::BatchAttachTypedLink {
                 source_object_reference: self.source_object_reference,
@@ -5426,7 +5376,7 @@ pub mod batch_attach_typed_link {
     }
 }
 impl BatchAttachTypedLink {
-    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink)
+    /// Creates a new builder-style object to manufacture [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
     pub fn builder() -> crate::model::batch_attach_typed_link::Builder {
         crate::model::batch_attach_typed_link::Builder::default()
     }
@@ -5459,11 +5409,10 @@ impl std::fmt::Debug for BatchDetachFromIndex {
         formatter.finish()
     }
 }
-/// See [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex)
+/// See [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
 pub mod batch_detach_from_index {
 
-    /// A builder for [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5496,7 +5445,7 @@ pub mod batch_detach_from_index {
             self.target_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex)
+        /// Consumes the builder and constructs a [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
         pub fn build(self) -> crate::model::BatchDetachFromIndex {
             crate::model::BatchDetachFromIndex {
                 index_reference: self.index_reference,
@@ -5506,7 +5455,7 @@ pub mod batch_detach_from_index {
     }
 }
 impl BatchDetachFromIndex {
-    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex)
+    /// Creates a new builder-style object to manufacture [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
     pub fn builder() -> crate::model::batch_detach_from_index::Builder {
         crate::model::batch_detach_from_index::Builder::default()
     }
@@ -5539,11 +5488,10 @@ impl std::fmt::Debug for BatchAttachToIndex {
         formatter.finish()
     }
 }
-/// See [`BatchAttachToIndex`](crate::model::BatchAttachToIndex)
+/// See [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
 pub mod batch_attach_to_index {
 
-    /// A builder for [`BatchAttachToIndex`](crate::model::BatchAttachToIndex)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5576,7 +5524,7 @@ pub mod batch_attach_to_index {
             self.target_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAttachToIndex`](crate::model::BatchAttachToIndex)
+        /// Consumes the builder and constructs a [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
         pub fn build(self) -> crate::model::BatchAttachToIndex {
             crate::model::BatchAttachToIndex {
                 index_reference: self.index_reference,
@@ -5586,7 +5534,7 @@ pub mod batch_attach_to_index {
     }
 }
 impl BatchAttachToIndex {
-    /// Creates a new builder-style object to manufacture [`BatchAttachToIndex`](crate::model::BatchAttachToIndex)
+    /// Creates a new builder-style object to manufacture [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
     pub fn builder() -> crate::model::batch_attach_to_index::Builder {
         crate::model::batch_attach_to_index::Builder::default()
     }
@@ -5646,11 +5594,10 @@ impl std::fmt::Debug for BatchCreateIndex {
         formatter.finish()
     }
 }
-/// See [`BatchCreateIndex`](crate::model::BatchCreateIndex)
+/// See [`BatchCreateIndex`](crate::model::BatchCreateIndex).
 pub mod batch_create_index {
 
-    /// A builder for [`BatchCreateIndex`](crate::model::BatchCreateIndex)
-    #[non_exhaustive]
+    /// A builder for [`BatchCreateIndex`](crate::model::BatchCreateIndex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ordered_indexed_attribute_list:
@@ -5726,7 +5673,7 @@ pub mod batch_create_index {
             self.batch_reference_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchCreateIndex`](crate::model::BatchCreateIndex)
+        /// Consumes the builder and constructs a [`BatchCreateIndex`](crate::model::BatchCreateIndex).
         pub fn build(self) -> crate::model::BatchCreateIndex {
             crate::model::BatchCreateIndex {
                 ordered_indexed_attribute_list: self.ordered_indexed_attribute_list,
@@ -5739,7 +5686,7 @@ pub mod batch_create_index {
     }
 }
 impl BatchCreateIndex {
-    /// Creates a new builder-style object to manufacture [`BatchCreateIndex`](crate::model::BatchCreateIndex)
+    /// Creates a new builder-style object to manufacture [`BatchCreateIndex`](crate::model::BatchCreateIndex).
     pub fn builder() -> crate::model::batch_create_index::Builder {
         crate::model::batch_create_index::Builder::default()
     }
@@ -5772,11 +5719,10 @@ impl std::fmt::Debug for BatchDetachPolicy {
         formatter.finish()
     }
 }
-/// See [`BatchDetachPolicy`](crate::model::BatchDetachPolicy)
+/// See [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
 pub mod batch_detach_policy {
 
-    /// A builder for [`BatchDetachPolicy`](crate::model::BatchDetachPolicy)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5809,7 +5755,7 @@ pub mod batch_detach_policy {
             self.object_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetachPolicy`](crate::model::BatchDetachPolicy)
+        /// Consumes the builder and constructs a [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
         pub fn build(self) -> crate::model::BatchDetachPolicy {
             crate::model::BatchDetachPolicy {
                 policy_reference: self.policy_reference,
@@ -5819,7 +5765,7 @@ pub mod batch_detach_policy {
     }
 }
 impl BatchDetachPolicy {
-    /// Creates a new builder-style object to manufacture [`BatchDetachPolicy`](crate::model::BatchDetachPolicy)
+    /// Creates a new builder-style object to manufacture [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
     pub fn builder() -> crate::model::batch_detach_policy::Builder {
         crate::model::batch_detach_policy::Builder::default()
     }
@@ -5852,11 +5798,10 @@ impl std::fmt::Debug for BatchAttachPolicy {
         formatter.finish()
     }
 }
-/// See [`BatchAttachPolicy`](crate::model::BatchAttachPolicy)
+/// See [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
 pub mod batch_attach_policy {
 
-    /// A builder for [`BatchAttachPolicy`](crate::model::BatchAttachPolicy)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5889,7 +5834,7 @@ pub mod batch_attach_policy {
             self.object_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAttachPolicy`](crate::model::BatchAttachPolicy)
+        /// Consumes the builder and constructs a [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
         pub fn build(self) -> crate::model::BatchAttachPolicy {
             crate::model::BatchAttachPolicy {
                 policy_reference: self.policy_reference,
@@ -5899,7 +5844,7 @@ pub mod batch_attach_policy {
     }
 }
 impl BatchAttachPolicy {
-    /// Creates a new builder-style object to manufacture [`BatchAttachPolicy`](crate::model::BatchAttachPolicy)
+    /// Creates a new builder-style object to manufacture [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
     pub fn builder() -> crate::model::batch_attach_policy::Builder {
         crate::model::batch_attach_policy::Builder::default()
     }
@@ -5932,11 +5877,10 @@ impl std::fmt::Debug for BatchRemoveFacetFromObject {
         formatter.finish()
     }
 }
-/// See [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject)
+/// See [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
 pub mod batch_remove_facet_from_object {
 
-    /// A builder for [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject)
-    #[non_exhaustive]
+    /// A builder for [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
@@ -5969,7 +5913,7 @@ pub mod batch_remove_facet_from_object {
             self.object_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject)
+        /// Consumes the builder and constructs a [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
         pub fn build(self) -> crate::model::BatchRemoveFacetFromObject {
             crate::model::BatchRemoveFacetFromObject {
                 schema_facet: self.schema_facet,
@@ -5979,7 +5923,7 @@ pub mod batch_remove_facet_from_object {
     }
 }
 impl BatchRemoveFacetFromObject {
-    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject)
+    /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
     pub fn builder() -> crate::model::batch_remove_facet_from_object::Builder {
         crate::model::batch_remove_facet_from_object::Builder::default()
     }
@@ -6022,11 +5966,10 @@ impl std::fmt::Debug for BatchAddFacetToObject {
         formatter.finish()
     }
 }
-/// See [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject)
+/// See [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
 pub mod batch_add_facet_to_object {
 
-    /// A builder for [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject)
-    #[non_exhaustive]
+    /// A builder for [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
@@ -6080,7 +6023,7 @@ pub mod batch_add_facet_to_object {
             self.object_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject)
+        /// Consumes the builder and constructs a [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
         pub fn build(self) -> crate::model::BatchAddFacetToObject {
             crate::model::BatchAddFacetToObject {
                 schema_facet: self.schema_facet,
@@ -6091,7 +6034,7 @@ pub mod batch_add_facet_to_object {
     }
 }
 impl BatchAddFacetToObject {
-    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject)
+    /// Creates a new builder-style object to manufacture [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
     pub fn builder() -> crate::model::batch_add_facet_to_object::Builder {
         crate::model::batch_add_facet_to_object::Builder::default()
     }
@@ -6117,11 +6060,10 @@ impl std::fmt::Debug for BatchDeleteObject {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteObject`](crate::model::BatchDeleteObject)
+/// See [`BatchDeleteObject`](crate::model::BatchDeleteObject).
 pub mod batch_delete_object {
 
-    /// A builder for [`BatchDeleteObject`](crate::model::BatchDeleteObject)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteObject`](crate::model::BatchDeleteObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6140,7 +6082,7 @@ pub mod batch_delete_object {
             self.object_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteObject`](crate::model::BatchDeleteObject)
+        /// Consumes the builder and constructs a [`BatchDeleteObject`](crate::model::BatchDeleteObject).
         pub fn build(self) -> crate::model::BatchDeleteObject {
             crate::model::BatchDeleteObject {
                 object_reference: self.object_reference,
@@ -6149,7 +6091,7 @@ pub mod batch_delete_object {
     }
 }
 impl BatchDeleteObject {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteObject`](crate::model::BatchDeleteObject)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteObject`](crate::model::BatchDeleteObject).
     pub fn builder() -> crate::model::batch_delete_object::Builder {
         crate::model::batch_delete_object::Builder::default()
     }
@@ -6182,11 +6124,10 @@ impl std::fmt::Debug for BatchUpdateObjectAttributes {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes)
+/// See [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
 pub mod batch_update_object_attributes {
 
-    /// A builder for [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6226,7 +6167,7 @@ pub mod batch_update_object_attributes {
             self.attribute_updates = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes)
+        /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
         pub fn build(self) -> crate::model::BatchUpdateObjectAttributes {
             crate::model::BatchUpdateObjectAttributes {
                 object_reference: self.object_reference,
@@ -6236,7 +6177,7 @@ pub mod batch_update_object_attributes {
     }
 }
 impl BatchUpdateObjectAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
     pub fn builder() -> crate::model::batch_update_object_attributes::Builder {
         crate::model::batch_update_object_attributes::Builder::default()
     }
@@ -6276,11 +6217,10 @@ impl std::fmt::Debug for BatchDetachObject {
         formatter.finish()
     }
 }
-/// See [`BatchDetachObject`](crate::model::BatchDetachObject)
+/// See [`BatchDetachObject`](crate::model::BatchDetachObject).
 pub mod batch_detach_object {
 
-    /// A builder for [`BatchDetachObject`](crate::model::BatchDetachObject)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetachObject`](crate::model::BatchDetachObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6324,7 +6264,7 @@ pub mod batch_detach_object {
             self.batch_reference_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetachObject`](crate::model::BatchDetachObject)
+        /// Consumes the builder and constructs a [`BatchDetachObject`](crate::model::BatchDetachObject).
         pub fn build(self) -> crate::model::BatchDetachObject {
             crate::model::BatchDetachObject {
                 parent_reference: self.parent_reference,
@@ -6335,7 +6275,7 @@ pub mod batch_detach_object {
     }
 }
 impl BatchDetachObject {
-    /// Creates a new builder-style object to manufacture [`BatchDetachObject`](crate::model::BatchDetachObject)
+    /// Creates a new builder-style object to manufacture [`BatchDetachObject`](crate::model::BatchDetachObject).
     pub fn builder() -> crate::model::batch_detach_object::Builder {
         crate::model::batch_detach_object::Builder::default()
     }
@@ -6375,11 +6315,10 @@ impl std::fmt::Debug for BatchAttachObject {
         formatter.finish()
     }
 }
-/// See [`BatchAttachObject`](crate::model::BatchAttachObject)
+/// See [`BatchAttachObject`](crate::model::BatchAttachObject).
 pub mod batch_attach_object {
 
-    /// A builder for [`BatchAttachObject`](crate::model::BatchAttachObject)
-    #[non_exhaustive]
+    /// A builder for [`BatchAttachObject`](crate::model::BatchAttachObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6423,7 +6362,7 @@ pub mod batch_attach_object {
             self.link_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAttachObject`](crate::model::BatchAttachObject)
+        /// Consumes the builder and constructs a [`BatchAttachObject`](crate::model::BatchAttachObject).
         pub fn build(self) -> crate::model::BatchAttachObject {
             crate::model::BatchAttachObject {
                 parent_reference: self.parent_reference,
@@ -6434,7 +6373,7 @@ pub mod batch_attach_object {
     }
 }
 impl BatchAttachObject {
-    /// Creates a new builder-style object to manufacture [`BatchAttachObject`](crate::model::BatchAttachObject)
+    /// Creates a new builder-style object to manufacture [`BatchAttachObject`](crate::model::BatchAttachObject).
     pub fn builder() -> crate::model::batch_attach_object::Builder {
         crate::model::batch_attach_object::Builder::default()
     }
@@ -6491,11 +6430,10 @@ impl std::fmt::Debug for BatchCreateObject {
         formatter.finish()
     }
 }
-/// See [`BatchCreateObject`](crate::model::BatchCreateObject)
+/// See [`BatchCreateObject`](crate::model::BatchCreateObject).
 pub mod batch_create_object {
 
-    /// A builder for [`BatchCreateObject`](crate::model::BatchCreateObject)
-    #[non_exhaustive]
+    /// A builder for [`BatchCreateObject`](crate::model::BatchCreateObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -6580,7 +6518,7 @@ pub mod batch_create_object {
             self.batch_reference_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchCreateObject`](crate::model::BatchCreateObject)
+        /// Consumes the builder and constructs a [`BatchCreateObject`](crate::model::BatchCreateObject).
         pub fn build(self) -> crate::model::BatchCreateObject {
             crate::model::BatchCreateObject {
                 schema_facet: self.schema_facet,
@@ -6593,7 +6531,7 @@ pub mod batch_create_object {
     }
 }
 impl BatchCreateObject {
-    /// Creates a new builder-style object to manufacture [`BatchCreateObject`](crate::model::BatchCreateObject)
+    /// Creates a new builder-style object to manufacture [`BatchCreateObject`](crate::model::BatchCreateObject).
     pub fn builder() -> crate::model::batch_create_object::Builder {
         crate::model::batch_create_object::Builder::default()
     }
@@ -6628,11 +6566,10 @@ impl std::fmt::Debug for BatchReadOperationResponse {
         formatter.finish()
     }
 }
-/// See [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse)
+/// See [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
 pub mod batch_read_operation_response {
 
-    /// A builder for [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_response:
@@ -6669,7 +6606,7 @@ pub mod batch_read_operation_response {
             self.exception_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse)
+        /// Consumes the builder and constructs a [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
         pub fn build(self) -> crate::model::BatchReadOperationResponse {
             crate::model::BatchReadOperationResponse {
                 successful_response: self.successful_response,
@@ -6679,7 +6616,7 @@ pub mod batch_read_operation_response {
     }
 }
 impl BatchReadOperationResponse {
-    /// Creates a new builder-style object to manufacture [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse)
+    /// Creates a new builder-style object to manufacture [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
     pub fn builder() -> crate::model::batch_read_operation_response::Builder {
         crate::model::batch_read_operation_response::Builder::default()
     }
@@ -6712,11 +6649,10 @@ impl std::fmt::Debug for BatchReadException {
         formatter.finish()
     }
 }
-/// See [`BatchReadException`](crate::model::BatchReadException)
+/// See [`BatchReadException`](crate::model::BatchReadException).
 pub mod batch_read_exception {
 
-    /// A builder for [`BatchReadException`](crate::model::BatchReadException)
-    #[non_exhaustive]
+    /// A builder for [`BatchReadException`](crate::model::BatchReadException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BatchReadExceptionType>,
@@ -6746,7 +6682,7 @@ pub mod batch_read_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchReadException`](crate::model::BatchReadException)
+        /// Consumes the builder and constructs a [`BatchReadException`](crate::model::BatchReadException).
         pub fn build(self) -> crate::model::BatchReadException {
             crate::model::BatchReadException {
                 r#type: self.r#type,
@@ -6756,7 +6692,7 @@ pub mod batch_read_exception {
     }
 }
 impl BatchReadException {
-    /// Creates a new builder-style object to manufacture [`BatchReadException`](crate::model::BatchReadException)
+    /// Creates a new builder-style object to manufacture [`BatchReadException`](crate::model::BatchReadException).
     pub fn builder() -> crate::model::batch_read_exception::Builder {
         crate::model::batch_read_exception::Builder::default()
     }
@@ -7020,11 +6956,10 @@ impl std::fmt::Debug for BatchReadSuccessfulResponse {
         formatter.finish()
     }
 }
-/// See [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse)
+/// See [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
 pub mod batch_read_successful_response {
 
-    /// A builder for [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_object_attributes:
@@ -7273,7 +7208,7 @@ pub mod batch_read_successful_response {
             self.list_object_parents = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse)
+        /// Consumes the builder and constructs a [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
         pub fn build(self) -> crate::model::BatchReadSuccessfulResponse {
             crate::model::BatchReadSuccessfulResponse {
                 list_object_attributes: self.list_object_attributes,
@@ -7295,7 +7230,7 @@ pub mod batch_read_successful_response {
     }
 }
 impl BatchReadSuccessfulResponse {
-    /// Creates a new builder-style object to manufacture [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse)
+    /// Creates a new builder-style object to manufacture [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
     pub fn builder() -> crate::model::batch_read_successful_response::Builder {
         crate::model::batch_read_successful_response::Builder::default()
     }
@@ -7331,11 +7266,10 @@ impl std::fmt::Debug for BatchListObjectParentsResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse)
+/// See [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
 pub mod batch_list_object_parents_response {
 
-    /// A builder for [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_links:
@@ -7377,7 +7311,7 @@ pub mod batch_list_object_parents_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse)
+        /// Consumes the builder and constructs a [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
         pub fn build(self) -> crate::model::BatchListObjectParentsResponse {
             crate::model::BatchListObjectParentsResponse {
                 parent_links: self.parent_links,
@@ -7387,7 +7321,7 @@ pub mod batch_list_object_parents_response {
     }
 }
 impl BatchListObjectParentsResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
     pub fn builder() -> crate::model::batch_list_object_parents_response::Builder {
         crate::model::batch_list_object_parents_response::Builder::default()
     }
@@ -7413,11 +7347,10 @@ impl std::fmt::Debug for BatchGetLinkAttributesResponse {
         formatter.finish()
     }
 }
-/// See [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse)
+/// See [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
 pub mod batch_get_link_attributes_response {
 
-    /// A builder for [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
@@ -7443,7 +7376,7 @@ pub mod batch_get_link_attributes_response {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse)
+        /// Consumes the builder and constructs a [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
         pub fn build(self) -> crate::model::BatchGetLinkAttributesResponse {
             crate::model::BatchGetLinkAttributesResponse {
                 attributes: self.attributes,
@@ -7452,7 +7385,7 @@ pub mod batch_get_link_attributes_response {
     }
 }
 impl BatchGetLinkAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse)
+    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
     pub fn builder() -> crate::model::batch_get_link_attributes_response::Builder {
         crate::model::batch_get_link_attributes_response::Builder::default()
     }
@@ -7485,11 +7418,10 @@ impl std::fmt::Debug for BatchListIncomingTypedLinksResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse)
+/// See [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
 pub mod batch_list_incoming_typed_links_response {
 
-    /// A builder for [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) link_specifiers:
@@ -7526,7 +7458,7 @@ pub mod batch_list_incoming_typed_links_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse)
+        /// Consumes the builder and constructs a [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
         pub fn build(self) -> crate::model::BatchListIncomingTypedLinksResponse {
             crate::model::BatchListIncomingTypedLinksResponse {
                 link_specifiers: self.link_specifiers,
@@ -7536,7 +7468,7 @@ pub mod batch_list_incoming_typed_links_response {
     }
 }
 impl BatchListIncomingTypedLinksResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
     pub fn builder() -> crate::model::batch_list_incoming_typed_links_response::Builder {
         crate::model::batch_list_incoming_typed_links_response::Builder::default()
     }
@@ -7571,11 +7503,10 @@ impl std::fmt::Debug for BatchListOutgoingTypedLinksResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse)
+/// See [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
 pub mod batch_list_outgoing_typed_links_response {
 
-    /// A builder for [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifiers:
@@ -7612,7 +7543,7 @@ pub mod batch_list_outgoing_typed_links_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse)
+        /// Consumes the builder and constructs a [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
         pub fn build(self) -> crate::model::BatchListOutgoingTypedLinksResponse {
             crate::model::BatchListOutgoingTypedLinksResponse {
                 typed_link_specifiers: self.typed_link_specifiers,
@@ -7622,7 +7553,7 @@ pub mod batch_list_outgoing_typed_links_response {
     }
 }
 impl BatchListOutgoingTypedLinksResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
     pub fn builder() -> crate::model::batch_list_outgoing_typed_links_response::Builder {
         crate::model::batch_list_outgoing_typed_links_response::Builder::default()
     }
@@ -7655,11 +7586,10 @@ impl std::fmt::Debug for BatchListIndexResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListIndexResponse`](crate::model::BatchListIndexResponse)
+/// See [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
 pub mod batch_list_index_response {
 
-    /// A builder for [`BatchListIndexResponse`](crate::model::BatchListIndexResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
@@ -7696,7 +7626,7 @@ pub mod batch_list_index_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListIndexResponse`](crate::model::BatchListIndexResponse)
+        /// Consumes the builder and constructs a [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
         pub fn build(self) -> crate::model::BatchListIndexResponse {
             crate::model::BatchListIndexResponse {
                 index_attachments: self.index_attachments,
@@ -7706,7 +7636,7 @@ pub mod batch_list_index_response {
     }
 }
 impl BatchListIndexResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListIndexResponse`](crate::model::BatchListIndexResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
     pub fn builder() -> crate::model::batch_list_index_response::Builder {
         crate::model::batch_list_index_response::Builder::default()
     }
@@ -7739,11 +7669,10 @@ impl std::fmt::Debug for BatchLookupPolicyResponse {
         formatter.finish()
     }
 }
-/// See [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse)
+/// See [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
 pub mod batch_lookup_policy_response {
 
-    /// A builder for [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_to_path_list:
@@ -7780,7 +7709,7 @@ pub mod batch_lookup_policy_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse)
+        /// Consumes the builder and constructs a [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
         pub fn build(self) -> crate::model::BatchLookupPolicyResponse {
             crate::model::BatchLookupPolicyResponse {
                 policy_to_path_list: self.policy_to_path_list,
@@ -7790,7 +7719,7 @@ pub mod batch_lookup_policy_response {
     }
 }
 impl BatchLookupPolicyResponse {
-    /// Creates a new builder-style object to manufacture [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse)
+    /// Creates a new builder-style object to manufacture [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
     pub fn builder() -> crate::model::batch_lookup_policy_response::Builder {
         crate::model::batch_lookup_policy_response::Builder::default()
     }
@@ -7823,11 +7752,10 @@ impl std::fmt::Debug for BatchListPolicyAttachmentsResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse)
+/// See [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
 pub mod batch_list_policy_attachments_response {
 
-    /// A builder for [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7863,7 +7791,7 @@ pub mod batch_list_policy_attachments_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse)
+        /// Consumes the builder and constructs a [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
         pub fn build(self) -> crate::model::BatchListPolicyAttachmentsResponse {
             crate::model::BatchListPolicyAttachmentsResponse {
                 object_identifiers: self.object_identifiers,
@@ -7873,7 +7801,7 @@ pub mod batch_list_policy_attachments_response {
     }
 }
 impl BatchListPolicyAttachmentsResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
     pub fn builder() -> crate::model::batch_list_policy_attachments_response::Builder {
         crate::model::batch_list_policy_attachments_response::Builder::default()
     }
@@ -7906,11 +7834,10 @@ impl std::fmt::Debug for BatchListObjectPoliciesResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse)
+/// See [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
 pub mod batch_list_object_policies_response {
 
-    /// A builder for [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7946,7 +7873,7 @@ pub mod batch_list_object_policies_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse)
+        /// Consumes the builder and constructs a [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
         pub fn build(self) -> crate::model::BatchListObjectPoliciesResponse {
             crate::model::BatchListObjectPoliciesResponse {
                 attached_policy_ids: self.attached_policy_ids,
@@ -7956,7 +7883,7 @@ pub mod batch_list_object_policies_response {
     }
 }
 impl BatchListObjectPoliciesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
     pub fn builder() -> crate::model::batch_list_object_policies_response::Builder {
         crate::model::batch_list_object_policies_response::Builder::default()
     }
@@ -7995,11 +7922,10 @@ impl std::fmt::Debug for BatchListObjectParentPathsResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse)
+/// See [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
 pub mod batch_list_object_parent_paths_response {
 
-    /// A builder for [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_to_object_identifiers_list:
@@ -8039,7 +7965,7 @@ pub mod batch_list_object_parent_paths_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse)
+        /// Consumes the builder and constructs a [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
         pub fn build(self) -> crate::model::BatchListObjectParentPathsResponse {
             crate::model::BatchListObjectParentPathsResponse {
                 path_to_object_identifiers_list: self.path_to_object_identifiers_list,
@@ -8049,7 +7975,7 @@ pub mod batch_list_object_parent_paths_response {
     }
 }
 impl BatchListObjectParentPathsResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
     pub fn builder() -> crate::model::batch_list_object_parent_paths_response::Builder {
         crate::model::batch_list_object_parent_paths_response::Builder::default()
     }
@@ -8082,11 +8008,10 @@ impl std::fmt::Debug for BatchListAttachedIndicesResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse)
+/// See [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
 pub mod batch_list_attached_indices_response {
 
-    /// A builder for [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_attachments:
@@ -8123,7 +8048,7 @@ pub mod batch_list_attached_indices_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse)
+        /// Consumes the builder and constructs a [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
         pub fn build(self) -> crate::model::BatchListAttachedIndicesResponse {
             crate::model::BatchListAttachedIndicesResponse {
                 index_attachments: self.index_attachments,
@@ -8133,7 +8058,7 @@ pub mod batch_list_attached_indices_response {
     }
 }
 impl BatchListAttachedIndicesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
     pub fn builder() -> crate::model::batch_list_attached_indices_response::Builder {
         crate::model::batch_list_attached_indices_response::Builder::default()
     }
@@ -8159,11 +8084,10 @@ impl std::fmt::Debug for BatchGetObjectAttributesResponse {
         formatter.finish()
     }
 }
-/// See [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse)
+/// See [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
 pub mod batch_get_object_attributes_response {
 
-    /// A builder for [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
@@ -8189,7 +8113,7 @@ pub mod batch_get_object_attributes_response {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse)
+        /// Consumes the builder and constructs a [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
         pub fn build(self) -> crate::model::BatchGetObjectAttributesResponse {
             crate::model::BatchGetObjectAttributesResponse {
                 attributes: self.attributes,
@@ -8198,7 +8122,7 @@ pub mod batch_get_object_attributes_response {
     }
 }
 impl BatchGetObjectAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse)
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
     pub fn builder() -> crate::model::batch_get_object_attributes_response::Builder {
         crate::model::batch_get_object_attributes_response::Builder::default()
     }
@@ -8231,11 +8155,10 @@ impl std::fmt::Debug for BatchGetObjectInformationResponse {
         formatter.finish()
     }
 }
-/// See [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse)
+/// See [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
 pub mod batch_get_object_information_response {
 
-    /// A builder for [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -8274,7 +8197,7 @@ pub mod batch_get_object_information_response {
             self.object_identifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse)
+        /// Consumes the builder and constructs a [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
         pub fn build(self) -> crate::model::BatchGetObjectInformationResponse {
             crate::model::BatchGetObjectInformationResponse {
                 schema_facets: self.schema_facets,
@@ -8284,7 +8207,7 @@ pub mod batch_get_object_information_response {
     }
 }
 impl BatchGetObjectInformationResponse {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse)
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
     pub fn builder() -> crate::model::batch_get_object_information_response::Builder {
         crate::model::batch_get_object_information_response::Builder::default()
     }
@@ -8321,11 +8244,10 @@ impl std::fmt::Debug for BatchListObjectChildrenResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse)
+/// See [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
 pub mod batch_list_object_children_response {
 
-    /// A builder for [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) children: std::option::Option<
@@ -8369,7 +8291,7 @@ pub mod batch_list_object_children_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse)
+        /// Consumes the builder and constructs a [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
         pub fn build(self) -> crate::model::BatchListObjectChildrenResponse {
             crate::model::BatchListObjectChildrenResponse {
                 children: self.children,
@@ -8379,7 +8301,7 @@ pub mod batch_list_object_children_response {
     }
 }
 impl BatchListObjectChildrenResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
     pub fn builder() -> crate::model::batch_list_object_children_response::Builder {
         crate::model::batch_list_object_children_response::Builder::default()
     }
@@ -8412,11 +8334,10 @@ impl std::fmt::Debug for BatchListObjectAttributesResponse {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse)
+/// See [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
 pub mod batch_list_object_attributes_response {
 
-    /// A builder for [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes:
@@ -8453,7 +8374,7 @@ pub mod batch_list_object_attributes_response {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse)
+        /// Consumes the builder and constructs a [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
         pub fn build(self) -> crate::model::BatchListObjectAttributesResponse {
             crate::model::BatchListObjectAttributesResponse {
                 attributes: self.attributes,
@@ -8463,7 +8384,7 @@ pub mod batch_list_object_attributes_response {
     }
 }
 impl BatchListObjectAttributesResponse {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
     pub fn builder() -> crate::model::batch_list_object_attributes_response::Builder {
         crate::model::batch_list_object_attributes_response::Builder::default()
     }
@@ -8604,11 +8525,10 @@ impl std::fmt::Debug for BatchReadOperation {
         formatter.finish()
     }
 }
-/// See [`BatchReadOperation`](crate::model::BatchReadOperation)
+/// See [`BatchReadOperation`](crate::model::BatchReadOperation).
 pub mod batch_read_operation {
 
-    /// A builder for [`BatchReadOperation`](crate::model::BatchReadOperation)
-    #[non_exhaustive]
+    /// A builder for [`BatchReadOperation`](crate::model::BatchReadOperation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) list_object_attributes:
@@ -8847,7 +8767,7 @@ pub mod batch_read_operation {
             self.get_link_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchReadOperation`](crate::model::BatchReadOperation)
+        /// Consumes the builder and constructs a [`BatchReadOperation`](crate::model::BatchReadOperation).
         pub fn build(self) -> crate::model::BatchReadOperation {
             crate::model::BatchReadOperation {
                 list_object_attributes: self.list_object_attributes,
@@ -8869,7 +8789,7 @@ pub mod batch_read_operation {
     }
 }
 impl BatchReadOperation {
-    /// Creates a new builder-style object to manufacture [`BatchReadOperation`](crate::model::BatchReadOperation)
+    /// Creates a new builder-style object to manufacture [`BatchReadOperation`](crate::model::BatchReadOperation).
     pub fn builder() -> crate::model::batch_read_operation::Builder {
         crate::model::batch_read_operation::Builder::default()
     }
@@ -8902,11 +8822,10 @@ impl std::fmt::Debug for BatchGetLinkAttributes {
         formatter.finish()
     }
 }
-/// See [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes)
+/// See [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
 pub mod batch_get_link_attributes {
 
-    /// A builder for [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -8945,7 +8864,7 @@ pub mod batch_get_link_attributes {
             self.attribute_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes)
+        /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
         pub fn build(self) -> crate::model::BatchGetLinkAttributes {
             crate::model::BatchGetLinkAttributes {
                 typed_link_specifier: self.typed_link_specifier,
@@ -8955,7 +8874,7 @@ pub mod batch_get_link_attributes {
     }
 }
 impl BatchGetLinkAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes)
+    /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
     pub fn builder() -> crate::model::batch_get_link_attributes::Builder {
         crate::model::batch_get_link_attributes::Builder::default()
     }
@@ -9014,11 +8933,10 @@ impl std::fmt::Debug for BatchListIncomingTypedLinks {
         formatter.finish()
     }
 }
-/// See [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks)
+/// See [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
 pub mod batch_list_incoming_typed_links {
 
-    /// A builder for [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks)
-    #[non_exhaustive]
+    /// A builder for [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9101,7 +9019,7 @@ pub mod batch_list_incoming_typed_links {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks)
+        /// Consumes the builder and constructs a [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
         pub fn build(self) -> crate::model::BatchListIncomingTypedLinks {
             crate::model::BatchListIncomingTypedLinks {
                 object_reference: self.object_reference,
@@ -9114,7 +9032,7 @@ pub mod batch_list_incoming_typed_links {
     }
 }
 impl BatchListIncomingTypedLinks {
-    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks)
+    /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
     pub fn builder() -> crate::model::batch_list_incoming_typed_links::Builder {
         crate::model::batch_list_incoming_typed_links::Builder::default()
     }
@@ -9173,11 +9091,10 @@ impl std::fmt::Debug for BatchListOutgoingTypedLinks {
         formatter.finish()
     }
 }
-/// See [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks)
+/// See [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
 pub mod batch_list_outgoing_typed_links {
 
-    /// A builder for [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks)
-    #[non_exhaustive]
+    /// A builder for [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9260,7 +9177,7 @@ pub mod batch_list_outgoing_typed_links {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks)
+        /// Consumes the builder and constructs a [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
         pub fn build(self) -> crate::model::BatchListOutgoingTypedLinks {
             crate::model::BatchListOutgoingTypedLinks {
                 object_reference: self.object_reference,
@@ -9273,7 +9190,7 @@ pub mod batch_list_outgoing_typed_links {
     }
 }
 impl BatchListOutgoingTypedLinks {
-    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks)
+    /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
     pub fn builder() -> crate::model::batch_list_outgoing_typed_links::Builder {
         crate::model::batch_list_outgoing_typed_links::Builder::default()
     }
@@ -9323,11 +9240,10 @@ impl std::fmt::Debug for BatchListIndex {
         formatter.finish()
     }
 }
-/// See [`BatchListIndex`](crate::model::BatchListIndex)
+/// See [`BatchListIndex`](crate::model::BatchListIndex).
 pub mod batch_list_index {
 
-    /// A builder for [`BatchListIndex`](crate::model::BatchListIndex)
-    #[non_exhaustive]
+    /// A builder for [`BatchListIndex`](crate::model::BatchListIndex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ranges_on_indexed_values:
@@ -9392,7 +9308,7 @@ pub mod batch_list_index {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListIndex`](crate::model::BatchListIndex)
+        /// Consumes the builder and constructs a [`BatchListIndex`](crate::model::BatchListIndex).
         pub fn build(self) -> crate::model::BatchListIndex {
             crate::model::BatchListIndex {
                 ranges_on_indexed_values: self.ranges_on_indexed_values,
@@ -9404,7 +9320,7 @@ pub mod batch_list_index {
     }
 }
 impl BatchListIndex {
-    /// Creates a new builder-style object to manufacture [`BatchListIndex`](crate::model::BatchListIndex)
+    /// Creates a new builder-style object to manufacture [`BatchListIndex`](crate::model::BatchListIndex).
     pub fn builder() -> crate::model::batch_list_index::Builder {
         crate::model::batch_list_index::Builder::default()
     }
@@ -9444,11 +9360,10 @@ impl std::fmt::Debug for BatchLookupPolicy {
         formatter.finish()
     }
 }
-/// See [`BatchLookupPolicy`](crate::model::BatchLookupPolicy)
+/// See [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
 pub mod batch_lookup_policy {
 
-    /// A builder for [`BatchLookupPolicy`](crate::model::BatchLookupPolicy)
-    #[non_exhaustive]
+    /// A builder for [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9489,7 +9404,7 @@ pub mod batch_lookup_policy {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchLookupPolicy`](crate::model::BatchLookupPolicy)
+        /// Consumes the builder and constructs a [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
         pub fn build(self) -> crate::model::BatchLookupPolicy {
             crate::model::BatchLookupPolicy {
                 object_reference: self.object_reference,
@@ -9500,7 +9415,7 @@ pub mod batch_lookup_policy {
     }
 }
 impl BatchLookupPolicy {
-    /// Creates a new builder-style object to manufacture [`BatchLookupPolicy`](crate::model::BatchLookupPolicy)
+    /// Creates a new builder-style object to manufacture [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
     pub fn builder() -> crate::model::batch_lookup_policy::Builder {
         crate::model::batch_lookup_policy::Builder::default()
     }
@@ -9540,11 +9455,10 @@ impl std::fmt::Debug for BatchListPolicyAttachments {
         formatter.finish()
     }
 }
-/// See [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments)
+/// See [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
 pub mod batch_list_policy_attachments {
 
-    /// A builder for [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments)
-    #[non_exhaustive]
+    /// A builder for [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9585,7 +9499,7 @@ pub mod batch_list_policy_attachments {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments)
+        /// Consumes the builder and constructs a [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
         pub fn build(self) -> crate::model::BatchListPolicyAttachments {
             crate::model::BatchListPolicyAttachments {
                 policy_reference: self.policy_reference,
@@ -9596,7 +9510,7 @@ pub mod batch_list_policy_attachments {
     }
 }
 impl BatchListPolicyAttachments {
-    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments)
+    /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
     pub fn builder() -> crate::model::batch_list_policy_attachments::Builder {
         crate::model::batch_list_policy_attachments::Builder::default()
     }
@@ -9636,11 +9550,10 @@ impl std::fmt::Debug for BatchListObjectPolicies {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies)
+/// See [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
 pub mod batch_list_object_policies {
 
-    /// A builder for [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9681,7 +9594,7 @@ pub mod batch_list_object_policies {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies)
+        /// Consumes the builder and constructs a [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
         pub fn build(self) -> crate::model::BatchListObjectPolicies {
             crate::model::BatchListObjectPolicies {
                 object_reference: self.object_reference,
@@ -9692,7 +9605,7 @@ pub mod batch_list_object_policies {
     }
 }
 impl BatchListObjectPolicies {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
     pub fn builder() -> crate::model::batch_list_object_policies::Builder {
         crate::model::batch_list_object_policies::Builder::default()
     }
@@ -9732,11 +9645,10 @@ impl std::fmt::Debug for BatchListObjectParents {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectParents`](crate::model::BatchListObjectParents)
+/// See [`BatchListObjectParents`](crate::model::BatchListObjectParents).
 pub mod batch_list_object_parents {
 
-    /// A builder for [`BatchListObjectParents`](crate::model::BatchListObjectParents)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectParents`](crate::model::BatchListObjectParents).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9777,7 +9689,7 @@ pub mod batch_list_object_parents {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectParents`](crate::model::BatchListObjectParents)
+        /// Consumes the builder and constructs a [`BatchListObjectParents`](crate::model::BatchListObjectParents).
         pub fn build(self) -> crate::model::BatchListObjectParents {
             crate::model::BatchListObjectParents {
                 object_reference: self.object_reference,
@@ -9788,7 +9700,7 @@ pub mod batch_list_object_parents {
     }
 }
 impl BatchListObjectParents {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParents`](crate::model::BatchListObjectParents)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParents`](crate::model::BatchListObjectParents).
     pub fn builder() -> crate::model::batch_list_object_parents::Builder {
         crate::model::batch_list_object_parents::Builder::default()
     }
@@ -9828,11 +9740,10 @@ impl std::fmt::Debug for BatchGetObjectAttributes {
         formatter.finish()
     }
 }
-/// See [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes)
+/// See [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
 pub mod batch_get_object_attributes {
 
-    /// A builder for [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9885,7 +9796,7 @@ pub mod batch_get_object_attributes {
             self.attribute_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes)
+        /// Consumes the builder and constructs a [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
         pub fn build(self) -> crate::model::BatchGetObjectAttributes {
             crate::model::BatchGetObjectAttributes {
                 object_reference: self.object_reference,
@@ -9896,7 +9807,7 @@ pub mod batch_get_object_attributes {
     }
 }
 impl BatchGetObjectAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes)
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
     pub fn builder() -> crate::model::batch_get_object_attributes::Builder {
         crate::model::batch_get_object_attributes::Builder::default()
     }
@@ -9922,11 +9833,10 @@ impl std::fmt::Debug for BatchGetObjectInformation {
         formatter.finish()
     }
 }
-/// See [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation)
+/// See [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
 pub mod batch_get_object_information {
 
-    /// A builder for [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9945,7 +9855,7 @@ pub mod batch_get_object_information {
             self.object_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation)
+        /// Consumes the builder and constructs a [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
         pub fn build(self) -> crate::model::BatchGetObjectInformation {
             crate::model::BatchGetObjectInformation {
                 object_reference: self.object_reference,
@@ -9954,7 +9864,7 @@ pub mod batch_get_object_information {
     }
 }
 impl BatchGetObjectInformation {
-    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation)
+    /// Creates a new builder-style object to manufacture [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
     pub fn builder() -> crate::model::batch_get_object_information::Builder {
         crate::model::batch_get_object_information::Builder::default()
     }
@@ -9994,11 +9904,10 @@ impl std::fmt::Debug for BatchListObjectParentPaths {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths)
+/// See [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
 pub mod batch_list_object_parent_paths {
 
-    /// A builder for [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -10039,7 +9948,7 @@ pub mod batch_list_object_parent_paths {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths)
+        /// Consumes the builder and constructs a [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
         pub fn build(self) -> crate::model::BatchListObjectParentPaths {
             crate::model::BatchListObjectParentPaths {
                 object_reference: self.object_reference,
@@ -10050,7 +9959,7 @@ pub mod batch_list_object_parent_paths {
     }
 }
 impl BatchListObjectParentPaths {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
     pub fn builder() -> crate::model::batch_list_object_parent_paths::Builder {
         crate::model::batch_list_object_parent_paths::Builder::default()
     }
@@ -10090,11 +9999,10 @@ impl std::fmt::Debug for BatchListAttachedIndices {
         formatter.finish()
     }
 }
-/// See [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices)
+/// See [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
 pub mod batch_list_attached_indices {
 
-    /// A builder for [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices)
-    #[non_exhaustive]
+    /// A builder for [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_reference: std::option::Option<crate::model::ObjectReference>,
@@ -10135,7 +10043,7 @@ pub mod batch_list_attached_indices {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices)
+        /// Consumes the builder and constructs a [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
         pub fn build(self) -> crate::model::BatchListAttachedIndices {
             crate::model::BatchListAttachedIndices {
                 target_reference: self.target_reference,
@@ -10146,7 +10054,7 @@ pub mod batch_list_attached_indices {
     }
 }
 impl BatchListAttachedIndices {
-    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices)
+    /// Creates a new builder-style object to manufacture [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
     pub fn builder() -> crate::model::batch_list_attached_indices::Builder {
         crate::model::batch_list_attached_indices::Builder::default()
     }
@@ -10186,11 +10094,10 @@ impl std::fmt::Debug for BatchListObjectChildren {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectChildren`](crate::model::BatchListObjectChildren)
+/// See [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
 pub mod batch_list_object_children {
 
-    /// A builder for [`BatchListObjectChildren`](crate::model::BatchListObjectChildren)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -10231,7 +10138,7 @@ pub mod batch_list_object_children {
             self.max_results = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectChildren`](crate::model::BatchListObjectChildren)
+        /// Consumes the builder and constructs a [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
         pub fn build(self) -> crate::model::BatchListObjectChildren {
             crate::model::BatchListObjectChildren {
                 object_reference: self.object_reference,
@@ -10242,7 +10149,7 @@ pub mod batch_list_object_children {
     }
 }
 impl BatchListObjectChildren {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectChildren`](crate::model::BatchListObjectChildren)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
     pub fn builder() -> crate::model::batch_list_object_children::Builder {
         crate::model::batch_list_object_children::Builder::default()
     }
@@ -10289,11 +10196,10 @@ impl std::fmt::Debug for BatchListObjectAttributes {
         formatter.finish()
     }
 }
-/// See [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes)
+/// See [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
 pub mod batch_list_object_attributes {
 
-    /// A builder for [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes)
-    #[non_exhaustive]
+    /// A builder for [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -10348,7 +10254,7 @@ pub mod batch_list_object_attributes {
             self.facet_filter = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes)
+        /// Consumes the builder and constructs a [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
         pub fn build(self) -> crate::model::BatchListObjectAttributes {
             crate::model::BatchListObjectAttributes {
                 object_reference: self.object_reference,
@@ -10360,7 +10266,7 @@ pub mod batch_list_object_attributes {
     }
 }
 impl BatchListObjectAttributes {
-    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes)
+    /// Creates a new builder-style object to manufacture [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
     pub fn builder() -> crate::model::batch_list_object_attributes::Builder {
         crate::model::batch_list_object_attributes::Builder::default()
     }

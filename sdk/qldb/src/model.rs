@@ -106,11 +106,10 @@ impl std::fmt::Debug for LedgerEncryptionDescription {
         formatter.finish()
     }
 }
-/// See [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
+/// See [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
 pub mod ledger_encryption_description {
 
-    /// A builder for [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
-    #[non_exhaustive]
+    /// A builder for [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
@@ -166,7 +165,7 @@ pub mod ledger_encryption_description {
             self.inaccessible_kms_key_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
+        /// Consumes the builder and constructs a [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
         pub fn build(self) -> crate::model::LedgerEncryptionDescription {
             crate::model::LedgerEncryptionDescription {
                 kms_key_arn: self.kms_key_arn,
@@ -177,7 +176,7 @@ pub mod ledger_encryption_description {
     }
 }
 impl LedgerEncryptionDescription {
-    /// Creates a new builder-style object to manufacture [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription)
+    /// Creates a new builder-style object to manufacture [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
     pub fn builder() -> crate::model::ledger_encryption_description::Builder {
         crate::model::ledger_encryption_description::Builder::default()
     }
@@ -334,11 +333,10 @@ impl std::fmt::Debug for KinesisConfiguration {
         formatter.finish()
     }
 }
-/// See [`KinesisConfiguration`](crate::model::KinesisConfiguration)
+/// See [`KinesisConfiguration`](crate::model::KinesisConfiguration).
 pub mod kinesis_configuration {
 
-    /// A builder for [`KinesisConfiguration`](crate::model::KinesisConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`KinesisConfiguration`](crate::model::KinesisConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
@@ -367,7 +365,7 @@ pub mod kinesis_configuration {
             self.aggregation_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::model::KinesisConfiguration)
+        /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::model::KinesisConfiguration).
         pub fn build(self) -> crate::model::KinesisConfiguration {
             crate::model::KinesisConfiguration {
                 stream_arn: self.stream_arn,
@@ -377,7 +375,7 @@ pub mod kinesis_configuration {
     }
 }
 impl KinesisConfiguration {
-    /// Creates a new builder-style object to manufacture [`KinesisConfiguration`](crate::model::KinesisConfiguration)
+    /// Creates a new builder-style object to manufacture [`KinesisConfiguration`](crate::model::KinesisConfiguration).
     pub fn builder() -> crate::model::kinesis_configuration::Builder {
         crate::model::kinesis_configuration::Builder::default()
     }
@@ -417,11 +415,10 @@ impl std::fmt::Debug for LedgerSummary {
         formatter.finish()
     }
 }
-/// See [`LedgerSummary`](crate::model::LedgerSummary)
+/// See [`LedgerSummary`](crate::model::LedgerSummary).
 pub mod ledger_summary {
 
-    /// A builder for [`LedgerSummary`](crate::model::LedgerSummary)
-    #[non_exhaustive]
+    /// A builder for [`LedgerSummary`](crate::model::LedgerSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -462,7 +459,7 @@ pub mod ledger_summary {
             self.creation_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`LedgerSummary`](crate::model::LedgerSummary)
+        /// Consumes the builder and constructs a [`LedgerSummary`](crate::model::LedgerSummary).
         pub fn build(self) -> crate::model::LedgerSummary {
             crate::model::LedgerSummary {
                 name: self.name,
@@ -473,7 +470,7 @@ pub mod ledger_summary {
     }
 }
 impl LedgerSummary {
-    /// Creates a new builder-style object to manufacture [`LedgerSummary`](crate::model::LedgerSummary)
+    /// Creates a new builder-style object to manufacture [`LedgerSummary`](crate::model::LedgerSummary).
     pub fn builder() -> crate::model::ledger_summary::Builder {
         crate::model::ledger_summary::Builder::default()
     }
@@ -565,11 +562,10 @@ impl std::fmt::Debug for JournalS3ExportDescription {
         formatter.finish()
     }
 }
-/// See [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription)
+/// See [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
 pub mod journal_s3_export_description {
 
-    /// A builder for [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription)
-    #[non_exhaustive]
+    /// A builder for [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
@@ -703,7 +699,7 @@ pub mod journal_s3_export_description {
             self.output_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription)
+        /// Consumes the builder and constructs a [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
         pub fn build(self) -> crate::model::JournalS3ExportDescription {
             crate::model::JournalS3ExportDescription {
                 ledger_name: self.ledger_name,
@@ -720,7 +716,7 @@ pub mod journal_s3_export_description {
     }
 }
 impl JournalS3ExportDescription {
-    /// Creates a new builder-style object to manufacture [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription)
+    /// Creates a new builder-style object to manufacture [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
     pub fn builder() -> crate::model::journal_s3_export_description::Builder {
         crate::model::journal_s3_export_description::Builder::default()
     }
@@ -837,11 +833,10 @@ impl std::fmt::Debug for S3ExportConfiguration {
         formatter.finish()
     }
 }
-/// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration)
+/// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
 pub mod s3_export_configuration {
 
-    /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -902,7 +897,7 @@ pub mod s3_export_configuration {
             self.encryption_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::model::S3ExportConfiguration)
+        /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
         pub fn build(self) -> crate::model::S3ExportConfiguration {
             crate::model::S3ExportConfiguration {
                 bucket: self.bucket,
@@ -913,7 +908,7 @@ pub mod s3_export_configuration {
     }
 }
 impl S3ExportConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration)
+    /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
     pub fn builder() -> crate::model::s3_export_configuration::Builder {
         crate::model::s3_export_configuration::Builder::default()
     }
@@ -954,11 +949,10 @@ impl std::fmt::Debug for S3EncryptionConfiguration {
         formatter.finish()
     }
 }
-/// See [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration)
+/// See [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
 pub mod s3_encryption_configuration {
 
-    /// A builder for [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_encryption_type:
@@ -998,7 +992,7 @@ pub mod s3_encryption_configuration {
             self.kms_key_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration)
+        /// Consumes the builder and constructs a [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
         pub fn build(self) -> crate::model::S3EncryptionConfiguration {
             crate::model::S3EncryptionConfiguration {
                 object_encryption_type: self.object_encryption_type,
@@ -1008,7 +1002,7 @@ pub mod s3_encryption_configuration {
     }
 }
 impl S3EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration)
+    /// Creates a new builder-style object to manufacture [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
     pub fn builder() -> crate::model::s3_encryption_configuration::Builder {
         crate::model::s3_encryption_configuration::Builder::default()
     }
@@ -1224,11 +1218,10 @@ impl std::fmt::Debug for JournalKinesisStreamDescription {
         formatter.finish()
     }
 }
-/// See [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription)
+/// See [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
 pub mod journal_kinesis_stream_description {
 
-    /// A builder for [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription)
-    #[non_exhaustive]
+    /// A builder for [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledger_name: std::option::Option<std::string::String>,
@@ -1372,7 +1365,7 @@ pub mod journal_kinesis_stream_description {
             self.stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription)
+        /// Consumes the builder and constructs a [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
         pub fn build(self) -> crate::model::JournalKinesisStreamDescription {
             crate::model::JournalKinesisStreamDescription {
                 ledger_name: self.ledger_name,
@@ -1391,7 +1384,7 @@ pub mod journal_kinesis_stream_description {
     }
 }
 impl JournalKinesisStreamDescription {
-    /// Creates a new builder-style object to manufacture [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription)
+    /// Creates a new builder-style object to manufacture [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
     pub fn builder() -> crate::model::journal_kinesis_stream_description::Builder {
         crate::model::journal_kinesis_stream_description::Builder::default()
     }
@@ -1539,11 +1532,10 @@ impl std::fmt::Debug for ValueHolder {
         formatter.finish()
     }
 }
-/// See [`ValueHolder`](crate::model::ValueHolder)
+/// See [`ValueHolder`](crate::model::ValueHolder).
 pub mod value_holder {
 
-    /// A builder for [`ValueHolder`](crate::model::ValueHolder)
-    #[non_exhaustive]
+    /// A builder for [`ValueHolder`](crate::model::ValueHolder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ion_text: std::option::Option<std::string::String>,
@@ -1559,7 +1551,7 @@ pub mod value_holder {
             self.ion_text = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValueHolder`](crate::model::ValueHolder)
+        /// Consumes the builder and constructs a [`ValueHolder`](crate::model::ValueHolder).
         pub fn build(self) -> crate::model::ValueHolder {
             crate::model::ValueHolder {
                 ion_text: self.ion_text,
@@ -1568,7 +1560,7 @@ pub mod value_holder {
     }
 }
 impl ValueHolder {
-    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder)
+    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
     pub fn builder() -> crate::model::value_holder::Builder {
         crate::model::value_holder::Builder::default()
     }

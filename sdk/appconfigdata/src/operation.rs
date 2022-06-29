@@ -10,7 +10,7 @@ pub struct GetLatestConfiguration {
     _private: (),
 }
 impl GetLatestConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetLatestConfigurationInput`](crate::input::GetLatestConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetLatestConfigurationInput`](crate::input::GetLatestConfigurationInput).
     pub fn builder() -> crate::input::get_latest_configuration_input::Builder {
         crate::input::get_latest_configuration_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct StartConfigurationSession {
     _private: (),
 }
 impl StartConfigurationSession {
-    /// Creates a new builder-style object to manufacture [`StartConfigurationSessionInput`](crate::input::StartConfigurationSessionInput)
+    /// Creates a new builder-style object to manufacture [`StartConfigurationSessionInput`](crate::input::StartConfigurationSessionInput).
     pub fn builder() -> crate::input::start_configuration_session_input::Builder {
         crate::input::start_configuration_session_input::Builder::default()
     }

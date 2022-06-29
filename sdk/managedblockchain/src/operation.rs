@@ -10,7 +10,7 @@ pub struct CreateMember {
     _private: (),
 }
 impl CreateMember {
-    /// Creates a new builder-style object to manufacture [`CreateMemberInput`](crate::input::CreateMemberInput)
+    /// Creates a new builder-style object to manufacture [`CreateMemberInput`](crate::input::CreateMemberInput).
     pub fn builder() -> crate::input::create_member_input::Builder {
         crate::input::create_member_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateNetwork {
     _private: (),
 }
 impl CreateNetwork {
-    /// Creates a new builder-style object to manufacture [`CreateNetworkInput`](crate::input::CreateNetworkInput)
+    /// Creates a new builder-style object to manufacture [`CreateNetworkInput`](crate::input::CreateNetworkInput).
     pub fn builder() -> crate::input::create_network_input::Builder {
         crate::input::create_network_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreateNode {
     _private: (),
 }
 impl CreateNode {
-    /// Creates a new builder-style object to manufacture [`CreateNodeInput`](crate::input::CreateNodeInput)
+    /// Creates a new builder-style object to manufacture [`CreateNodeInput`](crate::input::CreateNodeInput).
     pub fn builder() -> crate::input::create_node_input::Builder {
         crate::input::create_node_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct CreateProposal {
     _private: (),
 }
 impl CreateProposal {
-    /// Creates a new builder-style object to manufacture [`CreateProposalInput`](crate::input::CreateProposalInput)
+    /// Creates a new builder-style object to manufacture [`CreateProposalInput`](crate::input::CreateProposalInput).
     pub fn builder() -> crate::input::create_proposal_input::Builder {
         crate::input::create_proposal_input::Builder::default()
     }
@@ -138,7 +138,7 @@ pub struct DeleteMember {
     _private: (),
 }
 impl DeleteMember {
-    /// Creates a new builder-style object to manufacture [`DeleteMemberInput`](crate::input::DeleteMemberInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMemberInput`](crate::input::DeleteMemberInput).
     pub fn builder() -> crate::input::delete_member_input::Builder {
         crate::input::delete_member_input::Builder::default()
     }
@@ -170,7 +170,7 @@ pub struct DeleteNode {
     _private: (),
 }
 impl DeleteNode {
-    /// Creates a new builder-style object to manufacture [`DeleteNodeInput`](crate::input::DeleteNodeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNodeInput`](crate::input::DeleteNodeInput).
     pub fn builder() -> crate::input::delete_node_input::Builder {
         crate::input::delete_node_input::Builder::default()
     }
@@ -202,7 +202,7 @@ pub struct GetMember {
     _private: (),
 }
 impl GetMember {
-    /// Creates a new builder-style object to manufacture [`GetMemberInput`](crate::input::GetMemberInput)
+    /// Creates a new builder-style object to manufacture [`GetMemberInput`](crate::input::GetMemberInput).
     pub fn builder() -> crate::input::get_member_input::Builder {
         crate::input::get_member_input::Builder::default()
     }
@@ -233,7 +233,7 @@ pub struct GetNetwork {
     _private: (),
 }
 impl GetNetwork {
-    /// Creates a new builder-style object to manufacture [`GetNetworkInput`](crate::input::GetNetworkInput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkInput`](crate::input::GetNetworkInput).
     pub fn builder() -> crate::input::get_network_input::Builder {
         crate::input::get_network_input::Builder::default()
     }
@@ -265,7 +265,7 @@ pub struct GetNode {
     _private: (),
 }
 impl GetNode {
-    /// Creates a new builder-style object to manufacture [`GetNodeInput`](crate::input::GetNodeInput)
+    /// Creates a new builder-style object to manufacture [`GetNodeInput`](crate::input::GetNodeInput).
     pub fn builder() -> crate::input::get_node_input::Builder {
         crate::input::get_node_input::Builder::default()
     }
@@ -296,7 +296,7 @@ pub struct GetProposal {
     _private: (),
 }
 impl GetProposal {
-    /// Creates a new builder-style object to manufacture [`GetProposalInput`](crate::input::GetProposalInput)
+    /// Creates a new builder-style object to manufacture [`GetProposalInput`](crate::input::GetProposalInput).
     pub fn builder() -> crate::input::get_proposal_input::Builder {
         crate::input::get_proposal_input::Builder::default()
     }
@@ -328,7 +328,7 @@ pub struct ListInvitations {
     _private: (),
 }
 impl ListInvitations {
-    /// Creates a new builder-style object to manufacture [`ListInvitationsInput`](crate::input::ListInvitationsInput)
+    /// Creates a new builder-style object to manufacture [`ListInvitationsInput`](crate::input::ListInvitationsInput).
     pub fn builder() -> crate::input::list_invitations_input::Builder {
         crate::input::list_invitations_input::Builder::default()
     }
@@ -362,7 +362,7 @@ pub struct ListMembers {
     _private: (),
 }
 impl ListMembers {
-    /// Creates a new builder-style object to manufacture [`ListMembersInput`](crate::input::ListMembersInput)
+    /// Creates a new builder-style object to manufacture [`ListMembersInput`](crate::input::ListMembersInput).
     pub fn builder() -> crate::input::list_members_input::Builder {
         crate::input::list_members_input::Builder::default()
     }
@@ -394,7 +394,7 @@ pub struct ListNetworks {
     _private: (),
 }
 impl ListNetworks {
-    /// Creates a new builder-style object to manufacture [`ListNetworksInput`](crate::input::ListNetworksInput)
+    /// Creates a new builder-style object to manufacture [`ListNetworksInput`](crate::input::ListNetworksInput).
     pub fn builder() -> crate::input::list_networks_input::Builder {
         crate::input::list_networks_input::Builder::default()
     }
@@ -426,7 +426,7 @@ pub struct ListNodes {
     _private: (),
 }
 impl ListNodes {
-    /// Creates a new builder-style object to manufacture [`ListNodesInput`](crate::input::ListNodesInput)
+    /// Creates a new builder-style object to manufacture [`ListNodesInput`](crate::input::ListNodesInput).
     pub fn builder() -> crate::input::list_nodes_input::Builder {
         crate::input::list_nodes_input::Builder::default()
     }
@@ -457,7 +457,7 @@ pub struct ListProposals {
     _private: (),
 }
 impl ListProposals {
-    /// Creates a new builder-style object to manufacture [`ListProposalsInput`](crate::input::ListProposalsInput)
+    /// Creates a new builder-style object to manufacture [`ListProposalsInput`](crate::input::ListProposalsInput).
     pub fn builder() -> crate::input::list_proposals_input::Builder {
         crate::input::list_proposals_input::Builder::default()
     }
@@ -489,7 +489,7 @@ pub struct ListProposalVotes {
     _private: (),
 }
 impl ListProposalVotes {
-    /// Creates a new builder-style object to manufacture [`ListProposalVotesInput`](crate::input::ListProposalVotesInput)
+    /// Creates a new builder-style object to manufacture [`ListProposalVotesInput`](crate::input::ListProposalVotesInput).
     pub fn builder() -> crate::input::list_proposal_votes_input::Builder {
         crate::input::list_proposal_votes_input::Builder::default()
     }
@@ -523,7 +523,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -557,7 +557,7 @@ pub struct RejectInvitation {
     _private: (),
 }
 impl RejectInvitation {
-    /// Creates a new builder-style object to manufacture [`RejectInvitationInput`](crate::input::RejectInvitationInput)
+    /// Creates a new builder-style object to manufacture [`RejectInvitationInput`](crate::input::RejectInvitationInput).
     pub fn builder() -> crate::input::reject_invitation_input::Builder {
         crate::input::reject_invitation_input::Builder::default()
     }
@@ -591,7 +591,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -623,7 +623,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -655,7 +655,7 @@ pub struct UpdateMember {
     _private: (),
 }
 impl UpdateMember {
-    /// Creates a new builder-style object to manufacture [`UpdateMemberInput`](crate::input::UpdateMemberInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMemberInput`](crate::input::UpdateMemberInput).
     pub fn builder() -> crate::input::update_member_input::Builder {
         crate::input::update_member_input::Builder::default()
     }
@@ -687,7 +687,7 @@ pub struct UpdateNode {
     _private: (),
 }
 impl UpdateNode {
-    /// Creates a new builder-style object to manufacture [`UpdateNodeInput`](crate::input::UpdateNodeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNodeInput`](crate::input::UpdateNodeInput).
     pub fn builder() -> crate::input::update_node_input::Builder {
         crate::input::update_node_input::Builder::default()
     }
@@ -719,7 +719,7 @@ pub struct VoteOnProposal {
     _private: (),
 }
 impl VoteOnProposal {
-    /// Creates a new builder-style object to manufacture [`VoteOnProposalInput`](crate::input::VoteOnProposalInput)
+    /// Creates a new builder-style object to manufacture [`VoteOnProposalInput`](crate::input::VoteOnProposalInput).
     pub fn builder() -> crate::input::vote_on_proposal_input::Builder {
         crate::input::vote_on_proposal_input::Builder::default()
     }

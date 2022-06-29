@@ -10,7 +10,7 @@ pub struct AssociateAttributeGroup {
     _private: (),
 }
 impl AssociateAttributeGroup {
-    /// Creates a new builder-style object to manufacture [`AssociateAttributeGroupInput`](crate::input::AssociateAttributeGroupInput)
+    /// Creates a new builder-style object to manufacture [`AssociateAttributeGroupInput`](crate::input::AssociateAttributeGroupInput).
     pub fn builder() -> crate::input::associate_attribute_group_input::Builder {
         crate::input::associate_attribute_group_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateResource {
     _private: (),
 }
 impl AssociateResource {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceInput`](crate::input::AssociateResourceInput)
+    /// Creates a new builder-style object to manufacture [`AssociateResourceInput`](crate::input::AssociateResourceInput).
     pub fn builder() -> crate::input::associate_resource_input::Builder {
         crate::input::associate_resource_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateAttributeGroup {
     _private: (),
 }
 impl CreateAttributeGroup {
-    /// Creates a new builder-style object to manufacture [`CreateAttributeGroupInput`](crate::input::CreateAttributeGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateAttributeGroupInput`](crate::input::CreateAttributeGroupInput).
     pub fn builder() -> crate::input::create_attribute_group_input::Builder {
         crate::input::create_attribute_group_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteAttributeGroup {
     _private: (),
 }
 impl DeleteAttributeGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteAttributeGroupInput`](crate::input::DeleteAttributeGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAttributeGroupInput`](crate::input::DeleteAttributeGroupInput).
     pub fn builder() -> crate::input::delete_attribute_group_input::Builder {
         crate::input::delete_attribute_group_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DisassociateAttributeGroup {
     _private: (),
 }
 impl DisassociateAttributeGroup {
-    /// Creates a new builder-style object to manufacture [`DisassociateAttributeGroupInput`](crate::input::DisassociateAttributeGroupInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateAttributeGroupInput`](crate::input::DisassociateAttributeGroupInput).
     pub fn builder() -> crate::input::disassociate_attribute_group_input::Builder {
         crate::input::disassociate_attribute_group_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DisassociateResource {
     _private: (),
 }
 impl DisassociateResource {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceInput`](crate::input::DisassociateResourceInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceInput`](crate::input::DisassociateResourceInput).
     pub fn builder() -> crate::input::disassociate_resource_input::Builder {
         crate::input::disassociate_resource_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct GetApplication {
     _private: (),
 }
 impl GetApplication {
-    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput).
     pub fn builder() -> crate::input::get_application_input::Builder {
         crate::input::get_application_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct GetAssociatedResource {
     _private: (),
 }
 impl GetAssociatedResource {
-    /// Creates a new builder-style object to manufacture [`GetAssociatedResourceInput`](crate::input::GetAssociatedResourceInput)
+    /// Creates a new builder-style object to manufacture [`GetAssociatedResourceInput`](crate::input::GetAssociatedResourceInput).
     pub fn builder() -> crate::input::get_associated_resource_input::Builder {
         crate::input::get_associated_resource_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct GetAttributeGroup {
     _private: (),
 }
 impl GetAttributeGroup {
-    /// Creates a new builder-style object to manufacture [`GetAttributeGroupInput`](crate::input::GetAttributeGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetAttributeGroupInput`](crate::input::GetAttributeGroupInput).
     pub fn builder() -> crate::input::get_attribute_group_input::Builder {
         crate::input::get_attribute_group_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct ListApplications {
     _private: (),
 }
 impl ListApplications {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
     pub fn builder() -> crate::input::list_applications_input::Builder {
         crate::input::list_applications_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct ListAssociatedAttributeGroups {
     _private: (),
 }
 impl ListAssociatedAttributeGroups {
-    /// Creates a new builder-style object to manufacture [`ListAssociatedAttributeGroupsInput`](crate::input::ListAssociatedAttributeGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListAssociatedAttributeGroupsInput`](crate::input::ListAssociatedAttributeGroupsInput).
     pub fn builder() -> crate::input::list_associated_attribute_groups_input::Builder {
         crate::input::list_associated_attribute_groups_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct ListAssociatedResources {
     _private: (),
 }
 impl ListAssociatedResources {
-    /// Creates a new builder-style object to manufacture [`ListAssociatedResourcesInput`](crate::input::ListAssociatedResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListAssociatedResourcesInput`](crate::input::ListAssociatedResourcesInput).
     pub fn builder() -> crate::input::list_associated_resources_input::Builder {
         crate::input::list_associated_resources_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct ListAttributeGroups {
     _private: (),
 }
 impl ListAttributeGroups {
-    /// Creates a new builder-style object to manufacture [`ListAttributeGroupsInput`](crate::input::ListAttributeGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListAttributeGroupsInput`](crate::input::ListAttributeGroupsInput).
     pub fn builder() -> crate::input::list_attribute_groups_input::Builder {
         crate::input::list_attribute_groups_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct ListAttributeGroupsForApplication {
     _private: (),
 }
 impl ListAttributeGroupsForApplication {
-    /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput)
+    /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationInput`](crate::input::ListAttributeGroupsForApplicationInput).
     pub fn builder() -> crate::input::list_attribute_groups_for_application_input::Builder {
         crate::input::list_attribute_groups_for_application_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -586,7 +586,7 @@ pub struct SyncResource {
     _private: (),
 }
 impl SyncResource {
-    /// Creates a new builder-style object to manufacture [`SyncResourceInput`](crate::input::SyncResourceInput)
+    /// Creates a new builder-style object to manufacture [`SyncResourceInput`](crate::input::SyncResourceInput).
     pub fn builder() -> crate::input::sync_resource_input::Builder {
         crate::input::sync_resource_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -650,7 +650,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -682,7 +682,7 @@ pub struct UpdateApplication {
     _private: (),
 }
 impl UpdateApplication {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
     pub fn builder() -> crate::input::update_application_input::Builder {
         crate::input::update_application_input::Builder::default()
     }
@@ -716,7 +716,7 @@ pub struct UpdateAttributeGroup {
     _private: (),
 }
 impl UpdateAttributeGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateAttributeGroupInput`](crate::input::UpdateAttributeGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAttributeGroupInput`](crate::input::UpdateAttributeGroupInput).
     pub fn builder() -> crate::input::update_attribute_group_input::Builder {
         crate::input::update_attribute_group_input::Builder::default()
     }

@@ -69,11 +69,10 @@ impl std::fmt::Debug for DeviceDescription {
         formatter.finish()
     }
 }
-/// See [`DeviceDescription`](crate::model::DeviceDescription)
+/// See [`DeviceDescription`](crate::model::DeviceDescription).
 pub mod device_description {
 
-    /// A builder for [`DeviceDescription`](crate::model::DeviceDescription)
-    #[non_exhaustive]
+    /// A builder for [`DeviceDescription`](crate::model::DeviceDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -189,7 +188,7 @@ pub mod device_description {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceDescription`](crate::model::DeviceDescription)
+        /// Consumes the builder and constructs a [`DeviceDescription`](crate::model::DeviceDescription).
         pub fn build(self) -> crate::model::DeviceDescription {
             crate::model::DeviceDescription {
                 arn: self.arn,
@@ -204,7 +203,7 @@ pub mod device_description {
     }
 }
 impl DeviceDescription {
-    /// Creates a new builder-style object to manufacture [`DeviceDescription`](crate::model::DeviceDescription)
+    /// Creates a new builder-style object to manufacture [`DeviceDescription`](crate::model::DeviceDescription).
     pub fn builder() -> crate::model::device_description::Builder {
         crate::model::device_description::Builder::default()
     }
@@ -237,11 +236,10 @@ impl std::fmt::Debug for DeviceEvent {
         formatter.finish()
     }
 }
-/// See [`DeviceEvent`](crate::model::DeviceEvent)
+/// See [`DeviceEvent`](crate::model::DeviceEvent).
 pub mod device_event {
 
-    /// A builder for [`DeviceEvent`](crate::model::DeviceEvent)
-    #[non_exhaustive]
+    /// A builder for [`DeviceEvent`](crate::model::DeviceEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device: std::option::Option<crate::model::Device>,
@@ -268,7 +266,7 @@ pub mod device_event {
             self.std_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceEvent`](crate::model::DeviceEvent)
+        /// Consumes the builder and constructs a [`DeviceEvent`](crate::model::DeviceEvent).
         pub fn build(self) -> crate::model::DeviceEvent {
             crate::model::DeviceEvent {
                 device: self.device,
@@ -278,7 +276,7 @@ pub mod device_event {
     }
 }
 impl DeviceEvent {
-    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent)
+    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
     pub fn builder() -> crate::model::device_event::Builder {
         crate::model::device_event::Builder::default()
     }
@@ -318,11 +316,10 @@ impl std::fmt::Debug for Device {
         formatter.finish()
     }
 }
-/// See [`Device`](crate::model::Device)
+/// See [`Device`](crate::model::Device).
 pub mod device {
 
-    /// A builder for [`Device`](crate::model::Device)
-    #[non_exhaustive]
+    /// A builder for [`Device`](crate::model::Device).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::Attributes>,
@@ -363,7 +360,7 @@ pub mod device {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`Device`](crate::model::Device)
+        /// Consumes the builder and constructs a [`Device`](crate::model::Device).
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
                 attributes: self.attributes,
@@ -374,7 +371,7 @@ pub mod device {
     }
 }
 impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device)
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
     pub fn builder() -> crate::model::device::Builder {
         crate::model::device::Builder::default()
     }
@@ -390,22 +387,21 @@ impl std::fmt::Debug for Attributes {
         formatter.finish()
     }
 }
-/// See [`Attributes`](crate::model::Attributes)
+/// See [`Attributes`](crate::model::Attributes).
 pub mod attributes {
 
-    /// A builder for [`Attributes`](crate::model::Attributes)
-    #[non_exhaustive]
+    /// A builder for [`Attributes`](crate::model::Attributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`Attributes`](crate::model::Attributes)
+        /// Consumes the builder and constructs a [`Attributes`](crate::model::Attributes).
         pub fn build(self) -> crate::model::Attributes {
             crate::model::Attributes {}
         }
     }
 }
 impl Attributes {
-    /// Creates a new builder-style object to manufacture [`Attributes`](crate::model::Attributes)
+    /// Creates a new builder-style object to manufacture [`Attributes`](crate::model::Attributes).
     pub fn builder() -> crate::model::attributes::Builder {
         crate::model::attributes::Builder::default()
     }
@@ -438,11 +434,10 @@ impl std::fmt::Debug for DeviceMethod {
         formatter.finish()
     }
 }
-/// See [`DeviceMethod`](crate::model::DeviceMethod)
+/// See [`DeviceMethod`](crate::model::DeviceMethod).
 pub mod device_method {
 
-    /// A builder for [`DeviceMethod`](crate::model::DeviceMethod)
-    #[non_exhaustive]
+    /// A builder for [`DeviceMethod`](crate::model::DeviceMethod).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type: std::option::Option<std::string::String>,
@@ -469,7 +464,7 @@ pub mod device_method {
             self.method_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceMethod`](crate::model::DeviceMethod)
+        /// Consumes the builder and constructs a [`DeviceMethod`](crate::model::DeviceMethod).
         pub fn build(self) -> crate::model::DeviceMethod {
             crate::model::DeviceMethod {
                 device_type: self.device_type,
@@ -479,7 +474,7 @@ pub mod device_method {
     }
 }
 impl DeviceMethod {
-    /// Creates a new builder-style object to manufacture [`DeviceMethod`](crate::model::DeviceMethod)
+    /// Creates a new builder-style object to manufacture [`DeviceMethod`](crate::model::DeviceMethod).
     pub fn builder() -> crate::model::device_method::Builder {
         crate::model::device_method::Builder::default()
     }

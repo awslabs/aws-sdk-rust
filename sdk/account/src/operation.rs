@@ -10,7 +10,7 @@ pub struct DeleteAlternateContact {
     _private: (),
 }
 impl DeleteAlternateContact {
-    /// Creates a new builder-style object to manufacture [`DeleteAlternateContactInput`](crate::input::DeleteAlternateContactInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAlternateContactInput`](crate::input::DeleteAlternateContactInput).
     pub fn builder() -> crate::input::delete_alternate_contact_input::Builder {
         crate::input::delete_alternate_contact_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetAlternateContact {
     _private: (),
 }
 impl GetAlternateContact {
-    /// Creates a new builder-style object to manufacture [`GetAlternateContactInput`](crate::input::GetAlternateContactInput)
+    /// Creates a new builder-style object to manufacture [`GetAlternateContactInput`](crate::input::GetAlternateContactInput).
     pub fn builder() -> crate::input::get_alternate_contact_input::Builder {
         crate::input::get_alternate_contact_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct PutAlternateContact {
     _private: (),
 }
 impl PutAlternateContact {
-    /// Creates a new builder-style object to manufacture [`PutAlternateContactInput`](crate::input::PutAlternateContactInput)
+    /// Creates a new builder-style object to manufacture [`PutAlternateContactInput`](crate::input::PutAlternateContactInput).
     pub fn builder() -> crate::input::put_alternate_contact_input::Builder {
         crate::input::put_alternate_contact_input::Builder::default()
     }

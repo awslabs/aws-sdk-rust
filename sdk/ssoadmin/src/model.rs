@@ -23,11 +23,10 @@ impl std::fmt::Debug for InstanceAccessControlAttributeConfiguration {
         formatter.finish()
     }
 }
-/// See [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration)
+/// See [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
 pub mod instance_access_control_attribute_configuration {
 
-    /// A builder for [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_control_attributes:
@@ -56,7 +55,7 @@ pub mod instance_access_control_attribute_configuration {
             self.access_control_attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration)
+        /// Consumes the builder and constructs a [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
         pub fn build(self) -> crate::model::InstanceAccessControlAttributeConfiguration {
             crate::model::InstanceAccessControlAttributeConfiguration {
                 access_control_attributes: self.access_control_attributes,
@@ -65,7 +64,7 @@ pub mod instance_access_control_attribute_configuration {
     }
 }
 impl InstanceAccessControlAttributeConfiguration {
-    /// Creates a new builder-style object to manufacture [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration)
+    /// Creates a new builder-style object to manufacture [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
     pub fn builder() -> crate::model::instance_access_control_attribute_configuration::Builder {
         crate::model::instance_access_control_attribute_configuration::Builder::default()
     }
@@ -98,11 +97,10 @@ impl std::fmt::Debug for AccessControlAttribute {
         formatter.finish()
     }
 }
-/// See [`AccessControlAttribute`](crate::model::AccessControlAttribute)
+/// See [`AccessControlAttribute`](crate::model::AccessControlAttribute).
 pub mod access_control_attribute {
 
-    /// A builder for [`AccessControlAttribute`](crate::model::AccessControlAttribute)
-    #[non_exhaustive]
+    /// A builder for [`AccessControlAttribute`](crate::model::AccessControlAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -132,7 +130,7 @@ pub mod access_control_attribute {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessControlAttribute`](crate::model::AccessControlAttribute)
+        /// Consumes the builder and constructs a [`AccessControlAttribute`](crate::model::AccessControlAttribute).
         pub fn build(self) -> crate::model::AccessControlAttribute {
             crate::model::AccessControlAttribute {
                 key: self.key,
@@ -142,7 +140,7 @@ pub mod access_control_attribute {
     }
 }
 impl AccessControlAttribute {
-    /// Creates a new builder-style object to manufacture [`AccessControlAttribute`](crate::model::AccessControlAttribute)
+    /// Creates a new builder-style object to manufacture [`AccessControlAttribute`](crate::model::AccessControlAttribute).
     pub fn builder() -> crate::model::access_control_attribute::Builder {
         crate::model::access_control_attribute::Builder::default()
     }
@@ -168,11 +166,10 @@ impl std::fmt::Debug for AccessControlAttributeValue {
         formatter.finish()
     }
 }
-/// See [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue)
+/// See [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
 pub mod access_control_attribute_value {
 
-    /// A builder for [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue)
-    #[non_exhaustive]
+    /// A builder for [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -197,7 +194,7 @@ pub mod access_control_attribute_value {
             self.source = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue)
+        /// Consumes the builder and constructs a [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
         pub fn build(self) -> crate::model::AccessControlAttributeValue {
             crate::model::AccessControlAttributeValue {
                 source: self.source,
@@ -206,7 +203,7 @@ pub mod access_control_attribute_value {
     }
 }
 impl AccessControlAttributeValue {
-    /// Creates a new builder-style object to manufacture [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue)
+    /// Creates a new builder-style object to manufacture [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
     pub fn builder() -> crate::model::access_control_attribute_value::Builder {
         crate::model::access_control_attribute_value::Builder::default()
     }
@@ -239,11 +236,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -270,7 +266,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -280,7 +276,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -341,11 +337,10 @@ impl std::fmt::Debug for PermissionSetProvisioningStatus {
         formatter.finish()
     }
 }
-/// See [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus)
+/// See [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
 pub mod permission_set_provisioning_status {
 
-    /// A builder for [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus)
-    #[non_exhaustive]
+    /// A builder for [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -428,7 +423,7 @@ pub mod permission_set_provisioning_status {
             self.created_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus)
+        /// Consumes the builder and constructs a [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
         pub fn build(self) -> crate::model::PermissionSetProvisioningStatus {
             crate::model::PermissionSetProvisioningStatus {
                 status: self.status,
@@ -442,7 +437,7 @@ pub mod permission_set_provisioning_status {
     }
 }
 impl PermissionSetProvisioningStatus {
-    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus)
+    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
     pub fn builder() -> crate::model::permission_set_provisioning_status::Builder {
         crate::model::permission_set_provisioning_status::Builder::default()
     }
@@ -662,11 +657,10 @@ impl std::fmt::Debug for PermissionSetProvisioningStatusMetadata {
         formatter.finish()
     }
 }
-/// See [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata)
+/// See [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
 pub mod permission_set_provisioning_status_metadata {
 
-    /// A builder for [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata)
-    #[non_exhaustive]
+    /// A builder for [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -710,7 +704,7 @@ pub mod permission_set_provisioning_status_metadata {
             self.created_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata)
+        /// Consumes the builder and constructs a [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
         pub fn build(self) -> crate::model::PermissionSetProvisioningStatusMetadata {
             crate::model::PermissionSetProvisioningStatusMetadata {
                 status: self.status,
@@ -721,7 +715,7 @@ pub mod permission_set_provisioning_status_metadata {
     }
 }
 impl PermissionSetProvisioningStatusMetadata {
-    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata)
+    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
     pub fn builder() -> crate::model::permission_set_provisioning_status_metadata::Builder {
         crate::model::permission_set_provisioning_status_metadata::Builder::default()
     }
@@ -747,11 +741,10 @@ impl std::fmt::Debug for OperationStatusFilter {
         formatter.finish()
     }
 }
-/// See [`OperationStatusFilter`](crate::model::OperationStatusFilter)
+/// See [`OperationStatusFilter`](crate::model::OperationStatusFilter).
 pub mod operation_status_filter {
 
-    /// A builder for [`OperationStatusFilter`](crate::model::OperationStatusFilter)
-    #[non_exhaustive]
+    /// A builder for [`OperationStatusFilter`](crate::model::OperationStatusFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -770,7 +763,7 @@ pub mod operation_status_filter {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationStatusFilter`](crate::model::OperationStatusFilter)
+        /// Consumes the builder and constructs a [`OperationStatusFilter`](crate::model::OperationStatusFilter).
         pub fn build(self) -> crate::model::OperationStatusFilter {
             crate::model::OperationStatusFilter {
                 status: self.status,
@@ -779,7 +772,7 @@ pub mod operation_status_filter {
     }
 }
 impl OperationStatusFilter {
-    /// Creates a new builder-style object to manufacture [`OperationStatusFilter`](crate::model::OperationStatusFilter)
+    /// Creates a new builder-style object to manufacture [`OperationStatusFilter`](crate::model::OperationStatusFilter).
     pub fn builder() -> crate::model::operation_status_filter::Builder {
         crate::model::operation_status_filter::Builder::default()
     }
@@ -812,11 +805,10 @@ impl std::fmt::Debug for AttachedManagedPolicy {
         formatter.finish()
     }
 }
-/// See [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy)
+/// See [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
 pub mod attached_managed_policy {
 
-    /// A builder for [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -843,7 +835,7 @@ pub mod attached_managed_policy {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy)
+        /// Consumes the builder and constructs a [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
         pub fn build(self) -> crate::model::AttachedManagedPolicy {
             crate::model::AttachedManagedPolicy {
                 name: self.name,
@@ -853,7 +845,7 @@ pub mod attached_managed_policy {
     }
 }
 impl AttachedManagedPolicy {
-    /// Creates a new builder-style object to manufacture [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy)
+    /// Creates a new builder-style object to manufacture [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
     pub fn builder() -> crate::model::attached_managed_policy::Builder {
         crate::model::attached_managed_policy::Builder::default()
     }
@@ -886,11 +878,10 @@ impl std::fmt::Debug for InstanceMetadata {
         formatter.finish()
     }
 }
-/// See [`InstanceMetadata`](crate::model::InstanceMetadata)
+/// See [`InstanceMetadata`](crate::model::InstanceMetadata).
 pub mod instance_metadata {
 
-    /// A builder for [`InstanceMetadata`](crate::model::InstanceMetadata)
-    #[non_exhaustive]
+    /// A builder for [`InstanceMetadata`](crate::model::InstanceMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_arn: std::option::Option<std::string::String>,
@@ -920,7 +911,7 @@ pub mod instance_metadata {
             self.identity_store_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceMetadata`](crate::model::InstanceMetadata)
+        /// Consumes the builder and constructs a [`InstanceMetadata`](crate::model::InstanceMetadata).
         pub fn build(self) -> crate::model::InstanceMetadata {
             crate::model::InstanceMetadata {
                 instance_arn: self.instance_arn,
@@ -930,7 +921,7 @@ pub mod instance_metadata {
     }
 }
 impl InstanceMetadata {
-    /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::model::InstanceMetadata)
+    /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::model::InstanceMetadata).
     pub fn builder() -> crate::model::instance_metadata::Builder {
         crate::model::instance_metadata::Builder::default()
     }
@@ -979,11 +970,10 @@ impl std::fmt::Debug for AccountAssignment {
         formatter.finish()
     }
 }
-/// See [`AccountAssignment`](crate::model::AccountAssignment)
+/// See [`AccountAssignment`](crate::model::AccountAssignment).
 pub mod account_assignment {
 
-    /// A builder for [`AccountAssignment`](crate::model::AccountAssignment)
-    #[non_exhaustive]
+    /// A builder for [`AccountAssignment`](crate::model::AccountAssignment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1038,7 +1028,7 @@ pub mod account_assignment {
             self.principal_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountAssignment`](crate::model::AccountAssignment)
+        /// Consumes the builder and constructs a [`AccountAssignment`](crate::model::AccountAssignment).
         pub fn build(self) -> crate::model::AccountAssignment {
             crate::model::AccountAssignment {
                 account_id: self.account_id,
@@ -1050,7 +1040,7 @@ pub mod account_assignment {
     }
 }
 impl AccountAssignment {
-    /// Creates a new builder-style object to manufacture [`AccountAssignment`](crate::model::AccountAssignment)
+    /// Creates a new builder-style object to manufacture [`AccountAssignment`](crate::model::AccountAssignment).
     pub fn builder() -> crate::model::account_assignment::Builder {
         crate::model::account_assignment::Builder::default()
     }
@@ -1145,11 +1135,10 @@ impl std::fmt::Debug for AccountAssignmentOperationStatusMetadata {
         formatter.finish()
     }
 }
-/// See [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata)
+/// See [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
 pub mod account_assignment_operation_status_metadata {
 
-    /// A builder for [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata)
-    #[non_exhaustive]
+    /// A builder for [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -1193,7 +1182,7 @@ pub mod account_assignment_operation_status_metadata {
             self.created_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata)
+        /// Consumes the builder and constructs a [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
         pub fn build(self) -> crate::model::AccountAssignmentOperationStatusMetadata {
             crate::model::AccountAssignmentOperationStatusMetadata {
                 status: self.status,
@@ -1204,7 +1193,7 @@ pub mod account_assignment_operation_status_metadata {
     }
 }
 impl AccountAssignmentOperationStatusMetadata {
-    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata)
+    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
     pub fn builder() -> crate::model::account_assignment_operation_status_metadata::Builder {
         crate::model::account_assignment_operation_status_metadata::Builder::default()
     }
@@ -1265,11 +1254,10 @@ impl std::fmt::Debug for PermissionSet {
         formatter.finish()
     }
 }
-/// See [`PermissionSet`](crate::model::PermissionSet)
+/// See [`PermissionSet`](crate::model::PermissionSet).
 pub mod permission_set {
 
-    /// A builder for [`PermissionSet`](crate::model::PermissionSet)
-    #[non_exhaustive]
+    /// A builder for [`PermissionSet`](crate::model::PermissionSet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1349,7 +1337,7 @@ pub mod permission_set {
             self.relay_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`PermissionSet`](crate::model::PermissionSet)
+        /// Consumes the builder and constructs a [`PermissionSet`](crate::model::PermissionSet).
         pub fn build(self) -> crate::model::PermissionSet {
             crate::model::PermissionSet {
                 name: self.name,
@@ -1363,7 +1351,7 @@ pub mod permission_set {
     }
 }
 impl PermissionSet {
-    /// Creates a new builder-style object to manufacture [`PermissionSet`](crate::model::PermissionSet)
+    /// Creates a new builder-style object to manufacture [`PermissionSet`](crate::model::PermissionSet).
     pub fn builder() -> crate::model::permission_set::Builder {
         crate::model::permission_set::Builder::default()
     }
@@ -1508,11 +1496,10 @@ impl std::fmt::Debug for AccountAssignmentOperationStatus {
         formatter.finish()
     }
 }
-/// See [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus)
+/// See [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
 pub mod account_assignment_operation_status {
 
-    /// A builder for [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus)
-    #[non_exhaustive]
+    /// A builder for [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::StatusValues>,
@@ -1634,7 +1621,7 @@ pub mod account_assignment_operation_status {
             self.created_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus)
+        /// Consumes the builder and constructs a [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
         pub fn build(self) -> crate::model::AccountAssignmentOperationStatus {
             crate::model::AccountAssignmentOperationStatus {
                 status: self.status,
@@ -1651,7 +1638,7 @@ pub mod account_assignment_operation_status {
     }
 }
 impl AccountAssignmentOperationStatus {
-    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus)
+    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
     pub fn builder() -> crate::model::account_assignment_operation_status::Builder {
         crate::model::account_assignment_operation_status::Builder::default()
     }

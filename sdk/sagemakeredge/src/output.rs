@@ -9,22 +9,21 @@ impl std::fmt::Debug for SendHeartbeatOutput {
         formatter.finish()
     }
 }
-/// See [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
+/// See [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
 pub mod send_heartbeat_output {
 
-    /// A builder for [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
+        /// Consumes the builder and constructs a [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
         pub fn build(self) -> crate::output::SendHeartbeatOutput {
             crate::output::SendHeartbeatOutput {}
         }
     }
 }
 impl SendHeartbeatOutput {
-    /// Creates a new builder-style object to manufacture [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
+    /// Creates a new builder-style object to manufacture [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
     pub fn builder() -> crate::output::send_heartbeat_output::Builder {
         crate::output::send_heartbeat_output::Builder::default()
     }
@@ -57,11 +56,10 @@ impl std::fmt::Debug for GetDeviceRegistrationOutput {
         formatter.finish()
     }
 }
-/// See [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput)
+/// See [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
 pub mod get_device_registration_output {
 
-    /// A builder for [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_registration: std::option::Option<std::string::String>,
@@ -91,7 +89,7 @@ pub mod get_device_registration_output {
             self.cache_ttl = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput)
+        /// Consumes the builder and constructs a [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
         pub fn build(self) -> crate::output::GetDeviceRegistrationOutput {
             crate::output::GetDeviceRegistrationOutput {
                 device_registration: self.device_registration,
@@ -101,7 +99,7 @@ pub mod get_device_registration_output {
     }
 }
 impl GetDeviceRegistrationOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput)
+    /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
     pub fn builder() -> crate::output::get_device_registration_output::Builder {
         crate::output::get_device_registration_output::Builder::default()
     }

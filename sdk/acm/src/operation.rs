@@ -10,7 +10,7 @@ pub struct AddTagsToCertificate {
     _private: (),
 }
 impl AddTagsToCertificate {
-    /// Creates a new builder-style object to manufacture [`AddTagsToCertificateInput`](crate::input::AddTagsToCertificateInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToCertificateInput`](crate::input::AddTagsToCertificateInput).
     pub fn builder() -> crate::input::add_tags_to_certificate_input::Builder {
         crate::input::add_tags_to_certificate_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteCertificate {
     _private: (),
 }
 impl DeleteCertificate {
-    /// Creates a new builder-style object to manufacture [`DeleteCertificateInput`](crate::input::DeleteCertificateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCertificateInput`](crate::input::DeleteCertificateInput).
     pub fn builder() -> crate::input::delete_certificate_input::Builder {
         crate::input::delete_certificate_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeCertificate {
     _private: (),
 }
 impl DescribeCertificate {
-    /// Creates a new builder-style object to manufacture [`DescribeCertificateInput`](crate::input::DescribeCertificateInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCertificateInput`](crate::input::DescribeCertificateInput).
     pub fn builder() -> crate::input::describe_certificate_input::Builder {
         crate::input::describe_certificate_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ExportCertificate {
     _private: (),
 }
 impl ExportCertificate {
-    /// Creates a new builder-style object to manufacture [`ExportCertificateInput`](crate::input::ExportCertificateInput)
+    /// Creates a new builder-style object to manufacture [`ExportCertificateInput`](crate::input::ExportCertificateInput).
     pub fn builder() -> crate::input::export_certificate_input::Builder {
         crate::input::export_certificate_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct GetAccountConfiguration {
     _private: (),
 }
 impl GetAccountConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetAccountConfigurationInput`](crate::input::GetAccountConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetAccountConfigurationInput`](crate::input::GetAccountConfigurationInput).
     pub fn builder() -> crate::input::get_account_configuration_input::Builder {
         crate::input::get_account_configuration_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct GetCertificate {
     _private: (),
 }
 impl GetCertificate {
-    /// Creates a new builder-style object to manufacture [`GetCertificateInput`](crate::input::GetCertificateInput)
+    /// Creates a new builder-style object to manufacture [`GetCertificateInput`](crate::input::GetCertificateInput).
     pub fn builder() -> crate::input::get_certificate_input::Builder {
         crate::input::get_certificate_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct ImportCertificate {
     _private: (),
 }
 impl ImportCertificate {
-    /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::input::ImportCertificateInput)
+    /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::input::ImportCertificateInput).
     pub fn builder() -> crate::input::import_certificate_input::Builder {
         crate::input::import_certificate_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct ListCertificates {
     _private: (),
 }
 impl ListCertificates {
-    /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::input::ListCertificatesInput)
+    /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::input::ListCertificatesInput).
     pub fn builder() -> crate::input::list_certificates_input::Builder {
         crate::input::list_certificates_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct ListTagsForCertificate {
     _private: (),
 }
 impl ListTagsForCertificate {
-    /// Creates a new builder-style object to manufacture [`ListTagsForCertificateInput`](crate::input::ListTagsForCertificateInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForCertificateInput`](crate::input::ListTagsForCertificateInput).
     pub fn builder() -> crate::input::list_tags_for_certificate_input::Builder {
         crate::input::list_tags_for_certificate_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct PutAccountConfiguration {
     _private: (),
 }
 impl PutAccountConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutAccountConfigurationInput`](crate::input::PutAccountConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutAccountConfigurationInput`](crate::input::PutAccountConfigurationInput).
     pub fn builder() -> crate::input::put_account_configuration_input::Builder {
         crate::input::put_account_configuration_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct RemoveTagsFromCertificate {
     _private: (),
 }
 impl RemoveTagsFromCertificate {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromCertificateInput`](crate::input::RemoveTagsFromCertificateInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromCertificateInput`](crate::input::RemoveTagsFromCertificateInput).
     pub fn builder() -> crate::input::remove_tags_from_certificate_input::Builder {
         crate::input::remove_tags_from_certificate_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct RenewCertificate {
     _private: (),
 }
 impl RenewCertificate {
-    /// Creates a new builder-style object to manufacture [`RenewCertificateInput`](crate::input::RenewCertificateInput)
+    /// Creates a new builder-style object to manufacture [`RenewCertificateInput`](crate::input::RenewCertificateInput).
     pub fn builder() -> crate::input::renew_certificate_input::Builder {
         crate::input::renew_certificate_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct RequestCertificate {
     _private: (),
 }
 impl RequestCertificate {
-    /// Creates a new builder-style object to manufacture [`RequestCertificateInput`](crate::input::RequestCertificateInput)
+    /// Creates a new builder-style object to manufacture [`RequestCertificateInput`](crate::input::RequestCertificateInput).
     pub fn builder() -> crate::input::request_certificate_input::Builder {
         crate::input::request_certificate_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct ResendValidationEmail {
     _private: (),
 }
 impl ResendValidationEmail {
-    /// Creates a new builder-style object to manufacture [`ResendValidationEmailInput`](crate::input::ResendValidationEmailInput)
+    /// Creates a new builder-style object to manufacture [`ResendValidationEmailInput`](crate::input::ResendValidationEmailInput).
     pub fn builder() -> crate::input::resend_validation_email_input::Builder {
         crate::input::resend_validation_email_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct UpdateCertificateOptions {
     _private: (),
 }
 impl UpdateCertificateOptions {
-    /// Creates a new builder-style object to manufacture [`UpdateCertificateOptionsInput`](crate::input::UpdateCertificateOptionsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCertificateOptionsInput`](crate::input::UpdateCertificateOptionsInput).
     pub fn builder() -> crate::input::update_certificate_options_input::Builder {
         crate::input::update_certificate_options_input::Builder::default()
     }

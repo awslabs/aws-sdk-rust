@@ -10,7 +10,7 @@ pub struct CreateEnvironment {
     _private: (),
 }
 impl CreateEnvironment {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
     pub fn builder() -> crate::input::create_environment_input::Builder {
         crate::input::create_environment_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteEnvironment {
     _private: (),
 }
 impl DeleteEnvironment {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
     pub fn builder() -> crate::input::delete_environment_input::Builder {
         crate::input::delete_environment_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetEnvironment {
     _private: (),
 }
 impl GetEnvironment {
-    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
     pub fn builder() -> crate::input::get_environment_input::Builder {
         crate::input::get_environment_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct ListEnvironments {
     _private: (),
 }
 impl ListEnvironments {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
     pub fn builder() -> crate::input::list_environments_input::Builder {
         crate::input::list_environments_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct UpdateEnvironment {
     _private: (),
 }
 impl UpdateEnvironment {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
     pub fn builder() -> crate::input::update_environment_input::Builder {
         crate::input::update_environment_input::Builder::default()
     }

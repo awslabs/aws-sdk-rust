@@ -10,7 +10,7 @@ pub struct ConvertRecoveryPointToSnapshot {
     _private: (),
 }
 impl ConvertRecoveryPointToSnapshot {
-    /// Creates a new builder-style object to manufacture [`ConvertRecoveryPointToSnapshotInput`](crate::input::ConvertRecoveryPointToSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`ConvertRecoveryPointToSnapshotInput`](crate::input::ConvertRecoveryPointToSnapshotInput).
     pub fn builder() -> crate::input::convert_recovery_point_to_snapshot_input::Builder {
         crate::input::convert_recovery_point_to_snapshot_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateEndpointAccess {
     _private: (),
 }
 impl CreateEndpointAccess {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointAccessInput`](crate::input::CreateEndpointAccessInput)
+    /// Creates a new builder-style object to manufacture [`CreateEndpointAccessInput`](crate::input::CreateEndpointAccessInput).
     pub fn builder() -> crate::input::create_endpoint_access_input::Builder {
         crate::input::create_endpoint_access_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateNamespace {
     _private: (),
 }
 impl CreateNamespace {
-    /// Creates a new builder-style object to manufacture [`CreateNamespaceInput`](crate::input::CreateNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`CreateNamespaceInput`](crate::input::CreateNamespaceInput).
     pub fn builder() -> crate::input::create_namespace_input::Builder {
         crate::input::create_namespace_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateSnapshot {
     _private: (),
 }
 impl CreateSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
     pub fn builder() -> crate::input::create_snapshot_input::Builder {
         crate::input::create_snapshot_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateUsageLimit {
     _private: (),
 }
 impl CreateUsageLimit {
-    /// Creates a new builder-style object to manufacture [`CreateUsageLimitInput`](crate::input::CreateUsageLimitInput)
+    /// Creates a new builder-style object to manufacture [`CreateUsageLimitInput`](crate::input::CreateUsageLimitInput).
     pub fn builder() -> crate::input::create_usage_limit_input::Builder {
         crate::input::create_usage_limit_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateWorkgroup {
     _private: (),
 }
 impl CreateWorkgroup {
-    /// Creates a new builder-style object to manufacture [`CreateWorkgroupInput`](crate::input::CreateWorkgroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkgroupInput`](crate::input::CreateWorkgroupInput).
     pub fn builder() -> crate::input::create_workgroup_input::Builder {
         crate::input::create_workgroup_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DeleteEndpointAccess {
     _private: (),
 }
 impl DeleteEndpointAccess {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointAccessInput`](crate::input::DeleteEndpointAccessInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointAccessInput`](crate::input::DeleteEndpointAccessInput).
     pub fn builder() -> crate::input::delete_endpoint_access_input::Builder {
         crate::input::delete_endpoint_access_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct DeleteNamespace {
     _private: (),
 }
 impl DeleteNamespace {
-    /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput).
     pub fn builder() -> crate::input::delete_namespace_input::Builder {
         crate::input::delete_namespace_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct DeleteSnapshot {
     _private: (),
 }
 impl DeleteSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
     pub fn builder() -> crate::input::delete_snapshot_input::Builder {
         crate::input::delete_snapshot_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DeleteUsageLimit {
     _private: (),
 }
 impl DeleteUsageLimit {
-    /// Creates a new builder-style object to manufacture [`DeleteUsageLimitInput`](crate::input::DeleteUsageLimitInput)
+    /// Creates a new builder-style object to manufacture [`DeleteUsageLimitInput`](crate::input::DeleteUsageLimitInput).
     pub fn builder() -> crate::input::delete_usage_limit_input::Builder {
         crate::input::delete_usage_limit_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DeleteWorkgroup {
     _private: (),
 }
 impl DeleteWorkgroup {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkgroupInput`](crate::input::DeleteWorkgroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorkgroupInput`](crate::input::DeleteWorkgroupInput).
     pub fn builder() -> crate::input::delete_workgroup_input::Builder {
         crate::input::delete_workgroup_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct GetCredentials {
     _private: (),
 }
 impl GetCredentials {
-    /// Creates a new builder-style object to manufacture [`GetCredentialsInput`](crate::input::GetCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`GetCredentialsInput`](crate::input::GetCredentialsInput).
     pub fn builder() -> crate::input::get_credentials_input::Builder {
         crate::input::get_credentials_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct GetEndpointAccess {
     _private: (),
 }
 impl GetEndpointAccess {
-    /// Creates a new builder-style object to manufacture [`GetEndpointAccessInput`](crate::input::GetEndpointAccessInput)
+    /// Creates a new builder-style object to manufacture [`GetEndpointAccessInput`](crate::input::GetEndpointAccessInput).
     pub fn builder() -> crate::input::get_endpoint_access_input::Builder {
         crate::input::get_endpoint_access_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct GetNamespace {
     _private: (),
 }
 impl GetNamespace {
-    /// Creates a new builder-style object to manufacture [`GetNamespaceInput`](crate::input::GetNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`GetNamespaceInput`](crate::input::GetNamespaceInput).
     pub fn builder() -> crate::input::get_namespace_input::Builder {
         crate::input::get_namespace_input::Builder::default()
     }
@@ -512,7 +512,7 @@ pub struct GetRecoveryPoint {
     _private: (),
 }
 impl GetRecoveryPoint {
-    /// Creates a new builder-style object to manufacture [`GetRecoveryPointInput`](crate::input::GetRecoveryPointInput)
+    /// Creates a new builder-style object to manufacture [`GetRecoveryPointInput`](crate::input::GetRecoveryPointInput).
     pub fn builder() -> crate::input::get_recovery_point_input::Builder {
         crate::input::get_recovery_point_input::Builder::default()
     }
@@ -546,7 +546,7 @@ pub struct GetResourcePolicy {
     _private: (),
 }
 impl GetResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
         crate::input::get_resource_policy_input::Builder::default()
     }
@@ -580,7 +580,7 @@ pub struct GetSnapshot {
     _private: (),
 }
 impl GetSnapshot {
-    /// Creates a new builder-style object to manufacture [`GetSnapshotInput`](crate::input::GetSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`GetSnapshotInput`](crate::input::GetSnapshotInput).
     pub fn builder() -> crate::input::get_snapshot_input::Builder {
         crate::input::get_snapshot_input::Builder::default()
     }
@@ -612,7 +612,7 @@ pub struct GetUsageLimit {
     _private: (),
 }
 impl GetUsageLimit {
-    /// Creates a new builder-style object to manufacture [`GetUsageLimitInput`](crate::input::GetUsageLimitInput)
+    /// Creates a new builder-style object to manufacture [`GetUsageLimitInput`](crate::input::GetUsageLimitInput).
     pub fn builder() -> crate::input::get_usage_limit_input::Builder {
         crate::input::get_usage_limit_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct GetWorkgroup {
     _private: (),
 }
 impl GetWorkgroup {
-    /// Creates a new builder-style object to manufacture [`GetWorkgroupInput`](crate::input::GetWorkgroupInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkgroupInput`](crate::input::GetWorkgroupInput).
     pub fn builder() -> crate::input::get_workgroup_input::Builder {
         crate::input::get_workgroup_input::Builder::default()
     }
@@ -676,7 +676,7 @@ pub struct ListEndpointAccess {
     _private: (),
 }
 impl ListEndpointAccess {
-    /// Creates a new builder-style object to manufacture [`ListEndpointAccessInput`](crate::input::ListEndpointAccessInput)
+    /// Creates a new builder-style object to manufacture [`ListEndpointAccessInput`](crate::input::ListEndpointAccessInput).
     pub fn builder() -> crate::input::list_endpoint_access_input::Builder {
         crate::input::list_endpoint_access_input::Builder::default()
     }
@@ -710,7 +710,7 @@ pub struct ListNamespaces {
     _private: (),
 }
 impl ListNamespaces {
-    /// Creates a new builder-style object to manufacture [`ListNamespacesInput`](crate::input::ListNamespacesInput)
+    /// Creates a new builder-style object to manufacture [`ListNamespacesInput`](crate::input::ListNamespacesInput).
     pub fn builder() -> crate::input::list_namespaces_input::Builder {
         crate::input::list_namespaces_input::Builder::default()
     }
@@ -742,7 +742,7 @@ pub struct ListRecoveryPoints {
     _private: (),
 }
 impl ListRecoveryPoints {
-    /// Creates a new builder-style object to manufacture [`ListRecoveryPointsInput`](crate::input::ListRecoveryPointsInput)
+    /// Creates a new builder-style object to manufacture [`ListRecoveryPointsInput`](crate::input::ListRecoveryPointsInput).
     pub fn builder() -> crate::input::list_recovery_points_input::Builder {
         crate::input::list_recovery_points_input::Builder::default()
     }
@@ -776,7 +776,7 @@ pub struct ListSnapshots {
     _private: (),
 }
 impl ListSnapshots {
-    /// Creates a new builder-style object to manufacture [`ListSnapshotsInput`](crate::input::ListSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
     pub fn builder() -> crate::input::list_snapshots_input::Builder {
         crate::input::list_snapshots_input::Builder::default()
     }
@@ -808,7 +808,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -842,7 +842,7 @@ pub struct ListUsageLimits {
     _private: (),
 }
 impl ListUsageLimits {
-    /// Creates a new builder-style object to manufacture [`ListUsageLimitsInput`](crate::input::ListUsageLimitsInput)
+    /// Creates a new builder-style object to manufacture [`ListUsageLimitsInput`](crate::input::ListUsageLimitsInput).
     pub fn builder() -> crate::input::list_usage_limits_input::Builder {
         crate::input::list_usage_limits_input::Builder::default()
     }
@@ -876,7 +876,7 @@ pub struct ListWorkgroups {
     _private: (),
 }
 impl ListWorkgroups {
-    /// Creates a new builder-style object to manufacture [`ListWorkgroupsInput`](crate::input::ListWorkgroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkgroupsInput`](crate::input::ListWorkgroupsInput).
     pub fn builder() -> crate::input::list_workgroups_input::Builder {
         crate::input::list_workgroups_input::Builder::default()
     }
@@ -908,7 +908,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -942,7 +942,7 @@ pub struct RestoreFromRecoveryPoint {
     _private: (),
 }
 impl RestoreFromRecoveryPoint {
-    /// Creates a new builder-style object to manufacture [`RestoreFromRecoveryPointInput`](crate::input::RestoreFromRecoveryPointInput)
+    /// Creates a new builder-style object to manufacture [`RestoreFromRecoveryPointInput`](crate::input::RestoreFromRecoveryPointInput).
     pub fn builder() -> crate::input::restore_from_recovery_point_input::Builder {
         crate::input::restore_from_recovery_point_input::Builder::default()
     }
@@ -976,7 +976,7 @@ pub struct RestoreFromSnapshot {
     _private: (),
 }
 impl RestoreFromSnapshot {
-    /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::input::RestoreFromSnapshotInput).
     pub fn builder() -> crate::input::restore_from_snapshot_input::Builder {
         crate::input::restore_from_snapshot_input::Builder::default()
     }
@@ -1010,7 +1010,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1042,7 +1042,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1074,7 +1074,7 @@ pub struct UpdateEndpointAccess {
     _private: (),
 }
 impl UpdateEndpointAccess {
-    /// Creates a new builder-style object to manufacture [`UpdateEndpointAccessInput`](crate::input::UpdateEndpointAccessInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointAccessInput`](crate::input::UpdateEndpointAccessInput).
     pub fn builder() -> crate::input::update_endpoint_access_input::Builder {
         crate::input::update_endpoint_access_input::Builder::default()
     }
@@ -1108,7 +1108,7 @@ pub struct UpdateNamespace {
     _private: (),
 }
 impl UpdateNamespace {
-    /// Creates a new builder-style object to manufacture [`UpdateNamespaceInput`](crate::input::UpdateNamespaceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNamespaceInput`](crate::input::UpdateNamespaceInput).
     pub fn builder() -> crate::input::update_namespace_input::Builder {
         crate::input::update_namespace_input::Builder::default()
     }
@@ -1142,7 +1142,7 @@ pub struct UpdateSnapshot {
     _private: (),
 }
 impl UpdateSnapshot {
-    /// Creates a new builder-style object to manufacture [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
     pub fn builder() -> crate::input::update_snapshot_input::Builder {
         crate::input::update_snapshot_input::Builder::default()
     }
@@ -1174,7 +1174,7 @@ pub struct UpdateUsageLimit {
     _private: (),
 }
 impl UpdateUsageLimit {
-    /// Creates a new builder-style object to manufacture [`UpdateUsageLimitInput`](crate::input::UpdateUsageLimitInput)
+    /// Creates a new builder-style object to manufacture [`UpdateUsageLimitInput`](crate::input::UpdateUsageLimitInput).
     pub fn builder() -> crate::input::update_usage_limit_input::Builder {
         crate::input::update_usage_limit_input::Builder::default()
     }
@@ -1208,7 +1208,7 @@ pub struct UpdateWorkgroup {
     _private: (),
 }
 impl UpdateWorkgroup {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkgroupInput`](crate::input::UpdateWorkgroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWorkgroupInput`](crate::input::UpdateWorkgroupInput).
     pub fn builder() -> crate::input::update_workgroup_input::Builder {
         crate::input::update_workgroup_input::Builder::default()
     }

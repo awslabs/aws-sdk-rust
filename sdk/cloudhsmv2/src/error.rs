@@ -2149,11 +2149,10 @@ impl std::fmt::Display for CloudHsmTagException {
     }
 }
 impl std::error::Error for CloudHsmTagException {}
-/// See [`CloudHsmTagException`](crate::error::CloudHsmTagException)
+/// See [`CloudHsmTagException`](crate::error::CloudHsmTagException).
 pub mod cloud_hsm_tag_exception {
 
-    /// A builder for [`CloudHsmTagException`](crate::error::CloudHsmTagException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmTagException`](crate::error::CloudHsmTagException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2169,7 +2168,7 @@ pub mod cloud_hsm_tag_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmTagException`](crate::error::CloudHsmTagException)
+        /// Consumes the builder and constructs a [`CloudHsmTagException`](crate::error::CloudHsmTagException).
         pub fn build(self) -> crate::error::CloudHsmTagException {
             crate::error::CloudHsmTagException {
                 message: self.message,
@@ -2178,7 +2177,7 @@ pub mod cloud_hsm_tag_exception {
     }
 }
 impl CloudHsmTagException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmTagException`](crate::error::CloudHsmTagException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmTagException`](crate::error::CloudHsmTagException).
     pub fn builder() -> crate::error::cloud_hsm_tag_exception::Builder {
         crate::error::cloud_hsm_tag_exception::Builder::default()
     }
@@ -2214,11 +2213,10 @@ impl std::fmt::Display for CloudHsmServiceException {
     }
 }
 impl std::error::Error for CloudHsmServiceException {}
-/// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
+/// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
 pub mod cloud_hsm_service_exception {
 
-    /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2234,7 +2232,7 @@ pub mod cloud_hsm_service_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
+        /// Consumes the builder and constructs a [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
         pub fn build(self) -> crate::error::CloudHsmServiceException {
             crate::error::CloudHsmServiceException {
                 message: self.message,
@@ -2243,7 +2241,7 @@ pub mod cloud_hsm_service_exception {
     }
 }
 impl CloudHsmServiceException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmServiceException`](crate::error::CloudHsmServiceException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
     pub fn builder() -> crate::error::cloud_hsm_service_exception::Builder {
         crate::error::cloud_hsm_service_exception::Builder::default()
     }
@@ -2279,11 +2277,10 @@ impl std::fmt::Display for CloudHsmResourceNotFoundException {
     }
 }
 impl std::error::Error for CloudHsmResourceNotFoundException {}
-/// See [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException)
+/// See [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
 pub mod cloud_hsm_resource_not_found_exception {
 
-    /// A builder for [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2299,7 +2296,7 @@ pub mod cloud_hsm_resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException)
+        /// Consumes the builder and constructs a [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
         pub fn build(self) -> crate::error::CloudHsmResourceNotFoundException {
             crate::error::CloudHsmResourceNotFoundException {
                 message: self.message,
@@ -2308,7 +2305,7 @@ pub mod cloud_hsm_resource_not_found_exception {
     }
 }
 impl CloudHsmResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
     pub fn builder() -> crate::error::cloud_hsm_resource_not_found_exception::Builder {
         crate::error::cloud_hsm_resource_not_found_exception::Builder::default()
     }
@@ -2344,11 +2341,10 @@ impl std::fmt::Display for CloudHsmInvalidRequestException {
     }
 }
 impl std::error::Error for CloudHsmInvalidRequestException {}
-/// See [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException)
+/// See [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
 pub mod cloud_hsm_invalid_request_exception {
 
-    /// A builder for [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2364,7 +2360,7 @@ pub mod cloud_hsm_invalid_request_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException)
+        /// Consumes the builder and constructs a [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
         pub fn build(self) -> crate::error::CloudHsmInvalidRequestException {
             crate::error::CloudHsmInvalidRequestException {
                 message: self.message,
@@ -2373,7 +2369,7 @@ pub mod cloud_hsm_invalid_request_exception {
     }
 }
 impl CloudHsmInvalidRequestException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
     pub fn builder() -> crate::error::cloud_hsm_invalid_request_exception::Builder {
         crate::error::cloud_hsm_invalid_request_exception::Builder::default()
     }
@@ -2409,11 +2405,10 @@ impl std::fmt::Display for CloudHsmInternalFailureException {
     }
 }
 impl std::error::Error for CloudHsmInternalFailureException {}
-/// See [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException)
+/// See [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
 pub mod cloud_hsm_internal_failure_exception {
 
-    /// A builder for [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2429,7 +2424,7 @@ pub mod cloud_hsm_internal_failure_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException)
+        /// Consumes the builder and constructs a [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
         pub fn build(self) -> crate::error::CloudHsmInternalFailureException {
             crate::error::CloudHsmInternalFailureException {
                 message: self.message,
@@ -2438,7 +2433,7 @@ pub mod cloud_hsm_internal_failure_exception {
     }
 }
 impl CloudHsmInternalFailureException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
     pub fn builder() -> crate::error::cloud_hsm_internal_failure_exception::Builder {
         crate::error::cloud_hsm_internal_failure_exception::Builder::default()
     }
@@ -2474,11 +2469,10 @@ impl std::fmt::Display for CloudHsmAccessDeniedException {
     }
 }
 impl std::error::Error for CloudHsmAccessDeniedException {}
-/// See [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException)
+/// See [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
 pub mod cloud_hsm_access_denied_exception {
 
-    /// A builder for [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException)
-    #[non_exhaustive]
+    /// A builder for [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2494,7 +2488,7 @@ pub mod cloud_hsm_access_denied_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException)
+        /// Consumes the builder and constructs a [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
         pub fn build(self) -> crate::error::CloudHsmAccessDeniedException {
             crate::error::CloudHsmAccessDeniedException {
                 message: self.message,
@@ -2503,7 +2497,7 @@ pub mod cloud_hsm_access_denied_exception {
     }
 }
 impl CloudHsmAccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException)
+    /// Creates a new builder-style object to manufacture [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
     pub fn builder() -> crate::error::cloud_hsm_access_denied_exception::Builder {
         crate::error::cloud_hsm_access_denied_exception::Builder::default()
     }

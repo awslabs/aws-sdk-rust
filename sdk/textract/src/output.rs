@@ -19,11 +19,10 @@ impl std::fmt::Debug for StartExpenseAnalysisOutput {
         formatter.finish()
     }
 }
-/// See [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
+/// See [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
 pub mod start_expense_analysis_output {
 
-    /// A builder for [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod start_expense_analysis_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
+        /// Consumes the builder and constructs a [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
         pub fn build(self) -> crate::output::StartExpenseAnalysisOutput {
             crate::output::StartExpenseAnalysisOutput {
                 job_id: self.job_id,
@@ -48,7 +47,7 @@ pub mod start_expense_analysis_output {
     }
 }
 impl StartExpenseAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput)
+    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
     pub fn builder() -> crate::output::start_expense_analysis_output::Builder {
         crate::output::start_expense_analysis_output::Builder::default()
     }
@@ -74,11 +73,10 @@ impl std::fmt::Debug for StartDocumentTextDetectionOutput {
         formatter.finish()
     }
 }
-/// See [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput)
+/// See [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
 pub mod start_document_text_detection_output {
 
-    /// A builder for [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -94,7 +92,7 @@ pub mod start_document_text_detection_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput)
+        /// Consumes the builder and constructs a [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
         pub fn build(self) -> crate::output::StartDocumentTextDetectionOutput {
             crate::output::StartDocumentTextDetectionOutput {
                 job_id: self.job_id,
@@ -103,7 +101,7 @@ pub mod start_document_text_detection_output {
     }
 }
 impl StartDocumentTextDetectionOutput {
-    /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput)
+    /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
     pub fn builder() -> crate::output::start_document_text_detection_output::Builder {
         crate::output::start_document_text_detection_output::Builder::default()
     }
@@ -129,11 +127,10 @@ impl std::fmt::Debug for StartDocumentAnalysisOutput {
         formatter.finish()
     }
 }
-/// See [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput)
+/// See [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
 pub mod start_document_analysis_output {
 
-    /// A builder for [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -149,7 +146,7 @@ pub mod start_document_analysis_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput)
+        /// Consumes the builder and constructs a [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
         pub fn build(self) -> crate::output::StartDocumentAnalysisOutput {
             crate::output::StartDocumentAnalysisOutput {
                 job_id: self.job_id,
@@ -158,7 +155,7 @@ pub mod start_document_analysis_output {
     }
 }
 impl StartDocumentAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput)
+    /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
     pub fn builder() -> crate::output::start_document_analysis_output::Builder {
         crate::output::start_document_analysis_output::Builder::default()
     }
@@ -229,11 +226,10 @@ impl std::fmt::Debug for GetExpenseAnalysisOutput {
         formatter.finish()
     }
 }
-/// See [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
+/// See [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
 pub mod get_expense_analysis_output {
 
-    /// A builder for [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -349,7 +345,7 @@ pub mod get_expense_analysis_output {
             self.analyze_expense_model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
+        /// Consumes the builder and constructs a [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
         pub fn build(self) -> crate::output::GetExpenseAnalysisOutput {
             crate::output::GetExpenseAnalysisOutput {
                 document_metadata: self.document_metadata,
@@ -364,7 +360,7 @@ pub mod get_expense_analysis_output {
     }
 }
 impl GetExpenseAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput)
+    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
     pub fn builder() -> crate::output::get_expense_analysis_output::Builder {
         crate::output::get_expense_analysis_output::Builder::default()
     }
@@ -435,11 +431,10 @@ impl std::fmt::Debug for GetDocumentTextDetectionOutput {
         formatter.finish()
     }
 }
-/// See [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput)
+/// See [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
 pub mod get_document_text_detection_output {
 
-    /// A builder for [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -554,7 +549,7 @@ pub mod get_document_text_detection_output {
             self.detect_document_text_model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput)
+        /// Consumes the builder and constructs a [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
         pub fn build(self) -> crate::output::GetDocumentTextDetectionOutput {
             crate::output::GetDocumentTextDetectionOutput {
                 document_metadata: self.document_metadata,
@@ -569,7 +564,7 @@ pub mod get_document_text_detection_output {
     }
 }
 impl GetDocumentTextDetectionOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput)
+    /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
     pub fn builder() -> crate::output::get_document_text_detection_output::Builder {
         crate::output::get_document_text_detection_output::Builder::default()
     }
@@ -640,11 +635,10 @@ impl std::fmt::Debug for GetDocumentAnalysisOutput {
         formatter.finish()
     }
 }
-/// See [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput)
+/// See [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
 pub mod get_document_analysis_output {
 
-    /// A builder for [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -759,7 +753,7 @@ pub mod get_document_analysis_output {
             self.analyze_document_model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput)
+        /// Consumes the builder and constructs a [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
         pub fn build(self) -> crate::output::GetDocumentAnalysisOutput {
             crate::output::GetDocumentAnalysisOutput {
                 document_metadata: self.document_metadata,
@@ -774,7 +768,7 @@ pub mod get_document_analysis_output {
     }
 }
 impl GetDocumentAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput)
+    /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
     pub fn builder() -> crate::output::get_document_analysis_output::Builder {
         crate::output::get_document_analysis_output::Builder::default()
     }
@@ -817,11 +811,10 @@ impl std::fmt::Debug for DetectDocumentTextOutput {
         formatter.finish()
     }
 }
-/// See [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput)
+/// See [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
 pub mod detect_document_text_output {
 
-    /// A builder for [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput)
-    #[non_exhaustive]
+    /// A builder for [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -877,7 +870,7 @@ pub mod detect_document_text_output {
             self.detect_document_text_model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput)
+        /// Consumes the builder and constructs a [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
         pub fn build(self) -> crate::output::DetectDocumentTextOutput {
             crate::output::DetectDocumentTextOutput {
                 document_metadata: self.document_metadata,
@@ -888,7 +881,7 @@ pub mod detect_document_text_output {
     }
 }
 impl DetectDocumentTextOutput {
-    /// Creates a new builder-style object to manufacture [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput)
+    /// Creates a new builder-style object to manufacture [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
     pub fn builder() -> crate::output::detect_document_text_output::Builder {
         crate::output::detect_document_text_output::Builder::default()
     }
@@ -928,11 +921,10 @@ impl std::fmt::Debug for AnalyzeIdOutput {
         formatter.finish()
     }
 }
-/// See [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
+/// See [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
 pub mod analyze_id_output {
 
-    /// A builder for [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
-    #[non_exhaustive]
+    /// A builder for [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_documents:
@@ -986,7 +978,7 @@ pub mod analyze_id_output {
             self.analyze_id_model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
+        /// Consumes the builder and constructs a [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
         pub fn build(self) -> crate::output::AnalyzeIdOutput {
             crate::output::AnalyzeIdOutput {
                 identity_documents: self.identity_documents,
@@ -997,7 +989,7 @@ pub mod analyze_id_output {
     }
 }
 impl AnalyzeIdOutput {
-    /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput)
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
     pub fn builder() -> crate::output::analyze_id_output::Builder {
         crate::output::analyze_id_output::Builder::default()
     }
@@ -1030,11 +1022,10 @@ impl std::fmt::Debug for AnalyzeExpenseOutput {
         formatter.finish()
     }
 }
-/// See [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
+/// See [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
 pub mod analyze_expense_output {
 
-    /// A builder for [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
-    #[non_exhaustive]
+    /// A builder for [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1074,7 +1065,7 @@ pub mod analyze_expense_output {
             self.expense_documents = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
+        /// Consumes the builder and constructs a [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
         pub fn build(self) -> crate::output::AnalyzeExpenseOutput {
             crate::output::AnalyzeExpenseOutput {
                 document_metadata: self.document_metadata,
@@ -1084,7 +1075,7 @@ pub mod analyze_expense_output {
     }
 }
 impl AnalyzeExpenseOutput {
-    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
+    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
     pub fn builder() -> crate::output::analyze_expense_output::Builder {
         crate::output::analyze_expense_output::Builder::default()
     }
@@ -1139,11 +1130,10 @@ impl std::fmt::Debug for AnalyzeDocumentOutput {
         formatter.finish()
     }
 }
-/// See [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput)
+/// See [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
 pub mod analyze_document_output {
 
-    /// A builder for [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput)
-    #[non_exhaustive]
+    /// A builder for [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
@@ -1217,7 +1207,7 @@ pub mod analyze_document_output {
             self.analyze_document_model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput)
+        /// Consumes the builder and constructs a [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
         pub fn build(self) -> crate::output::AnalyzeDocumentOutput {
             crate::output::AnalyzeDocumentOutput {
                 document_metadata: self.document_metadata,
@@ -1229,7 +1219,7 @@ pub mod analyze_document_output {
     }
 }
 impl AnalyzeDocumentOutput {
-    /// Creates a new builder-style object to manufacture [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput)
+    /// Creates a new builder-style object to manufacture [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
     pub fn builder() -> crate::output::analyze_document_output::Builder {
         crate::output::analyze_document_output::Builder::default()
     }

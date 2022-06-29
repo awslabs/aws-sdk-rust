@@ -1232,11 +1232,10 @@ impl std::fmt::Display for TextLengthExceededException {
     }
 }
 impl std::error::Error for TextLengthExceededException {}
-/// See [`TextLengthExceededException`](crate::error::TextLengthExceededException)
+/// See [`TextLengthExceededException`](crate::error::TextLengthExceededException).
 pub mod text_length_exceeded_exception {
 
-    /// A builder for [`TextLengthExceededException`](crate::error::TextLengthExceededException)
-    #[non_exhaustive]
+    /// A builder for [`TextLengthExceededException`](crate::error::TextLengthExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1252,7 +1251,7 @@ pub mod text_length_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TextLengthExceededException`](crate::error::TextLengthExceededException)
+        /// Consumes the builder and constructs a [`TextLengthExceededException`](crate::error::TextLengthExceededException).
         pub fn build(self) -> crate::error::TextLengthExceededException {
             crate::error::TextLengthExceededException {
                 message: self.message,
@@ -1261,7 +1260,7 @@ pub mod text_length_exceeded_exception {
     }
 }
 impl TextLengthExceededException {
-    /// Creates a new builder-style object to manufacture [`TextLengthExceededException`](crate::error::TextLengthExceededException)
+    /// Creates a new builder-style object to manufacture [`TextLengthExceededException`](crate::error::TextLengthExceededException).
     pub fn builder() -> crate::error::text_length_exceeded_exception::Builder {
         crate::error::text_length_exceeded_exception::Builder::default()
     }
@@ -1297,11 +1296,10 @@ impl std::fmt::Display for SsmlMarksNotSupportedForTextTypeException {
     }
 }
 impl std::error::Error for SsmlMarksNotSupportedForTextTypeException {}
-/// See [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
+/// See [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
 pub mod ssml_marks_not_supported_for_text_type_exception {
 
-    /// A builder for [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
-    #[non_exhaustive]
+    /// A builder for [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1317,7 +1315,7 @@ pub mod ssml_marks_not_supported_for_text_type_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
+        /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
         pub fn build(self) -> crate::error::SsmlMarksNotSupportedForTextTypeException {
             crate::error::SsmlMarksNotSupportedForTextTypeException {
                 message: self.message,
@@ -1326,7 +1324,7 @@ pub mod ssml_marks_not_supported_for_text_type_exception {
     }
 }
 impl SsmlMarksNotSupportedForTextTypeException {
-    /// Creates a new builder-style object to manufacture [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException)
+    /// Creates a new builder-style object to manufacture [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
     pub fn builder() -> crate::error::ssml_marks_not_supported_for_text_type_exception::Builder {
         crate::error::ssml_marks_not_supported_for_text_type_exception::Builder::default()
     }
@@ -1362,11 +1360,10 @@ impl std::fmt::Display for ServiceFailureException {
     }
 }
 impl std::error::Error for ServiceFailureException {}
-/// See [`ServiceFailureException`](crate::error::ServiceFailureException)
+/// See [`ServiceFailureException`](crate::error::ServiceFailureException).
 pub mod service_failure_exception {
 
-    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException)
-    #[non_exhaustive]
+    /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1382,7 +1379,7 @@ pub mod service_failure_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException)
+        /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException).
         pub fn build(self) -> crate::error::ServiceFailureException {
             crate::error::ServiceFailureException {
                 message: self.message,
@@ -1391,7 +1388,7 @@ pub mod service_failure_exception {
     }
 }
 impl ServiceFailureException {
-    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException)
+    /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException).
     pub fn builder() -> crate::error::service_failure_exception::Builder {
         crate::error::service_failure_exception::Builder::default()
     }
@@ -1427,11 +1424,10 @@ impl std::fmt::Display for MarksNotSupportedForFormatException {
     }
 }
 impl std::error::Error for MarksNotSupportedForFormatException {}
-/// See [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
+/// See [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
 pub mod marks_not_supported_for_format_exception {
 
-    /// A builder for [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
-    #[non_exhaustive]
+    /// A builder for [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1447,7 +1443,7 @@ pub mod marks_not_supported_for_format_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
+        /// Consumes the builder and constructs a [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
         pub fn build(self) -> crate::error::MarksNotSupportedForFormatException {
             crate::error::MarksNotSupportedForFormatException {
                 message: self.message,
@@ -1456,7 +1452,7 @@ pub mod marks_not_supported_for_format_exception {
     }
 }
 impl MarksNotSupportedForFormatException {
-    /// Creates a new builder-style object to manufacture [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException)
+    /// Creates a new builder-style object to manufacture [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
     pub fn builder() -> crate::error::marks_not_supported_for_format_exception::Builder {
         crate::error::marks_not_supported_for_format_exception::Builder::default()
     }
@@ -1493,11 +1489,10 @@ impl std::fmt::Display for LexiconNotFoundException {
     }
 }
 impl std::error::Error for LexiconNotFoundException {}
-/// See [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
+/// See [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
 pub mod lexicon_not_found_exception {
 
-    /// A builder for [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1513,7 +1508,7 @@ pub mod lexicon_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
+        /// Consumes the builder and constructs a [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
         pub fn build(self) -> crate::error::LexiconNotFoundException {
             crate::error::LexiconNotFoundException {
                 message: self.message,
@@ -1522,7 +1517,7 @@ pub mod lexicon_not_found_exception {
     }
 }
 impl LexiconNotFoundException {
-    /// Creates a new builder-style object to manufacture [`LexiconNotFoundException`](crate::error::LexiconNotFoundException)
+    /// Creates a new builder-style object to manufacture [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
     pub fn builder() -> crate::error::lexicon_not_found_exception::Builder {
         crate::error::lexicon_not_found_exception::Builder::default()
     }
@@ -1558,11 +1553,10 @@ impl std::fmt::Display for LanguageNotSupportedException {
     }
 }
 impl std::error::Error for LanguageNotSupportedException {}
-/// See [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
+/// See [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
 pub mod language_not_supported_exception {
 
-    /// A builder for [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
-    #[non_exhaustive]
+    /// A builder for [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1578,7 +1572,7 @@ pub mod language_not_supported_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
+        /// Consumes the builder and constructs a [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
         pub fn build(self) -> crate::error::LanguageNotSupportedException {
             crate::error::LanguageNotSupportedException {
                 message: self.message,
@@ -1587,7 +1581,7 @@ pub mod language_not_supported_exception {
     }
 }
 impl LanguageNotSupportedException {
-    /// Creates a new builder-style object to manufacture [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException)
+    /// Creates a new builder-style object to manufacture [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
     pub fn builder() -> crate::error::language_not_supported_exception::Builder {
         crate::error::language_not_supported_exception::Builder::default()
     }
@@ -1623,11 +1617,10 @@ impl std::fmt::Display for InvalidSsmlException {
     }
 }
 impl std::error::Error for InvalidSsmlException {}
-/// See [`InvalidSsmlException`](crate::error::InvalidSsmlException)
+/// See [`InvalidSsmlException`](crate::error::InvalidSsmlException).
 pub mod invalid_ssml_exception {
 
-    /// A builder for [`InvalidSsmlException`](crate::error::InvalidSsmlException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidSsmlException`](crate::error::InvalidSsmlException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1643,7 +1636,7 @@ pub mod invalid_ssml_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSsmlException`](crate::error::InvalidSsmlException)
+        /// Consumes the builder and constructs a [`InvalidSsmlException`](crate::error::InvalidSsmlException).
         pub fn build(self) -> crate::error::InvalidSsmlException {
             crate::error::InvalidSsmlException {
                 message: self.message,
@@ -1652,7 +1645,7 @@ pub mod invalid_ssml_exception {
     }
 }
 impl InvalidSsmlException {
-    /// Creates a new builder-style object to manufacture [`InvalidSsmlException`](crate::error::InvalidSsmlException)
+    /// Creates a new builder-style object to manufacture [`InvalidSsmlException`](crate::error::InvalidSsmlException).
     pub fn builder() -> crate::error::invalid_ssml_exception::Builder {
         crate::error::invalid_ssml_exception::Builder::default()
     }
@@ -1688,11 +1681,10 @@ impl std::fmt::Display for InvalidSampleRateException {
     }
 }
 impl std::error::Error for InvalidSampleRateException {}
-/// See [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
+/// See [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
 pub mod invalid_sample_rate_exception {
 
-    /// A builder for [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1708,7 +1700,7 @@ pub mod invalid_sample_rate_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
+        /// Consumes the builder and constructs a [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
         pub fn build(self) -> crate::error::InvalidSampleRateException {
             crate::error::InvalidSampleRateException {
                 message: self.message,
@@ -1717,7 +1709,7 @@ pub mod invalid_sample_rate_exception {
     }
 }
 impl InvalidSampleRateException {
-    /// Creates a new builder-style object to manufacture [`InvalidSampleRateException`](crate::error::InvalidSampleRateException)
+    /// Creates a new builder-style object to manufacture [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
     pub fn builder() -> crate::error::invalid_sample_rate_exception::Builder {
         crate::error::invalid_sample_rate_exception::Builder::default()
     }
@@ -1753,11 +1745,10 @@ impl std::fmt::Display for EngineNotSupportedException {
     }
 }
 impl std::error::Error for EngineNotSupportedException {}
-/// See [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
+/// See [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
 pub mod engine_not_supported_exception {
 
-    /// A builder for [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
-    #[non_exhaustive]
+    /// A builder for [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1773,7 +1764,7 @@ pub mod engine_not_supported_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
+        /// Consumes the builder and constructs a [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
         pub fn build(self) -> crate::error::EngineNotSupportedException {
             crate::error::EngineNotSupportedException {
                 message: self.message,
@@ -1782,7 +1773,7 @@ pub mod engine_not_supported_exception {
     }
 }
 impl EngineNotSupportedException {
-    /// Creates a new builder-style object to manufacture [`EngineNotSupportedException`](crate::error::EngineNotSupportedException)
+    /// Creates a new builder-style object to manufacture [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
     pub fn builder() -> crate::error::engine_not_supported_exception::Builder {
         crate::error::engine_not_supported_exception::Builder::default()
     }
@@ -1818,11 +1809,10 @@ impl std::fmt::Display for InvalidSnsTopicArnException {
     }
 }
 impl std::error::Error for InvalidSnsTopicArnException {}
-/// See [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
+/// See [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
 pub mod invalid_sns_topic_arn_exception {
 
-    /// A builder for [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1838,7 +1828,7 @@ pub mod invalid_sns_topic_arn_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
+        /// Consumes the builder and constructs a [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
         pub fn build(self) -> crate::error::InvalidSnsTopicArnException {
             crate::error::InvalidSnsTopicArnException {
                 message: self.message,
@@ -1847,7 +1837,7 @@ pub mod invalid_sns_topic_arn_exception {
     }
 }
 impl InvalidSnsTopicArnException {
-    /// Creates a new builder-style object to manufacture [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException)
+    /// Creates a new builder-style object to manufacture [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
     pub fn builder() -> crate::error::invalid_sns_topic_arn_exception::Builder {
         crate::error::invalid_sns_topic_arn_exception::Builder::default()
     }
@@ -1883,11 +1873,10 @@ impl std::fmt::Display for InvalidS3KeyException {
     }
 }
 impl std::error::Error for InvalidS3KeyException {}
-/// See [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
+/// See [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
 pub mod invalid_s3_key_exception {
 
-    /// A builder for [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1903,7 +1892,7 @@ pub mod invalid_s3_key_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
+        /// Consumes the builder and constructs a [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
         pub fn build(self) -> crate::error::InvalidS3KeyException {
             crate::error::InvalidS3KeyException {
                 message: self.message,
@@ -1912,7 +1901,7 @@ pub mod invalid_s3_key_exception {
     }
 }
 impl InvalidS3KeyException {
-    /// Creates a new builder-style object to manufacture [`InvalidS3KeyException`](crate::error::InvalidS3KeyException)
+    /// Creates a new builder-style object to manufacture [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
     pub fn builder() -> crate::error::invalid_s3_key_exception::Builder {
         crate::error::invalid_s3_key_exception::Builder::default()
     }
@@ -1948,11 +1937,10 @@ impl std::fmt::Display for InvalidS3BucketException {
     }
 }
 impl std::error::Error for InvalidS3BucketException {}
-/// See [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
+/// See [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
 pub mod invalid_s3_bucket_exception {
 
-    /// A builder for [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1968,7 +1956,7 @@ pub mod invalid_s3_bucket_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
+        /// Consumes the builder and constructs a [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
         pub fn build(self) -> crate::error::InvalidS3BucketException {
             crate::error::InvalidS3BucketException {
                 message: self.message,
@@ -1977,7 +1965,7 @@ pub mod invalid_s3_bucket_exception {
     }
 }
 impl InvalidS3BucketException {
-    /// Creates a new builder-style object to manufacture [`InvalidS3BucketException`](crate::error::InvalidS3BucketException)
+    /// Creates a new builder-style object to manufacture [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
     pub fn builder() -> crate::error::invalid_s3_bucket_exception::Builder {
         crate::error::invalid_s3_bucket_exception::Builder::default()
     }
@@ -2013,11 +2001,10 @@ impl std::fmt::Display for UnsupportedPlsLanguageException {
     }
 }
 impl std::error::Error for UnsupportedPlsLanguageException {}
-/// See [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
+/// See [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
 pub mod unsupported_pls_language_exception {
 
-    /// A builder for [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2033,7 +2020,7 @@ pub mod unsupported_pls_language_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
+        /// Consumes the builder and constructs a [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
         pub fn build(self) -> crate::error::UnsupportedPlsLanguageException {
             crate::error::UnsupportedPlsLanguageException {
                 message: self.message,
@@ -2042,7 +2029,7 @@ pub mod unsupported_pls_language_exception {
     }
 }
 impl UnsupportedPlsLanguageException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException)
+    /// Creates a new builder-style object to manufacture [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
     pub fn builder() -> crate::error::unsupported_pls_language_exception::Builder {
         crate::error::unsupported_pls_language_exception::Builder::default()
     }
@@ -2078,11 +2065,10 @@ impl std::fmt::Display for UnsupportedPlsAlphabetException {
     }
 }
 impl std::error::Error for UnsupportedPlsAlphabetException {}
-/// See [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
+/// See [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
 pub mod unsupported_pls_alphabet_exception {
 
-    /// A builder for [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2098,7 +2084,7 @@ pub mod unsupported_pls_alphabet_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
+        /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
         pub fn build(self) -> crate::error::UnsupportedPlsAlphabetException {
             crate::error::UnsupportedPlsAlphabetException {
                 message: self.message,
@@ -2107,7 +2093,7 @@ pub mod unsupported_pls_alphabet_exception {
     }
 }
 impl UnsupportedPlsAlphabetException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException)
+    /// Creates a new builder-style object to manufacture [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
     pub fn builder() -> crate::error::unsupported_pls_alphabet_exception::Builder {
         crate::error::unsupported_pls_alphabet_exception::Builder::default()
     }
@@ -2143,11 +2129,10 @@ impl std::fmt::Display for MaxLexiconsNumberExceededException {
     }
 }
 impl std::error::Error for MaxLexiconsNumberExceededException {}
-/// See [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
+/// See [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
 pub mod max_lexicons_number_exceeded_exception {
 
-    /// A builder for [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
-    #[non_exhaustive]
+    /// A builder for [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2163,7 +2148,7 @@ pub mod max_lexicons_number_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
+        /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
         pub fn build(self) -> crate::error::MaxLexiconsNumberExceededException {
             crate::error::MaxLexiconsNumberExceededException {
                 message: self.message,
@@ -2172,7 +2157,7 @@ pub mod max_lexicons_number_exceeded_exception {
     }
 }
 impl MaxLexiconsNumberExceededException {
-    /// Creates a new builder-style object to manufacture [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException)
+    /// Creates a new builder-style object to manufacture [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
     pub fn builder() -> crate::error::max_lexicons_number_exceeded_exception::Builder {
         crate::error::max_lexicons_number_exceeded_exception::Builder::default()
     }
@@ -2208,11 +2193,10 @@ impl std::fmt::Display for MaxLexemeLengthExceededException {
     }
 }
 impl std::error::Error for MaxLexemeLengthExceededException {}
-/// See [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
+/// See [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
 pub mod max_lexeme_length_exceeded_exception {
 
-    /// A builder for [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
-    #[non_exhaustive]
+    /// A builder for [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2228,7 +2212,7 @@ pub mod max_lexeme_length_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
+        /// Consumes the builder and constructs a [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
         pub fn build(self) -> crate::error::MaxLexemeLengthExceededException {
             crate::error::MaxLexemeLengthExceededException {
                 message: self.message,
@@ -2237,7 +2221,7 @@ pub mod max_lexeme_length_exceeded_exception {
     }
 }
 impl MaxLexemeLengthExceededException {
-    /// Creates a new builder-style object to manufacture [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException)
+    /// Creates a new builder-style object to manufacture [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
     pub fn builder() -> crate::error::max_lexeme_length_exceeded_exception::Builder {
         crate::error::max_lexeme_length_exceeded_exception::Builder::default()
     }
@@ -2273,11 +2257,10 @@ impl std::fmt::Display for LexiconSizeExceededException {
     }
 }
 impl std::error::Error for LexiconSizeExceededException {}
-/// See [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
+/// See [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
 pub mod lexicon_size_exceeded_exception {
 
-    /// A builder for [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
-    #[non_exhaustive]
+    /// A builder for [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2293,7 +2276,7 @@ pub mod lexicon_size_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
+        /// Consumes the builder and constructs a [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
         pub fn build(self) -> crate::error::LexiconSizeExceededException {
             crate::error::LexiconSizeExceededException {
                 message: self.message,
@@ -2302,7 +2285,7 @@ pub mod lexicon_size_exceeded_exception {
     }
 }
 impl LexiconSizeExceededException {
-    /// Creates a new builder-style object to manufacture [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException)
+    /// Creates a new builder-style object to manufacture [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
     pub fn builder() -> crate::error::lexicon_size_exceeded_exception::Builder {
         crate::error::lexicon_size_exceeded_exception::Builder::default()
     }
@@ -2338,11 +2321,10 @@ impl std::fmt::Display for InvalidLexiconException {
     }
 }
 impl std::error::Error for InvalidLexiconException {}
-/// See [`InvalidLexiconException`](crate::error::InvalidLexiconException)
+/// See [`InvalidLexiconException`](crate::error::InvalidLexiconException).
 pub mod invalid_lexicon_exception {
 
-    /// A builder for [`InvalidLexiconException`](crate::error::InvalidLexiconException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidLexiconException`](crate::error::InvalidLexiconException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2358,7 +2340,7 @@ pub mod invalid_lexicon_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidLexiconException`](crate::error::InvalidLexiconException)
+        /// Consumes the builder and constructs a [`InvalidLexiconException`](crate::error::InvalidLexiconException).
         pub fn build(self) -> crate::error::InvalidLexiconException {
             crate::error::InvalidLexiconException {
                 message: self.message,
@@ -2367,7 +2349,7 @@ pub mod invalid_lexicon_exception {
     }
 }
 impl InvalidLexiconException {
-    /// Creates a new builder-style object to manufacture [`InvalidLexiconException`](crate::error::InvalidLexiconException)
+    /// Creates a new builder-style object to manufacture [`InvalidLexiconException`](crate::error::InvalidLexiconException).
     pub fn builder() -> crate::error::invalid_lexicon_exception::Builder {
         crate::error::invalid_lexicon_exception::Builder::default()
     }
@@ -2403,11 +2385,10 @@ impl std::fmt::Display for InvalidNextTokenException {
     }
 }
 impl std::error::Error for InvalidNextTokenException {}
-/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+/// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
 pub mod invalid_next_token_exception {
 
-    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2423,7 +2404,7 @@ pub mod invalid_next_token_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+        /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
         pub fn build(self) -> crate::error::InvalidNextTokenException {
             crate::error::InvalidNextTokenException {
                 message: self.message,
@@ -2432,7 +2413,7 @@ pub mod invalid_next_token_exception {
     }
 }
 impl InvalidNextTokenException {
-    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException)
+    /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
         crate::error::invalid_next_token_exception::Builder::default()
     }
@@ -2468,11 +2449,10 @@ impl std::fmt::Display for SynthesisTaskNotFoundException {
     }
 }
 impl std::error::Error for SynthesisTaskNotFoundException {}
-/// See [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
+/// See [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
 pub mod synthesis_task_not_found_exception {
 
-    /// A builder for [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2488,7 +2468,7 @@ pub mod synthesis_task_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
+        /// Consumes the builder and constructs a [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
         pub fn build(self) -> crate::error::SynthesisTaskNotFoundException {
             crate::error::SynthesisTaskNotFoundException {
                 message: self.message,
@@ -2497,7 +2477,7 @@ pub mod synthesis_task_not_found_exception {
     }
 }
 impl SynthesisTaskNotFoundException {
-    /// Creates a new builder-style object to manufacture [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException)
+    /// Creates a new builder-style object to manufacture [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
     pub fn builder() -> crate::error::synthesis_task_not_found_exception::Builder {
         crate::error::synthesis_task_not_found_exception::Builder::default()
     }
@@ -2533,11 +2513,10 @@ impl std::fmt::Display for InvalidTaskIdException {
     }
 }
 impl std::error::Error for InvalidTaskIdException {}
-/// See [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
+/// See [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
 pub mod invalid_task_id_exception {
 
-    /// A builder for [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2553,7 +2532,7 @@ pub mod invalid_task_id_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
+        /// Consumes the builder and constructs a [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
         pub fn build(self) -> crate::error::InvalidTaskIdException {
             crate::error::InvalidTaskIdException {
                 message: self.message,
@@ -2562,7 +2541,7 @@ pub mod invalid_task_id_exception {
     }
 }
 impl InvalidTaskIdException {
-    /// Creates a new builder-style object to manufacture [`InvalidTaskIdException`](crate::error::InvalidTaskIdException)
+    /// Creates a new builder-style object to manufacture [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
     pub fn builder() -> crate::error::invalid_task_id_exception::Builder {
         crate::error::invalid_task_id_exception::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct BatchMeterUsage {
     _private: (),
 }
 impl BatchMeterUsage {
-    /// Creates a new builder-style object to manufacture [`BatchMeterUsageInput`](crate::input::BatchMeterUsageInput)
+    /// Creates a new builder-style object to manufacture [`BatchMeterUsageInput`](crate::input::BatchMeterUsageInput).
     pub fn builder() -> crate::input::batch_meter_usage_input::Builder {
         crate::input::batch_meter_usage_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct MeterUsage {
     _private: (),
 }
 impl MeterUsage {
-    /// Creates a new builder-style object to manufacture [`MeterUsageInput`](crate::input::MeterUsageInput)
+    /// Creates a new builder-style object to manufacture [`MeterUsageInput`](crate::input::MeterUsageInput).
     pub fn builder() -> crate::input::meter_usage_input::Builder {
         crate::input::meter_usage_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct RegisterUsage {
     _private: (),
 }
 impl RegisterUsage {
-    /// Creates a new builder-style object to manufacture [`RegisterUsageInput`](crate::input::RegisterUsageInput)
+    /// Creates a new builder-style object to manufacture [`RegisterUsageInput`](crate::input::RegisterUsageInput).
     pub fn builder() -> crate::input::register_usage_input::Builder {
         crate::input::register_usage_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct ResolveCustomer {
     _private: (),
 }
 impl ResolveCustomer {
-    /// Creates a new builder-style object to manufacture [`ResolveCustomerInput`](crate::input::ResolveCustomerInput)
+    /// Creates a new builder-style object to manufacture [`ResolveCustomerInput`](crate::input::ResolveCustomerInput).
     pub fn builder() -> crate::input::resolve_customer_input::Builder {
         crate::input::resolve_customer_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct ConfigureLogs {
     _private: (),
 }
 impl ConfigureLogs {
-    /// Creates a new builder-style object to manufacture [`ConfigureLogsInput`](crate::input::ConfigureLogsInput)
+    /// Creates a new builder-style object to manufacture [`ConfigureLogsInput`](crate::input::ConfigureLogsInput).
     pub fn builder() -> crate::input::configure_logs_input::Builder {
         crate::input::configure_logs_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateAsset {
     _private: (),
 }
 impl CreateAsset {
-    /// Creates a new builder-style object to manufacture [`CreateAssetInput`](crate::input::CreateAssetInput)
+    /// Creates a new builder-style object to manufacture [`CreateAssetInput`](crate::input::CreateAssetInput).
     pub fn builder() -> crate::input::create_asset_input::Builder {
         crate::input::create_asset_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreatePackagingConfiguration {
     _private: (),
 }
 impl CreatePackagingConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreatePackagingConfigurationInput`](crate::input::CreatePackagingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreatePackagingConfigurationInput`](crate::input::CreatePackagingConfigurationInput).
     pub fn builder() -> crate::input::create_packaging_configuration_input::Builder {
         crate::input::create_packaging_configuration_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreatePackagingGroup {
     _private: (),
 }
 impl CreatePackagingGroup {
-    /// Creates a new builder-style object to manufacture [`CreatePackagingGroupInput`](crate::input::CreatePackagingGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreatePackagingGroupInput`](crate::input::CreatePackagingGroupInput).
     pub fn builder() -> crate::input::create_packaging_group_input::Builder {
         crate::input::create_packaging_group_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DeleteAsset {
     _private: (),
 }
 impl DeleteAsset {
-    /// Creates a new builder-style object to manufacture [`DeleteAssetInput`](crate::input::DeleteAssetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAssetInput`](crate::input::DeleteAssetInput).
     pub fn builder() -> crate::input::delete_asset_input::Builder {
         crate::input::delete_asset_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct DeletePackagingConfiguration {
     _private: (),
 }
 impl DeletePackagingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationInput`](crate::input::DeletePackagingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeletePackagingConfigurationInput`](crate::input::DeletePackagingConfigurationInput).
     pub fn builder() -> crate::input::delete_packaging_configuration_input::Builder {
         crate::input::delete_packaging_configuration_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DeletePackagingGroup {
     _private: (),
 }
 impl DeletePackagingGroup {
-    /// Creates a new builder-style object to manufacture [`DeletePackagingGroupInput`](crate::input::DeletePackagingGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeletePackagingGroupInput`](crate::input::DeletePackagingGroupInput).
     pub fn builder() -> crate::input::delete_packaging_group_input::Builder {
         crate::input::delete_packaging_group_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DescribeAsset {
     _private: (),
 }
 impl DescribeAsset {
-    /// Creates a new builder-style object to manufacture [`DescribeAssetInput`](crate::input::DescribeAssetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAssetInput`](crate::input::DescribeAssetInput).
     pub fn builder() -> crate::input::describe_asset_input::Builder {
         crate::input::describe_asset_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DescribePackagingConfiguration {
     _private: (),
 }
 impl DescribePackagingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationInput`](crate::input::DescribePackagingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribePackagingConfigurationInput`](crate::input::DescribePackagingConfigurationInput).
     pub fn builder() -> crate::input::describe_packaging_configuration_input::Builder {
         crate::input::describe_packaging_configuration_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DescribePackagingGroup {
     _private: (),
 }
 impl DescribePackagingGroup {
-    /// Creates a new builder-style object to manufacture [`DescribePackagingGroupInput`](crate::input::DescribePackagingGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribePackagingGroupInput`](crate::input::DescribePackagingGroupInput).
     pub fn builder() -> crate::input::describe_packaging_group_input::Builder {
         crate::input::describe_packaging_group_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct ListAssets {
     _private: (),
 }
 impl ListAssets {
-    /// Creates a new builder-style object to manufacture [`ListAssetsInput`](crate::input::ListAssetsInput)
+    /// Creates a new builder-style object to manufacture [`ListAssetsInput`](crate::input::ListAssetsInput).
     pub fn builder() -> crate::input::list_assets_input::Builder {
         crate::input::list_assets_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct ListPackagingConfigurations {
     _private: (),
 }
 impl ListPackagingConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListPackagingConfigurationsInput`](crate::input::ListPackagingConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListPackagingConfigurationsInput`](crate::input::ListPackagingConfigurationsInput).
     pub fn builder() -> crate::input::list_packaging_configurations_input::Builder {
         crate::input::list_packaging_configurations_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct ListPackagingGroups {
     _private: (),
 }
 impl ListPackagingGroups {
-    /// Creates a new builder-style object to manufacture [`ListPackagingGroupsInput`](crate::input::ListPackagingGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListPackagingGroupsInput`](crate::input::ListPackagingGroupsInput).
     pub fn builder() -> crate::input::list_packaging_groups_input::Builder {
         crate::input::list_packaging_groups_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -508,7 +508,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct UpdatePackagingGroup {
     _private: (),
 }
 impl UpdatePackagingGroup {
-    /// Creates a new builder-style object to manufacture [`UpdatePackagingGroupInput`](crate::input::UpdatePackagingGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePackagingGroupInput`](crate::input::UpdatePackagingGroupInput).
     pub fn builder() -> crate::input::update_packaging_group_input::Builder {
         crate::input::update_packaging_group_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CreateGroup {
     _private: (),
 }
 impl CreateGroup {
-    /// Creates a new builder-style object to manufacture [`CreateGroupInput`](crate::input::CreateGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateGroupInput`](crate::input::CreateGroupInput).
     pub fn builder() -> crate::input::create_group_input::Builder {
         crate::input::create_group_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DeleteGroup {
     _private: (),
 }
 impl DeleteGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteGroupInput`](crate::input::DeleteGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGroupInput`](crate::input::DeleteGroupInput).
     pub fn builder() -> crate::input::delete_group_input::Builder {
         crate::input::delete_group_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct GetGroup {
     _private: (),
 }
 impl GetGroup {
-    /// Creates a new builder-style object to manufacture [`GetGroupInput`](crate::input::GetGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetGroupInput`](crate::input::GetGroupInput).
     pub fn builder() -> crate::input::get_group_input::Builder {
         crate::input::get_group_input::Builder::default()
     }
@@ -105,7 +105,7 @@ pub struct GetGroupConfiguration {
     _private: (),
 }
 impl GetGroupConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetGroupConfigurationInput`](crate::input::GetGroupConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetGroupConfigurationInput`](crate::input::GetGroupConfigurationInput).
     pub fn builder() -> crate::input::get_group_configuration_input::Builder {
         crate::input::get_group_configuration_input::Builder::default()
     }
@@ -139,7 +139,7 @@ pub struct GetGroupQuery {
     _private: (),
 }
 impl GetGroupQuery {
-    /// Creates a new builder-style object to manufacture [`GetGroupQueryInput`](crate::input::GetGroupQueryInput)
+    /// Creates a new builder-style object to manufacture [`GetGroupQueryInput`](crate::input::GetGroupQueryInput).
     pub fn builder() -> crate::input::get_group_query_input::Builder {
         crate::input::get_group_query_input::Builder::default()
     }
@@ -171,7 +171,7 @@ pub struct GetTags {
     _private: (),
 }
 impl GetTags {
-    /// Creates a new builder-style object to manufacture [`GetTagsInput`](crate::input::GetTagsInput)
+    /// Creates a new builder-style object to manufacture [`GetTagsInput`](crate::input::GetTagsInput).
     pub fn builder() -> crate::input::get_tags_input::Builder {
         crate::input::get_tags_input::Builder::default()
     }
@@ -202,7 +202,7 @@ pub struct GroupResources {
     _private: (),
 }
 impl GroupResources {
-    /// Creates a new builder-style object to manufacture [`GroupResourcesInput`](crate::input::GroupResourcesInput)
+    /// Creates a new builder-style object to manufacture [`GroupResourcesInput`](crate::input::GroupResourcesInput).
     pub fn builder() -> crate::input::group_resources_input::Builder {
         crate::input::group_resources_input::Builder::default()
     }
@@ -234,7 +234,7 @@ pub struct ListGroupResources {
     _private: (),
 }
 impl ListGroupResources {
-    /// Creates a new builder-style object to manufacture [`ListGroupResourcesInput`](crate::input::ListGroupResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListGroupResourcesInput`](crate::input::ListGroupResourcesInput).
     pub fn builder() -> crate::input::list_group_resources_input::Builder {
         crate::input::list_group_resources_input::Builder::default()
     }
@@ -268,7 +268,7 @@ pub struct ListGroups {
     _private: (),
 }
 impl ListGroups {
-    /// Creates a new builder-style object to manufacture [`ListGroupsInput`](crate::input::ListGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListGroupsInput`](crate::input::ListGroupsInput).
     pub fn builder() -> crate::input::list_groups_input::Builder {
         crate::input::list_groups_input::Builder::default()
     }
@@ -300,7 +300,7 @@ pub struct PutGroupConfiguration {
     _private: (),
 }
 impl PutGroupConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutGroupConfigurationInput`](crate::input::PutGroupConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutGroupConfigurationInput`](crate::input::PutGroupConfigurationInput).
     pub fn builder() -> crate::input::put_group_configuration_input::Builder {
         crate::input::put_group_configuration_input::Builder::default()
     }
@@ -334,7 +334,7 @@ pub struct SearchResources {
     _private: (),
 }
 impl SearchResources {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesInput`](crate::input::SearchResourcesInput)
+    /// Creates a new builder-style object to manufacture [`SearchResourcesInput`](crate::input::SearchResourcesInput).
     pub fn builder() -> crate::input::search_resources_input::Builder {
         crate::input::search_resources_input::Builder::default()
     }
@@ -368,7 +368,7 @@ pub struct Tag {
     _private: (),
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`TagInput`](crate::input::TagInput)
+    /// Creates a new builder-style object to manufacture [`TagInput`](crate::input::TagInput).
     pub fn builder() -> crate::input::tag_input::Builder {
         crate::input::tag_input::Builder::default()
     }
@@ -399,7 +399,7 @@ pub struct UngroupResources {
     _private: (),
 }
 impl UngroupResources {
-    /// Creates a new builder-style object to manufacture [`UngroupResourcesInput`](crate::input::UngroupResourcesInput)
+    /// Creates a new builder-style object to manufacture [`UngroupResourcesInput`](crate::input::UngroupResourcesInput).
     pub fn builder() -> crate::input::ungroup_resources_input::Builder {
         crate::input::ungroup_resources_input::Builder::default()
     }
@@ -433,7 +433,7 @@ pub struct Untag {
     _private: (),
 }
 impl Untag {
-    /// Creates a new builder-style object to manufacture [`UntagInput`](crate::input::UntagInput)
+    /// Creates a new builder-style object to manufacture [`UntagInput`](crate::input::UntagInput).
     pub fn builder() -> crate::input::untag_input::Builder {
         crate::input::untag_input::Builder::default()
     }
@@ -464,7 +464,7 @@ pub struct UpdateGroup {
     _private: (),
 }
 impl UpdateGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateGroupInput`](crate::input::UpdateGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGroupInput`](crate::input::UpdateGroupInput).
     pub fn builder() -> crate::input::update_group_input::Builder {
         crate::input::update_group_input::Builder::default()
     }
@@ -496,7 +496,7 @@ pub struct UpdateGroupQuery {
     _private: (),
 }
 impl UpdateGroupQuery {
-    /// Creates a new builder-style object to manufacture [`UpdateGroupQueryInput`](crate::input::UpdateGroupQueryInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGroupQueryInput`](crate::input::UpdateGroupQueryInput).
     pub fn builder() -> crate::input::update_group_query_input::Builder {
         crate::input::update_group_query_input::Builder::default()
     }

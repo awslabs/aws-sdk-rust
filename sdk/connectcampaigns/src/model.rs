@@ -23,11 +23,10 @@ impl std::fmt::Debug for AnswerMachineDetectionConfig {
         formatter.finish()
     }
 }
-/// See [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
+/// See [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
 pub mod answer_machine_detection_config {
 
-    /// A builder for [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
-    #[non_exhaustive]
+    /// A builder for [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enable_answer_machine_detection: std::option::Option<bool>,
@@ -46,7 +45,7 @@ pub mod answer_machine_detection_config {
             self.enable_answer_machine_detection = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
+        /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
         pub fn build(self) -> crate::model::AnswerMachineDetectionConfig {
             crate::model::AnswerMachineDetectionConfig {
                 enable_answer_machine_detection: self.enable_answer_machine_detection,
@@ -55,7 +54,7 @@ pub mod answer_machine_detection_config {
     }
 }
 impl AnswerMachineDetectionConfig {
-    /// Creates a new builder-style object to manufacture [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig)
+    /// Creates a new builder-style object to manufacture [`AnswerMachineDetectionConfig`](crate::model::AnswerMachineDetectionConfig).
     pub fn builder() -> crate::model::answer_machine_detection_config::Builder {
         crate::model::answer_machine_detection_config::Builder::default()
     }
@@ -136,11 +135,10 @@ impl std::fmt::Debug for PredictiveDialerConfig {
         formatter.finish()
     }
 }
-/// See [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig)
+/// See [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
 pub mod predictive_dialer_config {
 
-    /// A builder for [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig)
-    #[non_exhaustive]
+    /// A builder for [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth_allocation: std::option::Option<f64>,
@@ -156,7 +154,7 @@ pub mod predictive_dialer_config {
             self.bandwidth_allocation = input;
             self
         }
-        /// Consumes the builder and constructs a [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig)
+        /// Consumes the builder and constructs a [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
         pub fn build(self) -> crate::model::PredictiveDialerConfig {
             crate::model::PredictiveDialerConfig {
                 bandwidth_allocation: self.bandwidth_allocation,
@@ -165,7 +163,7 @@ pub mod predictive_dialer_config {
     }
 }
 impl PredictiveDialerConfig {
-    /// Creates a new builder-style object to manufacture [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig)
+    /// Creates a new builder-style object to manufacture [`PredictiveDialerConfig`](crate::model::PredictiveDialerConfig).
     pub fn builder() -> crate::model::predictive_dialer_config::Builder {
         crate::model::predictive_dialer_config::Builder::default()
     }
@@ -191,11 +189,10 @@ impl std::fmt::Debug for ProgressiveDialerConfig {
         formatter.finish()
     }
 }
-/// See [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig)
+/// See [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
 pub mod progressive_dialer_config {
 
-    /// A builder for [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig)
-    #[non_exhaustive]
+    /// A builder for [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth_allocation: std::option::Option<f64>,
@@ -211,7 +208,7 @@ pub mod progressive_dialer_config {
             self.bandwidth_allocation = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig)
+        /// Consumes the builder and constructs a [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
         pub fn build(self) -> crate::model::ProgressiveDialerConfig {
             crate::model::ProgressiveDialerConfig {
                 bandwidth_allocation: self.bandwidth_allocation,
@@ -220,7 +217,7 @@ pub mod progressive_dialer_config {
     }
 }
 impl ProgressiveDialerConfig {
-    /// Creates a new builder-style object to manufacture [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig)
+    /// Creates a new builder-style object to manufacture [`ProgressiveDialerConfig`](crate::model::ProgressiveDialerConfig).
     pub fn builder() -> crate::model::progressive_dialer_config::Builder {
         crate::model::progressive_dialer_config::Builder::default()
     }
@@ -329,11 +326,10 @@ impl std::fmt::Debug for InstanceOnboardingJobStatus {
         formatter.finish()
     }
 }
-/// See [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus)
+/// See [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
 pub mod instance_onboarding_job_status {
 
-    /// A builder for [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus)
-    #[non_exhaustive]
+    /// A builder for [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
@@ -384,7 +380,7 @@ pub mod instance_onboarding_job_status {
             self.failure_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus)
+        /// Consumes the builder and constructs a [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
         pub fn build(self) -> crate::model::InstanceOnboardingJobStatus {
             crate::model::InstanceOnboardingJobStatus {
                 connect_instance_id: self.connect_instance_id,
@@ -395,7 +391,7 @@ pub mod instance_onboarding_job_status {
     }
 }
 impl InstanceOnboardingJobStatus {
-    /// Creates a new builder-style object to manufacture [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus)
+    /// Creates a new builder-style object to manufacture [`InstanceOnboardingJobStatus`](crate::model::InstanceOnboardingJobStatus).
     pub fn builder() -> crate::model::instance_onboarding_job_status::Builder {
         crate::model::instance_onboarding_job_status::Builder::default()
     }
@@ -580,11 +576,10 @@ impl std::fmt::Debug for EncryptionConfig {
         formatter.finish()
     }
 }
-/// See [`EncryptionConfig`](crate::model::EncryptionConfig)
+/// See [`EncryptionConfig`](crate::model::EncryptionConfig).
 pub mod encryption_config {
 
-    /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig)
-    #[non_exhaustive]
+    /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -625,7 +620,7 @@ pub mod encryption_config {
             self.key_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`EncryptionConfig`](crate::model::EncryptionConfig)
+        /// Consumes the builder and constructs a [`EncryptionConfig`](crate::model::EncryptionConfig).
         pub fn build(self) -> crate::model::EncryptionConfig {
             crate::model::EncryptionConfig {
                 enabled: self.enabled.unwrap_or_default(),
@@ -636,7 +631,7 @@ pub mod encryption_config {
     }
 }
 impl EncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig)
+    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
     pub fn builder() -> crate::model::encryption_config::Builder {
         crate::model::encryption_config::Builder::default()
     }
@@ -727,11 +722,10 @@ impl std::fmt::Debug for FailedRequest {
         formatter.finish()
     }
 }
-/// See [`FailedRequest`](crate::model::FailedRequest)
+/// See [`FailedRequest`](crate::model::FailedRequest).
 pub mod failed_request {
 
-    /// A builder for [`FailedRequest`](crate::model::FailedRequest)
-    #[non_exhaustive]
+    /// A builder for [`FailedRequest`](crate::model::FailedRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -772,7 +766,7 @@ pub mod failed_request {
             self.failure_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailedRequest`](crate::model::FailedRequest)
+        /// Consumes the builder and constructs a [`FailedRequest`](crate::model::FailedRequest).
         pub fn build(self) -> crate::model::FailedRequest {
             crate::model::FailedRequest {
                 client_token: self.client_token,
@@ -783,7 +777,7 @@ pub mod failed_request {
     }
 }
 impl FailedRequest {
-    /// Creates a new builder-style object to manufacture [`FailedRequest`](crate::model::FailedRequest)
+    /// Creates a new builder-style object to manufacture [`FailedRequest`](crate::model::FailedRequest).
     pub fn builder() -> crate::model::failed_request::Builder {
         crate::model::failed_request::Builder::default()
     }
@@ -875,11 +869,10 @@ impl std::fmt::Debug for SuccessfulRequest {
         formatter.finish()
     }
 }
-/// See [`SuccessfulRequest`](crate::model::SuccessfulRequest)
+/// See [`SuccessfulRequest`](crate::model::SuccessfulRequest).
 pub mod successful_request {
 
-    /// A builder for [`SuccessfulRequest`](crate::model::SuccessfulRequest)
-    #[non_exhaustive]
+    /// A builder for [`SuccessfulRequest`](crate::model::SuccessfulRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -906,7 +899,7 @@ pub mod successful_request {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuccessfulRequest`](crate::model::SuccessfulRequest)
+        /// Consumes the builder and constructs a [`SuccessfulRequest`](crate::model::SuccessfulRequest).
         pub fn build(self) -> crate::model::SuccessfulRequest {
             crate::model::SuccessfulRequest {
                 client_token: self.client_token,
@@ -916,7 +909,7 @@ pub mod successful_request {
     }
 }
 impl SuccessfulRequest {
-    /// Creates a new builder-style object to manufacture [`SuccessfulRequest`](crate::model::SuccessfulRequest)
+    /// Creates a new builder-style object to manufacture [`SuccessfulRequest`](crate::model::SuccessfulRequest).
     pub fn builder() -> crate::model::successful_request::Builder {
         crate::model::successful_request::Builder::default()
     }
@@ -967,11 +960,10 @@ impl std::fmt::Debug for DialRequest {
         formatter.finish()
     }
 }
-/// See [`DialRequest`](crate::model::DialRequest)
+/// See [`DialRequest`](crate::model::DialRequest).
 pub mod dial_request {
 
-    /// A builder for [`DialRequest`](crate::model::DialRequest)
-    #[non_exhaustive]
+    /// A builder for [`DialRequest`](crate::model::DialRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_token: std::option::Option<std::string::String>,
@@ -1040,7 +1032,7 @@ pub mod dial_request {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`DialRequest`](crate::model::DialRequest)
+        /// Consumes the builder and constructs a [`DialRequest`](crate::model::DialRequest).
         pub fn build(self) -> crate::model::DialRequest {
             crate::model::DialRequest {
                 client_token: self.client_token,
@@ -1052,7 +1044,7 @@ pub mod dial_request {
     }
 }
 impl DialRequest {
-    /// Creates a new builder-style object to manufacture [`DialRequest`](crate::model::DialRequest)
+    /// Creates a new builder-style object to manufacture [`DialRequest`](crate::model::DialRequest).
     pub fn builder() -> crate::model::dial_request::Builder {
         crate::model::dial_request::Builder::default()
     }
@@ -1099,11 +1091,10 @@ impl std::fmt::Debug for CampaignSummary {
         formatter.finish()
     }
 }
-/// See [`CampaignSummary`](crate::model::CampaignSummary)
+/// See [`CampaignSummary`](crate::model::CampaignSummary).
 pub mod campaign_summary {
 
-    /// A builder for [`CampaignSummary`](crate::model::CampaignSummary)
-    #[non_exhaustive]
+    /// A builder for [`CampaignSummary`](crate::model::CampaignSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1155,7 +1146,7 @@ pub mod campaign_summary {
             self.connect_instance_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CampaignSummary`](crate::model::CampaignSummary)
+        /// Consumes the builder and constructs a [`CampaignSummary`](crate::model::CampaignSummary).
         pub fn build(self) -> crate::model::CampaignSummary {
             crate::model::CampaignSummary {
                 id: self.id,
@@ -1167,7 +1158,7 @@ pub mod campaign_summary {
     }
 }
 impl CampaignSummary {
-    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary)
+    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
     pub fn builder() -> crate::model::campaign_summary::Builder {
         crate::model::campaign_summary::Builder::default()
     }
@@ -1193,11 +1184,10 @@ impl std::fmt::Debug for CampaignFilters {
         formatter.finish()
     }
 }
-/// See [`CampaignFilters`](crate::model::CampaignFilters)
+/// See [`CampaignFilters`](crate::model::CampaignFilters).
 pub mod campaign_filters {
 
-    /// A builder for [`CampaignFilters`](crate::model::CampaignFilters)
-    #[non_exhaustive]
+    /// A builder for [`CampaignFilters`](crate::model::CampaignFilters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id_filter: std::option::Option<crate::model::InstanceIdFilter>,
@@ -1216,7 +1206,7 @@ pub mod campaign_filters {
             self.instance_id_filter = input;
             self
         }
-        /// Consumes the builder and constructs a [`CampaignFilters`](crate::model::CampaignFilters)
+        /// Consumes the builder and constructs a [`CampaignFilters`](crate::model::CampaignFilters).
         pub fn build(self) -> crate::model::CampaignFilters {
             crate::model::CampaignFilters {
                 instance_id_filter: self.instance_id_filter,
@@ -1225,7 +1215,7 @@ pub mod campaign_filters {
     }
 }
 impl CampaignFilters {
-    /// Creates a new builder-style object to manufacture [`CampaignFilters`](crate::model::CampaignFilters)
+    /// Creates a new builder-style object to manufacture [`CampaignFilters`](crate::model::CampaignFilters).
     pub fn builder() -> crate::model::campaign_filters::Builder {
         crate::model::campaign_filters::Builder::default()
     }
@@ -1258,11 +1248,10 @@ impl std::fmt::Debug for InstanceIdFilter {
         formatter.finish()
     }
 }
-/// See [`InstanceIdFilter`](crate::model::InstanceIdFilter)
+/// See [`InstanceIdFilter`](crate::model::InstanceIdFilter).
 pub mod instance_id_filter {
 
-    /// A builder for [`InstanceIdFilter`](crate::model::InstanceIdFilter)
-    #[non_exhaustive]
+    /// A builder for [`InstanceIdFilter`](crate::model::InstanceIdFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -1292,7 +1281,7 @@ pub mod instance_id_filter {
             self.operator = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceIdFilter`](crate::model::InstanceIdFilter)
+        /// Consumes the builder and constructs a [`InstanceIdFilter`](crate::model::InstanceIdFilter).
         pub fn build(self) -> crate::model::InstanceIdFilter {
             crate::model::InstanceIdFilter {
                 value: self.value,
@@ -1302,7 +1291,7 @@ pub mod instance_id_filter {
     }
 }
 impl InstanceIdFilter {
-    /// Creates a new builder-style object to manufacture [`InstanceIdFilter`](crate::model::InstanceIdFilter)
+    /// Creates a new builder-style object to manufacture [`InstanceIdFilter`](crate::model::InstanceIdFilter).
     pub fn builder() -> crate::model::instance_id_filter::Builder {
         crate::model::instance_id_filter::Builder::default()
     }
@@ -1393,11 +1382,10 @@ impl std::fmt::Debug for InstanceConfig {
         formatter.finish()
     }
 }
-/// See [`InstanceConfig`](crate::model::InstanceConfig)
+/// See [`InstanceConfig`](crate::model::InstanceConfig).
 pub mod instance_config {
 
-    /// A builder for [`InstanceConfig`](crate::model::InstanceConfig)
-    #[non_exhaustive]
+    /// A builder for [`InstanceConfig`](crate::model::InstanceConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_instance_id: std::option::Option<std::string::String>,
@@ -1444,7 +1432,7 @@ pub mod instance_config {
             self.encryption_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceConfig`](crate::model::InstanceConfig)
+        /// Consumes the builder and constructs a [`InstanceConfig`](crate::model::InstanceConfig).
         pub fn build(self) -> crate::model::InstanceConfig {
             crate::model::InstanceConfig {
                 connect_instance_id: self.connect_instance_id,
@@ -1455,7 +1443,7 @@ pub mod instance_config {
     }
 }
 impl InstanceConfig {
-    /// Creates a new builder-style object to manufacture [`InstanceConfig`](crate::model::InstanceConfig)
+    /// Creates a new builder-style object to manufacture [`InstanceConfig`](crate::model::InstanceConfig).
     pub fn builder() -> crate::model::instance_config::Builder {
         crate::model::instance_config::Builder::default()
     }
@@ -1490,11 +1478,10 @@ impl std::fmt::Debug for FailedCampaignStateResponse {
         formatter.finish()
     }
 }
-/// See [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse)
+/// See [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
 pub mod failed_campaign_state_response {
 
-    /// A builder for [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse)
-    #[non_exhaustive]
+    /// A builder for [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
@@ -1528,7 +1515,7 @@ pub mod failed_campaign_state_response {
             self.failure_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse)
+        /// Consumes the builder and constructs a [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
         pub fn build(self) -> crate::model::FailedCampaignStateResponse {
             crate::model::FailedCampaignStateResponse {
                 campaign_id: self.campaign_id,
@@ -1538,7 +1525,7 @@ pub mod failed_campaign_state_response {
     }
 }
 impl FailedCampaignStateResponse {
-    /// Creates a new builder-style object to manufacture [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse)
+    /// Creates a new builder-style object to manufacture [`FailedCampaignStateResponse`](crate::model::FailedCampaignStateResponse).
     pub fn builder() -> crate::model::failed_campaign_state_response::Builder {
         crate::model::failed_campaign_state_response::Builder::default()
     }
@@ -1626,11 +1613,10 @@ impl std::fmt::Debug for SuccessfulCampaignStateResponse {
         formatter.finish()
     }
 }
-/// See [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse)
+/// See [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
 pub mod successful_campaign_state_response {
 
-    /// A builder for [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse)
-    #[non_exhaustive]
+    /// A builder for [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) campaign_id: std::option::Option<std::string::String>,
@@ -1660,7 +1646,7 @@ pub mod successful_campaign_state_response {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse)
+        /// Consumes the builder and constructs a [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
         pub fn build(self) -> crate::model::SuccessfulCampaignStateResponse {
             crate::model::SuccessfulCampaignStateResponse {
                 campaign_id: self.campaign_id,
@@ -1670,7 +1656,7 @@ pub mod successful_campaign_state_response {
     }
 }
 impl SuccessfulCampaignStateResponse {
-    /// Creates a new builder-style object to manufacture [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse)
+    /// Creates a new builder-style object to manufacture [`SuccessfulCampaignStateResponse`](crate::model::SuccessfulCampaignStateResponse).
     pub fn builder() -> crate::model::successful_campaign_state_response::Builder {
         crate::model::successful_campaign_state_response::Builder::default()
     }
@@ -1742,11 +1728,10 @@ impl std::fmt::Debug for Campaign {
         formatter.finish()
     }
 }
-/// See [`Campaign`](crate::model::Campaign)
+/// See [`Campaign`](crate::model::Campaign).
 pub mod campaign {
 
-    /// A builder for [`Campaign`](crate::model::Campaign)
-    #[non_exhaustive]
+    /// A builder for [`Campaign`](crate::model::Campaign).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1854,7 +1839,7 @@ pub mod campaign {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Campaign`](crate::model::Campaign)
+        /// Consumes the builder and constructs a [`Campaign`](crate::model::Campaign).
         pub fn build(self) -> crate::model::Campaign {
             crate::model::Campaign {
                 id: self.id,
@@ -1869,7 +1854,7 @@ pub mod campaign {
     }
 }
 impl Campaign {
-    /// Creates a new builder-style object to manufacture [`Campaign`](crate::model::Campaign)
+    /// Creates a new builder-style object to manufacture [`Campaign`](crate::model::Campaign).
     pub fn builder() -> crate::model::campaign::Builder {
         crate::model::campaign::Builder::default()
     }
@@ -1925,11 +1910,10 @@ impl std::fmt::Debug for OutboundCallConfig {
         formatter.finish()
     }
 }
-/// See [`OutboundCallConfig`](crate::model::OutboundCallConfig)
+/// See [`OutboundCallConfig`](crate::model::OutboundCallConfig).
 pub mod outbound_call_config {
 
-    /// A builder for [`OutboundCallConfig`](crate::model::OutboundCallConfig)
-    #[non_exhaustive]
+    /// A builder for [`OutboundCallConfig`](crate::model::OutboundCallConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connect_contact_flow_id: std::option::Option<std::string::String>,
@@ -1997,7 +1981,7 @@ pub mod outbound_call_config {
             self.answer_machine_detection_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutboundCallConfig`](crate::model::OutboundCallConfig)
+        /// Consumes the builder and constructs a [`OutboundCallConfig`](crate::model::OutboundCallConfig).
         pub fn build(self) -> crate::model::OutboundCallConfig {
             crate::model::OutboundCallConfig {
                 connect_contact_flow_id: self.connect_contact_flow_id,
@@ -2009,7 +1993,7 @@ pub mod outbound_call_config {
     }
 }
 impl OutboundCallConfig {
-    /// Creates a new builder-style object to manufacture [`OutboundCallConfig`](crate::model::OutboundCallConfig)
+    /// Creates a new builder-style object to manufacture [`OutboundCallConfig`](crate::model::OutboundCallConfig).
     pub fn builder() -> crate::model::outbound_call_config::Builder {
         crate::model::outbound_call_config::Builder::default()
     }

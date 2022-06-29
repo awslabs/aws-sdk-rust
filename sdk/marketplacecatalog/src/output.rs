@@ -26,11 +26,10 @@ impl std::fmt::Debug for StartChangeSetOutput {
         formatter.finish()
     }
 }
-/// See [`StartChangeSetOutput`](crate::output::StartChangeSetOutput)
+/// See [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
 pub mod start_change_set_output {
 
-    /// A builder for [`StartChangeSetOutput`](crate::output::StartChangeSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -63,7 +62,7 @@ pub mod start_change_set_output {
             self.change_set_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartChangeSetOutput`](crate::output::StartChangeSetOutput)
+        /// Consumes the builder and constructs a [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
         pub fn build(self) -> crate::output::StartChangeSetOutput {
             crate::output::StartChangeSetOutput {
                 change_set_id: self.change_set_id,
@@ -73,7 +72,7 @@ pub mod start_change_set_output {
     }
 }
 impl StartChangeSetOutput {
-    /// Creates a new builder-style object to manufacture [`StartChangeSetOutput`](crate::output::StartChangeSetOutput)
+    /// Creates a new builder-style object to manufacture [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
     pub fn builder() -> crate::output::start_change_set_output::Builder {
         crate::output::start_change_set_output::Builder::default()
     }
@@ -106,11 +105,10 @@ impl std::fmt::Debug for ListEntitiesOutput {
         formatter.finish()
     }
 }
-/// See [`ListEntitiesOutput`](crate::output::ListEntitiesOutput)
+/// See [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
 pub mod list_entities_output {
 
-    /// A builder for [`ListEntitiesOutput`](crate::output::ListEntitiesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_summary_list:
@@ -147,7 +145,7 @@ pub mod list_entities_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEntitiesOutput`](crate::output::ListEntitiesOutput)
+        /// Consumes the builder and constructs a [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
         pub fn build(self) -> crate::output::ListEntitiesOutput {
             crate::output::ListEntitiesOutput {
                 entity_summary_list: self.entity_summary_list,
@@ -157,7 +155,7 @@ pub mod list_entities_output {
     }
 }
 impl ListEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesOutput`](crate::output::ListEntitiesOutput)
+    /// Creates a new builder-style object to manufacture [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
     pub fn builder() -> crate::output::list_entities_output::Builder {
         crate::output::list_entities_output::Builder::default()
     }
@@ -193,11 +191,10 @@ impl std::fmt::Debug for ListChangeSetsOutput {
         formatter.finish()
     }
 }
-/// See [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput)
+/// See [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
 pub mod list_change_sets_output {
 
-    /// A builder for [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_summary_list:
@@ -237,7 +234,7 @@ pub mod list_change_sets_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput)
+        /// Consumes the builder and constructs a [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
         pub fn build(self) -> crate::output::ListChangeSetsOutput {
             crate::output::ListChangeSetsOutput {
                 change_set_summary_list: self.change_set_summary_list,
@@ -247,7 +244,7 @@ pub mod list_change_sets_output {
     }
 }
 impl ListChangeSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput)
+    /// Creates a new builder-style object to manufacture [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
     pub fn builder() -> crate::output::list_change_sets_output::Builder {
         crate::output::list_change_sets_output::Builder::default()
     }
@@ -301,11 +298,10 @@ impl std::fmt::Debug for DescribeEntityOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEntityOutput`](crate::output::DescribeEntityOutput)
+/// See [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
 pub mod describe_entity_output {
 
-    /// A builder for [`DescribeEntityOutput`](crate::output::DescribeEntityOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_type: std::option::Option<std::string::String>,
@@ -371,7 +367,7 @@ pub mod describe_entity_output {
             self.details = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEntityOutput`](crate::output::DescribeEntityOutput)
+        /// Consumes the builder and constructs a [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
         pub fn build(self) -> crate::output::DescribeEntityOutput {
             crate::output::DescribeEntityOutput {
                 entity_type: self.entity_type,
@@ -384,7 +380,7 @@ pub mod describe_entity_output {
     }
 }
 impl DescribeEntityOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityOutput`](crate::output::DescribeEntityOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
     pub fn builder() -> crate::output::describe_entity_output::Builder {
         crate::output::describe_entity_output::Builder::default()
     }
@@ -466,11 +462,10 @@ impl std::fmt::Debug for DescribeChangeSetOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput)
+/// See [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
 pub mod describe_change_set_output {
 
-    /// A builder for [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -601,7 +596,7 @@ pub mod describe_change_set_output {
             self.change_set = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput)
+        /// Consumes the builder and constructs a [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
         pub fn build(self) -> crate::output::DescribeChangeSetOutput {
             crate::output::DescribeChangeSetOutput {
                 change_set_id: self.change_set_id,
@@ -618,7 +613,7 @@ pub mod describe_change_set_output {
     }
 }
 impl DescribeChangeSetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
     pub fn builder() -> crate::output::describe_change_set_output::Builder {
         crate::output::describe_change_set_output::Builder::default()
     }
@@ -651,11 +646,10 @@ impl std::fmt::Debug for CancelChangeSetOutput {
         formatter.finish()
     }
 }
-/// See [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput)
+/// See [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
 pub mod cancel_change_set_output {
 
-    /// A builder for [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) change_set_id: std::option::Option<std::string::String>,
@@ -688,7 +682,7 @@ pub mod cancel_change_set_output {
             self.change_set_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput)
+        /// Consumes the builder and constructs a [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
         pub fn build(self) -> crate::output::CancelChangeSetOutput {
             crate::output::CancelChangeSetOutput {
                 change_set_id: self.change_set_id,
@@ -698,7 +692,7 @@ pub mod cancel_change_set_output {
     }
 }
 impl CancelChangeSetOutput {
-    /// Creates a new builder-style object to manufacture [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput)
+    /// Creates a new builder-style object to manufacture [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
     pub fn builder() -> crate::output::cancel_change_set_output::Builder {
         crate::output::cancel_change_set_output::Builder::default()
     }

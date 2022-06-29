@@ -19,11 +19,10 @@ impl std::fmt::Debug for QueryForecastOutput {
         formatter.finish()
     }
 }
-/// See [`QueryForecastOutput`](crate::output::QueryForecastOutput)
+/// See [`QueryForecastOutput`](crate::output::QueryForecastOutput).
 pub mod query_forecast_output {
 
-    /// A builder for [`QueryForecastOutput`](crate::output::QueryForecastOutput)
-    #[non_exhaustive]
+    /// A builder for [`QueryForecastOutput`](crate::output::QueryForecastOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast: std::option::Option<crate::model::Forecast>,
@@ -39,7 +38,7 @@ pub mod query_forecast_output {
             self.forecast = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryForecastOutput`](crate::output::QueryForecastOutput)
+        /// Consumes the builder and constructs a [`QueryForecastOutput`](crate::output::QueryForecastOutput).
         pub fn build(self) -> crate::output::QueryForecastOutput {
             crate::output::QueryForecastOutput {
                 forecast: self.forecast,
@@ -48,7 +47,7 @@ pub mod query_forecast_output {
     }
 }
 impl QueryForecastOutput {
-    /// Creates a new builder-style object to manufacture [`QueryForecastOutput`](crate::output::QueryForecastOutput)
+    /// Creates a new builder-style object to manufacture [`QueryForecastOutput`](crate::output::QueryForecastOutput).
     pub fn builder() -> crate::output::query_forecast_output::Builder {
         crate::output::query_forecast_output::Builder::default()
     }

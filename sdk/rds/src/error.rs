@@ -17864,11 +17864,10 @@ impl std::fmt::Display for InvalidDbInstanceStateFault {
     }
 }
 impl std::error::Error for InvalidDbInstanceStateFault {}
-/// See [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
+/// See [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault).
 pub mod invalid_db_instance_state_fault {
 
-    /// A builder for [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17884,7 +17883,7 @@ pub mod invalid_db_instance_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault).
         pub fn build(self) -> crate::error::InvalidDbInstanceStateFault {
             crate::error::InvalidDbInstanceStateFault {
                 message: self.message,
@@ -17893,7 +17892,7 @@ pub mod invalid_db_instance_state_fault {
     }
 }
 impl InvalidDbInstanceStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbInstanceStateFault`](crate::error::InvalidDbInstanceStateFault).
     pub fn builder() -> crate::error::invalid_db_instance_state_fault::Builder {
         crate::error::invalid_db_instance_state_fault::Builder::default()
     }
@@ -17929,11 +17928,10 @@ impl std::fmt::Display for DbInstanceNotFoundFault {
     }
 }
 impl std::error::Error for DbInstanceNotFoundFault {}
-/// See [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
+/// See [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault).
 pub mod db_instance_not_found_fault {
 
-    /// A builder for [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17949,7 +17947,7 @@ pub mod db_instance_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
+        /// Consumes the builder and constructs a [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault).
         pub fn build(self) -> crate::error::DbInstanceNotFoundFault {
             crate::error::DbInstanceNotFoundFault {
                 message: self.message,
@@ -17958,7 +17956,7 @@ pub mod db_instance_not_found_fault {
     }
 }
 impl DbInstanceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbInstanceNotFoundFault`](crate::error::DbInstanceNotFoundFault).
     pub fn builder() -> crate::error::db_instance_not_found_fault::Builder {
         crate::error::db_instance_not_found_fault::Builder::default()
     }
@@ -17994,11 +17992,10 @@ impl std::fmt::Display for SnapshotQuotaExceededFault {
     }
 }
 impl std::error::Error for SnapshotQuotaExceededFault {}
-/// See [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
+/// See [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
 pub mod snapshot_quota_exceeded_fault {
 
-    /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18014,7 +18011,7 @@ pub mod snapshot_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
+        /// Consumes the builder and constructs a [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
         pub fn build(self) -> crate::error::SnapshotQuotaExceededFault {
             crate::error::SnapshotQuotaExceededFault {
                 message: self.message,
@@ -18023,7 +18020,7 @@ pub mod snapshot_quota_exceeded_fault {
     }
 }
 impl SnapshotQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault).
     pub fn builder() -> crate::error::snapshot_quota_exceeded_fault::Builder {
         crate::error::snapshot_quota_exceeded_fault::Builder::default()
     }
@@ -18059,11 +18056,10 @@ impl std::fmt::Display for InvalidDbClusterStateFault {
     }
 }
 impl std::error::Error for InvalidDbClusterStateFault {}
-/// See [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
+/// See [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault).
 pub mod invalid_db_cluster_state_fault {
 
-    /// A builder for [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18079,7 +18075,7 @@ pub mod invalid_db_cluster_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault).
         pub fn build(self) -> crate::error::InvalidDbClusterStateFault {
             crate::error::InvalidDbClusterStateFault {
                 message: self.message,
@@ -18088,7 +18084,7 @@ pub mod invalid_db_cluster_state_fault {
     }
 }
 impl InvalidDbClusterStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterStateFault`](crate::error::InvalidDbClusterStateFault).
     pub fn builder() -> crate::error::invalid_db_cluster_state_fault::Builder {
         crate::error::invalid_db_cluster_state_fault::Builder::default()
     }
@@ -18127,11 +18123,10 @@ impl std::fmt::Display for DbSnapshotAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbSnapshotAlreadyExistsFault {}
-/// See [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
+/// See [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault).
 pub mod db_snapshot_already_exists_fault {
 
-    /// A builder for [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18147,7 +18142,7 @@ pub mod db_snapshot_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbSnapshotAlreadyExistsFault {
             crate::error::DbSnapshotAlreadyExistsFault {
                 message: self.message,
@@ -18156,7 +18151,7 @@ pub mod db_snapshot_already_exists_fault {
     }
 }
 impl DbSnapshotAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbSnapshotAlreadyExistsFault`](crate::error::DbSnapshotAlreadyExistsFault).
     pub fn builder() -> crate::error::db_snapshot_already_exists_fault::Builder {
         crate::error::db_snapshot_already_exists_fault::Builder::default()
     }
@@ -18192,11 +18187,10 @@ impl std::fmt::Display for DbClusterNotFoundFault {
     }
 }
 impl std::error::Error for DbClusterNotFoundFault {}
-/// See [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
+/// See [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault).
 pub mod db_cluster_not_found_fault {
 
-    /// A builder for [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18212,7 +18206,7 @@ pub mod db_cluster_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
+        /// Consumes the builder and constructs a [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault).
         pub fn build(self) -> crate::error::DbClusterNotFoundFault {
             crate::error::DbClusterNotFoundFault {
                 message: self.message,
@@ -18221,7 +18215,7 @@ pub mod db_cluster_not_found_fault {
     }
 }
 impl DbClusterNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterNotFoundFault`](crate::error::DbClusterNotFoundFault).
     pub fn builder() -> crate::error::db_cluster_not_found_fault::Builder {
         crate::error::db_cluster_not_found_fault::Builder::default()
     }
@@ -18257,11 +18251,10 @@ impl std::fmt::Display for ResourceNotFoundFault {
     }
 }
 impl std::error::Error for ResourceNotFoundFault {}
-/// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
+/// See [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
 pub mod resource_not_found_fault {
 
-    /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18277,7 +18270,7 @@ pub mod resource_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
+        /// Consumes the builder and constructs a [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
         pub fn build(self) -> crate::error::ResourceNotFoundFault {
             crate::error::ResourceNotFoundFault {
                 message: self.message,
@@ -18286,7 +18279,7 @@ pub mod resource_not_found_fault {
     }
 }
 impl ResourceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault).
     pub fn builder() -> crate::error::resource_not_found_fault::Builder {
         crate::error::resource_not_found_fault::Builder::default()
     }
@@ -18322,11 +18315,10 @@ impl std::fmt::Display for KmsKeyNotAccessibleFault {
     }
 }
 impl std::error::Error for KmsKeyNotAccessibleFault {}
-/// See [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
+/// See [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
 pub mod kms_key_not_accessible_fault {
 
-    /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
-    #[non_exhaustive]
+    /// A builder for [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18342,7 +18334,7 @@ pub mod kms_key_not_accessible_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
+        /// Consumes the builder and constructs a [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
         pub fn build(self) -> crate::error::KmsKeyNotAccessibleFault {
             crate::error::KmsKeyNotAccessibleFault {
                 message: self.message,
@@ -18351,7 +18343,7 @@ pub mod kms_key_not_accessible_fault {
     }
 }
 impl KmsKeyNotAccessibleFault {
-    /// Creates a new builder-style object to manufacture [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault)
+    /// Creates a new builder-style object to manufacture [`KmsKeyNotAccessibleFault`](crate::error::KmsKeyNotAccessibleFault).
     pub fn builder() -> crate::error::kms_key_not_accessible_fault::Builder {
         crate::error::kms_key_not_accessible_fault::Builder::default()
     }
@@ -18387,11 +18379,10 @@ impl std::fmt::Display for InvalidS3BucketFault {
     }
 }
 impl std::error::Error for InvalidS3BucketFault {}
-/// See [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault)
+/// See [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault).
 pub mod invalid_s3_bucket_fault {
 
-    /// A builder for [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18407,7 +18398,7 @@ pub mod invalid_s3_bucket_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault)
+        /// Consumes the builder and constructs a [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault).
         pub fn build(self) -> crate::error::InvalidS3BucketFault {
             crate::error::InvalidS3BucketFault {
                 message: self.message,
@@ -18416,7 +18407,7 @@ pub mod invalid_s3_bucket_fault {
     }
 }
 impl InvalidS3BucketFault {
-    /// Creates a new builder-style object to manufacture [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault)
+    /// Creates a new builder-style object to manufacture [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault).
     pub fn builder() -> crate::error::invalid_s3_bucket_fault::Builder {
         crate::error::invalid_s3_bucket_fault::Builder::default()
     }
@@ -18452,11 +18443,10 @@ impl std::fmt::Display for InvalidExportSourceStateFault {
     }
 }
 impl std::error::Error for InvalidExportSourceStateFault {}
-/// See [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault)
+/// See [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault).
 pub mod invalid_export_source_state_fault {
 
-    /// A builder for [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18472,7 +18462,7 @@ pub mod invalid_export_source_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault)
+        /// Consumes the builder and constructs a [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault).
         pub fn build(self) -> crate::error::InvalidExportSourceStateFault {
             crate::error::InvalidExportSourceStateFault {
                 message: self.message,
@@ -18481,7 +18471,7 @@ pub mod invalid_export_source_state_fault {
     }
 }
 impl InvalidExportSourceStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault).
     pub fn builder() -> crate::error::invalid_export_source_state_fault::Builder {
         crate::error::invalid_export_source_state_fault::Builder::default()
     }
@@ -18517,11 +18507,10 @@ impl std::fmt::Display for InvalidExportOnlyFault {
     }
 }
 impl std::error::Error for InvalidExportOnlyFault {}
-/// See [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault)
+/// See [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault).
 pub mod invalid_export_only_fault {
 
-    /// A builder for [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18537,7 +18526,7 @@ pub mod invalid_export_only_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault)
+        /// Consumes the builder and constructs a [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault).
         pub fn build(self) -> crate::error::InvalidExportOnlyFault {
             crate::error::InvalidExportOnlyFault {
                 message: self.message,
@@ -18546,7 +18535,7 @@ pub mod invalid_export_only_fault {
     }
 }
 impl InvalidExportOnlyFault {
-    /// Creates a new builder-style object to manufacture [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault)
+    /// Creates a new builder-style object to manufacture [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault).
     pub fn builder() -> crate::error::invalid_export_only_fault::Builder {
         crate::error::invalid_export_only_fault::Builder::default()
     }
@@ -18582,11 +18571,10 @@ impl std::fmt::Display for IamRoleNotFoundFault {
     }
 }
 impl std::error::Error for IamRoleNotFoundFault {}
-/// See [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault)
+/// See [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault).
 pub mod iam_role_not_found_fault {
 
-    /// A builder for [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18602,7 +18590,7 @@ pub mod iam_role_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault)
+        /// Consumes the builder and constructs a [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault).
         pub fn build(self) -> crate::error::IamRoleNotFoundFault {
             crate::error::IamRoleNotFoundFault {
                 message: self.message,
@@ -18611,7 +18599,7 @@ pub mod iam_role_not_found_fault {
     }
 }
 impl IamRoleNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault).
     pub fn builder() -> crate::error::iam_role_not_found_fault::Builder {
         crate::error::iam_role_not_found_fault::Builder::default()
     }
@@ -18647,11 +18635,10 @@ impl std::fmt::Display for IamRoleMissingPermissionsFault {
     }
 }
 impl std::error::Error for IamRoleMissingPermissionsFault {}
-/// See [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault)
+/// See [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault).
 pub mod iam_role_missing_permissions_fault {
 
-    /// A builder for [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault)
-    #[non_exhaustive]
+    /// A builder for [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18667,7 +18654,7 @@ pub mod iam_role_missing_permissions_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault)
+        /// Consumes the builder and constructs a [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault).
         pub fn build(self) -> crate::error::IamRoleMissingPermissionsFault {
             crate::error::IamRoleMissingPermissionsFault {
                 message: self.message,
@@ -18676,7 +18663,7 @@ pub mod iam_role_missing_permissions_fault {
     }
 }
 impl IamRoleMissingPermissionsFault {
-    /// Creates a new builder-style object to manufacture [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault)
+    /// Creates a new builder-style object to manufacture [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault).
     pub fn builder() -> crate::error::iam_role_missing_permissions_fault::Builder {
         crate::error::iam_role_missing_permissions_fault::Builder::default()
     }
@@ -18712,11 +18699,10 @@ impl std::fmt::Display for ExportTaskAlreadyExistsFault {
     }
 }
 impl std::error::Error for ExportTaskAlreadyExistsFault {}
-/// See [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault)
+/// See [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault).
 pub mod export_task_already_exists_fault {
 
-    /// A builder for [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18732,7 +18718,7 @@ pub mod export_task_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault).
         pub fn build(self) -> crate::error::ExportTaskAlreadyExistsFault {
             crate::error::ExportTaskAlreadyExistsFault {
                 message: self.message,
@@ -18741,7 +18727,7 @@ pub mod export_task_already_exists_fault {
     }
 }
 impl ExportTaskAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault).
     pub fn builder() -> crate::error::export_task_already_exists_fault::Builder {
         crate::error::export_task_already_exists_fault::Builder::default()
     }
@@ -18777,11 +18763,10 @@ impl std::fmt::Display for DbSnapshotNotFoundFault {
     }
 }
 impl std::error::Error for DbSnapshotNotFoundFault {}
-/// See [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
+/// See [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault).
 pub mod db_snapshot_not_found_fault {
 
-    /// A builder for [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18797,7 +18782,7 @@ pub mod db_snapshot_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
+        /// Consumes the builder and constructs a [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault).
         pub fn build(self) -> crate::error::DbSnapshotNotFoundFault {
             crate::error::DbSnapshotNotFoundFault {
                 message: self.message,
@@ -18806,7 +18791,7 @@ pub mod db_snapshot_not_found_fault {
     }
 }
 impl DbSnapshotNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbSnapshotNotFoundFault`](crate::error::DbSnapshotNotFoundFault).
     pub fn builder() -> crate::error::db_snapshot_not_found_fault::Builder {
         crate::error::db_snapshot_not_found_fault::Builder::default()
     }
@@ -18845,11 +18830,10 @@ impl std::fmt::Display for DbClusterSnapshotNotFoundFault {
     }
 }
 impl std::error::Error for DbClusterSnapshotNotFoundFault {}
-/// See [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
+/// See [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault).
 pub mod db_cluster_snapshot_not_found_fault {
 
-    /// A builder for [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18865,7 +18849,7 @@ pub mod db_cluster_snapshot_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
+        /// Consumes the builder and constructs a [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault).
         pub fn build(self) -> crate::error::DbClusterSnapshotNotFoundFault {
             crate::error::DbClusterSnapshotNotFoundFault {
                 message: self.message,
@@ -18874,7 +18858,7 @@ pub mod db_cluster_snapshot_not_found_fault {
     }
 }
 impl DbClusterSnapshotNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotNotFoundFault`](crate::error::DbClusterSnapshotNotFoundFault).
     pub fn builder() -> crate::error::db_cluster_snapshot_not_found_fault::Builder {
         crate::error::db_cluster_snapshot_not_found_fault::Builder::default()
     }
@@ -18910,11 +18894,10 @@ impl std::fmt::Display for StorageTypeNotSupportedFault {
     }
 }
 impl std::error::Error for StorageTypeNotSupportedFault {}
-/// See [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault)
+/// See [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault).
 pub mod storage_type_not_supported_fault {
 
-    /// A builder for [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault)
-    #[non_exhaustive]
+    /// A builder for [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18930,7 +18913,7 @@ pub mod storage_type_not_supported_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault)
+        /// Consumes the builder and constructs a [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault).
         pub fn build(self) -> crate::error::StorageTypeNotSupportedFault {
             crate::error::StorageTypeNotSupportedFault {
                 message: self.message,
@@ -18939,7 +18922,7 @@ pub mod storage_type_not_supported_fault {
     }
 }
 impl StorageTypeNotSupportedFault {
-    /// Creates a new builder-style object to manufacture [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault)
+    /// Creates a new builder-style object to manufacture [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault).
     pub fn builder() -> crate::error::storage_type_not_supported_fault::Builder {
         crate::error::storage_type_not_supported_fault::Builder::default()
     }
@@ -18975,11 +18958,10 @@ impl std::fmt::Display for DbInstanceAutomatedBackupQuotaExceededFault {
     }
 }
 impl std::error::Error for DbInstanceAutomatedBackupQuotaExceededFault {}
-/// See [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
+/// See [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault).
 pub mod db_instance_automated_backup_quota_exceeded_fault {
 
-    /// A builder for [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18995,7 +18977,7 @@ pub mod db_instance_automated_backup_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault).
         pub fn build(self) -> crate::error::DbInstanceAutomatedBackupQuotaExceededFault {
             crate::error::DbInstanceAutomatedBackupQuotaExceededFault {
                 message: self.message,
@@ -19004,7 +18986,7 @@ pub mod db_instance_automated_backup_quota_exceeded_fault {
     }
 }
 impl DbInstanceAutomatedBackupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupQuotaExceededFault`](crate::error::DbInstanceAutomatedBackupQuotaExceededFault).
     pub fn builder() -> crate::error::db_instance_automated_backup_quota_exceeded_fault::Builder {
         crate::error::db_instance_automated_backup_quota_exceeded_fault::Builder::default()
     }
@@ -19043,11 +19025,10 @@ impl std::fmt::Display for InvalidVpcNetworkStateFault {
     }
 }
 impl std::error::Error for InvalidVpcNetworkStateFault {}
-/// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
+/// See [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
 pub mod invalid_vpc_network_state_fault {
 
-    /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19063,7 +19044,7 @@ pub mod invalid_vpc_network_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
+        /// Consumes the builder and constructs a [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
         pub fn build(self) -> crate::error::InvalidVpcNetworkStateFault {
             crate::error::InvalidVpcNetworkStateFault {
                 message: self.message,
@@ -19072,7 +19053,7 @@ pub mod invalid_vpc_network_state_fault {
     }
 }
 impl InvalidVpcNetworkStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidVpcNetworkStateFault`](crate::error::InvalidVpcNetworkStateFault).
     pub fn builder() -> crate::error::invalid_vpc_network_state_fault::Builder {
         crate::error::invalid_vpc_network_state_fault::Builder::default()
     }
@@ -19108,11 +19089,10 @@ impl std::fmt::Display for InvalidSubnet {
     }
 }
 impl std::error::Error for InvalidSubnet {}
-/// See [`InvalidSubnet`](crate::error::InvalidSubnet)
+/// See [`InvalidSubnet`](crate::error::InvalidSubnet).
 pub mod invalid_subnet {
 
-    /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet)
-    #[non_exhaustive]
+    /// A builder for [`InvalidSubnet`](crate::error::InvalidSubnet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19128,7 +19108,7 @@ pub mod invalid_subnet {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidSubnet`](crate::error::InvalidSubnet)
+        /// Consumes the builder and constructs a [`InvalidSubnet`](crate::error::InvalidSubnet).
         pub fn build(self) -> crate::error::InvalidSubnet {
             crate::error::InvalidSubnet {
                 message: self.message,
@@ -19137,7 +19117,7 @@ pub mod invalid_subnet {
     }
 }
 impl InvalidSubnet {
-    /// Creates a new builder-style object to manufacture [`InvalidSubnet`](crate::error::InvalidSubnet)
+    /// Creates a new builder-style object to manufacture [`InvalidSubnet`](crate::error::InvalidSubnet).
     pub fn builder() -> crate::error::invalid_subnet::Builder {
         crate::error::invalid_subnet::Builder::default()
     }
@@ -19176,11 +19156,10 @@ impl std::fmt::Display for InsufficientDbInstanceCapacityFault {
     }
 }
 impl std::error::Error for InsufficientDbInstanceCapacityFault {}
-/// See [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
+/// See [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault).
 pub mod insufficient_db_instance_capacity_fault {
 
-    /// A builder for [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
-    #[non_exhaustive]
+    /// A builder for [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19196,7 +19175,7 @@ pub mod insufficient_db_instance_capacity_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
+        /// Consumes the builder and constructs a [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault).
         pub fn build(self) -> crate::error::InsufficientDbInstanceCapacityFault {
             crate::error::InsufficientDbInstanceCapacityFault {
                 message: self.message,
@@ -19205,7 +19184,7 @@ pub mod insufficient_db_instance_capacity_fault {
     }
 }
 impl InsufficientDbInstanceCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault)
+    /// Creates a new builder-style object to manufacture [`InsufficientDbInstanceCapacityFault`](crate::error::InsufficientDbInstanceCapacityFault).
     pub fn builder() -> crate::error::insufficient_db_instance_capacity_fault::Builder {
         crate::error::insufficient_db_instance_capacity_fault::Builder::default()
     }
@@ -19241,11 +19220,10 @@ impl std::fmt::Display for DbSubnetGroupNotFoundFault {
     }
 }
 impl std::error::Error for DbSubnetGroupNotFoundFault {}
-/// See [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
+/// See [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault).
 pub mod db_subnet_group_not_found_fault {
 
-    /// A builder for [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19261,7 +19239,7 @@ pub mod db_subnet_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
+        /// Consumes the builder and constructs a [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault).
         pub fn build(self) -> crate::error::DbSubnetGroupNotFoundFault {
             crate::error::DbSubnetGroupNotFoundFault {
                 message: self.message,
@@ -19270,7 +19248,7 @@ pub mod db_subnet_group_not_found_fault {
     }
 }
 impl DbSubnetGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupNotFoundFault`](crate::error::DbSubnetGroupNotFoundFault).
     pub fn builder() -> crate::error::db_subnet_group_not_found_fault::Builder {
         crate::error::db_subnet_group_not_found_fault::Builder::default()
     }
@@ -19309,11 +19287,10 @@ impl std::fmt::Display for DbSubnetGroupDoesNotCoverEnoughAZs {
     }
 }
 impl std::error::Error for DbSubnetGroupDoesNotCoverEnoughAZs {}
-/// See [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
+/// See [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs).
 pub mod db_subnet_group_does_not_cover_enough_a_zs {
 
-    /// A builder for [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
-    #[non_exhaustive]
+    /// A builder for [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19329,7 +19306,7 @@ pub mod db_subnet_group_does_not_cover_enough_a_zs {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
+        /// Consumes the builder and constructs a [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs).
         pub fn build(self) -> crate::error::DbSubnetGroupDoesNotCoverEnoughAZs {
             crate::error::DbSubnetGroupDoesNotCoverEnoughAZs {
                 message: self.message,
@@ -19338,7 +19315,7 @@ pub mod db_subnet_group_does_not_cover_enough_a_zs {
     }
 }
 impl DbSubnetGroupDoesNotCoverEnoughAZs {
-    /// Creates a new builder-style object to manufacture [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs)
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DbSubnetGroupDoesNotCoverEnoughAZs).
     pub fn builder() -> crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder {
         crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder::default()
     }
@@ -19375,11 +19352,10 @@ impl std::fmt::Display for AuthorizationNotFoundFault {
     }
 }
 impl std::error::Error for AuthorizationNotFoundFault {}
-/// See [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
+/// See [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
 pub mod authorization_not_found_fault {
 
-    /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19395,7 +19371,7 @@ pub mod authorization_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
+        /// Consumes the builder and constructs a [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
         pub fn build(self) -> crate::error::AuthorizationNotFoundFault {
             crate::error::AuthorizationNotFoundFault {
                 message: self.message,
@@ -19404,7 +19380,7 @@ pub mod authorization_not_found_fault {
     }
 }
 impl AuthorizationNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault).
     pub fn builder() -> crate::error::authorization_not_found_fault::Builder {
         crate::error::authorization_not_found_fault::Builder::default()
     }
@@ -19443,11 +19419,10 @@ impl std::fmt::Display for InvalidDbSecurityGroupStateFault {
     }
 }
 impl std::error::Error for InvalidDbSecurityGroupStateFault {}
-/// See [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
+/// See [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault).
 pub mod invalid_db_security_group_state_fault {
 
-    /// A builder for [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19463,7 +19438,7 @@ pub mod invalid_db_security_group_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault).
         pub fn build(self) -> crate::error::InvalidDbSecurityGroupStateFault {
             crate::error::InvalidDbSecurityGroupStateFault {
                 message: self.message,
@@ -19472,7 +19447,7 @@ pub mod invalid_db_security_group_state_fault {
     }
 }
 impl InvalidDbSecurityGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbSecurityGroupStateFault`](crate::error::InvalidDbSecurityGroupStateFault).
     pub fn builder() -> crate::error::invalid_db_security_group_state_fault::Builder {
         crate::error::invalid_db_security_group_state_fault::Builder::default()
     }
@@ -19511,11 +19486,10 @@ impl std::fmt::Display for DbSecurityGroupNotFoundFault {
     }
 }
 impl std::error::Error for DbSecurityGroupNotFoundFault {}
-/// See [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
+/// See [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault).
 pub mod db_security_group_not_found_fault {
 
-    /// A builder for [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19531,7 +19505,7 @@ pub mod db_security_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
+        /// Consumes the builder and constructs a [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault).
         pub fn build(self) -> crate::error::DbSecurityGroupNotFoundFault {
             crate::error::DbSecurityGroupNotFoundFault {
                 message: self.message,
@@ -19540,7 +19514,7 @@ pub mod db_security_group_not_found_fault {
     }
 }
 impl DbSecurityGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupNotFoundFault`](crate::error::DbSecurityGroupNotFoundFault).
     pub fn builder() -> crate::error::db_security_group_not_found_fault::Builder {
         crate::error::db_security_group_not_found_fault::Builder::default()
     }
@@ -19576,11 +19550,10 @@ impl std::fmt::Display for StorageQuotaExceededFault {
     }
 }
 impl std::error::Error for StorageQuotaExceededFault {}
-/// See [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
+/// See [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault).
 pub mod storage_quota_exceeded_fault {
 
-    /// A builder for [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19596,7 +19569,7 @@ pub mod storage_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
+        /// Consumes the builder and constructs a [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault).
         pub fn build(self) -> crate::error::StorageQuotaExceededFault {
             crate::error::StorageQuotaExceededFault {
                 message: self.message,
@@ -19605,7 +19578,7 @@ pub mod storage_quota_exceeded_fault {
     }
 }
 impl StorageQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault).
     pub fn builder() -> crate::error::storage_quota_exceeded_fault::Builder {
         crate::error::storage_quota_exceeded_fault::Builder::default()
     }
@@ -19644,11 +19617,10 @@ impl std::fmt::Display for ProvisionedIopsNotAvailableInAzFault {
     }
 }
 impl std::error::Error for ProvisionedIopsNotAvailableInAzFault {}
-/// See [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
+/// See [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault).
 pub mod provisioned_iops_not_available_in_az_fault {
 
-    /// A builder for [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
-    #[non_exhaustive]
+    /// A builder for [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19664,7 +19636,7 @@ pub mod provisioned_iops_not_available_in_az_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
+        /// Consumes the builder and constructs a [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault).
         pub fn build(self) -> crate::error::ProvisionedIopsNotAvailableInAzFault {
             crate::error::ProvisionedIopsNotAvailableInAzFault {
                 message: self.message,
@@ -19673,7 +19645,7 @@ pub mod provisioned_iops_not_available_in_az_fault {
     }
 }
 impl ProvisionedIopsNotAvailableInAzFault {
-    /// Creates a new builder-style object to manufacture [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault)
+    /// Creates a new builder-style object to manufacture [`ProvisionedIopsNotAvailableInAzFault`](crate::error::ProvisionedIopsNotAvailableInAzFault).
     pub fn builder() -> crate::error::provisioned_iops_not_available_in_az_fault::Builder {
         crate::error::provisioned_iops_not_available_in_az_fault::Builder::default()
     }
@@ -19709,11 +19681,10 @@ impl std::fmt::Display for PointInTimeRestoreNotEnabledFault {
     }
 }
 impl std::error::Error for PointInTimeRestoreNotEnabledFault {}
-/// See [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault)
+/// See [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault).
 pub mod point_in_time_restore_not_enabled_fault {
 
-    /// A builder for [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault)
-    #[non_exhaustive]
+    /// A builder for [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19729,7 +19700,7 @@ pub mod point_in_time_restore_not_enabled_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault)
+        /// Consumes the builder and constructs a [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault).
         pub fn build(self) -> crate::error::PointInTimeRestoreNotEnabledFault {
             crate::error::PointInTimeRestoreNotEnabledFault {
                 message: self.message,
@@ -19738,7 +19709,7 @@ pub mod point_in_time_restore_not_enabled_fault {
     }
 }
 impl PointInTimeRestoreNotEnabledFault {
-    /// Creates a new builder-style object to manufacture [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault)
+    /// Creates a new builder-style object to manufacture [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault).
     pub fn builder() -> crate::error::point_in_time_restore_not_enabled_fault::Builder {
         crate::error::point_in_time_restore_not_enabled_fault::Builder::default()
     }
@@ -19774,11 +19745,10 @@ impl std::fmt::Display for OptionGroupNotFoundFault {
     }
 }
 impl std::error::Error for OptionGroupNotFoundFault {}
-/// See [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault)
+/// See [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault).
 pub mod option_group_not_found_fault {
 
-    /// A builder for [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19794,7 +19764,7 @@ pub mod option_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault)
+        /// Consumes the builder and constructs a [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault).
         pub fn build(self) -> crate::error::OptionGroupNotFoundFault {
             crate::error::OptionGroupNotFoundFault {
                 message: self.message,
@@ -19803,7 +19773,7 @@ pub mod option_group_not_found_fault {
     }
 }
 impl OptionGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault).
     pub fn builder() -> crate::error::option_group_not_found_fault::Builder {
         crate::error::option_group_not_found_fault::Builder::default()
     }
@@ -19839,11 +19809,10 @@ impl std::fmt::Display for NetworkTypeNotSupported {
     }
 }
 impl std::error::Error for NetworkTypeNotSupported {}
-/// See [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
+/// See [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported).
 pub mod network_type_not_supported {
 
-    /// A builder for [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
-    #[non_exhaustive]
+    /// A builder for [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19859,7 +19828,7 @@ pub mod network_type_not_supported {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
+        /// Consumes the builder and constructs a [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported).
         pub fn build(self) -> crate::error::NetworkTypeNotSupported {
             crate::error::NetworkTypeNotSupported {
                 message: self.message,
@@ -19868,7 +19837,7 @@ pub mod network_type_not_supported {
     }
 }
 impl NetworkTypeNotSupported {
-    /// Creates a new builder-style object to manufacture [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported)
+    /// Creates a new builder-style object to manufacture [`NetworkTypeNotSupported`](crate::error::NetworkTypeNotSupported).
     pub fn builder() -> crate::error::network_type_not_supported::Builder {
         crate::error::network_type_not_supported::Builder::default()
     }
@@ -19904,11 +19873,10 @@ impl std::fmt::Display for InvalidRestoreFault {
     }
 }
 impl std::error::Error for InvalidRestoreFault {}
-/// See [`InvalidRestoreFault`](crate::error::InvalidRestoreFault)
+/// See [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
 pub mod invalid_restore_fault {
 
-    /// A builder for [`InvalidRestoreFault`](crate::error::InvalidRestoreFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19924,7 +19892,7 @@ pub mod invalid_restore_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRestoreFault`](crate::error::InvalidRestoreFault)
+        /// Consumes the builder and constructs a [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
         pub fn build(self) -> crate::error::InvalidRestoreFault {
             crate::error::InvalidRestoreFault {
                 message: self.message,
@@ -19933,7 +19901,7 @@ pub mod invalid_restore_fault {
     }
 }
 impl InvalidRestoreFault {
-    /// Creates a new builder-style object to manufacture [`InvalidRestoreFault`](crate::error::InvalidRestoreFault)
+    /// Creates a new builder-style object to manufacture [`InvalidRestoreFault`](crate::error::InvalidRestoreFault).
     pub fn builder() -> crate::error::invalid_restore_fault::Builder {
         crate::error::invalid_restore_fault::Builder::default()
     }
@@ -19969,11 +19937,10 @@ impl std::fmt::Display for InstanceQuotaExceededFault {
     }
 }
 impl std::error::Error for InstanceQuotaExceededFault {}
-/// See [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault)
+/// See [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault).
 pub mod instance_quota_exceeded_fault {
 
-    /// A builder for [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19989,7 +19956,7 @@ pub mod instance_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault)
+        /// Consumes the builder and constructs a [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault).
         pub fn build(self) -> crate::error::InstanceQuotaExceededFault {
             crate::error::InstanceQuotaExceededFault {
                 message: self.message,
@@ -19998,7 +19965,7 @@ pub mod instance_quota_exceeded_fault {
     }
 }
 impl InstanceQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault).
     pub fn builder() -> crate::error::instance_quota_exceeded_fault::Builder {
         crate::error::instance_quota_exceeded_fault::Builder::default()
     }
@@ -20034,11 +20001,10 @@ impl std::fmt::Display for DomainNotFoundFault {
     }
 }
 impl std::error::Error for DomainNotFoundFault {}
-/// See [`DomainNotFoundFault`](crate::error::DomainNotFoundFault)
+/// See [`DomainNotFoundFault`](crate::error::DomainNotFoundFault).
 pub mod domain_not_found_fault {
 
-    /// A builder for [`DomainNotFoundFault`](crate::error::DomainNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DomainNotFoundFault`](crate::error::DomainNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20054,7 +20020,7 @@ pub mod domain_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainNotFoundFault`](crate::error::DomainNotFoundFault)
+        /// Consumes the builder and constructs a [`DomainNotFoundFault`](crate::error::DomainNotFoundFault).
         pub fn build(self) -> crate::error::DomainNotFoundFault {
             crate::error::DomainNotFoundFault {
                 message: self.message,
@@ -20063,7 +20029,7 @@ pub mod domain_not_found_fault {
     }
 }
 impl DomainNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DomainNotFoundFault`](crate::error::DomainNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DomainNotFoundFault`](crate::error::DomainNotFoundFault).
     pub fn builder() -> crate::error::domain_not_found_fault::Builder {
         crate::error::domain_not_found_fault::Builder::default()
     }
@@ -20102,11 +20068,10 @@ impl std::fmt::Display for DbParameterGroupNotFoundFault {
     }
 }
 impl std::error::Error for DbParameterGroupNotFoundFault {}
-/// See [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
+/// See [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault).
 pub mod db_parameter_group_not_found_fault {
 
-    /// A builder for [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20122,7 +20087,7 @@ pub mod db_parameter_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
+        /// Consumes the builder and constructs a [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault).
         pub fn build(self) -> crate::error::DbParameterGroupNotFoundFault {
             crate::error::DbParameterGroupNotFoundFault {
                 message: self.message,
@@ -20131,7 +20096,7 @@ pub mod db_parameter_group_not_found_fault {
     }
 }
 impl DbParameterGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbParameterGroupNotFoundFault`](crate::error::DbParameterGroupNotFoundFault).
     pub fn builder() -> crate::error::db_parameter_group_not_found_fault::Builder {
         crate::error::db_parameter_group_not_found_fault::Builder::default()
     }
@@ -20170,11 +20135,10 @@ impl std::fmt::Display for DbInstanceAutomatedBackupNotFoundFault {
     }
 }
 impl std::error::Error for DbInstanceAutomatedBackupNotFoundFault {}
-/// See [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
+/// See [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault).
 pub mod db_instance_automated_backup_not_found_fault {
 
-    /// A builder for [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20190,7 +20154,7 @@ pub mod db_instance_automated_backup_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
+        /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault).
         pub fn build(self) -> crate::error::DbInstanceAutomatedBackupNotFoundFault {
             crate::error::DbInstanceAutomatedBackupNotFoundFault {
                 message: self.message,
@@ -20199,7 +20163,7 @@ pub mod db_instance_automated_backup_not_found_fault {
     }
 }
 impl DbInstanceAutomatedBackupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupNotFoundFault`](crate::error::DbInstanceAutomatedBackupNotFoundFault).
     pub fn builder() -> crate::error::db_instance_automated_backup_not_found_fault::Builder {
         crate::error::db_instance_automated_backup_not_found_fault::Builder::default()
     }
@@ -20238,11 +20202,10 @@ impl std::fmt::Display for DbInstanceAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbInstanceAlreadyExistsFault {}
-/// See [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
+/// See [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault).
 pub mod db_instance_already_exists_fault {
 
-    /// A builder for [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20258,7 +20221,7 @@ pub mod db_instance_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbInstanceAlreadyExistsFault {
             crate::error::DbInstanceAlreadyExistsFault {
                 message: self.message,
@@ -20267,7 +20230,7 @@ pub mod db_instance_already_exists_fault {
     }
 }
 impl DbInstanceAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbInstanceAlreadyExistsFault`](crate::error::DbInstanceAlreadyExistsFault).
     pub fn builder() -> crate::error::db_instance_already_exists_fault::Builder {
         crate::error::db_instance_already_exists_fault::Builder::default()
     }
@@ -20303,11 +20266,10 @@ impl std::fmt::Display for BackupPolicyNotFoundFault {
     }
 }
 impl std::error::Error for BackupPolicyNotFoundFault {}
-/// See [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault)
+/// See [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault).
 pub mod backup_policy_not_found_fault {
 
-    /// A builder for [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20323,7 +20285,7 @@ pub mod backup_policy_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault)
+        /// Consumes the builder and constructs a [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault).
         pub fn build(self) -> crate::error::BackupPolicyNotFoundFault {
             crate::error::BackupPolicyNotFoundFault {
                 message: self.message,
@@ -20332,7 +20294,7 @@ pub mod backup_policy_not_found_fault {
     }
 }
 impl BackupPolicyNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault).
     pub fn builder() -> crate::error::backup_policy_not_found_fault::Builder {
         crate::error::backup_policy_not_found_fault::Builder::default()
     }
@@ -20371,11 +20333,10 @@ impl std::fmt::Display for InvalidDbSnapshotStateFault {
     }
 }
 impl std::error::Error for InvalidDbSnapshotStateFault {}
-/// See [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
+/// See [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault).
 pub mod invalid_db_snapshot_state_fault {
 
-    /// A builder for [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20391,7 +20352,7 @@ pub mod invalid_db_snapshot_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault).
         pub fn build(self) -> crate::error::InvalidDbSnapshotStateFault {
             crate::error::InvalidDbSnapshotStateFault {
                 message: self.message,
@@ -20400,7 +20361,7 @@ pub mod invalid_db_snapshot_state_fault {
     }
 }
 impl InvalidDbSnapshotStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbSnapshotStateFault`](crate::error::InvalidDbSnapshotStateFault).
     pub fn builder() -> crate::error::invalid_db_snapshot_state_fault::Builder {
         crate::error::invalid_db_snapshot_state_fault::Builder::default()
     }
@@ -20439,11 +20400,10 @@ impl std::fmt::Display for InvalidDbClusterSnapshotStateFault {
     }
 }
 impl std::error::Error for InvalidDbClusterSnapshotStateFault {}
-/// See [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
+/// See [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault).
 pub mod invalid_db_cluster_snapshot_state_fault {
 
-    /// A builder for [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20459,7 +20419,7 @@ pub mod invalid_db_cluster_snapshot_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault).
         pub fn build(self) -> crate::error::InvalidDbClusterSnapshotStateFault {
             crate::error::InvalidDbClusterSnapshotStateFault {
                 message: self.message,
@@ -20468,7 +20428,7 @@ pub mod invalid_db_cluster_snapshot_state_fault {
     }
 }
 impl InvalidDbClusterSnapshotStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterSnapshotStateFault`](crate::error::InvalidDbClusterSnapshotStateFault).
     pub fn builder() -> crate::error::invalid_db_cluster_snapshot_state_fault::Builder {
         crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default()
     }
@@ -20504,11 +20464,10 @@ impl std::fmt::Display for InsufficientStorageClusterCapacityFault {
     }
 }
 impl std::error::Error for InsufficientStorageClusterCapacityFault {}
-/// See [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault)
+/// See [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault).
 pub mod insufficient_storage_cluster_capacity_fault {
 
-    /// A builder for [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault)
-    #[non_exhaustive]
+    /// A builder for [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20524,7 +20483,7 @@ pub mod insufficient_storage_cluster_capacity_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault)
+        /// Consumes the builder and constructs a [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault).
         pub fn build(self) -> crate::error::InsufficientStorageClusterCapacityFault {
             crate::error::InsufficientStorageClusterCapacityFault {
                 message: self.message,
@@ -20533,7 +20492,7 @@ pub mod insufficient_storage_cluster_capacity_fault {
     }
 }
 impl InsufficientStorageClusterCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault)
+    /// Creates a new builder-style object to manufacture [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault).
     pub fn builder() -> crate::error::insufficient_storage_cluster_capacity_fault::Builder {
         crate::error::insufficient_storage_cluster_capacity_fault::Builder::default()
     }
@@ -20572,11 +20531,10 @@ impl std::fmt::Display for InsufficientDbClusterCapacityFault {
     }
 }
 impl std::error::Error for InsufficientDbClusterCapacityFault {}
-/// See [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
+/// See [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault).
 pub mod insufficient_db_cluster_capacity_fault {
 
-    /// A builder for [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
-    #[non_exhaustive]
+    /// A builder for [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20592,7 +20550,7 @@ pub mod insufficient_db_cluster_capacity_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
+        /// Consumes the builder and constructs a [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault).
         pub fn build(self) -> crate::error::InsufficientDbClusterCapacityFault {
             crate::error::InsufficientDbClusterCapacityFault {
                 message: self.message,
@@ -20601,7 +20559,7 @@ pub mod insufficient_db_cluster_capacity_fault {
     }
 }
 impl InsufficientDbClusterCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault)
+    /// Creates a new builder-style object to manufacture [`InsufficientDbClusterCapacityFault`](crate::error::InsufficientDbClusterCapacityFault).
     pub fn builder() -> crate::error::insufficient_db_cluster_capacity_fault::Builder {
         crate::error::insufficient_db_cluster_capacity_fault::Builder::default()
     }
@@ -20640,11 +20598,10 @@ impl std::fmt::Display for DbClusterQuotaExceededFault {
     }
 }
 impl std::error::Error for DbClusterQuotaExceededFault {}
-/// See [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
+/// See [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault).
 pub mod db_cluster_quota_exceeded_fault {
 
-    /// A builder for [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20660,7 +20617,7 @@ pub mod db_cluster_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault).
         pub fn build(self) -> crate::error::DbClusterQuotaExceededFault {
             crate::error::DbClusterQuotaExceededFault {
                 message: self.message,
@@ -20669,7 +20626,7 @@ pub mod db_cluster_quota_exceeded_fault {
     }
 }
 impl DbClusterQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterQuotaExceededFault`](crate::error::DbClusterQuotaExceededFault).
     pub fn builder() -> crate::error::db_cluster_quota_exceeded_fault::Builder {
         crate::error::db_cluster_quota_exceeded_fault::Builder::default()
     }
@@ -20708,11 +20665,10 @@ impl std::fmt::Display for DbClusterParameterGroupNotFoundFault {
     }
 }
 impl std::error::Error for DbClusterParameterGroupNotFoundFault {}
-/// See [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
+/// See [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault).
 pub mod db_cluster_parameter_group_not_found_fault {
 
-    /// A builder for [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20728,7 +20684,7 @@ pub mod db_cluster_parameter_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
+        /// Consumes the builder and constructs a [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault).
         pub fn build(self) -> crate::error::DbClusterParameterGroupNotFoundFault {
             crate::error::DbClusterParameterGroupNotFoundFault {
                 message: self.message,
@@ -20737,7 +20693,7 @@ pub mod db_cluster_parameter_group_not_found_fault {
     }
 }
 impl DbClusterParameterGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterParameterGroupNotFoundFault`](crate::error::DbClusterParameterGroupNotFoundFault).
     pub fn builder() -> crate::error::db_cluster_parameter_group_not_found_fault::Builder {
         crate::error::db_cluster_parameter_group_not_found_fault::Builder::default()
     }
@@ -20776,11 +20732,10 @@ impl std::fmt::Display for DbClusterAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbClusterAlreadyExistsFault {}
-/// See [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
+/// See [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault).
 pub mod db_cluster_already_exists_fault {
 
-    /// A builder for [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20796,7 +20751,7 @@ pub mod db_cluster_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbClusterAlreadyExistsFault {
             crate::error::DbClusterAlreadyExistsFault {
                 message: self.message,
@@ -20805,7 +20760,7 @@ pub mod db_cluster_already_exists_fault {
     }
 }
 impl DbClusterAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterAlreadyExistsFault`](crate::error::DbClusterAlreadyExistsFault).
     pub fn builder() -> crate::error::db_cluster_already_exists_fault::Builder {
         crate::error::db_cluster_already_exists_fault::Builder::default()
     }
@@ -20844,11 +20799,10 @@ impl std::fmt::Display for InvalidDbSubnetGroupStateFault {
     }
 }
 impl std::error::Error for InvalidDbSubnetGroupStateFault {}
-/// See [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
+/// See [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault).
 pub mod invalid_db_subnet_group_state_fault {
 
-    /// A builder for [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20864,7 +20818,7 @@ pub mod invalid_db_subnet_group_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault).
         pub fn build(self) -> crate::error::InvalidDbSubnetGroupStateFault {
             crate::error::InvalidDbSubnetGroupStateFault {
                 message: self.message,
@@ -20873,7 +20827,7 @@ pub mod invalid_db_subnet_group_state_fault {
     }
 }
 impl InvalidDbSubnetGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetGroupStateFault`](crate::error::InvalidDbSubnetGroupStateFault).
     pub fn builder() -> crate::error::invalid_db_subnet_group_state_fault::Builder {
         crate::error::invalid_db_subnet_group_state_fault::Builder::default()
     }
@@ -20912,11 +20866,10 @@ impl std::fmt::Display for InvalidDbParameterGroupStateFault {
     }
 }
 impl std::error::Error for InvalidDbParameterGroupStateFault {}
-/// See [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
+/// See [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault).
 pub mod invalid_db_parameter_group_state_fault {
 
-    /// A builder for [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20932,7 +20885,7 @@ pub mod invalid_db_parameter_group_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault).
         pub fn build(self) -> crate::error::InvalidDbParameterGroupStateFault {
             crate::error::InvalidDbParameterGroupStateFault {
                 message: self.message,
@@ -20941,7 +20894,7 @@ pub mod invalid_db_parameter_group_state_fault {
     }
 }
 impl InvalidDbParameterGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbParameterGroupStateFault`](crate::error::InvalidDbParameterGroupStateFault).
     pub fn builder() -> crate::error::invalid_db_parameter_group_state_fault::Builder {
         crate::error::invalid_db_parameter_group_state_fault::Builder::default()
     }
@@ -20980,11 +20933,10 @@ impl std::fmt::Display for DbProxyTargetGroupNotFoundFault {
     }
 }
 impl std::error::Error for DbProxyTargetGroupNotFoundFault {}
-/// See [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
+/// See [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault).
 pub mod db_proxy_target_group_not_found_fault {
 
-    /// A builder for [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21000,7 +20952,7 @@ pub mod db_proxy_target_group_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
+        /// Consumes the builder and constructs a [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault).
         pub fn build(self) -> crate::error::DbProxyTargetGroupNotFoundFault {
             crate::error::DbProxyTargetGroupNotFoundFault {
                 message: self.message,
@@ -21009,7 +20961,7 @@ pub mod db_proxy_target_group_not_found_fault {
     }
 }
 impl DbProxyTargetGroupNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyTargetGroupNotFoundFault`](crate::error::DbProxyTargetGroupNotFoundFault).
     pub fn builder() -> crate::error::db_proxy_target_group_not_found_fault::Builder {
         crate::error::db_proxy_target_group_not_found_fault::Builder::default()
     }
@@ -21045,11 +20997,10 @@ impl std::fmt::Display for DbProxyNotFoundFault {
     }
 }
 impl std::error::Error for DbProxyNotFoundFault {}
-/// See [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
+/// See [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault).
 pub mod db_proxy_not_found_fault {
 
-    /// A builder for [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21065,7 +21016,7 @@ pub mod db_proxy_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
+        /// Consumes the builder and constructs a [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault).
         pub fn build(self) -> crate::error::DbProxyNotFoundFault {
             crate::error::DbProxyNotFoundFault {
                 message: self.message,
@@ -21074,7 +21025,7 @@ pub mod db_proxy_not_found_fault {
     }
 }
 impl DbProxyNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyNotFoundFault`](crate::error::DbProxyNotFoundFault).
     pub fn builder() -> crate::error::db_proxy_not_found_fault::Builder {
         crate::error::db_proxy_not_found_fault::Builder::default()
     }
@@ -21110,11 +21061,10 @@ impl std::fmt::Display for SubscriptionNotFoundFault {
     }
 }
 impl std::error::Error for SubscriptionNotFoundFault {}
-/// See [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault)
+/// See [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
 pub mod subscription_not_found_fault {
 
-    /// A builder for [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21130,7 +21080,7 @@ pub mod subscription_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault)
+        /// Consumes the builder and constructs a [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
         pub fn build(self) -> crate::error::SubscriptionNotFoundFault {
             crate::error::SubscriptionNotFoundFault {
                 message: self.message,
@@ -21139,7 +21089,7 @@ pub mod subscription_not_found_fault {
     }
 }
 impl SubscriptionNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault).
     pub fn builder() -> crate::error::subscription_not_found_fault::Builder {
         crate::error::subscription_not_found_fault::Builder::default()
     }
@@ -21175,11 +21125,10 @@ impl std::fmt::Display for SourceNotFoundFault {
     }
 }
 impl std::error::Error for SourceNotFoundFault {}
-/// See [`SourceNotFoundFault`](crate::error::SourceNotFoundFault)
+/// See [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
 pub mod source_not_found_fault {
 
-    /// A builder for [`SourceNotFoundFault`](crate::error::SourceNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21195,7 +21144,7 @@ pub mod source_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SourceNotFoundFault`](crate::error::SourceNotFoundFault)
+        /// Consumes the builder and constructs a [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
         pub fn build(self) -> crate::error::SourceNotFoundFault {
             crate::error::SourceNotFoundFault {
                 message: self.message,
@@ -21204,7 +21153,7 @@ pub mod source_not_found_fault {
     }
 }
 impl SourceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SourceNotFoundFault`](crate::error::SourceNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`SourceNotFoundFault`](crate::error::SourceNotFoundFault).
     pub fn builder() -> crate::error::source_not_found_fault::Builder {
         crate::error::source_not_found_fault::Builder::default()
     }
@@ -21243,11 +21192,10 @@ impl std::fmt::Display for DbInstanceRoleNotFoundFault {
     }
 }
 impl std::error::Error for DbInstanceRoleNotFoundFault {}
-/// See [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
+/// See [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault).
 pub mod db_instance_role_not_found_fault {
 
-    /// A builder for [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21263,7 +21211,7 @@ pub mod db_instance_role_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
+        /// Consumes the builder and constructs a [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault).
         pub fn build(self) -> crate::error::DbInstanceRoleNotFoundFault {
             crate::error::DbInstanceRoleNotFoundFault {
                 message: self.message,
@@ -21272,7 +21220,7 @@ pub mod db_instance_role_not_found_fault {
     }
 }
 impl DbInstanceRoleNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbInstanceRoleNotFoundFault`](crate::error::DbInstanceRoleNotFoundFault).
     pub fn builder() -> crate::error::db_instance_role_not_found_fault::Builder {
         crate::error::db_instance_role_not_found_fault::Builder::default()
     }
@@ -21308,11 +21256,10 @@ impl std::fmt::Display for DbClusterRoleNotFoundFault {
     }
 }
 impl std::error::Error for DbClusterRoleNotFoundFault {}
-/// See [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
+/// See [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault).
 pub mod db_cluster_role_not_found_fault {
 
-    /// A builder for [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21328,7 +21275,7 @@ pub mod db_cluster_role_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
+        /// Consumes the builder and constructs a [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault).
         pub fn build(self) -> crate::error::DbClusterRoleNotFoundFault {
             crate::error::DbClusterRoleNotFoundFault {
                 message: self.message,
@@ -21337,7 +21284,7 @@ pub mod db_cluster_role_not_found_fault {
     }
 }
 impl DbClusterRoleNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterRoleNotFoundFault`](crate::error::DbClusterRoleNotFoundFault).
     pub fn builder() -> crate::error::db_cluster_role_not_found_fault::Builder {
         crate::error::db_cluster_role_not_found_fault::Builder::default()
     }
@@ -21373,11 +21320,10 @@ impl std::fmt::Display for InvalidGlobalClusterStateFault {
     }
 }
 impl std::error::Error for InvalidGlobalClusterStateFault {}
-/// See [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
+/// See [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault).
 pub mod invalid_global_cluster_state_fault {
 
-    /// A builder for [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21393,7 +21339,7 @@ pub mod invalid_global_cluster_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
+        /// Consumes the builder and constructs a [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault).
         pub fn build(self) -> crate::error::InvalidGlobalClusterStateFault {
             crate::error::InvalidGlobalClusterStateFault {
                 message: self.message,
@@ -21402,7 +21348,7 @@ pub mod invalid_global_cluster_state_fault {
     }
 }
 impl InvalidGlobalClusterStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault).
     pub fn builder() -> crate::error::invalid_global_cluster_state_fault::Builder {
         crate::error::invalid_global_cluster_state_fault::Builder::default()
     }
@@ -21438,11 +21384,10 @@ impl std::fmt::Display for GlobalClusterNotFoundFault {
     }
 }
 impl std::error::Error for GlobalClusterNotFoundFault {}
-/// See [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
+/// See [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault).
 pub mod global_cluster_not_found_fault {
 
-    /// A builder for [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21458,7 +21403,7 @@ pub mod global_cluster_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
+        /// Consumes the builder and constructs a [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault).
         pub fn build(self) -> crate::error::GlobalClusterNotFoundFault {
             crate::error::GlobalClusterNotFoundFault {
                 message: self.message,
@@ -21467,7 +21412,7 @@ pub mod global_cluster_not_found_fault {
     }
 }
 impl GlobalClusterNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault).
     pub fn builder() -> crate::error::global_cluster_not_found_fault::Builder {
         crate::error::global_cluster_not_found_fault::Builder::default()
     }
@@ -21503,11 +21448,10 @@ impl std::fmt::Display for InvalidDbProxyStateFault {
     }
 }
 impl std::error::Error for InvalidDbProxyStateFault {}
-/// See [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
+/// See [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault).
 pub mod invalid_db_proxy_state_fault {
 
-    /// A builder for [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21523,7 +21467,7 @@ pub mod invalid_db_proxy_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault).
         pub fn build(self) -> crate::error::InvalidDbProxyStateFault {
             crate::error::InvalidDbProxyStateFault {
                 message: self.message,
@@ -21532,7 +21476,7 @@ pub mod invalid_db_proxy_state_fault {
     }
 }
 impl InvalidDbProxyStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbProxyStateFault`](crate::error::InvalidDbProxyStateFault).
     pub fn builder() -> crate::error::invalid_db_proxy_state_fault::Builder {
         crate::error::invalid_db_proxy_state_fault::Builder::default()
     }
@@ -21568,11 +21512,10 @@ impl std::fmt::Display for InsufficientAvailableIPsInSubnetFault {
     }
 }
 impl std::error::Error for InsufficientAvailableIPsInSubnetFault {}
-/// See [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault)
+/// See [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault).
 pub mod insufficient_available_i_ps_in_subnet_fault {
 
-    /// A builder for [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault)
-    #[non_exhaustive]
+    /// A builder for [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21588,7 +21531,7 @@ pub mod insufficient_available_i_ps_in_subnet_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault)
+        /// Consumes the builder and constructs a [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault).
         pub fn build(self) -> crate::error::InsufficientAvailableIPsInSubnetFault {
             crate::error::InsufficientAvailableIPsInSubnetFault {
                 message: self.message,
@@ -21597,7 +21540,7 @@ pub mod insufficient_available_i_ps_in_subnet_fault {
     }
 }
 impl InsufficientAvailableIPsInSubnetFault {
-    /// Creates a new builder-style object to manufacture [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault)
+    /// Creates a new builder-style object to manufacture [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault).
     pub fn builder() -> crate::error::insufficient_available_i_ps_in_subnet_fault::Builder {
         crate::error::insufficient_available_i_ps_in_subnet_fault::Builder::default()
     }
@@ -21636,11 +21579,10 @@ impl std::fmt::Display for DbProxyTargetAlreadyRegisteredFault {
     }
 }
 impl std::error::Error for DbProxyTargetAlreadyRegisteredFault {}
-/// See [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
+/// See [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault).
 pub mod db_proxy_target_already_registered_fault {
 
-    /// A builder for [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21656,7 +21598,7 @@ pub mod db_proxy_target_already_registered_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
+        /// Consumes the builder and constructs a [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault).
         pub fn build(self) -> crate::error::DbProxyTargetAlreadyRegisteredFault {
             crate::error::DbProxyTargetAlreadyRegisteredFault {
                 message: self.message,
@@ -21665,7 +21607,7 @@ pub mod db_proxy_target_already_registered_fault {
     }
 }
 impl DbProxyTargetAlreadyRegisteredFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyTargetAlreadyRegisteredFault`](crate::error::DbProxyTargetAlreadyRegisteredFault).
     pub fn builder() -> crate::error::db_proxy_target_already_registered_fault::Builder {
         crate::error::db_proxy_target_already_registered_fault::Builder::default()
     }
@@ -21704,11 +21646,10 @@ impl std::fmt::Display for ReservedDbInstancesOfferingNotFoundFault {
     }
 }
 impl std::error::Error for ReservedDbInstancesOfferingNotFoundFault {}
-/// See [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
+/// See [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault).
 pub mod reserved_db_instances_offering_not_found_fault {
 
-    /// A builder for [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21724,7 +21665,7 @@ pub mod reserved_db_instances_offering_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
+        /// Consumes the builder and constructs a [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault).
         pub fn build(self) -> crate::error::ReservedDbInstancesOfferingNotFoundFault {
             crate::error::ReservedDbInstancesOfferingNotFoundFault {
                 message: self.message,
@@ -21733,7 +21674,7 @@ pub mod reserved_db_instances_offering_not_found_fault {
     }
 }
 impl ReservedDbInstancesOfferingNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstancesOfferingNotFoundFault`](crate::error::ReservedDbInstancesOfferingNotFoundFault).
     pub fn builder() -> crate::error::reserved_db_instances_offering_not_found_fault::Builder {
         crate::error::reserved_db_instances_offering_not_found_fault::Builder::default()
     }
@@ -21772,11 +21713,10 @@ impl std::fmt::Display for ReservedDbInstanceQuotaExceededFault {
     }
 }
 impl std::error::Error for ReservedDbInstanceQuotaExceededFault {}
-/// See [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
+/// See [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault).
 pub mod reserved_db_instance_quota_exceeded_fault {
 
-    /// A builder for [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21792,7 +21732,7 @@ pub mod reserved_db_instance_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
+        /// Consumes the builder and constructs a [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault).
         pub fn build(self) -> crate::error::ReservedDbInstanceQuotaExceededFault {
             crate::error::ReservedDbInstanceQuotaExceededFault {
                 message: self.message,
@@ -21801,7 +21741,7 @@ pub mod reserved_db_instance_quota_exceeded_fault {
     }
 }
 impl ReservedDbInstanceQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceQuotaExceededFault`](crate::error::ReservedDbInstanceQuotaExceededFault).
     pub fn builder() -> crate::error::reserved_db_instance_quota_exceeded_fault::Builder {
         crate::error::reserved_db_instance_quota_exceeded_fault::Builder::default()
     }
@@ -21840,11 +21780,10 @@ impl std::fmt::Display for ReservedDbInstanceAlreadyExistsFault {
     }
 }
 impl std::error::Error for ReservedDbInstanceAlreadyExistsFault {}
-/// See [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
+/// See [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault).
 pub mod reserved_db_instance_already_exists_fault {
 
-    /// A builder for [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21860,7 +21799,7 @@ pub mod reserved_db_instance_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault).
         pub fn build(self) -> crate::error::ReservedDbInstanceAlreadyExistsFault {
             crate::error::ReservedDbInstanceAlreadyExistsFault {
                 message: self.message,
@@ -21869,7 +21808,7 @@ pub mod reserved_db_instance_already_exists_fault {
     }
 }
 impl ReservedDbInstanceAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceAlreadyExistsFault`](crate::error::ReservedDbInstanceAlreadyExistsFault).
     pub fn builder() -> crate::error::reserved_db_instance_already_exists_fault::Builder {
         crate::error::reserved_db_instance_already_exists_fault::Builder::default()
     }
@@ -21905,11 +21844,10 @@ impl std::fmt::Display for InvalidOptionGroupStateFault {
     }
 }
 impl std::error::Error for InvalidOptionGroupStateFault {}
-/// See [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault)
+/// See [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault).
 pub mod invalid_option_group_state_fault {
 
-    /// A builder for [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21925,7 +21863,7 @@ pub mod invalid_option_group_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault)
+        /// Consumes the builder and constructs a [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault).
         pub fn build(self) -> crate::error::InvalidOptionGroupStateFault {
             crate::error::InvalidOptionGroupStateFault {
                 message: self.message,
@@ -21934,7 +21872,7 @@ pub mod invalid_option_group_state_fault {
     }
 }
 impl InvalidOptionGroupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault).
     pub fn builder() -> crate::error::invalid_option_group_state_fault::Builder {
         crate::error::invalid_option_group_state_fault::Builder::default()
     }
@@ -21970,11 +21908,10 @@ impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
     }
 }
 impl std::error::Error for SubscriptionCategoryNotFoundFault {}
-/// See [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault)
+/// See [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
 pub mod subscription_category_not_found_fault {
 
-    /// A builder for [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21990,7 +21927,7 @@ pub mod subscription_category_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault)
+        /// Consumes the builder and constructs a [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
         pub fn build(self) -> crate::error::SubscriptionCategoryNotFoundFault {
             crate::error::SubscriptionCategoryNotFoundFault {
                 message: self.message,
@@ -21999,7 +21936,7 @@ pub mod subscription_category_not_found_fault {
     }
 }
 impl SubscriptionCategoryNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault).
     pub fn builder() -> crate::error::subscription_category_not_found_fault::Builder {
         crate::error::subscription_category_not_found_fault::Builder::default()
     }
@@ -22035,11 +21972,10 @@ impl std::fmt::Display for SnsTopicArnNotFoundFault {
     }
 }
 impl std::error::Error for SnsTopicArnNotFoundFault {}
-/// See [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
+/// See [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
 pub mod sns_topic_arn_not_found_fault {
 
-    /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22055,7 +21991,7 @@ pub mod sns_topic_arn_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
+        /// Consumes the builder and constructs a [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
         pub fn build(self) -> crate::error::SnsTopicArnNotFoundFault {
             crate::error::SnsTopicArnNotFoundFault {
                 message: self.message,
@@ -22064,7 +22000,7 @@ pub mod sns_topic_arn_not_found_fault {
     }
 }
 impl SnsTopicArnNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`SnsTopicArnNotFoundFault`](crate::error::SnsTopicArnNotFoundFault).
     pub fn builder() -> crate::error::sns_topic_arn_not_found_fault::Builder {
         crate::error::sns_topic_arn_not_found_fault::Builder::default()
     }
@@ -22100,11 +22036,10 @@ impl std::fmt::Display for SnsNoAuthorizationFault {
     }
 }
 impl std::error::Error for SnsNoAuthorizationFault {}
-/// See [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
+/// See [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
 pub mod sns_no_authorization_fault {
 
-    /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
-    #[non_exhaustive]
+    /// A builder for [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22120,7 +22055,7 @@ pub mod sns_no_authorization_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
+        /// Consumes the builder and constructs a [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
         pub fn build(self) -> crate::error::SnsNoAuthorizationFault {
             crate::error::SnsNoAuthorizationFault {
                 message: self.message,
@@ -22129,7 +22064,7 @@ pub mod sns_no_authorization_fault {
     }
 }
 impl SnsNoAuthorizationFault {
-    /// Creates a new builder-style object to manufacture [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault)
+    /// Creates a new builder-style object to manufacture [`SnsNoAuthorizationFault`](crate::error::SnsNoAuthorizationFault).
     pub fn builder() -> crate::error::sns_no_authorization_fault::Builder {
         crate::error::sns_no_authorization_fault::Builder::default()
     }
@@ -22165,11 +22100,10 @@ impl std::fmt::Display for SnsInvalidTopicFault {
     }
 }
 impl std::error::Error for SnsInvalidTopicFault {}
-/// See [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
+/// See [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
 pub mod sns_invalid_topic_fault {
 
-    /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
-    #[non_exhaustive]
+    /// A builder for [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22185,7 +22119,7 @@ pub mod sns_invalid_topic_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
+        /// Consumes the builder and constructs a [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
         pub fn build(self) -> crate::error::SnsInvalidTopicFault {
             crate::error::SnsInvalidTopicFault {
                 message: self.message,
@@ -22194,7 +22128,7 @@ pub mod sns_invalid_topic_fault {
     }
 }
 impl SnsInvalidTopicFault {
-    /// Creates a new builder-style object to manufacture [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault)
+    /// Creates a new builder-style object to manufacture [`SnsInvalidTopicFault`](crate::error::SnsInvalidTopicFault).
     pub fn builder() -> crate::error::sns_invalid_topic_fault::Builder {
         crate::error::sns_invalid_topic_fault::Builder::default()
     }
@@ -22230,11 +22164,10 @@ impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
     }
 }
 impl std::error::Error for EventSubscriptionQuotaExceededFault {}
-/// See [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault)
+/// See [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
 pub mod event_subscription_quota_exceeded_fault {
 
-    /// A builder for [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22250,7 +22183,7 @@ pub mod event_subscription_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault)
+        /// Consumes the builder and constructs a [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
         pub fn build(self) -> crate::error::EventSubscriptionQuotaExceededFault {
             crate::error::EventSubscriptionQuotaExceededFault {
                 message: self.message,
@@ -22259,7 +22192,7 @@ pub mod event_subscription_quota_exceeded_fault {
     }
 }
 impl EventSubscriptionQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault).
     pub fn builder() -> crate::error::event_subscription_quota_exceeded_fault::Builder {
         crate::error::event_subscription_quota_exceeded_fault::Builder::default()
     }
@@ -22295,11 +22228,10 @@ impl std::fmt::Display for SubnetAlreadyInUse {
     }
 }
 impl std::error::Error for SubnetAlreadyInUse {}
-/// See [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
+/// See [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
 pub mod subnet_already_in_use {
 
-    /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
-    #[non_exhaustive]
+    /// A builder for [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22315,7 +22247,7 @@ pub mod subnet_already_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
+        /// Consumes the builder and constructs a [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
         pub fn build(self) -> crate::error::SubnetAlreadyInUse {
             crate::error::SubnetAlreadyInUse {
                 message: self.message,
@@ -22324,7 +22256,7 @@ pub mod subnet_already_in_use {
     }
 }
 impl SubnetAlreadyInUse {
-    /// Creates a new builder-style object to manufacture [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
+    /// Creates a new builder-style object to manufacture [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse).
     pub fn builder() -> crate::error::subnet_already_in_use::Builder {
         crate::error::subnet_already_in_use::Builder::default()
     }
@@ -22360,11 +22292,10 @@ impl std::fmt::Display for DbSubnetQuotaExceededFault {
     }
 }
 impl std::error::Error for DbSubnetQuotaExceededFault {}
-/// See [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
+/// See [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault).
 pub mod db_subnet_quota_exceeded_fault {
 
-    /// A builder for [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22380,7 +22311,7 @@ pub mod db_subnet_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault).
         pub fn build(self) -> crate::error::DbSubnetQuotaExceededFault {
             crate::error::DbSubnetQuotaExceededFault {
                 message: self.message,
@@ -22389,7 +22320,7 @@ pub mod db_subnet_quota_exceeded_fault {
     }
 }
 impl DbSubnetQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbSubnetQuotaExceededFault`](crate::error::DbSubnetQuotaExceededFault).
     pub fn builder() -> crate::error::db_subnet_quota_exceeded_fault::Builder {
         crate::error::db_subnet_quota_exceeded_fault::Builder::default()
     }
@@ -22425,11 +22356,10 @@ impl std::fmt::Display for SharedSnapshotQuotaExceededFault {
     }
 }
 impl std::error::Error for SharedSnapshotQuotaExceededFault {}
-/// See [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault)
+/// See [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault).
 pub mod shared_snapshot_quota_exceeded_fault {
 
-    /// A builder for [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22445,7 +22375,7 @@ pub mod shared_snapshot_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault)
+        /// Consumes the builder and constructs a [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault).
         pub fn build(self) -> crate::error::SharedSnapshotQuotaExceededFault {
             crate::error::SharedSnapshotQuotaExceededFault {
                 message: self.message,
@@ -22454,7 +22384,7 @@ pub mod shared_snapshot_quota_exceeded_fault {
     }
 }
 impl SharedSnapshotQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault).
     pub fn builder() -> crate::error::shared_snapshot_quota_exceeded_fault::Builder {
         crate::error::shared_snapshot_quota_exceeded_fault::Builder::default()
     }
@@ -22493,11 +22423,10 @@ impl std::fmt::Display for InvalidDbProxyEndpointStateFault {
     }
 }
 impl std::error::Error for InvalidDbProxyEndpointStateFault {}
-/// See [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
+/// See [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault).
 pub mod invalid_db_proxy_endpoint_state_fault {
 
-    /// A builder for [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22513,7 +22442,7 @@ pub mod invalid_db_proxy_endpoint_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault).
         pub fn build(self) -> crate::error::InvalidDbProxyEndpointStateFault {
             crate::error::InvalidDbProxyEndpointStateFault {
                 message: self.message,
@@ -22522,7 +22451,7 @@ pub mod invalid_db_proxy_endpoint_state_fault {
     }
 }
 impl InvalidDbProxyEndpointStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbProxyEndpointStateFault`](crate::error::InvalidDbProxyEndpointStateFault).
     pub fn builder() -> crate::error::invalid_db_proxy_endpoint_state_fault::Builder {
         crate::error::invalid_db_proxy_endpoint_state_fault::Builder::default()
     }
@@ -22561,11 +22490,10 @@ impl std::fmt::Display for DbProxyEndpointNotFoundFault {
     }
 }
 impl std::error::Error for DbProxyEndpointNotFoundFault {}
-/// See [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
+/// See [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault).
 pub mod db_proxy_endpoint_not_found_fault {
 
-    /// A builder for [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22581,7 +22509,7 @@ pub mod db_proxy_endpoint_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
+        /// Consumes the builder and constructs a [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault).
         pub fn build(self) -> crate::error::DbProxyEndpointNotFoundFault {
             crate::error::DbProxyEndpointNotFoundFault {
                 message: self.message,
@@ -22590,7 +22518,7 @@ pub mod db_proxy_endpoint_not_found_fault {
     }
 }
 impl DbProxyEndpointNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyEndpointNotFoundFault`](crate::error::DbProxyEndpointNotFoundFault).
     pub fn builder() -> crate::error::db_proxy_endpoint_not_found_fault::Builder {
         crate::error::db_proxy_endpoint_not_found_fault::Builder::default()
     }
@@ -22629,11 +22557,10 @@ impl std::fmt::Display for DbProxyEndpointAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbProxyEndpointAlreadyExistsFault {}
-/// See [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
+/// See [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault).
 pub mod db_proxy_endpoint_already_exists_fault {
 
-    /// A builder for [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22649,7 +22576,7 @@ pub mod db_proxy_endpoint_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbProxyEndpointAlreadyExistsFault {
             crate::error::DbProxyEndpointAlreadyExistsFault {
                 message: self.message,
@@ -22658,7 +22585,7 @@ pub mod db_proxy_endpoint_already_exists_fault {
     }
 }
 impl DbProxyEndpointAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyEndpointAlreadyExistsFault`](crate::error::DbProxyEndpointAlreadyExistsFault).
     pub fn builder() -> crate::error::db_proxy_endpoint_already_exists_fault::Builder {
         crate::error::db_proxy_endpoint_already_exists_fault::Builder::default()
     }
@@ -22694,11 +22621,10 @@ impl std::fmt::Display for DbProxyAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbProxyAlreadyExistsFault {}
-/// See [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
+/// See [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault).
 pub mod db_proxy_already_exists_fault {
 
-    /// A builder for [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22714,7 +22640,7 @@ pub mod db_proxy_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbProxyAlreadyExistsFault {
             crate::error::DbProxyAlreadyExistsFault {
                 message: self.message,
@@ -22723,7 +22649,7 @@ pub mod db_proxy_already_exists_fault {
     }
 }
 impl DbProxyAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyAlreadyExistsFault`](crate::error::DbProxyAlreadyExistsFault).
     pub fn builder() -> crate::error::db_proxy_already_exists_fault::Builder {
         crate::error::db_proxy_already_exists_fault::Builder::default()
     }
@@ -22762,11 +22688,10 @@ impl std::fmt::Display for DbUpgradeDependencyFailureFault {
     }
 }
 impl std::error::Error for DbUpgradeDependencyFailureFault {}
-/// See [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
+/// See [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault).
 pub mod db_upgrade_dependency_failure_fault {
 
-    /// A builder for [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
-    #[non_exhaustive]
+    /// A builder for [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22782,7 +22707,7 @@ pub mod db_upgrade_dependency_failure_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
+        /// Consumes the builder and constructs a [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault).
         pub fn build(self) -> crate::error::DbUpgradeDependencyFailureFault {
             crate::error::DbUpgradeDependencyFailureFault {
                 message: self.message,
@@ -22791,7 +22716,7 @@ pub mod db_upgrade_dependency_failure_fault {
     }
 }
 impl DbUpgradeDependencyFailureFault {
-    /// Creates a new builder-style object to manufacture [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault)
+    /// Creates a new builder-style object to manufacture [`DbUpgradeDependencyFailureFault`](crate::error::DbUpgradeDependencyFailureFault).
     pub fn builder() -> crate::error::db_upgrade_dependency_failure_fault::Builder {
         crate::error::db_upgrade_dependency_failure_fault::Builder::default()
     }
@@ -22827,11 +22752,10 @@ impl std::fmt::Display for CertificateNotFoundFault {
     }
 }
 impl std::error::Error for CertificateNotFoundFault {}
-/// See [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault)
+/// See [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault).
 pub mod certificate_not_found_fault {
 
-    /// A builder for [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22847,7 +22771,7 @@ pub mod certificate_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault)
+        /// Consumes the builder and constructs a [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault).
         pub fn build(self) -> crate::error::CertificateNotFoundFault {
             crate::error::CertificateNotFoundFault {
                 message: self.message,
@@ -22856,7 +22780,7 @@ pub mod certificate_not_found_fault {
     }
 }
 impl CertificateNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault).
     pub fn builder() -> crate::error::certificate_not_found_fault::Builder {
         crate::error::certificate_not_found_fault::Builder::default()
     }
@@ -22895,11 +22819,10 @@ impl std::fmt::Display for InvalidDbClusterEndpointStateFault {
     }
 }
 impl std::error::Error for InvalidDbClusterEndpointStateFault {}
-/// See [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
+/// See [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault).
 pub mod invalid_db_cluster_endpoint_state_fault {
 
-    /// A builder for [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22915,7 +22838,7 @@ pub mod invalid_db_cluster_endpoint_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault).
         pub fn build(self) -> crate::error::InvalidDbClusterEndpointStateFault {
             crate::error::InvalidDbClusterEndpointStateFault {
                 message: self.message,
@@ -22924,7 +22847,7 @@ pub mod invalid_db_cluster_endpoint_state_fault {
     }
 }
 impl InvalidDbClusterEndpointStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterEndpointStateFault`](crate::error::InvalidDbClusterEndpointStateFault).
     pub fn builder() -> crate::error::invalid_db_cluster_endpoint_state_fault::Builder {
         crate::error::invalid_db_cluster_endpoint_state_fault::Builder::default()
     }
@@ -22963,11 +22886,10 @@ impl std::fmt::Display for DbClusterEndpointNotFoundFault {
     }
 }
 impl std::error::Error for DbClusterEndpointNotFoundFault {}
-/// See [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
+/// See [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault).
 pub mod db_cluster_endpoint_not_found_fault {
 
-    /// A builder for [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22983,7 +22905,7 @@ pub mod db_cluster_endpoint_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
+        /// Consumes the builder and constructs a [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault).
         pub fn build(self) -> crate::error::DbClusterEndpointNotFoundFault {
             crate::error::DbClusterEndpointNotFoundFault {
                 message: self.message,
@@ -22992,7 +22914,7 @@ pub mod db_cluster_endpoint_not_found_fault {
     }
 }
 impl DbClusterEndpointNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterEndpointNotFoundFault`](crate::error::DbClusterEndpointNotFoundFault).
     pub fn builder() -> crate::error::db_cluster_endpoint_not_found_fault::Builder {
         crate::error::db_cluster_endpoint_not_found_fault::Builder::default()
     }
@@ -23031,11 +22953,10 @@ impl std::fmt::Display for InvalidCustomDbEngineVersionStateFault {
     }
 }
 impl std::error::Error for InvalidCustomDbEngineVersionStateFault {}
-/// See [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
+/// See [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault).
 pub mod invalid_custom_db_engine_version_state_fault {
 
-    /// A builder for [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23051,7 +22972,7 @@ pub mod invalid_custom_db_engine_version_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
+        /// Consumes the builder and constructs a [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault).
         pub fn build(self) -> crate::error::InvalidCustomDbEngineVersionStateFault {
             crate::error::InvalidCustomDbEngineVersionStateFault {
                 message: self.message,
@@ -23060,7 +22981,7 @@ pub mod invalid_custom_db_engine_version_state_fault {
     }
 }
 impl InvalidCustomDbEngineVersionStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidCustomDbEngineVersionStateFault`](crate::error::InvalidCustomDbEngineVersionStateFault).
     pub fn builder() -> crate::error::invalid_custom_db_engine_version_state_fault::Builder {
         crate::error::invalid_custom_db_engine_version_state_fault::Builder::default()
     }
@@ -23099,11 +23020,10 @@ impl std::fmt::Display for CustomDbEngineVersionNotFoundFault {
     }
 }
 impl std::error::Error for CustomDbEngineVersionNotFoundFault {}
-/// See [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
+/// See [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault).
 pub mod custom_db_engine_version_not_found_fault {
 
-    /// A builder for [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23119,7 +23039,7 @@ pub mod custom_db_engine_version_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
+        /// Consumes the builder and constructs a [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault).
         pub fn build(self) -> crate::error::CustomDbEngineVersionNotFoundFault {
             crate::error::CustomDbEngineVersionNotFoundFault {
                 message: self.message,
@@ -23128,7 +23048,7 @@ pub mod custom_db_engine_version_not_found_fault {
     }
 }
 impl CustomDbEngineVersionNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionNotFoundFault`](crate::error::CustomDbEngineVersionNotFoundFault).
     pub fn builder() -> crate::error::custom_db_engine_version_not_found_fault::Builder {
         crate::error::custom_db_engine_version_not_found_fault::Builder::default()
     }
@@ -23167,11 +23087,10 @@ impl std::fmt::Display for InvalidDbClusterCapacityFault {
     }
 }
 impl std::error::Error for InvalidDbClusterCapacityFault {}
-/// See [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
+/// See [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault).
 pub mod invalid_db_cluster_capacity_fault {
 
-    /// A builder for [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23187,7 +23106,7 @@ pub mod invalid_db_cluster_capacity_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
+        /// Consumes the builder and constructs a [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault).
         pub fn build(self) -> crate::error::InvalidDbClusterCapacityFault {
             crate::error::InvalidDbClusterCapacityFault {
                 message: self.message,
@@ -23196,7 +23115,7 @@ pub mod invalid_db_cluster_capacity_fault {
     }
 }
 impl InvalidDbClusterCapacityFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbClusterCapacityFault`](crate::error::InvalidDbClusterCapacityFault).
     pub fn builder() -> crate::error::invalid_db_cluster_capacity_fault::Builder {
         crate::error::invalid_db_cluster_capacity_fault::Builder::default()
     }
@@ -23232,11 +23151,10 @@ impl std::fmt::Display for DbLogFileNotFoundFault {
     }
 }
 impl std::error::Error for DbLogFileNotFoundFault {}
-/// See [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
+/// See [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault).
 pub mod db_log_file_not_found_fault {
 
-    /// A builder for [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23252,7 +23170,7 @@ pub mod db_log_file_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
+        /// Consumes the builder and constructs a [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault).
         pub fn build(self) -> crate::error::DbLogFileNotFoundFault {
             crate::error::DbLogFileNotFoundFault {
                 message: self.message,
@@ -23261,7 +23179,7 @@ pub mod db_log_file_not_found_fault {
     }
 }
 impl DbLogFileNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbLogFileNotFoundFault`](crate::error::DbLogFileNotFoundFault).
     pub fn builder() -> crate::error::db_log_file_not_found_fault::Builder {
         crate::error::db_log_file_not_found_fault::Builder::default()
     }
@@ -23300,11 +23218,10 @@ impl std::fmt::Display for ReservedDbInstanceNotFoundFault {
     }
 }
 impl std::error::Error for ReservedDbInstanceNotFoundFault {}
-/// See [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
+/// See [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault).
 pub mod reserved_db_instance_not_found_fault {
 
-    /// A builder for [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23320,7 +23237,7 @@ pub mod reserved_db_instance_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
+        /// Consumes the builder and constructs a [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault).
         pub fn build(self) -> crate::error::ReservedDbInstanceNotFoundFault {
             crate::error::ReservedDbInstanceNotFoundFault {
                 message: self.message,
@@ -23329,7 +23246,7 @@ pub mod reserved_db_instance_not_found_fault {
     }
 }
 impl ReservedDbInstanceNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstanceNotFoundFault`](crate::error::ReservedDbInstanceNotFoundFault).
     pub fn builder() -> crate::error::reserved_db_instance_not_found_fault::Builder {
         crate::error::reserved_db_instance_not_found_fault::Builder::default()
     }
@@ -23365,11 +23282,10 @@ impl std::fmt::Display for ExportTaskNotFoundFault {
     }
 }
 impl std::error::Error for ExportTaskNotFoundFault {}
-/// See [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault)
+/// See [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault).
 pub mod export_task_not_found_fault {
 
-    /// A builder for [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23385,7 +23301,7 @@ pub mod export_task_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault)
+        /// Consumes the builder and constructs a [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault).
         pub fn build(self) -> crate::error::ExportTaskNotFoundFault {
             crate::error::ExportTaskNotFoundFault {
                 message: self.message,
@@ -23394,7 +23310,7 @@ pub mod export_task_not_found_fault {
     }
 }
 impl ExportTaskNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault).
     pub fn builder() -> crate::error::export_task_not_found_fault::Builder {
         crate::error::export_task_not_found_fault::Builder::default()
     }
@@ -23430,11 +23346,10 @@ impl std::fmt::Display for DbProxyTargetNotFoundFault {
     }
 }
 impl std::error::Error for DbProxyTargetNotFoundFault {}
-/// See [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
+/// See [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault).
 pub mod db_proxy_target_not_found_fault {
 
-    /// A builder for [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23450,7 +23365,7 @@ pub mod db_proxy_target_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
+        /// Consumes the builder and constructs a [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault).
         pub fn build(self) -> crate::error::DbProxyTargetNotFoundFault {
             crate::error::DbProxyTargetNotFoundFault {
                 message: self.message,
@@ -23459,7 +23374,7 @@ pub mod db_proxy_target_not_found_fault {
     }
 }
 impl DbProxyTargetNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyTargetNotFoundFault`](crate::error::DbProxyTargetNotFoundFault).
     pub fn builder() -> crate::error::db_proxy_target_not_found_fault::Builder {
         crate::error::db_proxy_target_not_found_fault::Builder::default()
     }
@@ -23498,11 +23413,10 @@ impl std::fmt::Display for DbClusterBacktrackNotFoundFault {
     }
 }
 impl std::error::Error for DbClusterBacktrackNotFoundFault {}
-/// See [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
+/// See [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault).
 pub mod db_cluster_backtrack_not_found_fault {
 
-    /// A builder for [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23518,7 +23432,7 @@ pub mod db_cluster_backtrack_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
+        /// Consumes the builder and constructs a [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault).
         pub fn build(self) -> crate::error::DbClusterBacktrackNotFoundFault {
             crate::error::DbClusterBacktrackNotFoundFault {
                 message: self.message,
@@ -23527,7 +23441,7 @@ pub mod db_cluster_backtrack_not_found_fault {
     }
 }
 impl DbClusterBacktrackNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterBacktrackNotFoundFault`](crate::error::DbClusterBacktrackNotFoundFault).
     pub fn builder() -> crate::error::db_cluster_backtrack_not_found_fault::Builder {
         crate::error::db_cluster_backtrack_not_found_fault::Builder::default()
     }
@@ -23563,11 +23477,10 @@ impl std::fmt::Display for InvalidEventSubscriptionStateFault {
     }
 }
 impl std::error::Error for InvalidEventSubscriptionStateFault {}
-/// See [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault)
+/// See [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault).
 pub mod invalid_event_subscription_state_fault {
 
-    /// A builder for [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23583,7 +23496,7 @@ pub mod invalid_event_subscription_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault)
+        /// Consumes the builder and constructs a [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault).
         pub fn build(self) -> crate::error::InvalidEventSubscriptionStateFault {
             crate::error::InvalidEventSubscriptionStateFault {
                 message: self.message,
@@ -23592,7 +23505,7 @@ pub mod invalid_event_subscription_state_fault {
     }
 }
 impl InvalidEventSubscriptionStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault).
     pub fn builder() -> crate::error::invalid_event_subscription_state_fault::Builder {
         crate::error::invalid_event_subscription_state_fault::Builder::default()
     }
@@ -23628,11 +23541,10 @@ impl std::fmt::Display for InvalidDbSubnetStateFault {
     }
 }
 impl std::error::Error for InvalidDbSubnetStateFault {}
-/// See [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
+/// See [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault).
 pub mod invalid_db_subnet_state_fault {
 
-    /// A builder for [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23648,7 +23560,7 @@ pub mod invalid_db_subnet_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault).
         pub fn build(self) -> crate::error::InvalidDbSubnetStateFault {
             crate::error::InvalidDbSubnetStateFault {
                 message: self.message,
@@ -23657,7 +23569,7 @@ pub mod invalid_db_subnet_state_fault {
     }
 }
 impl InvalidDbSubnetStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetStateFault`](crate::error::InvalidDbSubnetStateFault).
     pub fn builder() -> crate::error::invalid_db_subnet_state_fault::Builder {
         crate::error::invalid_db_subnet_state_fault::Builder::default()
     }
@@ -23693,11 +23605,10 @@ impl std::fmt::Display for InvalidDbInstanceAutomatedBackupStateFault {
     }
 }
 impl std::error::Error for InvalidDbInstanceAutomatedBackupStateFault {}
-/// See [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
+/// See [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault).
 pub mod invalid_db_instance_automated_backup_state_fault {
 
-    /// A builder for [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23713,7 +23624,7 @@ pub mod invalid_db_instance_automated_backup_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
+        /// Consumes the builder and constructs a [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault).
         pub fn build(self) -> crate::error::InvalidDbInstanceAutomatedBackupStateFault {
             crate::error::InvalidDbInstanceAutomatedBackupStateFault {
                 message: self.message,
@@ -23722,7 +23633,7 @@ pub mod invalid_db_instance_automated_backup_state_fault {
     }
 }
 impl InvalidDbInstanceAutomatedBackupStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbInstanceAutomatedBackupStateFault`](crate::error::InvalidDbInstanceAutomatedBackupStateFault).
     pub fn builder() -> crate::error::invalid_db_instance_automated_backup_state_fault::Builder {
         crate::error::invalid_db_instance_automated_backup_state_fault::Builder::default()
     }
@@ -23761,11 +23672,10 @@ impl std::fmt::Display for DbClusterSnapshotAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbClusterSnapshotAlreadyExistsFault {}
-/// See [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
+/// See [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault).
 pub mod db_cluster_snapshot_already_exists_fault {
 
-    /// A builder for [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23781,7 +23691,7 @@ pub mod db_cluster_snapshot_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbClusterSnapshotAlreadyExistsFault {
             crate::error::DbClusterSnapshotAlreadyExistsFault {
                 message: self.message,
@@ -23790,7 +23700,7 @@ pub mod db_cluster_snapshot_already_exists_fault {
     }
 }
 impl DbClusterSnapshotAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAlreadyExistsFault`](crate::error::DbClusterSnapshotAlreadyExistsFault).
     pub fn builder() -> crate::error::db_cluster_snapshot_already_exists_fault::Builder {
         crate::error::db_cluster_snapshot_already_exists_fault::Builder::default()
     }
@@ -23826,11 +23736,10 @@ impl std::fmt::Display for OptionGroupQuotaExceededFault {
     }
 }
 impl std::error::Error for OptionGroupQuotaExceededFault {}
-/// See [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault)
+/// See [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault).
 pub mod option_group_quota_exceeded_fault {
 
-    /// A builder for [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23846,7 +23755,7 @@ pub mod option_group_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault)
+        /// Consumes the builder and constructs a [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::OptionGroupQuotaExceededFault {
             crate::error::OptionGroupQuotaExceededFault {
                 message: self.message,
@@ -23855,7 +23764,7 @@ pub mod option_group_quota_exceeded_fault {
     }
 }
 impl OptionGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault).
     pub fn builder() -> crate::error::option_group_quota_exceeded_fault::Builder {
         crate::error::option_group_quota_exceeded_fault::Builder::default()
     }
@@ -23891,11 +23800,10 @@ impl std::fmt::Display for OptionGroupAlreadyExistsFault {
     }
 }
 impl std::error::Error for OptionGroupAlreadyExistsFault {}
-/// See [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault)
+/// See [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault).
 pub mod option_group_already_exists_fault {
 
-    /// A builder for [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23911,7 +23819,7 @@ pub mod option_group_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::OptionGroupAlreadyExistsFault {
             crate::error::OptionGroupAlreadyExistsFault {
                 message: self.message,
@@ -23920,7 +23828,7 @@ pub mod option_group_already_exists_fault {
     }
 }
 impl OptionGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault).
     pub fn builder() -> crate::error::option_group_already_exists_fault::Builder {
         crate::error::option_group_already_exists_fault::Builder::default()
     }
@@ -23956,11 +23864,10 @@ impl std::fmt::Display for GlobalClusterQuotaExceededFault {
     }
 }
 impl std::error::Error for GlobalClusterQuotaExceededFault {}
-/// See [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
+/// See [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault).
 pub mod global_cluster_quota_exceeded_fault {
 
-    /// A builder for [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23976,7 +23883,7 @@ pub mod global_cluster_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
+        /// Consumes the builder and constructs a [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault).
         pub fn build(self) -> crate::error::GlobalClusterQuotaExceededFault {
             crate::error::GlobalClusterQuotaExceededFault {
                 message: self.message,
@@ -23985,7 +23892,7 @@ pub mod global_cluster_quota_exceeded_fault {
     }
 }
 impl GlobalClusterQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault).
     pub fn builder() -> crate::error::global_cluster_quota_exceeded_fault::Builder {
         crate::error::global_cluster_quota_exceeded_fault::Builder::default()
     }
@@ -24021,11 +23928,10 @@ impl std::fmt::Display for GlobalClusterAlreadyExistsFault {
     }
 }
 impl std::error::Error for GlobalClusterAlreadyExistsFault {}
-/// See [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
+/// See [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault).
 pub mod global_cluster_already_exists_fault {
 
-    /// A builder for [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24041,7 +23947,7 @@ pub mod global_cluster_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault).
         pub fn build(self) -> crate::error::GlobalClusterAlreadyExistsFault {
             crate::error::GlobalClusterAlreadyExistsFault {
                 message: self.message,
@@ -24050,7 +23956,7 @@ pub mod global_cluster_already_exists_fault {
     }
 }
 impl GlobalClusterAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault).
     pub fn builder() -> crate::error::global_cluster_already_exists_fault::Builder {
         crate::error::global_cluster_already_exists_fault::Builder::default()
     }
@@ -24086,11 +23992,10 @@ impl std::fmt::Display for SubscriptionAlreadyExistFault {
     }
 }
 impl std::error::Error for SubscriptionAlreadyExistFault {}
-/// See [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault)
+/// See [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
 pub mod subscription_already_exist_fault {
 
-    /// A builder for [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault)
-    #[non_exhaustive]
+    /// A builder for [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24106,7 +24011,7 @@ pub mod subscription_already_exist_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault)
+        /// Consumes the builder and constructs a [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
         pub fn build(self) -> crate::error::SubscriptionAlreadyExistFault {
             crate::error::SubscriptionAlreadyExistFault {
                 message: self.message,
@@ -24115,7 +24020,7 @@ pub mod subscription_already_exist_fault {
     }
 }
 impl SubscriptionAlreadyExistFault {
-    /// Creates a new builder-style object to manufacture [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault)
+    /// Creates a new builder-style object to manufacture [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault).
     pub fn builder() -> crate::error::subscription_already_exist_fault::Builder {
         crate::error::subscription_already_exist_fault::Builder::default()
     }
@@ -24154,11 +24059,10 @@ impl std::fmt::Display for DbSubnetGroupQuotaExceededFault {
     }
 }
 impl std::error::Error for DbSubnetGroupQuotaExceededFault {}
-/// See [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
+/// See [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault).
 pub mod db_subnet_group_quota_exceeded_fault {
 
-    /// A builder for [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24174,7 +24078,7 @@ pub mod db_subnet_group_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::DbSubnetGroupQuotaExceededFault {
             crate::error::DbSubnetGroupQuotaExceededFault {
                 message: self.message,
@@ -24183,7 +24087,7 @@ pub mod db_subnet_group_quota_exceeded_fault {
     }
 }
 impl DbSubnetGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupQuotaExceededFault`](crate::error::DbSubnetGroupQuotaExceededFault).
     pub fn builder() -> crate::error::db_subnet_group_quota_exceeded_fault::Builder {
         crate::error::db_subnet_group_quota_exceeded_fault::Builder::default()
     }
@@ -24222,11 +24126,10 @@ impl std::fmt::Display for DbSubnetGroupAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbSubnetGroupAlreadyExistsFault {}
-/// See [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
+/// See [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault).
 pub mod db_subnet_group_already_exists_fault {
 
-    /// A builder for [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24242,7 +24145,7 @@ pub mod db_subnet_group_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbSubnetGroupAlreadyExistsFault {
             crate::error::DbSubnetGroupAlreadyExistsFault {
                 message: self.message,
@@ -24251,7 +24154,7 @@ pub mod db_subnet_group_already_exists_fault {
     }
 }
 impl DbSubnetGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupAlreadyExistsFault`](crate::error::DbSubnetGroupAlreadyExistsFault).
     pub fn builder() -> crate::error::db_subnet_group_already_exists_fault::Builder {
         crate::error::db_subnet_group_already_exists_fault::Builder::default()
     }
@@ -24290,11 +24193,10 @@ impl std::fmt::Display for DbSecurityGroupQuotaExceededFault {
     }
 }
 impl std::error::Error for DbSecurityGroupQuotaExceededFault {}
-/// See [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
+/// See [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault).
 pub mod db_security_group_quota_exceeded_fault {
 
-    /// A builder for [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24310,7 +24212,7 @@ pub mod db_security_group_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::DbSecurityGroupQuotaExceededFault {
             crate::error::DbSecurityGroupQuotaExceededFault {
                 message: self.message,
@@ -24319,7 +24221,7 @@ pub mod db_security_group_quota_exceeded_fault {
     }
 }
 impl DbSecurityGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupQuotaExceededFault`](crate::error::DbSecurityGroupQuotaExceededFault).
     pub fn builder() -> crate::error::db_security_group_quota_exceeded_fault::Builder {
         crate::error::db_security_group_quota_exceeded_fault::Builder::default()
     }
@@ -24358,11 +24260,10 @@ impl std::fmt::Display for DbSecurityGroupNotSupportedFault {
     }
 }
 impl std::error::Error for DbSecurityGroupNotSupportedFault {}
-/// See [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
+/// See [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault).
 pub mod db_security_group_not_supported_fault {
 
-    /// A builder for [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24378,7 +24279,7 @@ pub mod db_security_group_not_supported_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
+        /// Consumes the builder and constructs a [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault).
         pub fn build(self) -> crate::error::DbSecurityGroupNotSupportedFault {
             crate::error::DbSecurityGroupNotSupportedFault {
                 message: self.message,
@@ -24387,7 +24288,7 @@ pub mod db_security_group_not_supported_fault {
     }
 }
 impl DbSecurityGroupNotSupportedFault {
-    /// Creates a new builder-style object to manufacture [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault)
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupNotSupportedFault`](crate::error::DbSecurityGroupNotSupportedFault).
     pub fn builder() -> crate::error::db_security_group_not_supported_fault::Builder {
         crate::error::db_security_group_not_supported_fault::Builder::default()
     }
@@ -24426,11 +24327,10 @@ impl std::fmt::Display for DbSecurityGroupAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbSecurityGroupAlreadyExistsFault {}
-/// See [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
+/// See [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault).
 pub mod db_security_group_already_exists_fault {
 
-    /// A builder for [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24446,7 +24346,7 @@ pub mod db_security_group_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbSecurityGroupAlreadyExistsFault {
             crate::error::DbSecurityGroupAlreadyExistsFault {
                 message: self.message,
@@ -24455,7 +24355,7 @@ pub mod db_security_group_already_exists_fault {
     }
 }
 impl DbSecurityGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupAlreadyExistsFault`](crate::error::DbSecurityGroupAlreadyExistsFault).
     pub fn builder() -> crate::error::db_security_group_already_exists_fault::Builder {
         crate::error::db_security_group_already_exists_fault::Builder::default()
     }
@@ -24494,11 +24394,10 @@ impl std::fmt::Display for DbProxyEndpointQuotaExceededFault {
     }
 }
 impl std::error::Error for DbProxyEndpointQuotaExceededFault {}
-/// See [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
+/// See [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault).
 pub mod db_proxy_endpoint_quota_exceeded_fault {
 
-    /// A builder for [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24514,7 +24413,7 @@ pub mod db_proxy_endpoint_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault).
         pub fn build(self) -> crate::error::DbProxyEndpointQuotaExceededFault {
             crate::error::DbProxyEndpointQuotaExceededFault {
                 message: self.message,
@@ -24523,7 +24422,7 @@ pub mod db_proxy_endpoint_quota_exceeded_fault {
     }
 }
 impl DbProxyEndpointQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyEndpointQuotaExceededFault`](crate::error::DbProxyEndpointQuotaExceededFault).
     pub fn builder() -> crate::error::db_proxy_endpoint_quota_exceeded_fault::Builder {
         crate::error::db_proxy_endpoint_quota_exceeded_fault::Builder::default()
     }
@@ -24559,11 +24458,10 @@ impl std::fmt::Display for DbProxyQuotaExceededFault {
     }
 }
 impl std::error::Error for DbProxyQuotaExceededFault {}
-/// See [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
+/// See [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault).
 pub mod db_proxy_quota_exceeded_fault {
 
-    /// A builder for [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24579,7 +24477,7 @@ pub mod db_proxy_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault).
         pub fn build(self) -> crate::error::DbProxyQuotaExceededFault {
             crate::error::DbProxyQuotaExceededFault {
                 message: self.message,
@@ -24588,7 +24486,7 @@ pub mod db_proxy_quota_exceeded_fault {
     }
 }
 impl DbProxyQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbProxyQuotaExceededFault`](crate::error::DbProxyQuotaExceededFault).
     pub fn builder() -> crate::error::db_proxy_quota_exceeded_fault::Builder {
         crate::error::db_proxy_quota_exceeded_fault::Builder::default()
     }
@@ -24627,11 +24525,10 @@ impl std::fmt::Display for DbParameterGroupQuotaExceededFault {
     }
 }
 impl std::error::Error for DbParameterGroupQuotaExceededFault {}
-/// See [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
+/// See [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault).
 pub mod db_parameter_group_quota_exceeded_fault {
 
-    /// A builder for [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24647,7 +24544,7 @@ pub mod db_parameter_group_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault).
         pub fn build(self) -> crate::error::DbParameterGroupQuotaExceededFault {
             crate::error::DbParameterGroupQuotaExceededFault {
                 message: self.message,
@@ -24656,7 +24553,7 @@ pub mod db_parameter_group_quota_exceeded_fault {
     }
 }
 impl DbParameterGroupQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbParameterGroupQuotaExceededFault`](crate::error::DbParameterGroupQuotaExceededFault).
     pub fn builder() -> crate::error::db_parameter_group_quota_exceeded_fault::Builder {
         crate::error::db_parameter_group_quota_exceeded_fault::Builder::default()
     }
@@ -24695,11 +24592,10 @@ impl std::fmt::Display for DbParameterGroupAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbParameterGroupAlreadyExistsFault {}
-/// See [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
+/// See [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault).
 pub mod db_parameter_group_already_exists_fault {
 
-    /// A builder for [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24715,7 +24611,7 @@ pub mod db_parameter_group_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbParameterGroupAlreadyExistsFault {
             crate::error::DbParameterGroupAlreadyExistsFault {
                 message: self.message,
@@ -24724,7 +24620,7 @@ pub mod db_parameter_group_already_exists_fault {
     }
 }
 impl DbParameterGroupAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbParameterGroupAlreadyExistsFault`](crate::error::DbParameterGroupAlreadyExistsFault).
     pub fn builder() -> crate::error::db_parameter_group_already_exists_fault::Builder {
         crate::error::db_parameter_group_already_exists_fault::Builder::default()
     }
@@ -24760,11 +24656,10 @@ impl std::fmt::Display for InvalidDbSubnetGroupFault {
     }
 }
 impl std::error::Error for InvalidDbSubnetGroupFault {}
-/// See [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
+/// See [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault).
 pub mod invalid_db_subnet_group_fault {
 
-    /// A builder for [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24780,7 +24675,7 @@ pub mod invalid_db_subnet_group_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
+        /// Consumes the builder and constructs a [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault).
         pub fn build(self) -> crate::error::InvalidDbSubnetGroupFault {
             crate::error::InvalidDbSubnetGroupFault {
                 message: self.message,
@@ -24789,7 +24684,7 @@ pub mod invalid_db_subnet_group_fault {
     }
 }
 impl InvalidDbSubnetGroupFault {
-    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault)
+    /// Creates a new builder-style object to manufacture [`InvalidDbSubnetGroupFault`](crate::error::InvalidDbSubnetGroupFault).
     pub fn builder() -> crate::error::invalid_db_subnet_group_fault::Builder {
         crate::error::invalid_db_subnet_group_fault::Builder::default()
     }
@@ -24828,11 +24723,10 @@ impl std::fmt::Display for DbSubnetGroupNotAllowedFault {
     }
 }
 impl std::error::Error for DbSubnetGroupNotAllowedFault {}
-/// See [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
+/// See [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault).
 pub mod db_subnet_group_not_allowed_fault {
 
-    /// A builder for [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
-    #[non_exhaustive]
+    /// A builder for [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24848,7 +24742,7 @@ pub mod db_subnet_group_not_allowed_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
+        /// Consumes the builder and constructs a [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault).
         pub fn build(self) -> crate::error::DbSubnetGroupNotAllowedFault {
             crate::error::DbSubnetGroupNotAllowedFault {
                 message: self.message,
@@ -24857,7 +24751,7 @@ pub mod db_subnet_group_not_allowed_fault {
     }
 }
 impl DbSubnetGroupNotAllowedFault {
-    /// Creates a new builder-style object to manufacture [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault)
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroupNotAllowedFault`](crate::error::DbSubnetGroupNotAllowedFault).
     pub fn builder() -> crate::error::db_subnet_group_not_allowed_fault::Builder {
         crate::error::db_subnet_group_not_allowed_fault::Builder::default()
     }
@@ -24896,11 +24790,10 @@ impl std::fmt::Display for DbClusterEndpointQuotaExceededFault {
     }
 }
 impl std::error::Error for DbClusterEndpointQuotaExceededFault {}
-/// See [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
+/// See [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault).
 pub mod db_cluster_endpoint_quota_exceeded_fault {
 
-    /// A builder for [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24916,7 +24809,7 @@ pub mod db_cluster_endpoint_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault).
         pub fn build(self) -> crate::error::DbClusterEndpointQuotaExceededFault {
             crate::error::DbClusterEndpointQuotaExceededFault {
                 message: self.message,
@@ -24925,7 +24818,7 @@ pub mod db_cluster_endpoint_quota_exceeded_fault {
     }
 }
 impl DbClusterEndpointQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterEndpointQuotaExceededFault`](crate::error::DbClusterEndpointQuotaExceededFault).
     pub fn builder() -> crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder {
         crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder::default()
     }
@@ -24964,11 +24857,10 @@ impl std::fmt::Display for DbClusterEndpointAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbClusterEndpointAlreadyExistsFault {}
-/// See [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
+/// See [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault).
 pub mod db_cluster_endpoint_already_exists_fault {
 
-    /// A builder for [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -24984,7 +24876,7 @@ pub mod db_cluster_endpoint_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbClusterEndpointAlreadyExistsFault {
             crate::error::DbClusterEndpointAlreadyExistsFault {
                 message: self.message,
@@ -24993,7 +24885,7 @@ pub mod db_cluster_endpoint_already_exists_fault {
     }
 }
 impl DbClusterEndpointAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterEndpointAlreadyExistsFault`](crate::error::DbClusterEndpointAlreadyExistsFault).
     pub fn builder() -> crate::error::db_cluster_endpoint_already_exists_fault::Builder {
         crate::error::db_cluster_endpoint_already_exists_fault::Builder::default()
     }
@@ -25032,11 +24924,10 @@ impl std::fmt::Display for CustomDbEngineVersionQuotaExceededFault {
     }
 }
 impl std::error::Error for CustomDbEngineVersionQuotaExceededFault {}
-/// See [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
+/// See [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault).
 pub mod custom_db_engine_version_quota_exceeded_fault {
 
-    /// A builder for [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25052,7 +24943,7 @@ pub mod custom_db_engine_version_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
+        /// Consumes the builder and constructs a [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault).
         pub fn build(self) -> crate::error::CustomDbEngineVersionQuotaExceededFault {
             crate::error::CustomDbEngineVersionQuotaExceededFault {
                 message: self.message,
@@ -25061,7 +24952,7 @@ pub mod custom_db_engine_version_quota_exceeded_fault {
     }
 }
 impl CustomDbEngineVersionQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionQuotaExceededFault`](crate::error::CustomDbEngineVersionQuotaExceededFault).
     pub fn builder() -> crate::error::custom_db_engine_version_quota_exceeded_fault::Builder {
         crate::error::custom_db_engine_version_quota_exceeded_fault::Builder::default()
     }
@@ -25100,11 +24991,10 @@ impl std::fmt::Display for CustomDbEngineVersionAlreadyExistsFault {
     }
 }
 impl std::error::Error for CustomDbEngineVersionAlreadyExistsFault {}
-/// See [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
+/// See [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault).
 pub mod custom_db_engine_version_already_exists_fault {
 
-    /// A builder for [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25120,7 +25010,7 @@ pub mod custom_db_engine_version_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault).
         pub fn build(self) -> crate::error::CustomDbEngineVersionAlreadyExistsFault {
             crate::error::CustomDbEngineVersionAlreadyExistsFault {
                 message: self.message,
@@ -25129,7 +25019,7 @@ pub mod custom_db_engine_version_already_exists_fault {
     }
 }
 impl CustomDbEngineVersionAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionAlreadyExistsFault`](crate::error::CustomDbEngineVersionAlreadyExistsFault).
     pub fn builder() -> crate::error::custom_db_engine_version_already_exists_fault::Builder {
         crate::error::custom_db_engine_version_already_exists_fault::Builder::default()
     }
@@ -25165,11 +25055,10 @@ impl std::fmt::Display for CustomAvailabilityZoneNotFoundFault {
     }
 }
 impl std::error::Error for CustomAvailabilityZoneNotFoundFault {}
-/// See [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault)
+/// See [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault).
 pub mod custom_availability_zone_not_found_fault {
 
-    /// A builder for [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault)
-    #[non_exhaustive]
+    /// A builder for [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25185,7 +25074,7 @@ pub mod custom_availability_zone_not_found_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault)
+        /// Consumes the builder and constructs a [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault).
         pub fn build(self) -> crate::error::CustomAvailabilityZoneNotFoundFault {
             crate::error::CustomAvailabilityZoneNotFoundFault {
                 message: self.message,
@@ -25194,7 +25083,7 @@ pub mod custom_availability_zone_not_found_fault {
     }
 }
 impl CustomAvailabilityZoneNotFoundFault {
-    /// Creates a new builder-style object to manufacture [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault)
+    /// Creates a new builder-style object to manufacture [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault).
     pub fn builder() -> crate::error::custom_availability_zone_not_found_fault::Builder {
         crate::error::custom_availability_zone_not_found_fault::Builder::default()
     }
@@ -25230,11 +25119,10 @@ impl std::fmt::Display for InvalidExportTaskStateFault {
     }
 }
 impl std::error::Error for InvalidExportTaskStateFault {}
-/// See [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault)
+/// See [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault).
 pub mod invalid_export_task_state_fault {
 
-    /// A builder for [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault)
-    #[non_exhaustive]
+    /// A builder for [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25250,7 +25138,7 @@ pub mod invalid_export_task_state_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault)
+        /// Consumes the builder and constructs a [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault).
         pub fn build(self) -> crate::error::InvalidExportTaskStateFault {
             crate::error::InvalidExportTaskStateFault {
                 message: self.message,
@@ -25259,7 +25147,7 @@ pub mod invalid_export_task_state_fault {
     }
 }
 impl InvalidExportTaskStateFault {
-    /// Creates a new builder-style object to manufacture [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault)
+    /// Creates a new builder-style object to manufacture [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault).
     pub fn builder() -> crate::error::invalid_export_task_state_fault::Builder {
         crate::error::invalid_export_task_state_fault::Builder::default()
     }
@@ -25295,11 +25183,10 @@ impl std::fmt::Display for AuthorizationQuotaExceededFault {
     }
 }
 impl std::error::Error for AuthorizationQuotaExceededFault {}
-/// See [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault)
+/// See [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
 pub mod authorization_quota_exceeded_fault {
 
-    /// A builder for [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25315,7 +25202,7 @@ pub mod authorization_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault)
+        /// Consumes the builder and constructs a [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
         pub fn build(self) -> crate::error::AuthorizationQuotaExceededFault {
             crate::error::AuthorizationQuotaExceededFault {
                 message: self.message,
@@ -25324,7 +25211,7 @@ pub mod authorization_quota_exceeded_fault {
     }
 }
 impl AuthorizationQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault).
     pub fn builder() -> crate::error::authorization_quota_exceeded_fault::Builder {
         crate::error::authorization_quota_exceeded_fault::Builder::default()
     }
@@ -25360,11 +25247,10 @@ impl std::fmt::Display for AuthorizationAlreadyExistsFault {
     }
 }
 impl std::error::Error for AuthorizationAlreadyExistsFault {}
-/// See [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault)
+/// See [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
 pub mod authorization_already_exists_fault {
 
-    /// A builder for [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25380,7 +25266,7 @@ pub mod authorization_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
         pub fn build(self) -> crate::error::AuthorizationAlreadyExistsFault {
             crate::error::AuthorizationAlreadyExistsFault {
                 message: self.message,
@@ -25389,7 +25275,7 @@ pub mod authorization_already_exists_fault {
     }
 }
 impl AuthorizationAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault).
     pub fn builder() -> crate::error::authorization_already_exists_fault::Builder {
         crate::error::authorization_already_exists_fault::Builder::default()
     }
@@ -25428,11 +25314,10 @@ impl std::fmt::Display for DbInstanceRoleQuotaExceededFault {
     }
 }
 impl std::error::Error for DbInstanceRoleQuotaExceededFault {}
-/// See [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
+/// See [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault).
 pub mod db_instance_role_quota_exceeded_fault {
 
-    /// A builder for [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25448,7 +25333,7 @@ pub mod db_instance_role_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault).
         pub fn build(self) -> crate::error::DbInstanceRoleQuotaExceededFault {
             crate::error::DbInstanceRoleQuotaExceededFault {
                 message: self.message,
@@ -25457,7 +25342,7 @@ pub mod db_instance_role_quota_exceeded_fault {
     }
 }
 impl DbInstanceRoleQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbInstanceRoleQuotaExceededFault`](crate::error::DbInstanceRoleQuotaExceededFault).
     pub fn builder() -> crate::error::db_instance_role_quota_exceeded_fault::Builder {
         crate::error::db_instance_role_quota_exceeded_fault::Builder::default()
     }
@@ -25496,11 +25381,10 @@ impl std::fmt::Display for DbInstanceRoleAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbInstanceRoleAlreadyExistsFault {}
-/// See [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
+/// See [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault).
 pub mod db_instance_role_already_exists_fault {
 
-    /// A builder for [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25516,7 +25400,7 @@ pub mod db_instance_role_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbInstanceRoleAlreadyExistsFault {
             crate::error::DbInstanceRoleAlreadyExistsFault {
                 message: self.message,
@@ -25525,7 +25409,7 @@ pub mod db_instance_role_already_exists_fault {
     }
 }
 impl DbInstanceRoleAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbInstanceRoleAlreadyExistsFault`](crate::error::DbInstanceRoleAlreadyExistsFault).
     pub fn builder() -> crate::error::db_instance_role_already_exists_fault::Builder {
         crate::error::db_instance_role_already_exists_fault::Builder::default()
     }
@@ -25564,11 +25448,10 @@ impl std::fmt::Display for DbClusterRoleQuotaExceededFault {
     }
 }
 impl std::error::Error for DbClusterRoleQuotaExceededFault {}
-/// See [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
+/// See [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault).
 pub mod db_cluster_role_quota_exceeded_fault {
 
-    /// A builder for [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25584,7 +25467,7 @@ pub mod db_cluster_role_quota_exceeded_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
+        /// Consumes the builder and constructs a [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault).
         pub fn build(self) -> crate::error::DbClusterRoleQuotaExceededFault {
             crate::error::DbClusterRoleQuotaExceededFault {
                 message: self.message,
@@ -25593,7 +25476,7 @@ pub mod db_cluster_role_quota_exceeded_fault {
     }
 }
 impl DbClusterRoleQuotaExceededFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterRoleQuotaExceededFault`](crate::error::DbClusterRoleQuotaExceededFault).
     pub fn builder() -> crate::error::db_cluster_role_quota_exceeded_fault::Builder {
         crate::error::db_cluster_role_quota_exceeded_fault::Builder::default()
     }
@@ -25632,11 +25515,10 @@ impl std::fmt::Display for DbClusterRoleAlreadyExistsFault {
     }
 }
 impl std::error::Error for DbClusterRoleAlreadyExistsFault {}
-/// See [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
+/// See [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault).
 pub mod db_cluster_role_already_exists_fault {
 
-    /// A builder for [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
-    #[non_exhaustive]
+    /// A builder for [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -25652,7 +25534,7 @@ pub mod db_cluster_role_already_exists_fault {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
+        /// Consumes the builder and constructs a [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault).
         pub fn build(self) -> crate::error::DbClusterRoleAlreadyExistsFault {
             crate::error::DbClusterRoleAlreadyExistsFault {
                 message: self.message,
@@ -25661,7 +25543,7 @@ pub mod db_cluster_role_already_exists_fault {
     }
 }
 impl DbClusterRoleAlreadyExistsFault {
-    /// Creates a new builder-style object to manufacture [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault)
+    /// Creates a new builder-style object to manufacture [`DbClusterRoleAlreadyExistsFault`](crate::error::DbClusterRoleAlreadyExistsFault).
     pub fn builder() -> crate::error::db_cluster_role_already_exists_fault::Builder {
         crate::error::db_cluster_role_already_exists_fault::Builder::default()
     }

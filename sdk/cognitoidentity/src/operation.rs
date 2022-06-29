@@ -10,7 +10,7 @@ pub struct CreateIdentityPool {
     _private: (),
 }
 impl CreateIdentityPool {
-    /// Creates a new builder-style object to manufacture [`CreateIdentityPoolInput`](crate::input::CreateIdentityPoolInput)
+    /// Creates a new builder-style object to manufacture [`CreateIdentityPoolInput`](crate::input::CreateIdentityPoolInput).
     pub fn builder() -> crate::input::create_identity_pool_input::Builder {
         crate::input::create_identity_pool_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteIdentities {
     _private: (),
 }
 impl DeleteIdentities {
-    /// Creates a new builder-style object to manufacture [`DeleteIdentitiesInput`](crate::input::DeleteIdentitiesInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIdentitiesInput`](crate::input::DeleteIdentitiesInput).
     pub fn builder() -> crate::input::delete_identities_input::Builder {
         crate::input::delete_identities_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DeleteIdentityPool {
     _private: (),
 }
 impl DeleteIdentityPool {
-    /// Creates a new builder-style object to manufacture [`DeleteIdentityPoolInput`](crate::input::DeleteIdentityPoolInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIdentityPoolInput`](crate::input::DeleteIdentityPoolInput).
     pub fn builder() -> crate::input::delete_identity_pool_input::Builder {
         crate::input::delete_identity_pool_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeIdentity {
     _private: (),
 }
 impl DescribeIdentity {
-    /// Creates a new builder-style object to manufacture [`DescribeIdentityInput`](crate::input::DescribeIdentityInput)
+    /// Creates a new builder-style object to manufacture [`DescribeIdentityInput`](crate::input::DescribeIdentityInput).
     pub fn builder() -> crate::input::describe_identity_input::Builder {
         crate::input::describe_identity_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeIdentityPool {
     _private: (),
 }
 impl DescribeIdentityPool {
-    /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolInput`](crate::input::DescribeIdentityPoolInput)
+    /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolInput`](crate::input::DescribeIdentityPoolInput).
     pub fn builder() -> crate::input::describe_identity_pool_input::Builder {
         crate::input::describe_identity_pool_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct GetCredentialsForIdentity {
     _private: (),
 }
 impl GetCredentialsForIdentity {
-    /// Creates a new builder-style object to manufacture [`GetCredentialsForIdentityInput`](crate::input::GetCredentialsForIdentityInput)
+    /// Creates a new builder-style object to manufacture [`GetCredentialsForIdentityInput`](crate::input::GetCredentialsForIdentityInput).
     pub fn builder() -> crate::input::get_credentials_for_identity_input::Builder {
         crate::input::get_credentials_for_identity_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct GetId {
     _private: (),
 }
 impl GetId {
-    /// Creates a new builder-style object to manufacture [`GetIdInput`](crate::input::GetIdInput)
+    /// Creates a new builder-style object to manufacture [`GetIdInput`](crate::input::GetIdInput).
     pub fn builder() -> crate::input::get_id_input::Builder {
         crate::input::get_id_input::Builder::default()
     }
@@ -245,7 +245,7 @@ pub struct GetIdentityPoolRoles {
     _private: (),
 }
 impl GetIdentityPoolRoles {
-    /// Creates a new builder-style object to manufacture [`GetIdentityPoolRolesInput`](crate::input::GetIdentityPoolRolesInput)
+    /// Creates a new builder-style object to manufacture [`GetIdentityPoolRolesInput`](crate::input::GetIdentityPoolRolesInput).
     pub fn builder() -> crate::input::get_identity_pool_roles_input::Builder {
         crate::input::get_identity_pool_roles_input::Builder::default()
     }
@@ -279,7 +279,7 @@ pub struct GetOpenIdToken {
     _private: (),
 }
 impl GetOpenIdToken {
-    /// Creates a new builder-style object to manufacture [`GetOpenIdTokenInput`](crate::input::GetOpenIdTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetOpenIdTokenInput`](crate::input::GetOpenIdTokenInput).
     pub fn builder() -> crate::input::get_open_id_token_input::Builder {
         crate::input::get_open_id_token_input::Builder::default()
     }
@@ -311,7 +311,7 @@ pub struct GetOpenIdTokenForDeveloperIdentity {
     _private: (),
 }
 impl GetOpenIdTokenForDeveloperIdentity {
-    /// Creates a new builder-style object to manufacture [`GetOpenIdTokenForDeveloperIdentityInput`](crate::input::GetOpenIdTokenForDeveloperIdentityInput)
+    /// Creates a new builder-style object to manufacture [`GetOpenIdTokenForDeveloperIdentityInput`](crate::input::GetOpenIdTokenForDeveloperIdentityInput).
     pub fn builder() -> crate::input::get_open_id_token_for_developer_identity_input::Builder {
         crate::input::get_open_id_token_for_developer_identity_input::Builder::default()
     }
@@ -347,7 +347,7 @@ pub struct GetPrincipalTagAttributeMap {
     _private: (),
 }
 impl GetPrincipalTagAttributeMap {
-    /// Creates a new builder-style object to manufacture [`GetPrincipalTagAttributeMapInput`](crate::input::GetPrincipalTagAttributeMapInput)
+    /// Creates a new builder-style object to manufacture [`GetPrincipalTagAttributeMapInput`](crate::input::GetPrincipalTagAttributeMapInput).
     pub fn builder() -> crate::input::get_principal_tag_attribute_map_input::Builder {
         crate::input::get_principal_tag_attribute_map_input::Builder::default()
     }
@@ -381,7 +381,7 @@ pub struct ListIdentities {
     _private: (),
 }
 impl ListIdentities {
-    /// Creates a new builder-style object to manufacture [`ListIdentitiesInput`](crate::input::ListIdentitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListIdentitiesInput`](crate::input::ListIdentitiesInput).
     pub fn builder() -> crate::input::list_identities_input::Builder {
         crate::input::list_identities_input::Builder::default()
     }
@@ -413,7 +413,7 @@ pub struct ListIdentityPools {
     _private: (),
 }
 impl ListIdentityPools {
-    /// Creates a new builder-style object to manufacture [`ListIdentityPoolsInput`](crate::input::ListIdentityPoolsInput)
+    /// Creates a new builder-style object to manufacture [`ListIdentityPoolsInput`](crate::input::ListIdentityPoolsInput).
     pub fn builder() -> crate::input::list_identity_pools_input::Builder {
         crate::input::list_identity_pools_input::Builder::default()
     }
@@ -447,7 +447,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -481,7 +481,7 @@ pub struct LookupDeveloperIdentity {
     _private: (),
 }
 impl LookupDeveloperIdentity {
-    /// Creates a new builder-style object to manufacture [`LookupDeveloperIdentityInput`](crate::input::LookupDeveloperIdentityInput)
+    /// Creates a new builder-style object to manufacture [`LookupDeveloperIdentityInput`](crate::input::LookupDeveloperIdentityInput).
     pub fn builder() -> crate::input::lookup_developer_identity_input::Builder {
         crate::input::lookup_developer_identity_input::Builder::default()
     }
@@ -515,7 +515,7 @@ pub struct MergeDeveloperIdentities {
     _private: (),
 }
 impl MergeDeveloperIdentities {
-    /// Creates a new builder-style object to manufacture [`MergeDeveloperIdentitiesInput`](crate::input::MergeDeveloperIdentitiesInput)
+    /// Creates a new builder-style object to manufacture [`MergeDeveloperIdentitiesInput`](crate::input::MergeDeveloperIdentitiesInput).
     pub fn builder() -> crate::input::merge_developer_identities_input::Builder {
         crate::input::merge_developer_identities_input::Builder::default()
     }
@@ -549,7 +549,7 @@ pub struct SetIdentityPoolRoles {
     _private: (),
 }
 impl SetIdentityPoolRoles {
-    /// Creates a new builder-style object to manufacture [`SetIdentityPoolRolesInput`](crate::input::SetIdentityPoolRolesInput)
+    /// Creates a new builder-style object to manufacture [`SetIdentityPoolRolesInput`](crate::input::SetIdentityPoolRolesInput).
     pub fn builder() -> crate::input::set_identity_pool_roles_input::Builder {
         crate::input::set_identity_pool_roles_input::Builder::default()
     }
@@ -583,7 +583,7 @@ pub struct SetPrincipalTagAttributeMap {
     _private: (),
 }
 impl SetPrincipalTagAttributeMap {
-    /// Creates a new builder-style object to manufacture [`SetPrincipalTagAttributeMapInput`](crate::input::SetPrincipalTagAttributeMapInput)
+    /// Creates a new builder-style object to manufacture [`SetPrincipalTagAttributeMapInput`](crate::input::SetPrincipalTagAttributeMapInput).
     pub fn builder() -> crate::input::set_principal_tag_attribute_map_input::Builder {
         crate::input::set_principal_tag_attribute_map_input::Builder::default()
     }
@@ -617,7 +617,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -649,7 +649,7 @@ pub struct UnlinkDeveloperIdentity {
     _private: (),
 }
 impl UnlinkDeveloperIdentity {
-    /// Creates a new builder-style object to manufacture [`UnlinkDeveloperIdentityInput`](crate::input::UnlinkDeveloperIdentityInput)
+    /// Creates a new builder-style object to manufacture [`UnlinkDeveloperIdentityInput`](crate::input::UnlinkDeveloperIdentityInput).
     pub fn builder() -> crate::input::unlink_developer_identity_input::Builder {
         crate::input::unlink_developer_identity_input::Builder::default()
     }
@@ -683,7 +683,7 @@ pub struct UnlinkIdentity {
     _private: (),
 }
 impl UnlinkIdentity {
-    /// Creates a new builder-style object to manufacture [`UnlinkIdentityInput`](crate::input::UnlinkIdentityInput)
+    /// Creates a new builder-style object to manufacture [`UnlinkIdentityInput`](crate::input::UnlinkIdentityInput).
     pub fn builder() -> crate::input::unlink_identity_input::Builder {
         crate::input::unlink_identity_input::Builder::default()
     }
@@ -715,7 +715,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -747,7 +747,7 @@ pub struct UpdateIdentityPool {
     _private: (),
 }
 impl UpdateIdentityPool {
-    /// Creates a new builder-style object to manufacture [`UpdateIdentityPoolInput`](crate::input::UpdateIdentityPoolInput)
+    /// Creates a new builder-style object to manufacture [`UpdateIdentityPoolInput`](crate::input::UpdateIdentityPoolInput).
     pub fn builder() -> crate::input::update_identity_pool_input::Builder {
         crate::input::update_identity_pool_input::Builder::default()
     }

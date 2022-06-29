@@ -9,22 +9,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -88,11 +86,10 @@ impl std::fmt::Debug for StartTableDataImportJobOutput {
         formatter.finish()
     }
 }
-/// See [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput)
+/// See [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
 pub mod start_table_data_import_job_output {
 
-    /// A builder for [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -122,7 +119,7 @@ pub mod start_table_data_import_job_output {
             self.job_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput)
+        /// Consumes the builder and constructs a [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
         pub fn build(self) -> crate::output::StartTableDataImportJobOutput {
             crate::output::StartTableDataImportJobOutput {
                 job_id: self.job_id,
@@ -132,7 +129,7 @@ pub mod start_table_data_import_job_output {
     }
 }
 impl StartTableDataImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput)
+    /// Creates a new builder-style object to manufacture [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
     pub fn builder() -> crate::output::start_table_data_import_job_output::Builder {
         crate::output::start_table_data_import_job_output::Builder::default()
     }
@@ -179,11 +176,10 @@ impl std::fmt::Debug for QueryTableRowsOutput {
         formatter.finish()
     }
 }
-/// See [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput)
+/// See [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
 pub mod query_table_rows_output {
 
-    /// A builder for [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput)
-    #[non_exhaustive]
+    /// A builder for [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -250,7 +246,7 @@ pub mod query_table_rows_output {
             self.workbook_cursor = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput)
+        /// Consumes the builder and constructs a [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
         pub fn build(self) -> crate::output::QueryTableRowsOutput {
             crate::output::QueryTableRowsOutput {
                 column_ids: self.column_ids,
@@ -262,7 +258,7 @@ pub mod query_table_rows_output {
     }
 }
 impl QueryTableRowsOutput {
-    /// Creates a new builder-style object to manufacture [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput)
+    /// Creates a new builder-style object to manufacture [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
     pub fn builder() -> crate::output::query_table_rows_output::Builder {
         crate::output::query_table_rows_output::Builder::default()
     }
@@ -292,11 +288,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -329,14 +324,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -376,11 +371,10 @@ impl std::fmt::Debug for ListTablesOutput {
         formatter.finish()
     }
 }
-/// See [`ListTablesOutput`](crate::output::ListTablesOutput)
+/// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
 
-    /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tables: std::option::Option<std::vec::Vec<crate::model::Table>>,
@@ -427,7 +421,7 @@ pub mod list_tables_output {
             self.workbook_cursor = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput)
+        /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
                 tables: self.tables,
@@ -438,7 +432,7 @@ pub mod list_tables_output {
     }
 }
 impl ListTablesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput)
+    /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
     pub fn builder() -> crate::output::list_tables_output::Builder {
         crate::output::list_tables_output::Builder::default()
     }
@@ -492,11 +486,10 @@ impl std::fmt::Debug for ListTableRowsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTableRowsOutput`](crate::output::ListTableRowsOutput)
+/// See [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
 pub mod list_table_rows_output {
 
-    /// A builder for [`ListTableRowsOutput`](crate::output::ListTableRowsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -583,7 +576,7 @@ pub mod list_table_rows_output {
             self.workbook_cursor = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTableRowsOutput`](crate::output::ListTableRowsOutput)
+        /// Consumes the builder and constructs a [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
         pub fn build(self) -> crate::output::ListTableRowsOutput {
             crate::output::ListTableRowsOutput {
                 column_ids: self.column_ids,
@@ -596,7 +589,7 @@ pub mod list_table_rows_output {
     }
 }
 impl ListTableRowsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTableRowsOutput`](crate::output::ListTableRowsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
     pub fn builder() -> crate::output::list_table_rows_output::Builder {
         crate::output::list_table_rows_output::Builder::default()
     }
@@ -636,11 +629,10 @@ impl std::fmt::Debug for ListTableColumnsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput)
+/// See [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
 pub mod list_table_columns_output {
 
-    /// A builder for [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_columns: std::option::Option<std::vec::Vec<crate::model::TableColumn>>,
@@ -687,7 +679,7 @@ pub mod list_table_columns_output {
             self.workbook_cursor = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput)
+        /// Consumes the builder and constructs a [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
         pub fn build(self) -> crate::output::ListTableColumnsOutput {
             crate::output::ListTableColumnsOutput {
                 table_columns: self.table_columns,
@@ -698,7 +690,7 @@ pub mod list_table_columns_output {
     }
 }
 impl ListTableColumnsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
     pub fn builder() -> crate::output::list_table_columns_output::Builder {
         crate::output::list_table_columns_output::Builder::default()
     }
@@ -724,11 +716,10 @@ impl std::fmt::Debug for InvokeScreenAutomationOutput {
         formatter.finish()
     }
 }
-/// See [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput)
+/// See [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
 pub mod invoke_screen_automation_output {
 
-    /// A builder for [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput)
-    #[non_exhaustive]
+    /// A builder for [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
@@ -744,7 +735,7 @@ pub mod invoke_screen_automation_output {
             self.workbook_cursor = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput)
+        /// Consumes the builder and constructs a [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
         pub fn build(self) -> crate::output::InvokeScreenAutomationOutput {
             crate::output::InvokeScreenAutomationOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
@@ -753,7 +744,7 @@ pub mod invoke_screen_automation_output {
     }
 }
 impl InvokeScreenAutomationOutput {
-    /// Creates a new builder-style object to manufacture [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput)
+    /// Creates a new builder-style object to manufacture [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
     pub fn builder() -> crate::output::invoke_screen_automation_output::Builder {
         crate::output::invoke_screen_automation_output::Builder::default()
     }
@@ -798,11 +789,10 @@ impl std::fmt::Debug for GetScreenDataOutput {
         formatter.finish()
     }
 }
-/// See [`GetScreenDataOutput`](crate::output::GetScreenDataOutput)
+/// See [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
 pub mod get_screen_data_output {
 
-    /// A builder for [`GetScreenDataOutput`](crate::output::GetScreenDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) results: std::option::Option<
@@ -857,7 +847,7 @@ pub mod get_screen_data_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetScreenDataOutput`](crate::output::GetScreenDataOutput)
+        /// Consumes the builder and constructs a [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
         pub fn build(self) -> crate::output::GetScreenDataOutput {
             crate::output::GetScreenDataOutput {
                 results: self.results,
@@ -868,7 +858,7 @@ pub mod get_screen_data_output {
     }
 }
 impl GetScreenDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetScreenDataOutput`](crate::output::GetScreenDataOutput)
+    /// Creates a new builder-style object to manufacture [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
     pub fn builder() -> crate::output::get_screen_data_output::Builder {
         crate::output::get_screen_data_output::Builder::default()
     }
@@ -915,11 +905,10 @@ impl std::fmt::Debug for DescribeTableDataImportJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput)
+/// See [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
 pub mod describe_table_data_import_job_output {
 
-    /// A builder for [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
@@ -977,7 +966,7 @@ pub mod describe_table_data_import_job_output {
             self.error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput)
+        /// Consumes the builder and constructs a [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
         pub fn build(self) -> crate::output::DescribeTableDataImportJobOutput {
             crate::output::DescribeTableDataImportJobOutput {
                 job_status: self.job_status,
@@ -989,7 +978,7 @@ pub mod describe_table_data_import_job_output {
     }
 }
 impl DescribeTableDataImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
     pub fn builder() -> crate::output::describe_table_data_import_job_output::Builder {
         crate::output::describe_table_data_import_job_output::Builder::default()
     }
@@ -1035,11 +1024,10 @@ impl std::fmt::Debug for BatchUpsertTableRowsOutput {
         formatter.finish()
     }
 }
-/// See [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput)
+/// See [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
 pub mod batch_upsert_table_rows_output {
 
-    /// A builder for [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rows: std::option::Option<
@@ -1104,7 +1092,7 @@ pub mod batch_upsert_table_rows_output {
             self.failed_batch_items = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput)
+        /// Consumes the builder and constructs a [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
         pub fn build(self) -> crate::output::BatchUpsertTableRowsOutput {
             crate::output::BatchUpsertTableRowsOutput {
                 rows: self.rows,
@@ -1115,7 +1103,7 @@ pub mod batch_upsert_table_rows_output {
     }
 }
 impl BatchUpsertTableRowsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput)
+    /// Creates a new builder-style object to manufacture [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
     pub fn builder() -> crate::output::batch_upsert_table_rows_output::Builder {
         crate::output::batch_upsert_table_rows_output::Builder::default()
     }
@@ -1148,11 +1136,10 @@ impl std::fmt::Debug for BatchUpdateTableRowsOutput {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput)
+/// See [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
 pub mod batch_update_table_rows_output {
 
-    /// A builder for [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
@@ -1189,7 +1176,7 @@ pub mod batch_update_table_rows_output {
             self.failed_batch_items = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput)
+        /// Consumes the builder and constructs a [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
         pub fn build(self) -> crate::output::BatchUpdateTableRowsOutput {
             crate::output::BatchUpdateTableRowsOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
@@ -1199,7 +1186,7 @@ pub mod batch_update_table_rows_output {
     }
 }
 impl BatchUpdateTableRowsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
     pub fn builder() -> crate::output::batch_update_table_rows_output::Builder {
         crate::output::batch_update_table_rows_output::Builder::default()
     }
@@ -1232,11 +1219,10 @@ impl std::fmt::Debug for BatchDeleteTableRowsOutput {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput)
+/// See [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
 pub mod batch_delete_table_rows_output {
 
-    /// A builder for [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
@@ -1273,7 +1259,7 @@ pub mod batch_delete_table_rows_output {
             self.failed_batch_items = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput)
+        /// Consumes the builder and constructs a [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
         pub fn build(self) -> crate::output::BatchDeleteTableRowsOutput {
             crate::output::BatchDeleteTableRowsOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
@@ -1283,7 +1269,7 @@ pub mod batch_delete_table_rows_output {
     }
 }
 impl BatchDeleteTableRowsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
     pub fn builder() -> crate::output::batch_delete_table_rows_output::Builder {
         crate::output::batch_delete_table_rows_output::Builder::default()
     }
@@ -1327,11 +1313,10 @@ impl std::fmt::Debug for BatchCreateTableRowsOutput {
         formatter.finish()
     }
 }
-/// See [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput)
+/// See [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
 pub mod batch_create_table_rows_output {
 
-    /// A builder for [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
@@ -1396,7 +1381,7 @@ pub mod batch_create_table_rows_output {
             self.failed_batch_items = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput)
+        /// Consumes the builder and constructs a [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
         pub fn build(self) -> crate::output::BatchCreateTableRowsOutput {
             crate::output::BatchCreateTableRowsOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
@@ -1407,7 +1392,7 @@ pub mod batch_create_table_rows_output {
     }
 }
 impl BatchCreateTableRowsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput)
+    /// Creates a new builder-style object to manufacture [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
     pub fn builder() -> crate::output::batch_create_table_rows_output::Builder {
         crate::output::batch_create_table_rows_output::Builder::default()
     }

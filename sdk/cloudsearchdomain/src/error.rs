@@ -311,11 +311,10 @@ impl std::fmt::Display for DocumentServiceException {
     }
 }
 impl std::error::Error for DocumentServiceException {}
-/// See [`DocumentServiceException`](crate::error::DocumentServiceException)
+/// See [`DocumentServiceException`](crate::error::DocumentServiceException).
 pub mod document_service_exception {
 
-    /// A builder for [`DocumentServiceException`](crate::error::DocumentServiceException)
-    #[non_exhaustive]
+    /// A builder for [`DocumentServiceException`](crate::error::DocumentServiceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
@@ -342,7 +341,7 @@ pub mod document_service_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentServiceException`](crate::error::DocumentServiceException)
+        /// Consumes the builder and constructs a [`DocumentServiceException`](crate::error::DocumentServiceException).
         pub fn build(self) -> crate::error::DocumentServiceException {
             crate::error::DocumentServiceException {
                 status: self.status,
@@ -352,7 +351,7 @@ pub mod document_service_exception {
     }
 }
 impl DocumentServiceException {
-    /// Creates a new builder-style object to manufacture [`DocumentServiceException`](crate::error::DocumentServiceException)
+    /// Creates a new builder-style object to manufacture [`DocumentServiceException`](crate::error::DocumentServiceException).
     pub fn builder() -> crate::error::document_service_exception::Builder {
         crate::error::document_service_exception::Builder::default()
     }
@@ -388,11 +387,10 @@ impl std::fmt::Display for SearchException {
     }
 }
 impl std::error::Error for SearchException {}
-/// See [`SearchException`](crate::error::SearchException)
+/// See [`SearchException`](crate::error::SearchException).
 pub mod search_exception {
 
-    /// A builder for [`SearchException`](crate::error::SearchException)
-    #[non_exhaustive]
+    /// A builder for [`SearchException`](crate::error::SearchException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -408,7 +406,7 @@ pub mod search_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchException`](crate::error::SearchException)
+        /// Consumes the builder and constructs a [`SearchException`](crate::error::SearchException).
         pub fn build(self) -> crate::error::SearchException {
             crate::error::SearchException {
                 message: self.message,
@@ -417,7 +415,7 @@ pub mod search_exception {
     }
 }
 impl SearchException {
-    /// Creates a new builder-style object to manufacture [`SearchException`](crate::error::SearchException)
+    /// Creates a new builder-style object to manufacture [`SearchException`](crate::error::SearchException).
     pub fn builder() -> crate::error::search_exception::Builder {
         crate::error::search_exception::Builder::default()
     }

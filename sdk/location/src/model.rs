@@ -27,11 +27,10 @@ impl std::fmt::Debug for ValidationExceptionField {
         formatter.finish()
     }
 }
-/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
-    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField)
-    #[non_exhaustive]
+    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod validation_exception_field {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
                 name: self.name,
@@ -68,7 +67,7 @@ pub mod validation_exception_field {
     }
 }
 impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     pub fn builder() -> crate::model::validation_exception_field::Builder {
         crate::model::validation_exception_field::Builder::default()
     }
@@ -163,11 +162,10 @@ impl std::fmt::Debug for ListDevicePositionsResponseEntry {
         formatter.finish()
     }
 }
-/// See [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry)
+/// See [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
 pub mod list_device_positions_response_entry {
 
-    /// A builder for [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry)
-    #[non_exhaustive]
+    /// A builder for [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -256,7 +254,7 @@ pub mod list_device_positions_response_entry {
             self.position_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry)
+        /// Consumes the builder and constructs a [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
         pub fn build(self) -> crate::model::ListDevicePositionsResponseEntry {
             crate::model::ListDevicePositionsResponseEntry {
                 device_id: self.device_id,
@@ -269,7 +267,7 @@ pub mod list_device_positions_response_entry {
     }
 }
 impl ListDevicePositionsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry)
+    /// Creates a new builder-style object to manufacture [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
     pub fn builder() -> crate::model::list_device_positions_response_entry::Builder {
         crate::model::list_device_positions_response_entry::Builder::default()
     }
@@ -295,11 +293,10 @@ impl std::fmt::Debug for PositionalAccuracy {
         formatter.finish()
     }
 }
-/// See [`PositionalAccuracy`](crate::model::PositionalAccuracy)
+/// See [`PositionalAccuracy`](crate::model::PositionalAccuracy).
 pub mod positional_accuracy {
 
-    /// A builder for [`PositionalAccuracy`](crate::model::PositionalAccuracy)
-    #[non_exhaustive]
+    /// A builder for [`PositionalAccuracy`](crate::model::PositionalAccuracy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) horizontal: std::option::Option<f64>,
@@ -315,7 +312,7 @@ pub mod positional_accuracy {
             self.horizontal = input;
             self
         }
-        /// Consumes the builder and constructs a [`PositionalAccuracy`](crate::model::PositionalAccuracy)
+        /// Consumes the builder and constructs a [`PositionalAccuracy`](crate::model::PositionalAccuracy).
         pub fn build(self) -> crate::model::PositionalAccuracy {
             crate::model::PositionalAccuracy {
                 horizontal: self.horizontal,
@@ -324,7 +321,7 @@ pub mod positional_accuracy {
     }
 }
 impl PositionalAccuracy {
-    /// Creates a new builder-style object to manufacture [`PositionalAccuracy`](crate::model::PositionalAccuracy)
+    /// Creates a new builder-style object to manufacture [`PositionalAccuracy`](crate::model::PositionalAccuracy).
     pub fn builder() -> crate::model::positional_accuracy::Builder {
         crate::model::positional_accuracy::Builder::default()
     }
@@ -389,11 +386,10 @@ impl std::fmt::Debug for DevicePosition {
         formatter.finish()
     }
 }
-/// See [`DevicePosition`](crate::model::DevicePosition)
+/// See [`DevicePosition`](crate::model::DevicePosition).
 pub mod device_position {
 
-    /// A builder for [`DevicePosition`](crate::model::DevicePosition)
-    #[non_exhaustive]
+    /// A builder for [`DevicePosition`](crate::model::DevicePosition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -496,7 +492,7 @@ pub mod device_position {
             self.position_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DevicePosition`](crate::model::DevicePosition)
+        /// Consumes the builder and constructs a [`DevicePosition`](crate::model::DevicePosition).
         pub fn build(self) -> crate::model::DevicePosition {
             crate::model::DevicePosition {
                 device_id: self.device_id,
@@ -510,7 +506,7 @@ pub mod device_position {
     }
 }
 impl DevicePosition {
-    /// Creates a new builder-style object to manufacture [`DevicePosition`](crate::model::DevicePosition)
+    /// Creates a new builder-style object to manufacture [`DevicePosition`](crate::model::DevicePosition).
     pub fn builder() -> crate::model::device_position::Builder {
         crate::model::device_position::Builder::default()
     }
@@ -550,11 +546,10 @@ impl std::fmt::Debug for BatchUpdateDevicePositionError {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError)
+/// See [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
 pub mod batch_update_device_position_error {
 
-    /// A builder for [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -598,7 +593,7 @@ pub mod batch_update_device_position_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError)
+        /// Consumes the builder and constructs a [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
         pub fn build(self) -> crate::model::BatchUpdateDevicePositionError {
             crate::model::BatchUpdateDevicePositionError {
                 device_id: self.device_id,
@@ -609,7 +604,7 @@ pub mod batch_update_device_position_error {
     }
 }
 impl BatchUpdateDevicePositionError {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
     pub fn builder() -> crate::model::batch_update_device_position_error::Builder {
         crate::model::batch_update_device_position_error::Builder::default()
     }
@@ -642,11 +637,10 @@ impl std::fmt::Debug for BatchItemError {
         formatter.finish()
     }
 }
-/// See [`BatchItemError`](crate::model::BatchItemError)
+/// See [`BatchItemError`](crate::model::BatchItemError).
 pub mod batch_item_error {
 
-    /// A builder for [`BatchItemError`](crate::model::BatchItemError)
-    #[non_exhaustive]
+    /// A builder for [`BatchItemError`](crate::model::BatchItemError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::BatchItemErrorCode>,
@@ -676,7 +670,7 @@ pub mod batch_item_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchItemError`](crate::model::BatchItemError)
+        /// Consumes the builder and constructs a [`BatchItemError`](crate::model::BatchItemError).
         pub fn build(self) -> crate::model::BatchItemError {
             crate::model::BatchItemError {
                 code: self.code,
@@ -686,7 +680,7 @@ pub mod batch_item_error {
     }
 }
 impl BatchItemError {
-    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError)
+    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
     pub fn builder() -> crate::model::batch_item_error::Builder {
         crate::model::batch_item_error::Builder::default()
     }
@@ -784,11 +778,10 @@ impl std::fmt::Debug for DevicePositionUpdate {
         formatter.finish()
     }
 }
-/// See [`DevicePositionUpdate`](crate::model::DevicePositionUpdate)
+/// See [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
 pub mod device_position_update {
 
-    /// A builder for [`DevicePositionUpdate`](crate::model::DevicePositionUpdate)
-    #[non_exhaustive]
+    /// A builder for [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -879,7 +872,7 @@ pub mod device_position_update {
             self.position_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`DevicePositionUpdate`](crate::model::DevicePositionUpdate)
+        /// Consumes the builder and constructs a [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
         pub fn build(self) -> crate::model::DevicePositionUpdate {
             crate::model::DevicePositionUpdate {
                 device_id: self.device_id,
@@ -892,7 +885,7 @@ pub mod device_position_update {
     }
 }
 impl DevicePositionUpdate {
-    /// Creates a new builder-style object to manufacture [`DevicePositionUpdate`](crate::model::DevicePositionUpdate)
+    /// Creates a new builder-style object to manufacture [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
     pub fn builder() -> crate::model::device_position_update::Builder {
         crate::model::device_position_update::Builder::default()
     }
@@ -925,11 +918,10 @@ impl std::fmt::Debug for BatchGetDevicePositionError {
         formatter.finish()
     }
 }
-/// See [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError)
+/// See [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
 pub mod batch_get_device_position_error {
 
-    /// A builder for [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -959,7 +951,7 @@ pub mod batch_get_device_position_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError)
+        /// Consumes the builder and constructs a [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
         pub fn build(self) -> crate::model::BatchGetDevicePositionError {
             crate::model::BatchGetDevicePositionError {
                 device_id: self.device_id,
@@ -969,7 +961,7 @@ pub mod batch_get_device_position_error {
     }
 }
 impl BatchGetDevicePositionError {
-    /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError)
+    /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
     pub fn builder() -> crate::model::batch_get_device_position_error::Builder {
         crate::model::batch_get_device_position_error::Builder::default()
     }
@@ -1002,11 +994,10 @@ impl std::fmt::Debug for BatchDeleteDevicePositionHistoryError {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError)
+/// See [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
 pub mod batch_delete_device_position_history_error {
 
-    /// A builder for [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -1036,7 +1027,7 @@ pub mod batch_delete_device_position_history_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError)
+        /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
         pub fn build(self) -> crate::model::BatchDeleteDevicePositionHistoryError {
             crate::model::BatchDeleteDevicePositionHistoryError {
                 device_id: self.device_id,
@@ -1046,7 +1037,7 @@ pub mod batch_delete_device_position_history_error {
     }
 }
 impl BatchDeleteDevicePositionHistoryError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
     pub fn builder() -> crate::model::batch_delete_device_position_history_error::Builder {
         crate::model::batch_delete_device_position_history_error::Builder::default()
     }
@@ -1107,11 +1098,10 @@ impl std::fmt::Debug for ListTrackersResponseEntry {
         formatter.finish()
     }
 }
-/// See [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry)
+/// See [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
 pub mod list_trackers_response_entry {
 
-    /// A builder for [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry)
-    #[non_exhaustive]
+    /// A builder for [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
@@ -1194,7 +1184,7 @@ pub mod list_trackers_response_entry {
             self.update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry)
+        /// Consumes the builder and constructs a [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
         pub fn build(self) -> crate::model::ListTrackersResponseEntry {
             crate::model::ListTrackersResponseEntry {
                 tracker_name: self.tracker_name,
@@ -1208,7 +1198,7 @@ pub mod list_trackers_response_entry {
     }
 }
 impl ListTrackersResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry)
+    /// Creates a new builder-style object to manufacture [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
     pub fn builder() -> crate::model::list_trackers_response_entry::Builder {
         crate::model::list_trackers_response_entry::Builder::default()
     }
@@ -1331,11 +1321,10 @@ impl std::fmt::Debug for CalculateRouteMatrixSummary {
         formatter.finish()
     }
 }
-/// See [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
+/// See [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
 pub mod calculate_route_matrix_summary {
 
-    /// A builder for [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
-    #[non_exhaustive]
+    /// A builder for [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source: std::option::Option<std::string::String>,
@@ -1397,7 +1386,7 @@ pub mod calculate_route_matrix_summary {
             self.distance_unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
+        /// Consumes the builder and constructs a [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
         pub fn build(self) -> crate::model::CalculateRouteMatrixSummary {
             crate::model::CalculateRouteMatrixSummary {
                 data_source: self.data_source,
@@ -1409,7 +1398,7 @@ pub mod calculate_route_matrix_summary {
     }
 }
 impl CalculateRouteMatrixSummary {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary)
+    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
     pub fn builder() -> crate::model::calculate_route_matrix_summary::Builder {
         crate::model::calculate_route_matrix_summary::Builder::default()
     }
@@ -1480,11 +1469,10 @@ impl std::fmt::Debug for RouteMatrixEntry {
         formatter.finish()
     }
 }
-/// See [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
+/// See [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
 pub mod route_matrix_entry {
 
-    /// A builder for [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
-    #[non_exhaustive]
+    /// A builder for [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distance: std::option::Option<f64>,
@@ -1525,7 +1513,7 @@ pub mod route_matrix_entry {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
+        /// Consumes the builder and constructs a [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
         pub fn build(self) -> crate::model::RouteMatrixEntry {
             crate::model::RouteMatrixEntry {
                 distance: self.distance,
@@ -1536,7 +1524,7 @@ pub mod route_matrix_entry {
     }
 }
 impl RouteMatrixEntry {
-    /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::model::RouteMatrixEntry)
+    /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
     pub fn builder() -> crate::model::route_matrix_entry::Builder {
         crate::model::route_matrix_entry::Builder::default()
     }
@@ -1588,11 +1576,10 @@ impl std::fmt::Debug for RouteMatrixEntryError {
         formatter.finish()
     }
 }
-/// See [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
+/// See [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
 pub mod route_matrix_entry_error {
 
-    /// A builder for [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
-    #[non_exhaustive]
+    /// A builder for [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::RouteMatrixErrorCode>,
@@ -1622,7 +1609,7 @@ pub mod route_matrix_entry_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
+        /// Consumes the builder and constructs a [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
         pub fn build(self) -> crate::model::RouteMatrixEntryError {
             crate::model::RouteMatrixEntryError {
                 code: self.code,
@@ -1632,7 +1619,7 @@ pub mod route_matrix_entry_error {
     }
 }
 impl RouteMatrixEntryError {
-    /// Creates a new builder-style object to manufacture [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError)
+    /// Creates a new builder-style object to manufacture [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
     pub fn builder() -> crate::model::route_matrix_entry_error::Builder {
         crate::model::route_matrix_entry_error::Builder::default()
     }
@@ -1725,11 +1712,10 @@ impl std::fmt::Debug for CalculateRouteTruckModeOptions {
         formatter.finish()
     }
 }
-/// See [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions)
+/// See [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
 pub mod calculate_route_truck_mode_options {
 
-    /// A builder for [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions)
-    #[non_exhaustive]
+    /// A builder for [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avoid_ferries: std::option::Option<bool>,
@@ -1789,7 +1775,7 @@ pub mod calculate_route_truck_mode_options {
             self.weight = input;
             self
         }
-        /// Consumes the builder and constructs a [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions)
+        /// Consumes the builder and constructs a [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
         pub fn build(self) -> crate::model::CalculateRouteTruckModeOptions {
             crate::model::CalculateRouteTruckModeOptions {
                 avoid_ferries: self.avoid_ferries,
@@ -1801,7 +1787,7 @@ pub mod calculate_route_truck_mode_options {
     }
 }
 impl CalculateRouteTruckModeOptions {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions)
+    /// Creates a new builder-style object to manufacture [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
     pub fn builder() -> crate::model::calculate_route_truck_mode_options::Builder {
         crate::model::calculate_route_truck_mode_options::Builder::default()
     }
@@ -1842,11 +1828,10 @@ impl std::fmt::Debug for TruckWeight {
         formatter.finish()
     }
 }
-/// See [`TruckWeight`](crate::model::TruckWeight)
+/// See [`TruckWeight`](crate::model::TruckWeight).
 pub mod truck_weight {
 
-    /// A builder for [`TruckWeight`](crate::model::TruckWeight)
-    #[non_exhaustive]
+    /// A builder for [`TruckWeight`](crate::model::TruckWeight).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total: std::option::Option<f64>,
@@ -1884,7 +1869,7 @@ pub mod truck_weight {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`TruckWeight`](crate::model::TruckWeight)
+        /// Consumes the builder and constructs a [`TruckWeight`](crate::model::TruckWeight).
         pub fn build(self) -> crate::model::TruckWeight {
             crate::model::TruckWeight {
                 total: self.total,
@@ -1894,7 +1879,7 @@ pub mod truck_weight {
     }
 }
 impl TruckWeight {
-    /// Creates a new builder-style object to manufacture [`TruckWeight`](crate::model::TruckWeight)
+    /// Creates a new builder-style object to manufacture [`TruckWeight`](crate::model::TruckWeight).
     pub fn builder() -> crate::model::truck_weight::Builder {
         crate::model::truck_weight::Builder::default()
     }
@@ -1992,11 +1977,10 @@ impl std::fmt::Debug for TruckDimensions {
         formatter.finish()
     }
 }
-/// See [`TruckDimensions`](crate::model::TruckDimensions)
+/// See [`TruckDimensions`](crate::model::TruckDimensions).
 pub mod truck_dimensions {
 
-    /// A builder for [`TruckDimensions`](crate::model::TruckDimensions)
-    #[non_exhaustive]
+    /// A builder for [`TruckDimensions`](crate::model::TruckDimensions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) length: std::option::Option<f64>,
@@ -2065,7 +2049,7 @@ pub mod truck_dimensions {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`TruckDimensions`](crate::model::TruckDimensions)
+        /// Consumes the builder and constructs a [`TruckDimensions`](crate::model::TruckDimensions).
         pub fn build(self) -> crate::model::TruckDimensions {
             crate::model::TruckDimensions {
                 length: self.length,
@@ -2077,7 +2061,7 @@ pub mod truck_dimensions {
     }
 }
 impl TruckDimensions {
-    /// Creates a new builder-style object to manufacture [`TruckDimensions`](crate::model::TruckDimensions)
+    /// Creates a new builder-style object to manufacture [`TruckDimensions`](crate::model::TruckDimensions).
     pub fn builder() -> crate::model::truck_dimensions::Builder {
         crate::model::truck_dimensions::Builder::default()
     }
@@ -2149,11 +2133,10 @@ impl std::fmt::Debug for CalculateRouteCarModeOptions {
         formatter.finish()
     }
 }
-/// See [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions)
+/// See [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
 pub mod calculate_route_car_mode_options {
 
-    /// A builder for [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions)
-    #[non_exhaustive]
+    /// A builder for [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avoid_ferries: std::option::Option<bool>,
@@ -2188,7 +2171,7 @@ pub mod calculate_route_car_mode_options {
             self.avoid_tolls = input;
             self
         }
-        /// Consumes the builder and constructs a [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions)
+        /// Consumes the builder and constructs a [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
         pub fn build(self) -> crate::model::CalculateRouteCarModeOptions {
             crate::model::CalculateRouteCarModeOptions {
                 avoid_ferries: self.avoid_ferries,
@@ -2198,7 +2181,7 @@ pub mod calculate_route_car_mode_options {
     }
 }
 impl CalculateRouteCarModeOptions {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions)
+    /// Creates a new builder-style object to manufacture [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
     pub fn builder() -> crate::model::calculate_route_car_mode_options::Builder {
         crate::model::calculate_route_car_mode_options::Builder::default()
     }
@@ -2317,11 +2300,10 @@ impl std::fmt::Debug for CalculateRouteSummary {
         formatter.finish()
     }
 }
-/// See [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+/// See [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
 pub mod calculate_route_summary {
 
-    /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
-    #[non_exhaustive]
+    /// A builder for [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route_b_box: std::option::Option<std::vec::Vec<f64>>,
@@ -2424,7 +2406,7 @@ pub mod calculate_route_summary {
             self.distance_unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+        /// Consumes the builder and constructs a [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
         pub fn build(self) -> crate::model::CalculateRouteSummary {
             crate::model::CalculateRouteSummary {
                 route_b_box: self.route_b_box,
@@ -2437,7 +2419,7 @@ pub mod calculate_route_summary {
     }
 }
 impl CalculateRouteSummary {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary)
+    /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
     pub fn builder() -> crate::model::calculate_route_summary::Builder {
         crate::model::calculate_route_summary::Builder::default()
     }
@@ -2522,11 +2504,10 @@ impl std::fmt::Debug for Leg {
         formatter.finish()
     }
 }
-/// See [`Leg`](crate::model::Leg)
+/// See [`Leg`](crate::model::Leg).
 pub mod leg {
 
-    /// A builder for [`Leg`](crate::model::Leg)
-    #[non_exhaustive]
+    /// A builder for [`Leg`](crate::model::Leg).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2638,7 +2619,7 @@ pub mod leg {
             self.steps = input;
             self
         }
-        /// Consumes the builder and constructs a [`Leg`](crate::model::Leg)
+        /// Consumes the builder and constructs a [`Leg`](crate::model::Leg).
         pub fn build(self) -> crate::model::Leg {
             crate::model::Leg {
                 start_position: self.start_position,
@@ -2652,7 +2633,7 @@ pub mod leg {
     }
 }
 impl Leg {
-    /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg)
+    /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg).
     pub fn builder() -> crate::model::leg::Builder {
         crate::model::leg::Builder::default()
     }
@@ -2708,11 +2689,10 @@ impl std::fmt::Debug for Step {
         formatter.finish()
     }
 }
-/// See [`Step`](crate::model::Step)
+/// See [`Step`](crate::model::Step).
 pub mod step {
 
-    /// A builder for [`Step`](crate::model::Step)
-    #[non_exhaustive]
+    /// A builder for [`Step`](crate::model::Step).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_position: std::option::Option<std::vec::Vec<f64>>,
@@ -2789,7 +2769,7 @@ pub mod step {
             self.geometry_offset = input;
             self
         }
-        /// Consumes the builder and constructs a [`Step`](crate::model::Step)
+        /// Consumes the builder and constructs a [`Step`](crate::model::Step).
         pub fn build(self) -> crate::model::Step {
             crate::model::Step {
                 start_position: self.start_position,
@@ -2802,7 +2782,7 @@ pub mod step {
     }
 }
 impl Step {
-    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step)
+    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
     pub fn builder() -> crate::model::step::Builder {
         crate::model::step::Builder::default()
     }
@@ -2836,11 +2816,10 @@ impl std::fmt::Debug for LegGeometry {
         formatter.finish()
     }
 }
-/// See [`LegGeometry`](crate::model::LegGeometry)
+/// See [`LegGeometry`](crate::model::LegGeometry).
 pub mod leg_geometry {
 
-    /// A builder for [`LegGeometry`](crate::model::LegGeometry)
-    #[non_exhaustive]
+    /// A builder for [`LegGeometry`](crate::model::LegGeometry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
@@ -2873,7 +2852,7 @@ pub mod leg_geometry {
             self.line_string = input;
             self
         }
-        /// Consumes the builder and constructs a [`LegGeometry`](crate::model::LegGeometry)
+        /// Consumes the builder and constructs a [`LegGeometry`](crate::model::LegGeometry).
         pub fn build(self) -> crate::model::LegGeometry {
             crate::model::LegGeometry {
                 line_string: self.line_string,
@@ -2882,7 +2861,7 @@ pub mod leg_geometry {
     }
 }
 impl LegGeometry {
-    /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::model::LegGeometry)
+    /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::model::LegGeometry).
     pub fn builder() -> crate::model::leg_geometry::Builder {
         crate::model::leg_geometry::Builder::default()
     }
@@ -2965,11 +2944,10 @@ impl std::fmt::Debug for ListRouteCalculatorsResponseEntry {
         formatter.finish()
     }
 }
-/// See [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry)
+/// See [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
 pub mod list_route_calculators_response_entry {
 
-    /// A builder for [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry)
-    #[non_exhaustive]
+    /// A builder for [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
@@ -3074,7 +3052,7 @@ pub mod list_route_calculators_response_entry {
             self.update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry)
+        /// Consumes the builder and constructs a [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
         pub fn build(self) -> crate::model::ListRouteCalculatorsResponseEntry {
             crate::model::ListRouteCalculatorsResponseEntry {
                 calculator_name: self.calculator_name,
@@ -3088,7 +3066,7 @@ pub mod list_route_calculators_response_entry {
     }
 }
 impl ListRouteCalculatorsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry)
+    /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
     pub fn builder() -> crate::model::list_route_calculators_response_entry::Builder {
         crate::model::list_route_calculators_response_entry::Builder::default()
     }
@@ -3134,11 +3112,10 @@ impl std::fmt::Debug for SearchForTextResult {
         formatter.finish()
     }
 }
-/// See [`SearchForTextResult`](crate::model::SearchForTextResult)
+/// See [`SearchForTextResult`](crate::model::SearchForTextResult).
 pub mod search_for_text_result {
 
-    /// A builder for [`SearchForTextResult`](crate::model::SearchForTextResult)
-    #[non_exhaustive]
+    /// A builder for [`SearchForTextResult`](crate::model::SearchForTextResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
@@ -3182,7 +3159,7 @@ pub mod search_for_text_result {
             self.relevance = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchForTextResult`](crate::model::SearchForTextResult)
+        /// Consumes the builder and constructs a [`SearchForTextResult`](crate::model::SearchForTextResult).
         pub fn build(self) -> crate::model::SearchForTextResult {
             crate::model::SearchForTextResult {
                 place: self.place,
@@ -3193,7 +3170,7 @@ pub mod search_for_text_result {
     }
 }
 impl SearchForTextResult {
-    /// Creates a new builder-style object to manufacture [`SearchForTextResult`](crate::model::SearchForTextResult)
+    /// Creates a new builder-style object to manufacture [`SearchForTextResult`](crate::model::SearchForTextResult).
     pub fn builder() -> crate::model::search_for_text_result::Builder {
         crate::model::search_for_text_result::Builder::default()
     }
@@ -3303,11 +3280,10 @@ impl std::fmt::Debug for Place {
         formatter.finish()
     }
 }
-/// See [`Place`](crate::model::Place)
+/// See [`Place`](crate::model::Place).
 pub mod place {
 
-    /// A builder for [`Place`](crate::model::Place)
-    #[non_exhaustive]
+    /// A builder for [`Place`](crate::model::Place).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) label: std::option::Option<std::string::String>,
@@ -3456,7 +3432,7 @@ pub mod place {
             self.time_zone = input;
             self
         }
-        /// Consumes the builder and constructs a [`Place`](crate::model::Place)
+        /// Consumes the builder and constructs a [`Place`](crate::model::Place).
         pub fn build(self) -> crate::model::Place {
             crate::model::Place {
                 label: self.label,
@@ -3476,7 +3452,7 @@ pub mod place {
     }
 }
 impl Place {
-    /// Creates a new builder-style object to manufacture [`Place`](crate::model::Place)
+    /// Creates a new builder-style object to manufacture [`Place`](crate::model::Place).
     pub fn builder() -> crate::model::place::Builder {
         crate::model::place::Builder::default()
     }
@@ -3509,11 +3485,10 @@ impl std::fmt::Debug for TimeZone {
         formatter.finish()
     }
 }
-/// See [`TimeZone`](crate::model::TimeZone)
+/// See [`TimeZone`](crate::model::TimeZone).
 pub mod time_zone {
 
-    /// A builder for [`TimeZone`](crate::model::TimeZone)
-    #[non_exhaustive]
+    /// A builder for [`TimeZone`](crate::model::TimeZone).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3540,7 +3515,7 @@ pub mod time_zone {
             self.offset = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimeZone`](crate::model::TimeZone)
+        /// Consumes the builder and constructs a [`TimeZone`](crate::model::TimeZone).
         pub fn build(self) -> crate::model::TimeZone {
             crate::model::TimeZone {
                 name: self.name,
@@ -3550,7 +3525,7 @@ pub mod time_zone {
     }
 }
 impl TimeZone {
-    /// Creates a new builder-style object to manufacture [`TimeZone`](crate::model::TimeZone)
+    /// Creates a new builder-style object to manufacture [`TimeZone`](crate::model::TimeZone).
     pub fn builder() -> crate::model::time_zone::Builder {
         crate::model::time_zone::Builder::default()
     }
@@ -3584,11 +3559,10 @@ impl std::fmt::Debug for PlaceGeometry {
         formatter.finish()
     }
 }
-/// See [`PlaceGeometry`](crate::model::PlaceGeometry)
+/// See [`PlaceGeometry`](crate::model::PlaceGeometry).
 pub mod place_geometry {
 
-    /// A builder for [`PlaceGeometry`](crate::model::PlaceGeometry)
-    #[non_exhaustive]
+    /// A builder for [`PlaceGeometry`](crate::model::PlaceGeometry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) point: std::option::Option<std::vec::Vec<f64>>,
@@ -3618,14 +3592,14 @@ pub mod place_geometry {
             self.point = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlaceGeometry`](crate::model::PlaceGeometry)
+        /// Consumes the builder and constructs a [`PlaceGeometry`](crate::model::PlaceGeometry).
         pub fn build(self) -> crate::model::PlaceGeometry {
             crate::model::PlaceGeometry { point: self.point }
         }
     }
 }
 impl PlaceGeometry {
-    /// Creates a new builder-style object to manufacture [`PlaceGeometry`](crate::model::PlaceGeometry)
+    /// Creates a new builder-style object to manufacture [`PlaceGeometry`](crate::model::PlaceGeometry).
     pub fn builder() -> crate::model::place_geometry::Builder {
         crate::model::place_geometry::Builder::default()
     }
@@ -3718,11 +3692,10 @@ impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
         formatter.finish()
     }
 }
-/// See [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary)
+/// See [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
 pub mod search_place_index_for_text_summary {
 
-    /// A builder for [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary)
-    #[non_exhaustive]
+    /// A builder for [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3860,7 +3833,7 @@ pub mod search_place_index_for_text_summary {
             self.language = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary)
+        /// Consumes the builder and constructs a [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
         pub fn build(self) -> crate::model::SearchPlaceIndexForTextSummary {
             crate::model::SearchPlaceIndexForTextSummary {
                 text: self.text,
@@ -3876,7 +3849,7 @@ pub mod search_place_index_for_text_summary {
     }
 }
 impl SearchPlaceIndexForTextSummary {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary)
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
     pub fn builder() -> crate::model::search_place_index_for_text_summary::Builder {
         crate::model::search_place_index_for_text_summary::Builder::default()
     }
@@ -3902,11 +3875,10 @@ impl std::fmt::Debug for SearchForSuggestionsResult {
         formatter.finish()
     }
 }
-/// See [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult)
+/// See [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
 pub mod search_for_suggestions_result {
 
-    /// A builder for [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult)
-    #[non_exhaustive]
+    /// A builder for [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -3922,14 +3894,14 @@ pub mod search_for_suggestions_result {
             self.text = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult)
+        /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
         pub fn build(self) -> crate::model::SearchForSuggestionsResult {
             crate::model::SearchForSuggestionsResult { text: self.text }
         }
     }
 }
 impl SearchForSuggestionsResult {
-    /// Creates a new builder-style object to manufacture [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult)
+    /// Creates a new builder-style object to manufacture [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
     pub fn builder() -> crate::model::search_for_suggestions_result::Builder {
         crate::model::search_for_suggestions_result::Builder::default()
     }
@@ -4011,11 +3983,10 @@ impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
         formatter.finish()
     }
 }
-/// See [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary)
+/// See [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
 pub mod search_place_index_for_suggestions_summary {
 
-    /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary)
-    #[non_exhaustive]
+    /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -4132,7 +4103,7 @@ pub mod search_place_index_for_suggestions_summary {
             self.language = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary)
+        /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
         pub fn build(self) -> crate::model::SearchPlaceIndexForSuggestionsSummary {
             crate::model::SearchPlaceIndexForSuggestionsSummary {
                 text: self.text,
@@ -4147,7 +4118,7 @@ pub mod search_place_index_for_suggestions_summary {
     }
 }
 impl SearchPlaceIndexForSuggestionsSummary {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary)
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
     pub fn builder() -> crate::model::search_place_index_for_suggestions_summary::Builder {
         crate::model::search_place_index_for_suggestions_summary::Builder::default()
     }
@@ -4184,11 +4155,10 @@ impl std::fmt::Debug for SearchForPositionResult {
         formatter.finish()
     }
 }
-/// See [`SearchForPositionResult`](crate::model::SearchForPositionResult)
+/// See [`SearchForPositionResult`](crate::model::SearchForPositionResult).
 pub mod search_for_position_result {
 
-    /// A builder for [`SearchForPositionResult`](crate::model::SearchForPositionResult)
-    #[non_exhaustive]
+    /// A builder for [`SearchForPositionResult`](crate::model::SearchForPositionResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
@@ -4219,7 +4189,7 @@ pub mod search_for_position_result {
             self.distance = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchForPositionResult`](crate::model::SearchForPositionResult)
+        /// Consumes the builder and constructs a [`SearchForPositionResult`](crate::model::SearchForPositionResult).
         pub fn build(self) -> crate::model::SearchForPositionResult {
             crate::model::SearchForPositionResult {
                 place: self.place,
@@ -4229,7 +4199,7 @@ pub mod search_for_position_result {
     }
 }
 impl SearchForPositionResult {
-    /// Creates a new builder-style object to manufacture [`SearchForPositionResult`](crate::model::SearchForPositionResult)
+    /// Creates a new builder-style object to manufacture [`SearchForPositionResult`](crate::model::SearchForPositionResult).
     pub fn builder() -> crate::model::search_for_position_result::Builder {
         crate::model::search_for_position_result::Builder::default()
     }
@@ -4288,11 +4258,10 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
         formatter.finish()
     }
 }
-/// See [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary)
+/// See [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
 pub mod search_place_index_for_position_summary {
 
-    /// A builder for [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary)
-    #[non_exhaustive]
+    /// A builder for [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
@@ -4359,7 +4328,7 @@ pub mod search_place_index_for_position_summary {
             self.language = input;
             self
         }
-        /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary)
+        /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
         pub fn build(self) -> crate::model::SearchPlaceIndexForPositionSummary {
             crate::model::SearchPlaceIndexForPositionSummary {
                 position: self.position,
@@ -4371,7 +4340,7 @@ pub mod search_place_index_for_position_summary {
     }
 }
 impl SearchPlaceIndexForPositionSummary {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary)
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
     pub fn builder() -> crate::model::search_place_index_for_position_summary::Builder {
         crate::model::search_place_index_for_position_summary::Builder::default()
     }
@@ -4442,11 +4411,10 @@ impl std::fmt::Debug for ListPlaceIndexesResponseEntry {
         formatter.finish()
     }
 }
-/// See [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry)
+/// See [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
 pub mod list_place_indexes_response_entry {
 
-    /// A builder for [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry)
-    #[non_exhaustive]
+    /// A builder for [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_name: std::option::Option<std::string::String>,
@@ -4536,7 +4504,7 @@ pub mod list_place_indexes_response_entry {
             self.update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry)
+        /// Consumes the builder and constructs a [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
         pub fn build(self) -> crate::model::ListPlaceIndexesResponseEntry {
             crate::model::ListPlaceIndexesResponseEntry {
                 index_name: self.index_name,
@@ -4550,7 +4518,7 @@ pub mod list_place_indexes_response_entry {
     }
 }
 impl ListPlaceIndexesResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry)
+    /// Creates a new builder-style object to manufacture [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
     pub fn builder() -> crate::model::list_place_indexes_response_entry::Builder {
         crate::model::list_place_indexes_response_entry::Builder::default()
     }
@@ -4595,11 +4563,10 @@ impl std::fmt::Debug for DataSourceConfiguration {
         formatter.finish()
     }
 }
-/// See [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
+/// See [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
 pub mod data_source_configuration {
 
-    /// A builder for [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intended_use: std::option::Option<crate::model::IntendedUse>,
@@ -4630,7 +4597,7 @@ pub mod data_source_configuration {
             self.intended_use = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
+        /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
                 intended_use: self.intended_use,
@@ -4639,7 +4606,7 @@ pub mod data_source_configuration {
     }
 }
 impl DataSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
+    /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
     pub fn builder() -> crate::model::data_source_configuration::Builder {
         crate::model::data_source_configuration::Builder::default()
     }
@@ -4731,11 +4698,10 @@ impl std::fmt::Debug for ListMapsResponseEntry {
         formatter.finish()
     }
 }
-/// See [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry)
+/// See [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
 pub mod list_maps_response_entry {
 
-    /// A builder for [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry)
-    #[non_exhaustive]
+    /// A builder for [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) map_name: std::option::Option<std::string::String>,
@@ -4815,7 +4781,7 @@ pub mod list_maps_response_entry {
             self.update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry)
+        /// Consumes the builder and constructs a [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
         pub fn build(self) -> crate::model::ListMapsResponseEntry {
             crate::model::ListMapsResponseEntry {
                 map_name: self.map_name,
@@ -4829,7 +4795,7 @@ pub mod list_maps_response_entry {
     }
 }
 impl ListMapsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry)
+    /// Creates a new builder-style object to manufacture [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
     pub fn builder() -> crate::model::list_maps_response_entry::Builder {
         crate::model::list_maps_response_entry::Builder::default()
     }
@@ -4885,11 +4851,10 @@ impl std::fmt::Debug for MapConfiguration {
         formatter.finish()
     }
 }
-/// See [`MapConfiguration`](crate::model::MapConfiguration)
+/// See [`MapConfiguration`](crate::model::MapConfiguration).
 pub mod map_configuration {
 
-    /// A builder for [`MapConfiguration`](crate::model::MapConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`MapConfiguration`](crate::model::MapConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style: std::option::Option<std::string::String>,
@@ -4935,14 +4900,14 @@ pub mod map_configuration {
             self.style = input;
             self
         }
-        /// Consumes the builder and constructs a [`MapConfiguration`](crate::model::MapConfiguration)
+        /// Consumes the builder and constructs a [`MapConfiguration`](crate::model::MapConfiguration).
         pub fn build(self) -> crate::model::MapConfiguration {
             crate::model::MapConfiguration { style: self.style }
         }
     }
 }
 impl MapConfiguration {
-    /// Creates a new builder-style object to manufacture [`MapConfiguration`](crate::model::MapConfiguration)
+    /// Creates a new builder-style object to manufacture [`MapConfiguration`](crate::model::MapConfiguration).
     pub fn builder() -> crate::model::map_configuration::Builder {
         crate::model::map_configuration::Builder::default()
     }
@@ -4972,11 +4937,10 @@ impl std::fmt::Debug for GeofenceGeometry {
         formatter.finish()
     }
 }
-/// See [`GeofenceGeometry`](crate::model::GeofenceGeometry)
+/// See [`GeofenceGeometry`](crate::model::GeofenceGeometry).
 pub mod geofence_geometry {
 
-    /// A builder for [`GeofenceGeometry`](crate::model::GeofenceGeometry)
-    #[non_exhaustive]
+    /// A builder for [`GeofenceGeometry`](crate::model::GeofenceGeometry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
@@ -5003,7 +4967,7 @@ pub mod geofence_geometry {
             self.polygon = input;
             self
         }
-        /// Consumes the builder and constructs a [`GeofenceGeometry`](crate::model::GeofenceGeometry)
+        /// Consumes the builder and constructs a [`GeofenceGeometry`](crate::model::GeofenceGeometry).
         pub fn build(self) -> crate::model::GeofenceGeometry {
             crate::model::GeofenceGeometry {
                 polygon: self.polygon,
@@ -5012,7 +4976,7 @@ pub mod geofence_geometry {
     }
 }
 impl GeofenceGeometry {
-    /// Creates a new builder-style object to manufacture [`GeofenceGeometry`](crate::model::GeofenceGeometry)
+    /// Creates a new builder-style object to manufacture [`GeofenceGeometry`](crate::model::GeofenceGeometry).
     pub fn builder() -> crate::model::geofence_geometry::Builder {
         crate::model::geofence_geometry::Builder::default()
     }
@@ -5080,11 +5044,10 @@ impl std::fmt::Debug for ListGeofenceResponseEntry {
         formatter.finish()
     }
 }
-/// See [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry)
+/// See [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
 pub mod list_geofence_response_entry {
 
-    /// A builder for [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry)
-    #[non_exhaustive]
+    /// A builder for [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5167,7 +5130,7 @@ pub mod list_geofence_response_entry {
             self.update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry)
+        /// Consumes the builder and constructs a [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
         pub fn build(self) -> crate::model::ListGeofenceResponseEntry {
             crate::model::ListGeofenceResponseEntry {
                 geofence_id: self.geofence_id,
@@ -5180,7 +5143,7 @@ pub mod list_geofence_response_entry {
     }
 }
 impl ListGeofenceResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry)
+    /// Creates a new builder-style object to manufacture [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
     pub fn builder() -> crate::model::list_geofence_response_entry::Builder {
         crate::model::list_geofence_response_entry::Builder::default()
     }
@@ -5213,11 +5176,10 @@ impl std::fmt::Debug for BatchPutGeofenceError {
         formatter.finish()
     }
 }
-/// See [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError)
+/// See [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
 pub mod batch_put_geofence_error {
 
-    /// A builder for [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError)
-    #[non_exhaustive]
+    /// A builder for [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5247,7 +5209,7 @@ pub mod batch_put_geofence_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError)
+        /// Consumes the builder and constructs a [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
         pub fn build(self) -> crate::model::BatchPutGeofenceError {
             crate::model::BatchPutGeofenceError {
                 geofence_id: self.geofence_id,
@@ -5257,7 +5219,7 @@ pub mod batch_put_geofence_error {
     }
 }
 impl BatchPutGeofenceError {
-    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError)
+    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
     pub fn builder() -> crate::model::batch_put_geofence_error::Builder {
         crate::model::batch_put_geofence_error::Builder::default()
     }
@@ -5297,11 +5259,10 @@ impl std::fmt::Debug for BatchPutGeofenceSuccess {
         formatter.finish()
     }
 }
-/// See [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess)
+/// See [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
 pub mod batch_put_geofence_success {
 
-    /// A builder for [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess)
-    #[non_exhaustive]
+    /// A builder for [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5345,7 +5306,7 @@ pub mod batch_put_geofence_success {
             self.update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess)
+        /// Consumes the builder and constructs a [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
         pub fn build(self) -> crate::model::BatchPutGeofenceSuccess {
             crate::model::BatchPutGeofenceSuccess {
                 geofence_id: self.geofence_id,
@@ -5356,7 +5317,7 @@ pub mod batch_put_geofence_success {
     }
 }
 impl BatchPutGeofenceSuccess {
-    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess)
+    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
     pub fn builder() -> crate::model::batch_put_geofence_success::Builder {
         crate::model::batch_put_geofence_success::Builder::default()
     }
@@ -5393,11 +5354,10 @@ impl std::fmt::Debug for BatchPutGeofenceRequestEntry {
         formatter.finish()
     }
 }
-/// See [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry)
+/// See [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
 pub mod batch_put_geofence_request_entry {
 
-    /// A builder for [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry)
-    #[non_exhaustive]
+    /// A builder for [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5431,7 +5391,7 @@ pub mod batch_put_geofence_request_entry {
             self.geometry = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry)
+        /// Consumes the builder and constructs a [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
         pub fn build(self) -> crate::model::BatchPutGeofenceRequestEntry {
             crate::model::BatchPutGeofenceRequestEntry {
                 geofence_id: self.geofence_id,
@@ -5441,7 +5401,7 @@ pub mod batch_put_geofence_request_entry {
     }
 }
 impl BatchPutGeofenceRequestEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry)
+    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
     pub fn builder() -> crate::model::batch_put_geofence_request_entry::Builder {
         crate::model::batch_put_geofence_request_entry::Builder::default()
     }
@@ -5481,11 +5441,10 @@ impl std::fmt::Debug for BatchEvaluateGeofencesError {
         formatter.finish()
     }
 }
-/// See [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError)
+/// See [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
 pub mod batch_evaluate_geofences_error {
 
-    /// A builder for [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError)
-    #[non_exhaustive]
+    /// A builder for [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -5529,7 +5488,7 @@ pub mod batch_evaluate_geofences_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError)
+        /// Consumes the builder and constructs a [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
         pub fn build(self) -> crate::model::BatchEvaluateGeofencesError {
             crate::model::BatchEvaluateGeofencesError {
                 device_id: self.device_id,
@@ -5540,7 +5499,7 @@ pub mod batch_evaluate_geofences_error {
     }
 }
 impl BatchEvaluateGeofencesError {
-    /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError)
+    /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
     pub fn builder() -> crate::model::batch_evaluate_geofences_error::Builder {
         crate::model::batch_evaluate_geofences_error::Builder::default()
     }
@@ -5573,11 +5532,10 @@ impl std::fmt::Debug for BatchDeleteGeofenceError {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError)
+/// See [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
 pub mod batch_delete_geofence_error {
 
-    /// A builder for [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
@@ -5607,7 +5565,7 @@ pub mod batch_delete_geofence_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError)
+        /// Consumes the builder and constructs a [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
         pub fn build(self) -> crate::model::BatchDeleteGeofenceError {
             crate::model::BatchDeleteGeofenceError {
                 geofence_id: self.geofence_id,
@@ -5617,7 +5575,7 @@ pub mod batch_delete_geofence_error {
     }
 }
 impl BatchDeleteGeofenceError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
     pub fn builder() -> crate::model::batch_delete_geofence_error::Builder {
         crate::model::batch_delete_geofence_error::Builder::default()
     }
@@ -5678,11 +5636,10 @@ impl std::fmt::Debug for ListGeofenceCollectionsResponseEntry {
         formatter.finish()
     }
 }
-/// See [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry)
+/// See [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
 pub mod list_geofence_collections_response_entry {
 
-    /// A builder for [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry)
-    #[non_exhaustive]
+    /// A builder for [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) collection_name: std::option::Option<std::string::String>,
@@ -5768,7 +5725,7 @@ pub mod list_geofence_collections_response_entry {
             self.update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry)
+        /// Consumes the builder and constructs a [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
         pub fn build(self) -> crate::model::ListGeofenceCollectionsResponseEntry {
             crate::model::ListGeofenceCollectionsResponseEntry {
                 collection_name: self.collection_name,
@@ -5782,7 +5739,7 @@ pub mod list_geofence_collections_response_entry {
     }
 }
 impl ListGeofenceCollectionsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry)
+    /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
     pub fn builder() -> crate::model::list_geofence_collections_response_entry::Builder {
         crate::model::list_geofence_collections_response_entry::Builder::default()
     }

@@ -59,11 +59,10 @@ impl std::fmt::Debug for EventIntegration {
         formatter.finish()
     }
 }
-/// See [`EventIntegration`](crate::model::EventIntegration)
+/// See [`EventIntegration`](crate::model::EventIntegration).
 pub mod event_integration {
 
-    /// A builder for [`EventIntegration`](crate::model::EventIntegration)
-    #[non_exhaustive]
+    /// A builder for [`EventIntegration`](crate::model::EventIntegration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_arn: std::option::Option<std::string::String>,
@@ -160,7 +159,7 @@ pub mod event_integration {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventIntegration`](crate::model::EventIntegration)
+        /// Consumes the builder and constructs a [`EventIntegration`](crate::model::EventIntegration).
         pub fn build(self) -> crate::model::EventIntegration {
             crate::model::EventIntegration {
                 event_integration_arn: self.event_integration_arn,
@@ -174,7 +173,7 @@ pub mod event_integration {
     }
 }
 impl EventIntegration {
-    /// Creates a new builder-style object to manufacture [`EventIntegration`](crate::model::EventIntegration)
+    /// Creates a new builder-style object to manufacture [`EventIntegration`](crate::model::EventIntegration).
     pub fn builder() -> crate::model::event_integration::Builder {
         crate::model::event_integration::Builder::default()
     }
@@ -200,11 +199,10 @@ impl std::fmt::Debug for EventFilter {
         formatter.finish()
     }
 }
-/// See [`EventFilter`](crate::model::EventFilter)
+/// See [`EventFilter`](crate::model::EventFilter).
 pub mod event_filter {
 
-    /// A builder for [`EventFilter`](crate::model::EventFilter)
-    #[non_exhaustive]
+    /// A builder for [`EventFilter`](crate::model::EventFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -220,7 +218,7 @@ pub mod event_filter {
             self.source = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventFilter`](crate::model::EventFilter)
+        /// Consumes the builder and constructs a [`EventFilter`](crate::model::EventFilter).
         pub fn build(self) -> crate::model::EventFilter {
             crate::model::EventFilter {
                 source: self.source,
@@ -229,7 +227,7 @@ pub mod event_filter {
     }
 }
 impl EventFilter {
-    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter)
+    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
     pub fn builder() -> crate::model::event_filter::Builder {
         crate::model::event_filter::Builder::default()
     }
@@ -303,11 +301,10 @@ impl std::fmt::Debug for EventIntegrationAssociation {
         formatter.finish()
     }
 }
-/// See [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation)
+/// See [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
 pub mod event_integration_association {
 
-    /// A builder for [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation)
-    #[non_exhaustive]
+    /// A builder for [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_association_arn: std::option::Option<std::string::String>,
@@ -413,7 +410,7 @@ pub mod event_integration_association {
             self.client_association_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation)
+        /// Consumes the builder and constructs a [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
         pub fn build(self) -> crate::model::EventIntegrationAssociation {
             crate::model::EventIntegrationAssociation {
                 event_integration_association_arn: self.event_integration_association_arn,
@@ -427,7 +424,7 @@ pub mod event_integration_association {
     }
 }
 impl EventIntegrationAssociation {
-    /// Creates a new builder-style object to manufacture [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation)
+    /// Creates a new builder-style object to manufacture [`EventIntegrationAssociation`](crate::model::EventIntegrationAssociation).
     pub fn builder() -> crate::model::event_integration_association::Builder {
         crate::model::event_integration_association::Builder::default()
     }
@@ -467,11 +464,10 @@ impl std::fmt::Debug for DataIntegrationSummary {
         formatter.finish()
     }
 }
-/// See [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
+/// See [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
 pub mod data_integration_summary {
 
-    /// A builder for [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
-    #[non_exhaustive]
+    /// A builder for [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -509,7 +505,7 @@ pub mod data_integration_summary {
             self.source_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
+        /// Consumes the builder and constructs a [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
         pub fn build(self) -> crate::model::DataIntegrationSummary {
             crate::model::DataIntegrationSummary {
                 arn: self.arn,
@@ -520,7 +516,7 @@ pub mod data_integration_summary {
     }
 }
 impl DataIntegrationSummary {
-    /// Creates a new builder-style object to manufacture [`DataIntegrationSummary`](crate::model::DataIntegrationSummary)
+    /// Creates a new builder-style object to manufacture [`DataIntegrationSummary`](crate::model::DataIntegrationSummary).
     pub fn builder() -> crate::model::data_integration_summary::Builder {
         crate::model::data_integration_summary::Builder::default()
     }
@@ -563,11 +559,10 @@ impl std::fmt::Debug for DataIntegrationAssociationSummary {
         formatter.finish()
     }
 }
-/// See [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
+/// See [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
 pub mod data_integration_association_summary {
 
-    /// A builder for [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
-    #[non_exhaustive]
+    /// A builder for [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_integration_association_arn: std::option::Option<std::string::String>,
@@ -614,7 +609,7 @@ pub mod data_integration_association_summary {
             self.client_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
+        /// Consumes the builder and constructs a [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
         pub fn build(self) -> crate::model::DataIntegrationAssociationSummary {
             crate::model::DataIntegrationAssociationSummary {
                 data_integration_association_arn: self.data_integration_association_arn,
@@ -625,7 +620,7 @@ pub mod data_integration_association_summary {
     }
 }
 impl DataIntegrationAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary)
+    /// Creates a new builder-style object to manufacture [`DataIntegrationAssociationSummary`](crate::model::DataIntegrationAssociationSummary).
     pub fn builder() -> crate::model::data_integration_association_summary::Builder {
         crate::model::data_integration_association_summary::Builder::default()
     }
@@ -665,11 +660,10 @@ impl std::fmt::Debug for ScheduleConfiguration {
         formatter.finish()
     }
 }
-/// See [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
+/// See [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
 pub mod schedule_configuration {
 
-    /// A builder for [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) first_execution_from: std::option::Option<std::string::String>,
@@ -713,7 +707,7 @@ pub mod schedule_configuration {
             self.schedule_expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
+        /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
         pub fn build(self) -> crate::model::ScheduleConfiguration {
             crate::model::ScheduleConfiguration {
                 first_execution_from: self.first_execution_from,
@@ -724,7 +718,7 @@ pub mod schedule_configuration {
     }
 }
 impl ScheduleConfiguration {
-    /// Creates a new builder-style object to manufacture [`ScheduleConfiguration`](crate::model::ScheduleConfiguration)
+    /// Creates a new builder-style object to manufacture [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
     pub fn builder() -> crate::model::schedule_configuration::Builder {
         crate::model::schedule_configuration::Builder::default()
     }

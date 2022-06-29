@@ -10,7 +10,7 @@ pub struct AssociateAwsAccountWithPartnerAccount {
     _private: (),
 }
 impl AssociateAwsAccountWithPartnerAccount {
-    /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountInput`](crate::input::AssociateAwsAccountWithPartnerAccountInput)
+    /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountInput`](crate::input::AssociateAwsAccountWithPartnerAccountInput).
     pub fn builder() -> crate::input::associate_aws_account_with_partner_account_input::Builder {
         crate::input::associate_aws_account_with_partner_account_input::Builder::default()
     }
@@ -46,7 +46,7 @@ pub struct AssociateMulticastGroupWithFuotaTask {
     _private: (),
 }
 impl AssociateMulticastGroupWithFuotaTask {
-    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskInput`](crate::input::AssociateMulticastGroupWithFuotaTaskInput).
     pub fn builder() -> crate::input::associate_multicast_group_with_fuota_task_input::Builder {
         crate::input::associate_multicast_group_with_fuota_task_input::Builder::default()
     }
@@ -82,7 +82,7 @@ pub struct AssociateWirelessDeviceWithFuotaTask {
     _private: (),
 }
 impl AssociateWirelessDeviceWithFuotaTask {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskInput`](crate::input::AssociateWirelessDeviceWithFuotaTaskInput).
     pub fn builder() -> crate::input::associate_wireless_device_with_fuota_task_input::Builder {
         crate::input::associate_wireless_device_with_fuota_task_input::Builder::default()
     }
@@ -118,7 +118,7 @@ pub struct AssociateWirelessDeviceWithMulticastGroup {
     _private: (),
 }
 impl AssociateWirelessDeviceWithMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupInput`](crate::input::AssociateWirelessDeviceWithMulticastGroupInput).
     pub fn builder() -> crate::input::associate_wireless_device_with_multicast_group_input::Builder
     {
         crate::input::associate_wireless_device_with_multicast_group_input::Builder::default()
@@ -157,7 +157,7 @@ pub struct AssociateWirelessDeviceWithThing {
     _private: (),
 }
 impl AssociateWirelessDeviceWithThing {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingInput`](crate::input::AssociateWirelessDeviceWithThingInput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingInput`](crate::input::AssociateWirelessDeviceWithThingInput).
     pub fn builder() -> crate::input::associate_wireless_device_with_thing_input::Builder {
         crate::input::associate_wireless_device_with_thing_input::Builder::default()
     }
@@ -191,7 +191,7 @@ pub struct AssociateWirelessGatewayWithCertificate {
     _private: (),
 }
 impl AssociateWirelessGatewayWithCertificate {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateInput`](crate::input::AssociateWirelessGatewayWithCertificateInput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateInput`](crate::input::AssociateWirelessGatewayWithCertificateInput).
     pub fn builder() -> crate::input::associate_wireless_gateway_with_certificate_input::Builder {
         crate::input::associate_wireless_gateway_with_certificate_input::Builder::default()
     }
@@ -229,7 +229,7 @@ pub struct AssociateWirelessGatewayWithThing {
     _private: (),
 }
 impl AssociateWirelessGatewayWithThing {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingInput`](crate::input::AssociateWirelessGatewayWithThingInput)
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingInput`](crate::input::AssociateWirelessGatewayWithThingInput).
     pub fn builder() -> crate::input::associate_wireless_gateway_with_thing_input::Builder {
         crate::input::associate_wireless_gateway_with_thing_input::Builder::default()
     }
@@ -263,7 +263,7 @@ pub struct CancelMulticastGroupSession {
     _private: (),
 }
 impl CancelMulticastGroupSession {
-    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput)
+    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionInput`](crate::input::CancelMulticastGroupSessionInput).
     pub fn builder() -> crate::input::cancel_multicast_group_session_input::Builder {
         crate::input::cancel_multicast_group_session_input::Builder::default()
     }
@@ -297,7 +297,7 @@ pub struct CreateDestination {
     _private: (),
 }
 impl CreateDestination {
-    /// Creates a new builder-style object to manufacture [`CreateDestinationInput`](crate::input::CreateDestinationInput)
+    /// Creates a new builder-style object to manufacture [`CreateDestinationInput`](crate::input::CreateDestinationInput).
     pub fn builder() -> crate::input::create_destination_input::Builder {
         crate::input::create_destination_input::Builder::default()
     }
@@ -331,7 +331,7 @@ pub struct CreateDeviceProfile {
     _private: (),
 }
 impl CreateDeviceProfile {
-    /// Creates a new builder-style object to manufacture [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeviceProfileInput`](crate::input::CreateDeviceProfileInput).
     pub fn builder() -> crate::input::create_device_profile_input::Builder {
         crate::input::create_device_profile_input::Builder::default()
     }
@@ -365,7 +365,7 @@ pub struct CreateFuotaTask {
     _private: (),
 }
 impl CreateFuotaTask {
-    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskInput`](crate::input::CreateFuotaTaskInput).
     pub fn builder() -> crate::input::create_fuota_task_input::Builder {
         crate::input::create_fuota_task_input::Builder::default()
     }
@@ -399,7 +399,7 @@ pub struct CreateMulticastGroup {
     _private: (),
 }
 impl CreateMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupInput`](crate::input::CreateMulticastGroupInput).
     pub fn builder() -> crate::input::create_multicast_group_input::Builder {
         crate::input::create_multicast_group_input::Builder::default()
     }
@@ -433,7 +433,7 @@ pub struct CreateNetworkAnalyzerConfiguration {
     _private: (),
 }
 impl CreateNetworkAnalyzerConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationInput`](crate::input::CreateNetworkAnalyzerConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationInput`](crate::input::CreateNetworkAnalyzerConfigurationInput).
     pub fn builder() -> crate::input::create_network_analyzer_configuration_input::Builder {
         crate::input::create_network_analyzer_configuration_input::Builder::default()
     }
@@ -467,7 +467,7 @@ pub struct CreateServiceProfile {
     _private: (),
 }
 impl CreateServiceProfile {
-    /// Creates a new builder-style object to manufacture [`CreateServiceProfileInput`](crate::input::CreateServiceProfileInput)
+    /// Creates a new builder-style object to manufacture [`CreateServiceProfileInput`](crate::input::CreateServiceProfileInput).
     pub fn builder() -> crate::input::create_service_profile_input::Builder {
         crate::input::create_service_profile_input::Builder::default()
     }
@@ -501,7 +501,7 @@ pub struct CreateWirelessDevice {
     _private: (),
 }
 impl CreateWirelessDevice {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput).
     pub fn builder() -> crate::input::create_wireless_device_input::Builder {
         crate::input::create_wireless_device_input::Builder::default()
     }
@@ -535,7 +535,7 @@ pub struct CreateWirelessGateway {
     _private: (),
 }
 impl CreateWirelessGateway {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayInput`](crate::input::CreateWirelessGatewayInput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayInput`](crate::input::CreateWirelessGatewayInput).
     pub fn builder() -> crate::input::create_wireless_gateway_input::Builder {
         crate::input::create_wireless_gateway_input::Builder::default()
     }
@@ -569,7 +569,7 @@ pub struct CreateWirelessGatewayTask {
     _private: (),
 }
 impl CreateWirelessGatewayTask {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskInput`](crate::input::CreateWirelessGatewayTaskInput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskInput`](crate::input::CreateWirelessGatewayTaskInput).
     pub fn builder() -> crate::input::create_wireless_gateway_task_input::Builder {
         crate::input::create_wireless_gateway_task_input::Builder::default()
     }
@@ -603,7 +603,7 @@ pub struct CreateWirelessGatewayTaskDefinition {
     _private: (),
 }
 impl CreateWirelessGatewayTaskDefinition {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionInput`](crate::input::CreateWirelessGatewayTaskDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionInput`](crate::input::CreateWirelessGatewayTaskDefinitionInput).
     pub fn builder() -> crate::input::create_wireless_gateway_task_definition_input::Builder {
         crate::input::create_wireless_gateway_task_definition_input::Builder::default()
     }
@@ -637,7 +637,7 @@ pub struct DeleteDestination {
     _private: (),
 }
 impl DeleteDestination {
-    /// Creates a new builder-style object to manufacture [`DeleteDestinationInput`](crate::input::DeleteDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
     pub fn builder() -> crate::input::delete_destination_input::Builder {
         crate::input::delete_destination_input::Builder::default()
     }
@@ -671,7 +671,7 @@ pub struct DeleteDeviceProfile {
     _private: (),
 }
 impl DeleteDeviceProfile {
-    /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileInput`](crate::input::DeleteDeviceProfileInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileInput`](crate::input::DeleteDeviceProfileInput).
     pub fn builder() -> crate::input::delete_device_profile_input::Builder {
         crate::input::delete_device_profile_input::Builder::default()
     }
@@ -705,7 +705,7 @@ pub struct DeleteFuotaTask {
     _private: (),
 }
 impl DeleteFuotaTask {
-    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskInput`](crate::input::DeleteFuotaTaskInput).
     pub fn builder() -> crate::input::delete_fuota_task_input::Builder {
         crate::input::delete_fuota_task_input::Builder::default()
     }
@@ -739,7 +739,7 @@ pub struct DeleteMulticastGroup {
     _private: (),
 }
 impl DeleteMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupInput`](crate::input::DeleteMulticastGroupInput).
     pub fn builder() -> crate::input::delete_multicast_group_input::Builder {
         crate::input::delete_multicast_group_input::Builder::default()
     }
@@ -773,7 +773,7 @@ pub struct DeleteNetworkAnalyzerConfiguration {
     _private: (),
 }
 impl DeleteNetworkAnalyzerConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationInput`](crate::input::DeleteNetworkAnalyzerConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationInput`](crate::input::DeleteNetworkAnalyzerConfigurationInput).
     pub fn builder() -> crate::input::delete_network_analyzer_configuration_input::Builder {
         crate::input::delete_network_analyzer_configuration_input::Builder::default()
     }
@@ -807,7 +807,7 @@ pub struct DeleteQueuedMessages {
     _private: (),
 }
 impl DeleteQueuedMessages {
-    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput)
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesInput`](crate::input::DeleteQueuedMessagesInput).
     pub fn builder() -> crate::input::delete_queued_messages_input::Builder {
         crate::input::delete_queued_messages_input::Builder::default()
     }
@@ -841,7 +841,7 @@ pub struct DeleteServiceProfile {
     _private: (),
 }
 impl DeleteServiceProfile {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput)
+    /// Creates a new builder-style object to manufacture [`DeleteServiceProfileInput`](crate::input::DeleteServiceProfileInput).
     pub fn builder() -> crate::input::delete_service_profile_input::Builder {
         crate::input::delete_service_profile_input::Builder::default()
     }
@@ -875,7 +875,7 @@ pub struct DeleteWirelessDevice {
     _private: (),
 }
 impl DeleteWirelessDevice {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceInput`](crate::input::DeleteWirelessDeviceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceInput`](crate::input::DeleteWirelessDeviceInput).
     pub fn builder() -> crate::input::delete_wireless_device_input::Builder {
         crate::input::delete_wireless_device_input::Builder::default()
     }
@@ -909,7 +909,7 @@ pub struct DeleteWirelessGateway {
     _private: (),
 }
 impl DeleteWirelessGateway {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayInput`](crate::input::DeleteWirelessGatewayInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayInput`](crate::input::DeleteWirelessGatewayInput).
     pub fn builder() -> crate::input::delete_wireless_gateway_input::Builder {
         crate::input::delete_wireless_gateway_input::Builder::default()
     }
@@ -943,7 +943,7 @@ pub struct DeleteWirelessGatewayTask {
     _private: (),
 }
 impl DeleteWirelessGatewayTask {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskInput`](crate::input::DeleteWirelessGatewayTaskInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskInput`](crate::input::DeleteWirelessGatewayTaskInput).
     pub fn builder() -> crate::input::delete_wireless_gateway_task_input::Builder {
         crate::input::delete_wireless_gateway_task_input::Builder::default()
     }
@@ -977,7 +977,7 @@ pub struct DeleteWirelessGatewayTaskDefinition {
     _private: (),
 }
 impl DeleteWirelessGatewayTaskDefinition {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionInput`](crate::input::DeleteWirelessGatewayTaskDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionInput`](crate::input::DeleteWirelessGatewayTaskDefinitionInput).
     pub fn builder() -> crate::input::delete_wireless_gateway_task_definition_input::Builder {
         crate::input::delete_wireless_gateway_task_definition_input::Builder::default()
     }
@@ -1011,7 +1011,7 @@ pub struct DisassociateAwsAccountFromPartnerAccount {
     _private: (),
 }
 impl DisassociateAwsAccountFromPartnerAccount {
-    /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountInput`](crate::input::DisassociateAwsAccountFromPartnerAccountInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountInput`](crate::input::DisassociateAwsAccountFromPartnerAccountInput).
     pub fn builder() -> crate::input::disassociate_aws_account_from_partner_account_input::Builder {
         crate::input::disassociate_aws_account_from_partner_account_input::Builder::default()
     }
@@ -1049,7 +1049,7 @@ pub struct DisassociateMulticastGroupFromFuotaTask {
     _private: (),
 }
 impl DisassociateMulticastGroupFromFuotaTask {
-    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::input::DisassociateMulticastGroupFromFuotaTaskInput).
     pub fn builder() -> crate::input::disassociate_multicast_group_from_fuota_task_input::Builder {
         crate::input::disassociate_multicast_group_from_fuota_task_input::Builder::default()
     }
@@ -1087,7 +1087,7 @@ pub struct DisassociateWirelessDeviceFromFuotaTask {
     _private: (),
 }
 impl DisassociateWirelessDeviceFromFuotaTask {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskInput`](crate::input::DisassociateWirelessDeviceFromFuotaTaskInput).
     pub fn builder() -> crate::input::disassociate_wireless_device_from_fuota_task_input::Builder {
         crate::input::disassociate_wireless_device_from_fuota_task_input::Builder::default()
     }
@@ -1125,7 +1125,7 @@ pub struct DisassociateWirelessDeviceFromMulticastGroup {
     _private: (),
 }
 impl DisassociateWirelessDeviceFromMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::DisassociateWirelessDeviceFromMulticastGroupInput).
     pub fn builder(
     ) -> crate::input::disassociate_wireless_device_from_multicast_group_input::Builder {
         crate::input::disassociate_wireless_device_from_multicast_group_input::Builder::default()
@@ -1166,7 +1166,7 @@ pub struct DisassociateWirelessDeviceFromThing {
     _private: (),
 }
 impl DisassociateWirelessDeviceFromThing {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingInput`](crate::input::DisassociateWirelessDeviceFromThingInput).
     pub fn builder() -> crate::input::disassociate_wireless_device_from_thing_input::Builder {
         crate::input::disassociate_wireless_device_from_thing_input::Builder::default()
     }
@@ -1200,7 +1200,7 @@ pub struct DisassociateWirelessGatewayFromCertificate {
     _private: (),
 }
 impl DisassociateWirelessGatewayFromCertificate {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateInput`](crate::input::DisassociateWirelessGatewayFromCertificateInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateInput`](crate::input::DisassociateWirelessGatewayFromCertificateInput).
     pub fn builder() -> crate::input::disassociate_wireless_gateway_from_certificate_input::Builder
     {
         crate::input::disassociate_wireless_gateway_from_certificate_input::Builder::default()
@@ -1239,7 +1239,7 @@ pub struct DisassociateWirelessGatewayFromThing {
     _private: (),
 }
 impl DisassociateWirelessGatewayFromThing {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingInput`](crate::input::DisassociateWirelessGatewayFromThingInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingInput`](crate::input::DisassociateWirelessGatewayFromThingInput).
     pub fn builder() -> crate::input::disassociate_wireless_gateway_from_thing_input::Builder {
         crate::input::disassociate_wireless_gateway_from_thing_input::Builder::default()
     }
@@ -1275,7 +1275,7 @@ pub struct GetDestination {
     _private: (),
 }
 impl GetDestination {
-    /// Creates a new builder-style object to manufacture [`GetDestinationInput`](crate::input::GetDestinationInput)
+    /// Creates a new builder-style object to manufacture [`GetDestinationInput`](crate::input::GetDestinationInput).
     pub fn builder() -> crate::input::get_destination_input::Builder {
         crate::input::get_destination_input::Builder::default()
     }
@@ -1307,7 +1307,7 @@ pub struct GetDeviceProfile {
     _private: (),
 }
 impl GetDeviceProfile {
-    /// Creates a new builder-style object to manufacture [`GetDeviceProfileInput`](crate::input::GetDeviceProfileInput)
+    /// Creates a new builder-style object to manufacture [`GetDeviceProfileInput`](crate::input::GetDeviceProfileInput).
     pub fn builder() -> crate::input::get_device_profile_input::Builder {
         crate::input::get_device_profile_input::Builder::default()
     }
@@ -1341,7 +1341,7 @@ pub struct GetEventConfigurationByResourceTypes {
     _private: (),
 }
 impl GetEventConfigurationByResourceTypes {
-    /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput)
+    /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesInput`](crate::input::GetEventConfigurationByResourceTypesInput).
     pub fn builder() -> crate::input::get_event_configuration_by_resource_types_input::Builder {
         crate::input::get_event_configuration_by_resource_types_input::Builder::default()
     }
@@ -1377,7 +1377,7 @@ pub struct GetFuotaTask {
     _private: (),
 }
 impl GetFuotaTask {
-    /// Creates a new builder-style object to manufacture [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`GetFuotaTaskInput`](crate::input::GetFuotaTaskInput).
     pub fn builder() -> crate::input::get_fuota_task_input::Builder {
         crate::input::get_fuota_task_input::Builder::default()
     }
@@ -1409,7 +1409,7 @@ pub struct GetLogLevelsByResourceTypes {
     _private: (),
 }
 impl GetLogLevelsByResourceTypes {
-    /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput)
+    /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesInput`](crate::input::GetLogLevelsByResourceTypesInput).
     pub fn builder() -> crate::input::get_log_levels_by_resource_types_input::Builder {
         crate::input::get_log_levels_by_resource_types_input::Builder::default()
     }
@@ -1443,7 +1443,7 @@ pub struct GetMulticastGroup {
     _private: (),
 }
 impl GetMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupInput`](crate::input::GetMulticastGroupInput).
     pub fn builder() -> crate::input::get_multicast_group_input::Builder {
         crate::input::get_multicast_group_input::Builder::default()
     }
@@ -1477,7 +1477,7 @@ pub struct GetMulticastGroupSession {
     _private: (),
 }
 impl GetMulticastGroupSession {
-    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput)
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionInput`](crate::input::GetMulticastGroupSessionInput).
     pub fn builder() -> crate::input::get_multicast_group_session_input::Builder {
         crate::input::get_multicast_group_session_input::Builder::default()
     }
@@ -1511,7 +1511,7 @@ pub struct GetNetworkAnalyzerConfiguration {
     _private: (),
 }
 impl GetNetworkAnalyzerConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationInput`](crate::input::GetNetworkAnalyzerConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationInput`](crate::input::GetNetworkAnalyzerConfigurationInput).
     pub fn builder() -> crate::input::get_network_analyzer_configuration_input::Builder {
         crate::input::get_network_analyzer_configuration_input::Builder::default()
     }
@@ -1545,7 +1545,7 @@ pub struct GetPartnerAccount {
     _private: (),
 }
 impl GetPartnerAccount {
-    /// Creates a new builder-style object to manufacture [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput)
+    /// Creates a new builder-style object to manufacture [`GetPartnerAccountInput`](crate::input::GetPartnerAccountInput).
     pub fn builder() -> crate::input::get_partner_account_input::Builder {
         crate::input::get_partner_account_input::Builder::default()
     }
@@ -1579,7 +1579,7 @@ pub struct GetResourceEventConfiguration {
     _private: (),
 }
 impl GetResourceEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationInput`](crate::input::GetResourceEventConfigurationInput).
     pub fn builder() -> crate::input::get_resource_event_configuration_input::Builder {
         crate::input::get_resource_event_configuration_input::Builder::default()
     }
@@ -1613,7 +1613,7 @@ pub struct GetResourceLogLevel {
     _private: (),
 }
 impl GetResourceLogLevel {
-    /// Creates a new builder-style object to manufacture [`GetResourceLogLevelInput`](crate::input::GetResourceLogLevelInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceLogLevelInput`](crate::input::GetResourceLogLevelInput).
     pub fn builder() -> crate::input::get_resource_log_level_input::Builder {
         crate::input::get_resource_log_level_input::Builder::default()
     }
@@ -1647,7 +1647,7 @@ pub struct GetServiceEndpoint {
     _private: (),
 }
 impl GetServiceEndpoint {
-    /// Creates a new builder-style object to manufacture [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceEndpointInput`](crate::input::GetServiceEndpointInput).
     pub fn builder() -> crate::input::get_service_endpoint_input::Builder {
         crate::input::get_service_endpoint_input::Builder::default()
     }
@@ -1681,7 +1681,7 @@ pub struct GetServiceProfile {
     _private: (),
 }
 impl GetServiceProfile {
-    /// Creates a new builder-style object to manufacture [`GetServiceProfileInput`](crate::input::GetServiceProfileInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceProfileInput`](crate::input::GetServiceProfileInput).
     pub fn builder() -> crate::input::get_service_profile_input::Builder {
         crate::input::get_service_profile_input::Builder::default()
     }
@@ -1715,7 +1715,7 @@ pub struct GetWirelessDevice {
     _private: (),
 }
 impl GetWirelessDevice {
-    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceInput`](crate::input::GetWirelessDeviceInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceInput`](crate::input::GetWirelessDeviceInput).
     pub fn builder() -> crate::input::get_wireless_device_input::Builder {
         crate::input::get_wireless_device_input::Builder::default()
     }
@@ -1749,7 +1749,7 @@ pub struct GetWirelessDeviceStatistics {
     _private: (),
 }
 impl GetWirelessDeviceStatistics {
-    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsInput`](crate::input::GetWirelessDeviceStatisticsInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsInput`](crate::input::GetWirelessDeviceStatisticsInput).
     pub fn builder() -> crate::input::get_wireless_device_statistics_input::Builder {
         crate::input::get_wireless_device_statistics_input::Builder::default()
     }
@@ -1783,7 +1783,7 @@ pub struct GetWirelessGateway {
     _private: (),
 }
 impl GetWirelessGateway {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayInput`](crate::input::GetWirelessGatewayInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayInput`](crate::input::GetWirelessGatewayInput).
     pub fn builder() -> crate::input::get_wireless_gateway_input::Builder {
         crate::input::get_wireless_gateway_input::Builder::default()
     }
@@ -1817,7 +1817,7 @@ pub struct GetWirelessGatewayCertificate {
     _private: (),
 }
 impl GetWirelessGatewayCertificate {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateInput`](crate::input::GetWirelessGatewayCertificateInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateInput`](crate::input::GetWirelessGatewayCertificateInput).
     pub fn builder() -> crate::input::get_wireless_gateway_certificate_input::Builder {
         crate::input::get_wireless_gateway_certificate_input::Builder::default()
     }
@@ -1851,7 +1851,7 @@ pub struct GetWirelessGatewayFirmwareInformation {
     _private: (),
 }
 impl GetWirelessGatewayFirmwareInformation {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationInput`](crate::input::GetWirelessGatewayFirmwareInformationInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationInput`](crate::input::GetWirelessGatewayFirmwareInformationInput).
     pub fn builder() -> crate::input::get_wireless_gateway_firmware_information_input::Builder {
         crate::input::get_wireless_gateway_firmware_information_input::Builder::default()
     }
@@ -1887,7 +1887,7 @@ pub struct GetWirelessGatewayStatistics {
     _private: (),
 }
 impl GetWirelessGatewayStatistics {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsInput`](crate::input::GetWirelessGatewayStatisticsInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsInput`](crate::input::GetWirelessGatewayStatisticsInput).
     pub fn builder() -> crate::input::get_wireless_gateway_statistics_input::Builder {
         crate::input::get_wireless_gateway_statistics_input::Builder::default()
     }
@@ -1921,7 +1921,7 @@ pub struct GetWirelessGatewayTask {
     _private: (),
 }
 impl GetWirelessGatewayTask {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskInput`](crate::input::GetWirelessGatewayTaskInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskInput`](crate::input::GetWirelessGatewayTaskInput).
     pub fn builder() -> crate::input::get_wireless_gateway_task_input::Builder {
         crate::input::get_wireless_gateway_task_input::Builder::default()
     }
@@ -1955,7 +1955,7 @@ pub struct GetWirelessGatewayTaskDefinition {
     _private: (),
 }
 impl GetWirelessGatewayTaskDefinition {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionInput`](crate::input::GetWirelessGatewayTaskDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionInput`](crate::input::GetWirelessGatewayTaskDefinitionInput).
     pub fn builder() -> crate::input::get_wireless_gateway_task_definition_input::Builder {
         crate::input::get_wireless_gateway_task_definition_input::Builder::default()
     }
@@ -1989,7 +1989,7 @@ pub struct ListDestinations {
     _private: (),
 }
 impl ListDestinations {
-    /// Creates a new builder-style object to manufacture [`ListDestinationsInput`](crate::input::ListDestinationsInput)
+    /// Creates a new builder-style object to manufacture [`ListDestinationsInput`](crate::input::ListDestinationsInput).
     pub fn builder() -> crate::input::list_destinations_input::Builder {
         crate::input::list_destinations_input::Builder::default()
     }
@@ -2023,7 +2023,7 @@ pub struct ListDeviceProfiles {
     _private: (),
 }
 impl ListDeviceProfiles {
-    /// Creates a new builder-style object to manufacture [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput)
+    /// Creates a new builder-style object to manufacture [`ListDeviceProfilesInput`](crate::input::ListDeviceProfilesInput).
     pub fn builder() -> crate::input::list_device_profiles_input::Builder {
         crate::input::list_device_profiles_input::Builder::default()
     }
@@ -2057,7 +2057,7 @@ pub struct ListEventConfigurations {
     _private: (),
 }
 impl ListEventConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListEventConfigurationsInput`](crate::input::ListEventConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListEventConfigurationsInput`](crate::input::ListEventConfigurationsInput).
     pub fn builder() -> crate::input::list_event_configurations_input::Builder {
         crate::input::list_event_configurations_input::Builder::default()
     }
@@ -2091,7 +2091,7 @@ pub struct ListFuotaTasks {
     _private: (),
 }
 impl ListFuotaTasks {
-    /// Creates a new builder-style object to manufacture [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput)
+    /// Creates a new builder-style object to manufacture [`ListFuotaTasksInput`](crate::input::ListFuotaTasksInput).
     pub fn builder() -> crate::input::list_fuota_tasks_input::Builder {
         crate::input::list_fuota_tasks_input::Builder::default()
     }
@@ -2123,7 +2123,7 @@ pub struct ListMulticastGroups {
     _private: (),
 }
 impl ListMulticastGroups {
-    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsInput`](crate::input::ListMulticastGroupsInput).
     pub fn builder() -> crate::input::list_multicast_groups_input::Builder {
         crate::input::list_multicast_groups_input::Builder::default()
     }
@@ -2157,7 +2157,7 @@ pub struct ListMulticastGroupsByFuotaTask {
     _private: (),
 }
 impl ListMulticastGroupsByFuotaTask {
-    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskInput`](crate::input::ListMulticastGroupsByFuotaTaskInput).
     pub fn builder() -> crate::input::list_multicast_groups_by_fuota_task_input::Builder {
         crate::input::list_multicast_groups_by_fuota_task_input::Builder::default()
     }
@@ -2191,7 +2191,7 @@ pub struct ListNetworkAnalyzerConfigurations {
     _private: (),
 }
 impl ListNetworkAnalyzerConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsInput`](crate::input::ListNetworkAnalyzerConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsInput`](crate::input::ListNetworkAnalyzerConfigurationsInput).
     pub fn builder() -> crate::input::list_network_analyzer_configurations_input::Builder {
         crate::input::list_network_analyzer_configurations_input::Builder::default()
     }
@@ -2225,7 +2225,7 @@ pub struct ListPartnerAccounts {
     _private: (),
 }
 impl ListPartnerAccounts {
-    /// Creates a new builder-style object to manufacture [`ListPartnerAccountsInput`](crate::input::ListPartnerAccountsInput)
+    /// Creates a new builder-style object to manufacture [`ListPartnerAccountsInput`](crate::input::ListPartnerAccountsInput).
     pub fn builder() -> crate::input::list_partner_accounts_input::Builder {
         crate::input::list_partner_accounts_input::Builder::default()
     }
@@ -2259,7 +2259,7 @@ pub struct ListQueuedMessages {
     _private: (),
 }
 impl ListQueuedMessages {
-    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput)
+    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesInput`](crate::input::ListQueuedMessagesInput).
     pub fn builder() -> crate::input::list_queued_messages_input::Builder {
         crate::input::list_queued_messages_input::Builder::default()
     }
@@ -2293,7 +2293,7 @@ pub struct ListServiceProfiles {
     _private: (),
 }
 impl ListServiceProfiles {
-    /// Creates a new builder-style object to manufacture [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput)
+    /// Creates a new builder-style object to manufacture [`ListServiceProfilesInput`](crate::input::ListServiceProfilesInput).
     pub fn builder() -> crate::input::list_service_profiles_input::Builder {
         crate::input::list_service_profiles_input::Builder::default()
     }
@@ -2327,7 +2327,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -2361,7 +2361,7 @@ pub struct ListWirelessDevices {
     _private: (),
 }
 impl ListWirelessDevices {
-    /// Creates a new builder-style object to manufacture [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput)
+    /// Creates a new builder-style object to manufacture [`ListWirelessDevicesInput`](crate::input::ListWirelessDevicesInput).
     pub fn builder() -> crate::input::list_wireless_devices_input::Builder {
         crate::input::list_wireless_devices_input::Builder::default()
     }
@@ -2395,7 +2395,7 @@ pub struct ListWirelessGateways {
     _private: (),
 }
 impl ListWirelessGateways {
-    /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysInput`](crate::input::ListWirelessGatewaysInput)
+    /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysInput`](crate::input::ListWirelessGatewaysInput).
     pub fn builder() -> crate::input::list_wireless_gateways_input::Builder {
         crate::input::list_wireless_gateways_input::Builder::default()
     }
@@ -2429,7 +2429,7 @@ pub struct ListWirelessGatewayTaskDefinitions {
     _private: (),
 }
 impl ListWirelessGatewayTaskDefinitions {
-    /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsInput`](crate::input::ListWirelessGatewayTaskDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsInput`](crate::input::ListWirelessGatewayTaskDefinitionsInput).
     pub fn builder() -> crate::input::list_wireless_gateway_task_definitions_input::Builder {
         crate::input::list_wireless_gateway_task_definitions_input::Builder::default()
     }
@@ -2463,7 +2463,7 @@ pub struct PutResourceLogLevel {
     _private: (),
 }
 impl PutResourceLogLevel {
-    /// Creates a new builder-style object to manufacture [`PutResourceLogLevelInput`](crate::input::PutResourceLogLevelInput)
+    /// Creates a new builder-style object to manufacture [`PutResourceLogLevelInput`](crate::input::PutResourceLogLevelInput).
     pub fn builder() -> crate::input::put_resource_log_level_input::Builder {
         crate::input::put_resource_log_level_input::Builder::default()
     }
@@ -2497,7 +2497,7 @@ pub struct ResetAllResourceLogLevels {
     _private: (),
 }
 impl ResetAllResourceLogLevels {
-    /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput)
+    /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsInput`](crate::input::ResetAllResourceLogLevelsInput).
     pub fn builder() -> crate::input::reset_all_resource_log_levels_input::Builder {
         crate::input::reset_all_resource_log_levels_input::Builder::default()
     }
@@ -2531,7 +2531,7 @@ pub struct ResetResourceLogLevel {
     _private: (),
 }
 impl ResetResourceLogLevel {
-    /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput)
+    /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelInput`](crate::input::ResetResourceLogLevelInput).
     pub fn builder() -> crate::input::reset_resource_log_level_input::Builder {
         crate::input::reset_resource_log_level_input::Builder::default()
     }
@@ -2565,7 +2565,7 @@ pub struct SendDataToMulticastGroup {
     _private: (),
 }
 impl SendDataToMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupInput`](crate::input::SendDataToMulticastGroupInput).
     pub fn builder() -> crate::input::send_data_to_multicast_group_input::Builder {
         crate::input::send_data_to_multicast_group_input::Builder::default()
     }
@@ -2599,7 +2599,7 @@ pub struct SendDataToWirelessDevice {
     _private: (),
 }
 impl SendDataToWirelessDevice {
-    /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceInput`](crate::input::SendDataToWirelessDeviceInput)
+    /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceInput`](crate::input::SendDataToWirelessDeviceInput).
     pub fn builder() -> crate::input::send_data_to_wireless_device_input::Builder {
         crate::input::send_data_to_wireless_device_input::Builder::default()
     }
@@ -2633,7 +2633,7 @@ pub struct StartBulkAssociateWirelessDeviceWithMulticastGroup {
     _private: (),
 }
 impl StartBulkAssociateWirelessDeviceWithMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput).
     pub fn builder(
     ) -> crate::input::start_bulk_associate_wireless_device_with_multicast_group_input::Builder
     {
@@ -2671,7 +2671,7 @@ pub struct StartBulkDisassociateWirelessDeviceFromMulticastGroup {
     _private: (),
 }
 impl StartBulkDisassociateWirelessDeviceFromMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupInput`](crate::input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput).
     pub fn builder(
     ) -> crate::input::start_bulk_disassociate_wireless_device_from_multicast_group_input::Builder
     {
@@ -2709,7 +2709,7 @@ pub struct StartFuotaTask {
     _private: (),
 }
 impl StartFuotaTask {
-    /// Creates a new builder-style object to manufacture [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`StartFuotaTaskInput`](crate::input::StartFuotaTaskInput).
     pub fn builder() -> crate::input::start_fuota_task_input::Builder {
         crate::input::start_fuota_task_input::Builder::default()
     }
@@ -2741,7 +2741,7 @@ pub struct StartMulticastGroupSession {
     _private: (),
 }
 impl StartMulticastGroupSession {
-    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput)
+    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionInput`](crate::input::StartMulticastGroupSessionInput).
     pub fn builder() -> crate::input::start_multicast_group_session_input::Builder {
         crate::input::start_multicast_group_session_input::Builder::default()
     }
@@ -2775,7 +2775,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -2807,7 +2807,7 @@ pub struct TestWirelessDevice {
     _private: (),
 }
 impl TestWirelessDevice {
-    /// Creates a new builder-style object to manufacture [`TestWirelessDeviceInput`](crate::input::TestWirelessDeviceInput)
+    /// Creates a new builder-style object to manufacture [`TestWirelessDeviceInput`](crate::input::TestWirelessDeviceInput).
     pub fn builder() -> crate::input::test_wireless_device_input::Builder {
         crate::input::test_wireless_device_input::Builder::default()
     }
@@ -2841,7 +2841,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -2873,7 +2873,7 @@ pub struct UpdateDestination {
     _private: (),
 }
 impl UpdateDestination {
-    /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::input::UpdateDestinationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
     pub fn builder() -> crate::input::update_destination_input::Builder {
         crate::input::update_destination_input::Builder::default()
     }
@@ -2907,7 +2907,7 @@ pub struct UpdateEventConfigurationByResourceTypes {
     _private: (),
 }
 impl UpdateEventConfigurationByResourceTypes {
-    /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesInput`](crate::input::UpdateEventConfigurationByResourceTypesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesInput`](crate::input::UpdateEventConfigurationByResourceTypesInput).
     pub fn builder() -> crate::input::update_event_configuration_by_resource_types_input::Builder {
         crate::input::update_event_configuration_by_resource_types_input::Builder::default()
     }
@@ -2945,7 +2945,7 @@ pub struct UpdateFuotaTask {
     _private: (),
 }
 impl UpdateFuotaTask {
-    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskInput`](crate::input::UpdateFuotaTaskInput).
     pub fn builder() -> crate::input::update_fuota_task_input::Builder {
         crate::input::update_fuota_task_input::Builder::default()
     }
@@ -2979,7 +2979,7 @@ pub struct UpdateLogLevelsByResourceTypes {
     _private: (),
 }
 impl UpdateLogLevelsByResourceTypes {
-    /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesInput`](crate::input::UpdateLogLevelsByResourceTypesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesInput`](crate::input::UpdateLogLevelsByResourceTypesInput).
     pub fn builder() -> crate::input::update_log_levels_by_resource_types_input::Builder {
         crate::input::update_log_levels_by_resource_types_input::Builder::default()
     }
@@ -3013,7 +3013,7 @@ pub struct UpdateMulticastGroup {
     _private: (),
 }
 impl UpdateMulticastGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupInput`](crate::input::UpdateMulticastGroupInput).
     pub fn builder() -> crate::input::update_multicast_group_input::Builder {
         crate::input::update_multicast_group_input::Builder::default()
     }
@@ -3047,7 +3047,7 @@ pub struct UpdateNetworkAnalyzerConfiguration {
     _private: (),
 }
 impl UpdateNetworkAnalyzerConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationInput`](crate::input::UpdateNetworkAnalyzerConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationInput`](crate::input::UpdateNetworkAnalyzerConfigurationInput).
     pub fn builder() -> crate::input::update_network_analyzer_configuration_input::Builder {
         crate::input::update_network_analyzer_configuration_input::Builder::default()
     }
@@ -3081,7 +3081,7 @@ pub struct UpdatePartnerAccount {
     _private: (),
 }
 impl UpdatePartnerAccount {
-    /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountInput`](crate::input::UpdatePartnerAccountInput).
     pub fn builder() -> crate::input::update_partner_account_input::Builder {
         crate::input::update_partner_account_input::Builder::default()
     }
@@ -3115,7 +3115,7 @@ pub struct UpdateResourceEventConfiguration {
     _private: (),
 }
 impl UpdateResourceEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationInput`](crate::input::UpdateResourceEventConfigurationInput).
     pub fn builder() -> crate::input::update_resource_event_configuration_input::Builder {
         crate::input::update_resource_event_configuration_input::Builder::default()
     }
@@ -3149,7 +3149,7 @@ pub struct UpdateWirelessDevice {
     _private: (),
 }
 impl UpdateWirelessDevice {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceInput`](crate::input::UpdateWirelessDeviceInput).
     pub fn builder() -> crate::input::update_wireless_device_input::Builder {
         crate::input::update_wireless_device_input::Builder::default()
     }
@@ -3183,7 +3183,7 @@ pub struct UpdateWirelessGateway {
     _private: (),
 }
 impl UpdateWirelessGateway {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayInput`](crate::input::UpdateWirelessGatewayInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayInput`](crate::input::UpdateWirelessGatewayInput).
     pub fn builder() -> crate::input::update_wireless_gateway_input::Builder {
         crate::input::update_wireless_gateway_input::Builder::default()
     }

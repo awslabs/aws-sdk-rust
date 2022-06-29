@@ -127,11 +127,10 @@ impl std::fmt::Debug for Volume {
         formatter.finish()
     }
 }
-/// See [`Volume`](crate::model::Volume)
+/// See [`Volume`](crate::model::Volume).
 pub mod volume {
 
-    /// A builder for [`Volume`](crate::model::Volume)
-    #[non_exhaustive]
+    /// A builder for [`Volume`](crate::model::Volume).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -337,7 +336,7 @@ pub mod volume {
             self.open_zfs_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`Volume`](crate::model::Volume)
+        /// Consumes the builder and constructs a [`Volume`](crate::model::Volume).
         pub fn build(self) -> crate::model::Volume {
             crate::model::Volume {
                 creation_time: self.creation_time,
@@ -357,7 +356,7 @@ pub mod volume {
     }
 }
 impl Volume {
-    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume)
+    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
     pub fn builder() -> crate::model::volume::Builder {
         crate::model::volume::Builder::default()
     }
@@ -476,11 +475,10 @@ impl std::fmt::Debug for OpenZfsVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration)
+/// See [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
 pub mod open_zfs_volume_configuration {
 
-    /// A builder for [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_volume_id: std::option::Option<std::string::String>,
@@ -658,7 +656,7 @@ pub mod open_zfs_volume_configuration {
             self.user_and_group_quotas = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration)
+        /// Consumes the builder and constructs a [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
         pub fn build(self) -> crate::model::OpenZfsVolumeConfiguration {
             crate::model::OpenZfsVolumeConfiguration {
                 parent_volume_id: self.parent_volume_id,
@@ -677,7 +675,7 @@ pub mod open_zfs_volume_configuration {
     }
 }
 impl OpenZfsVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration)
+    /// Creates a new builder-style object to manufacture [`OpenZfsVolumeConfiguration`](crate::model::OpenZfsVolumeConfiguration).
     pub fn builder() -> crate::model::open_zfs_volume_configuration::Builder {
         crate::model::open_zfs_volume_configuration::Builder::default()
     }
@@ -720,11 +718,10 @@ impl std::fmt::Debug for OpenZfsUserOrGroupQuota {
         formatter.finish()
     }
 }
-/// See [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota)
+/// See [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
 pub mod open_zfs_user_or_group_quota {
 
-    /// A builder for [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota)
-    #[non_exhaustive]
+    /// A builder for [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::OpenZfsQuotaType>,
@@ -765,7 +762,7 @@ pub mod open_zfs_user_or_group_quota {
             self.storage_capacity_quota_gi_b = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota)
+        /// Consumes the builder and constructs a [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
         pub fn build(self) -> crate::model::OpenZfsUserOrGroupQuota {
             crate::model::OpenZfsUserOrGroupQuota {
                 r#type: self.r#type,
@@ -776,7 +773,7 @@ pub mod open_zfs_user_or_group_quota {
     }
 }
 impl OpenZfsUserOrGroupQuota {
-    /// Creates a new builder-style object to manufacture [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota)
+    /// Creates a new builder-style object to manufacture [`OpenZfsUserOrGroupQuota`](crate::model::OpenZfsUserOrGroupQuota).
     pub fn builder() -> crate::model::open_zfs_user_or_group_quota::Builder {
         crate::model::open_zfs_user_or_group_quota::Builder::default()
     }
@@ -860,11 +857,10 @@ impl std::fmt::Debug for OpenZfsNfsExport {
         formatter.finish()
     }
 }
-/// See [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport)
+/// See [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
 pub mod open_zfs_nfs_export {
 
-    /// A builder for [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport)
-    #[non_exhaustive]
+    /// A builder for [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_configurations:
@@ -893,7 +889,7 @@ pub mod open_zfs_nfs_export {
             self.client_configurations = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport)
+        /// Consumes the builder and constructs a [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
         pub fn build(self) -> crate::model::OpenZfsNfsExport {
             crate::model::OpenZfsNfsExport {
                 client_configurations: self.client_configurations,
@@ -902,7 +898,7 @@ pub mod open_zfs_nfs_export {
     }
 }
 impl OpenZfsNfsExport {
-    /// Creates a new builder-style object to manufacture [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport)
+    /// Creates a new builder-style object to manufacture [`OpenZfsNfsExport`](crate::model::OpenZfsNfsExport).
     pub fn builder() -> crate::model::open_zfs_nfs_export::Builder {
         crate::model::open_zfs_nfs_export::Builder::default()
     }
@@ -943,11 +939,10 @@ impl std::fmt::Debug for OpenZfsClientConfiguration {
         formatter.finish()
     }
 }
-/// See [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration)
+/// See [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
 pub mod open_zfs_client_configuration {
 
-    /// A builder for [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) clients: std::option::Option<std::string::String>,
@@ -991,7 +986,7 @@ pub mod open_zfs_client_configuration {
             self.options = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration)
+        /// Consumes the builder and constructs a [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
         pub fn build(self) -> crate::model::OpenZfsClientConfiguration {
             crate::model::OpenZfsClientConfiguration {
                 clients: self.clients,
@@ -1001,7 +996,7 @@ pub mod open_zfs_client_configuration {
     }
 }
 impl OpenZfsClientConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration)
+    /// Creates a new builder-style object to manufacture [`OpenZfsClientConfiguration`](crate::model::OpenZfsClientConfiguration).
     pub fn builder() -> crate::model::open_zfs_client_configuration::Builder {
         crate::model::open_zfs_client_configuration::Builder::default()
     }
@@ -1042,11 +1037,10 @@ impl std::fmt::Debug for OpenZfsOriginSnapshotConfiguration {
         formatter.finish()
     }
 }
-/// See [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration)
+/// See [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
 pub mod open_zfs_origin_snapshot_configuration {
 
-    /// A builder for [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_arn: std::option::Option<std::string::String>,
@@ -1084,7 +1078,7 @@ pub mod open_zfs_origin_snapshot_configuration {
             self.copy_strategy = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration)
+        /// Consumes the builder and constructs a [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
         pub fn build(self) -> crate::model::OpenZfsOriginSnapshotConfiguration {
             crate::model::OpenZfsOriginSnapshotConfiguration {
                 snapshot_arn: self.snapshot_arn,
@@ -1094,7 +1088,7 @@ pub mod open_zfs_origin_snapshot_configuration {
     }
 }
 impl OpenZfsOriginSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration)
+    /// Creates a new builder-style object to manufacture [`OpenZfsOriginSnapshotConfiguration`](crate::model::OpenZfsOriginSnapshotConfiguration).
     pub fn builder() -> crate::model::open_zfs_origin_snapshot_configuration::Builder {
         crate::model::open_zfs_origin_snapshot_configuration::Builder::default()
     }
@@ -1330,11 +1324,10 @@ impl std::fmt::Debug for AdministrativeAction {
         formatter.finish()
     }
 }
-/// See [`AdministrativeAction`](crate::model::AdministrativeAction)
+/// See [`AdministrativeAction`](crate::model::AdministrativeAction).
 pub mod administrative_action {
 
-    /// A builder for [`AdministrativeAction`](crate::model::AdministrativeAction)
-    #[non_exhaustive]
+    /// A builder for [`AdministrativeAction`](crate::model::AdministrativeAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) administrative_action_type:
@@ -1493,7 +1486,7 @@ pub mod administrative_action {
             self.target_snapshot_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`AdministrativeAction`](crate::model::AdministrativeAction)
+        /// Consumes the builder and constructs a [`AdministrativeAction`](crate::model::AdministrativeAction).
         pub fn build(self) -> crate::model::AdministrativeAction {
             crate::model::AdministrativeAction {
                 administrative_action_type: self.administrative_action_type,
@@ -1509,7 +1502,7 @@ pub mod administrative_action {
     }
 }
 impl AdministrativeAction {
-    /// Creates a new builder-style object to manufacture [`AdministrativeAction`](crate::model::AdministrativeAction)
+    /// Creates a new builder-style object to manufacture [`AdministrativeAction`](crate::model::AdministrativeAction).
     pub fn builder() -> crate::model::administrative_action::Builder {
         crate::model::administrative_action::Builder::default()
     }
@@ -1611,11 +1604,10 @@ impl std::fmt::Debug for Snapshot {
         formatter.finish()
     }
 }
-/// See [`Snapshot`](crate::model::Snapshot)
+/// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
 
-    /// A builder for [`Snapshot`](crate::model::Snapshot)
-    #[non_exhaustive]
+    /// A builder for [`Snapshot`](crate::model::Snapshot).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -1763,7 +1755,7 @@ pub mod snapshot {
             self.administrative_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`Snapshot`](crate::model::Snapshot)
+        /// Consumes the builder and constructs a [`Snapshot`](crate::model::Snapshot).
         pub fn build(self) -> crate::model::Snapshot {
             crate::model::Snapshot {
                 resource_arn: self.resource_arn,
@@ -1780,7 +1772,7 @@ pub mod snapshot {
     }
 }
 impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot)
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
     pub fn builder() -> crate::model::snapshot::Builder {
         crate::model::snapshot::Builder::default()
     }
@@ -1813,11 +1805,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1844,7 +1835,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -1854,7 +1845,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -1880,11 +1871,10 @@ impl std::fmt::Debug for LifecycleTransitionReason {
         formatter.finish()
     }
 }
-/// See [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
+/// See [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
 pub mod lifecycle_transition_reason {
 
-    /// A builder for [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
-    #[non_exhaustive]
+    /// A builder for [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1900,7 +1890,7 @@ pub mod lifecycle_transition_reason {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
+        /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
         pub fn build(self) -> crate::model::LifecycleTransitionReason {
             crate::model::LifecycleTransitionReason {
                 message: self.message,
@@ -1909,7 +1899,7 @@ pub mod lifecycle_transition_reason {
     }
 }
 impl LifecycleTransitionReason {
-    /// Creates a new builder-style object to manufacture [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason)
+    /// Creates a new builder-style object to manufacture [`LifecycleTransitionReason`](crate::model::LifecycleTransitionReason).
     pub fn builder() -> crate::model::lifecycle_transition_reason::Builder {
         crate::model::lifecycle_transition_reason::Builder::default()
     }
@@ -1998,11 +1988,10 @@ impl std::fmt::Debug for AdministrativeActionFailureDetails {
         formatter.finish()
     }
 }
-/// See [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails)
+/// See [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
 pub mod administrative_action_failure_details {
 
-    /// A builder for [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails)
-    #[non_exhaustive]
+    /// A builder for [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2018,7 +2007,7 @@ pub mod administrative_action_failure_details {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails)
+        /// Consumes the builder and constructs a [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
         pub fn build(self) -> crate::model::AdministrativeActionFailureDetails {
             crate::model::AdministrativeActionFailureDetails {
                 message: self.message,
@@ -2027,7 +2016,7 @@ pub mod administrative_action_failure_details {
     }
 }
 impl AdministrativeActionFailureDetails {
-    /// Creates a new builder-style object to manufacture [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails)
+    /// Creates a new builder-style object to manufacture [`AdministrativeActionFailureDetails`](crate::model::AdministrativeActionFailureDetails).
     pub fn builder() -> crate::model::administrative_action_failure_details::Builder {
         crate::model::administrative_action_failure_details::Builder::default()
     }
@@ -2238,11 +2227,10 @@ impl std::fmt::Debug for FileSystem {
         formatter.finish()
     }
 }
-/// See [`FileSystem`](crate::model::FileSystem)
+/// See [`FileSystem`](crate::model::FileSystem).
 pub mod file_system {
 
-    /// A builder for [`FileSystem`](crate::model::FileSystem)
-    #[non_exhaustive]
+    /// A builder for [`FileSystem`](crate::model::FileSystem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) owner_id: std::option::Option<std::string::String>,
@@ -2598,7 +2586,7 @@ pub mod file_system {
             self.open_zfs_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSystem`](crate::model::FileSystem)
+        /// Consumes the builder and constructs a [`FileSystem`](crate::model::FileSystem).
         pub fn build(self) -> crate::model::FileSystem {
             crate::model::FileSystem {
                 owner_id: self.owner_id,
@@ -2627,7 +2615,7 @@ pub mod file_system {
     }
 }
 impl FileSystem {
-    /// Creates a new builder-style object to manufacture [`FileSystem`](crate::model::FileSystem)
+    /// Creates a new builder-style object to manufacture [`FileSystem`](crate::model::FileSystem).
     pub fn builder() -> crate::model::file_system::Builder {
         crate::model::file_system::Builder::default()
     }
@@ -2726,11 +2714,10 @@ impl std::fmt::Debug for OpenZfsFileSystemConfiguration {
         formatter.finish()
     }
 }
-/// See [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration)
+/// See [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
 pub mod open_zfs_file_system_configuration {
 
-    /// A builder for [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
@@ -2868,7 +2855,7 @@ pub mod open_zfs_file_system_configuration {
             self.root_volume_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration)
+        /// Consumes the builder and constructs a [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
         pub fn build(self) -> crate::model::OpenZfsFileSystemConfiguration {
             crate::model::OpenZfsFileSystemConfiguration {
                 automatic_backup_retention_days: self.automatic_backup_retention_days,
@@ -2885,7 +2872,7 @@ pub mod open_zfs_file_system_configuration {
     }
 }
 impl OpenZfsFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration)
+    /// Creates a new builder-style object to manufacture [`OpenZfsFileSystemConfiguration`](crate::model::OpenZfsFileSystemConfiguration).
     pub fn builder() -> crate::model::open_zfs_file_system_configuration::Builder {
         crate::model::open_zfs_file_system_configuration::Builder::default()
     }
@@ -2918,11 +2905,10 @@ impl std::fmt::Debug for DiskIopsConfiguration {
         formatter.finish()
     }
 }
-/// See [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration)
+/// See [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
 pub mod disk_iops_configuration {
 
-    /// A builder for [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::DiskIopsConfigurationMode>,
@@ -2952,7 +2938,7 @@ pub mod disk_iops_configuration {
             self.iops = input;
             self
         }
-        /// Consumes the builder and constructs a [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration)
+        /// Consumes the builder and constructs a [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
         pub fn build(self) -> crate::model::DiskIopsConfiguration {
             crate::model::DiskIopsConfiguration {
                 mode: self.mode,
@@ -2962,7 +2948,7 @@ pub mod disk_iops_configuration {
     }
 }
 impl DiskIopsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration)
+    /// Creates a new builder-style object to manufacture [`DiskIopsConfiguration`](crate::model::DiskIopsConfiguration).
     pub fn builder() -> crate::model::disk_iops_configuration::Builder {
         crate::model::disk_iops_configuration::Builder::default()
     }
@@ -3188,11 +3174,10 @@ impl std::fmt::Debug for OntapFileSystemConfiguration {
         formatter.finish()
     }
 }
-/// See [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration)
+/// See [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
 pub mod ontap_file_system_configuration {
 
-    /// A builder for [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
@@ -3370,7 +3355,7 @@ pub mod ontap_file_system_configuration {
             self.weekly_maintenance_start_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration)
+        /// Consumes the builder and constructs a [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
         pub fn build(self) -> crate::model::OntapFileSystemConfiguration {
             crate::model::OntapFileSystemConfiguration {
                 automatic_backup_retention_days: self.automatic_backup_retention_days,
@@ -3388,7 +3373,7 @@ pub mod ontap_file_system_configuration {
     }
 }
 impl OntapFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration)
+    /// Creates a new builder-style object to manufacture [`OntapFileSystemConfiguration`](crate::model::OntapFileSystemConfiguration).
     pub fn builder() -> crate::model::ontap_file_system_configuration::Builder {
         crate::model::ontap_file_system_configuration::Builder::default()
     }
@@ -3421,11 +3406,10 @@ impl std::fmt::Debug for FileSystemEndpoints {
         formatter.finish()
     }
 }
-/// See [`FileSystemEndpoints`](crate::model::FileSystemEndpoints)
+/// See [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
 pub mod file_system_endpoints {
 
-    /// A builder for [`FileSystemEndpoints`](crate::model::FileSystemEndpoints)
-    #[non_exhaustive]
+    /// A builder for [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intercluster: std::option::Option<crate::model::FileSystemEndpoint>,
@@ -3458,7 +3442,7 @@ pub mod file_system_endpoints {
             self.management = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSystemEndpoints`](crate::model::FileSystemEndpoints)
+        /// Consumes the builder and constructs a [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
         pub fn build(self) -> crate::model::FileSystemEndpoints {
             crate::model::FileSystemEndpoints {
                 intercluster: self.intercluster,
@@ -3468,7 +3452,7 @@ pub mod file_system_endpoints {
     }
 }
 impl FileSystemEndpoints {
-    /// Creates a new builder-style object to manufacture [`FileSystemEndpoints`](crate::model::FileSystemEndpoints)
+    /// Creates a new builder-style object to manufacture [`FileSystemEndpoints`](crate::model::FileSystemEndpoints).
     pub fn builder() -> crate::model::file_system_endpoints::Builder {
         crate::model::file_system_endpoints::Builder::default()
     }
@@ -3501,11 +3485,10 @@ impl std::fmt::Debug for FileSystemEndpoint {
         formatter.finish()
     }
 }
-/// See [`FileSystemEndpoint`](crate::model::FileSystemEndpoint)
+/// See [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
 pub mod file_system_endpoint {
 
-    /// A builder for [`FileSystemEndpoint`](crate::model::FileSystemEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_name: std::option::Option<std::string::String>,
@@ -3541,7 +3524,7 @@ pub mod file_system_endpoint {
             self.ip_addresses = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSystemEndpoint`](crate::model::FileSystemEndpoint)
+        /// Consumes the builder and constructs a [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
         pub fn build(self) -> crate::model::FileSystemEndpoint {
             crate::model::FileSystemEndpoint {
                 dns_name: self.dns_name,
@@ -3551,7 +3534,7 @@ pub mod file_system_endpoint {
     }
 }
 impl FileSystemEndpoint {
-    /// Creates a new builder-style object to manufacture [`FileSystemEndpoint`](crate::model::FileSystemEndpoint)
+    /// Creates a new builder-style object to manufacture [`FileSystemEndpoint`](crate::model::FileSystemEndpoint).
     pub fn builder() -> crate::model::file_system_endpoint::Builder {
         crate::model::file_system_endpoint::Builder::default()
     }
@@ -3763,11 +3746,10 @@ impl std::fmt::Debug for LustreFileSystemConfiguration {
         formatter.finish()
     }
 }
-/// See [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration)
+/// See [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
 pub mod lustre_file_system_configuration {
 
-    /// A builder for [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
@@ -3979,7 +3961,7 @@ pub mod lustre_file_system_configuration {
             self.root_squash_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration)
+        /// Consumes the builder and constructs a [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
         pub fn build(self) -> crate::model::LustreFileSystemConfiguration {
             crate::model::LustreFileSystemConfiguration {
                 weekly_maintenance_start_time: self.weekly_maintenance_start_time,
@@ -3999,7 +3981,7 @@ pub mod lustre_file_system_configuration {
     }
 }
 impl LustreFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration)
+    /// Creates a new builder-style object to manufacture [`LustreFileSystemConfiguration`](crate::model::LustreFileSystemConfiguration).
     pub fn builder() -> crate::model::lustre_file_system_configuration::Builder {
         crate::model::lustre_file_system_configuration::Builder::default()
     }
@@ -4051,11 +4033,10 @@ impl std::fmt::Debug for LustreRootSquashConfiguration {
         formatter.finish()
     }
 }
-/// See [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
+/// See [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
 pub mod lustre_root_squash_configuration {
 
-    /// A builder for [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) root_squash: std::option::Option<std::string::String>,
@@ -4109,7 +4090,7 @@ pub mod lustre_root_squash_configuration {
             self.no_squash_nids = input;
             self
         }
-        /// Consumes the builder and constructs a [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
+        /// Consumes the builder and constructs a [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
         pub fn build(self) -> crate::model::LustreRootSquashConfiguration {
             crate::model::LustreRootSquashConfiguration {
                 root_squash: self.root_squash,
@@ -4119,7 +4100,7 @@ pub mod lustre_root_squash_configuration {
     }
 }
 impl LustreRootSquashConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration)
+    /// Creates a new builder-style object to manufacture [`LustreRootSquashConfiguration`](crate::model::LustreRootSquashConfiguration).
     pub fn builder() -> crate::model::lustre_root_squash_configuration::Builder {
         crate::model::lustre_root_squash_configuration::Builder::default()
     }
@@ -4165,11 +4146,10 @@ impl std::fmt::Debug for LustreLogConfiguration {
         formatter.finish()
     }
 }
-/// See [`LustreLogConfiguration`](crate::model::LustreLogConfiguration)
+/// See [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
 pub mod lustre_log_configuration {
 
-    /// A builder for [`LustreLogConfiguration`](crate::model::LustreLogConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) level: std::option::Option<crate::model::LustreAccessAuditLogLevel>,
@@ -4211,7 +4191,7 @@ pub mod lustre_log_configuration {
             self.destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`LustreLogConfiguration`](crate::model::LustreLogConfiguration)
+        /// Consumes the builder and constructs a [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
         pub fn build(self) -> crate::model::LustreLogConfiguration {
             crate::model::LustreLogConfiguration {
                 level: self.level,
@@ -4221,7 +4201,7 @@ pub mod lustre_log_configuration {
     }
 }
 impl LustreLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreLogConfiguration`](crate::model::LustreLogConfiguration)
+    /// Creates a new builder-style object to manufacture [`LustreLogConfiguration`](crate::model::LustreLogConfiguration).
     pub fn builder() -> crate::model::lustre_log_configuration::Builder {
         crate::model::lustre_log_configuration::Builder::default()
     }
@@ -4549,11 +4529,10 @@ impl std::fmt::Debug for DataRepositoryConfiguration {
         formatter.finish()
     }
 }
-/// See [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration)
+/// See [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
 pub mod data_repository_configuration {
 
-    /// A builder for [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lifecycle: std::option::Option<crate::model::DataRepositoryLifecycle>,
@@ -4664,7 +4643,7 @@ pub mod data_repository_configuration {
             self.failure_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration)
+        /// Consumes the builder and constructs a [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
         pub fn build(self) -> crate::model::DataRepositoryConfiguration {
             crate::model::DataRepositoryConfiguration {
                 lifecycle: self.lifecycle,
@@ -4678,7 +4657,7 @@ pub mod data_repository_configuration {
     }
 }
 impl DataRepositoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration)
+    /// Creates a new builder-style object to manufacture [`DataRepositoryConfiguration`](crate::model::DataRepositoryConfiguration).
     pub fn builder() -> crate::model::data_repository_configuration::Builder {
         crate::model::data_repository_configuration::Builder::default()
     }
@@ -4704,11 +4683,10 @@ impl std::fmt::Debug for DataRepositoryFailureDetails {
         formatter.finish()
     }
 }
-/// See [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails)
+/// See [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
 pub mod data_repository_failure_details {
 
-    /// A builder for [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails)
-    #[non_exhaustive]
+    /// A builder for [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4724,7 +4702,7 @@ pub mod data_repository_failure_details {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails)
+        /// Consumes the builder and constructs a [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
         pub fn build(self) -> crate::model::DataRepositoryFailureDetails {
             crate::model::DataRepositoryFailureDetails {
                 message: self.message,
@@ -4733,7 +4711,7 @@ pub mod data_repository_failure_details {
     }
 }
 impl DataRepositoryFailureDetails {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails)
+    /// Creates a new builder-style object to manufacture [`DataRepositoryFailureDetails`](crate::model::DataRepositoryFailureDetails).
     pub fn builder() -> crate::model::data_repository_failure_details::Builder {
         crate::model::data_repository_failure_details::Builder::default()
     }
@@ -5037,11 +5015,10 @@ impl std::fmt::Debug for WindowsFileSystemConfiguration {
         formatter.finish()
     }
 }
-/// See [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration)
+/// See [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
 pub mod windows_file_system_configuration {
 
-    /// A builder for [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_directory_id: std::option::Option<std::string::String>,
@@ -5289,7 +5266,7 @@ pub mod windows_file_system_configuration {
             self.audit_log_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration)
+        /// Consumes the builder and constructs a [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
         pub fn build(self) -> crate::model::WindowsFileSystemConfiguration {
             crate::model::WindowsFileSystemConfiguration {
                 active_directory_id: self.active_directory_id,
@@ -5312,7 +5289,7 @@ pub mod windows_file_system_configuration {
     }
 }
 impl WindowsFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration)
+    /// Creates a new builder-style object to manufacture [`WindowsFileSystemConfiguration`](crate::model::WindowsFileSystemConfiguration).
     pub fn builder() -> crate::model::windows_file_system_configuration::Builder {
         crate::model::windows_file_system_configuration::Builder::default()
     }
@@ -5391,11 +5368,10 @@ impl std::fmt::Debug for WindowsAuditLogConfiguration {
         formatter.finish()
     }
 }
-/// See [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration)
+/// See [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
 pub mod windows_audit_log_configuration {
 
-    /// A builder for [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_access_audit_log_level:
@@ -5478,7 +5454,7 @@ pub mod windows_audit_log_configuration {
             self.audit_log_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration)
+        /// Consumes the builder and constructs a [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
         pub fn build(self) -> crate::model::WindowsAuditLogConfiguration {
             crate::model::WindowsAuditLogConfiguration {
                 file_access_audit_log_level: self.file_access_audit_log_level,
@@ -5489,7 +5465,7 @@ pub mod windows_audit_log_configuration {
     }
 }
 impl WindowsAuditLogConfiguration {
-    /// Creates a new builder-style object to manufacture [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration)
+    /// Creates a new builder-style object to manufacture [`WindowsAuditLogConfiguration`](crate::model::WindowsAuditLogConfiguration).
     pub fn builder() -> crate::model::windows_audit_log_configuration::Builder {
         crate::model::windows_audit_log_configuration::Builder::default()
     }
@@ -5618,11 +5594,10 @@ impl std::fmt::Debug for Alias {
         formatter.finish()
     }
 }
-/// See [`Alias`](crate::model::Alias)
+/// See [`Alias`](crate::model::Alias).
 pub mod alias {
 
-    /// A builder for [`Alias`](crate::model::Alias)
-    #[non_exhaustive]
+    /// A builder for [`Alias`](crate::model::Alias).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -5680,7 +5655,7 @@ pub mod alias {
             self.lifecycle = input;
             self
         }
-        /// Consumes the builder and constructs a [`Alias`](crate::model::Alias)
+        /// Consumes the builder and constructs a [`Alias`](crate::model::Alias).
         pub fn build(self) -> crate::model::Alias {
             crate::model::Alias {
                 name: self.name,
@@ -5690,7 +5665,7 @@ pub mod alias {
     }
 }
 impl Alias {
-    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias)
+    /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
     pub fn builder() -> crate::model::alias::Builder {
         crate::model::alias::Builder::default()
     }
@@ -5937,11 +5912,10 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryAttributes {
         formatter.finish()
     }
 }
-/// See [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes)
+/// See [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
 pub mod self_managed_active_directory_attributes {
 
-    /// A builder for [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes)
-    #[non_exhaustive]
+    /// A builder for [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -6022,7 +5996,7 @@ pub mod self_managed_active_directory_attributes {
             self.dns_ips = input;
             self
         }
-        /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes)
+        /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
         pub fn build(self) -> crate::model::SelfManagedActiveDirectoryAttributes {
             crate::model::SelfManagedActiveDirectoryAttributes {
                 domain_name: self.domain_name,
@@ -6035,7 +6009,7 @@ pub mod self_managed_active_directory_attributes {
     }
 }
 impl SelfManagedActiveDirectoryAttributes {
-    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes)
+    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryAttributes`](crate::model::SelfManagedActiveDirectoryAttributes).
     pub fn builder() -> crate::model::self_managed_active_directory_attributes::Builder {
         crate::model::self_managed_active_directory_attributes::Builder::default()
     }
@@ -6116,11 +6090,10 @@ impl std::fmt::Debug for FileSystemFailureDetails {
         formatter.finish()
     }
 }
-/// See [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails)
+/// See [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
 pub mod file_system_failure_details {
 
-    /// A builder for [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails)
-    #[non_exhaustive]
+    /// A builder for [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -6136,7 +6109,7 @@ pub mod file_system_failure_details {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails)
+        /// Consumes the builder and constructs a [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
         pub fn build(self) -> crate::model::FileSystemFailureDetails {
             crate::model::FileSystemFailureDetails {
                 message: self.message,
@@ -6145,7 +6118,7 @@ pub mod file_system_failure_details {
     }
 }
 impl FileSystemFailureDetails {
-    /// Creates a new builder-style object to manufacture [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails)
+    /// Creates a new builder-style object to manufacture [`FileSystemFailureDetails`](crate::model::FileSystemFailureDetails).
     pub fn builder() -> crate::model::file_system_failure_details::Builder {
         crate::model::file_system_failure_details::Builder::default()
     }
@@ -6693,11 +6666,10 @@ impl std::fmt::Debug for OntapVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration)
+/// See [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
 pub mod ontap_volume_configuration {
 
-    /// A builder for [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flex_cache_endpoint_type:
@@ -6859,7 +6831,7 @@ pub mod ontap_volume_configuration {
             self.ontap_volume_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration)
+        /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
         pub fn build(self) -> crate::model::OntapVolumeConfiguration {
             crate::model::OntapVolumeConfiguration {
                 flex_cache_endpoint_type: self.flex_cache_endpoint_type,
@@ -6877,7 +6849,7 @@ pub mod ontap_volume_configuration {
     }
 }
 impl OntapVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration)
+    /// Creates a new builder-style object to manufacture [`OntapVolumeConfiguration`](crate::model::OntapVolumeConfiguration).
     pub fn builder() -> crate::model::ontap_volume_configuration::Builder {
         crate::model::ontap_volume_configuration::Builder::default()
     }
@@ -6994,11 +6966,10 @@ impl std::fmt::Debug for TieringPolicy {
         formatter.finish()
     }
 }
-/// See [`TieringPolicy`](crate::model::TieringPolicy)
+/// See [`TieringPolicy`](crate::model::TieringPolicy).
 pub mod tiering_policy {
 
-    /// A builder for [`TieringPolicy`](crate::model::TieringPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TieringPolicy`](crate::model::TieringPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cooling_period: std::option::Option<i32>,
@@ -7040,7 +7011,7 @@ pub mod tiering_policy {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`TieringPolicy`](crate::model::TieringPolicy)
+        /// Consumes the builder and constructs a [`TieringPolicy`](crate::model::TieringPolicy).
         pub fn build(self) -> crate::model::TieringPolicy {
             crate::model::TieringPolicy {
                 cooling_period: self.cooling_period,
@@ -7050,7 +7021,7 @@ pub mod tiering_policy {
     }
 }
 impl TieringPolicy {
-    /// Creates a new builder-style object to manufacture [`TieringPolicy`](crate::model::TieringPolicy)
+    /// Creates a new builder-style object to manufacture [`TieringPolicy`](crate::model::TieringPolicy).
     pub fn builder() -> crate::model::tiering_policy::Builder {
         crate::model::tiering_policy::Builder::default()
     }
@@ -7403,11 +7374,10 @@ impl std::fmt::Debug for UpdateOpenZfsVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration)
+/// See [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
 pub mod update_open_zfs_volume_configuration {
 
-    /// A builder for [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_capacity_reservation_gi_b: std::option::Option<i32>,
@@ -7531,7 +7501,7 @@ pub mod update_open_zfs_volume_configuration {
             self.read_only = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration)
+        /// Consumes the builder and constructs a [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
         pub fn build(self) -> crate::model::UpdateOpenZfsVolumeConfiguration {
             crate::model::UpdateOpenZfsVolumeConfiguration {
                 storage_capacity_reservation_gi_b: self.storage_capacity_reservation_gi_b,
@@ -7546,7 +7516,7 @@ pub mod update_open_zfs_volume_configuration {
     }
 }
 impl UpdateOpenZfsVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateOpenZfsVolumeConfiguration`](crate::model::UpdateOpenZfsVolumeConfiguration).
     pub fn builder() -> crate::model::update_open_zfs_volume_configuration::Builder {
         crate::model::update_open_zfs_volume_configuration::Builder::default()
     }
@@ -7603,11 +7573,10 @@ impl std::fmt::Debug for UpdateOntapVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration)
+/// See [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
 pub mod update_ontap_volume_configuration {
 
-    /// A builder for [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) junction_path: std::option::Option<std::string::String>,
@@ -7676,7 +7645,7 @@ pub mod update_ontap_volume_configuration {
             self.tiering_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration)
+        /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
         pub fn build(self) -> crate::model::UpdateOntapVolumeConfiguration {
             crate::model::UpdateOntapVolumeConfiguration {
                 junction_path: self.junction_path,
@@ -7689,7 +7658,7 @@ pub mod update_ontap_volume_configuration {
     }
 }
 impl UpdateOntapVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::model::UpdateOntapVolumeConfiguration).
     pub fn builder() -> crate::model::update_ontap_volume_configuration::Builder {
         crate::model::update_ontap_volume_configuration::Builder::default()
     }
@@ -7835,11 +7804,10 @@ impl std::fmt::Debug for StorageVirtualMachine {
         formatter.finish()
     }
 }
-/// See [`StorageVirtualMachine`](crate::model::StorageVirtualMachine)
+/// See [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
 pub mod storage_virtual_machine {
 
-    /// A builder for [`StorageVirtualMachine`](crate::model::StorageVirtualMachine)
-    #[non_exhaustive]
+    /// A builder for [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_directory_configuration:
@@ -8051,7 +8019,7 @@ pub mod storage_virtual_machine {
             self.root_volume_security_style = input;
             self
         }
-        /// Consumes the builder and constructs a [`StorageVirtualMachine`](crate::model::StorageVirtualMachine)
+        /// Consumes the builder and constructs a [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
         pub fn build(self) -> crate::model::StorageVirtualMachine {
             crate::model::StorageVirtualMachine {
                 active_directory_configuration: self.active_directory_configuration,
@@ -8072,7 +8040,7 @@ pub mod storage_virtual_machine {
     }
 }
 impl StorageVirtualMachine {
-    /// Creates a new builder-style object to manufacture [`StorageVirtualMachine`](crate::model::StorageVirtualMachine)
+    /// Creates a new builder-style object to manufacture [`StorageVirtualMachine`](crate::model::StorageVirtualMachine).
     pub fn builder() -> crate::model::storage_virtual_machine::Builder {
         crate::model::storage_virtual_machine::Builder::default()
     }
@@ -8324,11 +8292,10 @@ impl std::fmt::Debug for SvmEndpoints {
         formatter.finish()
     }
 }
-/// See [`SvmEndpoints`](crate::model::SvmEndpoints)
+/// See [`SvmEndpoints`](crate::model::SvmEndpoints).
 pub mod svm_endpoints {
 
-    /// A builder for [`SvmEndpoints`](crate::model::SvmEndpoints)
-    #[non_exhaustive]
+    /// A builder for [`SvmEndpoints`](crate::model::SvmEndpoints).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iscsi: std::option::Option<crate::model::SvmEndpoint>,
@@ -8380,7 +8347,7 @@ pub mod svm_endpoints {
             self.smb = input;
             self
         }
-        /// Consumes the builder and constructs a [`SvmEndpoints`](crate::model::SvmEndpoints)
+        /// Consumes the builder and constructs a [`SvmEndpoints`](crate::model::SvmEndpoints).
         pub fn build(self) -> crate::model::SvmEndpoints {
             crate::model::SvmEndpoints {
                 iscsi: self.iscsi,
@@ -8392,7 +8359,7 @@ pub mod svm_endpoints {
     }
 }
 impl SvmEndpoints {
-    /// Creates a new builder-style object to manufacture [`SvmEndpoints`](crate::model::SvmEndpoints)
+    /// Creates a new builder-style object to manufacture [`SvmEndpoints`](crate::model::SvmEndpoints).
     pub fn builder() -> crate::model::svm_endpoints::Builder {
         crate::model::svm_endpoints::Builder::default()
     }
@@ -8425,11 +8392,10 @@ impl std::fmt::Debug for SvmEndpoint {
         formatter.finish()
     }
 }
-/// See [`SvmEndpoint`](crate::model::SvmEndpoint)
+/// See [`SvmEndpoint`](crate::model::SvmEndpoint).
 pub mod svm_endpoint {
 
-    /// A builder for [`SvmEndpoint`](crate::model::SvmEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`SvmEndpoint`](crate::model::SvmEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_name: std::option::Option<std::string::String>,
@@ -8465,7 +8431,7 @@ pub mod svm_endpoint {
             self.ip_addresses = input;
             self
         }
-        /// Consumes the builder and constructs a [`SvmEndpoint`](crate::model::SvmEndpoint)
+        /// Consumes the builder and constructs a [`SvmEndpoint`](crate::model::SvmEndpoint).
         pub fn build(self) -> crate::model::SvmEndpoint {
             crate::model::SvmEndpoint {
                 dns_name: self.dns_name,
@@ -8475,7 +8441,7 @@ pub mod svm_endpoint {
     }
 }
 impl SvmEndpoint {
-    /// Creates a new builder-style object to manufacture [`SvmEndpoint`](crate::model::SvmEndpoint)
+    /// Creates a new builder-style object to manufacture [`SvmEndpoint`](crate::model::SvmEndpoint).
     pub fn builder() -> crate::model::svm_endpoint::Builder {
         crate::model::svm_endpoint::Builder::default()
     }
@@ -8514,11 +8480,10 @@ impl std::fmt::Debug for SvmActiveDirectoryConfiguration {
         formatter.finish()
     }
 }
-/// See [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration)
+/// See [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
 pub mod svm_active_directory_configuration {
 
-    /// A builder for [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) net_bios_name: std::option::Option<std::string::String>,
@@ -8555,7 +8520,7 @@ pub mod svm_active_directory_configuration {
             self.self_managed_active_directory_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration)
+        /// Consumes the builder and constructs a [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
         pub fn build(self) -> crate::model::SvmActiveDirectoryConfiguration {
             crate::model::SvmActiveDirectoryConfiguration {
                 net_bios_name: self.net_bios_name,
@@ -8566,7 +8531,7 @@ pub mod svm_active_directory_configuration {
     }
 }
 impl SvmActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration)
+    /// Creates a new builder-style object to manufacture [`SvmActiveDirectoryConfiguration`](crate::model::SvmActiveDirectoryConfiguration).
     pub fn builder() -> crate::model::svm_active_directory_configuration::Builder {
         crate::model::svm_active_directory_configuration::Builder::default()
     }
@@ -8598,11 +8563,10 @@ impl std::fmt::Debug for UpdateSvmActiveDirectoryConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration)
+/// See [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
 pub mod update_svm_active_directory_configuration {
 
-    /// A builder for [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) self_managed_active_directory_configuration:
@@ -8627,7 +8591,7 @@ pub mod update_svm_active_directory_configuration {
             self.self_managed_active_directory_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration)
+        /// Consumes the builder and constructs a [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
         pub fn build(self) -> crate::model::UpdateSvmActiveDirectoryConfiguration {
             crate::model::UpdateSvmActiveDirectoryConfiguration {
                 self_managed_active_directory_configuration: self
@@ -8637,7 +8601,7 @@ pub mod update_svm_active_directory_configuration {
     }
 }
 impl UpdateSvmActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateSvmActiveDirectoryConfiguration`](crate::model::UpdateSvmActiveDirectoryConfiguration).
     pub fn builder() -> crate::model::update_svm_active_directory_configuration::Builder {
         crate::model::update_svm_active_directory_configuration::Builder::default()
     }
@@ -8677,11 +8641,10 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryConfigurationUpdates {
         formatter.finish()
     }
 }
-/// See [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates)
+/// See [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
 pub mod self_managed_active_directory_configuration_updates {
 
-    /// A builder for [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates)
-    #[non_exhaustive]
+    /// A builder for [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
@@ -8728,7 +8691,7 @@ pub mod self_managed_active_directory_configuration_updates {
             self.dns_ips = input;
             self
         }
-        /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates)
+        /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
         pub fn build(self) -> crate::model::SelfManagedActiveDirectoryConfigurationUpdates {
             crate::model::SelfManagedActiveDirectoryConfigurationUpdates {
                 user_name: self.user_name,
@@ -8739,7 +8702,7 @@ pub mod self_managed_active_directory_configuration_updates {
     }
 }
 impl SelfManagedActiveDirectoryConfigurationUpdates {
-    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates)
+    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfigurationUpdates`](crate::model::SelfManagedActiveDirectoryConfigurationUpdates).
     pub fn builder() -> crate::model::self_managed_active_directory_configuration_updates::Builder {
         crate::model::self_managed_active_directory_configuration_updates::Builder::default()
     }
@@ -8924,11 +8887,10 @@ impl std::fmt::Debug for UpdateFileSystemOpenZfsConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration)
+/// See [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
 pub mod update_file_system_open_zfs_configuration {
 
-    /// A builder for [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
@@ -9038,7 +9000,7 @@ pub mod update_file_system_open_zfs_configuration {
             self.disk_iops_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration)
+        /// Consumes the builder and constructs a [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
         pub fn build(self) -> crate::model::UpdateFileSystemOpenZfsConfiguration {
             crate::model::UpdateFileSystemOpenZfsConfiguration {
                 automatic_backup_retention_days: self.automatic_backup_retention_days,
@@ -9053,7 +9015,7 @@ pub mod update_file_system_open_zfs_configuration {
     }
 }
 impl UpdateFileSystemOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOpenZfsConfiguration`](crate::model::UpdateFileSystemOpenZfsConfiguration).
     pub fn builder() -> crate::model::update_file_system_open_zfs_configuration::Builder {
         crate::model::update_file_system_open_zfs_configuration::Builder::default()
     }
@@ -9131,11 +9093,10 @@ impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration)
+/// See [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
 pub mod update_file_system_ontap_configuration {
 
-    /// A builder for [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
@@ -9237,7 +9198,7 @@ pub mod update_file_system_ontap_configuration {
             self.throughput_capacity = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration)
+        /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
         pub fn build(self) -> crate::model::UpdateFileSystemOntapConfiguration {
             crate::model::UpdateFileSystemOntapConfiguration {
                 automatic_backup_retention_days: self.automatic_backup_retention_days,
@@ -9251,7 +9212,7 @@ pub mod update_file_system_ontap_configuration {
     }
 }
 impl UpdateFileSystemOntapConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemOntapConfiguration`](crate::model::UpdateFileSystemOntapConfiguration).
     pub fn builder() -> crate::model::update_file_system_ontap_configuration::Builder {
         crate::model::update_file_system_ontap_configuration::Builder::default()
     }
@@ -9358,11 +9319,10 @@ impl std::fmt::Debug for UpdateFileSystemLustreConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration)
+/// See [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
 pub mod update_file_system_lustre_configuration {
 
-    /// A builder for [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
@@ -9505,7 +9465,7 @@ pub mod update_file_system_lustre_configuration {
             self.root_squash_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration)
+        /// Consumes the builder and constructs a [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
         pub fn build(self) -> crate::model::UpdateFileSystemLustreConfiguration {
             crate::model::UpdateFileSystemLustreConfiguration {
                 weekly_maintenance_start_time: self.weekly_maintenance_start_time,
@@ -9520,7 +9480,7 @@ pub mod update_file_system_lustre_configuration {
     }
 }
 impl UpdateFileSystemLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemLustreConfiguration`](crate::model::UpdateFileSystemLustreConfiguration).
     pub fn builder() -> crate::model::update_file_system_lustre_configuration::Builder {
         crate::model::update_file_system_lustre_configuration::Builder::default()
     }
@@ -9587,11 +9547,10 @@ impl std::fmt::Debug for LustreLogCreateConfiguration {
         formatter.finish()
     }
 }
-/// See [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration)
+/// See [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
 pub mod lustre_log_create_configuration {
 
-    /// A builder for [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) level: std::option::Option<crate::model::LustreAccessAuditLogLevel>,
@@ -9649,7 +9608,7 @@ pub mod lustre_log_create_configuration {
             self.destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration)
+        /// Consumes the builder and constructs a [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
         pub fn build(self) -> crate::model::LustreLogCreateConfiguration {
             crate::model::LustreLogCreateConfiguration {
                 level: self.level,
@@ -9659,7 +9618,7 @@ pub mod lustre_log_create_configuration {
     }
 }
 impl LustreLogCreateConfiguration {
-    /// Creates a new builder-style object to manufacture [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration)
+    /// Creates a new builder-style object to manufacture [`LustreLogCreateConfiguration`](crate::model::LustreLogCreateConfiguration).
     pub fn builder() -> crate::model::lustre_log_create_configuration::Builder {
         crate::model::lustre_log_create_configuration::Builder::default()
     }
@@ -9738,11 +9697,10 @@ impl std::fmt::Debug for UpdateFileSystemWindowsConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration)
+/// See [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
 pub mod update_file_system_windows_configuration {
 
-    /// A builder for [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
@@ -9844,7 +9802,7 @@ pub mod update_file_system_windows_configuration {
             self.audit_log_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration)
+        /// Consumes the builder and constructs a [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
         pub fn build(self) -> crate::model::UpdateFileSystemWindowsConfiguration {
             crate::model::UpdateFileSystemWindowsConfiguration {
                 weekly_maintenance_start_time: self.weekly_maintenance_start_time,
@@ -9859,7 +9817,7 @@ pub mod update_file_system_windows_configuration {
     }
 }
 impl UpdateFileSystemWindowsConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateFileSystemWindowsConfiguration`](crate::model::UpdateFileSystemWindowsConfiguration).
     pub fn builder() -> crate::model::update_file_system_windows_configuration::Builder {
         crate::model::update_file_system_windows_configuration::Builder::default()
     }
@@ -9950,11 +9908,10 @@ impl std::fmt::Debug for WindowsAuditLogCreateConfiguration {
         formatter.finish()
     }
 }
-/// See [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration)
+/// See [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
 pub mod windows_audit_log_create_configuration {
 
-    /// A builder for [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_access_audit_log_level:
@@ -10049,7 +10006,7 @@ pub mod windows_audit_log_create_configuration {
             self.audit_log_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration)
+        /// Consumes the builder and constructs a [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
         pub fn build(self) -> crate::model::WindowsAuditLogCreateConfiguration {
             crate::model::WindowsAuditLogCreateConfiguration {
                 file_access_audit_log_level: self.file_access_audit_log_level,
@@ -10060,7 +10017,7 @@ pub mod windows_audit_log_create_configuration {
     }
 }
 impl WindowsAuditLogCreateConfiguration {
-    /// Creates a new builder-style object to manufacture [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration)
+    /// Creates a new builder-style object to manufacture [`WindowsAuditLogCreateConfiguration`](crate::model::WindowsAuditLogCreateConfiguration).
     pub fn builder() -> crate::model::windows_audit_log_create_configuration::Builder {
         crate::model::windows_audit_log_create_configuration::Builder::default()
     }
@@ -10198,11 +10155,10 @@ impl std::fmt::Debug for DataRepositoryAssociation {
         formatter.finish()
     }
 }
-/// See [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation)
+/// See [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
 pub mod data_repository_association {
 
-    /// A builder for [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation)
-    #[non_exhaustive]
+    /// A builder for [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) association_id: std::option::Option<std::string::String>,
@@ -10402,7 +10358,7 @@ pub mod data_repository_association {
             self.creation_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation)
+        /// Consumes the builder and constructs a [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
         pub fn build(self) -> crate::model::DataRepositoryAssociation {
             crate::model::DataRepositoryAssociation {
                 association_id: self.association_id,
@@ -10422,7 +10378,7 @@ pub mod data_repository_association {
     }
 }
 impl DataRepositoryAssociation {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation)
+    /// Creates a new builder-style object to manufacture [`DataRepositoryAssociation`](crate::model::DataRepositoryAssociation).
     pub fn builder() -> crate::model::data_repository_association::Builder {
         crate::model::data_repository_association::Builder::default()
     }
@@ -10455,11 +10411,10 @@ impl std::fmt::Debug for S3DataRepositoryConfiguration {
         formatter.finish()
     }
 }
-/// See [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration)
+/// See [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
 pub mod s3_data_repository_configuration {
 
-    /// A builder for [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_import_policy: std::option::Option<crate::model::AutoImportPolicy>,
@@ -10492,7 +10447,7 @@ pub mod s3_data_repository_configuration {
             self.auto_export_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration)
+        /// Consumes the builder and constructs a [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
         pub fn build(self) -> crate::model::S3DataRepositoryConfiguration {
             crate::model::S3DataRepositoryConfiguration {
                 auto_import_policy: self.auto_import_policy,
@@ -10502,7 +10457,7 @@ pub mod s3_data_repository_configuration {
     }
 }
 impl S3DataRepositoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration)
+    /// Creates a new builder-style object to manufacture [`S3DataRepositoryConfiguration`](crate::model::S3DataRepositoryConfiguration).
     pub fn builder() -> crate::model::s3_data_repository_configuration::Builder {
         crate::model::s3_data_repository_configuration::Builder::default()
     }
@@ -10541,11 +10496,10 @@ impl std::fmt::Debug for AutoExportPolicy {
         formatter.finish()
     }
 }
-/// See [`AutoExportPolicy`](crate::model::AutoExportPolicy)
+/// See [`AutoExportPolicy`](crate::model::AutoExportPolicy).
 pub mod auto_export_policy {
 
-    /// A builder for [`AutoExportPolicy`](crate::model::AutoExportPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AutoExportPolicy`](crate::model::AutoExportPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -10582,7 +10536,7 @@ pub mod auto_export_policy {
             self.events = input;
             self
         }
-        /// Consumes the builder and constructs a [`AutoExportPolicy`](crate::model::AutoExportPolicy)
+        /// Consumes the builder and constructs a [`AutoExportPolicy`](crate::model::AutoExportPolicy).
         pub fn build(self) -> crate::model::AutoExportPolicy {
             crate::model::AutoExportPolicy {
                 events: self.events,
@@ -10591,7 +10545,7 @@ pub mod auto_export_policy {
     }
 }
 impl AutoExportPolicy {
-    /// Creates a new builder-style object to manufacture [`AutoExportPolicy`](crate::model::AutoExportPolicy)
+    /// Creates a new builder-style object to manufacture [`AutoExportPolicy`](crate::model::AutoExportPolicy).
     pub fn builder() -> crate::model::auto_export_policy::Builder {
         crate::model::auto_export_policy::Builder::default()
     }
@@ -10689,11 +10643,10 @@ impl std::fmt::Debug for AutoImportPolicy {
         formatter.finish()
     }
 }
-/// See [`AutoImportPolicy`](crate::model::AutoImportPolicy)
+/// See [`AutoImportPolicy`](crate::model::AutoImportPolicy).
 pub mod auto_import_policy {
 
-    /// A builder for [`AutoImportPolicy`](crate::model::AutoImportPolicy)
-    #[non_exhaustive]
+    /// A builder for [`AutoImportPolicy`](crate::model::AutoImportPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -10730,7 +10683,7 @@ pub mod auto_import_policy {
             self.events = input;
             self
         }
-        /// Consumes the builder and constructs a [`AutoImportPolicy`](crate::model::AutoImportPolicy)
+        /// Consumes the builder and constructs a [`AutoImportPolicy`](crate::model::AutoImportPolicy).
         pub fn build(self) -> crate::model::AutoImportPolicy {
             crate::model::AutoImportPolicy {
                 events: self.events,
@@ -10739,7 +10692,7 @@ pub mod auto_import_policy {
     }
 }
 impl AutoImportPolicy {
-    /// Creates a new builder-style object to manufacture [`AutoImportPolicy`](crate::model::AutoImportPolicy)
+    /// Creates a new builder-style object to manufacture [`AutoImportPolicy`](crate::model::AutoImportPolicy).
     pub fn builder() -> crate::model::auto_import_policy::Builder {
         crate::model::auto_import_policy::Builder::default()
     }
@@ -10831,11 +10784,10 @@ impl std::fmt::Debug for VolumeFilter {
         formatter.finish()
     }
 }
-/// See [`VolumeFilter`](crate::model::VolumeFilter)
+/// See [`VolumeFilter`](crate::model::VolumeFilter).
 pub mod volume_filter {
 
-    /// A builder for [`VolumeFilter`](crate::model::VolumeFilter)
-    #[non_exhaustive]
+    /// A builder for [`VolumeFilter`](crate::model::VolumeFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::VolumeFilterName>,
@@ -10874,7 +10826,7 @@ pub mod volume_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`VolumeFilter`](crate::model::VolumeFilter)
+        /// Consumes the builder and constructs a [`VolumeFilter`](crate::model::VolumeFilter).
         pub fn build(self) -> crate::model::VolumeFilter {
             crate::model::VolumeFilter {
                 name: self.name,
@@ -10884,7 +10836,7 @@ pub mod volume_filter {
     }
 }
 impl VolumeFilter {
-    /// Creates a new builder-style object to manufacture [`VolumeFilter`](crate::model::VolumeFilter)
+    /// Creates a new builder-style object to manufacture [`VolumeFilter`](crate::model::VolumeFilter).
     pub fn builder() -> crate::model::volume_filter::Builder {
         crate::model::volume_filter::Builder::default()
     }
@@ -10972,11 +10924,10 @@ impl std::fmt::Debug for StorageVirtualMachineFilter {
         formatter.finish()
     }
 }
-/// See [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter)
+/// See [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
 pub mod storage_virtual_machine_filter {
 
-    /// A builder for [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter)
-    #[non_exhaustive]
+    /// A builder for [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::StorageVirtualMachineFilterName>,
@@ -11015,7 +10966,7 @@ pub mod storage_virtual_machine_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter)
+        /// Consumes the builder and constructs a [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
         pub fn build(self) -> crate::model::StorageVirtualMachineFilter {
             crate::model::StorageVirtualMachineFilter {
                 name: self.name,
@@ -11025,7 +10976,7 @@ pub mod storage_virtual_machine_filter {
     }
 }
 impl StorageVirtualMachineFilter {
-    /// Creates a new builder-style object to manufacture [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter)
+    /// Creates a new builder-style object to manufacture [`StorageVirtualMachineFilter`](crate::model::StorageVirtualMachineFilter).
     pub fn builder() -> crate::model::storage_virtual_machine_filter::Builder {
         crate::model::storage_virtual_machine_filter::Builder::default()
     }
@@ -11109,11 +11060,10 @@ impl std::fmt::Debug for SnapshotFilter {
         formatter.finish()
     }
 }
-/// See [`SnapshotFilter`](crate::model::SnapshotFilter)
+/// See [`SnapshotFilter`](crate::model::SnapshotFilter).
 pub mod snapshot_filter {
 
-    /// A builder for [`SnapshotFilter`](crate::model::SnapshotFilter)
-    #[non_exhaustive]
+    /// A builder for [`SnapshotFilter`](crate::model::SnapshotFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SnapshotFilterName>,
@@ -11152,7 +11102,7 @@ pub mod snapshot_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnapshotFilter`](crate::model::SnapshotFilter)
+        /// Consumes the builder and constructs a [`SnapshotFilter`](crate::model::SnapshotFilter).
         pub fn build(self) -> crate::model::SnapshotFilter {
             crate::model::SnapshotFilter {
                 name: self.name,
@@ -11162,7 +11112,7 @@ pub mod snapshot_filter {
     }
 }
 impl SnapshotFilter {
-    /// Creates a new builder-style object to manufacture [`SnapshotFilter`](crate::model::SnapshotFilter)
+    /// Creates a new builder-style object to manufacture [`SnapshotFilter`](crate::model::SnapshotFilter).
     pub fn builder() -> crate::model::snapshot_filter::Builder {
         crate::model::snapshot_filter::Builder::default()
     }
@@ -11359,11 +11309,10 @@ impl std::fmt::Debug for DataRepositoryTask {
         formatter.finish()
     }
 }
-/// See [`DataRepositoryTask`](crate::model::DataRepositoryTask)
+/// See [`DataRepositoryTask`](crate::model::DataRepositoryTask).
 pub mod data_repository_task {
 
-    /// A builder for [`DataRepositoryTask`](crate::model::DataRepositoryTask)
-    #[non_exhaustive]
+    /// A builder for [`DataRepositoryTask`](crate::model::DataRepositoryTask).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
@@ -11590,7 +11539,7 @@ pub mod data_repository_task {
             self.report = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataRepositoryTask`](crate::model::DataRepositoryTask)
+        /// Consumes the builder and constructs a [`DataRepositoryTask`](crate::model::DataRepositoryTask).
         pub fn build(self) -> crate::model::DataRepositoryTask {
             crate::model::DataRepositoryTask {
                 task_id: self.task_id,
@@ -11611,7 +11560,7 @@ pub mod data_repository_task {
     }
 }
 impl DataRepositoryTask {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTask`](crate::model::DataRepositoryTask)
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTask`](crate::model::DataRepositoryTask).
     pub fn builder() -> crate::model::data_repository_task::Builder {
         crate::model::data_repository_task::Builder::default()
     }
@@ -11658,11 +11607,10 @@ impl std::fmt::Debug for CompletionReport {
         formatter.finish()
     }
 }
-/// See [`CompletionReport`](crate::model::CompletionReport)
+/// See [`CompletionReport`](crate::model::CompletionReport).
 pub mod completion_report {
 
-    /// A builder for [`CompletionReport`](crate::model::CompletionReport)
-    #[non_exhaustive]
+    /// A builder for [`CompletionReport`](crate::model::CompletionReport).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
@@ -11714,7 +11662,7 @@ pub mod completion_report {
             self.scope = input;
             self
         }
-        /// Consumes the builder and constructs a [`CompletionReport`](crate::model::CompletionReport)
+        /// Consumes the builder and constructs a [`CompletionReport`](crate::model::CompletionReport).
         pub fn build(self) -> crate::model::CompletionReport {
             crate::model::CompletionReport {
                 enabled: self.enabled,
@@ -11726,7 +11674,7 @@ pub mod completion_report {
     }
 }
 impl CompletionReport {
-    /// Creates a new builder-style object to manufacture [`CompletionReport`](crate::model::CompletionReport)
+    /// Creates a new builder-style object to manufacture [`CompletionReport`](crate::model::CompletionReport).
     pub fn builder() -> crate::model::completion_report::Builder {
         crate::model::completion_report::Builder::default()
     }
@@ -11875,11 +11823,10 @@ impl std::fmt::Debug for DataRepositoryTaskStatus {
         formatter.finish()
     }
 }
-/// See [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus)
+/// See [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
 pub mod data_repository_task_status {
 
-    /// A builder for [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus)
-    #[non_exhaustive]
+    /// A builder for [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) total_count: std::option::Option<i64>,
@@ -11931,7 +11878,7 @@ pub mod data_repository_task_status {
             self.last_updated_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus)
+        /// Consumes the builder and constructs a [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
         pub fn build(self) -> crate::model::DataRepositoryTaskStatus {
             crate::model::DataRepositoryTaskStatus {
                 total_count: self.total_count,
@@ -11943,7 +11890,7 @@ pub mod data_repository_task_status {
     }
 }
 impl DataRepositoryTaskStatus {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus)
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskStatus`](crate::model::DataRepositoryTaskStatus).
     pub fn builder() -> crate::model::data_repository_task_status::Builder {
         crate::model::data_repository_task_status::Builder::default()
     }
@@ -11969,11 +11916,10 @@ impl std::fmt::Debug for DataRepositoryTaskFailureDetails {
         formatter.finish()
     }
 }
-/// See [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails)
+/// See [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
 pub mod data_repository_task_failure_details {
 
-    /// A builder for [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails)
-    #[non_exhaustive]
+    /// A builder for [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -11989,7 +11935,7 @@ pub mod data_repository_task_failure_details {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails)
+        /// Consumes the builder and constructs a [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
         pub fn build(self) -> crate::model::DataRepositoryTaskFailureDetails {
             crate::model::DataRepositoryTaskFailureDetails {
                 message: self.message,
@@ -11998,7 +11944,7 @@ pub mod data_repository_task_failure_details {
     }
 }
 impl DataRepositoryTaskFailureDetails {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails)
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFailureDetails`](crate::model::DataRepositoryTaskFailureDetails).
     pub fn builder() -> crate::model::data_repository_task_failure_details::Builder {
         crate::model::data_repository_task_failure_details::Builder::default()
     }
@@ -12172,11 +12118,10 @@ impl std::fmt::Debug for DataRepositoryTaskFilter {
         formatter.finish()
     }
 }
-/// See [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter)
+/// See [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
 pub mod data_repository_task_filter {
 
-    /// A builder for [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter)
-    #[non_exhaustive]
+    /// A builder for [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::DataRepositoryTaskFilterName>,
@@ -12223,7 +12168,7 @@ pub mod data_repository_task_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter)
+        /// Consumes the builder and constructs a [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
         pub fn build(self) -> crate::model::DataRepositoryTaskFilter {
             crate::model::DataRepositoryTaskFilter {
                 name: self.name,
@@ -12233,7 +12178,7 @@ pub mod data_repository_task_filter {
     }
 }
 impl DataRepositoryTaskFilter {
-    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter)
+    /// Creates a new builder-style object to manufacture [`DataRepositoryTaskFilter`](crate::model::DataRepositoryTaskFilter).
     pub fn builder() -> crate::model::data_repository_task_filter::Builder {
         crate::model::data_repository_task_filter::Builder::default()
     }
@@ -12329,11 +12274,10 @@ impl std::fmt::Debug for Filter {
         formatter.finish()
     }
 }
-/// See [`Filter`](crate::model::Filter)
+/// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
-    /// A builder for [`Filter`](crate::model::Filter)
-    #[non_exhaustive]
+    /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::FilterName>,
@@ -12369,7 +12313,7 @@ pub mod filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
                 name: self.name,
@@ -12379,7 +12323,7 @@ pub mod filter {
     }
 }
 impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
     pub fn builder() -> crate::model::filter::Builder {
         crate::model::filter::Builder::default()
     }
@@ -12603,11 +12547,10 @@ impl std::fmt::Debug for Backup {
         formatter.finish()
     }
 }
-/// See [`Backup`](crate::model::Backup)
+/// See [`Backup`](crate::model::Backup).
 pub mod backup {
 
-    /// A builder for [`Backup`](crate::model::Backup)
-    #[non_exhaustive]
+    /// A builder for [`Backup`](crate::model::Backup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -12843,7 +12786,7 @@ pub mod backup {
             self.volume = input;
             self
         }
-        /// Consumes the builder and constructs a [`Backup`](crate::model::Backup)
+        /// Consumes the builder and constructs a [`Backup`](crate::model::Backup).
         pub fn build(self) -> crate::model::Backup {
             crate::model::Backup {
                 backup_id: self.backup_id,
@@ -12867,7 +12810,7 @@ pub mod backup {
     }
 }
 impl Backup {
-    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup)
+    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
     pub fn builder() -> crate::model::backup::Builder {
         crate::model::backup::Builder::default()
     }
@@ -12962,11 +12905,10 @@ impl std::fmt::Debug for ActiveDirectoryBackupAttributes {
         formatter.finish()
     }
 }
-/// See [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes)
+/// See [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
 pub mod active_directory_backup_attributes {
 
-    /// A builder for [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes)
-    #[non_exhaustive]
+    /// A builder for [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -13007,7 +12949,7 @@ pub mod active_directory_backup_attributes {
             self.resource_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes)
+        /// Consumes the builder and constructs a [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
         pub fn build(self) -> crate::model::ActiveDirectoryBackupAttributes {
             crate::model::ActiveDirectoryBackupAttributes {
                 domain_name: self.domain_name,
@@ -13018,7 +12960,7 @@ pub mod active_directory_backup_attributes {
     }
 }
 impl ActiveDirectoryBackupAttributes {
-    /// Creates a new builder-style object to manufacture [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes)
+    /// Creates a new builder-style object to manufacture [`ActiveDirectoryBackupAttributes`](crate::model::ActiveDirectoryBackupAttributes).
     pub fn builder() -> crate::model::active_directory_backup_attributes::Builder {
         crate::model::active_directory_backup_attributes::Builder::default()
     }
@@ -13103,11 +13045,10 @@ impl std::fmt::Debug for BackupFailureDetails {
         formatter.finish()
     }
 }
-/// See [`BackupFailureDetails`](crate::model::BackupFailureDetails)
+/// See [`BackupFailureDetails`](crate::model::BackupFailureDetails).
 pub mod backup_failure_details {
 
-    /// A builder for [`BackupFailureDetails`](crate::model::BackupFailureDetails)
-    #[non_exhaustive]
+    /// A builder for [`BackupFailureDetails`](crate::model::BackupFailureDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -13123,7 +13064,7 @@ pub mod backup_failure_details {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BackupFailureDetails`](crate::model::BackupFailureDetails)
+        /// Consumes the builder and constructs a [`BackupFailureDetails`](crate::model::BackupFailureDetails).
         pub fn build(self) -> crate::model::BackupFailureDetails {
             crate::model::BackupFailureDetails {
                 message: self.message,
@@ -13132,7 +13073,7 @@ pub mod backup_failure_details {
     }
 }
 impl BackupFailureDetails {
-    /// Creates a new builder-style object to manufacture [`BackupFailureDetails`](crate::model::BackupFailureDetails)
+    /// Creates a new builder-style object to manufacture [`BackupFailureDetails`](crate::model::BackupFailureDetails).
     pub fn builder() -> crate::model::backup_failure_details::Builder {
         crate::model::backup_failure_details::Builder::default()
     }
@@ -13280,11 +13221,10 @@ impl std::fmt::Debug for DeleteVolumeOntapResponse {
         formatter.finish()
     }
 }
-/// See [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse)
+/// See [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
 pub mod delete_volume_ontap_response {
 
-    /// A builder for [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
@@ -13323,7 +13263,7 @@ pub mod delete_volume_ontap_response {
             self.final_backup_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse)
+        /// Consumes the builder and constructs a [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
         pub fn build(self) -> crate::model::DeleteVolumeOntapResponse {
             crate::model::DeleteVolumeOntapResponse {
                 final_backup_id: self.final_backup_id,
@@ -13333,7 +13273,7 @@ pub mod delete_volume_ontap_response {
     }
 }
 impl DeleteVolumeOntapResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse)
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapResponse`](crate::model::DeleteVolumeOntapResponse).
     pub fn builder() -> crate::model::delete_volume_ontap_response::Builder {
         crate::model::delete_volume_ontap_response::Builder::default()
     }
@@ -13359,11 +13299,10 @@ impl std::fmt::Debug for DeleteVolumeOpenZfsConfiguration {
         formatter.finish()
     }
 }
-/// See [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration)
+/// See [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
 pub mod delete_volume_open_zfs_configuration {
 
-    /// A builder for [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) options:
@@ -13389,7 +13328,7 @@ pub mod delete_volume_open_zfs_configuration {
             self.options = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration)
+        /// Consumes the builder and constructs a [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
         pub fn build(self) -> crate::model::DeleteVolumeOpenZfsConfiguration {
             crate::model::DeleteVolumeOpenZfsConfiguration {
                 options: self.options,
@@ -13398,7 +13337,7 @@ pub mod delete_volume_open_zfs_configuration {
     }
 }
 impl DeleteVolumeOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration)
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOpenZfsConfiguration`](crate::model::DeleteVolumeOpenZfsConfiguration).
     pub fn builder() -> crate::model::delete_volume_open_zfs_configuration::Builder {
         crate::model::delete_volume_open_zfs_configuration::Builder::default()
     }
@@ -13486,11 +13425,10 @@ impl std::fmt::Debug for DeleteVolumeOntapConfiguration {
         formatter.finish()
     }
 }
-/// See [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration)
+/// See [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
 pub mod delete_volume_ontap_configuration {
 
-    /// A builder for [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
@@ -13526,7 +13464,7 @@ pub mod delete_volume_ontap_configuration {
             self.final_backup_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration)
+        /// Consumes the builder and constructs a [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
         pub fn build(self) -> crate::model::DeleteVolumeOntapConfiguration {
             crate::model::DeleteVolumeOntapConfiguration {
                 skip_final_backup: self.skip_final_backup,
@@ -13536,7 +13474,7 @@ pub mod delete_volume_ontap_configuration {
     }
 }
 impl DeleteVolumeOntapConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration)
+    /// Creates a new builder-style object to manufacture [`DeleteVolumeOntapConfiguration`](crate::model::DeleteVolumeOntapConfiguration).
     pub fn builder() -> crate::model::delete_volume_ontap_configuration::Builder {
         crate::model::delete_volume_ontap_configuration::Builder::default()
     }
@@ -13569,11 +13507,10 @@ impl std::fmt::Debug for DeleteFileSystemOpenZfsResponse {
         formatter.finish()
     }
 }
-/// See [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse)
+/// See [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
 pub mod delete_file_system_open_zfs_response {
 
-    /// A builder for [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
@@ -13612,7 +13549,7 @@ pub mod delete_file_system_open_zfs_response {
             self.final_backup_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse)
+        /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
         pub fn build(self) -> crate::model::DeleteFileSystemOpenZfsResponse {
             crate::model::DeleteFileSystemOpenZfsResponse {
                 final_backup_id: self.final_backup_id,
@@ -13622,7 +13559,7 @@ pub mod delete_file_system_open_zfs_response {
     }
 }
 impl DeleteFileSystemOpenZfsResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse)
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsResponse`](crate::model::DeleteFileSystemOpenZfsResponse).
     pub fn builder() -> crate::model::delete_file_system_open_zfs_response::Builder {
         crate::model::delete_file_system_open_zfs_response::Builder::default()
     }
@@ -13655,11 +13592,10 @@ impl std::fmt::Debug for DeleteFileSystemLustreResponse {
         formatter.finish()
     }
 }
-/// See [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse)
+/// See [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
 pub mod delete_file_system_lustre_response {
 
-    /// A builder for [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
@@ -13698,7 +13634,7 @@ pub mod delete_file_system_lustre_response {
             self.final_backup_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse)
+        /// Consumes the builder and constructs a [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
         pub fn build(self) -> crate::model::DeleteFileSystemLustreResponse {
             crate::model::DeleteFileSystemLustreResponse {
                 final_backup_id: self.final_backup_id,
@@ -13708,7 +13644,7 @@ pub mod delete_file_system_lustre_response {
     }
 }
 impl DeleteFileSystemLustreResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse)
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreResponse`](crate::model::DeleteFileSystemLustreResponse).
     pub fn builder() -> crate::model::delete_file_system_lustre_response::Builder {
         crate::model::delete_file_system_lustre_response::Builder::default()
     }
@@ -13741,11 +13677,10 @@ impl std::fmt::Debug for DeleteFileSystemWindowsResponse {
         formatter.finish()
     }
 }
-/// See [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse)
+/// See [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
 pub mod delete_file_system_windows_response {
 
-    /// A builder for [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) final_backup_id: std::option::Option<std::string::String>,
@@ -13784,7 +13719,7 @@ pub mod delete_file_system_windows_response {
             self.final_backup_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse)
+        /// Consumes the builder and constructs a [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
         pub fn build(self) -> crate::model::DeleteFileSystemWindowsResponse {
             crate::model::DeleteFileSystemWindowsResponse {
                 final_backup_id: self.final_backup_id,
@@ -13794,7 +13729,7 @@ pub mod delete_file_system_windows_response {
     }
 }
 impl DeleteFileSystemWindowsResponse {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse)
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsResponse`](crate::model::DeleteFileSystemWindowsResponse).
     pub fn builder() -> crate::model::delete_file_system_windows_response::Builder {
         crate::model::delete_file_system_windows_response::Builder::default()
     }
@@ -13834,11 +13769,10 @@ impl std::fmt::Debug for DeleteFileSystemOpenZfsConfiguration {
         formatter.finish()
     }
 }
-/// See [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration)
+/// See [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
 pub mod delete_file_system_open_zfs_configuration {
 
-    /// A builder for [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
@@ -13895,7 +13829,7 @@ pub mod delete_file_system_open_zfs_configuration {
             self.options = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration)
+        /// Consumes the builder and constructs a [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
         pub fn build(self) -> crate::model::DeleteFileSystemOpenZfsConfiguration {
             crate::model::DeleteFileSystemOpenZfsConfiguration {
                 skip_final_backup: self.skip_final_backup,
@@ -13906,7 +13840,7 @@ pub mod delete_file_system_open_zfs_configuration {
     }
 }
 impl DeleteFileSystemOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration)
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemOpenZfsConfiguration`](crate::model::DeleteFileSystemOpenZfsConfiguration).
     pub fn builder() -> crate::model::delete_file_system_open_zfs_configuration::Builder {
         crate::model::delete_file_system_open_zfs_configuration::Builder::default()
     }
@@ -13998,11 +13932,10 @@ impl std::fmt::Debug for DeleteFileSystemLustreConfiguration {
         formatter.finish()
     }
 }
-/// See [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration)
+/// See [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
 pub mod delete_file_system_lustre_configuration {
 
-    /// A builder for [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
@@ -14042,7 +13975,7 @@ pub mod delete_file_system_lustre_configuration {
             self.final_backup_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration)
+        /// Consumes the builder and constructs a [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
         pub fn build(self) -> crate::model::DeleteFileSystemLustreConfiguration {
             crate::model::DeleteFileSystemLustreConfiguration {
                 skip_final_backup: self.skip_final_backup,
@@ -14052,7 +13985,7 @@ pub mod delete_file_system_lustre_configuration {
     }
 }
 impl DeleteFileSystemLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration)
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemLustreConfiguration`](crate::model::DeleteFileSystemLustreConfiguration).
     pub fn builder() -> crate::model::delete_file_system_lustre_configuration::Builder {
         crate::model::delete_file_system_lustre_configuration::Builder::default()
     }
@@ -14085,11 +14018,10 @@ impl std::fmt::Debug for DeleteFileSystemWindowsConfiguration {
         formatter.finish()
     }
 }
-/// See [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration)
+/// See [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
 pub mod delete_file_system_windows_configuration {
 
-    /// A builder for [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skip_final_backup: std::option::Option<bool>,
@@ -14125,7 +14057,7 @@ pub mod delete_file_system_windows_configuration {
             self.final_backup_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration)
+        /// Consumes the builder and constructs a [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
         pub fn build(self) -> crate::model::DeleteFileSystemWindowsConfiguration {
             crate::model::DeleteFileSystemWindowsConfiguration {
                 skip_final_backup: self.skip_final_backup,
@@ -14135,7 +14067,7 @@ pub mod delete_file_system_windows_configuration {
     }
 }
 impl DeleteFileSystemWindowsConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration)
+    /// Creates a new builder-style object to manufacture [`DeleteFileSystemWindowsConfiguration`](crate::model::DeleteFileSystemWindowsConfiguration).
     pub fn builder() -> crate::model::delete_file_system_windows_configuration::Builder {
         crate::model::delete_file_system_windows_configuration::Builder::default()
     }
@@ -14238,11 +14170,10 @@ impl std::fmt::Debug for CreateOntapVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration)
+/// See [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
 pub mod create_ontap_volume_configuration {
 
-    /// A builder for [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) junction_path: std::option::Option<std::string::String>,
@@ -14361,7 +14292,7 @@ pub mod create_ontap_volume_configuration {
             self.tiering_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration)
+        /// Consumes the builder and constructs a [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
         pub fn build(self) -> crate::model::CreateOntapVolumeConfiguration {
             crate::model::CreateOntapVolumeConfiguration {
                 junction_path: self.junction_path,
@@ -14375,7 +14306,7 @@ pub mod create_ontap_volume_configuration {
     }
 }
 impl CreateOntapVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::model::CreateOntapVolumeConfiguration).
     pub fn builder() -> crate::model::create_ontap_volume_configuration::Builder {
         crate::model::create_ontap_volume_configuration::Builder::default()
     }
@@ -14492,11 +14423,10 @@ impl std::fmt::Debug for CreateOpenZfsVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration)
+/// See [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
 pub mod create_open_zfs_volume_configuration {
 
-    /// A builder for [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parent_volume_id: std::option::Option<std::string::String>,
@@ -14667,7 +14597,7 @@ pub mod create_open_zfs_volume_configuration {
             self.user_and_group_quotas = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration)
+        /// Consumes the builder and constructs a [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
         pub fn build(self) -> crate::model::CreateOpenZfsVolumeConfiguration {
             crate::model::CreateOpenZfsVolumeConfiguration {
                 parent_volume_id: self.parent_volume_id,
@@ -14685,7 +14615,7 @@ pub mod create_open_zfs_volume_configuration {
     }
 }
 impl CreateOpenZfsVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateOpenZfsVolumeConfiguration`](crate::model::CreateOpenZfsVolumeConfiguration).
     pub fn builder() -> crate::model::create_open_zfs_volume_configuration::Builder {
         crate::model::create_open_zfs_volume_configuration::Builder::default()
     }
@@ -14726,11 +14656,10 @@ impl std::fmt::Debug for CreateOpenZfsOriginSnapshotConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration)
+/// See [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
 pub mod create_open_zfs_origin_snapshot_configuration {
 
-    /// A builder for [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot_arn: std::option::Option<std::string::String>,
@@ -14768,7 +14697,7 @@ pub mod create_open_zfs_origin_snapshot_configuration {
             self.copy_strategy = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration)
+        /// Consumes the builder and constructs a [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
         pub fn build(self) -> crate::model::CreateOpenZfsOriginSnapshotConfiguration {
             crate::model::CreateOpenZfsOriginSnapshotConfiguration {
                 snapshot_arn: self.snapshot_arn,
@@ -14778,7 +14707,7 @@ pub mod create_open_zfs_origin_snapshot_configuration {
     }
 }
 impl CreateOpenZfsOriginSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateOpenZfsOriginSnapshotConfiguration`](crate::model::CreateOpenZfsOriginSnapshotConfiguration).
     pub fn builder() -> crate::model::create_open_zfs_origin_snapshot_configuration::Builder {
         crate::model::create_open_zfs_origin_snapshot_configuration::Builder::default()
     }
@@ -14889,11 +14818,10 @@ impl std::fmt::Debug for CreateSvmActiveDirectoryConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration)
+/// See [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
 pub mod create_svm_active_directory_configuration {
 
-    /// A builder for [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) net_bios_name: std::option::Option<std::string::String>,
@@ -14930,7 +14858,7 @@ pub mod create_svm_active_directory_configuration {
             self.self_managed_active_directory_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration)
+        /// Consumes the builder and constructs a [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
         pub fn build(self) -> crate::model::CreateSvmActiveDirectoryConfiguration {
             crate::model::CreateSvmActiveDirectoryConfiguration {
                 net_bios_name: self.net_bios_name,
@@ -14941,7 +14869,7 @@ pub mod create_svm_active_directory_configuration {
     }
 }
 impl CreateSvmActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateSvmActiveDirectoryConfiguration`](crate::model::CreateSvmActiveDirectoryConfiguration).
     pub fn builder() -> crate::model::create_svm_active_directory_configuration::Builder {
         crate::model::create_svm_active_directory_configuration::Builder::default()
     }
@@ -15012,11 +14940,10 @@ impl std::fmt::Debug for SelfManagedActiveDirectoryConfiguration {
         formatter.finish()
     }
 }
-/// See [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration)
+/// See [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
 pub mod self_managed_active_directory_configuration {
 
-    /// A builder for [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -15112,7 +15039,7 @@ pub mod self_managed_active_directory_configuration {
             self.dns_ips = input;
             self
         }
-        /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration)
+        /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
         pub fn build(self) -> crate::model::SelfManagedActiveDirectoryConfiguration {
             crate::model::SelfManagedActiveDirectoryConfiguration {
                 domain_name: self.domain_name,
@@ -15126,7 +15053,7 @@ pub mod self_managed_active_directory_configuration {
     }
 }
 impl SelfManagedActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration)
+    /// Creates a new builder-style object to manufacture [`SelfManagedActiveDirectoryConfiguration`](crate::model::SelfManagedActiveDirectoryConfiguration).
     pub fn builder() -> crate::model::self_managed_active_directory_configuration::Builder {
         crate::model::self_managed_active_directory_configuration::Builder::default()
     }
@@ -15228,11 +15155,10 @@ impl std::fmt::Debug for CreateFileSystemOpenZfsConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration)
+/// See [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
 pub mod create_file_system_open_zfs_configuration {
 
-    /// A builder for [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
@@ -15374,7 +15300,7 @@ pub mod create_file_system_open_zfs_configuration {
             self.root_volume_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration)
+        /// Consumes the builder and constructs a [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
         pub fn build(self) -> crate::model::CreateFileSystemOpenZfsConfiguration {
             crate::model::CreateFileSystemOpenZfsConfiguration {
                 automatic_backup_retention_days: self.automatic_backup_retention_days,
@@ -15391,7 +15317,7 @@ pub mod create_file_system_open_zfs_configuration {
     }
 }
 impl CreateFileSystemOpenZfsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemOpenZfsConfiguration`](crate::model::CreateFileSystemOpenZfsConfiguration).
     pub fn builder() -> crate::model::create_file_system_open_zfs_configuration::Builder {
         crate::model::create_file_system_open_zfs_configuration::Builder::default()
     }
@@ -15467,11 +15393,10 @@ impl std::fmt::Debug for OpenZfsCreateRootVolumeConfiguration {
         formatter.finish()
     }
 }
-/// See [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration)
+/// See [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
 pub mod open_zfs_create_root_volume_configuration {
 
-    /// A builder for [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record_size_ki_b: std::option::Option<i32>,
@@ -15581,7 +15506,7 @@ pub mod open_zfs_create_root_volume_configuration {
             self.read_only = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration)
+        /// Consumes the builder and constructs a [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
         pub fn build(self) -> crate::model::OpenZfsCreateRootVolumeConfiguration {
             crate::model::OpenZfsCreateRootVolumeConfiguration {
                 record_size_ki_b: self.record_size_ki_b,
@@ -15595,7 +15520,7 @@ pub mod open_zfs_create_root_volume_configuration {
     }
 }
 impl OpenZfsCreateRootVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration)
+    /// Creates a new builder-style object to manufacture [`OpenZfsCreateRootVolumeConfiguration`](crate::model::OpenZfsCreateRootVolumeConfiguration).
     pub fn builder() -> crate::model::open_zfs_create_root_volume_configuration::Builder {
         crate::model::open_zfs_create_root_volume_configuration::Builder::default()
     }
@@ -15808,11 +15733,10 @@ impl std::fmt::Debug for CreateFileSystemLustreConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration)
+/// See [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
 pub mod create_file_system_lustre_configuration {
 
-    /// A builder for [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
@@ -16084,7 +16008,7 @@ pub mod create_file_system_lustre_configuration {
             self.root_squash_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration)
+        /// Consumes the builder and constructs a [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
         pub fn build(self) -> crate::model::CreateFileSystemLustreConfiguration {
             crate::model::CreateFileSystemLustreConfiguration {
                 weekly_maintenance_start_time: self.weekly_maintenance_start_time,
@@ -16106,7 +16030,7 @@ pub mod create_file_system_lustre_configuration {
     }
 }
 impl CreateFileSystemLustreConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemLustreConfiguration`](crate::model::CreateFileSystemLustreConfiguration).
     pub fn builder() -> crate::model::create_file_system_lustre_configuration::Builder {
         crate::model::create_file_system_lustre_configuration::Builder::default()
     }
@@ -16250,11 +16174,10 @@ impl std::fmt::Debug for CreateFileSystemWindowsConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration)
+/// See [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
 pub mod create_file_system_windows_configuration {
 
-    /// A builder for [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_directory_id: std::option::Option<std::string::String>,
@@ -16457,7 +16380,7 @@ pub mod create_file_system_windows_configuration {
             self.audit_log_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration)
+        /// Consumes the builder and constructs a [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
         pub fn build(self) -> crate::model::CreateFileSystemWindowsConfiguration {
             crate::model::CreateFileSystemWindowsConfiguration {
                 active_directory_id: self.active_directory_id,
@@ -16477,7 +16400,7 @@ pub mod create_file_system_windows_configuration {
     }
 }
 impl CreateFileSystemWindowsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemWindowsConfiguration`](crate::model::CreateFileSystemWindowsConfiguration).
     pub fn builder() -> crate::model::create_file_system_windows_configuration::Builder {
         crate::model::create_file_system_windows_configuration::Builder::default()
     }
@@ -16597,11 +16520,10 @@ impl std::fmt::Debug for CreateFileSystemOntapConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration)
+/// See [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
 pub mod create_file_system_ontap_configuration {
 
-    /// A builder for [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
@@ -16779,7 +16701,7 @@ pub mod create_file_system_ontap_configuration {
             self.weekly_maintenance_start_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration)
+        /// Consumes the builder and constructs a [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
         pub fn build(self) -> crate::model::CreateFileSystemOntapConfiguration {
             crate::model::CreateFileSystemOntapConfiguration {
                 automatic_backup_retention_days: self.automatic_backup_retention_days,
@@ -16797,7 +16719,7 @@ pub mod create_file_system_ontap_configuration {
     }
 }
 impl CreateFileSystemOntapConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateFileSystemOntapConfiguration`](crate::model::CreateFileSystemOntapConfiguration).
     pub fn builder() -> crate::model::create_file_system_ontap_configuration::Builder {
         crate::model::create_file_system_ontap_configuration::Builder::default()
     }

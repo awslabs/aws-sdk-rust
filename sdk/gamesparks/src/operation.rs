@@ -10,7 +10,7 @@ pub struct CreateGame {
     _private: (),
 }
 impl CreateGame {
-    /// Creates a new builder-style object to manufacture [`CreateGameInput`](crate::input::CreateGameInput)
+    /// Creates a new builder-style object to manufacture [`CreateGameInput`](crate::input::CreateGameInput).
     pub fn builder() -> crate::input::create_game_input::Builder {
         crate::input::create_game_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateSnapshot {
     _private: (),
 }
 impl CreateSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
     pub fn builder() -> crate::input::create_snapshot_input::Builder {
         crate::input::create_snapshot_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreateStage {
     _private: (),
 }
 impl CreateStage {
-    /// Creates a new builder-style object to manufacture [`CreateStageInput`](crate::input::CreateStageInput)
+    /// Creates a new builder-style object to manufacture [`CreateStageInput`](crate::input::CreateStageInput).
     pub fn builder() -> crate::input::create_stage_input::Builder {
         crate::input::create_stage_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct DeleteGame {
     _private: (),
 }
 impl DeleteGame {
-    /// Creates a new builder-style object to manufacture [`DeleteGameInput`](crate::input::DeleteGameInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGameInput`](crate::input::DeleteGameInput).
     pub fn builder() -> crate::input::delete_game_input::Builder {
         crate::input::delete_game_input::Builder::default()
     }
@@ -138,7 +138,7 @@ pub struct DeleteStage {
     _private: (),
 }
 impl DeleteStage {
-    /// Creates a new builder-style object to manufacture [`DeleteStageInput`](crate::input::DeleteStageInput)
+    /// Creates a new builder-style object to manufacture [`DeleteStageInput`](crate::input::DeleteStageInput).
     pub fn builder() -> crate::input::delete_stage_input::Builder {
         crate::input::delete_stage_input::Builder::default()
     }
@@ -170,7 +170,7 @@ pub struct DisconnectPlayer {
     _private: (),
 }
 impl DisconnectPlayer {
-    /// Creates a new builder-style object to manufacture [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput)
+    /// Creates a new builder-style object to manufacture [`DisconnectPlayerInput`](crate::input::DisconnectPlayerInput).
     pub fn builder() -> crate::input::disconnect_player_input::Builder {
         crate::input::disconnect_player_input::Builder::default()
     }
@@ -204,7 +204,7 @@ pub struct ExportSnapshot {
     _private: (),
 }
 impl ExportSnapshot {
-    /// Creates a new builder-style object to manufacture [`ExportSnapshotInput`](crate::input::ExportSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`ExportSnapshotInput`](crate::input::ExportSnapshotInput).
     pub fn builder() -> crate::input::export_snapshot_input::Builder {
         crate::input::export_snapshot_input::Builder::default()
     }
@@ -236,7 +236,7 @@ pub struct GetExtension {
     _private: (),
 }
 impl GetExtension {
-    /// Creates a new builder-style object to manufacture [`GetExtensionInput`](crate::input::GetExtensionInput)
+    /// Creates a new builder-style object to manufacture [`GetExtensionInput`](crate::input::GetExtensionInput).
     pub fn builder() -> crate::input::get_extension_input::Builder {
         crate::input::get_extension_input::Builder::default()
     }
@@ -268,7 +268,7 @@ pub struct GetExtensionVersion {
     _private: (),
 }
 impl GetExtensionVersion {
-    /// Creates a new builder-style object to manufacture [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput)
+    /// Creates a new builder-style object to manufacture [`GetExtensionVersionInput`](crate::input::GetExtensionVersionInput).
     pub fn builder() -> crate::input::get_extension_version_input::Builder {
         crate::input::get_extension_version_input::Builder::default()
     }
@@ -302,7 +302,7 @@ pub struct GetGame {
     _private: (),
 }
 impl GetGame {
-    /// Creates a new builder-style object to manufacture [`GetGameInput`](crate::input::GetGameInput)
+    /// Creates a new builder-style object to manufacture [`GetGameInput`](crate::input::GetGameInput).
     pub fn builder() -> crate::input::get_game_input::Builder {
         crate::input::get_game_input::Builder::default()
     }
@@ -333,7 +333,7 @@ pub struct GetGameConfiguration {
     _private: (),
 }
 impl GetGameConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetGameConfigurationInput`](crate::input::GetGameConfigurationInput).
     pub fn builder() -> crate::input::get_game_configuration_input::Builder {
         crate::input::get_game_configuration_input::Builder::default()
     }
@@ -367,7 +367,7 @@ pub struct GetGeneratedCodeJob {
     _private: (),
 }
 impl GetGeneratedCodeJob {
-    /// Creates a new builder-style object to manufacture [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput)
+    /// Creates a new builder-style object to manufacture [`GetGeneratedCodeJobInput`](crate::input::GetGeneratedCodeJobInput).
     pub fn builder() -> crate::input::get_generated_code_job_input::Builder {
         crate::input::get_generated_code_job_input::Builder::default()
     }
@@ -401,7 +401,7 @@ pub struct GetPlayerConnectionStatus {
     _private: (),
 }
 impl GetPlayerConnectionStatus {
-    /// Creates a new builder-style object to manufacture [`GetPlayerConnectionStatusInput`](crate::input::GetPlayerConnectionStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetPlayerConnectionStatusInput`](crate::input::GetPlayerConnectionStatusInput).
     pub fn builder() -> crate::input::get_player_connection_status_input::Builder {
         crate::input::get_player_connection_status_input::Builder::default()
     }
@@ -435,7 +435,7 @@ pub struct GetSnapshot {
     _private: (),
 }
 impl GetSnapshot {
-    /// Creates a new builder-style object to manufacture [`GetSnapshotInput`](crate::input::GetSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`GetSnapshotInput`](crate::input::GetSnapshotInput).
     pub fn builder() -> crate::input::get_snapshot_input::Builder {
         crate::input::get_snapshot_input::Builder::default()
     }
@@ -467,7 +467,7 @@ pub struct GetStage {
     _private: (),
 }
 impl GetStage {
-    /// Creates a new builder-style object to manufacture [`GetStageInput`](crate::input::GetStageInput)
+    /// Creates a new builder-style object to manufacture [`GetStageInput`](crate::input::GetStageInput).
     pub fn builder() -> crate::input::get_stage_input::Builder {
         crate::input::get_stage_input::Builder::default()
     }
@@ -498,7 +498,7 @@ pub struct GetStageDeployment {
     _private: (),
 }
 impl GetStageDeployment {
-    /// Creates a new builder-style object to manufacture [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`GetStageDeploymentInput`](crate::input::GetStageDeploymentInput).
     pub fn builder() -> crate::input::get_stage_deployment_input::Builder {
         crate::input::get_stage_deployment_input::Builder::default()
     }
@@ -532,7 +532,7 @@ pub struct ImportGameConfiguration {
     _private: (),
 }
 impl ImportGameConfiguration {
-    /// Creates a new builder-style object to manufacture [`ImportGameConfigurationInput`](crate::input::ImportGameConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`ImportGameConfigurationInput`](crate::input::ImportGameConfigurationInput).
     pub fn builder() -> crate::input::import_game_configuration_input::Builder {
         crate::input::import_game_configuration_input::Builder::default()
     }
@@ -566,7 +566,7 @@ pub struct ListExtensions {
     _private: (),
 }
 impl ListExtensions {
-    /// Creates a new builder-style object to manufacture [`ListExtensionsInput`](crate::input::ListExtensionsInput)
+    /// Creates a new builder-style object to manufacture [`ListExtensionsInput`](crate::input::ListExtensionsInput).
     pub fn builder() -> crate::input::list_extensions_input::Builder {
         crate::input::list_extensions_input::Builder::default()
     }
@@ -598,7 +598,7 @@ pub struct ListExtensionVersions {
     _private: (),
 }
 impl ListExtensionVersions {
-    /// Creates a new builder-style object to manufacture [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListExtensionVersionsInput`](crate::input::ListExtensionVersionsInput).
     pub fn builder() -> crate::input::list_extension_versions_input::Builder {
         crate::input::list_extension_versions_input::Builder::default()
     }
@@ -632,7 +632,7 @@ pub struct ListGames {
     _private: (),
 }
 impl ListGames {
-    /// Creates a new builder-style object to manufacture [`ListGamesInput`](crate::input::ListGamesInput)
+    /// Creates a new builder-style object to manufacture [`ListGamesInput`](crate::input::ListGamesInput).
     pub fn builder() -> crate::input::list_games_input::Builder {
         crate::input::list_games_input::Builder::default()
     }
@@ -663,7 +663,7 @@ pub struct ListGeneratedCodeJobs {
     _private: (),
 }
 impl ListGeneratedCodeJobs {
-    /// Creates a new builder-style object to manufacture [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListGeneratedCodeJobsInput`](crate::input::ListGeneratedCodeJobsInput).
     pub fn builder() -> crate::input::list_generated_code_jobs_input::Builder {
         crate::input::list_generated_code_jobs_input::Builder::default()
     }
@@ -697,7 +697,7 @@ pub struct ListSnapshots {
     _private: (),
 }
 impl ListSnapshots {
-    /// Creates a new builder-style object to manufacture [`ListSnapshotsInput`](crate::input::ListSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`ListSnapshotsInput`](crate::input::ListSnapshotsInput).
     pub fn builder() -> crate::input::list_snapshots_input::Builder {
         crate::input::list_snapshots_input::Builder::default()
     }
@@ -729,7 +729,7 @@ pub struct ListStageDeployments {
     _private: (),
 }
 impl ListStageDeployments {
-    /// Creates a new builder-style object to manufacture [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput)
+    /// Creates a new builder-style object to manufacture [`ListStageDeploymentsInput`](crate::input::ListStageDeploymentsInput).
     pub fn builder() -> crate::input::list_stage_deployments_input::Builder {
         crate::input::list_stage_deployments_input::Builder::default()
     }
@@ -763,7 +763,7 @@ pub struct ListStages {
     _private: (),
 }
 impl ListStages {
-    /// Creates a new builder-style object to manufacture [`ListStagesInput`](crate::input::ListStagesInput)
+    /// Creates a new builder-style object to manufacture [`ListStagesInput`](crate::input::ListStagesInput).
     pub fn builder() -> crate::input::list_stages_input::Builder {
         crate::input::list_stages_input::Builder::default()
     }
@@ -795,7 +795,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -829,7 +829,7 @@ pub struct StartGeneratedCodeJob {
     _private: (),
 }
 impl StartGeneratedCodeJob {
-    /// Creates a new builder-style object to manufacture [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput)
+    /// Creates a new builder-style object to manufacture [`StartGeneratedCodeJobInput`](crate::input::StartGeneratedCodeJobInput).
     pub fn builder() -> crate::input::start_generated_code_job_input::Builder {
         crate::input::start_generated_code_job_input::Builder::default()
     }
@@ -863,7 +863,7 @@ pub struct StartStageDeployment {
     _private: (),
 }
 impl StartStageDeployment {
-    /// Creates a new builder-style object to manufacture [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`StartStageDeploymentInput`](crate::input::StartStageDeploymentInput).
     pub fn builder() -> crate::input::start_stage_deployment_input::Builder {
         crate::input::start_stage_deployment_input::Builder::default()
     }
@@ -897,7 +897,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -929,7 +929,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -961,7 +961,7 @@ pub struct UpdateGame {
     _private: (),
 }
 impl UpdateGame {
-    /// Creates a new builder-style object to manufacture [`UpdateGameInput`](crate::input::UpdateGameInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGameInput`](crate::input::UpdateGameInput).
     pub fn builder() -> crate::input::update_game_input::Builder {
         crate::input::update_game_input::Builder::default()
     }
@@ -993,7 +993,7 @@ pub struct UpdateGameConfiguration {
     _private: (),
 }
 impl UpdateGameConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateGameConfigurationInput`](crate::input::UpdateGameConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGameConfigurationInput`](crate::input::UpdateGameConfigurationInput).
     pub fn builder() -> crate::input::update_game_configuration_input::Builder {
         crate::input::update_game_configuration_input::Builder::default()
     }
@@ -1027,7 +1027,7 @@ pub struct UpdateSnapshot {
     _private: (),
 }
 impl UpdateSnapshot {
-    /// Creates a new builder-style object to manufacture [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSnapshotInput`](crate::input::UpdateSnapshotInput).
     pub fn builder() -> crate::input::update_snapshot_input::Builder {
         crate::input::update_snapshot_input::Builder::default()
     }
@@ -1059,7 +1059,7 @@ pub struct UpdateStage {
     _private: (),
 }
 impl UpdateStage {
-    /// Creates a new builder-style object to manufacture [`UpdateStageInput`](crate::input::UpdateStageInput)
+    /// Creates a new builder-style object to manufacture [`UpdateStageInput`](crate::input::UpdateStageInput).
     pub fn builder() -> crate::input::update_stage_input::Builder {
         crate::input::update_stage_input::Builder::default()
     }

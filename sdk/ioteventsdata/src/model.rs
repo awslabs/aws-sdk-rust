@@ -55,11 +55,10 @@ impl std::fmt::Debug for DetectorSummary {
         formatter.finish()
     }
 }
-/// See [`DetectorSummary`](crate::model::DetectorSummary)
+/// See [`DetectorSummary`](crate::model::DetectorSummary).
 pub mod detector_summary {
 
-    /// A builder for [`DetectorSummary`](crate::model::DetectorSummary)
-    #[non_exhaustive]
+    /// A builder for [`DetectorSummary`](crate::model::DetectorSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -145,7 +144,7 @@ pub mod detector_summary {
             self.last_update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectorSummary`](crate::model::DetectorSummary)
+        /// Consumes the builder and constructs a [`DetectorSummary`](crate::model::DetectorSummary).
         pub fn build(self) -> crate::model::DetectorSummary {
             crate::model::DetectorSummary {
                 detector_model_name: self.detector_model_name,
@@ -159,7 +158,7 @@ pub mod detector_summary {
     }
 }
 impl DetectorSummary {
-    /// Creates a new builder-style object to manufacture [`DetectorSummary`](crate::model::DetectorSummary)
+    /// Creates a new builder-style object to manufacture [`DetectorSummary`](crate::model::DetectorSummary).
     pub fn builder() -> crate::model::detector_summary::Builder {
         crate::model::detector_summary::Builder::default()
     }
@@ -185,11 +184,10 @@ impl std::fmt::Debug for DetectorStateSummary {
         formatter.finish()
     }
 }
-/// See [`DetectorStateSummary`](crate::model::DetectorStateSummary)
+/// See [`DetectorStateSummary`](crate::model::DetectorStateSummary).
 pub mod detector_state_summary {
 
-    /// A builder for [`DetectorStateSummary`](crate::model::DetectorStateSummary)
-    #[non_exhaustive]
+    /// A builder for [`DetectorStateSummary`](crate::model::DetectorStateSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<std::string::String>,
@@ -205,7 +203,7 @@ pub mod detector_state_summary {
             self.state_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectorStateSummary`](crate::model::DetectorStateSummary)
+        /// Consumes the builder and constructs a [`DetectorStateSummary`](crate::model::DetectorStateSummary).
         pub fn build(self) -> crate::model::DetectorStateSummary {
             crate::model::DetectorStateSummary {
                 state_name: self.state_name,
@@ -214,7 +212,7 @@ pub mod detector_state_summary {
     }
 }
 impl DetectorStateSummary {
-    /// Creates a new builder-style object to manufacture [`DetectorStateSummary`](crate::model::DetectorStateSummary)
+    /// Creates a new builder-style object to manufacture [`DetectorStateSummary`](crate::model::DetectorStateSummary).
     pub fn builder() -> crate::model::detector_state_summary::Builder {
         crate::model::detector_state_summary::Builder::default()
     }
@@ -291,11 +289,10 @@ impl std::fmt::Debug for AlarmSummary {
         formatter.finish()
     }
 }
-/// See [`AlarmSummary`](crate::model::AlarmSummary)
+/// See [`AlarmSummary`](crate::model::AlarmSummary).
 pub mod alarm_summary {
 
-    /// A builder for [`AlarmSummary`](crate::model::AlarmSummary)
-    #[non_exhaustive]
+    /// A builder for [`AlarmSummary`](crate::model::AlarmSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -397,7 +394,7 @@ pub mod alarm_summary {
             self.last_update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`AlarmSummary`](crate::model::AlarmSummary)
+        /// Consumes the builder and constructs a [`AlarmSummary`](crate::model::AlarmSummary).
         pub fn build(self) -> crate::model::AlarmSummary {
             crate::model::AlarmSummary {
                 alarm_model_name: self.alarm_model_name,
@@ -411,7 +408,7 @@ pub mod alarm_summary {
     }
 }
 impl AlarmSummary {
-    /// Creates a new builder-style object to manufacture [`AlarmSummary`](crate::model::AlarmSummary)
+    /// Creates a new builder-style object to manufacture [`AlarmSummary`](crate::model::AlarmSummary).
     pub fn builder() -> crate::model::alarm_summary::Builder {
         crate::model::alarm_summary::Builder::default()
     }
@@ -550,11 +547,10 @@ impl std::fmt::Debug for Detector {
         formatter.finish()
     }
 }
-/// See [`Detector`](crate::model::Detector)
+/// See [`Detector`](crate::model::Detector).
 pub mod detector {
 
-    /// A builder for [`Detector`](crate::model::Detector)
-    #[non_exhaustive]
+    /// A builder for [`Detector`](crate::model::Detector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
@@ -640,7 +636,7 @@ pub mod detector {
             self.last_update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Detector`](crate::model::Detector)
+        /// Consumes the builder and constructs a [`Detector`](crate::model::Detector).
         pub fn build(self) -> crate::model::Detector {
             crate::model::Detector {
                 detector_model_name: self.detector_model_name,
@@ -654,7 +650,7 @@ pub mod detector {
     }
 }
 impl Detector {
-    /// Creates a new builder-style object to manufacture [`Detector`](crate::model::Detector)
+    /// Creates a new builder-style object to manufacture [`Detector`](crate::model::Detector).
     pub fn builder() -> crate::model::detector::Builder {
         crate::model::detector::Builder::default()
     }
@@ -694,11 +690,10 @@ impl std::fmt::Debug for DetectorState {
         formatter.finish()
     }
 }
-/// See [`DetectorState`](crate::model::DetectorState)
+/// See [`DetectorState`](crate::model::DetectorState).
 pub mod detector_state {
 
-    /// A builder for [`DetectorState`](crate::model::DetectorState)
-    #[non_exhaustive]
+    /// A builder for [`DetectorState`](crate::model::DetectorState).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<std::string::String>,
@@ -754,7 +749,7 @@ pub mod detector_state {
             self.timers = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectorState`](crate::model::DetectorState)
+        /// Consumes the builder and constructs a [`DetectorState`](crate::model::DetectorState).
         pub fn build(self) -> crate::model::DetectorState {
             crate::model::DetectorState {
                 state_name: self.state_name,
@@ -765,7 +760,7 @@ pub mod detector_state {
     }
 }
 impl DetectorState {
-    /// Creates a new builder-style object to manufacture [`DetectorState`](crate::model::DetectorState)
+    /// Creates a new builder-style object to manufacture [`DetectorState`](crate::model::DetectorState).
     pub fn builder() -> crate::model::detector_state::Builder {
         crate::model::detector_state::Builder::default()
     }
@@ -798,11 +793,10 @@ impl std::fmt::Debug for Timer {
         formatter.finish()
     }
 }
-/// See [`Timer`](crate::model::Timer)
+/// See [`Timer`](crate::model::Timer).
 pub mod timer {
 
-    /// A builder for [`Timer`](crate::model::Timer)
-    #[non_exhaustive]
+    /// A builder for [`Timer`](crate::model::Timer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -832,7 +826,7 @@ pub mod timer {
             self.timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`Timer`](crate::model::Timer)
+        /// Consumes the builder and constructs a [`Timer`](crate::model::Timer).
         pub fn build(self) -> crate::model::Timer {
             crate::model::Timer {
                 name: self.name,
@@ -842,7 +836,7 @@ pub mod timer {
     }
 }
 impl Timer {
-    /// Creates a new builder-style object to manufacture [`Timer`](crate::model::Timer)
+    /// Creates a new builder-style object to manufacture [`Timer`](crate::model::Timer).
     pub fn builder() -> crate::model::timer::Builder {
         crate::model::timer::Builder::default()
     }
@@ -875,11 +869,10 @@ impl std::fmt::Debug for Variable {
         formatter.finish()
     }
 }
-/// See [`Variable`](crate::model::Variable)
+/// See [`Variable`](crate::model::Variable).
 pub mod variable {
 
-    /// A builder for [`Variable`](crate::model::Variable)
-    #[non_exhaustive]
+    /// A builder for [`Variable`](crate::model::Variable).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -906,7 +899,7 @@ pub mod variable {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Variable`](crate::model::Variable)
+        /// Consumes the builder and constructs a [`Variable`](crate::model::Variable).
         pub fn build(self) -> crate::model::Variable {
             crate::model::Variable {
                 name: self.name,
@@ -916,7 +909,7 @@ pub mod variable {
     }
 }
 impl Variable {
-    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable)
+    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
     pub fn builder() -> crate::model::variable::Builder {
         crate::model::variable::Builder::default()
     }
@@ -984,11 +977,10 @@ impl std::fmt::Debug for Alarm {
         formatter.finish()
     }
 }
-/// See [`Alarm`](crate::model::Alarm)
+/// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
 
-    /// A builder for [`Alarm`](crate::model::Alarm)
-    #[non_exhaustive]
+    /// A builder for [`Alarm`](crate::model::Alarm).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
@@ -1085,7 +1077,7 @@ pub mod alarm {
             self.last_update_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Alarm`](crate::model::Alarm)
+        /// Consumes the builder and constructs a [`Alarm`](crate::model::Alarm).
         pub fn build(self) -> crate::model::Alarm {
             crate::model::Alarm {
                 alarm_model_name: self.alarm_model_name,
@@ -1100,7 +1092,7 @@ pub mod alarm {
     }
 }
 impl Alarm {
-    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm)
+    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
     pub fn builder() -> crate::model::alarm::Builder {
         crate::model::alarm::Builder::default()
     }
@@ -1163,11 +1155,10 @@ impl std::fmt::Debug for AlarmState {
         formatter.finish()
     }
 }
-/// See [`AlarmState`](crate::model::AlarmState)
+/// See [`AlarmState`](crate::model::AlarmState).
 pub mod alarm_state {
 
-    /// A builder for [`AlarmState`](crate::model::AlarmState)
-    #[non_exhaustive]
+    /// A builder for [`AlarmState`](crate::model::AlarmState).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<crate::model::AlarmStateName>,
@@ -1244,7 +1235,7 @@ pub mod alarm_state {
             self.system_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`AlarmState`](crate::model::AlarmState)
+        /// Consumes the builder and constructs a [`AlarmState`](crate::model::AlarmState).
         pub fn build(self) -> crate::model::AlarmState {
             crate::model::AlarmState {
                 state_name: self.state_name,
@@ -1256,7 +1247,7 @@ pub mod alarm_state {
     }
 }
 impl AlarmState {
-    /// Creates a new builder-style object to manufacture [`AlarmState`](crate::model::AlarmState)
+    /// Creates a new builder-style object to manufacture [`AlarmState`](crate::model::AlarmState).
     pub fn builder() -> crate::model::alarm_state::Builder {
         crate::model::alarm_state::Builder::default()
     }
@@ -1294,11 +1285,10 @@ impl std::fmt::Debug for SystemEvent {
         formatter.finish()
     }
 }
-/// See [`SystemEvent`](crate::model::SystemEvent)
+/// See [`SystemEvent`](crate::model::SystemEvent).
 pub mod system_event {
 
-    /// A builder for [`SystemEvent`](crate::model::SystemEvent)
-    #[non_exhaustive]
+    /// A builder for [`SystemEvent`](crate::model::SystemEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
@@ -1335,7 +1325,7 @@ pub mod system_event {
             self.state_change_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`SystemEvent`](crate::model::SystemEvent)
+        /// Consumes the builder and constructs a [`SystemEvent`](crate::model::SystemEvent).
         pub fn build(self) -> crate::model::SystemEvent {
             crate::model::SystemEvent {
                 event_type: self.event_type,
@@ -1345,7 +1335,7 @@ pub mod system_event {
     }
 }
 impl SystemEvent {
-    /// Creates a new builder-style object to manufacture [`SystemEvent`](crate::model::SystemEvent)
+    /// Creates a new builder-style object to manufacture [`SystemEvent`](crate::model::SystemEvent).
     pub fn builder() -> crate::model::system_event::Builder {
         crate::model::system_event::Builder::default()
     }
@@ -1371,11 +1361,10 @@ impl std::fmt::Debug for StateChangeConfiguration {
         formatter.finish()
     }
 }
-/// See [`StateChangeConfiguration`](crate::model::StateChangeConfiguration)
+/// See [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
 pub mod state_change_configuration {
 
-    /// A builder for [`StateChangeConfiguration`](crate::model::StateChangeConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trigger_type: std::option::Option<crate::model::TriggerType>,
@@ -1394,7 +1383,7 @@ pub mod state_change_configuration {
             self.trigger_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`StateChangeConfiguration`](crate::model::StateChangeConfiguration)
+        /// Consumes the builder and constructs a [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
         pub fn build(self) -> crate::model::StateChangeConfiguration {
             crate::model::StateChangeConfiguration {
                 trigger_type: self.trigger_type,
@@ -1403,7 +1392,7 @@ pub mod state_change_configuration {
     }
 }
 impl StateChangeConfiguration {
-    /// Creates a new builder-style object to manufacture [`StateChangeConfiguration`](crate::model::StateChangeConfiguration)
+    /// Creates a new builder-style object to manufacture [`StateChangeConfiguration`](crate::model::StateChangeConfiguration).
     pub fn builder() -> crate::model::state_change_configuration::Builder {
         crate::model::state_change_configuration::Builder::default()
     }
@@ -1608,11 +1597,10 @@ impl std::fmt::Debug for CustomerAction {
         formatter.finish()
     }
 }
-/// See [`CustomerAction`](crate::model::CustomerAction)
+/// See [`CustomerAction`](crate::model::CustomerAction).
 pub mod customer_action {
 
-    /// A builder for [`CustomerAction`](crate::model::CustomerAction)
-    #[non_exhaustive]
+    /// A builder for [`CustomerAction`](crate::model::CustomerAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_name: std::option::Option<crate::model::CustomerActionName>,
@@ -1737,7 +1725,7 @@ pub mod customer_action {
             self.reset_action_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomerAction`](crate::model::CustomerAction)
+        /// Consumes the builder and constructs a [`CustomerAction`](crate::model::CustomerAction).
         pub fn build(self) -> crate::model::CustomerAction {
             crate::model::CustomerAction {
                 action_name: self.action_name,
@@ -1751,7 +1739,7 @@ pub mod customer_action {
     }
 }
 impl CustomerAction {
-    /// Creates a new builder-style object to manufacture [`CustomerAction`](crate::model::CustomerAction)
+    /// Creates a new builder-style object to manufacture [`CustomerAction`](crate::model::CustomerAction).
     pub fn builder() -> crate::model::customer_action::Builder {
         crate::model::customer_action::Builder::default()
     }
@@ -1777,11 +1765,10 @@ impl std::fmt::Debug for ResetActionConfiguration {
         formatter.finish()
     }
 }
-/// See [`ResetActionConfiguration`](crate::model::ResetActionConfiguration)
+/// See [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
 pub mod reset_action_configuration {
 
-    /// A builder for [`ResetActionConfiguration`](crate::model::ResetActionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
@@ -1797,14 +1784,14 @@ pub mod reset_action_configuration {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResetActionConfiguration`](crate::model::ResetActionConfiguration)
+        /// Consumes the builder and constructs a [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
         pub fn build(self) -> crate::model::ResetActionConfiguration {
             crate::model::ResetActionConfiguration { note: self.note }
         }
     }
 }
 impl ResetActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ResetActionConfiguration`](crate::model::ResetActionConfiguration)
+    /// Creates a new builder-style object to manufacture [`ResetActionConfiguration`](crate::model::ResetActionConfiguration).
     pub fn builder() -> crate::model::reset_action_configuration::Builder {
         crate::model::reset_action_configuration::Builder::default()
     }
@@ -1830,11 +1817,10 @@ impl std::fmt::Debug for AcknowledgeActionConfiguration {
         formatter.finish()
     }
 }
-/// See [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration)
+/// See [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
 pub mod acknowledge_action_configuration {
 
-    /// A builder for [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
@@ -1850,14 +1836,14 @@ pub mod acknowledge_action_configuration {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration)
+        /// Consumes the builder and constructs a [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
         pub fn build(self) -> crate::model::AcknowledgeActionConfiguration {
             crate::model::AcknowledgeActionConfiguration { note: self.note }
         }
     }
 }
 impl AcknowledgeActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration)
+    /// Creates a new builder-style object to manufacture [`AcknowledgeActionConfiguration`](crate::model::AcknowledgeActionConfiguration).
     pub fn builder() -> crate::model::acknowledge_action_configuration::Builder {
         crate::model::acknowledge_action_configuration::Builder::default()
     }
@@ -1883,11 +1869,10 @@ impl std::fmt::Debug for DisableActionConfiguration {
         formatter.finish()
     }
 }
-/// See [`DisableActionConfiguration`](crate::model::DisableActionConfiguration)
+/// See [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
 pub mod disable_action_configuration {
 
-    /// A builder for [`DisableActionConfiguration`](crate::model::DisableActionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
@@ -1903,14 +1888,14 @@ pub mod disable_action_configuration {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisableActionConfiguration`](crate::model::DisableActionConfiguration)
+        /// Consumes the builder and constructs a [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
         pub fn build(self) -> crate::model::DisableActionConfiguration {
             crate::model::DisableActionConfiguration { note: self.note }
         }
     }
 }
 impl DisableActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`DisableActionConfiguration`](crate::model::DisableActionConfiguration)
+    /// Creates a new builder-style object to manufacture [`DisableActionConfiguration`](crate::model::DisableActionConfiguration).
     pub fn builder() -> crate::model::disable_action_configuration::Builder {
         crate::model::disable_action_configuration::Builder::default()
     }
@@ -1936,11 +1921,10 @@ impl std::fmt::Debug for EnableActionConfiguration {
         formatter.finish()
     }
 }
-/// See [`EnableActionConfiguration`](crate::model::EnableActionConfiguration)
+/// See [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
 pub mod enable_action_configuration {
 
-    /// A builder for [`EnableActionConfiguration`](crate::model::EnableActionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) note: std::option::Option<std::string::String>,
@@ -1956,14 +1940,14 @@ pub mod enable_action_configuration {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableActionConfiguration`](crate::model::EnableActionConfiguration)
+        /// Consumes the builder and constructs a [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
         pub fn build(self) -> crate::model::EnableActionConfiguration {
             crate::model::EnableActionConfiguration { note: self.note }
         }
     }
 }
 impl EnableActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EnableActionConfiguration`](crate::model::EnableActionConfiguration)
+    /// Creates a new builder-style object to manufacture [`EnableActionConfiguration`](crate::model::EnableActionConfiguration).
     pub fn builder() -> crate::model::enable_action_configuration::Builder {
         crate::model::enable_action_configuration::Builder::default()
     }
@@ -1996,11 +1980,10 @@ impl std::fmt::Debug for SnoozeActionConfiguration {
         formatter.finish()
     }
 }
-/// See [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration)
+/// See [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
 pub mod snooze_action_configuration {
 
-    /// A builder for [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snooze_duration: std::option::Option<i32>,
@@ -2027,7 +2010,7 @@ pub mod snooze_action_configuration {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration)
+        /// Consumes the builder and constructs a [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
         pub fn build(self) -> crate::model::SnoozeActionConfiguration {
             crate::model::SnoozeActionConfiguration {
                 snooze_duration: self.snooze_duration,
@@ -2037,7 +2020,7 @@ pub mod snooze_action_configuration {
     }
 }
 impl SnoozeActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration)
+    /// Creates a new builder-style object to manufacture [`SnoozeActionConfiguration`](crate::model::SnoozeActionConfiguration).
     pub fn builder() -> crate::model::snooze_action_configuration::Builder {
         crate::model::snooze_action_configuration::Builder::default()
     }
@@ -2132,11 +2115,10 @@ impl std::fmt::Debug for RuleEvaluation {
         formatter.finish()
     }
 }
-/// See [`RuleEvaluation`](crate::model::RuleEvaluation)
+/// See [`RuleEvaluation`](crate::model::RuleEvaluation).
 pub mod rule_evaluation {
 
-    /// A builder for [`RuleEvaluation`](crate::model::RuleEvaluation)
-    #[non_exhaustive]
+    /// A builder for [`RuleEvaluation`](crate::model::RuleEvaluation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simple_rule_evaluation: std::option::Option<crate::model::SimpleRuleEvaluation>,
@@ -2155,7 +2137,7 @@ pub mod rule_evaluation {
             self.simple_rule_evaluation = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleEvaluation`](crate::model::RuleEvaluation)
+        /// Consumes the builder and constructs a [`RuleEvaluation`](crate::model::RuleEvaluation).
         pub fn build(self) -> crate::model::RuleEvaluation {
             crate::model::RuleEvaluation {
                 simple_rule_evaluation: self.simple_rule_evaluation,
@@ -2164,7 +2146,7 @@ pub mod rule_evaluation {
     }
 }
 impl RuleEvaluation {
-    /// Creates a new builder-style object to manufacture [`RuleEvaluation`](crate::model::RuleEvaluation)
+    /// Creates a new builder-style object to manufacture [`RuleEvaluation`](crate::model::RuleEvaluation).
     pub fn builder() -> crate::model::rule_evaluation::Builder {
         crate::model::rule_evaluation::Builder::default()
     }
@@ -2204,11 +2186,10 @@ impl std::fmt::Debug for SimpleRuleEvaluation {
         formatter.finish()
     }
 }
-/// See [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation)
+/// See [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
 pub mod simple_rule_evaluation {
 
-    /// A builder for [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation)
-    #[non_exhaustive]
+    /// A builder for [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_property_value: std::option::Option<std::string::String>,
@@ -2255,7 +2236,7 @@ pub mod simple_rule_evaluation {
             self.threshold_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation)
+        /// Consumes the builder and constructs a [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
         pub fn build(self) -> crate::model::SimpleRuleEvaluation {
             crate::model::SimpleRuleEvaluation {
                 input_property_value: self.input_property_value,
@@ -2266,7 +2247,7 @@ pub mod simple_rule_evaluation {
     }
 }
 impl SimpleRuleEvaluation {
-    /// Creates a new builder-style object to manufacture [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation)
+    /// Creates a new builder-style object to manufacture [`SimpleRuleEvaluation`](crate::model::SimpleRuleEvaluation).
     pub fn builder() -> crate::model::simple_rule_evaluation::Builder {
         crate::model::simple_rule_evaluation::Builder::default()
     }
@@ -2384,11 +2365,10 @@ impl std::fmt::Debug for BatchUpdateDetectorErrorEntry {
         formatter.finish()
     }
 }
-/// See [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry)
+/// See [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
 pub mod batch_update_detector_error_entry {
 
-    /// A builder for [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry)
-    #[non_exhaustive]
+    /// A builder for [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -2432,7 +2412,7 @@ pub mod batch_update_detector_error_entry {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry)
+        /// Consumes the builder and constructs a [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
         pub fn build(self) -> crate::model::BatchUpdateDetectorErrorEntry {
             crate::model::BatchUpdateDetectorErrorEntry {
                 message_id: self.message_id,
@@ -2443,7 +2423,7 @@ pub mod batch_update_detector_error_entry {
     }
 }
 impl BatchUpdateDetectorErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorErrorEntry`](crate::model::BatchUpdateDetectorErrorEntry).
     pub fn builder() -> crate::model::batch_update_detector_error_entry::Builder {
         crate::model::batch_update_detector_error_entry::Builder::default()
     }
@@ -2563,11 +2543,10 @@ impl std::fmt::Debug for UpdateDetectorRequest {
         formatter.finish()
     }
 }
-/// See [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest)
+/// See [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
 pub mod update_detector_request {
 
-    /// A builder for [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -2622,7 +2601,7 @@ pub mod update_detector_request {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest)
+        /// Consumes the builder and constructs a [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
         pub fn build(self) -> crate::model::UpdateDetectorRequest {
             crate::model::UpdateDetectorRequest {
                 message_id: self.message_id,
@@ -2634,7 +2613,7 @@ pub mod update_detector_request {
     }
 }
 impl UpdateDetectorRequest {
-    /// Creates a new builder-style object to manufacture [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest)
+    /// Creates a new builder-style object to manufacture [`UpdateDetectorRequest`](crate::model::UpdateDetectorRequest).
     pub fn builder() -> crate::model::update_detector_request::Builder {
         crate::model::update_detector_request::Builder::default()
     }
@@ -2674,11 +2653,10 @@ impl std::fmt::Debug for DetectorStateDefinition {
         formatter.finish()
     }
 }
-/// See [`DetectorStateDefinition`](crate::model::DetectorStateDefinition)
+/// See [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
 pub mod detector_state_definition {
 
-    /// A builder for [`DetectorStateDefinition`](crate::model::DetectorStateDefinition)
-    #[non_exhaustive]
+    /// A builder for [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state_name: std::option::Option<std::string::String>,
@@ -2734,7 +2712,7 @@ pub mod detector_state_definition {
             self.timers = input;
             self
         }
-        /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::model::DetectorStateDefinition)
+        /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
         pub fn build(self) -> crate::model::DetectorStateDefinition {
             crate::model::DetectorStateDefinition {
                 state_name: self.state_name,
@@ -2745,7 +2723,7 @@ pub mod detector_state_definition {
     }
 }
 impl DetectorStateDefinition {
-    /// Creates a new builder-style object to manufacture [`DetectorStateDefinition`](crate::model::DetectorStateDefinition)
+    /// Creates a new builder-style object to manufacture [`DetectorStateDefinition`](crate::model::DetectorStateDefinition).
     pub fn builder() -> crate::model::detector_state_definition::Builder {
         crate::model::detector_state_definition::Builder::default()
     }
@@ -2778,11 +2756,10 @@ impl std::fmt::Debug for TimerDefinition {
         formatter.finish()
     }
 }
-/// See [`TimerDefinition`](crate::model::TimerDefinition)
+/// See [`TimerDefinition`](crate::model::TimerDefinition).
 pub mod timer_definition {
 
-    /// A builder for [`TimerDefinition`](crate::model::TimerDefinition)
-    #[non_exhaustive]
+    /// A builder for [`TimerDefinition`](crate::model::TimerDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2809,7 +2786,7 @@ pub mod timer_definition {
             self.seconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimerDefinition`](crate::model::TimerDefinition)
+        /// Consumes the builder and constructs a [`TimerDefinition`](crate::model::TimerDefinition).
         pub fn build(self) -> crate::model::TimerDefinition {
             crate::model::TimerDefinition {
                 name: self.name,
@@ -2819,7 +2796,7 @@ pub mod timer_definition {
     }
 }
 impl TimerDefinition {
-    /// Creates a new builder-style object to manufacture [`TimerDefinition`](crate::model::TimerDefinition)
+    /// Creates a new builder-style object to manufacture [`TimerDefinition`](crate::model::TimerDefinition).
     pub fn builder() -> crate::model::timer_definition::Builder {
         crate::model::timer_definition::Builder::default()
     }
@@ -2852,11 +2829,10 @@ impl std::fmt::Debug for VariableDefinition {
         formatter.finish()
     }
 }
-/// See [`VariableDefinition`](crate::model::VariableDefinition)
+/// See [`VariableDefinition`](crate::model::VariableDefinition).
 pub mod variable_definition {
 
-    /// A builder for [`VariableDefinition`](crate::model::VariableDefinition)
-    #[non_exhaustive]
+    /// A builder for [`VariableDefinition`](crate::model::VariableDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2883,7 +2859,7 @@ pub mod variable_definition {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`VariableDefinition`](crate::model::VariableDefinition)
+        /// Consumes the builder and constructs a [`VariableDefinition`](crate::model::VariableDefinition).
         pub fn build(self) -> crate::model::VariableDefinition {
             crate::model::VariableDefinition {
                 name: self.name,
@@ -2893,7 +2869,7 @@ pub mod variable_definition {
     }
 }
 impl VariableDefinition {
-    /// Creates a new builder-style object to manufacture [`VariableDefinition`](crate::model::VariableDefinition)
+    /// Creates a new builder-style object to manufacture [`VariableDefinition`](crate::model::VariableDefinition).
     pub fn builder() -> crate::model::variable_definition::Builder {
         crate::model::variable_definition::Builder::default()
     }
@@ -2940,11 +2916,10 @@ impl std::fmt::Debug for BatchAlarmActionErrorEntry {
         formatter.finish()
     }
 }
-/// See [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry)
+/// See [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
 pub mod batch_alarm_action_error_entry {
 
-    /// A builder for [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry)
-    #[non_exhaustive]
+    /// A builder for [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -2988,7 +2963,7 @@ pub mod batch_alarm_action_error_entry {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry)
+        /// Consumes the builder and constructs a [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
         pub fn build(self) -> crate::model::BatchAlarmActionErrorEntry {
             crate::model::BatchAlarmActionErrorEntry {
                 request_id: self.request_id,
@@ -2999,7 +2974,7 @@ pub mod batch_alarm_action_error_entry {
     }
 }
 impl BatchAlarmActionErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry)
+    /// Creates a new builder-style object to manufacture [`BatchAlarmActionErrorEntry`](crate::model::BatchAlarmActionErrorEntry).
     pub fn builder() -> crate::model::batch_alarm_action_error_entry::Builder {
         crate::model::batch_alarm_action_error_entry::Builder::default()
     }
@@ -3053,11 +3028,10 @@ impl std::fmt::Debug for SnoozeAlarmActionRequest {
         formatter.finish()
     }
 }
-/// See [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest)
+/// See [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
 pub mod snooze_alarm_action_request {
 
-    /// A builder for [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest)
-    #[non_exhaustive]
+    /// A builder for [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3120,7 +3094,7 @@ pub mod snooze_alarm_action_request {
             self.snooze_duration = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest)
+        /// Consumes the builder and constructs a [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
         pub fn build(self) -> crate::model::SnoozeAlarmActionRequest {
             crate::model::SnoozeAlarmActionRequest {
                 request_id: self.request_id,
@@ -3133,7 +3107,7 @@ pub mod snooze_alarm_action_request {
     }
 }
 impl SnoozeAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest)
+    /// Creates a new builder-style object to manufacture [`SnoozeAlarmActionRequest`](crate::model::SnoozeAlarmActionRequest).
     pub fn builder() -> crate::model::snooze_alarm_action_request::Builder {
         crate::model::snooze_alarm_action_request::Builder::default()
     }
@@ -3180,11 +3154,10 @@ impl std::fmt::Debug for ResetAlarmActionRequest {
         formatter.finish()
     }
 }
-/// See [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest)
+/// See [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
 pub mod reset_alarm_action_request {
 
-    /// A builder for [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest)
-    #[non_exhaustive]
+    /// A builder for [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3236,7 +3209,7 @@ pub mod reset_alarm_action_request {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest)
+        /// Consumes the builder and constructs a [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
         pub fn build(self) -> crate::model::ResetAlarmActionRequest {
             crate::model::ResetAlarmActionRequest {
                 request_id: self.request_id,
@@ -3248,7 +3221,7 @@ pub mod reset_alarm_action_request {
     }
 }
 impl ResetAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest)
+    /// Creates a new builder-style object to manufacture [`ResetAlarmActionRequest`](crate::model::ResetAlarmActionRequest).
     pub fn builder() -> crate::model::reset_alarm_action_request::Builder {
         crate::model::reset_alarm_action_request::Builder::default()
     }
@@ -3288,11 +3261,10 @@ impl std::fmt::Debug for BatchPutMessageErrorEntry {
         formatter.finish()
     }
 }
-/// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry)
+/// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
 pub mod batch_put_message_error_entry {
 
-    /// A builder for [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry)
-    #[non_exhaustive]
+    /// A builder for [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -3336,7 +3308,7 @@ pub mod batch_put_message_error_entry {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry)
+        /// Consumes the builder and constructs a [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
         pub fn build(self) -> crate::model::BatchPutMessageErrorEntry {
             crate::model::BatchPutMessageErrorEntry {
                 message_id: self.message_id,
@@ -3347,7 +3319,7 @@ pub mod batch_put_message_error_entry {
     }
 }
 impl BatchPutMessageErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry)
+    /// Creates a new builder-style object to manufacture [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
     pub fn builder() -> crate::model::batch_put_message_error_entry::Builder {
         crate::model::batch_put_message_error_entry::Builder::default()
     }
@@ -3394,11 +3366,10 @@ impl std::fmt::Debug for Message {
         formatter.finish()
     }
 }
-/// See [`Message`](crate::model::Message)
+/// See [`Message`](crate::model::Message).
 pub mod message {
 
-    /// A builder for [`Message`](crate::model::Message)
-    #[non_exhaustive]
+    /// A builder for [`Message`](crate::model::Message).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -3450,7 +3421,7 @@ pub mod message {
             self.timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`Message`](crate::model::Message)
+        /// Consumes the builder and constructs a [`Message`](crate::model::Message).
         pub fn build(self) -> crate::model::Message {
             crate::model::Message {
                 message_id: self.message_id,
@@ -3462,7 +3433,7 @@ pub mod message {
     }
 }
 impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message)
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
     pub fn builder() -> crate::model::message::Builder {
         crate::model::message::Builder::default()
     }
@@ -3488,11 +3459,10 @@ impl std::fmt::Debug for TimestampValue {
         formatter.finish()
     }
 }
-/// See [`TimestampValue`](crate::model::TimestampValue)
+/// See [`TimestampValue`](crate::model::TimestampValue).
 pub mod timestamp_value {
 
-    /// A builder for [`TimestampValue`](crate::model::TimestampValue)
-    #[non_exhaustive]
+    /// A builder for [`TimestampValue`](crate::model::TimestampValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_in_millis: std::option::Option<i64>,
@@ -3508,7 +3478,7 @@ pub mod timestamp_value {
             self.time_in_millis = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimestampValue`](crate::model::TimestampValue)
+        /// Consumes the builder and constructs a [`TimestampValue`](crate::model::TimestampValue).
         pub fn build(self) -> crate::model::TimestampValue {
             crate::model::TimestampValue {
                 time_in_millis: self.time_in_millis,
@@ -3517,7 +3487,7 @@ pub mod timestamp_value {
     }
 }
 impl TimestampValue {
-    /// Creates a new builder-style object to manufacture [`TimestampValue`](crate::model::TimestampValue)
+    /// Creates a new builder-style object to manufacture [`TimestampValue`](crate::model::TimestampValue).
     pub fn builder() -> crate::model::timestamp_value::Builder {
         crate::model::timestamp_value::Builder::default()
     }
@@ -3564,11 +3534,10 @@ impl std::fmt::Debug for EnableAlarmActionRequest {
         formatter.finish()
     }
 }
-/// See [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest)
+/// See [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
 pub mod enable_alarm_action_request {
 
-    /// A builder for [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest)
-    #[non_exhaustive]
+    /// A builder for [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3620,7 +3589,7 @@ pub mod enable_alarm_action_request {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest)
+        /// Consumes the builder and constructs a [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
         pub fn build(self) -> crate::model::EnableAlarmActionRequest {
             crate::model::EnableAlarmActionRequest {
                 request_id: self.request_id,
@@ -3632,7 +3601,7 @@ pub mod enable_alarm_action_request {
     }
 }
 impl EnableAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest)
+    /// Creates a new builder-style object to manufacture [`EnableAlarmActionRequest`](crate::model::EnableAlarmActionRequest).
     pub fn builder() -> crate::model::enable_alarm_action_request::Builder {
         crate::model::enable_alarm_action_request::Builder::default()
     }
@@ -3679,11 +3648,10 @@ impl std::fmt::Debug for DisableAlarmActionRequest {
         formatter.finish()
     }
 }
-/// See [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest)
+/// See [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
 pub mod disable_alarm_action_request {
 
-    /// A builder for [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest)
-    #[non_exhaustive]
+    /// A builder for [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -3735,7 +3703,7 @@ pub mod disable_alarm_action_request {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest)
+        /// Consumes the builder and constructs a [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
         pub fn build(self) -> crate::model::DisableAlarmActionRequest {
             crate::model::DisableAlarmActionRequest {
                 request_id: self.request_id,
@@ -3747,7 +3715,7 @@ pub mod disable_alarm_action_request {
     }
 }
 impl DisableAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest)
+    /// Creates a new builder-style object to manufacture [`DisableAlarmActionRequest`](crate::model::DisableAlarmActionRequest).
     pub fn builder() -> crate::model::disable_alarm_action_request::Builder {
         crate::model::disable_alarm_action_request::Builder::default()
     }
@@ -3787,11 +3755,10 @@ impl std::fmt::Debug for BatchDeleteDetectorErrorEntry {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
+/// See [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
 pub mod batch_delete_detector_error_entry {
 
-    /// A builder for [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -3835,7 +3802,7 @@ pub mod batch_delete_detector_error_entry {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
+        /// Consumes the builder and constructs a [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
         pub fn build(self) -> crate::model::BatchDeleteDetectorErrorEntry {
             crate::model::BatchDeleteDetectorErrorEntry {
                 message_id: self.message_id,
@@ -3846,7 +3813,7 @@ pub mod batch_delete_detector_error_entry {
     }
 }
 impl BatchDeleteDetectorErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorErrorEntry`](crate::model::BatchDeleteDetectorErrorEntry).
     pub fn builder() -> crate::model::batch_delete_detector_error_entry::Builder {
         crate::model::batch_delete_detector_error_entry::Builder::default()
     }
@@ -3886,11 +3853,10 @@ impl std::fmt::Debug for DeleteDetectorRequest {
         formatter.finish()
     }
 }
-/// See [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
+/// See [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
 pub mod delete_detector_request {
 
-    /// A builder for [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -3931,7 +3897,7 @@ pub mod delete_detector_request {
             self.key_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
+        /// Consumes the builder and constructs a [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
         pub fn build(self) -> crate::model::DeleteDetectorRequest {
             crate::model::DeleteDetectorRequest {
                 message_id: self.message_id,
@@ -3942,7 +3908,7 @@ pub mod delete_detector_request {
     }
 }
 impl DeleteDetectorRequest {
-    /// Creates a new builder-style object to manufacture [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest)
+    /// Creates a new builder-style object to manufacture [`DeleteDetectorRequest`](crate::model::DeleteDetectorRequest).
     pub fn builder() -> crate::model::delete_detector_request::Builder {
         crate::model::delete_detector_request::Builder::default()
     }
@@ -3989,11 +3955,10 @@ impl std::fmt::Debug for AcknowledgeAlarmActionRequest {
         formatter.finish()
     }
 }
-/// See [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest)
+/// See [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
 pub mod acknowledge_alarm_action_request {
 
-    /// A builder for [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest)
-    #[non_exhaustive]
+    /// A builder for [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -4045,7 +4010,7 @@ pub mod acknowledge_alarm_action_request {
             self.note = input;
             self
         }
-        /// Consumes the builder and constructs a [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest)
+        /// Consumes the builder and constructs a [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
         pub fn build(self) -> crate::model::AcknowledgeAlarmActionRequest {
             crate::model::AcknowledgeAlarmActionRequest {
                 request_id: self.request_id,
@@ -4057,7 +4022,7 @@ pub mod acknowledge_alarm_action_request {
     }
 }
 impl AcknowledgeAlarmActionRequest {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest)
+    /// Creates a new builder-style object to manufacture [`AcknowledgeAlarmActionRequest`](crate::model::AcknowledgeAlarmActionRequest).
     pub fn builder() -> crate::model::acknowledge_alarm_action_request::Builder {
         crate::model::acknowledge_alarm_action_request::Builder::default()
     }

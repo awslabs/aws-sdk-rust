@@ -9,22 +9,21 @@ impl std::fmt::Debug for PutResourceAttributesOutput {
         formatter.finish()
     }
 }
-/// See [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput)
+/// See [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
 pub mod put_resource_attributes_output {
 
-    /// A builder for [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput)
+        /// Consumes the builder and constructs a [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
         pub fn build(self) -> crate::output::PutResourceAttributesOutput {
             crate::output::PutResourceAttributesOutput {}
         }
     }
 }
 impl PutResourceAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput)
+    /// Creates a new builder-style object to manufacture [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput).
     pub fn builder() -> crate::output::put_resource_attributes_output::Builder {
         crate::output::put_resource_attributes_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for NotifyMigrationTaskStateOutput {
         formatter.finish()
     }
 }
-/// See [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput)
+/// See [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
 pub mod notify_migration_task_state_output {
 
-    /// A builder for [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput)
+        /// Consumes the builder and constructs a [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
         pub fn build(self) -> crate::output::NotifyMigrationTaskStateOutput {
             crate::output::NotifyMigrationTaskStateOutput {}
         }
     }
 }
 impl NotifyMigrationTaskStateOutput {
-    /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput)
+    /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput).
     pub fn builder() -> crate::output::notify_migration_task_state_output::Builder {
         crate::output::notify_migration_task_state_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for NotifyApplicationStateOutput {
         formatter.finish()
     }
 }
-/// See [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput)
+/// See [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
 pub mod notify_application_state_output {
 
-    /// A builder for [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput)
+        /// Consumes the builder and constructs a [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
         pub fn build(self) -> crate::output::NotifyApplicationStateOutput {
             crate::output::NotifyApplicationStateOutput {}
         }
     }
 }
 impl NotifyApplicationStateOutput {
-    /// Creates a new builder-style object to manufacture [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput)
+    /// Creates a new builder-style object to manufacture [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput).
     pub fn builder() -> crate::output::notify_application_state_output::Builder {
         crate::output::notify_application_state_output::Builder::default()
     }
@@ -125,11 +122,10 @@ impl std::fmt::Debug for ListProgressUpdateStreamsOutput {
         formatter.finish()
     }
 }
-/// See [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput)
+/// See [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
 pub mod list_progress_update_streams_output {
 
-    /// A builder for [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_update_stream_summary_list:
@@ -169,7 +165,7 @@ pub mod list_progress_update_streams_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput)
+        /// Consumes the builder and constructs a [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
         pub fn build(self) -> crate::output::ListProgressUpdateStreamsOutput {
             crate::output::ListProgressUpdateStreamsOutput {
                 progress_update_stream_summary_list: self.progress_update_stream_summary_list,
@@ -179,7 +175,7 @@ pub mod list_progress_update_streams_output {
     }
 }
 impl ListProgressUpdateStreamsOutput {
-    /// Creates a new builder-style object to manufacture [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput)
+    /// Creates a new builder-style object to manufacture [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput).
     pub fn builder() -> crate::output::list_progress_update_streams_output::Builder {
         crate::output::list_progress_update_streams_output::Builder::default()
     }
@@ -218,11 +214,10 @@ impl std::fmt::Debug for ListMigrationTasksOutput {
         formatter.finish()
     }
 }
-/// See [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput)
+/// See [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
 pub mod list_migration_tasks_output {
 
-    /// A builder for [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -262,7 +257,7 @@ pub mod list_migration_tasks_output {
             self.migration_task_summary_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput)
+        /// Consumes the builder and constructs a [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
         pub fn build(self) -> crate::output::ListMigrationTasksOutput {
             crate::output::ListMigrationTasksOutput {
                 next_token: self.next_token,
@@ -272,7 +267,7 @@ pub mod list_migration_tasks_output {
     }
 }
 impl ListMigrationTasksOutput {
-    /// Creates a new builder-style object to manufacture [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput)
+    /// Creates a new builder-style object to manufacture [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput).
     pub fn builder() -> crate::output::list_migration_tasks_output::Builder {
         crate::output::list_migration_tasks_output::Builder::default()
     }
@@ -308,11 +303,10 @@ impl std::fmt::Debug for ListDiscoveredResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
+/// See [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
 pub mod list_discovered_resources_output {
 
-    /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -349,7 +343,7 @@ pub mod list_discovered_resources_output {
             self.discovered_resource_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
+        /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
         pub fn build(self) -> crate::output::ListDiscoveredResourcesOutput {
             crate::output::ListDiscoveredResourcesOutput {
                 next_token: self.next_token,
@@ -359,7 +353,7 @@ pub mod list_discovered_resources_output {
     }
 }
 impl ListDiscoveredResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput).
     pub fn builder() -> crate::output::list_discovered_resources_output::Builder {
         crate::output::list_discovered_resources_output::Builder::default()
     }
@@ -392,11 +386,10 @@ impl std::fmt::Debug for ListCreatedArtifactsOutput {
         formatter.finish()
     }
 }
-/// See [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput)
+/// See [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
 pub mod list_created_artifacts_output {
 
-    /// A builder for [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -433,7 +426,7 @@ pub mod list_created_artifacts_output {
             self.created_artifact_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput)
+        /// Consumes the builder and constructs a [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
         pub fn build(self) -> crate::output::ListCreatedArtifactsOutput {
             crate::output::ListCreatedArtifactsOutput {
                 next_token: self.next_token,
@@ -443,7 +436,7 @@ pub mod list_created_artifacts_output {
     }
 }
 impl ListCreatedArtifactsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput)
+    /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput).
     pub fn builder() -> crate::output::list_created_artifacts_output::Builder {
         crate::output::list_created_artifacts_output::Builder::default()
     }
@@ -476,11 +469,10 @@ impl std::fmt::Debug for ListApplicationStatesOutput {
         formatter.finish()
     }
 }
-/// See [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput)
+/// See [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
 pub mod list_application_states_output {
 
-    /// A builder for [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_state_list:
@@ -517,7 +509,7 @@ pub mod list_application_states_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput)
+        /// Consumes the builder and constructs a [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
         pub fn build(self) -> crate::output::ListApplicationStatesOutput {
             crate::output::ListApplicationStatesOutput {
                 application_state_list: self.application_state_list,
@@ -527,7 +519,7 @@ pub mod list_application_states_output {
     }
 }
 impl ListApplicationStatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput).
     pub fn builder() -> crate::output::list_application_states_output::Builder {
         crate::output::list_application_states_output::Builder::default()
     }
@@ -543,22 +535,21 @@ impl std::fmt::Debug for ImportMigrationTaskOutput {
         formatter.finish()
     }
 }
-/// See [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput)
+/// See [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
 pub mod import_migration_task_output {
 
-    /// A builder for [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput)
+        /// Consumes the builder and constructs a [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
         pub fn build(self) -> crate::output::ImportMigrationTaskOutput {
             crate::output::ImportMigrationTaskOutput {}
         }
     }
 }
 impl ImportMigrationTaskOutput {
-    /// Creates a new builder-style object to manufacture [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput)
+    /// Creates a new builder-style object to manufacture [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput).
     pub fn builder() -> crate::output::import_migration_task_output::Builder {
         crate::output::import_migration_task_output::Builder::default()
     }
@@ -574,22 +565,21 @@ impl std::fmt::Debug for DisassociateDiscoveredResourceOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput)
+/// See [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
 pub mod disassociate_discovered_resource_output {
 
-    /// A builder for [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput)
+        /// Consumes the builder and constructs a [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
         pub fn build(self) -> crate::output::DisassociateDiscoveredResourceOutput {
             crate::output::DisassociateDiscoveredResourceOutput {}
         }
     }
 }
 impl DisassociateDiscoveredResourceOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput).
     pub fn builder() -> crate::output::disassociate_discovered_resource_output::Builder {
         crate::output::disassociate_discovered_resource_output::Builder::default()
     }
@@ -605,22 +595,21 @@ impl std::fmt::Debug for DisassociateCreatedArtifactOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput)
+/// See [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
 pub mod disassociate_created_artifact_output {
 
-    /// A builder for [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput)
+        /// Consumes the builder and constructs a [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
         pub fn build(self) -> crate::output::DisassociateCreatedArtifactOutput {
             crate::output::DisassociateCreatedArtifactOutput {}
         }
     }
 }
 impl DisassociateCreatedArtifactOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput).
     pub fn builder() -> crate::output::disassociate_created_artifact_output::Builder {
         crate::output::disassociate_created_artifact_output::Builder::default()
     }
@@ -646,11 +635,10 @@ impl std::fmt::Debug for DescribeMigrationTaskOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput)
+/// See [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
 pub mod describe_migration_task_output {
 
-    /// A builder for [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) migration_task: std::option::Option<crate::model::MigrationTask>,
@@ -669,7 +657,7 @@ pub mod describe_migration_task_output {
             self.migration_task = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput)
+        /// Consumes the builder and constructs a [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
         pub fn build(self) -> crate::output::DescribeMigrationTaskOutput {
             crate::output::DescribeMigrationTaskOutput {
                 migration_task: self.migration_task,
@@ -678,7 +666,7 @@ pub mod describe_migration_task_output {
     }
 }
 impl DescribeMigrationTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput).
     pub fn builder() -> crate::output::describe_migration_task_output::Builder {
         crate::output::describe_migration_task_output::Builder::default()
     }
@@ -711,11 +699,10 @@ impl std::fmt::Debug for DescribeApplicationStateOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput)
+/// See [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
 pub mod describe_application_state_output {
 
-    /// A builder for [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_status: std::option::Option<crate::model::ApplicationStatus>,
@@ -748,7 +735,7 @@ pub mod describe_application_state_output {
             self.last_updated_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput)
+        /// Consumes the builder and constructs a [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
         pub fn build(self) -> crate::output::DescribeApplicationStateOutput {
             crate::output::DescribeApplicationStateOutput {
                 application_status: self.application_status,
@@ -758,7 +745,7 @@ pub mod describe_application_state_output {
     }
 }
 impl DescribeApplicationStateOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput).
     pub fn builder() -> crate::output::describe_application_state_output::Builder {
         crate::output::describe_application_state_output::Builder::default()
     }
@@ -774,22 +761,21 @@ impl std::fmt::Debug for DeleteProgressUpdateStreamOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput)
+/// See [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
 pub mod delete_progress_update_stream_output {
 
-    /// A builder for [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput)
+        /// Consumes the builder and constructs a [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
         pub fn build(self) -> crate::output::DeleteProgressUpdateStreamOutput {
             crate::output::DeleteProgressUpdateStreamOutput {}
         }
     }
 }
 impl DeleteProgressUpdateStreamOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput).
     pub fn builder() -> crate::output::delete_progress_update_stream_output::Builder {
         crate::output::delete_progress_update_stream_output::Builder::default()
     }
@@ -805,22 +791,21 @@ impl std::fmt::Debug for CreateProgressUpdateStreamOutput {
         formatter.finish()
     }
 }
-/// See [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput)
+/// See [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
 pub mod create_progress_update_stream_output {
 
-    /// A builder for [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput)
+        /// Consumes the builder and constructs a [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
         pub fn build(self) -> crate::output::CreateProgressUpdateStreamOutput {
             crate::output::CreateProgressUpdateStreamOutput {}
         }
     }
 }
 impl CreateProgressUpdateStreamOutput {
-    /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput)
+    /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput).
     pub fn builder() -> crate::output::create_progress_update_stream_output::Builder {
         crate::output::create_progress_update_stream_output::Builder::default()
     }
@@ -836,22 +821,21 @@ impl std::fmt::Debug for AssociateDiscoveredResourceOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput)
+/// See [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
 pub mod associate_discovered_resource_output {
 
-    /// A builder for [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput)
+        /// Consumes the builder and constructs a [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
         pub fn build(self) -> crate::output::AssociateDiscoveredResourceOutput {
             crate::output::AssociateDiscoveredResourceOutput {}
         }
     }
 }
 impl AssociateDiscoveredResourceOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput).
     pub fn builder() -> crate::output::associate_discovered_resource_output::Builder {
         crate::output::associate_discovered_resource_output::Builder::default()
     }
@@ -867,22 +851,21 @@ impl std::fmt::Debug for AssociateCreatedArtifactOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput)
+/// See [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
 pub mod associate_created_artifact_output {
 
-    /// A builder for [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput)
+        /// Consumes the builder and constructs a [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
         pub fn build(self) -> crate::output::AssociateCreatedArtifactOutput {
             crate::output::AssociateCreatedArtifactOutput {}
         }
     }
 }
 impl AssociateCreatedArtifactOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput).
     pub fn builder() -> crate::output::associate_created_artifact_output::Builder {
         crate::output::associate_created_artifact_output::Builder::default()
     }

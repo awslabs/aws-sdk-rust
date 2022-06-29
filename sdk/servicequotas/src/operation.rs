@@ -10,7 +10,7 @@ pub struct AssociateServiceQuotaTemplate {
     _private: (),
 }
 impl AssociateServiceQuotaTemplate {
-    /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateInput`](crate::input::AssociateServiceQuotaTemplateInput)
+    /// Creates a new builder-style object to manufacture [`AssociateServiceQuotaTemplateInput`](crate::input::AssociateServiceQuotaTemplateInput).
     pub fn builder() -> crate::input::associate_service_quota_template_input::Builder {
         crate::input::associate_service_quota_template_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteServiceQuotaIncreaseRequestFromTemplate {
     _private: (),
 }
 impl DeleteServiceQuotaIncreaseRequestFromTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput).
     pub fn builder(
     ) -> crate::input::delete_service_quota_increase_request_from_template_input::Builder {
         crate::input::delete_service_quota_increase_request_from_template_input::Builder::default()
@@ -83,7 +83,7 @@ pub struct DisassociateServiceQuotaTemplate {
     _private: (),
 }
 impl DisassociateServiceQuotaTemplate {
-    /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateInput`](crate::input::DisassociateServiceQuotaTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateServiceQuotaTemplateInput`](crate::input::DisassociateServiceQuotaTemplateInput).
     pub fn builder() -> crate::input::disassociate_service_quota_template_input::Builder {
         crate::input::disassociate_service_quota_template_input::Builder::default()
     }
@@ -117,7 +117,7 @@ pub struct GetAssociationForServiceQuotaTemplate {
     _private: (),
 }
 impl GetAssociationForServiceQuotaTemplate {
-    /// Creates a new builder-style object to manufacture [`GetAssociationForServiceQuotaTemplateInput`](crate::input::GetAssociationForServiceQuotaTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetAssociationForServiceQuotaTemplateInput`](crate::input::GetAssociationForServiceQuotaTemplateInput).
     pub fn builder() -> crate::input::get_association_for_service_quota_template_input::Builder {
         crate::input::get_association_for_service_quota_template_input::Builder::default()
     }
@@ -153,7 +153,7 @@ pub struct GetAWSDefaultServiceQuota {
     _private: (),
 }
 impl GetAWSDefaultServiceQuota {
-    /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaInput`](crate::input::GetAwsDefaultServiceQuotaInput)
+    /// Creates a new builder-style object to manufacture [`GetAwsDefaultServiceQuotaInput`](crate::input::GetAwsDefaultServiceQuotaInput).
     pub fn builder() -> crate::input::get_aws_default_service_quota_input::Builder {
         crate::input::get_aws_default_service_quota_input::Builder::default()
     }
@@ -187,7 +187,7 @@ pub struct GetRequestedServiceQuotaChange {
     _private: (),
 }
 impl GetRequestedServiceQuotaChange {
-    /// Creates a new builder-style object to manufacture [`GetRequestedServiceQuotaChangeInput`](crate::input::GetRequestedServiceQuotaChangeInput)
+    /// Creates a new builder-style object to manufacture [`GetRequestedServiceQuotaChangeInput`](crate::input::GetRequestedServiceQuotaChangeInput).
     pub fn builder() -> crate::input::get_requested_service_quota_change_input::Builder {
         crate::input::get_requested_service_quota_change_input::Builder::default()
     }
@@ -221,7 +221,7 @@ pub struct GetServiceQuota {
     _private: (),
 }
 impl GetServiceQuota {
-    /// Creates a new builder-style object to manufacture [`GetServiceQuotaInput`](crate::input::GetServiceQuotaInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceQuotaInput`](crate::input::GetServiceQuotaInput).
     pub fn builder() -> crate::input::get_service_quota_input::Builder {
         crate::input::get_service_quota_input::Builder::default()
     }
@@ -255,7 +255,7 @@ pub struct GetServiceQuotaIncreaseRequestFromTemplate {
     _private: (),
 }
 impl GetServiceQuotaIncreaseRequestFromTemplate {
-    /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput).
     pub fn builder() -> crate::input::get_service_quota_increase_request_from_template_input::Builder
     {
         crate::input::get_service_quota_increase_request_from_template_input::Builder::default()
@@ -294,7 +294,7 @@ pub struct ListAWSDefaultServiceQuotas {
     _private: (),
 }
 impl ListAWSDefaultServiceQuotas {
-    /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasInput`](crate::input::ListAwsDefaultServiceQuotasInput)
+    /// Creates a new builder-style object to manufacture [`ListAwsDefaultServiceQuotasInput`](crate::input::ListAwsDefaultServiceQuotasInput).
     pub fn builder() -> crate::input::list_aws_default_service_quotas_input::Builder {
         crate::input::list_aws_default_service_quotas_input::Builder::default()
     }
@@ -328,7 +328,7 @@ pub struct ListRequestedServiceQuotaChangeHistory {
     _private: (),
 }
 impl ListRequestedServiceQuotaChangeHistory {
-    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryInput`](crate::input::ListRequestedServiceQuotaChangeHistoryInput)
+    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryInput`](crate::input::ListRequestedServiceQuotaChangeHistoryInput).
     pub fn builder() -> crate::input::list_requested_service_quota_change_history_input::Builder {
         crate::input::list_requested_service_quota_change_history_input::Builder::default()
     }
@@ -366,7 +366,7 @@ pub struct ListRequestedServiceQuotaChangeHistoryByQuota {
     _private: (),
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuota {
-    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput)
+    /// Creates a new builder-style object to manufacture [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput).
     pub fn builder(
     ) -> crate::input::list_requested_service_quota_change_history_by_quota_input::Builder {
         crate::input::list_requested_service_quota_change_history_by_quota_input::Builder::default()
@@ -405,7 +405,7 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplate {
     _private: (),
 }
 impl ListServiceQuotaIncreaseRequestsInTemplate {
-    /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput)
+    /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput).
     pub fn builder() -> crate::input::list_service_quota_increase_requests_in_template_input::Builder
     {
         crate::input::list_service_quota_increase_requests_in_template_input::Builder::default()
@@ -444,7 +444,7 @@ pub struct ListServiceQuotas {
     _private: (),
 }
 impl ListServiceQuotas {
-    /// Creates a new builder-style object to manufacture [`ListServiceQuotasInput`](crate::input::ListServiceQuotasInput)
+    /// Creates a new builder-style object to manufacture [`ListServiceQuotasInput`](crate::input::ListServiceQuotasInput).
     pub fn builder() -> crate::input::list_service_quotas_input::Builder {
         crate::input::list_service_quotas_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct ListServices {
     _private: (),
 }
 impl ListServices {
-    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput)
+    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput).
     pub fn builder() -> crate::input::list_services_input::Builder {
         crate::input::list_services_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplate {
     _private: (),
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplate {
-    /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput)
+    /// Creates a new builder-style object to manufacture [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput).
     pub fn builder() -> crate::input::put_service_quota_increase_request_into_template_input::Builder
     {
         crate::input::put_service_quota_increase_request_into_template_input::Builder::default()
@@ -583,7 +583,7 @@ pub struct RequestServiceQuotaIncrease {
     _private: (),
 }
 impl RequestServiceQuotaIncrease {
-    /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseInput`](crate::input::RequestServiceQuotaIncreaseInput)
+    /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseInput`](crate::input::RequestServiceQuotaIncreaseInput).
     pub fn builder() -> crate::input::request_service_quota_increase_input::Builder {
         crate::input::request_service_quota_increase_input::Builder::default()
     }
@@ -617,7 +617,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -649,7 +649,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

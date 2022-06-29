@@ -48,11 +48,10 @@ impl std::fmt::Debug for Entitlement {
         formatter.finish()
     }
 }
-/// See [`Entitlement`](crate::model::Entitlement)
+/// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
 
-    /// A builder for [`Entitlement`](crate::model::Entitlement)
-    #[non_exhaustive]
+    /// A builder for [`Entitlement`](crate::model::Entitlement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
@@ -121,7 +120,7 @@ pub mod entitlement {
             self.expiration_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement)
+        /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement).
         pub fn build(self) -> crate::model::Entitlement {
             crate::model::Entitlement {
                 product_code: self.product_code,
@@ -134,7 +133,7 @@ pub mod entitlement {
     }
 }
 impl Entitlement {
-    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement)
+    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
     pub fn builder() -> crate::model::entitlement::Builder {
         crate::model::entitlement::Builder::default()
     }

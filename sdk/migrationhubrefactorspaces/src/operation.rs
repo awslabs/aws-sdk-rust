@@ -10,7 +10,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateEnvironment {
     _private: (),
 }
 impl CreateEnvironment {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
     pub fn builder() -> crate::input::create_environment_input::Builder {
         crate::input::create_environment_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateRoute {
     _private: (),
 }
 impl CreateRoute {
-    /// Creates a new builder-style object to manufacture [`CreateRouteInput`](crate::input::CreateRouteInput)
+    /// Creates a new builder-style object to manufacture [`CreateRouteInput`](crate::input::CreateRouteInput).
     pub fn builder() -> crate::input::create_route_input::Builder {
         crate::input::create_route_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateService {
     _private: (),
 }
 impl CreateService {
-    /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::input::CreateServiceInput)
+    /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::input::CreateServiceInput).
     pub fn builder() -> crate::input::create_service_input::Builder {
         crate::input::create_service_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeleteEnvironment {
     _private: (),
 }
 impl DeleteEnvironment {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
     pub fn builder() -> crate::input::delete_environment_input::Builder {
         crate::input::delete_environment_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteRoute {
     _private: (),
 }
 impl DeleteRoute {
-    /// Creates a new builder-style object to manufacture [`DeleteRouteInput`](crate::input::DeleteRouteInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRouteInput`](crate::input::DeleteRouteInput).
     pub fn builder() -> crate::input::delete_route_input::Builder {
         crate::input::delete_route_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct DeleteService {
     _private: (),
 }
 impl DeleteService {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceInput`](crate::input::DeleteServiceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteServiceInput`](crate::input::DeleteServiceInput).
     pub fn builder() -> crate::input::delete_service_input::Builder {
         crate::input::delete_service_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct GetApplication {
     _private: (),
 }
 impl GetApplication {
-    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput).
     pub fn builder() -> crate::input::get_application_input::Builder {
         crate::input::get_application_input::Builder::default()
     }
@@ -340,7 +340,7 @@ pub struct GetEnvironment {
     _private: (),
 }
 impl GetEnvironment {
-    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
     pub fn builder() -> crate::input::get_environment_input::Builder {
         crate::input::get_environment_input::Builder::default()
     }
@@ -372,7 +372,7 @@ pub struct GetResourcePolicy {
     _private: (),
 }
 impl GetResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
         crate::input::get_resource_policy_input::Builder::default()
     }
@@ -406,7 +406,7 @@ pub struct GetRoute {
     _private: (),
 }
 impl GetRoute {
-    /// Creates a new builder-style object to manufacture [`GetRouteInput`](crate::input::GetRouteInput)
+    /// Creates a new builder-style object to manufacture [`GetRouteInput`](crate::input::GetRouteInput).
     pub fn builder() -> crate::input::get_route_input::Builder {
         crate::input::get_route_input::Builder::default()
     }
@@ -437,7 +437,7 @@ pub struct GetService {
     _private: (),
 }
 impl GetService {
-    /// Creates a new builder-style object to manufacture [`GetServiceInput`](crate::input::GetServiceInput)
+    /// Creates a new builder-style object to manufacture [`GetServiceInput`](crate::input::GetServiceInput).
     pub fn builder() -> crate::input::get_service_input::Builder {
         crate::input::get_service_input::Builder::default()
     }
@@ -469,7 +469,7 @@ pub struct ListApplications {
     _private: (),
 }
 impl ListApplications {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
     pub fn builder() -> crate::input::list_applications_input::Builder {
         crate::input::list_applications_input::Builder::default()
     }
@@ -503,7 +503,7 @@ pub struct ListEnvironments {
     _private: (),
 }
 impl ListEnvironments {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
     pub fn builder() -> crate::input::list_environments_input::Builder {
         crate::input::list_environments_input::Builder::default()
     }
@@ -537,7 +537,7 @@ pub struct ListEnvironmentVpcs {
     _private: (),
 }
 impl ListEnvironmentVpcs {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentVpcsInput`](crate::input::ListEnvironmentVpcsInput)
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentVpcsInput`](crate::input::ListEnvironmentVpcsInput).
     pub fn builder() -> crate::input::list_environment_vpcs_input::Builder {
         crate::input::list_environment_vpcs_input::Builder::default()
     }
@@ -571,7 +571,7 @@ pub struct ListRoutes {
     _private: (),
 }
 impl ListRoutes {
-    /// Creates a new builder-style object to manufacture [`ListRoutesInput`](crate::input::ListRoutesInput)
+    /// Creates a new builder-style object to manufacture [`ListRoutesInput`](crate::input::ListRoutesInput).
     pub fn builder() -> crate::input::list_routes_input::Builder {
         crate::input::list_routes_input::Builder::default()
     }
@@ -603,7 +603,7 @@ pub struct ListServices {
     _private: (),
 }
 impl ListServices {
-    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput)
+    /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::input::ListServicesInput).
     pub fn builder() -> crate::input::list_services_input::Builder {
         crate::input::list_services_input::Builder::default()
     }
@@ -635,7 +635,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -669,7 +669,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -703,7 +703,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -735,7 +735,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

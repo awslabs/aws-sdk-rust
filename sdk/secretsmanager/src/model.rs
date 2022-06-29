@@ -27,11 +27,10 @@ impl std::fmt::Debug for ValidationErrorsEntry {
         formatter.finish()
     }
 }
-/// See [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry)
+/// See [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
 pub mod validation_errors_entry {
 
-    /// A builder for [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry)
-    #[non_exhaustive]
+    /// A builder for [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_name: std::option::Option<std::string::String>,
@@ -61,7 +60,7 @@ pub mod validation_errors_entry {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry)
+        /// Consumes the builder and constructs a [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
         pub fn build(self) -> crate::model::ValidationErrorsEntry {
             crate::model::ValidationErrorsEntry {
                 check_name: self.check_name,
@@ -71,7 +70,7 @@ pub mod validation_errors_entry {
     }
 }
 impl ValidationErrorsEntry {
-    /// Creates a new builder-style object to manufacture [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry)
+    /// Creates a new builder-style object to manufacture [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
     pub fn builder() -> crate::model::validation_errors_entry::Builder {
         crate::model::validation_errors_entry::Builder::default()
     }
@@ -104,11 +103,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -135,7 +133,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -145,7 +143,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -191,11 +189,10 @@ impl std::fmt::Debug for RotationRulesType {
         formatter.finish()
     }
 }
-/// See [`RotationRulesType`](crate::model::RotationRulesType)
+/// See [`RotationRulesType`](crate::model::RotationRulesType).
 pub mod rotation_rules_type {
 
-    /// A builder for [`RotationRulesType`](crate::model::RotationRulesType)
-    #[non_exhaustive]
+    /// A builder for [`RotationRulesType`](crate::model::RotationRulesType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatically_after_days: std::option::Option<i64>,
@@ -242,7 +239,7 @@ pub mod rotation_rules_type {
             self.schedule_expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`RotationRulesType`](crate::model::RotationRulesType)
+        /// Consumes the builder and constructs a [`RotationRulesType`](crate::model::RotationRulesType).
         pub fn build(self) -> crate::model::RotationRulesType {
             crate::model::RotationRulesType {
                 automatically_after_days: self.automatically_after_days,
@@ -253,7 +250,7 @@ pub mod rotation_rules_type {
     }
 }
 impl RotationRulesType {
-    /// Creates a new builder-style object to manufacture [`RotationRulesType`](crate::model::RotationRulesType)
+    /// Creates a new builder-style object to manufacture [`RotationRulesType`](crate::model::RotationRulesType).
     pub fn builder() -> crate::model::rotation_rules_type::Builder {
         crate::model::rotation_rules_type::Builder::default()
     }
@@ -307,11 +304,10 @@ impl std::fmt::Debug for ReplicationStatusType {
         formatter.finish()
     }
 }
-/// See [`ReplicationStatusType`](crate::model::ReplicationStatusType)
+/// See [`ReplicationStatusType`](crate::model::ReplicationStatusType).
 pub mod replication_status_type {
 
-    /// A builder for [`ReplicationStatusType`](crate::model::ReplicationStatusType)
-    #[non_exhaustive]
+    /// A builder for [`ReplicationStatusType`](crate::model::ReplicationStatusType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -377,7 +373,7 @@ pub mod replication_status_type {
             self.last_accessed_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicationStatusType`](crate::model::ReplicationStatusType)
+        /// Consumes the builder and constructs a [`ReplicationStatusType`](crate::model::ReplicationStatusType).
         pub fn build(self) -> crate::model::ReplicationStatusType {
             crate::model::ReplicationStatusType {
                 region: self.region,
@@ -390,7 +386,7 @@ pub mod replication_status_type {
     }
 }
 impl ReplicationStatusType {
-    /// Creates a new builder-style object to manufacture [`ReplicationStatusType`](crate::model::ReplicationStatusType)
+    /// Creates a new builder-style object to manufacture [`ReplicationStatusType`](crate::model::ReplicationStatusType).
     pub fn builder() -> crate::model::replication_status_type::Builder {
         crate::model::replication_status_type::Builder::default()
     }
@@ -482,11 +478,10 @@ impl std::fmt::Debug for ReplicaRegionType {
         formatter.finish()
     }
 }
-/// See [`ReplicaRegionType`](crate::model::ReplicaRegionType)
+/// See [`ReplicaRegionType`](crate::model::ReplicaRegionType).
 pub mod replica_region_type {
 
-    /// A builder for [`ReplicaRegionType`](crate::model::ReplicaRegionType)
-    #[non_exhaustive]
+    /// A builder for [`ReplicaRegionType`](crate::model::ReplicaRegionType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region: std::option::Option<std::string::String>,
@@ -513,7 +508,7 @@ pub mod replica_region_type {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicaRegionType`](crate::model::ReplicaRegionType)
+        /// Consumes the builder and constructs a [`ReplicaRegionType`](crate::model::ReplicaRegionType).
         pub fn build(self) -> crate::model::ReplicaRegionType {
             crate::model::ReplicaRegionType {
                 region: self.region,
@@ -523,7 +518,7 @@ pub mod replica_region_type {
     }
 }
 impl ReplicaRegionType {
-    /// Creates a new builder-style object to manufacture [`ReplicaRegionType`](crate::model::ReplicaRegionType)
+    /// Creates a new builder-style object to manufacture [`ReplicaRegionType`](crate::model::ReplicaRegionType).
     pub fn builder() -> crate::model::replica_region_type::Builder {
         crate::model::replica_region_type::Builder::default()
     }
@@ -577,11 +572,10 @@ impl std::fmt::Debug for SecretVersionsListEntry {
         formatter.finish()
     }
 }
-/// See [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry)
+/// See [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
 pub mod secret_versions_list_entry {
 
-    /// A builder for [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry)
-    #[non_exhaustive]
+    /// A builder for [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -665,7 +659,7 @@ pub mod secret_versions_list_entry {
             self.kms_key_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry)
+        /// Consumes the builder and constructs a [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
         pub fn build(self) -> crate::model::SecretVersionsListEntry {
             crate::model::SecretVersionsListEntry {
                 version_id: self.version_id,
@@ -678,7 +672,7 @@ pub mod secret_versions_list_entry {
     }
 }
 impl SecretVersionsListEntry {
-    /// Creates a new builder-style object to manufacture [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry)
+    /// Creates a new builder-style object to manufacture [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
     pub fn builder() -> crate::model::secret_versions_list_entry::Builder {
         crate::model::secret_versions_list_entry::Builder::default()
     }
@@ -819,11 +813,10 @@ impl std::fmt::Debug for SecretListEntry {
         formatter.finish()
     }
 }
-/// See [`SecretListEntry`](crate::model::SecretListEntry)
+/// See [`SecretListEntry`](crate::model::SecretListEntry).
 pub mod secret_list_entry {
 
-    /// A builder for [`SecretListEntry`](crate::model::SecretListEntry)
-    #[non_exhaustive]
+    /// A builder for [`SecretListEntry`](crate::model::SecretListEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1061,7 +1054,7 @@ pub mod secret_list_entry {
             self.primary_region = input;
             self
         }
-        /// Consumes the builder and constructs a [`SecretListEntry`](crate::model::SecretListEntry)
+        /// Consumes the builder and constructs a [`SecretListEntry`](crate::model::SecretListEntry).
         pub fn build(self) -> crate::model::SecretListEntry {
             crate::model::SecretListEntry {
                 arn: self.arn,
@@ -1085,7 +1078,7 @@ pub mod secret_list_entry {
     }
 }
 impl SecretListEntry {
-    /// Creates a new builder-style object to manufacture [`SecretListEntry`](crate::model::SecretListEntry)
+    /// Creates a new builder-style object to manufacture [`SecretListEntry`](crate::model::SecretListEntry).
     pub fn builder() -> crate::model::secret_list_entry::Builder {
         crate::model::secret_list_entry::Builder::default()
     }
@@ -1191,11 +1184,10 @@ impl std::fmt::Debug for Filter {
         formatter.finish()
     }
 }
-/// See [`Filter`](crate::model::Filter)
+/// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
-    /// A builder for [`Filter`](crate::model::Filter)
-    #[non_exhaustive]
+    /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<crate::model::FilterNameStringType>,
@@ -1252,7 +1244,7 @@ pub mod filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
                 key: self.key,
@@ -1262,7 +1254,7 @@ pub mod filter {
     }
 }
 impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
     pub fn builder() -> crate::model::filter::Builder {
         crate::model::filter::Builder::default()
     }

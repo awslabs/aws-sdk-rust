@@ -10,7 +10,7 @@ pub struct CreateExperimentTemplate {
     _private: (),
 }
 impl CreateExperimentTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateInput`](crate::input::CreateExperimentTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateInput`](crate::input::CreateExperimentTemplateInput).
     pub fn builder() -> crate::input::create_experiment_template_input::Builder {
         crate::input::create_experiment_template_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteExperimentTemplate {
     _private: (),
 }
 impl DeleteExperimentTemplate {
-    /// Creates a new builder-style object to manufacture [`DeleteExperimentTemplateInput`](crate::input::DeleteExperimentTemplateInput)
+    /// Creates a new builder-style object to manufacture [`DeleteExperimentTemplateInput`](crate::input::DeleteExperimentTemplateInput).
     pub fn builder() -> crate::input::delete_experiment_template_input::Builder {
         crate::input::delete_experiment_template_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetAction {
     _private: (),
 }
 impl GetAction {
-    /// Creates a new builder-style object to manufacture [`GetActionInput`](crate::input::GetActionInput)
+    /// Creates a new builder-style object to manufacture [`GetActionInput`](crate::input::GetActionInput).
     pub fn builder() -> crate::input::get_action_input::Builder {
         crate::input::get_action_input::Builder::default()
     }
@@ -109,7 +109,7 @@ pub struct GetExperiment {
     _private: (),
 }
 impl GetExperiment {
-    /// Creates a new builder-style object to manufacture [`GetExperimentInput`](crate::input::GetExperimentInput)
+    /// Creates a new builder-style object to manufacture [`GetExperimentInput`](crate::input::GetExperimentInput).
     pub fn builder() -> crate::input::get_experiment_input::Builder {
         crate::input::get_experiment_input::Builder::default()
     }
@@ -141,7 +141,7 @@ pub struct GetExperimentTemplate {
     _private: (),
 }
 impl GetExperimentTemplate {
-    /// Creates a new builder-style object to manufacture [`GetExperimentTemplateInput`](crate::input::GetExperimentTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetExperimentTemplateInput`](crate::input::GetExperimentTemplateInput).
     pub fn builder() -> crate::input::get_experiment_template_input::Builder {
         crate::input::get_experiment_template_input::Builder::default()
     }
@@ -175,7 +175,7 @@ pub struct GetTargetResourceType {
     _private: (),
 }
 impl GetTargetResourceType {
-    /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput)
+    /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeInput`](crate::input::GetTargetResourceTypeInput).
     pub fn builder() -> crate::input::get_target_resource_type_input::Builder {
         crate::input::get_target_resource_type_input::Builder::default()
     }
@@ -209,7 +209,7 @@ pub struct ListActions {
     _private: (),
 }
 impl ListActions {
-    /// Creates a new builder-style object to manufacture [`ListActionsInput`](crate::input::ListActionsInput)
+    /// Creates a new builder-style object to manufacture [`ListActionsInput`](crate::input::ListActionsInput).
     pub fn builder() -> crate::input::list_actions_input::Builder {
         crate::input::list_actions_input::Builder::default()
     }
@@ -241,7 +241,7 @@ pub struct ListExperiments {
     _private: (),
 }
 impl ListExperiments {
-    /// Creates a new builder-style object to manufacture [`ListExperimentsInput`](crate::input::ListExperimentsInput)
+    /// Creates a new builder-style object to manufacture [`ListExperimentsInput`](crate::input::ListExperimentsInput).
     pub fn builder() -> crate::input::list_experiments_input::Builder {
         crate::input::list_experiments_input::Builder::default()
     }
@@ -275,7 +275,7 @@ pub struct ListExperimentTemplates {
     _private: (),
 }
 impl ListExperimentTemplates {
-    /// Creates a new builder-style object to manufacture [`ListExperimentTemplatesInput`](crate::input::ListExperimentTemplatesInput)
+    /// Creates a new builder-style object to manufacture [`ListExperimentTemplatesInput`](crate::input::ListExperimentTemplatesInput).
     pub fn builder() -> crate::input::list_experiment_templates_input::Builder {
         crate::input::list_experiment_templates_input::Builder::default()
     }
@@ -309,7 +309,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -343,7 +343,7 @@ pub struct ListTargetResourceTypes {
     _private: (),
 }
 impl ListTargetResourceTypes {
-    /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesInput`](crate::input::ListTargetResourceTypesInput).
     pub fn builder() -> crate::input::list_target_resource_types_input::Builder {
         crate::input::list_target_resource_types_input::Builder::default()
     }
@@ -377,7 +377,7 @@ pub struct StartExperiment {
     _private: (),
 }
 impl StartExperiment {
-    /// Creates a new builder-style object to manufacture [`StartExperimentInput`](crate::input::StartExperimentInput)
+    /// Creates a new builder-style object to manufacture [`StartExperimentInput`](crate::input::StartExperimentInput).
     pub fn builder() -> crate::input::start_experiment_input::Builder {
         crate::input::start_experiment_input::Builder::default()
     }
@@ -411,7 +411,7 @@ pub struct StopExperiment {
     _private: (),
 }
 impl StopExperiment {
-    /// Creates a new builder-style object to manufacture [`StopExperimentInput`](crate::input::StopExperimentInput)
+    /// Creates a new builder-style object to manufacture [`StopExperimentInput`](crate::input::StopExperimentInput).
     pub fn builder() -> crate::input::stop_experiment_input::Builder {
         crate::input::stop_experiment_input::Builder::default()
     }
@@ -443,7 +443,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -475,7 +475,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -507,7 +507,7 @@ pub struct UpdateExperimentTemplate {
     _private: (),
 }
 impl UpdateExperimentTemplate {
-    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateInput`](crate::input::UpdateExperimentTemplateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateInput`](crate::input::UpdateExperimentTemplateInput).
     pub fn builder() -> crate::input::update_experiment_template_input::Builder {
         crate::input::update_experiment_template_input::Builder::default()
     }

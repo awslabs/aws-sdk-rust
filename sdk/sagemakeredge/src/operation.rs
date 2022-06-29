@@ -10,7 +10,7 @@ pub struct GetDeviceRegistration {
     _private: (),
 }
 impl GetDeviceRegistration {
-    /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput)
+    /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationInput`](crate::input::GetDeviceRegistrationInput).
     pub fn builder() -> crate::input::get_device_registration_input::Builder {
         crate::input::get_device_registration_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct SendHeartbeat {
     _private: (),
 }
 impl SendHeartbeat {
-    /// Creates a new builder-style object to manufacture [`SendHeartbeatInput`](crate::input::SendHeartbeatInput)
+    /// Creates a new builder-style object to manufacture [`SendHeartbeatInput`](crate::input::SendHeartbeatInput).
     pub fn builder() -> crate::input::send_heartbeat_input::Builder {
         crate::input::send_heartbeat_input::Builder::default()
     }

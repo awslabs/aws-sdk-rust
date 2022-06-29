@@ -10,7 +10,7 @@ pub struct ClaimDevicesByClaimCode {
     _private: (),
 }
 impl ClaimDevicesByClaimCode {
-    /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeInput`](crate::input::ClaimDevicesByClaimCodeInput)
+    /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeInput`](crate::input::ClaimDevicesByClaimCodeInput).
     pub fn builder() -> crate::input::claim_devices_by_claim_code_input::Builder {
         crate::input::claim_devices_by_claim_code_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeDevice {
     _private: (),
 }
 impl DescribeDevice {
-    /// Creates a new builder-style object to manufacture [`DescribeDeviceInput`](crate::input::DescribeDeviceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeviceInput`](crate::input::DescribeDeviceInput).
     pub fn builder() -> crate::input::describe_device_input::Builder {
         crate::input::describe_device_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct FinalizeDeviceClaim {
     _private: (),
 }
 impl FinalizeDeviceClaim {
-    /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimInput`](crate::input::FinalizeDeviceClaimInput)
+    /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimInput`](crate::input::FinalizeDeviceClaimInput).
     pub fn builder() -> crate::input::finalize_device_claim_input::Builder {
         crate::input::finalize_device_claim_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct GetDeviceMethods {
     _private: (),
 }
 impl GetDeviceMethods {
-    /// Creates a new builder-style object to manufacture [`GetDeviceMethodsInput`](crate::input::GetDeviceMethodsInput)
+    /// Creates a new builder-style object to manufacture [`GetDeviceMethodsInput`](crate::input::GetDeviceMethodsInput).
     pub fn builder() -> crate::input::get_device_methods_input::Builder {
         crate::input::get_device_methods_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct InitiateDeviceClaim {
     _private: (),
 }
 impl InitiateDeviceClaim {
-    /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimInput`](crate::input::InitiateDeviceClaimInput)
+    /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimInput`](crate::input::InitiateDeviceClaimInput).
     pub fn builder() -> crate::input::initiate_device_claim_input::Builder {
         crate::input::initiate_device_claim_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct InvokeDeviceMethod {
     _private: (),
 }
 impl InvokeDeviceMethod {
-    /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodInput`](crate::input::InvokeDeviceMethodInput)
+    /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodInput`](crate::input::InvokeDeviceMethodInput).
     pub fn builder() -> crate::input::invoke_device_method_input::Builder {
         crate::input::invoke_device_method_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct ListDeviceEvents {
     _private: (),
 }
 impl ListDeviceEvents {
-    /// Creates a new builder-style object to manufacture [`ListDeviceEventsInput`](crate::input::ListDeviceEventsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeviceEventsInput`](crate::input::ListDeviceEventsInput).
     pub fn builder() -> crate::input::list_device_events_input::Builder {
         crate::input::list_device_events_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct ListDevices {
     _private: (),
 }
 impl ListDevices {
-    /// Creates a new builder-style object to manufacture [`ListDevicesInput`](crate::input::ListDevicesInput)
+    /// Creates a new builder-style object to manufacture [`ListDevicesInput`](crate::input::ListDevicesInput).
     pub fn builder() -> crate::input::list_devices_input::Builder {
         crate::input::list_devices_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct UnclaimDevice {
     _private: (),
 }
 impl UnclaimDevice {
-    /// Creates a new builder-style object to manufacture [`UnclaimDeviceInput`](crate::input::UnclaimDeviceInput)
+    /// Creates a new builder-style object to manufacture [`UnclaimDeviceInput`](crate::input::UnclaimDeviceInput).
     pub fn builder() -> crate::input::unclaim_device_input::Builder {
         crate::input::unclaim_device_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct UpdateDeviceState {
     _private: (),
 }
 impl UpdateDeviceState {
-    /// Creates a new builder-style object to manufacture [`UpdateDeviceStateInput`](crate::input::UpdateDeviceStateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDeviceStateInput`](crate::input::UpdateDeviceStateInput).
     pub fn builder() -> crate::input::update_device_state_input::Builder {
         crate::input::update_device_state_input::Builder::default()
     }

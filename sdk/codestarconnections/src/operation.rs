@@ -10,7 +10,7 @@ pub struct CreateConnection {
     _private: (),
 }
 impl CreateConnection {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput).
     pub fn builder() -> crate::input::create_connection_input::Builder {
         crate::input::create_connection_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateHost {
     _private: (),
 }
 impl CreateHost {
-    /// Creates a new builder-style object to manufacture [`CreateHostInput`](crate::input::CreateHostInput)
+    /// Creates a new builder-style object to manufacture [`CreateHostInput`](crate::input::CreateHostInput).
     pub fn builder() -> crate::input::create_host_input::Builder {
         crate::input::create_host_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteConnection {
     _private: (),
 }
 impl DeleteConnection {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
     pub fn builder() -> crate::input::delete_connection_input::Builder {
         crate::input::delete_connection_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteHost {
     _private: (),
 }
 impl DeleteHost {
-    /// Creates a new builder-style object to manufacture [`DeleteHostInput`](crate::input::DeleteHostInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHostInput`](crate::input::DeleteHostInput).
     pub fn builder() -> crate::input::delete_host_input::Builder {
         crate::input::delete_host_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct GetConnection {
     _private: (),
 }
 impl GetConnection {
-    /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput).
     pub fn builder() -> crate::input::get_connection_input::Builder {
         crate::input::get_connection_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct GetHost {
     _private: (),
 }
 impl GetHost {
-    /// Creates a new builder-style object to manufacture [`GetHostInput`](crate::input::GetHostInput)
+    /// Creates a new builder-style object to manufacture [`GetHostInput`](crate::input::GetHostInput).
     pub fn builder() -> crate::input::get_host_input::Builder {
         crate::input::get_host_input::Builder::default()
     }
@@ -205,7 +205,7 @@ pub struct ListConnections {
     _private: (),
 }
 impl ListConnections {
-    /// Creates a new builder-style object to manufacture [`ListConnectionsInput`](crate::input::ListConnectionsInput)
+    /// Creates a new builder-style object to manufacture [`ListConnectionsInput`](crate::input::ListConnectionsInput).
     pub fn builder() -> crate::input::list_connections_input::Builder {
         crate::input::list_connections_input::Builder::default()
     }
@@ -239,7 +239,7 @@ pub struct ListHosts {
     _private: (),
 }
 impl ListHosts {
-    /// Creates a new builder-style object to manufacture [`ListHostsInput`](crate::input::ListHostsInput)
+    /// Creates a new builder-style object to manufacture [`ListHostsInput`](crate::input::ListHostsInput).
     pub fn builder() -> crate::input::list_hosts_input::Builder {
         crate::input::list_hosts_input::Builder::default()
     }
@@ -270,7 +270,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -304,7 +304,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -336,7 +336,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -368,7 +368,7 @@ pub struct UpdateHost {
     _private: (),
 }
 impl UpdateHost {
-    /// Creates a new builder-style object to manufacture [`UpdateHostInput`](crate::input::UpdateHostInput)
+    /// Creates a new builder-style object to manufacture [`UpdateHostInput`](crate::input::UpdateHostInput).
     pub fn builder() -> crate::input::update_host_input::Builder {
         crate::input::update_host_input::Builder::default()
     }

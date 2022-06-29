@@ -119,11 +119,10 @@ impl std::fmt::Debug for UpdateTrailOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateTrailOutput`](crate::output::UpdateTrailOutput)
+/// See [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
 pub mod update_trail_output {
 
-    /// A builder for [`UpdateTrailOutput`](crate::output::UpdateTrailOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -301,7 +300,7 @@ pub mod update_trail_output {
             self.is_organization_trail = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateTrailOutput`](crate::output::UpdateTrailOutput)
+        /// Consumes the builder and constructs a [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
         pub fn build(self) -> crate::output::UpdateTrailOutput {
             crate::output::UpdateTrailOutput {
                 name: self.name,
@@ -322,7 +321,7 @@ pub mod update_trail_output {
     }
 }
 impl UpdateTrailOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTrailOutput`](crate::output::UpdateTrailOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateTrailOutput`](crate::output::UpdateTrailOutput).
     pub fn builder() -> crate::output::update_trail_output::Builder {
         crate::output::update_trail_output::Builder::default()
     }
@@ -417,11 +416,10 @@ impl std::fmt::Debug for UpdateEventDataStoreOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
+/// See [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
 pub mod update_event_data_store_output {
 
-    /// A builder for [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
@@ -564,7 +562,7 @@ pub mod update_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
+        /// Consumes the builder and constructs a [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
         pub fn build(self) -> crate::output::UpdateEventDataStoreOutput {
             crate::output::UpdateEventDataStoreOutput {
                 event_data_store_arn: self.event_data_store_arn,
@@ -582,7 +580,7 @@ pub mod update_event_data_store_output {
     }
 }
 impl UpdateEventDataStoreOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreOutput`](crate::output::UpdateEventDataStoreOutput).
     pub fn builder() -> crate::output::update_event_data_store_output::Builder {
         crate::output::update_event_data_store_output::Builder::default()
     }
@@ -598,22 +596,21 @@ impl std::fmt::Debug for StopLoggingOutput {
         formatter.finish()
     }
 }
-/// See [`StopLoggingOutput`](crate::output::StopLoggingOutput)
+/// See [`StopLoggingOutput`](crate::output::StopLoggingOutput).
 pub mod stop_logging_output {
 
-    /// A builder for [`StopLoggingOutput`](crate::output::StopLoggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopLoggingOutput`](crate::output::StopLoggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StopLoggingOutput`](crate::output::StopLoggingOutput)
+        /// Consumes the builder and constructs a [`StopLoggingOutput`](crate::output::StopLoggingOutput).
         pub fn build(self) -> crate::output::StopLoggingOutput {
             crate::output::StopLoggingOutput {}
         }
     }
 }
 impl StopLoggingOutput {
-    /// Creates a new builder-style object to manufacture [`StopLoggingOutput`](crate::output::StopLoggingOutput)
+    /// Creates a new builder-style object to manufacture [`StopLoggingOutput`](crate::output::StopLoggingOutput).
     pub fn builder() -> crate::output::stop_logging_output::Builder {
         crate::output::stop_logging_output::Builder::default()
     }
@@ -639,11 +636,10 @@ impl std::fmt::Debug for StartQueryOutput {
         formatter.finish()
     }
 }
-/// See [`StartQueryOutput`](crate::output::StartQueryOutput)
+/// See [`StartQueryOutput`](crate::output::StartQueryOutput).
 pub mod start_query_output {
 
-    /// A builder for [`StartQueryOutput`](crate::output::StartQueryOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartQueryOutput`](crate::output::StartQueryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -659,7 +655,7 @@ pub mod start_query_output {
             self.query_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartQueryOutput`](crate::output::StartQueryOutput)
+        /// Consumes the builder and constructs a [`StartQueryOutput`](crate::output::StartQueryOutput).
         pub fn build(self) -> crate::output::StartQueryOutput {
             crate::output::StartQueryOutput {
                 query_id: self.query_id,
@@ -668,7 +664,7 @@ pub mod start_query_output {
     }
 }
 impl StartQueryOutput {
-    /// Creates a new builder-style object to manufacture [`StartQueryOutput`](crate::output::StartQueryOutput)
+    /// Creates a new builder-style object to manufacture [`StartQueryOutput`](crate::output::StartQueryOutput).
     pub fn builder() -> crate::output::start_query_output::Builder {
         crate::output::start_query_output::Builder::default()
     }
@@ -684,22 +680,21 @@ impl std::fmt::Debug for StartLoggingOutput {
         formatter.finish()
     }
 }
-/// See [`StartLoggingOutput`](crate::output::StartLoggingOutput)
+/// See [`StartLoggingOutput`](crate::output::StartLoggingOutput).
 pub mod start_logging_output {
 
-    /// A builder for [`StartLoggingOutput`](crate::output::StartLoggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartLoggingOutput`](crate::output::StartLoggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StartLoggingOutput`](crate::output::StartLoggingOutput)
+        /// Consumes the builder and constructs a [`StartLoggingOutput`](crate::output::StartLoggingOutput).
         pub fn build(self) -> crate::output::StartLoggingOutput {
             crate::output::StartLoggingOutput {}
         }
     }
 }
 impl StartLoggingOutput {
-    /// Creates a new builder-style object to manufacture [`StartLoggingOutput`](crate::output::StartLoggingOutput)
+    /// Creates a new builder-style object to manufacture [`StartLoggingOutput`](crate::output::StartLoggingOutput).
     pub fn builder() -> crate::output::start_logging_output::Builder {
         crate::output::start_logging_output::Builder::default()
     }
@@ -794,11 +789,10 @@ impl std::fmt::Debug for RestoreEventDataStoreOutput {
         formatter.finish()
     }
 }
-/// See [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
+/// See [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
 pub mod restore_event_data_store_output {
 
-    /// A builder for [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
@@ -941,7 +935,7 @@ pub mod restore_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
+        /// Consumes the builder and constructs a [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
         pub fn build(self) -> crate::output::RestoreEventDataStoreOutput {
             crate::output::RestoreEventDataStoreOutput {
                 event_data_store_arn: self.event_data_store_arn,
@@ -959,7 +953,7 @@ pub mod restore_event_data_store_output {
     }
 }
 impl RestoreEventDataStoreOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput)
+    /// Creates a new builder-style object to manufacture [`RestoreEventDataStoreOutput`](crate::output::RestoreEventDataStoreOutput).
     pub fn builder() -> crate::output::restore_event_data_store_output::Builder {
         crate::output::restore_event_data_store_output::Builder::default()
     }
@@ -975,22 +969,21 @@ impl std::fmt::Debug for RemoveTagsOutput {
         formatter.finish()
     }
 }
-/// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+/// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
-    /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+        /// Consumes the builder and constructs a [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
         pub fn build(self) -> crate::output::RemoveTagsOutput {
             crate::output::RemoveTagsOutput {}
         }
     }
 }
 impl RemoveTagsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
     pub fn builder() -> crate::output::remove_tags_output::Builder {
         crate::output::remove_tags_output::Builder::default()
     }
@@ -1023,11 +1016,10 @@ impl std::fmt::Debug for PutInsightSelectorsOutput {
         formatter.finish()
     }
 }
-/// See [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput)
+/// See [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
 pub mod put_insight_selectors_output {
 
-    /// A builder for [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
@@ -1064,7 +1056,7 @@ pub mod put_insight_selectors_output {
             self.insight_selectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput)
+        /// Consumes the builder and constructs a [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
         pub fn build(self) -> crate::output::PutInsightSelectorsOutput {
             crate::output::PutInsightSelectorsOutput {
                 trail_arn: self.trail_arn,
@@ -1074,7 +1066,7 @@ pub mod put_insight_selectors_output {
     }
 }
 impl PutInsightSelectorsOutput {
-    /// Creates a new builder-style object to manufacture [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput)
+    /// Creates a new builder-style object to manufacture [`PutInsightSelectorsOutput`](crate::output::PutInsightSelectorsOutput).
     pub fn builder() -> crate::output::put_insight_selectors_output::Builder {
         crate::output::put_insight_selectors_output::Builder::default()
     }
@@ -1119,11 +1111,10 @@ impl std::fmt::Debug for PutEventSelectorsOutput {
         formatter.finish()
     }
 }
-/// See [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput)
+/// See [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
 pub mod put_event_selectors_output {
 
-    /// A builder for [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
@@ -1185,7 +1176,7 @@ pub mod put_event_selectors_output {
             self.advanced_event_selectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput)
+        /// Consumes the builder and constructs a [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
         pub fn build(self) -> crate::output::PutEventSelectorsOutput {
             crate::output::PutEventSelectorsOutput {
                 trail_arn: self.trail_arn,
@@ -1196,7 +1187,7 @@ pub mod put_event_selectors_output {
     }
 }
 impl PutEventSelectorsOutput {
-    /// Creates a new builder-style object to manufacture [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput)
+    /// Creates a new builder-style object to manufacture [`PutEventSelectorsOutput`](crate::output::PutEventSelectorsOutput).
     pub fn builder() -> crate::output::put_event_selectors_output::Builder {
         crate::output::put_event_selectors_output::Builder::default()
     }
@@ -1229,11 +1220,10 @@ impl std::fmt::Debug for LookupEventsOutput {
         formatter.finish()
     }
 }
-/// See [`LookupEventsOutput`](crate::output::LookupEventsOutput)
+/// See [`LookupEventsOutput`](crate::output::LookupEventsOutput).
 pub mod lookup_events_output {
 
-    /// A builder for [`LookupEventsOutput`](crate::output::LookupEventsOutput)
-    #[non_exhaustive]
+    /// A builder for [`LookupEventsOutput`](crate::output::LookupEventsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -1269,7 +1259,7 @@ pub mod lookup_events_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`LookupEventsOutput`](crate::output::LookupEventsOutput)
+        /// Consumes the builder and constructs a [`LookupEventsOutput`](crate::output::LookupEventsOutput).
         pub fn build(self) -> crate::output::LookupEventsOutput {
             crate::output::LookupEventsOutput {
                 events: self.events,
@@ -1279,7 +1269,7 @@ pub mod lookup_events_output {
     }
 }
 impl LookupEventsOutput {
-    /// Creates a new builder-style object to manufacture [`LookupEventsOutput`](crate::output::LookupEventsOutput)
+    /// Creates a new builder-style object to manufacture [`LookupEventsOutput`](crate::output::LookupEventsOutput).
     pub fn builder() -> crate::output::lookup_events_output::Builder {
         crate::output::lookup_events_output::Builder::default()
     }
@@ -1312,11 +1302,10 @@ impl std::fmt::Debug for ListTrailsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTrailsOutput`](crate::output::ListTrailsOutput)
+/// See [`ListTrailsOutput`](crate::output::ListTrailsOutput).
 pub mod list_trails_output {
 
-    /// A builder for [`ListTrailsOutput`](crate::output::ListTrailsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTrailsOutput`](crate::output::ListTrailsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trails: std::option::Option<std::vec::Vec<crate::model::TrailInfo>>,
@@ -1352,7 +1341,7 @@ pub mod list_trails_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTrailsOutput`](crate::output::ListTrailsOutput)
+        /// Consumes the builder and constructs a [`ListTrailsOutput`](crate::output::ListTrailsOutput).
         pub fn build(self) -> crate::output::ListTrailsOutput {
             crate::output::ListTrailsOutput {
                 trails: self.trails,
@@ -1362,7 +1351,7 @@ pub mod list_trails_output {
     }
 }
 impl ListTrailsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrailsOutput`](crate::output::ListTrailsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTrailsOutput`](crate::output::ListTrailsOutput).
     pub fn builder() -> crate::output::list_trails_output::Builder {
         crate::output::list_trails_output::Builder::default()
     }
@@ -1395,11 +1384,10 @@ impl std::fmt::Debug for ListTagsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsOutput`](crate::output::ListTagsOutput)
+/// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
 
-    /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tag_list: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -1435,7 +1423,7 @@ pub mod list_tags_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput)
+        /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
             crate::output::ListTagsOutput {
                 resource_tag_list: self.resource_tag_list,
@@ -1445,7 +1433,7 @@ pub mod list_tags_output {
     }
 }
 impl ListTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
     pub fn builder() -> crate::output::list_tags_output::Builder {
         crate::output::list_tags_output::Builder::default()
     }
@@ -1478,11 +1466,10 @@ impl std::fmt::Debug for ListQueriesOutput {
         formatter.finish()
     }
 }
-/// See [`ListQueriesOutput`](crate::output::ListQueriesOutput)
+/// See [`ListQueriesOutput`](crate::output::ListQueriesOutput).
 pub mod list_queries_output {
 
-    /// A builder for [`ListQueriesOutput`](crate::output::ListQueriesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListQueriesOutput`](crate::output::ListQueriesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) queries: std::option::Option<std::vec::Vec<crate::model::Query>>,
@@ -1518,7 +1505,7 @@ pub mod list_queries_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListQueriesOutput`](crate::output::ListQueriesOutput)
+        /// Consumes the builder and constructs a [`ListQueriesOutput`](crate::output::ListQueriesOutput).
         pub fn build(self) -> crate::output::ListQueriesOutput {
             crate::output::ListQueriesOutput {
                 queries: self.queries,
@@ -1528,7 +1515,7 @@ pub mod list_queries_output {
     }
 }
 impl ListQueriesOutput {
-    /// Creates a new builder-style object to manufacture [`ListQueriesOutput`](crate::output::ListQueriesOutput)
+    /// Creates a new builder-style object to manufacture [`ListQueriesOutput`](crate::output::ListQueriesOutput).
     pub fn builder() -> crate::output::list_queries_output::Builder {
         crate::output::list_queries_output::Builder::default()
     }
@@ -1565,11 +1552,10 @@ impl std::fmt::Debug for ListPublicKeysOutput {
         formatter.finish()
     }
 }
-/// See [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput)
+/// See [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
 pub mod list_public_keys_output {
 
-    /// A builder for [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_key_list: std::option::Option<std::vec::Vec<crate::model::PublicKey>>,
@@ -1609,7 +1595,7 @@ pub mod list_public_keys_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput)
+        /// Consumes the builder and constructs a [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
         pub fn build(self) -> crate::output::ListPublicKeysOutput {
             crate::output::ListPublicKeysOutput {
                 public_key_list: self.public_key_list,
@@ -1619,7 +1605,7 @@ pub mod list_public_keys_output {
     }
 }
 impl ListPublicKeysOutput {
-    /// Creates a new builder-style object to manufacture [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput)
+    /// Creates a new builder-style object to manufacture [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput).
     pub fn builder() -> crate::output::list_public_keys_output::Builder {
         crate::output::list_public_keys_output::Builder::default()
     }
@@ -1652,11 +1638,10 @@ impl std::fmt::Debug for ListEventDataStoresOutput {
         formatter.finish()
     }
 }
-/// See [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
+/// See [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
 pub mod list_event_data_stores_output {
 
-    /// A builder for [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_stores:
@@ -1693,7 +1678,7 @@ pub mod list_event_data_stores_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
+        /// Consumes the builder and constructs a [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
         pub fn build(self) -> crate::output::ListEventDataStoresOutput {
             crate::output::ListEventDataStoresOutput {
                 event_data_stores: self.event_data_stores,
@@ -1703,7 +1688,7 @@ pub mod list_event_data_stores_output {
     }
 }
 impl ListEventDataStoresOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput)
+    /// Creates a new builder-style object to manufacture [`ListEventDataStoresOutput`](crate::output::ListEventDataStoresOutput).
     pub fn builder() -> crate::output::list_event_data_stores_output::Builder {
         crate::output::list_event_data_stores_output::Builder::default()
     }
@@ -1875,11 +1860,10 @@ impl std::fmt::Debug for GetTrailStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput)
+/// See [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
 pub mod get_trail_status_output {
 
-    /// A builder for [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_logging: std::option::Option<bool>,
@@ -2149,7 +2133,7 @@ pub mod get_trail_status_output {
             self.time_logging_stopped = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput)
+        /// Consumes the builder and constructs a [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
         pub fn build(self) -> crate::output::GetTrailStatusOutput {
             crate::output::GetTrailStatusOutput {
                 is_logging: self.is_logging,
@@ -2174,7 +2158,7 @@ pub mod get_trail_status_output {
     }
 }
 impl GetTrailStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetTrailStatusOutput`](crate::output::GetTrailStatusOutput).
     pub fn builder() -> crate::output::get_trail_status_output::Builder {
         crate::output::get_trail_status_output::Builder::default()
     }
@@ -2200,11 +2184,10 @@ impl std::fmt::Debug for GetTrailOutput {
         formatter.finish()
     }
 }
-/// See [`GetTrailOutput`](crate::output::GetTrailOutput)
+/// See [`GetTrailOutput`](crate::output::GetTrailOutput).
 pub mod get_trail_output {
 
-    /// A builder for [`GetTrailOutput`](crate::output::GetTrailOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetTrailOutput`](crate::output::GetTrailOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail: std::option::Option<crate::model::Trail>,
@@ -2220,14 +2203,14 @@ pub mod get_trail_output {
             self.trail = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetTrailOutput`](crate::output::GetTrailOutput)
+        /// Consumes the builder and constructs a [`GetTrailOutput`](crate::output::GetTrailOutput).
         pub fn build(self) -> crate::output::GetTrailOutput {
             crate::output::GetTrailOutput { trail: self.trail }
         }
     }
 }
 impl GetTrailOutput {
-    /// Creates a new builder-style object to manufacture [`GetTrailOutput`](crate::output::GetTrailOutput)
+    /// Creates a new builder-style object to manufacture [`GetTrailOutput`](crate::output::GetTrailOutput).
     pub fn builder() -> crate::output::get_trail_output::Builder {
         crate::output::get_trail_output::Builder::default()
     }
@@ -2289,11 +2272,10 @@ impl std::fmt::Debug for GetQueryResultsOutput {
         formatter.finish()
     }
 }
-/// See [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
+/// See [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
 pub mod get_query_results_output {
 
-    /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_status: std::option::Option<crate::model::QueryStatus>,
@@ -2386,7 +2368,7 @@ pub mod get_query_results_output {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
+        /// Consumes the builder and constructs a [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
         pub fn build(self) -> crate::output::GetQueryResultsOutput {
             crate::output::GetQueryResultsOutput {
                 query_status: self.query_status,
@@ -2399,7 +2381,7 @@ pub mod get_query_results_output {
     }
 }
 impl GetQueryResultsOutput {
-    /// Creates a new builder-style object to manufacture [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput)
+    /// Creates a new builder-style object to manufacture [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput).
     pub fn builder() -> crate::output::get_query_results_output::Builder {
         crate::output::get_query_results_output::Builder::default()
     }
@@ -2432,11 +2414,10 @@ impl std::fmt::Debug for GetInsightSelectorsOutput {
         formatter.finish()
     }
 }
-/// See [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput)
+/// See [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
 pub mod get_insight_selectors_output {
 
-    /// A builder for [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
@@ -2473,7 +2454,7 @@ pub mod get_insight_selectors_output {
             self.insight_selectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput)
+        /// Consumes the builder and constructs a [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
         pub fn build(self) -> crate::output::GetInsightSelectorsOutput {
             crate::output::GetInsightSelectorsOutput {
                 trail_arn: self.trail_arn,
@@ -2483,7 +2464,7 @@ pub mod get_insight_selectors_output {
     }
 }
 impl GetInsightSelectorsOutput {
-    /// Creates a new builder-style object to manufacture [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput)
+    /// Creates a new builder-style object to manufacture [`GetInsightSelectorsOutput`](crate::output::GetInsightSelectorsOutput).
     pub fn builder() -> crate::output::get_insight_selectors_output::Builder {
         crate::output::get_insight_selectors_output::Builder::default()
     }
@@ -2526,11 +2507,10 @@ impl std::fmt::Debug for GetEventSelectorsOutput {
         formatter.finish()
     }
 }
-/// See [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput)
+/// See [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
 pub mod get_event_selectors_output {
 
-    /// A builder for [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_arn: std::option::Option<std::string::String>,
@@ -2590,7 +2570,7 @@ pub mod get_event_selectors_output {
             self.advanced_event_selectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput)
+        /// Consumes the builder and constructs a [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
         pub fn build(self) -> crate::output::GetEventSelectorsOutput {
             crate::output::GetEventSelectorsOutput {
                 trail_arn: self.trail_arn,
@@ -2601,7 +2581,7 @@ pub mod get_event_selectors_output {
     }
 }
 impl GetEventSelectorsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput)
+    /// Creates a new builder-style object to manufacture [`GetEventSelectorsOutput`](crate::output::GetEventSelectorsOutput).
     pub fn builder() -> crate::output::get_event_selectors_output::Builder {
         crate::output::get_event_selectors_output::Builder::default()
     }
@@ -2696,11 +2676,10 @@ impl std::fmt::Debug for GetEventDataStoreOutput {
         formatter.finish()
     }
 }
-/// See [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
+/// See [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
 pub mod get_event_data_store_output {
 
-    /// A builder for [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
@@ -2843,7 +2822,7 @@ pub mod get_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
+        /// Consumes the builder and constructs a [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
         pub fn build(self) -> crate::output::GetEventDataStoreOutput {
             crate::output::GetEventDataStoreOutput {
                 event_data_store_arn: self.event_data_store_arn,
@@ -2861,7 +2840,7 @@ pub mod get_event_data_store_output {
     }
 }
 impl GetEventDataStoreOutput {
-    /// Creates a new builder-style object to manufacture [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput)
+    /// Creates a new builder-style object to manufacture [`GetEventDataStoreOutput`](crate::output::GetEventDataStoreOutput).
     pub fn builder() -> crate::output::get_event_data_store_output::Builder {
         crate::output::get_event_data_store_output::Builder::default()
     }
@@ -2887,11 +2866,10 @@ impl std::fmt::Debug for DescribeTrailsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput)
+/// See [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
 pub mod describe_trails_output {
 
-    /// A builder for [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trail_list: std::option::Option<std::vec::Vec<crate::model::Trail>>,
@@ -2916,7 +2894,7 @@ pub mod describe_trails_output {
             self.trail_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput)
+        /// Consumes the builder and constructs a [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
         pub fn build(self) -> crate::output::DescribeTrailsOutput {
             crate::output::DescribeTrailsOutput {
                 trail_list: self.trail_list,
@@ -2925,7 +2903,7 @@ pub mod describe_trails_output {
     }
 }
 impl DescribeTrailsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrailsOutput`](crate::output::DescribeTrailsOutput).
     pub fn builder() -> crate::output::describe_trails_output::Builder {
         crate::output::describe_trails_output::Builder::default()
     }
@@ -2981,11 +2959,10 @@ impl std::fmt::Debug for DescribeQueryOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
+/// See [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
 pub mod describe_query_output {
 
-    /// A builder for [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -3058,7 +3035,7 @@ pub mod describe_query_output {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
+        /// Consumes the builder and constructs a [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
         pub fn build(self) -> crate::output::DescribeQueryOutput {
             crate::output::DescribeQueryOutput {
                 query_id: self.query_id,
@@ -3071,7 +3048,7 @@ pub mod describe_query_output {
     }
 }
 impl DescribeQueryOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeQueryOutput`](crate::output::DescribeQueryOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeQueryOutput`](crate::output::DescribeQueryOutput).
     pub fn builder() -> crate::output::describe_query_output::Builder {
         crate::output::describe_query_output::Builder::default()
     }
@@ -3087,22 +3064,21 @@ impl std::fmt::Debug for DeleteTrailOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteTrailOutput`](crate::output::DeleteTrailOutput)
+/// See [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
 pub mod delete_trail_output {
 
-    /// A builder for [`DeleteTrailOutput`](crate::output::DeleteTrailOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteTrailOutput`](crate::output::DeleteTrailOutput)
+        /// Consumes the builder and constructs a [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
         pub fn build(self) -> crate::output::DeleteTrailOutput {
             crate::output::DeleteTrailOutput {}
         }
     }
 }
 impl DeleteTrailOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTrailOutput`](crate::output::DeleteTrailOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteTrailOutput`](crate::output::DeleteTrailOutput).
     pub fn builder() -> crate::output::delete_trail_output::Builder {
         crate::output::delete_trail_output::Builder::default()
     }
@@ -3118,22 +3094,21 @@ impl std::fmt::Debug for DeleteEventDataStoreOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+/// See [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
 pub mod delete_event_data_store_output {
 
-    /// A builder for [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+        /// Consumes the builder and constructs a [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
         pub fn build(self) -> crate::output::DeleteEventDataStoreOutput {
             crate::output::DeleteEventDataStoreOutput {}
         }
     }
 }
 impl DeleteEventDataStoreOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreOutput`](crate::output::DeleteEventDataStoreOutput).
     pub fn builder() -> crate::output::delete_event_data_store_output::Builder {
         crate::output::delete_event_data_store_output::Builder::default()
     }
@@ -3258,11 +3233,10 @@ impl std::fmt::Debug for CreateTrailOutput {
         formatter.finish()
     }
 }
-/// See [`CreateTrailOutput`](crate::output::CreateTrailOutput)
+/// See [`CreateTrailOutput`](crate::output::CreateTrailOutput).
 pub mod create_trail_output {
 
-    /// A builder for [`CreateTrailOutput`](crate::output::CreateTrailOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateTrailOutput`](crate::output::CreateTrailOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -3440,7 +3414,7 @@ pub mod create_trail_output {
             self.is_organization_trail = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateTrailOutput`](crate::output::CreateTrailOutput)
+        /// Consumes the builder and constructs a [`CreateTrailOutput`](crate::output::CreateTrailOutput).
         pub fn build(self) -> crate::output::CreateTrailOutput {
             crate::output::CreateTrailOutput {
                 name: self.name,
@@ -3461,7 +3435,7 @@ pub mod create_trail_output {
     }
 }
 impl CreateTrailOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTrailOutput`](crate::output::CreateTrailOutput)
+    /// Creates a new builder-style object to manufacture [`CreateTrailOutput`](crate::output::CreateTrailOutput).
     pub fn builder() -> crate::output::create_trail_output::Builder {
         crate::output::create_trail_output::Builder::default()
     }
@@ -3563,11 +3537,10 @@ impl std::fmt::Debug for CreateEventDataStoreOutput {
         formatter.finish()
     }
 }
-/// See [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
+/// See [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
 pub mod create_event_data_store_output {
 
-    /// A builder for [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
@@ -3730,7 +3703,7 @@ pub mod create_event_data_store_output {
             self.updated_timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
+        /// Consumes the builder and constructs a [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
         pub fn build(self) -> crate::output::CreateEventDataStoreOutput {
             crate::output::CreateEventDataStoreOutput {
                 event_data_store_arn: self.event_data_store_arn,
@@ -3749,7 +3722,7 @@ pub mod create_event_data_store_output {
     }
 }
 impl CreateEventDataStoreOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput)
+    /// Creates a new builder-style object to manufacture [`CreateEventDataStoreOutput`](crate::output::CreateEventDataStoreOutput).
     pub fn builder() -> crate::output::create_event_data_store_output::Builder {
         crate::output::create_event_data_store_output::Builder::default()
     }
@@ -3782,11 +3755,10 @@ impl std::fmt::Debug for CancelQueryOutput {
         formatter.finish()
     }
 }
-/// See [`CancelQueryOutput`](crate::output::CancelQueryOutput)
+/// See [`CancelQueryOutput`](crate::output::CancelQueryOutput).
 pub mod cancel_query_output {
 
-    /// A builder for [`CancelQueryOutput`](crate::output::CancelQueryOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelQueryOutput`](crate::output::CancelQueryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) query_id: std::option::Option<std::string::String>,
@@ -3816,7 +3788,7 @@ pub mod cancel_query_output {
             self.query_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelQueryOutput`](crate::output::CancelQueryOutput)
+        /// Consumes the builder and constructs a [`CancelQueryOutput`](crate::output::CancelQueryOutput).
         pub fn build(self) -> crate::output::CancelQueryOutput {
             crate::output::CancelQueryOutput {
                 query_id: self.query_id,
@@ -3826,7 +3798,7 @@ pub mod cancel_query_output {
     }
 }
 impl CancelQueryOutput {
-    /// Creates a new builder-style object to manufacture [`CancelQueryOutput`](crate::output::CancelQueryOutput)
+    /// Creates a new builder-style object to manufacture [`CancelQueryOutput`](crate::output::CancelQueryOutput).
     pub fn builder() -> crate::output::cancel_query_output::Builder {
         crate::output::cancel_query_output::Builder::default()
     }
@@ -3842,22 +3814,21 @@ impl std::fmt::Debug for AddTagsOutput {
         formatter.finish()
     }
 }
-/// See [`AddTagsOutput`](crate::output::AddTagsOutput)
+/// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
-    /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput)
-    #[non_exhaustive]
+    /// A builder for [`AddTagsOutput`](crate::output::AddTagsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput)
+        /// Consumes the builder and constructs a [`AddTagsOutput`](crate::output::AddTagsOutput).
         pub fn build(self) -> crate::output::AddTagsOutput {
             crate::output::AddTagsOutput {}
         }
     }
 }
 impl AddTagsOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput)
+    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
     pub fn builder() -> crate::output::add_tags_output::Builder {
         crate::output::add_tags_output::Builder::default()
     }

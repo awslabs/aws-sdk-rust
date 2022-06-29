@@ -10,7 +10,7 @@ pub struct GetEntitlements {
     _private: (),
 }
 impl GetEntitlements {
-    /// Creates a new builder-style object to manufacture [`GetEntitlementsInput`](crate::input::GetEntitlementsInput)
+    /// Creates a new builder-style object to manufacture [`GetEntitlementsInput`](crate::input::GetEntitlementsInput).
     pub fn builder() -> crate::input::get_entitlements_input::Builder {
         crate::input::get_entitlements_input::Builder::default()
     }

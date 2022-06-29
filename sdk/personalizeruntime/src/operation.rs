@@ -10,7 +10,7 @@ pub struct GetPersonalizedRanking {
     _private: (),
 }
 impl GetPersonalizedRanking {
-    /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingInput`](crate::input::GetPersonalizedRankingInput)
+    /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingInput`](crate::input::GetPersonalizedRankingInput).
     pub fn builder() -> crate::input::get_personalized_ranking_input::Builder {
         crate::input::get_personalized_ranking_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetRecommendations {
     _private: (),
 }
 impl GetRecommendations {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::input::GetRecommendationsInput)
+    /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::input::GetRecommendationsInput).
     pub fn builder() -> crate::input::get_recommendations_input::Builder {
         crate::input::get_recommendations_input::Builder::default()
     }

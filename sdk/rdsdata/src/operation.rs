@@ -10,7 +10,7 @@ pub struct BatchExecuteStatement {
     _private: (),
 }
 impl BatchExecuteStatement {
-    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
+    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
     pub fn builder() -> crate::input::batch_execute_statement_input::Builder {
         crate::input::batch_execute_statement_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BeginTransaction {
     _private: (),
 }
 impl BeginTransaction {
-    /// Creates a new builder-style object to manufacture [`BeginTransactionInput`](crate::input::BeginTransactionInput)
+    /// Creates a new builder-style object to manufacture [`BeginTransactionInput`](crate::input::BeginTransactionInput).
     pub fn builder() -> crate::input::begin_transaction_input::Builder {
         crate::input::begin_transaction_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CommitTransaction {
     _private: (),
 }
 impl CommitTransaction {
-    /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput)
+    /// Creates a new builder-style object to manufacture [`CommitTransactionInput`](crate::input::CommitTransactionInput).
     pub fn builder() -> crate::input::commit_transaction_input::Builder {
         crate::input::commit_transaction_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ExecuteSql {
     _private: (),
 }
 impl ExecuteSql {
-    /// Creates a new builder-style object to manufacture [`ExecuteSqlInput`](crate::input::ExecuteSqlInput)
+    /// Creates a new builder-style object to manufacture [`ExecuteSqlInput`](crate::input::ExecuteSqlInput).
     pub fn builder() -> crate::input::execute_sql_input::Builder {
         crate::input::execute_sql_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct ExecuteStatement {
     _private: (),
 }
 impl ExecuteStatement {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
     pub fn builder() -> crate::input::execute_statement_input::Builder {
         crate::input::execute_statement_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct RollbackTransaction {
     _private: (),
 }
 impl RollbackTransaction {
-    /// Creates a new builder-style object to manufacture [`RollbackTransactionInput`](crate::input::RollbackTransactionInput)
+    /// Creates a new builder-style object to manufacture [`RollbackTransactionInput`](crate::input::RollbackTransactionInput).
     pub fn builder() -> crate::input::rollback_transaction_input::Builder {
         crate::input::rollback_transaction_input::Builder::default()
     }

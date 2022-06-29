@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateScalingPlanOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
+/// See [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
 pub mod update_scaling_plan_output {
 
-    /// A builder for [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
+        /// Consumes the builder and constructs a [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
         pub fn build(self) -> crate::output::UpdateScalingPlanOutput {
             crate::output::UpdateScalingPlanOutput {}
         }
     }
 }
 impl UpdateScalingPlanOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
     pub fn builder() -> crate::output::update_scaling_plan_output::Builder {
         crate::output::update_scaling_plan_output::Builder::default()
     }
@@ -50,11 +49,10 @@ impl std::fmt::Debug for GetScalingPlanResourceForecastDataOutput {
         formatter.finish()
     }
 }
-/// See [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput)
+/// See [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
 pub mod get_scaling_plan_resource_forecast_data_output {
 
-    /// A builder for [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
@@ -79,7 +77,7 @@ pub mod get_scaling_plan_resource_forecast_data_output {
             self.datapoints = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput)
+        /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
         pub fn build(self) -> crate::output::GetScalingPlanResourceForecastDataOutput {
             crate::output::GetScalingPlanResourceForecastDataOutput {
                 datapoints: self.datapoints,
@@ -88,7 +86,7 @@ pub mod get_scaling_plan_resource_forecast_data_output {
     }
 }
 impl GetScalingPlanResourceForecastDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput)
+    /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
     pub fn builder() -> crate::output::get_scaling_plan_resource_forecast_data_output::Builder {
         crate::output::get_scaling_plan_resource_forecast_data_output::Builder::default()
     }
@@ -121,11 +119,10 @@ impl std::fmt::Debug for DescribeScalingPlansOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput)
+/// See [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
 pub mod describe_scaling_plans_output {
 
-    /// A builder for [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plans: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>,
@@ -161,7 +158,7 @@ pub mod describe_scaling_plans_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput)
+        /// Consumes the builder and constructs a [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
         pub fn build(self) -> crate::output::DescribeScalingPlansOutput {
             crate::output::DescribeScalingPlansOutput {
                 scaling_plans: self.scaling_plans,
@@ -171,7 +168,7 @@ pub mod describe_scaling_plans_output {
     }
 }
 impl DescribeScalingPlansOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
     pub fn builder() -> crate::output::describe_scaling_plans_output::Builder {
         crate::output::describe_scaling_plans_output::Builder::default()
     }
@@ -207,11 +204,10 @@ impl std::fmt::Debug for DescribeScalingPlanResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput)
+/// See [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
 pub mod describe_scaling_plan_resources_output {
 
-    /// A builder for [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_resources:
@@ -248,7 +244,7 @@ pub mod describe_scaling_plan_resources_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput)
+        /// Consumes the builder and constructs a [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
         pub fn build(self) -> crate::output::DescribeScalingPlanResourcesOutput {
             crate::output::DescribeScalingPlanResourcesOutput {
                 scaling_plan_resources: self.scaling_plan_resources,
@@ -258,7 +254,7 @@ pub mod describe_scaling_plan_resources_output {
     }
 }
 impl DescribeScalingPlanResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
     pub fn builder() -> crate::output::describe_scaling_plan_resources_output::Builder {
         crate::output::describe_scaling_plan_resources_output::Builder::default()
     }
@@ -274,22 +270,21 @@ impl std::fmt::Debug for DeleteScalingPlanOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
+/// See [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
 pub mod delete_scaling_plan_output {
 
-    /// A builder for [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
+        /// Consumes the builder and constructs a [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
         pub fn build(self) -> crate::output::DeleteScalingPlanOutput {
             crate::output::DeleteScalingPlanOutput {}
         }
     }
 }
 impl DeleteScalingPlanOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
     pub fn builder() -> crate::output::delete_scaling_plan_output::Builder {
         crate::output::delete_scaling_plan_output::Builder::default()
     }
@@ -315,11 +310,10 @@ impl std::fmt::Debug for CreateScalingPlanOutput {
         formatter.finish()
     }
 }
-/// See [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput)
+/// See [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
 pub mod create_scaling_plan_output {
 
-    /// A builder for [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_version: std::option::Option<i64>,
@@ -335,7 +329,7 @@ pub mod create_scaling_plan_output {
             self.scaling_plan_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput)
+        /// Consumes the builder and constructs a [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
         pub fn build(self) -> crate::output::CreateScalingPlanOutput {
             crate::output::CreateScalingPlanOutput {
                 scaling_plan_version: self.scaling_plan_version,
@@ -344,7 +338,7 @@ pub mod create_scaling_plan_output {
     }
 }
 impl CreateScalingPlanOutput {
-    /// Creates a new builder-style object to manufacture [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput)
+    /// Creates a new builder-style object to manufacture [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
     pub fn builder() -> crate::output::create_scaling_plan_output::Builder {
         crate::output::create_scaling_plan_output::Builder::default()
     }

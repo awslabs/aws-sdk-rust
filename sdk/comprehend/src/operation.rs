@@ -10,7 +10,7 @@ pub struct BatchDetectDominantLanguage {
     _private: (),
 }
 impl BatchDetectDominantLanguage {
-    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageInput`](crate::input::BatchDetectDominantLanguageInput)
+    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageInput`](crate::input::BatchDetectDominantLanguageInput).
     pub fn builder() -> crate::input::batch_detect_dominant_language_input::Builder {
         crate::input::batch_detect_dominant_language_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchDetectEntities {
     _private: (),
 }
 impl BatchDetectEntities {
-    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesInput`](crate::input::BatchDetectEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesInput`](crate::input::BatchDetectEntitiesInput).
     pub fn builder() -> crate::input::batch_detect_entities_input::Builder {
         crate::input::batch_detect_entities_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchDetectKeyPhrases {
     _private: (),
 }
 impl BatchDetectKeyPhrases {
-    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesInput`](crate::input::BatchDetectKeyPhrasesInput)
+    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesInput`](crate::input::BatchDetectKeyPhrasesInput).
     pub fn builder() -> crate::input::batch_detect_key_phrases_input::Builder {
         crate::input::batch_detect_key_phrases_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct BatchDetectSentiment {
     _private: (),
 }
 impl BatchDetectSentiment {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentInput`](crate::input::BatchDetectSentimentInput)
+    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentInput`](crate::input::BatchDetectSentimentInput).
     pub fn builder() -> crate::input::batch_detect_sentiment_input::Builder {
         crate::input::batch_detect_sentiment_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct BatchDetectSyntax {
     _private: (),
 }
 impl BatchDetectSyntax {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxInput`](crate::input::BatchDetectSyntaxInput)
+    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxInput`](crate::input::BatchDetectSyntaxInput).
     pub fn builder() -> crate::input::batch_detect_syntax_input::Builder {
         crate::input::batch_detect_syntax_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct ClassifyDocument {
     _private: (),
 }
 impl ClassifyDocument {
-    /// Creates a new builder-style object to manufacture [`ClassifyDocumentInput`](crate::input::ClassifyDocumentInput)
+    /// Creates a new builder-style object to manufacture [`ClassifyDocumentInput`](crate::input::ClassifyDocumentInput).
     pub fn builder() -> crate::input::classify_document_input::Builder {
         crate::input::classify_document_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct ContainsPiiEntities {
     _private: (),
 }
 impl ContainsPiiEntities {
-    /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesInput`](crate::input::ContainsPiiEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesInput`](crate::input::ContainsPiiEntitiesInput).
     pub fn builder() -> crate::input::contains_pii_entities_input::Builder {
         crate::input::contains_pii_entities_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CreateDocumentClassifier {
     _private: (),
 }
 impl CreateDocumentClassifier {
-    /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierInput`](crate::input::CreateDocumentClassifierInput)
+    /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierInput`](crate::input::CreateDocumentClassifierInput).
     pub fn builder() -> crate::input::create_document_classifier_input::Builder {
         crate::input::create_document_classifier_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct CreateEndpoint {
     _private: (),
 }
 impl CreateEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput).
     pub fn builder() -> crate::input::create_endpoint_input::Builder {
         crate::input::create_endpoint_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct CreateEntityRecognizer {
     _private: (),
 }
 impl CreateEntityRecognizer {
-    /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerInput`](crate::input::CreateEntityRecognizerInput)
+    /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerInput`](crate::input::CreateEntityRecognizerInput).
     pub fn builder() -> crate::input::create_entity_recognizer_input::Builder {
         crate::input::create_entity_recognizer_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct DeleteDocumentClassifier {
     _private: (),
 }
 impl DeleteDocumentClassifier {
-    /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierInput`](crate::input::DeleteDocumentClassifierInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierInput`](crate::input::DeleteDocumentClassifierInput).
     pub fn builder() -> crate::input::delete_document_classifier_input::Builder {
         crate::input::delete_document_classifier_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct DeleteEndpoint {
     _private: (),
 }
 impl DeleteEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
     pub fn builder() -> crate::input::delete_endpoint_input::Builder {
         crate::input::delete_endpoint_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DeleteEntityRecognizer {
     _private: (),
 }
 impl DeleteEntityRecognizer {
-    /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerInput`](crate::input::DeleteEntityRecognizerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerInput`](crate::input::DeleteEntityRecognizerInput).
     pub fn builder() -> crate::input::delete_entity_recognizer_input::Builder {
         crate::input::delete_entity_recognizer_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DescribeDocumentClassificationJob {
     _private: (),
 }
 impl DescribeDocumentClassificationJob {
-    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobInput`](crate::input::DescribeDocumentClassificationJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobInput`](crate::input::DescribeDocumentClassificationJobInput).
     pub fn builder() -> crate::input::describe_document_classification_job_input::Builder {
         crate::input::describe_document_classification_job_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DescribeDocumentClassifier {
     _private: (),
 }
 impl DescribeDocumentClassifier {
-    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierInput`](crate::input::DescribeDocumentClassifierInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierInput`](crate::input::DescribeDocumentClassifierInput).
     pub fn builder() -> crate::input::describe_document_classifier_input::Builder {
         crate::input::describe_document_classifier_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct DescribeDominantLanguageDetectionJob {
     _private: (),
 }
 impl DescribeDominantLanguageDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobInput`](crate::input::DescribeDominantLanguageDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobInput`](crate::input::DescribeDominantLanguageDetectionJobInput).
     pub fn builder() -> crate::input::describe_dominant_language_detection_job_input::Builder {
         crate::input::describe_dominant_language_detection_job_input::Builder::default()
     }
@@ -586,7 +586,7 @@ pub struct DescribeEndpoint {
     _private: (),
 }
 impl DescribeEndpoint {
-    /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::input::DescribeEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::input::DescribeEndpointInput).
     pub fn builder() -> crate::input::describe_endpoint_input::Builder {
         crate::input::describe_endpoint_input::Builder::default()
     }
@@ -620,7 +620,7 @@ pub struct DescribeEntitiesDetectionJob {
     _private: (),
 }
 impl DescribeEntitiesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionJobInput`](crate::input::DescribeEntitiesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionJobInput`](crate::input::DescribeEntitiesDetectionJobInput).
     pub fn builder() -> crate::input::describe_entities_detection_job_input::Builder {
         crate::input::describe_entities_detection_job_input::Builder::default()
     }
@@ -654,7 +654,7 @@ pub struct DescribeEntityRecognizer {
     _private: (),
 }
 impl DescribeEntityRecognizer {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerInput`](crate::input::DescribeEntityRecognizerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerInput`](crate::input::DescribeEntityRecognizerInput).
     pub fn builder() -> crate::input::describe_entity_recognizer_input::Builder {
         crate::input::describe_entity_recognizer_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct DescribeEventsDetectionJob {
     _private: (),
 }
 impl DescribeEventsDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobInput`](crate::input::DescribeEventsDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobInput`](crate::input::DescribeEventsDetectionJobInput).
     pub fn builder() -> crate::input::describe_events_detection_job_input::Builder {
         crate::input::describe_events_detection_job_input::Builder::default()
     }
@@ -722,7 +722,7 @@ pub struct DescribeKeyPhrasesDetectionJob {
     _private: (),
 }
 impl DescribeKeyPhrasesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobInput`](crate::input::DescribeKeyPhrasesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobInput`](crate::input::DescribeKeyPhrasesDetectionJobInput).
     pub fn builder() -> crate::input::describe_key_phrases_detection_job_input::Builder {
         crate::input::describe_key_phrases_detection_job_input::Builder::default()
     }
@@ -756,7 +756,7 @@ pub struct DescribePiiEntitiesDetectionJob {
     _private: (),
 }
 impl DescribePiiEntitiesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobInput`](crate::input::DescribePiiEntitiesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobInput`](crate::input::DescribePiiEntitiesDetectionJobInput).
     pub fn builder() -> crate::input::describe_pii_entities_detection_job_input::Builder {
         crate::input::describe_pii_entities_detection_job_input::Builder::default()
     }
@@ -790,7 +790,7 @@ pub struct DescribeResourcePolicy {
     _private: (),
 }
 impl DescribeResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyInput`](crate::input::DescribeResourcePolicyInput).
     pub fn builder() -> crate::input::describe_resource_policy_input::Builder {
         crate::input::describe_resource_policy_input::Builder::default()
     }
@@ -824,7 +824,7 @@ pub struct DescribeSentimentDetectionJob {
     _private: (),
 }
 impl DescribeSentimentDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobInput`](crate::input::DescribeSentimentDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobInput`](crate::input::DescribeSentimentDetectionJobInput).
     pub fn builder() -> crate::input::describe_sentiment_detection_job_input::Builder {
         crate::input::describe_sentiment_detection_job_input::Builder::default()
     }
@@ -858,7 +858,7 @@ pub struct DescribeTargetedSentimentDetectionJob {
     _private: (),
 }
 impl DescribeTargetedSentimentDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobInput`](crate::input::DescribeTargetedSentimentDetectionJobInput).
     pub fn builder() -> crate::input::describe_targeted_sentiment_detection_job_input::Builder {
         crate::input::describe_targeted_sentiment_detection_job_input::Builder::default()
     }
@@ -894,7 +894,7 @@ pub struct DescribeTopicsDetectionJob {
     _private: (),
 }
 impl DescribeTopicsDetectionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobInput`](crate::input::DescribeTopicsDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobInput`](crate::input::DescribeTopicsDetectionJobInput).
     pub fn builder() -> crate::input::describe_topics_detection_job_input::Builder {
         crate::input::describe_topics_detection_job_input::Builder::default()
     }
@@ -928,7 +928,7 @@ pub struct DetectDominantLanguage {
     _private: (),
 }
 impl DetectDominantLanguage {
-    /// Creates a new builder-style object to manufacture [`DetectDominantLanguageInput`](crate::input::DetectDominantLanguageInput)
+    /// Creates a new builder-style object to manufacture [`DetectDominantLanguageInput`](crate::input::DetectDominantLanguageInput).
     pub fn builder() -> crate::input::detect_dominant_language_input::Builder {
         crate::input::detect_dominant_language_input::Builder::default()
     }
@@ -962,7 +962,7 @@ pub struct DetectEntities {
     _private: (),
 }
 impl DetectEntities {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesInput`](crate::input::DetectEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesInput`](crate::input::DetectEntitiesInput).
     pub fn builder() -> crate::input::detect_entities_input::Builder {
         crate::input::detect_entities_input::Builder::default()
     }
@@ -994,7 +994,7 @@ pub struct DetectKeyPhrases {
     _private: (),
 }
 impl DetectKeyPhrases {
-    /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesInput`](crate::input::DetectKeyPhrasesInput)
+    /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesInput`](crate::input::DetectKeyPhrasesInput).
     pub fn builder() -> crate::input::detect_key_phrases_input::Builder {
         crate::input::detect_key_phrases_input::Builder::default()
     }
@@ -1028,7 +1028,7 @@ pub struct DetectPiiEntities {
     _private: (),
 }
 impl DetectPiiEntities {
-    /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesInput`](crate::input::DetectPiiEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesInput`](crate::input::DetectPiiEntitiesInput).
     pub fn builder() -> crate::input::detect_pii_entities_input::Builder {
         crate::input::detect_pii_entities_input::Builder::default()
     }
@@ -1062,7 +1062,7 @@ pub struct DetectSentiment {
     _private: (),
 }
 impl DetectSentiment {
-    /// Creates a new builder-style object to manufacture [`DetectSentimentInput`](crate::input::DetectSentimentInput)
+    /// Creates a new builder-style object to manufacture [`DetectSentimentInput`](crate::input::DetectSentimentInput).
     pub fn builder() -> crate::input::detect_sentiment_input::Builder {
         crate::input::detect_sentiment_input::Builder::default()
     }
@@ -1096,7 +1096,7 @@ pub struct DetectSyntax {
     _private: (),
 }
 impl DetectSyntax {
-    /// Creates a new builder-style object to manufacture [`DetectSyntaxInput`](crate::input::DetectSyntaxInput)
+    /// Creates a new builder-style object to manufacture [`DetectSyntaxInput`](crate::input::DetectSyntaxInput).
     pub fn builder() -> crate::input::detect_syntax_input::Builder {
         crate::input::detect_syntax_input::Builder::default()
     }
@@ -1128,7 +1128,7 @@ pub struct ImportModel {
     _private: (),
 }
 impl ImportModel {
-    /// Creates a new builder-style object to manufacture [`ImportModelInput`](crate::input::ImportModelInput)
+    /// Creates a new builder-style object to manufacture [`ImportModelInput`](crate::input::ImportModelInput).
     pub fn builder() -> crate::input::import_model_input::Builder {
         crate::input::import_model_input::Builder::default()
     }
@@ -1160,7 +1160,7 @@ pub struct ListDocumentClassificationJobs {
     _private: (),
 }
 impl ListDocumentClassificationJobs {
-    /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsInput`](crate::input::ListDocumentClassificationJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsInput`](crate::input::ListDocumentClassificationJobsInput).
     pub fn builder() -> crate::input::list_document_classification_jobs_input::Builder {
         crate::input::list_document_classification_jobs_input::Builder::default()
     }
@@ -1194,7 +1194,7 @@ pub struct ListDocumentClassifiers {
     _private: (),
 }
 impl ListDocumentClassifiers {
-    /// Creates a new builder-style object to manufacture [`ListDocumentClassifiersInput`](crate::input::ListDocumentClassifiersInput)
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassifiersInput`](crate::input::ListDocumentClassifiersInput).
     pub fn builder() -> crate::input::list_document_classifiers_input::Builder {
         crate::input::list_document_classifiers_input::Builder::default()
     }
@@ -1228,7 +1228,7 @@ pub struct ListDocumentClassifierSummaries {
     _private: (),
 }
 impl ListDocumentClassifierSummaries {
-    /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesInput`](crate::input::ListDocumentClassifierSummariesInput)
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesInput`](crate::input::ListDocumentClassifierSummariesInput).
     pub fn builder() -> crate::input::list_document_classifier_summaries_input::Builder {
         crate::input::list_document_classifier_summaries_input::Builder::default()
     }
@@ -1262,7 +1262,7 @@ pub struct ListDominantLanguageDetectionJobs {
     _private: (),
 }
 impl ListDominantLanguageDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsInput`](crate::input::ListDominantLanguageDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsInput`](crate::input::ListDominantLanguageDetectionJobsInput).
     pub fn builder() -> crate::input::list_dominant_language_detection_jobs_input::Builder {
         crate::input::list_dominant_language_detection_jobs_input::Builder::default()
     }
@@ -1296,7 +1296,7 @@ pub struct ListEndpoints {
     _private: (),
 }
 impl ListEndpoints {
-    /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput).
     pub fn builder() -> crate::input::list_endpoints_input::Builder {
         crate::input::list_endpoints_input::Builder::default()
     }
@@ -1328,7 +1328,7 @@ pub struct ListEntitiesDetectionJobs {
     _private: (),
 }
 impl ListEntitiesDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionJobsInput`](crate::input::ListEntitiesDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionJobsInput`](crate::input::ListEntitiesDetectionJobsInput).
     pub fn builder() -> crate::input::list_entities_detection_jobs_input::Builder {
         crate::input::list_entities_detection_jobs_input::Builder::default()
     }
@@ -1362,7 +1362,7 @@ pub struct ListEntityRecognizers {
     _private: (),
 }
 impl ListEntityRecognizers {
-    /// Creates a new builder-style object to manufacture [`ListEntityRecognizersInput`](crate::input::ListEntityRecognizersInput)
+    /// Creates a new builder-style object to manufacture [`ListEntityRecognizersInput`](crate::input::ListEntityRecognizersInput).
     pub fn builder() -> crate::input::list_entity_recognizers_input::Builder {
         crate::input::list_entity_recognizers_input::Builder::default()
     }
@@ -1396,7 +1396,7 @@ pub struct ListEntityRecognizerSummaries {
     _private: (),
 }
 impl ListEntityRecognizerSummaries {
-    /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesInput`](crate::input::ListEntityRecognizerSummariesInput)
+    /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesInput`](crate::input::ListEntityRecognizerSummariesInput).
     pub fn builder() -> crate::input::list_entity_recognizer_summaries_input::Builder {
         crate::input::list_entity_recognizer_summaries_input::Builder::default()
     }
@@ -1430,7 +1430,7 @@ pub struct ListEventsDetectionJobs {
     _private: (),
 }
 impl ListEventsDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsInput`](crate::input::ListEventsDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsInput`](crate::input::ListEventsDetectionJobsInput).
     pub fn builder() -> crate::input::list_events_detection_jobs_input::Builder {
         crate::input::list_events_detection_jobs_input::Builder::default()
     }
@@ -1464,7 +1464,7 @@ pub struct ListKeyPhrasesDetectionJobs {
     _private: (),
 }
 impl ListKeyPhrasesDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsInput`](crate::input::ListKeyPhrasesDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsInput`](crate::input::ListKeyPhrasesDetectionJobsInput).
     pub fn builder() -> crate::input::list_key_phrases_detection_jobs_input::Builder {
         crate::input::list_key_phrases_detection_jobs_input::Builder::default()
     }
@@ -1498,7 +1498,7 @@ pub struct ListPiiEntitiesDetectionJobs {
     _private: (),
 }
 impl ListPiiEntitiesDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsInput`](crate::input::ListPiiEntitiesDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsInput`](crate::input::ListPiiEntitiesDetectionJobsInput).
     pub fn builder() -> crate::input::list_pii_entities_detection_jobs_input::Builder {
         crate::input::list_pii_entities_detection_jobs_input::Builder::default()
     }
@@ -1532,7 +1532,7 @@ pub struct ListSentimentDetectionJobs {
     _private: (),
 }
 impl ListSentimentDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsInput`](crate::input::ListSentimentDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsInput`](crate::input::ListSentimentDetectionJobsInput).
     pub fn builder() -> crate::input::list_sentiment_detection_jobs_input::Builder {
         crate::input::list_sentiment_detection_jobs_input::Builder::default()
     }
@@ -1566,7 +1566,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1600,7 +1600,7 @@ pub struct ListTargetedSentimentDetectionJobs {
     _private: (),
 }
 impl ListTargetedSentimentDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsInput`](crate::input::ListTargetedSentimentDetectionJobsInput).
     pub fn builder() -> crate::input::list_targeted_sentiment_detection_jobs_input::Builder {
         crate::input::list_targeted_sentiment_detection_jobs_input::Builder::default()
     }
@@ -1634,7 +1634,7 @@ pub struct ListTopicsDetectionJobs {
     _private: (),
 }
 impl ListTopicsDetectionJobs {
-    /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput).
     pub fn builder() -> crate::input::list_topics_detection_jobs_input::Builder {
         crate::input::list_topics_detection_jobs_input::Builder::default()
     }
@@ -1668,7 +1668,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -1702,7 +1702,7 @@ pub struct StartDocumentClassificationJob {
     _private: (),
 }
 impl StartDocumentClassificationJob {
-    /// Creates a new builder-style object to manufacture [`StartDocumentClassificationJobInput`](crate::input::StartDocumentClassificationJobInput)
+    /// Creates a new builder-style object to manufacture [`StartDocumentClassificationJobInput`](crate::input::StartDocumentClassificationJobInput).
     pub fn builder() -> crate::input::start_document_classification_job_input::Builder {
         crate::input::start_document_classification_job_input::Builder::default()
     }
@@ -1736,7 +1736,7 @@ pub struct StartDominantLanguageDetectionJob {
     _private: (),
 }
 impl StartDominantLanguageDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobInput`](crate::input::StartDominantLanguageDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobInput`](crate::input::StartDominantLanguageDetectionJobInput).
     pub fn builder() -> crate::input::start_dominant_language_detection_job_input::Builder {
         crate::input::start_dominant_language_detection_job_input::Builder::default()
     }
@@ -1770,7 +1770,7 @@ pub struct StartEntitiesDetectionJob {
     _private: (),
 }
 impl StartEntitiesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobInput`](crate::input::StartEntitiesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobInput`](crate::input::StartEntitiesDetectionJobInput).
     pub fn builder() -> crate::input::start_entities_detection_job_input::Builder {
         crate::input::start_entities_detection_job_input::Builder::default()
     }
@@ -1804,7 +1804,7 @@ pub struct StartEventsDetectionJob {
     _private: (),
 }
 impl StartEventsDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobInput`](crate::input::StartEventsDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobInput`](crate::input::StartEventsDetectionJobInput).
     pub fn builder() -> crate::input::start_events_detection_job_input::Builder {
         crate::input::start_events_detection_job_input::Builder::default()
     }
@@ -1838,7 +1838,7 @@ pub struct StartKeyPhrasesDetectionJob {
     _private: (),
 }
 impl StartKeyPhrasesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartKeyPhrasesDetectionJobInput`](crate::input::StartKeyPhrasesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartKeyPhrasesDetectionJobInput`](crate::input::StartKeyPhrasesDetectionJobInput).
     pub fn builder() -> crate::input::start_key_phrases_detection_job_input::Builder {
         crate::input::start_key_phrases_detection_job_input::Builder::default()
     }
@@ -1872,7 +1872,7 @@ pub struct StartPiiEntitiesDetectionJob {
     _private: (),
 }
 impl StartPiiEntitiesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobInput`](crate::input::StartPiiEntitiesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobInput`](crate::input::StartPiiEntitiesDetectionJobInput).
     pub fn builder() -> crate::input::start_pii_entities_detection_job_input::Builder {
         crate::input::start_pii_entities_detection_job_input::Builder::default()
     }
@@ -1906,7 +1906,7 @@ pub struct StartSentimentDetectionJob {
     _private: (),
 }
 impl StartSentimentDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartSentimentDetectionJobInput`](crate::input::StartSentimentDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartSentimentDetectionJobInput`](crate::input::StartSentimentDetectionJobInput).
     pub fn builder() -> crate::input::start_sentiment_detection_job_input::Builder {
         crate::input::start_sentiment_detection_job_input::Builder::default()
     }
@@ -1940,7 +1940,7 @@ pub struct StartTargetedSentimentDetectionJob {
     _private: (),
 }
 impl StartTargetedSentimentDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobInput`](crate::input::StartTargetedSentimentDetectionJobInput).
     pub fn builder() -> crate::input::start_targeted_sentiment_detection_job_input::Builder {
         crate::input::start_targeted_sentiment_detection_job_input::Builder::default()
     }
@@ -1974,7 +1974,7 @@ pub struct StartTopicsDetectionJob {
     _private: (),
 }
 impl StartTopicsDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobInput`](crate::input::StartTopicsDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobInput`](crate::input::StartTopicsDetectionJobInput).
     pub fn builder() -> crate::input::start_topics_detection_job_input::Builder {
         crate::input::start_topics_detection_job_input::Builder::default()
     }
@@ -2008,7 +2008,7 @@ pub struct StopDominantLanguageDetectionJob {
     _private: (),
 }
 impl StopDominantLanguageDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobInput`](crate::input::StopDominantLanguageDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobInput`](crate::input::StopDominantLanguageDetectionJobInput).
     pub fn builder() -> crate::input::stop_dominant_language_detection_job_input::Builder {
         crate::input::stop_dominant_language_detection_job_input::Builder::default()
     }
@@ -2042,7 +2042,7 @@ pub struct StopEntitiesDetectionJob {
     _private: (),
 }
 impl StopEntitiesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionJobInput`](crate::input::StopEntitiesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionJobInput`](crate::input::StopEntitiesDetectionJobInput).
     pub fn builder() -> crate::input::stop_entities_detection_job_input::Builder {
         crate::input::stop_entities_detection_job_input::Builder::default()
     }
@@ -2076,7 +2076,7 @@ pub struct StopEventsDetectionJob {
     _private: (),
 }
 impl StopEventsDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobInput`](crate::input::StopEventsDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobInput`](crate::input::StopEventsDetectionJobInput).
     pub fn builder() -> crate::input::stop_events_detection_job_input::Builder {
         crate::input::stop_events_detection_job_input::Builder::default()
     }
@@ -2110,7 +2110,7 @@ pub struct StopKeyPhrasesDetectionJob {
     _private: (),
 }
 impl StopKeyPhrasesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobInput`](crate::input::StopKeyPhrasesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobInput`](crate::input::StopKeyPhrasesDetectionJobInput).
     pub fn builder() -> crate::input::stop_key_phrases_detection_job_input::Builder {
         crate::input::stop_key_phrases_detection_job_input::Builder::default()
     }
@@ -2144,7 +2144,7 @@ pub struct StopPiiEntitiesDetectionJob {
     _private: (),
 }
 impl StopPiiEntitiesDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobInput`](crate::input::StopPiiEntitiesDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobInput`](crate::input::StopPiiEntitiesDetectionJobInput).
     pub fn builder() -> crate::input::stop_pii_entities_detection_job_input::Builder {
         crate::input::stop_pii_entities_detection_job_input::Builder::default()
     }
@@ -2178,7 +2178,7 @@ pub struct StopSentimentDetectionJob {
     _private: (),
 }
 impl StopSentimentDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobInput`](crate::input::StopSentimentDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobInput`](crate::input::StopSentimentDetectionJobInput).
     pub fn builder() -> crate::input::stop_sentiment_detection_job_input::Builder {
         crate::input::stop_sentiment_detection_job_input::Builder::default()
     }
@@ -2212,7 +2212,7 @@ pub struct StopTargetedSentimentDetectionJob {
     _private: (),
 }
 impl StopTargetedSentimentDetectionJob {
-    /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput)
+    /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobInput`](crate::input::StopTargetedSentimentDetectionJobInput).
     pub fn builder() -> crate::input::stop_targeted_sentiment_detection_job_input::Builder {
         crate::input::stop_targeted_sentiment_detection_job_input::Builder::default()
     }
@@ -2246,7 +2246,7 @@ pub struct StopTrainingDocumentClassifier {
     _private: (),
 }
 impl StopTrainingDocumentClassifier {
-    /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierInput`](crate::input::StopTrainingDocumentClassifierInput)
+    /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierInput`](crate::input::StopTrainingDocumentClassifierInput).
     pub fn builder() -> crate::input::stop_training_document_classifier_input::Builder {
         crate::input::stop_training_document_classifier_input::Builder::default()
     }
@@ -2280,7 +2280,7 @@ pub struct StopTrainingEntityRecognizer {
     _private: (),
 }
 impl StopTrainingEntityRecognizer {
-    /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerInput`](crate::input::StopTrainingEntityRecognizerInput)
+    /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerInput`](crate::input::StopTrainingEntityRecognizerInput).
     pub fn builder() -> crate::input::stop_training_entity_recognizer_input::Builder {
         crate::input::stop_training_entity_recognizer_input::Builder::default()
     }
@@ -2314,7 +2314,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -2346,7 +2346,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -2378,7 +2378,7 @@ pub struct UpdateEndpoint {
     _private: (),
 }
 impl UpdateEndpoint {
-    /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::input::UpdateEndpointInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::input::UpdateEndpointInput).
     pub fn builder() -> crate::input::update_endpoint_input::Builder {
         crate::input::update_endpoint_input::Builder::default()
     }

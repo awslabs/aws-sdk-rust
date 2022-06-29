@@ -10,7 +10,7 @@ pub struct StartMedicalStreamTranscription {
     _private: (),
 }
 impl StartMedicalStreamTranscription {
-    /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionInput`](crate::input::StartMedicalStreamTranscriptionInput)
+    /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionInput`](crate::input::StartMedicalStreamTranscriptionInput).
     pub fn builder() -> crate::input::start_medical_stream_transcription_input::Builder {
         crate::input::start_medical_stream_transcription_input::Builder::default()
     }
@@ -51,7 +51,7 @@ pub struct StartStreamTranscription {
     _private: (),
 }
 impl StartStreamTranscription {
-    /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionInput`](crate::input::StartStreamTranscriptionInput)
+    /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionInput`](crate::input::StartStreamTranscriptionInput).
     pub fn builder() -> crate::input::start_stream_transcription_input::Builder {
         crate::input::start_stream_transcription_input::Builder::default()
     }

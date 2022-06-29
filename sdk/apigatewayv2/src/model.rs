@@ -166,11 +166,10 @@ impl std::fmt::Debug for RouteSettings {
         formatter.finish()
     }
 }
-/// See [`RouteSettings`](crate::model::RouteSettings)
+/// See [`RouteSettings`](crate::model::RouteSettings).
 pub mod route_settings {
 
-    /// A builder for [`RouteSettings`](crate::model::RouteSettings)
-    #[non_exhaustive]
+    /// A builder for [`RouteSettings`](crate::model::RouteSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_trace_enabled: std::option::Option<bool>,
@@ -233,7 +232,7 @@ pub mod route_settings {
             self.throttling_rate_limit = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteSettings`](crate::model::RouteSettings)
+        /// Consumes the builder and constructs a [`RouteSettings`](crate::model::RouteSettings).
         pub fn build(self) -> crate::model::RouteSettings {
             crate::model::RouteSettings {
                 data_trace_enabled: self.data_trace_enabled.unwrap_or_default(),
@@ -246,7 +245,7 @@ pub mod route_settings {
     }
 }
 impl RouteSettings {
-    /// Creates a new builder-style object to manufacture [`RouteSettings`](crate::model::RouteSettings)
+    /// Creates a new builder-style object to manufacture [`RouteSettings`](crate::model::RouteSettings).
     pub fn builder() -> crate::model::route_settings::Builder {
         crate::model::route_settings::Builder::default()
     }
@@ -338,11 +337,10 @@ impl std::fmt::Debug for AccessLogSettings {
         formatter.finish()
     }
 }
-/// See [`AccessLogSettings`](crate::model::AccessLogSettings)
+/// See [`AccessLogSettings`](crate::model::AccessLogSettings).
 pub mod access_log_settings {
 
-    /// A builder for [`AccessLogSettings`](crate::model::AccessLogSettings)
-    #[non_exhaustive]
+    /// A builder for [`AccessLogSettings`](crate::model::AccessLogSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_arn: std::option::Option<std::string::String>,
@@ -372,7 +370,7 @@ pub mod access_log_settings {
             self.format = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessLogSettings`](crate::model::AccessLogSettings)
+        /// Consumes the builder and constructs a [`AccessLogSettings`](crate::model::AccessLogSettings).
         pub fn build(self) -> crate::model::AccessLogSettings {
             crate::model::AccessLogSettings {
                 destination_arn: self.destination_arn,
@@ -382,7 +380,7 @@ pub mod access_log_settings {
     }
 }
 impl AccessLogSettings {
-    /// Creates a new builder-style object to manufacture [`AccessLogSettings`](crate::model::AccessLogSettings)
+    /// Creates a new builder-style object to manufacture [`AccessLogSettings`](crate::model::AccessLogSettings).
     pub fn builder() -> crate::model::access_log_settings::Builder {
         crate::model::access_log_settings::Builder::default()
     }
@@ -408,11 +406,10 @@ impl std::fmt::Debug for ParameterConstraints {
         formatter.finish()
     }
 }
-/// See [`ParameterConstraints`](crate::model::ParameterConstraints)
+/// See [`ParameterConstraints`](crate::model::ParameterConstraints).
 pub mod parameter_constraints {
 
-    /// A builder for [`ParameterConstraints`](crate::model::ParameterConstraints)
-    #[non_exhaustive]
+    /// A builder for [`ParameterConstraints`](crate::model::ParameterConstraints).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) required: std::option::Option<bool>,
@@ -428,7 +425,7 @@ pub mod parameter_constraints {
             self.required = input;
             self
         }
-        /// Consumes the builder and constructs a [`ParameterConstraints`](crate::model::ParameterConstraints)
+        /// Consumes the builder and constructs a [`ParameterConstraints`](crate::model::ParameterConstraints).
         pub fn build(self) -> crate::model::ParameterConstraints {
             crate::model::ParameterConstraints {
                 required: self.required.unwrap_or_default(),
@@ -437,7 +434,7 @@ pub mod parameter_constraints {
     }
 }
 impl ParameterConstraints {
-    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints)
+    /// Creates a new builder-style object to manufacture [`ParameterConstraints`](crate::model::ParameterConstraints).
     pub fn builder() -> crate::model::parameter_constraints::Builder {
         crate::model::parameter_constraints::Builder::default()
     }
@@ -581,11 +578,10 @@ impl std::fmt::Debug for TlsConfig {
         formatter.finish()
     }
 }
-/// See [`TlsConfig`](crate::model::TlsConfig)
+/// See [`TlsConfig`](crate::model::TlsConfig).
 pub mod tls_config {
 
-    /// A builder for [`TlsConfig`](crate::model::TlsConfig)
-    #[non_exhaustive]
+    /// A builder for [`TlsConfig`](crate::model::TlsConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name_to_verify: std::option::Option<std::string::String>,
@@ -604,7 +600,7 @@ pub mod tls_config {
             self.server_name_to_verify = input;
             self
         }
-        /// Consumes the builder and constructs a [`TlsConfig`](crate::model::TlsConfig)
+        /// Consumes the builder and constructs a [`TlsConfig`](crate::model::TlsConfig).
         pub fn build(self) -> crate::model::TlsConfig {
             crate::model::TlsConfig {
                 server_name_to_verify: self.server_name_to_verify,
@@ -613,7 +609,7 @@ pub mod tls_config {
     }
 }
 impl TlsConfig {
-    /// Creates a new builder-style object to manufacture [`TlsConfig`](crate::model::TlsConfig)
+    /// Creates a new builder-style object to manufacture [`TlsConfig`](crate::model::TlsConfig).
     pub fn builder() -> crate::model::tls_config::Builder {
         crate::model::tls_config::Builder::default()
     }
@@ -820,11 +816,10 @@ impl std::fmt::Debug for TlsConfigInput {
         formatter.finish()
     }
 }
-/// See [`TlsConfigInput`](crate::model::TlsConfigInput)
+/// See [`TlsConfigInput`](crate::model::TlsConfigInput).
 pub mod tls_config_input {
 
-    /// A builder for [`TlsConfigInput`](crate::model::TlsConfigInput)
-    #[non_exhaustive]
+    /// A builder for [`TlsConfigInput`](crate::model::TlsConfigInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) server_name_to_verify: std::option::Option<std::string::String>,
@@ -843,7 +838,7 @@ pub mod tls_config_input {
             self.server_name_to_verify = input;
             self
         }
-        /// Consumes the builder and constructs a [`TlsConfigInput`](crate::model::TlsConfigInput)
+        /// Consumes the builder and constructs a [`TlsConfigInput`](crate::model::TlsConfigInput).
         pub fn build(self) -> crate::model::TlsConfigInput {
             crate::model::TlsConfigInput {
                 server_name_to_verify: self.server_name_to_verify,
@@ -852,7 +847,7 @@ pub mod tls_config_input {
     }
 }
 impl TlsConfigInput {
-    /// Creates a new builder-style object to manufacture [`TlsConfigInput`](crate::model::TlsConfigInput)
+    /// Creates a new builder-style object to manufacture [`TlsConfigInput`](crate::model::TlsConfigInput).
     pub fn builder() -> crate::model::tls_config_input::Builder {
         crate::model::tls_config_input::Builder::default()
     }
@@ -900,11 +895,10 @@ impl std::fmt::Debug for MutualTlsAuthentication {
         formatter.finish()
     }
 }
-/// See [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication)
+/// See [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
 pub mod mutual_tls_authentication {
 
-    /// A builder for [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication)
-    #[non_exhaustive]
+    /// A builder for [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truststore_uri: std::option::Option<std::string::String>,
@@ -965,7 +959,7 @@ pub mod mutual_tls_authentication {
             self.truststore_warnings = input;
             self
         }
-        /// Consumes the builder and constructs a [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication)
+        /// Consumes the builder and constructs a [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
         pub fn build(self) -> crate::model::MutualTlsAuthentication {
             crate::model::MutualTlsAuthentication {
                 truststore_uri: self.truststore_uri,
@@ -976,7 +970,7 @@ pub mod mutual_tls_authentication {
     }
 }
 impl MutualTlsAuthentication {
-    /// Creates a new builder-style object to manufacture [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication)
+    /// Creates a new builder-style object to manufacture [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
     pub fn builder() -> crate::model::mutual_tls_authentication::Builder {
         crate::model::mutual_tls_authentication::Builder::default()
     }
@@ -1071,11 +1065,10 @@ impl std::fmt::Debug for DomainNameConfiguration {
         formatter.finish()
     }
 }
-/// See [`DomainNameConfiguration`](crate::model::DomainNameConfiguration)
+/// See [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
 pub mod domain_name_configuration {
 
-    /// A builder for [`DomainNameConfiguration`](crate::model::DomainNameConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_domain_name: std::option::Option<std::string::String>,
@@ -1223,7 +1216,7 @@ pub mod domain_name_configuration {
             self.ownership_verification_certificate_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainNameConfiguration`](crate::model::DomainNameConfiguration)
+        /// Consumes the builder and constructs a [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
         pub fn build(self) -> crate::model::DomainNameConfiguration {
             crate::model::DomainNameConfiguration {
                 api_gateway_domain_name: self.api_gateway_domain_name,
@@ -1241,7 +1234,7 @@ pub mod domain_name_configuration {
     }
 }
 impl DomainNameConfiguration {
-    /// Creates a new builder-style object to manufacture [`DomainNameConfiguration`](crate::model::DomainNameConfiguration)
+    /// Creates a new builder-style object to manufacture [`DomainNameConfiguration`](crate::model::DomainNameConfiguration).
     pub fn builder() -> crate::model::domain_name_configuration::Builder {
         crate::model::domain_name_configuration::Builder::default()
     }
@@ -1460,11 +1453,10 @@ impl std::fmt::Debug for MutualTlsAuthenticationInput {
         formatter.finish()
     }
 }
-/// See [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput)
+/// See [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
 pub mod mutual_tls_authentication_input {
 
-    /// A builder for [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput)
-    #[non_exhaustive]
+    /// A builder for [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) truststore_uri: std::option::Option<std::string::String>,
@@ -1505,7 +1497,7 @@ pub mod mutual_tls_authentication_input {
             self.truststore_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput)
+        /// Consumes the builder and constructs a [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
         pub fn build(self) -> crate::model::MutualTlsAuthenticationInput {
             crate::model::MutualTlsAuthenticationInput {
                 truststore_uri: self.truststore_uri,
@@ -1515,7 +1507,7 @@ pub mod mutual_tls_authentication_input {
     }
 }
 impl MutualTlsAuthenticationInput {
-    /// Creates a new builder-style object to manufacture [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput)
+    /// Creates a new builder-style object to manufacture [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
     pub fn builder() -> crate::model::mutual_tls_authentication_input::Builder {
         crate::model::mutual_tls_authentication_input::Builder::default()
     }
@@ -1615,11 +1607,10 @@ impl std::fmt::Debug for JwtConfiguration {
         formatter.finish()
     }
 }
-/// See [`JwtConfiguration`](crate::model::JwtConfiguration)
+/// See [`JwtConfiguration`](crate::model::JwtConfiguration).
 pub mod jwt_configuration {
 
-    /// A builder for [`JwtConfiguration`](crate::model::JwtConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`JwtConfiguration`](crate::model::JwtConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audience: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1663,7 +1654,7 @@ pub mod jwt_configuration {
             self.issuer = input;
             self
         }
-        /// Consumes the builder and constructs a [`JwtConfiguration`](crate::model::JwtConfiguration)
+        /// Consumes the builder and constructs a [`JwtConfiguration`](crate::model::JwtConfiguration).
         pub fn build(self) -> crate::model::JwtConfiguration {
             crate::model::JwtConfiguration {
                 audience: self.audience,
@@ -1673,7 +1664,7 @@ pub mod jwt_configuration {
     }
 }
 impl JwtConfiguration {
-    /// Creates a new builder-style object to manufacture [`JwtConfiguration`](crate::model::JwtConfiguration)
+    /// Creates a new builder-style object to manufacture [`JwtConfiguration`](crate::model::JwtConfiguration).
     pub fn builder() -> crate::model::jwt_configuration::Builder {
         crate::model::jwt_configuration::Builder::default()
     }
@@ -1844,11 +1835,10 @@ impl std::fmt::Debug for Cors {
         formatter.finish()
     }
 }
-/// See [`Cors`](crate::model::Cors)
+/// See [`Cors`](crate::model::Cors).
 pub mod cors {
 
-    /// A builder for [`Cors`](crate::model::Cors)
-    #[non_exhaustive]
+    /// A builder for [`Cors`](crate::model::Cors).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allow_credentials: std::option::Option<bool>,
@@ -1955,7 +1945,7 @@ pub mod cors {
             self.max_age = input;
             self
         }
-        /// Consumes the builder and constructs a [`Cors`](crate::model::Cors)
+        /// Consumes the builder and constructs a [`Cors`](crate::model::Cors).
         pub fn build(self) -> crate::model::Cors {
             crate::model::Cors {
                 allow_credentials: self.allow_credentials.unwrap_or_default(),
@@ -1969,7 +1959,7 @@ pub mod cors {
     }
 }
 impl Cors {
-    /// Creates a new builder-style object to manufacture [`Cors`](crate::model::Cors)
+    /// Creates a new builder-style object to manufacture [`Cors`](crate::model::Cors).
     pub fn builder() -> crate::model::cors::Builder {
         crate::model::cors::Builder::default()
     }
@@ -2055,11 +2045,10 @@ impl std::fmt::Debug for VpcLink {
         formatter.finish()
     }
 }
-/// See [`VpcLink`](crate::model::VpcLink)
+/// See [`VpcLink`](crate::model::VpcLink).
 pub mod vpc_link {
 
-    /// A builder for [`VpcLink`](crate::model::VpcLink)
-    #[non_exhaustive]
+    /// A builder for [`VpcLink`](crate::model::VpcLink).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2210,7 +2199,7 @@ pub mod vpc_link {
             self.vpc_link_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcLink`](crate::model::VpcLink)
+        /// Consumes the builder and constructs a [`VpcLink`](crate::model::VpcLink).
         pub fn build(self) -> crate::model::VpcLink {
             crate::model::VpcLink {
                 created_date: self.created_date,
@@ -2227,7 +2216,7 @@ pub mod vpc_link {
     }
 }
 impl VpcLink {
-    /// Creates a new builder-style object to manufacture [`VpcLink`](crate::model::VpcLink)
+    /// Creates a new builder-style object to manufacture [`VpcLink`](crate::model::VpcLink).
     pub fn builder() -> crate::model::vpc_link::Builder {
         crate::model::vpc_link::Builder::default()
     }
@@ -2361,11 +2350,10 @@ impl std::fmt::Debug for Stage {
         formatter.finish()
     }
 }
-/// See [`Stage`](crate::model::Stage)
+/// See [`Stage`](crate::model::Stage).
 pub mod stage {
 
-    /// A builder for [`Stage`](crate::model::Stage)
-    #[non_exhaustive]
+    /// A builder for [`Stage`](crate::model::Stage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
@@ -2599,7 +2587,7 @@ pub mod stage {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Stage`](crate::model::Stage)
+        /// Consumes the builder and constructs a [`Stage`](crate::model::Stage).
         pub fn build(self) -> crate::model::Stage {
             crate::model::Stage {
                 access_log_settings: self.access_log_settings,
@@ -2621,7 +2609,7 @@ pub mod stage {
     }
 }
 impl Stage {
-    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage)
+    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
     pub fn builder() -> crate::model::stage::Builder {
         crate::model::stage::Builder::default()
     }
@@ -2747,11 +2735,10 @@ impl std::fmt::Debug for Route {
         formatter.finish()
     }
 }
-/// See [`Route`](crate::model::Route)
+/// See [`Route`](crate::model::Route).
 pub mod route {
 
-    /// A builder for [`Route`](crate::model::Route)
-    #[non_exhaustive]
+    /// A builder for [`Route`](crate::model::Route).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -2960,7 +2947,7 @@ pub mod route {
             self.target = input;
             self
         }
-        /// Consumes the builder and constructs a [`Route`](crate::model::Route)
+        /// Consumes the builder and constructs a [`Route`](crate::model::Route).
         pub fn build(self) -> crate::model::Route {
             crate::model::Route {
                 api_gateway_managed: self.api_gateway_managed.unwrap_or_default(),
@@ -2981,7 +2968,7 @@ pub mod route {
     }
 }
 impl Route {
-    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route)
+    /// Creates a new builder-style object to manufacture [`Route`](crate::model::Route).
     pub fn builder() -> crate::model::route::Builder {
         crate::model::route::Builder::default()
     }
@@ -3048,11 +3035,10 @@ impl std::fmt::Debug for RouteResponse {
         formatter.finish()
     }
 }
-/// See [`RouteResponse`](crate::model::RouteResponse)
+/// See [`RouteResponse`](crate::model::RouteResponse).
 pub mod route_response {
 
-    /// A builder for [`RouteResponse`](crate::model::RouteResponse)
-    #[non_exhaustive]
+    /// A builder for [`RouteResponse`](crate::model::RouteResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_selection_expression: std::option::Option<std::string::String>,
@@ -3155,7 +3141,7 @@ pub mod route_response {
             self.route_response_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`RouteResponse`](crate::model::RouteResponse)
+        /// Consumes the builder and constructs a [`RouteResponse`](crate::model::RouteResponse).
         pub fn build(self) -> crate::model::RouteResponse {
             crate::model::RouteResponse {
                 model_selection_expression: self.model_selection_expression,
@@ -3168,7 +3154,7 @@ pub mod route_response {
     }
 }
 impl RouteResponse {
-    /// Creates a new builder-style object to manufacture [`RouteResponse`](crate::model::RouteResponse)
+    /// Creates a new builder-style object to manufacture [`RouteResponse`](crate::model::RouteResponse).
     pub fn builder() -> crate::model::route_response::Builder {
         crate::model::route_response::Builder::default()
     }
@@ -3222,11 +3208,10 @@ impl std::fmt::Debug for Model {
         formatter.finish()
     }
 }
-/// See [`Model`](crate::model::Model)
+/// See [`Model`](crate::model::Model).
 pub mod model {
 
-    /// A builder for [`Model`](crate::model::Model)
-    #[non_exhaustive]
+    /// A builder for [`Model`](crate::model::Model).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -3286,7 +3271,7 @@ pub mod model {
             self.schema = input;
             self
         }
-        /// Consumes the builder and constructs a [`Model`](crate::model::Model)
+        /// Consumes the builder and constructs a [`Model`](crate::model::Model).
         pub fn build(self) -> crate::model::Model {
             crate::model::Model {
                 content_type: self.content_type,
@@ -3299,7 +3284,7 @@ pub mod model {
     }
 }
 impl Model {
-    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model)
+    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
     pub fn builder() -> crate::model::model::Builder {
         crate::model::model::Builder::default()
     }
@@ -3532,11 +3517,10 @@ impl std::fmt::Debug for Integration {
         formatter.finish()
     }
 }
-/// See [`Integration`](crate::model::Integration)
+/// See [`Integration`](crate::model::Integration).
 pub mod integration {
 
-    /// A builder for [`Integration`](crate::model::Integration)
-    #[non_exhaustive]
+    /// A builder for [`Integration`](crate::model::Integration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
@@ -3917,7 +3901,7 @@ pub mod integration {
             self.tls_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`Integration`](crate::model::Integration)
+        /// Consumes the builder and constructs a [`Integration`](crate::model::Integration).
         pub fn build(self) -> crate::model::Integration {
             crate::model::Integration {
                 api_gateway_managed: self.api_gateway_managed.unwrap_or_default(),
@@ -3946,7 +3930,7 @@ pub mod integration {
     }
 }
 impl Integration {
-    /// Creates a new builder-style object to manufacture [`Integration`](crate::model::Integration)
+    /// Creates a new builder-style object to manufacture [`Integration`](crate::model::Integration).
     pub fn builder() -> crate::model::integration::Builder {
         crate::model::integration::Builder::default()
     }
@@ -4026,11 +4010,10 @@ impl std::fmt::Debug for IntegrationResponse {
         formatter.finish()
     }
 }
-/// See [`IntegrationResponse`](crate::model::IntegrationResponse)
+/// See [`IntegrationResponse`](crate::model::IntegrationResponse).
 pub mod integration_response {
 
-    /// A builder for [`IntegrationResponse`](crate::model::IntegrationResponse)
-    #[non_exhaustive]
+    /// A builder for [`IntegrationResponse`](crate::model::IntegrationResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_handling_strategy:
@@ -4160,7 +4143,7 @@ pub mod integration_response {
             self.template_selection_expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`IntegrationResponse`](crate::model::IntegrationResponse)
+        /// Consumes the builder and constructs a [`IntegrationResponse`](crate::model::IntegrationResponse).
         pub fn build(self) -> crate::model::IntegrationResponse {
             crate::model::IntegrationResponse {
                 content_handling_strategy: self.content_handling_strategy,
@@ -4174,7 +4157,7 @@ pub mod integration_response {
     }
 }
 impl IntegrationResponse {
-    /// Creates a new builder-style object to manufacture [`IntegrationResponse`](crate::model::IntegrationResponse)
+    /// Creates a new builder-style object to manufacture [`IntegrationResponse`](crate::model::IntegrationResponse).
     pub fn builder() -> crate::model::integration_response::Builder {
         crate::model::integration_response::Builder::default()
     }
@@ -4243,11 +4226,10 @@ impl std::fmt::Debug for DomainName {
         formatter.finish()
     }
 }
-/// See [`DomainName`](crate::model::DomainName)
+/// See [`DomainName`](crate::model::DomainName).
 pub mod domain_name {
 
-    /// A builder for [`DomainName`](crate::model::DomainName)
-    #[non_exhaustive]
+    /// A builder for [`DomainName`](crate::model::DomainName).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_mapping_selection_expression: std::option::Option<std::string::String>,
@@ -4350,7 +4332,7 @@ pub mod domain_name {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainName`](crate::model::DomainName)
+        /// Consumes the builder and constructs a [`DomainName`](crate::model::DomainName).
         pub fn build(self) -> crate::model::DomainName {
             crate::model::DomainName {
                 api_mapping_selection_expression: self.api_mapping_selection_expression,
@@ -4363,7 +4345,7 @@ pub mod domain_name {
     }
 }
 impl DomainName {
-    /// Creates a new builder-style object to manufacture [`DomainName`](crate::model::DomainName)
+    /// Creates a new builder-style object to manufacture [`DomainName`](crate::model::DomainName).
     pub fn builder() -> crate::model::domain_name::Builder {
         crate::model::domain_name::Builder::default()
     }
@@ -4424,11 +4406,10 @@ impl std::fmt::Debug for Deployment {
         formatter.finish()
     }
 }
-/// See [`Deployment`](crate::model::Deployment)
+/// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
 
-    /// A builder for [`Deployment`](crate::model::Deployment)
-    #[non_exhaustive]
+    /// A builder for [`Deployment`](crate::model::Deployment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
@@ -4511,7 +4492,7 @@ pub mod deployment {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment)
+        /// Consumes the builder and constructs a [`Deployment`](crate::model::Deployment).
         pub fn build(self) -> crate::model::Deployment {
             crate::model::Deployment {
                 auto_deployed: self.auto_deployed.unwrap_or_default(),
@@ -4525,7 +4506,7 @@ pub mod deployment {
     }
 }
 impl Deployment {
-    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment)
+    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
     pub fn builder() -> crate::model::deployment::Builder {
         crate::model::deployment::Builder::default()
     }
@@ -4653,11 +4634,10 @@ impl std::fmt::Debug for Authorizer {
         formatter.finish()
     }
 }
-/// See [`Authorizer`](crate::model::Authorizer)
+/// See [`Authorizer`](crate::model::Authorizer).
 pub mod authorizer {
 
-    /// A builder for [`Authorizer`](crate::model::Authorizer)
-    #[non_exhaustive]
+    /// A builder for [`Authorizer`](crate::model::Authorizer).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorizer_credentials_arn: std::option::Option<std::string::String>,
@@ -4842,7 +4822,7 @@ pub mod authorizer {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Authorizer`](crate::model::Authorizer)
+        /// Consumes the builder and constructs a [`Authorizer`](crate::model::Authorizer).
         pub fn build(self) -> crate::model::Authorizer {
             crate::model::Authorizer {
                 authorizer_credentials_arn: self.authorizer_credentials_arn,
@@ -4863,7 +4843,7 @@ pub mod authorizer {
     }
 }
 impl Authorizer {
-    /// Creates a new builder-style object to manufacture [`Authorizer`](crate::model::Authorizer)
+    /// Creates a new builder-style object to manufacture [`Authorizer`](crate::model::Authorizer).
     pub fn builder() -> crate::model::authorizer::Builder {
         crate::model::authorizer::Builder::default()
     }
@@ -5007,11 +4987,10 @@ impl std::fmt::Debug for Api {
         formatter.finish()
     }
 }
-/// See [`Api`](crate::model::Api)
+/// See [`Api`](crate::model::Api).
 pub mod api {
 
-    /// A builder for [`Api`](crate::model::Api)
-    #[non_exhaustive]
+    /// A builder for [`Api`](crate::model::Api).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_endpoint: std::option::Option<std::string::String>,
@@ -5248,7 +5227,7 @@ pub mod api {
             self.warnings = input;
             self
         }
-        /// Consumes the builder and constructs a [`Api`](crate::model::Api)
+        /// Consumes the builder and constructs a [`Api`](crate::model::Api).
         pub fn build(self) -> crate::model::Api {
             crate::model::Api {
                 api_endpoint: self.api_endpoint,
@@ -5272,7 +5251,7 @@ pub mod api {
     }
 }
 impl Api {
-    /// Creates a new builder-style object to manufacture [`Api`](crate::model::Api)
+    /// Creates a new builder-style object to manufacture [`Api`](crate::model::Api).
     pub fn builder() -> crate::model::api::Builder {
         crate::model::api::Builder::default()
     }
@@ -5319,11 +5298,10 @@ impl std::fmt::Debug for ApiMapping {
         formatter.finish()
     }
 }
-/// See [`ApiMapping`](crate::model::ApiMapping)
+/// See [`ApiMapping`](crate::model::ApiMapping).
 pub mod api_mapping {
 
-    /// A builder for [`ApiMapping`](crate::model::ApiMapping)
-    #[non_exhaustive]
+    /// A builder for [`ApiMapping`](crate::model::ApiMapping).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) api_id: std::option::Option<std::string::String>,
@@ -5378,7 +5356,7 @@ pub mod api_mapping {
             self.stage = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiMapping`](crate::model::ApiMapping)
+        /// Consumes the builder and constructs a [`ApiMapping`](crate::model::ApiMapping).
         pub fn build(self) -> crate::model::ApiMapping {
             crate::model::ApiMapping {
                 api_id: self.api_id,
@@ -5390,7 +5368,7 @@ pub mod api_mapping {
     }
 }
 impl ApiMapping {
-    /// Creates a new builder-style object to manufacture [`ApiMapping`](crate::model::ApiMapping)
+    /// Creates a new builder-style object to manufacture [`ApiMapping`](crate::model::ApiMapping).
     pub fn builder() -> crate::model::api_mapping::Builder {
         crate::model::api_mapping::Builder::default()
     }

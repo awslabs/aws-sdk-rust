@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateLongTermPricingOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput)
+/// See [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput).
 pub mod update_long_term_pricing_output {
 
-    /// A builder for [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput)
+        /// Consumes the builder and constructs a [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput).
         pub fn build(self) -> crate::output::UpdateLongTermPricingOutput {
             crate::output::UpdateLongTermPricingOutput {}
         }
     }
 }
 impl UpdateLongTermPricingOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput).
     pub fn builder() -> crate::output::update_long_term_pricing_output::Builder {
         crate::output::update_long_term_pricing_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UpdateJobShipmentStateOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput)
+/// See [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput).
 pub mod update_job_shipment_state_output {
 
-    /// A builder for [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput)
+        /// Consumes the builder and constructs a [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput).
         pub fn build(self) -> crate::output::UpdateJobShipmentStateOutput {
             crate::output::UpdateJobShipmentStateOutput {}
         }
     }
 }
 impl UpdateJobShipmentStateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput).
     pub fn builder() -> crate::output::update_job_shipment_state_output::Builder {
         crate::output::update_job_shipment_state_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for UpdateJobOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateJobOutput`](crate::output::UpdateJobOutput)
+/// See [`UpdateJobOutput`](crate::output::UpdateJobOutput).
 pub mod update_job_output {
 
-    /// A builder for [`UpdateJobOutput`](crate::output::UpdateJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateJobOutput`](crate::output::UpdateJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateJobOutput`](crate::output::UpdateJobOutput)
+        /// Consumes the builder and constructs a [`UpdateJobOutput`](crate::output::UpdateJobOutput).
         pub fn build(self) -> crate::output::UpdateJobOutput {
             crate::output::UpdateJobOutput {}
         }
     }
 }
 impl UpdateJobOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobOutput`](crate::output::UpdateJobOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobOutput`](crate::output::UpdateJobOutput).
     pub fn builder() -> crate::output::update_job_output::Builder {
         crate::output::update_job_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for UpdateClusterOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
+/// See [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
 pub mod update_cluster_output {
 
-    /// A builder for [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
+        /// Consumes the builder and constructs a [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
         pub fn build(self) -> crate::output::UpdateClusterOutput {
             crate::output::UpdateClusterOutput {}
         }
     }
 }
 impl UpdateClusterOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
     pub fn builder() -> crate::output::update_cluster_output::Builder {
         crate::output::update_cluster_output::Builder::default()
     }
@@ -153,11 +149,10 @@ impl std::fmt::Debug for ListLongTermPricingOutput {
         formatter.finish()
     }
 }
-/// See [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput)
+/// See [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput).
 pub mod list_long_term_pricing_output {
 
-    /// A builder for [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_entries:
@@ -197,7 +192,7 @@ pub mod list_long_term_pricing_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput)
+        /// Consumes the builder and constructs a [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput).
         pub fn build(self) -> crate::output::ListLongTermPricingOutput {
             crate::output::ListLongTermPricingOutput {
                 long_term_pricing_entries: self.long_term_pricing_entries,
@@ -207,7 +202,7 @@ pub mod list_long_term_pricing_output {
     }
 }
 impl ListLongTermPricingOutput {
-    /// Creates a new builder-style object to manufacture [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput)
+    /// Creates a new builder-style object to manufacture [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput).
     pub fn builder() -> crate::output::list_long_term_pricing_output::Builder {
         crate::output::list_long_term_pricing_output::Builder::default()
     }
@@ -240,11 +235,10 @@ impl std::fmt::Debug for ListJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListJobsOutput`](crate::output::ListJobsOutput)
+/// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
 
-    /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
@@ -280,7 +274,7 @@ pub mod list_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput)
+        /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
                 job_list_entries: self.job_list_entries,
@@ -290,7 +284,7 @@ pub mod list_jobs_output {
     }
 }
 impl ListJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
     pub fn builder() -> crate::output::list_jobs_output::Builder {
         crate::output::list_jobs_output::Builder::default()
     }
@@ -323,11 +317,10 @@ impl std::fmt::Debug for ListCompatibleImagesOutput {
         formatter.finish()
     }
 }
-/// See [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput)
+/// See [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput).
 pub mod list_compatible_images_output {
 
-    /// A builder for [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compatible_images:
@@ -364,7 +357,7 @@ pub mod list_compatible_images_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput)
+        /// Consumes the builder and constructs a [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput).
         pub fn build(self) -> crate::output::ListCompatibleImagesOutput {
             crate::output::ListCompatibleImagesOutput {
                 compatible_images: self.compatible_images,
@@ -374,7 +367,7 @@ pub mod list_compatible_images_output {
     }
 }
 impl ListCompatibleImagesOutput {
-    /// Creates a new builder-style object to manufacture [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput)
+    /// Creates a new builder-style object to manufacture [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput).
     pub fn builder() -> crate::output::list_compatible_images_output::Builder {
         crate::output::list_compatible_images_output::Builder::default()
     }
@@ -407,11 +400,10 @@ impl std::fmt::Debug for ListClustersOutput {
         formatter.finish()
     }
 }
-/// See [`ListClustersOutput`](crate::output::ListClustersOutput)
+/// See [`ListClustersOutput`](crate::output::ListClustersOutput).
 pub mod list_clusters_output {
 
-    /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_list_entries:
@@ -448,7 +440,7 @@ pub mod list_clusters_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListClustersOutput`](crate::output::ListClustersOutput)
+        /// Consumes the builder and constructs a [`ListClustersOutput`](crate::output::ListClustersOutput).
         pub fn build(self) -> crate::output::ListClustersOutput {
             crate::output::ListClustersOutput {
                 cluster_list_entries: self.cluster_list_entries,
@@ -458,7 +450,7 @@ pub mod list_clusters_output {
     }
 }
 impl ListClustersOutput {
-    /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::output::ListClustersOutput)
+    /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::output::ListClustersOutput).
     pub fn builder() -> crate::output::list_clusters_output::Builder {
         crate::output::list_clusters_output::Builder::default()
     }
@@ -491,11 +483,10 @@ impl std::fmt::Debug for ListClusterJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput)
+/// See [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput).
 pub mod list_cluster_jobs_output {
 
-    /// A builder for [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
@@ -531,7 +522,7 @@ pub mod list_cluster_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput)
+        /// Consumes the builder and constructs a [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput).
         pub fn build(self) -> crate::output::ListClusterJobsOutput {
             crate::output::ListClusterJobsOutput {
                 job_list_entries: self.job_list_entries,
@@ -541,7 +532,7 @@ pub mod list_cluster_jobs_output {
     }
 }
 impl ListClusterJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput).
     pub fn builder() -> crate::output::list_cluster_jobs_output::Builder {
         crate::output::list_cluster_jobs_output::Builder::default()
     }
@@ -567,11 +558,10 @@ impl std::fmt::Debug for GetSoftwareUpdatesOutput {
         formatter.finish()
     }
 }
-/// See [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput)
+/// See [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput).
 pub mod get_software_updates_output {
 
-    /// A builder for [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) updates_uri: std::option::Option<std::string::String>,
@@ -587,7 +577,7 @@ pub mod get_software_updates_output {
             self.updates_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput)
+        /// Consumes the builder and constructs a [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput).
         pub fn build(self) -> crate::output::GetSoftwareUpdatesOutput {
             crate::output::GetSoftwareUpdatesOutput {
                 updates_uri: self.updates_uri,
@@ -596,7 +586,7 @@ pub mod get_software_updates_output {
     }
 }
 impl GetSoftwareUpdatesOutput {
-    /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput)
+    /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput).
     pub fn builder() -> crate::output::get_software_updates_output::Builder {
         crate::output::get_software_updates_output::Builder::default()
     }
@@ -629,11 +619,10 @@ impl std::fmt::Debug for GetSnowballUsageOutput {
         formatter.finish()
     }
 }
-/// See [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput)
+/// See [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput).
 pub mod get_snowball_usage_output {
 
-    /// A builder for [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snowball_limit: std::option::Option<i32>,
@@ -660,7 +649,7 @@ pub mod get_snowball_usage_output {
             self.snowballs_in_use = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput)
+        /// Consumes the builder and constructs a [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput).
         pub fn build(self) -> crate::output::GetSnowballUsageOutput {
             crate::output::GetSnowballUsageOutput {
                 snowball_limit: self.snowball_limit,
@@ -670,7 +659,7 @@ pub mod get_snowball_usage_output {
     }
 }
 impl GetSnowballUsageOutput {
-    /// Creates a new builder-style object to manufacture [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput)
+    /// Creates a new builder-style object to manufacture [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput).
     pub fn builder() -> crate::output::get_snowball_usage_output::Builder {
         crate::output::get_snowball_usage_output::Builder::default()
     }
@@ -696,11 +685,10 @@ impl std::fmt::Debug for GetJobUnlockCodeOutput {
         formatter.finish()
     }
 }
-/// See [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput)
+/// See [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput).
 pub mod get_job_unlock_code_output {
 
-    /// A builder for [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unlock_code: std::option::Option<std::string::String>,
@@ -716,7 +704,7 @@ pub mod get_job_unlock_code_output {
             self.unlock_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput)
+        /// Consumes the builder and constructs a [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput).
         pub fn build(self) -> crate::output::GetJobUnlockCodeOutput {
             crate::output::GetJobUnlockCodeOutput {
                 unlock_code: self.unlock_code,
@@ -725,7 +713,7 @@ pub mod get_job_unlock_code_output {
     }
 }
 impl GetJobUnlockCodeOutput {
-    /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput)
+    /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput).
     pub fn builder() -> crate::output::get_job_unlock_code_output::Builder {
         crate::output::get_job_unlock_code_output::Builder::default()
     }
@@ -751,11 +739,10 @@ impl std::fmt::Debug for GetJobManifestOutput {
         formatter.finish()
     }
 }
-/// See [`GetJobManifestOutput`](crate::output::GetJobManifestOutput)
+/// See [`GetJobManifestOutput`](crate::output::GetJobManifestOutput).
 pub mod get_job_manifest_output {
 
-    /// A builder for [`GetJobManifestOutput`](crate::output::GetJobManifestOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetJobManifestOutput`](crate::output::GetJobManifestOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_uri: std::option::Option<std::string::String>,
@@ -771,7 +758,7 @@ pub mod get_job_manifest_output {
             self.manifest_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetJobManifestOutput`](crate::output::GetJobManifestOutput)
+        /// Consumes the builder and constructs a [`GetJobManifestOutput`](crate::output::GetJobManifestOutput).
         pub fn build(self) -> crate::output::GetJobManifestOutput {
             crate::output::GetJobManifestOutput {
                 manifest_uri: self.manifest_uri,
@@ -780,7 +767,7 @@ pub mod get_job_manifest_output {
     }
 }
 impl GetJobManifestOutput {
-    /// Creates a new builder-style object to manufacture [`GetJobManifestOutput`](crate::output::GetJobManifestOutput)
+    /// Creates a new builder-style object to manufacture [`GetJobManifestOutput`](crate::output::GetJobManifestOutput).
     pub fn builder() -> crate::output::get_job_manifest_output::Builder {
         crate::output::get_job_manifest_output::Builder::default()
     }
@@ -820,11 +807,10 @@ impl std::fmt::Debug for DescribeReturnShippingLabelOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput)
+/// See [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput).
 pub mod describe_return_shipping_label_output {
 
-    /// A builder for [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ShippingLabelStatus>,
@@ -871,7 +857,7 @@ pub mod describe_return_shipping_label_output {
             self.return_shipping_label_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput)
+        /// Consumes the builder and constructs a [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput).
         pub fn build(self) -> crate::output::DescribeReturnShippingLabelOutput {
             crate::output::DescribeReturnShippingLabelOutput {
                 status: self.status,
@@ -882,7 +868,7 @@ pub mod describe_return_shipping_label_output {
     }
 }
 impl DescribeReturnShippingLabelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput).
     pub fn builder() -> crate::output::describe_return_shipping_label_output::Builder {
         crate::output::describe_return_shipping_label_output::Builder::default()
     }
@@ -915,11 +901,10 @@ impl std::fmt::Debug for DescribeJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeJobOutput`](crate::output::DescribeJobOutput)
+/// See [`DescribeJobOutput`](crate::output::DescribeJobOutput).
 pub mod describe_job_output {
 
-    /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_metadata: std::option::Option<crate::model::JobMetadata>,
@@ -958,7 +943,7 @@ pub mod describe_job_output {
             self.sub_job_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::output::DescribeJobOutput)
+        /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::output::DescribeJobOutput).
         pub fn build(self) -> crate::output::DescribeJobOutput {
             crate::output::DescribeJobOutput {
                 job_metadata: self.job_metadata,
@@ -968,7 +953,7 @@ pub mod describe_job_output {
     }
 }
 impl DescribeJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
     pub fn builder() -> crate::output::describe_job_output::Builder {
         crate::output::describe_job_output::Builder::default()
     }
@@ -994,11 +979,10 @@ impl std::fmt::Debug for DescribeClusterOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
+/// See [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
 pub mod describe_cluster_output {
 
-    /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_metadata: std::option::Option<crate::model::ClusterMetadata>,
@@ -1017,7 +1001,7 @@ pub mod describe_cluster_output {
             self.cluster_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
+        /// Consumes the builder and constructs a [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
         pub fn build(self) -> crate::output::DescribeClusterOutput {
             crate::output::DescribeClusterOutput {
                 cluster_metadata: self.cluster_metadata,
@@ -1026,7 +1010,7 @@ pub mod describe_cluster_output {
     }
 }
 impl DescribeClusterOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeClusterOutput`](crate::output::DescribeClusterOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
     pub fn builder() -> crate::output::describe_cluster_output::Builder {
         crate::output::describe_cluster_output::Builder::default()
     }
@@ -1059,11 +1043,10 @@ impl std::fmt::Debug for DescribeAddressesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput)
+/// See [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput).
 pub mod describe_addresses_output {
 
-    /// A builder for [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) addresses: std::option::Option<std::vec::Vec<crate::model::Address>>,
@@ -1099,7 +1082,7 @@ pub mod describe_addresses_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput)
+        /// Consumes the builder and constructs a [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput).
         pub fn build(self) -> crate::output::DescribeAddressesOutput {
             crate::output::DescribeAddressesOutput {
                 addresses: self.addresses,
@@ -1109,7 +1092,7 @@ pub mod describe_addresses_output {
     }
 }
 impl DescribeAddressesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput).
     pub fn builder() -> crate::output::describe_addresses_output::Builder {
         crate::output::describe_addresses_output::Builder::default()
     }
@@ -1135,11 +1118,10 @@ impl std::fmt::Debug for DescribeAddressOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAddressOutput`](crate::output::DescribeAddressOutput)
+/// See [`DescribeAddressOutput`](crate::output::DescribeAddressOutput).
 pub mod describe_address_output {
 
-    /// A builder for [`DescribeAddressOutput`](crate::output::DescribeAddressOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAddressOutput`](crate::output::DescribeAddressOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<crate::model::Address>,
@@ -1155,7 +1137,7 @@ pub mod describe_address_output {
             self.address = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAddressOutput`](crate::output::DescribeAddressOutput)
+        /// Consumes the builder and constructs a [`DescribeAddressOutput`](crate::output::DescribeAddressOutput).
         pub fn build(self) -> crate::output::DescribeAddressOutput {
             crate::output::DescribeAddressOutput {
                 address: self.address,
@@ -1164,7 +1146,7 @@ pub mod describe_address_output {
     }
 }
 impl DescribeAddressOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAddressOutput`](crate::output::DescribeAddressOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAddressOutput`](crate::output::DescribeAddressOutput).
     pub fn builder() -> crate::output::describe_address_output::Builder {
         crate::output::describe_address_output::Builder::default()
     }
@@ -1190,11 +1172,10 @@ impl std::fmt::Debug for CreateReturnShippingLabelOutput {
         formatter.finish()
     }
 }
-/// See [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput)
+/// See [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput).
 pub mod create_return_shipping_label_output {
 
-    /// A builder for [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ShippingLabelStatus>,
@@ -1213,7 +1194,7 @@ pub mod create_return_shipping_label_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput)
+        /// Consumes the builder and constructs a [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput).
         pub fn build(self) -> crate::output::CreateReturnShippingLabelOutput {
             crate::output::CreateReturnShippingLabelOutput {
                 status: self.status,
@@ -1222,7 +1203,7 @@ pub mod create_return_shipping_label_output {
     }
 }
 impl CreateReturnShippingLabelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput)
+    /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput).
     pub fn builder() -> crate::output::create_return_shipping_label_output::Builder {
         crate::output::create_return_shipping_label_output::Builder::default()
     }
@@ -1248,11 +1229,10 @@ impl std::fmt::Debug for CreateLongTermPricingOutput {
         formatter.finish()
     }
 }
-/// See [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput)
+/// See [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput).
 pub mod create_long_term_pricing_output {
 
-    /// A builder for [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) long_term_pricing_id: std::option::Option<std::string::String>,
@@ -1271,7 +1251,7 @@ pub mod create_long_term_pricing_output {
             self.long_term_pricing_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput)
+        /// Consumes the builder and constructs a [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput).
         pub fn build(self) -> crate::output::CreateLongTermPricingOutput {
             crate::output::CreateLongTermPricingOutput {
                 long_term_pricing_id: self.long_term_pricing_id,
@@ -1280,7 +1260,7 @@ pub mod create_long_term_pricing_output {
     }
 }
 impl CreateLongTermPricingOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput)
+    /// Creates a new builder-style object to manufacture [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput).
     pub fn builder() -> crate::output::create_long_term_pricing_output::Builder {
         crate::output::create_long_term_pricing_output::Builder::default()
     }
@@ -1306,11 +1286,10 @@ impl std::fmt::Debug for CreateJobOutput {
         formatter.finish()
     }
 }
-/// See [`CreateJobOutput`](crate::output::CreateJobOutput)
+/// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
 
-    /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1326,7 +1305,7 @@ pub mod create_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput)
+        /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
             crate::output::CreateJobOutput {
                 job_id: self.job_id,
@@ -1335,7 +1314,7 @@ pub mod create_job_output {
     }
 }
 impl CreateJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput)
+    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
     pub fn builder() -> crate::output::create_job_output::Builder {
         crate::output::create_job_output::Builder::default()
     }
@@ -1361,11 +1340,10 @@ impl std::fmt::Debug for CreateClusterOutput {
         formatter.finish()
     }
 }
-/// See [`CreateClusterOutput`](crate::output::CreateClusterOutput)
+/// See [`CreateClusterOutput`](crate::output::CreateClusterOutput).
 pub mod create_cluster_output {
 
-    /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_id: std::option::Option<std::string::String>,
@@ -1381,7 +1359,7 @@ pub mod create_cluster_output {
             self.cluster_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::output::CreateClusterOutput)
+        /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::output::CreateClusterOutput).
         pub fn build(self) -> crate::output::CreateClusterOutput {
             crate::output::CreateClusterOutput {
                 cluster_id: self.cluster_id,
@@ -1390,7 +1368,7 @@ pub mod create_cluster_output {
     }
 }
 impl CreateClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput)
+    /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput).
     pub fn builder() -> crate::output::create_cluster_output::Builder {
         crate::output::create_cluster_output::Builder::default()
     }
@@ -1416,11 +1394,10 @@ impl std::fmt::Debug for CreateAddressOutput {
         formatter.finish()
     }
 }
-/// See [`CreateAddressOutput`](crate::output::CreateAddressOutput)
+/// See [`CreateAddressOutput`](crate::output::CreateAddressOutput).
 pub mod create_address_output {
 
-    /// A builder for [`CreateAddressOutput`](crate::output::CreateAddressOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateAddressOutput`](crate::output::CreateAddressOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_id: std::option::Option<std::string::String>,
@@ -1436,7 +1413,7 @@ pub mod create_address_output {
             self.address_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAddressOutput`](crate::output::CreateAddressOutput)
+        /// Consumes the builder and constructs a [`CreateAddressOutput`](crate::output::CreateAddressOutput).
         pub fn build(self) -> crate::output::CreateAddressOutput {
             crate::output::CreateAddressOutput {
                 address_id: self.address_id,
@@ -1445,7 +1422,7 @@ pub mod create_address_output {
     }
 }
 impl CreateAddressOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAddressOutput`](crate::output::CreateAddressOutput)
+    /// Creates a new builder-style object to manufacture [`CreateAddressOutput`](crate::output::CreateAddressOutput).
     pub fn builder() -> crate::output::create_address_output::Builder {
         crate::output::create_address_output::Builder::default()
     }
@@ -1461,22 +1438,21 @@ impl std::fmt::Debug for CancelJobOutput {
         formatter.finish()
     }
 }
-/// See [`CancelJobOutput`](crate::output::CancelJobOutput)
+/// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
 
-    /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput)
+        /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
         pub fn build(self) -> crate::output::CancelJobOutput {
             crate::output::CancelJobOutput {}
         }
     }
 }
 impl CancelJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::output::CancelJobOutput)
+    /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::output::CancelJobOutput).
     pub fn builder() -> crate::output::cancel_job_output::Builder {
         crate::output::cancel_job_output::Builder::default()
     }
@@ -1492,22 +1468,21 @@ impl std::fmt::Debug for CancelClusterOutput {
         formatter.finish()
     }
 }
-/// See [`CancelClusterOutput`](crate::output::CancelClusterOutput)
+/// See [`CancelClusterOutput`](crate::output::CancelClusterOutput).
 pub mod cancel_cluster_output {
 
-    /// A builder for [`CancelClusterOutput`](crate::output::CancelClusterOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelClusterOutput`](crate::output::CancelClusterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelClusterOutput`](crate::output::CancelClusterOutput)
+        /// Consumes the builder and constructs a [`CancelClusterOutput`](crate::output::CancelClusterOutput).
         pub fn build(self) -> crate::output::CancelClusterOutput {
             crate::output::CancelClusterOutput {}
         }
     }
 }
 impl CancelClusterOutput {
-    /// Creates a new builder-style object to manufacture [`CancelClusterOutput`](crate::output::CancelClusterOutput)
+    /// Creates a new builder-style object to manufacture [`CancelClusterOutput`](crate::output::CancelClusterOutput).
     pub fn builder() -> crate::output::cancel_cluster_output::Builder {
         crate::output::cancel_cluster_output::Builder::default()
     }

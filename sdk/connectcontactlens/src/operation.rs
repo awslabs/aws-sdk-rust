@@ -10,7 +10,7 @@ pub struct ListRealtimeContactAnalysisSegments {
     _private: (),
 }
 impl ListRealtimeContactAnalysisSegments {
-    /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsInput`](crate::input::ListRealtimeContactAnalysisSegmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListRealtimeContactAnalysisSegmentsInput`](crate::input::ListRealtimeContactAnalysisSegmentsInput).
     pub fn builder() -> crate::input::list_realtime_contact_analysis_segments_input::Builder {
         crate::input::list_realtime_contact_analysis_segments_input::Builder::default()
     }

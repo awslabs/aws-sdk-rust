@@ -10,7 +10,7 @@ pub struct AssociateLenses {
     _private: (),
 }
 impl AssociateLenses {
-    /// Creates a new builder-style object to manufacture [`AssociateLensesInput`](crate::input::AssociateLensesInput)
+    /// Creates a new builder-style object to manufacture [`AssociateLensesInput`](crate::input::AssociateLensesInput).
     pub fn builder() -> crate::input::associate_lenses_input::Builder {
         crate::input::associate_lenses_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateLensShare {
     _private: (),
 }
 impl CreateLensShare {
-    /// Creates a new builder-style object to manufacture [`CreateLensShareInput`](crate::input::CreateLensShareInput)
+    /// Creates a new builder-style object to manufacture [`CreateLensShareInput`](crate::input::CreateLensShareInput).
     pub fn builder() -> crate::input::create_lens_share_input::Builder {
         crate::input::create_lens_share_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateLensVersion {
     _private: (),
 }
 impl CreateLensVersion {
-    /// Creates a new builder-style object to manufacture [`CreateLensVersionInput`](crate::input::CreateLensVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateLensVersionInput`](crate::input::CreateLensVersionInput).
     pub fn builder() -> crate::input::create_lens_version_input::Builder {
         crate::input::create_lens_version_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateMilestone {
     _private: (),
 }
 impl CreateMilestone {
-    /// Creates a new builder-style object to manufacture [`CreateMilestoneInput`](crate::input::CreateMilestoneInput)
+    /// Creates a new builder-style object to manufacture [`CreateMilestoneInput`](crate::input::CreateMilestoneInput).
     pub fn builder() -> crate::input::create_milestone_input::Builder {
         crate::input::create_milestone_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateWorkload {
     _private: (),
 }
 impl CreateWorkload {
-    /// Creates a new builder-style object to manufacture [`CreateWorkloadInput`](crate::input::CreateWorkloadInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkloadInput`](crate::input::CreateWorkloadInput).
     pub fn builder() -> crate::input::create_workload_input::Builder {
         crate::input::create_workload_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateWorkloadShare {
     _private: (),
 }
 impl CreateWorkloadShare {
-    /// Creates a new builder-style object to manufacture [`CreateWorkloadShareInput`](crate::input::CreateWorkloadShareInput)
+    /// Creates a new builder-style object to manufacture [`CreateWorkloadShareInput`](crate::input::CreateWorkloadShareInput).
     pub fn builder() -> crate::input::create_workload_share_input::Builder {
         crate::input::create_workload_share_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DeleteLens {
     _private: (),
 }
 impl DeleteLens {
-    /// Creates a new builder-style object to manufacture [`DeleteLensInput`](crate::input::DeleteLensInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLensInput`](crate::input::DeleteLensInput).
     pub fn builder() -> crate::input::delete_lens_input::Builder {
         crate::input::delete_lens_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteLensShare {
     _private: (),
 }
 impl DeleteLensShare {
-    /// Creates a new builder-style object to manufacture [`DeleteLensShareInput`](crate::input::DeleteLensShareInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLensShareInput`](crate::input::DeleteLensShareInput).
     pub fn builder() -> crate::input::delete_lens_share_input::Builder {
         crate::input::delete_lens_share_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteWorkload {
     _private: (),
 }
 impl DeleteWorkload {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkloadInput`](crate::input::DeleteWorkloadInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorkloadInput`](crate::input::DeleteWorkloadInput).
     pub fn builder() -> crate::input::delete_workload_input::Builder {
         crate::input::delete_workload_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct DeleteWorkloadShare {
     _private: (),
 }
 impl DeleteWorkloadShare {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkloadShareInput`](crate::input::DeleteWorkloadShareInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorkloadShareInput`](crate::input::DeleteWorkloadShareInput).
     pub fn builder() -> crate::input::delete_workload_share_input::Builder {
         crate::input::delete_workload_share_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct DisassociateLenses {
     _private: (),
 }
 impl DisassociateLenses {
-    /// Creates a new builder-style object to manufacture [`DisassociateLensesInput`](crate::input::DisassociateLensesInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateLensesInput`](crate::input::DisassociateLensesInput).
     pub fn builder() -> crate::input::disassociate_lenses_input::Builder {
         crate::input::disassociate_lenses_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct ExportLens {
     _private: (),
 }
 impl ExportLens {
-    /// Creates a new builder-style object to manufacture [`ExportLensInput`](crate::input::ExportLensInput)
+    /// Creates a new builder-style object to manufacture [`ExportLensInput`](crate::input::ExportLensInput).
     pub fn builder() -> crate::input::export_lens_input::Builder {
         crate::input::export_lens_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct GetAnswer {
     _private: (),
 }
 impl GetAnswer {
-    /// Creates a new builder-style object to manufacture [`GetAnswerInput`](crate::input::GetAnswerInput)
+    /// Creates a new builder-style object to manufacture [`GetAnswerInput`](crate::input::GetAnswerInput).
     pub fn builder() -> crate::input::get_answer_input::Builder {
         crate::input::get_answer_input::Builder::default()
     }
@@ -441,7 +441,7 @@ pub struct GetLens {
     _private: (),
 }
 impl GetLens {
-    /// Creates a new builder-style object to manufacture [`GetLensInput`](crate::input::GetLensInput)
+    /// Creates a new builder-style object to manufacture [`GetLensInput`](crate::input::GetLensInput).
     pub fn builder() -> crate::input::get_lens_input::Builder {
         crate::input::get_lens_input::Builder::default()
     }
@@ -472,7 +472,7 @@ pub struct GetLensReview {
     _private: (),
 }
 impl GetLensReview {
-    /// Creates a new builder-style object to manufacture [`GetLensReviewInput`](crate::input::GetLensReviewInput)
+    /// Creates a new builder-style object to manufacture [`GetLensReviewInput`](crate::input::GetLensReviewInput).
     pub fn builder() -> crate::input::get_lens_review_input::Builder {
         crate::input::get_lens_review_input::Builder::default()
     }
@@ -504,7 +504,7 @@ pub struct GetLensReviewReport {
     _private: (),
 }
 impl GetLensReviewReport {
-    /// Creates a new builder-style object to manufacture [`GetLensReviewReportInput`](crate::input::GetLensReviewReportInput)
+    /// Creates a new builder-style object to manufacture [`GetLensReviewReportInput`](crate::input::GetLensReviewReportInput).
     pub fn builder() -> crate::input::get_lens_review_report_input::Builder {
         crate::input::get_lens_review_report_input::Builder::default()
     }
@@ -538,7 +538,7 @@ pub struct GetLensVersionDifference {
     _private: (),
 }
 impl GetLensVersionDifference {
-    /// Creates a new builder-style object to manufacture [`GetLensVersionDifferenceInput`](crate::input::GetLensVersionDifferenceInput)
+    /// Creates a new builder-style object to manufacture [`GetLensVersionDifferenceInput`](crate::input::GetLensVersionDifferenceInput).
     pub fn builder() -> crate::input::get_lens_version_difference_input::Builder {
         crate::input::get_lens_version_difference_input::Builder::default()
     }
@@ -572,7 +572,7 @@ pub struct GetMilestone {
     _private: (),
 }
 impl GetMilestone {
-    /// Creates a new builder-style object to manufacture [`GetMilestoneInput`](crate::input::GetMilestoneInput)
+    /// Creates a new builder-style object to manufacture [`GetMilestoneInput`](crate::input::GetMilestoneInput).
     pub fn builder() -> crate::input::get_milestone_input::Builder {
         crate::input::get_milestone_input::Builder::default()
     }
@@ -604,7 +604,7 @@ pub struct GetWorkload {
     _private: (),
 }
 impl GetWorkload {
-    /// Creates a new builder-style object to manufacture [`GetWorkloadInput`](crate::input::GetWorkloadInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkloadInput`](crate::input::GetWorkloadInput).
     pub fn builder() -> crate::input::get_workload_input::Builder {
         crate::input::get_workload_input::Builder::default()
     }
@@ -636,7 +636,7 @@ pub struct ImportLens {
     _private: (),
 }
 impl ImportLens {
-    /// Creates a new builder-style object to manufacture [`ImportLensInput`](crate::input::ImportLensInput)
+    /// Creates a new builder-style object to manufacture [`ImportLensInput`](crate::input::ImportLensInput).
     pub fn builder() -> crate::input::import_lens_input::Builder {
         crate::input::import_lens_input::Builder::default()
     }
@@ -668,7 +668,7 @@ pub struct ListAnswers {
     _private: (),
 }
 impl ListAnswers {
-    /// Creates a new builder-style object to manufacture [`ListAnswersInput`](crate::input::ListAnswersInput)
+    /// Creates a new builder-style object to manufacture [`ListAnswersInput`](crate::input::ListAnswersInput).
     pub fn builder() -> crate::input::list_answers_input::Builder {
         crate::input::list_answers_input::Builder::default()
     }
@@ -700,7 +700,7 @@ pub struct ListLenses {
     _private: (),
 }
 impl ListLenses {
-    /// Creates a new builder-style object to manufacture [`ListLensesInput`](crate::input::ListLensesInput)
+    /// Creates a new builder-style object to manufacture [`ListLensesInput`](crate::input::ListLensesInput).
     pub fn builder() -> crate::input::list_lenses_input::Builder {
         crate::input::list_lenses_input::Builder::default()
     }
@@ -732,7 +732,7 @@ pub struct ListLensReviewImprovements {
     _private: (),
 }
 impl ListLensReviewImprovements {
-    /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsInput`](crate::input::ListLensReviewImprovementsInput)
+    /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsInput`](crate::input::ListLensReviewImprovementsInput).
     pub fn builder() -> crate::input::list_lens_review_improvements_input::Builder {
         crate::input::list_lens_review_improvements_input::Builder::default()
     }
@@ -766,7 +766,7 @@ pub struct ListLensReviews {
     _private: (),
 }
 impl ListLensReviews {
-    /// Creates a new builder-style object to manufacture [`ListLensReviewsInput`](crate::input::ListLensReviewsInput)
+    /// Creates a new builder-style object to manufacture [`ListLensReviewsInput`](crate::input::ListLensReviewsInput).
     pub fn builder() -> crate::input::list_lens_reviews_input::Builder {
         crate::input::list_lens_reviews_input::Builder::default()
     }
@@ -800,7 +800,7 @@ pub struct ListLensShares {
     _private: (),
 }
 impl ListLensShares {
-    /// Creates a new builder-style object to manufacture [`ListLensSharesInput`](crate::input::ListLensSharesInput)
+    /// Creates a new builder-style object to manufacture [`ListLensSharesInput`](crate::input::ListLensSharesInput).
     pub fn builder() -> crate::input::list_lens_shares_input::Builder {
         crate::input::list_lens_shares_input::Builder::default()
     }
@@ -832,7 +832,7 @@ pub struct ListMilestones {
     _private: (),
 }
 impl ListMilestones {
-    /// Creates a new builder-style object to manufacture [`ListMilestonesInput`](crate::input::ListMilestonesInput)
+    /// Creates a new builder-style object to manufacture [`ListMilestonesInput`](crate::input::ListMilestonesInput).
     pub fn builder() -> crate::input::list_milestones_input::Builder {
         crate::input::list_milestones_input::Builder::default()
     }
@@ -864,7 +864,7 @@ pub struct ListNotifications {
     _private: (),
 }
 impl ListNotifications {
-    /// Creates a new builder-style object to manufacture [`ListNotificationsInput`](crate::input::ListNotificationsInput)
+    /// Creates a new builder-style object to manufacture [`ListNotificationsInput`](crate::input::ListNotificationsInput).
     pub fn builder() -> crate::input::list_notifications_input::Builder {
         crate::input::list_notifications_input::Builder::default()
     }
@@ -898,7 +898,7 @@ pub struct ListShareInvitations {
     _private: (),
 }
 impl ListShareInvitations {
-    /// Creates a new builder-style object to manufacture [`ListShareInvitationsInput`](crate::input::ListShareInvitationsInput)
+    /// Creates a new builder-style object to manufacture [`ListShareInvitationsInput`](crate::input::ListShareInvitationsInput).
     pub fn builder() -> crate::input::list_share_invitations_input::Builder {
         crate::input::list_share_invitations_input::Builder::default()
     }
@@ -932,7 +932,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -966,7 +966,7 @@ pub struct ListWorkloads {
     _private: (),
 }
 impl ListWorkloads {
-    /// Creates a new builder-style object to manufacture [`ListWorkloadsInput`](crate::input::ListWorkloadsInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkloadsInput`](crate::input::ListWorkloadsInput).
     pub fn builder() -> crate::input::list_workloads_input::Builder {
         crate::input::list_workloads_input::Builder::default()
     }
@@ -998,7 +998,7 @@ pub struct ListWorkloadShares {
     _private: (),
 }
 impl ListWorkloadShares {
-    /// Creates a new builder-style object to manufacture [`ListWorkloadSharesInput`](crate::input::ListWorkloadSharesInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkloadSharesInput`](crate::input::ListWorkloadSharesInput).
     pub fn builder() -> crate::input::list_workload_shares_input::Builder {
         crate::input::list_workload_shares_input::Builder::default()
     }
@@ -1032,7 +1032,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1064,7 +1064,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1096,7 +1096,7 @@ pub struct UpdateAnswer {
     _private: (),
 }
 impl UpdateAnswer {
-    /// Creates a new builder-style object to manufacture [`UpdateAnswerInput`](crate::input::UpdateAnswerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAnswerInput`](crate::input::UpdateAnswerInput).
     pub fn builder() -> crate::input::update_answer_input::Builder {
         crate::input::update_answer_input::Builder::default()
     }
@@ -1128,7 +1128,7 @@ pub struct UpdateLensReview {
     _private: (),
 }
 impl UpdateLensReview {
-    /// Creates a new builder-style object to manufacture [`UpdateLensReviewInput`](crate::input::UpdateLensReviewInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLensReviewInput`](crate::input::UpdateLensReviewInput).
     pub fn builder() -> crate::input::update_lens_review_input::Builder {
         crate::input::update_lens_review_input::Builder::default()
     }
@@ -1162,7 +1162,7 @@ pub struct UpdateShareInvitation {
     _private: (),
 }
 impl UpdateShareInvitation {
-    /// Creates a new builder-style object to manufacture [`UpdateShareInvitationInput`](crate::input::UpdateShareInvitationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateShareInvitationInput`](crate::input::UpdateShareInvitationInput).
     pub fn builder() -> crate::input::update_share_invitation_input::Builder {
         crate::input::update_share_invitation_input::Builder::default()
     }
@@ -1196,7 +1196,7 @@ pub struct UpdateWorkload {
     _private: (),
 }
 impl UpdateWorkload {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkloadInput`](crate::input::UpdateWorkloadInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWorkloadInput`](crate::input::UpdateWorkloadInput).
     pub fn builder() -> crate::input::update_workload_input::Builder {
         crate::input::update_workload_input::Builder::default()
     }
@@ -1228,7 +1228,7 @@ pub struct UpdateWorkloadShare {
     _private: (),
 }
 impl UpdateWorkloadShare {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareInput`](crate::input::UpdateWorkloadShareInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareInput`](crate::input::UpdateWorkloadShareInput).
     pub fn builder() -> crate::input::update_workload_share_input::Builder {
         crate::input::update_workload_share_input::Builder::default()
     }
@@ -1262,7 +1262,7 @@ pub struct UpgradeLensReview {
     _private: (),
 }
 impl UpgradeLensReview {
-    /// Creates a new builder-style object to manufacture [`UpgradeLensReviewInput`](crate::input::UpgradeLensReviewInput)
+    /// Creates a new builder-style object to manufacture [`UpgradeLensReviewInput`](crate::input::UpgradeLensReviewInput).
     pub fn builder() -> crate::input::upgrade_lens_review_input::Builder {
         crate::input::upgrade_lens_review_input::Builder::default()
     }

@@ -33,11 +33,10 @@ impl std::fmt::Debug for UpdateJobStatusOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput)
+/// See [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
 pub mod update_job_status_output {
 
-    /// A builder for [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -78,7 +77,7 @@ pub mod update_job_status_output {
             self.status_update_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput)
+        /// Consumes the builder and constructs a [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
         pub fn build(self) -> crate::output::UpdateJobStatusOutput {
             crate::output::UpdateJobStatusOutput {
                 job_id: self.job_id,
@@ -89,7 +88,7 @@ pub mod update_job_status_output {
     }
 }
 impl UpdateJobStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobStatusOutput`](crate::output::UpdateJobStatusOutput).
     pub fn builder() -> crate::output::update_job_status_output::Builder {
         crate::output::update_job_status_output::Builder::default()
     }
@@ -122,11 +121,10 @@ impl std::fmt::Debug for UpdateJobPriorityOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput)
+/// See [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
 pub mod update_job_priority_output {
 
-    /// A builder for [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -153,7 +151,7 @@ pub mod update_job_priority_output {
             self.priority = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput)
+        /// Consumes the builder and constructs a [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
         pub fn build(self) -> crate::output::UpdateJobPriorityOutput {
             crate::output::UpdateJobPriorityOutput {
                 job_id: self.job_id,
@@ -163,7 +161,7 @@ pub mod update_job_priority_output {
     }
 }
 impl UpdateJobPriorityOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateJobPriorityOutput`](crate::output::UpdateJobPriorityOutput).
     pub fn builder() -> crate::output::update_job_priority_output::Builder {
         crate::output::update_job_priority_output::Builder::default()
     }
@@ -179,22 +177,21 @@ impl std::fmt::Debug for PutStorageLensConfigurationTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput)
+/// See [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
 pub mod put_storage_lens_configuration_tagging_output {
 
-    /// A builder for [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput)
+        /// Consumes the builder and constructs a [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
         pub fn build(self) -> crate::output::PutStorageLensConfigurationTaggingOutput {
             crate::output::PutStorageLensConfigurationTaggingOutput {}
         }
     }
 }
 impl PutStorageLensConfigurationTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingOutput`](crate::output::PutStorageLensConfigurationTaggingOutput).
     pub fn builder() -> crate::output::put_storage_lens_configuration_tagging_output::Builder {
         crate::output::put_storage_lens_configuration_tagging_output::Builder::default()
     }
@@ -210,22 +207,21 @@ impl std::fmt::Debug for PutStorageLensConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput)
+/// See [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
 pub mod put_storage_lens_configuration_output {
 
-    /// A builder for [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput)
+        /// Consumes the builder and constructs a [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
         pub fn build(self) -> crate::output::PutStorageLensConfigurationOutput {
             crate::output::PutStorageLensConfigurationOutput {}
         }
     }
 }
 impl PutStorageLensConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationOutput`](crate::output::PutStorageLensConfigurationOutput).
     pub fn builder() -> crate::output::put_storage_lens_configuration_output::Builder {
         crate::output::put_storage_lens_configuration_output::Builder::default()
     }
@@ -241,22 +237,21 @@ impl std::fmt::Debug for PutPublicAccessBlockOutput {
         formatter.finish()
     }
 }
-/// See [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
+/// See [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
 pub mod put_public_access_block_output {
 
-    /// A builder for [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
+        /// Consumes the builder and constructs a [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
         pub fn build(self) -> crate::output::PutPublicAccessBlockOutput {
             crate::output::PutPublicAccessBlockOutput {}
         }
     }
 }
 impl PutPublicAccessBlockOutput {
-    /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput)
+    /// Creates a new builder-style object to manufacture [`PutPublicAccessBlockOutput`](crate::output::PutPublicAccessBlockOutput).
     pub fn builder() -> crate::output::put_public_access_block_output::Builder {
         crate::output::put_public_access_block_output::Builder::default()
     }
@@ -282,11 +277,10 @@ impl std::fmt::Debug for PutMultiRegionAccessPointPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
+/// See [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
 pub mod put_multi_region_access_point_policy_output {
 
-    /// A builder for [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
@@ -305,7 +299,7 @@ pub mod put_multi_region_access_point_policy_output {
             self.request_token_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
+        /// Consumes the builder and constructs a [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::PutMultiRegionAccessPointPolicyOutput {
             crate::output::PutMultiRegionAccessPointPolicyOutput {
                 request_token_arn: self.request_token_arn,
@@ -314,7 +308,7 @@ pub mod put_multi_region_access_point_policy_output {
     }
 }
 impl PutMultiRegionAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutMultiRegionAccessPointPolicyOutput`](crate::output::PutMultiRegionAccessPointPolicyOutput).
     pub fn builder() -> crate::output::put_multi_region_access_point_policy_output::Builder {
         crate::output::put_multi_region_access_point_policy_output::Builder::default()
     }
@@ -330,22 +324,21 @@ impl std::fmt::Debug for PutJobTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput)
+/// See [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
 pub mod put_job_tagging_output {
 
-    /// A builder for [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput)
+        /// Consumes the builder and constructs a [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
         pub fn build(self) -> crate::output::PutJobTaggingOutput {
             crate::output::PutJobTaggingOutput {}
         }
     }
 }
 impl PutJobTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`PutJobTaggingOutput`](crate::output::PutJobTaggingOutput).
     pub fn builder() -> crate::output::put_job_tagging_output::Builder {
         crate::output::put_job_tagging_output::Builder::default()
     }
@@ -361,22 +354,21 @@ impl std::fmt::Debug for PutBucketTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
+/// See [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
 pub mod put_bucket_tagging_output {
 
-    /// A builder for [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
+        /// Consumes the builder and constructs a [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
         pub fn build(self) -> crate::output::PutBucketTaggingOutput {
             crate::output::PutBucketTaggingOutput {}
         }
     }
 }
 impl PutBucketTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`PutBucketTaggingOutput`](crate::output::PutBucketTaggingOutput).
     pub fn builder() -> crate::output::put_bucket_tagging_output::Builder {
         crate::output::put_bucket_tagging_output::Builder::default()
     }
@@ -392,22 +384,21 @@ impl std::fmt::Debug for PutBucketPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
+/// See [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
 pub mod put_bucket_policy_output {
 
-    /// A builder for [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
+        /// Consumes the builder and constructs a [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
         pub fn build(self) -> crate::output::PutBucketPolicyOutput {
             crate::output::PutBucketPolicyOutput {}
         }
     }
 }
 impl PutBucketPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutBucketPolicyOutput`](crate::output::PutBucketPolicyOutput).
     pub fn builder() -> crate::output::put_bucket_policy_output::Builder {
         crate::output::put_bucket_policy_output::Builder::default()
     }
@@ -423,22 +414,21 @@ impl std::fmt::Debug for PutBucketLifecycleConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
+/// See [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
 pub mod put_bucket_lifecycle_configuration_output {
 
-    /// A builder for [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
+        /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::PutBucketLifecycleConfigurationOutput {
             crate::output::PutBucketLifecycleConfigurationOutput {}
         }
     }
 }
 impl PutBucketLifecycleConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationOutput`](crate::output::PutBucketLifecycleConfigurationOutput).
     pub fn builder() -> crate::output::put_bucket_lifecycle_configuration_output::Builder {
         crate::output::put_bucket_lifecycle_configuration_output::Builder::default()
     }
@@ -454,22 +444,21 @@ impl std::fmt::Debug for PutAccessPointPolicyForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput)
+/// See [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
 pub mod put_access_point_policy_for_object_lambda_output {
 
-    /// A builder for [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
         pub fn build(self) -> crate::output::PutAccessPointPolicyForObjectLambdaOutput {
             crate::output::PutAccessPointPolicyForObjectLambdaOutput {}
         }
     }
 }
 impl PutAccessPointPolicyForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyForObjectLambdaOutput`](crate::output::PutAccessPointPolicyForObjectLambdaOutput).
     pub fn builder() -> crate::output::put_access_point_policy_for_object_lambda_output::Builder {
         crate::output::put_access_point_policy_for_object_lambda_output::Builder::default()
     }
@@ -485,22 +474,21 @@ impl std::fmt::Debug for PutAccessPointPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput)
+/// See [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
 pub mod put_access_point_policy_output {
 
-    /// A builder for [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput)
+        /// Consumes the builder and constructs a [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::PutAccessPointPolicyOutput {
             crate::output::PutAccessPointPolicyOutput {}
         }
     }
 }
 impl PutAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyOutput`](crate::output::PutAccessPointPolicyOutput).
     pub fn builder() -> crate::output::put_access_point_policy_output::Builder {
         crate::output::put_access_point_policy_output::Builder::default()
     }
@@ -516,22 +504,21 @@ impl std::fmt::Debug for PutAccessPointConfigurationForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput)
+/// See [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
 pub mod put_access_point_configuration_for_object_lambda_output {
 
-    /// A builder for [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
         pub fn build(self) -> crate::output::PutAccessPointConfigurationForObjectLambdaOutput {
             crate::output::PutAccessPointConfigurationForObjectLambdaOutput {}
         }
     }
 }
 impl PutAccessPointConfigurationForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`PutAccessPointConfigurationForObjectLambdaOutput`](crate::output::PutAccessPointConfigurationForObjectLambdaOutput).
     pub fn builder(
     ) -> crate::output::put_access_point_configuration_for_object_lambda_output::Builder {
         crate::output::put_access_point_configuration_for_object_lambda_output::Builder::default()
@@ -571,11 +558,10 @@ impl std::fmt::Debug for ListStorageLensConfigurationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput)
+/// See [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
 pub mod list_storage_lens_configurations_output {
 
-    /// A builder for [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -617,7 +603,7 @@ pub mod list_storage_lens_configurations_output {
             self.storage_lens_configuration_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput)
+        /// Consumes the builder and constructs a [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
         pub fn build(self) -> crate::output::ListStorageLensConfigurationsOutput {
             crate::output::ListStorageLensConfigurationsOutput {
                 next_token: self.next_token,
@@ -627,7 +613,7 @@ pub mod list_storage_lens_configurations_output {
     }
 }
 impl ListStorageLensConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListStorageLensConfigurationsOutput`](crate::output::ListStorageLensConfigurationsOutput).
     pub fn builder() -> crate::output::list_storage_lens_configurations_output::Builder {
         crate::output::list_storage_lens_configurations_output::Builder::default()
     }
@@ -660,11 +646,10 @@ impl std::fmt::Debug for ListRegionalBucketsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput)
+/// See [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
 pub mod list_regional_buckets_output {
 
-    /// A builder for [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regional_bucket_list:
@@ -701,7 +686,7 @@ pub mod list_regional_buckets_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput)
+        /// Consumes the builder and constructs a [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
         pub fn build(self) -> crate::output::ListRegionalBucketsOutput {
             crate::output::ListRegionalBucketsOutput {
                 regional_bucket_list: self.regional_bucket_list,
@@ -711,7 +696,7 @@ pub mod list_regional_buckets_output {
     }
 }
 impl ListRegionalBucketsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRegionalBucketsOutput`](crate::output::ListRegionalBucketsOutput).
     pub fn builder() -> crate::output::list_regional_buckets_output::Builder {
         crate::output::list_regional_buckets_output::Builder::default()
     }
@@ -747,11 +732,10 @@ impl std::fmt::Debug for ListMultiRegionAccessPointsOutput {
         formatter.finish()
     }
 }
-/// See [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
+/// See [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
 pub mod list_multi_region_access_points_output {
 
-    /// A builder for [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_points:
@@ -788,7 +772,7 @@ pub mod list_multi_region_access_points_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
+        /// Consumes the builder and constructs a [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
         pub fn build(self) -> crate::output::ListMultiRegionAccessPointsOutput {
             crate::output::ListMultiRegionAccessPointsOutput {
                 access_points: self.access_points,
@@ -798,7 +782,7 @@ pub mod list_multi_region_access_points_output {
     }
 }
 impl ListMultiRegionAccessPointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput)
+    /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsOutput`](crate::output::ListMultiRegionAccessPointsOutput).
     pub fn builder() -> crate::output::list_multi_region_access_points_output::Builder {
         crate::output::list_multi_region_access_points_output::Builder::default()
     }
@@ -831,11 +815,10 @@ impl std::fmt::Debug for ListJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListJobsOutput`](crate::output::ListJobsOutput)
+/// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
 
-    /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -871,7 +854,7 @@ pub mod list_jobs_output {
             self.jobs = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput)
+        /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
                 next_token: self.next_token,
@@ -881,7 +864,7 @@ pub mod list_jobs_output {
     }
 }
 impl ListJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
     pub fn builder() -> crate::output::list_jobs_output::Builder {
         crate::output::list_jobs_output::Builder::default()
     }
@@ -920,11 +903,10 @@ impl std::fmt::Debug for ListAccessPointsForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput)
+/// See [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
 pub mod list_access_points_for_object_lambda_output {
 
-    /// A builder for [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_lambda_access_point_list:
@@ -964,7 +946,7 @@ pub mod list_access_points_for_object_lambda_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
         pub fn build(self) -> crate::output::ListAccessPointsForObjectLambdaOutput {
             crate::output::ListAccessPointsForObjectLambdaOutput {
                 object_lambda_access_point_list: self.object_lambda_access_point_list,
@@ -974,7 +956,7 @@ pub mod list_access_points_for_object_lambda_output {
     }
 }
 impl ListAccessPointsForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`ListAccessPointsForObjectLambdaOutput`](crate::output::ListAccessPointsForObjectLambdaOutput).
     pub fn builder() -> crate::output::list_access_points_for_object_lambda_output::Builder {
         crate::output::list_access_points_for_object_lambda_output::Builder::default()
     }
@@ -1007,11 +989,10 @@ impl std::fmt::Debug for ListAccessPointsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput)
+/// See [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
 pub mod list_access_points_output {
 
-    /// A builder for [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_list: std::option::Option<std::vec::Vec<crate::model::AccessPoint>>,
@@ -1047,7 +1028,7 @@ pub mod list_access_points_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput)
+        /// Consumes the builder and constructs a [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
         pub fn build(self) -> crate::output::ListAccessPointsOutput {
             crate::output::ListAccessPointsOutput {
                 access_point_list: self.access_point_list,
@@ -1057,7 +1038,7 @@ pub mod list_access_points_output {
     }
 }
 impl ListAccessPointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAccessPointsOutput`](crate::output::ListAccessPointsOutput).
     pub fn builder() -> crate::output::list_access_points_output::Builder {
         crate::output::list_access_points_output::Builder::default()
     }
@@ -1083,11 +1064,10 @@ impl std::fmt::Debug for GetStorageLensConfigurationTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput)
+/// See [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
 pub mod get_storage_lens_configuration_tagging_output {
 
-    /// A builder for [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::StorageLensTag>>,
@@ -1112,14 +1092,14 @@ pub mod get_storage_lens_configuration_tagging_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput)
+        /// Consumes the builder and constructs a [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
         pub fn build(self) -> crate::output::GetStorageLensConfigurationTaggingOutput {
             crate::output::GetStorageLensConfigurationTaggingOutput { tags: self.tags }
         }
     }
 }
 impl GetStorageLensConfigurationTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationTaggingOutput`](crate::output::GetStorageLensConfigurationTaggingOutput).
     pub fn builder() -> crate::output::get_storage_lens_configuration_tagging_output::Builder {
         crate::output::get_storage_lens_configuration_tagging_output::Builder::default()
     }
@@ -1150,11 +1130,10 @@ impl std::fmt::Debug for GetStorageLensConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput)
+/// See [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
 pub mod get_storage_lens_configuration_output {
 
-    /// A builder for [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_lens_configuration:
@@ -1177,7 +1156,7 @@ pub mod get_storage_lens_configuration_output {
             self.storage_lens_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput)
+        /// Consumes the builder and constructs a [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
         pub fn build(self) -> crate::output::GetStorageLensConfigurationOutput {
             crate::output::GetStorageLensConfigurationOutput {
                 storage_lens_configuration: self.storage_lens_configuration,
@@ -1186,7 +1165,7 @@ pub mod get_storage_lens_configuration_output {
     }
 }
 impl GetStorageLensConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`GetStorageLensConfigurationOutput`](crate::output::GetStorageLensConfigurationOutput).
     pub fn builder() -> crate::output::get_storage_lens_configuration_output::Builder {
         crate::output::get_storage_lens_configuration_output::Builder::default()
     }
@@ -1218,11 +1197,10 @@ impl std::fmt::Debug for GetPublicAccessBlockOutput {
         formatter.finish()
     }
 }
-/// See [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
+/// See [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
 pub mod get_public_access_block_output {
 
-    /// A builder for [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_access_block_configuration:
@@ -1245,7 +1223,7 @@ pub mod get_public_access_block_output {
             self.public_access_block_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
+        /// Consumes the builder and constructs a [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
         pub fn build(self) -> crate::output::GetPublicAccessBlockOutput {
             crate::output::GetPublicAccessBlockOutput {
                 public_access_block_configuration: self.public_access_block_configuration,
@@ -1254,7 +1232,7 @@ pub mod get_public_access_block_output {
     }
 }
 impl GetPublicAccessBlockOutput {
-    /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput)
+    /// Creates a new builder-style object to manufacture [`GetPublicAccessBlockOutput`](crate::output::GetPublicAccessBlockOutput).
     pub fn builder() -> crate::output::get_public_access_block_output::Builder {
         crate::output::get_public_access_block_output::Builder::default()
     }
@@ -1280,11 +1258,10 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
+/// See [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
 pub mod get_multi_region_access_point_policy_status_output {
 
-    /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) established: std::option::Option<crate::model::PolicyStatus>,
@@ -1303,7 +1280,7 @@ pub mod get_multi_region_access_point_policy_status_output {
             self.established = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
         pub fn build(self) -> crate::output::GetMultiRegionAccessPointPolicyStatusOutput {
             crate::output::GetMultiRegionAccessPointPolicyStatusOutput {
                 established: self.established,
@@ -1312,7 +1289,7 @@ pub mod get_multi_region_access_point_policy_status_output {
     }
 }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::output::GetMultiRegionAccessPointPolicyStatusOutput).
     pub fn builder() -> crate::output::get_multi_region_access_point_policy_status_output::Builder {
         crate::output::get_multi_region_access_point_policy_status_output::Builder::default()
     }
@@ -1340,11 +1317,10 @@ impl std::fmt::Debug for GetMultiRegionAccessPointPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
+/// See [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
 pub mod get_multi_region_access_point_policy_output {
 
-    /// A builder for [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::MultiRegionAccessPointPolicyDocument>,
@@ -1363,7 +1339,7 @@ pub mod get_multi_region_access_point_policy_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::GetMultiRegionAccessPointPolicyOutput {
             crate::output::GetMultiRegionAccessPointPolicyOutput {
                 policy: self.policy,
@@ -1372,7 +1348,7 @@ pub mod get_multi_region_access_point_policy_output {
     }
 }
 impl GetMultiRegionAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyOutput`](crate::output::GetMultiRegionAccessPointPolicyOutput).
     pub fn builder() -> crate::output::get_multi_region_access_point_policy_output::Builder {
         crate::output::get_multi_region_access_point_policy_output::Builder::default()
     }
@@ -1398,11 +1374,10 @@ impl std::fmt::Debug for GetMultiRegionAccessPointOutput {
         formatter.finish()
     }
 }
-/// See [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
+/// See [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
 pub mod get_multi_region_access_point_output {
 
-    /// A builder for [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point: std::option::Option<crate::model::MultiRegionAccessPointReport>,
@@ -1421,7 +1396,7 @@ pub mod get_multi_region_access_point_output {
             self.access_point = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
+        /// Consumes the builder and constructs a [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
         pub fn build(self) -> crate::output::GetMultiRegionAccessPointOutput {
             crate::output::GetMultiRegionAccessPointOutput {
                 access_point: self.access_point,
@@ -1430,7 +1405,7 @@ pub mod get_multi_region_access_point_output {
     }
 }
 impl GetMultiRegionAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput)
+    /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointOutput`](crate::output::GetMultiRegionAccessPointOutput).
     pub fn builder() -> crate::output::get_multi_region_access_point_output::Builder {
         crate::output::get_multi_region_access_point_output::Builder::default()
     }
@@ -1456,11 +1431,10 @@ impl std::fmt::Debug for GetJobTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput)
+/// See [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
 pub mod get_job_tagging_output {
 
-    /// A builder for [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -1485,14 +1459,14 @@ pub mod get_job_tagging_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput)
+        /// Consumes the builder and constructs a [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
         pub fn build(self) -> crate::output::GetJobTaggingOutput {
             crate::output::GetJobTaggingOutput { tags: self.tags }
         }
     }
 }
 impl GetJobTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`GetJobTaggingOutput`](crate::output::GetJobTaggingOutput).
     pub fn builder() -> crate::output::get_job_tagging_output::Builder {
         crate::output::get_job_tagging_output::Builder::default()
     }
@@ -1518,11 +1492,10 @@ impl std::fmt::Debug for GetBucketTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
+/// See [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
 pub mod get_bucket_tagging_output {
 
-    /// A builder for [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::model::S3Tag>>,
@@ -1547,7 +1520,7 @@ pub mod get_bucket_tagging_output {
             self.tag_set = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
+        /// Consumes the builder and constructs a [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
         pub fn build(self) -> crate::output::GetBucketTaggingOutput {
             crate::output::GetBucketTaggingOutput {
                 tag_set: self.tag_set,
@@ -1556,7 +1529,7 @@ pub mod get_bucket_tagging_output {
     }
 }
 impl GetBucketTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`GetBucketTaggingOutput`](crate::output::GetBucketTaggingOutput).
     pub fn builder() -> crate::output::get_bucket_tagging_output::Builder {
         crate::output::get_bucket_tagging_output::Builder::default()
     }
@@ -1582,11 +1555,10 @@ impl std::fmt::Debug for GetBucketPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
+/// See [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
 pub mod get_bucket_policy_output {
 
-    /// A builder for [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1602,7 +1574,7 @@ pub mod get_bucket_policy_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
+        /// Consumes the builder and constructs a [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
         pub fn build(self) -> crate::output::GetBucketPolicyOutput {
             crate::output::GetBucketPolicyOutput {
                 policy: self.policy,
@@ -1611,7 +1583,7 @@ pub mod get_bucket_policy_output {
     }
 }
 impl GetBucketPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetBucketPolicyOutput`](crate::output::GetBucketPolicyOutput).
     pub fn builder() -> crate::output::get_bucket_policy_output::Builder {
         crate::output::get_bucket_policy_output::Builder::default()
     }
@@ -1637,11 +1609,10 @@ impl std::fmt::Debug for GetBucketLifecycleConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
+/// See [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
 pub mod get_bucket_lifecycle_configuration_output {
 
-    /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
@@ -1666,14 +1637,14 @@ pub mod get_bucket_lifecycle_configuration_output {
             self.rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
+        /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::GetBucketLifecycleConfigurationOutput {
             crate::output::GetBucketLifecycleConfigurationOutput { rules: self.rules }
         }
     }
 }
 impl GetBucketLifecycleConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`GetBucketLifecycleConfigurationOutput`](crate::output::GetBucketLifecycleConfigurationOutput).
     pub fn builder() -> crate::output::get_bucket_lifecycle_configuration_output::Builder {
         crate::output::get_bucket_lifecycle_configuration_output::Builder::default()
     }
@@ -1716,11 +1687,10 @@ impl std::fmt::Debug for GetBucketOutput {
         formatter.finish()
     }
 }
-/// See [`GetBucketOutput`](crate::output::GetBucketOutput)
+/// See [`GetBucketOutput`](crate::output::GetBucketOutput).
 pub mod get_bucket_output {
 
-    /// A builder for [`GetBucketOutput`](crate::output::GetBucketOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetBucketOutput`](crate::output::GetBucketOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket: std::option::Option<std::string::String>,
@@ -1761,7 +1731,7 @@ pub mod get_bucket_output {
             self.creation_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetBucketOutput`](crate::output::GetBucketOutput)
+        /// Consumes the builder and constructs a [`GetBucketOutput`](crate::output::GetBucketOutput).
         pub fn build(self) -> crate::output::GetBucketOutput {
             crate::output::GetBucketOutput {
                 bucket: self.bucket,
@@ -1772,7 +1742,7 @@ pub mod get_bucket_output {
     }
 }
 impl GetBucketOutput {
-    /// Creates a new builder-style object to manufacture [`GetBucketOutput`](crate::output::GetBucketOutput)
+    /// Creates a new builder-style object to manufacture [`GetBucketOutput`](crate::output::GetBucketOutput).
     pub fn builder() -> crate::output::get_bucket_output::Builder {
         crate::output::get_bucket_output::Builder::default()
     }
@@ -1798,11 +1768,10 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput)
+/// See [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
 pub mod get_access_point_policy_status_for_object_lambda_output {
 
-    /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_status: std::option::Option<crate::model::PolicyStatus>,
@@ -1821,7 +1790,7 @@ pub mod get_access_point_policy_status_for_object_lambda_output {
             self.policy_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput {
             crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput {
                 policy_status: self.policy_status,
@@ -1830,7 +1799,7 @@ pub mod get_access_point_policy_status_for_object_lambda_output {
     }
 }
 impl GetAccessPointPolicyStatusForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusForObjectLambdaOutput`](crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput).
     pub fn builder(
     ) -> crate::output::get_access_point_policy_status_for_object_lambda_output::Builder {
         crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default()
@@ -1857,11 +1826,10 @@ impl std::fmt::Debug for GetAccessPointPolicyStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput)
+/// See [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
 pub mod get_access_point_policy_status_output {
 
-    /// A builder for [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_status: std::option::Option<crate::model::PolicyStatus>,
@@ -1880,7 +1848,7 @@ pub mod get_access_point_policy_status_output {
             self.policy_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput)
+        /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyStatusOutput {
             crate::output::GetAccessPointPolicyStatusOutput {
                 policy_status: self.policy_status,
@@ -1889,7 +1857,7 @@ pub mod get_access_point_policy_status_output {
     }
 }
 impl GetAccessPointPolicyStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusOutput`](crate::output::GetAccessPointPolicyStatusOutput).
     pub fn builder() -> crate::output::get_access_point_policy_status_output::Builder {
         crate::output::get_access_point_policy_status_output::Builder::default()
     }
@@ -1915,11 +1883,10 @@ impl std::fmt::Debug for GetAccessPointPolicyForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput)
+/// See [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
 pub mod get_access_point_policy_for_object_lambda_output {
 
-    /// A builder for [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1935,7 +1902,7 @@ pub mod get_access_point_policy_for_object_lambda_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyForObjectLambdaOutput {
             crate::output::GetAccessPointPolicyForObjectLambdaOutput {
                 policy: self.policy,
@@ -1944,7 +1911,7 @@ pub mod get_access_point_policy_for_object_lambda_output {
     }
 }
 impl GetAccessPointPolicyForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaOutput`](crate::output::GetAccessPointPolicyForObjectLambdaOutput).
     pub fn builder() -> crate::output::get_access_point_policy_for_object_lambda_output::Builder {
         crate::output::get_access_point_policy_for_object_lambda_output::Builder::default()
     }
@@ -1970,11 +1937,10 @@ impl std::fmt::Debug for GetAccessPointPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput)
+/// See [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
 pub mod get_access_point_policy_output {
 
-    /// A builder for [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1990,7 +1956,7 @@ pub mod get_access_point_policy_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput)
+        /// Consumes the builder and constructs a [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::GetAccessPointPolicyOutput {
             crate::output::GetAccessPointPolicyOutput {
                 policy: self.policy,
@@ -1999,7 +1965,7 @@ pub mod get_access_point_policy_output {
     }
 }
 impl GetAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyOutput`](crate::output::GetAccessPointPolicyOutput).
     pub fn builder() -> crate::output::get_access_point_policy_output::Builder {
         crate::output::get_access_point_policy_output::Builder::default()
     }
@@ -2045,11 +2011,10 @@ impl std::fmt::Debug for GetAccessPointForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput)
+/// See [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
 pub mod get_access_point_for_object_lambda_output {
 
-    /// A builder for [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2097,7 +2062,7 @@ pub mod get_access_point_for_object_lambda_output {
             self.creation_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointForObjectLambdaOutput {
             crate::output::GetAccessPointForObjectLambdaOutput {
                 name: self.name,
@@ -2108,7 +2073,7 @@ pub mod get_access_point_for_object_lambda_output {
     }
 }
 impl GetAccessPointForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointForObjectLambdaOutput`](crate::output::GetAccessPointForObjectLambdaOutput).
     pub fn builder() -> crate::output::get_access_point_for_object_lambda_output::Builder {
         crate::output::get_access_point_for_object_lambda_output::Builder::default()
     }
@@ -2134,11 +2099,10 @@ impl std::fmt::Debug for GetAccessPointConfigurationForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput)
+/// See [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
 pub mod get_access_point_configuration_for_object_lambda_output {
 
-    /// A builder for [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::ObjectLambdaConfiguration>,
@@ -2157,7 +2121,7 @@ pub mod get_access_point_configuration_for_object_lambda_output {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
         pub fn build(self) -> crate::output::GetAccessPointConfigurationForObjectLambdaOutput {
             crate::output::GetAccessPointConfigurationForObjectLambdaOutput {
                 configuration: self.configuration,
@@ -2166,7 +2130,7 @@ pub mod get_access_point_configuration_for_object_lambda_output {
     }
 }
 impl GetAccessPointConfigurationForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointConfigurationForObjectLambdaOutput`](crate::output::GetAccessPointConfigurationForObjectLambdaOutput).
     pub fn builder(
     ) -> crate::output::get_access_point_configuration_for_object_lambda_output::Builder {
         crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default()
@@ -2267,11 +2231,10 @@ impl std::fmt::Debug for GetAccessPointOutput {
         formatter.finish()
     }
 }
-/// See [`GetAccessPointOutput`](crate::output::GetAccessPointOutput)
+/// See [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
 pub mod get_access_point_output {
 
-    /// A builder for [`GetAccessPointOutput`](crate::output::GetAccessPointOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2419,7 +2382,7 @@ pub mod get_access_point_output {
             self.endpoints = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAccessPointOutput`](crate::output::GetAccessPointOutput)
+        /// Consumes the builder and constructs a [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
         pub fn build(self) -> crate::output::GetAccessPointOutput {
             crate::output::GetAccessPointOutput {
                 name: self.name,
@@ -2436,7 +2399,7 @@ pub mod get_access_point_output {
     }
 }
 impl GetAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessPointOutput`](crate::output::GetAccessPointOutput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPointOutput`](crate::output::GetAccessPointOutput).
     pub fn builder() -> crate::output::get_access_point_output::Builder {
         crate::output::get_access_point_output::Builder::default()
     }
@@ -2462,11 +2425,10 @@ impl std::fmt::Debug for DescribeMultiRegionAccessPointOperationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
+/// See [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
 pub mod describe_multi_region_access_point_operation_output {
 
-    /// A builder for [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) async_operation: std::option::Option<crate::model::AsyncOperation>,
@@ -2485,7 +2447,7 @@ pub mod describe_multi_region_access_point_operation_output {
             self.async_operation = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
+        /// Consumes the builder and constructs a [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
         pub fn build(self) -> crate::output::DescribeMultiRegionAccessPointOperationOutput {
             crate::output::DescribeMultiRegionAccessPointOperationOutput {
                 async_operation: self.async_operation,
@@ -2494,7 +2456,7 @@ pub mod describe_multi_region_access_point_operation_output {
     }
 }
 impl DescribeMultiRegionAccessPointOperationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeMultiRegionAccessPointOperationOutput`](crate::output::DescribeMultiRegionAccessPointOperationOutput).
     pub fn builder() -> crate::output::describe_multi_region_access_point_operation_output::Builder
     {
         crate::output::describe_multi_region_access_point_operation_output::Builder::default()
@@ -2521,11 +2483,10 @@ impl std::fmt::Debug for DescribeJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeJobOutput`](crate::output::DescribeJobOutput)
+/// See [`DescribeJobOutput`](crate::output::DescribeJobOutput).
 pub mod describe_job_output {
 
-    /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeJobOutput`](crate::output::DescribeJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::JobDescriptor>,
@@ -2541,14 +2502,14 @@ pub mod describe_job_output {
             self.job = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::output::DescribeJobOutput)
+        /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::output::DescribeJobOutput).
         pub fn build(self) -> crate::output::DescribeJobOutput {
             crate::output::DescribeJobOutput { job: self.job }
         }
     }
 }
 impl DescribeJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
     pub fn builder() -> crate::output::describe_job_output::Builder {
         crate::output::describe_job_output::Builder::default()
     }
@@ -2564,22 +2525,21 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput)
+/// See [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
 pub mod delete_storage_lens_configuration_tagging_output {
 
-    /// A builder for [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput)
+        /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
         pub fn build(self) -> crate::output::DeleteStorageLensConfigurationTaggingOutput {
             crate::output::DeleteStorageLensConfigurationTaggingOutput {}
         }
     }
 }
 impl DeleteStorageLensConfigurationTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationTaggingOutput`](crate::output::DeleteStorageLensConfigurationTaggingOutput).
     pub fn builder() -> crate::output::delete_storage_lens_configuration_tagging_output::Builder {
         crate::output::delete_storage_lens_configuration_tagging_output::Builder::default()
     }
@@ -2595,22 +2555,21 @@ impl std::fmt::Debug for DeleteStorageLensConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput)
+/// See [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
 pub mod delete_storage_lens_configuration_output {
 
-    /// A builder for [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput)
+        /// Consumes the builder and constructs a [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteStorageLensConfigurationOutput {
             crate::output::DeleteStorageLensConfigurationOutput {}
         }
     }
 }
 impl DeleteStorageLensConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteStorageLensConfigurationOutput`](crate::output::DeleteStorageLensConfigurationOutput).
     pub fn builder() -> crate::output::delete_storage_lens_configuration_output::Builder {
         crate::output::delete_storage_lens_configuration_output::Builder::default()
     }
@@ -2626,22 +2585,21 @@ impl std::fmt::Debug for DeletePublicAccessBlockOutput {
         formatter.finish()
     }
 }
-/// See [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
+/// See [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
 pub mod delete_public_access_block_output {
 
-    /// A builder for [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
+        /// Consumes the builder and constructs a [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
         pub fn build(self) -> crate::output::DeletePublicAccessBlockOutput {
             crate::output::DeletePublicAccessBlockOutput {}
         }
     }
 }
 impl DeletePublicAccessBlockOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput)
+    /// Creates a new builder-style object to manufacture [`DeletePublicAccessBlockOutput`](crate::output::DeletePublicAccessBlockOutput).
     pub fn builder() -> crate::output::delete_public_access_block_output::Builder {
         crate::output::delete_public_access_block_output::Builder::default()
     }
@@ -2667,11 +2625,10 @@ impl std::fmt::Debug for DeleteMultiRegionAccessPointOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
+/// See [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
 pub mod delete_multi_region_access_point_output {
 
-    /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
@@ -2690,7 +2647,7 @@ pub mod delete_multi_region_access_point_output {
             self.request_token_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
+        /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
         pub fn build(self) -> crate::output::DeleteMultiRegionAccessPointOutput {
             crate::output::DeleteMultiRegionAccessPointOutput {
                 request_token_arn: self.request_token_arn,
@@ -2699,7 +2656,7 @@ pub mod delete_multi_region_access_point_output {
     }
 }
 impl DeleteMultiRegionAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteMultiRegionAccessPointOutput`](crate::output::DeleteMultiRegionAccessPointOutput).
     pub fn builder() -> crate::output::delete_multi_region_access_point_output::Builder {
         crate::output::delete_multi_region_access_point_output::Builder::default()
     }
@@ -2715,22 +2672,21 @@ impl std::fmt::Debug for DeleteJobTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput)
+/// See [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
 pub mod delete_job_tagging_output {
 
-    /// A builder for [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput)
+        /// Consumes the builder and constructs a [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
         pub fn build(self) -> crate::output::DeleteJobTaggingOutput {
             crate::output::DeleteJobTaggingOutput {}
         }
     }
 }
 impl DeleteJobTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteJobTaggingOutput`](crate::output::DeleteJobTaggingOutput).
     pub fn builder() -> crate::output::delete_job_tagging_output::Builder {
         crate::output::delete_job_tagging_output::Builder::default()
     }
@@ -2746,22 +2702,21 @@ impl std::fmt::Debug for DeleteBucketTaggingOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
+/// See [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
 pub mod delete_bucket_tagging_output {
 
-    /// A builder for [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
+        /// Consumes the builder and constructs a [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
         pub fn build(self) -> crate::output::DeleteBucketTaggingOutput {
             crate::output::DeleteBucketTaggingOutput {}
         }
     }
 }
 impl DeleteBucketTaggingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketTaggingOutput`](crate::output::DeleteBucketTaggingOutput).
     pub fn builder() -> crate::output::delete_bucket_tagging_output::Builder {
         crate::output::delete_bucket_tagging_output::Builder::default()
     }
@@ -2777,22 +2732,21 @@ impl std::fmt::Debug for DeleteBucketPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
+/// See [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
 pub mod delete_bucket_policy_output {
 
-    /// A builder for [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
+        /// Consumes the builder and constructs a [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
         pub fn build(self) -> crate::output::DeleteBucketPolicyOutput {
             crate::output::DeleteBucketPolicyOutput {}
         }
     }
 }
 impl DeleteBucketPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketPolicyOutput`](crate::output::DeleteBucketPolicyOutput).
     pub fn builder() -> crate::output::delete_bucket_policy_output::Builder {
         crate::output::delete_bucket_policy_output::Builder::default()
     }
@@ -2808,22 +2762,21 @@ impl std::fmt::Debug for DeleteBucketLifecycleConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput)
+/// See [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
 pub mod delete_bucket_lifecycle_configuration_output {
 
-    /// A builder for [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput)
+        /// Consumes the builder and constructs a [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteBucketLifecycleConfigurationOutput {
             crate::output::DeleteBucketLifecycleConfigurationOutput {}
         }
     }
 }
 impl DeleteBucketLifecycleConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketLifecycleConfigurationOutput`](crate::output::DeleteBucketLifecycleConfigurationOutput).
     pub fn builder() -> crate::output::delete_bucket_lifecycle_configuration_output::Builder {
         crate::output::delete_bucket_lifecycle_configuration_output::Builder::default()
     }
@@ -2839,22 +2792,21 @@ impl std::fmt::Debug for DeleteBucketOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+/// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
 pub mod delete_bucket_output {
 
-    /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+        /// Consumes the builder and constructs a [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
         pub fn build(self) -> crate::output::DeleteBucketOutput {
             crate::output::DeleteBucketOutput {}
         }
     }
 }
 impl DeleteBucketOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput).
     pub fn builder() -> crate::output::delete_bucket_output::Builder {
         crate::output::delete_bucket_output::Builder::default()
     }
@@ -2870,22 +2822,21 @@ impl std::fmt::Debug for DeleteAccessPointPolicyForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput)
+/// See [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
 pub mod delete_access_point_policy_for_object_lambda_output {
 
-    /// A builder for [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointPolicyForObjectLambdaOutput {
             crate::output::DeleteAccessPointPolicyForObjectLambdaOutput {}
         }
     }
 }
 impl DeleteAccessPointPolicyForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaOutput`](crate::output::DeleteAccessPointPolicyForObjectLambdaOutput).
     pub fn builder() -> crate::output::delete_access_point_policy_for_object_lambda_output::Builder
     {
         crate::output::delete_access_point_policy_for_object_lambda_output::Builder::default()
@@ -2902,22 +2853,21 @@ impl std::fmt::Debug for DeleteAccessPointPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput)
+/// See [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
 pub mod delete_access_point_policy_output {
 
-    /// A builder for [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput)
+        /// Consumes the builder and constructs a [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointPolicyOutput {
             crate::output::DeleteAccessPointPolicyOutput {}
         }
     }
 }
 impl DeleteAccessPointPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyOutput`](crate::output::DeleteAccessPointPolicyOutput).
     pub fn builder() -> crate::output::delete_access_point_policy_output::Builder {
         crate::output::delete_access_point_policy_output::Builder::default()
     }
@@ -2933,22 +2883,21 @@ impl std::fmt::Debug for DeleteAccessPointForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput)
+/// See [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
 pub mod delete_access_point_for_object_lambda_output {
 
-    /// A builder for [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointForObjectLambdaOutput {
             crate::output::DeleteAccessPointForObjectLambdaOutput {}
         }
     }
 }
 impl DeleteAccessPointForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointForObjectLambdaOutput`](crate::output::DeleteAccessPointForObjectLambdaOutput).
     pub fn builder() -> crate::output::delete_access_point_for_object_lambda_output::Builder {
         crate::output::delete_access_point_for_object_lambda_output::Builder::default()
     }
@@ -2964,22 +2913,21 @@ impl std::fmt::Debug for DeleteAccessPointOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
+/// See [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
 pub mod delete_access_point_output {
 
-    /// A builder for [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
+        /// Consumes the builder and constructs a [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
         pub fn build(self) -> crate::output::DeleteAccessPointOutput {
             crate::output::DeleteAccessPointOutput {}
         }
     }
 }
 impl DeleteAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccessPointOutput`](crate::output::DeleteAccessPointOutput).
     pub fn builder() -> crate::output::delete_access_point_output::Builder {
         crate::output::delete_access_point_output::Builder::default()
     }
@@ -3005,11 +2953,10 @@ impl std::fmt::Debug for CreateMultiRegionAccessPointOutput {
         formatter.finish()
     }
 }
-/// See [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
+/// See [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
 pub mod create_multi_region_access_point_output {
 
-    /// A builder for [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_token_arn: std::option::Option<std::string::String>,
@@ -3028,7 +2975,7 @@ pub mod create_multi_region_access_point_output {
             self.request_token_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
+        /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
         pub fn build(self) -> crate::output::CreateMultiRegionAccessPointOutput {
             crate::output::CreateMultiRegionAccessPointOutput {
                 request_token_arn: self.request_token_arn,
@@ -3037,7 +2984,7 @@ pub mod create_multi_region_access_point_output {
     }
 }
 impl CreateMultiRegionAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput)
+    /// Creates a new builder-style object to manufacture [`CreateMultiRegionAccessPointOutput`](crate::output::CreateMultiRegionAccessPointOutput).
     pub fn builder() -> crate::output::create_multi_region_access_point_output::Builder {
         crate::output::create_multi_region_access_point_output::Builder::default()
     }
@@ -3063,11 +3010,10 @@ impl std::fmt::Debug for CreateJobOutput {
         formatter.finish()
     }
 }
-/// See [`CreateJobOutput`](crate::output::CreateJobOutput)
+/// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
 
-    /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3083,7 +3029,7 @@ pub mod create_job_output {
             self.job_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput)
+        /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
             crate::output::CreateJobOutput {
                 job_id: self.job_id,
@@ -3092,7 +3038,7 @@ pub mod create_job_output {
     }
 }
 impl CreateJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput)
+    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
     pub fn builder() -> crate::output::create_job_output::Builder {
         crate::output::create_job_output::Builder::default()
     }
@@ -3149,11 +3095,10 @@ impl std::fmt::Debug for CreateBucketOutput {
         formatter.finish()
     }
 }
-/// See [`CreateBucketOutput`](crate::output::CreateBucketOutput)
+/// See [`CreateBucketOutput`](crate::output::CreateBucketOutput).
 pub mod create_bucket_output {
 
-    /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -3204,7 +3149,7 @@ pub mod create_bucket_output {
             self.bucket_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateBucketOutput`](crate::output::CreateBucketOutput)
+        /// Consumes the builder and constructs a [`CreateBucketOutput`](crate::output::CreateBucketOutput).
         pub fn build(self) -> crate::output::CreateBucketOutput {
             crate::output::CreateBucketOutput {
                 location: self.location,
@@ -3214,7 +3159,7 @@ pub mod create_bucket_output {
     }
 }
 impl CreateBucketOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput)
+    /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput).
     pub fn builder() -> crate::output::create_bucket_output::Builder {
         crate::output::create_bucket_output::Builder::default()
     }
@@ -3243,11 +3188,10 @@ impl std::fmt::Debug for CreateAccessPointForObjectLambdaOutput {
         formatter.finish()
     }
 }
-/// See [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput)
+/// See [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
 pub mod create_access_point_for_object_lambda_output {
 
-    /// A builder for [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_lambda_access_point_arn: std::option::Option<std::string::String>,
@@ -3269,7 +3213,7 @@ pub mod create_access_point_for_object_lambda_output {
             self.object_lambda_access_point_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput)
+        /// Consumes the builder and constructs a [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
         pub fn build(self) -> crate::output::CreateAccessPointForObjectLambdaOutput {
             crate::output::CreateAccessPointForObjectLambdaOutput {
                 object_lambda_access_point_arn: self.object_lambda_access_point_arn,
@@ -3278,7 +3222,7 @@ pub mod create_access_point_for_object_lambda_output {
     }
 }
 impl CreateAccessPointForObjectLambdaOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput)
+    /// Creates a new builder-style object to manufacture [`CreateAccessPointForObjectLambdaOutput`](crate::output::CreateAccessPointForObjectLambdaOutput).
     pub fn builder() -> crate::output::create_access_point_for_object_lambda_output::Builder {
         crate::output::create_access_point_for_object_lambda_output::Builder::default()
     }
@@ -3315,11 +3259,10 @@ impl std::fmt::Debug for CreateAccessPointOutput {
         formatter.finish()
     }
 }
-/// See [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput)
+/// See [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
 pub mod create_access_point_output {
 
-    /// A builder for [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
@@ -3353,7 +3296,7 @@ pub mod create_access_point_output {
             self.alias = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput)
+        /// Consumes the builder and constructs a [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
         pub fn build(self) -> crate::output::CreateAccessPointOutput {
             crate::output::CreateAccessPointOutput {
                 access_point_arn: self.access_point_arn,
@@ -3363,7 +3306,7 @@ pub mod create_access_point_output {
     }
 }
 impl CreateAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput)
+    /// Creates a new builder-style object to manufacture [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput).
     pub fn builder() -> crate::output::create_access_point_output::Builder {
         crate::output::create_access_point_output::Builder::default()
     }

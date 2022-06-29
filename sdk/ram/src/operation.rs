@@ -10,7 +10,7 @@ pub struct AcceptResourceShareInvitation {
     _private: (),
 }
 impl AcceptResourceShareInvitation {
-    /// Creates a new builder-style object to manufacture [`AcceptResourceShareInvitationInput`](crate::input::AcceptResourceShareInvitationInput)
+    /// Creates a new builder-style object to manufacture [`AcceptResourceShareInvitationInput`](crate::input::AcceptResourceShareInvitationInput).
     pub fn builder() -> crate::input::accept_resource_share_invitation_input::Builder {
         crate::input::accept_resource_share_invitation_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateResourceShare {
     _private: (),
 }
 impl AssociateResourceShare {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceShareInput`](crate::input::AssociateResourceShareInput)
+    /// Creates a new builder-style object to manufacture [`AssociateResourceShareInput`](crate::input::AssociateResourceShareInput).
     pub fn builder() -> crate::input::associate_resource_share_input::Builder {
         crate::input::associate_resource_share_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AssociateResourceSharePermission {
     _private: (),
 }
 impl AssociateResourceSharePermission {
-    /// Creates a new builder-style object to manufacture [`AssociateResourceSharePermissionInput`](crate::input::AssociateResourceSharePermissionInput)
+    /// Creates a new builder-style object to manufacture [`AssociateResourceSharePermissionInput`](crate::input::AssociateResourceSharePermissionInput).
     pub fn builder() -> crate::input::associate_resource_share_permission_input::Builder {
         crate::input::associate_resource_share_permission_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateResourceShare {
     _private: (),
 }
 impl CreateResourceShare {
-    /// Creates a new builder-style object to manufacture [`CreateResourceShareInput`](crate::input::CreateResourceShareInput)
+    /// Creates a new builder-style object to manufacture [`CreateResourceShareInput`](crate::input::CreateResourceShareInput).
     pub fn builder() -> crate::input::create_resource_share_input::Builder {
         crate::input::create_resource_share_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteResourceShare {
     _private: (),
 }
 impl DeleteResourceShare {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceShareInput`](crate::input::DeleteResourceShareInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourceShareInput`](crate::input::DeleteResourceShareInput).
     pub fn builder() -> crate::input::delete_resource_share_input::Builder {
         crate::input::delete_resource_share_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DisassociateResourceShare {
     _private: (),
 }
 impl DisassociateResourceShare {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceShareInput`](crate::input::DisassociateResourceShareInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceShareInput`](crate::input::DisassociateResourceShareInput).
     pub fn builder() -> crate::input::disassociate_resource_share_input::Builder {
         crate::input::disassociate_resource_share_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DisassociateResourceSharePermission {
     _private: (),
 }
 impl DisassociateResourceSharePermission {
-    /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionInput`](crate::input::DisassociateResourceSharePermissionInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResourceSharePermissionInput`](crate::input::DisassociateResourceSharePermissionInput).
     pub fn builder() -> crate::input::disassociate_resource_share_permission_input::Builder {
         crate::input::disassociate_resource_share_permission_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct EnableSharingWithAwsOrganization {
     _private: (),
 }
 impl EnableSharingWithAwsOrganization {
-    /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationInput`](crate::input::EnableSharingWithAwsOrganizationInput)
+    /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationInput`](crate::input::EnableSharingWithAwsOrganizationInput).
     pub fn builder() -> crate::input::enable_sharing_with_aws_organization_input::Builder {
         crate::input::enable_sharing_with_aws_organization_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct GetPermission {
     _private: (),
 }
 impl GetPermission {
-    /// Creates a new builder-style object to manufacture [`GetPermissionInput`](crate::input::GetPermissionInput)
+    /// Creates a new builder-style object to manufacture [`GetPermissionInput`](crate::input::GetPermissionInput).
     pub fn builder() -> crate::input::get_permission_input::Builder {
         crate::input::get_permission_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct GetResourcePolicies {
     _private: (),
 }
 impl GetResourcePolicies {
-    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
     pub fn builder() -> crate::input::get_resource_policies_input::Builder {
         crate::input::get_resource_policies_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct GetResourceShareAssociations {
     _private: (),
 }
 impl GetResourceShareAssociations {
-    /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsInput`](crate::input::GetResourceShareAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceShareAssociationsInput`](crate::input::GetResourceShareAssociationsInput).
     pub fn builder() -> crate::input::get_resource_share_associations_input::Builder {
         crate::input::get_resource_share_associations_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct GetResourceShareInvitations {
     _private: (),
 }
 impl GetResourceShareInvitations {
-    /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsInput`](crate::input::GetResourceShareInvitationsInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceShareInvitationsInput`](crate::input::GetResourceShareInvitationsInput).
     pub fn builder() -> crate::input::get_resource_share_invitations_input::Builder {
         crate::input::get_resource_share_invitations_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct GetResourceShares {
     _private: (),
 }
 impl GetResourceShares {
-    /// Creates a new builder-style object to manufacture [`GetResourceSharesInput`](crate::input::GetResourceSharesInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceSharesInput`](crate::input::GetResourceSharesInput).
     pub fn builder() -> crate::input::get_resource_shares_input::Builder {
         crate::input::get_resource_shares_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct ListPendingInvitationResources {
     _private: (),
 }
 impl ListPendingInvitationResources {
-    /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesInput`](crate::input::ListPendingInvitationResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListPendingInvitationResourcesInput`](crate::input::ListPendingInvitationResourcesInput).
     pub fn builder() -> crate::input::list_pending_invitation_resources_input::Builder {
         crate::input::list_pending_invitation_resources_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct ListPermissions {
     _private: (),
 }
 impl ListPermissions {
-    /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::input::ListPermissionsInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionsInput`](crate::input::ListPermissionsInput).
     pub fn builder() -> crate::input::list_permissions_input::Builder {
         crate::input::list_permissions_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct ListPermissionVersions {
     _private: (),
 }
 impl ListPermissionVersions {
-    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsInput`](crate::input::ListPermissionVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionVersionsInput`](crate::input::ListPermissionVersionsInput).
     pub fn builder() -> crate::input::list_permission_versions_input::Builder {
         crate::input::list_permission_versions_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct ListPrincipals {
     _private: (),
 }
 impl ListPrincipals {
-    /// Creates a new builder-style object to manufacture [`ListPrincipalsInput`](crate::input::ListPrincipalsInput)
+    /// Creates a new builder-style object to manufacture [`ListPrincipalsInput`](crate::input::ListPrincipalsInput).
     pub fn builder() -> crate::input::list_principals_input::Builder {
         crate::input::list_principals_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct ListResources {
     _private: (),
 }
 impl ListResources {
-    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesInput`](crate::input::ListResourcesInput).
     pub fn builder() -> crate::input::list_resources_input::Builder {
         crate::input::list_resources_input::Builder::default()
     }
@@ -616,7 +616,7 @@ pub struct ListResourceSharePermissions {
     _private: (),
 }
 impl ListResourceSharePermissions {
-    /// Creates a new builder-style object to manufacture [`ListResourceSharePermissionsInput`](crate::input::ListResourceSharePermissionsInput)
+    /// Creates a new builder-style object to manufacture [`ListResourceSharePermissionsInput`](crate::input::ListResourceSharePermissionsInput).
     pub fn builder() -> crate::input::list_resource_share_permissions_input::Builder {
         crate::input::list_resource_share_permissions_input::Builder::default()
     }
@@ -650,7 +650,7 @@ pub struct ListResourceTypes {
     _private: (),
 }
 impl ListResourceTypes {
-    /// Creates a new builder-style object to manufacture [`ListResourceTypesInput`](crate::input::ListResourceTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListResourceTypesInput`](crate::input::ListResourceTypesInput).
     pub fn builder() -> crate::input::list_resource_types_input::Builder {
         crate::input::list_resource_types_input::Builder::default()
     }
@@ -684,7 +684,7 @@ pub struct PromoteResourceShareCreatedFromPolicy {
     _private: (),
 }
 impl PromoteResourceShareCreatedFromPolicy {
-    /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyInput`](crate::input::PromoteResourceShareCreatedFromPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyInput`](crate::input::PromoteResourceShareCreatedFromPolicyInput).
     pub fn builder() -> crate::input::promote_resource_share_created_from_policy_input::Builder {
         crate::input::promote_resource_share_created_from_policy_input::Builder::default()
     }
@@ -720,7 +720,7 @@ pub struct RejectResourceShareInvitation {
     _private: (),
 }
 impl RejectResourceShareInvitation {
-    /// Creates a new builder-style object to manufacture [`RejectResourceShareInvitationInput`](crate::input::RejectResourceShareInvitationInput)
+    /// Creates a new builder-style object to manufacture [`RejectResourceShareInvitationInput`](crate::input::RejectResourceShareInvitationInput).
     pub fn builder() -> crate::input::reject_resource_share_invitation_input::Builder {
         crate::input::reject_resource_share_invitation_input::Builder::default()
     }
@@ -754,7 +754,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -786,7 +786,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -818,7 +818,7 @@ pub struct UpdateResourceShare {
     _private: (),
 }
 impl UpdateResourceShare {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceShareInput`](crate::input::UpdateResourceShareInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceShareInput`](crate::input::UpdateResourceShareInput).
     pub fn builder() -> crate::input::update_resource_share_input::Builder {
         crate::input::update_resource_share_input::Builder::default()
     }

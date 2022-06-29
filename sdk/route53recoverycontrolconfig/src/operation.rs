@@ -10,7 +10,7 @@ pub struct CreateCluster {
     _private: (),
 }
 impl CreateCluster {
-    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput).
     pub fn builder() -> crate::input::create_cluster_input::Builder {
         crate::input::create_cluster_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateControlPanel {
     _private: (),
 }
 impl CreateControlPanel {
-    /// Creates a new builder-style object to manufacture [`CreateControlPanelInput`](crate::input::CreateControlPanelInput)
+    /// Creates a new builder-style object to manufacture [`CreateControlPanelInput`](crate::input::CreateControlPanelInput).
     pub fn builder() -> crate::input::create_control_panel_input::Builder {
         crate::input::create_control_panel_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateRoutingControl {
     _private: (),
 }
 impl CreateRoutingControl {
-    /// Creates a new builder-style object to manufacture [`CreateRoutingControlInput`](crate::input::CreateRoutingControlInput)
+    /// Creates a new builder-style object to manufacture [`CreateRoutingControlInput`](crate::input::CreateRoutingControlInput).
     pub fn builder() -> crate::input::create_routing_control_input::Builder {
         crate::input::create_routing_control_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateSafetyRule {
     _private: (),
 }
 impl CreateSafetyRule {
-    /// Creates a new builder-style object to manufacture [`CreateSafetyRuleInput`](crate::input::CreateSafetyRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateSafetyRuleInput`](crate::input::CreateSafetyRuleInput).
     pub fn builder() -> crate::input::create_safety_rule_input::Builder {
         crate::input::create_safety_rule_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DeleteCluster {
     _private: (),
 }
 impl DeleteCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput).
     pub fn builder() -> crate::input::delete_cluster_input::Builder {
         crate::input::delete_cluster_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeleteControlPanel {
     _private: (),
 }
 impl DeleteControlPanel {
-    /// Creates a new builder-style object to manufacture [`DeleteControlPanelInput`](crate::input::DeleteControlPanelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteControlPanelInput`](crate::input::DeleteControlPanelInput).
     pub fn builder() -> crate::input::delete_control_panel_input::Builder {
         crate::input::delete_control_panel_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteRoutingControl {
     _private: (),
 }
 impl DeleteRoutingControl {
-    /// Creates a new builder-style object to manufacture [`DeleteRoutingControlInput`](crate::input::DeleteRoutingControlInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRoutingControlInput`](crate::input::DeleteRoutingControlInput).
     pub fn builder() -> crate::input::delete_routing_control_input::Builder {
         crate::input::delete_routing_control_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteSafetyRule {
     _private: (),
 }
 impl DeleteSafetyRule {
-    /// Creates a new builder-style object to manufacture [`DeleteSafetyRuleInput`](crate::input::DeleteSafetyRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSafetyRuleInput`](crate::input::DeleteSafetyRuleInput).
     pub fn builder() -> crate::input::delete_safety_rule_input::Builder {
         crate::input::delete_safety_rule_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DescribeCluster {
     _private: (),
 }
 impl DescribeCluster {
-    /// Creates a new builder-style object to manufacture [`DescribeClusterInput`](crate::input::DescribeClusterInput)
+    /// Creates a new builder-style object to manufacture [`DescribeClusterInput`](crate::input::DescribeClusterInput).
     pub fn builder() -> crate::input::describe_cluster_input::Builder {
         crate::input::describe_cluster_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DescribeControlPanel {
     _private: (),
 }
 impl DescribeControlPanel {
-    /// Creates a new builder-style object to manufacture [`DescribeControlPanelInput`](crate::input::DescribeControlPanelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeControlPanelInput`](crate::input::DescribeControlPanelInput).
     pub fn builder() -> crate::input::describe_control_panel_input::Builder {
         crate::input::describe_control_panel_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DescribeRoutingControl {
     _private: (),
 }
 impl DescribeRoutingControl {
-    /// Creates a new builder-style object to manufacture [`DescribeRoutingControlInput`](crate::input::DescribeRoutingControlInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRoutingControlInput`](crate::input::DescribeRoutingControlInput).
     pub fn builder() -> crate::input::describe_routing_control_input::Builder {
         crate::input::describe_routing_control_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DescribeSafetyRule {
     _private: (),
 }
 impl DescribeSafetyRule {
-    /// Creates a new builder-style object to manufacture [`DescribeSafetyRuleInput`](crate::input::DescribeSafetyRuleInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSafetyRuleInput`](crate::input::DescribeSafetyRuleInput).
     pub fn builder() -> crate::input::describe_safety_rule_input::Builder {
         crate::input::describe_safety_rule_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct ListAssociatedRoute53HealthChecks {
     _private: (),
 }
 impl ListAssociatedRoute53HealthChecks {
-    /// Creates a new builder-style object to manufacture [`ListAssociatedRoute53HealthChecksInput`](crate::input::ListAssociatedRoute53HealthChecksInput)
+    /// Creates a new builder-style object to manufacture [`ListAssociatedRoute53HealthChecksInput`](crate::input::ListAssociatedRoute53HealthChecksInput).
     pub fn builder() -> crate::input::list_associated_route53_health_checks_input::Builder {
         crate::input::list_associated_route53_health_checks_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct ListClusters {
     _private: (),
 }
 impl ListClusters {
-    /// Creates a new builder-style object to manufacture [`ListClustersInput`](crate::input::ListClustersInput)
+    /// Creates a new builder-style object to manufacture [`ListClustersInput`](crate::input::ListClustersInput).
     pub fn builder() -> crate::input::list_clusters_input::Builder {
         crate::input::list_clusters_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct ListControlPanels {
     _private: (),
 }
 impl ListControlPanels {
-    /// Creates a new builder-style object to manufacture [`ListControlPanelsInput`](crate::input::ListControlPanelsInput)
+    /// Creates a new builder-style object to manufacture [`ListControlPanelsInput`](crate::input::ListControlPanelsInput).
     pub fn builder() -> crate::input::list_control_panels_input::Builder {
         crate::input::list_control_panels_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct ListRoutingControls {
     _private: (),
 }
 impl ListRoutingControls {
-    /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput)
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
     pub fn builder() -> crate::input::list_routing_controls_input::Builder {
         crate::input::list_routing_controls_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct ListSafetyRules {
     _private: (),
 }
 impl ListSafetyRules {
-    /// Creates a new builder-style object to manufacture [`ListSafetyRulesInput`](crate::input::ListSafetyRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListSafetyRulesInput`](crate::input::ListSafetyRulesInput).
     pub fn builder() -> crate::input::list_safety_rules_input::Builder {
         crate::input::list_safety_rules_input::Builder::default()
     }
@@ -582,7 +582,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -616,7 +616,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -648,7 +648,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -680,7 +680,7 @@ pub struct UpdateControlPanel {
     _private: (),
 }
 impl UpdateControlPanel {
-    /// Creates a new builder-style object to manufacture [`UpdateControlPanelInput`](crate::input::UpdateControlPanelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateControlPanelInput`](crate::input::UpdateControlPanelInput).
     pub fn builder() -> crate::input::update_control_panel_input::Builder {
         crate::input::update_control_panel_input::Builder::default()
     }
@@ -714,7 +714,7 @@ pub struct UpdateRoutingControl {
     _private: (),
 }
 impl UpdateRoutingControl {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlInput`](crate::input::UpdateRoutingControlInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlInput`](crate::input::UpdateRoutingControlInput).
     pub fn builder() -> crate::input::update_routing_control_input::Builder {
         crate::input::update_routing_control_input::Builder::default()
     }
@@ -748,7 +748,7 @@ pub struct UpdateSafetyRule {
     _private: (),
 }
 impl UpdateSafetyRule {
-    /// Creates a new builder-style object to manufacture [`UpdateSafetyRuleInput`](crate::input::UpdateSafetyRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSafetyRuleInput`](crate::input::UpdateSafetyRuleInput).
     pub fn builder() -> crate::input::update_safety_rule_input::Builder {
         crate::input::update_safety_rule_input::Builder::default()
     }

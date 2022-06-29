@@ -27,11 +27,10 @@ impl std::fmt::Debug for GetEntitlementsOutput {
         formatter.finish()
     }
 }
-/// See [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput)
+/// See [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
 pub mod get_entitlements_output {
 
-    /// A builder for [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -67,7 +66,7 @@ pub mod get_entitlements_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput)
+        /// Consumes the builder and constructs a [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
         pub fn build(self) -> crate::output::GetEntitlementsOutput {
             crate::output::GetEntitlementsOutput {
                 entitlements: self.entitlements,
@@ -77,7 +76,7 @@ pub mod get_entitlements_output {
     }
 }
 impl GetEntitlementsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput)
+    /// Creates a new builder-style object to manufacture [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
     pub fn builder() -> crate::output::get_entitlements_output::Builder {
         crate::output::get_entitlements_output::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct AcceptDomainTransferFromAnotherAwsAccount {
     _private: (),
 }
 impl AcceptDomainTransferFromAnotherAwsAccount {
-    /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::input::AcceptDomainTransferFromAnotherAwsAccountInput)
+    /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountInput`](crate::input::AcceptDomainTransferFromAnotherAwsAccountInput).
     pub fn builder() -> crate::input::accept_domain_transfer_from_another_aws_account_input::Builder
     {
         crate::input::accept_domain_transfer_from_another_aws_account_input::Builder::default()
@@ -49,7 +49,7 @@ pub struct CancelDomainTransferToAnotherAwsAccount {
     _private: (),
 }
 impl CancelDomainTransferToAnotherAwsAccount {
-    /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountInput`](crate::input::CancelDomainTransferToAnotherAwsAccountInput)
+    /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountInput`](crate::input::CancelDomainTransferToAnotherAwsAccountInput).
     pub fn builder() -> crate::input::cancel_domain_transfer_to_another_aws_account_input::Builder {
         crate::input::cancel_domain_transfer_to_another_aws_account_input::Builder::default()
     }
@@ -87,7 +87,7 @@ pub struct CheckDomainAvailability {
     _private: (),
 }
 impl CheckDomainAvailability {
-    /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityInput`](crate::input::CheckDomainAvailabilityInput)
+    /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityInput`](crate::input::CheckDomainAvailabilityInput).
     pub fn builder() -> crate::input::check_domain_availability_input::Builder {
         crate::input::check_domain_availability_input::Builder::default()
     }
@@ -121,7 +121,7 @@ pub struct CheckDomainTransferability {
     _private: (),
 }
 impl CheckDomainTransferability {
-    /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityInput`](crate::input::CheckDomainTransferabilityInput)
+    /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityInput`](crate::input::CheckDomainTransferabilityInput).
     pub fn builder() -> crate::input::check_domain_transferability_input::Builder {
         crate::input::check_domain_transferability_input::Builder::default()
     }
@@ -155,7 +155,7 @@ pub struct DeleteDomain {
     _private: (),
 }
 impl DeleteDomain {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput).
     pub fn builder() -> crate::input::delete_domain_input::Builder {
         crate::input::delete_domain_input::Builder::default()
     }
@@ -187,7 +187,7 @@ pub struct DeleteTagsForDomain {
     _private: (),
 }
 impl DeleteTagsForDomain {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainInput`](crate::input::DeleteTagsForDomainInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainInput`](crate::input::DeleteTagsForDomainInput).
     pub fn builder() -> crate::input::delete_tags_for_domain_input::Builder {
         crate::input::delete_tags_for_domain_input::Builder::default()
     }
@@ -221,7 +221,7 @@ pub struct DisableDomainAutoRenew {
     _private: (),
 }
 impl DisableDomainAutoRenew {
-    /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewInput`](crate::input::DisableDomainAutoRenewInput)
+    /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewInput`](crate::input::DisableDomainAutoRenewInput).
     pub fn builder() -> crate::input::disable_domain_auto_renew_input::Builder {
         crate::input::disable_domain_auto_renew_input::Builder::default()
     }
@@ -255,7 +255,7 @@ pub struct DisableDomainTransferLock {
     _private: (),
 }
 impl DisableDomainTransferLock {
-    /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockInput`](crate::input::DisableDomainTransferLockInput)
+    /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockInput`](crate::input::DisableDomainTransferLockInput).
     pub fn builder() -> crate::input::disable_domain_transfer_lock_input::Builder {
         crate::input::disable_domain_transfer_lock_input::Builder::default()
     }
@@ -289,7 +289,7 @@ pub struct EnableDomainAutoRenew {
     _private: (),
 }
 impl EnableDomainAutoRenew {
-    /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewInput`](crate::input::EnableDomainAutoRenewInput)
+    /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewInput`](crate::input::EnableDomainAutoRenewInput).
     pub fn builder() -> crate::input::enable_domain_auto_renew_input::Builder {
         crate::input::enable_domain_auto_renew_input::Builder::default()
     }
@@ -323,7 +323,7 @@ pub struct EnableDomainTransferLock {
     _private: (),
 }
 impl EnableDomainTransferLock {
-    /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockInput`](crate::input::EnableDomainTransferLockInput)
+    /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockInput`](crate::input::EnableDomainTransferLockInput).
     pub fn builder() -> crate::input::enable_domain_transfer_lock_input::Builder {
         crate::input::enable_domain_transfer_lock_input::Builder::default()
     }
@@ -357,7 +357,7 @@ pub struct GetContactReachabilityStatus {
     _private: (),
 }
 impl GetContactReachabilityStatus {
-    /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusInput`](crate::input::GetContactReachabilityStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusInput`](crate::input::GetContactReachabilityStatusInput).
     pub fn builder() -> crate::input::get_contact_reachability_status_input::Builder {
         crate::input::get_contact_reachability_status_input::Builder::default()
     }
@@ -391,7 +391,7 @@ pub struct GetDomainDetail {
     _private: (),
 }
 impl GetDomainDetail {
-    /// Creates a new builder-style object to manufacture [`GetDomainDetailInput`](crate::input::GetDomainDetailInput)
+    /// Creates a new builder-style object to manufacture [`GetDomainDetailInput`](crate::input::GetDomainDetailInput).
     pub fn builder() -> crate::input::get_domain_detail_input::Builder {
         crate::input::get_domain_detail_input::Builder::default()
     }
@@ -425,7 +425,7 @@ pub struct GetDomainSuggestions {
     _private: (),
 }
 impl GetDomainSuggestions {
-    /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsInput`](crate::input::GetDomainSuggestionsInput)
+    /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsInput`](crate::input::GetDomainSuggestionsInput).
     pub fn builder() -> crate::input::get_domain_suggestions_input::Builder {
         crate::input::get_domain_suggestions_input::Builder::default()
     }
@@ -459,7 +459,7 @@ pub struct GetOperationDetail {
     _private: (),
 }
 impl GetOperationDetail {
-    /// Creates a new builder-style object to manufacture [`GetOperationDetailInput`](crate::input::GetOperationDetailInput)
+    /// Creates a new builder-style object to manufacture [`GetOperationDetailInput`](crate::input::GetOperationDetailInput).
     pub fn builder() -> crate::input::get_operation_detail_input::Builder {
         crate::input::get_operation_detail_input::Builder::default()
     }
@@ -493,7 +493,7 @@ pub struct ListDomains {
     _private: (),
 }
 impl ListDomains {
-    /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput).
     pub fn builder() -> crate::input::list_domains_input::Builder {
         crate::input::list_domains_input::Builder::default()
     }
@@ -525,7 +525,7 @@ pub struct ListOperations {
     _private: (),
 }
 impl ListOperations {
-    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput)
+    /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::input::ListOperationsInput).
     pub fn builder() -> crate::input::list_operations_input::Builder {
         crate::input::list_operations_input::Builder::default()
     }
@@ -557,7 +557,7 @@ pub struct ListPrices {
     _private: (),
 }
 impl ListPrices {
-    /// Creates a new builder-style object to manufacture [`ListPricesInput`](crate::input::ListPricesInput)
+    /// Creates a new builder-style object to manufacture [`ListPricesInput`](crate::input::ListPricesInput).
     pub fn builder() -> crate::input::list_prices_input::Builder {
         crate::input::list_prices_input::Builder::default()
     }
@@ -589,7 +589,7 @@ pub struct ListTagsForDomain {
     _private: (),
 }
 impl ListTagsForDomain {
-    /// Creates a new builder-style object to manufacture [`ListTagsForDomainInput`](crate::input::ListTagsForDomainInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForDomainInput`](crate::input::ListTagsForDomainInput).
     pub fn builder() -> crate::input::list_tags_for_domain_input::Builder {
         crate::input::list_tags_for_domain_input::Builder::default()
     }
@@ -623,7 +623,7 @@ pub struct RegisterDomain {
     _private: (),
 }
 impl RegisterDomain {
-    /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::input::RegisterDomainInput)
+    /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::input::RegisterDomainInput).
     pub fn builder() -> crate::input::register_domain_input::Builder {
         crate::input::register_domain_input::Builder::default()
     }
@@ -655,7 +655,7 @@ pub struct RejectDomainTransferFromAnotherAwsAccount {
     _private: (),
 }
 impl RejectDomainTransferFromAnotherAwsAccount {
-    /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::input::RejectDomainTransferFromAnotherAwsAccountInput)
+    /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountInput`](crate::input::RejectDomainTransferFromAnotherAwsAccountInput).
     pub fn builder() -> crate::input::reject_domain_transfer_from_another_aws_account_input::Builder
     {
         crate::input::reject_domain_transfer_from_another_aws_account_input::Builder::default()
@@ -694,7 +694,7 @@ pub struct RenewDomain {
     _private: (),
 }
 impl RenewDomain {
-    /// Creates a new builder-style object to manufacture [`RenewDomainInput`](crate::input::RenewDomainInput)
+    /// Creates a new builder-style object to manufacture [`RenewDomainInput`](crate::input::RenewDomainInput).
     pub fn builder() -> crate::input::renew_domain_input::Builder {
         crate::input::renew_domain_input::Builder::default()
     }
@@ -726,7 +726,7 @@ pub struct ResendContactReachabilityEmail {
     _private: (),
 }
 impl ResendContactReachabilityEmail {
-    /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailInput`](crate::input::ResendContactReachabilityEmailInput)
+    /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailInput`](crate::input::ResendContactReachabilityEmailInput).
     pub fn builder() -> crate::input::resend_contact_reachability_email_input::Builder {
         crate::input::resend_contact_reachability_email_input::Builder::default()
     }
@@ -760,7 +760,7 @@ pub struct RetrieveDomainAuthCode {
     _private: (),
 }
 impl RetrieveDomainAuthCode {
-    /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeInput`](crate::input::RetrieveDomainAuthCodeInput)
+    /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeInput`](crate::input::RetrieveDomainAuthCodeInput).
     pub fn builder() -> crate::input::retrieve_domain_auth_code_input::Builder {
         crate::input::retrieve_domain_auth_code_input::Builder::default()
     }
@@ -794,7 +794,7 @@ pub struct TransferDomain {
     _private: (),
 }
 impl TransferDomain {
-    /// Creates a new builder-style object to manufacture [`TransferDomainInput`](crate::input::TransferDomainInput)
+    /// Creates a new builder-style object to manufacture [`TransferDomainInput`](crate::input::TransferDomainInput).
     pub fn builder() -> crate::input::transfer_domain_input::Builder {
         crate::input::transfer_domain_input::Builder::default()
     }
@@ -826,7 +826,7 @@ pub struct TransferDomainToAnotherAwsAccount {
     _private: (),
 }
 impl TransferDomainToAnotherAwsAccount {
-    /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountInput`](crate::input::TransferDomainToAnotherAwsAccountInput)
+    /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountInput`](crate::input::TransferDomainToAnotherAwsAccountInput).
     pub fn builder() -> crate::input::transfer_domain_to_another_aws_account_input::Builder {
         crate::input::transfer_domain_to_another_aws_account_input::Builder::default()
     }
@@ -860,7 +860,7 @@ pub struct UpdateDomainContact {
     _private: (),
 }
 impl UpdateDomainContact {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainContactInput`](crate::input::UpdateDomainContactInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainContactInput`](crate::input::UpdateDomainContactInput).
     pub fn builder() -> crate::input::update_domain_contact_input::Builder {
         crate::input::update_domain_contact_input::Builder::default()
     }
@@ -894,7 +894,7 @@ pub struct UpdateDomainContactPrivacy {
     _private: (),
 }
 impl UpdateDomainContactPrivacy {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyInput`](crate::input::UpdateDomainContactPrivacyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyInput`](crate::input::UpdateDomainContactPrivacyInput).
     pub fn builder() -> crate::input::update_domain_contact_privacy_input::Builder {
         crate::input::update_domain_contact_privacy_input::Builder::default()
     }
@@ -928,7 +928,7 @@ pub struct UpdateDomainNameservers {
     _private: (),
 }
 impl UpdateDomainNameservers {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversInput`](crate::input::UpdateDomainNameserversInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversInput`](crate::input::UpdateDomainNameserversInput).
     pub fn builder() -> crate::input::update_domain_nameservers_input::Builder {
         crate::input::update_domain_nameservers_input::Builder::default()
     }
@@ -962,7 +962,7 @@ pub struct UpdateTagsForDomain {
     _private: (),
 }
 impl UpdateTagsForDomain {
-    /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainInput`](crate::input::UpdateTagsForDomainInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainInput`](crate::input::UpdateTagsForDomainInput).
     pub fn builder() -> crate::input::update_tags_for_domain_input::Builder {
         crate::input::update_tags_for_domain_input::Builder::default()
     }
@@ -996,7 +996,7 @@ pub struct ViewBilling {
     _private: (),
 }
 impl ViewBilling {
-    /// Creates a new builder-style object to manufacture [`ViewBillingInput`](crate::input::ViewBillingInput)
+    /// Creates a new builder-style object to manufacture [`ViewBillingInput`](crate::input::ViewBillingInput).
     pub fn builder() -> crate::input::view_billing_input::Builder {
         crate::input::view_billing_input::Builder::default()
     }

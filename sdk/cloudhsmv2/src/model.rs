@@ -27,11 +27,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -68,7 +67,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -164,11 +163,10 @@ impl std::fmt::Debug for Backup {
         formatter.finish()
     }
 }
-/// See [`Backup`](crate::model::Backup)
+/// See [`Backup`](crate::model::Backup).
 pub mod backup {
 
-    /// A builder for [`Backup`](crate::model::Backup)
-    #[non_exhaustive]
+    /// A builder for [`Backup`](crate::model::Backup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_id: std::option::Option<std::string::String>,
@@ -324,7 +322,7 @@ pub mod backup {
             self.tag_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`Backup`](crate::model::Backup)
+        /// Consumes the builder and constructs a [`Backup`](crate::model::Backup).
         pub fn build(self) -> crate::model::Backup {
             crate::model::Backup {
                 backup_id: self.backup_id,
@@ -343,7 +341,7 @@ pub mod backup {
     }
 }
 impl Backup {
-    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup)
+    /// Creates a new builder-style object to manufacture [`Backup`](crate::model::Backup).
     pub fn builder() -> crate::model::backup::Builder {
         crate::model::backup::Builder::default()
     }
@@ -536,11 +534,10 @@ impl std::fmt::Debug for Cluster {
         formatter.finish()
     }
 }
-/// See [`Cluster`](crate::model::Cluster)
+/// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
-    /// A builder for [`Cluster`](crate::model::Cluster)
-    #[non_exhaustive]
+    /// A builder for [`Cluster`](crate::model::Cluster).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backup_policy: std::option::Option<crate::model::BackupPolicy>,
@@ -773,7 +770,7 @@ pub mod cluster {
             self.tag_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
+        /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
                 backup_policy: self.backup_policy,
@@ -796,7 +793,7 @@ pub mod cluster {
     }
 }
 impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster)
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
     pub fn builder() -> crate::model::cluster::Builder {
         crate::model::cluster::Builder::default()
     }
@@ -853,11 +850,10 @@ impl std::fmt::Debug for Certificates {
         formatter.finish()
     }
 }
-/// See [`Certificates`](crate::model::Certificates)
+/// See [`Certificates`](crate::model::Certificates).
 pub mod certificates {
 
-    /// A builder for [`Certificates`](crate::model::Certificates)
-    #[non_exhaustive]
+    /// A builder for [`Certificates`](crate::model::Certificates).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_csr: std::option::Option<std::string::String>,
@@ -932,7 +928,7 @@ pub mod certificates {
             self.cluster_certificate = input;
             self
         }
-        /// Consumes the builder and constructs a [`Certificates`](crate::model::Certificates)
+        /// Consumes the builder and constructs a [`Certificates`](crate::model::Certificates).
         pub fn build(self) -> crate::model::Certificates {
             crate::model::Certificates {
                 cluster_csr: self.cluster_csr,
@@ -945,7 +941,7 @@ pub mod certificates {
     }
 }
 impl Certificates {
-    /// Creates a new builder-style object to manufacture [`Certificates`](crate::model::Certificates)
+    /// Creates a new builder-style object to manufacture [`Certificates`](crate::model::Certificates).
     pub fn builder() -> crate::model::certificates::Builder {
         crate::model::certificates::Builder::default()
     }
@@ -1113,11 +1109,10 @@ impl std::fmt::Debug for Hsm {
         formatter.finish()
     }
 }
-/// See [`Hsm`](crate::model::Hsm)
+/// See [`Hsm`](crate::model::Hsm).
 pub mod hsm {
 
-    /// A builder for [`Hsm`](crate::model::Hsm)
-    #[non_exhaustive]
+    /// A builder for [`Hsm`](crate::model::Hsm).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -1216,7 +1211,7 @@ pub mod hsm {
             self.state_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`Hsm`](crate::model::Hsm)
+        /// Consumes the builder and constructs a [`Hsm`](crate::model::Hsm).
         pub fn build(self) -> crate::model::Hsm {
             crate::model::Hsm {
                 availability_zone: self.availability_zone,
@@ -1232,7 +1227,7 @@ pub mod hsm {
     }
 }
 impl Hsm {
-    /// Creates a new builder-style object to manufacture [`Hsm`](crate::model::Hsm)
+    /// Creates a new builder-style object to manufacture [`Hsm`](crate::model::Hsm).
     pub fn builder() -> crate::model::hsm::Builder {
         crate::model::hsm::Builder::default()
     }
@@ -1338,11 +1333,10 @@ impl std::fmt::Debug for BackupRetentionPolicy {
         formatter.finish()
     }
 }
-/// See [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy)
+/// See [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
 pub mod backup_retention_policy {
 
-    /// A builder for [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy)
-    #[non_exhaustive]
+    /// A builder for [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::BackupRetentionType>,
@@ -1372,7 +1366,7 @@ pub mod backup_retention_policy {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy)
+        /// Consumes the builder and constructs a [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
         pub fn build(self) -> crate::model::BackupRetentionPolicy {
             crate::model::BackupRetentionPolicy {
                 r#type: self.r#type,
@@ -1382,7 +1376,7 @@ pub mod backup_retention_policy {
     }
 }
 impl BackupRetentionPolicy {
-    /// Creates a new builder-style object to manufacture [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy)
+    /// Creates a new builder-style object to manufacture [`BackupRetentionPolicy`](crate::model::BackupRetentionPolicy).
     pub fn builder() -> crate::model::backup_retention_policy::Builder {
         crate::model::backup_retention_policy::Builder::default()
     }
@@ -1531,11 +1525,10 @@ impl std::fmt::Debug for DestinationBackup {
         formatter.finish()
     }
 }
-/// See [`DestinationBackup`](crate::model::DestinationBackup)
+/// See [`DestinationBackup`](crate::model::DestinationBackup).
 pub mod destination_backup {
 
-    /// A builder for [`DestinationBackup`](crate::model::DestinationBackup)
-    #[non_exhaustive]
+    /// A builder for [`DestinationBackup`](crate::model::DestinationBackup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1596,7 +1589,7 @@ pub mod destination_backup {
             self.source_cluster = input;
             self
         }
-        /// Consumes the builder and constructs a [`DestinationBackup`](crate::model::DestinationBackup)
+        /// Consumes the builder and constructs a [`DestinationBackup`](crate::model::DestinationBackup).
         pub fn build(self) -> crate::model::DestinationBackup {
             crate::model::DestinationBackup {
                 create_timestamp: self.create_timestamp,
@@ -1608,7 +1601,7 @@ pub mod destination_backup {
     }
 }
 impl DestinationBackup {
-    /// Creates a new builder-style object to manufacture [`DestinationBackup`](crate::model::DestinationBackup)
+    /// Creates a new builder-style object to manufacture [`DestinationBackup`](crate::model::DestinationBackup).
     pub fn builder() -> crate::model::destination_backup::Builder {
         crate::model::destination_backup::Builder::default()
     }

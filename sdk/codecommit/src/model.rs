@@ -90,11 +90,10 @@ impl std::fmt::Debug for PullRequest {
         formatter.finish()
     }
 }
-/// See [`PullRequest`](crate::model::PullRequest)
+/// See [`PullRequest`](crate::model::PullRequest).
 pub mod pull_request {
 
-    /// A builder for [`PullRequest`](crate::model::PullRequest)
-    #[non_exhaustive]
+    /// A builder for [`PullRequest`](crate::model::PullRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -254,7 +253,7 @@ pub mod pull_request {
             self.approval_rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`PullRequest`](crate::model::PullRequest)
+        /// Consumes the builder and constructs a [`PullRequest`](crate::model::PullRequest).
         pub fn build(self) -> crate::model::PullRequest {
             crate::model::PullRequest {
                 pull_request_id: self.pull_request_id,
@@ -273,7 +272,7 @@ pub mod pull_request {
     }
 }
 impl PullRequest {
-    /// Creates a new builder-style object to manufacture [`PullRequest`](crate::model::PullRequest)
+    /// Creates a new builder-style object to manufacture [`PullRequest`](crate::model::PullRequest).
     pub fn builder() -> crate::model::pull_request::Builder {
         crate::model::pull_request::Builder::default()
     }
@@ -354,11 +353,10 @@ impl std::fmt::Debug for ApprovalRule {
         formatter.finish()
     }
 }
-/// See [`ApprovalRule`](crate::model::ApprovalRule)
+/// See [`ApprovalRule`](crate::model::ApprovalRule).
 pub mod approval_rule {
 
-    /// A builder for [`ApprovalRule`](crate::model::ApprovalRule)
-    #[non_exhaustive]
+    /// A builder for [`ApprovalRule`](crate::model::ApprovalRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_id: std::option::Option<std::string::String>,
@@ -479,7 +477,7 @@ pub mod approval_rule {
             self.origin_approval_rule_template = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApprovalRule`](crate::model::ApprovalRule)
+        /// Consumes the builder and constructs a [`ApprovalRule`](crate::model::ApprovalRule).
         pub fn build(self) -> crate::model::ApprovalRule {
             crate::model::ApprovalRule {
                 approval_rule_id: self.approval_rule_id,
@@ -495,7 +493,7 @@ pub mod approval_rule {
     }
 }
 impl ApprovalRule {
-    /// Creates a new builder-style object to manufacture [`ApprovalRule`](crate::model::ApprovalRule)
+    /// Creates a new builder-style object to manufacture [`ApprovalRule`](crate::model::ApprovalRule).
     pub fn builder() -> crate::model::approval_rule::Builder {
         crate::model::approval_rule::Builder::default()
     }
@@ -531,11 +529,10 @@ impl std::fmt::Debug for OriginApprovalRuleTemplate {
         formatter.finish()
     }
 }
-/// See [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate)
+/// See [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
 pub mod origin_approval_rule_template {
 
-    /// A builder for [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate)
-    #[non_exhaustive]
+    /// A builder for [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
@@ -571,7 +568,7 @@ pub mod origin_approval_rule_template {
             self.approval_rule_template_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate)
+        /// Consumes the builder and constructs a [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
         pub fn build(self) -> crate::model::OriginApprovalRuleTemplate {
             crate::model::OriginApprovalRuleTemplate {
                 approval_rule_template_id: self.approval_rule_template_id,
@@ -581,7 +578,7 @@ pub mod origin_approval_rule_template {
     }
 }
 impl OriginApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate)
+    /// Creates a new builder-style object to manufacture [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
     pub fn builder() -> crate::model::origin_approval_rule_template::Builder {
         crate::model::origin_approval_rule_template::Builder::default()
     }
@@ -649,11 +646,10 @@ impl std::fmt::Debug for PullRequestTarget {
         formatter.finish()
     }
 }
-/// See [`PullRequestTarget`](crate::model::PullRequestTarget)
+/// See [`PullRequestTarget`](crate::model::PullRequestTarget).
 pub mod pull_request_target {
 
-    /// A builder for [`PullRequestTarget`](crate::model::PullRequestTarget)
-    #[non_exhaustive]
+    /// A builder for [`PullRequestTarget`](crate::model::PullRequestTarget).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -753,7 +749,7 @@ pub mod pull_request_target {
             self.merge_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`PullRequestTarget`](crate::model::PullRequestTarget)
+        /// Consumes the builder and constructs a [`PullRequestTarget`](crate::model::PullRequestTarget).
         pub fn build(self) -> crate::model::PullRequestTarget {
             crate::model::PullRequestTarget {
                 repository_name: self.repository_name,
@@ -768,7 +764,7 @@ pub mod pull_request_target {
     }
 }
 impl PullRequestTarget {
-    /// Creates a new builder-style object to manufacture [`PullRequestTarget`](crate::model::PullRequestTarget)
+    /// Creates a new builder-style object to manufacture [`PullRequestTarget`](crate::model::PullRequestTarget).
     pub fn builder() -> crate::model::pull_request_target::Builder {
         crate::model::pull_request_target::Builder::default()
     }
@@ -815,11 +811,10 @@ impl std::fmt::Debug for MergeMetadata {
         formatter.finish()
     }
 }
-/// See [`MergeMetadata`](crate::model::MergeMetadata)
+/// See [`MergeMetadata`](crate::model::MergeMetadata).
 pub mod merge_metadata {
 
-    /// A builder for [`MergeMetadata`](crate::model::MergeMetadata)
-    #[non_exhaustive]
+    /// A builder for [`MergeMetadata`](crate::model::MergeMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_merged: std::option::Option<bool>,
@@ -874,7 +869,7 @@ pub mod merge_metadata {
             self.merge_option = input;
             self
         }
-        /// Consumes the builder and constructs a [`MergeMetadata`](crate::model::MergeMetadata)
+        /// Consumes the builder and constructs a [`MergeMetadata`](crate::model::MergeMetadata).
         pub fn build(self) -> crate::model::MergeMetadata {
             crate::model::MergeMetadata {
                 is_merged: self.is_merged.unwrap_or_default(),
@@ -886,7 +881,7 @@ pub mod merge_metadata {
     }
 }
 impl MergeMetadata {
-    /// Creates a new builder-style object to manufacture [`MergeMetadata`](crate::model::MergeMetadata)
+    /// Creates a new builder-style object to manufacture [`MergeMetadata`](crate::model::MergeMetadata).
     pub fn builder() -> crate::model::merge_metadata::Builder {
         crate::model::merge_metadata::Builder::default()
     }
@@ -1146,11 +1141,10 @@ impl std::fmt::Debug for Comment {
         formatter.finish()
     }
 }
-/// See [`Comment`](crate::model::Comment)
+/// See [`Comment`](crate::model::Comment).
 pub mod comment {
 
-    /// A builder for [`Comment`](crate::model::Comment)
-    #[non_exhaustive]
+    /// A builder for [`Comment`](crate::model::Comment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
@@ -1293,7 +1287,7 @@ pub mod comment {
             self.reaction_counts = input;
             self
         }
-        /// Consumes the builder and constructs a [`Comment`](crate::model::Comment)
+        /// Consumes the builder and constructs a [`Comment`](crate::model::Comment).
         pub fn build(self) -> crate::model::Comment {
             crate::model::Comment {
                 comment_id: self.comment_id,
@@ -1311,7 +1305,7 @@ pub mod comment {
     }
 }
 impl Comment {
-    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment)
+    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
     pub fn builder() -> crate::model::comment::Builder {
         crate::model::comment::Builder::default()
     }
@@ -1395,11 +1389,10 @@ impl std::fmt::Debug for ApprovalRuleTemplate {
         formatter.finish()
     }
 }
-/// See [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate)
+/// See [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
 pub mod approval_rule_template {
 
-    /// A builder for [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate)
-    #[non_exhaustive]
+    /// A builder for [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
@@ -1525,7 +1518,7 @@ pub mod approval_rule_template {
             self.last_modified_user = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate)
+        /// Consumes the builder and constructs a [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
         pub fn build(self) -> crate::model::ApprovalRuleTemplate {
             crate::model::ApprovalRuleTemplate {
                 approval_rule_template_id: self.approval_rule_template_id,
@@ -1541,7 +1534,7 @@ pub mod approval_rule_template {
     }
 }
 impl ApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate)
+    /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
     pub fn builder() -> crate::model::approval_rule_template::Builder {
         crate::model::approval_rule_template::Builder::default()
     }
@@ -1574,11 +1567,10 @@ impl std::fmt::Debug for RepositoryTriggerExecutionFailure {
         formatter.finish()
     }
 }
-/// See [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure)
+/// See [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
 pub mod repository_trigger_execution_failure {
 
-    /// A builder for [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure)
-    #[non_exhaustive]
+    /// A builder for [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trigger: std::option::Option<std::string::String>,
@@ -1608,7 +1600,7 @@ pub mod repository_trigger_execution_failure {
             self.failure_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure)
+        /// Consumes the builder and constructs a [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
         pub fn build(self) -> crate::model::RepositoryTriggerExecutionFailure {
             crate::model::RepositoryTriggerExecutionFailure {
                 trigger: self.trigger,
@@ -1618,7 +1610,7 @@ pub mod repository_trigger_execution_failure {
     }
 }
 impl RepositoryTriggerExecutionFailure {
-    /// Creates a new builder-style object to manufacture [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure)
+    /// Creates a new builder-style object to manufacture [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
     pub fn builder() -> crate::model::repository_trigger_execution_failure::Builder {
         crate::model::repository_trigger_execution_failure::Builder::default()
     }
@@ -1680,11 +1672,10 @@ impl std::fmt::Debug for RepositoryTrigger {
         formatter.finish()
     }
 }
-/// See [`RepositoryTrigger`](crate::model::RepositoryTrigger)
+/// See [`RepositoryTrigger`](crate::model::RepositoryTrigger).
 pub mod repository_trigger {
 
-    /// A builder for [`RepositoryTrigger`](crate::model::RepositoryTrigger)
-    #[non_exhaustive]
+    /// A builder for [`RepositoryTrigger`](crate::model::RepositoryTrigger).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1774,7 +1765,7 @@ pub mod repository_trigger {
             self.events = input;
             self
         }
-        /// Consumes the builder and constructs a [`RepositoryTrigger`](crate::model::RepositoryTrigger)
+        /// Consumes the builder and constructs a [`RepositoryTrigger`](crate::model::RepositoryTrigger).
         pub fn build(self) -> crate::model::RepositoryTrigger {
             crate::model::RepositoryTrigger {
                 name: self.name,
@@ -1787,7 +1778,7 @@ pub mod repository_trigger {
     }
 }
 impl RepositoryTrigger {
-    /// Creates a new builder-style object to manufacture [`RepositoryTrigger`](crate::model::RepositoryTrigger)
+    /// Creates a new builder-style object to manufacture [`RepositoryTrigger`](crate::model::RepositoryTrigger).
     pub fn builder() -> crate::model::repository_trigger::Builder {
         crate::model::repository_trigger::Builder::default()
     }
@@ -1956,11 +1947,10 @@ impl std::fmt::Debug for Location {
         formatter.finish()
     }
 }
-/// See [`Location`](crate::model::Location)
+/// See [`Location`](crate::model::Location).
 pub mod location {
 
-    /// A builder for [`Location`](crate::model::Location)
-    #[non_exhaustive]
+    /// A builder for [`Location`](crate::model::Location).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -2005,7 +1995,7 @@ pub mod location {
             self.relative_file_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`Location`](crate::model::Location)
+        /// Consumes the builder and constructs a [`Location`](crate::model::Location).
         pub fn build(self) -> crate::model::Location {
             crate::model::Location {
                 file_path: self.file_path,
@@ -2016,7 +2006,7 @@ pub mod location {
     }
 }
 impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location)
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
     pub fn builder() -> crate::model::location::Builder {
         crate::model::location::Builder::default()
     }
@@ -2166,11 +2156,10 @@ impl std::fmt::Debug for ConflictResolution {
         formatter.finish()
     }
 }
-/// See [`ConflictResolution`](crate::model::ConflictResolution)
+/// See [`ConflictResolution`](crate::model::ConflictResolution).
 pub mod conflict_resolution {
 
-    /// A builder for [`ConflictResolution`](crate::model::ConflictResolution)
-    #[non_exhaustive]
+    /// A builder for [`ConflictResolution`](crate::model::ConflictResolution).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) replace_contents:
@@ -2237,7 +2226,7 @@ pub mod conflict_resolution {
             self.set_file_modes = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictResolution`](crate::model::ConflictResolution)
+        /// Consumes the builder and constructs a [`ConflictResolution`](crate::model::ConflictResolution).
         pub fn build(self) -> crate::model::ConflictResolution {
             crate::model::ConflictResolution {
                 replace_contents: self.replace_contents,
@@ -2248,7 +2237,7 @@ pub mod conflict_resolution {
     }
 }
 impl ConflictResolution {
-    /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution)
+    /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution).
     pub fn builder() -> crate::model::conflict_resolution::Builder {
         crate::model::conflict_resolution::Builder::default()
     }
@@ -2281,11 +2270,10 @@ impl std::fmt::Debug for SetFileModeEntry {
         formatter.finish()
     }
 }
-/// See [`SetFileModeEntry`](crate::model::SetFileModeEntry)
+/// See [`SetFileModeEntry`](crate::model::SetFileModeEntry).
 pub mod set_file_mode_entry {
 
-    /// A builder for [`SetFileModeEntry`](crate::model::SetFileModeEntry)
-    #[non_exhaustive]
+    /// A builder for [`SetFileModeEntry`](crate::model::SetFileModeEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -2315,7 +2303,7 @@ pub mod set_file_mode_entry {
             self.file_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`SetFileModeEntry`](crate::model::SetFileModeEntry)
+        /// Consumes the builder and constructs a [`SetFileModeEntry`](crate::model::SetFileModeEntry).
         pub fn build(self) -> crate::model::SetFileModeEntry {
             crate::model::SetFileModeEntry {
                 file_path: self.file_path,
@@ -2325,7 +2313,7 @@ pub mod set_file_mode_entry {
     }
 }
 impl SetFileModeEntry {
-    /// Creates a new builder-style object to manufacture [`SetFileModeEntry`](crate::model::SetFileModeEntry)
+    /// Creates a new builder-style object to manufacture [`SetFileModeEntry`](crate::model::SetFileModeEntry).
     pub fn builder() -> crate::model::set_file_mode_entry::Builder {
         crate::model::set_file_mode_entry::Builder::default()
     }
@@ -2351,11 +2339,10 @@ impl std::fmt::Debug for DeleteFileEntry {
         formatter.finish()
     }
 }
-/// See [`DeleteFileEntry`](crate::model::DeleteFileEntry)
+/// See [`DeleteFileEntry`](crate::model::DeleteFileEntry).
 pub mod delete_file_entry {
 
-    /// A builder for [`DeleteFileEntry`](crate::model::DeleteFileEntry)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFileEntry`](crate::model::DeleteFileEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -2371,7 +2358,7 @@ pub mod delete_file_entry {
             self.file_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFileEntry`](crate::model::DeleteFileEntry)
+        /// Consumes the builder and constructs a [`DeleteFileEntry`](crate::model::DeleteFileEntry).
         pub fn build(self) -> crate::model::DeleteFileEntry {
             crate::model::DeleteFileEntry {
                 file_path: self.file_path,
@@ -2380,7 +2367,7 @@ pub mod delete_file_entry {
     }
 }
 impl DeleteFileEntry {
-    /// Creates a new builder-style object to manufacture [`DeleteFileEntry`](crate::model::DeleteFileEntry)
+    /// Creates a new builder-style object to manufacture [`DeleteFileEntry`](crate::model::DeleteFileEntry).
     pub fn builder() -> crate::model::delete_file_entry::Builder {
         crate::model::delete_file_entry::Builder::default()
     }
@@ -2427,11 +2414,10 @@ impl std::fmt::Debug for ReplaceContentEntry {
         formatter.finish()
     }
 }
-/// See [`ReplaceContentEntry`](crate::model::ReplaceContentEntry)
+/// See [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
 pub mod replace_content_entry {
 
-    /// A builder for [`ReplaceContentEntry`](crate::model::ReplaceContentEntry)
-    #[non_exhaustive]
+    /// A builder for [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -2486,7 +2472,7 @@ pub mod replace_content_entry {
             self.file_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplaceContentEntry`](crate::model::ReplaceContentEntry)
+        /// Consumes the builder and constructs a [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
         pub fn build(self) -> crate::model::ReplaceContentEntry {
             crate::model::ReplaceContentEntry {
                 file_path: self.file_path,
@@ -2498,7 +2484,7 @@ pub mod replace_content_entry {
     }
 }
 impl ReplaceContentEntry {
-    /// Creates a new builder-style object to manufacture [`ReplaceContentEntry`](crate::model::ReplaceContentEntry)
+    /// Creates a new builder-style object to manufacture [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
     pub fn builder() -> crate::model::replace_content_entry::Builder {
         crate::model::replace_content_entry::Builder::default()
     }
@@ -2717,11 +2703,10 @@ impl std::fmt::Debug for RepositoryNameIdPair {
         formatter.finish()
     }
 }
-/// See [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair)
+/// See [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
 pub mod repository_name_id_pair {
 
-    /// A builder for [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair)
-    #[non_exhaustive]
+    /// A builder for [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -2754,7 +2739,7 @@ pub mod repository_name_id_pair {
             self.repository_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair)
+        /// Consumes the builder and constructs a [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
         pub fn build(self) -> crate::model::RepositoryNameIdPair {
             crate::model::RepositoryNameIdPair {
                 repository_name: self.repository_name,
@@ -2764,7 +2749,7 @@ pub mod repository_name_id_pair {
     }
 }
 impl RepositoryNameIdPair {
-    /// Creates a new builder-style object to manufacture [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair)
+    /// Creates a new builder-style object to manufacture [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
     pub fn builder() -> crate::model::repository_name_id_pair::Builder {
         crate::model::repository_name_id_pair::Builder::default()
     }
@@ -2963,11 +2948,10 @@ impl std::fmt::Debug for RepositoryMetadata {
         formatter.finish()
     }
 }
-/// See [`RepositoryMetadata`](crate::model::RepositoryMetadata)
+/// See [`RepositoryMetadata`](crate::model::RepositoryMetadata).
 pub mod repository_metadata {
 
-    /// A builder for [`RepositoryMetadata`](crate::model::RepositoryMetadata)
-    #[non_exhaustive]
+    /// A builder for [`RepositoryMetadata`](crate::model::RepositoryMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -3106,7 +3090,7 @@ pub mod repository_metadata {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`RepositoryMetadata`](crate::model::RepositoryMetadata)
+        /// Consumes the builder and constructs a [`RepositoryMetadata`](crate::model::RepositoryMetadata).
         pub fn build(self) -> crate::model::RepositoryMetadata {
             crate::model::RepositoryMetadata {
                 account_id: self.account_id,
@@ -3124,7 +3108,7 @@ pub mod repository_metadata {
     }
 }
 impl RepositoryMetadata {
-    /// Creates a new builder-style object to manufacture [`RepositoryMetadata`](crate::model::RepositoryMetadata)
+    /// Creates a new builder-style object to manufacture [`RepositoryMetadata`](crate::model::RepositoryMetadata).
     pub fn builder() -> crate::model::repository_metadata::Builder {
         crate::model::repository_metadata::Builder::default()
     }
@@ -3157,11 +3141,10 @@ impl std::fmt::Debug for Approval {
         formatter.finish()
     }
 }
-/// See [`Approval`](crate::model::Approval)
+/// See [`Approval`](crate::model::Approval).
 pub mod approval {
 
-    /// A builder for [`Approval`](crate::model::Approval)
-    #[non_exhaustive]
+    /// A builder for [`Approval`](crate::model::Approval).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -3191,7 +3174,7 @@ pub mod approval {
             self.approval_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`Approval`](crate::model::Approval)
+        /// Consumes the builder and constructs a [`Approval`](crate::model::Approval).
         pub fn build(self) -> crate::model::Approval {
             crate::model::Approval {
                 user_arn: self.user_arn,
@@ -3201,7 +3184,7 @@ pub mod approval {
     }
 }
 impl Approval {
-    /// Creates a new builder-style object to manufacture [`Approval`](crate::model::Approval)
+    /// Creates a new builder-style object to manufacture [`Approval`](crate::model::Approval).
     pub fn builder() -> crate::model::approval::Builder {
         crate::model::approval::Builder::default()
     }
@@ -3290,11 +3273,10 @@ impl std::fmt::Debug for ConflictMetadata {
         formatter.finish()
     }
 }
-/// See [`ConflictMetadata`](crate::model::ConflictMetadata)
+/// See [`ConflictMetadata`](crate::model::ConflictMetadata).
 pub mod conflict_metadata {
 
-    /// A builder for [`ConflictMetadata`](crate::model::ConflictMetadata)
-    #[non_exhaustive]
+    /// A builder for [`ConflictMetadata`](crate::model::ConflictMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -3424,7 +3406,7 @@ pub mod conflict_metadata {
             self.merge_operations = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictMetadata`](crate::model::ConflictMetadata)
+        /// Consumes the builder and constructs a [`ConflictMetadata`](crate::model::ConflictMetadata).
         pub fn build(self) -> crate::model::ConflictMetadata {
             crate::model::ConflictMetadata {
                 file_path: self.file_path,
@@ -3442,7 +3424,7 @@ pub mod conflict_metadata {
     }
 }
 impl ConflictMetadata {
-    /// Creates a new builder-style object to manufacture [`ConflictMetadata`](crate::model::ConflictMetadata)
+    /// Creates a new builder-style object to manufacture [`ConflictMetadata`](crate::model::ConflictMetadata).
     pub fn builder() -> crate::model::conflict_metadata::Builder {
         crate::model::conflict_metadata::Builder::default()
     }
@@ -3475,11 +3457,10 @@ impl std::fmt::Debug for MergeOperations {
         formatter.finish()
     }
 }
-/// See [`MergeOperations`](crate::model::MergeOperations)
+/// See [`MergeOperations`](crate::model::MergeOperations).
 pub mod merge_operations {
 
-    /// A builder for [`MergeOperations`](crate::model::MergeOperations)
-    #[non_exhaustive]
+    /// A builder for [`MergeOperations`](crate::model::MergeOperations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -3512,7 +3493,7 @@ pub mod merge_operations {
             self.destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`MergeOperations`](crate::model::MergeOperations)
+        /// Consumes the builder and constructs a [`MergeOperations`](crate::model::MergeOperations).
         pub fn build(self) -> crate::model::MergeOperations {
             crate::model::MergeOperations {
                 source: self.source,
@@ -3522,7 +3503,7 @@ pub mod merge_operations {
     }
 }
 impl MergeOperations {
-    /// Creates a new builder-style object to manufacture [`MergeOperations`](crate::model::MergeOperations)
+    /// Creates a new builder-style object to manufacture [`MergeOperations`](crate::model::MergeOperations).
     pub fn builder() -> crate::model::merge_operations::Builder {
         crate::model::merge_operations::Builder::default()
     }
@@ -3621,11 +3602,10 @@ impl std::fmt::Debug for IsBinaryFile {
         formatter.finish()
     }
 }
-/// See [`IsBinaryFile`](crate::model::IsBinaryFile)
+/// See [`IsBinaryFile`](crate::model::IsBinaryFile).
 pub mod is_binary_file {
 
-    /// A builder for [`IsBinaryFile`](crate::model::IsBinaryFile)
-    #[non_exhaustive]
+    /// A builder for [`IsBinaryFile`](crate::model::IsBinaryFile).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<bool>,
@@ -3663,7 +3643,7 @@ pub mod is_binary_file {
             self.base = input;
             self
         }
-        /// Consumes the builder and constructs a [`IsBinaryFile`](crate::model::IsBinaryFile)
+        /// Consumes the builder and constructs a [`IsBinaryFile`](crate::model::IsBinaryFile).
         pub fn build(self) -> crate::model::IsBinaryFile {
             crate::model::IsBinaryFile {
                 source: self.source,
@@ -3674,7 +3654,7 @@ pub mod is_binary_file {
     }
 }
 impl IsBinaryFile {
-    /// Creates a new builder-style object to manufacture [`IsBinaryFile`](crate::model::IsBinaryFile)
+    /// Creates a new builder-style object to manufacture [`IsBinaryFile`](crate::model::IsBinaryFile).
     pub fn builder() -> crate::model::is_binary_file::Builder {
         crate::model::is_binary_file::Builder::default()
     }
@@ -3714,11 +3694,10 @@ impl std::fmt::Debug for ObjectTypes {
         formatter.finish()
     }
 }
-/// See [`ObjectTypes`](crate::model::ObjectTypes)
+/// See [`ObjectTypes`](crate::model::ObjectTypes).
 pub mod object_types {
 
-    /// A builder for [`ObjectTypes`](crate::model::ObjectTypes)
-    #[non_exhaustive]
+    /// A builder for [`ObjectTypes`](crate::model::ObjectTypes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::ObjectTypeEnum>,
@@ -3765,7 +3744,7 @@ pub mod object_types {
             self.base = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectTypes`](crate::model::ObjectTypes)
+        /// Consumes the builder and constructs a [`ObjectTypes`](crate::model::ObjectTypes).
         pub fn build(self) -> crate::model::ObjectTypes {
             crate::model::ObjectTypes {
                 source: self.source,
@@ -3776,7 +3755,7 @@ pub mod object_types {
     }
 }
 impl ObjectTypes {
-    /// Creates a new builder-style object to manufacture [`ObjectTypes`](crate::model::ObjectTypes)
+    /// Creates a new builder-style object to manufacture [`ObjectTypes`](crate::model::ObjectTypes).
     pub fn builder() -> crate::model::object_types::Builder {
         crate::model::object_types::Builder::default()
     }
@@ -3879,11 +3858,10 @@ impl std::fmt::Debug for FileModes {
         formatter.finish()
     }
 }
-/// See [`FileModes`](crate::model::FileModes)
+/// See [`FileModes`](crate::model::FileModes).
 pub mod file_modes {
 
-    /// A builder for [`FileModes`](crate::model::FileModes)
-    #[non_exhaustive]
+    /// A builder for [`FileModes`](crate::model::FileModes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -3930,7 +3908,7 @@ pub mod file_modes {
             self.base = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileModes`](crate::model::FileModes)
+        /// Consumes the builder and constructs a [`FileModes`](crate::model::FileModes).
         pub fn build(self) -> crate::model::FileModes {
             crate::model::FileModes {
                 source: self.source,
@@ -3941,7 +3919,7 @@ pub mod file_modes {
     }
 }
 impl FileModes {
-    /// Creates a new builder-style object to manufacture [`FileModes`](crate::model::FileModes)
+    /// Creates a new builder-style object to manufacture [`FileModes`](crate::model::FileModes).
     pub fn builder() -> crate::model::file_modes::Builder {
         crate::model::file_modes::Builder::default()
     }
@@ -3981,11 +3959,10 @@ impl std::fmt::Debug for FileSizes {
         formatter.finish()
     }
 }
-/// See [`FileSizes`](crate::model::FileSizes)
+/// See [`FileSizes`](crate::model::FileSizes).
 pub mod file_sizes {
 
-    /// A builder for [`FileSizes`](crate::model::FileSizes)
-    #[non_exhaustive]
+    /// A builder for [`FileSizes`](crate::model::FileSizes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<i64>,
@@ -4023,7 +4000,7 @@ pub mod file_sizes {
             self.base = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileSizes`](crate::model::FileSizes)
+        /// Consumes the builder and constructs a [`FileSizes`](crate::model::FileSizes).
         pub fn build(self) -> crate::model::FileSizes {
             crate::model::FileSizes {
                 source: self.source.unwrap_or_default(),
@@ -4034,7 +4011,7 @@ pub mod file_sizes {
     }
 }
 impl FileSizes {
-    /// Creates a new builder-style object to manufacture [`FileSizes`](crate::model::FileSizes)
+    /// Creates a new builder-style object to manufacture [`FileSizes`](crate::model::FileSizes).
     pub fn builder() -> crate::model::file_sizes::Builder {
         crate::model::file_sizes::Builder::default()
     }
@@ -4074,11 +4051,10 @@ impl std::fmt::Debug for SubModule {
         formatter.finish()
     }
 }
-/// See [`SubModule`](crate::model::SubModule)
+/// See [`SubModule`](crate::model::SubModule).
 pub mod sub_module {
 
-    /// A builder for [`SubModule`](crate::model::SubModule)
-    #[non_exhaustive]
+    /// A builder for [`SubModule`](crate::model::SubModule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
@@ -4122,7 +4098,7 @@ pub mod sub_module {
             self.relative_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`SubModule`](crate::model::SubModule)
+        /// Consumes the builder and constructs a [`SubModule`](crate::model::SubModule).
         pub fn build(self) -> crate::model::SubModule {
             crate::model::SubModule {
                 commit_id: self.commit_id,
@@ -4133,7 +4109,7 @@ pub mod sub_module {
     }
 }
 impl SubModule {
-    /// Creates a new builder-style object to manufacture [`SubModule`](crate::model::SubModule)
+    /// Creates a new builder-style object to manufacture [`SubModule`](crate::model::SubModule).
     pub fn builder() -> crate::model::sub_module::Builder {
         crate::model::sub_module::Builder::default()
     }
@@ -4180,11 +4156,10 @@ impl std::fmt::Debug for SymbolicLink {
         formatter.finish()
     }
 }
-/// See [`SymbolicLink`](crate::model::SymbolicLink)
+/// See [`SymbolicLink`](crate::model::SymbolicLink).
 pub mod symbolic_link {
 
-    /// A builder for [`SymbolicLink`](crate::model::SymbolicLink)
-    #[non_exhaustive]
+    /// A builder for [`SymbolicLink`](crate::model::SymbolicLink).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
@@ -4242,7 +4217,7 @@ pub mod symbolic_link {
             self.file_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`SymbolicLink`](crate::model::SymbolicLink)
+        /// Consumes the builder and constructs a [`SymbolicLink`](crate::model::SymbolicLink).
         pub fn build(self) -> crate::model::SymbolicLink {
             crate::model::SymbolicLink {
                 blob_id: self.blob_id,
@@ -4254,7 +4229,7 @@ pub mod symbolic_link {
     }
 }
 impl SymbolicLink {
-    /// Creates a new builder-style object to manufacture [`SymbolicLink`](crate::model::SymbolicLink)
+    /// Creates a new builder-style object to manufacture [`SymbolicLink`](crate::model::SymbolicLink).
     pub fn builder() -> crate::model::symbolic_link::Builder {
         crate::model::symbolic_link::Builder::default()
     }
@@ -4301,11 +4276,10 @@ impl std::fmt::Debug for File {
         formatter.finish()
     }
 }
-/// See [`File`](crate::model::File)
+/// See [`File`](crate::model::File).
 pub mod file {
 
-    /// A builder for [`File`](crate::model::File)
-    #[non_exhaustive]
+    /// A builder for [`File`](crate::model::File).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
@@ -4363,7 +4337,7 @@ pub mod file {
             self.file_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`File`](crate::model::File)
+        /// Consumes the builder and constructs a [`File`](crate::model::File).
         pub fn build(self) -> crate::model::File {
             crate::model::File {
                 blob_id: self.blob_id,
@@ -4375,7 +4349,7 @@ pub mod file {
     }
 }
 impl File {
-    /// Creates a new builder-style object to manufacture [`File`](crate::model::File)
+    /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
     pub fn builder() -> crate::model::file::Builder {
         crate::model::file::Builder::default()
     }
@@ -4415,11 +4389,10 @@ impl std::fmt::Debug for Folder {
         formatter.finish()
     }
 }
-/// See [`Folder`](crate::model::Folder)
+/// See [`Folder`](crate::model::Folder).
 pub mod folder {
 
-    /// A builder for [`Folder`](crate::model::Folder)
-    #[non_exhaustive]
+    /// A builder for [`Folder`](crate::model::Folder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tree_id: std::option::Option<std::string::String>,
@@ -4463,7 +4436,7 @@ pub mod folder {
             self.relative_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`Folder`](crate::model::Folder)
+        /// Consumes the builder and constructs a [`Folder`](crate::model::Folder).
         pub fn build(self) -> crate::model::Folder {
             crate::model::Folder {
                 tree_id: self.tree_id,
@@ -4474,7 +4447,7 @@ pub mod folder {
     }
 }
 impl Folder {
-    /// Creates a new builder-style object to manufacture [`Folder`](crate::model::Folder)
+    /// Creates a new builder-style object to manufacture [`Folder`](crate::model::Folder).
     pub fn builder() -> crate::model::folder::Builder {
         crate::model::folder::Builder::default()
     }
@@ -4514,11 +4487,10 @@ impl std::fmt::Debug for Difference {
         formatter.finish()
     }
 }
-/// See [`Difference`](crate::model::Difference)
+/// See [`Difference`](crate::model::Difference).
 pub mod difference {
 
-    /// A builder for [`Difference`](crate::model::Difference)
-    #[non_exhaustive]
+    /// A builder for [`Difference`](crate::model::Difference).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) before_blob: std::option::Option<crate::model::BlobMetadata>,
@@ -4565,7 +4537,7 @@ pub mod difference {
             self.change_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`Difference`](crate::model::Difference)
+        /// Consumes the builder and constructs a [`Difference`](crate::model::Difference).
         pub fn build(self) -> crate::model::Difference {
             crate::model::Difference {
                 before_blob: self.before_blob,
@@ -4576,7 +4548,7 @@ pub mod difference {
     }
 }
 impl Difference {
-    /// Creates a new builder-style object to manufacture [`Difference`](crate::model::Difference)
+    /// Creates a new builder-style object to manufacture [`Difference`](crate::model::Difference).
     pub fn builder() -> crate::model::difference::Builder {
         crate::model::difference::Builder::default()
     }
@@ -4628,11 +4600,10 @@ impl std::fmt::Debug for BlobMetadata {
         formatter.finish()
     }
 }
-/// See [`BlobMetadata`](crate::model::BlobMetadata)
+/// See [`BlobMetadata`](crate::model::BlobMetadata).
 pub mod blob_metadata {
 
-    /// A builder for [`BlobMetadata`](crate::model::BlobMetadata)
-    #[non_exhaustive]
+    /// A builder for [`BlobMetadata`](crate::model::BlobMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blob_id: std::option::Option<std::string::String>,
@@ -4682,7 +4653,7 @@ pub mod blob_metadata {
             self.mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`BlobMetadata`](crate::model::BlobMetadata)
+        /// Consumes the builder and constructs a [`BlobMetadata`](crate::model::BlobMetadata).
         pub fn build(self) -> crate::model::BlobMetadata {
             crate::model::BlobMetadata {
                 blob_id: self.blob_id,
@@ -4693,7 +4664,7 @@ pub mod blob_metadata {
     }
 }
 impl BlobMetadata {
-    /// Creates a new builder-style object to manufacture [`BlobMetadata`](crate::model::BlobMetadata)
+    /// Creates a new builder-style object to manufacture [`BlobMetadata`](crate::model::BlobMetadata).
     pub fn builder() -> crate::model::blob_metadata::Builder {
         crate::model::blob_metadata::Builder::default()
     }
@@ -4763,11 +4734,10 @@ impl std::fmt::Debug for Commit {
         formatter.finish()
     }
 }
-/// See [`Commit`](crate::model::Commit)
+/// See [`Commit`](crate::model::Commit).
 pub mod commit {
 
-    /// A builder for [`Commit`](crate::model::Commit)
-    #[non_exhaustive]
+    /// A builder for [`Commit`](crate::model::Commit).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
@@ -4863,7 +4833,7 @@ pub mod commit {
             self.additional_data = input;
             self
         }
-        /// Consumes the builder and constructs a [`Commit`](crate::model::Commit)
+        /// Consumes the builder and constructs a [`Commit`](crate::model::Commit).
         pub fn build(self) -> crate::model::Commit {
             crate::model::Commit {
                 commit_id: self.commit_id,
@@ -4878,7 +4848,7 @@ pub mod commit {
     }
 }
 impl Commit {
-    /// Creates a new builder-style object to manufacture [`Commit`](crate::model::Commit)
+    /// Creates a new builder-style object to manufacture [`Commit`](crate::model::Commit).
     pub fn builder() -> crate::model::commit::Builder {
         crate::model::commit::Builder::default()
     }
@@ -4918,11 +4888,10 @@ impl std::fmt::Debug for UserInfo {
         formatter.finish()
     }
 }
-/// See [`UserInfo`](crate::model::UserInfo)
+/// See [`UserInfo`](crate::model::UserInfo).
 pub mod user_info {
 
-    /// A builder for [`UserInfo`](crate::model::UserInfo)
-    #[non_exhaustive]
+    /// A builder for [`UserInfo`](crate::model::UserInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4960,7 +4929,7 @@ pub mod user_info {
             self.date = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserInfo`](crate::model::UserInfo)
+        /// Consumes the builder and constructs a [`UserInfo`](crate::model::UserInfo).
         pub fn build(self) -> crate::model::UserInfo {
             crate::model::UserInfo {
                 name: self.name,
@@ -4971,7 +4940,7 @@ pub mod user_info {
     }
 }
 impl UserInfo {
-    /// Creates a new builder-style object to manufacture [`UserInfo`](crate::model::UserInfo)
+    /// Creates a new builder-style object to manufacture [`UserInfo`](crate::model::UserInfo).
     pub fn builder() -> crate::model::user_info::Builder {
         crate::model::user_info::Builder::default()
     }
@@ -5046,11 +5015,10 @@ impl std::fmt::Debug for CommentsForPullRequest {
         formatter.finish()
     }
 }
-/// See [`CommentsForPullRequest`](crate::model::CommentsForPullRequest)
+/// See [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
 pub mod comments_for_pull_request {
 
-    /// A builder for [`CommentsForPullRequest`](crate::model::CommentsForPullRequest)
-    #[non_exhaustive]
+    /// A builder for [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -5170,7 +5138,7 @@ pub mod comments_for_pull_request {
             self.comments = input;
             self
         }
-        /// Consumes the builder and constructs a [`CommentsForPullRequest`](crate::model::CommentsForPullRequest)
+        /// Consumes the builder and constructs a [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
         pub fn build(self) -> crate::model::CommentsForPullRequest {
             crate::model::CommentsForPullRequest {
                 pull_request_id: self.pull_request_id,
@@ -5186,7 +5154,7 @@ pub mod comments_for_pull_request {
     }
 }
 impl CommentsForPullRequest {
-    /// Creates a new builder-style object to manufacture [`CommentsForPullRequest`](crate::model::CommentsForPullRequest)
+    /// Creates a new builder-style object to manufacture [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
     pub fn builder() -> crate::model::comments_for_pull_request::Builder {
         crate::model::comments_for_pull_request::Builder::default()
     }
@@ -5254,11 +5222,10 @@ impl std::fmt::Debug for CommentsForComparedCommit {
         formatter.finish()
     }
 }
-/// See [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit)
+/// See [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
 pub mod comments_for_compared_commit {
 
-    /// A builder for [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit)
-    #[non_exhaustive]
+    /// A builder for [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -5364,7 +5331,7 @@ pub mod comments_for_compared_commit {
             self.comments = input;
             self
         }
-        /// Consumes the builder and constructs a [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit)
+        /// Consumes the builder and constructs a [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
         pub fn build(self) -> crate::model::CommentsForComparedCommit {
             crate::model::CommentsForComparedCommit {
                 repository_name: self.repository_name,
@@ -5379,7 +5346,7 @@ pub mod comments_for_compared_commit {
     }
 }
 impl CommentsForComparedCommit {
-    /// Creates a new builder-style object to manufacture [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit)
+    /// Creates a new builder-style object to manufacture [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
     pub fn builder() -> crate::model::comments_for_compared_commit::Builder {
         crate::model::comments_for_compared_commit::Builder::default()
     }
@@ -5422,11 +5389,10 @@ impl std::fmt::Debug for ReactionForComment {
         formatter.finish()
     }
 }
-/// See [`ReactionForComment`](crate::model::ReactionForComment)
+/// See [`ReactionForComment`](crate::model::ReactionForComment).
 pub mod reaction_for_comment {
 
-    /// A builder for [`ReactionForComment`](crate::model::ReactionForComment)
-    #[non_exhaustive]
+    /// A builder for [`ReactionForComment`](crate::model::ReactionForComment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reaction: std::option::Option<crate::model::ReactionValueFormats>,
@@ -5479,7 +5445,7 @@ pub mod reaction_for_comment {
             self.reactions_from_deleted_users_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReactionForComment`](crate::model::ReactionForComment)
+        /// Consumes the builder and constructs a [`ReactionForComment`](crate::model::ReactionForComment).
         pub fn build(self) -> crate::model::ReactionForComment {
             crate::model::ReactionForComment {
                 reaction: self.reaction,
@@ -5490,7 +5456,7 @@ pub mod reaction_for_comment {
     }
 }
 impl ReactionForComment {
-    /// Creates a new builder-style object to manufacture [`ReactionForComment`](crate::model::ReactionForComment)
+    /// Creates a new builder-style object to manufacture [`ReactionForComment`](crate::model::ReactionForComment).
     pub fn builder() -> crate::model::reaction_for_comment::Builder {
         crate::model::reaction_for_comment::Builder::default()
     }
@@ -5530,11 +5496,10 @@ impl std::fmt::Debug for ReactionValueFormats {
         formatter.finish()
     }
 }
-/// See [`ReactionValueFormats`](crate::model::ReactionValueFormats)
+/// See [`ReactionValueFormats`](crate::model::ReactionValueFormats).
 pub mod reaction_value_formats {
 
-    /// A builder for [`ReactionValueFormats`](crate::model::ReactionValueFormats)
-    #[non_exhaustive]
+    /// A builder for [`ReactionValueFormats`](crate::model::ReactionValueFormats).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) emoji: std::option::Option<std::string::String>,
@@ -5572,7 +5537,7 @@ pub mod reaction_value_formats {
             self.unicode = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReactionValueFormats`](crate::model::ReactionValueFormats)
+        /// Consumes the builder and constructs a [`ReactionValueFormats`](crate::model::ReactionValueFormats).
         pub fn build(self) -> crate::model::ReactionValueFormats {
             crate::model::ReactionValueFormats {
                 emoji: self.emoji,
@@ -5583,7 +5548,7 @@ pub mod reaction_value_formats {
     }
 }
 impl ReactionValueFormats {
-    /// Creates a new builder-style object to manufacture [`ReactionValueFormats`](crate::model::ReactionValueFormats)
+    /// Creates a new builder-style object to manufacture [`ReactionValueFormats`](crate::model::ReactionValueFormats).
     pub fn builder() -> crate::model::reaction_value_formats::Builder {
         crate::model::reaction_value_formats::Builder::default()
     }
@@ -5616,11 +5581,10 @@ impl std::fmt::Debug for BranchInfo {
         formatter.finish()
     }
 }
-/// See [`BranchInfo`](crate::model::BranchInfo)
+/// See [`BranchInfo`](crate::model::BranchInfo).
 pub mod branch_info {
 
-    /// A builder for [`BranchInfo`](crate::model::BranchInfo)
-    #[non_exhaustive]
+    /// A builder for [`BranchInfo`](crate::model::BranchInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch_name: std::option::Option<std::string::String>,
@@ -5647,7 +5611,7 @@ pub mod branch_info {
             self.commit_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`BranchInfo`](crate::model::BranchInfo)
+        /// Consumes the builder and constructs a [`BranchInfo`](crate::model::BranchInfo).
         pub fn build(self) -> crate::model::BranchInfo {
             crate::model::BranchInfo {
                 branch_name: self.branch_name,
@@ -5657,7 +5621,7 @@ pub mod branch_info {
     }
 }
 impl BranchInfo {
-    /// Creates a new builder-style object to manufacture [`BranchInfo`](crate::model::BranchInfo)
+    /// Creates a new builder-style object to manufacture [`BranchInfo`](crate::model::BranchInfo).
     pub fn builder() -> crate::model::branch_info::Builder {
         crate::model::branch_info::Builder::default()
     }
@@ -5707,11 +5671,10 @@ impl std::fmt::Debug for Evaluation {
         formatter.finish()
     }
 }
-/// See [`Evaluation`](crate::model::Evaluation)
+/// See [`Evaluation`](crate::model::Evaluation).
 pub mod evaluation {
 
-    /// A builder for [`Evaluation`](crate::model::Evaluation)
-    #[non_exhaustive]
+    /// A builder for [`Evaluation`](crate::model::Evaluation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approved: std::option::Option<bool>,
@@ -5783,7 +5746,7 @@ pub mod evaluation {
             self.approval_rules_not_satisfied = input;
             self
         }
-        /// Consumes the builder and constructs a [`Evaluation`](crate::model::Evaluation)
+        /// Consumes the builder and constructs a [`Evaluation`](crate::model::Evaluation).
         pub fn build(self) -> crate::model::Evaluation {
             crate::model::Evaluation {
                 approved: self.approved.unwrap_or_default(),
@@ -5795,7 +5758,7 @@ pub mod evaluation {
     }
 }
 impl Evaluation {
-    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation)
+    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
     pub fn builder() -> crate::model::evaluation::Builder {
         crate::model::evaluation::Builder::default()
     }
@@ -5936,11 +5899,10 @@ impl std::fmt::Debug for PullRequestEvent {
         formatter.finish()
     }
 }
-/// See [`PullRequestEvent`](crate::model::PullRequestEvent)
+/// See [`PullRequestEvent`](crate::model::PullRequestEvent).
 pub mod pull_request_event {
 
-    /// A builder for [`PullRequestEvent`](crate::model::PullRequestEvent)
-    #[non_exhaustive]
+    /// A builder for [`PullRequestEvent`](crate::model::PullRequestEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
@@ -6129,7 +6091,7 @@ pub mod pull_request_event {
             self.approval_rule_overridden_event_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`PullRequestEvent`](crate::model::PullRequestEvent)
+        /// Consumes the builder and constructs a [`PullRequestEvent`](crate::model::PullRequestEvent).
         pub fn build(self) -> crate::model::PullRequestEvent {
             crate::model::PullRequestEvent {
                 pull_request_id: self.pull_request_id,
@@ -6152,7 +6114,7 @@ pub mod pull_request_event {
     }
 }
 impl PullRequestEvent {
-    /// Creates a new builder-style object to manufacture [`PullRequestEvent`](crate::model::PullRequestEvent)
+    /// Creates a new builder-style object to manufacture [`PullRequestEvent`](crate::model::PullRequestEvent).
     pub fn builder() -> crate::model::pull_request_event::Builder {
         crate::model::pull_request_event::Builder::default()
     }
@@ -6185,11 +6147,10 @@ impl std::fmt::Debug for ApprovalRuleOverriddenEventMetadata {
         formatter.finish()
     }
 }
-/// See [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata)
+/// See [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
 pub mod approval_rule_overridden_event_metadata {
 
-    /// A builder for [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata)
-    #[non_exhaustive]
+    /// A builder for [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -6219,7 +6180,7 @@ pub mod approval_rule_overridden_event_metadata {
             self.override_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata)
+        /// Consumes the builder and constructs a [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
         pub fn build(self) -> crate::model::ApprovalRuleOverriddenEventMetadata {
             crate::model::ApprovalRuleOverriddenEventMetadata {
                 revision_id: self.revision_id,
@@ -6229,7 +6190,7 @@ pub mod approval_rule_overridden_event_metadata {
     }
 }
 impl ApprovalRuleOverriddenEventMetadata {
-    /// Creates a new builder-style object to manufacture [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata)
+    /// Creates a new builder-style object to manufacture [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
     pub fn builder() -> crate::model::approval_rule_overridden_event_metadata::Builder {
         crate::model::approval_rule_overridden_event_metadata::Builder::default()
     }
@@ -6262,11 +6223,10 @@ impl std::fmt::Debug for ApprovalStateChangedEventMetadata {
         formatter.finish()
     }
 }
-/// See [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata)
+/// See [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
 pub mod approval_state_changed_event_metadata {
 
-    /// A builder for [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata)
-    #[non_exhaustive]
+    /// A builder for [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) revision_id: std::option::Option<std::string::String>,
@@ -6296,7 +6256,7 @@ pub mod approval_state_changed_event_metadata {
             self.approval_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata)
+        /// Consumes the builder and constructs a [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
         pub fn build(self) -> crate::model::ApprovalStateChangedEventMetadata {
             crate::model::ApprovalStateChangedEventMetadata {
                 revision_id: self.revision_id,
@@ -6306,7 +6266,7 @@ pub mod approval_state_changed_event_metadata {
     }
 }
 impl ApprovalStateChangedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata)
+    /// Creates a new builder-style object to manufacture [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
     pub fn builder() -> crate::model::approval_state_changed_event_metadata::Builder {
         crate::model::approval_state_changed_event_metadata::Builder::default()
     }
@@ -6346,11 +6306,10 @@ impl std::fmt::Debug for ApprovalRuleEventMetadata {
         formatter.finish()
     }
 }
-/// See [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata)
+/// See [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
 pub mod approval_rule_event_metadata {
 
-    /// A builder for [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata)
-    #[non_exhaustive]
+    /// A builder for [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_name: std::option::Option<std::string::String>,
@@ -6397,7 +6356,7 @@ pub mod approval_rule_event_metadata {
             self.approval_rule_content = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata)
+        /// Consumes the builder and constructs a [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
         pub fn build(self) -> crate::model::ApprovalRuleEventMetadata {
             crate::model::ApprovalRuleEventMetadata {
                 approval_rule_name: self.approval_rule_name,
@@ -6408,7 +6367,7 @@ pub mod approval_rule_event_metadata {
     }
 }
 impl ApprovalRuleEventMetadata {
-    /// Creates a new builder-style object to manufacture [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata)
+    /// Creates a new builder-style object to manufacture [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
     pub fn builder() -> crate::model::approval_rule_event_metadata::Builder {
         crate::model::approval_rule_event_metadata::Builder::default()
     }
@@ -6448,11 +6407,10 @@ impl std::fmt::Debug for PullRequestMergedStateChangedEventMetadata {
         formatter.finish()
     }
 }
-/// See [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata)
+/// See [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
 pub mod pull_request_merged_state_changed_event_metadata {
 
-    /// A builder for [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata)
-    #[non_exhaustive]
+    /// A builder for [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -6499,7 +6457,7 @@ pub mod pull_request_merged_state_changed_event_metadata {
             self.merge_metadata = input;
             self
         }
-        /// Consumes the builder and constructs a [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata)
+        /// Consumes the builder and constructs a [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestMergedStateChangedEventMetadata {
             crate::model::PullRequestMergedStateChangedEventMetadata {
                 repository_name: self.repository_name,
@@ -6510,7 +6468,7 @@ pub mod pull_request_merged_state_changed_event_metadata {
     }
 }
 impl PullRequestMergedStateChangedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata)
+    /// Creates a new builder-style object to manufacture [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
     pub fn builder() -> crate::model::pull_request_merged_state_changed_event_metadata::Builder {
         crate::model::pull_request_merged_state_changed_event_metadata::Builder::default()
     }
@@ -6557,11 +6515,10 @@ impl std::fmt::Debug for PullRequestSourceReferenceUpdatedEventMetadata {
         formatter.finish()
     }
 }
-/// See [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata)
+/// See [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
 pub mod pull_request_source_reference_updated_event_metadata {
 
-    /// A builder for [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata)
-    #[non_exhaustive]
+    /// A builder for [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -6619,7 +6576,7 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self.merge_base = input;
             self
         }
-        /// Consumes the builder and constructs a [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata)
+        /// Consumes the builder and constructs a [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestSourceReferenceUpdatedEventMetadata {
             crate::model::PullRequestSourceReferenceUpdatedEventMetadata {
                 repository_name: self.repository_name,
@@ -6631,7 +6588,7 @@ pub mod pull_request_source_reference_updated_event_metadata {
     }
 }
 impl PullRequestSourceReferenceUpdatedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata)
+    /// Creates a new builder-style object to manufacture [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
     pub fn builder() -> crate::model::pull_request_source_reference_updated_event_metadata::Builder
     {
         crate::model::pull_request_source_reference_updated_event_metadata::Builder::default()
@@ -6658,11 +6615,10 @@ impl std::fmt::Debug for PullRequestStatusChangedEventMetadata {
         formatter.finish()
     }
 }
-/// See [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata)
+/// See [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
 pub mod pull_request_status_changed_event_metadata {
 
-    /// A builder for [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata)
-    #[non_exhaustive]
+    /// A builder for [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
@@ -6681,7 +6637,7 @@ pub mod pull_request_status_changed_event_metadata {
             self.pull_request_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata)
+        /// Consumes the builder and constructs a [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestStatusChangedEventMetadata {
             crate::model::PullRequestStatusChangedEventMetadata {
                 pull_request_status: self.pull_request_status,
@@ -6690,7 +6646,7 @@ pub mod pull_request_status_changed_event_metadata {
     }
 }
 impl PullRequestStatusChangedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata)
+    /// Creates a new builder-style object to manufacture [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
     pub fn builder() -> crate::model::pull_request_status_changed_event_metadata::Builder {
         crate::model::pull_request_status_changed_event_metadata::Builder::default()
     }
@@ -6737,11 +6693,10 @@ impl std::fmt::Debug for PullRequestCreatedEventMetadata {
         formatter.finish()
     }
 }
-/// See [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata)
+/// See [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
 pub mod pull_request_created_event_metadata {
 
-    /// A builder for [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata)
-    #[non_exhaustive]
+    /// A builder for [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -6799,7 +6754,7 @@ pub mod pull_request_created_event_metadata {
             self.merge_base = input;
             self
         }
-        /// Consumes the builder and constructs a [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata)
+        /// Consumes the builder and constructs a [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
         pub fn build(self) -> crate::model::PullRequestCreatedEventMetadata {
             crate::model::PullRequestCreatedEventMetadata {
                 repository_name: self.repository_name,
@@ -6811,7 +6766,7 @@ pub mod pull_request_created_event_metadata {
     }
 }
 impl PullRequestCreatedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata)
+    /// Creates a new builder-style object to manufacture [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
     pub fn builder() -> crate::model::pull_request_created_event_metadata::Builder {
         crate::model::pull_request_created_event_metadata::Builder::default()
     }
@@ -6979,11 +6934,10 @@ impl std::fmt::Debug for MergeHunk {
         formatter.finish()
     }
 }
-/// See [`MergeHunk`](crate::model::MergeHunk)
+/// See [`MergeHunk`](crate::model::MergeHunk).
 pub mod merge_hunk {
 
-    /// A builder for [`MergeHunk`](crate::model::MergeHunk)
-    #[non_exhaustive]
+    /// A builder for [`MergeHunk`](crate::model::MergeHunk).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_conflict: std::option::Option<bool>,
@@ -7041,7 +6995,7 @@ pub mod merge_hunk {
             self.base = input;
             self
         }
-        /// Consumes the builder and constructs a [`MergeHunk`](crate::model::MergeHunk)
+        /// Consumes the builder and constructs a [`MergeHunk`](crate::model::MergeHunk).
         pub fn build(self) -> crate::model::MergeHunk {
             crate::model::MergeHunk {
                 is_conflict: self.is_conflict.unwrap_or_default(),
@@ -7053,7 +7007,7 @@ pub mod merge_hunk {
     }
 }
 impl MergeHunk {
-    /// Creates a new builder-style object to manufacture [`MergeHunk`](crate::model::MergeHunk)
+    /// Creates a new builder-style object to manufacture [`MergeHunk`](crate::model::MergeHunk).
     pub fn builder() -> crate::model::merge_hunk::Builder {
         crate::model::merge_hunk::Builder::default()
     }
@@ -7093,11 +7047,10 @@ impl std::fmt::Debug for MergeHunkDetail {
         formatter.finish()
     }
 }
-/// See [`MergeHunkDetail`](crate::model::MergeHunkDetail)
+/// See [`MergeHunkDetail`](crate::model::MergeHunkDetail).
 pub mod merge_hunk_detail {
 
-    /// A builder for [`MergeHunkDetail`](crate::model::MergeHunkDetail)
-    #[non_exhaustive]
+    /// A builder for [`MergeHunkDetail`](crate::model::MergeHunkDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_line: std::option::Option<i32>,
@@ -7135,7 +7088,7 @@ pub mod merge_hunk_detail {
             self.hunk_content = input;
             self
         }
-        /// Consumes the builder and constructs a [`MergeHunkDetail`](crate::model::MergeHunkDetail)
+        /// Consumes the builder and constructs a [`MergeHunkDetail`](crate::model::MergeHunkDetail).
         pub fn build(self) -> crate::model::MergeHunkDetail {
             crate::model::MergeHunkDetail {
                 start_line: self.start_line,
@@ -7146,7 +7099,7 @@ pub mod merge_hunk_detail {
     }
 }
 impl MergeHunkDetail {
-    /// Creates a new builder-style object to manufacture [`MergeHunkDetail`](crate::model::MergeHunkDetail)
+    /// Creates a new builder-style object to manufacture [`MergeHunkDetail`](crate::model::MergeHunkDetail).
     pub fn builder() -> crate::model::merge_hunk_detail::Builder {
         crate::model::merge_hunk_detail::Builder::default()
     }
@@ -7186,11 +7139,10 @@ impl std::fmt::Debug for Target {
         formatter.finish()
     }
 }
-/// See [`Target`](crate::model::Target)
+/// See [`Target`](crate::model::Target).
 pub mod target {
 
-    /// A builder for [`Target`](crate::model::Target)
-    #[non_exhaustive]
+    /// A builder for [`Target`](crate::model::Target).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -7237,7 +7189,7 @@ pub mod target {
             self.destination_reference = input;
             self
         }
-        /// Consumes the builder and constructs a [`Target`](crate::model::Target)
+        /// Consumes the builder and constructs a [`Target`](crate::model::Target).
         pub fn build(self) -> crate::model::Target {
             crate::model::Target {
                 repository_name: self.repository_name,
@@ -7248,7 +7200,7 @@ pub mod target {
     }
 }
 impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target)
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
     pub fn builder() -> crate::model::target::Builder {
         crate::model::target::Builder::default()
     }
@@ -7288,11 +7240,10 @@ impl std::fmt::Debug for FileMetadata {
         formatter.finish()
     }
 }
-/// See [`FileMetadata`](crate::model::FileMetadata)
+/// See [`FileMetadata`](crate::model::FileMetadata).
 pub mod file_metadata {
 
-    /// A builder for [`FileMetadata`](crate::model::FileMetadata)
-    #[non_exhaustive]
+    /// A builder for [`FileMetadata`](crate::model::FileMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) absolute_path: std::option::Option<std::string::String>,
@@ -7336,7 +7287,7 @@ pub mod file_metadata {
             self.file_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`FileMetadata`](crate::model::FileMetadata)
+        /// Consumes the builder and constructs a [`FileMetadata`](crate::model::FileMetadata).
         pub fn build(self) -> crate::model::FileMetadata {
             crate::model::FileMetadata {
                 absolute_path: self.absolute_path,
@@ -7347,7 +7298,7 @@ pub mod file_metadata {
     }
 }
 impl FileMetadata {
-    /// Creates a new builder-style object to manufacture [`FileMetadata`](crate::model::FileMetadata)
+    /// Creates a new builder-style object to manufacture [`FileMetadata`](crate::model::FileMetadata).
     pub fn builder() -> crate::model::file_metadata::Builder {
         crate::model::file_metadata::Builder::default()
     }
@@ -7394,11 +7345,10 @@ impl std::fmt::Debug for PutFileEntry {
         formatter.finish()
     }
 }
-/// See [`PutFileEntry`](crate::model::PutFileEntry)
+/// See [`PutFileEntry`](crate::model::PutFileEntry).
 pub mod put_file_entry {
 
-    /// A builder for [`PutFileEntry`](crate::model::PutFileEntry)
-    #[non_exhaustive]
+    /// A builder for [`PutFileEntry`](crate::model::PutFileEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -7456,7 +7406,7 @@ pub mod put_file_entry {
             self.source_file = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutFileEntry`](crate::model::PutFileEntry)
+        /// Consumes the builder and constructs a [`PutFileEntry`](crate::model::PutFileEntry).
         pub fn build(self) -> crate::model::PutFileEntry {
             crate::model::PutFileEntry {
                 file_path: self.file_path,
@@ -7468,7 +7418,7 @@ pub mod put_file_entry {
     }
 }
 impl PutFileEntry {
-    /// Creates a new builder-style object to manufacture [`PutFileEntry`](crate::model::PutFileEntry)
+    /// Creates a new builder-style object to manufacture [`PutFileEntry`](crate::model::PutFileEntry).
     pub fn builder() -> crate::model::put_file_entry::Builder {
         crate::model::put_file_entry::Builder::default()
     }
@@ -7501,11 +7451,10 @@ impl std::fmt::Debug for SourceFileSpecifier {
         formatter.finish()
     }
 }
-/// See [`SourceFileSpecifier`](crate::model::SourceFileSpecifier)
+/// See [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
 pub mod source_file_specifier {
 
-    /// A builder for [`SourceFileSpecifier`](crate::model::SourceFileSpecifier)
-    #[non_exhaustive]
+    /// A builder for [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -7532,7 +7481,7 @@ pub mod source_file_specifier {
             self.is_move = input;
             self
         }
-        /// Consumes the builder and constructs a [`SourceFileSpecifier`](crate::model::SourceFileSpecifier)
+        /// Consumes the builder and constructs a [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
         pub fn build(self) -> crate::model::SourceFileSpecifier {
             crate::model::SourceFileSpecifier {
                 file_path: self.file_path,
@@ -7542,7 +7491,7 @@ pub mod source_file_specifier {
     }
 }
 impl SourceFileSpecifier {
-    /// Creates a new builder-style object to manufacture [`SourceFileSpecifier`](crate::model::SourceFileSpecifier)
+    /// Creates a new builder-style object to manufacture [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
     pub fn builder() -> crate::model::source_file_specifier::Builder {
         crate::model::source_file_specifier::Builder::default()
     }
@@ -7582,11 +7531,10 @@ impl std::fmt::Debug for BatchGetCommitsError {
         formatter.finish()
     }
 }
-/// See [`BatchGetCommitsError`](crate::model::BatchGetCommitsError)
+/// See [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
 pub mod batch_get_commits_error {
 
-    /// A builder for [`BatchGetCommitsError`](crate::model::BatchGetCommitsError)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
@@ -7627,7 +7575,7 @@ pub mod batch_get_commits_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetCommitsError`](crate::model::BatchGetCommitsError)
+        /// Consumes the builder and constructs a [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
         pub fn build(self) -> crate::model::BatchGetCommitsError {
             crate::model::BatchGetCommitsError {
                 commit_id: self.commit_id,
@@ -7638,7 +7586,7 @@ pub mod batch_get_commits_error {
     }
 }
 impl BatchGetCommitsError {
-    /// Creates a new builder-style object to manufacture [`BatchGetCommitsError`](crate::model::BatchGetCommitsError)
+    /// Creates a new builder-style object to manufacture [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
     pub fn builder() -> crate::model::batch_get_commits_error::Builder {
         crate::model::batch_get_commits_error::Builder::default()
     }
@@ -7679,11 +7627,10 @@ impl std::fmt::Debug for BatchDisassociateApprovalRuleTemplateFromRepositoriesEr
         formatter.finish()
     }
 }
-/// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError)
+/// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
 pub mod batch_disassociate_approval_rule_template_from_repositories_error {
 
-    /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError)
-    #[non_exhaustive]
+    /// A builder for [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -7727,7 +7674,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError)
+        /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
         pub fn build(
             self,
         ) -> crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
@@ -7740,7 +7687,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
     }
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
-    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError)
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
     pub fn builder(
     ) -> crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder
     {
@@ -7782,11 +7729,10 @@ impl std::fmt::Debug for BatchDescribeMergeConflictsError {
         formatter.finish()
     }
 }
-/// See [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError)
+/// See [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
 pub mod batch_describe_merge_conflicts_error {
 
-    /// A builder for [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError)
-    #[non_exhaustive]
+    /// A builder for [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
@@ -7827,7 +7773,7 @@ pub mod batch_describe_merge_conflicts_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError)
+        /// Consumes the builder and constructs a [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
         pub fn build(self) -> crate::model::BatchDescribeMergeConflictsError {
             crate::model::BatchDescribeMergeConflictsError {
                 file_path: self.file_path,
@@ -7838,7 +7784,7 @@ pub mod batch_describe_merge_conflicts_error {
     }
 }
 impl BatchDescribeMergeConflictsError {
-    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError)
+    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
     pub fn builder() -> crate::model::batch_describe_merge_conflicts_error::Builder {
         crate::model::batch_describe_merge_conflicts_error::Builder::default()
     }
@@ -7871,11 +7817,10 @@ impl std::fmt::Debug for Conflict {
         formatter.finish()
     }
 }
-/// See [`Conflict`](crate::model::Conflict)
+/// See [`Conflict`](crate::model::Conflict).
 pub mod conflict {
 
-    /// A builder for [`Conflict`](crate::model::Conflict)
-    #[non_exhaustive]
+    /// A builder for [`Conflict`](crate::model::Conflict).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conflict_metadata: std::option::Option<crate::model::ConflictMetadata>,
@@ -7914,7 +7859,7 @@ pub mod conflict {
             self.merge_hunks = input;
             self
         }
-        /// Consumes the builder and constructs a [`Conflict`](crate::model::Conflict)
+        /// Consumes the builder and constructs a [`Conflict`](crate::model::Conflict).
         pub fn build(self) -> crate::model::Conflict {
             crate::model::Conflict {
                 conflict_metadata: self.conflict_metadata,
@@ -7924,7 +7869,7 @@ pub mod conflict {
     }
 }
 impl Conflict {
-    /// Creates a new builder-style object to manufacture [`Conflict`](crate::model::Conflict)
+    /// Creates a new builder-style object to manufacture [`Conflict`](crate::model::Conflict).
     pub fn builder() -> crate::model::conflict::Builder {
         crate::model::conflict::Builder::default()
     }
@@ -7965,11 +7910,10 @@ impl std::fmt::Debug for BatchAssociateApprovalRuleTemplateWithRepositoriesError
         formatter.finish()
     }
 }
-/// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError)
+/// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
 pub mod batch_associate_approval_rule_template_with_repositories_error {
 
-    /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError)
-    #[non_exhaustive]
+    /// A builder for [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_name: std::option::Option<std::string::String>,
@@ -8013,7 +7957,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError)
+        /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
         pub fn build(
             self,
         ) -> crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError {
@@ -8026,7 +7970,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
     }
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError)
+    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
     pub fn builder(
     ) -> crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder {
         crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder::default()

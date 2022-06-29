@@ -7374,11 +7374,10 @@ impl std::fmt::Display for WafUnavailableEntityException {
     }
 }
 impl std::error::Error for WafUnavailableEntityException {}
-/// See [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException)
+/// See [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
 pub mod waf_unavailable_entity_exception {
 
-    /// A builder for [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException)
-    #[non_exhaustive]
+    /// A builder for [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7394,7 +7393,7 @@ pub mod waf_unavailable_entity_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException)
+        /// Consumes the builder and constructs a [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
         pub fn build(self) -> crate::error::WafUnavailableEntityException {
             crate::error::WafUnavailableEntityException {
                 message: self.message,
@@ -7403,7 +7402,7 @@ pub mod waf_unavailable_entity_exception {
     }
 }
 impl WafUnavailableEntityException {
-    /// Creates a new builder-style object to manufacture [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException)
+    /// Creates a new builder-style object to manufacture [`WafUnavailableEntityException`](crate::error::WafUnavailableEntityException).
     pub fn builder() -> crate::error::waf_unavailable_entity_exception::Builder {
         crate::error::waf_unavailable_entity_exception::Builder::default()
     }
@@ -7442,11 +7441,10 @@ impl std::fmt::Display for WafSubscriptionNotFoundException {
     }
 }
 impl std::error::Error for WafSubscriptionNotFoundException {}
-/// See [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException)
+/// See [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
 pub mod waf_subscription_not_found_exception {
 
-    /// A builder for [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7462,7 +7460,7 @@ pub mod waf_subscription_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException)
+        /// Consumes the builder and constructs a [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
         pub fn build(self) -> crate::error::WafSubscriptionNotFoundException {
             crate::error::WafSubscriptionNotFoundException {
                 message: self.message,
@@ -7471,7 +7469,7 @@ pub mod waf_subscription_not_found_exception {
     }
 }
 impl WafSubscriptionNotFoundException {
-    /// Creates a new builder-style object to manufacture [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException)
+    /// Creates a new builder-style object to manufacture [`WafSubscriptionNotFoundException`](crate::error::WafSubscriptionNotFoundException).
     pub fn builder() -> crate::error::waf_subscription_not_found_exception::Builder {
         crate::error::waf_subscription_not_found_exception::Builder::default()
     }
@@ -7507,11 +7505,10 @@ impl std::fmt::Display for WafOptimisticLockException {
     }
 }
 impl std::error::Error for WafOptimisticLockException {}
-/// See [`WafOptimisticLockException`](crate::error::WafOptimisticLockException)
+/// See [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
 pub mod waf_optimistic_lock_exception {
 
-    /// A builder for [`WafOptimisticLockException`](crate::error::WafOptimisticLockException)
-    #[non_exhaustive]
+    /// A builder for [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7527,7 +7524,7 @@ pub mod waf_optimistic_lock_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafOptimisticLockException`](crate::error::WafOptimisticLockException)
+        /// Consumes the builder and constructs a [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
         pub fn build(self) -> crate::error::WafOptimisticLockException {
             crate::error::WafOptimisticLockException {
                 message: self.message,
@@ -7536,7 +7533,7 @@ pub mod waf_optimistic_lock_exception {
     }
 }
 impl WafOptimisticLockException {
-    /// Creates a new builder-style object to manufacture [`WafOptimisticLockException`](crate::error::WafOptimisticLockException)
+    /// Creates a new builder-style object to manufacture [`WafOptimisticLockException`](crate::error::WafOptimisticLockException).
     pub fn builder() -> crate::error::waf_optimistic_lock_exception::Builder {
         crate::error::waf_optimistic_lock_exception::Builder::default()
     }
@@ -7575,11 +7572,10 @@ impl std::fmt::Display for WafNonexistentItemException {
     }
 }
 impl std::error::Error for WafNonexistentItemException {}
-/// See [`WafNonexistentItemException`](crate::error::WafNonexistentItemException)
+/// See [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
 pub mod waf_nonexistent_item_exception {
 
-    /// A builder for [`WafNonexistentItemException`](crate::error::WafNonexistentItemException)
-    #[non_exhaustive]
+    /// A builder for [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7595,7 +7591,7 @@ pub mod waf_nonexistent_item_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafNonexistentItemException`](crate::error::WafNonexistentItemException)
+        /// Consumes the builder and constructs a [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
         pub fn build(self) -> crate::error::WafNonexistentItemException {
             crate::error::WafNonexistentItemException {
                 message: self.message,
@@ -7604,7 +7600,7 @@ pub mod waf_nonexistent_item_exception {
     }
 }
 impl WafNonexistentItemException {
-    /// Creates a new builder-style object to manufacture [`WafNonexistentItemException`](crate::error::WafNonexistentItemException)
+    /// Creates a new builder-style object to manufacture [`WafNonexistentItemException`](crate::error::WafNonexistentItemException).
     pub fn builder() -> crate::error::waf_nonexistent_item_exception::Builder {
         crate::error::waf_nonexistent_item_exception::Builder::default()
     }
@@ -7640,11 +7636,10 @@ impl std::fmt::Display for WafLimitsExceededException {
     }
 }
 impl std::error::Error for WafLimitsExceededException {}
-/// See [`WafLimitsExceededException`](crate::error::WafLimitsExceededException)
+/// See [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
 pub mod waf_limits_exceeded_exception {
 
-    /// A builder for [`WafLimitsExceededException`](crate::error::WafLimitsExceededException)
-    #[non_exhaustive]
+    /// A builder for [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7660,7 +7655,7 @@ pub mod waf_limits_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafLimitsExceededException`](crate::error::WafLimitsExceededException)
+        /// Consumes the builder and constructs a [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
         pub fn build(self) -> crate::error::WafLimitsExceededException {
             crate::error::WafLimitsExceededException {
                 message: self.message,
@@ -7669,7 +7664,7 @@ pub mod waf_limits_exceeded_exception {
     }
 }
 impl WafLimitsExceededException {
-    /// Creates a new builder-style object to manufacture [`WafLimitsExceededException`](crate::error::WafLimitsExceededException)
+    /// Creates a new builder-style object to manufacture [`WafLimitsExceededException`](crate::error::WafLimitsExceededException).
     pub fn builder() -> crate::error::waf_limits_exceeded_exception::Builder {
         crate::error::waf_limits_exceeded_exception::Builder::default()
     }
@@ -7708,11 +7703,10 @@ impl std::fmt::Display for WafInvalidResourceException {
     }
 }
 impl std::error::Error for WafInvalidResourceException {}
-/// See [`WafInvalidResourceException`](crate::error::WafInvalidResourceException)
+/// See [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
 pub mod waf_invalid_resource_exception {
 
-    /// A builder for [`WafInvalidResourceException`](crate::error::WafInvalidResourceException)
-    #[non_exhaustive]
+    /// A builder for [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7728,7 +7722,7 @@ pub mod waf_invalid_resource_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafInvalidResourceException`](crate::error::WafInvalidResourceException)
+        /// Consumes the builder and constructs a [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
         pub fn build(self) -> crate::error::WafInvalidResourceException {
             crate::error::WafInvalidResourceException {
                 message: self.message,
@@ -7737,7 +7731,7 @@ pub mod waf_invalid_resource_exception {
     }
 }
 impl WafInvalidResourceException {
-    /// Creates a new builder-style object to manufacture [`WafInvalidResourceException`](crate::error::WafInvalidResourceException)
+    /// Creates a new builder-style object to manufacture [`WafInvalidResourceException`](crate::error::WafInvalidResourceException).
     pub fn builder() -> crate::error::waf_invalid_resource_exception::Builder {
         crate::error::waf_invalid_resource_exception::Builder::default()
     }
@@ -7805,11 +7799,10 @@ impl std::fmt::Display for WafInvalidParameterException {
     }
 }
 impl std::error::Error for WafInvalidParameterException {}
-/// See [`WafInvalidParameterException`](crate::error::WafInvalidParameterException)
+/// See [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
 pub mod waf_invalid_parameter_exception {
 
-    /// A builder for [`WafInvalidParameterException`](crate::error::WafInvalidParameterException)
-    #[non_exhaustive]
+    /// A builder for [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7861,7 +7854,7 @@ pub mod waf_invalid_parameter_exception {
             self.reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafInvalidParameterException`](crate::error::WafInvalidParameterException)
+        /// Consumes the builder and constructs a [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
         pub fn build(self) -> crate::error::WafInvalidParameterException {
             crate::error::WafInvalidParameterException {
                 message: self.message,
@@ -7873,7 +7866,7 @@ pub mod waf_invalid_parameter_exception {
     }
 }
 impl WafInvalidParameterException {
-    /// Creates a new builder-style object to manufacture [`WafInvalidParameterException`](crate::error::WafInvalidParameterException)
+    /// Creates a new builder-style object to manufacture [`WafInvalidParameterException`](crate::error::WafInvalidParameterException).
     pub fn builder() -> crate::error::waf_invalid_parameter_exception::Builder {
         crate::error::waf_invalid_parameter_exception::Builder::default()
     }
@@ -7912,11 +7905,10 @@ impl std::fmt::Display for WafInvalidOperationException {
     }
 }
 impl std::error::Error for WafInvalidOperationException {}
-/// See [`WafInvalidOperationException`](crate::error::WafInvalidOperationException)
+/// See [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
 pub mod waf_invalid_operation_exception {
 
-    /// A builder for [`WafInvalidOperationException`](crate::error::WafInvalidOperationException)
-    #[non_exhaustive]
+    /// A builder for [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7932,7 +7924,7 @@ pub mod waf_invalid_operation_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafInvalidOperationException`](crate::error::WafInvalidOperationException)
+        /// Consumes the builder and constructs a [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
         pub fn build(self) -> crate::error::WafInvalidOperationException {
             crate::error::WafInvalidOperationException {
                 message: self.message,
@@ -7941,7 +7933,7 @@ pub mod waf_invalid_operation_exception {
     }
 }
 impl WafInvalidOperationException {
-    /// Creates a new builder-style object to manufacture [`WafInvalidOperationException`](crate::error::WafInvalidOperationException)
+    /// Creates a new builder-style object to manufacture [`WafInvalidOperationException`](crate::error::WafInvalidOperationException).
     pub fn builder() -> crate::error::waf_invalid_operation_exception::Builder {
         crate::error::waf_invalid_operation_exception::Builder::default()
     }
@@ -7977,11 +7969,10 @@ impl std::fmt::Display for WafInternalErrorException {
     }
 }
 impl std::error::Error for WafInternalErrorException {}
-/// See [`WafInternalErrorException`](crate::error::WafInternalErrorException)
+/// See [`WafInternalErrorException`](crate::error::WafInternalErrorException).
 pub mod waf_internal_error_exception {
 
-    /// A builder for [`WafInternalErrorException`](crate::error::WafInternalErrorException)
-    #[non_exhaustive]
+    /// A builder for [`WafInternalErrorException`](crate::error::WafInternalErrorException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7997,7 +7988,7 @@ pub mod waf_internal_error_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafInternalErrorException`](crate::error::WafInternalErrorException)
+        /// Consumes the builder and constructs a [`WafInternalErrorException`](crate::error::WafInternalErrorException).
         pub fn build(self) -> crate::error::WafInternalErrorException {
             crate::error::WafInternalErrorException {
                 message: self.message,
@@ -8006,7 +7997,7 @@ pub mod waf_internal_error_exception {
     }
 }
 impl WafInternalErrorException {
-    /// Creates a new builder-style object to manufacture [`WafInternalErrorException`](crate::error::WafInternalErrorException)
+    /// Creates a new builder-style object to manufacture [`WafInternalErrorException`](crate::error::WafInternalErrorException).
     pub fn builder() -> crate::error::waf_internal_error_exception::Builder {
         crate::error::waf_internal_error_exception::Builder::default()
     }
@@ -8042,11 +8033,10 @@ impl std::fmt::Display for WafExpiredManagedRuleGroupVersionException {
     }
 }
 impl std::error::Error for WafExpiredManagedRuleGroupVersionException {}
-/// See [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
+/// See [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
 pub mod waf_expired_managed_rule_group_version_exception {
 
-    /// A builder for [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
-    #[non_exhaustive]
+    /// A builder for [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8062,7 +8052,7 @@ pub mod waf_expired_managed_rule_group_version_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
+        /// Consumes the builder and constructs a [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
         pub fn build(self) -> crate::error::WafExpiredManagedRuleGroupVersionException {
             crate::error::WafExpiredManagedRuleGroupVersionException {
                 message: self.message,
@@ -8071,7 +8061,7 @@ pub mod waf_expired_managed_rule_group_version_exception {
     }
 }
 impl WafExpiredManagedRuleGroupVersionException {
-    /// Creates a new builder-style object to manufacture [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
+    /// Creates a new builder-style object to manufacture [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException).
     pub fn builder() -> crate::error::waf_expired_managed_rule_group_version_exception::Builder {
         crate::error::waf_expired_managed_rule_group_version_exception::Builder::default()
     }
@@ -8107,11 +8097,10 @@ impl std::fmt::Display for WafDuplicateItemException {
     }
 }
 impl std::error::Error for WafDuplicateItemException {}
-/// See [`WafDuplicateItemException`](crate::error::WafDuplicateItemException)
+/// See [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
 pub mod waf_duplicate_item_exception {
 
-    /// A builder for [`WafDuplicateItemException`](crate::error::WafDuplicateItemException)
-    #[non_exhaustive]
+    /// A builder for [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8127,7 +8116,7 @@ pub mod waf_duplicate_item_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafDuplicateItemException`](crate::error::WafDuplicateItemException)
+        /// Consumes the builder and constructs a [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
         pub fn build(self) -> crate::error::WafDuplicateItemException {
             crate::error::WafDuplicateItemException {
                 message: self.message,
@@ -8136,7 +8125,7 @@ pub mod waf_duplicate_item_exception {
     }
 }
 impl WafDuplicateItemException {
-    /// Creates a new builder-style object to manufacture [`WafDuplicateItemException`](crate::error::WafDuplicateItemException)
+    /// Creates a new builder-style object to manufacture [`WafDuplicateItemException`](crate::error::WafDuplicateItemException).
     pub fn builder() -> crate::error::waf_duplicate_item_exception::Builder {
         crate::error::waf_duplicate_item_exception::Builder::default()
     }
@@ -8177,11 +8166,10 @@ impl std::fmt::Display for WafConfigurationWarningException {
     }
 }
 impl std::error::Error for WafConfigurationWarningException {}
-/// See [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
+/// See [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
 pub mod waf_configuration_warning_exception {
 
-    /// A builder for [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
-    #[non_exhaustive]
+    /// A builder for [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8197,7 +8185,7 @@ pub mod waf_configuration_warning_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
+        /// Consumes the builder and constructs a [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
         pub fn build(self) -> crate::error::WafConfigurationWarningException {
             crate::error::WafConfigurationWarningException {
                 message: self.message,
@@ -8206,7 +8194,7 @@ pub mod waf_configuration_warning_exception {
     }
 }
 impl WafConfigurationWarningException {
-    /// Creates a new builder-style object to manufacture [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException)
+    /// Creates a new builder-style object to manufacture [`WafConfigurationWarningException`](crate::error::WafConfigurationWarningException).
     pub fn builder() -> crate::error::waf_configuration_warning_exception::Builder {
         crate::error::waf_configuration_warning_exception::Builder::default()
     }
@@ -8245,11 +8233,10 @@ impl std::fmt::Display for WafTagOperationInternalErrorException {
     }
 }
 impl std::error::Error for WafTagOperationInternalErrorException {}
-/// See [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException)
+/// See [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
 pub mod waf_tag_operation_internal_error_exception {
 
-    /// A builder for [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException)
-    #[non_exhaustive]
+    /// A builder for [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8265,7 +8252,7 @@ pub mod waf_tag_operation_internal_error_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException)
+        /// Consumes the builder and constructs a [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
         pub fn build(self) -> crate::error::WafTagOperationInternalErrorException {
             crate::error::WafTagOperationInternalErrorException {
                 message: self.message,
@@ -8274,7 +8261,7 @@ pub mod waf_tag_operation_internal_error_exception {
     }
 }
 impl WafTagOperationInternalErrorException {
-    /// Creates a new builder-style object to manufacture [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException)
+    /// Creates a new builder-style object to manufacture [`WafTagOperationInternalErrorException`](crate::error::WafTagOperationInternalErrorException).
     pub fn builder() -> crate::error::waf_tag_operation_internal_error_exception::Builder {
         crate::error::waf_tag_operation_internal_error_exception::Builder::default()
     }
@@ -8310,11 +8297,10 @@ impl std::fmt::Display for WafTagOperationException {
     }
 }
 impl std::error::Error for WafTagOperationException {}
-/// See [`WafTagOperationException`](crate::error::WafTagOperationException)
+/// See [`WafTagOperationException`](crate::error::WafTagOperationException).
 pub mod waf_tag_operation_exception {
 
-    /// A builder for [`WafTagOperationException`](crate::error::WafTagOperationException)
-    #[non_exhaustive]
+    /// A builder for [`WafTagOperationException`](crate::error::WafTagOperationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8330,7 +8316,7 @@ pub mod waf_tag_operation_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafTagOperationException`](crate::error::WafTagOperationException)
+        /// Consumes the builder and constructs a [`WafTagOperationException`](crate::error::WafTagOperationException).
         pub fn build(self) -> crate::error::WafTagOperationException {
             crate::error::WafTagOperationException {
                 message: self.message,
@@ -8339,7 +8325,7 @@ pub mod waf_tag_operation_exception {
     }
 }
 impl WafTagOperationException {
-    /// Creates a new builder-style object to manufacture [`WafTagOperationException`](crate::error::WafTagOperationException)
+    /// Creates a new builder-style object to manufacture [`WafTagOperationException`](crate::error::WafTagOperationException).
     pub fn builder() -> crate::error::waf_tag_operation_exception::Builder {
         crate::error::waf_tag_operation_exception::Builder::default()
     }
@@ -8387,11 +8373,10 @@ impl std::fmt::Display for WafInvalidPermissionPolicyException {
     }
 }
 impl std::error::Error for WafInvalidPermissionPolicyException {}
-/// See [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException)
+/// See [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
 pub mod waf_invalid_permission_policy_exception {
 
-    /// A builder for [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException)
-    #[non_exhaustive]
+    /// A builder for [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8407,7 +8392,7 @@ pub mod waf_invalid_permission_policy_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException)
+        /// Consumes the builder and constructs a [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
         pub fn build(self) -> crate::error::WafInvalidPermissionPolicyException {
             crate::error::WafInvalidPermissionPolicyException {
                 message: self.message,
@@ -8416,7 +8401,7 @@ pub mod waf_invalid_permission_policy_exception {
     }
 }
 impl WafInvalidPermissionPolicyException {
-    /// Creates a new builder-style object to manufacture [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException)
+    /// Creates a new builder-style object to manufacture [`WafInvalidPermissionPolicyException`](crate::error::WafInvalidPermissionPolicyException).
     pub fn builder() -> crate::error::waf_invalid_permission_policy_exception::Builder {
         crate::error::waf_invalid_permission_policy_exception::Builder::default()
     }
@@ -8455,11 +8440,10 @@ impl std::fmt::Display for WafServiceLinkedRoleErrorException {
     }
 }
 impl std::error::Error for WafServiceLinkedRoleErrorException {}
-/// See [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException)
+/// See [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
 pub mod waf_service_linked_role_error_exception {
 
-    /// A builder for [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException)
-    #[non_exhaustive]
+    /// A builder for [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8475,7 +8459,7 @@ pub mod waf_service_linked_role_error_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException)
+        /// Consumes the builder and constructs a [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
         pub fn build(self) -> crate::error::WafServiceLinkedRoleErrorException {
             crate::error::WafServiceLinkedRoleErrorException {
                 message: self.message,
@@ -8484,7 +8468,7 @@ pub mod waf_service_linked_role_error_exception {
     }
 }
 impl WafServiceLinkedRoleErrorException {
-    /// Creates a new builder-style object to manufacture [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException)
+    /// Creates a new builder-style object to manufacture [`WafServiceLinkedRoleErrorException`](crate::error::WafServiceLinkedRoleErrorException).
     pub fn builder() -> crate::error::waf_service_linked_role_error_exception::Builder {
         crate::error::waf_service_linked_role_error_exception::Builder::default()
     }
@@ -8523,11 +8507,10 @@ impl std::fmt::Display for WafLogDestinationPermissionIssueException {
     }
 }
 impl std::error::Error for WafLogDestinationPermissionIssueException {}
-/// See [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
+/// See [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
 pub mod waf_log_destination_permission_issue_exception {
 
-    /// A builder for [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
-    #[non_exhaustive]
+    /// A builder for [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8543,7 +8526,7 @@ pub mod waf_log_destination_permission_issue_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
+        /// Consumes the builder and constructs a [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
         pub fn build(self) -> crate::error::WafLogDestinationPermissionIssueException {
             crate::error::WafLogDestinationPermissionIssueException {
                 message: self.message,
@@ -8552,7 +8535,7 @@ pub mod waf_log_destination_permission_issue_exception {
     }
 }
 impl WafLogDestinationPermissionIssueException {
-    /// Creates a new builder-style object to manufacture [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException)
+    /// Creates a new builder-style object to manufacture [`WafLogDestinationPermissionIssueException`](crate::error::WafLogDestinationPermissionIssueException).
     pub fn builder() -> crate::error::waf_log_destination_permission_issue_exception::Builder {
         crate::error::waf_log_destination_permission_issue_exception::Builder::default()
     }
@@ -8589,11 +8572,10 @@ impl std::fmt::Display for WafAssociatedItemException {
     }
 }
 impl std::error::Error for WafAssociatedItemException {}
-/// See [`WafAssociatedItemException`](crate::error::WafAssociatedItemException)
+/// See [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
 pub mod waf_associated_item_exception {
 
-    /// A builder for [`WafAssociatedItemException`](crate::error::WafAssociatedItemException)
-    #[non_exhaustive]
+    /// A builder for [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8609,7 +8591,7 @@ pub mod waf_associated_item_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`WafAssociatedItemException`](crate::error::WafAssociatedItemException)
+        /// Consumes the builder and constructs a [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
         pub fn build(self) -> crate::error::WafAssociatedItemException {
             crate::error::WafAssociatedItemException {
                 message: self.message,
@@ -8618,7 +8600,7 @@ pub mod waf_associated_item_exception {
     }
 }
 impl WafAssociatedItemException {
-    /// Creates a new builder-style object to manufacture [`WafAssociatedItemException`](crate::error::WafAssociatedItemException)
+    /// Creates a new builder-style object to manufacture [`WafAssociatedItemException`](crate::error::WafAssociatedItemException).
     pub fn builder() -> crate::error::waf_associated_item_exception::Builder {
         crate::error::waf_associated_item_exception::Builder::default()
     }

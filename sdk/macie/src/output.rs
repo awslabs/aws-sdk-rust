@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateS3ResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput)
+/// See [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
 pub mod update_s3_resources_output {
 
-    /// A builder for [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_s3_resources:
@@ -49,7 +48,7 @@ pub mod update_s3_resources_output {
             self.failed_s3_resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput)
+        /// Consumes the builder and constructs a [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
         pub fn build(self) -> crate::output::UpdateS3ResourcesOutput {
             crate::output::UpdateS3ResourcesOutput {
                 failed_s3_resources: self.failed_s3_resources,
@@ -58,7 +57,7 @@ pub mod update_s3_resources_output {
     }
 }
 impl UpdateS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateS3ResourcesOutput`](crate::output::UpdateS3ResourcesOutput).
     pub fn builder() -> crate::output::update_s3_resources_output::Builder {
         crate::output::update_s3_resources_output::Builder::default()
     }
@@ -91,11 +90,10 @@ impl std::fmt::Debug for ListS3ResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput)
+/// See [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
 pub mod list_s3_resources_output {
 
-    /// A builder for [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_resources:
@@ -132,7 +130,7 @@ pub mod list_s3_resources_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput)
+        /// Consumes the builder and constructs a [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
         pub fn build(self) -> crate::output::ListS3ResourcesOutput {
             crate::output::ListS3ResourcesOutput {
                 s3_resources: self.s3_resources,
@@ -142,7 +140,7 @@ pub mod list_s3_resources_output {
     }
 }
 impl ListS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`ListS3ResourcesOutput`](crate::output::ListS3ResourcesOutput).
     pub fn builder() -> crate::output::list_s3_resources_output::Builder {
         crate::output::list_s3_resources_output::Builder::default()
     }
@@ -175,11 +173,10 @@ impl std::fmt::Debug for ListMemberAccountsOutput {
         formatter.finish()
     }
 }
-/// See [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput)
+/// See [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
 pub mod list_member_accounts_output {
 
-    /// A builder for [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member_accounts: std::option::Option<std::vec::Vec<crate::model::MemberAccount>>,
@@ -215,7 +212,7 @@ pub mod list_member_accounts_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput)
+        /// Consumes the builder and constructs a [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
         pub fn build(self) -> crate::output::ListMemberAccountsOutput {
             crate::output::ListMemberAccountsOutput {
                 member_accounts: self.member_accounts,
@@ -225,7 +222,7 @@ pub mod list_member_accounts_output {
     }
 }
 impl ListMemberAccountsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput)
+    /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput).
     pub fn builder() -> crate::output::list_member_accounts_output::Builder {
         crate::output::list_member_accounts_output::Builder::default()
     }
@@ -251,11 +248,10 @@ impl std::fmt::Debug for DisassociateS3ResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput)
+/// See [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
 pub mod disassociate_s3_resources_output {
 
-    /// A builder for [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_s3_resources:
@@ -281,7 +277,7 @@ pub mod disassociate_s3_resources_output {
             self.failed_s3_resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput)
+        /// Consumes the builder and constructs a [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
         pub fn build(self) -> crate::output::DisassociateS3ResourcesOutput {
             crate::output::DisassociateS3ResourcesOutput {
                 failed_s3_resources: self.failed_s3_resources,
@@ -290,7 +286,7 @@ pub mod disassociate_s3_resources_output {
     }
 }
 impl DisassociateS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesOutput`](crate::output::DisassociateS3ResourcesOutput).
     pub fn builder() -> crate::output::disassociate_s3_resources_output::Builder {
         crate::output::disassociate_s3_resources_output::Builder::default()
     }
@@ -306,22 +302,21 @@ impl std::fmt::Debug for DisassociateMemberAccountOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput)
+/// See [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
 pub mod disassociate_member_account_output {
 
-    /// A builder for [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput)
+        /// Consumes the builder and constructs a [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
         pub fn build(self) -> crate::output::DisassociateMemberAccountOutput {
             crate::output::DisassociateMemberAccountOutput {}
         }
     }
 }
 impl DisassociateMemberAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateMemberAccountOutput`](crate::output::DisassociateMemberAccountOutput).
     pub fn builder() -> crate::output::disassociate_member_account_output::Builder {
         crate::output::disassociate_member_account_output::Builder::default()
     }
@@ -347,11 +342,10 @@ impl std::fmt::Debug for AssociateS3ResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput)
+/// See [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
 pub mod associate_s3_resources_output {
 
-    /// A builder for [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failed_s3_resources:
@@ -377,7 +371,7 @@ pub mod associate_s3_resources_output {
             self.failed_s3_resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput)
+        /// Consumes the builder and constructs a [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
         pub fn build(self) -> crate::output::AssociateS3ResourcesOutput {
             crate::output::AssociateS3ResourcesOutput {
                 failed_s3_resources: self.failed_s3_resources,
@@ -386,7 +380,7 @@ pub mod associate_s3_resources_output {
     }
 }
 impl AssociateS3ResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateS3ResourcesOutput`](crate::output::AssociateS3ResourcesOutput).
     pub fn builder() -> crate::output::associate_s3_resources_output::Builder {
         crate::output::associate_s3_resources_output::Builder::default()
     }
@@ -402,22 +396,21 @@ impl std::fmt::Debug for AssociateMemberAccountOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput)
+/// See [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
 pub mod associate_member_account_output {
 
-    /// A builder for [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput)
+        /// Consumes the builder and constructs a [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
         pub fn build(self) -> crate::output::AssociateMemberAccountOutput {
             crate::output::AssociateMemberAccountOutput {}
         }
     }
 }
 impl AssociateMemberAccountOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateMemberAccountOutput`](crate::output::AssociateMemberAccountOutput).
     pub fn builder() -> crate::output::associate_member_account_output::Builder {
         crate::output::associate_member_account_output::Builder::default()
     }

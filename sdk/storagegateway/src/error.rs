@@ -9508,11 +9508,10 @@ impl std::fmt::Display for InvalidGatewayRequestException {
     }
 }
 impl std::error::Error for InvalidGatewayRequestException {}
-/// See [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException)
+/// See [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException).
 pub mod invalid_gateway_request_exception {
 
-    /// A builder for [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9542,7 +9541,7 @@ pub mod invalid_gateway_request_exception {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException)
+        /// Consumes the builder and constructs a [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException).
         pub fn build(self) -> crate::error::InvalidGatewayRequestException {
             crate::error::InvalidGatewayRequestException {
                 message: self.message,
@@ -9552,7 +9551,7 @@ pub mod invalid_gateway_request_exception {
     }
 }
 impl InvalidGatewayRequestException {
-    /// Creates a new builder-style object to manufacture [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException)
+    /// Creates a new builder-style object to manufacture [`InvalidGatewayRequestException`](crate::error::InvalidGatewayRequestException).
     pub fn builder() -> crate::error::invalid_gateway_request_exception::Builder {
         crate::error::invalid_gateway_request_exception::Builder::default()
     }
@@ -9597,11 +9596,10 @@ impl std::fmt::Display for InternalServerError {
     }
 }
 impl std::error::Error for InternalServerError {}
-/// See [`InternalServerError`](crate::error::InternalServerError)
+/// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
 
-    /// A builder for [`InternalServerError`](crate::error::InternalServerError)
-    #[non_exhaustive]
+    /// A builder for [`InternalServerError`](crate::error::InternalServerError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9631,7 +9629,7 @@ pub mod internal_server_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
+        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
         pub fn build(self) -> crate::error::InternalServerError {
             crate::error::InternalServerError {
                 message: self.message,
@@ -9641,7 +9639,7 @@ pub mod internal_server_error {
     }
 }
 impl InternalServerError {
-    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError)
+    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
     pub fn builder() -> crate::error::internal_server_error::Builder {
         crate::error::internal_server_error::Builder::default()
     }
@@ -9686,11 +9684,10 @@ impl std::fmt::Display for ServiceUnavailableError {
     }
 }
 impl std::error::Error for ServiceUnavailableError {}
-/// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+/// See [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
 pub mod service_unavailable_error {
 
-    /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
-    #[non_exhaustive]
+    /// A builder for [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -9720,7 +9717,7 @@ pub mod service_unavailable_error {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+        /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
         pub fn build(self) -> crate::error::ServiceUnavailableError {
             crate::error::ServiceUnavailableError {
                 message: self.message,
@@ -9730,7 +9727,7 @@ pub mod service_unavailable_error {
     }
 }
 impl ServiceUnavailableError {
-    /// Creates a new builder-style object to manufacture [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)
+    /// Creates a new builder-style object to manufacture [`ServiceUnavailableError`](crate::error::ServiceUnavailableError).
     pub fn builder() -> crate::error::service_unavailable_error::Builder {
         crate::error::service_unavailable_error::Builder::default()
     }

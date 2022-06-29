@@ -10,7 +10,7 @@ pub struct BatchGetRecord {
     _private: (),
 }
 impl BatchGetRecord {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordInput`](crate::input::BatchGetRecordInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordInput`](crate::input::BatchGetRecordInput).
     pub fn builder() -> crate::input::batch_get_record_input::Builder {
         crate::input::batch_get_record_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DeleteRecord {
     _private: (),
 }
 impl DeleteRecord {
-    /// Creates a new builder-style object to manufacture [`DeleteRecordInput`](crate::input::DeleteRecordInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRecordInput`](crate::input::DeleteRecordInput).
     pub fn builder() -> crate::input::delete_record_input::Builder {
         crate::input::delete_record_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct GetRecord {
     _private: (),
 }
 impl GetRecord {
-    /// Creates a new builder-style object to manufacture [`GetRecordInput`](crate::input::GetRecordInput)
+    /// Creates a new builder-style object to manufacture [`GetRecordInput`](crate::input::GetRecordInput).
     pub fn builder() -> crate::input::get_record_input::Builder {
         crate::input::get_record_input::Builder::default()
     }
@@ -105,7 +105,7 @@ pub struct PutRecord {
     _private: (),
 }
 impl PutRecord {
-    /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput)
+    /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput).
     pub fn builder() -> crate::input::put_record_input::Builder {
         crate::input::put_record_input::Builder::default()
     }

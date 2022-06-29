@@ -10,7 +10,7 @@ pub struct GetClip {
     _private: (),
 }
 impl GetClip {
-    /// Creates a new builder-style object to manufacture [`GetClipInput`](crate::input::GetClipInput)
+    /// Creates a new builder-style object to manufacture [`GetClipInput`](crate::input::GetClipInput).
     pub fn builder() -> crate::input::get_clip_input::Builder {
         crate::input::get_clip_input::Builder::default()
     }
@@ -48,7 +48,7 @@ pub struct GetDASHStreamingSessionURL {
     _private: (),
 }
 impl GetDASHStreamingSessionURL {
-    /// Creates a new builder-style object to manufacture [`GetDashStreamingSessionUrlInput`](crate::input::GetDashStreamingSessionUrlInput)
+    /// Creates a new builder-style object to manufacture [`GetDashStreamingSessionUrlInput`](crate::input::GetDashStreamingSessionUrlInput).
     pub fn builder() -> crate::input::get_dash_streaming_session_url_input::Builder {
         crate::input::get_dash_streaming_session_url_input::Builder::default()
     }
@@ -82,7 +82,7 @@ pub struct GetHLSStreamingSessionURL {
     _private: (),
 }
 impl GetHLSStreamingSessionURL {
-    /// Creates a new builder-style object to manufacture [`GetHlsStreamingSessionUrlInput`](crate::input::GetHlsStreamingSessionUrlInput)
+    /// Creates a new builder-style object to manufacture [`GetHlsStreamingSessionUrlInput`](crate::input::GetHlsStreamingSessionUrlInput).
     pub fn builder() -> crate::input::get_hls_streaming_session_url_input::Builder {
         crate::input::get_hls_streaming_session_url_input::Builder::default()
     }
@@ -116,7 +116,7 @@ pub struct GetImages {
     _private: (),
 }
 impl GetImages {
-    /// Creates a new builder-style object to manufacture [`GetImagesInput`](crate::input::GetImagesInput)
+    /// Creates a new builder-style object to manufacture [`GetImagesInput`](crate::input::GetImagesInput).
     pub fn builder() -> crate::input::get_images_input::Builder {
         crate::input::get_images_input::Builder::default()
     }
@@ -147,7 +147,7 @@ pub struct GetMediaForFragmentList {
     _private: (),
 }
 impl GetMediaForFragmentList {
-    /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListInput`](crate::input::GetMediaForFragmentListInput)
+    /// Creates a new builder-style object to manufacture [`GetMediaForFragmentListInput`](crate::input::GetMediaForFragmentListInput).
     pub fn builder() -> crate::input::get_media_for_fragment_list_input::Builder {
         crate::input::get_media_for_fragment_list_input::Builder::default()
     }
@@ -190,7 +190,7 @@ pub struct ListFragments {
     _private: (),
 }
 impl ListFragments {
-    /// Creates a new builder-style object to manufacture [`ListFragmentsInput`](crate::input::ListFragmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListFragmentsInput`](crate::input::ListFragmentsInput).
     pub fn builder() -> crate::input::list_fragments_input::Builder {
         crate::input::list_fragments_input::Builder::default()
     }

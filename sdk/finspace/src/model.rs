@@ -105,11 +105,10 @@ impl std::fmt::Debug for Environment {
         formatter.finish()
     }
 }
-/// See [`Environment`](crate::model::Environment)
+/// See [`Environment`](crate::model::Environment).
 pub mod environment {
 
-    /// A builder for [`Environment`](crate::model::Environment)
-    #[non_exhaustive]
+    /// A builder for [`Environment`](crate::model::Environment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -279,7 +278,7 @@ pub mod environment {
             self.federation_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`Environment`](crate::model::Environment)
+        /// Consumes the builder and constructs a [`Environment`](crate::model::Environment).
         pub fn build(self) -> crate::model::Environment {
             crate::model::Environment {
                 name: self.name,
@@ -299,7 +298,7 @@ pub mod environment {
     }
 }
 impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment)
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
     pub fn builder() -> crate::model::environment::Builder {
         crate::model::environment::Builder::default()
     }
@@ -364,11 +363,10 @@ impl std::fmt::Debug for FederationParameters {
         formatter.finish()
     }
 }
-/// See [`FederationParameters`](crate::model::FederationParameters)
+/// See [`FederationParameters`](crate::model::FederationParameters).
 pub mod federation_parameters {
 
-    /// A builder for [`FederationParameters`](crate::model::FederationParameters)
-    #[non_exhaustive]
+    /// A builder for [`FederationParameters`](crate::model::FederationParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) saml_metadata_document: std::option::Option<std::string::String>,
@@ -471,7 +469,7 @@ pub mod federation_parameters {
             self.attribute_map = input;
             self
         }
-        /// Consumes the builder and constructs a [`FederationParameters`](crate::model::FederationParameters)
+        /// Consumes the builder and constructs a [`FederationParameters`](crate::model::FederationParameters).
         pub fn build(self) -> crate::model::FederationParameters {
             crate::model::FederationParameters {
                 saml_metadata_document: self.saml_metadata_document,
@@ -485,7 +483,7 @@ pub mod federation_parameters {
     }
 }
 impl FederationParameters {
-    /// Creates a new builder-style object to manufacture [`FederationParameters`](crate::model::FederationParameters)
+    /// Creates a new builder-style object to manufacture [`FederationParameters`](crate::model::FederationParameters).
     pub fn builder() -> crate::model::federation_parameters::Builder {
         crate::model::federation_parameters::Builder::default()
     }
@@ -678,11 +676,10 @@ impl std::fmt::Debug for SuperuserParameters {
         formatter.finish()
     }
 }
-/// See [`SuperuserParameters`](crate::model::SuperuserParameters)
+/// See [`SuperuserParameters`](crate::model::SuperuserParameters).
 pub mod superuser_parameters {
 
-    /// A builder for [`SuperuserParameters`](crate::model::SuperuserParameters)
-    #[non_exhaustive]
+    /// A builder for [`SuperuserParameters`](crate::model::SuperuserParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) email_address: std::option::Option<std::string::String>,
@@ -723,7 +720,7 @@ pub mod superuser_parameters {
             self.last_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`SuperuserParameters`](crate::model::SuperuserParameters)
+        /// Consumes the builder and constructs a [`SuperuserParameters`](crate::model::SuperuserParameters).
         pub fn build(self) -> crate::model::SuperuserParameters {
             crate::model::SuperuserParameters {
                 email_address: self.email_address,
@@ -734,7 +731,7 @@ pub mod superuser_parameters {
     }
 }
 impl SuperuserParameters {
-    /// Creates a new builder-style object to manufacture [`SuperuserParameters`](crate::model::SuperuserParameters)
+    /// Creates a new builder-style object to manufacture [`SuperuserParameters`](crate::model::SuperuserParameters).
     pub fn builder() -> crate::model::superuser_parameters::Builder {
         crate::model::superuser_parameters::Builder::default()
     }

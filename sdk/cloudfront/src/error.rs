@@ -14671,11 +14671,10 @@ impl std::fmt::Display for TrustedSignerDoesNotExist {
     }
 }
 impl std::error::Error for TrustedSignerDoesNotExist {}
-/// See [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist)
+/// See [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist).
 pub mod trusted_signer_does_not_exist {
 
-    /// A builder for [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist)
-    #[non_exhaustive]
+    /// A builder for [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14691,7 +14690,7 @@ pub mod trusted_signer_does_not_exist {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist)
+        /// Consumes the builder and constructs a [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist).
         pub fn build(self) -> crate::error::TrustedSignerDoesNotExist {
             crate::error::TrustedSignerDoesNotExist {
                 message: self.message,
@@ -14700,7 +14699,7 @@ pub mod trusted_signer_does_not_exist {
     }
 }
 impl TrustedSignerDoesNotExist {
-    /// Creates a new builder-style object to manufacture [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist)
+    /// Creates a new builder-style object to manufacture [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist).
     pub fn builder() -> crate::error::trusted_signer_does_not_exist::Builder {
         crate::error::trusted_signer_does_not_exist::Builder::default()
     }
@@ -14736,11 +14735,10 @@ impl std::fmt::Display for TooManyTrustedSigners {
     }
 }
 impl std::error::Error for TooManyTrustedSigners {}
-/// See [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners)
+/// See [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners).
 pub mod too_many_trusted_signers {
 
-    /// A builder for [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners)
-    #[non_exhaustive]
+    /// A builder for [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14756,7 +14754,7 @@ pub mod too_many_trusted_signers {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners)
+        /// Consumes the builder and constructs a [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners).
         pub fn build(self) -> crate::error::TooManyTrustedSigners {
             crate::error::TooManyTrustedSigners {
                 message: self.message,
@@ -14765,7 +14763,7 @@ pub mod too_many_trusted_signers {
     }
 }
 impl TooManyTrustedSigners {
-    /// Creates a new builder-style object to manufacture [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners)
+    /// Creates a new builder-style object to manufacture [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners).
     pub fn builder() -> crate::error::too_many_trusted_signers::Builder {
         crate::error::too_many_trusted_signers::Builder::default()
     }
@@ -14804,11 +14802,10 @@ impl std::fmt::Display for TooManyStreamingDistributionCnamEs {
     }
 }
 impl std::error::Error for TooManyStreamingDistributionCnamEs {}
-/// See [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs)
+/// See [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs).
 pub mod too_many_streaming_distribution_cnam_es {
 
-    /// A builder for [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs)
-    #[non_exhaustive]
+    /// A builder for [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14824,7 +14821,7 @@ pub mod too_many_streaming_distribution_cnam_es {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs)
+        /// Consumes the builder and constructs a [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs).
         pub fn build(self) -> crate::error::TooManyStreamingDistributionCnamEs {
             crate::error::TooManyStreamingDistributionCnamEs {
                 message: self.message,
@@ -14833,7 +14830,7 @@ pub mod too_many_streaming_distribution_cnam_es {
     }
 }
 impl TooManyStreamingDistributionCnamEs {
-    /// Creates a new builder-style object to manufacture [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs)
+    /// Creates a new builder-style object to manufacture [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs).
     pub fn builder() -> crate::error::too_many_streaming_distribution_cnam_es::Builder {
         crate::error::too_many_streaming_distribution_cnam_es::Builder::default()
     }
@@ -14869,11 +14866,10 @@ impl std::fmt::Display for PreconditionFailed {
     }
 }
 impl std::error::Error for PreconditionFailed {}
-/// See [`PreconditionFailed`](crate::error::PreconditionFailed)
+/// See [`PreconditionFailed`](crate::error::PreconditionFailed).
 pub mod precondition_failed {
 
-    /// A builder for [`PreconditionFailed`](crate::error::PreconditionFailed)
-    #[non_exhaustive]
+    /// A builder for [`PreconditionFailed`](crate::error::PreconditionFailed).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14889,7 +14885,7 @@ pub mod precondition_failed {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PreconditionFailed`](crate::error::PreconditionFailed)
+        /// Consumes the builder and constructs a [`PreconditionFailed`](crate::error::PreconditionFailed).
         pub fn build(self) -> crate::error::PreconditionFailed {
             crate::error::PreconditionFailed {
                 message: self.message,
@@ -14898,7 +14894,7 @@ pub mod precondition_failed {
     }
 }
 impl PreconditionFailed {
-    /// Creates a new builder-style object to manufacture [`PreconditionFailed`](crate::error::PreconditionFailed)
+    /// Creates a new builder-style object to manufacture [`PreconditionFailed`](crate::error::PreconditionFailed).
     pub fn builder() -> crate::error::precondition_failed::Builder {
         crate::error::precondition_failed::Builder::default()
     }
@@ -14934,11 +14930,10 @@ impl std::fmt::Display for NoSuchStreamingDistribution {
     }
 }
 impl std::error::Error for NoSuchStreamingDistribution {}
-/// See [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution)
+/// See [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution).
 pub mod no_such_streaming_distribution {
 
-    /// A builder for [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -14954,7 +14949,7 @@ pub mod no_such_streaming_distribution {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution)
+        /// Consumes the builder and constructs a [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution).
         pub fn build(self) -> crate::error::NoSuchStreamingDistribution {
             crate::error::NoSuchStreamingDistribution {
                 message: self.message,
@@ -14963,7 +14958,7 @@ pub mod no_such_streaming_distribution {
     }
 }
 impl NoSuchStreamingDistribution {
-    /// Creates a new builder-style object to manufacture [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution)
+    /// Creates a new builder-style object to manufacture [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution).
     pub fn builder() -> crate::error::no_such_streaming_distribution::Builder {
         crate::error::no_such_streaming_distribution::Builder::default()
     }
@@ -14999,11 +14994,10 @@ impl std::fmt::Display for MissingBody {
     }
 }
 impl std::error::Error for MissingBody {}
-/// See [`MissingBody`](crate::error::MissingBody)
+/// See [`MissingBody`](crate::error::MissingBody).
 pub mod missing_body {
 
-    /// A builder for [`MissingBody`](crate::error::MissingBody)
-    #[non_exhaustive]
+    /// A builder for [`MissingBody`](crate::error::MissingBody).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15019,7 +15013,7 @@ pub mod missing_body {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MissingBody`](crate::error::MissingBody)
+        /// Consumes the builder and constructs a [`MissingBody`](crate::error::MissingBody).
         pub fn build(self) -> crate::error::MissingBody {
             crate::error::MissingBody {
                 message: self.message,
@@ -15028,7 +15022,7 @@ pub mod missing_body {
     }
 }
 impl MissingBody {
-    /// Creates a new builder-style object to manufacture [`MissingBody`](crate::error::MissingBody)
+    /// Creates a new builder-style object to manufacture [`MissingBody`](crate::error::MissingBody).
     pub fn builder() -> crate::error::missing_body::Builder {
         crate::error::missing_body::Builder::default()
     }
@@ -15064,11 +15058,10 @@ impl std::fmt::Display for InvalidOriginAccessIdentity {
     }
 }
 impl std::error::Error for InvalidOriginAccessIdentity {}
-/// See [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity)
+/// See [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity).
 pub mod invalid_origin_access_identity {
 
-    /// A builder for [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity)
-    #[non_exhaustive]
+    /// A builder for [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15084,7 +15077,7 @@ pub mod invalid_origin_access_identity {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity)
+        /// Consumes the builder and constructs a [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity).
         pub fn build(self) -> crate::error::InvalidOriginAccessIdentity {
             crate::error::InvalidOriginAccessIdentity {
                 message: self.message,
@@ -15093,7 +15086,7 @@ pub mod invalid_origin_access_identity {
     }
 }
 impl InvalidOriginAccessIdentity {
-    /// Creates a new builder-style object to manufacture [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity)
+    /// Creates a new builder-style object to manufacture [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity).
     pub fn builder() -> crate::error::invalid_origin_access_identity::Builder {
         crate::error::invalid_origin_access_identity::Builder::default()
     }
@@ -15129,11 +15122,10 @@ impl std::fmt::Display for InvalidIfMatchVersion {
     }
 }
 impl std::error::Error for InvalidIfMatchVersion {}
-/// See [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion)
+/// See [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion).
 pub mod invalid_if_match_version {
 
-    /// A builder for [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion)
-    #[non_exhaustive]
+    /// A builder for [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15149,7 +15141,7 @@ pub mod invalid_if_match_version {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion)
+        /// Consumes the builder and constructs a [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion).
         pub fn build(self) -> crate::error::InvalidIfMatchVersion {
             crate::error::InvalidIfMatchVersion {
                 message: self.message,
@@ -15158,7 +15150,7 @@ pub mod invalid_if_match_version {
     }
 }
 impl InvalidIfMatchVersion {
-    /// Creates a new builder-style object to manufacture [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion)
+    /// Creates a new builder-style object to manufacture [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion).
     pub fn builder() -> crate::error::invalid_if_match_version::Builder {
         crate::error::invalid_if_match_version::Builder::default()
     }
@@ -15194,11 +15186,10 @@ impl std::fmt::Display for InvalidArgument {
     }
 }
 impl std::error::Error for InvalidArgument {}
-/// See [`InvalidArgument`](crate::error::InvalidArgument)
+/// See [`InvalidArgument`](crate::error::InvalidArgument).
 pub mod invalid_argument {
 
-    /// A builder for [`InvalidArgument`](crate::error::InvalidArgument)
-    #[non_exhaustive]
+    /// A builder for [`InvalidArgument`](crate::error::InvalidArgument).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15214,7 +15205,7 @@ pub mod invalid_argument {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidArgument`](crate::error::InvalidArgument)
+        /// Consumes the builder and constructs a [`InvalidArgument`](crate::error::InvalidArgument).
         pub fn build(self) -> crate::error::InvalidArgument {
             crate::error::InvalidArgument {
                 message: self.message,
@@ -15223,7 +15214,7 @@ pub mod invalid_argument {
     }
 }
 impl InvalidArgument {
-    /// Creates a new builder-style object to manufacture [`InvalidArgument`](crate::error::InvalidArgument)
+    /// Creates a new builder-style object to manufacture [`InvalidArgument`](crate::error::InvalidArgument).
     pub fn builder() -> crate::error::invalid_argument::Builder {
         crate::error::invalid_argument::Builder::default()
     }
@@ -15259,11 +15250,10 @@ impl std::fmt::Display for InconsistentQuantities {
     }
 }
 impl std::error::Error for InconsistentQuantities {}
-/// See [`InconsistentQuantities`](crate::error::InconsistentQuantities)
+/// See [`InconsistentQuantities`](crate::error::InconsistentQuantities).
 pub mod inconsistent_quantities {
 
-    /// A builder for [`InconsistentQuantities`](crate::error::InconsistentQuantities)
-    #[non_exhaustive]
+    /// A builder for [`InconsistentQuantities`](crate::error::InconsistentQuantities).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15279,7 +15269,7 @@ pub mod inconsistent_quantities {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InconsistentQuantities`](crate::error::InconsistentQuantities)
+        /// Consumes the builder and constructs a [`InconsistentQuantities`](crate::error::InconsistentQuantities).
         pub fn build(self) -> crate::error::InconsistentQuantities {
             crate::error::InconsistentQuantities {
                 message: self.message,
@@ -15288,7 +15278,7 @@ pub mod inconsistent_quantities {
     }
 }
 impl InconsistentQuantities {
-    /// Creates a new builder-style object to manufacture [`InconsistentQuantities`](crate::error::InconsistentQuantities)
+    /// Creates a new builder-style object to manufacture [`InconsistentQuantities`](crate::error::InconsistentQuantities).
     pub fn builder() -> crate::error::inconsistent_quantities::Builder {
         crate::error::inconsistent_quantities::Builder::default()
     }
@@ -15324,11 +15314,10 @@ impl std::fmt::Display for IllegalUpdate {
     }
 }
 impl std::error::Error for IllegalUpdate {}
-/// See [`IllegalUpdate`](crate::error::IllegalUpdate)
+/// See [`IllegalUpdate`](crate::error::IllegalUpdate).
 pub mod illegal_update {
 
-    /// A builder for [`IllegalUpdate`](crate::error::IllegalUpdate)
-    #[non_exhaustive]
+    /// A builder for [`IllegalUpdate`](crate::error::IllegalUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15344,7 +15333,7 @@ pub mod illegal_update {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IllegalUpdate`](crate::error::IllegalUpdate)
+        /// Consumes the builder and constructs a [`IllegalUpdate`](crate::error::IllegalUpdate).
         pub fn build(self) -> crate::error::IllegalUpdate {
             crate::error::IllegalUpdate {
                 message: self.message,
@@ -15353,7 +15342,7 @@ pub mod illegal_update {
     }
 }
 impl IllegalUpdate {
-    /// Creates a new builder-style object to manufacture [`IllegalUpdate`](crate::error::IllegalUpdate)
+    /// Creates a new builder-style object to manufacture [`IllegalUpdate`](crate::error::IllegalUpdate).
     pub fn builder() -> crate::error::illegal_update::Builder {
         crate::error::illegal_update::Builder::default()
     }
@@ -15389,11 +15378,10 @@ impl std::fmt::Display for CnameAlreadyExists {
     }
 }
 impl std::error::Error for CnameAlreadyExists {}
-/// See [`CnameAlreadyExists`](crate::error::CnameAlreadyExists)
+/// See [`CnameAlreadyExists`](crate::error::CnameAlreadyExists).
 pub mod cname_already_exists {
 
-    /// A builder for [`CnameAlreadyExists`](crate::error::CnameAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`CnameAlreadyExists`](crate::error::CnameAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15409,7 +15397,7 @@ pub mod cname_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CnameAlreadyExists`](crate::error::CnameAlreadyExists)
+        /// Consumes the builder and constructs a [`CnameAlreadyExists`](crate::error::CnameAlreadyExists).
         pub fn build(self) -> crate::error::CnameAlreadyExists {
             crate::error::CnameAlreadyExists {
                 message: self.message,
@@ -15418,7 +15406,7 @@ pub mod cname_already_exists {
     }
 }
 impl CnameAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`CnameAlreadyExists`](crate::error::CnameAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`CnameAlreadyExists`](crate::error::CnameAlreadyExists).
     pub fn builder() -> crate::error::cname_already_exists::Builder {
         crate::error::cname_already_exists::Builder::default()
     }
@@ -15454,11 +15442,10 @@ impl std::fmt::Display for AccessDenied {
     }
 }
 impl std::error::Error for AccessDenied {}
-/// See [`AccessDenied`](crate::error::AccessDenied)
+/// See [`AccessDenied`](crate::error::AccessDenied).
 pub mod access_denied {
 
-    /// A builder for [`AccessDenied`](crate::error::AccessDenied)
-    #[non_exhaustive]
+    /// A builder for [`AccessDenied`](crate::error::AccessDenied).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15474,7 +15461,7 @@ pub mod access_denied {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDenied`](crate::error::AccessDenied)
+        /// Consumes the builder and constructs a [`AccessDenied`](crate::error::AccessDenied).
         pub fn build(self) -> crate::error::AccessDenied {
             crate::error::AccessDenied {
                 message: self.message,
@@ -15483,7 +15470,7 @@ pub mod access_denied {
     }
 }
 impl AccessDenied {
-    /// Creates a new builder-style object to manufacture [`AccessDenied`](crate::error::AccessDenied)
+    /// Creates a new builder-style object to manufacture [`AccessDenied`](crate::error::AccessDenied).
     pub fn builder() -> crate::error::access_denied::Builder {
         crate::error::access_denied::Builder::default()
     }
@@ -15520,11 +15507,10 @@ impl std::fmt::Display for TooManyCustomHeadersInResponseHeadersPolicy {
     }
 }
 impl std::error::Error for TooManyCustomHeadersInResponseHeadersPolicy {}
-/// See [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
+/// See [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy).
 pub mod too_many_custom_headers_in_response_headers_policy {
 
-    /// A builder for [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15540,7 +15526,7 @@ pub mod too_many_custom_headers_in_response_headers_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
+        /// Consumes the builder and constructs a [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy).
         pub fn build(self) -> crate::error::TooManyCustomHeadersInResponseHeadersPolicy {
             crate::error::TooManyCustomHeadersInResponseHeadersPolicy {
                 message: self.message,
@@ -15549,7 +15535,7 @@ pub mod too_many_custom_headers_in_response_headers_policy {
     }
 }
 impl TooManyCustomHeadersInResponseHeadersPolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy).
     pub fn builder() -> crate::error::too_many_custom_headers_in_response_headers_policy::Builder {
         crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default()
     }
@@ -15589,11 +15575,10 @@ impl std::fmt::Display for TooLongCspInResponseHeadersPolicy {
     }
 }
 impl std::error::Error for TooLongCspInResponseHeadersPolicy {}
-/// See [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy)
+/// See [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy).
 pub mod too_long_csp_in_response_headers_policy {
 
-    /// A builder for [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15609,7 +15594,7 @@ pub mod too_long_csp_in_response_headers_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy)
+        /// Consumes the builder and constructs a [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy).
         pub fn build(self) -> crate::error::TooLongCspInResponseHeadersPolicy {
             crate::error::TooLongCspInResponseHeadersPolicy {
                 message: self.message,
@@ -15618,7 +15603,7 @@ pub mod too_long_csp_in_response_headers_policy {
     }
 }
 impl TooLongCspInResponseHeadersPolicy {
-    /// Creates a new builder-style object to manufacture [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy)
+    /// Creates a new builder-style object to manufacture [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy).
     pub fn builder() -> crate::error::too_long_csp_in_response_headers_policy::Builder {
         crate::error::too_long_csp_in_response_headers_policy::Builder::default()
     }
@@ -15654,11 +15639,10 @@ impl std::fmt::Display for ResponseHeadersPolicyAlreadyExists {
     }
 }
 impl std::error::Error for ResponseHeadersPolicyAlreadyExists {}
-/// See [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
+/// See [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists).
 pub mod response_headers_policy_already_exists {
 
-    /// A builder for [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15674,7 +15658,7 @@ pub mod response_headers_policy_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists).
         pub fn build(self) -> crate::error::ResponseHeadersPolicyAlreadyExists {
             crate::error::ResponseHeadersPolicyAlreadyExists {
                 message: self.message,
@@ -15683,7 +15667,7 @@ pub mod response_headers_policy_already_exists {
     }
 }
 impl ResponseHeadersPolicyAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists).
     pub fn builder() -> crate::error::response_headers_policy_already_exists::Builder {
         crate::error::response_headers_policy_already_exists::Builder::default()
     }
@@ -15719,11 +15703,10 @@ impl std::fmt::Display for NoSuchResponseHeadersPolicy {
     }
 }
 impl std::error::Error for NoSuchResponseHeadersPolicy {}
-/// See [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
+/// See [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy).
 pub mod no_such_response_headers_policy {
 
-    /// A builder for [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15739,7 +15722,7 @@ pub mod no_such_response_headers_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
+        /// Consumes the builder and constructs a [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy).
         pub fn build(self) -> crate::error::NoSuchResponseHeadersPolicy {
             crate::error::NoSuchResponseHeadersPolicy {
                 message: self.message,
@@ -15748,7 +15731,7 @@ pub mod no_such_response_headers_policy {
     }
 }
 impl NoSuchResponseHeadersPolicy {
-    /// Creates a new builder-style object to manufacture [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy)
+    /// Creates a new builder-style object to manufacture [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy).
     pub fn builder() -> crate::error::no_such_response_headers_policy::Builder {
         crate::error::no_such_response_headers_policy::Builder::default()
     }
@@ -15784,11 +15767,10 @@ impl std::fmt::Display for NoSuchRealtimeLogConfig {
     }
 }
 impl std::error::Error for NoSuchRealtimeLogConfig {}
-/// See [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig)
+/// See [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig).
 pub mod no_such_realtime_log_config {
 
-    /// A builder for [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15804,7 +15786,7 @@ pub mod no_such_realtime_log_config {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig)
+        /// Consumes the builder and constructs a [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig).
         pub fn build(self) -> crate::error::NoSuchRealtimeLogConfig {
             crate::error::NoSuchRealtimeLogConfig {
                 message: self.message,
@@ -15813,7 +15795,7 @@ pub mod no_such_realtime_log_config {
     }
 }
 impl NoSuchRealtimeLogConfig {
-    /// Creates a new builder-style object to manufacture [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig)
+    /// Creates a new builder-style object to manufacture [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig).
     pub fn builder() -> crate::error::no_such_realtime_log_config::Builder {
         crate::error::no_such_realtime_log_config::Builder::default()
     }
@@ -15849,11 +15831,10 @@ impl std::fmt::Display for NoSuchPublicKey {
     }
 }
 impl std::error::Error for NoSuchPublicKey {}
-/// See [`NoSuchPublicKey`](crate::error::NoSuchPublicKey)
+/// See [`NoSuchPublicKey`](crate::error::NoSuchPublicKey).
 pub mod no_such_public_key {
 
-    /// A builder for [`NoSuchPublicKey`](crate::error::NoSuchPublicKey)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchPublicKey`](crate::error::NoSuchPublicKey).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15869,7 +15850,7 @@ pub mod no_such_public_key {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchPublicKey`](crate::error::NoSuchPublicKey)
+        /// Consumes the builder and constructs a [`NoSuchPublicKey`](crate::error::NoSuchPublicKey).
         pub fn build(self) -> crate::error::NoSuchPublicKey {
             crate::error::NoSuchPublicKey {
                 message: self.message,
@@ -15878,7 +15859,7 @@ pub mod no_such_public_key {
     }
 }
 impl NoSuchPublicKey {
-    /// Creates a new builder-style object to manufacture [`NoSuchPublicKey`](crate::error::NoSuchPublicKey)
+    /// Creates a new builder-style object to manufacture [`NoSuchPublicKey`](crate::error::NoSuchPublicKey).
     pub fn builder() -> crate::error::no_such_public_key::Builder {
         crate::error::no_such_public_key::Builder::default()
     }
@@ -15914,11 +15895,10 @@ impl std::fmt::Display for CannotChangeImmutablePublicKeyFields {
     }
 }
 impl std::error::Error for CannotChangeImmutablePublicKeyFields {}
-/// See [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields)
+/// See [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields).
 pub mod cannot_change_immutable_public_key_fields {
 
-    /// A builder for [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields)
-    #[non_exhaustive]
+    /// A builder for [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15934,7 +15914,7 @@ pub mod cannot_change_immutable_public_key_fields {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields)
+        /// Consumes the builder and constructs a [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields).
         pub fn build(self) -> crate::error::CannotChangeImmutablePublicKeyFields {
             crate::error::CannotChangeImmutablePublicKeyFields {
                 message: self.message,
@@ -15943,7 +15923,7 @@ pub mod cannot_change_immutable_public_key_fields {
     }
 }
 impl CannotChangeImmutablePublicKeyFields {
-    /// Creates a new builder-style object to manufacture [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields)
+    /// Creates a new builder-style object to manufacture [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields).
     pub fn builder() -> crate::error::cannot_change_immutable_public_key_fields::Builder {
         crate::error::cannot_change_immutable_public_key_fields::Builder::default()
     }
@@ -15979,11 +15959,10 @@ impl std::fmt::Display for TooManyQueryStringsInOriginRequestPolicy {
     }
 }
 impl std::error::Error for TooManyQueryStringsInOriginRequestPolicy {}
-/// See [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy)
+/// See [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy).
 pub mod too_many_query_strings_in_origin_request_policy {
 
-    /// A builder for [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -15999,7 +15978,7 @@ pub mod too_many_query_strings_in_origin_request_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy)
+        /// Consumes the builder and constructs a [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy).
         pub fn build(self) -> crate::error::TooManyQueryStringsInOriginRequestPolicy {
             crate::error::TooManyQueryStringsInOriginRequestPolicy {
                 message: self.message,
@@ -16008,7 +15987,7 @@ pub mod too_many_query_strings_in_origin_request_policy {
     }
 }
 impl TooManyQueryStringsInOriginRequestPolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy).
     pub fn builder() -> crate::error::too_many_query_strings_in_origin_request_policy::Builder {
         crate::error::too_many_query_strings_in_origin_request_policy::Builder::default()
     }
@@ -16044,11 +16023,10 @@ impl std::fmt::Display for TooManyHeadersInOriginRequestPolicy {
     }
 }
 impl std::error::Error for TooManyHeadersInOriginRequestPolicy {}
-/// See [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy)
+/// See [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy).
 pub mod too_many_headers_in_origin_request_policy {
 
-    /// A builder for [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16064,7 +16042,7 @@ pub mod too_many_headers_in_origin_request_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy)
+        /// Consumes the builder and constructs a [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy).
         pub fn build(self) -> crate::error::TooManyHeadersInOriginRequestPolicy {
             crate::error::TooManyHeadersInOriginRequestPolicy {
                 message: self.message,
@@ -16073,7 +16051,7 @@ pub mod too_many_headers_in_origin_request_policy {
     }
 }
 impl TooManyHeadersInOriginRequestPolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy).
     pub fn builder() -> crate::error::too_many_headers_in_origin_request_policy::Builder {
         crate::error::too_many_headers_in_origin_request_policy::Builder::default()
     }
@@ -16109,11 +16087,10 @@ impl std::fmt::Display for TooManyCookiesInOriginRequestPolicy {
     }
 }
 impl std::error::Error for TooManyCookiesInOriginRequestPolicy {}
-/// See [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy)
+/// See [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy).
 pub mod too_many_cookies_in_origin_request_policy {
 
-    /// A builder for [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16129,7 +16106,7 @@ pub mod too_many_cookies_in_origin_request_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy)
+        /// Consumes the builder and constructs a [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy).
         pub fn build(self) -> crate::error::TooManyCookiesInOriginRequestPolicy {
             crate::error::TooManyCookiesInOriginRequestPolicy {
                 message: self.message,
@@ -16138,7 +16115,7 @@ pub mod too_many_cookies_in_origin_request_policy {
     }
 }
 impl TooManyCookiesInOriginRequestPolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy).
     pub fn builder() -> crate::error::too_many_cookies_in_origin_request_policy::Builder {
         crate::error::too_many_cookies_in_origin_request_policy::Builder::default()
     }
@@ -16174,11 +16151,10 @@ impl std::fmt::Display for OriginRequestPolicyAlreadyExists {
     }
 }
 impl std::error::Error for OriginRequestPolicyAlreadyExists {}
-/// See [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists)
+/// See [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists).
 pub mod origin_request_policy_already_exists {
 
-    /// A builder for [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16194,7 +16170,7 @@ pub mod origin_request_policy_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists)
+        /// Consumes the builder and constructs a [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists).
         pub fn build(self) -> crate::error::OriginRequestPolicyAlreadyExists {
             crate::error::OriginRequestPolicyAlreadyExists {
                 message: self.message,
@@ -16203,7 +16179,7 @@ pub mod origin_request_policy_already_exists {
     }
 }
 impl OriginRequestPolicyAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists).
     pub fn builder() -> crate::error::origin_request_policy_already_exists::Builder {
         crate::error::origin_request_policy_already_exists::Builder::default()
     }
@@ -16239,11 +16215,10 @@ impl std::fmt::Display for NoSuchOriginRequestPolicy {
     }
 }
 impl std::error::Error for NoSuchOriginRequestPolicy {}
-/// See [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy)
+/// See [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy).
 pub mod no_such_origin_request_policy {
 
-    /// A builder for [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16259,7 +16234,7 @@ pub mod no_such_origin_request_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy)
+        /// Consumes the builder and constructs a [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy).
         pub fn build(self) -> crate::error::NoSuchOriginRequestPolicy {
             crate::error::NoSuchOriginRequestPolicy {
                 message: self.message,
@@ -16268,7 +16243,7 @@ pub mod no_such_origin_request_policy {
     }
 }
 impl NoSuchOriginRequestPolicy {
-    /// Creates a new builder-style object to manufacture [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy)
+    /// Creates a new builder-style object to manufacture [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy).
     pub fn builder() -> crate::error::no_such_origin_request_policy::Builder {
         crate::error::no_such_origin_request_policy::Builder::default()
     }
@@ -16304,11 +16279,10 @@ impl std::fmt::Display for TooManyPublicKeysInKeyGroup {
     }
 }
 impl std::error::Error for TooManyPublicKeysInKeyGroup {}
-/// See [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup)
+/// See [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup).
 pub mod too_many_public_keys_in_key_group {
 
-    /// A builder for [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup)
-    #[non_exhaustive]
+    /// A builder for [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16324,7 +16298,7 @@ pub mod too_many_public_keys_in_key_group {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup)
+        /// Consumes the builder and constructs a [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup).
         pub fn build(self) -> crate::error::TooManyPublicKeysInKeyGroup {
             crate::error::TooManyPublicKeysInKeyGroup {
                 message: self.message,
@@ -16333,7 +16307,7 @@ pub mod too_many_public_keys_in_key_group {
     }
 }
 impl TooManyPublicKeysInKeyGroup {
-    /// Creates a new builder-style object to manufacture [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup)
+    /// Creates a new builder-style object to manufacture [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup).
     pub fn builder() -> crate::error::too_many_public_keys_in_key_group::Builder {
         crate::error::too_many_public_keys_in_key_group::Builder::default()
     }
@@ -16369,11 +16343,10 @@ impl std::fmt::Display for NoSuchResource {
     }
 }
 impl std::error::Error for NoSuchResource {}
-/// See [`NoSuchResource`](crate::error::NoSuchResource)
+/// See [`NoSuchResource`](crate::error::NoSuchResource).
 pub mod no_such_resource {
 
-    /// A builder for [`NoSuchResource`](crate::error::NoSuchResource)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchResource`](crate::error::NoSuchResource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16389,7 +16362,7 @@ pub mod no_such_resource {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchResource`](crate::error::NoSuchResource)
+        /// Consumes the builder and constructs a [`NoSuchResource`](crate::error::NoSuchResource).
         pub fn build(self) -> crate::error::NoSuchResource {
             crate::error::NoSuchResource {
                 message: self.message,
@@ -16398,7 +16371,7 @@ pub mod no_such_resource {
     }
 }
 impl NoSuchResource {
-    /// Creates a new builder-style object to manufacture [`NoSuchResource`](crate::error::NoSuchResource)
+    /// Creates a new builder-style object to manufacture [`NoSuchResource`](crate::error::NoSuchResource).
     pub fn builder() -> crate::error::no_such_resource::Builder {
         crate::error::no_such_resource::Builder::default()
     }
@@ -16434,11 +16407,10 @@ impl std::fmt::Display for KeyGroupAlreadyExists {
     }
 }
 impl std::error::Error for KeyGroupAlreadyExists {}
-/// See [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists)
+/// See [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists).
 pub mod key_group_already_exists {
 
-    /// A builder for [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16454,7 +16426,7 @@ pub mod key_group_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists)
+        /// Consumes the builder and constructs a [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists).
         pub fn build(self) -> crate::error::KeyGroupAlreadyExists {
             crate::error::KeyGroupAlreadyExists {
                 message: self.message,
@@ -16463,7 +16435,7 @@ pub mod key_group_already_exists {
     }
 }
 impl KeyGroupAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists).
     pub fn builder() -> crate::error::key_group_already_exists::Builder {
         crate::error::key_group_already_exists::Builder::default()
     }
@@ -16499,11 +16471,10 @@ impl std::fmt::Display for UnsupportedOperation {
     }
 }
 impl std::error::Error for UnsupportedOperation {}
-/// See [`UnsupportedOperation`](crate::error::UnsupportedOperation)
+/// See [`UnsupportedOperation`](crate::error::UnsupportedOperation).
 pub mod unsupported_operation {
 
-    /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16519,7 +16490,7 @@ pub mod unsupported_operation {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedOperation`](crate::error::UnsupportedOperation)
+        /// Consumes the builder and constructs a [`UnsupportedOperation`](crate::error::UnsupportedOperation).
         pub fn build(self) -> crate::error::UnsupportedOperation {
             crate::error::UnsupportedOperation {
                 message: self.message,
@@ -16528,7 +16499,7 @@ pub mod unsupported_operation {
     }
 }
 impl UnsupportedOperation {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOperation`](crate::error::UnsupportedOperation)
+    /// Creates a new builder-style object to manufacture [`UnsupportedOperation`](crate::error::UnsupportedOperation).
     pub fn builder() -> crate::error::unsupported_operation::Builder {
         crate::error::unsupported_operation::Builder::default()
     }
@@ -16564,11 +16535,10 @@ impl std::fmt::Display for NoSuchFunctionExists {
     }
 }
 impl std::error::Error for NoSuchFunctionExists {}
-/// See [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists)
+/// See [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists).
 pub mod no_such_function_exists {
 
-    /// A builder for [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16584,7 +16554,7 @@ pub mod no_such_function_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists)
+        /// Consumes the builder and constructs a [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists).
         pub fn build(self) -> crate::error::NoSuchFunctionExists {
             crate::error::NoSuchFunctionExists {
                 message: self.message,
@@ -16593,7 +16563,7 @@ pub mod no_such_function_exists {
     }
 }
 impl NoSuchFunctionExists {
-    /// Creates a new builder-style object to manufacture [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists)
+    /// Creates a new builder-style object to manufacture [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists).
     pub fn builder() -> crate::error::no_such_function_exists::Builder {
         crate::error::no_such_function_exists::Builder::default()
     }
@@ -16629,11 +16599,10 @@ impl std::fmt::Display for FunctionSizeLimitExceeded {
     }
 }
 impl std::error::Error for FunctionSizeLimitExceeded {}
-/// See [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded)
+/// See [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded).
 pub mod function_size_limit_exceeded {
 
-    /// A builder for [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16649,7 +16618,7 @@ pub mod function_size_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded)
+        /// Consumes the builder and constructs a [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded).
         pub fn build(self) -> crate::error::FunctionSizeLimitExceeded {
             crate::error::FunctionSizeLimitExceeded {
                 message: self.message,
@@ -16658,7 +16627,7 @@ pub mod function_size_limit_exceeded {
     }
 }
 impl FunctionSizeLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded).
     pub fn builder() -> crate::error::function_size_limit_exceeded::Builder {
         crate::error::function_size_limit_exceeded::Builder::default()
     }
@@ -16694,11 +16663,10 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionFieldPatterns {
     }
 }
 impl std::error::Error for TooManyFieldLevelEncryptionFieldPatterns {}
-/// See [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns)
+/// See [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns).
 pub mod too_many_field_level_encryption_field_patterns {
 
-    /// A builder for [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16714,7 +16682,7 @@ pub mod too_many_field_level_encryption_field_patterns {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns)
+        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns).
         pub fn build(self) -> crate::error::TooManyFieldLevelEncryptionFieldPatterns {
             crate::error::TooManyFieldLevelEncryptionFieldPatterns {
                 message: self.message,
@@ -16723,7 +16691,7 @@ pub mod too_many_field_level_encryption_field_patterns {
     }
 }
 impl TooManyFieldLevelEncryptionFieldPatterns {
-    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns)
+    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns).
     pub fn builder() -> crate::error::too_many_field_level_encryption_field_patterns::Builder {
         crate::error::too_many_field_level_encryption_field_patterns::Builder::default()
     }
@@ -16759,11 +16727,10 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionEncryptionEntities {
     }
 }
 impl std::error::Error for TooManyFieldLevelEncryptionEncryptionEntities {}
-/// See [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities)
+/// See [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities).
 pub mod too_many_field_level_encryption_encryption_entities {
 
-    /// A builder for [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16779,7 +16746,7 @@ pub mod too_many_field_level_encryption_encryption_entities {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities)
+        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities).
         pub fn build(self) -> crate::error::TooManyFieldLevelEncryptionEncryptionEntities {
             crate::error::TooManyFieldLevelEncryptionEncryptionEntities {
                 message: self.message,
@@ -16788,7 +16755,7 @@ pub mod too_many_field_level_encryption_encryption_entities {
     }
 }
 impl TooManyFieldLevelEncryptionEncryptionEntities {
-    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities)
+    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities).
     pub fn builder() -> crate::error::too_many_field_level_encryption_encryption_entities::Builder {
         crate::error::too_many_field_level_encryption_encryption_entities::Builder::default()
     }
@@ -16824,11 +16791,10 @@ impl std::fmt::Display for NoSuchFieldLevelEncryptionProfile {
     }
 }
 impl std::error::Error for NoSuchFieldLevelEncryptionProfile {}
-/// See [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile)
+/// See [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile).
 pub mod no_such_field_level_encryption_profile {
 
-    /// A builder for [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16844,7 +16810,7 @@ pub mod no_such_field_level_encryption_profile {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile)
+        /// Consumes the builder and constructs a [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile).
         pub fn build(self) -> crate::error::NoSuchFieldLevelEncryptionProfile {
             crate::error::NoSuchFieldLevelEncryptionProfile {
                 message: self.message,
@@ -16853,7 +16819,7 @@ pub mod no_such_field_level_encryption_profile {
     }
 }
 impl NoSuchFieldLevelEncryptionProfile {
-    /// Creates a new builder-style object to manufacture [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile)
+    /// Creates a new builder-style object to manufacture [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile).
     pub fn builder() -> crate::error::no_such_field_level_encryption_profile::Builder {
         crate::error::no_such_field_level_encryption_profile::Builder::default()
     }
@@ -16889,11 +16855,10 @@ impl std::fmt::Display for FieldLevelEncryptionProfileSizeExceeded {
     }
 }
 impl std::error::Error for FieldLevelEncryptionProfileSizeExceeded {}
-/// See [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded)
+/// See [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded).
 pub mod field_level_encryption_profile_size_exceeded {
 
-    /// A builder for [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded)
-    #[non_exhaustive]
+    /// A builder for [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16909,7 +16874,7 @@ pub mod field_level_encryption_profile_size_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded)
+        /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded).
         pub fn build(self) -> crate::error::FieldLevelEncryptionProfileSizeExceeded {
             crate::error::FieldLevelEncryptionProfileSizeExceeded {
                 message: self.message,
@@ -16918,7 +16883,7 @@ pub mod field_level_encryption_profile_size_exceeded {
     }
 }
 impl FieldLevelEncryptionProfileSizeExceeded {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded)
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded).
     pub fn builder() -> crate::error::field_level_encryption_profile_size_exceeded::Builder {
         crate::error::field_level_encryption_profile_size_exceeded::Builder::default()
     }
@@ -16954,11 +16919,10 @@ impl std::fmt::Display for FieldLevelEncryptionProfileAlreadyExists {
     }
 }
 impl std::error::Error for FieldLevelEncryptionProfileAlreadyExists {}
-/// See [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists)
+/// See [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists).
 pub mod field_level_encryption_profile_already_exists {
 
-    /// A builder for [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -16974,7 +16938,7 @@ pub mod field_level_encryption_profile_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists)
+        /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists).
         pub fn build(self) -> crate::error::FieldLevelEncryptionProfileAlreadyExists {
             crate::error::FieldLevelEncryptionProfileAlreadyExists {
                 message: self.message,
@@ -16983,7 +16947,7 @@ pub mod field_level_encryption_profile_already_exists {
     }
 }
 impl FieldLevelEncryptionProfileAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists).
     pub fn builder() -> crate::error::field_level_encryption_profile_already_exists::Builder {
         crate::error::field_level_encryption_profile_already_exists::Builder::default()
     }
@@ -17019,11 +16983,10 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionQueryArgProfiles {
     }
 }
 impl std::error::Error for TooManyFieldLevelEncryptionQueryArgProfiles {}
-/// See [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles)
+/// See [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles).
 pub mod too_many_field_level_encryption_query_arg_profiles {
 
-    /// A builder for [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17039,7 +17002,7 @@ pub mod too_many_field_level_encryption_query_arg_profiles {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles)
+        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles).
         pub fn build(self) -> crate::error::TooManyFieldLevelEncryptionQueryArgProfiles {
             crate::error::TooManyFieldLevelEncryptionQueryArgProfiles {
                 message: self.message,
@@ -17048,7 +17011,7 @@ pub mod too_many_field_level_encryption_query_arg_profiles {
     }
 }
 impl TooManyFieldLevelEncryptionQueryArgProfiles {
-    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles)
+    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles).
     pub fn builder() -> crate::error::too_many_field_level_encryption_query_arg_profiles::Builder {
         crate::error::too_many_field_level_encryption_query_arg_profiles::Builder::default()
     }
@@ -17084,11 +17047,10 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionContentTypeProfiles {
     }
 }
 impl std::error::Error for TooManyFieldLevelEncryptionContentTypeProfiles {}
-/// See [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles)
+/// See [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles).
 pub mod too_many_field_level_encryption_content_type_profiles {
 
-    /// A builder for [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17104,7 +17066,7 @@ pub mod too_many_field_level_encryption_content_type_profiles {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles)
+        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles).
         pub fn build(self) -> crate::error::TooManyFieldLevelEncryptionContentTypeProfiles {
             crate::error::TooManyFieldLevelEncryptionContentTypeProfiles {
                 message: self.message,
@@ -17113,7 +17075,7 @@ pub mod too_many_field_level_encryption_content_type_profiles {
     }
 }
 impl TooManyFieldLevelEncryptionContentTypeProfiles {
-    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles)
+    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles).
     pub fn builder() -> crate::error::too_many_field_level_encryption_content_type_profiles::Builder
     {
         crate::error::too_many_field_level_encryption_content_type_profiles::Builder::default()
@@ -17150,11 +17112,10 @@ impl std::fmt::Display for QueryArgProfileEmpty {
     }
 }
 impl std::error::Error for QueryArgProfileEmpty {}
-/// See [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty)
+/// See [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty).
 pub mod query_arg_profile_empty {
 
-    /// A builder for [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty)
-    #[non_exhaustive]
+    /// A builder for [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17170,7 +17131,7 @@ pub mod query_arg_profile_empty {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty)
+        /// Consumes the builder and constructs a [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty).
         pub fn build(self) -> crate::error::QueryArgProfileEmpty {
             crate::error::QueryArgProfileEmpty {
                 message: self.message,
@@ -17179,7 +17140,7 @@ pub mod query_arg_profile_empty {
     }
 }
 impl QueryArgProfileEmpty {
-    /// Creates a new builder-style object to manufacture [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty)
+    /// Creates a new builder-style object to manufacture [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty).
     pub fn builder() -> crate::error::query_arg_profile_empty::Builder {
         crate::error::query_arg_profile_empty::Builder::default()
     }
@@ -17215,11 +17176,10 @@ impl std::fmt::Display for NoSuchFieldLevelEncryptionConfig {
     }
 }
 impl std::error::Error for NoSuchFieldLevelEncryptionConfig {}
-/// See [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig)
+/// See [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig).
 pub mod no_such_field_level_encryption_config {
 
-    /// A builder for [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17235,7 +17195,7 @@ pub mod no_such_field_level_encryption_config {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig)
+        /// Consumes the builder and constructs a [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig).
         pub fn build(self) -> crate::error::NoSuchFieldLevelEncryptionConfig {
             crate::error::NoSuchFieldLevelEncryptionConfig {
                 message: self.message,
@@ -17244,7 +17204,7 @@ pub mod no_such_field_level_encryption_config {
     }
 }
 impl NoSuchFieldLevelEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig)
+    /// Creates a new builder-style object to manufacture [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig).
     pub fn builder() -> crate::error::no_such_field_level_encryption_config::Builder {
         crate::error::no_such_field_level_encryption_config::Builder::default()
     }
@@ -17280,11 +17240,10 @@ impl std::fmt::Display for TrustedKeyGroupDoesNotExist {
     }
 }
 impl std::error::Error for TrustedKeyGroupDoesNotExist {}
-/// See [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist)
+/// See [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist).
 pub mod trusted_key_group_does_not_exist {
 
-    /// A builder for [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist)
-    #[non_exhaustive]
+    /// A builder for [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17300,7 +17259,7 @@ pub mod trusted_key_group_does_not_exist {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist)
+        /// Consumes the builder and constructs a [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist).
         pub fn build(self) -> crate::error::TrustedKeyGroupDoesNotExist {
             crate::error::TrustedKeyGroupDoesNotExist {
                 message: self.message,
@@ -17309,7 +17268,7 @@ pub mod trusted_key_group_does_not_exist {
     }
 }
 impl TrustedKeyGroupDoesNotExist {
-    /// Creates a new builder-style object to manufacture [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist)
+    /// Creates a new builder-style object to manufacture [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist).
     pub fn builder() -> crate::error::trusted_key_group_does_not_exist::Builder {
         crate::error::trusted_key_group_does_not_exist::Builder::default()
     }
@@ -17345,11 +17304,10 @@ impl std::fmt::Display for TooManyQueryStringParameters {
     }
 }
 impl std::error::Error for TooManyQueryStringParameters {}
-/// See [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters)
+/// See [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters).
 pub mod too_many_query_string_parameters {
 
-    /// A builder for [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters)
-    #[non_exhaustive]
+    /// A builder for [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17365,7 +17323,7 @@ pub mod too_many_query_string_parameters {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters)
+        /// Consumes the builder and constructs a [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters).
         pub fn build(self) -> crate::error::TooManyQueryStringParameters {
             crate::error::TooManyQueryStringParameters {
                 message: self.message,
@@ -17374,7 +17332,7 @@ pub mod too_many_query_string_parameters {
     }
 }
 impl TooManyQueryStringParameters {
-    /// Creates a new builder-style object to manufacture [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters)
+    /// Creates a new builder-style object to manufacture [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters).
     pub fn builder() -> crate::error::too_many_query_string_parameters::Builder {
         crate::error::too_many_query_string_parameters::Builder::default()
     }
@@ -17410,11 +17368,10 @@ impl std::fmt::Display for TooManyOrigins {
     }
 }
 impl std::error::Error for TooManyOrigins {}
-/// See [`TooManyOrigins`](crate::error::TooManyOrigins)
+/// See [`TooManyOrigins`](crate::error::TooManyOrigins).
 pub mod too_many_origins {
 
-    /// A builder for [`TooManyOrigins`](crate::error::TooManyOrigins)
-    #[non_exhaustive]
+    /// A builder for [`TooManyOrigins`](crate::error::TooManyOrigins).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17430,7 +17387,7 @@ pub mod too_many_origins {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyOrigins`](crate::error::TooManyOrigins)
+        /// Consumes the builder and constructs a [`TooManyOrigins`](crate::error::TooManyOrigins).
         pub fn build(self) -> crate::error::TooManyOrigins {
             crate::error::TooManyOrigins {
                 message: self.message,
@@ -17439,7 +17396,7 @@ pub mod too_many_origins {
     }
 }
 impl TooManyOrigins {
-    /// Creates a new builder-style object to manufacture [`TooManyOrigins`](crate::error::TooManyOrigins)
+    /// Creates a new builder-style object to manufacture [`TooManyOrigins`](crate::error::TooManyOrigins).
     pub fn builder() -> crate::error::too_many_origins::Builder {
         crate::error::too_many_origins::Builder::default()
     }
@@ -17475,11 +17432,10 @@ impl std::fmt::Display for TooManyOriginGroupsPerDistribution {
     }
 }
 impl std::error::Error for TooManyOriginGroupsPerDistribution {}
-/// See [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution)
+/// See [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution).
 pub mod too_many_origin_groups_per_distribution {
 
-    /// A builder for [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution)
-    #[non_exhaustive]
+    /// A builder for [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17495,7 +17451,7 @@ pub mod too_many_origin_groups_per_distribution {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution)
+        /// Consumes the builder and constructs a [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution).
         pub fn build(self) -> crate::error::TooManyOriginGroupsPerDistribution {
             crate::error::TooManyOriginGroupsPerDistribution {
                 message: self.message,
@@ -17504,7 +17460,7 @@ pub mod too_many_origin_groups_per_distribution {
     }
 }
 impl TooManyOriginGroupsPerDistribution {
-    /// Creates a new builder-style object to manufacture [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution)
+    /// Creates a new builder-style object to manufacture [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution).
     pub fn builder() -> crate::error::too_many_origin_groups_per_distribution::Builder {
         crate::error::too_many_origin_groups_per_distribution::Builder::default()
     }
@@ -17540,11 +17496,10 @@ impl std::fmt::Display for TooManyOriginCustomHeaders {
     }
 }
 impl std::error::Error for TooManyOriginCustomHeaders {}
-/// See [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders)
+/// See [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders).
 pub mod too_many_origin_custom_headers {
 
-    /// A builder for [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders)
-    #[non_exhaustive]
+    /// A builder for [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17560,7 +17515,7 @@ pub mod too_many_origin_custom_headers {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders)
+        /// Consumes the builder and constructs a [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders).
         pub fn build(self) -> crate::error::TooManyOriginCustomHeaders {
             crate::error::TooManyOriginCustomHeaders {
                 message: self.message,
@@ -17569,7 +17524,7 @@ pub mod too_many_origin_custom_headers {
     }
 }
 impl TooManyOriginCustomHeaders {
-    /// Creates a new builder-style object to manufacture [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders)
+    /// Creates a new builder-style object to manufacture [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders).
     pub fn builder() -> crate::error::too_many_origin_custom_headers::Builder {
         crate::error::too_many_origin_custom_headers::Builder::default()
     }
@@ -17605,11 +17560,10 @@ impl std::fmt::Display for TooManyLambdaFunctionAssociations {
     }
 }
 impl std::error::Error for TooManyLambdaFunctionAssociations {}
-/// See [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations)
+/// See [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations).
 pub mod too_many_lambda_function_associations {
 
-    /// A builder for [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations)
-    #[non_exhaustive]
+    /// A builder for [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17625,7 +17579,7 @@ pub mod too_many_lambda_function_associations {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations)
+        /// Consumes the builder and constructs a [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations).
         pub fn build(self) -> crate::error::TooManyLambdaFunctionAssociations {
             crate::error::TooManyLambdaFunctionAssociations {
                 message: self.message,
@@ -17634,7 +17588,7 @@ pub mod too_many_lambda_function_associations {
     }
 }
 impl TooManyLambdaFunctionAssociations {
-    /// Creates a new builder-style object to manufacture [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations)
+    /// Creates a new builder-style object to manufacture [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations).
     pub fn builder() -> crate::error::too_many_lambda_function_associations::Builder {
         crate::error::too_many_lambda_function_associations::Builder::default()
     }
@@ -17670,11 +17624,10 @@ impl std::fmt::Display for TooManyKeyGroupsAssociatedToDistribution {
     }
 }
 impl std::error::Error for TooManyKeyGroupsAssociatedToDistribution {}
-/// See [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution)
+/// See [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution).
 pub mod too_many_key_groups_associated_to_distribution {
 
-    /// A builder for [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution)
-    #[non_exhaustive]
+    /// A builder for [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17690,7 +17643,7 @@ pub mod too_many_key_groups_associated_to_distribution {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution)
+        /// Consumes the builder and constructs a [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution).
         pub fn build(self) -> crate::error::TooManyKeyGroupsAssociatedToDistribution {
             crate::error::TooManyKeyGroupsAssociatedToDistribution {
                 message: self.message,
@@ -17699,7 +17652,7 @@ pub mod too_many_key_groups_associated_to_distribution {
     }
 }
 impl TooManyKeyGroupsAssociatedToDistribution {
-    /// Creates a new builder-style object to manufacture [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution)
+    /// Creates a new builder-style object to manufacture [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution).
     pub fn builder() -> crate::error::too_many_key_groups_associated_to_distribution::Builder {
         crate::error::too_many_key_groups_associated_to_distribution::Builder::default()
     }
@@ -17735,11 +17688,10 @@ impl std::fmt::Display for TooManyHeadersInForwardedValues {
     }
 }
 impl std::error::Error for TooManyHeadersInForwardedValues {}
-/// See [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues)
+/// See [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues).
 pub mod too_many_headers_in_forwarded_values {
 
-    /// A builder for [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues)
-    #[non_exhaustive]
+    /// A builder for [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17755,7 +17707,7 @@ pub mod too_many_headers_in_forwarded_values {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues)
+        /// Consumes the builder and constructs a [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues).
         pub fn build(self) -> crate::error::TooManyHeadersInForwardedValues {
             crate::error::TooManyHeadersInForwardedValues {
                 message: self.message,
@@ -17764,7 +17716,7 @@ pub mod too_many_headers_in_forwarded_values {
     }
 }
 impl TooManyHeadersInForwardedValues {
-    /// Creates a new builder-style object to manufacture [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues)
+    /// Creates a new builder-style object to manufacture [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues).
     pub fn builder() -> crate::error::too_many_headers_in_forwarded_values::Builder {
         crate::error::too_many_headers_in_forwarded_values::Builder::default()
     }
@@ -17800,11 +17752,10 @@ impl std::fmt::Display for TooManyFunctionAssociations {
     }
 }
 impl std::error::Error for TooManyFunctionAssociations {}
-/// See [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations)
+/// See [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations).
 pub mod too_many_function_associations {
 
-    /// A builder for [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17820,7 +17771,7 @@ pub mod too_many_function_associations {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations)
+        /// Consumes the builder and constructs a [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations).
         pub fn build(self) -> crate::error::TooManyFunctionAssociations {
             crate::error::TooManyFunctionAssociations {
                 message: self.message,
@@ -17829,7 +17780,7 @@ pub mod too_many_function_associations {
     }
 }
 impl TooManyFunctionAssociations {
-    /// Creates a new builder-style object to manufacture [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations)
+    /// Creates a new builder-style object to manufacture [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations).
     pub fn builder() -> crate::error::too_many_function_associations::Builder {
         crate::error::too_many_function_associations::Builder::default()
     }
@@ -17868,11 +17819,10 @@ impl std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
     }
 }
 impl std::error::Error for TooManyDistributionsWithSingleFunctionArn {}
-/// See [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn)
+/// See [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn).
 pub mod too_many_distributions_with_single_function_arn {
 
-    /// A builder for [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17888,7 +17838,7 @@ pub mod too_many_distributions_with_single_function_arn {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn)
+        /// Consumes the builder and constructs a [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn).
         pub fn build(self) -> crate::error::TooManyDistributionsWithSingleFunctionArn {
             crate::error::TooManyDistributionsWithSingleFunctionArn {
                 message: self.message,
@@ -17897,7 +17847,7 @@ pub mod too_many_distributions_with_single_function_arn {
     }
 }
 impl TooManyDistributionsWithSingleFunctionArn {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn).
     pub fn builder() -> crate::error::too_many_distributions_with_single_function_arn::Builder {
         crate::error::too_many_distributions_with_single_function_arn::Builder::default()
     }
@@ -17933,11 +17883,10 @@ impl std::fmt::Display for TooManyDistributionsWithLambdaAssociations {
     }
 }
 impl std::error::Error for TooManyDistributionsWithLambdaAssociations {}
-/// See [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations)
+/// See [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations).
 pub mod too_many_distributions_with_lambda_associations {
 
-    /// A builder for [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -17953,7 +17902,7 @@ pub mod too_many_distributions_with_lambda_associations {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations)
+        /// Consumes the builder and constructs a [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations).
         pub fn build(self) -> crate::error::TooManyDistributionsWithLambdaAssociations {
             crate::error::TooManyDistributionsWithLambdaAssociations {
                 message: self.message,
@@ -17962,7 +17911,7 @@ pub mod too_many_distributions_with_lambda_associations {
     }
 }
 impl TooManyDistributionsWithLambdaAssociations {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations).
     pub fn builder() -> crate::error::too_many_distributions_with_lambda_associations::Builder {
         crate::error::too_many_distributions_with_lambda_associations::Builder::default()
     }
@@ -17998,11 +17947,10 @@ impl std::fmt::Display for TooManyDistributionsWithFunctionAssociations {
     }
 }
 impl std::error::Error for TooManyDistributionsWithFunctionAssociations {}
-/// See [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations)
+/// See [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations).
 pub mod too_many_distributions_with_function_associations {
 
-    /// A builder for [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18018,7 +17966,7 @@ pub mod too_many_distributions_with_function_associations {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations)
+        /// Consumes the builder and constructs a [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations).
         pub fn build(self) -> crate::error::TooManyDistributionsWithFunctionAssociations {
             crate::error::TooManyDistributionsWithFunctionAssociations {
                 message: self.message,
@@ -18027,7 +17975,7 @@ pub mod too_many_distributions_with_function_associations {
     }
 }
 impl TooManyDistributionsWithFunctionAssociations {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations).
     pub fn builder() -> crate::error::too_many_distributions_with_function_associations::Builder {
         crate::error::too_many_distributions_with_function_associations::Builder::default()
     }
@@ -18064,11 +18012,10 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToResponseHeadersPolicy
     }
 }
 impl std::error::Error for TooManyDistributionsAssociatedToResponseHeadersPolicy {}
-/// See [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
+/// See [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
 pub mod too_many_distributions_associated_to_response_headers_policy {
 
-    /// A builder for [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18084,7 +18031,7 @@ pub mod too_many_distributions_associated_to_response_headers_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
+        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
         pub fn build(self) -> crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
             crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy {
                 message: self.message,
@@ -18093,7 +18040,7 @@ pub mod too_many_distributions_associated_to_response_headers_policy {
     }
 }
 impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
     pub fn builder(
     ) -> crate::error::too_many_distributions_associated_to_response_headers_policy::Builder {
         crate::error::too_many_distributions_associated_to_response_headers_policy::Builder::default(
@@ -18131,11 +18078,10 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToOriginRequestPolicy {
     }
 }
 impl std::error::Error for TooManyDistributionsAssociatedToOriginRequestPolicy {}
-/// See [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy)
+/// See [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy).
 pub mod too_many_distributions_associated_to_origin_request_policy {
 
-    /// A builder for [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18151,7 +18097,7 @@ pub mod too_many_distributions_associated_to_origin_request_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy)
+        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy).
         pub fn build(self) -> crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy {
             crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy {
                 message: self.message,
@@ -18160,7 +18106,7 @@ pub mod too_many_distributions_associated_to_origin_request_policy {
     }
 }
 impl TooManyDistributionsAssociatedToOriginRequestPolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy).
     pub fn builder(
     ) -> crate::error::too_many_distributions_associated_to_origin_request_policy::Builder {
         crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default()
@@ -18197,11 +18143,10 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToKeyGroup {
     }
 }
 impl std::error::Error for TooManyDistributionsAssociatedToKeyGroup {}
-/// See [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup)
+/// See [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup).
 pub mod too_many_distributions_associated_to_key_group {
 
-    /// A builder for [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18217,7 +18162,7 @@ pub mod too_many_distributions_associated_to_key_group {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup)
+        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup).
         pub fn build(self) -> crate::error::TooManyDistributionsAssociatedToKeyGroup {
             crate::error::TooManyDistributionsAssociatedToKeyGroup {
                 message: self.message,
@@ -18226,7 +18171,7 @@ pub mod too_many_distributions_associated_to_key_group {
     }
 }
 impl TooManyDistributionsAssociatedToKeyGroup {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup).
     pub fn builder() -> crate::error::too_many_distributions_associated_to_key_group::Builder {
         crate::error::too_many_distributions_associated_to_key_group::Builder::default()
     }
@@ -18266,11 +18211,10 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptionC
     }
 }
 impl std::error::Error for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {}
-/// See [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig)
+/// See [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
 pub mod too_many_distributions_associated_to_field_level_encryption_config {
 
-    /// A builder for [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18286,7 +18230,7 @@ pub mod too_many_distributions_associated_to_field_level_encryption_config {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig)
+        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
         pub fn build(
             self,
         ) -> crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
@@ -18297,7 +18241,7 @@ pub mod too_many_distributions_associated_to_field_level_encryption_config {
     }
 }
 impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
     pub fn builder(
     ) -> crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder
     {
@@ -18335,11 +18279,10 @@ impl std::fmt::Display for TooManyDistributionsAssociatedToCachePolicy {
     }
 }
 impl std::error::Error for TooManyDistributionsAssociatedToCachePolicy {}
-/// See [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy)
+/// See [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy).
 pub mod too_many_distributions_associated_to_cache_policy {
 
-    /// A builder for [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18355,7 +18298,7 @@ pub mod too_many_distributions_associated_to_cache_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy)
+        /// Consumes the builder and constructs a [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy).
         pub fn build(self) -> crate::error::TooManyDistributionsAssociatedToCachePolicy {
             crate::error::TooManyDistributionsAssociatedToCachePolicy {
                 message: self.message,
@@ -18364,7 +18307,7 @@ pub mod too_many_distributions_associated_to_cache_policy {
     }
 }
 impl TooManyDistributionsAssociatedToCachePolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy).
     pub fn builder() -> crate::error::too_many_distributions_associated_to_cache_policy::Builder {
         crate::error::too_many_distributions_associated_to_cache_policy::Builder::default()
     }
@@ -18400,11 +18343,10 @@ impl std::fmt::Display for TooManyDistributionCnamEs {
     }
 }
 impl std::error::Error for TooManyDistributionCnamEs {}
-/// See [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs)
+/// See [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs).
 pub mod too_many_distribution_cnam_es {
 
-    /// A builder for [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18420,7 +18362,7 @@ pub mod too_many_distribution_cnam_es {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs)
+        /// Consumes the builder and constructs a [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs).
         pub fn build(self) -> crate::error::TooManyDistributionCnamEs {
             crate::error::TooManyDistributionCnamEs {
                 message: self.message,
@@ -18429,7 +18371,7 @@ pub mod too_many_distribution_cnam_es {
     }
 }
 impl TooManyDistributionCnamEs {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs).
     pub fn builder() -> crate::error::too_many_distribution_cnam_es::Builder {
         crate::error::too_many_distribution_cnam_es::Builder::default()
     }
@@ -18465,11 +18407,10 @@ impl std::fmt::Display for TooManyCookieNamesInWhiteList {
     }
 }
 impl std::error::Error for TooManyCookieNamesInWhiteList {}
-/// See [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList)
+/// See [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList).
 pub mod too_many_cookie_names_in_white_list {
 
-    /// A builder for [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18485,7 +18426,7 @@ pub mod too_many_cookie_names_in_white_list {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList)
+        /// Consumes the builder and constructs a [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList).
         pub fn build(self) -> crate::error::TooManyCookieNamesInWhiteList {
             crate::error::TooManyCookieNamesInWhiteList {
                 message: self.message,
@@ -18494,7 +18435,7 @@ pub mod too_many_cookie_names_in_white_list {
     }
 }
 impl TooManyCookieNamesInWhiteList {
-    /// Creates a new builder-style object to manufacture [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList)
+    /// Creates a new builder-style object to manufacture [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList).
     pub fn builder() -> crate::error::too_many_cookie_names_in_white_list::Builder {
         crate::error::too_many_cookie_names_in_white_list::Builder::default()
     }
@@ -18530,11 +18471,10 @@ impl std::fmt::Display for TooManyCertificates {
     }
 }
 impl std::error::Error for TooManyCertificates {}
-/// See [`TooManyCertificates`](crate::error::TooManyCertificates)
+/// See [`TooManyCertificates`](crate::error::TooManyCertificates).
 pub mod too_many_certificates {
 
-    /// A builder for [`TooManyCertificates`](crate::error::TooManyCertificates)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCertificates`](crate::error::TooManyCertificates).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18550,7 +18490,7 @@ pub mod too_many_certificates {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCertificates`](crate::error::TooManyCertificates)
+        /// Consumes the builder and constructs a [`TooManyCertificates`](crate::error::TooManyCertificates).
         pub fn build(self) -> crate::error::TooManyCertificates {
             crate::error::TooManyCertificates {
                 message: self.message,
@@ -18559,7 +18499,7 @@ pub mod too_many_certificates {
     }
 }
 impl TooManyCertificates {
-    /// Creates a new builder-style object to manufacture [`TooManyCertificates`](crate::error::TooManyCertificates)
+    /// Creates a new builder-style object to manufacture [`TooManyCertificates`](crate::error::TooManyCertificates).
     pub fn builder() -> crate::error::too_many_certificates::Builder {
         crate::error::too_many_certificates::Builder::default()
     }
@@ -18595,11 +18535,10 @@ impl std::fmt::Display for TooManyCacheBehaviors {
     }
 }
 impl std::error::Error for TooManyCacheBehaviors {}
-/// See [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors)
+/// See [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors).
 pub mod too_many_cache_behaviors {
 
-    /// A builder for [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18615,7 +18554,7 @@ pub mod too_many_cache_behaviors {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors)
+        /// Consumes the builder and constructs a [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors).
         pub fn build(self) -> crate::error::TooManyCacheBehaviors {
             crate::error::TooManyCacheBehaviors {
                 message: self.message,
@@ -18624,7 +18563,7 @@ pub mod too_many_cache_behaviors {
     }
 }
 impl TooManyCacheBehaviors {
-    /// Creates a new builder-style object to manufacture [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors)
+    /// Creates a new builder-style object to manufacture [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors).
     pub fn builder() -> crate::error::too_many_cache_behaviors::Builder {
         crate::error::too_many_cache_behaviors::Builder::default()
     }
@@ -18660,11 +18599,10 @@ impl std::fmt::Display for RealtimeLogConfigOwnerMismatch {
     }
 }
 impl std::error::Error for RealtimeLogConfigOwnerMismatch {}
-/// See [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch)
+/// See [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch).
 pub mod realtime_log_config_owner_mismatch {
 
-    /// A builder for [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch)
-    #[non_exhaustive]
+    /// A builder for [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18680,7 +18618,7 @@ pub mod realtime_log_config_owner_mismatch {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch)
+        /// Consumes the builder and constructs a [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch).
         pub fn build(self) -> crate::error::RealtimeLogConfigOwnerMismatch {
             crate::error::RealtimeLogConfigOwnerMismatch {
                 message: self.message,
@@ -18689,7 +18627,7 @@ pub mod realtime_log_config_owner_mismatch {
     }
 }
 impl RealtimeLogConfigOwnerMismatch {
-    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch)
+    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch).
     pub fn builder() -> crate::error::realtime_log_config_owner_mismatch::Builder {
         crate::error::realtime_log_config_owner_mismatch::Builder::default()
     }
@@ -18725,11 +18663,10 @@ impl std::fmt::Display for NoSuchOrigin {
     }
 }
 impl std::error::Error for NoSuchOrigin {}
-/// See [`NoSuchOrigin`](crate::error::NoSuchOrigin)
+/// See [`NoSuchOrigin`](crate::error::NoSuchOrigin).
 pub mod no_such_origin {
 
-    /// A builder for [`NoSuchOrigin`](crate::error::NoSuchOrigin)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchOrigin`](crate::error::NoSuchOrigin).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18745,7 +18682,7 @@ pub mod no_such_origin {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchOrigin`](crate::error::NoSuchOrigin)
+        /// Consumes the builder and constructs a [`NoSuchOrigin`](crate::error::NoSuchOrigin).
         pub fn build(self) -> crate::error::NoSuchOrigin {
             crate::error::NoSuchOrigin {
                 message: self.message,
@@ -18754,7 +18691,7 @@ pub mod no_such_origin {
     }
 }
 impl NoSuchOrigin {
-    /// Creates a new builder-style object to manufacture [`NoSuchOrigin`](crate::error::NoSuchOrigin)
+    /// Creates a new builder-style object to manufacture [`NoSuchOrigin`](crate::error::NoSuchOrigin).
     pub fn builder() -> crate::error::no_such_origin::Builder {
         crate::error::no_such_origin::Builder::default()
     }
@@ -18790,11 +18727,10 @@ impl std::fmt::Display for NoSuchDistribution {
     }
 }
 impl std::error::Error for NoSuchDistribution {}
-/// See [`NoSuchDistribution`](crate::error::NoSuchDistribution)
+/// See [`NoSuchDistribution`](crate::error::NoSuchDistribution).
 pub mod no_such_distribution {
 
-    /// A builder for [`NoSuchDistribution`](crate::error::NoSuchDistribution)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchDistribution`](crate::error::NoSuchDistribution).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18810,7 +18746,7 @@ pub mod no_such_distribution {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchDistribution`](crate::error::NoSuchDistribution)
+        /// Consumes the builder and constructs a [`NoSuchDistribution`](crate::error::NoSuchDistribution).
         pub fn build(self) -> crate::error::NoSuchDistribution {
             crate::error::NoSuchDistribution {
                 message: self.message,
@@ -18819,7 +18755,7 @@ pub mod no_such_distribution {
     }
 }
 impl NoSuchDistribution {
-    /// Creates a new builder-style object to manufacture [`NoSuchDistribution`](crate::error::NoSuchDistribution)
+    /// Creates a new builder-style object to manufacture [`NoSuchDistribution`](crate::error::NoSuchDistribution).
     pub fn builder() -> crate::error::no_such_distribution::Builder {
         crate::error::no_such_distribution::Builder::default()
     }
@@ -18855,11 +18791,10 @@ impl std::fmt::Display for NoSuchCachePolicy {
     }
 }
 impl std::error::Error for NoSuchCachePolicy {}
-/// See [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy)
+/// See [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy).
 pub mod no_such_cache_policy {
 
-    /// A builder for [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18875,7 +18810,7 @@ pub mod no_such_cache_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy)
+        /// Consumes the builder and constructs a [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy).
         pub fn build(self) -> crate::error::NoSuchCachePolicy {
             crate::error::NoSuchCachePolicy {
                 message: self.message,
@@ -18884,7 +18819,7 @@ pub mod no_such_cache_policy {
     }
 }
 impl NoSuchCachePolicy {
-    /// Creates a new builder-style object to manufacture [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy)
+    /// Creates a new builder-style object to manufacture [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy).
     pub fn builder() -> crate::error::no_such_cache_policy::Builder {
         crate::error::no_such_cache_policy::Builder::default()
     }
@@ -18920,11 +18855,10 @@ impl std::fmt::Display for InvalidWebAclId {
     }
 }
 impl std::error::Error for InvalidWebAclId {}
-/// See [`InvalidWebAclId`](crate::error::InvalidWebAclId)
+/// See [`InvalidWebAclId`](crate::error::InvalidWebAclId).
 pub mod invalid_web_acl_id {
 
-    /// A builder for [`InvalidWebAclId`](crate::error::InvalidWebAclId)
-    #[non_exhaustive]
+    /// A builder for [`InvalidWebAclId`](crate::error::InvalidWebAclId).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -18940,7 +18874,7 @@ pub mod invalid_web_acl_id {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidWebAclId`](crate::error::InvalidWebAclId)
+        /// Consumes the builder and constructs a [`InvalidWebAclId`](crate::error::InvalidWebAclId).
         pub fn build(self) -> crate::error::InvalidWebAclId {
             crate::error::InvalidWebAclId {
                 message: self.message,
@@ -18949,7 +18883,7 @@ pub mod invalid_web_acl_id {
     }
 }
 impl InvalidWebAclId {
-    /// Creates a new builder-style object to manufacture [`InvalidWebAclId`](crate::error::InvalidWebAclId)
+    /// Creates a new builder-style object to manufacture [`InvalidWebAclId`](crate::error::InvalidWebAclId).
     pub fn builder() -> crate::error::invalid_web_acl_id::Builder {
         crate::error::invalid_web_acl_id::Builder::default()
     }
@@ -18985,11 +18919,10 @@ impl std::fmt::Display for InvalidViewerCertificate {
     }
 }
 impl std::error::Error for InvalidViewerCertificate {}
-/// See [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate)
+/// See [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate).
 pub mod invalid_viewer_certificate {
 
-    /// A builder for [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate)
-    #[non_exhaustive]
+    /// A builder for [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19005,7 +18938,7 @@ pub mod invalid_viewer_certificate {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate)
+        /// Consumes the builder and constructs a [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate).
         pub fn build(self) -> crate::error::InvalidViewerCertificate {
             crate::error::InvalidViewerCertificate {
                 message: self.message,
@@ -19014,7 +18947,7 @@ pub mod invalid_viewer_certificate {
     }
 }
 impl InvalidViewerCertificate {
-    /// Creates a new builder-style object to manufacture [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate)
+    /// Creates a new builder-style object to manufacture [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate).
     pub fn builder() -> crate::error::invalid_viewer_certificate::Builder {
         crate::error::invalid_viewer_certificate::Builder::default()
     }
@@ -19050,11 +18983,10 @@ impl std::fmt::Display for InvalidTtlOrder {
     }
 }
 impl std::error::Error for InvalidTtlOrder {}
-/// See [`InvalidTtlOrder`](crate::error::InvalidTtlOrder)
+/// See [`InvalidTtlOrder`](crate::error::InvalidTtlOrder).
 pub mod invalid_ttl_order {
 
-    /// A builder for [`InvalidTtlOrder`](crate::error::InvalidTtlOrder)
-    #[non_exhaustive]
+    /// A builder for [`InvalidTtlOrder`](crate::error::InvalidTtlOrder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19070,7 +19002,7 @@ pub mod invalid_ttl_order {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidTtlOrder`](crate::error::InvalidTtlOrder)
+        /// Consumes the builder and constructs a [`InvalidTtlOrder`](crate::error::InvalidTtlOrder).
         pub fn build(self) -> crate::error::InvalidTtlOrder {
             crate::error::InvalidTtlOrder {
                 message: self.message,
@@ -19079,7 +19011,7 @@ pub mod invalid_ttl_order {
     }
 }
 impl InvalidTtlOrder {
-    /// Creates a new builder-style object to manufacture [`InvalidTtlOrder`](crate::error::InvalidTtlOrder)
+    /// Creates a new builder-style object to manufacture [`InvalidTtlOrder`](crate::error::InvalidTtlOrder).
     pub fn builder() -> crate::error::invalid_ttl_order::Builder {
         crate::error::invalid_ttl_order::Builder::default()
     }
@@ -19115,11 +19047,10 @@ impl std::fmt::Display for InvalidResponseCode {
     }
 }
 impl std::error::Error for InvalidResponseCode {}
-/// See [`InvalidResponseCode`](crate::error::InvalidResponseCode)
+/// See [`InvalidResponseCode`](crate::error::InvalidResponseCode).
 pub mod invalid_response_code {
 
-    /// A builder for [`InvalidResponseCode`](crate::error::InvalidResponseCode)
-    #[non_exhaustive]
+    /// A builder for [`InvalidResponseCode`](crate::error::InvalidResponseCode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19135,7 +19066,7 @@ pub mod invalid_response_code {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidResponseCode`](crate::error::InvalidResponseCode)
+        /// Consumes the builder and constructs a [`InvalidResponseCode`](crate::error::InvalidResponseCode).
         pub fn build(self) -> crate::error::InvalidResponseCode {
             crate::error::InvalidResponseCode {
                 message: self.message,
@@ -19144,7 +19075,7 @@ pub mod invalid_response_code {
     }
 }
 impl InvalidResponseCode {
-    /// Creates a new builder-style object to manufacture [`InvalidResponseCode`](crate::error::InvalidResponseCode)
+    /// Creates a new builder-style object to manufacture [`InvalidResponseCode`](crate::error::InvalidResponseCode).
     pub fn builder() -> crate::error::invalid_response_code::Builder {
         crate::error::invalid_response_code::Builder::default()
     }
@@ -19180,11 +19111,10 @@ impl std::fmt::Display for InvalidRequiredProtocol {
     }
 }
 impl std::error::Error for InvalidRequiredProtocol {}
-/// See [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol)
+/// See [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol).
 pub mod invalid_required_protocol {
 
-    /// A builder for [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol)
-    #[non_exhaustive]
+    /// A builder for [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19200,7 +19130,7 @@ pub mod invalid_required_protocol {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol)
+        /// Consumes the builder and constructs a [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol).
         pub fn build(self) -> crate::error::InvalidRequiredProtocol {
             crate::error::InvalidRequiredProtocol {
                 message: self.message,
@@ -19209,7 +19139,7 @@ pub mod invalid_required_protocol {
     }
 }
 impl InvalidRequiredProtocol {
-    /// Creates a new builder-style object to manufacture [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol)
+    /// Creates a new builder-style object to manufacture [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol).
     pub fn builder() -> crate::error::invalid_required_protocol::Builder {
         crate::error::invalid_required_protocol::Builder::default()
     }
@@ -19245,11 +19175,10 @@ impl std::fmt::Display for InvalidRelativePath {
     }
 }
 impl std::error::Error for InvalidRelativePath {}
-/// See [`InvalidRelativePath`](crate::error::InvalidRelativePath)
+/// See [`InvalidRelativePath`](crate::error::InvalidRelativePath).
 pub mod invalid_relative_path {
 
-    /// A builder for [`InvalidRelativePath`](crate::error::InvalidRelativePath)
-    #[non_exhaustive]
+    /// A builder for [`InvalidRelativePath`](crate::error::InvalidRelativePath).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19265,7 +19194,7 @@ pub mod invalid_relative_path {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidRelativePath`](crate::error::InvalidRelativePath)
+        /// Consumes the builder and constructs a [`InvalidRelativePath`](crate::error::InvalidRelativePath).
         pub fn build(self) -> crate::error::InvalidRelativePath {
             crate::error::InvalidRelativePath {
                 message: self.message,
@@ -19274,7 +19203,7 @@ pub mod invalid_relative_path {
     }
 }
 impl InvalidRelativePath {
-    /// Creates a new builder-style object to manufacture [`InvalidRelativePath`](crate::error::InvalidRelativePath)
+    /// Creates a new builder-style object to manufacture [`InvalidRelativePath`](crate::error::InvalidRelativePath).
     pub fn builder() -> crate::error::invalid_relative_path::Builder {
         crate::error::invalid_relative_path::Builder::default()
     }
@@ -19310,11 +19239,10 @@ impl std::fmt::Display for InvalidQueryStringParameters {
     }
 }
 impl std::error::Error for InvalidQueryStringParameters {}
-/// See [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters)
+/// See [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters).
 pub mod invalid_query_string_parameters {
 
-    /// A builder for [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters)
-    #[non_exhaustive]
+    /// A builder for [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19330,7 +19258,7 @@ pub mod invalid_query_string_parameters {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters)
+        /// Consumes the builder and constructs a [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters).
         pub fn build(self) -> crate::error::InvalidQueryStringParameters {
             crate::error::InvalidQueryStringParameters {
                 message: self.message,
@@ -19339,7 +19267,7 @@ pub mod invalid_query_string_parameters {
     }
 }
 impl InvalidQueryStringParameters {
-    /// Creates a new builder-style object to manufacture [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters)
+    /// Creates a new builder-style object to manufacture [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters).
     pub fn builder() -> crate::error::invalid_query_string_parameters::Builder {
         crate::error::invalid_query_string_parameters::Builder::default()
     }
@@ -19375,11 +19303,10 @@ impl std::fmt::Display for InvalidOriginReadTimeout {
     }
 }
 impl std::error::Error for InvalidOriginReadTimeout {}
-/// See [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout)
+/// See [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout).
 pub mod invalid_origin_read_timeout {
 
-    /// A builder for [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout)
-    #[non_exhaustive]
+    /// A builder for [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19395,7 +19322,7 @@ pub mod invalid_origin_read_timeout {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout)
+        /// Consumes the builder and constructs a [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout).
         pub fn build(self) -> crate::error::InvalidOriginReadTimeout {
             crate::error::InvalidOriginReadTimeout {
                 message: self.message,
@@ -19404,7 +19331,7 @@ pub mod invalid_origin_read_timeout {
     }
 }
 impl InvalidOriginReadTimeout {
-    /// Creates a new builder-style object to manufacture [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout)
+    /// Creates a new builder-style object to manufacture [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout).
     pub fn builder() -> crate::error::invalid_origin_read_timeout::Builder {
         crate::error::invalid_origin_read_timeout::Builder::default()
     }
@@ -19440,11 +19367,10 @@ impl std::fmt::Display for InvalidOriginKeepaliveTimeout {
     }
 }
 impl std::error::Error for InvalidOriginKeepaliveTimeout {}
-/// See [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout)
+/// See [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout).
 pub mod invalid_origin_keepalive_timeout {
 
-    /// A builder for [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout)
-    #[non_exhaustive]
+    /// A builder for [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19460,7 +19386,7 @@ pub mod invalid_origin_keepalive_timeout {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout)
+        /// Consumes the builder and constructs a [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout).
         pub fn build(self) -> crate::error::InvalidOriginKeepaliveTimeout {
             crate::error::InvalidOriginKeepaliveTimeout {
                 message: self.message,
@@ -19469,7 +19395,7 @@ pub mod invalid_origin_keepalive_timeout {
     }
 }
 impl InvalidOriginKeepaliveTimeout {
-    /// Creates a new builder-style object to manufacture [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout)
+    /// Creates a new builder-style object to manufacture [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout).
     pub fn builder() -> crate::error::invalid_origin_keepalive_timeout::Builder {
         crate::error::invalid_origin_keepalive_timeout::Builder::default()
     }
@@ -19505,11 +19431,10 @@ impl std::fmt::Display for InvalidMinimumProtocolVersion {
     }
 }
 impl std::error::Error for InvalidMinimumProtocolVersion {}
-/// See [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion)
+/// See [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion).
 pub mod invalid_minimum_protocol_version {
 
-    /// A builder for [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion)
-    #[non_exhaustive]
+    /// A builder for [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19525,7 +19450,7 @@ pub mod invalid_minimum_protocol_version {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion)
+        /// Consumes the builder and constructs a [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion).
         pub fn build(self) -> crate::error::InvalidMinimumProtocolVersion {
             crate::error::InvalidMinimumProtocolVersion {
                 message: self.message,
@@ -19534,7 +19459,7 @@ pub mod invalid_minimum_protocol_version {
     }
 }
 impl InvalidMinimumProtocolVersion {
-    /// Creates a new builder-style object to manufacture [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion)
+    /// Creates a new builder-style object to manufacture [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion).
     pub fn builder() -> crate::error::invalid_minimum_protocol_version::Builder {
         crate::error::invalid_minimum_protocol_version::Builder::default()
     }
@@ -19570,11 +19495,10 @@ impl std::fmt::Display for InvalidLocationCode {
     }
 }
 impl std::error::Error for InvalidLocationCode {}
-/// See [`InvalidLocationCode`](crate::error::InvalidLocationCode)
+/// See [`InvalidLocationCode`](crate::error::InvalidLocationCode).
 pub mod invalid_location_code {
 
-    /// A builder for [`InvalidLocationCode`](crate::error::InvalidLocationCode)
-    #[non_exhaustive]
+    /// A builder for [`InvalidLocationCode`](crate::error::InvalidLocationCode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19590,7 +19514,7 @@ pub mod invalid_location_code {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidLocationCode`](crate::error::InvalidLocationCode)
+        /// Consumes the builder and constructs a [`InvalidLocationCode`](crate::error::InvalidLocationCode).
         pub fn build(self) -> crate::error::InvalidLocationCode {
             crate::error::InvalidLocationCode {
                 message: self.message,
@@ -19599,7 +19523,7 @@ pub mod invalid_location_code {
     }
 }
 impl InvalidLocationCode {
-    /// Creates a new builder-style object to manufacture [`InvalidLocationCode`](crate::error::InvalidLocationCode)
+    /// Creates a new builder-style object to manufacture [`InvalidLocationCode`](crate::error::InvalidLocationCode).
     pub fn builder() -> crate::error::invalid_location_code::Builder {
         crate::error::invalid_location_code::Builder::default()
     }
@@ -19635,11 +19559,10 @@ impl std::fmt::Display for InvalidLambdaFunctionAssociation {
     }
 }
 impl std::error::Error for InvalidLambdaFunctionAssociation {}
-/// See [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation)
+/// See [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation).
 pub mod invalid_lambda_function_association {
 
-    /// A builder for [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation)
-    #[non_exhaustive]
+    /// A builder for [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19655,7 +19578,7 @@ pub mod invalid_lambda_function_association {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation)
+        /// Consumes the builder and constructs a [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation).
         pub fn build(self) -> crate::error::InvalidLambdaFunctionAssociation {
             crate::error::InvalidLambdaFunctionAssociation {
                 message: self.message,
@@ -19664,7 +19587,7 @@ pub mod invalid_lambda_function_association {
     }
 }
 impl InvalidLambdaFunctionAssociation {
-    /// Creates a new builder-style object to manufacture [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation)
+    /// Creates a new builder-style object to manufacture [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation).
     pub fn builder() -> crate::error::invalid_lambda_function_association::Builder {
         crate::error::invalid_lambda_function_association::Builder::default()
     }
@@ -19700,11 +19623,10 @@ impl std::fmt::Display for InvalidHeadersForS3Origin {
     }
 }
 impl std::error::Error for InvalidHeadersForS3Origin {}
-/// See [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin)
+/// See [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin).
 pub mod invalid_headers_for_s3_origin {
 
-    /// A builder for [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin)
-    #[non_exhaustive]
+    /// A builder for [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19720,7 +19642,7 @@ pub mod invalid_headers_for_s3_origin {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin)
+        /// Consumes the builder and constructs a [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin).
         pub fn build(self) -> crate::error::InvalidHeadersForS3Origin {
             crate::error::InvalidHeadersForS3Origin {
                 message: self.message,
@@ -19729,7 +19651,7 @@ pub mod invalid_headers_for_s3_origin {
     }
 }
 impl InvalidHeadersForS3Origin {
-    /// Creates a new builder-style object to manufacture [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin)
+    /// Creates a new builder-style object to manufacture [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin).
     pub fn builder() -> crate::error::invalid_headers_for_s3_origin::Builder {
         crate::error::invalid_headers_for_s3_origin::Builder::default()
     }
@@ -19765,11 +19687,10 @@ impl std::fmt::Display for InvalidGeoRestrictionParameter {
     }
 }
 impl std::error::Error for InvalidGeoRestrictionParameter {}
-/// See [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter)
+/// See [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter).
 pub mod invalid_geo_restriction_parameter {
 
-    /// A builder for [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter)
-    #[non_exhaustive]
+    /// A builder for [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19785,7 +19706,7 @@ pub mod invalid_geo_restriction_parameter {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter)
+        /// Consumes the builder and constructs a [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter).
         pub fn build(self) -> crate::error::InvalidGeoRestrictionParameter {
             crate::error::InvalidGeoRestrictionParameter {
                 message: self.message,
@@ -19794,7 +19715,7 @@ pub mod invalid_geo_restriction_parameter {
     }
 }
 impl InvalidGeoRestrictionParameter {
-    /// Creates a new builder-style object to manufacture [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter)
+    /// Creates a new builder-style object to manufacture [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter).
     pub fn builder() -> crate::error::invalid_geo_restriction_parameter::Builder {
         crate::error::invalid_geo_restriction_parameter::Builder::default()
     }
@@ -19830,11 +19751,10 @@ impl std::fmt::Display for InvalidFunctionAssociation {
     }
 }
 impl std::error::Error for InvalidFunctionAssociation {}
-/// See [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation)
+/// See [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation).
 pub mod invalid_function_association {
 
-    /// A builder for [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation)
-    #[non_exhaustive]
+    /// A builder for [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19850,7 +19770,7 @@ pub mod invalid_function_association {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation)
+        /// Consumes the builder and constructs a [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation).
         pub fn build(self) -> crate::error::InvalidFunctionAssociation {
             crate::error::InvalidFunctionAssociation {
                 message: self.message,
@@ -19859,7 +19779,7 @@ pub mod invalid_function_association {
     }
 }
 impl InvalidFunctionAssociation {
-    /// Creates a new builder-style object to manufacture [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation)
+    /// Creates a new builder-style object to manufacture [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation).
     pub fn builder() -> crate::error::invalid_function_association::Builder {
         crate::error::invalid_function_association::Builder::default()
     }
@@ -19895,11 +19815,10 @@ impl std::fmt::Display for InvalidForwardCookies {
     }
 }
 impl std::error::Error for InvalidForwardCookies {}
-/// See [`InvalidForwardCookies`](crate::error::InvalidForwardCookies)
+/// See [`InvalidForwardCookies`](crate::error::InvalidForwardCookies).
 pub mod invalid_forward_cookies {
 
-    /// A builder for [`InvalidForwardCookies`](crate::error::InvalidForwardCookies)
-    #[non_exhaustive]
+    /// A builder for [`InvalidForwardCookies`](crate::error::InvalidForwardCookies).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19915,7 +19834,7 @@ pub mod invalid_forward_cookies {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidForwardCookies`](crate::error::InvalidForwardCookies)
+        /// Consumes the builder and constructs a [`InvalidForwardCookies`](crate::error::InvalidForwardCookies).
         pub fn build(self) -> crate::error::InvalidForwardCookies {
             crate::error::InvalidForwardCookies {
                 message: self.message,
@@ -19924,7 +19843,7 @@ pub mod invalid_forward_cookies {
     }
 }
 impl InvalidForwardCookies {
-    /// Creates a new builder-style object to manufacture [`InvalidForwardCookies`](crate::error::InvalidForwardCookies)
+    /// Creates a new builder-style object to manufacture [`InvalidForwardCookies`](crate::error::InvalidForwardCookies).
     pub fn builder() -> crate::error::invalid_forward_cookies::Builder {
         crate::error::invalid_forward_cookies::Builder::default()
     }
@@ -19960,11 +19879,10 @@ impl std::fmt::Display for InvalidErrorCode {
     }
 }
 impl std::error::Error for InvalidErrorCode {}
-/// See [`InvalidErrorCode`](crate::error::InvalidErrorCode)
+/// See [`InvalidErrorCode`](crate::error::InvalidErrorCode).
 pub mod invalid_error_code {
 
-    /// A builder for [`InvalidErrorCode`](crate::error::InvalidErrorCode)
-    #[non_exhaustive]
+    /// A builder for [`InvalidErrorCode`](crate::error::InvalidErrorCode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -19980,7 +19898,7 @@ pub mod invalid_error_code {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidErrorCode`](crate::error::InvalidErrorCode)
+        /// Consumes the builder and constructs a [`InvalidErrorCode`](crate::error::InvalidErrorCode).
         pub fn build(self) -> crate::error::InvalidErrorCode {
             crate::error::InvalidErrorCode {
                 message: self.message,
@@ -19989,7 +19907,7 @@ pub mod invalid_error_code {
     }
 }
 impl InvalidErrorCode {
-    /// Creates a new builder-style object to manufacture [`InvalidErrorCode`](crate::error::InvalidErrorCode)
+    /// Creates a new builder-style object to manufacture [`InvalidErrorCode`](crate::error::InvalidErrorCode).
     pub fn builder() -> crate::error::invalid_error_code::Builder {
         crate::error::invalid_error_code::Builder::default()
     }
@@ -20025,11 +19943,10 @@ impl std::fmt::Display for InvalidDefaultRootObject {
     }
 }
 impl std::error::Error for InvalidDefaultRootObject {}
-/// See [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject)
+/// See [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject).
 pub mod invalid_default_root_object {
 
-    /// A builder for [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20045,7 +19962,7 @@ pub mod invalid_default_root_object {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject)
+        /// Consumes the builder and constructs a [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject).
         pub fn build(self) -> crate::error::InvalidDefaultRootObject {
             crate::error::InvalidDefaultRootObject {
                 message: self.message,
@@ -20054,7 +19971,7 @@ pub mod invalid_default_root_object {
     }
 }
 impl InvalidDefaultRootObject {
-    /// Creates a new builder-style object to manufacture [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject)
+    /// Creates a new builder-style object to manufacture [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject).
     pub fn builder() -> crate::error::invalid_default_root_object::Builder {
         crate::error::invalid_default_root_object::Builder::default()
     }
@@ -20094,11 +20011,10 @@ impl std::fmt::Display for IllegalFieldLevelEncryptionConfigAssociationWithCache
     }
 }
 impl std::error::Error for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {}
-/// See [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior)
+/// See [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior).
 pub mod illegal_field_level_encryption_config_association_with_cache_behavior {
 
-    /// A builder for [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior)
-    #[non_exhaustive]
+    /// A builder for [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20114,7 +20030,7 @@ pub mod illegal_field_level_encryption_config_association_with_cache_behavior {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior)
+        /// Consumes the builder and constructs a [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior).
         pub fn build(
             self,
         ) -> crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
@@ -20125,7 +20041,7 @@ pub mod illegal_field_level_encryption_config_association_with_cache_behavior {
     }
 }
 impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
-    /// Creates a new builder-style object to manufacture [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior)
+    /// Creates a new builder-style object to manufacture [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior).
     pub fn builder(
     ) -> crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder
     {
@@ -20163,11 +20079,10 @@ impl std::fmt::Display for NoSuchCloudFrontOriginAccessIdentity {
     }
 }
 impl std::error::Error for NoSuchCloudFrontOriginAccessIdentity {}
-/// See [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity)
+/// See [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity).
 pub mod no_such_cloud_front_origin_access_identity {
 
-    /// A builder for [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20183,7 +20098,7 @@ pub mod no_such_cloud_front_origin_access_identity {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity)
+        /// Consumes the builder and constructs a [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity).
         pub fn build(self) -> crate::error::NoSuchCloudFrontOriginAccessIdentity {
             crate::error::NoSuchCloudFrontOriginAccessIdentity {
                 message: self.message,
@@ -20192,7 +20107,7 @@ pub mod no_such_cloud_front_origin_access_identity {
     }
 }
 impl NoSuchCloudFrontOriginAccessIdentity {
-    /// Creates a new builder-style object to manufacture [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity)
+    /// Creates a new builder-style object to manufacture [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity).
     pub fn builder() -> crate::error::no_such_cloud_front_origin_access_identity::Builder {
         crate::error::no_such_cloud_front_origin_access_identity::Builder::default()
     }
@@ -20228,11 +20143,10 @@ impl std::fmt::Display for TooManyQueryStringsInCachePolicy {
     }
 }
 impl std::error::Error for TooManyQueryStringsInCachePolicy {}
-/// See [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy)
+/// See [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy).
 pub mod too_many_query_strings_in_cache_policy {
 
-    /// A builder for [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20248,7 +20162,7 @@ pub mod too_many_query_strings_in_cache_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy)
+        /// Consumes the builder and constructs a [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy).
         pub fn build(self) -> crate::error::TooManyQueryStringsInCachePolicy {
             crate::error::TooManyQueryStringsInCachePolicy {
                 message: self.message,
@@ -20257,7 +20171,7 @@ pub mod too_many_query_strings_in_cache_policy {
     }
 }
 impl TooManyQueryStringsInCachePolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy).
     pub fn builder() -> crate::error::too_many_query_strings_in_cache_policy::Builder {
         crate::error::too_many_query_strings_in_cache_policy::Builder::default()
     }
@@ -20293,11 +20207,10 @@ impl std::fmt::Display for TooManyHeadersInCachePolicy {
     }
 }
 impl std::error::Error for TooManyHeadersInCachePolicy {}
-/// See [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy)
+/// See [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy).
 pub mod too_many_headers_in_cache_policy {
 
-    /// A builder for [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20313,7 +20226,7 @@ pub mod too_many_headers_in_cache_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy)
+        /// Consumes the builder and constructs a [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy).
         pub fn build(self) -> crate::error::TooManyHeadersInCachePolicy {
             crate::error::TooManyHeadersInCachePolicy {
                 message: self.message,
@@ -20322,7 +20235,7 @@ pub mod too_many_headers_in_cache_policy {
     }
 }
 impl TooManyHeadersInCachePolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy).
     pub fn builder() -> crate::error::too_many_headers_in_cache_policy::Builder {
         crate::error::too_many_headers_in_cache_policy::Builder::default()
     }
@@ -20358,11 +20271,10 @@ impl std::fmt::Display for TooManyCookiesInCachePolicy {
     }
 }
 impl std::error::Error for TooManyCookiesInCachePolicy {}
-/// See [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy)
+/// See [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy).
 pub mod too_many_cookies_in_cache_policy {
 
-    /// A builder for [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20378,7 +20290,7 @@ pub mod too_many_cookies_in_cache_policy {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy)
+        /// Consumes the builder and constructs a [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy).
         pub fn build(self) -> crate::error::TooManyCookiesInCachePolicy {
             crate::error::TooManyCookiesInCachePolicy {
                 message: self.message,
@@ -20387,7 +20299,7 @@ pub mod too_many_cookies_in_cache_policy {
     }
 }
 impl TooManyCookiesInCachePolicy {
-    /// Creates a new builder-style object to manufacture [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy)
+    /// Creates a new builder-style object to manufacture [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy).
     pub fn builder() -> crate::error::too_many_cookies_in_cache_policy::Builder {
         crate::error::too_many_cookies_in_cache_policy::Builder::default()
     }
@@ -20423,11 +20335,10 @@ impl std::fmt::Display for CachePolicyAlreadyExists {
     }
 }
 impl std::error::Error for CachePolicyAlreadyExists {}
-/// See [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists)
+/// See [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists).
 pub mod cache_policy_already_exists {
 
-    /// A builder for [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20443,7 +20354,7 @@ pub mod cache_policy_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists)
+        /// Consumes the builder and constructs a [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists).
         pub fn build(self) -> crate::error::CachePolicyAlreadyExists {
             crate::error::CachePolicyAlreadyExists {
                 message: self.message,
@@ -20452,7 +20363,7 @@ pub mod cache_policy_already_exists {
     }
 }
 impl CachePolicyAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists).
     pub fn builder() -> crate::error::cache_policy_already_exists::Builder {
         crate::error::cache_policy_already_exists::Builder::default()
     }
@@ -20488,11 +20399,10 @@ impl std::fmt::Display for InvalidTagging {
     }
 }
 impl std::error::Error for InvalidTagging {}
-/// See [`InvalidTagging`](crate::error::InvalidTagging)
+/// See [`InvalidTagging`](crate::error::InvalidTagging).
 pub mod invalid_tagging {
 
-    /// A builder for [`InvalidTagging`](crate::error::InvalidTagging)
-    #[non_exhaustive]
+    /// A builder for [`InvalidTagging`](crate::error::InvalidTagging).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20508,7 +20418,7 @@ pub mod invalid_tagging {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidTagging`](crate::error::InvalidTagging)
+        /// Consumes the builder and constructs a [`InvalidTagging`](crate::error::InvalidTagging).
         pub fn build(self) -> crate::error::InvalidTagging {
             crate::error::InvalidTagging {
                 message: self.message,
@@ -20517,7 +20427,7 @@ pub mod invalid_tagging {
     }
 }
 impl InvalidTagging {
-    /// Creates a new builder-style object to manufacture [`InvalidTagging`](crate::error::InvalidTagging)
+    /// Creates a new builder-style object to manufacture [`InvalidTagging`](crate::error::InvalidTagging).
     pub fn builder() -> crate::error::invalid_tagging::Builder {
         crate::error::invalid_tagging::Builder::default()
     }
@@ -20553,11 +20463,10 @@ impl std::fmt::Display for TestFunctionFailed {
     }
 }
 impl std::error::Error for TestFunctionFailed {}
-/// See [`TestFunctionFailed`](crate::error::TestFunctionFailed)
+/// See [`TestFunctionFailed`](crate::error::TestFunctionFailed).
 pub mod test_function_failed {
 
-    /// A builder for [`TestFunctionFailed`](crate::error::TestFunctionFailed)
-    #[non_exhaustive]
+    /// A builder for [`TestFunctionFailed`](crate::error::TestFunctionFailed).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20573,7 +20482,7 @@ pub mod test_function_failed {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TestFunctionFailed`](crate::error::TestFunctionFailed)
+        /// Consumes the builder and constructs a [`TestFunctionFailed`](crate::error::TestFunctionFailed).
         pub fn build(self) -> crate::error::TestFunctionFailed {
             crate::error::TestFunctionFailed {
                 message: self.message,
@@ -20582,7 +20491,7 @@ pub mod test_function_failed {
     }
 }
 impl TestFunctionFailed {
-    /// Creates a new builder-style object to manufacture [`TestFunctionFailed`](crate::error::TestFunctionFailed)
+    /// Creates a new builder-style object to manufacture [`TestFunctionFailed`](crate::error::TestFunctionFailed).
     pub fn builder() -> crate::error::test_function_failed::Builder {
         crate::error::test_function_failed::Builder::default()
     }
@@ -20618,11 +20527,10 @@ impl std::fmt::Display for NoSuchInvalidation {
     }
 }
 impl std::error::Error for NoSuchInvalidation {}
-/// See [`NoSuchInvalidation`](crate::error::NoSuchInvalidation)
+/// See [`NoSuchInvalidation`](crate::error::NoSuchInvalidation).
 pub mod no_such_invalidation {
 
-    /// A builder for [`NoSuchInvalidation`](crate::error::NoSuchInvalidation)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchInvalidation`](crate::error::NoSuchInvalidation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20638,7 +20546,7 @@ pub mod no_such_invalidation {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchInvalidation`](crate::error::NoSuchInvalidation)
+        /// Consumes the builder and constructs a [`NoSuchInvalidation`](crate::error::NoSuchInvalidation).
         pub fn build(self) -> crate::error::NoSuchInvalidation {
             crate::error::NoSuchInvalidation {
                 message: self.message,
@@ -20647,7 +20555,7 @@ pub mod no_such_invalidation {
     }
 }
 impl NoSuchInvalidation {
-    /// Creates a new builder-style object to manufacture [`NoSuchInvalidation`](crate::error::NoSuchInvalidation)
+    /// Creates a new builder-style object to manufacture [`NoSuchInvalidation`](crate::error::NoSuchInvalidation).
     pub fn builder() -> crate::error::no_such_invalidation::Builder {
         crate::error::no_such_invalidation::Builder::default()
     }
@@ -20683,11 +20591,10 @@ impl std::fmt::Display for StreamingDistributionNotDisabled {
     }
 }
 impl std::error::Error for StreamingDistributionNotDisabled {}
-/// See [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled)
+/// See [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled).
 pub mod streaming_distribution_not_disabled {
 
-    /// A builder for [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled)
-    #[non_exhaustive]
+    /// A builder for [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20703,7 +20610,7 @@ pub mod streaming_distribution_not_disabled {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled)
+        /// Consumes the builder and constructs a [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled).
         pub fn build(self) -> crate::error::StreamingDistributionNotDisabled {
             crate::error::StreamingDistributionNotDisabled {
                 message: self.message,
@@ -20712,7 +20619,7 @@ pub mod streaming_distribution_not_disabled {
     }
 }
 impl StreamingDistributionNotDisabled {
-    /// Creates a new builder-style object to manufacture [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled)
+    /// Creates a new builder-style object to manufacture [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled).
     pub fn builder() -> crate::error::streaming_distribution_not_disabled::Builder {
         crate::error::streaming_distribution_not_disabled::Builder::default()
     }
@@ -20748,11 +20655,10 @@ impl std::fmt::Display for ResponseHeadersPolicyInUse {
     }
 }
 impl std::error::Error for ResponseHeadersPolicyInUse {}
-/// See [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
+/// See [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse).
 pub mod response_headers_policy_in_use {
 
-    /// A builder for [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
-    #[non_exhaustive]
+    /// A builder for [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20768,7 +20674,7 @@ pub mod response_headers_policy_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
+        /// Consumes the builder and constructs a [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse).
         pub fn build(self) -> crate::error::ResponseHeadersPolicyInUse {
             crate::error::ResponseHeadersPolicyInUse {
                 message: self.message,
@@ -20777,7 +20683,7 @@ pub mod response_headers_policy_in_use {
     }
 }
 impl ResponseHeadersPolicyInUse {
-    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse)
+    /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse).
     pub fn builder() -> crate::error::response_headers_policy_in_use::Builder {
         crate::error::response_headers_policy_in_use::Builder::default()
     }
@@ -20813,11 +20719,10 @@ impl std::fmt::Display for IllegalDelete {
     }
 }
 impl std::error::Error for IllegalDelete {}
-/// See [`IllegalDelete`](crate::error::IllegalDelete)
+/// See [`IllegalDelete`](crate::error::IllegalDelete).
 pub mod illegal_delete {
 
-    /// A builder for [`IllegalDelete`](crate::error::IllegalDelete)
-    #[non_exhaustive]
+    /// A builder for [`IllegalDelete`](crate::error::IllegalDelete).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20833,7 +20738,7 @@ pub mod illegal_delete {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`IllegalDelete`](crate::error::IllegalDelete)
+        /// Consumes the builder and constructs a [`IllegalDelete`](crate::error::IllegalDelete).
         pub fn build(self) -> crate::error::IllegalDelete {
             crate::error::IllegalDelete {
                 message: self.message,
@@ -20842,7 +20747,7 @@ pub mod illegal_delete {
     }
 }
 impl IllegalDelete {
-    /// Creates a new builder-style object to manufacture [`IllegalDelete`](crate::error::IllegalDelete)
+    /// Creates a new builder-style object to manufacture [`IllegalDelete`](crate::error::IllegalDelete).
     pub fn builder() -> crate::error::illegal_delete::Builder {
         crate::error::illegal_delete::Builder::default()
     }
@@ -20878,11 +20783,10 @@ impl std::fmt::Display for RealtimeLogConfigInUse {
     }
 }
 impl std::error::Error for RealtimeLogConfigInUse {}
-/// See [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse)
+/// See [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse).
 pub mod realtime_log_config_in_use {
 
-    /// A builder for [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse)
-    #[non_exhaustive]
+    /// A builder for [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20898,7 +20802,7 @@ pub mod realtime_log_config_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse)
+        /// Consumes the builder and constructs a [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse).
         pub fn build(self) -> crate::error::RealtimeLogConfigInUse {
             crate::error::RealtimeLogConfigInUse {
                 message: self.message,
@@ -20907,7 +20811,7 @@ pub mod realtime_log_config_in_use {
     }
 }
 impl RealtimeLogConfigInUse {
-    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse)
+    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse).
     pub fn builder() -> crate::error::realtime_log_config_in_use::Builder {
         crate::error::realtime_log_config_in_use::Builder::default()
     }
@@ -20943,11 +20847,10 @@ impl std::fmt::Display for PublicKeyInUse {
     }
 }
 impl std::error::Error for PublicKeyInUse {}
-/// See [`PublicKeyInUse`](crate::error::PublicKeyInUse)
+/// See [`PublicKeyInUse`](crate::error::PublicKeyInUse).
 pub mod public_key_in_use {
 
-    /// A builder for [`PublicKeyInUse`](crate::error::PublicKeyInUse)
-    #[non_exhaustive]
+    /// A builder for [`PublicKeyInUse`](crate::error::PublicKeyInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -20963,7 +20866,7 @@ pub mod public_key_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicKeyInUse`](crate::error::PublicKeyInUse)
+        /// Consumes the builder and constructs a [`PublicKeyInUse`](crate::error::PublicKeyInUse).
         pub fn build(self) -> crate::error::PublicKeyInUse {
             crate::error::PublicKeyInUse {
                 message: self.message,
@@ -20972,7 +20875,7 @@ pub mod public_key_in_use {
     }
 }
 impl PublicKeyInUse {
-    /// Creates a new builder-style object to manufacture [`PublicKeyInUse`](crate::error::PublicKeyInUse)
+    /// Creates a new builder-style object to manufacture [`PublicKeyInUse`](crate::error::PublicKeyInUse).
     pub fn builder() -> crate::error::public_key_in_use::Builder {
         crate::error::public_key_in_use::Builder::default()
     }
@@ -21008,11 +20911,10 @@ impl std::fmt::Display for OriginRequestPolicyInUse {
     }
 }
 impl std::error::Error for OriginRequestPolicyInUse {}
-/// See [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse)
+/// See [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse).
 pub mod origin_request_policy_in_use {
 
-    /// A builder for [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse)
-    #[non_exhaustive]
+    /// A builder for [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21028,7 +20930,7 @@ pub mod origin_request_policy_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse)
+        /// Consumes the builder and constructs a [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse).
         pub fn build(self) -> crate::error::OriginRequestPolicyInUse {
             crate::error::OriginRequestPolicyInUse {
                 message: self.message,
@@ -21037,7 +20939,7 @@ pub mod origin_request_policy_in_use {
     }
 }
 impl OriginRequestPolicyInUse {
-    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse)
+    /// Creates a new builder-style object to manufacture [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse).
     pub fn builder() -> crate::error::origin_request_policy_in_use::Builder {
         crate::error::origin_request_policy_in_use::Builder::default()
     }
@@ -21073,11 +20975,10 @@ impl std::fmt::Display for ResourceInUse {
     }
 }
 impl std::error::Error for ResourceInUse {}
-/// See [`ResourceInUse`](crate::error::ResourceInUse)
+/// See [`ResourceInUse`](crate::error::ResourceInUse).
 pub mod resource_in_use {
 
-    /// A builder for [`ResourceInUse`](crate::error::ResourceInUse)
-    #[non_exhaustive]
+    /// A builder for [`ResourceInUse`](crate::error::ResourceInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21093,7 +20994,7 @@ pub mod resource_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceInUse`](crate::error::ResourceInUse)
+        /// Consumes the builder and constructs a [`ResourceInUse`](crate::error::ResourceInUse).
         pub fn build(self) -> crate::error::ResourceInUse {
             crate::error::ResourceInUse {
                 message: self.message,
@@ -21102,7 +21003,7 @@ pub mod resource_in_use {
     }
 }
 impl ResourceInUse {
-    /// Creates a new builder-style object to manufacture [`ResourceInUse`](crate::error::ResourceInUse)
+    /// Creates a new builder-style object to manufacture [`ResourceInUse`](crate::error::ResourceInUse).
     pub fn builder() -> crate::error::resource_in_use::Builder {
         crate::error::resource_in_use::Builder::default()
     }
@@ -21138,11 +21039,10 @@ impl std::fmt::Display for FunctionInUse {
     }
 }
 impl std::error::Error for FunctionInUse {}
-/// See [`FunctionInUse`](crate::error::FunctionInUse)
+/// See [`FunctionInUse`](crate::error::FunctionInUse).
 pub mod function_in_use {
 
-    /// A builder for [`FunctionInUse`](crate::error::FunctionInUse)
-    #[non_exhaustive]
+    /// A builder for [`FunctionInUse`](crate::error::FunctionInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21158,7 +21058,7 @@ pub mod function_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FunctionInUse`](crate::error::FunctionInUse)
+        /// Consumes the builder and constructs a [`FunctionInUse`](crate::error::FunctionInUse).
         pub fn build(self) -> crate::error::FunctionInUse {
             crate::error::FunctionInUse {
                 message: self.message,
@@ -21167,7 +21067,7 @@ pub mod function_in_use {
     }
 }
 impl FunctionInUse {
-    /// Creates a new builder-style object to manufacture [`FunctionInUse`](crate::error::FunctionInUse)
+    /// Creates a new builder-style object to manufacture [`FunctionInUse`](crate::error::FunctionInUse).
     pub fn builder() -> crate::error::function_in_use::Builder {
         crate::error::function_in_use::Builder::default()
     }
@@ -21203,11 +21103,10 @@ impl std::fmt::Display for FieldLevelEncryptionProfileInUse {
     }
 }
 impl std::error::Error for FieldLevelEncryptionProfileInUse {}
-/// See [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse)
+/// See [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse).
 pub mod field_level_encryption_profile_in_use {
 
-    /// A builder for [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse)
-    #[non_exhaustive]
+    /// A builder for [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21223,7 +21122,7 @@ pub mod field_level_encryption_profile_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse)
+        /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse).
         pub fn build(self) -> crate::error::FieldLevelEncryptionProfileInUse {
             crate::error::FieldLevelEncryptionProfileInUse {
                 message: self.message,
@@ -21232,7 +21131,7 @@ pub mod field_level_encryption_profile_in_use {
     }
 }
 impl FieldLevelEncryptionProfileInUse {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse)
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse).
     pub fn builder() -> crate::error::field_level_encryption_profile_in_use::Builder {
         crate::error::field_level_encryption_profile_in_use::Builder::default()
     }
@@ -21268,11 +21167,10 @@ impl std::fmt::Display for FieldLevelEncryptionConfigInUse {
     }
 }
 impl std::error::Error for FieldLevelEncryptionConfigInUse {}
-/// See [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse)
+/// See [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse).
 pub mod field_level_encryption_config_in_use {
 
-    /// A builder for [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse)
-    #[non_exhaustive]
+    /// A builder for [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21288,7 +21186,7 @@ pub mod field_level_encryption_config_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse)
+        /// Consumes the builder and constructs a [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse).
         pub fn build(self) -> crate::error::FieldLevelEncryptionConfigInUse {
             crate::error::FieldLevelEncryptionConfigInUse {
                 message: self.message,
@@ -21297,7 +21195,7 @@ pub mod field_level_encryption_config_in_use {
     }
 }
 impl FieldLevelEncryptionConfigInUse {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse)
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse).
     pub fn builder() -> crate::error::field_level_encryption_config_in_use::Builder {
         crate::error::field_level_encryption_config_in_use::Builder::default()
     }
@@ -21333,11 +21231,10 @@ impl std::fmt::Display for DistributionNotDisabled {
     }
 }
 impl std::error::Error for DistributionNotDisabled {}
-/// See [`DistributionNotDisabled`](crate::error::DistributionNotDisabled)
+/// See [`DistributionNotDisabled`](crate::error::DistributionNotDisabled).
 pub mod distribution_not_disabled {
 
-    /// A builder for [`DistributionNotDisabled`](crate::error::DistributionNotDisabled)
-    #[non_exhaustive]
+    /// A builder for [`DistributionNotDisabled`](crate::error::DistributionNotDisabled).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21353,7 +21250,7 @@ pub mod distribution_not_disabled {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DistributionNotDisabled`](crate::error::DistributionNotDisabled)
+        /// Consumes the builder and constructs a [`DistributionNotDisabled`](crate::error::DistributionNotDisabled).
         pub fn build(self) -> crate::error::DistributionNotDisabled {
             crate::error::DistributionNotDisabled {
                 message: self.message,
@@ -21362,7 +21259,7 @@ pub mod distribution_not_disabled {
     }
 }
 impl DistributionNotDisabled {
-    /// Creates a new builder-style object to manufacture [`DistributionNotDisabled`](crate::error::DistributionNotDisabled)
+    /// Creates a new builder-style object to manufacture [`DistributionNotDisabled`](crate::error::DistributionNotDisabled).
     pub fn builder() -> crate::error::distribution_not_disabled::Builder {
         crate::error::distribution_not_disabled::Builder::default()
     }
@@ -21398,11 +21295,10 @@ impl std::fmt::Display for CloudFrontOriginAccessIdentityInUse {
     }
 }
 impl std::error::Error for CloudFrontOriginAccessIdentityInUse {}
-/// See [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse)
+/// See [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse).
 pub mod cloud_front_origin_access_identity_in_use {
 
-    /// A builder for [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse)
-    #[non_exhaustive]
+    /// A builder for [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21418,7 +21314,7 @@ pub mod cloud_front_origin_access_identity_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse)
+        /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse).
         pub fn build(self) -> crate::error::CloudFrontOriginAccessIdentityInUse {
             crate::error::CloudFrontOriginAccessIdentityInUse {
                 message: self.message,
@@ -21427,7 +21323,7 @@ pub mod cloud_front_origin_access_identity_in_use {
     }
 }
 impl CloudFrontOriginAccessIdentityInUse {
-    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse)
+    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse).
     pub fn builder() -> crate::error::cloud_front_origin_access_identity_in_use::Builder {
         crate::error::cloud_front_origin_access_identity_in_use::Builder::default()
     }
@@ -21463,11 +21359,10 @@ impl std::fmt::Display for CachePolicyInUse {
     }
 }
 impl std::error::Error for CachePolicyInUse {}
-/// See [`CachePolicyInUse`](crate::error::CachePolicyInUse)
+/// See [`CachePolicyInUse`](crate::error::CachePolicyInUse).
 pub mod cache_policy_in_use {
 
-    /// A builder for [`CachePolicyInUse`](crate::error::CachePolicyInUse)
-    #[non_exhaustive]
+    /// A builder for [`CachePolicyInUse`](crate::error::CachePolicyInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21483,7 +21378,7 @@ pub mod cache_policy_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CachePolicyInUse`](crate::error::CachePolicyInUse)
+        /// Consumes the builder and constructs a [`CachePolicyInUse`](crate::error::CachePolicyInUse).
         pub fn build(self) -> crate::error::CachePolicyInUse {
             crate::error::CachePolicyInUse {
                 message: self.message,
@@ -21492,7 +21387,7 @@ pub mod cache_policy_in_use {
     }
 }
 impl CachePolicyInUse {
-    /// Creates a new builder-style object to manufacture [`CachePolicyInUse`](crate::error::CachePolicyInUse)
+    /// Creates a new builder-style object to manufacture [`CachePolicyInUse`](crate::error::CachePolicyInUse).
     pub fn builder() -> crate::error::cache_policy_in_use::Builder {
         crate::error::cache_policy_in_use::Builder::default()
     }
@@ -21528,11 +21423,10 @@ impl std::fmt::Display for TooManyStreamingDistributions {
     }
 }
 impl std::error::Error for TooManyStreamingDistributions {}
-/// See [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions)
+/// See [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions).
 pub mod too_many_streaming_distributions {
 
-    /// A builder for [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions)
-    #[non_exhaustive]
+    /// A builder for [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21548,7 +21442,7 @@ pub mod too_many_streaming_distributions {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions)
+        /// Consumes the builder and constructs a [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions).
         pub fn build(self) -> crate::error::TooManyStreamingDistributions {
             crate::error::TooManyStreamingDistributions {
                 message: self.message,
@@ -21557,7 +21451,7 @@ pub mod too_many_streaming_distributions {
     }
 }
 impl TooManyStreamingDistributions {
-    /// Creates a new builder-style object to manufacture [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions)
+    /// Creates a new builder-style object to manufacture [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions).
     pub fn builder() -> crate::error::too_many_streaming_distributions::Builder {
         crate::error::too_many_streaming_distributions::Builder::default()
     }
@@ -21593,11 +21487,10 @@ impl std::fmt::Display for StreamingDistributionAlreadyExists {
     }
 }
 impl std::error::Error for StreamingDistributionAlreadyExists {}
-/// See [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists)
+/// See [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists).
 pub mod streaming_distribution_already_exists {
 
-    /// A builder for [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21613,7 +21506,7 @@ pub mod streaming_distribution_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists)
+        /// Consumes the builder and constructs a [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists).
         pub fn build(self) -> crate::error::StreamingDistributionAlreadyExists {
             crate::error::StreamingDistributionAlreadyExists {
                 message: self.message,
@@ -21622,7 +21515,7 @@ pub mod streaming_distribution_already_exists {
     }
 }
 impl StreamingDistributionAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists).
     pub fn builder() -> crate::error::streaming_distribution_already_exists::Builder {
         crate::error::streaming_distribution_already_exists::Builder::default()
     }
@@ -21658,11 +21551,10 @@ impl std::fmt::Display for InvalidOrigin {
     }
 }
 impl std::error::Error for InvalidOrigin {}
-/// See [`InvalidOrigin`](crate::error::InvalidOrigin)
+/// See [`InvalidOrigin`](crate::error::InvalidOrigin).
 pub mod invalid_origin {
 
-    /// A builder for [`InvalidOrigin`](crate::error::InvalidOrigin)
-    #[non_exhaustive]
+    /// A builder for [`InvalidOrigin`](crate::error::InvalidOrigin).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21678,7 +21570,7 @@ pub mod invalid_origin {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidOrigin`](crate::error::InvalidOrigin)
+        /// Consumes the builder and constructs a [`InvalidOrigin`](crate::error::InvalidOrigin).
         pub fn build(self) -> crate::error::InvalidOrigin {
             crate::error::InvalidOrigin {
                 message: self.message,
@@ -21687,7 +21579,7 @@ pub mod invalid_origin {
     }
 }
 impl InvalidOrigin {
-    /// Creates a new builder-style object to manufacture [`InvalidOrigin`](crate::error::InvalidOrigin)
+    /// Creates a new builder-style object to manufacture [`InvalidOrigin`](crate::error::InvalidOrigin).
     pub fn builder() -> crate::error::invalid_origin::Builder {
         crate::error::invalid_origin::Builder::default()
     }
@@ -21724,11 +21616,10 @@ impl std::fmt::Display for TooManyResponseHeadersPolicies {
     }
 }
 impl std::error::Error for TooManyResponseHeadersPolicies {}
-/// See [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
+/// See [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies).
 pub mod too_many_response_headers_policies {
 
-    /// A builder for [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
-    #[non_exhaustive]
+    /// A builder for [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21744,7 +21635,7 @@ pub mod too_many_response_headers_policies {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
+        /// Consumes the builder and constructs a [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies).
         pub fn build(self) -> crate::error::TooManyResponseHeadersPolicies {
             crate::error::TooManyResponseHeadersPolicies {
                 message: self.message,
@@ -21753,7 +21644,7 @@ pub mod too_many_response_headers_policies {
     }
 }
 impl TooManyResponseHeadersPolicies {
-    /// Creates a new builder-style object to manufacture [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies)
+    /// Creates a new builder-style object to manufacture [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies).
     pub fn builder() -> crate::error::too_many_response_headers_policies::Builder {
         crate::error::too_many_response_headers_policies::Builder::default()
     }
@@ -21789,11 +21680,10 @@ impl std::fmt::Display for TooManyRealtimeLogConfigs {
     }
 }
 impl std::error::Error for TooManyRealtimeLogConfigs {}
-/// See [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs)
+/// See [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs).
 pub mod too_many_realtime_log_configs {
 
-    /// A builder for [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs)
-    #[non_exhaustive]
+    /// A builder for [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21809,7 +21699,7 @@ pub mod too_many_realtime_log_configs {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs)
+        /// Consumes the builder and constructs a [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs).
         pub fn build(self) -> crate::error::TooManyRealtimeLogConfigs {
             crate::error::TooManyRealtimeLogConfigs {
                 message: self.message,
@@ -21818,7 +21708,7 @@ pub mod too_many_realtime_log_configs {
     }
 }
 impl TooManyRealtimeLogConfigs {
-    /// Creates a new builder-style object to manufacture [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs)
+    /// Creates a new builder-style object to manufacture [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs).
     pub fn builder() -> crate::error::too_many_realtime_log_configs::Builder {
         crate::error::too_many_realtime_log_configs::Builder::default()
     }
@@ -21854,11 +21744,10 @@ impl std::fmt::Display for RealtimeLogConfigAlreadyExists {
     }
 }
 impl std::error::Error for RealtimeLogConfigAlreadyExists {}
-/// See [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists)
+/// See [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists).
 pub mod realtime_log_config_already_exists {
 
-    /// A builder for [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21874,7 +21763,7 @@ pub mod realtime_log_config_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists)
+        /// Consumes the builder and constructs a [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists).
         pub fn build(self) -> crate::error::RealtimeLogConfigAlreadyExists {
             crate::error::RealtimeLogConfigAlreadyExists {
                 message: self.message,
@@ -21883,7 +21772,7 @@ pub mod realtime_log_config_already_exists {
     }
 }
 impl RealtimeLogConfigAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists).
     pub fn builder() -> crate::error::realtime_log_config_already_exists::Builder {
         crate::error::realtime_log_config_already_exists::Builder::default()
     }
@@ -21919,11 +21808,10 @@ impl std::fmt::Display for TooManyPublicKeys {
     }
 }
 impl std::error::Error for TooManyPublicKeys {}
-/// See [`TooManyPublicKeys`](crate::error::TooManyPublicKeys)
+/// See [`TooManyPublicKeys`](crate::error::TooManyPublicKeys).
 pub mod too_many_public_keys {
 
-    /// A builder for [`TooManyPublicKeys`](crate::error::TooManyPublicKeys)
-    #[non_exhaustive]
+    /// A builder for [`TooManyPublicKeys`](crate::error::TooManyPublicKeys).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -21939,7 +21827,7 @@ pub mod too_many_public_keys {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyPublicKeys`](crate::error::TooManyPublicKeys)
+        /// Consumes the builder and constructs a [`TooManyPublicKeys`](crate::error::TooManyPublicKeys).
         pub fn build(self) -> crate::error::TooManyPublicKeys {
             crate::error::TooManyPublicKeys {
                 message: self.message,
@@ -21948,7 +21836,7 @@ pub mod too_many_public_keys {
     }
 }
 impl TooManyPublicKeys {
-    /// Creates a new builder-style object to manufacture [`TooManyPublicKeys`](crate::error::TooManyPublicKeys)
+    /// Creates a new builder-style object to manufacture [`TooManyPublicKeys`](crate::error::TooManyPublicKeys).
     pub fn builder() -> crate::error::too_many_public_keys::Builder {
         crate::error::too_many_public_keys::Builder::default()
     }
@@ -21984,11 +21872,10 @@ impl std::fmt::Display for PublicKeyAlreadyExists {
     }
 }
 impl std::error::Error for PublicKeyAlreadyExists {}
-/// See [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists)
+/// See [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists).
 pub mod public_key_already_exists {
 
-    /// A builder for [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22004,7 +21891,7 @@ pub mod public_key_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists)
+        /// Consumes the builder and constructs a [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists).
         pub fn build(self) -> crate::error::PublicKeyAlreadyExists {
             crate::error::PublicKeyAlreadyExists {
                 message: self.message,
@@ -22013,7 +21900,7 @@ pub mod public_key_already_exists {
     }
 }
 impl PublicKeyAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists).
     pub fn builder() -> crate::error::public_key_already_exists::Builder {
         crate::error::public_key_already_exists::Builder::default()
     }
@@ -22049,11 +21936,10 @@ impl std::fmt::Display for TooManyOriginRequestPolicies {
     }
 }
 impl std::error::Error for TooManyOriginRequestPolicies {}
-/// See [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies)
+/// See [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies).
 pub mod too_many_origin_request_policies {
 
-    /// A builder for [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies)
-    #[non_exhaustive]
+    /// A builder for [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22069,7 +21955,7 @@ pub mod too_many_origin_request_policies {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies)
+        /// Consumes the builder and constructs a [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies).
         pub fn build(self) -> crate::error::TooManyOriginRequestPolicies {
             crate::error::TooManyOriginRequestPolicies {
                 message: self.message,
@@ -22078,7 +21964,7 @@ pub mod too_many_origin_request_policies {
     }
 }
 impl TooManyOriginRequestPolicies {
-    /// Creates a new builder-style object to manufacture [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies)
+    /// Creates a new builder-style object to manufacture [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies).
     pub fn builder() -> crate::error::too_many_origin_request_policies::Builder {
         crate::error::too_many_origin_request_policies::Builder::default()
     }
@@ -22114,11 +22000,10 @@ impl std::fmt::Display for TooManyKeyGroups {
     }
 }
 impl std::error::Error for TooManyKeyGroups {}
-/// See [`TooManyKeyGroups`](crate::error::TooManyKeyGroups)
+/// See [`TooManyKeyGroups`](crate::error::TooManyKeyGroups).
 pub mod too_many_key_groups {
 
-    /// A builder for [`TooManyKeyGroups`](crate::error::TooManyKeyGroups)
-    #[non_exhaustive]
+    /// A builder for [`TooManyKeyGroups`](crate::error::TooManyKeyGroups).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22134,7 +22019,7 @@ pub mod too_many_key_groups {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyKeyGroups`](crate::error::TooManyKeyGroups)
+        /// Consumes the builder and constructs a [`TooManyKeyGroups`](crate::error::TooManyKeyGroups).
         pub fn build(self) -> crate::error::TooManyKeyGroups {
             crate::error::TooManyKeyGroups {
                 message: self.message,
@@ -22143,7 +22028,7 @@ pub mod too_many_key_groups {
     }
 }
 impl TooManyKeyGroups {
-    /// Creates a new builder-style object to manufacture [`TooManyKeyGroups`](crate::error::TooManyKeyGroups)
+    /// Creates a new builder-style object to manufacture [`TooManyKeyGroups`](crate::error::TooManyKeyGroups).
     pub fn builder() -> crate::error::too_many_key_groups::Builder {
         crate::error::too_many_key_groups::Builder::default()
     }
@@ -22179,11 +22064,10 @@ impl std::fmt::Display for TooManyInvalidationsInProgress {
     }
 }
 impl std::error::Error for TooManyInvalidationsInProgress {}
-/// See [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress)
+/// See [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress).
 pub mod too_many_invalidations_in_progress {
 
-    /// A builder for [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress)
-    #[non_exhaustive]
+    /// A builder for [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22199,7 +22083,7 @@ pub mod too_many_invalidations_in_progress {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress)
+        /// Consumes the builder and constructs a [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress).
         pub fn build(self) -> crate::error::TooManyInvalidationsInProgress {
             crate::error::TooManyInvalidationsInProgress {
                 message: self.message,
@@ -22208,7 +22092,7 @@ pub mod too_many_invalidations_in_progress {
     }
 }
 impl TooManyInvalidationsInProgress {
-    /// Creates a new builder-style object to manufacture [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress)
+    /// Creates a new builder-style object to manufacture [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress).
     pub fn builder() -> crate::error::too_many_invalidations_in_progress::Builder {
         crate::error::too_many_invalidations_in_progress::Builder::default()
     }
@@ -22244,11 +22128,10 @@ impl std::fmt::Display for BatchTooLarge {
     }
 }
 impl std::error::Error for BatchTooLarge {}
-/// See [`BatchTooLarge`](crate::error::BatchTooLarge)
+/// See [`BatchTooLarge`](crate::error::BatchTooLarge).
 pub mod batch_too_large {
 
-    /// A builder for [`BatchTooLarge`](crate::error::BatchTooLarge)
-    #[non_exhaustive]
+    /// A builder for [`BatchTooLarge`](crate::error::BatchTooLarge).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22264,7 +22147,7 @@ pub mod batch_too_large {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchTooLarge`](crate::error::BatchTooLarge)
+        /// Consumes the builder and constructs a [`BatchTooLarge`](crate::error::BatchTooLarge).
         pub fn build(self) -> crate::error::BatchTooLarge {
             crate::error::BatchTooLarge {
                 message: self.message,
@@ -22273,7 +22156,7 @@ pub mod batch_too_large {
     }
 }
 impl BatchTooLarge {
-    /// Creates a new builder-style object to manufacture [`BatchTooLarge`](crate::error::BatchTooLarge)
+    /// Creates a new builder-style object to manufacture [`BatchTooLarge`](crate::error::BatchTooLarge).
     pub fn builder() -> crate::error::batch_too_large::Builder {
         crate::error::batch_too_large::Builder::default()
     }
@@ -22309,11 +22192,10 @@ impl std::fmt::Display for TooManyFunctions {
     }
 }
 impl std::error::Error for TooManyFunctions {}
-/// See [`TooManyFunctions`](crate::error::TooManyFunctions)
+/// See [`TooManyFunctions`](crate::error::TooManyFunctions).
 pub mod too_many_functions {
 
-    /// A builder for [`TooManyFunctions`](crate::error::TooManyFunctions)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFunctions`](crate::error::TooManyFunctions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22329,7 +22211,7 @@ pub mod too_many_functions {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFunctions`](crate::error::TooManyFunctions)
+        /// Consumes the builder and constructs a [`TooManyFunctions`](crate::error::TooManyFunctions).
         pub fn build(self) -> crate::error::TooManyFunctions {
             crate::error::TooManyFunctions {
                 message: self.message,
@@ -22338,7 +22220,7 @@ pub mod too_many_functions {
     }
 }
 impl TooManyFunctions {
-    /// Creates a new builder-style object to manufacture [`TooManyFunctions`](crate::error::TooManyFunctions)
+    /// Creates a new builder-style object to manufacture [`TooManyFunctions`](crate::error::TooManyFunctions).
     pub fn builder() -> crate::error::too_many_functions::Builder {
         crate::error::too_many_functions::Builder::default()
     }
@@ -22374,11 +22256,10 @@ impl std::fmt::Display for FunctionAlreadyExists {
     }
 }
 impl std::error::Error for FunctionAlreadyExists {}
-/// See [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists)
+/// See [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists).
 pub mod function_already_exists {
 
-    /// A builder for [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22394,7 +22275,7 @@ pub mod function_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists)
+        /// Consumes the builder and constructs a [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists).
         pub fn build(self) -> crate::error::FunctionAlreadyExists {
             crate::error::FunctionAlreadyExists {
                 message: self.message,
@@ -22403,7 +22284,7 @@ pub mod function_already_exists {
     }
 }
 impl FunctionAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists).
     pub fn builder() -> crate::error::function_already_exists::Builder {
         crate::error::function_already_exists::Builder::default()
     }
@@ -22439,11 +22320,10 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionProfiles {
     }
 }
 impl std::error::Error for TooManyFieldLevelEncryptionProfiles {}
-/// See [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles)
+/// See [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles).
 pub mod too_many_field_level_encryption_profiles {
 
-    /// A builder for [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22459,7 +22339,7 @@ pub mod too_many_field_level_encryption_profiles {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles)
+        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles).
         pub fn build(self) -> crate::error::TooManyFieldLevelEncryptionProfiles {
             crate::error::TooManyFieldLevelEncryptionProfiles {
                 message: self.message,
@@ -22468,7 +22348,7 @@ pub mod too_many_field_level_encryption_profiles {
     }
 }
 impl TooManyFieldLevelEncryptionProfiles {
-    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles)
+    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles).
     pub fn builder() -> crate::error::too_many_field_level_encryption_profiles::Builder {
         crate::error::too_many_field_level_encryption_profiles::Builder::default()
     }
@@ -22504,11 +22384,10 @@ impl std::fmt::Display for TooManyFieldLevelEncryptionConfigs {
     }
 }
 impl std::error::Error for TooManyFieldLevelEncryptionConfigs {}
-/// See [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs)
+/// See [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs).
 pub mod too_many_field_level_encryption_configs {
 
-    /// A builder for [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs)
-    #[non_exhaustive]
+    /// A builder for [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22524,7 +22403,7 @@ pub mod too_many_field_level_encryption_configs {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs)
+        /// Consumes the builder and constructs a [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs).
         pub fn build(self) -> crate::error::TooManyFieldLevelEncryptionConfigs {
             crate::error::TooManyFieldLevelEncryptionConfigs {
                 message: self.message,
@@ -22533,7 +22412,7 @@ pub mod too_many_field_level_encryption_configs {
     }
 }
 impl TooManyFieldLevelEncryptionConfigs {
-    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs)
+    /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs).
     pub fn builder() -> crate::error::too_many_field_level_encryption_configs::Builder {
         crate::error::too_many_field_level_encryption_configs::Builder::default()
     }
@@ -22569,11 +22448,10 @@ impl std::fmt::Display for FieldLevelEncryptionConfigAlreadyExists {
     }
 }
 impl std::error::Error for FieldLevelEncryptionConfigAlreadyExists {}
-/// See [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists)
+/// See [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists).
 pub mod field_level_encryption_config_already_exists {
 
-    /// A builder for [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22589,7 +22467,7 @@ pub mod field_level_encryption_config_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists)
+        /// Consumes the builder and constructs a [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists).
         pub fn build(self) -> crate::error::FieldLevelEncryptionConfigAlreadyExists {
             crate::error::FieldLevelEncryptionConfigAlreadyExists {
                 message: self.message,
@@ -22598,7 +22476,7 @@ pub mod field_level_encryption_config_already_exists {
     }
 }
 impl FieldLevelEncryptionConfigAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists).
     pub fn builder() -> crate::error::field_level_encryption_config_already_exists::Builder {
         crate::error::field_level_encryption_config_already_exists::Builder::default()
     }
@@ -22634,11 +22512,10 @@ impl std::fmt::Display for TooManyDistributions {
     }
 }
 impl std::error::Error for TooManyDistributions {}
-/// See [`TooManyDistributions`](crate::error::TooManyDistributions)
+/// See [`TooManyDistributions`](crate::error::TooManyDistributions).
 pub mod too_many_distributions {
 
-    /// A builder for [`TooManyDistributions`](crate::error::TooManyDistributions)
-    #[non_exhaustive]
+    /// A builder for [`TooManyDistributions`](crate::error::TooManyDistributions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22654,7 +22531,7 @@ pub mod too_many_distributions {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyDistributions`](crate::error::TooManyDistributions)
+        /// Consumes the builder and constructs a [`TooManyDistributions`](crate::error::TooManyDistributions).
         pub fn build(self) -> crate::error::TooManyDistributions {
             crate::error::TooManyDistributions {
                 message: self.message,
@@ -22663,7 +22540,7 @@ pub mod too_many_distributions {
     }
 }
 impl TooManyDistributions {
-    /// Creates a new builder-style object to manufacture [`TooManyDistributions`](crate::error::TooManyDistributions)
+    /// Creates a new builder-style object to manufacture [`TooManyDistributions`](crate::error::TooManyDistributions).
     pub fn builder() -> crate::error::too_many_distributions::Builder {
         crate::error::too_many_distributions::Builder::default()
     }
@@ -22699,11 +22576,10 @@ impl std::fmt::Display for InvalidProtocolSettings {
     }
 }
 impl std::error::Error for InvalidProtocolSettings {}
-/// See [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings)
+/// See [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings).
 pub mod invalid_protocol_settings {
 
-    /// A builder for [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings)
-    #[non_exhaustive]
+    /// A builder for [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22719,7 +22595,7 @@ pub mod invalid_protocol_settings {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings)
+        /// Consumes the builder and constructs a [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings).
         pub fn build(self) -> crate::error::InvalidProtocolSettings {
             crate::error::InvalidProtocolSettings {
                 message: self.message,
@@ -22728,7 +22604,7 @@ pub mod invalid_protocol_settings {
     }
 }
 impl InvalidProtocolSettings {
-    /// Creates a new builder-style object to manufacture [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings)
+    /// Creates a new builder-style object to manufacture [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings).
     pub fn builder() -> crate::error::invalid_protocol_settings::Builder {
         crate::error::invalid_protocol_settings::Builder::default()
     }
@@ -22764,11 +22640,10 @@ impl std::fmt::Display for DistributionAlreadyExists {
     }
 }
 impl std::error::Error for DistributionAlreadyExists {}
-/// See [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists)
+/// See [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists).
 pub mod distribution_already_exists {
 
-    /// A builder for [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22784,7 +22659,7 @@ pub mod distribution_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists)
+        /// Consumes the builder and constructs a [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists).
         pub fn build(self) -> crate::error::DistributionAlreadyExists {
             crate::error::DistributionAlreadyExists {
                 message: self.message,
@@ -22793,7 +22668,7 @@ pub mod distribution_already_exists {
     }
 }
 impl DistributionAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists).
     pub fn builder() -> crate::error::distribution_already_exists::Builder {
         crate::error::distribution_already_exists::Builder::default()
     }
@@ -22829,11 +22704,10 @@ impl std::fmt::Display for TooManyCloudFrontOriginAccessIdentities {
     }
 }
 impl std::error::Error for TooManyCloudFrontOriginAccessIdentities {}
-/// See [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities)
+/// See [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities).
 pub mod too_many_cloud_front_origin_access_identities {
 
-    /// A builder for [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22849,7 +22723,7 @@ pub mod too_many_cloud_front_origin_access_identities {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities)
+        /// Consumes the builder and constructs a [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities).
         pub fn build(self) -> crate::error::TooManyCloudFrontOriginAccessIdentities {
             crate::error::TooManyCloudFrontOriginAccessIdentities {
                 message: self.message,
@@ -22858,7 +22732,7 @@ pub mod too_many_cloud_front_origin_access_identities {
     }
 }
 impl TooManyCloudFrontOriginAccessIdentities {
-    /// Creates a new builder-style object to manufacture [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities)
+    /// Creates a new builder-style object to manufacture [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities).
     pub fn builder() -> crate::error::too_many_cloud_front_origin_access_identities::Builder {
         crate::error::too_many_cloud_front_origin_access_identities::Builder::default()
     }
@@ -22894,11 +22768,10 @@ impl std::fmt::Display for CloudFrontOriginAccessIdentityAlreadyExists {
     }
 }
 impl std::error::Error for CloudFrontOriginAccessIdentityAlreadyExists {}
-/// See [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists)
+/// See [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists).
 pub mod cloud_front_origin_access_identity_already_exists {
 
-    /// A builder for [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22914,7 +22787,7 @@ pub mod cloud_front_origin_access_identity_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists)
+        /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists).
         pub fn build(self) -> crate::error::CloudFrontOriginAccessIdentityAlreadyExists {
             crate::error::CloudFrontOriginAccessIdentityAlreadyExists {
                 message: self.message,
@@ -22923,7 +22796,7 @@ pub mod cloud_front_origin_access_identity_already_exists {
     }
 }
 impl CloudFrontOriginAccessIdentityAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists).
     pub fn builder() -> crate::error::cloud_front_origin_access_identity_already_exists::Builder {
         crate::error::cloud_front_origin_access_identity_already_exists::Builder::default()
     }
@@ -22959,11 +22832,10 @@ impl std::fmt::Display for TooManyCachePolicies {
     }
 }
 impl std::error::Error for TooManyCachePolicies {}
-/// See [`TooManyCachePolicies`](crate::error::TooManyCachePolicies)
+/// See [`TooManyCachePolicies`](crate::error::TooManyCachePolicies).
 pub mod too_many_cache_policies {
 
-    /// A builder for [`TooManyCachePolicies`](crate::error::TooManyCachePolicies)
-    #[non_exhaustive]
+    /// A builder for [`TooManyCachePolicies`](crate::error::TooManyCachePolicies).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22979,7 +22851,7 @@ pub mod too_many_cache_policies {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyCachePolicies`](crate::error::TooManyCachePolicies)
+        /// Consumes the builder and constructs a [`TooManyCachePolicies`](crate::error::TooManyCachePolicies).
         pub fn build(self) -> crate::error::TooManyCachePolicies {
             crate::error::TooManyCachePolicies {
                 message: self.message,
@@ -22988,7 +22860,7 @@ pub mod too_many_cache_policies {
     }
 }
 impl TooManyCachePolicies {
-    /// Creates a new builder-style object to manufacture [`TooManyCachePolicies`](crate::error::TooManyCachePolicies)
+    /// Creates a new builder-style object to manufacture [`TooManyCachePolicies`](crate::error::TooManyCachePolicies).
     pub fn builder() -> crate::error::too_many_cache_policies::Builder {
         crate::error::too_many_cache_policies::Builder::default()
     }

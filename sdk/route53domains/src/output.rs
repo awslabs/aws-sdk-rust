@@ -27,11 +27,10 @@ impl std::fmt::Debug for ViewBillingOutput {
         formatter.finish()
     }
 }
-/// See [`ViewBillingOutput`](crate::output::ViewBillingOutput)
+/// See [`ViewBillingOutput`](crate::output::ViewBillingOutput).
 pub mod view_billing_output {
 
-    /// A builder for [`ViewBillingOutput`](crate::output::ViewBillingOutput)
-    #[non_exhaustive]
+    /// A builder for [`ViewBillingOutput`](crate::output::ViewBillingOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_page_marker: std::option::Option<std::string::String>,
@@ -70,7 +69,7 @@ pub mod view_billing_output {
             self.billing_records = input;
             self
         }
-        /// Consumes the builder and constructs a [`ViewBillingOutput`](crate::output::ViewBillingOutput)
+        /// Consumes the builder and constructs a [`ViewBillingOutput`](crate::output::ViewBillingOutput).
         pub fn build(self) -> crate::output::ViewBillingOutput {
             crate::output::ViewBillingOutput {
                 next_page_marker: self.next_page_marker,
@@ -80,7 +79,7 @@ pub mod view_billing_output {
     }
 }
 impl ViewBillingOutput {
-    /// Creates a new builder-style object to manufacture [`ViewBillingOutput`](crate::output::ViewBillingOutput)
+    /// Creates a new builder-style object to manufacture [`ViewBillingOutput`](crate::output::ViewBillingOutput).
     pub fn builder() -> crate::output::view_billing_output::Builder {
         crate::output::view_billing_output::Builder::default()
     }
@@ -96,22 +95,21 @@ impl std::fmt::Debug for UpdateTagsForDomainOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput)
+/// See [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
 pub mod update_tags_for_domain_output {
 
-    /// A builder for [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput)
+        /// Consumes the builder and constructs a [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
         pub fn build(self) -> crate::output::UpdateTagsForDomainOutput {
             crate::output::UpdateTagsForDomainOutput {}
         }
     }
 }
 impl UpdateTagsForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
     pub fn builder() -> crate::output::update_tags_for_domain_output::Builder {
         crate::output::update_tags_for_domain_output::Builder::default()
     }
@@ -137,11 +135,10 @@ impl std::fmt::Debug for UpdateDomainNameserversOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput)
+/// See [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
 pub mod update_domain_nameservers_output {
 
-    /// A builder for [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -157,7 +154,7 @@ pub mod update_domain_nameservers_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput)
+        /// Consumes the builder and constructs a [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
         pub fn build(self) -> crate::output::UpdateDomainNameserversOutput {
             crate::output::UpdateDomainNameserversOutput {
                 operation_id: self.operation_id,
@@ -166,7 +163,7 @@ pub mod update_domain_nameservers_output {
     }
 }
 impl UpdateDomainNameserversOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
     pub fn builder() -> crate::output::update_domain_nameservers_output::Builder {
         crate::output::update_domain_nameservers_output::Builder::default()
     }
@@ -192,11 +189,10 @@ impl std::fmt::Debug for UpdateDomainContactPrivacyOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput)
+/// See [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
 pub mod update_domain_contact_privacy_output {
 
-    /// A builder for [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -212,7 +208,7 @@ pub mod update_domain_contact_privacy_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput)
+        /// Consumes the builder and constructs a [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
         pub fn build(self) -> crate::output::UpdateDomainContactPrivacyOutput {
             crate::output::UpdateDomainContactPrivacyOutput {
                 operation_id: self.operation_id,
@@ -221,7 +217,7 @@ pub mod update_domain_contact_privacy_output {
     }
 }
 impl UpdateDomainContactPrivacyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
     pub fn builder() -> crate::output::update_domain_contact_privacy_output::Builder {
         crate::output::update_domain_contact_privacy_output::Builder::default()
     }
@@ -247,11 +243,10 @@ impl std::fmt::Debug for UpdateDomainContactOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput)
+/// See [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
 pub mod update_domain_contact_output {
 
-    /// A builder for [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -267,7 +262,7 @@ pub mod update_domain_contact_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput)
+        /// Consumes the builder and constructs a [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
         pub fn build(self) -> crate::output::UpdateDomainContactOutput {
             crate::output::UpdateDomainContactOutput {
                 operation_id: self.operation_id,
@@ -276,7 +271,7 @@ pub mod update_domain_contact_output {
     }
 }
 impl UpdateDomainContactOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
     pub fn builder() -> crate::output::update_domain_contact_output::Builder {
         crate::output::update_domain_contact_output::Builder::default()
     }
@@ -309,11 +304,10 @@ impl std::fmt::Debug for TransferDomainToAnotherAwsAccountOutput {
         formatter.finish()
     }
 }
-/// See [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput)
+/// See [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
 pub mod transfer_domain_to_another_aws_account_output {
 
-    /// A builder for [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -340,7 +334,7 @@ pub mod transfer_domain_to_another_aws_account_output {
             self.password = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput)
+        /// Consumes the builder and constructs a [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::TransferDomainToAnotherAwsAccountOutput {
             crate::output::TransferDomainToAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
@@ -350,7 +344,7 @@ pub mod transfer_domain_to_another_aws_account_output {
     }
 }
 impl TransferDomainToAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput)
+    /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
     pub fn builder() -> crate::output::transfer_domain_to_another_aws_account_output::Builder {
         crate::output::transfer_domain_to_another_aws_account_output::Builder::default()
     }
@@ -376,11 +370,10 @@ impl std::fmt::Debug for TransferDomainOutput {
         formatter.finish()
     }
 }
-/// See [`TransferDomainOutput`](crate::output::TransferDomainOutput)
+/// See [`TransferDomainOutput`](crate::output::TransferDomainOutput).
 pub mod transfer_domain_output {
 
-    /// A builder for [`TransferDomainOutput`](crate::output::TransferDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`TransferDomainOutput`](crate::output::TransferDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -396,7 +389,7 @@ pub mod transfer_domain_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransferDomainOutput`](crate::output::TransferDomainOutput)
+        /// Consumes the builder and constructs a [`TransferDomainOutput`](crate::output::TransferDomainOutput).
         pub fn build(self) -> crate::output::TransferDomainOutput {
             crate::output::TransferDomainOutput {
                 operation_id: self.operation_id,
@@ -405,7 +398,7 @@ pub mod transfer_domain_output {
     }
 }
 impl TransferDomainOutput {
-    /// Creates a new builder-style object to manufacture [`TransferDomainOutput`](crate::output::TransferDomainOutput)
+    /// Creates a new builder-style object to manufacture [`TransferDomainOutput`](crate::output::TransferDomainOutput).
     pub fn builder() -> crate::output::transfer_domain_output::Builder {
         crate::output::transfer_domain_output::Builder::default()
     }
@@ -431,11 +424,10 @@ impl std::fmt::Debug for RetrieveDomainAuthCodeOutput {
         formatter.finish()
     }
 }
-/// See [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput)
+/// See [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
 pub mod retrieve_domain_auth_code_output {
 
-    /// A builder for [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auth_code: std::option::Option<std::string::String>,
@@ -451,7 +443,7 @@ pub mod retrieve_domain_auth_code_output {
             self.auth_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput)
+        /// Consumes the builder and constructs a [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
         pub fn build(self) -> crate::output::RetrieveDomainAuthCodeOutput {
             crate::output::RetrieveDomainAuthCodeOutput {
                 auth_code: self.auth_code,
@@ -460,7 +452,7 @@ pub mod retrieve_domain_auth_code_output {
     }
 }
 impl RetrieveDomainAuthCodeOutput {
-    /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput)
+    /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
     pub fn builder() -> crate::output::retrieve_domain_auth_code_output::Builder {
         crate::output::retrieve_domain_auth_code_output::Builder::default()
     }
@@ -500,11 +492,10 @@ impl std::fmt::Debug for ResendContactReachabilityEmailOutput {
         formatter.finish()
     }
 }
-/// See [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput)
+/// See [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
 pub mod resend_contact_reachability_email_output {
 
-    /// A builder for [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput)
-    #[non_exhaustive]
+    /// A builder for [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -545,7 +536,7 @@ pub mod resend_contact_reachability_email_output {
             self.is_already_verified = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput)
+        /// Consumes the builder and constructs a [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
         pub fn build(self) -> crate::output::ResendContactReachabilityEmailOutput {
             crate::output::ResendContactReachabilityEmailOutput {
                 domain_name: self.domain_name,
@@ -556,7 +547,7 @@ pub mod resend_contact_reachability_email_output {
     }
 }
 impl ResendContactReachabilityEmailOutput {
-    /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput)
+    /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
     pub fn builder() -> crate::output::resend_contact_reachability_email_output::Builder {
         crate::output::resend_contact_reachability_email_output::Builder::default()
     }
@@ -582,11 +573,10 @@ impl std::fmt::Debug for RenewDomainOutput {
         formatter.finish()
     }
 }
-/// See [`RenewDomainOutput`](crate::output::RenewDomainOutput)
+/// See [`RenewDomainOutput`](crate::output::RenewDomainOutput).
 pub mod renew_domain_output {
 
-    /// A builder for [`RenewDomainOutput`](crate::output::RenewDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`RenewDomainOutput`](crate::output::RenewDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -602,7 +592,7 @@ pub mod renew_domain_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RenewDomainOutput`](crate::output::RenewDomainOutput)
+        /// Consumes the builder and constructs a [`RenewDomainOutput`](crate::output::RenewDomainOutput).
         pub fn build(self) -> crate::output::RenewDomainOutput {
             crate::output::RenewDomainOutput {
                 operation_id: self.operation_id,
@@ -611,7 +601,7 @@ pub mod renew_domain_output {
     }
 }
 impl RenewDomainOutput {
-    /// Creates a new builder-style object to manufacture [`RenewDomainOutput`](crate::output::RenewDomainOutput)
+    /// Creates a new builder-style object to manufacture [`RenewDomainOutput`](crate::output::RenewDomainOutput).
     pub fn builder() -> crate::output::renew_domain_output::Builder {
         crate::output::renew_domain_output::Builder::default()
     }
@@ -637,11 +627,10 @@ impl std::fmt::Debug for RejectDomainTransferFromAnotherAwsAccountOutput {
         formatter.finish()
     }
 }
-/// See [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput)
+/// See [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
 pub mod reject_domain_transfer_from_another_aws_account_output {
 
-    /// A builder for [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -657,7 +646,7 @@ pub mod reject_domain_transfer_from_another_aws_account_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput)
+        /// Consumes the builder and constructs a [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::RejectDomainTransferFromAnotherAwsAccountOutput {
             crate::output::RejectDomainTransferFromAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
@@ -666,7 +655,7 @@ pub mod reject_domain_transfer_from_another_aws_account_output {
     }
 }
 impl RejectDomainTransferFromAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput)
+    /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
     pub fn builder(
     ) -> crate::output::reject_domain_transfer_from_another_aws_account_output::Builder {
         crate::output::reject_domain_transfer_from_another_aws_account_output::Builder::default()
@@ -693,11 +682,10 @@ impl std::fmt::Debug for RegisterDomainOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
+/// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
 pub mod register_domain_output {
 
-    /// A builder for [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -713,7 +701,7 @@ pub mod register_domain_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
+        /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
         pub fn build(self) -> crate::output::RegisterDomainOutput {
             crate::output::RegisterDomainOutput {
                 operation_id: self.operation_id,
@@ -722,7 +710,7 @@ pub mod register_domain_output {
     }
 }
 impl RegisterDomainOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
     pub fn builder() -> crate::output::register_domain_output::Builder {
         crate::output::register_domain_output::Builder::default()
     }
@@ -748,11 +736,10 @@ impl std::fmt::Debug for ListTagsForDomainOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput)
+/// See [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
 pub mod list_tags_for_domain_output {
 
-    /// A builder for [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -777,7 +764,7 @@ pub mod list_tags_for_domain_output {
             self.tag_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput)
+        /// Consumes the builder and constructs a [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
         pub fn build(self) -> crate::output::ListTagsForDomainOutput {
             crate::output::ListTagsForDomainOutput {
                 tag_list: self.tag_list,
@@ -786,7 +773,7 @@ pub mod list_tags_for_domain_output {
     }
 }
 impl ListTagsForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
     pub fn builder() -> crate::output::list_tags_for_domain_output::Builder {
         crate::output::list_tags_for_domain_output::Builder::default()
     }
@@ -821,11 +808,10 @@ impl std::fmt::Debug for ListPricesOutput {
         formatter.finish()
     }
 }
-/// See [`ListPricesOutput`](crate::output::ListPricesOutput)
+/// See [`ListPricesOutput`](crate::output::ListPricesOutput).
 pub mod list_prices_output {
 
-    /// A builder for [`ListPricesOutput`](crate::output::ListPricesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPricesOutput`](crate::output::ListPricesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prices: std::option::Option<std::vec::Vec<crate::model::DomainPrice>>,
@@ -866,7 +852,7 @@ pub mod list_prices_output {
             self.next_page_marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPricesOutput`](crate::output::ListPricesOutput)
+        /// Consumes the builder and constructs a [`ListPricesOutput`](crate::output::ListPricesOutput).
         pub fn build(self) -> crate::output::ListPricesOutput {
             crate::output::ListPricesOutput {
                 prices: self.prices,
@@ -876,7 +862,7 @@ pub mod list_prices_output {
     }
 }
 impl ListPricesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPricesOutput`](crate::output::ListPricesOutput)
+    /// Creates a new builder-style object to manufacture [`ListPricesOutput`](crate::output::ListPricesOutput).
     pub fn builder() -> crate::output::list_prices_output::Builder {
         crate::output::list_prices_output::Builder::default()
     }
@@ -909,11 +895,10 @@ impl std::fmt::Debug for ListOperationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListOperationsOutput`](crate::output::ListOperationsOutput)
+/// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
 
-    /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
@@ -952,7 +937,7 @@ pub mod list_operations_output {
             self.next_page_marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput)
+        /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput).
         pub fn build(self) -> crate::output::ListOperationsOutput {
             crate::output::ListOperationsOutput {
                 operations: self.operations,
@@ -962,7 +947,7 @@ pub mod list_operations_output {
     }
 }
 impl ListOperationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
     pub fn builder() -> crate::output::list_operations_output::Builder {
         crate::output::list_operations_output::Builder::default()
     }
@@ -995,11 +980,10 @@ impl std::fmt::Debug for ListDomainsOutput {
         formatter.finish()
     }
 }
-/// See [`ListDomainsOutput`](crate::output::ListDomainsOutput)
+/// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
 
-    /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -1038,7 +1022,7 @@ pub mod list_domains_output {
             self.next_page_marker = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput)
+        /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
                 domains: self.domains,
@@ -1048,7 +1032,7 @@ pub mod list_domains_output {
     }
 }
 impl ListDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput)
+    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     pub fn builder() -> crate::output::list_domains_output::Builder {
         crate::output::list_domains_output::Builder::default()
     }
@@ -1109,11 +1093,10 @@ impl std::fmt::Debug for GetOperationDetailOutput {
         formatter.finish()
     }
 }
-/// See [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput)
+/// See [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
 pub mod get_operation_detail_output {
 
-    /// A builder for [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1190,7 +1173,7 @@ pub mod get_operation_detail_output {
             self.submitted_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput)
+        /// Consumes the builder and constructs a [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
         pub fn build(self) -> crate::output::GetOperationDetailOutput {
             crate::output::GetOperationDetailOutput {
                 operation_id: self.operation_id,
@@ -1204,7 +1187,7 @@ pub mod get_operation_detail_output {
     }
 }
 impl GetOperationDetailOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput)
+    /// Creates a new builder-style object to manufacture [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
     pub fn builder() -> crate::output::get_operation_detail_output::Builder {
         crate::output::get_operation_detail_output::Builder::default()
     }
@@ -1230,11 +1213,10 @@ impl std::fmt::Debug for GetDomainSuggestionsOutput {
         formatter.finish()
     }
 }
-/// See [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput)
+/// See [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
 pub mod get_domain_suggestions_output {
 
-    /// A builder for [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggestions_list:
@@ -1260,7 +1242,7 @@ pub mod get_domain_suggestions_output {
             self.suggestions_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput)
+        /// Consumes the builder and constructs a [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
         pub fn build(self) -> crate::output::GetDomainSuggestionsOutput {
             crate::output::GetDomainSuggestionsOutput {
                 suggestions_list: self.suggestions_list,
@@ -1269,7 +1251,7 @@ pub mod get_domain_suggestions_output {
     }
 }
 impl GetDomainSuggestionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput)
+    /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
     pub fn builder() -> crate::output::get_domain_suggestions_output::Builder {
         crate::output::get_domain_suggestions_output::Builder::default()
     }
@@ -1439,11 +1421,10 @@ impl std::fmt::Debug for GetDomainDetailOutput {
         formatter.finish()
     }
 }
-/// See [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput)
+/// See [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
 pub mod get_domain_detail_output {
 
-    /// A builder for [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1737,7 +1718,7 @@ pub mod get_domain_detail_output {
             self.status_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput)
+        /// Consumes the builder and constructs a [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
         pub fn build(self) -> crate::output::GetDomainDetailOutput {
             crate::output::GetDomainDetailOutput {
                 domain_name: self.domain_name,
@@ -1766,7 +1747,7 @@ pub mod get_domain_detail_output {
     }
 }
 impl GetDomainDetailOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput)
+    /// Creates a new builder-style object to manufacture [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
     pub fn builder() -> crate::output::get_domain_detail_output::Builder {
         crate::output::get_domain_detail_output::Builder::default()
     }
@@ -1839,11 +1820,10 @@ impl std::fmt::Debug for GetContactReachabilityStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput)
+/// See [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
 pub mod get_contact_reachability_status_output {
 
-    /// A builder for [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -1913,7 +1893,7 @@ pub mod get_contact_reachability_status_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput)
+        /// Consumes the builder and constructs a [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
         pub fn build(self) -> crate::output::GetContactReachabilityStatusOutput {
             crate::output::GetContactReachabilityStatusOutput {
                 domain_name: self.domain_name,
@@ -1923,7 +1903,7 @@ pub mod get_contact_reachability_status_output {
     }
 }
 impl GetContactReachabilityStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
     pub fn builder() -> crate::output::get_contact_reachability_status_output::Builder {
         crate::output::get_contact_reachability_status_output::Builder::default()
     }
@@ -1949,11 +1929,10 @@ impl std::fmt::Debug for EnableDomainTransferLockOutput {
         formatter.finish()
     }
 }
-/// See [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput)
+/// See [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
 pub mod enable_domain_transfer_lock_output {
 
-    /// A builder for [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1969,7 +1948,7 @@ pub mod enable_domain_transfer_lock_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput)
+        /// Consumes the builder and constructs a [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
         pub fn build(self) -> crate::output::EnableDomainTransferLockOutput {
             crate::output::EnableDomainTransferLockOutput {
                 operation_id: self.operation_id,
@@ -1978,7 +1957,7 @@ pub mod enable_domain_transfer_lock_output {
     }
 }
 impl EnableDomainTransferLockOutput {
-    /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput)
+    /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
     pub fn builder() -> crate::output::enable_domain_transfer_lock_output::Builder {
         crate::output::enable_domain_transfer_lock_output::Builder::default()
     }
@@ -1994,22 +1973,21 @@ impl std::fmt::Debug for EnableDomainAutoRenewOutput {
         formatter.finish()
     }
 }
-/// See [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput)
+/// See [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
 pub mod enable_domain_auto_renew_output {
 
-    /// A builder for [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput)
+        /// Consumes the builder and constructs a [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
         pub fn build(self) -> crate::output::EnableDomainAutoRenewOutput {
             crate::output::EnableDomainAutoRenewOutput {}
         }
     }
 }
 impl EnableDomainAutoRenewOutput {
-    /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput)
+    /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
     pub fn builder() -> crate::output::enable_domain_auto_renew_output::Builder {
         crate::output::enable_domain_auto_renew_output::Builder::default()
     }
@@ -2035,11 +2013,10 @@ impl std::fmt::Debug for DisableDomainTransferLockOutput {
         formatter.finish()
     }
 }
-/// See [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput)
+/// See [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
 pub mod disable_domain_transfer_lock_output {
 
-    /// A builder for [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -2055,7 +2032,7 @@ pub mod disable_domain_transfer_lock_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput)
+        /// Consumes the builder and constructs a [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
         pub fn build(self) -> crate::output::DisableDomainTransferLockOutput {
             crate::output::DisableDomainTransferLockOutput {
                 operation_id: self.operation_id,
@@ -2064,7 +2041,7 @@ pub mod disable_domain_transfer_lock_output {
     }
 }
 impl DisableDomainTransferLockOutput {
-    /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput)
+    /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
     pub fn builder() -> crate::output::disable_domain_transfer_lock_output::Builder {
         crate::output::disable_domain_transfer_lock_output::Builder::default()
     }
@@ -2080,22 +2057,21 @@ impl std::fmt::Debug for DisableDomainAutoRenewOutput {
         formatter.finish()
     }
 }
-/// See [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput)
+/// See [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
 pub mod disable_domain_auto_renew_output {
 
-    /// A builder for [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput)
+        /// Consumes the builder and constructs a [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
         pub fn build(self) -> crate::output::DisableDomainAutoRenewOutput {
             crate::output::DisableDomainAutoRenewOutput {}
         }
     }
 }
 impl DisableDomainAutoRenewOutput {
-    /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput)
+    /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
     pub fn builder() -> crate::output::disable_domain_auto_renew_output::Builder {
         crate::output::disable_domain_auto_renew_output::Builder::default()
     }
@@ -2111,22 +2087,21 @@ impl std::fmt::Debug for DeleteTagsForDomainOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput)
+/// See [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
 pub mod delete_tags_for_domain_output {
 
-    /// A builder for [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput)
+        /// Consumes the builder and constructs a [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
         pub fn build(self) -> crate::output::DeleteTagsForDomainOutput {
             crate::output::DeleteTagsForDomainOutput {}
         }
     }
 }
 impl DeleteTagsForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
     pub fn builder() -> crate::output::delete_tags_for_domain_output::Builder {
         crate::output::delete_tags_for_domain_output::Builder::default()
     }
@@ -2152,11 +2127,10 @@ impl std::fmt::Debug for DeleteDomainOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
+/// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
 
-    /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -2172,7 +2146,7 @@ pub mod delete_domain_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
+        /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
             crate::output::DeleteDomainOutput {
                 operation_id: self.operation_id,
@@ -2181,7 +2155,7 @@ pub mod delete_domain_output {
     }
 }
 impl DeleteDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     pub fn builder() -> crate::output::delete_domain_output::Builder {
         crate::output::delete_domain_output::Builder::default()
     }
@@ -2207,11 +2181,10 @@ impl std::fmt::Debug for CheckDomainTransferabilityOutput {
         formatter.finish()
     }
 }
-/// See [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput)
+/// See [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
 pub mod check_domain_transferability_output {
 
-    /// A builder for [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput)
-    #[non_exhaustive]
+    /// A builder for [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transferability: std::option::Option<crate::model::DomainTransferability>,
@@ -2230,7 +2203,7 @@ pub mod check_domain_transferability_output {
             self.transferability = input;
             self
         }
-        /// Consumes the builder and constructs a [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput)
+        /// Consumes the builder and constructs a [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
         pub fn build(self) -> crate::output::CheckDomainTransferabilityOutput {
             crate::output::CheckDomainTransferabilityOutput {
                 transferability: self.transferability,
@@ -2239,7 +2212,7 @@ pub mod check_domain_transferability_output {
     }
 }
 impl CheckDomainTransferabilityOutput {
-    /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput)
+    /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
     pub fn builder() -> crate::output::check_domain_transferability_output::Builder {
         crate::output::check_domain_transferability_output::Builder::default()
     }
@@ -2383,11 +2356,10 @@ impl std::fmt::Debug for CheckDomainAvailabilityOutput {
         formatter.finish()
     }
 }
-/// See [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput)
+/// See [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
 pub mod check_domain_availability_output {
 
-    /// A builder for [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput)
-    #[non_exhaustive]
+    /// A builder for [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability: std::option::Option<crate::model::DomainAvailability>,
@@ -2524,7 +2496,7 @@ pub mod check_domain_availability_output {
             self.availability = input;
             self
         }
-        /// Consumes the builder and constructs a [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput)
+        /// Consumes the builder and constructs a [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
         pub fn build(self) -> crate::output::CheckDomainAvailabilityOutput {
             crate::output::CheckDomainAvailabilityOutput {
                 availability: self.availability,
@@ -2533,7 +2505,7 @@ pub mod check_domain_availability_output {
     }
 }
 impl CheckDomainAvailabilityOutput {
-    /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput)
+    /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
     pub fn builder() -> crate::output::check_domain_availability_output::Builder {
         crate::output::check_domain_availability_output::Builder::default()
     }
@@ -2559,11 +2531,10 @@ impl std::fmt::Debug for CancelDomainTransferToAnotherAwsAccountOutput {
         formatter.finish()
     }
 }
-/// See [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput)
+/// See [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
 pub mod cancel_domain_transfer_to_another_aws_account_output {
 
-    /// A builder for [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -2579,7 +2550,7 @@ pub mod cancel_domain_transfer_to_another_aws_account_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput)
+        /// Consumes the builder and constructs a [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::CancelDomainTransferToAnotherAwsAccountOutput {
             crate::output::CancelDomainTransferToAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
@@ -2588,7 +2559,7 @@ pub mod cancel_domain_transfer_to_another_aws_account_output {
     }
 }
 impl CancelDomainTransferToAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput)
+    /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
     pub fn builder() -> crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder
     {
         crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder::default()
@@ -2615,11 +2586,10 @@ impl std::fmt::Debug for AcceptDomainTransferFromAnotherAwsAccountOutput {
         formatter.finish()
     }
 }
-/// See [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput)
+/// See [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
 pub mod accept_domain_transfer_from_another_aws_account_output {
 
-    /// A builder for [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -2635,7 +2605,7 @@ pub mod accept_domain_transfer_from_another_aws_account_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput)
+        /// Consumes the builder and constructs a [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput {
             crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
@@ -2644,7 +2614,7 @@ pub mod accept_domain_transfer_from_another_aws_account_output {
     }
 }
 impl AcceptDomainTransferFromAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput)
+    /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
     pub fn builder(
     ) -> crate::output::accept_domain_transfer_from_another_aws_account_output::Builder {
         crate::output::accept_domain_transfer_from_another_aws_account_output::Builder::default()

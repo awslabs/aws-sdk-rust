@@ -120,11 +120,10 @@ impl std::fmt::Debug for Source {
         formatter.finish()
     }
 }
-/// See [`Source`](crate::model::Source)
+/// See [`Source`](crate::model::Source).
 pub mod source {
 
-    /// A builder for [`Source`](crate::model::Source)
-    #[non_exhaustive]
+    /// A builder for [`Source`](crate::model::Source).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -317,7 +316,7 @@ pub mod source {
             self.whitelist_cidr = input;
             self
         }
-        /// Consumes the builder and constructs a [`Source`](crate::model::Source)
+        /// Consumes the builder and constructs a [`Source`](crate::model::Source).
         pub fn build(self) -> crate::model::Source {
             crate::model::Source {
                 data_transfer_subscriber_fee_percent: self
@@ -341,7 +340,7 @@ pub mod source {
     }
 }
 impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source)
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
     pub fn builder() -> crate::model::source::Builder {
         crate::model::source::Builder::default()
     }
@@ -437,11 +436,10 @@ impl std::fmt::Debug for Transport {
         formatter.finish()
     }
 }
-/// See [`Transport`](crate::model::Transport)
+/// See [`Transport`](crate::model::Transport).
 pub mod transport {
 
-    /// A builder for [`Transport`](crate::model::Transport)
-    #[non_exhaustive]
+    /// A builder for [`Transport`](crate::model::Transport).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -579,7 +577,7 @@ pub mod transport {
             self.stream_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Transport`](crate::model::Transport)
+        /// Consumes the builder and constructs a [`Transport`](crate::model::Transport).
         pub fn build(self) -> crate::model::Transport {
             crate::model::Transport {
                 cidr_allow_list: self.cidr_allow_list,
@@ -598,7 +596,7 @@ pub mod transport {
     }
 }
 impl Transport {
-    /// Creates a new builder-style object to manufacture [`Transport`](crate::model::Transport)
+    /// Creates a new builder-style object to manufacture [`Transport`](crate::model::Transport).
     pub fn builder() -> crate::model::transport::Builder {
         crate::model::transport::Builder::default()
     }
@@ -731,11 +729,10 @@ impl std::fmt::Debug for MediaStreamSourceConfiguration {
         formatter.finish()
     }
 }
-/// See [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration)
+/// See [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
 pub mod media_stream_source_configuration {
 
-    /// A builder for [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
@@ -789,7 +786,7 @@ pub mod media_stream_source_configuration {
             self.media_stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration)
+        /// Consumes the builder and constructs a [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
         pub fn build(self) -> crate::model::MediaStreamSourceConfiguration {
             crate::model::MediaStreamSourceConfiguration {
                 encoding_name: self.encoding_name,
@@ -800,7 +797,7 @@ pub mod media_stream_source_configuration {
     }
 }
 impl MediaStreamSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration)
+    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
     pub fn builder() -> crate::model::media_stream_source_configuration::Builder {
         crate::model::media_stream_source_configuration::Builder::default()
     }
@@ -840,11 +837,10 @@ impl std::fmt::Debug for InputConfiguration {
         formatter.finish()
     }
 }
-/// See [`InputConfiguration`](crate::model::InputConfiguration)
+/// See [`InputConfiguration`](crate::model::InputConfiguration).
 pub mod input_configuration {
 
-    /// A builder for [`InputConfiguration`](crate::model::InputConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`InputConfiguration`](crate::model::InputConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_ip: std::option::Option<std::string::String>,
@@ -885,7 +881,7 @@ pub mod input_configuration {
             self.interface = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputConfiguration`](crate::model::InputConfiguration)
+        /// Consumes the builder and constructs a [`InputConfiguration`](crate::model::InputConfiguration).
         pub fn build(self) -> crate::model::InputConfiguration {
             crate::model::InputConfiguration {
                 input_ip: self.input_ip,
@@ -896,7 +892,7 @@ pub mod input_configuration {
     }
 }
 impl InputConfiguration {
-    /// Creates a new builder-style object to manufacture [`InputConfiguration`](crate::model::InputConfiguration)
+    /// Creates a new builder-style object to manufacture [`InputConfiguration`](crate::model::InputConfiguration).
     pub fn builder() -> crate::model::input_configuration::Builder {
         crate::model::input_configuration::Builder::default()
     }
@@ -922,11 +918,10 @@ impl std::fmt::Debug for Interface {
         formatter.finish()
     }
 }
-/// See [`Interface`](crate::model::Interface)
+/// See [`Interface`](crate::model::Interface).
 pub mod interface {
 
-    /// A builder for [`Interface`](crate::model::Interface)
-    #[non_exhaustive]
+    /// A builder for [`Interface`](crate::model::Interface).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -942,14 +937,14 @@ pub mod interface {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Interface`](crate::model::Interface)
+        /// Consumes the builder and constructs a [`Interface`](crate::model::Interface).
         pub fn build(self) -> crate::model::Interface {
             crate::model::Interface { name: self.name }
         }
     }
 }
 impl Interface {
-    /// Creates a new builder-style object to manufacture [`Interface`](crate::model::Interface)
+    /// Creates a new builder-style object to manufacture [`Interface`](crate::model::Interface).
     pub fn builder() -> crate::model::interface::Builder {
         crate::model::interface::Builder::default()
     }
@@ -1097,11 +1092,10 @@ impl std::fmt::Debug for Encryption {
         formatter.finish()
     }
 }
-/// See [`Encryption`](crate::model::Encryption)
+/// See [`Encryption`](crate::model::Encryption).
 pub mod encryption {
 
-    /// A builder for [`Encryption`](crate::model::Encryption)
-    #[non_exhaustive]
+    /// A builder for [`Encryption`](crate::model::Encryption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<crate::model::Algorithm>,
@@ -1214,7 +1208,7 @@ pub mod encryption {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`Encryption`](crate::model::Encryption)
+        /// Consumes the builder and constructs a [`Encryption`](crate::model::Encryption).
         pub fn build(self) -> crate::model::Encryption {
             crate::model::Encryption {
                 algorithm: self.algorithm,
@@ -1231,7 +1225,7 @@ pub mod encryption {
     }
 }
 impl Encryption {
-    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption)
+    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
     pub fn builder() -> crate::model::encryption::Builder {
         crate::model::encryption::Builder::default()
     }
@@ -1392,11 +1386,10 @@ impl std::fmt::Debug for MediaStreamSourceConfigurationRequest {
         formatter.finish()
     }
 }
-/// See [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest)
+/// See [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
 pub mod media_stream_source_configuration_request {
 
-    /// A builder for [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest)
-    #[non_exhaustive]
+    /// A builder for [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encoding_name: std::option::Option<crate::model::EncodingName>,
@@ -1453,7 +1446,7 @@ pub mod media_stream_source_configuration_request {
             self.media_stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest)
+        /// Consumes the builder and constructs a [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
         pub fn build(self) -> crate::model::MediaStreamSourceConfigurationRequest {
             crate::model::MediaStreamSourceConfigurationRequest {
                 encoding_name: self.encoding_name,
@@ -1464,7 +1457,7 @@ pub mod media_stream_source_configuration_request {
     }
 }
 impl MediaStreamSourceConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest)
+    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
     pub fn builder() -> crate::model::media_stream_source_configuration_request::Builder {
         crate::model::media_stream_source_configuration_request::Builder::default()
     }
@@ -1497,11 +1490,10 @@ impl std::fmt::Debug for InputConfigurationRequest {
         formatter.finish()
     }
 }
-/// See [`InputConfigurationRequest`](crate::model::InputConfigurationRequest)
+/// See [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
 pub mod input_configuration_request {
 
-    /// A builder for [`InputConfigurationRequest`](crate::model::InputConfigurationRequest)
-    #[non_exhaustive]
+    /// A builder for [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_port: std::option::Option<i32>,
@@ -1531,7 +1523,7 @@ pub mod input_configuration_request {
             self.interface = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputConfigurationRequest`](crate::model::InputConfigurationRequest)
+        /// Consumes the builder and constructs a [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
         pub fn build(self) -> crate::model::InputConfigurationRequest {
             crate::model::InputConfigurationRequest {
                 input_port: self.input_port.unwrap_or_default(),
@@ -1541,7 +1533,7 @@ pub mod input_configuration_request {
     }
 }
 impl InputConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`InputConfigurationRequest`](crate::model::InputConfigurationRequest)
+    /// Creates a new builder-style object to manufacture [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
     pub fn builder() -> crate::model::input_configuration_request::Builder {
         crate::model::input_configuration_request::Builder::default()
     }
@@ -1567,11 +1559,10 @@ impl std::fmt::Debug for InterfaceRequest {
         formatter.finish()
     }
 }
-/// See [`InterfaceRequest`](crate::model::InterfaceRequest)
+/// See [`InterfaceRequest`](crate::model::InterfaceRequest).
 pub mod interface_request {
 
-    /// A builder for [`InterfaceRequest`](crate::model::InterfaceRequest)
-    #[non_exhaustive]
+    /// A builder for [`InterfaceRequest`](crate::model::InterfaceRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1587,14 +1578,14 @@ pub mod interface_request {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`InterfaceRequest`](crate::model::InterfaceRequest)
+        /// Consumes the builder and constructs a [`InterfaceRequest`](crate::model::InterfaceRequest).
         pub fn build(self) -> crate::model::InterfaceRequest {
             crate::model::InterfaceRequest { name: self.name }
         }
     }
 }
 impl InterfaceRequest {
-    /// Creates a new builder-style object to manufacture [`InterfaceRequest`](crate::model::InterfaceRequest)
+    /// Creates a new builder-style object to manufacture [`InterfaceRequest`](crate::model::InterfaceRequest).
     pub fn builder() -> crate::model::interface_request::Builder {
         crate::model::interface_request::Builder::default()
     }
@@ -1679,11 +1670,10 @@ impl std::fmt::Debug for UpdateEncryption {
         formatter.finish()
     }
 }
-/// See [`UpdateEncryption`](crate::model::UpdateEncryption)
+/// See [`UpdateEncryption`](crate::model::UpdateEncryption).
 pub mod update_encryption {
 
-    /// A builder for [`UpdateEncryption`](crate::model::UpdateEncryption)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEncryption`](crate::model::UpdateEncryption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<crate::model::Algorithm>,
@@ -1796,7 +1786,7 @@ pub mod update_encryption {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateEncryption`](crate::model::UpdateEncryption)
+        /// Consumes the builder and constructs a [`UpdateEncryption`](crate::model::UpdateEncryption).
         pub fn build(self) -> crate::model::UpdateEncryption {
             crate::model::UpdateEncryption {
                 algorithm: self.algorithm,
@@ -1813,7 +1803,7 @@ pub mod update_encryption {
     }
 }
 impl UpdateEncryption {
-    /// Creates a new builder-style object to manufacture [`UpdateEncryption`](crate::model::UpdateEncryption)
+    /// Creates a new builder-style object to manufacture [`UpdateEncryption`](crate::model::UpdateEncryption).
     pub fn builder() -> crate::model::update_encryption::Builder {
         crate::model::update_encryption::Builder::default()
     }
@@ -1934,11 +1924,10 @@ impl std::fmt::Debug for Output {
         formatter.finish()
     }
 }
-/// See [`Output`](crate::model::Output)
+/// See [`Output`](crate::model::Output).
 pub mod output {
 
-    /// A builder for [`Output`](crate::model::Output)
-    #[non_exhaustive]
+    /// A builder for [`Output`](crate::model::Output).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -2124,7 +2113,7 @@ pub mod output {
             self.vpc_interface_attachment = input;
             self
         }
-        /// Consumes the builder and constructs a [`Output`](crate::model::Output)
+        /// Consumes the builder and constructs a [`Output`](crate::model::Output).
         pub fn build(self) -> crate::model::Output {
             crate::model::Output {
                 data_transfer_subscriber_fee_percent: self
@@ -2147,7 +2136,7 @@ pub mod output {
     }
 }
 impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output)
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
     pub fn builder() -> crate::model::output::Builder {
         crate::model::output::Builder::default()
     }
@@ -2173,11 +2162,10 @@ impl std::fmt::Debug for VpcInterfaceAttachment {
         formatter.finish()
     }
 }
-/// See [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
+/// See [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
 pub mod vpc_interface_attachment {
 
-    /// A builder for [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
-    #[non_exhaustive]
+    /// A builder for [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
@@ -2196,7 +2184,7 @@ pub mod vpc_interface_attachment {
             self.vpc_interface_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
+        /// Consumes the builder and constructs a [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
         pub fn build(self) -> crate::model::VpcInterfaceAttachment {
             crate::model::VpcInterfaceAttachment {
                 vpc_interface_name: self.vpc_interface_name,
@@ -2205,7 +2193,7 @@ pub mod vpc_interface_attachment {
     }
 }
 impl VpcInterfaceAttachment {
-    /// Creates a new builder-style object to manufacture [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment)
+    /// Creates a new builder-style object to manufacture [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
     pub fn builder() -> crate::model::vpc_interface_attachment::Builder {
         crate::model::vpc_interface_attachment::Builder::default()
     }
@@ -2258,11 +2246,10 @@ impl std::fmt::Debug for MediaStreamOutputConfiguration {
         formatter.finish()
     }
 }
-/// See [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
+/// See [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
 pub mod media_stream_output_configuration {
 
-    /// A builder for [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_configurations:
@@ -2333,7 +2320,7 @@ pub mod media_stream_output_configuration {
             self.media_stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
+        /// Consumes the builder and constructs a [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
         pub fn build(self) -> crate::model::MediaStreamOutputConfiguration {
             crate::model::MediaStreamOutputConfiguration {
                 destination_configurations: self.destination_configurations,
@@ -2345,7 +2332,7 @@ pub mod media_stream_output_configuration {
     }
 }
 impl MediaStreamOutputConfiguration {
-    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration)
+    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
     pub fn builder() -> crate::model::media_stream_output_configuration::Builder {
         crate::model::media_stream_output_configuration::Builder::default()
     }
@@ -2378,11 +2365,10 @@ impl std::fmt::Debug for EncodingParameters {
         formatter.finish()
     }
 }
-/// See [`EncodingParameters`](crate::model::EncodingParameters)
+/// See [`EncodingParameters`](crate::model::EncodingParameters).
 pub mod encoding_parameters {
 
-    /// A builder for [`EncodingParameters`](crate::model::EncodingParameters)
-    #[non_exhaustive]
+    /// A builder for [`EncodingParameters`](crate::model::EncodingParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compression_factor: std::option::Option<f64>,
@@ -2412,7 +2398,7 @@ pub mod encoding_parameters {
             self.encoder_profile = input;
             self
         }
-        /// Consumes the builder and constructs a [`EncodingParameters`](crate::model::EncodingParameters)
+        /// Consumes the builder and constructs a [`EncodingParameters`](crate::model::EncodingParameters).
         pub fn build(self) -> crate::model::EncodingParameters {
             crate::model::EncodingParameters {
                 compression_factor: self.compression_factor.unwrap_or_default(),
@@ -2422,7 +2408,7 @@ pub mod encoding_parameters {
     }
 }
 impl EncodingParameters {
-    /// Creates a new builder-style object to manufacture [`EncodingParameters`](crate::model::EncodingParameters)
+    /// Creates a new builder-style object to manufacture [`EncodingParameters`](crate::model::EncodingParameters).
     pub fn builder() -> crate::model::encoding_parameters::Builder {
         crate::model::encoding_parameters::Builder::default()
     }
@@ -2524,11 +2510,10 @@ impl std::fmt::Debug for DestinationConfiguration {
         formatter.finish()
     }
 }
-/// See [`DestinationConfiguration`](crate::model::DestinationConfiguration)
+/// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
 pub mod destination_configuration {
 
-    /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`DestinationConfiguration`](crate::model::DestinationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_ip: std::option::Option<std::string::String>,
@@ -2583,7 +2568,7 @@ pub mod destination_configuration {
             self.outbound_ip = input;
             self
         }
-        /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::model::DestinationConfiguration)
+        /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::model::DestinationConfiguration).
         pub fn build(self) -> crate::model::DestinationConfiguration {
             crate::model::DestinationConfiguration {
                 destination_ip: self.destination_ip,
@@ -2595,7 +2580,7 @@ pub mod destination_configuration {
     }
 }
 impl DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration)
+    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration).
     pub fn builder() -> crate::model::destination_configuration::Builder {
         crate::model::destination_configuration::Builder::default()
     }
@@ -2650,11 +2635,10 @@ impl std::fmt::Debug for MediaStreamOutputConfigurationRequest {
         formatter.finish()
     }
 }
-/// See [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
+/// See [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
 pub mod media_stream_output_configuration_request {
 
-    /// A builder for [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
-    #[non_exhaustive]
+    /// A builder for [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_configurations:
@@ -2731,7 +2715,7 @@ pub mod media_stream_output_configuration_request {
             self.media_stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
+        /// Consumes the builder and constructs a [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
         pub fn build(self) -> crate::model::MediaStreamOutputConfigurationRequest {
             crate::model::MediaStreamOutputConfigurationRequest {
                 destination_configurations: self.destination_configurations,
@@ -2743,7 +2727,7 @@ pub mod media_stream_output_configuration_request {
     }
 }
 impl MediaStreamOutputConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest)
+    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
     pub fn builder() -> crate::model::media_stream_output_configuration_request::Builder {
         crate::model::media_stream_output_configuration_request::Builder::default()
     }
@@ -2776,11 +2760,10 @@ impl std::fmt::Debug for EncodingParametersRequest {
         formatter.finish()
     }
 }
-/// See [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
+/// See [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
 pub mod encoding_parameters_request {
 
-    /// A builder for [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
-    #[non_exhaustive]
+    /// A builder for [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) compression_factor: std::option::Option<f64>,
@@ -2810,7 +2793,7 @@ pub mod encoding_parameters_request {
             self.encoder_profile = input;
             self
         }
-        /// Consumes the builder and constructs a [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
+        /// Consumes the builder and constructs a [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
         pub fn build(self) -> crate::model::EncodingParametersRequest {
             crate::model::EncodingParametersRequest {
                 compression_factor: self.compression_factor.unwrap_or_default(),
@@ -2820,7 +2803,7 @@ pub mod encoding_parameters_request {
     }
 }
 impl EncodingParametersRequest {
-    /// Creates a new builder-style object to manufacture [`EncodingParametersRequest`](crate::model::EncodingParametersRequest)
+    /// Creates a new builder-style object to manufacture [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
     pub fn builder() -> crate::model::encoding_parameters_request::Builder {
         crate::model::encoding_parameters_request::Builder::default()
     }
@@ -2860,11 +2843,10 @@ impl std::fmt::Debug for DestinationConfigurationRequest {
         formatter.finish()
     }
 }
-/// See [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
+/// See [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
 pub mod destination_configuration_request {
 
-    /// A builder for [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
-    #[non_exhaustive]
+    /// A builder for [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_ip: std::option::Option<std::string::String>,
@@ -2908,7 +2890,7 @@ pub mod destination_configuration_request {
             self.interface = input;
             self
         }
-        /// Consumes the builder and constructs a [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
+        /// Consumes the builder and constructs a [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
         pub fn build(self) -> crate::model::DestinationConfigurationRequest {
             crate::model::DestinationConfigurationRequest {
                 destination_ip: self.destination_ip,
@@ -2919,7 +2901,7 @@ pub mod destination_configuration_request {
     }
 }
 impl DestinationConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest)
+    /// Creates a new builder-style object to manufacture [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
     pub fn builder() -> crate::model::destination_configuration_request::Builder {
         crate::model::destination_configuration_request::Builder::default()
     }
@@ -2994,11 +2976,10 @@ impl std::fmt::Debug for MediaStream {
         formatter.finish()
     }
 }
-/// See [`MediaStream`](crate::model::MediaStream)
+/// See [`MediaStream`](crate::model::MediaStream).
 pub mod media_stream {
 
-    /// A builder for [`MediaStream`](crate::model::MediaStream)
-    #[non_exhaustive]
+    /// A builder for [`MediaStream`](crate::model::MediaStream).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::MediaStreamAttributes>,
@@ -3100,7 +3081,7 @@ pub mod media_stream {
             self.video_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaStream`](crate::model::MediaStream)
+        /// Consumes the builder and constructs a [`MediaStream`](crate::model::MediaStream).
         pub fn build(self) -> crate::model::MediaStream {
             crate::model::MediaStream {
                 attributes: self.attributes,
@@ -3116,7 +3097,7 @@ pub mod media_stream {
     }
 }
 impl MediaStream {
-    /// Creates a new builder-style object to manufacture [`MediaStream`](crate::model::MediaStream)
+    /// Creates a new builder-style object to manufacture [`MediaStream`](crate::model::MediaStream).
     pub fn builder() -> crate::model::media_stream::Builder {
         crate::model::media_stream::Builder::default()
     }
@@ -3208,11 +3189,10 @@ impl std::fmt::Debug for MediaStreamAttributes {
         formatter.finish()
     }
 }
-/// See [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
+/// See [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
 pub mod media_stream_attributes {
 
-    /// A builder for [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
-    #[non_exhaustive]
+    /// A builder for [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fmtp: std::option::Option<crate::model::Fmtp>,
@@ -3239,7 +3219,7 @@ pub mod media_stream_attributes {
             self.lang = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
+        /// Consumes the builder and constructs a [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
         pub fn build(self) -> crate::model::MediaStreamAttributes {
             crate::model::MediaStreamAttributes {
                 fmtp: self.fmtp,
@@ -3249,7 +3229,7 @@ pub mod media_stream_attributes {
     }
 }
 impl MediaStreamAttributes {
-    /// Creates a new builder-style object to manufacture [`MediaStreamAttributes`](crate::model::MediaStreamAttributes)
+    /// Creates a new builder-style object to manufacture [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
     pub fn builder() -> crate::model::media_stream_attributes::Builder {
         crate::model::media_stream_attributes::Builder::default()
     }
@@ -3317,11 +3297,10 @@ impl std::fmt::Debug for Fmtp {
         formatter.finish()
     }
 }
-/// See [`Fmtp`](crate::model::Fmtp)
+/// See [`Fmtp`](crate::model::Fmtp).
 pub mod fmtp {
 
-    /// A builder for [`Fmtp`](crate::model::Fmtp)
-    #[non_exhaustive]
+    /// A builder for [`Fmtp`](crate::model::Fmtp).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_order: std::option::Option<std::string::String>,
@@ -3412,7 +3391,7 @@ pub mod fmtp {
             self.tcs = input;
             self
         }
-        /// Consumes the builder and constructs a [`Fmtp`](crate::model::Fmtp)
+        /// Consumes the builder and constructs a [`Fmtp`](crate::model::Fmtp).
         pub fn build(self) -> crate::model::Fmtp {
             crate::model::Fmtp {
                 channel_order: self.channel_order,
@@ -3427,7 +3406,7 @@ pub mod fmtp {
     }
 }
 impl Fmtp {
-    /// Creates a new builder-style object to manufacture [`Fmtp`](crate::model::Fmtp)
+    /// Creates a new builder-style object to manufacture [`Fmtp`](crate::model::Fmtp).
     pub fn builder() -> crate::model::fmtp::Builder {
         crate::model::fmtp::Builder::default()
     }
@@ -3748,11 +3727,10 @@ impl std::fmt::Debug for MediaStreamAttributesRequest {
         formatter.finish()
     }
 }
-/// See [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
+/// See [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
 pub mod media_stream_attributes_request {
 
-    /// A builder for [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
-    #[non_exhaustive]
+    /// A builder for [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fmtp: std::option::Option<crate::model::FmtpRequest>,
@@ -3779,7 +3757,7 @@ pub mod media_stream_attributes_request {
             self.lang = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
+        /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
         pub fn build(self) -> crate::model::MediaStreamAttributesRequest {
             crate::model::MediaStreamAttributesRequest {
                 fmtp: self.fmtp,
@@ -3789,7 +3767,7 @@ pub mod media_stream_attributes_request {
     }
 }
 impl MediaStreamAttributesRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest)
+    /// Creates a new builder-style object to manufacture [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
     pub fn builder() -> crate::model::media_stream_attributes_request::Builder {
         crate::model::media_stream_attributes_request::Builder::default()
     }
@@ -3857,11 +3835,10 @@ impl std::fmt::Debug for FmtpRequest {
         formatter.finish()
     }
 }
-/// See [`FmtpRequest`](crate::model::FmtpRequest)
+/// See [`FmtpRequest`](crate::model::FmtpRequest).
 pub mod fmtp_request {
 
-    /// A builder for [`FmtpRequest`](crate::model::FmtpRequest)
-    #[non_exhaustive]
+    /// A builder for [`FmtpRequest`](crate::model::FmtpRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_order: std::option::Option<std::string::String>,
@@ -3952,7 +3929,7 @@ pub mod fmtp_request {
             self.tcs = input;
             self
         }
-        /// Consumes the builder and constructs a [`FmtpRequest`](crate::model::FmtpRequest)
+        /// Consumes the builder and constructs a [`FmtpRequest`](crate::model::FmtpRequest).
         pub fn build(self) -> crate::model::FmtpRequest {
             crate::model::FmtpRequest {
                 channel_order: self.channel_order,
@@ -3967,7 +3944,7 @@ pub mod fmtp_request {
     }
 }
 impl FmtpRequest {
-    /// Creates a new builder-style object to manufacture [`FmtpRequest`](crate::model::FmtpRequest)
+    /// Creates a new builder-style object to manufacture [`FmtpRequest`](crate::model::FmtpRequest).
     pub fn builder() -> crate::model::fmtp_request::Builder {
         crate::model::fmtp_request::Builder::default()
     }
@@ -4038,11 +4015,10 @@ impl std::fmt::Debug for Entitlement {
         formatter.finish()
     }
 }
-/// See [`Entitlement`](crate::model::Entitlement)
+/// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
 
-    /// A builder for [`Entitlement`](crate::model::Entitlement)
-    #[non_exhaustive]
+    /// A builder for [`Entitlement`](crate::model::Entitlement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -4145,7 +4121,7 @@ pub mod entitlement {
             self.subscribers = input;
             self
         }
-        /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement)
+        /// Consumes the builder and constructs a [`Entitlement`](crate::model::Entitlement).
         pub fn build(self) -> crate::model::Entitlement {
             crate::model::Entitlement {
                 data_transfer_subscriber_fee_percent: self
@@ -4162,7 +4138,7 @@ pub mod entitlement {
     }
 }
 impl Entitlement {
-    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement)
+    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
     pub fn builder() -> crate::model::entitlement::Builder {
         crate::model::entitlement::Builder::default()
     }
@@ -4334,11 +4310,10 @@ impl std::fmt::Debug for Flow {
         formatter.finish()
     }
 }
-/// See [`Flow`](crate::model::Flow)
+/// See [`Flow`](crate::model::Flow).
 pub mod flow {
 
-    /// A builder for [`Flow`](crate::model::Flow)
-    #[non_exhaustive]
+    /// A builder for [`Flow`](crate::model::Flow).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -4550,7 +4525,7 @@ pub mod flow {
             self.maintenance = input;
             self
         }
-        /// Consumes the builder and constructs a [`Flow`](crate::model::Flow)
+        /// Consumes the builder and constructs a [`Flow`](crate::model::Flow).
         pub fn build(self) -> crate::model::Flow {
             crate::model::Flow {
                 availability_zone: self.availability_zone,
@@ -4572,7 +4547,7 @@ pub mod flow {
     }
 }
 impl Flow {
-    /// Creates a new builder-style object to manufacture [`Flow`](crate::model::Flow)
+    /// Creates a new builder-style object to manufacture [`Flow`](crate::model::Flow).
     pub fn builder() -> crate::model::flow::Builder {
         crate::model::flow::Builder::default()
     }
@@ -4622,11 +4597,10 @@ impl std::fmt::Debug for Maintenance {
         formatter.finish()
     }
 }
-/// See [`Maintenance`](crate::model::Maintenance)
+/// See [`Maintenance`](crate::model::Maintenance).
 pub mod maintenance {
 
-    /// A builder for [`Maintenance`](crate::model::Maintenance)
-    #[non_exhaustive]
+    /// A builder for [`Maintenance`](crate::model::Maintenance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -4687,7 +4661,7 @@ pub mod maintenance {
             self.maintenance_start_hour = input;
             self
         }
-        /// Consumes the builder and constructs a [`Maintenance`](crate::model::Maintenance)
+        /// Consumes the builder and constructs a [`Maintenance`](crate::model::Maintenance).
         pub fn build(self) -> crate::model::Maintenance {
             crate::model::Maintenance {
                 maintenance_day: self.maintenance_day,
@@ -4699,7 +4673,7 @@ pub mod maintenance {
     }
 }
 impl Maintenance {
-    /// Creates a new builder-style object to manufacture [`Maintenance`](crate::model::Maintenance)
+    /// Creates a new builder-style object to manufacture [`Maintenance`](crate::model::Maintenance).
     pub fn builder() -> crate::model::maintenance::Builder {
         crate::model::maintenance::Builder::default()
     }
@@ -4845,11 +4819,10 @@ impl std::fmt::Debug for VpcInterface {
         formatter.finish()
     }
 }
-/// See [`VpcInterface`](crate::model::VpcInterface)
+/// See [`VpcInterface`](crate::model::VpcInterface).
 pub mod vpc_interface {
 
-    /// A builder for [`VpcInterface`](crate::model::VpcInterface)
-    #[non_exhaustive]
+    /// A builder for [`VpcInterface`](crate::model::VpcInterface).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -4941,7 +4914,7 @@ pub mod vpc_interface {
             self.subnet_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcInterface`](crate::model::VpcInterface)
+        /// Consumes the builder and constructs a [`VpcInterface`](crate::model::VpcInterface).
         pub fn build(self) -> crate::model::VpcInterface {
             crate::model::VpcInterface {
                 name: self.name,
@@ -4955,7 +4928,7 @@ pub mod vpc_interface {
     }
 }
 impl VpcInterface {
-    /// Creates a new builder-style object to manufacture [`VpcInterface`](crate::model::VpcInterface)
+    /// Creates a new builder-style object to manufacture [`VpcInterface`](crate::model::VpcInterface).
     pub fn builder() -> crate::model::vpc_interface::Builder {
         crate::model::vpc_interface::Builder::default()
     }
@@ -5134,11 +5107,10 @@ impl std::fmt::Debug for FailoverConfig {
         formatter.finish()
     }
 }
-/// See [`FailoverConfig`](crate::model::FailoverConfig)
+/// See [`FailoverConfig`](crate::model::FailoverConfig).
 pub mod failover_config {
 
-    /// A builder for [`FailoverConfig`](crate::model::FailoverConfig)
-    #[non_exhaustive]
+    /// A builder for [`FailoverConfig`](crate::model::FailoverConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failover_mode: std::option::Option<crate::model::FailoverMode>,
@@ -5193,7 +5165,7 @@ pub mod failover_config {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailoverConfig`](crate::model::FailoverConfig)
+        /// Consumes the builder and constructs a [`FailoverConfig`](crate::model::FailoverConfig).
         pub fn build(self) -> crate::model::FailoverConfig {
             crate::model::FailoverConfig {
                 failover_mode: self.failover_mode,
@@ -5205,7 +5177,7 @@ pub mod failover_config {
     }
 }
 impl FailoverConfig {
-    /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig)
+    /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig).
     pub fn builder() -> crate::model::failover_config::Builder {
         crate::model::failover_config::Builder::default()
     }
@@ -5286,11 +5258,10 @@ impl std::fmt::Debug for SourcePriority {
         formatter.finish()
     }
 }
-/// See [`SourcePriority`](crate::model::SourcePriority)
+/// See [`SourcePriority`](crate::model::SourcePriority).
 pub mod source_priority {
 
-    /// A builder for [`SourcePriority`](crate::model::SourcePriority)
-    #[non_exhaustive]
+    /// A builder for [`SourcePriority`](crate::model::SourcePriority).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) primary_source: std::option::Option<std::string::String>,
@@ -5309,7 +5280,7 @@ pub mod source_priority {
             self.primary_source = input;
             self
         }
-        /// Consumes the builder and constructs a [`SourcePriority`](crate::model::SourcePriority)
+        /// Consumes the builder and constructs a [`SourcePriority`](crate::model::SourcePriority).
         pub fn build(self) -> crate::model::SourcePriority {
             crate::model::SourcePriority {
                 primary_source: self.primary_source,
@@ -5318,7 +5289,7 @@ pub mod source_priority {
     }
 }
 impl SourcePriority {
-    /// Creates a new builder-style object to manufacture [`SourcePriority`](crate::model::SourcePriority)
+    /// Creates a new builder-style object to manufacture [`SourcePriority`](crate::model::SourcePriority).
     pub fn builder() -> crate::model::source_priority::Builder {
         crate::model::source_priority::Builder::default()
     }
@@ -5416,11 +5387,10 @@ impl std::fmt::Debug for UpdateMaintenance {
         formatter.finish()
     }
 }
-/// See [`UpdateMaintenance`](crate::model::UpdateMaintenance)
+/// See [`UpdateMaintenance`](crate::model::UpdateMaintenance).
 pub mod update_maintenance {
 
-    /// A builder for [`UpdateMaintenance`](crate::model::UpdateMaintenance)
-    #[non_exhaustive]
+    /// A builder for [`UpdateMaintenance`](crate::model::UpdateMaintenance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -5467,7 +5437,7 @@ pub mod update_maintenance {
             self.maintenance_start_hour = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateMaintenance`](crate::model::UpdateMaintenance)
+        /// Consumes the builder and constructs a [`UpdateMaintenance`](crate::model::UpdateMaintenance).
         pub fn build(self) -> crate::model::UpdateMaintenance {
             crate::model::UpdateMaintenance {
                 maintenance_day: self.maintenance_day,
@@ -5478,7 +5448,7 @@ pub mod update_maintenance {
     }
 }
 impl UpdateMaintenance {
-    /// Creates a new builder-style object to manufacture [`UpdateMaintenance`](crate::model::UpdateMaintenance)
+    /// Creates a new builder-style object to manufacture [`UpdateMaintenance`](crate::model::UpdateMaintenance).
     pub fn builder() -> crate::model::update_maintenance::Builder {
         crate::model::update_maintenance::Builder::default()
     }
@@ -5525,11 +5495,10 @@ impl std::fmt::Debug for UpdateFailoverConfig {
         formatter.finish()
     }
 }
-/// See [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig)
+/// See [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
 pub mod update_failover_config {
 
-    /// A builder for [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failover_mode: std::option::Option<crate::model::FailoverMode>,
@@ -5584,7 +5553,7 @@ pub mod update_failover_config {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig)
+        /// Consumes the builder and constructs a [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
         pub fn build(self) -> crate::model::UpdateFailoverConfig {
             crate::model::UpdateFailoverConfig {
                 failover_mode: self.failover_mode,
@@ -5596,7 +5565,7 @@ pub mod update_failover_config {
     }
 }
 impl UpdateFailoverConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig)
+    /// Creates a new builder-style object to manufacture [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
     pub fn builder() -> crate::model::update_failover_config::Builder {
         crate::model::update_failover_config::Builder::default()
     }
@@ -5708,11 +5677,10 @@ impl std::fmt::Debug for Reservation {
         formatter.finish()
     }
 }
-/// See [`Reservation`](crate::model::Reservation)
+/// See [`Reservation`](crate::model::Reservation).
 pub mod reservation {
 
-    /// A builder for [`Reservation`](crate::model::Reservation)
-    #[non_exhaustive]
+    /// A builder for [`Reservation`](crate::model::Reservation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) currency_code: std::option::Option<std::string::String>,
@@ -5890,7 +5858,7 @@ pub mod reservation {
             self.start = input;
             self
         }
-        /// Consumes the builder and constructs a [`Reservation`](crate::model::Reservation)
+        /// Consumes the builder and constructs a [`Reservation`](crate::model::Reservation).
         pub fn build(self) -> crate::model::Reservation {
             crate::model::Reservation {
                 currency_code: self.currency_code,
@@ -5911,7 +5879,7 @@ pub mod reservation {
     }
 }
 impl Reservation {
-    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation)
+    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation).
     pub fn builder() -> crate::model::reservation::Builder {
         crate::model::reservation::Builder::default()
     }
@@ -5944,11 +5912,10 @@ impl std::fmt::Debug for ResourceSpecification {
         formatter.finish()
     }
 }
-/// See [`ResourceSpecification`](crate::model::ResourceSpecification)
+/// See [`ResourceSpecification`](crate::model::ResourceSpecification).
 pub mod resource_specification {
 
-    /// A builder for [`ResourceSpecification`](crate::model::ResourceSpecification)
-    #[non_exhaustive]
+    /// A builder for [`ResourceSpecification`](crate::model::ResourceSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reserved_bitrate: std::option::Option<i32>,
@@ -5978,7 +5945,7 @@ pub mod resource_specification {
             self.resource_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceSpecification`](crate::model::ResourceSpecification)
+        /// Consumes the builder and constructs a [`ResourceSpecification`](crate::model::ResourceSpecification).
         pub fn build(self) -> crate::model::ResourceSpecification {
             crate::model::ResourceSpecification {
                 reserved_bitrate: self.reserved_bitrate.unwrap_or_default(),
@@ -5988,7 +5955,7 @@ pub mod resource_specification {
     }
 }
 impl ResourceSpecification {
-    /// Creates a new builder-style object to manufacture [`ResourceSpecification`](crate::model::ResourceSpecification)
+    /// Creates a new builder-style object to manufacture [`ResourceSpecification`](crate::model::ResourceSpecification).
     pub fn builder() -> crate::model::resource_specification::Builder {
         crate::model::resource_specification::Builder::default()
     }
@@ -6281,11 +6248,10 @@ impl std::fmt::Debug for Offering {
         formatter.finish()
     }
 }
-/// See [`Offering`](crate::model::Offering)
+/// See [`Offering`](crate::model::Offering).
 pub mod offering {
 
-    /// A builder for [`Offering`](crate::model::Offering)
-    #[non_exhaustive]
+    /// A builder for [`Offering`](crate::model::Offering).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) currency_code: std::option::Option<std::string::String>,
@@ -6399,7 +6365,7 @@ pub mod offering {
             self.resource_specification = input;
             self
         }
-        /// Consumes the builder and constructs a [`Offering`](crate::model::Offering)
+        /// Consumes the builder and constructs a [`Offering`](crate::model::Offering).
         pub fn build(self) -> crate::model::Offering {
             crate::model::Offering {
                 currency_code: self.currency_code,
@@ -6415,7 +6381,7 @@ pub mod offering {
     }
 }
 impl Offering {
-    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering)
+    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
     pub fn builder() -> crate::model::offering::Builder {
         crate::model::offering::Builder::default()
     }
@@ -6483,11 +6449,10 @@ impl std::fmt::Debug for ListedFlow {
         formatter.finish()
     }
 }
-/// See [`ListedFlow`](crate::model::ListedFlow)
+/// See [`ListedFlow`](crate::model::ListedFlow).
 pub mod listed_flow {
 
-    /// A builder for [`ListedFlow`](crate::model::ListedFlow)
-    #[non_exhaustive]
+    /// A builder for [`ListedFlow`](crate::model::ListedFlow).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -6578,7 +6543,7 @@ pub mod listed_flow {
             self.maintenance = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListedFlow`](crate::model::ListedFlow)
+        /// Consumes the builder and constructs a [`ListedFlow`](crate::model::ListedFlow).
         pub fn build(self) -> crate::model::ListedFlow {
             crate::model::ListedFlow {
                 availability_zone: self.availability_zone,
@@ -6593,7 +6558,7 @@ pub mod listed_flow {
     }
 }
 impl ListedFlow {
-    /// Creates a new builder-style object to manufacture [`ListedFlow`](crate::model::ListedFlow)
+    /// Creates a new builder-style object to manufacture [`ListedFlow`](crate::model::ListedFlow).
     pub fn builder() -> crate::model::listed_flow::Builder {
         crate::model::listed_flow::Builder::default()
     }
@@ -6691,11 +6656,10 @@ impl std::fmt::Debug for ListedEntitlement {
         formatter.finish()
     }
 }
-/// See [`ListedEntitlement`](crate::model::ListedEntitlement)
+/// See [`ListedEntitlement`](crate::model::ListedEntitlement).
 pub mod listed_entitlement {
 
-    /// A builder for [`ListedEntitlement`](crate::model::ListedEntitlement)
-    #[non_exhaustive]
+    /// A builder for [`ListedEntitlement`](crate::model::ListedEntitlement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -6742,7 +6706,7 @@ pub mod listed_entitlement {
             self.entitlement_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListedEntitlement`](crate::model::ListedEntitlement)
+        /// Consumes the builder and constructs a [`ListedEntitlement`](crate::model::ListedEntitlement).
         pub fn build(self) -> crate::model::ListedEntitlement {
             crate::model::ListedEntitlement {
                 data_transfer_subscriber_fee_percent: self
@@ -6755,7 +6719,7 @@ pub mod listed_entitlement {
     }
 }
 impl ListedEntitlement {
-    /// Creates a new builder-style object to manufacture [`ListedEntitlement`](crate::model::ListedEntitlement)
+    /// Creates a new builder-style object to manufacture [`ListedEntitlement`](crate::model::ListedEntitlement).
     pub fn builder() -> crate::model::listed_entitlement::Builder {
         crate::model::listed_entitlement::Builder::default()
     }
@@ -6819,11 +6783,10 @@ impl std::fmt::Debug for GrantEntitlementRequest {
         formatter.finish()
     }
 }
-/// See [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest)
+/// See [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
 pub mod grant_entitlement_request {
 
-    /// A builder for [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest)
-    #[non_exhaustive]
+    /// A builder for [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
@@ -6912,7 +6875,7 @@ pub mod grant_entitlement_request {
             self.subscribers = input;
             self
         }
-        /// Consumes the builder and constructs a [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest)
+        /// Consumes the builder and constructs a [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
         pub fn build(self) -> crate::model::GrantEntitlementRequest {
             crate::model::GrantEntitlementRequest {
                 data_transfer_subscriber_fee_percent: self
@@ -6928,7 +6891,7 @@ pub mod grant_entitlement_request {
     }
 }
 impl GrantEntitlementRequest {
-    /// Creates a new builder-style object to manufacture [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest)
+    /// Creates a new builder-style object to manufacture [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
     pub fn builder() -> crate::model::grant_entitlement_request::Builder {
         crate::model::grant_entitlement_request::Builder::default()
     }
@@ -6954,11 +6917,10 @@ impl std::fmt::Debug for Messages {
         formatter.finish()
     }
 }
-/// See [`Messages`](crate::model::Messages)
+/// See [`Messages`](crate::model::Messages).
 pub mod messages {
 
-    /// A builder for [`Messages`](crate::model::Messages)
-    #[non_exhaustive]
+    /// A builder for [`Messages`](crate::model::Messages).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6983,7 +6945,7 @@ pub mod messages {
             self.errors = input;
             self
         }
-        /// Consumes the builder and constructs a [`Messages`](crate::model::Messages)
+        /// Consumes the builder and constructs a [`Messages`](crate::model::Messages).
         pub fn build(self) -> crate::model::Messages {
             crate::model::Messages {
                 errors: self.errors,
@@ -6992,7 +6954,7 @@ pub mod messages {
     }
 }
 impl Messages {
-    /// Creates a new builder-style object to manufacture [`Messages`](crate::model::Messages)
+    /// Creates a new builder-style object to manufacture [`Messages`](crate::model::Messages).
     pub fn builder() -> crate::model::messages::Builder {
         crate::model::messages::Builder::default()
     }
@@ -7025,11 +6987,10 @@ impl std::fmt::Debug for AddMaintenance {
         formatter.finish()
     }
 }
-/// See [`AddMaintenance`](crate::model::AddMaintenance)
+/// See [`AddMaintenance`](crate::model::AddMaintenance).
 pub mod add_maintenance {
 
-    /// A builder for [`AddMaintenance`](crate::model::AddMaintenance)
-    #[non_exhaustive]
+    /// A builder for [`AddMaintenance`](crate::model::AddMaintenance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -7062,7 +7023,7 @@ pub mod add_maintenance {
             self.maintenance_start_hour = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddMaintenance`](crate::model::AddMaintenance)
+        /// Consumes the builder and constructs a [`AddMaintenance`](crate::model::AddMaintenance).
         pub fn build(self) -> crate::model::AddMaintenance {
             crate::model::AddMaintenance {
                 maintenance_day: self.maintenance_day,
@@ -7072,7 +7033,7 @@ pub mod add_maintenance {
     }
 }
 impl AddMaintenance {
-    /// Creates a new builder-style object to manufacture [`AddMaintenance`](crate::model::AddMaintenance)
+    /// Creates a new builder-style object to manufacture [`AddMaintenance`](crate::model::AddMaintenance).
     pub fn builder() -> crate::model::add_maintenance::Builder {
         crate::model::add_maintenance::Builder::default()
     }
@@ -7128,11 +7089,10 @@ impl std::fmt::Debug for VpcInterfaceRequest {
         formatter.finish()
     }
 }
-/// See [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest)
+/// See [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
 pub mod vpc_interface_request {
 
-    /// A builder for [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest)
-    #[non_exhaustive]
+    /// A builder for [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7204,7 +7164,7 @@ pub mod vpc_interface_request {
             self.subnet_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest)
+        /// Consumes the builder and constructs a [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
         pub fn build(self) -> crate::model::VpcInterfaceRequest {
             crate::model::VpcInterfaceRequest {
                 name: self.name,
@@ -7217,7 +7177,7 @@ pub mod vpc_interface_request {
     }
 }
 impl VpcInterfaceRequest {
-    /// Creates a new builder-style object to manufacture [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest)
+    /// Creates a new builder-style object to manufacture [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
     pub fn builder() -> crate::model::vpc_interface_request::Builder {
         crate::model::vpc_interface_request::Builder::default()
     }
@@ -7354,11 +7314,10 @@ impl std::fmt::Debug for SetSourceRequest {
         formatter.finish()
     }
 }
-/// See [`SetSourceRequest`](crate::model::SetSourceRequest)
+/// See [`SetSourceRequest`](crate::model::SetSourceRequest).
 pub mod set_source_request {
 
-    /// A builder for [`SetSourceRequest`](crate::model::SetSourceRequest)
-    #[non_exhaustive]
+    /// A builder for [`SetSourceRequest`](crate::model::SetSourceRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decryption: std::option::Option<crate::model::Encryption>,
@@ -7569,7 +7528,7 @@ pub mod set_source_request {
             self.whitelist_cidr = input;
             self
         }
-        /// Consumes the builder and constructs a [`SetSourceRequest`](crate::model::SetSourceRequest)
+        /// Consumes the builder and constructs a [`SetSourceRequest`](crate::model::SetSourceRequest).
         pub fn build(self) -> crate::model::SetSourceRequest {
             crate::model::SetSourceRequest {
                 decryption: self.decryption,
@@ -7593,7 +7552,7 @@ pub mod set_source_request {
     }
 }
 impl SetSourceRequest {
-    /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::model::SetSourceRequest)
+    /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::model::SetSourceRequest).
     pub fn builder() -> crate::model::set_source_request::Builder {
         crate::model::set_source_request::Builder::default()
     }
@@ -7725,11 +7684,10 @@ impl std::fmt::Debug for AddOutputRequest {
         formatter.finish()
     }
 }
-/// See [`AddOutputRequest`](crate::model::AddOutputRequest)
+/// See [`AddOutputRequest`](crate::model::AddOutputRequest).
 pub mod add_output_request {
 
-    /// A builder for [`AddOutputRequest`](crate::model::AddOutputRequest)
-    #[non_exhaustive]
+    /// A builder for [`AddOutputRequest`](crate::model::AddOutputRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7933,7 +7891,7 @@ pub mod add_output_request {
             self.vpc_interface_attachment = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddOutputRequest`](crate::model::AddOutputRequest)
+        /// Consumes the builder and constructs a [`AddOutputRequest`](crate::model::AddOutputRequest).
         pub fn build(self) -> crate::model::AddOutputRequest {
             crate::model::AddOutputRequest {
                 cidr_allow_list: self.cidr_allow_list,
@@ -7956,7 +7914,7 @@ pub mod add_output_request {
     }
 }
 impl AddOutputRequest {
-    /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::model::AddOutputRequest)
+    /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::model::AddOutputRequest).
     pub fn builder() -> crate::model::add_output_request::Builder {
         crate::model::add_output_request::Builder::default()
     }
@@ -8024,11 +7982,10 @@ impl std::fmt::Debug for AddMediaStreamRequest {
         formatter.finish()
     }
 }
-/// See [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest)
+/// See [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
 pub mod add_media_stream_request {
 
-    /// A builder for [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest)
-    #[non_exhaustive]
+    /// A builder for [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attributes: std::option::Option<crate::model::MediaStreamAttributesRequest>,
@@ -8119,7 +8076,7 @@ pub mod add_media_stream_request {
             self.video_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest)
+        /// Consumes the builder and constructs a [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
         pub fn build(self) -> crate::model::AddMediaStreamRequest {
             crate::model::AddMediaStreamRequest {
                 attributes: self.attributes,
@@ -8134,7 +8091,7 @@ pub mod add_media_stream_request {
     }
 }
 impl AddMediaStreamRequest {
-    /// Creates a new builder-style object to manufacture [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest)
+    /// Creates a new builder-style object to manufacture [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
     pub fn builder() -> crate::model::add_media_stream_request::Builder {
         crate::model::add_media_stream_request::Builder::default()
     }

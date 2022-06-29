@@ -10,7 +10,7 @@ pub struct CreateEnvironmentEC2 {
     _private: (),
 }
 impl CreateEnvironmentEC2 {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentEc2Input`](crate::input::CreateEnvironmentEc2Input)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentEc2Input`](crate::input::CreateEnvironmentEc2Input).
     pub fn builder() -> crate::input::create_environment_ec2_input::Builder {
         crate::input::create_environment_ec2_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateEnvironmentMembership {
     _private: (),
 }
 impl CreateEnvironmentMembership {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentMembershipInput`](crate::input::CreateEnvironmentMembershipInput)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentMembershipInput`](crate::input::CreateEnvironmentMembershipInput).
     pub fn builder() -> crate::input::create_environment_membership_input::Builder {
         crate::input::create_environment_membership_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DeleteEnvironment {
     _private: (),
 }
 impl DeleteEnvironment {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
     pub fn builder() -> crate::input::delete_environment_input::Builder {
         crate::input::delete_environment_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteEnvironmentMembership {
     _private: (),
 }
 impl DeleteEnvironmentMembership {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentMembershipInput`](crate::input::DeleteEnvironmentMembershipInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentMembershipInput`](crate::input::DeleteEnvironmentMembershipInput).
     pub fn builder() -> crate::input::delete_environment_membership_input::Builder {
         crate::input::delete_environment_membership_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeEnvironmentMemberships {
     _private: (),
 }
 impl DescribeEnvironmentMemberships {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentMembershipsInput`](crate::input::DescribeEnvironmentMembershipsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentMembershipsInput`](crate::input::DescribeEnvironmentMembershipsInput).
     pub fn builder() -> crate::input::describe_environment_memberships_input::Builder {
         crate::input::describe_environment_memberships_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DescribeEnvironments {
     _private: (),
 }
 impl DescribeEnvironments {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput).
     pub fn builder() -> crate::input::describe_environments_input::Builder {
         crate::input::describe_environments_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DescribeEnvironmentStatus {
     _private: (),
 }
 impl DescribeEnvironmentStatus {
-    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusInput`](crate::input::DescribeEnvironmentStatusInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusInput`](crate::input::DescribeEnvironmentStatusInput).
     pub fn builder() -> crate::input::describe_environment_status_input::Builder {
         crate::input::describe_environment_status_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct ListEnvironments {
     _private: (),
 }
 impl ListEnvironments {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
     pub fn builder() -> crate::input::list_environments_input::Builder {
         crate::input::list_environments_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct UpdateEnvironment {
     _private: (),
 }
 impl UpdateEnvironment {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
     pub fn builder() -> crate::input::update_environment_input::Builder {
         crate::input::update_environment_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct UpdateEnvironmentMembership {
     _private: (),
 }
 impl UpdateEnvironmentMembership {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentMembershipInput`](crate::input::UpdateEnvironmentMembershipInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentMembershipInput`](crate::input::UpdateEnvironmentMembershipInput).
     pub fn builder() -> crate::input::update_environment_membership_input::Builder {
         crate::input::update_environment_membership_input::Builder::default()
     }

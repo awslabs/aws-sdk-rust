@@ -26,11 +26,10 @@ impl std::fmt::Debug for GetAppMonitorDataOutput {
         formatter.finish()
     }
 }
-/// See [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput)
+/// See [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
 pub mod get_app_monitor_data_output {
 
-    /// A builder for [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -66,7 +65,7 @@ pub mod get_app_monitor_data_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput)
+        /// Consumes the builder and constructs a [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
         pub fn build(self) -> crate::output::GetAppMonitorDataOutput {
             crate::output::GetAppMonitorDataOutput {
                 events: self.events,
@@ -76,7 +75,7 @@ pub mod get_app_monitor_data_output {
     }
 }
 impl GetAppMonitorDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput)
+    /// Creates a new builder-style object to manufacture [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
     pub fn builder() -> crate::output::get_app_monitor_data_output::Builder {
         crate::output::get_app_monitor_data_output::Builder::default()
     }
@@ -102,11 +101,10 @@ impl std::fmt::Debug for CreateAppMonitorOutput {
         formatter.finish()
     }
 }
-/// See [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput)
+/// See [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
 pub mod create_app_monitor_output {
 
-    /// A builder for [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -122,14 +120,14 @@ pub mod create_app_monitor_output {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput)
+        /// Consumes the builder and constructs a [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
         pub fn build(self) -> crate::output::CreateAppMonitorOutput {
             crate::output::CreateAppMonitorOutput { id: self.id }
         }
     }
 }
 impl CreateAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput)
+    /// Creates a new builder-style object to manufacture [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
     pub fn builder() -> crate::output::create_app_monitor_output::Builder {
         crate::output::create_app_monitor_output::Builder::default()
     }
@@ -162,11 +160,10 @@ impl std::fmt::Debug for ListAppMonitorsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput)
+/// See [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
 pub mod list_app_monitors_output {
 
-    /// A builder for [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -203,7 +200,7 @@ pub mod list_app_monitors_output {
             self.app_monitor_summaries = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput)
+        /// Consumes the builder and constructs a [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
         pub fn build(self) -> crate::output::ListAppMonitorsOutput {
             crate::output::ListAppMonitorsOutput {
                 next_token: self.next_token,
@@ -213,7 +210,7 @@ pub mod list_app_monitors_output {
     }
 }
 impl ListAppMonitorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
     pub fn builder() -> crate::output::list_app_monitors_output::Builder {
         crate::output::list_app_monitors_output::Builder::default()
     }
@@ -229,22 +226,21 @@ impl std::fmt::Debug for DeleteAppMonitorOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput)
+/// See [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
 pub mod delete_app_monitor_output {
 
-    /// A builder for [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput)
+        /// Consumes the builder and constructs a [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
         pub fn build(self) -> crate::output::DeleteAppMonitorOutput {
             crate::output::DeleteAppMonitorOutput {}
         }
     }
 }
 impl DeleteAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
     pub fn builder() -> crate::output::delete_app_monitor_output::Builder {
         crate::output::delete_app_monitor_output::Builder::default()
     }
@@ -260,22 +256,21 @@ impl std::fmt::Debug for UpdateAppMonitorOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
+/// See [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
 pub mod update_app_monitor_output {
 
-    /// A builder for [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
+        /// Consumes the builder and constructs a [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
         pub fn build(self) -> crate::output::UpdateAppMonitorOutput {
             crate::output::UpdateAppMonitorOutput {}
         }
     }
 }
 impl UpdateAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
     pub fn builder() -> crate::output::update_app_monitor_output::Builder {
         crate::output::update_app_monitor_output::Builder::default()
     }
@@ -301,11 +296,10 @@ impl std::fmt::Debug for GetAppMonitorOutput {
         formatter.finish()
     }
 }
-/// See [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput)
+/// See [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
 pub mod get_app_monitor_output {
 
-    /// A builder for [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor: std::option::Option<crate::model::AppMonitor>,
@@ -324,7 +318,7 @@ pub mod get_app_monitor_output {
             self.app_monitor = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput)
+        /// Consumes the builder and constructs a [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
         pub fn build(self) -> crate::output::GetAppMonitorOutput {
             crate::output::GetAppMonitorOutput {
                 app_monitor: self.app_monitor,
@@ -333,7 +327,7 @@ pub mod get_app_monitor_output {
     }
 }
 impl GetAppMonitorOutput {
-    /// Creates a new builder-style object to manufacture [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput)
+    /// Creates a new builder-style object to manufacture [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
     pub fn builder() -> crate::output::get_app_monitor_output::Builder {
         crate::output::get_app_monitor_output::Builder::default()
     }
@@ -349,22 +343,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -380,22 +373,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -411,22 +403,21 @@ impl std::fmt::Debug for PutRumEventsOutput {
         formatter.finish()
     }
 }
-/// See [`PutRumEventsOutput`](crate::output::PutRumEventsOutput)
+/// See [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
 pub mod put_rum_events_output {
 
-    /// A builder for [`PutRumEventsOutput`](crate::output::PutRumEventsOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutRumEventsOutput`](crate::output::PutRumEventsOutput)
+        /// Consumes the builder and constructs a [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
         pub fn build(self) -> crate::output::PutRumEventsOutput {
             crate::output::PutRumEventsOutput {}
         }
     }
 }
 impl PutRumEventsOutput {
-    /// Creates a new builder-style object to manufacture [`PutRumEventsOutput`](crate::output::PutRumEventsOutput)
+    /// Creates a new builder-style object to manufacture [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
     pub fn builder() -> crate::output::put_rum_events_output::Builder {
         crate::output::put_rum_events_output::Builder::default()
     }
@@ -463,11 +454,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -511,7 +501,7 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 resource_arn: self.resource_arn,
@@ -521,7 +511,7 @@ pub mod list_tags_for_resource_output {
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }

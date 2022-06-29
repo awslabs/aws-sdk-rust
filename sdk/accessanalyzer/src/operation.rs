@@ -10,7 +10,7 @@ pub struct ApplyArchiveRule {
     _private: (),
 }
 impl ApplyArchiveRule {
-    /// Creates a new builder-style object to manufacture [`ApplyArchiveRuleInput`](crate::input::ApplyArchiveRuleInput)
+    /// Creates a new builder-style object to manufacture [`ApplyArchiveRuleInput`](crate::input::ApplyArchiveRuleInput).
     pub fn builder() -> crate::input::apply_archive_rule_input::Builder {
         crate::input::apply_archive_rule_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CancelPolicyGeneration {
     _private: (),
 }
 impl CancelPolicyGeneration {
-    /// Creates a new builder-style object to manufacture [`CancelPolicyGenerationInput`](crate::input::CancelPolicyGenerationInput)
+    /// Creates a new builder-style object to manufacture [`CancelPolicyGenerationInput`](crate::input::CancelPolicyGenerationInput).
     pub fn builder() -> crate::input::cancel_policy_generation_input::Builder {
         crate::input::cancel_policy_generation_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateAccessPreview {
     _private: (),
 }
 impl CreateAccessPreview {
-    /// Creates a new builder-style object to manufacture [`CreateAccessPreviewInput`](crate::input::CreateAccessPreviewInput)
+    /// Creates a new builder-style object to manufacture [`CreateAccessPreviewInput`](crate::input::CreateAccessPreviewInput).
     pub fn builder() -> crate::input::create_access_preview_input::Builder {
         crate::input::create_access_preview_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateAnalyzer {
     _private: (),
 }
 impl CreateAnalyzer {
-    /// Creates a new builder-style object to manufacture [`CreateAnalyzerInput`](crate::input::CreateAnalyzerInput)
+    /// Creates a new builder-style object to manufacture [`CreateAnalyzerInput`](crate::input::CreateAnalyzerInput).
     pub fn builder() -> crate::input::create_analyzer_input::Builder {
         crate::input::create_analyzer_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateArchiveRule {
     _private: (),
 }
 impl CreateArchiveRule {
-    /// Creates a new builder-style object to manufacture [`CreateArchiveRuleInput`](crate::input::CreateArchiveRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateArchiveRuleInput`](crate::input::CreateArchiveRuleInput).
     pub fn builder() -> crate::input::create_archive_rule_input::Builder {
         crate::input::create_archive_rule_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeleteAnalyzer {
     _private: (),
 }
 impl DeleteAnalyzer {
-    /// Creates a new builder-style object to manufacture [`DeleteAnalyzerInput`](crate::input::DeleteAnalyzerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAnalyzerInput`](crate::input::DeleteAnalyzerInput).
     pub fn builder() -> crate::input::delete_analyzer_input::Builder {
         crate::input::delete_analyzer_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteArchiveRule {
     _private: (),
 }
 impl DeleteArchiveRule {
-    /// Creates a new builder-style object to manufacture [`DeleteArchiveRuleInput`](crate::input::DeleteArchiveRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteArchiveRuleInput`](crate::input::DeleteArchiveRuleInput).
     pub fn builder() -> crate::input::delete_archive_rule_input::Builder {
         crate::input::delete_archive_rule_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct GetAccessPreview {
     _private: (),
 }
 impl GetAccessPreview {
-    /// Creates a new builder-style object to manufacture [`GetAccessPreviewInput`](crate::input::GetAccessPreviewInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessPreviewInput`](crate::input::GetAccessPreviewInput).
     pub fn builder() -> crate::input::get_access_preview_input::Builder {
         crate::input::get_access_preview_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct GetAnalyzedResource {
     _private: (),
 }
 impl GetAnalyzedResource {
-    /// Creates a new builder-style object to manufacture [`GetAnalyzedResourceInput`](crate::input::GetAnalyzedResourceInput)
+    /// Creates a new builder-style object to manufacture [`GetAnalyzedResourceInput`](crate::input::GetAnalyzedResourceInput).
     pub fn builder() -> crate::input::get_analyzed_resource_input::Builder {
         crate::input::get_analyzed_resource_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct GetAnalyzer {
     _private: (),
 }
 impl GetAnalyzer {
-    /// Creates a new builder-style object to manufacture [`GetAnalyzerInput`](crate::input::GetAnalyzerInput)
+    /// Creates a new builder-style object to manufacture [`GetAnalyzerInput`](crate::input::GetAnalyzerInput).
     pub fn builder() -> crate::input::get_analyzer_input::Builder {
         crate::input::get_analyzer_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct GetArchiveRule {
     _private: (),
 }
 impl GetArchiveRule {
-    /// Creates a new builder-style object to manufacture [`GetArchiveRuleInput`](crate::input::GetArchiveRuleInput)
+    /// Creates a new builder-style object to manufacture [`GetArchiveRuleInput`](crate::input::GetArchiveRuleInput).
     pub fn builder() -> crate::input::get_archive_rule_input::Builder {
         crate::input::get_archive_rule_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct GetFinding {
     _private: (),
 }
 impl GetFinding {
-    /// Creates a new builder-style object to manufacture [`GetFindingInput`](crate::input::GetFindingInput)
+    /// Creates a new builder-style object to manufacture [`GetFindingInput`](crate::input::GetFindingInput).
     pub fn builder() -> crate::input::get_finding_input::Builder {
         crate::input::get_finding_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct GetGeneratedPolicy {
     _private: (),
 }
 impl GetGeneratedPolicy {
-    /// Creates a new builder-style object to manufacture [`GetGeneratedPolicyInput`](crate::input::GetGeneratedPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetGeneratedPolicyInput`](crate::input::GetGeneratedPolicyInput).
     pub fn builder() -> crate::input::get_generated_policy_input::Builder {
         crate::input::get_generated_policy_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct ListAccessPreviewFindings {
     _private: (),
 }
 impl ListAccessPreviewFindings {
-    /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsInput`](crate::input::ListAccessPreviewFindingsInput)
+    /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsInput`](crate::input::ListAccessPreviewFindingsInput).
     pub fn builder() -> crate::input::list_access_preview_findings_input::Builder {
         crate::input::list_access_preview_findings_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct ListAccessPreviews {
     _private: (),
 }
 impl ListAccessPreviews {
-    /// Creates a new builder-style object to manufacture [`ListAccessPreviewsInput`](crate::input::ListAccessPreviewsInput)
+    /// Creates a new builder-style object to manufacture [`ListAccessPreviewsInput`](crate::input::ListAccessPreviewsInput).
     pub fn builder() -> crate::input::list_access_previews_input::Builder {
         crate::input::list_access_previews_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct ListAnalyzedResources {
     _private: (),
 }
 impl ListAnalyzedResources {
-    /// Creates a new builder-style object to manufacture [`ListAnalyzedResourcesInput`](crate::input::ListAnalyzedResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListAnalyzedResourcesInput`](crate::input::ListAnalyzedResourcesInput).
     pub fn builder() -> crate::input::list_analyzed_resources_input::Builder {
         crate::input::list_analyzed_resources_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct ListAnalyzers {
     _private: (),
 }
 impl ListAnalyzers {
-    /// Creates a new builder-style object to manufacture [`ListAnalyzersInput`](crate::input::ListAnalyzersInput)
+    /// Creates a new builder-style object to manufacture [`ListAnalyzersInput`](crate::input::ListAnalyzersInput).
     pub fn builder() -> crate::input::list_analyzers_input::Builder {
         crate::input::list_analyzers_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct ListArchiveRules {
     _private: (),
 }
 impl ListArchiveRules {
-    /// Creates a new builder-style object to manufacture [`ListArchiveRulesInput`](crate::input::ListArchiveRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListArchiveRulesInput`](crate::input::ListArchiveRulesInput).
     pub fn builder() -> crate::input::list_archive_rules_input::Builder {
         crate::input::list_archive_rules_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct ListFindings {
     _private: (),
 }
 impl ListFindings {
-    /// Creates a new builder-style object to manufacture [`ListFindingsInput`](crate::input::ListFindingsInput)
+    /// Creates a new builder-style object to manufacture [`ListFindingsInput`](crate::input::ListFindingsInput).
     pub fn builder() -> crate::input::list_findings_input::Builder {
         crate::input::list_findings_input::Builder::default()
     }
@@ -642,7 +642,7 @@ pub struct ListPolicyGenerations {
     _private: (),
 }
 impl ListPolicyGenerations {
-    /// Creates a new builder-style object to manufacture [`ListPolicyGenerationsInput`](crate::input::ListPolicyGenerationsInput)
+    /// Creates a new builder-style object to manufacture [`ListPolicyGenerationsInput`](crate::input::ListPolicyGenerationsInput).
     pub fn builder() -> crate::input::list_policy_generations_input::Builder {
         crate::input::list_policy_generations_input::Builder::default()
     }
@@ -676,7 +676,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -710,7 +710,7 @@ pub struct StartPolicyGeneration {
     _private: (),
 }
 impl StartPolicyGeneration {
-    /// Creates a new builder-style object to manufacture [`StartPolicyGenerationInput`](crate::input::StartPolicyGenerationInput)
+    /// Creates a new builder-style object to manufacture [`StartPolicyGenerationInput`](crate::input::StartPolicyGenerationInput).
     pub fn builder() -> crate::input::start_policy_generation_input::Builder {
         crate::input::start_policy_generation_input::Builder::default()
     }
@@ -744,7 +744,7 @@ pub struct StartResourceScan {
     _private: (),
 }
 impl StartResourceScan {
-    /// Creates a new builder-style object to manufacture [`StartResourceScanInput`](crate::input::StartResourceScanInput)
+    /// Creates a new builder-style object to manufacture [`StartResourceScanInput`](crate::input::StartResourceScanInput).
     pub fn builder() -> crate::input::start_resource_scan_input::Builder {
         crate::input::start_resource_scan_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -810,7 +810,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -842,7 +842,7 @@ pub struct UpdateArchiveRule {
     _private: (),
 }
 impl UpdateArchiveRule {
-    /// Creates a new builder-style object to manufacture [`UpdateArchiveRuleInput`](crate::input::UpdateArchiveRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateArchiveRuleInput`](crate::input::UpdateArchiveRuleInput).
     pub fn builder() -> crate::input::update_archive_rule_input::Builder {
         crate::input::update_archive_rule_input::Builder::default()
     }
@@ -876,7 +876,7 @@ pub struct UpdateFindings {
     _private: (),
 }
 impl UpdateFindings {
-    /// Creates a new builder-style object to manufacture [`UpdateFindingsInput`](crate::input::UpdateFindingsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFindingsInput`](crate::input::UpdateFindingsInput).
     pub fn builder() -> crate::input::update_findings_input::Builder {
         crate::input::update_findings_input::Builder::default()
     }
@@ -908,7 +908,7 @@ pub struct ValidatePolicy {
     _private: (),
 }
 impl ValidatePolicy {
-    /// Creates a new builder-style object to manufacture [`ValidatePolicyInput`](crate::input::ValidatePolicyInput)
+    /// Creates a new builder-style object to manufacture [`ValidatePolicyInput`](crate::input::ValidatePolicyInput).
     pub fn builder() -> crate::input::validate_policy_input::Builder {
         crate::input::validate_policy_input::Builder::default()
     }

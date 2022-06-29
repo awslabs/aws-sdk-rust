@@ -10,7 +10,7 @@ pub struct AcknowledgeJob {
     _private: (),
 }
 impl AcknowledgeJob {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeJobInput`](crate::input::AcknowledgeJobInput)
+    /// Creates a new builder-style object to manufacture [`AcknowledgeJobInput`](crate::input::AcknowledgeJobInput).
     pub fn builder() -> crate::input::acknowledge_job_input::Builder {
         crate::input::acknowledge_job_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct AcknowledgeThirdPartyJob {
     _private: (),
 }
 impl AcknowledgeThirdPartyJob {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeThirdPartyJobInput`](crate::input::AcknowledgeThirdPartyJobInput)
+    /// Creates a new builder-style object to manufacture [`AcknowledgeThirdPartyJobInput`](crate::input::AcknowledgeThirdPartyJobInput).
     pub fn builder() -> crate::input::acknowledge_third_party_job_input::Builder {
         crate::input::acknowledge_third_party_job_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateCustomActionType {
     _private: (),
 }
 impl CreateCustomActionType {
-    /// Creates a new builder-style object to manufacture [`CreateCustomActionTypeInput`](crate::input::CreateCustomActionTypeInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomActionTypeInput`](crate::input::CreateCustomActionTypeInput).
     pub fn builder() -> crate::input::create_custom_action_type_input::Builder {
         crate::input::create_custom_action_type_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreatePipeline {
     _private: (),
 }
 impl CreatePipeline {
-    /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::input::CreatePipelineInput)
+    /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::input::CreatePipelineInput).
     pub fn builder() -> crate::input::create_pipeline_input::Builder {
         crate::input::create_pipeline_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DeleteCustomActionType {
     _private: (),
 }
 impl DeleteCustomActionType {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomActionTypeInput`](crate::input::DeleteCustomActionTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomActionTypeInput`](crate::input::DeleteCustomActionTypeInput).
     pub fn builder() -> crate::input::delete_custom_action_type_input::Builder {
         crate::input::delete_custom_action_type_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeletePipeline {
     _private: (),
 }
 impl DeletePipeline {
-    /// Creates a new builder-style object to manufacture [`DeletePipelineInput`](crate::input::DeletePipelineInput)
+    /// Creates a new builder-style object to manufacture [`DeletePipelineInput`](crate::input::DeletePipelineInput).
     pub fn builder() -> crate::input::delete_pipeline_input::Builder {
         crate::input::delete_pipeline_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DeleteWebhook {
     _private: (),
 }
 impl DeleteWebhook {
-    /// Creates a new builder-style object to manufacture [`DeleteWebhookInput`](crate::input::DeleteWebhookInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
     pub fn builder() -> crate::input::delete_webhook_input::Builder {
         crate::input::delete_webhook_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct DeregisterWebhookWithThirdParty {
     _private: (),
 }
 impl DeregisterWebhookWithThirdParty {
-    /// Creates a new builder-style object to manufacture [`DeregisterWebhookWithThirdPartyInput`](crate::input::DeregisterWebhookWithThirdPartyInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterWebhookWithThirdPartyInput`](crate::input::DeregisterWebhookWithThirdPartyInput).
     pub fn builder() -> crate::input::deregister_webhook_with_third_party_input::Builder {
         crate::input::deregister_webhook_with_third_party_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DisableStageTransition {
     _private: (),
 }
 impl DisableStageTransition {
-    /// Creates a new builder-style object to manufacture [`DisableStageTransitionInput`](crate::input::DisableStageTransitionInput)
+    /// Creates a new builder-style object to manufacture [`DisableStageTransitionInput`](crate::input::DisableStageTransitionInput).
     pub fn builder() -> crate::input::disable_stage_transition_input::Builder {
         crate::input::disable_stage_transition_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct EnableStageTransition {
     _private: (),
 }
 impl EnableStageTransition {
-    /// Creates a new builder-style object to manufacture [`EnableStageTransitionInput`](crate::input::EnableStageTransitionInput)
+    /// Creates a new builder-style object to manufacture [`EnableStageTransitionInput`](crate::input::EnableStageTransitionInput).
     pub fn builder() -> crate::input::enable_stage_transition_input::Builder {
         crate::input::enable_stage_transition_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct GetActionType {
     _private: (),
 }
 impl GetActionType {
-    /// Creates a new builder-style object to manufacture [`GetActionTypeInput`](crate::input::GetActionTypeInput)
+    /// Creates a new builder-style object to manufacture [`GetActionTypeInput`](crate::input::GetActionTypeInput).
     pub fn builder() -> crate::input::get_action_type_input::Builder {
         crate::input::get_action_type_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct GetJobDetails {
     _private: (),
 }
 impl GetJobDetails {
-    /// Creates a new builder-style object to manufacture [`GetJobDetailsInput`](crate::input::GetJobDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetJobDetailsInput`](crate::input::GetJobDetailsInput).
     pub fn builder() -> crate::input::get_job_details_input::Builder {
         crate::input::get_job_details_input::Builder::default()
     }
@@ -406,7 +406,7 @@ pub struct GetPipeline {
     _private: (),
 }
 impl GetPipeline {
-    /// Creates a new builder-style object to manufacture [`GetPipelineInput`](crate::input::GetPipelineInput)
+    /// Creates a new builder-style object to manufacture [`GetPipelineInput`](crate::input::GetPipelineInput).
     pub fn builder() -> crate::input::get_pipeline_input::Builder {
         crate::input::get_pipeline_input::Builder::default()
     }
@@ -438,7 +438,7 @@ pub struct GetPipelineExecution {
     _private: (),
 }
 impl GetPipelineExecution {
-    /// Creates a new builder-style object to manufacture [`GetPipelineExecutionInput`](crate::input::GetPipelineExecutionInput)
+    /// Creates a new builder-style object to manufacture [`GetPipelineExecutionInput`](crate::input::GetPipelineExecutionInput).
     pub fn builder() -> crate::input::get_pipeline_execution_input::Builder {
         crate::input::get_pipeline_execution_input::Builder::default()
     }
@@ -472,7 +472,7 @@ pub struct GetPipelineState {
     _private: (),
 }
 impl GetPipelineState {
-    /// Creates a new builder-style object to manufacture [`GetPipelineStateInput`](crate::input::GetPipelineStateInput)
+    /// Creates a new builder-style object to manufacture [`GetPipelineStateInput`](crate::input::GetPipelineStateInput).
     pub fn builder() -> crate::input::get_pipeline_state_input::Builder {
         crate::input::get_pipeline_state_input::Builder::default()
     }
@@ -506,7 +506,7 @@ pub struct GetThirdPartyJobDetails {
     _private: (),
 }
 impl GetThirdPartyJobDetails {
-    /// Creates a new builder-style object to manufacture [`GetThirdPartyJobDetailsInput`](crate::input::GetThirdPartyJobDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetThirdPartyJobDetailsInput`](crate::input::GetThirdPartyJobDetailsInput).
     pub fn builder() -> crate::input::get_third_party_job_details_input::Builder {
         crate::input::get_third_party_job_details_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct ListActionExecutions {
     _private: (),
 }
 impl ListActionExecutions {
-    /// Creates a new builder-style object to manufacture [`ListActionExecutionsInput`](crate::input::ListActionExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListActionExecutionsInput`](crate::input::ListActionExecutionsInput).
     pub fn builder() -> crate::input::list_action_executions_input::Builder {
         crate::input::list_action_executions_input::Builder::default()
     }
@@ -574,7 +574,7 @@ pub struct ListActionTypes {
     _private: (),
 }
 impl ListActionTypes {
-    /// Creates a new builder-style object to manufacture [`ListActionTypesInput`](crate::input::ListActionTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListActionTypesInput`](crate::input::ListActionTypesInput).
     pub fn builder() -> crate::input::list_action_types_input::Builder {
         crate::input::list_action_types_input::Builder::default()
     }
@@ -608,7 +608,7 @@ pub struct ListPipelineExecutions {
     _private: (),
 }
 impl ListPipelineExecutions {
-    /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsInput`](crate::input::ListPipelineExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsInput`](crate::input::ListPipelineExecutionsInput).
     pub fn builder() -> crate::input::list_pipeline_executions_input::Builder {
         crate::input::list_pipeline_executions_input::Builder::default()
     }
@@ -642,7 +642,7 @@ pub struct ListPipelines {
     _private: (),
 }
 impl ListPipelines {
-    /// Creates a new builder-style object to manufacture [`ListPipelinesInput`](crate::input::ListPipelinesInput)
+    /// Creates a new builder-style object to manufacture [`ListPipelinesInput`](crate::input::ListPipelinesInput).
     pub fn builder() -> crate::input::list_pipelines_input::Builder {
         crate::input::list_pipelines_input::Builder::default()
     }
@@ -674,7 +674,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -708,7 +708,7 @@ pub struct ListWebhooks {
     _private: (),
 }
 impl ListWebhooks {
-    /// Creates a new builder-style object to manufacture [`ListWebhooksInput`](crate::input::ListWebhooksInput)
+    /// Creates a new builder-style object to manufacture [`ListWebhooksInput`](crate::input::ListWebhooksInput).
     pub fn builder() -> crate::input::list_webhooks_input::Builder {
         crate::input::list_webhooks_input::Builder::default()
     }
@@ -740,7 +740,7 @@ pub struct PollForJobs {
     _private: (),
 }
 impl PollForJobs {
-    /// Creates a new builder-style object to manufacture [`PollForJobsInput`](crate::input::PollForJobsInput)
+    /// Creates a new builder-style object to manufacture [`PollForJobsInput`](crate::input::PollForJobsInput).
     pub fn builder() -> crate::input::poll_for_jobs_input::Builder {
         crate::input::poll_for_jobs_input::Builder::default()
     }
@@ -772,7 +772,7 @@ pub struct PollForThirdPartyJobs {
     _private: (),
 }
 impl PollForThirdPartyJobs {
-    /// Creates a new builder-style object to manufacture [`PollForThirdPartyJobsInput`](crate::input::PollForThirdPartyJobsInput)
+    /// Creates a new builder-style object to manufacture [`PollForThirdPartyJobsInput`](crate::input::PollForThirdPartyJobsInput).
     pub fn builder() -> crate::input::poll_for_third_party_jobs_input::Builder {
         crate::input::poll_for_third_party_jobs_input::Builder::default()
     }
@@ -806,7 +806,7 @@ pub struct PutActionRevision {
     _private: (),
 }
 impl PutActionRevision {
-    /// Creates a new builder-style object to manufacture [`PutActionRevisionInput`](crate::input::PutActionRevisionInput)
+    /// Creates a new builder-style object to manufacture [`PutActionRevisionInput`](crate::input::PutActionRevisionInput).
     pub fn builder() -> crate::input::put_action_revision_input::Builder {
         crate::input::put_action_revision_input::Builder::default()
     }
@@ -840,7 +840,7 @@ pub struct PutApprovalResult {
     _private: (),
 }
 impl PutApprovalResult {
-    /// Creates a new builder-style object to manufacture [`PutApprovalResultInput`](crate::input::PutApprovalResultInput)
+    /// Creates a new builder-style object to manufacture [`PutApprovalResultInput`](crate::input::PutApprovalResultInput).
     pub fn builder() -> crate::input::put_approval_result_input::Builder {
         crate::input::put_approval_result_input::Builder::default()
     }
@@ -874,7 +874,7 @@ pub struct PutJobFailureResult {
     _private: (),
 }
 impl PutJobFailureResult {
-    /// Creates a new builder-style object to manufacture [`PutJobFailureResultInput`](crate::input::PutJobFailureResultInput)
+    /// Creates a new builder-style object to manufacture [`PutJobFailureResultInput`](crate::input::PutJobFailureResultInput).
     pub fn builder() -> crate::input::put_job_failure_result_input::Builder {
         crate::input::put_job_failure_result_input::Builder::default()
     }
@@ -908,7 +908,7 @@ pub struct PutJobSuccessResult {
     _private: (),
 }
 impl PutJobSuccessResult {
-    /// Creates a new builder-style object to manufacture [`PutJobSuccessResultInput`](crate::input::PutJobSuccessResultInput)
+    /// Creates a new builder-style object to manufacture [`PutJobSuccessResultInput`](crate::input::PutJobSuccessResultInput).
     pub fn builder() -> crate::input::put_job_success_result_input::Builder {
         crate::input::put_job_success_result_input::Builder::default()
     }
@@ -942,7 +942,7 @@ pub struct PutThirdPartyJobFailureResult {
     _private: (),
 }
 impl PutThirdPartyJobFailureResult {
-    /// Creates a new builder-style object to manufacture [`PutThirdPartyJobFailureResultInput`](crate::input::PutThirdPartyJobFailureResultInput)
+    /// Creates a new builder-style object to manufacture [`PutThirdPartyJobFailureResultInput`](crate::input::PutThirdPartyJobFailureResultInput).
     pub fn builder() -> crate::input::put_third_party_job_failure_result_input::Builder {
         crate::input::put_third_party_job_failure_result_input::Builder::default()
     }
@@ -976,7 +976,7 @@ pub struct PutThirdPartyJobSuccessResult {
     _private: (),
 }
 impl PutThirdPartyJobSuccessResult {
-    /// Creates a new builder-style object to manufacture [`PutThirdPartyJobSuccessResultInput`](crate::input::PutThirdPartyJobSuccessResultInput)
+    /// Creates a new builder-style object to manufacture [`PutThirdPartyJobSuccessResultInput`](crate::input::PutThirdPartyJobSuccessResultInput).
     pub fn builder() -> crate::input::put_third_party_job_success_result_input::Builder {
         crate::input::put_third_party_job_success_result_input::Builder::default()
     }
@@ -1010,7 +1010,7 @@ pub struct PutWebhook {
     _private: (),
 }
 impl PutWebhook {
-    /// Creates a new builder-style object to manufacture [`PutWebhookInput`](crate::input::PutWebhookInput)
+    /// Creates a new builder-style object to manufacture [`PutWebhookInput`](crate::input::PutWebhookInput).
     pub fn builder() -> crate::input::put_webhook_input::Builder {
         crate::input::put_webhook_input::Builder::default()
     }
@@ -1042,7 +1042,7 @@ pub struct RegisterWebhookWithThirdParty {
     _private: (),
 }
 impl RegisterWebhookWithThirdParty {
-    /// Creates a new builder-style object to manufacture [`RegisterWebhookWithThirdPartyInput`](crate::input::RegisterWebhookWithThirdPartyInput)
+    /// Creates a new builder-style object to manufacture [`RegisterWebhookWithThirdPartyInput`](crate::input::RegisterWebhookWithThirdPartyInput).
     pub fn builder() -> crate::input::register_webhook_with_third_party_input::Builder {
         crate::input::register_webhook_with_third_party_input::Builder::default()
     }
@@ -1076,7 +1076,7 @@ pub struct RetryStageExecution {
     _private: (),
 }
 impl RetryStageExecution {
-    /// Creates a new builder-style object to manufacture [`RetryStageExecutionInput`](crate::input::RetryStageExecutionInput)
+    /// Creates a new builder-style object to manufacture [`RetryStageExecutionInput`](crate::input::RetryStageExecutionInput).
     pub fn builder() -> crate::input::retry_stage_execution_input::Builder {
         crate::input::retry_stage_execution_input::Builder::default()
     }
@@ -1110,7 +1110,7 @@ pub struct StartPipelineExecution {
     _private: (),
 }
 impl StartPipelineExecution {
-    /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::input::StartPipelineExecutionInput)
+    /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::input::StartPipelineExecutionInput).
     pub fn builder() -> crate::input::start_pipeline_execution_input::Builder {
         crate::input::start_pipeline_execution_input::Builder::default()
     }
@@ -1144,7 +1144,7 @@ pub struct StopPipelineExecution {
     _private: (),
 }
 impl StopPipelineExecution {
-    /// Creates a new builder-style object to manufacture [`StopPipelineExecutionInput`](crate::input::StopPipelineExecutionInput)
+    /// Creates a new builder-style object to manufacture [`StopPipelineExecutionInput`](crate::input::StopPipelineExecutionInput).
     pub fn builder() -> crate::input::stop_pipeline_execution_input::Builder {
         crate::input::stop_pipeline_execution_input::Builder::default()
     }
@@ -1178,7 +1178,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1210,7 +1210,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1242,7 +1242,7 @@ pub struct UpdateActionType {
     _private: (),
 }
 impl UpdateActionType {
-    /// Creates a new builder-style object to manufacture [`UpdateActionTypeInput`](crate::input::UpdateActionTypeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateActionTypeInput`](crate::input::UpdateActionTypeInput).
     pub fn builder() -> crate::input::update_action_type_input::Builder {
         crate::input::update_action_type_input::Builder::default()
     }
@@ -1276,7 +1276,7 @@ pub struct UpdatePipeline {
     _private: (),
 }
 impl UpdatePipeline {
-    /// Creates a new builder-style object to manufacture [`UpdatePipelineInput`](crate::input::UpdatePipelineInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePipelineInput`](crate::input::UpdatePipelineInput).
     pub fn builder() -> crate::input::update_pipeline_input::Builder {
         crate::input::update_pipeline_input::Builder::default()
     }

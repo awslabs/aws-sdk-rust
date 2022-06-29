@@ -2615,11 +2615,10 @@ impl std::fmt::Display for StateMachineDoesNotExist {
     }
 }
 impl std::error::Error for StateMachineDoesNotExist {}
-/// See [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist)
+/// See [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist).
 pub mod state_machine_does_not_exist {
 
-    /// A builder for [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist)
-    #[non_exhaustive]
+    /// A builder for [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2635,7 +2634,7 @@ pub mod state_machine_does_not_exist {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist)
+        /// Consumes the builder and constructs a [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist).
         pub fn build(self) -> crate::error::StateMachineDoesNotExist {
             crate::error::StateMachineDoesNotExist {
                 message: self.message,
@@ -2644,7 +2643,7 @@ pub mod state_machine_does_not_exist {
     }
 }
 impl StateMachineDoesNotExist {
-    /// Creates a new builder-style object to manufacture [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist)
+    /// Creates a new builder-style object to manufacture [`StateMachineDoesNotExist`](crate::error::StateMachineDoesNotExist).
     pub fn builder() -> crate::error::state_machine_does_not_exist::Builder {
         crate::error::state_machine_does_not_exist::Builder::default()
     }
@@ -2680,11 +2679,10 @@ impl std::fmt::Display for StateMachineDeleting {
     }
 }
 impl std::error::Error for StateMachineDeleting {}
-/// See [`StateMachineDeleting`](crate::error::StateMachineDeleting)
+/// See [`StateMachineDeleting`](crate::error::StateMachineDeleting).
 pub mod state_machine_deleting {
 
-    /// A builder for [`StateMachineDeleting`](crate::error::StateMachineDeleting)
-    #[non_exhaustive]
+    /// A builder for [`StateMachineDeleting`](crate::error::StateMachineDeleting).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2700,7 +2698,7 @@ pub mod state_machine_deleting {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StateMachineDeleting`](crate::error::StateMachineDeleting)
+        /// Consumes the builder and constructs a [`StateMachineDeleting`](crate::error::StateMachineDeleting).
         pub fn build(self) -> crate::error::StateMachineDeleting {
             crate::error::StateMachineDeleting {
                 message: self.message,
@@ -2709,7 +2707,7 @@ pub mod state_machine_deleting {
     }
 }
 impl StateMachineDeleting {
-    /// Creates a new builder-style object to manufacture [`StateMachineDeleting`](crate::error::StateMachineDeleting)
+    /// Creates a new builder-style object to manufacture [`StateMachineDeleting`](crate::error::StateMachineDeleting).
     pub fn builder() -> crate::error::state_machine_deleting::Builder {
         crate::error::state_machine_deleting::Builder::default()
     }
@@ -2745,11 +2743,10 @@ impl std::fmt::Display for MissingRequiredParameter {
     }
 }
 impl std::error::Error for MissingRequiredParameter {}
-/// See [`MissingRequiredParameter`](crate::error::MissingRequiredParameter)
+/// See [`MissingRequiredParameter`](crate::error::MissingRequiredParameter).
 pub mod missing_required_parameter {
 
-    /// A builder for [`MissingRequiredParameter`](crate::error::MissingRequiredParameter)
-    #[non_exhaustive]
+    /// A builder for [`MissingRequiredParameter`](crate::error::MissingRequiredParameter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2765,7 +2762,7 @@ pub mod missing_required_parameter {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MissingRequiredParameter`](crate::error::MissingRequiredParameter)
+        /// Consumes the builder and constructs a [`MissingRequiredParameter`](crate::error::MissingRequiredParameter).
         pub fn build(self) -> crate::error::MissingRequiredParameter {
             crate::error::MissingRequiredParameter {
                 message: self.message,
@@ -2774,7 +2771,7 @@ pub mod missing_required_parameter {
     }
 }
 impl MissingRequiredParameter {
-    /// Creates a new builder-style object to manufacture [`MissingRequiredParameter`](crate::error::MissingRequiredParameter)
+    /// Creates a new builder-style object to manufacture [`MissingRequiredParameter`](crate::error::MissingRequiredParameter).
     pub fn builder() -> crate::error::missing_required_parameter::Builder {
         crate::error::missing_required_parameter::Builder::default()
     }
@@ -2810,11 +2807,10 @@ impl std::fmt::Display for InvalidTracingConfiguration {
     }
 }
 impl std::error::Error for InvalidTracingConfiguration {}
-/// See [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration)
+/// See [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration).
 pub mod invalid_tracing_configuration {
 
-    /// A builder for [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2830,7 +2826,7 @@ pub mod invalid_tracing_configuration {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration)
+        /// Consumes the builder and constructs a [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration).
         pub fn build(self) -> crate::error::InvalidTracingConfiguration {
             crate::error::InvalidTracingConfiguration {
                 message: self.message,
@@ -2839,7 +2835,7 @@ pub mod invalid_tracing_configuration {
     }
 }
 impl InvalidTracingConfiguration {
-    /// Creates a new builder-style object to manufacture [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration)
+    /// Creates a new builder-style object to manufacture [`InvalidTracingConfiguration`](crate::error::InvalidTracingConfiguration).
     pub fn builder() -> crate::error::invalid_tracing_configuration::Builder {
         crate::error::invalid_tracing_configuration::Builder::default()
     }
@@ -2875,11 +2871,10 @@ impl std::fmt::Display for InvalidLoggingConfiguration {
     }
 }
 impl std::error::Error for InvalidLoggingConfiguration {}
-/// See [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration)
+/// See [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration).
 pub mod invalid_logging_configuration {
 
-    /// A builder for [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2895,7 +2890,7 @@ pub mod invalid_logging_configuration {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration)
+        /// Consumes the builder and constructs a [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration).
         pub fn build(self) -> crate::error::InvalidLoggingConfiguration {
             crate::error::InvalidLoggingConfiguration {
                 message: self.message,
@@ -2904,7 +2899,7 @@ pub mod invalid_logging_configuration {
     }
 }
 impl InvalidLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration)
+    /// Creates a new builder-style object to manufacture [`InvalidLoggingConfiguration`](crate::error::InvalidLoggingConfiguration).
     pub fn builder() -> crate::error::invalid_logging_configuration::Builder {
         crate::error::invalid_logging_configuration::Builder::default()
     }
@@ -2940,11 +2935,10 @@ impl std::fmt::Display for InvalidDefinition {
     }
 }
 impl std::error::Error for InvalidDefinition {}
-/// See [`InvalidDefinition`](crate::error::InvalidDefinition)
+/// See [`InvalidDefinition`](crate::error::InvalidDefinition).
 pub mod invalid_definition {
 
-    /// A builder for [`InvalidDefinition`](crate::error::InvalidDefinition)
-    #[non_exhaustive]
+    /// A builder for [`InvalidDefinition`](crate::error::InvalidDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2960,7 +2954,7 @@ pub mod invalid_definition {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidDefinition`](crate::error::InvalidDefinition)
+        /// Consumes the builder and constructs a [`InvalidDefinition`](crate::error::InvalidDefinition).
         pub fn build(self) -> crate::error::InvalidDefinition {
             crate::error::InvalidDefinition {
                 message: self.message,
@@ -2969,7 +2963,7 @@ pub mod invalid_definition {
     }
 }
 impl InvalidDefinition {
-    /// Creates a new builder-style object to manufacture [`InvalidDefinition`](crate::error::InvalidDefinition)
+    /// Creates a new builder-style object to manufacture [`InvalidDefinition`](crate::error::InvalidDefinition).
     pub fn builder() -> crate::error::invalid_definition::Builder {
         crate::error::invalid_definition::Builder::default()
     }
@@ -3005,11 +2999,10 @@ impl std::fmt::Display for InvalidArn {
     }
 }
 impl std::error::Error for InvalidArn {}
-/// See [`InvalidArn`](crate::error::InvalidArn)
+/// See [`InvalidArn`](crate::error::InvalidArn).
 pub mod invalid_arn {
 
-    /// A builder for [`InvalidArn`](crate::error::InvalidArn)
-    #[non_exhaustive]
+    /// A builder for [`InvalidArn`](crate::error::InvalidArn).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3025,7 +3018,7 @@ pub mod invalid_arn {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidArn`](crate::error::InvalidArn)
+        /// Consumes the builder and constructs a [`InvalidArn`](crate::error::InvalidArn).
         pub fn build(self) -> crate::error::InvalidArn {
             crate::error::InvalidArn {
                 message: self.message,
@@ -3034,7 +3027,7 @@ pub mod invalid_arn {
     }
 }
 impl InvalidArn {
-    /// Creates a new builder-style object to manufacture [`InvalidArn`](crate::error::InvalidArn)
+    /// Creates a new builder-style object to manufacture [`InvalidArn`](crate::error::InvalidArn).
     pub fn builder() -> crate::error::invalid_arn::Builder {
         crate::error::invalid_arn::Builder::default()
     }
@@ -3079,11 +3072,10 @@ impl std::fmt::Display for ResourceNotFound {
     }
 }
 impl std::error::Error for ResourceNotFound {}
-/// See [`ResourceNotFound`](crate::error::ResourceNotFound)
+/// See [`ResourceNotFound`](crate::error::ResourceNotFound).
 pub mod resource_not_found {
 
-    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3113,7 +3105,7 @@ pub mod resource_not_found {
             self.resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound)
+        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound).
         pub fn build(self) -> crate::error::ResourceNotFound {
             crate::error::ResourceNotFound {
                 message: self.message,
@@ -3123,7 +3115,7 @@ pub mod resource_not_found {
     }
 }
 impl ResourceNotFound {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound).
     pub fn builder() -> crate::error::resource_not_found::Builder {
         crate::error::resource_not_found::Builder::default()
     }
@@ -3168,11 +3160,10 @@ impl std::fmt::Display for TooManyTags {
     }
 }
 impl std::error::Error for TooManyTags {}
-/// See [`TooManyTags`](crate::error::TooManyTags)
+/// See [`TooManyTags`](crate::error::TooManyTags).
 pub mod too_many_tags {
 
-    /// A builder for [`TooManyTags`](crate::error::TooManyTags)
-    #[non_exhaustive]
+    /// A builder for [`TooManyTags`](crate::error::TooManyTags).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3202,7 +3193,7 @@ pub mod too_many_tags {
             self.resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyTags`](crate::error::TooManyTags)
+        /// Consumes the builder and constructs a [`TooManyTags`](crate::error::TooManyTags).
         pub fn build(self) -> crate::error::TooManyTags {
             crate::error::TooManyTags {
                 message: self.message,
@@ -3212,7 +3203,7 @@ pub mod too_many_tags {
     }
 }
 impl TooManyTags {
-    /// Creates a new builder-style object to manufacture [`TooManyTags`](crate::error::TooManyTags)
+    /// Creates a new builder-style object to manufacture [`TooManyTags`](crate::error::TooManyTags).
     pub fn builder() -> crate::error::too_many_tags::Builder {
         crate::error::too_many_tags::Builder::default()
     }
@@ -3248,11 +3239,10 @@ impl std::fmt::Display for ExecutionDoesNotExist {
     }
 }
 impl std::error::Error for ExecutionDoesNotExist {}
-/// See [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist)
+/// See [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist).
 pub mod execution_does_not_exist {
 
-    /// A builder for [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist)
-    #[non_exhaustive]
+    /// A builder for [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3268,7 +3258,7 @@ pub mod execution_does_not_exist {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist)
+        /// Consumes the builder and constructs a [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist).
         pub fn build(self) -> crate::error::ExecutionDoesNotExist {
             crate::error::ExecutionDoesNotExist {
                 message: self.message,
@@ -3277,7 +3267,7 @@ pub mod execution_does_not_exist {
     }
 }
 impl ExecutionDoesNotExist {
-    /// Creates a new builder-style object to manufacture [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist)
+    /// Creates a new builder-style object to manufacture [`ExecutionDoesNotExist`](crate::error::ExecutionDoesNotExist).
     pub fn builder() -> crate::error::execution_does_not_exist::Builder {
         crate::error::execution_does_not_exist::Builder::default()
     }
@@ -3313,11 +3303,10 @@ impl std::fmt::Display for StateMachineTypeNotSupported {
     }
 }
 impl std::error::Error for StateMachineTypeNotSupported {}
-/// See [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported)
+/// See [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported).
 pub mod state_machine_type_not_supported {
 
-    /// A builder for [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported)
-    #[non_exhaustive]
+    /// A builder for [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3333,7 +3322,7 @@ pub mod state_machine_type_not_supported {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported)
+        /// Consumes the builder and constructs a [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported).
         pub fn build(self) -> crate::error::StateMachineTypeNotSupported {
             crate::error::StateMachineTypeNotSupported {
                 message: self.message,
@@ -3342,7 +3331,7 @@ pub mod state_machine_type_not_supported {
     }
 }
 impl StateMachineTypeNotSupported {
-    /// Creates a new builder-style object to manufacture [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported)
+    /// Creates a new builder-style object to manufacture [`StateMachineTypeNotSupported`](crate::error::StateMachineTypeNotSupported).
     pub fn builder() -> crate::error::state_machine_type_not_supported::Builder {
         crate::error::state_machine_type_not_supported::Builder::default()
     }
@@ -3378,11 +3367,10 @@ impl std::fmt::Display for InvalidName {
     }
 }
 impl std::error::Error for InvalidName {}
-/// See [`InvalidName`](crate::error::InvalidName)
+/// See [`InvalidName`](crate::error::InvalidName).
 pub mod invalid_name {
 
-    /// A builder for [`InvalidName`](crate::error::InvalidName)
-    #[non_exhaustive]
+    /// A builder for [`InvalidName`](crate::error::InvalidName).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3398,7 +3386,7 @@ pub mod invalid_name {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidName`](crate::error::InvalidName)
+        /// Consumes the builder and constructs a [`InvalidName`](crate::error::InvalidName).
         pub fn build(self) -> crate::error::InvalidName {
             crate::error::InvalidName {
                 message: self.message,
@@ -3407,7 +3395,7 @@ pub mod invalid_name {
     }
 }
 impl InvalidName {
-    /// Creates a new builder-style object to manufacture [`InvalidName`](crate::error::InvalidName)
+    /// Creates a new builder-style object to manufacture [`InvalidName`](crate::error::InvalidName).
     pub fn builder() -> crate::error::invalid_name::Builder {
         crate::error::invalid_name::Builder::default()
     }
@@ -3443,11 +3431,10 @@ impl std::fmt::Display for InvalidExecutionInput {
     }
 }
 impl std::error::Error for InvalidExecutionInput {}
-/// See [`InvalidExecutionInput`](crate::error::InvalidExecutionInput)
+/// See [`InvalidExecutionInput`](crate::error::InvalidExecutionInput).
 pub mod invalid_execution_input {
 
-    /// A builder for [`InvalidExecutionInput`](crate::error::InvalidExecutionInput)
-    #[non_exhaustive]
+    /// A builder for [`InvalidExecutionInput`](crate::error::InvalidExecutionInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3463,7 +3450,7 @@ pub mod invalid_execution_input {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidExecutionInput`](crate::error::InvalidExecutionInput)
+        /// Consumes the builder and constructs a [`InvalidExecutionInput`](crate::error::InvalidExecutionInput).
         pub fn build(self) -> crate::error::InvalidExecutionInput {
             crate::error::InvalidExecutionInput {
                 message: self.message,
@@ -3472,7 +3459,7 @@ pub mod invalid_execution_input {
     }
 }
 impl InvalidExecutionInput {
-    /// Creates a new builder-style object to manufacture [`InvalidExecutionInput`](crate::error::InvalidExecutionInput)
+    /// Creates a new builder-style object to manufacture [`InvalidExecutionInput`](crate::error::InvalidExecutionInput).
     pub fn builder() -> crate::error::invalid_execution_input::Builder {
         crate::error::invalid_execution_input::Builder::default()
     }
@@ -3508,11 +3495,10 @@ impl std::fmt::Display for ExecutionLimitExceeded {
     }
 }
 impl std::error::Error for ExecutionLimitExceeded {}
-/// See [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded)
+/// See [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded).
 pub mod execution_limit_exceeded {
 
-    /// A builder for [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3528,7 +3514,7 @@ pub mod execution_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded)
+        /// Consumes the builder and constructs a [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded).
         pub fn build(self) -> crate::error::ExecutionLimitExceeded {
             crate::error::ExecutionLimitExceeded {
                 message: self.message,
@@ -3537,7 +3523,7 @@ pub mod execution_limit_exceeded {
     }
 }
 impl ExecutionLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`ExecutionLimitExceeded`](crate::error::ExecutionLimitExceeded).
     pub fn builder() -> crate::error::execution_limit_exceeded::Builder {
         crate::error::execution_limit_exceeded::Builder::default()
     }
@@ -3575,11 +3561,10 @@ impl std::fmt::Display for ExecutionAlreadyExists {
     }
 }
 impl std::error::Error for ExecutionAlreadyExists {}
-/// See [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists)
+/// See [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists).
 pub mod execution_already_exists {
 
-    /// A builder for [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3595,7 +3580,7 @@ pub mod execution_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists)
+        /// Consumes the builder and constructs a [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists).
         pub fn build(self) -> crate::error::ExecutionAlreadyExists {
             crate::error::ExecutionAlreadyExists {
                 message: self.message,
@@ -3604,7 +3589,7 @@ pub mod execution_already_exists {
     }
 }
 impl ExecutionAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`ExecutionAlreadyExists`](crate::error::ExecutionAlreadyExists).
     pub fn builder() -> crate::error::execution_already_exists::Builder {
         crate::error::execution_already_exists::Builder::default()
     }
@@ -3640,11 +3625,10 @@ impl std::fmt::Display for TaskTimedOut {
     }
 }
 impl std::error::Error for TaskTimedOut {}
-/// See [`TaskTimedOut`](crate::error::TaskTimedOut)
+/// See [`TaskTimedOut`](crate::error::TaskTimedOut).
 pub mod task_timed_out {
 
-    /// A builder for [`TaskTimedOut`](crate::error::TaskTimedOut)
-    #[non_exhaustive]
+    /// A builder for [`TaskTimedOut`](crate::error::TaskTimedOut).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3660,7 +3644,7 @@ pub mod task_timed_out {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TaskTimedOut`](crate::error::TaskTimedOut)
+        /// Consumes the builder and constructs a [`TaskTimedOut`](crate::error::TaskTimedOut).
         pub fn build(self) -> crate::error::TaskTimedOut {
             crate::error::TaskTimedOut {
                 message: self.message,
@@ -3669,7 +3653,7 @@ pub mod task_timed_out {
     }
 }
 impl TaskTimedOut {
-    /// Creates a new builder-style object to manufacture [`TaskTimedOut`](crate::error::TaskTimedOut)
+    /// Creates a new builder-style object to manufacture [`TaskTimedOut`](crate::error::TaskTimedOut).
     pub fn builder() -> crate::error::task_timed_out::Builder {
         crate::error::task_timed_out::Builder::default()
     }
@@ -3705,11 +3689,10 @@ impl std::fmt::Display for TaskDoesNotExist {
     }
 }
 impl std::error::Error for TaskDoesNotExist {}
-/// See [`TaskDoesNotExist`](crate::error::TaskDoesNotExist)
+/// See [`TaskDoesNotExist`](crate::error::TaskDoesNotExist).
 pub mod task_does_not_exist {
 
-    /// A builder for [`TaskDoesNotExist`](crate::error::TaskDoesNotExist)
-    #[non_exhaustive]
+    /// A builder for [`TaskDoesNotExist`](crate::error::TaskDoesNotExist).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3725,7 +3708,7 @@ pub mod task_does_not_exist {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TaskDoesNotExist`](crate::error::TaskDoesNotExist)
+        /// Consumes the builder and constructs a [`TaskDoesNotExist`](crate::error::TaskDoesNotExist).
         pub fn build(self) -> crate::error::TaskDoesNotExist {
             crate::error::TaskDoesNotExist {
                 message: self.message,
@@ -3734,7 +3717,7 @@ pub mod task_does_not_exist {
     }
 }
 impl TaskDoesNotExist {
-    /// Creates a new builder-style object to manufacture [`TaskDoesNotExist`](crate::error::TaskDoesNotExist)
+    /// Creates a new builder-style object to manufacture [`TaskDoesNotExist`](crate::error::TaskDoesNotExist).
     pub fn builder() -> crate::error::task_does_not_exist::Builder {
         crate::error::task_does_not_exist::Builder::default()
     }
@@ -3770,11 +3753,10 @@ impl std::fmt::Display for InvalidToken {
     }
 }
 impl std::error::Error for InvalidToken {}
-/// See [`InvalidToken`](crate::error::InvalidToken)
+/// See [`InvalidToken`](crate::error::InvalidToken).
 pub mod invalid_token {
 
-    /// A builder for [`InvalidToken`](crate::error::InvalidToken)
-    #[non_exhaustive]
+    /// A builder for [`InvalidToken`](crate::error::InvalidToken).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3790,7 +3772,7 @@ pub mod invalid_token {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidToken`](crate::error::InvalidToken)
+        /// Consumes the builder and constructs a [`InvalidToken`](crate::error::InvalidToken).
         pub fn build(self) -> crate::error::InvalidToken {
             crate::error::InvalidToken {
                 message: self.message,
@@ -3799,7 +3781,7 @@ pub mod invalid_token {
     }
 }
 impl InvalidToken {
-    /// Creates a new builder-style object to manufacture [`InvalidToken`](crate::error::InvalidToken)
+    /// Creates a new builder-style object to manufacture [`InvalidToken`](crate::error::InvalidToken).
     pub fn builder() -> crate::error::invalid_token::Builder {
         crate::error::invalid_token::Builder::default()
     }
@@ -3835,11 +3817,10 @@ impl std::fmt::Display for InvalidOutput {
     }
 }
 impl std::error::Error for InvalidOutput {}
-/// See [`InvalidOutput`](crate::error::InvalidOutput)
+/// See [`InvalidOutput`](crate::error::InvalidOutput).
 pub mod invalid_output {
 
-    /// A builder for [`InvalidOutput`](crate::error::InvalidOutput)
-    #[non_exhaustive]
+    /// A builder for [`InvalidOutput`](crate::error::InvalidOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3855,7 +3836,7 @@ pub mod invalid_output {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidOutput`](crate::error::InvalidOutput)
+        /// Consumes the builder and constructs a [`InvalidOutput`](crate::error::InvalidOutput).
         pub fn build(self) -> crate::error::InvalidOutput {
             crate::error::InvalidOutput {
                 message: self.message,
@@ -3864,7 +3845,7 @@ pub mod invalid_output {
     }
 }
 impl InvalidOutput {
-    /// Creates a new builder-style object to manufacture [`InvalidOutput`](crate::error::InvalidOutput)
+    /// Creates a new builder-style object to manufacture [`InvalidOutput`](crate::error::InvalidOutput).
     pub fn builder() -> crate::error::invalid_output::Builder {
         crate::error::invalid_output::Builder::default()
     }
@@ -3900,11 +3881,10 @@ impl std::fmt::Display for ActivityWorkerLimitExceeded {
     }
 }
 impl std::error::Error for ActivityWorkerLimitExceeded {}
-/// See [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded)
+/// See [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded).
 pub mod activity_worker_limit_exceeded {
 
-    /// A builder for [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3920,7 +3900,7 @@ pub mod activity_worker_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded)
+        /// Consumes the builder and constructs a [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded).
         pub fn build(self) -> crate::error::ActivityWorkerLimitExceeded {
             crate::error::ActivityWorkerLimitExceeded {
                 message: self.message,
@@ -3929,7 +3909,7 @@ pub mod activity_worker_limit_exceeded {
     }
 }
 impl ActivityWorkerLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`ActivityWorkerLimitExceeded`](crate::error::ActivityWorkerLimitExceeded).
     pub fn builder() -> crate::error::activity_worker_limit_exceeded::Builder {
         crate::error::activity_worker_limit_exceeded::Builder::default()
     }
@@ -3965,11 +3945,10 @@ impl std::fmt::Display for ActivityDoesNotExist {
     }
 }
 impl std::error::Error for ActivityDoesNotExist {}
-/// See [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist)
+/// See [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist).
 pub mod activity_does_not_exist {
 
-    /// A builder for [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist)
-    #[non_exhaustive]
+    /// A builder for [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -3985,7 +3964,7 @@ pub mod activity_does_not_exist {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist)
+        /// Consumes the builder and constructs a [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist).
         pub fn build(self) -> crate::error::ActivityDoesNotExist {
             crate::error::ActivityDoesNotExist {
                 message: self.message,
@@ -3994,7 +3973,7 @@ pub mod activity_does_not_exist {
     }
 }
 impl ActivityDoesNotExist {
-    /// Creates a new builder-style object to manufacture [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist)
+    /// Creates a new builder-style object to manufacture [`ActivityDoesNotExist`](crate::error::ActivityDoesNotExist).
     pub fn builder() -> crate::error::activity_does_not_exist::Builder {
         crate::error::activity_does_not_exist::Builder::default()
     }
@@ -4030,11 +4009,10 @@ impl std::fmt::Display for StateMachineLimitExceeded {
     }
 }
 impl std::error::Error for StateMachineLimitExceeded {}
-/// See [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded)
+/// See [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded).
 pub mod state_machine_limit_exceeded {
 
-    /// A builder for [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4050,7 +4028,7 @@ pub mod state_machine_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded)
+        /// Consumes the builder and constructs a [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded).
         pub fn build(self) -> crate::error::StateMachineLimitExceeded {
             crate::error::StateMachineLimitExceeded {
                 message: self.message,
@@ -4059,7 +4037,7 @@ pub mod state_machine_limit_exceeded {
     }
 }
 impl StateMachineLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`StateMachineLimitExceeded`](crate::error::StateMachineLimitExceeded).
     pub fn builder() -> crate::error::state_machine_limit_exceeded::Builder {
         crate::error::state_machine_limit_exceeded::Builder::default()
     }
@@ -4095,11 +4073,10 @@ impl std::fmt::Display for StateMachineAlreadyExists {
     }
 }
 impl std::error::Error for StateMachineAlreadyExists {}
-/// See [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists)
+/// See [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists).
 pub mod state_machine_already_exists {
 
-    /// A builder for [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4115,7 +4092,7 @@ pub mod state_machine_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists)
+        /// Consumes the builder and constructs a [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists).
         pub fn build(self) -> crate::error::StateMachineAlreadyExists {
             crate::error::StateMachineAlreadyExists {
                 message: self.message,
@@ -4124,7 +4101,7 @@ pub mod state_machine_already_exists {
     }
 }
 impl StateMachineAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`StateMachineAlreadyExists`](crate::error::StateMachineAlreadyExists).
     pub fn builder() -> crate::error::state_machine_already_exists::Builder {
         crate::error::state_machine_already_exists::Builder::default()
     }
@@ -4160,11 +4137,10 @@ impl std::fmt::Display for ActivityLimitExceeded {
     }
 }
 impl std::error::Error for ActivityLimitExceeded {}
-/// See [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded)
+/// See [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded).
 pub mod activity_limit_exceeded {
 
-    /// A builder for [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4180,7 +4156,7 @@ pub mod activity_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded)
+        /// Consumes the builder and constructs a [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded).
         pub fn build(self) -> crate::error::ActivityLimitExceeded {
             crate::error::ActivityLimitExceeded {
                 message: self.message,
@@ -4189,7 +4165,7 @@ pub mod activity_limit_exceeded {
     }
 }
 impl ActivityLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`ActivityLimitExceeded`](crate::error::ActivityLimitExceeded).
     pub fn builder() -> crate::error::activity_limit_exceeded::Builder {
         crate::error::activity_limit_exceeded::Builder::default()
     }

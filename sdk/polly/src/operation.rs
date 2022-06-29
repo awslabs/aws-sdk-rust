@@ -10,7 +10,7 @@ pub struct DeleteLexicon {
     _private: (),
 }
 impl DeleteLexicon {
-    /// Creates a new builder-style object to manufacture [`DeleteLexiconInput`](crate::input::DeleteLexiconInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLexiconInput`](crate::input::DeleteLexiconInput).
     pub fn builder() -> crate::input::delete_lexicon_input::Builder {
         crate::input::delete_lexicon_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DescribeVoices {
     _private: (),
 }
 impl DescribeVoices {
-    /// Creates a new builder-style object to manufacture [`DescribeVoicesInput`](crate::input::DescribeVoicesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVoicesInput`](crate::input::DescribeVoicesInput).
     pub fn builder() -> crate::input::describe_voices_input::Builder {
         crate::input::describe_voices_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct GetLexicon {
     _private: (),
 }
 impl GetLexicon {
-    /// Creates a new builder-style object to manufacture [`GetLexiconInput`](crate::input::GetLexiconInput)
+    /// Creates a new builder-style object to manufacture [`GetLexiconInput`](crate::input::GetLexiconInput).
     pub fn builder() -> crate::input::get_lexicon_input::Builder {
         crate::input::get_lexicon_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct GetSpeechSynthesisTask {
     _private: (),
 }
 impl GetSpeechSynthesisTask {
-    /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput)
+    /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput).
     pub fn builder() -> crate::input::get_speech_synthesis_task_input::Builder {
         crate::input::get_speech_synthesis_task_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct ListLexicons {
     _private: (),
 }
 impl ListLexicons {
-    /// Creates a new builder-style object to manufacture [`ListLexiconsInput`](crate::input::ListLexiconsInput)
+    /// Creates a new builder-style object to manufacture [`ListLexiconsInput`](crate::input::ListLexiconsInput).
     pub fn builder() -> crate::input::list_lexicons_input::Builder {
         crate::input::list_lexicons_input::Builder::default()
     }
@@ -172,7 +172,7 @@ pub struct ListSpeechSynthesisTasks {
     _private: (),
 }
 impl ListSpeechSynthesisTasks {
-    /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput)
+    /// Creates a new builder-style object to manufacture [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput).
     pub fn builder() -> crate::input::list_speech_synthesis_tasks_input::Builder {
         crate::input::list_speech_synthesis_tasks_input::Builder::default()
     }
@@ -206,7 +206,7 @@ pub struct PutLexicon {
     _private: (),
 }
 impl PutLexicon {
-    /// Creates a new builder-style object to manufacture [`PutLexiconInput`](crate::input::PutLexiconInput)
+    /// Creates a new builder-style object to manufacture [`PutLexiconInput`](crate::input::PutLexiconInput).
     pub fn builder() -> crate::input::put_lexicon_input::Builder {
         crate::input::put_lexicon_input::Builder::default()
     }
@@ -238,7 +238,7 @@ pub struct StartSpeechSynthesisTask {
     _private: (),
 }
 impl StartSpeechSynthesisTask {
-    /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput)
+    /// Creates a new builder-style object to manufacture [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput).
     pub fn builder() -> crate::input::start_speech_synthesis_task_input::Builder {
         crate::input::start_speech_synthesis_task_input::Builder::default()
     }
@@ -272,7 +272,7 @@ pub struct SynthesizeSpeech {
     _private: (),
 }
 impl SynthesizeSpeech {
-    /// Creates a new builder-style object to manufacture [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput)
+    /// Creates a new builder-style object to manufacture [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput).
     pub fn builder() -> crate::input::synthesize_speech_input::Builder {
         crate::input::synthesize_speech_input::Builder::default()
     }

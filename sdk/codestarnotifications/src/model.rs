@@ -81,11 +81,10 @@ impl std::fmt::Debug for Target {
         formatter.finish()
     }
 }
-/// See [`Target`](crate::model::Target)
+/// See [`Target`](crate::model::Target).
 pub mod target {
 
-    /// A builder for [`Target`](crate::model::Target)
-    #[non_exhaustive]
+    /// A builder for [`Target`](crate::model::Target).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_type: std::option::Option<std::string::String>,
@@ -115,7 +114,7 @@ pub mod target {
             self.target_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`Target`](crate::model::Target)
+        /// Consumes the builder and constructs a [`Target`](crate::model::Target).
         pub fn build(self) -> crate::model::Target {
             crate::model::Target {
                 target_type: self.target_type,
@@ -125,7 +124,7 @@ pub mod target {
     }
 }
 impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target)
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
     pub fn builder() -> crate::model::target::Builder {
         crate::model::target::Builder::default()
     }
@@ -220,11 +219,10 @@ impl std::fmt::Debug for TargetSummary {
         formatter.finish()
     }
 }
-/// See [`TargetSummary`](crate::model::TargetSummary)
+/// See [`TargetSummary`](crate::model::TargetSummary).
 pub mod target_summary {
 
-    /// A builder for [`TargetSummary`](crate::model::TargetSummary)
-    #[non_exhaustive]
+    /// A builder for [`TargetSummary`](crate::model::TargetSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_address: std::option::Option<std::string::String>,
@@ -268,7 +266,7 @@ pub mod target_summary {
             self.target_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`TargetSummary`](crate::model::TargetSummary)
+        /// Consumes the builder and constructs a [`TargetSummary`](crate::model::TargetSummary).
         pub fn build(self) -> crate::model::TargetSummary {
             crate::model::TargetSummary {
                 target_address: self.target_address,
@@ -279,7 +277,7 @@ pub mod target_summary {
     }
 }
 impl TargetSummary {
-    /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary)
+    /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary).
     pub fn builder() -> crate::model::target_summary::Builder {
         crate::model::target_summary::Builder::default()
     }
@@ -385,11 +383,10 @@ impl std::fmt::Debug for ListTargetsFilter {
         formatter.finish()
     }
 }
-/// See [`ListTargetsFilter`](crate::model::ListTargetsFilter)
+/// See [`ListTargetsFilter`](crate::model::ListTargetsFilter).
 pub mod list_targets_filter {
 
-    /// A builder for [`ListTargetsFilter`](crate::model::ListTargetsFilter)
-    #[non_exhaustive]
+    /// A builder for [`ListTargetsFilter`](crate::model::ListTargetsFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListTargetsFilterName>,
@@ -419,7 +416,7 @@ pub mod list_targets_filter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTargetsFilter`](crate::model::ListTargetsFilter)
+        /// Consumes the builder and constructs a [`ListTargetsFilter`](crate::model::ListTargetsFilter).
         pub fn build(self) -> crate::model::ListTargetsFilter {
             crate::model::ListTargetsFilter {
                 name: self.name,
@@ -429,7 +426,7 @@ pub mod list_targets_filter {
     }
 }
 impl ListTargetsFilter {
-    /// Creates a new builder-style object to manufacture [`ListTargetsFilter`](crate::model::ListTargetsFilter)
+    /// Creates a new builder-style object to manufacture [`ListTargetsFilter`](crate::model::ListTargetsFilter).
     pub fn builder() -> crate::model::list_targets_filter::Builder {
         crate::model::list_targets_filter::Builder::default()
     }
@@ -521,11 +518,10 @@ impl std::fmt::Debug for NotificationRuleSummary {
         formatter.finish()
     }
 }
-/// See [`NotificationRuleSummary`](crate::model::NotificationRuleSummary)
+/// See [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
 pub mod notification_rule_summary {
 
-    /// A builder for [`NotificationRuleSummary`](crate::model::NotificationRuleSummary)
-    #[non_exhaustive]
+    /// A builder for [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -552,7 +548,7 @@ pub mod notification_rule_summary {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotificationRuleSummary`](crate::model::NotificationRuleSummary)
+        /// Consumes the builder and constructs a [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
         pub fn build(self) -> crate::model::NotificationRuleSummary {
             crate::model::NotificationRuleSummary {
                 id: self.id,
@@ -562,7 +558,7 @@ pub mod notification_rule_summary {
     }
 }
 impl NotificationRuleSummary {
-    /// Creates a new builder-style object to manufacture [`NotificationRuleSummary`](crate::model::NotificationRuleSummary)
+    /// Creates a new builder-style object to manufacture [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
     pub fn builder() -> crate::model::notification_rule_summary::Builder {
         crate::model::notification_rule_summary::Builder::default()
     }
@@ -595,11 +591,10 @@ impl std::fmt::Debug for ListNotificationRulesFilter {
         formatter.finish()
     }
 }
-/// See [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter)
+/// See [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
 pub mod list_notification_rules_filter {
 
-    /// A builder for [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter)
-    #[non_exhaustive]
+    /// A builder for [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListNotificationRulesFilterName>,
@@ -629,7 +624,7 @@ pub mod list_notification_rules_filter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter)
+        /// Consumes the builder and constructs a [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
         pub fn build(self) -> crate::model::ListNotificationRulesFilter {
             crate::model::ListNotificationRulesFilter {
                 name: self.name,
@@ -639,7 +634,7 @@ pub mod list_notification_rules_filter {
     }
 }
 impl ListNotificationRulesFilter {
-    /// Creates a new builder-style object to manufacture [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter)
+    /// Creates a new builder-style object to manufacture [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
     pub fn builder() -> crate::model::list_notification_rules_filter::Builder {
         crate::model::list_notification_rules_filter::Builder::default()
     }
@@ -749,11 +744,10 @@ impl std::fmt::Debug for EventTypeSummary {
         formatter.finish()
     }
 }
-/// See [`EventTypeSummary`](crate::model::EventTypeSummary)
+/// See [`EventTypeSummary`](crate::model::EventTypeSummary).
 pub mod event_type_summary {
 
-    /// A builder for [`EventTypeSummary`](crate::model::EventTypeSummary)
-    #[non_exhaustive]
+    /// A builder for [`EventTypeSummary`](crate::model::EventTypeSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_type_id: std::option::Option<std::string::String>,
@@ -811,7 +805,7 @@ pub mod event_type_summary {
             self.resource_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventTypeSummary`](crate::model::EventTypeSummary)
+        /// Consumes the builder and constructs a [`EventTypeSummary`](crate::model::EventTypeSummary).
         pub fn build(self) -> crate::model::EventTypeSummary {
             crate::model::EventTypeSummary {
                 event_type_id: self.event_type_id,
@@ -823,7 +817,7 @@ pub mod event_type_summary {
     }
 }
 impl EventTypeSummary {
-    /// Creates a new builder-style object to manufacture [`EventTypeSummary`](crate::model::EventTypeSummary)
+    /// Creates a new builder-style object to manufacture [`EventTypeSummary`](crate::model::EventTypeSummary).
     pub fn builder() -> crate::model::event_type_summary::Builder {
         crate::model::event_type_summary::Builder::default()
     }
@@ -856,11 +850,10 @@ impl std::fmt::Debug for ListEventTypesFilter {
         formatter.finish()
     }
 }
-/// See [`ListEventTypesFilter`](crate::model::ListEventTypesFilter)
+/// See [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
 pub mod list_event_types_filter {
 
-    /// A builder for [`ListEventTypesFilter`](crate::model::ListEventTypesFilter)
-    #[non_exhaustive]
+    /// A builder for [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ListEventTypesFilterName>,
@@ -890,7 +883,7 @@ pub mod list_event_types_filter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEventTypesFilter`](crate::model::ListEventTypesFilter)
+        /// Consumes the builder and constructs a [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
         pub fn build(self) -> crate::model::ListEventTypesFilter {
             crate::model::ListEventTypesFilter {
                 name: self.name,
@@ -900,7 +893,7 @@ pub mod list_event_types_filter {
     }
 }
 impl ListEventTypesFilter {
-    /// Creates a new builder-style object to manufacture [`ListEventTypesFilter`](crate::model::ListEventTypesFilter)
+    /// Creates a new builder-style object to manufacture [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
     pub fn builder() -> crate::model::list_event_types_filter::Builder {
         crate::model::list_event_types_filter::Builder::default()
     }

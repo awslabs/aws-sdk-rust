@@ -9,22 +9,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -98,11 +96,10 @@ impl std::fmt::Debug for RotateTunnelAccessTokenOutput {
         formatter.finish()
     }
 }
-/// See [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
+/// See [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
 pub mod rotate_tunnel_access_token_output {
 
-    /// A builder for [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
-    #[non_exhaustive]
+    /// A builder for [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
@@ -146,7 +143,7 @@ pub mod rotate_tunnel_access_token_output {
             self.destination_access_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
+        /// Consumes the builder and constructs a [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
         pub fn build(self) -> crate::output::RotateTunnelAccessTokenOutput {
             crate::output::RotateTunnelAccessTokenOutput {
                 tunnel_arn: self.tunnel_arn,
@@ -157,7 +154,7 @@ pub mod rotate_tunnel_access_token_output {
     }
 }
 impl RotateTunnelAccessTokenOutput {
-    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput)
+    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
     pub fn builder() -> crate::output::rotate_tunnel_access_token_output::Builder {
         crate::output::rotate_tunnel_access_token_output::Builder::default()
     }
@@ -207,11 +204,10 @@ impl std::fmt::Debug for OpenTunnelOutput {
         formatter.finish()
     }
 }
-/// See [`OpenTunnelOutput`](crate::output::OpenTunnelOutput)
+/// See [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
 pub mod open_tunnel_output {
 
-    /// A builder for [`OpenTunnelOutput`](crate::output::OpenTunnelOutput)
-    #[non_exhaustive]
+    /// A builder for [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_id: std::option::Option<std::string::String>,
@@ -266,7 +262,7 @@ pub mod open_tunnel_output {
             self.destination_access_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenTunnelOutput`](crate::output::OpenTunnelOutput)
+        /// Consumes the builder and constructs a [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
         pub fn build(self) -> crate::output::OpenTunnelOutput {
             crate::output::OpenTunnelOutput {
                 tunnel_id: self.tunnel_id,
@@ -278,7 +274,7 @@ pub mod open_tunnel_output {
     }
 }
 impl OpenTunnelOutput {
-    /// Creates a new builder-style object to manufacture [`OpenTunnelOutput`](crate::output::OpenTunnelOutput)
+    /// Creates a new builder-style object to manufacture [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
     pub fn builder() -> crate::output::open_tunnel_output::Builder {
         crate::output::open_tunnel_output::Builder::default()
     }
@@ -311,11 +307,10 @@ impl std::fmt::Debug for ListTunnelsOutput {
         formatter.finish()
     }
 }
-/// See [`ListTunnelsOutput`](crate::output::ListTunnelsOutput)
+/// See [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
 pub mod list_tunnels_output {
 
-    /// A builder for [`ListTunnelsOutput`](crate::output::ListTunnelsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel_summaries:
@@ -352,7 +347,7 @@ pub mod list_tunnels_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTunnelsOutput`](crate::output::ListTunnelsOutput)
+        /// Consumes the builder and constructs a [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
         pub fn build(self) -> crate::output::ListTunnelsOutput {
             crate::output::ListTunnelsOutput {
                 tunnel_summaries: self.tunnel_summaries,
@@ -362,7 +357,7 @@ pub mod list_tunnels_output {
     }
 }
 impl ListTunnelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTunnelsOutput`](crate::output::ListTunnelsOutput)
+    /// Creates a new builder-style object to manufacture [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
     pub fn builder() -> crate::output::list_tunnels_output::Builder {
         crate::output::list_tunnels_output::Builder::default()
     }
@@ -388,11 +383,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -417,14 +411,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -450,11 +444,10 @@ impl std::fmt::Debug for DescribeTunnelOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput)
+/// See [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
 pub mod describe_tunnel_output {
 
-    /// A builder for [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel: std::option::Option<crate::model::Tunnel>,
@@ -470,7 +463,7 @@ pub mod describe_tunnel_output {
             self.tunnel = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput)
+        /// Consumes the builder and constructs a [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
         pub fn build(self) -> crate::output::DescribeTunnelOutput {
             crate::output::DescribeTunnelOutput {
                 tunnel: self.tunnel,
@@ -479,7 +472,7 @@ pub mod describe_tunnel_output {
     }
 }
 impl DescribeTunnelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
     pub fn builder() -> crate::output::describe_tunnel_output::Builder {
         crate::output::describe_tunnel_output::Builder::default()
     }
@@ -495,22 +488,21 @@ impl std::fmt::Debug for CloseTunnelOutput {
         formatter.finish()
     }
 }
-/// See [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
+/// See [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
 pub mod close_tunnel_output {
 
-    /// A builder for [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
-    #[non_exhaustive]
+    /// A builder for [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
+        /// Consumes the builder and constructs a [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
         pub fn build(self) -> crate::output::CloseTunnelOutput {
             crate::output::CloseTunnelOutput {}
         }
     }
 }
 impl CloseTunnelOutput {
-    /// Creates a new builder-style object to manufacture [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
+    /// Creates a new builder-style object to manufacture [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
     pub fn builder() -> crate::output::close_tunnel_output::Builder {
         crate::output::close_tunnel_output::Builder::default()
     }

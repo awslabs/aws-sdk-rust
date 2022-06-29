@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateServiceOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateServiceOutput`](crate::output::UpdateServiceOutput)
+/// See [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
 pub mod update_service_output {
 
-    /// A builder for [`UpdateServiceOutput`](crate::output::UpdateServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod update_service_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateServiceOutput`](crate::output::UpdateServiceOutput)
+        /// Consumes the builder and constructs a [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
         pub fn build(self) -> crate::output::UpdateServiceOutput {
             crate::output::UpdateServiceOutput {
                 operation_id: self.operation_id,
@@ -48,7 +47,7 @@ pub mod update_service_output {
     }
 }
 impl UpdateServiceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceOutput`](crate::output::UpdateServiceOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
     pub fn builder() -> crate::output::update_service_output::Builder {
         crate::output::update_service_output::Builder::default()
     }
@@ -74,11 +73,10 @@ impl std::fmt::Debug for UpdatePublicDnsNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput)
+/// See [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
 pub mod update_public_dns_namespace_output {
 
-    /// A builder for [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -94,7 +92,7 @@ pub mod update_public_dns_namespace_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput)
+        /// Consumes the builder and constructs a [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
         pub fn build(self) -> crate::output::UpdatePublicDnsNamespaceOutput {
             crate::output::UpdatePublicDnsNamespaceOutput {
                 operation_id: self.operation_id,
@@ -103,7 +101,7 @@ pub mod update_public_dns_namespace_output {
     }
 }
 impl UpdatePublicDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
     pub fn builder() -> crate::output::update_public_dns_namespace_output::Builder {
         crate::output::update_public_dns_namespace_output::Builder::default()
     }
@@ -129,11 +127,10 @@ impl std::fmt::Debug for UpdatePrivateDnsNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput)
+/// See [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
 pub mod update_private_dns_namespace_output {
 
-    /// A builder for [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -149,7 +146,7 @@ pub mod update_private_dns_namespace_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput)
+        /// Consumes the builder and constructs a [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
         pub fn build(self) -> crate::output::UpdatePrivateDnsNamespaceOutput {
             crate::output::UpdatePrivateDnsNamespaceOutput {
                 operation_id: self.operation_id,
@@ -158,7 +155,7 @@ pub mod update_private_dns_namespace_output {
     }
 }
 impl UpdatePrivateDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
     pub fn builder() -> crate::output::update_private_dns_namespace_output::Builder {
         crate::output::update_private_dns_namespace_output::Builder::default()
     }
@@ -174,22 +171,21 @@ impl std::fmt::Debug for UpdateInstanceCustomHealthStatusOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput)
+/// See [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
 pub mod update_instance_custom_health_status_output {
 
-    /// A builder for [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput)
+        /// Consumes the builder and constructs a [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
         pub fn build(self) -> crate::output::UpdateInstanceCustomHealthStatusOutput {
             crate::output::UpdateInstanceCustomHealthStatusOutput {}
         }
     }
 }
 impl UpdateInstanceCustomHealthStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
     pub fn builder() -> crate::output::update_instance_custom_health_status_output::Builder {
         crate::output::update_instance_custom_health_status_output::Builder::default()
     }
@@ -215,11 +211,10 @@ impl std::fmt::Debug for UpdateHttpNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput)
+/// See [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
 pub mod update_http_namespace_output {
 
-    /// A builder for [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -235,7 +230,7 @@ pub mod update_http_namespace_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput)
+        /// Consumes the builder and constructs a [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
         pub fn build(self) -> crate::output::UpdateHttpNamespaceOutput {
             crate::output::UpdateHttpNamespaceOutput {
                 operation_id: self.operation_id,
@@ -244,7 +239,7 @@ pub mod update_http_namespace_output {
     }
 }
 impl UpdateHttpNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
     pub fn builder() -> crate::output::update_http_namespace_output::Builder {
         crate::output::update_http_namespace_output::Builder::default()
     }
@@ -260,22 +255,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -291,22 +285,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -332,11 +325,10 @@ impl std::fmt::Debug for RegisterInstanceOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput)
+/// See [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
 pub mod register_instance_output {
 
-    /// A builder for [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -352,7 +344,7 @@ pub mod register_instance_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput)
+        /// Consumes the builder and constructs a [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
         pub fn build(self) -> crate::output::RegisterInstanceOutput {
             crate::output::RegisterInstanceOutput {
                 operation_id: self.operation_id,
@@ -361,7 +353,7 @@ pub mod register_instance_output {
     }
 }
 impl RegisterInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
     pub fn builder() -> crate::output::register_instance_output::Builder {
         crate::output::register_instance_output::Builder::default()
     }
@@ -387,11 +379,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -416,14 +407,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -460,11 +451,10 @@ impl std::fmt::Debug for ListServicesOutput {
         formatter.finish()
     }
 }
-/// See [`ListServicesOutput`](crate::output::ListServicesOutput)
+/// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
 
-    /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListServicesOutput`](crate::output::ListServicesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
@@ -504,7 +494,7 @@ pub mod list_services_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput)
+        /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput).
         pub fn build(self) -> crate::output::ListServicesOutput {
             crate::output::ListServicesOutput {
                 services: self.services,
@@ -514,7 +504,7 @@ pub mod list_services_output {
     }
 }
 impl ListServicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput)
+    /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
     pub fn builder() -> crate::output::list_services_output::Builder {
         crate::output::list_services_output::Builder::default()
     }
@@ -551,11 +541,10 @@ impl std::fmt::Debug for ListOperationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListOperationsOutput`](crate::output::ListOperationsOutput)
+/// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
 
-    /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListOperationsOutput`](crate::output::ListOperationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
@@ -595,7 +584,7 @@ pub mod list_operations_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput)
+        /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput).
         pub fn build(self) -> crate::output::ListOperationsOutput {
             crate::output::ListOperationsOutput {
                 operations: self.operations,
@@ -605,7 +594,7 @@ pub mod list_operations_output {
     }
 }
 impl ListOperationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
     pub fn builder() -> crate::output::list_operations_output::Builder {
         crate::output::list_operations_output::Builder::default()
     }
@@ -642,11 +631,10 @@ impl std::fmt::Debug for ListNamespacesOutput {
         formatter.finish()
     }
 }
-/// See [`ListNamespacesOutput`](crate::output::ListNamespacesOutput)
+/// See [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
 pub mod list_namespaces_output {
 
-    /// A builder for [`ListNamespacesOutput`](crate::output::ListNamespacesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>,
@@ -686,7 +674,7 @@ pub mod list_namespaces_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::output::ListNamespacesOutput)
+        /// Consumes the builder and constructs a [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
         pub fn build(self) -> crate::output::ListNamespacesOutput {
             crate::output::ListNamespacesOutput {
                 namespaces: self.namespaces,
@@ -696,7 +684,7 @@ pub mod list_namespaces_output {
     }
 }
 impl ListNamespacesOutput {
-    /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::output::ListNamespacesOutput)
+    /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
     pub fn builder() -> crate::output::list_namespaces_output::Builder {
         crate::output::list_namespaces_output::Builder::default()
     }
@@ -729,11 +717,10 @@ impl std::fmt::Debug for ListInstancesOutput {
         formatter.finish()
     }
 }
-/// See [`ListInstancesOutput`](crate::output::ListInstancesOutput)
+/// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
 pub mod list_instances_output {
 
-    /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListInstancesOutput`](crate::output::ListInstancesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
@@ -769,7 +756,7 @@ pub mod list_instances_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::output::ListInstancesOutput)
+        /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::output::ListInstancesOutput).
         pub fn build(self) -> crate::output::ListInstancesOutput {
             crate::output::ListInstancesOutput {
                 instances: self.instances,
@@ -779,7 +766,7 @@ pub mod list_instances_output {
     }
 }
 impl ListInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput)
+    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
     pub fn builder() -> crate::output::list_instances_output::Builder {
         crate::output::list_instances_output::Builder::default()
     }
@@ -805,11 +792,10 @@ impl std::fmt::Debug for GetServiceOutput {
         formatter.finish()
     }
 }
-/// See [`GetServiceOutput`](crate::output::GetServiceOutput)
+/// See [`GetServiceOutput`](crate::output::GetServiceOutput).
 pub mod get_service_output {
 
-    /// A builder for [`GetServiceOutput`](crate::output::GetServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetServiceOutput`](crate::output::GetServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
@@ -825,7 +811,7 @@ pub mod get_service_output {
             self.service = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetServiceOutput`](crate::output::GetServiceOutput)
+        /// Consumes the builder and constructs a [`GetServiceOutput`](crate::output::GetServiceOutput).
         pub fn build(self) -> crate::output::GetServiceOutput {
             crate::output::GetServiceOutput {
                 service: self.service,
@@ -834,7 +820,7 @@ pub mod get_service_output {
     }
 }
 impl GetServiceOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceOutput`](crate::output::GetServiceOutput)
+    /// Creates a new builder-style object to manufacture [`GetServiceOutput`](crate::output::GetServiceOutput).
     pub fn builder() -> crate::output::get_service_output::Builder {
         crate::output::get_service_output::Builder::default()
     }
@@ -860,11 +846,10 @@ impl std::fmt::Debug for GetOperationOutput {
         formatter.finish()
     }
 }
-/// See [`GetOperationOutput`](crate::output::GetOperationOutput)
+/// See [`GetOperationOutput`](crate::output::GetOperationOutput).
 pub mod get_operation_output {
 
-    /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetOperationOutput`](crate::output::GetOperationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation: std::option::Option<crate::model::Operation>,
@@ -883,7 +868,7 @@ pub mod get_operation_output {
             self.operation = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetOperationOutput`](crate::output::GetOperationOutput)
+        /// Consumes the builder and constructs a [`GetOperationOutput`](crate::output::GetOperationOutput).
         pub fn build(self) -> crate::output::GetOperationOutput {
             crate::output::GetOperationOutput {
                 operation: self.operation,
@@ -892,7 +877,7 @@ pub mod get_operation_output {
     }
 }
 impl GetOperationOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput)
+    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
     pub fn builder() -> crate::output::get_operation_output::Builder {
         crate::output::get_operation_output::Builder::default()
     }
@@ -918,11 +903,10 @@ impl std::fmt::Debug for GetNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`GetNamespaceOutput`](crate::output::GetNamespaceOutput)
+/// See [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
 pub mod get_namespace_output {
 
-    /// A builder for [`GetNamespaceOutput`](crate::output::GetNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace: std::option::Option<crate::model::Namespace>,
@@ -941,7 +925,7 @@ pub mod get_namespace_output {
             self.namespace = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetNamespaceOutput`](crate::output::GetNamespaceOutput)
+        /// Consumes the builder and constructs a [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
         pub fn build(self) -> crate::output::GetNamespaceOutput {
             crate::output::GetNamespaceOutput {
                 namespace: self.namespace,
@@ -950,7 +934,7 @@ pub mod get_namespace_output {
     }
 }
 impl GetNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`GetNamespaceOutput`](crate::output::GetNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
     pub fn builder() -> crate::output::get_namespace_output::Builder {
         crate::output::get_namespace_output::Builder::default()
     }
@@ -989,11 +973,10 @@ impl std::fmt::Debug for GetInstancesHealthStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput)
+/// See [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
 pub mod get_instances_health_status_output {
 
-    /// A builder for [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<
@@ -1037,7 +1020,7 @@ pub mod get_instances_health_status_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput)
+        /// Consumes the builder and constructs a [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
         pub fn build(self) -> crate::output::GetInstancesHealthStatusOutput {
             crate::output::GetInstancesHealthStatusOutput {
                 status: self.status,
@@ -1047,7 +1030,7 @@ pub mod get_instances_health_status_output {
     }
 }
 impl GetInstancesHealthStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
     pub fn builder() -> crate::output::get_instances_health_status_output::Builder {
         crate::output::get_instances_health_status_output::Builder::default()
     }
@@ -1073,11 +1056,10 @@ impl std::fmt::Debug for GetInstanceOutput {
         formatter.finish()
     }
 }
-/// See [`GetInstanceOutput`](crate::output::GetInstanceOutput)
+/// See [`GetInstanceOutput`](crate::output::GetInstanceOutput).
 pub mod get_instance_output {
 
-    /// A builder for [`GetInstanceOutput`](crate::output::GetInstanceOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetInstanceOutput`](crate::output::GetInstanceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance: std::option::Option<crate::model::Instance>,
@@ -1093,7 +1075,7 @@ pub mod get_instance_output {
             self.instance = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetInstanceOutput`](crate::output::GetInstanceOutput)
+        /// Consumes the builder and constructs a [`GetInstanceOutput`](crate::output::GetInstanceOutput).
         pub fn build(self) -> crate::output::GetInstanceOutput {
             crate::output::GetInstanceOutput {
                 instance: self.instance,
@@ -1102,7 +1084,7 @@ pub mod get_instance_output {
     }
 }
 impl GetInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput)
+    /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput).
     pub fn builder() -> crate::output::get_instance_output::Builder {
         crate::output::get_instance_output::Builder::default()
     }
@@ -1128,11 +1110,10 @@ impl std::fmt::Debug for DiscoverInstancesOutput {
         formatter.finish()
     }
 }
-/// See [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput)
+/// See [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
 pub mod discover_instances_output {
 
-    /// A builder for [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::HttpInstanceSummary>>,
@@ -1157,7 +1138,7 @@ pub mod discover_instances_output {
             self.instances = input;
             self
         }
-        /// Consumes the builder and constructs a [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput)
+        /// Consumes the builder and constructs a [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
         pub fn build(self) -> crate::output::DiscoverInstancesOutput {
             crate::output::DiscoverInstancesOutput {
                 instances: self.instances,
@@ -1166,7 +1147,7 @@ pub mod discover_instances_output {
     }
 }
 impl DiscoverInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput)
+    /// Creates a new builder-style object to manufacture [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
     pub fn builder() -> crate::output::discover_instances_output::Builder {
         crate::output::discover_instances_output::Builder::default()
     }
@@ -1192,11 +1173,10 @@ impl std::fmt::Debug for DeregisterInstanceOutput {
         formatter.finish()
     }
 }
-/// See [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput)
+/// See [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
 pub mod deregister_instance_output {
 
-    /// A builder for [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1212,7 +1192,7 @@ pub mod deregister_instance_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput)
+        /// Consumes the builder and constructs a [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
         pub fn build(self) -> crate::output::DeregisterInstanceOutput {
             crate::output::DeregisterInstanceOutput {
                 operation_id: self.operation_id,
@@ -1221,7 +1201,7 @@ pub mod deregister_instance_output {
     }
 }
 impl DeregisterInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput)
+    /// Creates a new builder-style object to manufacture [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
     pub fn builder() -> crate::output::deregister_instance_output::Builder {
         crate::output::deregister_instance_output::Builder::default()
     }
@@ -1237,22 +1217,21 @@ impl std::fmt::Debug for DeleteServiceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
+/// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
 pub mod delete_service_output {
 
-    /// A builder for [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
+        /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
         pub fn build(self) -> crate::output::DeleteServiceOutput {
             crate::output::DeleteServiceOutput {}
         }
     }
 }
 impl DeleteServiceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
     pub fn builder() -> crate::output::delete_service_output::Builder {
         crate::output::delete_service_output::Builder::default()
     }
@@ -1278,11 +1257,10 @@ impl std::fmt::Debug for DeleteNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput)
+/// See [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
 pub mod delete_namespace_output {
 
-    /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1298,7 +1276,7 @@ pub mod delete_namespace_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput)
+        /// Consumes the builder and constructs a [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
         pub fn build(self) -> crate::output::DeleteNamespaceOutput {
             crate::output::DeleteNamespaceOutput {
                 operation_id: self.operation_id,
@@ -1307,7 +1285,7 @@ pub mod delete_namespace_output {
     }
 }
 impl DeleteNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
     pub fn builder() -> crate::output::delete_namespace_output::Builder {
         crate::output::delete_namespace_output::Builder::default()
     }
@@ -1333,11 +1311,10 @@ impl std::fmt::Debug for CreateServiceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateServiceOutput`](crate::output::CreateServiceOutput)
+/// See [`CreateServiceOutput`](crate::output::CreateServiceOutput).
 pub mod create_service_output {
 
-    /// A builder for [`CreateServiceOutput`](crate::output::CreateServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateServiceOutput`](crate::output::CreateServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service: std::option::Option<crate::model::Service>,
@@ -1353,7 +1330,7 @@ pub mod create_service_output {
             self.service = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateServiceOutput`](crate::output::CreateServiceOutput)
+        /// Consumes the builder and constructs a [`CreateServiceOutput`](crate::output::CreateServiceOutput).
         pub fn build(self) -> crate::output::CreateServiceOutput {
             crate::output::CreateServiceOutput {
                 service: self.service,
@@ -1362,7 +1339,7 @@ pub mod create_service_output {
     }
 }
 impl CreateServiceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateServiceOutput`](crate::output::CreateServiceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateServiceOutput`](crate::output::CreateServiceOutput).
     pub fn builder() -> crate::output::create_service_output::Builder {
         crate::output::create_service_output::Builder::default()
     }
@@ -1388,11 +1365,10 @@ impl std::fmt::Debug for CreatePublicDnsNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput)
+/// See [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
 pub mod create_public_dns_namespace_output {
 
-    /// A builder for [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1408,7 +1384,7 @@ pub mod create_public_dns_namespace_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput)
+        /// Consumes the builder and constructs a [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
         pub fn build(self) -> crate::output::CreatePublicDnsNamespaceOutput {
             crate::output::CreatePublicDnsNamespaceOutput {
                 operation_id: self.operation_id,
@@ -1417,7 +1393,7 @@ pub mod create_public_dns_namespace_output {
     }
 }
 impl CreatePublicDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
     pub fn builder() -> crate::output::create_public_dns_namespace_output::Builder {
         crate::output::create_public_dns_namespace_output::Builder::default()
     }
@@ -1443,11 +1419,10 @@ impl std::fmt::Debug for CreatePrivateDnsNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput)
+/// See [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
 pub mod create_private_dns_namespace_output {
 
-    /// A builder for [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1463,7 +1438,7 @@ pub mod create_private_dns_namespace_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput)
+        /// Consumes the builder and constructs a [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
         pub fn build(self) -> crate::output::CreatePrivateDnsNamespaceOutput {
             crate::output::CreatePrivateDnsNamespaceOutput {
                 operation_id: self.operation_id,
@@ -1472,7 +1447,7 @@ pub mod create_private_dns_namespace_output {
     }
 }
 impl CreatePrivateDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
     pub fn builder() -> crate::output::create_private_dns_namespace_output::Builder {
         crate::output::create_private_dns_namespace_output::Builder::default()
     }
@@ -1498,11 +1473,10 @@ impl std::fmt::Debug for CreateHttpNamespaceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput)
+/// See [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
 pub mod create_http_namespace_output {
 
-    /// A builder for [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
@@ -1518,7 +1492,7 @@ pub mod create_http_namespace_output {
             self.operation_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput)
+        /// Consumes the builder and constructs a [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
         pub fn build(self) -> crate::output::CreateHttpNamespaceOutput {
             crate::output::CreateHttpNamespaceOutput {
                 operation_id: self.operation_id,
@@ -1527,7 +1501,7 @@ pub mod create_http_namespace_output {
     }
 }
 impl CreateHttpNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
     pub fn builder() -> crate::output::create_http_namespace_output::Builder {
         crate::output::create_http_namespace_output::Builder::default()
     }

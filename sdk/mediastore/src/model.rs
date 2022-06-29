@@ -27,11 +27,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -68,7 +67,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -104,11 +103,10 @@ impl std::fmt::Debug for MetricPolicy {
         formatter.finish()
     }
 }
-/// See [`MetricPolicy`](crate::model::MetricPolicy)
+/// See [`MetricPolicy`](crate::model::MetricPolicy).
 pub mod metric_policy {
 
-    /// A builder for [`MetricPolicy`](crate::model::MetricPolicy)
-    #[non_exhaustive]
+    /// A builder for [`MetricPolicy`](crate::model::MetricPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_level_metrics:
@@ -152,7 +150,7 @@ pub mod metric_policy {
             self.metric_policy_rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`MetricPolicy`](crate::model::MetricPolicy)
+        /// Consumes the builder and constructs a [`MetricPolicy`](crate::model::MetricPolicy).
         pub fn build(self) -> crate::model::MetricPolicy {
             crate::model::MetricPolicy {
                 container_level_metrics: self.container_level_metrics,
@@ -162,7 +160,7 @@ pub mod metric_policy {
     }
 }
 impl MetricPolicy {
-    /// Creates a new builder-style object to manufacture [`MetricPolicy`](crate::model::MetricPolicy)
+    /// Creates a new builder-style object to manufacture [`MetricPolicy`](crate::model::MetricPolicy).
     pub fn builder() -> crate::model::metric_policy::Builder {
         crate::model::metric_policy::Builder::default()
     }
@@ -195,11 +193,10 @@ impl std::fmt::Debug for MetricPolicyRule {
         formatter.finish()
     }
 }
-/// See [`MetricPolicyRule`](crate::model::MetricPolicyRule)
+/// See [`MetricPolicyRule`](crate::model::MetricPolicyRule).
 pub mod metric_policy_rule {
 
-    /// A builder for [`MetricPolicyRule`](crate::model::MetricPolicyRule)
-    #[non_exhaustive]
+    /// A builder for [`MetricPolicyRule`](crate::model::MetricPolicyRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_group: std::option::Option<std::string::String>,
@@ -229,7 +226,7 @@ pub mod metric_policy_rule {
             self.object_group_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MetricPolicyRule`](crate::model::MetricPolicyRule)
+        /// Consumes the builder and constructs a [`MetricPolicyRule`](crate::model::MetricPolicyRule).
         pub fn build(self) -> crate::model::MetricPolicyRule {
             crate::model::MetricPolicyRule {
                 object_group: self.object_group,
@@ -239,7 +236,7 @@ pub mod metric_policy_rule {
     }
 }
 impl MetricPolicyRule {
-    /// Creates a new builder-style object to manufacture [`MetricPolicyRule`](crate::model::MetricPolicyRule)
+    /// Creates a new builder-style object to manufacture [`MetricPolicyRule`](crate::model::MetricPolicyRule).
     pub fn builder() -> crate::model::metric_policy_rule::Builder {
         crate::model::metric_policy_rule::Builder::default()
     }
@@ -358,11 +355,10 @@ impl std::fmt::Debug for CorsRule {
         formatter.finish()
     }
 }
-/// See [`CorsRule`](crate::model::CorsRule)
+/// See [`CorsRule`](crate::model::CorsRule).
 pub mod cors_rule {
 
-    /// A builder for [`CorsRule`](crate::model::CorsRule)
-    #[non_exhaustive]
+    /// A builder for [`CorsRule`](crate::model::CorsRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) allowed_origins: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -468,7 +464,7 @@ pub mod cors_rule {
             self.expose_headers = input;
             self
         }
-        /// Consumes the builder and constructs a [`CorsRule`](crate::model::CorsRule)
+        /// Consumes the builder and constructs a [`CorsRule`](crate::model::CorsRule).
         pub fn build(self) -> crate::model::CorsRule {
             crate::model::CorsRule {
                 allowed_origins: self.allowed_origins,
@@ -481,7 +477,7 @@ pub mod cors_rule {
     }
 }
 impl CorsRule {
-    /// Creates a new builder-style object to manufacture [`CorsRule`](crate::model::CorsRule)
+    /// Creates a new builder-style object to manufacture [`CorsRule`](crate::model::CorsRule).
     pub fn builder() -> crate::model::cors_rule::Builder {
         crate::model::cors_rule::Builder::default()
     }
@@ -623,11 +619,10 @@ impl std::fmt::Debug for Container {
         formatter.finish()
     }
 }
-/// See [`Container`](crate::model::Container)
+/// See [`Container`](crate::model::Container).
 pub mod container {
 
-    /// A builder for [`Container`](crate::model::Container)
-    #[non_exhaustive]
+    /// A builder for [`Container`](crate::model::Container).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -722,7 +717,7 @@ pub mod container {
             self.access_logging_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`Container`](crate::model::Container)
+        /// Consumes the builder and constructs a [`Container`](crate::model::Container).
         pub fn build(self) -> crate::model::Container {
             crate::model::Container {
                 endpoint: self.endpoint,
@@ -736,7 +731,7 @@ pub mod container {
     }
 }
 impl Container {
-    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container)
+    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
     pub fn builder() -> crate::model::container::Builder {
         crate::model::container::Builder::default()
     }

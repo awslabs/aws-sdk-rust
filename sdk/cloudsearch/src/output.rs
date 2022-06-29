@@ -20,11 +20,10 @@ impl std::fmt::Debug for UpdateServiceAccessPoliciesOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput)
+/// See [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
 pub mod update_service_access_policies_output {
 
-    /// A builder for [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
@@ -43,7 +42,7 @@ pub mod update_service_access_policies_output {
             self.access_policies = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput)
+        /// Consumes the builder and constructs a [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
         pub fn build(self) -> crate::output::UpdateServiceAccessPoliciesOutput {
             crate::output::UpdateServiceAccessPoliciesOutput {
                 access_policies: self.access_policies,
@@ -52,7 +51,7 @@ pub mod update_service_access_policies_output {
     }
 }
 impl UpdateServiceAccessPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesOutput`](crate::output::UpdateServiceAccessPoliciesOutput).
     pub fn builder() -> crate::output::update_service_access_policies_output::Builder {
         crate::output::update_service_access_policies_output::Builder::default()
     }
@@ -80,11 +79,10 @@ impl std::fmt::Debug for UpdateScalingParametersOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput)
+/// See [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
 pub mod update_scaling_parameters_output {
 
-    /// A builder for [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
@@ -103,7 +101,7 @@ pub mod update_scaling_parameters_output {
             self.scaling_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput)
+        /// Consumes the builder and constructs a [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
         pub fn build(self) -> crate::output::UpdateScalingParametersOutput {
             crate::output::UpdateScalingParametersOutput {
                 scaling_parameters: self.scaling_parameters,
@@ -112,7 +110,7 @@ pub mod update_scaling_parameters_output {
     }
 }
 impl UpdateScalingParametersOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateScalingParametersOutput`](crate::output::UpdateScalingParametersOutput).
     pub fn builder() -> crate::output::update_scaling_parameters_output::Builder {
         crate::output::update_scaling_parameters_output::Builder::default()
     }
@@ -140,11 +138,10 @@ impl std::fmt::Debug for UpdateDomainEndpointOptionsOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput)
+/// See [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
 pub mod update_domain_endpoint_options_output {
 
-    /// A builder for [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_endpoint_options:
@@ -167,7 +164,7 @@ pub mod update_domain_endpoint_options_output {
             self.domain_endpoint_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput)
+        /// Consumes the builder and constructs a [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
         pub fn build(self) -> crate::output::UpdateDomainEndpointOptionsOutput {
             crate::output::UpdateDomainEndpointOptionsOutput {
                 domain_endpoint_options: self.domain_endpoint_options,
@@ -176,7 +173,7 @@ pub mod update_domain_endpoint_options_output {
     }
 }
 impl UpdateDomainEndpointOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsOutput`](crate::output::UpdateDomainEndpointOptionsOutput).
     pub fn builder() -> crate::output::update_domain_endpoint_options_output::Builder {
         crate::output::update_domain_endpoint_options_output::Builder::default()
     }
@@ -204,11 +201,10 @@ impl std::fmt::Debug for UpdateAvailabilityOptionsOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput)
+/// See [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
 pub mod update_availability_options_output {
 
-    /// A builder for [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_options:
@@ -231,7 +227,7 @@ pub mod update_availability_options_output {
             self.availability_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput)
+        /// Consumes the builder and constructs a [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
         pub fn build(self) -> crate::output::UpdateAvailabilityOptionsOutput {
             crate::output::UpdateAvailabilityOptionsOutput {
                 availability_options: self.availability_options,
@@ -240,7 +236,7 @@ pub mod update_availability_options_output {
     }
 }
 impl UpdateAvailabilityOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsOutput`](crate::output::UpdateAvailabilityOptionsOutput).
     pub fn builder() -> crate::output::update_availability_options_output::Builder {
         crate::output::update_availability_options_output::Builder::default()
     }
@@ -270,11 +266,10 @@ impl std::fmt::Debug for ListDomainNamesOutput {
         formatter.finish()
     }
 }
-/// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+/// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
 pub mod list_domain_names_output {
 
-    /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_names: std::option::Option<
@@ -307,7 +302,7 @@ pub mod list_domain_names_output {
             self.domain_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+        /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
         pub fn build(self) -> crate::output::ListDomainNamesOutput {
             crate::output::ListDomainNamesOutput {
                 domain_names: self.domain_names,
@@ -316,7 +311,7 @@ pub mod list_domain_names_output {
     }
 }
 impl ListDomainNamesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput)
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
     pub fn builder() -> crate::output::list_domain_names_output::Builder {
         crate::output::list_domain_names_output::Builder::default()
     }
@@ -342,11 +337,10 @@ impl std::fmt::Debug for IndexDocumentsOutput {
         formatter.finish()
     }
 }
-/// See [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput)
+/// See [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
 pub mod index_documents_output {
 
-    /// A builder for [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -371,7 +365,7 @@ pub mod index_documents_output {
             self.field_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput)
+        /// Consumes the builder and constructs a [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
         pub fn build(self) -> crate::output::IndexDocumentsOutput {
             crate::output::IndexDocumentsOutput {
                 field_names: self.field_names,
@@ -380,7 +374,7 @@ pub mod index_documents_output {
     }
 }
 impl IndexDocumentsOutput {
-    /// Creates a new builder-style object to manufacture [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput)
+    /// Creates a new builder-style object to manufacture [`IndexDocumentsOutput`](crate::output::IndexDocumentsOutput).
     pub fn builder() -> crate::output::index_documents_output::Builder {
         crate::output::index_documents_output::Builder::default()
     }
@@ -406,11 +400,10 @@ impl std::fmt::Debug for DescribeSuggestersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput)
+/// See [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
 pub mod describe_suggesters_output {
 
-    /// A builder for [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggesters: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
@@ -435,7 +428,7 @@ pub mod describe_suggesters_output {
             self.suggesters = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput)
+        /// Consumes the builder and constructs a [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
         pub fn build(self) -> crate::output::DescribeSuggestersOutput {
             crate::output::DescribeSuggestersOutput {
                 suggesters: self.suggesters,
@@ -444,7 +437,7 @@ pub mod describe_suggesters_output {
     }
 }
 impl DescribeSuggestersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeSuggestersOutput`](crate::output::DescribeSuggestersOutput).
     pub fn builder() -> crate::output::describe_suggesters_output::Builder {
         crate::output::describe_suggesters_output::Builder::default()
     }
@@ -470,11 +463,10 @@ impl std::fmt::Debug for DescribeServiceAccessPoliciesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput)
+/// See [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
 pub mod describe_service_access_policies_output {
 
-    /// A builder for [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_policies: std::option::Option<crate::model::AccessPoliciesStatus>,
@@ -493,7 +485,7 @@ pub mod describe_service_access_policies_output {
             self.access_policies = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput)
+        /// Consumes the builder and constructs a [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
         pub fn build(self) -> crate::output::DescribeServiceAccessPoliciesOutput {
             crate::output::DescribeServiceAccessPoliciesOutput {
                 access_policies: self.access_policies,
@@ -502,7 +494,7 @@ pub mod describe_service_access_policies_output {
     }
 }
 impl DescribeServiceAccessPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesOutput`](crate::output::DescribeServiceAccessPoliciesOutput).
     pub fn builder() -> crate::output::describe_service_access_policies_output::Builder {
         crate::output::describe_service_access_policies_output::Builder::default()
     }
@@ -530,11 +522,10 @@ impl std::fmt::Debug for DescribeScalingParametersOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput)
+/// See [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
 pub mod describe_scaling_parameters_output {
 
-    /// A builder for [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_parameters: std::option::Option<crate::model::ScalingParametersStatus>,
@@ -553,7 +544,7 @@ pub mod describe_scaling_parameters_output {
             self.scaling_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput)
+        /// Consumes the builder and constructs a [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
         pub fn build(self) -> crate::output::DescribeScalingParametersOutput {
             crate::output::DescribeScalingParametersOutput {
                 scaling_parameters: self.scaling_parameters,
@@ -562,7 +553,7 @@ pub mod describe_scaling_parameters_output {
     }
 }
 impl DescribeScalingParametersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingParametersOutput`](crate::output::DescribeScalingParametersOutput).
     pub fn builder() -> crate::output::describe_scaling_parameters_output::Builder {
         crate::output::describe_scaling_parameters_output::Builder::default()
     }
@@ -588,11 +579,10 @@ impl std::fmt::Debug for DescribeIndexFieldsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput)
+/// See [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
 pub mod describe_index_fields_output {
 
-    /// A builder for [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_fields: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
@@ -617,7 +607,7 @@ pub mod describe_index_fields_output {
             self.index_fields = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput)
+        /// Consumes the builder and constructs a [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
         pub fn build(self) -> crate::output::DescribeIndexFieldsOutput {
             crate::output::DescribeIndexFieldsOutput {
                 index_fields: self.index_fields,
@@ -626,7 +616,7 @@ pub mod describe_index_fields_output {
     }
 }
 impl DescribeIndexFieldsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::output::DescribeIndexFieldsOutput).
     pub fn builder() -> crate::output::describe_index_fields_output::Builder {
         crate::output::describe_index_fields_output::Builder::default()
     }
@@ -652,11 +642,10 @@ impl std::fmt::Debug for DescribeExpressionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput)
+/// See [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
 pub mod describe_expressions_output {
 
-    /// A builder for [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expressions: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
@@ -681,7 +670,7 @@ pub mod describe_expressions_output {
             self.expressions = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput)
+        /// Consumes the builder and constructs a [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
         pub fn build(self) -> crate::output::DescribeExpressionsOutput {
             crate::output::DescribeExpressionsOutput {
                 expressions: self.expressions,
@@ -690,7 +679,7 @@ pub mod describe_expressions_output {
     }
 }
 impl DescribeExpressionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeExpressionsOutput`](crate::output::DescribeExpressionsOutput).
     pub fn builder() -> crate::output::describe_expressions_output::Builder {
         crate::output::describe_expressions_output::Builder::default()
     }
@@ -716,11 +705,10 @@ impl std::fmt::Debug for DescribeDomainsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput)
+/// See [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
 pub mod describe_domains_output {
 
-    /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status_list:
@@ -746,7 +734,7 @@ pub mod describe_domains_output {
             self.domain_status_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput)
+        /// Consumes the builder and constructs a [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
         pub fn build(self) -> crate::output::DescribeDomainsOutput {
             crate::output::DescribeDomainsOutput {
                 domain_status_list: self.domain_status_list,
@@ -755,7 +743,7 @@ pub mod describe_domains_output {
     }
 }
 impl DescribeDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainsOutput`](crate::output::DescribeDomainsOutput).
     pub fn builder() -> crate::output::describe_domains_output::Builder {
         crate::output::describe_domains_output::Builder::default()
     }
@@ -783,11 +771,10 @@ impl std::fmt::Debug for DescribeDomainEndpointOptionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput)
+/// See [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
 pub mod describe_domain_endpoint_options_output {
 
-    /// A builder for [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_endpoint_options:
@@ -810,7 +797,7 @@ pub mod describe_domain_endpoint_options_output {
             self.domain_endpoint_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput)
+        /// Consumes the builder and constructs a [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
         pub fn build(self) -> crate::output::DescribeDomainEndpointOptionsOutput {
             crate::output::DescribeDomainEndpointOptionsOutput {
                 domain_endpoint_options: self.domain_endpoint_options,
@@ -819,7 +806,7 @@ pub mod describe_domain_endpoint_options_output {
     }
 }
 impl DescribeDomainEndpointOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsOutput`](crate::output::DescribeDomainEndpointOptionsOutput).
     pub fn builder() -> crate::output::describe_domain_endpoint_options_output::Builder {
         crate::output::describe_domain_endpoint_options_output::Builder::default()
     }
@@ -847,11 +834,10 @@ impl std::fmt::Debug for DescribeAvailabilityOptionsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput)
+/// See [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
 pub mod describe_availability_options_output {
 
-    /// A builder for [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_options:
@@ -874,7 +860,7 @@ pub mod describe_availability_options_output {
             self.availability_options = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput)
+        /// Consumes the builder and constructs a [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
         pub fn build(self) -> crate::output::DescribeAvailabilityOptionsOutput {
             crate::output::DescribeAvailabilityOptionsOutput {
                 availability_options: self.availability_options,
@@ -883,7 +869,7 @@ pub mod describe_availability_options_output {
     }
 }
 impl DescribeAvailabilityOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsOutput`](crate::output::DescribeAvailabilityOptionsOutput).
     pub fn builder() -> crate::output::describe_availability_options_output::Builder {
         crate::output::describe_availability_options_output::Builder::default()
     }
@@ -909,11 +895,10 @@ impl std::fmt::Debug for DescribeAnalysisSchemesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput)
+/// See [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
 pub mod describe_analysis_schemes_output {
 
-    /// A builder for [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_schemes:
@@ -939,7 +924,7 @@ pub mod describe_analysis_schemes_output {
             self.analysis_schemes = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput)
+        /// Consumes the builder and constructs a [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
         pub fn build(self) -> crate::output::DescribeAnalysisSchemesOutput {
             crate::output::DescribeAnalysisSchemesOutput {
                 analysis_schemes: self.analysis_schemes,
@@ -948,7 +933,7 @@ pub mod describe_analysis_schemes_output {
     }
 }
 impl DescribeAnalysisSchemesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::output::DescribeAnalysisSchemesOutput).
     pub fn builder() -> crate::output::describe_analysis_schemes_output::Builder {
         crate::output::describe_analysis_schemes_output::Builder::default()
     }
@@ -974,11 +959,10 @@ impl std::fmt::Debug for DeleteSuggesterOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput)
+/// See [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
 pub mod delete_suggester_output {
 
-    /// A builder for [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester: std::option::Option<crate::model::SuggesterStatus>,
@@ -997,7 +981,7 @@ pub mod delete_suggester_output {
             self.suggester = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput)
+        /// Consumes the builder and constructs a [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
         pub fn build(self) -> crate::output::DeleteSuggesterOutput {
             crate::output::DeleteSuggesterOutput {
                 suggester: self.suggester,
@@ -1006,7 +990,7 @@ pub mod delete_suggester_output {
     }
 }
 impl DeleteSuggesterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteSuggesterOutput`](crate::output::DeleteSuggesterOutput).
     pub fn builder() -> crate::output::delete_suggester_output::Builder {
         crate::output::delete_suggester_output::Builder::default()
     }
@@ -1032,11 +1016,10 @@ impl std::fmt::Debug for DeleteIndexFieldOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput)
+/// See [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
 pub mod delete_index_field_output {
 
-    /// A builder for [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field: std::option::Option<crate::model::IndexFieldStatus>,
@@ -1055,7 +1038,7 @@ pub mod delete_index_field_output {
             self.index_field = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput)
+        /// Consumes the builder and constructs a [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
         pub fn build(self) -> crate::output::DeleteIndexFieldOutput {
             crate::output::DeleteIndexFieldOutput {
                 index_field: self.index_field,
@@ -1064,7 +1047,7 @@ pub mod delete_index_field_output {
     }
 }
 impl DeleteIndexFieldOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteIndexFieldOutput`](crate::output::DeleteIndexFieldOutput).
     pub fn builder() -> crate::output::delete_index_field_output::Builder {
         crate::output::delete_index_field_output::Builder::default()
     }
@@ -1090,11 +1073,10 @@ impl std::fmt::Debug for DeleteExpressionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput)
+/// See [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
 pub mod delete_expression_output {
 
-    /// A builder for [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<crate::model::ExpressionStatus>,
@@ -1113,7 +1095,7 @@ pub mod delete_expression_output {
             self.expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput)
+        /// Consumes the builder and constructs a [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
         pub fn build(self) -> crate::output::DeleteExpressionOutput {
             crate::output::DeleteExpressionOutput {
                 expression: self.expression,
@@ -1122,7 +1104,7 @@ pub mod delete_expression_output {
     }
 }
 impl DeleteExpressionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteExpressionOutput`](crate::output::DeleteExpressionOutput).
     pub fn builder() -> crate::output::delete_expression_output::Builder {
         crate::output::delete_expression_output::Builder::default()
     }
@@ -1148,11 +1130,10 @@ impl std::fmt::Debug for DeleteDomainOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
+/// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
 
-    /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -1171,7 +1152,7 @@ pub mod delete_domain_output {
             self.domain_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
+        /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
             crate::output::DeleteDomainOutput {
                 domain_status: self.domain_status,
@@ -1180,7 +1161,7 @@ pub mod delete_domain_output {
     }
 }
 impl DeleteDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
     pub fn builder() -> crate::output::delete_domain_output::Builder {
         crate::output::delete_domain_output::Builder::default()
     }
@@ -1206,11 +1187,10 @@ impl std::fmt::Debug for DeleteAnalysisSchemeOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput)
+/// See [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
 pub mod delete_analysis_scheme_output {
 
-    /// A builder for [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
@@ -1229,7 +1209,7 @@ pub mod delete_analysis_scheme_output {
             self.analysis_scheme = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput)
+        /// Consumes the builder and constructs a [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
         pub fn build(self) -> crate::output::DeleteAnalysisSchemeOutput {
             crate::output::DeleteAnalysisSchemeOutput {
                 analysis_scheme: self.analysis_scheme,
@@ -1238,7 +1218,7 @@ pub mod delete_analysis_scheme_output {
     }
 }
 impl DeleteAnalysisSchemeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeOutput`](crate::output::DeleteAnalysisSchemeOutput).
     pub fn builder() -> crate::output::delete_analysis_scheme_output::Builder {
         crate::output::delete_analysis_scheme_output::Builder::default()
     }
@@ -1264,11 +1244,10 @@ impl std::fmt::Debug for DefineSuggesterOutput {
         formatter.finish()
     }
 }
-/// See [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput)
+/// See [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
 pub mod define_suggester_output {
 
-    /// A builder for [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) suggester: std::option::Option<crate::model::SuggesterStatus>,
@@ -1287,7 +1266,7 @@ pub mod define_suggester_output {
             self.suggester = input;
             self
         }
-        /// Consumes the builder and constructs a [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput)
+        /// Consumes the builder and constructs a [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
         pub fn build(self) -> crate::output::DefineSuggesterOutput {
             crate::output::DefineSuggesterOutput {
                 suggester: self.suggester,
@@ -1296,7 +1275,7 @@ pub mod define_suggester_output {
     }
 }
 impl DefineSuggesterOutput {
-    /// Creates a new builder-style object to manufacture [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput)
+    /// Creates a new builder-style object to manufacture [`DefineSuggesterOutput`](crate::output::DefineSuggesterOutput).
     pub fn builder() -> crate::output::define_suggester_output::Builder {
         crate::output::define_suggester_output::Builder::default()
     }
@@ -1322,11 +1301,10 @@ impl std::fmt::Debug for DefineIndexFieldOutput {
         formatter.finish()
     }
 }
-/// See [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput)
+/// See [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
 pub mod define_index_field_output {
 
-    /// A builder for [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput)
-    #[non_exhaustive]
+    /// A builder for [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index_field: std::option::Option<crate::model::IndexFieldStatus>,
@@ -1345,7 +1323,7 @@ pub mod define_index_field_output {
             self.index_field = input;
             self
         }
-        /// Consumes the builder and constructs a [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput)
+        /// Consumes the builder and constructs a [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
         pub fn build(self) -> crate::output::DefineIndexFieldOutput {
             crate::output::DefineIndexFieldOutput {
                 index_field: self.index_field,
@@ -1354,7 +1332,7 @@ pub mod define_index_field_output {
     }
 }
 impl DefineIndexFieldOutput {
-    /// Creates a new builder-style object to manufacture [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput)
+    /// Creates a new builder-style object to manufacture [`DefineIndexFieldOutput`](crate::output::DefineIndexFieldOutput).
     pub fn builder() -> crate::output::define_index_field_output::Builder {
         crate::output::define_index_field_output::Builder::default()
     }
@@ -1380,11 +1358,10 @@ impl std::fmt::Debug for DefineExpressionOutput {
         formatter.finish()
     }
 }
-/// See [`DefineExpressionOutput`](crate::output::DefineExpressionOutput)
+/// See [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
 pub mod define_expression_output {
 
-    /// A builder for [`DefineExpressionOutput`](crate::output::DefineExpressionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<crate::model::ExpressionStatus>,
@@ -1403,7 +1380,7 @@ pub mod define_expression_output {
             self.expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`DefineExpressionOutput`](crate::output::DefineExpressionOutput)
+        /// Consumes the builder and constructs a [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
         pub fn build(self) -> crate::output::DefineExpressionOutput {
             crate::output::DefineExpressionOutput {
                 expression: self.expression,
@@ -1412,7 +1389,7 @@ pub mod define_expression_output {
     }
 }
 impl DefineExpressionOutput {
-    /// Creates a new builder-style object to manufacture [`DefineExpressionOutput`](crate::output::DefineExpressionOutput)
+    /// Creates a new builder-style object to manufacture [`DefineExpressionOutput`](crate::output::DefineExpressionOutput).
     pub fn builder() -> crate::output::define_expression_output::Builder {
         crate::output::define_expression_output::Builder::default()
     }
@@ -1438,11 +1415,10 @@ impl std::fmt::Debug for DefineAnalysisSchemeOutput {
         formatter.finish()
     }
 }
-/// See [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput)
+/// See [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
 pub mod define_analysis_scheme_output {
 
-    /// A builder for [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
@@ -1461,7 +1437,7 @@ pub mod define_analysis_scheme_output {
             self.analysis_scheme = input;
             self
         }
-        /// Consumes the builder and constructs a [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput)
+        /// Consumes the builder and constructs a [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
         pub fn build(self) -> crate::output::DefineAnalysisSchemeOutput {
             crate::output::DefineAnalysisSchemeOutput {
                 analysis_scheme: self.analysis_scheme,
@@ -1470,7 +1446,7 @@ pub mod define_analysis_scheme_output {
     }
 }
 impl DefineAnalysisSchemeOutput {
-    /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput)
+    /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeOutput`](crate::output::DefineAnalysisSchemeOutput).
     pub fn builder() -> crate::output::define_analysis_scheme_output::Builder {
         crate::output::define_analysis_scheme_output::Builder::default()
     }
@@ -1496,11 +1472,10 @@ impl std::fmt::Debug for CreateDomainOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDomainOutput`](crate::output::CreateDomainOutput)
+/// See [`CreateDomainOutput`](crate::output::CreateDomainOutput).
 pub mod create_domain_output {
 
-    /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -1519,7 +1494,7 @@ pub mod create_domain_output {
             self.domain_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput)
+        /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::output::CreateDomainOutput).
         pub fn build(self) -> crate::output::CreateDomainOutput {
             crate::output::CreateDomainOutput {
                 domain_status: self.domain_status,
@@ -1528,7 +1503,7 @@ pub mod create_domain_output {
     }
 }
 impl CreateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::output::CreateDomainOutput).
     pub fn builder() -> crate::output::create_domain_output::Builder {
         crate::output::create_domain_output::Builder::default()
     }
@@ -1554,11 +1529,10 @@ impl std::fmt::Debug for BuildSuggestersOutput {
         formatter.finish()
     }
 }
-/// See [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput)
+/// See [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
 pub mod build_suggesters_output {
 
-    /// A builder for [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput)
-    #[non_exhaustive]
+    /// A builder for [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1583,7 +1557,7 @@ pub mod build_suggesters_output {
             self.field_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput)
+        /// Consumes the builder and constructs a [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
         pub fn build(self) -> crate::output::BuildSuggestersOutput {
             crate::output::BuildSuggestersOutput {
                 field_names: self.field_names,
@@ -1592,7 +1566,7 @@ pub mod build_suggesters_output {
     }
 }
 impl BuildSuggestersOutput {
-    /// Creates a new builder-style object to manufacture [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput)
+    /// Creates a new builder-style object to manufacture [`BuildSuggestersOutput`](crate::output::BuildSuggestersOutput).
     pub fn builder() -> crate::output::build_suggesters_output::Builder {
         crate::output::build_suggesters_output::Builder::default()
     }

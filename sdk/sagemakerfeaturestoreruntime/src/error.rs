@@ -493,11 +493,10 @@ impl std::fmt::Display for ValidationError {
     }
 }
 impl std::error::Error for ValidationError {}
-/// See [`ValidationError`](crate::error::ValidationError)
+/// See [`ValidationError`](crate::error::ValidationError).
 pub mod validation_error {
 
-    /// A builder for [`ValidationError`](crate::error::ValidationError)
-    #[non_exhaustive]
+    /// A builder for [`ValidationError`](crate::error::ValidationError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -513,7 +512,7 @@ pub mod validation_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError)
+        /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError).
         pub fn build(self) -> crate::error::ValidationError {
             crate::error::ValidationError {
                 message: self.message,
@@ -522,7 +521,7 @@ pub mod validation_error {
     }
 }
 impl ValidationError {
-    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::error::ValidationError)
+    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::error::ValidationError).
     pub fn builder() -> crate::error::validation_error::Builder {
         crate::error::validation_error::Builder::default()
     }
@@ -558,11 +557,10 @@ impl std::fmt::Display for ServiceUnavailable {
     }
 }
 impl std::error::Error for ServiceUnavailable {}
-/// See [`ServiceUnavailable`](crate::error::ServiceUnavailable)
+/// See [`ServiceUnavailable`](crate::error::ServiceUnavailable).
 pub mod service_unavailable {
 
-    /// A builder for [`ServiceUnavailable`](crate::error::ServiceUnavailable)
-    #[non_exhaustive]
+    /// A builder for [`ServiceUnavailable`](crate::error::ServiceUnavailable).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -578,7 +576,7 @@ pub mod service_unavailable {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceUnavailable`](crate::error::ServiceUnavailable)
+        /// Consumes the builder and constructs a [`ServiceUnavailable`](crate::error::ServiceUnavailable).
         pub fn build(self) -> crate::error::ServiceUnavailable {
             crate::error::ServiceUnavailable {
                 message: self.message,
@@ -587,7 +585,7 @@ pub mod service_unavailable {
     }
 }
 impl ServiceUnavailable {
-    /// Creates a new builder-style object to manufacture [`ServiceUnavailable`](crate::error::ServiceUnavailable)
+    /// Creates a new builder-style object to manufacture [`ServiceUnavailable`](crate::error::ServiceUnavailable).
     pub fn builder() -> crate::error::service_unavailable::Builder {
         crate::error::service_unavailable::Builder::default()
     }
@@ -623,11 +621,10 @@ impl std::fmt::Display for InternalFailure {
     }
 }
 impl std::error::Error for InternalFailure {}
-/// See [`InternalFailure`](crate::error::InternalFailure)
+/// See [`InternalFailure`](crate::error::InternalFailure).
 pub mod internal_failure {
 
-    /// A builder for [`InternalFailure`](crate::error::InternalFailure)
-    #[non_exhaustive]
+    /// A builder for [`InternalFailure`](crate::error::InternalFailure).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -643,7 +640,7 @@ pub mod internal_failure {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalFailure`](crate::error::InternalFailure)
+        /// Consumes the builder and constructs a [`InternalFailure`](crate::error::InternalFailure).
         pub fn build(self) -> crate::error::InternalFailure {
             crate::error::InternalFailure {
                 message: self.message,
@@ -652,7 +649,7 @@ pub mod internal_failure {
     }
 }
 impl InternalFailure {
-    /// Creates a new builder-style object to manufacture [`InternalFailure`](crate::error::InternalFailure)
+    /// Creates a new builder-style object to manufacture [`InternalFailure`](crate::error::InternalFailure).
     pub fn builder() -> crate::error::internal_failure::Builder {
         crate::error::internal_failure::Builder::default()
     }
@@ -688,11 +685,10 @@ impl std::fmt::Display for AccessForbidden {
     }
 }
 impl std::error::Error for AccessForbidden {}
-/// See [`AccessForbidden`](crate::error::AccessForbidden)
+/// See [`AccessForbidden`](crate::error::AccessForbidden).
 pub mod access_forbidden {
 
-    /// A builder for [`AccessForbidden`](crate::error::AccessForbidden)
-    #[non_exhaustive]
+    /// A builder for [`AccessForbidden`](crate::error::AccessForbidden).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -708,7 +704,7 @@ pub mod access_forbidden {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessForbidden`](crate::error::AccessForbidden)
+        /// Consumes the builder and constructs a [`AccessForbidden`](crate::error::AccessForbidden).
         pub fn build(self) -> crate::error::AccessForbidden {
             crate::error::AccessForbidden {
                 message: self.message,
@@ -717,7 +713,7 @@ pub mod access_forbidden {
     }
 }
 impl AccessForbidden {
-    /// Creates a new builder-style object to manufacture [`AccessForbidden`](crate::error::AccessForbidden)
+    /// Creates a new builder-style object to manufacture [`AccessForbidden`](crate::error::AccessForbidden).
     pub fn builder() -> crate::error::access_forbidden::Builder {
         crate::error::access_forbidden::Builder::default()
     }
@@ -753,11 +749,10 @@ impl std::fmt::Display for ResourceNotFound {
     }
 }
 impl std::error::Error for ResourceNotFound {}
-/// See [`ResourceNotFound`](crate::error::ResourceNotFound)
+/// See [`ResourceNotFound`](crate::error::ResourceNotFound).
 pub mod resource_not_found {
 
-    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -773,7 +768,7 @@ pub mod resource_not_found {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound)
+        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound).
         pub fn build(self) -> crate::error::ResourceNotFound {
             crate::error::ResourceNotFound {
                 message: self.message,
@@ -782,7 +777,7 @@ pub mod resource_not_found {
     }
 }
 impl ResourceNotFound {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound).
     pub fn builder() -> crate::error::resource_not_found::Builder {
         crate::error::resource_not_found::Builder::default()
     }

@@ -19,11 +19,10 @@ impl std::fmt::Debug for SendAlexaOfferToMasterOutput {
         formatter.finish()
     }
 }
-/// See [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput)
+/// See [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
 pub mod send_alexa_offer_to_master_output {
 
-    /// A builder for [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) answer: std::option::Option<std::string::String>,
@@ -39,7 +38,7 @@ pub mod send_alexa_offer_to_master_output {
             self.answer = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput)
+        /// Consumes the builder and constructs a [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
         pub fn build(self) -> crate::output::SendAlexaOfferToMasterOutput {
             crate::output::SendAlexaOfferToMasterOutput {
                 answer: self.answer,
@@ -48,7 +47,7 @@ pub mod send_alexa_offer_to_master_output {
     }
 }
 impl SendAlexaOfferToMasterOutput {
-    /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput)
+    /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
     pub fn builder() -> crate::output::send_alexa_offer_to_master_output::Builder {
         crate::output::send_alexa_offer_to_master_output::Builder::default()
     }
@@ -74,11 +73,10 @@ impl std::fmt::Debug for GetIceServerConfigOutput {
         formatter.finish()
     }
 }
-/// See [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput)
+/// See [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
 pub mod get_ice_server_config_output {
 
-    /// A builder for [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ice_server_list: std::option::Option<std::vec::Vec<crate::model::IceServer>>,
@@ -103,7 +101,7 @@ pub mod get_ice_server_config_output {
             self.ice_server_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput)
+        /// Consumes the builder and constructs a [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
         pub fn build(self) -> crate::output::GetIceServerConfigOutput {
             crate::output::GetIceServerConfigOutput {
                 ice_server_list: self.ice_server_list,
@@ -112,7 +110,7 @@ pub mod get_ice_server_config_output {
     }
 }
 impl GetIceServerConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput)
+    /// Creates a new builder-style object to manufacture [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
     pub fn builder() -> crate::output::get_ice_server_config_output::Builder {
         crate::output::get_ice_server_config_output::Builder::default()
     }

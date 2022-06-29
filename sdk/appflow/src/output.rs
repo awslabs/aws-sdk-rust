@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateFlowOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+/// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
 pub mod update_flow_output {
 
-    /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_status: std::option::Option<crate::model::FlowStatus>,
@@ -42,7 +41,7 @@ pub mod update_flow_output {
             self.flow_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+        /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
         pub fn build(self) -> crate::output::UpdateFlowOutput {
             crate::output::UpdateFlowOutput {
                 flow_status: self.flow_status,
@@ -51,7 +50,7 @@ pub mod update_flow_output {
     }
 }
 impl UpdateFlowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
     pub fn builder() -> crate::output::update_flow_output::Builder {
         crate::output::update_flow_output::Builder::default()
     }
@@ -77,11 +76,10 @@ impl std::fmt::Debug for UpdateConnectorProfileOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput)
+/// See [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
 pub mod update_connector_profile_output {
 
-    /// A builder for [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_arn: std::option::Option<std::string::String>,
@@ -100,7 +98,7 @@ pub mod update_connector_profile_output {
             self.connector_profile_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput)
+        /// Consumes the builder and constructs a [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
         pub fn build(self) -> crate::output::UpdateConnectorProfileOutput {
             crate::output::UpdateConnectorProfileOutput {
                 connector_profile_arn: self.connector_profile_arn,
@@ -109,7 +107,7 @@ pub mod update_connector_profile_output {
     }
 }
 impl UpdateConnectorProfileOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
     pub fn builder() -> crate::output::update_connector_profile_output::Builder {
         crate::output::update_connector_profile_output::Builder::default()
     }
@@ -125,22 +123,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -156,22 +153,21 @@ impl std::fmt::Debug for UnregisterConnectorOutput {
         formatter.finish()
     }
 }
-/// See [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+/// See [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
 pub mod unregister_connector_output {
 
-    /// A builder for [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+        /// Consumes the builder and constructs a [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
         pub fn build(self) -> crate::output::UnregisterConnectorOutput {
             crate::output::UnregisterConnectorOutput {}
         }
     }
 }
 impl UnregisterConnectorOutput {
-    /// Creates a new builder-style object to manufacture [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput)
+    /// Creates a new builder-style object to manufacture [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
     pub fn builder() -> crate::output::unregister_connector_output::Builder {
         crate::output::unregister_connector_output::Builder::default()
     }
@@ -187,22 +183,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -235,11 +230,10 @@ impl std::fmt::Debug for StopFlowOutput {
         formatter.finish()
     }
 }
-/// See [`StopFlowOutput`](crate::output::StopFlowOutput)
+/// See [`StopFlowOutput`](crate::output::StopFlowOutput).
 pub mod stop_flow_output {
 
-    /// A builder for [`StopFlowOutput`](crate::output::StopFlowOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopFlowOutput`](crate::output::StopFlowOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -269,7 +263,7 @@ pub mod stop_flow_output {
             self.flow_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopFlowOutput`](crate::output::StopFlowOutput)
+        /// Consumes the builder and constructs a [`StopFlowOutput`](crate::output::StopFlowOutput).
         pub fn build(self) -> crate::output::StopFlowOutput {
             crate::output::StopFlowOutput {
                 flow_arn: self.flow_arn,
@@ -279,7 +273,7 @@ pub mod stop_flow_output {
     }
 }
 impl StopFlowOutput {
-    /// Creates a new builder-style object to manufacture [`StopFlowOutput`](crate::output::StopFlowOutput)
+    /// Creates a new builder-style object to manufacture [`StopFlowOutput`](crate::output::StopFlowOutput).
     pub fn builder() -> crate::output::stop_flow_output::Builder {
         crate::output::stop_flow_output::Builder::default()
     }
@@ -319,11 +313,10 @@ impl std::fmt::Debug for StartFlowOutput {
         formatter.finish()
     }
 }
-/// See [`StartFlowOutput`](crate::output::StartFlowOutput)
+/// See [`StartFlowOutput`](crate::output::StartFlowOutput).
 pub mod start_flow_output {
 
-    /// A builder for [`StartFlowOutput`](crate::output::StartFlowOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartFlowOutput`](crate::output::StartFlowOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -364,7 +357,7 @@ pub mod start_flow_output {
             self.execution_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartFlowOutput`](crate::output::StartFlowOutput)
+        /// Consumes the builder and constructs a [`StartFlowOutput`](crate::output::StartFlowOutput).
         pub fn build(self) -> crate::output::StartFlowOutput {
             crate::output::StartFlowOutput {
                 flow_arn: self.flow_arn,
@@ -375,7 +368,7 @@ pub mod start_flow_output {
     }
 }
 impl StartFlowOutput {
-    /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::output::StartFlowOutput)
+    /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::output::StartFlowOutput).
     pub fn builder() -> crate::output::start_flow_output::Builder {
         crate::output::start_flow_output::Builder::default()
     }
@@ -401,11 +394,10 @@ impl std::fmt::Debug for RegisterConnectorOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
+/// See [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
 pub mod register_connector_output {
 
-    /// A builder for [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
@@ -424,7 +416,7 @@ pub mod register_connector_output {
             self.connector_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
+        /// Consumes the builder and constructs a [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
         pub fn build(self) -> crate::output::RegisterConnectorOutput {
             crate::output::RegisterConnectorOutput {
                 connector_arn: self.connector_arn,
@@ -433,7 +425,7 @@ pub mod register_connector_output {
     }
 }
 impl RegisterConnectorOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
     pub fn builder() -> crate::output::register_connector_output::Builder {
         crate::output::register_connector_output::Builder::default()
     }
@@ -463,11 +455,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -500,14 +491,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -540,11 +531,10 @@ impl std::fmt::Debug for ListFlowsOutput {
         formatter.finish()
     }
 }
-/// See [`ListFlowsOutput`](crate::output::ListFlowsOutput)
+/// See [`ListFlowsOutput`](crate::output::ListFlowsOutput).
 pub mod list_flows_output {
 
-    /// A builder for [`ListFlowsOutput`](crate::output::ListFlowsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFlowsOutput`](crate::output::ListFlowsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flows: std::option::Option<std::vec::Vec<crate::model::FlowDefinition>>,
@@ -580,7 +570,7 @@ pub mod list_flows_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFlowsOutput`](crate::output::ListFlowsOutput)
+        /// Consumes the builder and constructs a [`ListFlowsOutput`](crate::output::ListFlowsOutput).
         pub fn build(self) -> crate::output::ListFlowsOutput {
             crate::output::ListFlowsOutput {
                 flows: self.flows,
@@ -590,7 +580,7 @@ pub mod list_flows_output {
     }
 }
 impl ListFlowsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::output::ListFlowsOutput)
+    /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::output::ListFlowsOutput).
     pub fn builder() -> crate::output::list_flows_output::Builder {
         crate::output::list_flows_output::Builder::default()
     }
@@ -623,11 +613,10 @@ impl std::fmt::Debug for ListConnectorsOutput {
         formatter.finish()
     }
 }
-/// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
+/// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
 pub mod list_connectors_output {
 
-    /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
@@ -663,7 +652,7 @@ pub mod list_connectors_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
+        /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
         pub fn build(self) -> crate::output::ListConnectorsOutput {
             crate::output::ListConnectorsOutput {
                 connectors: self.connectors,
@@ -673,7 +662,7 @@ pub mod list_connectors_output {
     }
 }
 impl ListConnectorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput)
+    /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
     pub fn builder() -> crate::output::list_connectors_output::Builder {
         crate::output::list_connectors_output::Builder::default()
     }
@@ -711,11 +700,10 @@ impl std::fmt::Debug for ListConnectorEntitiesOutput {
         formatter.finish()
     }
 }
-/// See [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput)
+/// See [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
 pub mod list_connector_entities_output {
 
-    /// A builder for [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_entity_map: std::option::Option<
@@ -754,7 +742,7 @@ pub mod list_connector_entities_output {
             self.connector_entity_map = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput)
+        /// Consumes the builder and constructs a [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
         pub fn build(self) -> crate::output::ListConnectorEntitiesOutput {
             crate::output::ListConnectorEntitiesOutput {
                 connector_entity_map: self.connector_entity_map,
@@ -763,7 +751,7 @@ pub mod list_connector_entities_output {
     }
 }
 impl ListConnectorEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput)
+    /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
     pub fn builder() -> crate::output::list_connector_entities_output::Builder {
         crate::output::list_connector_entities_output::Builder::default()
     }
@@ -796,11 +784,10 @@ impl std::fmt::Debug for DescribeFlowExecutionRecordsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput)
+/// See [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
 pub mod describe_flow_execution_records_output {
 
-    /// A builder for [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_executions:
@@ -837,7 +824,7 @@ pub mod describe_flow_execution_records_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput)
+        /// Consumes the builder and constructs a [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
         pub fn build(self) -> crate::output::DescribeFlowExecutionRecordsOutput {
             crate::output::DescribeFlowExecutionRecordsOutput {
                 flow_executions: self.flow_executions,
@@ -847,7 +834,7 @@ pub mod describe_flow_execution_records_output {
     }
 }
 impl DescribeFlowExecutionRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
     pub fn builder() -> crate::output::describe_flow_execution_records_output::Builder {
         crate::output::describe_flow_execution_records_output::Builder::default()
     }
@@ -993,11 +980,10 @@ impl std::fmt::Debug for DescribeFlowOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput)
+/// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
 pub mod describe_flow_output {
 
-    /// A builder for [`DescribeFlowOutput`](crate::output::DescribeFlowOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -1241,7 +1227,7 @@ pub mod describe_flow_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFlowOutput`](crate::output::DescribeFlowOutput)
+        /// Consumes the builder and constructs a [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
         pub fn build(self) -> crate::output::DescribeFlowOutput {
             crate::output::DescribeFlowOutput {
                 flow_arn: self.flow_arn,
@@ -1265,7 +1251,7 @@ pub mod describe_flow_output {
     }
 }
 impl DescribeFlowOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFlowOutput`](crate::output::DescribeFlowOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
     pub fn builder() -> crate::output::describe_flow_output::Builder {
         crate::output::describe_flow_output::Builder::default()
     }
@@ -1317,11 +1303,10 @@ impl std::fmt::Debug for DescribeConnectorsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput)
+/// See [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
 pub mod describe_connectors_output {
 
-    /// A builder for [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_configurations: std::option::Option<
@@ -1391,7 +1376,7 @@ pub mod describe_connectors_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput)
+        /// Consumes the builder and constructs a [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
         pub fn build(self) -> crate::output::DescribeConnectorsOutput {
             crate::output::DescribeConnectorsOutput {
                 connector_configurations: self.connector_configurations,
@@ -1402,7 +1387,7 @@ pub mod describe_connectors_output {
     }
 }
 impl DescribeConnectorsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
     pub fn builder() -> crate::output::describe_connectors_output::Builder {
         crate::output::describe_connectors_output::Builder::default()
     }
@@ -1438,11 +1423,10 @@ impl std::fmt::Debug for DescribeConnectorProfilesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput)
+/// See [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
 pub mod describe_connector_profiles_output {
 
-    /// A builder for [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_details:
@@ -1479,7 +1463,7 @@ pub mod describe_connector_profiles_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput)
+        /// Consumes the builder and constructs a [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
         pub fn build(self) -> crate::output::DescribeConnectorProfilesOutput {
             crate::output::DescribeConnectorProfilesOutput {
                 connector_profile_details: self.connector_profile_details,
@@ -1489,7 +1473,7 @@ pub mod describe_connector_profiles_output {
     }
 }
 impl DescribeConnectorProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
     pub fn builder() -> crate::output::describe_connector_profiles_output::Builder {
         crate::output::describe_connector_profiles_output::Builder::default()
     }
@@ -1518,11 +1502,10 @@ impl std::fmt::Debug for DescribeConnectorEntityOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput)
+/// See [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
 pub mod describe_connector_entity_output {
 
-    /// A builder for [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_entity_fields:
@@ -1551,7 +1534,7 @@ pub mod describe_connector_entity_output {
             self.connector_entity_fields = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput)
+        /// Consumes the builder and constructs a [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
         pub fn build(self) -> crate::output::DescribeConnectorEntityOutput {
             crate::output::DescribeConnectorEntityOutput {
                 connector_entity_fields: self.connector_entity_fields,
@@ -1560,7 +1543,7 @@ pub mod describe_connector_entity_output {
     }
 }
 impl DescribeConnectorEntityOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
     pub fn builder() -> crate::output::describe_connector_entity_output::Builder {
         crate::output::describe_connector_entity_output::Builder::default()
     }
@@ -1588,11 +1571,10 @@ impl std::fmt::Debug for DescribeConnectorOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
+/// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
 pub mod describe_connector_output {
 
-    /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_configuration:
@@ -1615,7 +1597,7 @@ pub mod describe_connector_output {
             self.connector_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
+        /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
         pub fn build(self) -> crate::output::DescribeConnectorOutput {
             crate::output::DescribeConnectorOutput {
                 connector_configuration: self.connector_configuration,
@@ -1624,7 +1606,7 @@ pub mod describe_connector_output {
     }
 }
 impl DescribeConnectorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
     pub fn builder() -> crate::output::describe_connector_output::Builder {
         crate::output::describe_connector_output::Builder::default()
     }
@@ -1640,22 +1622,21 @@ impl std::fmt::Debug for DeleteFlowOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteFlowOutput`](crate::output::DeleteFlowOutput)
+/// See [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
 pub mod delete_flow_output {
 
-    /// A builder for [`DeleteFlowOutput`](crate::output::DeleteFlowOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteFlowOutput`](crate::output::DeleteFlowOutput)
+        /// Consumes the builder and constructs a [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
         pub fn build(self) -> crate::output::DeleteFlowOutput {
             crate::output::DeleteFlowOutput {}
         }
     }
 }
 impl DeleteFlowOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFlowOutput`](crate::output::DeleteFlowOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
     pub fn builder() -> crate::output::delete_flow_output::Builder {
         crate::output::delete_flow_output::Builder::default()
     }
@@ -1671,22 +1652,21 @@ impl std::fmt::Debug for DeleteConnectorProfileOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput)
+/// See [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
 pub mod delete_connector_profile_output {
 
-    /// A builder for [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput)
+        /// Consumes the builder and constructs a [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
         pub fn build(self) -> crate::output::DeleteConnectorProfileOutput {
             crate::output::DeleteConnectorProfileOutput {}
         }
     }
 }
 impl DeleteConnectorProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
     pub fn builder() -> crate::output::delete_connector_profile_output::Builder {
         crate::output::delete_connector_profile_output::Builder::default()
     }
@@ -1719,11 +1699,10 @@ impl std::fmt::Debug for CreateFlowOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFlowOutput`](crate::output::CreateFlowOutput)
+/// See [`CreateFlowOutput`](crate::output::CreateFlowOutput).
 pub mod create_flow_output {
 
-    /// A builder for [`CreateFlowOutput`](crate::output::CreateFlowOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFlowOutput`](crate::output::CreateFlowOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -1753,7 +1732,7 @@ pub mod create_flow_output {
             self.flow_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFlowOutput`](crate::output::CreateFlowOutput)
+        /// Consumes the builder and constructs a [`CreateFlowOutput`](crate::output::CreateFlowOutput).
         pub fn build(self) -> crate::output::CreateFlowOutput {
             crate::output::CreateFlowOutput {
                 flow_arn: self.flow_arn,
@@ -1763,7 +1742,7 @@ pub mod create_flow_output {
     }
 }
 impl CreateFlowOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFlowOutput`](crate::output::CreateFlowOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFlowOutput`](crate::output::CreateFlowOutput).
     pub fn builder() -> crate::output::create_flow_output::Builder {
         crate::output::create_flow_output::Builder::default()
     }
@@ -1789,11 +1768,10 @@ impl std::fmt::Debug for CreateConnectorProfileOutput {
         formatter.finish()
     }
 }
-/// See [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput)
+/// See [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
 pub mod create_connector_profile_output {
 
-    /// A builder for [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connector_profile_arn: std::option::Option<std::string::String>,
@@ -1812,7 +1790,7 @@ pub mod create_connector_profile_output {
             self.connector_profile_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput)
+        /// Consumes the builder and constructs a [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
         pub fn build(self) -> crate::output::CreateConnectorProfileOutput {
             crate::output::CreateConnectorProfileOutput {
                 connector_profile_arn: self.connector_profile_arn,
@@ -1821,7 +1799,7 @@ pub mod create_connector_profile_output {
     }
 }
 impl CreateConnectorProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
     pub fn builder() -> crate::output::create_connector_profile_output::Builder {
         crate::output::create_connector_profile_output::Builder::default()
     }

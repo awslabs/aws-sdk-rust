@@ -10,7 +10,7 @@ pub struct CreateHomeRegionControl {
     _private: (),
 }
 impl CreateHomeRegionControl {
-    /// Creates a new builder-style object to manufacture [`CreateHomeRegionControlInput`](crate::input::CreateHomeRegionControlInput)
+    /// Creates a new builder-style object to manufacture [`CreateHomeRegionControlInput`](crate::input::CreateHomeRegionControlInput).
     pub fn builder() -> crate::input::create_home_region_control_input::Builder {
         crate::input::create_home_region_control_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeHomeRegionControls {
     _private: (),
 }
 impl DescribeHomeRegionControls {
-    /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsInput`](crate::input::DescribeHomeRegionControlsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsInput`](crate::input::DescribeHomeRegionControlsInput).
     pub fn builder() -> crate::input::describe_home_region_controls_input::Builder {
         crate::input::describe_home_region_controls_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetHomeRegion {
     _private: (),
 }
 impl GetHomeRegion {
-    /// Creates a new builder-style object to manufacture [`GetHomeRegionInput`](crate::input::GetHomeRegionInput)
+    /// Creates a new builder-style object to manufacture [`GetHomeRegionInput`](crate::input::GetHomeRegionInput).
     pub fn builder() -> crate::input::get_home_region_input::Builder {
         crate::input::get_home_region_input::Builder::default()
     }

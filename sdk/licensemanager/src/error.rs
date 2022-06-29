@@ -7658,11 +7658,10 @@ impl std::fmt::Display for ServerInternalException {
     }
 }
 impl std::error::Error for ServerInternalException {}
-/// See [`ServerInternalException`](crate::error::ServerInternalException)
+/// See [`ServerInternalException`](crate::error::ServerInternalException).
 pub mod server_internal_exception {
 
-    /// A builder for [`ServerInternalException`](crate::error::ServerInternalException)
-    #[non_exhaustive]
+    /// A builder for [`ServerInternalException`](crate::error::ServerInternalException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7678,7 +7677,7 @@ pub mod server_internal_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerInternalException`](crate::error::ServerInternalException)
+        /// Consumes the builder and constructs a [`ServerInternalException`](crate::error::ServerInternalException).
         pub fn build(self) -> crate::error::ServerInternalException {
             crate::error::ServerInternalException {
                 message: self.message,
@@ -7687,7 +7686,7 @@ pub mod server_internal_exception {
     }
 }
 impl ServerInternalException {
-    /// Creates a new builder-style object to manufacture [`ServerInternalException`](crate::error::ServerInternalException)
+    /// Creates a new builder-style object to manufacture [`ServerInternalException`](crate::error::ServerInternalException).
     pub fn builder() -> crate::error::server_internal_exception::Builder {
         crate::error::server_internal_exception::Builder::default()
     }
@@ -7723,11 +7722,10 @@ impl std::fmt::Display for RateLimitExceededException {
     }
 }
 impl std::error::Error for RateLimitExceededException {}
-/// See [`RateLimitExceededException`](crate::error::RateLimitExceededException)
+/// See [`RateLimitExceededException`](crate::error::RateLimitExceededException).
 pub mod rate_limit_exceeded_exception {
 
-    /// A builder for [`RateLimitExceededException`](crate::error::RateLimitExceededException)
-    #[non_exhaustive]
+    /// A builder for [`RateLimitExceededException`](crate::error::RateLimitExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7743,7 +7741,7 @@ pub mod rate_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RateLimitExceededException`](crate::error::RateLimitExceededException)
+        /// Consumes the builder and constructs a [`RateLimitExceededException`](crate::error::RateLimitExceededException).
         pub fn build(self) -> crate::error::RateLimitExceededException {
             crate::error::RateLimitExceededException {
                 message: self.message,
@@ -7752,7 +7750,7 @@ pub mod rate_limit_exceeded_exception {
     }
 }
 impl RateLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`RateLimitExceededException`](crate::error::RateLimitExceededException)
+    /// Creates a new builder-style object to manufacture [`RateLimitExceededException`](crate::error::RateLimitExceededException).
     pub fn builder() -> crate::error::rate_limit_exceeded_exception::Builder {
         crate::error::rate_limit_exceeded_exception::Builder::default()
     }
@@ -7788,11 +7786,10 @@ impl std::fmt::Display for InvalidParameterValueException {
     }
 }
 impl std::error::Error for InvalidParameterValueException {}
-/// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+/// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
 pub mod invalid_parameter_value_exception {
 
-    /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7808,7 +7805,7 @@ pub mod invalid_parameter_value_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+        /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
         pub fn build(self) -> crate::error::InvalidParameterValueException {
             crate::error::InvalidParameterValueException {
                 message: self.message,
@@ -7817,7 +7814,7 @@ pub mod invalid_parameter_value_exception {
     }
 }
 impl InvalidParameterValueException {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+    /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
     pub fn builder() -> crate::error::invalid_parameter_value_exception::Builder {
         crate::error::invalid_parameter_value_exception::Builder::default()
     }
@@ -7853,11 +7850,10 @@ impl std::fmt::Display for AuthorizationException {
     }
 }
 impl std::error::Error for AuthorizationException {}
-/// See [`AuthorizationException`](crate::error::AuthorizationException)
+/// See [`AuthorizationException`](crate::error::AuthorizationException).
 pub mod authorization_exception {
 
-    /// A builder for [`AuthorizationException`](crate::error::AuthorizationException)
-    #[non_exhaustive]
+    /// A builder for [`AuthorizationException`](crate::error::AuthorizationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7873,7 +7869,7 @@ pub mod authorization_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthorizationException`](crate::error::AuthorizationException)
+        /// Consumes the builder and constructs a [`AuthorizationException`](crate::error::AuthorizationException).
         pub fn build(self) -> crate::error::AuthorizationException {
             crate::error::AuthorizationException {
                 message: self.message,
@@ -7882,7 +7878,7 @@ pub mod authorization_exception {
     }
 }
 impl AuthorizationException {
-    /// Creates a new builder-style object to manufacture [`AuthorizationException`](crate::error::AuthorizationException)
+    /// Creates a new builder-style object to manufacture [`AuthorizationException`](crate::error::AuthorizationException).
     pub fn builder() -> crate::error::authorization_exception::Builder {
         crate::error::authorization_exception::Builder::default()
     }
@@ -7918,11 +7914,10 @@ impl std::fmt::Display for AccessDeniedException {
     }
 }
 impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
 
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
-    #[non_exhaustive]
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7938,7 +7933,7 @@ pub mod access_denied_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
                 message: self.message,
@@ -7947,7 +7942,7 @@ pub mod access_denied_exception {
     }
 }
 impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
     }
@@ -7983,11 +7978,10 @@ impl std::fmt::Display for LicenseUsageException {
     }
 }
 impl std::error::Error for LicenseUsageException {}
-/// See [`LicenseUsageException`](crate::error::LicenseUsageException)
+/// See [`LicenseUsageException`](crate::error::LicenseUsageException).
 pub mod license_usage_exception {
 
-    /// A builder for [`LicenseUsageException`](crate::error::LicenseUsageException)
-    #[non_exhaustive]
+    /// A builder for [`LicenseUsageException`](crate::error::LicenseUsageException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8003,7 +7997,7 @@ pub mod license_usage_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`LicenseUsageException`](crate::error::LicenseUsageException)
+        /// Consumes the builder and constructs a [`LicenseUsageException`](crate::error::LicenseUsageException).
         pub fn build(self) -> crate::error::LicenseUsageException {
             crate::error::LicenseUsageException {
                 message: self.message,
@@ -8012,7 +8006,7 @@ pub mod license_usage_exception {
     }
 }
 impl LicenseUsageException {
-    /// Creates a new builder-style object to manufacture [`LicenseUsageException`](crate::error::LicenseUsageException)
+    /// Creates a new builder-style object to manufacture [`LicenseUsageException`](crate::error::LicenseUsageException).
     pub fn builder() -> crate::error::license_usage_exception::Builder {
         crate::error::license_usage_exception::Builder::default()
     }
@@ -8049,11 +8043,10 @@ impl std::fmt::Display for InvalidResourceStateException {
     }
 }
 impl std::error::Error for InvalidResourceStateException {}
-/// See [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
+/// See [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
 pub mod invalid_resource_state_exception {
 
-    /// A builder for [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8069,7 +8062,7 @@ pub mod invalid_resource_state_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
+        /// Consumes the builder and constructs a [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
         pub fn build(self) -> crate::error::InvalidResourceStateException {
             crate::error::InvalidResourceStateException {
                 message: self.message,
@@ -8078,7 +8071,7 @@ pub mod invalid_resource_state_exception {
     }
 }
 impl InvalidResourceStateException {
-    /// Creates a new builder-style object to manufacture [`InvalidResourceStateException`](crate::error::InvalidResourceStateException)
+    /// Creates a new builder-style object to manufacture [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
     pub fn builder() -> crate::error::invalid_resource_state_exception::Builder {
         crate::error::invalid_resource_state_exception::Builder::default()
     }
@@ -8114,11 +8107,10 @@ impl std::fmt::Display for ValidationException {
     }
 }
 impl std::error::Error for ValidationException {}
-/// See [`ValidationException`](crate::error::ValidationException)
+/// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
 
-    /// A builder for [`ValidationException`](crate::error::ValidationException)
-    #[non_exhaustive]
+    /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8134,7 +8126,7 @@ pub mod validation_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException)
+        /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
                 message: self.message,
@@ -8143,7 +8135,7 @@ pub mod validation_exception {
     }
 }
 impl ValidationException {
-    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException)
+    /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
     pub fn builder() -> crate::error::validation_exception::Builder {
         crate::error::validation_exception::Builder::default()
     }
@@ -8179,11 +8171,10 @@ impl std::fmt::Display for ResourceNotFoundException {
     }
 }
 impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
 
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8199,7 +8190,7 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
                 message: self.message,
@@ -8208,7 +8199,7 @@ pub mod resource_not_found_exception {
     }
 }
 impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
     }
@@ -8244,11 +8235,10 @@ impl std::fmt::Display for ResourceLimitExceededException {
     }
 }
 impl std::error::Error for ResourceLimitExceededException {}
-/// See [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException)
+/// See [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
 pub mod resource_limit_exceeded_exception {
 
-    /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException)
-    #[non_exhaustive]
+    /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8264,7 +8254,7 @@ pub mod resource_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException)
+        /// Consumes the builder and constructs a [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
         pub fn build(self) -> crate::error::ResourceLimitExceededException {
             crate::error::ResourceLimitExceededException {
                 message: self.message,
@@ -8273,7 +8263,7 @@ pub mod resource_limit_exceeded_exception {
     }
 }
 impl ResourceLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException)
+    /// Creates a new builder-style object to manufacture [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
     pub fn builder() -> crate::error::resource_limit_exceeded_exception::Builder {
         crate::error::resource_limit_exceeded_exception::Builder::default()
     }
@@ -8309,11 +8299,10 @@ impl std::fmt::Display for FilterLimitExceededException {
     }
 }
 impl std::error::Error for FilterLimitExceededException {}
-/// See [`FilterLimitExceededException`](crate::error::FilterLimitExceededException)
+/// See [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
 pub mod filter_limit_exceeded_exception {
 
-    /// A builder for [`FilterLimitExceededException`](crate::error::FilterLimitExceededException)
-    #[non_exhaustive]
+    /// A builder for [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8329,7 +8318,7 @@ pub mod filter_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FilterLimitExceededException`](crate::error::FilterLimitExceededException)
+        /// Consumes the builder and constructs a [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
         pub fn build(self) -> crate::error::FilterLimitExceededException {
             crate::error::FilterLimitExceededException {
                 message: self.message,
@@ -8338,7 +8327,7 @@ pub mod filter_limit_exceeded_exception {
     }
 }
 impl FilterLimitExceededException {
-    /// Creates a new builder-style object to manufacture [`FilterLimitExceededException`](crate::error::FilterLimitExceededException)
+    /// Creates a new builder-style object to manufacture [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
     pub fn builder() -> crate::error::filter_limit_exceeded_exception::Builder {
         crate::error::filter_limit_exceeded_exception::Builder::default()
     }
@@ -8383,11 +8372,10 @@ impl std::fmt::Display for FailedDependencyException {
     }
 }
 impl std::error::Error for FailedDependencyException {}
-/// See [`FailedDependencyException`](crate::error::FailedDependencyException)
+/// See [`FailedDependencyException`](crate::error::FailedDependencyException).
 pub mod failed_dependency_exception {
 
-    /// A builder for [`FailedDependencyException`](crate::error::FailedDependencyException)
-    #[non_exhaustive]
+    /// A builder for [`FailedDependencyException`](crate::error::FailedDependencyException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8414,7 +8402,7 @@ pub mod failed_dependency_exception {
             self.error_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailedDependencyException`](crate::error::FailedDependencyException)
+        /// Consumes the builder and constructs a [`FailedDependencyException`](crate::error::FailedDependencyException).
         pub fn build(self) -> crate::error::FailedDependencyException {
             crate::error::FailedDependencyException {
                 message: self.message,
@@ -8424,7 +8412,7 @@ pub mod failed_dependency_exception {
     }
 }
 impl FailedDependencyException {
-    /// Creates a new builder-style object to manufacture [`FailedDependencyException`](crate::error::FailedDependencyException)
+    /// Creates a new builder-style object to manufacture [`FailedDependencyException`](crate::error::FailedDependencyException).
     pub fn builder() -> crate::error::failed_dependency_exception::Builder {
         crate::error::failed_dependency_exception::Builder::default()
     }
@@ -8469,11 +8457,10 @@ impl std::fmt::Display for RedirectException {
     }
 }
 impl std::error::Error for RedirectException {}
-/// See [`RedirectException`](crate::error::RedirectException)
+/// See [`RedirectException`](crate::error::RedirectException).
 pub mod redirect_exception {
 
-    /// A builder for [`RedirectException`](crate::error::RedirectException)
-    #[non_exhaustive]
+    /// A builder for [`RedirectException`](crate::error::RedirectException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) location: std::option::Option<std::string::String>,
@@ -8500,7 +8487,7 @@ pub mod redirect_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedirectException`](crate::error::RedirectException)
+        /// Consumes the builder and constructs a [`RedirectException`](crate::error::RedirectException).
         pub fn build(self) -> crate::error::RedirectException {
             crate::error::RedirectException {
                 location: self.location,
@@ -8510,7 +8497,7 @@ pub mod redirect_exception {
     }
 }
 impl RedirectException {
-    /// Creates a new builder-style object to manufacture [`RedirectException`](crate::error::RedirectException)
+    /// Creates a new builder-style object to manufacture [`RedirectException`](crate::error::RedirectException).
     pub fn builder() -> crate::error::redirect_exception::Builder {
         crate::error::redirect_exception::Builder::default()
     }
@@ -8546,11 +8533,10 @@ impl std::fmt::Display for ConflictException {
     }
 }
 impl std::error::Error for ConflictException {}
-/// See [`ConflictException`](crate::error::ConflictException)
+/// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
 
-    /// A builder for [`ConflictException`](crate::error::ConflictException)
-    #[non_exhaustive]
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8566,7 +8552,7 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
                 message: self.message,
@@ -8575,7 +8561,7 @@ pub mod conflict_exception {
     }
 }
 impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
     pub fn builder() -> crate::error::conflict_exception::Builder {
         crate::error::conflict_exception::Builder::default()
     }
@@ -8611,11 +8597,10 @@ impl std::fmt::Display for UnsupportedDigitalSignatureMethodException {
     }
 }
 impl std::error::Error for UnsupportedDigitalSignatureMethodException {}
-/// See [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException)
+/// See [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
 pub mod unsupported_digital_signature_method_exception {
 
-    /// A builder for [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8631,7 +8616,7 @@ pub mod unsupported_digital_signature_method_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException)
+        /// Consumes the builder and constructs a [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
         pub fn build(self) -> crate::error::UnsupportedDigitalSignatureMethodException {
             crate::error::UnsupportedDigitalSignatureMethodException {
                 message: self.message,
@@ -8640,7 +8625,7 @@ pub mod unsupported_digital_signature_method_exception {
     }
 }
 impl UnsupportedDigitalSignatureMethodException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException)
+    /// Creates a new builder-style object to manufacture [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
     pub fn builder() -> crate::error::unsupported_digital_signature_method_exception::Builder {
         crate::error::unsupported_digital_signature_method_exception::Builder::default()
     }
@@ -8676,11 +8661,10 @@ impl std::fmt::Display for NoEntitlementsAllowedException {
     }
 }
 impl std::error::Error for NoEntitlementsAllowedException {}
-/// See [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException)
+/// See [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
 pub mod no_entitlements_allowed_exception {
 
-    /// A builder for [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException)
-    #[non_exhaustive]
+    /// A builder for [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8696,7 +8680,7 @@ pub mod no_entitlements_allowed_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException)
+        /// Consumes the builder and constructs a [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
         pub fn build(self) -> crate::error::NoEntitlementsAllowedException {
             crate::error::NoEntitlementsAllowedException {
                 message: self.message,
@@ -8705,7 +8689,7 @@ pub mod no_entitlements_allowed_exception {
     }
 }
 impl NoEntitlementsAllowedException {
-    /// Creates a new builder-style object to manufacture [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException)
+    /// Creates a new builder-style object to manufacture [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
     pub fn builder() -> crate::error::no_entitlements_allowed_exception::Builder {
         crate::error::no_entitlements_allowed_exception::Builder::default()
     }
@@ -8741,11 +8725,10 @@ impl std::fmt::Display for EntitlementNotAllowedException {
     }
 }
 impl std::error::Error for EntitlementNotAllowedException {}
-/// See [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException)
+/// See [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
 pub mod entitlement_not_allowed_exception {
 
-    /// A builder for [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException)
-    #[non_exhaustive]
+    /// A builder for [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8761,7 +8744,7 @@ pub mod entitlement_not_allowed_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException)
+        /// Consumes the builder and constructs a [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
         pub fn build(self) -> crate::error::EntitlementNotAllowedException {
             crate::error::EntitlementNotAllowedException {
                 message: self.message,
@@ -8770,7 +8753,7 @@ pub mod entitlement_not_allowed_exception {
     }
 }
 impl EntitlementNotAllowedException {
-    /// Creates a new builder-style object to manufacture [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException)
+    /// Creates a new builder-style object to manufacture [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
     pub fn builder() -> crate::error::entitlement_not_allowed_exception::Builder {
         crate::error::entitlement_not_allowed_exception::Builder::default()
     }

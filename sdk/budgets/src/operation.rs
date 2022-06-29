@@ -10,7 +10,7 @@ pub struct CreateBudget {
     _private: (),
 }
 impl CreateBudget {
-    /// Creates a new builder-style object to manufacture [`CreateBudgetInput`](crate::input::CreateBudgetInput)
+    /// Creates a new builder-style object to manufacture [`CreateBudgetInput`](crate::input::CreateBudgetInput).
     pub fn builder() -> crate::input::create_budget_input::Builder {
         crate::input::create_budget_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateBudgetAction {
     _private: (),
 }
 impl CreateBudgetAction {
-    /// Creates a new builder-style object to manufacture [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput)
+    /// Creates a new builder-style object to manufacture [`CreateBudgetActionInput`](crate::input::CreateBudgetActionInput).
     pub fn builder() -> crate::input::create_budget_action_input::Builder {
         crate::input::create_budget_action_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateNotification {
     _private: (),
 }
 impl CreateNotification {
-    /// Creates a new builder-style object to manufacture [`CreateNotificationInput`](crate::input::CreateNotificationInput)
+    /// Creates a new builder-style object to manufacture [`CreateNotificationInput`](crate::input::CreateNotificationInput).
     pub fn builder() -> crate::input::create_notification_input::Builder {
         crate::input::create_notification_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateSubscriber {
     _private: (),
 }
 impl CreateSubscriber {
-    /// Creates a new builder-style object to manufacture [`CreateSubscriberInput`](crate::input::CreateSubscriberInput)
+    /// Creates a new builder-style object to manufacture [`CreateSubscriberInput`](crate::input::CreateSubscriberInput).
     pub fn builder() -> crate::input::create_subscriber_input::Builder {
         crate::input::create_subscriber_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DeleteBudget {
     _private: (),
 }
 impl DeleteBudget {
-    /// Creates a new builder-style object to manufacture [`DeleteBudgetInput`](crate::input::DeleteBudgetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBudgetInput`](crate::input::DeleteBudgetInput).
     pub fn builder() -> crate::input::delete_budget_input::Builder {
         crate::input::delete_budget_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeleteBudgetAction {
     _private: (),
 }
 impl DeleteBudgetAction {
-    /// Creates a new builder-style object to manufacture [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBudgetActionInput`](crate::input::DeleteBudgetActionInput).
     pub fn builder() -> crate::input::delete_budget_action_input::Builder {
         crate::input::delete_budget_action_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteNotification {
     _private: (),
 }
 impl DeleteNotification {
-    /// Creates a new builder-style object to manufacture [`DeleteNotificationInput`](crate::input::DeleteNotificationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNotificationInput`](crate::input::DeleteNotificationInput).
     pub fn builder() -> crate::input::delete_notification_input::Builder {
         crate::input::delete_notification_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteSubscriber {
     _private: (),
 }
 impl DeleteSubscriber {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriberInput`](crate::input::DeleteSubscriberInput).
     pub fn builder() -> crate::input::delete_subscriber_input::Builder {
         crate::input::delete_subscriber_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DescribeBudget {
     _private: (),
 }
 impl DescribeBudget {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetInput`](crate::input::DescribeBudgetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetInput`](crate::input::DescribeBudgetInput).
     pub fn builder() -> crate::input::describe_budget_input::Builder {
         crate::input::describe_budget_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct DescribeBudgetAction {
     _private: (),
 }
 impl DescribeBudgetAction {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionInput`](crate::input::DescribeBudgetActionInput).
     pub fn builder() -> crate::input::describe_budget_action_input::Builder {
         crate::input::describe_budget_action_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct DescribeBudgetActionHistories {
     _private: (),
 }
 impl DescribeBudgetActionHistories {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesInput`](crate::input::DescribeBudgetActionHistoriesInput).
     pub fn builder() -> crate::input::describe_budget_action_histories_input::Builder {
         crate::input::describe_budget_action_histories_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct DescribeBudgetActionsForAccount {
     _private: (),
 }
 impl DescribeBudgetActionsForAccount {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountInput`](crate::input::DescribeBudgetActionsForAccountInput).
     pub fn builder() -> crate::input::describe_budget_actions_for_account_input::Builder {
         crate::input::describe_budget_actions_for_account_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct DescribeBudgetActionsForBudget {
     _private: (),
 }
 impl DescribeBudgetActionsForBudget {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetInput`](crate::input::DescribeBudgetActionsForBudgetInput).
     pub fn builder() -> crate::input::describe_budget_actions_for_budget_input::Builder {
         crate::input::describe_budget_actions_for_budget_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct DescribeBudgetNotificationsForAccount {
     _private: (),
 }
 impl DescribeBudgetNotificationsForAccount {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountInput`](crate::input::DescribeBudgetNotificationsForAccountInput).
     pub fn builder() -> crate::input::describe_budget_notifications_for_account_input::Builder {
         crate::input::describe_budget_notifications_for_account_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DescribeBudgetPerformanceHistory {
     _private: (),
 }
 impl DescribeBudgetPerformanceHistory {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryInput`](crate::input::DescribeBudgetPerformanceHistoryInput).
     pub fn builder() -> crate::input::describe_budget_performance_history_input::Builder {
         crate::input::describe_budget_performance_history_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DescribeBudgets {
     _private: (),
 }
 impl DescribeBudgets {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetsInput`](crate::input::DescribeBudgetsInput).
     pub fn builder() -> crate::input::describe_budgets_input::Builder {
         crate::input::describe_budgets_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct DescribeNotificationsForBudget {
     _private: (),
 }
 impl DescribeNotificationsForBudget {
-    /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetInput`](crate::input::DescribeNotificationsForBudgetInput).
     pub fn builder() -> crate::input::describe_notifications_for_budget_input::Builder {
         crate::input::describe_notifications_for_budget_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct DescribeSubscribersForNotification {
     _private: (),
 }
 impl DescribeSubscribersForNotification {
-    /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationInput`](crate::input::DescribeSubscribersForNotificationInput).
     pub fn builder() -> crate::input::describe_subscribers_for_notification_input::Builder {
         crate::input::describe_subscribers_for_notification_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct ExecuteBudgetAction {
     _private: (),
 }
 impl ExecuteBudgetAction {
-    /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput)
+    /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionInput`](crate::input::ExecuteBudgetActionInput).
     pub fn builder() -> crate::input::execute_budget_action_input::Builder {
         crate::input::execute_budget_action_input::Builder::default()
     }
@@ -652,7 +652,7 @@ pub struct UpdateBudget {
     _private: (),
 }
 impl UpdateBudget {
-    /// Creates a new builder-style object to manufacture [`UpdateBudgetInput`](crate::input::UpdateBudgetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBudgetInput`](crate::input::UpdateBudgetInput).
     pub fn builder() -> crate::input::update_budget_input::Builder {
         crate::input::update_budget_input::Builder::default()
     }
@@ -684,7 +684,7 @@ pub struct UpdateBudgetAction {
     _private: (),
 }
 impl UpdateBudgetAction {
-    /// Creates a new builder-style object to manufacture [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBudgetActionInput`](crate::input::UpdateBudgetActionInput).
     pub fn builder() -> crate::input::update_budget_action_input::Builder {
         crate::input::update_budget_action_input::Builder::default()
     }
@@ -718,7 +718,7 @@ pub struct UpdateNotification {
     _private: (),
 }
 impl UpdateNotification {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationInput`](crate::input::UpdateNotificationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationInput`](crate::input::UpdateNotificationInput).
     pub fn builder() -> crate::input::update_notification_input::Builder {
         crate::input::update_notification_input::Builder::default()
     }
@@ -752,7 +752,7 @@ pub struct UpdateSubscriber {
     _private: (),
 }
 impl UpdateSubscriber {
-    /// Creates a new builder-style object to manufacture [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriberInput`](crate::input::UpdateSubscriberInput).
     pub fn builder() -> crate::input::update_subscriber_input::Builder {
         crate::input::update_subscriber_input::Builder::default()
     }

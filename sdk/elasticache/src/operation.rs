@@ -10,7 +10,7 @@ pub struct AddTagsToResource {
     _private: (),
 }
 impl AddTagsToResource {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
     pub fn builder() -> crate::input::add_tags_to_resource_input::Builder {
         crate::input::add_tags_to_resource_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AuthorizeCacheSecurityGroupIngress {
     _private: (),
 }
 impl AuthorizeCacheSecurityGroupIngress {
-    /// Creates a new builder-style object to manufacture [`AuthorizeCacheSecurityGroupIngressInput`](crate::input::AuthorizeCacheSecurityGroupIngressInput)
+    /// Creates a new builder-style object to manufacture [`AuthorizeCacheSecurityGroupIngressInput`](crate::input::AuthorizeCacheSecurityGroupIngressInput).
     pub fn builder() -> crate::input::authorize_cache_security_group_ingress_input::Builder {
         crate::input::authorize_cache_security_group_ingress_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchApplyUpdateAction {
     _private: (),
 }
 impl BatchApplyUpdateAction {
-    /// Creates a new builder-style object to manufacture [`BatchApplyUpdateActionInput`](crate::input::BatchApplyUpdateActionInput)
+    /// Creates a new builder-style object to manufacture [`BatchApplyUpdateActionInput`](crate::input::BatchApplyUpdateActionInput).
     pub fn builder() -> crate::input::batch_apply_update_action_input::Builder {
         crate::input::batch_apply_update_action_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct BatchStopUpdateAction {
     _private: (),
 }
 impl BatchStopUpdateAction {
-    /// Creates a new builder-style object to manufacture [`BatchStopUpdateActionInput`](crate::input::BatchStopUpdateActionInput)
+    /// Creates a new builder-style object to manufacture [`BatchStopUpdateActionInput`](crate::input::BatchStopUpdateActionInput).
     pub fn builder() -> crate::input::batch_stop_update_action_input::Builder {
         crate::input::batch_stop_update_action_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CompleteMigration {
     _private: (),
 }
 impl CompleteMigration {
-    /// Creates a new builder-style object to manufacture [`CompleteMigrationInput`](crate::input::CompleteMigrationInput)
+    /// Creates a new builder-style object to manufacture [`CompleteMigrationInput`](crate::input::CompleteMigrationInput).
     pub fn builder() -> crate::input::complete_migration_input::Builder {
         crate::input::complete_migration_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CopySnapshot {
     _private: (),
 }
 impl CopySnapshot {
-    /// Creates a new builder-style object to manufacture [`CopySnapshotInput`](crate::input::CopySnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CopySnapshotInput`](crate::input::CopySnapshotInput).
     pub fn builder() -> crate::input::copy_snapshot_input::Builder {
         crate::input::copy_snapshot_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct CreateCacheCluster {
     _private: (),
 }
 impl CreateCacheCluster {
-    /// Creates a new builder-style object to manufacture [`CreateCacheClusterInput`](crate::input::CreateCacheClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateCacheClusterInput`](crate::input::CreateCacheClusterInput).
     pub fn builder() -> crate::input::create_cache_cluster_input::Builder {
         crate::input::create_cache_cluster_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct CreateCacheParameterGroup {
     _private: (),
 }
 impl CreateCacheParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CreateCacheParameterGroupInput`](crate::input::CreateCacheParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateCacheParameterGroupInput`](crate::input::CreateCacheParameterGroupInput).
     pub fn builder() -> crate::input::create_cache_parameter_group_input::Builder {
         crate::input::create_cache_parameter_group_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct CreateCacheSecurityGroup {
     _private: (),
 }
 impl CreateCacheSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`CreateCacheSecurityGroupInput`](crate::input::CreateCacheSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateCacheSecurityGroupInput`](crate::input::CreateCacheSecurityGroupInput).
     pub fn builder() -> crate::input::create_cache_security_group_input::Builder {
         crate::input::create_cache_security_group_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct CreateCacheSubnetGroup {
     _private: (),
 }
 impl CreateCacheSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`CreateCacheSubnetGroupInput`](crate::input::CreateCacheSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateCacheSubnetGroupInput`](crate::input::CreateCacheSubnetGroupInput).
     pub fn builder() -> crate::input::create_cache_subnet_group_input::Builder {
         crate::input::create_cache_subnet_group_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct CreateGlobalReplicationGroup {
     _private: (),
 }
 impl CreateGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalReplicationGroupInput`](crate::input::CreateGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateGlobalReplicationGroupInput`](crate::input::CreateGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::create_global_replication_group_input::Builder {
         crate::input::create_global_replication_group_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct CreateReplicationGroup {
     _private: (),
 }
 impl CreateReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`CreateReplicationGroupInput`](crate::input::CreateReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateReplicationGroupInput`](crate::input::CreateReplicationGroupInput).
     pub fn builder() -> crate::input::create_replication_group_input::Builder {
         crate::input::create_replication_group_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct CreateSnapshot {
     _private: (),
 }
 impl CreateSnapshot {
-    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CreateSnapshotInput`](crate::input::CreateSnapshotInput).
     pub fn builder() -> crate::input::create_snapshot_input::Builder {
         crate::input::create_snapshot_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct CreateUser {
     _private: (),
 }
 impl CreateUser {
-    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput)
+    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput).
     pub fn builder() -> crate::input::create_user_input::Builder {
         crate::input::create_user_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct CreateUserGroup {
     _private: (),
 }
 impl CreateUserGroup {
-    /// Creates a new builder-style object to manufacture [`CreateUserGroupInput`](crate::input::CreateUserGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateUserGroupInput`](crate::input::CreateUserGroupInput).
     pub fn builder() -> crate::input::create_user_group_input::Builder {
         crate::input::create_user_group_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct DecreaseNodeGroupsInGlobalReplicationGroup {
     _private: (),
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`DecreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`DecreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::decrease_node_groups_in_global_replication_group_input::Builder
     {
         crate::input::decrease_node_groups_in_global_replication_group_input::Builder::default()
@@ -553,7 +553,7 @@ pub struct DecreaseReplicaCount {
     _private: (),
 }
 impl DecreaseReplicaCount {
-    /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountInput`](crate::input::DecreaseReplicaCountInput)
+    /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountInput`](crate::input::DecreaseReplicaCountInput).
     pub fn builder() -> crate::input::decrease_replica_count_input::Builder {
         crate::input::decrease_replica_count_input::Builder::default()
     }
@@ -587,7 +587,7 @@ pub struct DeleteCacheCluster {
     _private: (),
 }
 impl DeleteCacheCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheClusterInput`](crate::input::DeleteCacheClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCacheClusterInput`](crate::input::DeleteCacheClusterInput).
     pub fn builder() -> crate::input::delete_cache_cluster_input::Builder {
         crate::input::delete_cache_cluster_input::Builder::default()
     }
@@ -621,7 +621,7 @@ pub struct DeleteCacheParameterGroup {
     _private: (),
 }
 impl DeleteCacheParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheParameterGroupInput`](crate::input::DeleteCacheParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCacheParameterGroupInput`](crate::input::DeleteCacheParameterGroupInput).
     pub fn builder() -> crate::input::delete_cache_parameter_group_input::Builder {
         crate::input::delete_cache_parameter_group_input::Builder::default()
     }
@@ -655,7 +655,7 @@ pub struct DeleteCacheSecurityGroup {
     _private: (),
 }
 impl DeleteCacheSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheSecurityGroupInput`](crate::input::DeleteCacheSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCacheSecurityGroupInput`](crate::input::DeleteCacheSecurityGroupInput).
     pub fn builder() -> crate::input::delete_cache_security_group_input::Builder {
         crate::input::delete_cache_security_group_input::Builder::default()
     }
@@ -689,7 +689,7 @@ pub struct DeleteCacheSubnetGroup {
     _private: (),
 }
 impl DeleteCacheSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteCacheSubnetGroupInput`](crate::input::DeleteCacheSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCacheSubnetGroupInput`](crate::input::DeleteCacheSubnetGroupInput).
     pub fn builder() -> crate::input::delete_cache_subnet_group_input::Builder {
         crate::input::delete_cache_subnet_group_input::Builder::default()
     }
@@ -723,7 +723,7 @@ pub struct DeleteGlobalReplicationGroup {
     _private: (),
 }
 impl DeleteGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteGlobalReplicationGroupInput`](crate::input::DeleteGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalReplicationGroupInput`](crate::input::DeleteGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::delete_global_replication_group_input::Builder {
         crate::input::delete_global_replication_group_input::Builder::default()
     }
@@ -757,7 +757,7 @@ pub struct DeleteReplicationGroup {
     _private: (),
 }
 impl DeleteReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupInput`](crate::input::DeleteReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupInput`](crate::input::DeleteReplicationGroupInput).
     pub fn builder() -> crate::input::delete_replication_group_input::Builder {
         crate::input::delete_replication_group_input::Builder::default()
     }
@@ -791,7 +791,7 @@ pub struct DeleteSnapshot {
     _private: (),
 }
 impl DeleteSnapshot {
-    /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput).
     pub fn builder() -> crate::input::delete_snapshot_input::Builder {
         crate::input::delete_snapshot_input::Builder::default()
     }
@@ -823,7 +823,7 @@ pub struct DeleteUser {
     _private: (),
 }
 impl DeleteUser {
-    /// Creates a new builder-style object to manufacture [`DeleteUserInput`](crate::input::DeleteUserInput)
+    /// Creates a new builder-style object to manufacture [`DeleteUserInput`](crate::input::DeleteUserInput).
     pub fn builder() -> crate::input::delete_user_input::Builder {
         crate::input::delete_user_input::Builder::default()
     }
@@ -855,7 +855,7 @@ pub struct DeleteUserGroup {
     _private: (),
 }
 impl DeleteUserGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteUserGroupInput`](crate::input::DeleteUserGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteUserGroupInput`](crate::input::DeleteUserGroupInput).
     pub fn builder() -> crate::input::delete_user_group_input::Builder {
         crate::input::delete_user_group_input::Builder::default()
     }
@@ -889,7 +889,7 @@ pub struct DescribeCacheClusters {
     _private: (),
 }
 impl DescribeCacheClusters {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheClustersInput`](crate::input::DescribeCacheClustersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCacheClustersInput`](crate::input::DescribeCacheClustersInput).
     pub fn builder() -> crate::input::describe_cache_clusters_input::Builder {
         crate::input::describe_cache_clusters_input::Builder::default()
     }
@@ -923,7 +923,7 @@ pub struct DescribeCacheEngineVersions {
     _private: (),
 }
 impl DescribeCacheEngineVersions {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheEngineVersionsInput`](crate::input::DescribeCacheEngineVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCacheEngineVersionsInput`](crate::input::DescribeCacheEngineVersionsInput).
     pub fn builder() -> crate::input::describe_cache_engine_versions_input::Builder {
         crate::input::describe_cache_engine_versions_input::Builder::default()
     }
@@ -957,7 +957,7 @@ pub struct DescribeCacheParameterGroups {
     _private: (),
 }
 impl DescribeCacheParameterGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheParameterGroupsInput`](crate::input::DescribeCacheParameterGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCacheParameterGroupsInput`](crate::input::DescribeCacheParameterGroupsInput).
     pub fn builder() -> crate::input::describe_cache_parameter_groups_input::Builder {
         crate::input::describe_cache_parameter_groups_input::Builder::default()
     }
@@ -991,7 +991,7 @@ pub struct DescribeCacheParameters {
     _private: (),
 }
 impl DescribeCacheParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheParametersInput`](crate::input::DescribeCacheParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCacheParametersInput`](crate::input::DescribeCacheParametersInput).
     pub fn builder() -> crate::input::describe_cache_parameters_input::Builder {
         crate::input::describe_cache_parameters_input::Builder::default()
     }
@@ -1025,7 +1025,7 @@ pub struct DescribeCacheSecurityGroups {
     _private: (),
 }
 impl DescribeCacheSecurityGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheSecurityGroupsInput`](crate::input::DescribeCacheSecurityGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCacheSecurityGroupsInput`](crate::input::DescribeCacheSecurityGroupsInput).
     pub fn builder() -> crate::input::describe_cache_security_groups_input::Builder {
         crate::input::describe_cache_security_groups_input::Builder::default()
     }
@@ -1059,7 +1059,7 @@ pub struct DescribeCacheSubnetGroups {
     _private: (),
 }
 impl DescribeCacheSubnetGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeCacheSubnetGroupsInput`](crate::input::DescribeCacheSubnetGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCacheSubnetGroupsInput`](crate::input::DescribeCacheSubnetGroupsInput).
     pub fn builder() -> crate::input::describe_cache_subnet_groups_input::Builder {
         crate::input::describe_cache_subnet_groups_input::Builder::default()
     }
@@ -1093,7 +1093,7 @@ pub struct DescribeEngineDefaultParameters {
     _private: (),
 }
 impl DescribeEngineDefaultParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput).
     pub fn builder() -> crate::input::describe_engine_default_parameters_input::Builder {
         crate::input::describe_engine_default_parameters_input::Builder::default()
     }
@@ -1127,7 +1127,7 @@ pub struct DescribeEvents {
     _private: (),
 }
 impl DescribeEvents {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsInput`](crate::input::DescribeEventsInput).
     pub fn builder() -> crate::input::describe_events_input::Builder {
         crate::input::describe_events_input::Builder::default()
     }
@@ -1159,7 +1159,7 @@ pub struct DescribeGlobalReplicationGroups {
     _private: (),
 }
 impl DescribeGlobalReplicationGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalReplicationGroupsInput`](crate::input::DescribeGlobalReplicationGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalReplicationGroupsInput`](crate::input::DescribeGlobalReplicationGroupsInput).
     pub fn builder() -> crate::input::describe_global_replication_groups_input::Builder {
         crate::input::describe_global_replication_groups_input::Builder::default()
     }
@@ -1193,7 +1193,7 @@ pub struct DescribeReplicationGroups {
     _private: (),
 }
 impl DescribeReplicationGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeReplicationGroupsInput`](crate::input::DescribeReplicationGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReplicationGroupsInput`](crate::input::DescribeReplicationGroupsInput).
     pub fn builder() -> crate::input::describe_replication_groups_input::Builder {
         crate::input::describe_replication_groups_input::Builder::default()
     }
@@ -1227,7 +1227,7 @@ pub struct DescribeReservedCacheNodes {
     _private: (),
 }
 impl DescribeReservedCacheNodes {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesInput`](crate::input::DescribeReservedCacheNodesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesInput`](crate::input::DescribeReservedCacheNodesInput).
     pub fn builder() -> crate::input::describe_reserved_cache_nodes_input::Builder {
         crate::input::describe_reserved_cache_nodes_input::Builder::default()
     }
@@ -1261,7 +1261,7 @@ pub struct DescribeReservedCacheNodesOfferings {
     _private: (),
 }
 impl DescribeReservedCacheNodesOfferings {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsInput`](crate::input::DescribeReservedCacheNodesOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservedCacheNodesOfferingsInput`](crate::input::DescribeReservedCacheNodesOfferingsInput).
     pub fn builder() -> crate::input::describe_reserved_cache_nodes_offerings_input::Builder {
         crate::input::describe_reserved_cache_nodes_offerings_input::Builder::default()
     }
@@ -1295,7 +1295,7 @@ pub struct DescribeServiceUpdates {
     _private: (),
 }
 impl DescribeServiceUpdates {
-    /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesInput`](crate::input::DescribeServiceUpdatesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeServiceUpdatesInput`](crate::input::DescribeServiceUpdatesInput).
     pub fn builder() -> crate::input::describe_service_updates_input::Builder {
         crate::input::describe_service_updates_input::Builder::default()
     }
@@ -1329,7 +1329,7 @@ pub struct DescribeSnapshots {
     _private: (),
 }
 impl DescribeSnapshots {
-    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput).
     pub fn builder() -> crate::input::describe_snapshots_input::Builder {
         crate::input::describe_snapshots_input::Builder::default()
     }
@@ -1363,7 +1363,7 @@ pub struct DescribeUpdateActions {
     _private: (),
 }
 impl DescribeUpdateActions {
-    /// Creates a new builder-style object to manufacture [`DescribeUpdateActionsInput`](crate::input::DescribeUpdateActionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeUpdateActionsInput`](crate::input::DescribeUpdateActionsInput).
     pub fn builder() -> crate::input::describe_update_actions_input::Builder {
         crate::input::describe_update_actions_input::Builder::default()
     }
@@ -1397,7 +1397,7 @@ pub struct DescribeUserGroups {
     _private: (),
 }
 impl DescribeUserGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeUserGroupsInput`](crate::input::DescribeUserGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeUserGroupsInput`](crate::input::DescribeUserGroupsInput).
     pub fn builder() -> crate::input::describe_user_groups_input::Builder {
         crate::input::describe_user_groups_input::Builder::default()
     }
@@ -1431,7 +1431,7 @@ pub struct DescribeUsers {
     _private: (),
 }
 impl DescribeUsers {
-    /// Creates a new builder-style object to manufacture [`DescribeUsersInput`](crate::input::DescribeUsersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeUsersInput`](crate::input::DescribeUsersInput).
     pub fn builder() -> crate::input::describe_users_input::Builder {
         crate::input::describe_users_input::Builder::default()
     }
@@ -1463,7 +1463,7 @@ pub struct DisassociateGlobalReplicationGroup {
     _private: (),
 }
 impl DisassociateGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`DisassociateGlobalReplicationGroupInput`](crate::input::DisassociateGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateGlobalReplicationGroupInput`](crate::input::DisassociateGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::disassociate_global_replication_group_input::Builder {
         crate::input::disassociate_global_replication_group_input::Builder::default()
     }
@@ -1497,7 +1497,7 @@ pub struct FailoverGlobalReplicationGroup {
     _private: (),
 }
 impl FailoverGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`FailoverGlobalReplicationGroupInput`](crate::input::FailoverGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`FailoverGlobalReplicationGroupInput`](crate::input::FailoverGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::failover_global_replication_group_input::Builder {
         crate::input::failover_global_replication_group_input::Builder::default()
     }
@@ -1531,7 +1531,7 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroup {
     _private: (),
 }
 impl IncreaseNodeGroupsInGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::increase_node_groups_in_global_replication_group_input::Builder
     {
         crate::input::increase_node_groups_in_global_replication_group_input::Builder::default()
@@ -1570,7 +1570,7 @@ pub struct IncreaseReplicaCount {
     _private: (),
 }
 impl IncreaseReplicaCount {
-    /// Creates a new builder-style object to manufacture [`IncreaseReplicaCountInput`](crate::input::IncreaseReplicaCountInput)
+    /// Creates a new builder-style object to manufacture [`IncreaseReplicaCountInput`](crate::input::IncreaseReplicaCountInput).
     pub fn builder() -> crate::input::increase_replica_count_input::Builder {
         crate::input::increase_replica_count_input::Builder::default()
     }
@@ -1604,7 +1604,7 @@ pub struct ListAllowedNodeTypeModifications {
     _private: (),
 }
 impl ListAllowedNodeTypeModifications {
-    /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeModificationsInput`](crate::input::ListAllowedNodeTypeModificationsInput)
+    /// Creates a new builder-style object to manufacture [`ListAllowedNodeTypeModificationsInput`](crate::input::ListAllowedNodeTypeModificationsInput).
     pub fn builder() -> crate::input::list_allowed_node_type_modifications_input::Builder {
         crate::input::list_allowed_node_type_modifications_input::Builder::default()
     }
@@ -1638,7 +1638,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1672,7 +1672,7 @@ pub struct ModifyCacheCluster {
     _private: (),
 }
 impl ModifyCacheCluster {
-    /// Creates a new builder-style object to manufacture [`ModifyCacheClusterInput`](crate::input::ModifyCacheClusterInput)
+    /// Creates a new builder-style object to manufacture [`ModifyCacheClusterInput`](crate::input::ModifyCacheClusterInput).
     pub fn builder() -> crate::input::modify_cache_cluster_input::Builder {
         crate::input::modify_cache_cluster_input::Builder::default()
     }
@@ -1706,7 +1706,7 @@ pub struct ModifyCacheParameterGroup {
     _private: (),
 }
 impl ModifyCacheParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyCacheParameterGroupInput`](crate::input::ModifyCacheParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyCacheParameterGroupInput`](crate::input::ModifyCacheParameterGroupInput).
     pub fn builder() -> crate::input::modify_cache_parameter_group_input::Builder {
         crate::input::modify_cache_parameter_group_input::Builder::default()
     }
@@ -1740,7 +1740,7 @@ pub struct ModifyCacheSubnetGroup {
     _private: (),
 }
 impl ModifyCacheSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyCacheSubnetGroupInput`](crate::input::ModifyCacheSubnetGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyCacheSubnetGroupInput`](crate::input::ModifyCacheSubnetGroupInput).
     pub fn builder() -> crate::input::modify_cache_subnet_group_input::Builder {
         crate::input::modify_cache_subnet_group_input::Builder::default()
     }
@@ -1774,7 +1774,7 @@ pub struct ModifyGlobalReplicationGroup {
     _private: (),
 }
 impl ModifyGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyGlobalReplicationGroupInput`](crate::input::ModifyGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyGlobalReplicationGroupInput`](crate::input::ModifyGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::modify_global_replication_group_input::Builder {
         crate::input::modify_global_replication_group_input::Builder::default()
     }
@@ -1808,7 +1808,7 @@ pub struct ModifyReplicationGroup {
     _private: (),
 }
 impl ModifyReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupInput`](crate::input::ModifyReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupInput`](crate::input::ModifyReplicationGroupInput).
     pub fn builder() -> crate::input::modify_replication_group_input::Builder {
         crate::input::modify_replication_group_input::Builder::default()
     }
@@ -1842,7 +1842,7 @@ pub struct ModifyReplicationGroupShardConfiguration {
     _private: (),
 }
 impl ModifyReplicationGroupShardConfiguration {
-    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupShardConfigurationInput`](crate::input::ModifyReplicationGroupShardConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`ModifyReplicationGroupShardConfigurationInput`](crate::input::ModifyReplicationGroupShardConfigurationInput).
     pub fn builder() -> crate::input::modify_replication_group_shard_configuration_input::Builder {
         crate::input::modify_replication_group_shard_configuration_input::Builder::default()
     }
@@ -1880,7 +1880,7 @@ pub struct ModifyUser {
     _private: (),
 }
 impl ModifyUser {
-    /// Creates a new builder-style object to manufacture [`ModifyUserInput`](crate::input::ModifyUserInput)
+    /// Creates a new builder-style object to manufacture [`ModifyUserInput`](crate::input::ModifyUserInput).
     pub fn builder() -> crate::input::modify_user_input::Builder {
         crate::input::modify_user_input::Builder::default()
     }
@@ -1912,7 +1912,7 @@ pub struct ModifyUserGroup {
     _private: (),
 }
 impl ModifyUserGroup {
-    /// Creates a new builder-style object to manufacture [`ModifyUserGroupInput`](crate::input::ModifyUserGroupInput)
+    /// Creates a new builder-style object to manufacture [`ModifyUserGroupInput`](crate::input::ModifyUserGroupInput).
     pub fn builder() -> crate::input::modify_user_group_input::Builder {
         crate::input::modify_user_group_input::Builder::default()
     }
@@ -1946,7 +1946,7 @@ pub struct PurchaseReservedCacheNodesOffering {
     _private: (),
 }
 impl PurchaseReservedCacheNodesOffering {
-    /// Creates a new builder-style object to manufacture [`PurchaseReservedCacheNodesOfferingInput`](crate::input::PurchaseReservedCacheNodesOfferingInput)
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedCacheNodesOfferingInput`](crate::input::PurchaseReservedCacheNodesOfferingInput).
     pub fn builder() -> crate::input::purchase_reserved_cache_nodes_offering_input::Builder {
         crate::input::purchase_reserved_cache_nodes_offering_input::Builder::default()
     }
@@ -1980,7 +1980,7 @@ pub struct RebalanceSlotsInGlobalReplicationGroup {
     _private: (),
 }
 impl RebalanceSlotsInGlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::input::RebalanceSlotsInGlobalReplicationGroupInput)
+    /// Creates a new builder-style object to manufacture [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::input::RebalanceSlotsInGlobalReplicationGroupInput).
     pub fn builder() -> crate::input::rebalance_slots_in_global_replication_group_input::Builder {
         crate::input::rebalance_slots_in_global_replication_group_input::Builder::default()
     }
@@ -2018,7 +2018,7 @@ pub struct RebootCacheCluster {
     _private: (),
 }
 impl RebootCacheCluster {
-    /// Creates a new builder-style object to manufacture [`RebootCacheClusterInput`](crate::input::RebootCacheClusterInput)
+    /// Creates a new builder-style object to manufacture [`RebootCacheClusterInput`](crate::input::RebootCacheClusterInput).
     pub fn builder() -> crate::input::reboot_cache_cluster_input::Builder {
         crate::input::reboot_cache_cluster_input::Builder::default()
     }
@@ -2052,7 +2052,7 @@ pub struct RemoveTagsFromResource {
     _private: (),
 }
 impl RemoveTagsFromResource {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
     pub fn builder() -> crate::input::remove_tags_from_resource_input::Builder {
         crate::input::remove_tags_from_resource_input::Builder::default()
     }
@@ -2086,7 +2086,7 @@ pub struct ResetCacheParameterGroup {
     _private: (),
 }
 impl ResetCacheParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ResetCacheParameterGroupInput`](crate::input::ResetCacheParameterGroupInput)
+    /// Creates a new builder-style object to manufacture [`ResetCacheParameterGroupInput`](crate::input::ResetCacheParameterGroupInput).
     pub fn builder() -> crate::input::reset_cache_parameter_group_input::Builder {
         crate::input::reset_cache_parameter_group_input::Builder::default()
     }
@@ -2120,7 +2120,7 @@ pub struct RevokeCacheSecurityGroupIngress {
     _private: (),
 }
 impl RevokeCacheSecurityGroupIngress {
-    /// Creates a new builder-style object to manufacture [`RevokeCacheSecurityGroupIngressInput`](crate::input::RevokeCacheSecurityGroupIngressInput)
+    /// Creates a new builder-style object to manufacture [`RevokeCacheSecurityGroupIngressInput`](crate::input::RevokeCacheSecurityGroupIngressInput).
     pub fn builder() -> crate::input::revoke_cache_security_group_ingress_input::Builder {
         crate::input::revoke_cache_security_group_ingress_input::Builder::default()
     }
@@ -2154,7 +2154,7 @@ pub struct StartMigration {
     _private: (),
 }
 impl StartMigration {
-    /// Creates a new builder-style object to manufacture [`StartMigrationInput`](crate::input::StartMigrationInput)
+    /// Creates a new builder-style object to manufacture [`StartMigrationInput`](crate::input::StartMigrationInput).
     pub fn builder() -> crate::input::start_migration_input::Builder {
         crate::input::start_migration_input::Builder::default()
     }
@@ -2186,7 +2186,7 @@ pub struct TestFailover {
     _private: (),
 }
 impl TestFailover {
-    /// Creates a new builder-style object to manufacture [`TestFailoverInput`](crate::input::TestFailoverInput)
+    /// Creates a new builder-style object to manufacture [`TestFailoverInput`](crate::input::TestFailoverInput).
     pub fn builder() -> crate::input::test_failover_input::Builder {
         crate::input::test_failover_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct ActivatePipeline {
     _private: (),
 }
 impl ActivatePipeline {
-    /// Creates a new builder-style object to manufacture [`ActivatePipelineInput`](crate::input::ActivatePipelineInput)
+    /// Creates a new builder-style object to manufacture [`ActivatePipelineInput`](crate::input::ActivatePipelineInput).
     pub fn builder() -> crate::input::activate_pipeline_input::Builder {
         crate::input::activate_pipeline_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AddTags {
     _private: (),
 }
 impl AddTags {
-    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
     pub fn builder() -> crate::input::add_tags_input::Builder {
         crate::input::add_tags_input::Builder::default()
     }
@@ -75,7 +75,7 @@ pub struct CreatePipeline {
     _private: (),
 }
 impl CreatePipeline {
-    /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::input::CreatePipelineInput)
+    /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::input::CreatePipelineInput).
     pub fn builder() -> crate::input::create_pipeline_input::Builder {
         crate::input::create_pipeline_input::Builder::default()
     }
@@ -107,7 +107,7 @@ pub struct DeactivatePipeline {
     _private: (),
 }
 impl DeactivatePipeline {
-    /// Creates a new builder-style object to manufacture [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput)
+    /// Creates a new builder-style object to manufacture [`DeactivatePipelineInput`](crate::input::DeactivatePipelineInput).
     pub fn builder() -> crate::input::deactivate_pipeline_input::Builder {
         crate::input::deactivate_pipeline_input::Builder::default()
     }
@@ -141,7 +141,7 @@ pub struct DeletePipeline {
     _private: (),
 }
 impl DeletePipeline {
-    /// Creates a new builder-style object to manufacture [`DeletePipelineInput`](crate::input::DeletePipelineInput)
+    /// Creates a new builder-style object to manufacture [`DeletePipelineInput`](crate::input::DeletePipelineInput).
     pub fn builder() -> crate::input::delete_pipeline_input::Builder {
         crate::input::delete_pipeline_input::Builder::default()
     }
@@ -173,7 +173,7 @@ pub struct DescribeObjects {
     _private: (),
 }
 impl DescribeObjects {
-    /// Creates a new builder-style object to manufacture [`DescribeObjectsInput`](crate::input::DescribeObjectsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeObjectsInput`](crate::input::DescribeObjectsInput).
     pub fn builder() -> crate::input::describe_objects_input::Builder {
         crate::input::describe_objects_input::Builder::default()
     }
@@ -207,7 +207,7 @@ pub struct DescribePipelines {
     _private: (),
 }
 impl DescribePipelines {
-    /// Creates a new builder-style object to manufacture [`DescribePipelinesInput`](crate::input::DescribePipelinesInput)
+    /// Creates a new builder-style object to manufacture [`DescribePipelinesInput`](crate::input::DescribePipelinesInput).
     pub fn builder() -> crate::input::describe_pipelines_input::Builder {
         crate::input::describe_pipelines_input::Builder::default()
     }
@@ -241,7 +241,7 @@ pub struct EvaluateExpression {
     _private: (),
 }
 impl EvaluateExpression {
-    /// Creates a new builder-style object to manufacture [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput)
+    /// Creates a new builder-style object to manufacture [`EvaluateExpressionInput`](crate::input::EvaluateExpressionInput).
     pub fn builder() -> crate::input::evaluate_expression_input::Builder {
         crate::input::evaluate_expression_input::Builder::default()
     }
@@ -275,7 +275,7 @@ pub struct GetPipelineDefinition {
     _private: (),
 }
 impl GetPipelineDefinition {
-    /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionInput`](crate::input::GetPipelineDefinitionInput).
     pub fn builder() -> crate::input::get_pipeline_definition_input::Builder {
         crate::input::get_pipeline_definition_input::Builder::default()
     }
@@ -309,7 +309,7 @@ pub struct ListPipelines {
     _private: (),
 }
 impl ListPipelines {
-    /// Creates a new builder-style object to manufacture [`ListPipelinesInput`](crate::input::ListPipelinesInput)
+    /// Creates a new builder-style object to manufacture [`ListPipelinesInput`](crate::input::ListPipelinesInput).
     pub fn builder() -> crate::input::list_pipelines_input::Builder {
         crate::input::list_pipelines_input::Builder::default()
     }
@@ -341,7 +341,7 @@ pub struct PollForTask {
     _private: (),
 }
 impl PollForTask {
-    /// Creates a new builder-style object to manufacture [`PollForTaskInput`](crate::input::PollForTaskInput)
+    /// Creates a new builder-style object to manufacture [`PollForTaskInput`](crate::input::PollForTaskInput).
     pub fn builder() -> crate::input::poll_for_task_input::Builder {
         crate::input::poll_for_task_input::Builder::default()
     }
@@ -373,7 +373,7 @@ pub struct PutPipelineDefinition {
     _private: (),
 }
 impl PutPipelineDefinition {
-    /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionInput`](crate::input::PutPipelineDefinitionInput).
     pub fn builder() -> crate::input::put_pipeline_definition_input::Builder {
         crate::input::put_pipeline_definition_input::Builder::default()
     }
@@ -407,7 +407,7 @@ pub struct QueryObjects {
     _private: (),
 }
 impl QueryObjects {
-    /// Creates a new builder-style object to manufacture [`QueryObjectsInput`](crate::input::QueryObjectsInput)
+    /// Creates a new builder-style object to manufacture [`QueryObjectsInput`](crate::input::QueryObjectsInput).
     pub fn builder() -> crate::input::query_objects_input::Builder {
         crate::input::query_objects_input::Builder::default()
     }
@@ -439,7 +439,7 @@ pub struct RemoveTags {
     _private: (),
 }
 impl RemoveTags {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput).
     pub fn builder() -> crate::input::remove_tags_input::Builder {
         crate::input::remove_tags_input::Builder::default()
     }
@@ -471,7 +471,7 @@ pub struct ReportTaskProgress {
     _private: (),
 }
 impl ReportTaskProgress {
-    /// Creates a new builder-style object to manufacture [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput)
+    /// Creates a new builder-style object to manufacture [`ReportTaskProgressInput`](crate::input::ReportTaskProgressInput).
     pub fn builder() -> crate::input::report_task_progress_input::Builder {
         crate::input::report_task_progress_input::Builder::default()
     }
@@ -505,7 +505,7 @@ pub struct ReportTaskRunnerHeartbeat {
     _private: (),
 }
 impl ReportTaskRunnerHeartbeat {
-    /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput)
+    /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatInput`](crate::input::ReportTaskRunnerHeartbeatInput).
     pub fn builder() -> crate::input::report_task_runner_heartbeat_input::Builder {
         crate::input::report_task_runner_heartbeat_input::Builder::default()
     }
@@ -539,7 +539,7 @@ pub struct SetStatus {
     _private: (),
 }
 impl SetStatus {
-    /// Creates a new builder-style object to manufacture [`SetStatusInput`](crate::input::SetStatusInput)
+    /// Creates a new builder-style object to manufacture [`SetStatusInput`](crate::input::SetStatusInput).
     pub fn builder() -> crate::input::set_status_input::Builder {
         crate::input::set_status_input::Builder::default()
     }
@@ -570,7 +570,7 @@ pub struct SetTaskStatus {
     _private: (),
 }
 impl SetTaskStatus {
-    /// Creates a new builder-style object to manufacture [`SetTaskStatusInput`](crate::input::SetTaskStatusInput)
+    /// Creates a new builder-style object to manufacture [`SetTaskStatusInput`](crate::input::SetTaskStatusInput).
     pub fn builder() -> crate::input::set_task_status_input::Builder {
         crate::input::set_task_status_input::Builder::default()
     }
@@ -602,7 +602,7 @@ pub struct ValidatePipelineDefinition {
     _private: (),
 }
 impl ValidatePipelineDefinition {
-    /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionInput`](crate::input::ValidatePipelineDefinitionInput).
     pub fn builder() -> crate::input::validate_pipeline_definition_input::Builder {
         crate::input::validate_pipeline_definition_input::Builder::default()
     }

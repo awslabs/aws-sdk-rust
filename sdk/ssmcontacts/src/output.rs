@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateContactChannelOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput)
+/// See [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
 pub mod update_contact_channel_output {
 
-    /// A builder for [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput)
+        /// Consumes the builder and constructs a [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
         pub fn build(self) -> crate::output::UpdateContactChannelOutput {
             crate::output::UpdateContactChannelOutput {}
         }
     }
 }
 impl UpdateContactChannelOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
     pub fn builder() -> crate::output::update_contact_channel_output::Builder {
         crate::output::update_contact_channel_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UpdateContactOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+/// See [`UpdateContactOutput`](crate::output::UpdateContactOutput).
 pub mod update_contact_output {
 
-    /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+        /// Consumes the builder and constructs a [`UpdateContactOutput`](crate::output::UpdateContactOutput).
         pub fn build(self) -> crate::output::UpdateContactOutput {
             crate::output::UpdateContactOutput {}
         }
     }
 }
 impl UpdateContactOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateContactOutput`](crate::output::UpdateContactOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateContactOutput`](crate::output::UpdateContactOutput).
     pub fn builder() -> crate::output::update_contact_output::Builder {
         crate::output::update_contact_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -133,22 +129,21 @@ impl std::fmt::Debug for StopEngagementOutput {
         formatter.finish()
     }
 }
-/// See [`StopEngagementOutput`](crate::output::StopEngagementOutput)
+/// See [`StopEngagementOutput`](crate::output::StopEngagementOutput).
 pub mod stop_engagement_output {
 
-    /// A builder for [`StopEngagementOutput`](crate::output::StopEngagementOutput)
-    #[non_exhaustive]
+    /// A builder for [`StopEngagementOutput`](crate::output::StopEngagementOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`StopEngagementOutput`](crate::output::StopEngagementOutput)
+        /// Consumes the builder and constructs a [`StopEngagementOutput`](crate::output::StopEngagementOutput).
         pub fn build(self) -> crate::output::StopEngagementOutput {
             crate::output::StopEngagementOutput {}
         }
     }
 }
 impl StopEngagementOutput {
-    /// Creates a new builder-style object to manufacture [`StopEngagementOutput`](crate::output::StopEngagementOutput)
+    /// Creates a new builder-style object to manufacture [`StopEngagementOutput`](crate::output::StopEngagementOutput).
     pub fn builder() -> crate::output::stop_engagement_output::Builder {
         crate::output::stop_engagement_output::Builder::default()
     }
@@ -174,11 +169,10 @@ impl std::fmt::Debug for StartEngagementOutput {
         formatter.finish()
     }
 }
-/// See [`StartEngagementOutput`](crate::output::StartEngagementOutput)
+/// See [`StartEngagementOutput`](crate::output::StartEngagementOutput).
 pub mod start_engagement_output {
 
-    /// A builder for [`StartEngagementOutput`](crate::output::StartEngagementOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartEngagementOutput`](crate::output::StartEngagementOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) engagement_arn: std::option::Option<std::string::String>,
@@ -197,7 +191,7 @@ pub mod start_engagement_output {
             self.engagement_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartEngagementOutput`](crate::output::StartEngagementOutput)
+        /// Consumes the builder and constructs a [`StartEngagementOutput`](crate::output::StartEngagementOutput).
         pub fn build(self) -> crate::output::StartEngagementOutput {
             crate::output::StartEngagementOutput {
                 engagement_arn: self.engagement_arn,
@@ -206,7 +200,7 @@ pub mod start_engagement_output {
     }
 }
 impl StartEngagementOutput {
-    /// Creates a new builder-style object to manufacture [`StartEngagementOutput`](crate::output::StartEngagementOutput)
+    /// Creates a new builder-style object to manufacture [`StartEngagementOutput`](crate::output::StartEngagementOutput).
     pub fn builder() -> crate::output::start_engagement_output::Builder {
         crate::output::start_engagement_output::Builder::default()
     }
@@ -222,22 +216,21 @@ impl std::fmt::Debug for SendActivationCodeOutput {
         formatter.finish()
     }
 }
-/// See [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput)
+/// See [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
 pub mod send_activation_code_output {
 
-    /// A builder for [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput)
+        /// Consumes the builder and constructs a [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
         pub fn build(self) -> crate::output::SendActivationCodeOutput {
             crate::output::SendActivationCodeOutput {}
         }
     }
 }
 impl SendActivationCodeOutput {
-    /// Creates a new builder-style object to manufacture [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput)
+    /// Creates a new builder-style object to manufacture [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
     pub fn builder() -> crate::output::send_activation_code_output::Builder {
         crate::output::send_activation_code_output::Builder::default()
     }
@@ -253,22 +246,21 @@ impl std::fmt::Debug for PutContactPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput)
+/// See [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
 pub mod put_contact_policy_output {
 
-    /// A builder for [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput)
+        /// Consumes the builder and constructs a [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
         pub fn build(self) -> crate::output::PutContactPolicyOutput {
             crate::output::PutContactPolicyOutput {}
         }
     }
 }
 impl PutContactPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
     pub fn builder() -> crate::output::put_contact_policy_output::Builder {
         crate::output::put_contact_policy_output::Builder::default()
     }
@@ -294,11 +286,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -323,14 +314,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -363,11 +354,10 @@ impl std::fmt::Debug for ListPagesByEngagementOutput {
         formatter.finish()
     }
 }
-/// See [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput)
+/// See [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
 pub mod list_pages_by_engagement_output {
 
-    /// A builder for [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -403,7 +393,7 @@ pub mod list_pages_by_engagement_output {
             self.pages = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput)
+        /// Consumes the builder and constructs a [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
         pub fn build(self) -> crate::output::ListPagesByEngagementOutput {
             crate::output::ListPagesByEngagementOutput {
                 next_token: self.next_token,
@@ -413,7 +403,7 @@ pub mod list_pages_by_engagement_output {
     }
 }
 impl ListPagesByEngagementOutput {
-    /// Creates a new builder-style object to manufacture [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput)
+    /// Creates a new builder-style object to manufacture [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
     pub fn builder() -> crate::output::list_pages_by_engagement_output::Builder {
         crate::output::list_pages_by_engagement_output::Builder::default()
     }
@@ -446,11 +436,10 @@ impl std::fmt::Debug for ListPagesByContactOutput {
         formatter.finish()
     }
 }
-/// See [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput)
+/// See [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
 pub mod list_pages_by_contact_output {
 
-    /// A builder for [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -486,7 +475,7 @@ pub mod list_pages_by_contact_output {
             self.pages = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput)
+        /// Consumes the builder and constructs a [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
         pub fn build(self) -> crate::output::ListPagesByContactOutput {
             crate::output::ListPagesByContactOutput {
                 next_token: self.next_token,
@@ -496,7 +485,7 @@ pub mod list_pages_by_contact_output {
     }
 }
 impl ListPagesByContactOutput {
-    /// Creates a new builder-style object to manufacture [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput)
+    /// Creates a new builder-style object to manufacture [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
     pub fn builder() -> crate::output::list_pages_by_contact_output::Builder {
         crate::output::list_pages_by_contact_output::Builder::default()
     }
@@ -529,11 +518,10 @@ impl std::fmt::Debug for ListPageReceiptsOutput {
         formatter.finish()
     }
 }
-/// See [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput)
+/// See [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
 pub mod list_page_receipts_output {
 
-    /// A builder for [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -569,7 +557,7 @@ pub mod list_page_receipts_output {
             self.receipts = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput)
+        /// Consumes the builder and constructs a [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
         pub fn build(self) -> crate::output::ListPageReceiptsOutput {
             crate::output::ListPageReceiptsOutput {
                 next_token: self.next_token,
@@ -579,7 +567,7 @@ pub mod list_page_receipts_output {
     }
 }
 impl ListPageReceiptsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput)
+    /// Creates a new builder-style object to manufacture [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
     pub fn builder() -> crate::output::list_page_receipts_output::Builder {
         crate::output::list_page_receipts_output::Builder::default()
     }
@@ -612,11 +600,10 @@ impl std::fmt::Debug for ListEngagementsOutput {
         formatter.finish()
     }
 }
-/// See [`ListEngagementsOutput`](crate::output::ListEngagementsOutput)
+/// See [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
 pub mod list_engagements_output {
 
-    /// A builder for [`ListEngagementsOutput`](crate::output::ListEngagementsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -652,7 +639,7 @@ pub mod list_engagements_output {
             self.engagements = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListEngagementsOutput`](crate::output::ListEngagementsOutput)
+        /// Consumes the builder and constructs a [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
         pub fn build(self) -> crate::output::ListEngagementsOutput {
             crate::output::ListEngagementsOutput {
                 next_token: self.next_token,
@@ -662,7 +649,7 @@ pub mod list_engagements_output {
     }
 }
 impl ListEngagementsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEngagementsOutput`](crate::output::ListEngagementsOutput)
+    /// Creates a new builder-style object to manufacture [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
     pub fn builder() -> crate::output::list_engagements_output::Builder {
         crate::output::list_engagements_output::Builder::default()
     }
@@ -695,11 +682,10 @@ impl std::fmt::Debug for ListContactsOutput {
         formatter.finish()
     }
 }
-/// See [`ListContactsOutput`](crate::output::ListContactsOutput)
+/// See [`ListContactsOutput`](crate::output::ListContactsOutput).
 pub mod list_contacts_output {
 
-    /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -735,7 +721,7 @@ pub mod list_contacts_output {
             self.contacts = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListContactsOutput`](crate::output::ListContactsOutput)
+        /// Consumes the builder and constructs a [`ListContactsOutput`](crate::output::ListContactsOutput).
         pub fn build(self) -> crate::output::ListContactsOutput {
             crate::output::ListContactsOutput {
                 next_token: self.next_token,
@@ -745,7 +731,7 @@ pub mod list_contacts_output {
     }
 }
 impl ListContactsOutput {
-    /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::output::ListContactsOutput)
+    /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::output::ListContactsOutput).
     pub fn builder() -> crate::output::list_contacts_output::Builder {
         crate::output::list_contacts_output::Builder::default()
     }
@@ -778,11 +764,10 @@ impl std::fmt::Debug for ListContactChannelsOutput {
         formatter.finish()
     }
 }
-/// See [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput)
+/// See [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
 pub mod list_contact_channels_output {
 
-    /// A builder for [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -819,7 +804,7 @@ pub mod list_contact_channels_output {
             self.contact_channels = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput)
+        /// Consumes the builder and constructs a [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
         pub fn build(self) -> crate::output::ListContactChannelsOutput {
             crate::output::ListContactChannelsOutput {
                 next_token: self.next_token,
@@ -829,7 +814,7 @@ pub mod list_contact_channels_output {
     }
 }
 impl ListContactChannelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput)
+    /// Creates a new builder-style object to manufacture [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
     pub fn builder() -> crate::output::list_contact_channels_output::Builder {
         crate::output::list_contact_channels_output::Builder::default()
     }
@@ -862,11 +847,10 @@ impl std::fmt::Debug for GetContactPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput)
+/// See [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
 pub mod get_contact_policy_output {
 
-    /// A builder for [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -893,7 +877,7 @@ pub mod get_contact_policy_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput)
+        /// Consumes the builder and constructs a [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
         pub fn build(self) -> crate::output::GetContactPolicyOutput {
             crate::output::GetContactPolicyOutput {
                 contact_arn: self.contact_arn,
@@ -903,7 +887,7 @@ pub mod get_contact_policy_output {
     }
 }
 impl GetContactPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
     pub fn builder() -> crate::output::get_contact_policy_output::Builder {
         crate::output::get_contact_policy_output::Builder::default()
     }
@@ -964,11 +948,10 @@ impl std::fmt::Debug for GetContactChannelOutput {
         formatter.finish()
     }
 }
-/// See [`GetContactChannelOutput`](crate::output::GetContactChannelOutput)
+/// See [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
 pub mod get_contact_channel_output {
 
-    /// A builder for [`GetContactChannelOutput`](crate::output::GetContactChannelOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -1048,7 +1031,7 @@ pub mod get_contact_channel_output {
             self.activation_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetContactChannelOutput`](crate::output::GetContactChannelOutput)
+        /// Consumes the builder and constructs a [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
         pub fn build(self) -> crate::output::GetContactChannelOutput {
             crate::output::GetContactChannelOutput {
                 contact_arn: self.contact_arn,
@@ -1062,7 +1045,7 @@ pub mod get_contact_channel_output {
     }
 }
 impl GetContactChannelOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactChannelOutput`](crate::output::GetContactChannelOutput)
+    /// Creates a new builder-style object to manufacture [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
     pub fn builder() -> crate::output::get_contact_channel_output::Builder {
         crate::output::get_contact_channel_output::Builder::default()
     }
@@ -1116,11 +1099,10 @@ impl std::fmt::Debug for GetContactOutput {
         formatter.finish()
     }
 }
-/// See [`GetContactOutput`](crate::output::GetContactOutput)
+/// See [`GetContactOutput`](crate::output::GetContactOutput).
 pub mod get_contact_output {
 
-    /// A builder for [`GetContactOutput`](crate::output::GetContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetContactOutput`](crate::output::GetContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -1180,7 +1162,7 @@ pub mod get_contact_output {
             self.plan = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetContactOutput`](crate::output::GetContactOutput)
+        /// Consumes the builder and constructs a [`GetContactOutput`](crate::output::GetContactOutput).
         pub fn build(self) -> crate::output::GetContactOutput {
             crate::output::GetContactOutput {
                 contact_arn: self.contact_arn,
@@ -1193,7 +1175,7 @@ pub mod get_contact_output {
     }
 }
 impl GetContactOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::output::GetContactOutput)
+    /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::output::GetContactOutput).
     pub fn builder() -> crate::output::get_contact_output::Builder {
         crate::output::get_contact_output::Builder::default()
     }
@@ -1296,11 +1278,10 @@ impl std::fmt::Debug for DescribePageOutput {
         formatter.finish()
     }
 }
-/// See [`DescribePageOutput`](crate::output::DescribePageOutput)
+/// See [`DescribePageOutput`](crate::output::DescribePageOutput).
 pub mod describe_page_output {
 
-    /// A builder for [`DescribePageOutput`](crate::output::DescribePageOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribePageOutput`](crate::output::DescribePageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) page_arn: std::option::Option<std::string::String>,
@@ -1455,7 +1436,7 @@ pub mod describe_page_output {
             self.delivery_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribePageOutput`](crate::output::DescribePageOutput)
+        /// Consumes the builder and constructs a [`DescribePageOutput`](crate::output::DescribePageOutput).
         pub fn build(self) -> crate::output::DescribePageOutput {
             crate::output::DescribePageOutput {
                 page_arn: self.page_arn,
@@ -1475,7 +1456,7 @@ pub mod describe_page_output {
     }
 }
 impl DescribePageOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePageOutput`](crate::output::DescribePageOutput)
+    /// Creates a new builder-style object to manufacture [`DescribePageOutput`](crate::output::DescribePageOutput).
     pub fn builder() -> crate::output::describe_page_output::Builder {
         crate::output::describe_page_output::Builder::default()
     }
@@ -1564,11 +1545,10 @@ impl std::fmt::Debug for DescribeEngagementOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput)
+/// See [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
 pub mod describe_engagement_output {
 
-    /// A builder for [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -1698,7 +1678,7 @@ pub mod describe_engagement_output {
             self.stop_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput)
+        /// Consumes the builder and constructs a [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
         pub fn build(self) -> crate::output::DescribeEngagementOutput {
             crate::output::DescribeEngagementOutput {
                 contact_arn: self.contact_arn,
@@ -1716,7 +1696,7 @@ pub mod describe_engagement_output {
     }
 }
 impl DescribeEngagementOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
     pub fn builder() -> crate::output::describe_engagement_output::Builder {
         crate::output::describe_engagement_output::Builder::default()
     }
@@ -1732,22 +1712,21 @@ impl std::fmt::Debug for DeleteContactChannelOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput)
+/// See [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
 pub mod delete_contact_channel_output {
 
-    /// A builder for [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput)
+        /// Consumes the builder and constructs a [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
         pub fn build(self) -> crate::output::DeleteContactChannelOutput {
             crate::output::DeleteContactChannelOutput {}
         }
     }
 }
 impl DeleteContactChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
     pub fn builder() -> crate::output::delete_contact_channel_output::Builder {
         crate::output::delete_contact_channel_output::Builder::default()
     }
@@ -1763,22 +1742,21 @@ impl std::fmt::Debug for DeleteContactOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteContactOutput`](crate::output::DeleteContactOutput)
+/// See [`DeleteContactOutput`](crate::output::DeleteContactOutput).
 pub mod delete_contact_output {
 
-    /// A builder for [`DeleteContactOutput`](crate::output::DeleteContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteContactOutput`](crate::output::DeleteContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteContactOutput`](crate::output::DeleteContactOutput)
+        /// Consumes the builder and constructs a [`DeleteContactOutput`](crate::output::DeleteContactOutput).
         pub fn build(self) -> crate::output::DeleteContactOutput {
             crate::output::DeleteContactOutput {}
         }
     }
 }
 impl DeleteContactOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContactOutput`](crate::output::DeleteContactOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteContactOutput`](crate::output::DeleteContactOutput).
     pub fn builder() -> crate::output::delete_contact_output::Builder {
         crate::output::delete_contact_output::Builder::default()
     }
@@ -1794,22 +1772,21 @@ impl std::fmt::Debug for DeactivateContactChannelOutput {
         formatter.finish()
     }
 }
-/// See [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput)
+/// See [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
 pub mod deactivate_contact_channel_output {
 
-    /// A builder for [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput)
+        /// Consumes the builder and constructs a [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
         pub fn build(self) -> crate::output::DeactivateContactChannelOutput {
             crate::output::DeactivateContactChannelOutput {}
         }
     }
 }
 impl DeactivateContactChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput)
+    /// Creates a new builder-style object to manufacture [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
     pub fn builder() -> crate::output::deactivate_contact_channel_output::Builder {
         crate::output::deactivate_contact_channel_output::Builder::default()
     }
@@ -1835,11 +1812,10 @@ impl std::fmt::Debug for CreateContactChannelOutput {
         formatter.finish()
     }
 }
-/// See [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput)
+/// See [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
 pub mod create_contact_channel_output {
 
-    /// A builder for [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,
@@ -1858,7 +1834,7 @@ pub mod create_contact_channel_output {
             self.contact_channel_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput)
+        /// Consumes the builder and constructs a [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
         pub fn build(self) -> crate::output::CreateContactChannelOutput {
             crate::output::CreateContactChannelOutput {
                 contact_channel_arn: self.contact_channel_arn,
@@ -1867,7 +1843,7 @@ pub mod create_contact_channel_output {
     }
 }
 impl CreateContactChannelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput)
+    /// Creates a new builder-style object to manufacture [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
     pub fn builder() -> crate::output::create_contact_channel_output::Builder {
         crate::output::create_contact_channel_output::Builder::default()
     }
@@ -1893,11 +1869,10 @@ impl std::fmt::Debug for CreateContactOutput {
         formatter.finish()
     }
 }
-/// See [`CreateContactOutput`](crate::output::CreateContactOutput)
+/// See [`CreateContactOutput`](crate::output::CreateContactOutput).
 pub mod create_contact_output {
 
-    /// A builder for [`CreateContactOutput`](crate::output::CreateContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateContactOutput`](crate::output::CreateContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -1913,7 +1888,7 @@ pub mod create_contact_output {
             self.contact_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateContactOutput`](crate::output::CreateContactOutput)
+        /// Consumes the builder and constructs a [`CreateContactOutput`](crate::output::CreateContactOutput).
         pub fn build(self) -> crate::output::CreateContactOutput {
             crate::output::CreateContactOutput {
                 contact_arn: self.contact_arn,
@@ -1922,7 +1897,7 @@ pub mod create_contact_output {
     }
 }
 impl CreateContactOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContactOutput`](crate::output::CreateContactOutput)
+    /// Creates a new builder-style object to manufacture [`CreateContactOutput`](crate::output::CreateContactOutput).
     pub fn builder() -> crate::output::create_contact_output::Builder {
         crate::output::create_contact_output::Builder::default()
     }
@@ -1938,22 +1913,21 @@ impl std::fmt::Debug for ActivateContactChannelOutput {
         formatter.finish()
     }
 }
-/// See [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput)
+/// See [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
 pub mod activate_contact_channel_output {
 
-    /// A builder for [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput)
-    #[non_exhaustive]
+    /// A builder for [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput)
+        /// Consumes the builder and constructs a [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
         pub fn build(self) -> crate::output::ActivateContactChannelOutput {
             crate::output::ActivateContactChannelOutput {}
         }
     }
 }
 impl ActivateContactChannelOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput)
+    /// Creates a new builder-style object to manufacture [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
     pub fn builder() -> crate::output::activate_contact_channel_output::Builder {
         crate::output::activate_contact_channel_output::Builder::default()
     }
@@ -1969,22 +1943,21 @@ impl std::fmt::Debug for AcceptPageOutput {
         formatter.finish()
     }
 }
-/// See [`AcceptPageOutput`](crate::output::AcceptPageOutput)
+/// See [`AcceptPageOutput`](crate::output::AcceptPageOutput).
 pub mod accept_page_output {
 
-    /// A builder for [`AcceptPageOutput`](crate::output::AcceptPageOutput)
-    #[non_exhaustive]
+    /// A builder for [`AcceptPageOutput`](crate::output::AcceptPageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AcceptPageOutput`](crate::output::AcceptPageOutput)
+        /// Consumes the builder and constructs a [`AcceptPageOutput`](crate::output::AcceptPageOutput).
         pub fn build(self) -> crate::output::AcceptPageOutput {
             crate::output::AcceptPageOutput {}
         }
     }
 }
 impl AcceptPageOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptPageOutput`](crate::output::AcceptPageOutput)
+    /// Creates a new builder-style object to manufacture [`AcceptPageOutput`](crate::output::AcceptPageOutput).
     pub fn builder() -> crate::output::accept_page_output::Builder {
         crate::output::accept_page_output::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CancelJob {
     _private: (),
 }
 impl CancelJob {
-    /// Creates a new builder-style object to manufacture [`CancelJobInput`](crate::input::CancelJobInput)
+    /// Creates a new builder-style object to manufacture [`CancelJobInput`](crate::input::CancelJobInput).
     pub fn builder() -> crate::input::cancel_job_input::Builder {
         crate::input::cancel_job_input::Builder::default()
     }
@@ -41,7 +41,7 @@ pub struct CancelQuantumTask {
     _private: (),
 }
 impl CancelQuantumTask {
-    /// Creates a new builder-style object to manufacture [`CancelQuantumTaskInput`](crate::input::CancelQuantumTaskInput)
+    /// Creates a new builder-style object to manufacture [`CancelQuantumTaskInput`](crate::input::CancelQuantumTaskInput).
     pub fn builder() -> crate::input::cancel_quantum_task_input::Builder {
         crate::input::cancel_quantum_task_input::Builder::default()
     }
@@ -75,7 +75,7 @@ pub struct CreateJob {
     _private: (),
 }
 impl CreateJob {
-    /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput)
+    /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::input::CreateJobInput).
     pub fn builder() -> crate::input::create_job_input::Builder {
         crate::input::create_job_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct CreateQuantumTask {
     _private: (),
 }
 impl CreateQuantumTask {
-    /// Creates a new builder-style object to manufacture [`CreateQuantumTaskInput`](crate::input::CreateQuantumTaskInput)
+    /// Creates a new builder-style object to manufacture [`CreateQuantumTaskInput`](crate::input::CreateQuantumTaskInput).
     pub fn builder() -> crate::input::create_quantum_task_input::Builder {
         crate::input::create_quantum_task_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct GetDevice {
     _private: (),
 }
 impl GetDevice {
-    /// Creates a new builder-style object to manufacture [`GetDeviceInput`](crate::input::GetDeviceInput)
+    /// Creates a new builder-style object to manufacture [`GetDeviceInput`](crate::input::GetDeviceInput).
     pub fn builder() -> crate::input::get_device_input::Builder {
         crate::input::get_device_input::Builder::default()
     }
@@ -171,7 +171,7 @@ pub struct GetJob {
     _private: (),
 }
 impl GetJob {
-    /// Creates a new builder-style object to manufacture [`GetJobInput`](crate::input::GetJobInput)
+    /// Creates a new builder-style object to manufacture [`GetJobInput`](crate::input::GetJobInput).
     pub fn builder() -> crate::input::get_job_input::Builder {
         crate::input::get_job_input::Builder::default()
     }
@@ -202,7 +202,7 @@ pub struct GetQuantumTask {
     _private: (),
 }
 impl GetQuantumTask {
-    /// Creates a new builder-style object to manufacture [`GetQuantumTaskInput`](crate::input::GetQuantumTaskInput)
+    /// Creates a new builder-style object to manufacture [`GetQuantumTaskInput`](crate::input::GetQuantumTaskInput).
     pub fn builder() -> crate::input::get_quantum_task_input::Builder {
         crate::input::get_quantum_task_input::Builder::default()
     }
@@ -234,7 +234,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -268,7 +268,7 @@ pub struct SearchDevices {
     _private: (),
 }
 impl SearchDevices {
-    /// Creates a new builder-style object to manufacture [`SearchDevicesInput`](crate::input::SearchDevicesInput)
+    /// Creates a new builder-style object to manufacture [`SearchDevicesInput`](crate::input::SearchDevicesInput).
     pub fn builder() -> crate::input::search_devices_input::Builder {
         crate::input::search_devices_input::Builder::default()
     }
@@ -300,7 +300,7 @@ pub struct SearchJobs {
     _private: (),
 }
 impl SearchJobs {
-    /// Creates a new builder-style object to manufacture [`SearchJobsInput`](crate::input::SearchJobsInput)
+    /// Creates a new builder-style object to manufacture [`SearchJobsInput`](crate::input::SearchJobsInput).
     pub fn builder() -> crate::input::search_jobs_input::Builder {
         crate::input::search_jobs_input::Builder::default()
     }
@@ -332,7 +332,7 @@ pub struct SearchQuantumTasks {
     _private: (),
 }
 impl SearchQuantumTasks {
-    /// Creates a new builder-style object to manufacture [`SearchQuantumTasksInput`](crate::input::SearchQuantumTasksInput)
+    /// Creates a new builder-style object to manufacture [`SearchQuantumTasksInput`](crate::input::SearchQuantumTasksInput).
     pub fn builder() -> crate::input::search_quantum_tasks_input::Builder {
         crate::input::search_quantum_tasks_input::Builder::default()
     }
@@ -366,7 +366,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -398,7 +398,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

@@ -90,11 +90,10 @@ impl std::fmt::Debug for SavingsPlanOffering {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanOffering`](crate::model::SavingsPlanOffering)
+/// See [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
 pub mod savings_plan_offering {
 
-    /// A builder for [`SavingsPlanOffering`](crate::model::SavingsPlanOffering)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
@@ -249,7 +248,7 @@ pub mod savings_plan_offering {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanOffering`](crate::model::SavingsPlanOffering)
+        /// Consumes the builder and constructs a [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
         pub fn build(self) -> crate::model::SavingsPlanOffering {
             crate::model::SavingsPlanOffering {
                 offering_id: self.offering_id,
@@ -268,7 +267,7 @@ pub mod savings_plan_offering {
     }
 }
 impl SavingsPlanOffering {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOffering`](crate::model::SavingsPlanOffering)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
     pub fn builder() -> crate::model::savings_plan_offering::Builder {
         crate::model::savings_plan_offering::Builder::default()
     }
@@ -301,11 +300,10 @@ impl std::fmt::Debug for SavingsPlanOfferingProperty {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty)
+/// See [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
 pub mod savings_plan_offering_property {
 
-    /// A builder for [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
@@ -335,7 +333,7 @@ pub mod savings_plan_offering_property {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty)
+        /// Consumes the builder and constructs a [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
         pub fn build(self) -> crate::model::SavingsPlanOfferingProperty {
             crate::model::SavingsPlanOfferingProperty {
                 name: self.name,
@@ -345,7 +343,7 @@ pub mod savings_plan_offering_property {
     }
 }
 impl SavingsPlanOfferingProperty {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
     pub fn builder() -> crate::model::savings_plan_offering_property::Builder {
         crate::model::savings_plan_offering_property::Builder::default()
     }
@@ -669,11 +667,10 @@ impl std::fmt::Debug for SavingsPlanOfferingFilterElement {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement)
+/// See [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
 pub mod savings_plan_offering_filter_element {
 
-    /// A builder for [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>,
@@ -712,7 +709,7 @@ pub mod savings_plan_offering_filter_element {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement)
+        /// Consumes the builder and constructs a [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
         pub fn build(self) -> crate::model::SavingsPlanOfferingFilterElement {
             crate::model::SavingsPlanOfferingFilterElement {
                 name: self.name,
@@ -722,7 +719,7 @@ pub mod savings_plan_offering_filter_element {
     }
 }
 impl SavingsPlanOfferingFilterElement {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
     pub fn builder() -> crate::model::savings_plan_offering_filter_element::Builder {
         crate::model::savings_plan_offering_filter_element::Builder::default()
     }
@@ -857,11 +854,10 @@ impl std::fmt::Debug for SavingsPlanOfferingRate {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate)
+/// See [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
 pub mod savings_plan_offering_rate {
 
-    /// A builder for [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) savings_plan_offering:
@@ -982,7 +978,7 @@ pub mod savings_plan_offering_rate {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate)
+        /// Consumes the builder and constructs a [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
         pub fn build(self) -> crate::model::SavingsPlanOfferingRate {
             crate::model::SavingsPlanOfferingRate {
                 savings_plan_offering: self.savings_plan_offering,
@@ -998,7 +994,7 @@ pub mod savings_plan_offering_rate {
     }
 }
 impl SavingsPlanOfferingRate {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
     pub fn builder() -> crate::model::savings_plan_offering_rate::Builder {
         crate::model::savings_plan_offering_rate::Builder::default()
     }
@@ -1031,11 +1027,10 @@ impl std::fmt::Debug for SavingsPlanOfferingRateProperty {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty)
+/// See [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
 pub mod savings_plan_offering_rate_property {
 
-    /// A builder for [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1062,7 +1057,7 @@ pub mod savings_plan_offering_rate_property {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty)
+        /// Consumes the builder and constructs a [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
         pub fn build(self) -> crate::model::SavingsPlanOfferingRateProperty {
             crate::model::SavingsPlanOfferingRateProperty {
                 name: self.name,
@@ -1072,7 +1067,7 @@ pub mod savings_plan_offering_rate_property {
     }
 }
 impl SavingsPlanOfferingRateProperty {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
     pub fn builder() -> crate::model::savings_plan_offering_rate_property::Builder {
         crate::model::savings_plan_offering_rate_property::Builder::default()
     }
@@ -1265,11 +1260,10 @@ impl std::fmt::Debug for ParentSavingsPlanOffering {
         formatter.finish()
     }
 }
-/// See [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering)
+/// See [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
 pub mod parent_savings_plan_offering {
 
-    /// A builder for [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering)
-    #[non_exhaustive]
+    /// A builder for [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
@@ -1352,7 +1346,7 @@ pub mod parent_savings_plan_offering {
             self.plan_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering)
+        /// Consumes the builder and constructs a [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
         pub fn build(self) -> crate::model::ParentSavingsPlanOffering {
             crate::model::ParentSavingsPlanOffering {
                 offering_id: self.offering_id,
@@ -1366,7 +1360,7 @@ pub mod parent_savings_plan_offering {
     }
 }
 impl ParentSavingsPlanOffering {
-    /// Creates a new builder-style object to manufacture [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering)
+    /// Creates a new builder-style object to manufacture [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
     pub fn builder() -> crate::model::parent_savings_plan_offering::Builder {
         crate::model::parent_savings_plan_offering::Builder::default()
     }
@@ -1399,11 +1393,10 @@ impl std::fmt::Debug for SavingsPlanOfferingRateFilterElement {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement)
+/// See [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
 pub mod savings_plan_offering_rate_filter_element {
 
-    /// A builder for [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
@@ -1442,7 +1435,7 @@ pub mod savings_plan_offering_rate_filter_element {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement)
+        /// Consumes the builder and constructs a [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
         pub fn build(self) -> crate::model::SavingsPlanOfferingRateFilterElement {
             crate::model::SavingsPlanOfferingRateFilterElement {
                 name: self.name,
@@ -1452,7 +1445,7 @@ pub mod savings_plan_offering_rate_filter_element {
     }
 }
 impl SavingsPlanOfferingRateFilterElement {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
     pub fn builder() -> crate::model::savings_plan_offering_rate_filter_element::Builder {
         crate::model::savings_plan_offering_rate_filter_element::Builder::default()
     }
@@ -1679,11 +1672,10 @@ impl std::fmt::Debug for SavingsPlan {
         formatter.finish()
     }
 }
-/// See [`SavingsPlan`](crate::model::SavingsPlan)
+/// See [`SavingsPlan`](crate::model::SavingsPlan).
 pub mod savings_plan {
 
-    /// A builder for [`SavingsPlan`](crate::model::SavingsPlan)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlan`](crate::model::SavingsPlan).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
@@ -1940,7 +1932,7 @@ pub mod savings_plan {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlan`](crate::model::SavingsPlan)
+        /// Consumes the builder and constructs a [`SavingsPlan`](crate::model::SavingsPlan).
         pub fn build(self) -> crate::model::SavingsPlan {
             crate::model::SavingsPlan {
                 offering_id: self.offering_id,
@@ -1966,7 +1958,7 @@ pub mod savings_plan {
     }
 }
 impl SavingsPlan {
-    /// Creates a new builder-style object to manufacture [`SavingsPlan`](crate::model::SavingsPlan)
+    /// Creates a new builder-style object to manufacture [`SavingsPlan`](crate::model::SavingsPlan).
     pub fn builder() -> crate::model::savings_plan::Builder {
         crate::model::savings_plan::Builder::default()
     }
@@ -2077,11 +2069,10 @@ impl std::fmt::Debug for SavingsPlanFilter {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanFilter`](crate::model::SavingsPlanFilter)
+/// See [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
 pub mod savings_plan_filter {
 
-    /// A builder for [`SavingsPlanFilter`](crate::model::SavingsPlanFilter)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlansFilterName>,
@@ -2120,7 +2111,7 @@ pub mod savings_plan_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanFilter`](crate::model::SavingsPlanFilter)
+        /// Consumes the builder and constructs a [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
         pub fn build(self) -> crate::model::SavingsPlanFilter {
             crate::model::SavingsPlanFilter {
                 name: self.name,
@@ -2130,7 +2121,7 @@ pub mod savings_plan_filter {
     }
 }
 impl SavingsPlanFilter {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanFilter`](crate::model::SavingsPlanFilter)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
     pub fn builder() -> crate::model::savings_plan_filter::Builder {
         crate::model::savings_plan_filter::Builder::default()
     }
@@ -2298,11 +2289,10 @@ impl std::fmt::Debug for SavingsPlanRate {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanRate`](crate::model::SavingsPlanRate)
+/// See [`SavingsPlanRate`](crate::model::SavingsPlanRate).
 pub mod savings_plan_rate {
 
-    /// A builder for [`SavingsPlanRate`](crate::model::SavingsPlanRate)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanRate`](crate::model::SavingsPlanRate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rate: std::option::Option<std::string::String>,
@@ -2417,7 +2407,7 @@ pub mod savings_plan_rate {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanRate`](crate::model::SavingsPlanRate)
+        /// Consumes the builder and constructs a [`SavingsPlanRate`](crate::model::SavingsPlanRate).
         pub fn build(self) -> crate::model::SavingsPlanRate {
             crate::model::SavingsPlanRate {
                 rate: self.rate,
@@ -2433,7 +2423,7 @@ pub mod savings_plan_rate {
     }
 }
 impl SavingsPlanRate {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanRate`](crate::model::SavingsPlanRate)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanRate`](crate::model::SavingsPlanRate).
     pub fn builder() -> crate::model::savings_plan_rate::Builder {
         crate::model::savings_plan_rate::Builder::default()
     }
@@ -2466,11 +2456,10 @@ impl std::fmt::Debug for SavingsPlanRateProperty {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty)
+/// See [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
 pub mod savings_plan_rate_property {
 
-    /// A builder for [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRatePropertyKey>,
@@ -2500,7 +2489,7 @@ pub mod savings_plan_rate_property {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty)
+        /// Consumes the builder and constructs a [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
         pub fn build(self) -> crate::model::SavingsPlanRateProperty {
             crate::model::SavingsPlanRateProperty {
                 name: self.name,
@@ -2510,7 +2499,7 @@ pub mod savings_plan_rate_property {
     }
 }
 impl SavingsPlanRateProperty {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
     pub fn builder() -> crate::model::savings_plan_rate_property::Builder {
         crate::model::savings_plan_rate_property::Builder::default()
     }
@@ -2616,11 +2605,10 @@ impl std::fmt::Debug for SavingsPlanRateFilter {
         formatter.finish()
     }
 }
-/// See [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter)
+/// See [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
 pub mod savings_plan_rate_filter {
 
-    /// A builder for [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter)
-    #[non_exhaustive]
+    /// A builder for [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SavingsPlanRateFilterName>,
@@ -2659,7 +2647,7 @@ pub mod savings_plan_rate_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter)
+        /// Consumes the builder and constructs a [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
         pub fn build(self) -> crate::model::SavingsPlanRateFilter {
             crate::model::SavingsPlanRateFilter {
                 name: self.name,
@@ -2669,7 +2657,7 @@ pub mod savings_plan_rate_filter {
     }
 }
 impl SavingsPlanRateFilter {
-    /// Creates a new builder-style object to manufacture [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter)
+    /// Creates a new builder-style object to manufacture [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
     pub fn builder() -> crate::model::savings_plan_rate_filter::Builder {
         crate::model::savings_plan_rate_filter::Builder::default()
     }

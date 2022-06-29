@@ -10,7 +10,7 @@ pub struct AssociateTrackerConsumer {
     _private: (),
 }
 impl AssociateTrackerConsumer {
-    /// Creates a new builder-style object to manufacture [`AssociateTrackerConsumerInput`](crate::input::AssociateTrackerConsumerInput)
+    /// Creates a new builder-style object to manufacture [`AssociateTrackerConsumerInput`](crate::input::AssociateTrackerConsumerInput).
     pub fn builder() -> crate::input::associate_tracker_consumer_input::Builder {
         crate::input::associate_tracker_consumer_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchDeleteDevicePositionHistory {
     _private: (),
 }
 impl BatchDeleteDevicePositionHistory {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryInput`](crate::input::BatchDeleteDevicePositionHistoryInput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryInput`](crate::input::BatchDeleteDevicePositionHistoryInput).
     pub fn builder() -> crate::input::batch_delete_device_position_history_input::Builder {
         crate::input::batch_delete_device_position_history_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchDeleteGeofence {
     _private: (),
 }
 impl BatchDeleteGeofence {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceInput`](crate::input::BatchDeleteGeofenceInput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceInput`](crate::input::BatchDeleteGeofenceInput).
     pub fn builder() -> crate::input::batch_delete_geofence_input::Builder {
         crate::input::batch_delete_geofence_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct BatchEvaluateGeofences {
     _private: (),
 }
 impl BatchEvaluateGeofences {
-    /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesInput`](crate::input::BatchEvaluateGeofencesInput)
+    /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesInput`](crate::input::BatchEvaluateGeofencesInput).
     pub fn builder() -> crate::input::batch_evaluate_geofences_input::Builder {
         crate::input::batch_evaluate_geofences_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct BatchGetDevicePosition {
     _private: (),
 }
 impl BatchGetDevicePosition {
-    /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionInput`](crate::input::BatchGetDevicePositionInput)
+    /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionInput`](crate::input::BatchGetDevicePositionInput).
     pub fn builder() -> crate::input::batch_get_device_position_input::Builder {
         crate::input::batch_get_device_position_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct BatchPutGeofence {
     _private: (),
 }
 impl BatchPutGeofence {
-    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceInput`](crate::input::BatchPutGeofenceInput)
+    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceInput`](crate::input::BatchPutGeofenceInput).
     pub fn builder() -> crate::input::batch_put_geofence_input::Builder {
         crate::input::batch_put_geofence_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct BatchUpdateDevicePosition {
     _private: (),
 }
 impl BatchUpdateDevicePosition {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionInput`](crate::input::BatchUpdateDevicePositionInput)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionInput`](crate::input::BatchUpdateDevicePositionInput).
     pub fn builder() -> crate::input::batch_update_device_position_input::Builder {
         crate::input::batch_update_device_position_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CalculateRoute {
     _private: (),
 }
 impl CalculateRoute {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteInput`](crate::input::CalculateRouteInput)
+    /// Creates a new builder-style object to manufacture [`CalculateRouteInput`](crate::input::CalculateRouteInput).
     pub fn builder() -> crate::input::calculate_route_input::Builder {
         crate::input::calculate_route_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct CalculateRouteMatrix {
     _private: (),
 }
 impl CalculateRouteMatrix {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixInput`](crate::input::CalculateRouteMatrixInput)
+    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixInput`](crate::input::CalculateRouteMatrixInput).
     pub fn builder() -> crate::input::calculate_route_matrix_input::Builder {
         crate::input::calculate_route_matrix_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct CreateGeofenceCollection {
     _private: (),
 }
 impl CreateGeofenceCollection {
-    /// Creates a new builder-style object to manufacture [`CreateGeofenceCollectionInput`](crate::input::CreateGeofenceCollectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateGeofenceCollectionInput`](crate::input::CreateGeofenceCollectionInput).
     pub fn builder() -> crate::input::create_geofence_collection_input::Builder {
         crate::input::create_geofence_collection_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct CreateMap {
     _private: (),
 }
 impl CreateMap {
-    /// Creates a new builder-style object to manufacture [`CreateMapInput`](crate::input::CreateMapInput)
+    /// Creates a new builder-style object to manufacture [`CreateMapInput`](crate::input::CreateMapInput).
     pub fn builder() -> crate::input::create_map_input::Builder {
         crate::input::create_map_input::Builder::default()
     }
@@ -379,7 +379,7 @@ pub struct CreatePlaceIndex {
     _private: (),
 }
 impl CreatePlaceIndex {
-    /// Creates a new builder-style object to manufacture [`CreatePlaceIndexInput`](crate::input::CreatePlaceIndexInput)
+    /// Creates a new builder-style object to manufacture [`CreatePlaceIndexInput`](crate::input::CreatePlaceIndexInput).
     pub fn builder() -> crate::input::create_place_index_input::Builder {
         crate::input::create_place_index_input::Builder::default()
     }
@@ -413,7 +413,7 @@ pub struct CreateRouteCalculator {
     _private: (),
 }
 impl CreateRouteCalculator {
-    /// Creates a new builder-style object to manufacture [`CreateRouteCalculatorInput`](crate::input::CreateRouteCalculatorInput)
+    /// Creates a new builder-style object to manufacture [`CreateRouteCalculatorInput`](crate::input::CreateRouteCalculatorInput).
     pub fn builder() -> crate::input::create_route_calculator_input::Builder {
         crate::input::create_route_calculator_input::Builder::default()
     }
@@ -447,7 +447,7 @@ pub struct CreateTracker {
     _private: (),
 }
 impl CreateTracker {
-    /// Creates a new builder-style object to manufacture [`CreateTrackerInput`](crate::input::CreateTrackerInput)
+    /// Creates a new builder-style object to manufacture [`CreateTrackerInput`](crate::input::CreateTrackerInput).
     pub fn builder() -> crate::input::create_tracker_input::Builder {
         crate::input::create_tracker_input::Builder::default()
     }
@@ -479,7 +479,7 @@ pub struct DeleteGeofenceCollection {
     _private: (),
 }
 impl DeleteGeofenceCollection {
-    /// Creates a new builder-style object to manufacture [`DeleteGeofenceCollectionInput`](crate::input::DeleteGeofenceCollectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGeofenceCollectionInput`](crate::input::DeleteGeofenceCollectionInput).
     pub fn builder() -> crate::input::delete_geofence_collection_input::Builder {
         crate::input::delete_geofence_collection_input::Builder::default()
     }
@@ -513,7 +513,7 @@ pub struct DeleteMap {
     _private: (),
 }
 impl DeleteMap {
-    /// Creates a new builder-style object to manufacture [`DeleteMapInput`](crate::input::DeleteMapInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMapInput`](crate::input::DeleteMapInput).
     pub fn builder() -> crate::input::delete_map_input::Builder {
         crate::input::delete_map_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct DeletePlaceIndex {
     _private: (),
 }
 impl DeletePlaceIndex {
-    /// Creates a new builder-style object to manufacture [`DeletePlaceIndexInput`](crate::input::DeletePlaceIndexInput)
+    /// Creates a new builder-style object to manufacture [`DeletePlaceIndexInput`](crate::input::DeletePlaceIndexInput).
     pub fn builder() -> crate::input::delete_place_index_input::Builder {
         crate::input::delete_place_index_input::Builder::default()
     }
@@ -578,7 +578,7 @@ pub struct DeleteRouteCalculator {
     _private: (),
 }
 impl DeleteRouteCalculator {
-    /// Creates a new builder-style object to manufacture [`DeleteRouteCalculatorInput`](crate::input::DeleteRouteCalculatorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRouteCalculatorInput`](crate::input::DeleteRouteCalculatorInput).
     pub fn builder() -> crate::input::delete_route_calculator_input::Builder {
         crate::input::delete_route_calculator_input::Builder::default()
     }
@@ -612,7 +612,7 @@ pub struct DeleteTracker {
     _private: (),
 }
 impl DeleteTracker {
-    /// Creates a new builder-style object to manufacture [`DeleteTrackerInput`](crate::input::DeleteTrackerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTrackerInput`](crate::input::DeleteTrackerInput).
     pub fn builder() -> crate::input::delete_tracker_input::Builder {
         crate::input::delete_tracker_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct DescribeGeofenceCollection {
     _private: (),
 }
 impl DescribeGeofenceCollection {
-    /// Creates a new builder-style object to manufacture [`DescribeGeofenceCollectionInput`](crate::input::DescribeGeofenceCollectionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGeofenceCollectionInput`](crate::input::DescribeGeofenceCollectionInput).
     pub fn builder() -> crate::input::describe_geofence_collection_input::Builder {
         crate::input::describe_geofence_collection_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct DescribeMap {
     _private: (),
 }
 impl DescribeMap {
-    /// Creates a new builder-style object to manufacture [`DescribeMapInput`](crate::input::DescribeMapInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMapInput`](crate::input::DescribeMapInput).
     pub fn builder() -> crate::input::describe_map_input::Builder {
         crate::input::describe_map_input::Builder::default()
     }
@@ -710,7 +710,7 @@ pub struct DescribePlaceIndex {
     _private: (),
 }
 impl DescribePlaceIndex {
-    /// Creates a new builder-style object to manufacture [`DescribePlaceIndexInput`](crate::input::DescribePlaceIndexInput)
+    /// Creates a new builder-style object to manufacture [`DescribePlaceIndexInput`](crate::input::DescribePlaceIndexInput).
     pub fn builder() -> crate::input::describe_place_index_input::Builder {
         crate::input::describe_place_index_input::Builder::default()
     }
@@ -744,7 +744,7 @@ pub struct DescribeRouteCalculator {
     _private: (),
 }
 impl DescribeRouteCalculator {
-    /// Creates a new builder-style object to manufacture [`DescribeRouteCalculatorInput`](crate::input::DescribeRouteCalculatorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRouteCalculatorInput`](crate::input::DescribeRouteCalculatorInput).
     pub fn builder() -> crate::input::describe_route_calculator_input::Builder {
         crate::input::describe_route_calculator_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct DescribeTracker {
     _private: (),
 }
 impl DescribeTracker {
-    /// Creates a new builder-style object to manufacture [`DescribeTrackerInput`](crate::input::DescribeTrackerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrackerInput`](crate::input::DescribeTrackerInput).
     pub fn builder() -> crate::input::describe_tracker_input::Builder {
         crate::input::describe_tracker_input::Builder::default()
     }
@@ -812,7 +812,7 @@ pub struct DisassociateTrackerConsumer {
     _private: (),
 }
 impl DisassociateTrackerConsumer {
-    /// Creates a new builder-style object to manufacture [`DisassociateTrackerConsumerInput`](crate::input::DisassociateTrackerConsumerInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateTrackerConsumerInput`](crate::input::DisassociateTrackerConsumerInput).
     pub fn builder() -> crate::input::disassociate_tracker_consumer_input::Builder {
         crate::input::disassociate_tracker_consumer_input::Builder::default()
     }
@@ -846,7 +846,7 @@ pub struct GetDevicePosition {
     _private: (),
 }
 impl GetDevicePosition {
-    /// Creates a new builder-style object to manufacture [`GetDevicePositionInput`](crate::input::GetDevicePositionInput)
+    /// Creates a new builder-style object to manufacture [`GetDevicePositionInput`](crate::input::GetDevicePositionInput).
     pub fn builder() -> crate::input::get_device_position_input::Builder {
         crate::input::get_device_position_input::Builder::default()
     }
@@ -880,7 +880,7 @@ pub struct GetDevicePositionHistory {
     _private: (),
 }
 impl GetDevicePositionHistory {
-    /// Creates a new builder-style object to manufacture [`GetDevicePositionHistoryInput`](crate::input::GetDevicePositionHistoryInput)
+    /// Creates a new builder-style object to manufacture [`GetDevicePositionHistoryInput`](crate::input::GetDevicePositionHistoryInput).
     pub fn builder() -> crate::input::get_device_position_history_input::Builder {
         crate::input::get_device_position_history_input::Builder::default()
     }
@@ -914,7 +914,7 @@ pub struct GetGeofence {
     _private: (),
 }
 impl GetGeofence {
-    /// Creates a new builder-style object to manufacture [`GetGeofenceInput`](crate::input::GetGeofenceInput)
+    /// Creates a new builder-style object to manufacture [`GetGeofenceInput`](crate::input::GetGeofenceInput).
     pub fn builder() -> crate::input::get_geofence_input::Builder {
         crate::input::get_geofence_input::Builder::default()
     }
@@ -946,7 +946,7 @@ pub struct GetMapGlyphs {
     _private: (),
 }
 impl GetMapGlyphs {
-    /// Creates a new builder-style object to manufacture [`GetMapGlyphsInput`](crate::input::GetMapGlyphsInput)
+    /// Creates a new builder-style object to manufacture [`GetMapGlyphsInput`](crate::input::GetMapGlyphsInput).
     pub fn builder() -> crate::input::get_map_glyphs_input::Builder {
         crate::input::get_map_glyphs_input::Builder::default()
     }
@@ -978,7 +978,7 @@ pub struct GetMapSprites {
     _private: (),
 }
 impl GetMapSprites {
-    /// Creates a new builder-style object to manufacture [`GetMapSpritesInput`](crate::input::GetMapSpritesInput)
+    /// Creates a new builder-style object to manufacture [`GetMapSpritesInput`](crate::input::GetMapSpritesInput).
     pub fn builder() -> crate::input::get_map_sprites_input::Builder {
         crate::input::get_map_sprites_input::Builder::default()
     }
@@ -1010,7 +1010,7 @@ pub struct GetMapStyleDescriptor {
     _private: (),
 }
 impl GetMapStyleDescriptor {
-    /// Creates a new builder-style object to manufacture [`GetMapStyleDescriptorInput`](crate::input::GetMapStyleDescriptorInput)
+    /// Creates a new builder-style object to manufacture [`GetMapStyleDescriptorInput`](crate::input::GetMapStyleDescriptorInput).
     pub fn builder() -> crate::input::get_map_style_descriptor_input::Builder {
         crate::input::get_map_style_descriptor_input::Builder::default()
     }
@@ -1044,7 +1044,7 @@ pub struct GetMapTile {
     _private: (),
 }
 impl GetMapTile {
-    /// Creates a new builder-style object to manufacture [`GetMapTileInput`](crate::input::GetMapTileInput)
+    /// Creates a new builder-style object to manufacture [`GetMapTileInput`](crate::input::GetMapTileInput).
     pub fn builder() -> crate::input::get_map_tile_input::Builder {
         crate::input::get_map_tile_input::Builder::default()
     }
@@ -1076,7 +1076,7 @@ pub struct ListDevicePositions {
     _private: (),
 }
 impl ListDevicePositions {
-    /// Creates a new builder-style object to manufacture [`ListDevicePositionsInput`](crate::input::ListDevicePositionsInput)
+    /// Creates a new builder-style object to manufacture [`ListDevicePositionsInput`](crate::input::ListDevicePositionsInput).
     pub fn builder() -> crate::input::list_device_positions_input::Builder {
         crate::input::list_device_positions_input::Builder::default()
     }
@@ -1110,7 +1110,7 @@ pub struct ListGeofenceCollections {
     _private: (),
 }
 impl ListGeofenceCollections {
-    /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsInput`](crate::input::ListGeofenceCollectionsInput)
+    /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsInput`](crate::input::ListGeofenceCollectionsInput).
     pub fn builder() -> crate::input::list_geofence_collections_input::Builder {
         crate::input::list_geofence_collections_input::Builder::default()
     }
@@ -1144,7 +1144,7 @@ pub struct ListGeofences {
     _private: (),
 }
 impl ListGeofences {
-    /// Creates a new builder-style object to manufacture [`ListGeofencesInput`](crate::input::ListGeofencesInput)
+    /// Creates a new builder-style object to manufacture [`ListGeofencesInput`](crate::input::ListGeofencesInput).
     pub fn builder() -> crate::input::list_geofences_input::Builder {
         crate::input::list_geofences_input::Builder::default()
     }
@@ -1176,7 +1176,7 @@ pub struct ListMaps {
     _private: (),
 }
 impl ListMaps {
-    /// Creates a new builder-style object to manufacture [`ListMapsInput`](crate::input::ListMapsInput)
+    /// Creates a new builder-style object to manufacture [`ListMapsInput`](crate::input::ListMapsInput).
     pub fn builder() -> crate::input::list_maps_input::Builder {
         crate::input::list_maps_input::Builder::default()
     }
@@ -1207,7 +1207,7 @@ pub struct ListPlaceIndexes {
     _private: (),
 }
 impl ListPlaceIndexes {
-    /// Creates a new builder-style object to manufacture [`ListPlaceIndexesInput`](crate::input::ListPlaceIndexesInput)
+    /// Creates a new builder-style object to manufacture [`ListPlaceIndexesInput`](crate::input::ListPlaceIndexesInput).
     pub fn builder() -> crate::input::list_place_indexes_input::Builder {
         crate::input::list_place_indexes_input::Builder::default()
     }
@@ -1241,7 +1241,7 @@ pub struct ListRouteCalculators {
     _private: (),
 }
 impl ListRouteCalculators {
-    /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsInput`](crate::input::ListRouteCalculatorsInput)
+    /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsInput`](crate::input::ListRouteCalculatorsInput).
     pub fn builder() -> crate::input::list_route_calculators_input::Builder {
         crate::input::list_route_calculators_input::Builder::default()
     }
@@ -1275,7 +1275,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1309,7 +1309,7 @@ pub struct ListTrackerConsumers {
     _private: (),
 }
 impl ListTrackerConsumers {
-    /// Creates a new builder-style object to manufacture [`ListTrackerConsumersInput`](crate::input::ListTrackerConsumersInput)
+    /// Creates a new builder-style object to manufacture [`ListTrackerConsumersInput`](crate::input::ListTrackerConsumersInput).
     pub fn builder() -> crate::input::list_tracker_consumers_input::Builder {
         crate::input::list_tracker_consumers_input::Builder::default()
     }
@@ -1343,7 +1343,7 @@ pub struct ListTrackers {
     _private: (),
 }
 impl ListTrackers {
-    /// Creates a new builder-style object to manufacture [`ListTrackersInput`](crate::input::ListTrackersInput)
+    /// Creates a new builder-style object to manufacture [`ListTrackersInput`](crate::input::ListTrackersInput).
     pub fn builder() -> crate::input::list_trackers_input::Builder {
         crate::input::list_trackers_input::Builder::default()
     }
@@ -1375,7 +1375,7 @@ pub struct PutGeofence {
     _private: (),
 }
 impl PutGeofence {
-    /// Creates a new builder-style object to manufacture [`PutGeofenceInput`](crate::input::PutGeofenceInput)
+    /// Creates a new builder-style object to manufacture [`PutGeofenceInput`](crate::input::PutGeofenceInput).
     pub fn builder() -> crate::input::put_geofence_input::Builder {
         crate::input::put_geofence_input::Builder::default()
     }
@@ -1407,7 +1407,7 @@ pub struct SearchPlaceIndexForPosition {
     _private: (),
 }
 impl SearchPlaceIndexForPosition {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionInput`](crate::input::SearchPlaceIndexForPositionInput)
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionInput`](crate::input::SearchPlaceIndexForPositionInput).
     pub fn builder() -> crate::input::search_place_index_for_position_input::Builder {
         crate::input::search_place_index_for_position_input::Builder::default()
     }
@@ -1441,7 +1441,7 @@ pub struct SearchPlaceIndexForSuggestions {
     _private: (),
 }
 impl SearchPlaceIndexForSuggestions {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsInput`](crate::input::SearchPlaceIndexForSuggestionsInput)
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsInput`](crate::input::SearchPlaceIndexForSuggestionsInput).
     pub fn builder() -> crate::input::search_place_index_for_suggestions_input::Builder {
         crate::input::search_place_index_for_suggestions_input::Builder::default()
     }
@@ -1475,7 +1475,7 @@ pub struct SearchPlaceIndexForText {
     _private: (),
 }
 impl SearchPlaceIndexForText {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextInput`](crate::input::SearchPlaceIndexForTextInput)
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextInput`](crate::input::SearchPlaceIndexForTextInput).
     pub fn builder() -> crate::input::search_place_index_for_text_input::Builder {
         crate::input::search_place_index_for_text_input::Builder::default()
     }
@@ -1509,7 +1509,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1541,7 +1541,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1573,7 +1573,7 @@ pub struct UpdateGeofenceCollection {
     _private: (),
 }
 impl UpdateGeofenceCollection {
-    /// Creates a new builder-style object to manufacture [`UpdateGeofenceCollectionInput`](crate::input::UpdateGeofenceCollectionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGeofenceCollectionInput`](crate::input::UpdateGeofenceCollectionInput).
     pub fn builder() -> crate::input::update_geofence_collection_input::Builder {
         crate::input::update_geofence_collection_input::Builder::default()
     }
@@ -1607,7 +1607,7 @@ pub struct UpdateMap {
     _private: (),
 }
 impl UpdateMap {
-    /// Creates a new builder-style object to manufacture [`UpdateMapInput`](crate::input::UpdateMapInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMapInput`](crate::input::UpdateMapInput).
     pub fn builder() -> crate::input::update_map_input::Builder {
         crate::input::update_map_input::Builder::default()
     }
@@ -1638,7 +1638,7 @@ pub struct UpdatePlaceIndex {
     _private: (),
 }
 impl UpdatePlaceIndex {
-    /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexInput`](crate::input::UpdatePlaceIndexInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexInput`](crate::input::UpdatePlaceIndexInput).
     pub fn builder() -> crate::input::update_place_index_input::Builder {
         crate::input::update_place_index_input::Builder::default()
     }
@@ -1672,7 +1672,7 @@ pub struct UpdateRouteCalculator {
     _private: (),
 }
 impl UpdateRouteCalculator {
-    /// Creates a new builder-style object to manufacture [`UpdateRouteCalculatorInput`](crate::input::UpdateRouteCalculatorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRouteCalculatorInput`](crate::input::UpdateRouteCalculatorInput).
     pub fn builder() -> crate::input::update_route_calculator_input::Builder {
         crate::input::update_route_calculator_input::Builder::default()
     }
@@ -1706,7 +1706,7 @@ pub struct UpdateTracker {
     _private: (),
 }
 impl UpdateTracker {
-    /// Creates a new builder-style object to manufacture [`UpdateTrackerInput`](crate::input::UpdateTrackerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTrackerInput`](crate::input::UpdateTrackerInput).
     pub fn builder() -> crate::input::update_tracker_input::Builder {
         crate::input::update_tracker_input::Builder::default()
     }

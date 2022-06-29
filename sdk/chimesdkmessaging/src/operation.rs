@@ -10,7 +10,7 @@ pub struct AssociateChannelFlow {
     _private: (),
 }
 impl AssociateChannelFlow {
-    /// Creates a new builder-style object to manufacture [`AssociateChannelFlowInput`](crate::input::AssociateChannelFlowInput)
+    /// Creates a new builder-style object to manufacture [`AssociateChannelFlowInput`](crate::input::AssociateChannelFlowInput).
     pub fn builder() -> crate::input::associate_channel_flow_input::Builder {
         crate::input::associate_channel_flow_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchCreateChannelMembership {
     _private: (),
 }
 impl BatchCreateChannelMembership {
-    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipInput`](crate::input::BatchCreateChannelMembershipInput)
+    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipInput`](crate::input::BatchCreateChannelMembershipInput).
     pub fn builder() -> crate::input::batch_create_channel_membership_input::Builder {
         crate::input::batch_create_channel_membership_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct ChannelFlowCallback {
     _private: (),
 }
 impl ChannelFlowCallback {
-    /// Creates a new builder-style object to manufacture [`ChannelFlowCallbackInput`](crate::input::ChannelFlowCallbackInput)
+    /// Creates a new builder-style object to manufacture [`ChannelFlowCallbackInput`](crate::input::ChannelFlowCallbackInput).
     pub fn builder() -> crate::input::channel_flow_callback_input::Builder {
         crate::input::channel_flow_callback_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateChannel {
     _private: (),
 }
 impl CreateChannel {
-    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput).
     pub fn builder() -> crate::input::create_channel_input::Builder {
         crate::input::create_channel_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateChannelBan {
     _private: (),
 }
 impl CreateChannelBan {
-    /// Creates a new builder-style object to manufacture [`CreateChannelBanInput`](crate::input::CreateChannelBanInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelBanInput`](crate::input::CreateChannelBanInput).
     pub fn builder() -> crate::input::create_channel_ban_input::Builder {
         crate::input::create_channel_ban_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateChannelFlow {
     _private: (),
 }
 impl CreateChannelFlow {
-    /// Creates a new builder-style object to manufacture [`CreateChannelFlowInput`](crate::input::CreateChannelFlowInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelFlowInput`](crate::input::CreateChannelFlowInput).
     pub fn builder() -> crate::input::create_channel_flow_input::Builder {
         crate::input::create_channel_flow_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct CreateChannelMembership {
     _private: (),
 }
 impl CreateChannelMembership {
-    /// Creates a new builder-style object to manufacture [`CreateChannelMembershipInput`](crate::input::CreateChannelMembershipInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelMembershipInput`](crate::input::CreateChannelMembershipInput).
     pub fn builder() -> crate::input::create_channel_membership_input::Builder {
         crate::input::create_channel_membership_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct CreateChannelModerator {
     _private: (),
 }
 impl CreateChannelModerator {
-    /// Creates a new builder-style object to manufacture [`CreateChannelModeratorInput`](crate::input::CreateChannelModeratorInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelModeratorInput`](crate::input::CreateChannelModeratorInput).
     pub fn builder() -> crate::input::create_channel_moderator_input::Builder {
         crate::input::create_channel_moderator_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct DeleteChannel {
     _private: (),
 }
 impl DeleteChannel {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput).
     pub fn builder() -> crate::input::delete_channel_input::Builder {
         crate::input::delete_channel_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DeleteChannelBan {
     _private: (),
 }
 impl DeleteChannelBan {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelBanInput`](crate::input::DeleteChannelBanInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelBanInput`](crate::input::DeleteChannelBanInput).
     pub fn builder() -> crate::input::delete_channel_ban_input::Builder {
         crate::input::delete_channel_ban_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DeleteChannelFlow {
     _private: (),
 }
 impl DeleteChannelFlow {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelFlowInput`](crate::input::DeleteChannelFlowInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelFlowInput`](crate::input::DeleteChannelFlowInput).
     pub fn builder() -> crate::input::delete_channel_flow_input::Builder {
         crate::input::delete_channel_flow_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DeleteChannelMembership {
     _private: (),
 }
 impl DeleteChannelMembership {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipInput`](crate::input::DeleteChannelMembershipInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipInput`](crate::input::DeleteChannelMembershipInput).
     pub fn builder() -> crate::input::delete_channel_membership_input::Builder {
         crate::input::delete_channel_membership_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DeleteChannelMessage {
     _private: (),
 }
 impl DeleteChannelMessage {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelMessageInput`](crate::input::DeleteChannelMessageInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelMessageInput`](crate::input::DeleteChannelMessageInput).
     pub fn builder() -> crate::input::delete_channel_message_input::Builder {
         crate::input::delete_channel_message_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct DeleteChannelModerator {
     _private: (),
 }
 impl DeleteChannelModerator {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelModeratorInput`](crate::input::DeleteChannelModeratorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelModeratorInput`](crate::input::DeleteChannelModeratorInput).
     pub fn builder() -> crate::input::delete_channel_moderator_input::Builder {
         crate::input::delete_channel_moderator_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DescribeChannel {
     _private: (),
 }
 impl DescribeChannel {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelInput`](crate::input::DescribeChannelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelInput`](crate::input::DescribeChannelInput).
     pub fn builder() -> crate::input::describe_channel_input::Builder {
         crate::input::describe_channel_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DescribeChannelBan {
     _private: (),
 }
 impl DescribeChannelBan {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelBanInput`](crate::input::DescribeChannelBanInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelBanInput`](crate::input::DescribeChannelBanInput).
     pub fn builder() -> crate::input::describe_channel_ban_input::Builder {
         crate::input::describe_channel_ban_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct DescribeChannelFlow {
     _private: (),
 }
 impl DescribeChannelFlow {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelFlowInput`](crate::input::DescribeChannelFlowInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelFlowInput`](crate::input::DescribeChannelFlowInput).
     pub fn builder() -> crate::input::describe_channel_flow_input::Builder {
         crate::input::describe_channel_flow_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct DescribeChannelMembership {
     _private: (),
 }
 impl DescribeChannelMembership {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipInput`](crate::input::DescribeChannelMembershipInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipInput`](crate::input::DescribeChannelMembershipInput).
     pub fn builder() -> crate::input::describe_channel_membership_input::Builder {
         crate::input::describe_channel_membership_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct DescribeChannelMembershipForAppInstanceUser {
     _private: (),
 }
 impl DescribeChannelMembershipForAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipForAppInstanceUserInput`](crate::input::DescribeChannelMembershipForAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipForAppInstanceUserInput`](crate::input::DescribeChannelMembershipForAppInstanceUserInput).
     pub fn builder(
     ) -> crate::input::describe_channel_membership_for_app_instance_user_input::Builder {
         crate::input::describe_channel_membership_for_app_instance_user_input::Builder::default()
@@ -659,7 +659,7 @@ pub struct DescribeChannelModeratedByAppInstanceUser {
     _private: (),
 }
 impl DescribeChannelModeratedByAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratedByAppInstanceUserInput`](crate::input::DescribeChannelModeratedByAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratedByAppInstanceUserInput`](crate::input::DescribeChannelModeratedByAppInstanceUserInput).
     pub fn builder() -> crate::input::describe_channel_moderated_by_app_instance_user_input::Builder
     {
         crate::input::describe_channel_moderated_by_app_instance_user_input::Builder::default()
@@ -698,7 +698,7 @@ pub struct DescribeChannelModerator {
     _private: (),
 }
 impl DescribeChannelModerator {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratorInput`](crate::input::DescribeChannelModeratorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratorInput`](crate::input::DescribeChannelModeratorInput).
     pub fn builder() -> crate::input::describe_channel_moderator_input::Builder {
         crate::input::describe_channel_moderator_input::Builder::default()
     }
@@ -732,7 +732,7 @@ pub struct DisassociateChannelFlow {
     _private: (),
 }
 impl DisassociateChannelFlow {
-    /// Creates a new builder-style object to manufacture [`DisassociateChannelFlowInput`](crate::input::DisassociateChannelFlowInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateChannelFlowInput`](crate::input::DisassociateChannelFlowInput).
     pub fn builder() -> crate::input::disassociate_channel_flow_input::Builder {
         crate::input::disassociate_channel_flow_input::Builder::default()
     }
@@ -766,7 +766,7 @@ pub struct GetChannelMembershipPreferences {
     _private: (),
 }
 impl GetChannelMembershipPreferences {
-    /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesInput`](crate::input::GetChannelMembershipPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesInput`](crate::input::GetChannelMembershipPreferencesInput).
     pub fn builder() -> crate::input::get_channel_membership_preferences_input::Builder {
         crate::input::get_channel_membership_preferences_input::Builder::default()
     }
@@ -800,7 +800,7 @@ pub struct GetChannelMessage {
     _private: (),
 }
 impl GetChannelMessage {
-    /// Creates a new builder-style object to manufacture [`GetChannelMessageInput`](crate::input::GetChannelMessageInput)
+    /// Creates a new builder-style object to manufacture [`GetChannelMessageInput`](crate::input::GetChannelMessageInput).
     pub fn builder() -> crate::input::get_channel_message_input::Builder {
         crate::input::get_channel_message_input::Builder::default()
     }
@@ -834,7 +834,7 @@ pub struct GetChannelMessageStatus {
     _private: (),
 }
 impl GetChannelMessageStatus {
-    /// Creates a new builder-style object to manufacture [`GetChannelMessageStatusInput`](crate::input::GetChannelMessageStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetChannelMessageStatusInput`](crate::input::GetChannelMessageStatusInput).
     pub fn builder() -> crate::input::get_channel_message_status_input::Builder {
         crate::input::get_channel_message_status_input::Builder::default()
     }
@@ -868,7 +868,7 @@ pub struct GetMessagingSessionEndpoint {
     _private: (),
 }
 impl GetMessagingSessionEndpoint {
-    /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointInput`](crate::input::GetMessagingSessionEndpointInput)
+    /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointInput`](crate::input::GetMessagingSessionEndpointInput).
     pub fn builder() -> crate::input::get_messaging_session_endpoint_input::Builder {
         crate::input::get_messaging_session_endpoint_input::Builder::default()
     }
@@ -902,7 +902,7 @@ pub struct ListChannelBans {
     _private: (),
 }
 impl ListChannelBans {
-    /// Creates a new builder-style object to manufacture [`ListChannelBansInput`](crate::input::ListChannelBansInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelBansInput`](crate::input::ListChannelBansInput).
     pub fn builder() -> crate::input::list_channel_bans_input::Builder {
         crate::input::list_channel_bans_input::Builder::default()
     }
@@ -936,7 +936,7 @@ pub struct ListChannelFlows {
     _private: (),
 }
 impl ListChannelFlows {
-    /// Creates a new builder-style object to manufacture [`ListChannelFlowsInput`](crate::input::ListChannelFlowsInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelFlowsInput`](crate::input::ListChannelFlowsInput).
     pub fn builder() -> crate::input::list_channel_flows_input::Builder {
         crate::input::list_channel_flows_input::Builder::default()
     }
@@ -970,7 +970,7 @@ pub struct ListChannelMemberships {
     _private: (),
 }
 impl ListChannelMemberships {
-    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput).
     pub fn builder() -> crate::input::list_channel_memberships_input::Builder {
         crate::input::list_channel_memberships_input::Builder::default()
     }
@@ -1004,7 +1004,7 @@ pub struct ListChannelMembershipsForAppInstanceUser {
     _private: (),
 }
 impl ListChannelMembershipsForAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsForAppInstanceUserInput`](crate::input::ListChannelMembershipsForAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsForAppInstanceUserInput`](crate::input::ListChannelMembershipsForAppInstanceUserInput).
     pub fn builder() -> crate::input::list_channel_memberships_for_app_instance_user_input::Builder
     {
         crate::input::list_channel_memberships_for_app_instance_user_input::Builder::default()
@@ -1043,7 +1043,7 @@ pub struct ListChannelMessages {
     _private: (),
 }
 impl ListChannelMessages {
-    /// Creates a new builder-style object to manufacture [`ListChannelMessagesInput`](crate::input::ListChannelMessagesInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelMessagesInput`](crate::input::ListChannelMessagesInput).
     pub fn builder() -> crate::input::list_channel_messages_input::Builder {
         crate::input::list_channel_messages_input::Builder::default()
     }
@@ -1077,7 +1077,7 @@ pub struct ListChannelModerators {
     _private: (),
 }
 impl ListChannelModerators {
-    /// Creates a new builder-style object to manufacture [`ListChannelModeratorsInput`](crate::input::ListChannelModeratorsInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelModeratorsInput`](crate::input::ListChannelModeratorsInput).
     pub fn builder() -> crate::input::list_channel_moderators_input::Builder {
         crate::input::list_channel_moderators_input::Builder::default()
     }
@@ -1111,7 +1111,7 @@ pub struct ListChannels {
     _private: (),
 }
 impl ListChannels {
-    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput).
     pub fn builder() -> crate::input::list_channels_input::Builder {
         crate::input::list_channels_input::Builder::default()
     }
@@ -1143,7 +1143,7 @@ pub struct ListChannelsAssociatedWithChannelFlow {
     _private: (),
 }
 impl ListChannelsAssociatedWithChannelFlow {
-    /// Creates a new builder-style object to manufacture [`ListChannelsAssociatedWithChannelFlowInput`](crate::input::ListChannelsAssociatedWithChannelFlowInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelsAssociatedWithChannelFlowInput`](crate::input::ListChannelsAssociatedWithChannelFlowInput).
     pub fn builder() -> crate::input::list_channels_associated_with_channel_flow_input::Builder {
         crate::input::list_channels_associated_with_channel_flow_input::Builder::default()
     }
@@ -1179,7 +1179,7 @@ pub struct ListChannelsModeratedByAppInstanceUser {
     _private: (),
 }
 impl ListChannelsModeratedByAppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput).
     pub fn builder() -> crate::input::list_channels_moderated_by_app_instance_user_input::Builder {
         crate::input::list_channels_moderated_by_app_instance_user_input::Builder::default()
     }
@@ -1217,7 +1217,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1251,7 +1251,7 @@ pub struct PutChannelMembershipPreferences {
     _private: (),
 }
 impl PutChannelMembershipPreferences {
-    /// Creates a new builder-style object to manufacture [`PutChannelMembershipPreferencesInput`](crate::input::PutChannelMembershipPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`PutChannelMembershipPreferencesInput`](crate::input::PutChannelMembershipPreferencesInput).
     pub fn builder() -> crate::input::put_channel_membership_preferences_input::Builder {
         crate::input::put_channel_membership_preferences_input::Builder::default()
     }
@@ -1285,7 +1285,7 @@ pub struct RedactChannelMessage {
     _private: (),
 }
 impl RedactChannelMessage {
-    /// Creates a new builder-style object to manufacture [`RedactChannelMessageInput`](crate::input::RedactChannelMessageInput)
+    /// Creates a new builder-style object to manufacture [`RedactChannelMessageInput`](crate::input::RedactChannelMessageInput).
     pub fn builder() -> crate::input::redact_channel_message_input::Builder {
         crate::input::redact_channel_message_input::Builder::default()
     }
@@ -1319,7 +1319,7 @@ pub struct SearchChannels {
     _private: (),
 }
 impl SearchChannels {
-    /// Creates a new builder-style object to manufacture [`SearchChannelsInput`](crate::input::SearchChannelsInput)
+    /// Creates a new builder-style object to manufacture [`SearchChannelsInput`](crate::input::SearchChannelsInput).
     pub fn builder() -> crate::input::search_channels_input::Builder {
         crate::input::search_channels_input::Builder::default()
     }
@@ -1351,7 +1351,7 @@ pub struct SendChannelMessage {
     _private: (),
 }
 impl SendChannelMessage {
-    /// Creates a new builder-style object to manufacture [`SendChannelMessageInput`](crate::input::SendChannelMessageInput)
+    /// Creates a new builder-style object to manufacture [`SendChannelMessageInput`](crate::input::SendChannelMessageInput).
     pub fn builder() -> crate::input::send_channel_message_input::Builder {
         crate::input::send_channel_message_input::Builder::default()
     }
@@ -1385,7 +1385,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1417,7 +1417,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1449,7 +1449,7 @@ pub struct UpdateChannel {
     _private: (),
 }
 impl UpdateChannel {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput).
     pub fn builder() -> crate::input::update_channel_input::Builder {
         crate::input::update_channel_input::Builder::default()
     }
@@ -1481,7 +1481,7 @@ pub struct UpdateChannelFlow {
     _private: (),
 }
 impl UpdateChannelFlow {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelFlowInput`](crate::input::UpdateChannelFlowInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelFlowInput`](crate::input::UpdateChannelFlowInput).
     pub fn builder() -> crate::input::update_channel_flow_input::Builder {
         crate::input::update_channel_flow_input::Builder::default()
     }
@@ -1515,7 +1515,7 @@ pub struct UpdateChannelMessage {
     _private: (),
 }
 impl UpdateChannelMessage {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelMessageInput`](crate::input::UpdateChannelMessageInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelMessageInput`](crate::input::UpdateChannelMessageInput).
     pub fn builder() -> crate::input::update_channel_message_input::Builder {
         crate::input::update_channel_message_input::Builder::default()
     }
@@ -1549,7 +1549,7 @@ pub struct UpdateChannelReadMarker {
     _private: (),
 }
 impl UpdateChannelReadMarker {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelReadMarkerInput`](crate::input::UpdateChannelReadMarkerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelReadMarkerInput`](crate::input::UpdateChannelReadMarkerInput).
     pub fn builder() -> crate::input::update_channel_read_marker_input::Builder {
         crate::input::update_channel_read_marker_input::Builder::default()
     }

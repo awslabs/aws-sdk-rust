@@ -27,11 +27,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -68,7 +67,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -179,11 +178,10 @@ impl std::fmt::Debug for VpcConfig {
         formatter.finish()
     }
 }
-/// See [`VpcConfig`](crate::model::VpcConfig)
+/// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
 
-    /// A builder for [`VpcConfig`](crate::model::VpcConfig)
-    #[non_exhaustive]
+    /// A builder for [`VpcConfig`](crate::model::VpcConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -228,7 +226,7 @@ pub mod vpc_config {
             self.subnets = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcConfig`](crate::model::VpcConfig)
+        /// Consumes the builder and constructs a [`VpcConfig`](crate::model::VpcConfig).
         pub fn build(self) -> crate::model::VpcConfig {
             crate::model::VpcConfig {
                 security_group_ids: self.security_group_ids,
@@ -238,7 +236,7 @@ pub mod vpc_config {
     }
 }
 impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig)
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
     pub fn builder() -> crate::model::vpc_config::Builder {
         crate::model::vpc_config::Builder::default()
     }
@@ -288,11 +286,10 @@ impl std::fmt::Debug for OutputDataConfig {
         formatter.finish()
     }
 }
-/// See [`OutputDataConfig`](crate::model::OutputDataConfig)
+/// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
 
-    /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -335,7 +332,7 @@ pub mod output_data_config {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig)
+        /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig).
         pub fn build(self) -> crate::model::OutputDataConfig {
             crate::model::OutputDataConfig {
                 s3_uri: self.s3_uri,
@@ -345,7 +342,7 @@ pub mod output_data_config {
     }
 }
 impl OutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig)
+    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
     pub fn builder() -> crate::model::output_data_config::Builder {
         crate::model::output_data_config::Builder::default()
     }
@@ -399,11 +396,10 @@ impl std::fmt::Debug for InputDataConfig {
         formatter.finish()
     }
 }
-/// See [`InputDataConfig`](crate::model::InputDataConfig)
+/// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
 
-    /// A builder for [`InputDataConfig`](crate::model::InputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -459,7 +455,7 @@ pub mod input_data_config {
             self.document_reader_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDataConfig`](crate::model::InputDataConfig)
+        /// Consumes the builder and constructs a [`InputDataConfig`](crate::model::InputDataConfig).
         pub fn build(self) -> crate::model::InputDataConfig {
             crate::model::InputDataConfig {
                 s3_uri: self.s3_uri,
@@ -470,7 +466,7 @@ pub mod input_data_config {
     }
 }
 impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig)
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
     pub fn builder() -> crate::model::input_data_config::Builder {
         crate::model::input_data_config::Builder::default()
     }
@@ -526,11 +522,10 @@ impl std::fmt::Debug for DocumentReaderConfig {
         formatter.finish()
     }
 }
-/// See [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
+/// See [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
 pub mod document_reader_config {
 
-    /// A builder for [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
-    #[non_exhaustive]
+    /// A builder for [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_read_action: std::option::Option<crate::model::DocumentReadAction>,
@@ -600,7 +595,7 @@ pub mod document_reader_config {
             self.feature_types = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
+        /// Consumes the builder and constructs a [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
         pub fn build(self) -> crate::model::DocumentReaderConfig {
             crate::model::DocumentReaderConfig {
                 document_read_action: self.document_read_action,
@@ -611,7 +606,7 @@ pub mod document_reader_config {
     }
 }
 impl DocumentReaderConfig {
-    /// Creates a new builder-style object to manufacture [`DocumentReaderConfig`](crate::model::DocumentReaderConfig)
+    /// Creates a new builder-style object to manufacture [`DocumentReaderConfig`](crate::model::DocumentReaderConfig).
     pub fn builder() -> crate::model::document_reader_config::Builder {
         crate::model::document_reader_config::Builder::default()
     }
@@ -981,11 +976,10 @@ impl std::fmt::Debug for RedactionConfig {
         formatter.finish()
     }
 }
-/// See [`RedactionConfig`](crate::model::RedactionConfig)
+/// See [`RedactionConfig`](crate::model::RedactionConfig).
 pub mod redaction_config {
 
-    /// A builder for [`RedactionConfig`](crate::model::RedactionConfig)
-    #[non_exhaustive]
+    /// A builder for [`RedactionConfig`](crate::model::RedactionConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pii_entity_types:
@@ -1039,7 +1033,7 @@ pub mod redaction_config {
             self.mask_character = input;
             self
         }
-        /// Consumes the builder and constructs a [`RedactionConfig`](crate::model::RedactionConfig)
+        /// Consumes the builder and constructs a [`RedactionConfig`](crate::model::RedactionConfig).
         pub fn build(self) -> crate::model::RedactionConfig {
             crate::model::RedactionConfig {
                 pii_entity_types: self.pii_entity_types,
@@ -1050,7 +1044,7 @@ pub mod redaction_config {
     }
 }
 impl RedactionConfig {
-    /// Creates a new builder-style object to manufacture [`RedactionConfig`](crate::model::RedactionConfig)
+    /// Creates a new builder-style object to manufacture [`RedactionConfig`](crate::model::RedactionConfig).
     pub fn builder() -> crate::model::redaction_config::Builder {
         crate::model::redaction_config::Builder::default()
     }
@@ -1545,11 +1539,10 @@ impl std::fmt::Debug for TopicsDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties)
+/// See [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
 pub mod topics_detection_job_properties {
 
-    /// A builder for [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1755,7 +1748,7 @@ pub mod topics_detection_job_properties {
             self.vpc_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties)
+        /// Consumes the builder and constructs a [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
         pub fn build(self) -> crate::model::TopicsDetectionJobProperties {
             crate::model::TopicsDetectionJobProperties {
                 job_id: self.job_id,
@@ -1776,7 +1769,7 @@ pub mod topics_detection_job_properties {
     }
 }
 impl TopicsDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobProperties`](crate::model::TopicsDetectionJobProperties).
     pub fn builder() -> crate::model::topics_detection_job_properties::Builder {
         crate::model::topics_detection_job_properties::Builder::default()
     }
@@ -1823,11 +1816,10 @@ impl std::fmt::Debug for TopicsDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter)
+/// See [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
 pub mod topics_detection_job_filter {
 
-    /// A builder for [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -1885,7 +1877,7 @@ pub mod topics_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter)
+        /// Consumes the builder and constructs a [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
         pub fn build(self) -> crate::model::TopicsDetectionJobFilter {
             crate::model::TopicsDetectionJobFilter {
                 job_name: self.job_name,
@@ -1897,7 +1889,7 @@ pub mod topics_detection_job_filter {
     }
 }
 impl TopicsDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`TopicsDetectionJobFilter`](crate::model::TopicsDetectionJobFilter).
     pub fn builder() -> crate::model::topics_detection_job_filter::Builder {
         crate::model::topics_detection_job_filter::Builder::default()
     }
@@ -2043,11 +2035,10 @@ impl std::fmt::Debug for TargetedSentimentDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
+/// See [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
 pub mod targeted_sentiment_detection_job_properties {
 
-    /// A builder for [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2258,7 +2249,7 @@ pub mod targeted_sentiment_detection_job_properties {
             self.vpc_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
+        /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
         pub fn build(self) -> crate::model::TargetedSentimentDetectionJobProperties {
             crate::model::TargetedSentimentDetectionJobProperties {
                 job_id: self.job_id,
@@ -2279,7 +2270,7 @@ pub mod targeted_sentiment_detection_job_properties {
     }
 }
 impl TargetedSentimentDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobProperties`](crate::model::TargetedSentimentDetectionJobProperties).
     pub fn builder() -> crate::model::targeted_sentiment_detection_job_properties::Builder {
         crate::model::targeted_sentiment_detection_job_properties::Builder::default()
     }
@@ -2326,11 +2317,10 @@ impl std::fmt::Debug for TargetedSentimentDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
+/// See [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
 pub mod targeted_sentiment_detection_job_filter {
 
-    /// A builder for [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2388,7 +2378,7 @@ pub mod targeted_sentiment_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
+        /// Consumes the builder and constructs a [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
         pub fn build(self) -> crate::model::TargetedSentimentDetectionJobFilter {
             crate::model::TargetedSentimentDetectionJobFilter {
                 job_name: self.job_name,
@@ -2400,7 +2390,7 @@ pub mod targeted_sentiment_detection_job_filter {
     }
 }
 impl TargetedSentimentDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`TargetedSentimentDetectionJobFilter`](crate::model::TargetedSentimentDetectionJobFilter).
     pub fn builder() -> crate::model::targeted_sentiment_detection_job_filter::Builder {
         crate::model::targeted_sentiment_detection_job_filter::Builder::default()
     }
@@ -2544,11 +2534,10 @@ impl std::fmt::Debug for SentimentDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties)
+/// See [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
 pub mod sentiment_detection_job_properties {
 
-    /// A builder for [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -2757,7 +2746,7 @@ pub mod sentiment_detection_job_properties {
             self.vpc_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties)
+        /// Consumes the builder and constructs a [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
         pub fn build(self) -> crate::model::SentimentDetectionJobProperties {
             crate::model::SentimentDetectionJobProperties {
                 job_id: self.job_id,
@@ -2778,7 +2767,7 @@ pub mod sentiment_detection_job_properties {
     }
 }
 impl SentimentDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobProperties`](crate::model::SentimentDetectionJobProperties).
     pub fn builder() -> crate::model::sentiment_detection_job_properties::Builder {
         crate::model::sentiment_detection_job_properties::Builder::default()
     }
@@ -2825,11 +2814,10 @@ impl std::fmt::Debug for SentimentDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter)
+/// See [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
 pub mod sentiment_detection_job_filter {
 
-    /// A builder for [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -2887,7 +2875,7 @@ pub mod sentiment_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter)
+        /// Consumes the builder and constructs a [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
         pub fn build(self) -> crate::model::SentimentDetectionJobFilter {
             crate::model::SentimentDetectionJobFilter {
                 job_name: self.job_name,
@@ -2899,7 +2887,7 @@ pub mod sentiment_detection_job_filter {
     }
 }
 impl SentimentDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`SentimentDetectionJobFilter`](crate::model::SentimentDetectionJobFilter).
     pub fn builder() -> crate::model::sentiment_detection_job_filter::Builder {
         crate::model::sentiment_detection_job_filter::Builder::default()
     }
@@ -3037,11 +3025,10 @@ impl std::fmt::Debug for PiiEntitiesDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties)
+/// See [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
 pub mod pii_entities_detection_job_properties {
 
-    /// A builder for [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3244,7 +3231,7 @@ pub mod pii_entities_detection_job_properties {
             self.mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties)
+        /// Consumes the builder and constructs a [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
         pub fn build(self) -> crate::model::PiiEntitiesDetectionJobProperties {
             crate::model::PiiEntitiesDetectionJobProperties {
                 job_id: self.job_id,
@@ -3265,7 +3252,7 @@ pub mod pii_entities_detection_job_properties {
     }
 }
 impl PiiEntitiesDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobProperties`](crate::model::PiiEntitiesDetectionJobProperties).
     pub fn builder() -> crate::model::pii_entities_detection_job_properties::Builder {
         crate::model::pii_entities_detection_job_properties::Builder::default()
     }
@@ -3300,11 +3287,10 @@ impl std::fmt::Debug for PiiOutputDataConfig {
         formatter.finish()
     }
 }
-/// See [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig)
+/// See [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
 pub mod pii_output_data_config {
 
-    /// A builder for [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -3333,7 +3319,7 @@ pub mod pii_output_data_config {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig)
+        /// Consumes the builder and constructs a [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
         pub fn build(self) -> crate::model::PiiOutputDataConfig {
             crate::model::PiiOutputDataConfig {
                 s3_uri: self.s3_uri,
@@ -3343,7 +3329,7 @@ pub mod pii_output_data_config {
     }
 }
 impl PiiOutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig)
+    /// Creates a new builder-style object to manufacture [`PiiOutputDataConfig`](crate::model::PiiOutputDataConfig).
     pub fn builder() -> crate::model::pii_output_data_config::Builder {
         crate::model::pii_output_data_config::Builder::default()
     }
@@ -3390,11 +3376,10 @@ impl std::fmt::Debug for PiiEntitiesDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter)
+/// See [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
 pub mod pii_entities_detection_job_filter {
 
-    /// A builder for [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -3452,7 +3437,7 @@ pub mod pii_entities_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter)
+        /// Consumes the builder and constructs a [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
         pub fn build(self) -> crate::model::PiiEntitiesDetectionJobFilter {
             crate::model::PiiEntitiesDetectionJobFilter {
                 job_name: self.job_name,
@@ -3464,7 +3449,7 @@ pub mod pii_entities_detection_job_filter {
     }
 }
 impl PiiEntitiesDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobFilter`](crate::model::PiiEntitiesDetectionJobFilter).
     pub fn builder() -> crate::model::pii_entities_detection_job_filter::Builder {
         crate::model::pii_entities_detection_job_filter::Builder::default()
     }
@@ -3608,11 +3593,10 @@ impl std::fmt::Debug for KeyPhrasesDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties)
+/// See [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
 pub mod key_phrases_detection_job_properties {
 
-    /// A builder for [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -3821,7 +3805,7 @@ pub mod key_phrases_detection_job_properties {
             self.vpc_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties)
+        /// Consumes the builder and constructs a [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
         pub fn build(self) -> crate::model::KeyPhrasesDetectionJobProperties {
             crate::model::KeyPhrasesDetectionJobProperties {
                 job_id: self.job_id,
@@ -3842,7 +3826,7 @@ pub mod key_phrases_detection_job_properties {
     }
 }
 impl KeyPhrasesDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobProperties`](crate::model::KeyPhrasesDetectionJobProperties).
     pub fn builder() -> crate::model::key_phrases_detection_job_properties::Builder {
         crate::model::key_phrases_detection_job_properties::Builder::default()
     }
@@ -3889,11 +3873,10 @@ impl std::fmt::Debug for KeyPhrasesDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter)
+/// See [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
 pub mod key_phrases_detection_job_filter {
 
-    /// A builder for [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -3951,7 +3934,7 @@ pub mod key_phrases_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter)
+        /// Consumes the builder and constructs a [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
         pub fn build(self) -> crate::model::KeyPhrasesDetectionJobFilter {
             crate::model::KeyPhrasesDetectionJobFilter {
                 job_name: self.job_name,
@@ -3963,7 +3946,7 @@ pub mod key_phrases_detection_job_filter {
     }
 }
 impl KeyPhrasesDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`KeyPhrasesDetectionJobFilter`](crate::model::KeyPhrasesDetectionJobFilter).
     pub fn builder() -> crate::model::key_phrases_detection_job_filter::Builder {
         crate::model::key_phrases_detection_job_filter::Builder::default()
     }
@@ -4092,11 +4075,10 @@ impl std::fmt::Debug for EventsDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties)
+/// See [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
 pub mod events_detection_job_properties {
 
-    /// A builder for [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -4289,7 +4271,7 @@ pub mod events_detection_job_properties {
             self.target_event_types = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties)
+        /// Consumes the builder and constructs a [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
         pub fn build(self) -> crate::model::EventsDetectionJobProperties {
             crate::model::EventsDetectionJobProperties {
                 job_id: self.job_id,
@@ -4309,7 +4291,7 @@ pub mod events_detection_job_properties {
     }
 }
 impl EventsDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`EventsDetectionJobProperties`](crate::model::EventsDetectionJobProperties).
     pub fn builder() -> crate::model::events_detection_job_properties::Builder {
         crate::model::events_detection_job_properties::Builder::default()
     }
@@ -4356,11 +4338,10 @@ impl std::fmt::Debug for EventsDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter)
+/// See [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
 pub mod events_detection_job_filter {
 
-    /// A builder for [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -4418,7 +4399,7 @@ pub mod events_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter)
+        /// Consumes the builder and constructs a [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
         pub fn build(self) -> crate::model::EventsDetectionJobFilter {
             crate::model::EventsDetectionJobFilter {
                 job_name: self.job_name,
@@ -4430,7 +4411,7 @@ pub mod events_detection_job_filter {
     }
 }
 impl EventsDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`EventsDetectionJobFilter`](crate::model::EventsDetectionJobFilter).
     pub fn builder() -> crate::model::events_detection_job_filter::Builder {
         crate::model::events_detection_job_filter::Builder::default()
     }
@@ -4484,11 +4465,10 @@ impl std::fmt::Debug for EntityRecognizerSummary {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
+/// See [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
 pub mod entity_recognizer_summary {
 
-    /// A builder for [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
@@ -4560,7 +4540,7 @@ pub mod entity_recognizer_summary {
             self.latest_version_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
+        /// Consumes the builder and constructs a [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
         pub fn build(self) -> crate::model::EntityRecognizerSummary {
             crate::model::EntityRecognizerSummary {
                 recognizer_name: self.recognizer_name,
@@ -4573,7 +4553,7 @@ pub mod entity_recognizer_summary {
     }
 }
 impl EntityRecognizerSummary {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerSummary`](crate::model::EntityRecognizerSummary).
     pub fn builder() -> crate::model::entity_recognizer_summary::Builder {
         crate::model::entity_recognizer_summary::Builder::default()
     }
@@ -4807,11 +4787,10 @@ impl std::fmt::Debug for EntityRecognizerProperties {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties)
+/// See [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
 pub mod entity_recognizer_properties {
 
-    /// A builder for [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
@@ -5054,7 +5033,7 @@ pub mod entity_recognizer_properties {
             self.source_model_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties)
+        /// Consumes the builder and constructs a [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
         pub fn build(self) -> crate::model::EntityRecognizerProperties {
             crate::model::EntityRecognizerProperties {
                 entity_recognizer_arn: self.entity_recognizer_arn,
@@ -5078,7 +5057,7 @@ pub mod entity_recognizer_properties {
     }
 }
 impl EntityRecognizerProperties {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerProperties`](crate::model::EntityRecognizerProperties).
     pub fn builder() -> crate::model::entity_recognizer_properties::Builder {
         crate::model::entity_recognizer_properties::Builder::default()
     }
@@ -5134,11 +5113,10 @@ impl std::fmt::Debug for EntityRecognizerMetadata {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata)
+/// See [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
 pub mod entity_recognizer_metadata {
 
-    /// A builder for [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_of_trained_documents: std::option::Option<i32>,
@@ -5210,7 +5188,7 @@ pub mod entity_recognizer_metadata {
             self.entity_types = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata)
+        /// Consumes the builder and constructs a [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
         pub fn build(self) -> crate::model::EntityRecognizerMetadata {
             crate::model::EntityRecognizerMetadata {
                 number_of_trained_documents: self.number_of_trained_documents,
@@ -5222,7 +5200,7 @@ pub mod entity_recognizer_metadata {
     }
 }
 impl EntityRecognizerMetadata {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadata`](crate::model::EntityRecognizerMetadata).
     pub fn builder() -> crate::model::entity_recognizer_metadata::Builder {
         crate::model::entity_recognizer_metadata::Builder::default()
     }
@@ -5264,11 +5242,10 @@ impl std::fmt::Debug for EntityRecognizerMetadataEntityTypesListItem {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem)
+/// See [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
 pub mod entity_recognizer_metadata_entity_types_list_item {
 
-    /// A builder for [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -5313,7 +5290,7 @@ pub mod entity_recognizer_metadata_entity_types_list_item {
             self.number_of_train_mentions = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem)
+        /// Consumes the builder and constructs a [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
         pub fn build(self) -> crate::model::EntityRecognizerMetadataEntityTypesListItem {
             crate::model::EntityRecognizerMetadataEntityTypesListItem {
                 r#type: self.r#type,
@@ -5324,7 +5301,7 @@ pub mod entity_recognizer_metadata_entity_types_list_item {
     }
 }
 impl EntityRecognizerMetadataEntityTypesListItem {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadataEntityTypesListItem`](crate::model::EntityRecognizerMetadataEntityTypesListItem).
     pub fn builder() -> crate::model::entity_recognizer_metadata_entity_types_list_item::Builder {
         crate::model::entity_recognizer_metadata_entity_types_list_item::Builder::default()
     }
@@ -5364,11 +5341,10 @@ impl std::fmt::Debug for EntityTypesEvaluationMetrics {
         formatter.finish()
     }
 }
-/// See [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics)
+/// See [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
 pub mod entity_types_evaluation_metrics {
 
-    /// A builder for [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics)
-    #[non_exhaustive]
+    /// A builder for [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) precision: std::option::Option<f64>,
@@ -5406,7 +5382,7 @@ pub mod entity_types_evaluation_metrics {
             self.f1_score = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics)
+        /// Consumes the builder and constructs a [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
         pub fn build(self) -> crate::model::EntityTypesEvaluationMetrics {
             crate::model::EntityTypesEvaluationMetrics {
                 precision: self.precision,
@@ -5417,7 +5393,7 @@ pub mod entity_types_evaluation_metrics {
     }
 }
 impl EntityTypesEvaluationMetrics {
-    /// Creates a new builder-style object to manufacture [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics)
+    /// Creates a new builder-style object to manufacture [`EntityTypesEvaluationMetrics`](crate::model::EntityTypesEvaluationMetrics).
     pub fn builder() -> crate::model::entity_types_evaluation_metrics::Builder {
         crate::model::entity_types_evaluation_metrics::Builder::default()
     }
@@ -5457,11 +5433,10 @@ impl std::fmt::Debug for EntityRecognizerEvaluationMetrics {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics)
+/// See [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
 pub mod entity_recognizer_evaluation_metrics {
 
-    /// A builder for [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) precision: std::option::Option<f64>,
@@ -5499,7 +5474,7 @@ pub mod entity_recognizer_evaluation_metrics {
             self.f1_score = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics)
+        /// Consumes the builder and constructs a [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
         pub fn build(self) -> crate::model::EntityRecognizerEvaluationMetrics {
             crate::model::EntityRecognizerEvaluationMetrics {
                 precision: self.precision,
@@ -5510,7 +5485,7 @@ pub mod entity_recognizer_evaluation_metrics {
     }
 }
 impl EntityRecognizerEvaluationMetrics {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerEvaluationMetrics`](crate::model::EntityRecognizerEvaluationMetrics).
     pub fn builder() -> crate::model::entity_recognizer_evaluation_metrics::Builder {
         crate::model::entity_recognizer_evaluation_metrics::Builder::default()
     }
@@ -5590,11 +5565,10 @@ impl std::fmt::Debug for EntityRecognizerInputDataConfig {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig)
+/// See [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
 pub mod entity_recognizer_input_data_config {
 
-    /// A builder for [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_format: std::option::Option<crate::model::EntityRecognizerDataFormat>,
@@ -5716,7 +5690,7 @@ pub mod entity_recognizer_input_data_config {
             self.augmented_manifests = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig)
+        /// Consumes the builder and constructs a [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
         pub fn build(self) -> crate::model::EntityRecognizerInputDataConfig {
             crate::model::EntityRecognizerInputDataConfig {
                 data_format: self.data_format,
@@ -5730,7 +5704,7 @@ pub mod entity_recognizer_input_data_config {
     }
 }
 impl EntityRecognizerInputDataConfig {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerInputDataConfig`](crate::model::EntityRecognizerInputDataConfig).
     pub fn builder() -> crate::model::entity_recognizer_input_data_config::Builder {
         crate::model::entity_recognizer_input_data_config::Builder::default()
     }
@@ -5809,11 +5783,10 @@ impl std::fmt::Debug for AugmentedManifestsListItem {
         formatter.finish()
     }
 }
-/// See [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem)
+/// See [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
 pub mod augmented_manifests_list_item {
 
-    /// A builder for [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem)
-    #[non_exhaustive]
+    /// A builder for [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -5922,7 +5895,7 @@ pub mod augmented_manifests_list_item {
             self.document_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem)
+        /// Consumes the builder and constructs a [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
         pub fn build(self) -> crate::model::AugmentedManifestsListItem {
             crate::model::AugmentedManifestsListItem {
                 s3_uri: self.s3_uri,
@@ -5936,7 +5909,7 @@ pub mod augmented_manifests_list_item {
     }
 }
 impl AugmentedManifestsListItem {
-    /// Creates a new builder-style object to manufacture [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem)
+    /// Creates a new builder-style object to manufacture [`AugmentedManifestsListItem`](crate::model::AugmentedManifestsListItem).
     pub fn builder() -> crate::model::augmented_manifests_list_item::Builder {
         crate::model::augmented_manifests_list_item::Builder::default()
     }
@@ -6076,11 +6049,10 @@ impl std::fmt::Debug for EntityRecognizerEntityList {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList)
+/// See [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
 pub mod entity_recognizer_entity_list {
 
-    /// A builder for [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -6096,7 +6068,7 @@ pub mod entity_recognizer_entity_list {
             self.s3_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList)
+        /// Consumes the builder and constructs a [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
         pub fn build(self) -> crate::model::EntityRecognizerEntityList {
             crate::model::EntityRecognizerEntityList {
                 s3_uri: self.s3_uri,
@@ -6105,7 +6077,7 @@ pub mod entity_recognizer_entity_list {
     }
 }
 impl EntityRecognizerEntityList {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerEntityList`](crate::model::EntityRecognizerEntityList).
     pub fn builder() -> crate::model::entity_recognizer_entity_list::Builder {
         crate::model::entity_recognizer_entity_list::Builder::default()
     }
@@ -6138,11 +6110,10 @@ impl std::fmt::Debug for EntityRecognizerAnnotations {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations)
+/// See [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
 pub mod entity_recognizer_annotations {
 
-    /// A builder for [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -6169,7 +6140,7 @@ pub mod entity_recognizer_annotations {
             self.test_s3_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations)
+        /// Consumes the builder and constructs a [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
         pub fn build(self) -> crate::model::EntityRecognizerAnnotations {
             crate::model::EntityRecognizerAnnotations {
                 s3_uri: self.s3_uri,
@@ -6179,7 +6150,7 @@ pub mod entity_recognizer_annotations {
     }
 }
 impl EntityRecognizerAnnotations {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerAnnotations`](crate::model::EntityRecognizerAnnotations).
     pub fn builder() -> crate::model::entity_recognizer_annotations::Builder {
         crate::model::entity_recognizer_annotations::Builder::default()
     }
@@ -6219,11 +6190,10 @@ impl std::fmt::Debug for EntityRecognizerDocuments {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments)
+/// See [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
 pub mod entity_recognizer_documents {
 
-    /// A builder for [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -6264,7 +6234,7 @@ pub mod entity_recognizer_documents {
             self.input_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments)
+        /// Consumes the builder and constructs a [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
         pub fn build(self) -> crate::model::EntityRecognizerDocuments {
             crate::model::EntityRecognizerDocuments {
                 s3_uri: self.s3_uri,
@@ -6275,7 +6245,7 @@ pub mod entity_recognizer_documents {
     }
 }
 impl EntityRecognizerDocuments {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerDocuments`](crate::model::EntityRecognizerDocuments).
     pub fn builder() -> crate::model::entity_recognizer_documents::Builder {
         crate::model::entity_recognizer_documents::Builder::default()
     }
@@ -6303,11 +6273,10 @@ impl std::fmt::Debug for EntityTypesListItem {
         formatter.finish()
     }
 }
-/// See [`EntityTypesListItem`](crate::model::EntityTypesListItem)
+/// See [`EntityTypesListItem`](crate::model::EntityTypesListItem).
 pub mod entity_types_list_item {
 
-    /// A builder for [`EntityTypesListItem`](crate::model::EntityTypesListItem)
-    #[non_exhaustive]
+    /// A builder for [`EntityTypesListItem`](crate::model::EntityTypesListItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
@@ -6325,7 +6294,7 @@ pub mod entity_types_list_item {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityTypesListItem`](crate::model::EntityTypesListItem)
+        /// Consumes the builder and constructs a [`EntityTypesListItem`](crate::model::EntityTypesListItem).
         pub fn build(self) -> crate::model::EntityTypesListItem {
             crate::model::EntityTypesListItem {
                 r#type: self.r#type,
@@ -6334,7 +6303,7 @@ pub mod entity_types_list_item {
     }
 }
 impl EntityTypesListItem {
-    /// Creates a new builder-style object to manufacture [`EntityTypesListItem`](crate::model::EntityTypesListItem)
+    /// Creates a new builder-style object to manufacture [`EntityTypesListItem`](crate::model::EntityTypesListItem).
     pub fn builder() -> crate::model::entity_types_list_item::Builder {
         crate::model::entity_types_list_item::Builder::default()
     }
@@ -6436,11 +6405,10 @@ impl std::fmt::Debug for EntityRecognizerFilter {
         formatter.finish()
     }
 }
-/// See [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter)
+/// See [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
 pub mod entity_recognizer_filter {
 
-    /// A builder for [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter)
-    #[non_exhaustive]
+    /// A builder for [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
@@ -6498,7 +6466,7 @@ pub mod entity_recognizer_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter)
+        /// Consumes the builder and constructs a [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
         pub fn build(self) -> crate::model::EntityRecognizerFilter {
             crate::model::EntityRecognizerFilter {
                 status: self.status,
@@ -6510,7 +6478,7 @@ pub mod entity_recognizer_filter {
     }
 }
 impl EntityRecognizerFilter {
-    /// Creates a new builder-style object to manufacture [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter)
+    /// Creates a new builder-style object to manufacture [`EntityRecognizerFilter`](crate::model::EntityRecognizerFilter).
     pub fn builder() -> crate::model::entity_recognizer_filter::Builder {
         crate::model::entity_recognizer_filter::Builder::default()
     }
@@ -6661,11 +6629,10 @@ impl std::fmt::Debug for EntitiesDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties)
+/// See [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
 pub mod entities_detection_job_properties {
 
-    /// A builder for [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -6888,7 +6855,7 @@ pub mod entities_detection_job_properties {
             self.vpc_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties)
+        /// Consumes the builder and constructs a [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
         pub fn build(self) -> crate::model::EntitiesDetectionJobProperties {
             crate::model::EntitiesDetectionJobProperties {
                 job_id: self.job_id,
@@ -6910,7 +6877,7 @@ pub mod entities_detection_job_properties {
     }
 }
 impl EntitiesDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobProperties`](crate::model::EntitiesDetectionJobProperties).
     pub fn builder() -> crate::model::entities_detection_job_properties::Builder {
         crate::model::entities_detection_job_properties::Builder::default()
     }
@@ -6957,11 +6924,10 @@ impl std::fmt::Debug for EntitiesDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter)
+/// See [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
 pub mod entities_detection_job_filter {
 
-    /// A builder for [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -7019,7 +6985,7 @@ pub mod entities_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter)
+        /// Consumes the builder and constructs a [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
         pub fn build(self) -> crate::model::EntitiesDetectionJobFilter {
             crate::model::EntitiesDetectionJobFilter {
                 job_name: self.job_name,
@@ -7031,7 +6997,7 @@ pub mod entities_detection_job_filter {
     }
 }
 impl EntitiesDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`EntitiesDetectionJobFilter`](crate::model::EntitiesDetectionJobFilter).
     pub fn builder() -> crate::model::entities_detection_job_filter::Builder {
         crate::model::entities_detection_job_filter::Builder::default()
     }
@@ -7130,11 +7096,10 @@ impl std::fmt::Debug for EndpointProperties {
         formatter.finish()
     }
 }
-/// See [`EndpointProperties`](crate::model::EndpointProperties)
+/// See [`EndpointProperties`](crate::model::EndpointProperties).
 pub mod endpoint_properties {
 
-    /// A builder for [`EndpointProperties`](crate::model::EndpointProperties)
-    #[non_exhaustive]
+    /// A builder for [`EndpointProperties`](crate::model::EndpointProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
@@ -7281,7 +7246,7 @@ pub mod endpoint_properties {
             self.desired_data_access_role_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`EndpointProperties`](crate::model::EndpointProperties)
+        /// Consumes the builder and constructs a [`EndpointProperties`](crate::model::EndpointProperties).
         pub fn build(self) -> crate::model::EndpointProperties {
             crate::model::EndpointProperties {
                 endpoint_arn: self.endpoint_arn,
@@ -7300,7 +7265,7 @@ pub mod endpoint_properties {
     }
 }
 impl EndpointProperties {
-    /// Creates a new builder-style object to manufacture [`EndpointProperties`](crate::model::EndpointProperties)
+    /// Creates a new builder-style object to manufacture [`EndpointProperties`](crate::model::EndpointProperties).
     pub fn builder() -> crate::model::endpoint_properties::Builder {
         crate::model::endpoint_properties::Builder::default()
     }
@@ -7414,11 +7379,10 @@ impl std::fmt::Debug for EndpointFilter {
         formatter.finish()
     }
 }
-/// See [`EndpointFilter`](crate::model::EndpointFilter)
+/// See [`EndpointFilter`](crate::model::EndpointFilter).
 pub mod endpoint_filter {
 
-    /// A builder for [`EndpointFilter`](crate::model::EndpointFilter)
-    #[non_exhaustive]
+    /// A builder for [`EndpointFilter`](crate::model::EndpointFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_arn: std::option::Option<std::string::String>,
@@ -7476,7 +7440,7 @@ pub mod endpoint_filter {
             self.creation_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`EndpointFilter`](crate::model::EndpointFilter)
+        /// Consumes the builder and constructs a [`EndpointFilter`](crate::model::EndpointFilter).
         pub fn build(self) -> crate::model::EndpointFilter {
             crate::model::EndpointFilter {
                 model_arn: self.model_arn,
@@ -7488,7 +7452,7 @@ pub mod endpoint_filter {
     }
 }
 impl EndpointFilter {
-    /// Creates a new builder-style object to manufacture [`EndpointFilter`](crate::model::EndpointFilter)
+    /// Creates a new builder-style object to manufacture [`EndpointFilter`](crate::model::EndpointFilter).
     pub fn builder() -> crate::model::endpoint_filter::Builder {
         crate::model::endpoint_filter::Builder::default()
     }
@@ -7625,11 +7589,10 @@ impl std::fmt::Debug for DominantLanguageDetectionJobProperties {
         formatter.finish()
     }
 }
-/// See [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties)
+/// See [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
 pub mod dominant_language_detection_job_properties {
 
-    /// A builder for [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -7824,7 +7787,7 @@ pub mod dominant_language_detection_job_properties {
             self.vpc_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties)
+        /// Consumes the builder and constructs a [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
         pub fn build(self) -> crate::model::DominantLanguageDetectionJobProperties {
             crate::model::DominantLanguageDetectionJobProperties {
                 job_id: self.job_id,
@@ -7844,7 +7807,7 @@ pub mod dominant_language_detection_job_properties {
     }
 }
 impl DominantLanguageDetectionJobProperties {
-    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties)
+    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobProperties`](crate::model::DominantLanguageDetectionJobProperties).
     pub fn builder() -> crate::model::dominant_language_detection_job_properties::Builder {
         crate::model::dominant_language_detection_job_properties::Builder::default()
     }
@@ -7891,11 +7854,10 @@ impl std::fmt::Debug for DominantLanguageDetectionJobFilter {
         formatter.finish()
     }
 }
-/// See [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter)
+/// See [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
 pub mod dominant_language_detection_job_filter {
 
-    /// A builder for [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -7953,7 +7915,7 @@ pub mod dominant_language_detection_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter)
+        /// Consumes the builder and constructs a [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
         pub fn build(self) -> crate::model::DominantLanguageDetectionJobFilter {
             crate::model::DominantLanguageDetectionJobFilter {
                 job_name: self.job_name,
@@ -7965,7 +7927,7 @@ pub mod dominant_language_detection_job_filter {
     }
 }
 impl DominantLanguageDetectionJobFilter {
-    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter)
+    /// Creates a new builder-style object to manufacture [`DominantLanguageDetectionJobFilter`](crate::model::DominantLanguageDetectionJobFilter).
     pub fn builder() -> crate::model::dominant_language_detection_job_filter::Builder {
         crate::model::dominant_language_detection_job_filter::Builder::default()
     }
@@ -8019,11 +7981,10 @@ impl std::fmt::Debug for DocumentClassifierSummary {
         formatter.finish()
     }
 }
-/// See [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
+/// See [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
 pub mod document_classifier_summary {
 
-    /// A builder for [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
@@ -8095,7 +8056,7 @@ pub mod document_classifier_summary {
             self.latest_version_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
+        /// Consumes the builder and constructs a [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
         pub fn build(self) -> crate::model::DocumentClassifierSummary {
             crate::model::DocumentClassifierSummary {
                 document_classifier_name: self.document_classifier_name,
@@ -8108,7 +8069,7 @@ pub mod document_classifier_summary {
     }
 }
 impl DocumentClassifierSummary {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary)
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierSummary`](crate::model::DocumentClassifierSummary).
     pub fn builder() -> crate::model::document_classifier_summary::Builder {
         crate::model::document_classifier_summary::Builder::default()
     }
@@ -8273,11 +8234,10 @@ impl std::fmt::Debug for DocumentClassifierProperties {
         formatter.finish()
     }
 }
-/// See [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties)
+/// See [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
 pub mod document_classifier_properties {
 
-    /// A builder for [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
@@ -8549,7 +8509,7 @@ pub mod document_classifier_properties {
             self.source_model_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties)
+        /// Consumes the builder and constructs a [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
         pub fn build(self) -> crate::model::DocumentClassifierProperties {
             crate::model::DocumentClassifierProperties {
                 document_classifier_arn: self.document_classifier_arn,
@@ -8575,7 +8535,7 @@ pub mod document_classifier_properties {
     }
 }
 impl DocumentClassifierProperties {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties)
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierProperties`](crate::model::DocumentClassifierProperties).
     pub fn builder() -> crate::model::document_classifier_properties::Builder {
         crate::model::document_classifier_properties::Builder::default()
     }
@@ -8682,11 +8642,10 @@ impl std::fmt::Debug for ClassifierMetadata {
         formatter.finish()
     }
 }
-/// See [`ClassifierMetadata`](crate::model::ClassifierMetadata)
+/// See [`ClassifierMetadata`](crate::model::ClassifierMetadata).
 pub mod classifier_metadata {
 
-    /// A builder for [`ClassifierMetadata`](crate::model::ClassifierMetadata)
-    #[non_exhaustive]
+    /// A builder for [`ClassifierMetadata`](crate::model::ClassifierMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number_of_labels: std::option::Option<i32>,
@@ -8742,7 +8701,7 @@ pub mod classifier_metadata {
             self.evaluation_metrics = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClassifierMetadata`](crate::model::ClassifierMetadata)
+        /// Consumes the builder and constructs a [`ClassifierMetadata`](crate::model::ClassifierMetadata).
         pub fn build(self) -> crate::model::ClassifierMetadata {
             crate::model::ClassifierMetadata {
                 number_of_labels: self.number_of_labels,
@@ -8754,7 +8713,7 @@ pub mod classifier_metadata {
     }
 }
 impl ClassifierMetadata {
-    /// Creates a new builder-style object to manufacture [`ClassifierMetadata`](crate::model::ClassifierMetadata)
+    /// Creates a new builder-style object to manufacture [`ClassifierMetadata`](crate::model::ClassifierMetadata).
     pub fn builder() -> crate::model::classifier_metadata::Builder {
         crate::model::classifier_metadata::Builder::default()
     }
@@ -8829,11 +8788,10 @@ impl std::fmt::Debug for ClassifierEvaluationMetrics {
         formatter.finish()
     }
 }
-/// See [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics)
+/// See [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
 pub mod classifier_evaluation_metrics {
 
-    /// A builder for [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics)
-    #[non_exhaustive]
+    /// A builder for [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accuracy: std::option::Option<f64>,
@@ -8926,7 +8884,7 @@ pub mod classifier_evaluation_metrics {
             self.hamming_loss = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics)
+        /// Consumes the builder and constructs a [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
         pub fn build(self) -> crate::model::ClassifierEvaluationMetrics {
             crate::model::ClassifierEvaluationMetrics {
                 accuracy: self.accuracy,
@@ -8942,7 +8900,7 @@ pub mod classifier_evaluation_metrics {
     }
 }
 impl ClassifierEvaluationMetrics {
-    /// Creates a new builder-style object to manufacture [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics)
+    /// Creates a new builder-style object to manufacture [`ClassifierEvaluationMetrics`](crate::model::ClassifierEvaluationMetrics).
     pub fn builder() -> crate::model::classifier_evaluation_metrics::Builder {
         crate::model::classifier_evaluation_metrics::Builder::default()
     }
@@ -8989,11 +8947,10 @@ impl std::fmt::Debug for DocumentClassifierOutputDataConfig {
         formatter.finish()
     }
 }
-/// See [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig)
+/// See [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
 pub mod document_classifier_output_data_config {
 
-    /// A builder for [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_uri: std::option::Option<std::string::String>,
@@ -9034,7 +8991,7 @@ pub mod document_classifier_output_data_config {
             self.kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig)
+        /// Consumes the builder and constructs a [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
         pub fn build(self) -> crate::model::DocumentClassifierOutputDataConfig {
             crate::model::DocumentClassifierOutputDataConfig {
                 s3_uri: self.s3_uri,
@@ -9044,7 +9001,7 @@ pub mod document_classifier_output_data_config {
     }
 }
 impl DocumentClassifierOutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig)
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierOutputDataConfig`](crate::model::DocumentClassifierOutputDataConfig).
     pub fn builder() -> crate::model::document_classifier_output_data_config::Builder {
         crate::model::document_classifier_output_data_config::Builder::default()
     }
@@ -9118,11 +9075,10 @@ impl std::fmt::Debug for DocumentClassifierInputDataConfig {
         formatter.finish()
     }
 }
-/// See [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig)
+/// See [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
 pub mod document_classifier_input_data_config {
 
-    /// A builder for [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_format: std::option::Option<crate::model::DocumentClassifierDataFormat>,
@@ -9217,7 +9173,7 @@ pub mod document_classifier_input_data_config {
             self.augmented_manifests = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig)
+        /// Consumes the builder and constructs a [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
         pub fn build(self) -> crate::model::DocumentClassifierInputDataConfig {
             crate::model::DocumentClassifierInputDataConfig {
                 data_format: self.data_format,
@@ -9230,7 +9186,7 @@ pub mod document_classifier_input_data_config {
     }
 }
 impl DocumentClassifierInputDataConfig {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig)
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierInputDataConfig`](crate::model::DocumentClassifierInputDataConfig).
     pub fn builder() -> crate::model::document_classifier_input_data_config::Builder {
         crate::model::document_classifier_input_data_config::Builder::default()
     }
@@ -9332,11 +9288,10 @@ impl std::fmt::Debug for DocumentClassifierFilter {
         formatter.finish()
     }
 }
-/// See [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter)
+/// See [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
 pub mod document_classifier_filter {
 
-    /// A builder for [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
@@ -9394,7 +9349,7 @@ pub mod document_classifier_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter)
+        /// Consumes the builder and constructs a [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
         pub fn build(self) -> crate::model::DocumentClassifierFilter {
             crate::model::DocumentClassifierFilter {
                 status: self.status,
@@ -9406,7 +9361,7 @@ pub mod document_classifier_filter {
     }
 }
 impl DocumentClassifierFilter {
-    /// Creates a new builder-style object to manufacture [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter)
+    /// Creates a new builder-style object to manufacture [`DocumentClassifierFilter`](crate::model::DocumentClassifierFilter).
     pub fn builder() -> crate::model::document_classifier_filter::Builder {
         crate::model::document_classifier_filter::Builder::default()
     }
@@ -9550,11 +9505,10 @@ impl std::fmt::Debug for DocumentClassificationJobProperties {
         formatter.finish()
     }
 }
-/// See [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties)
+/// See [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
 pub mod document_classification_job_properties {
 
-    /// A builder for [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -9763,7 +9717,7 @@ pub mod document_classification_job_properties {
             self.vpc_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties)
+        /// Consumes the builder and constructs a [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
         pub fn build(self) -> crate::model::DocumentClassificationJobProperties {
             crate::model::DocumentClassificationJobProperties {
                 job_id: self.job_id,
@@ -9784,7 +9738,7 @@ pub mod document_classification_job_properties {
     }
 }
 impl DocumentClassificationJobProperties {
-    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties)
+    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobProperties`](crate::model::DocumentClassificationJobProperties).
     pub fn builder() -> crate::model::document_classification_job_properties::Builder {
         crate::model::document_classification_job_properties::Builder::default()
     }
@@ -9831,11 +9785,10 @@ impl std::fmt::Debug for DocumentClassificationJobFilter {
         formatter.finish()
     }
 }
-/// See [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter)
+/// See [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
 pub mod document_classification_job_filter {
 
-    /// A builder for [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -9893,7 +9846,7 @@ pub mod document_classification_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter)
+        /// Consumes the builder and constructs a [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
         pub fn build(self) -> crate::model::DocumentClassificationJobFilter {
             crate::model::DocumentClassificationJobFilter {
                 job_name: self.job_name,
@@ -9905,7 +9858,7 @@ pub mod document_classification_job_filter {
     }
 }
 impl DocumentClassificationJobFilter {
-    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter)
+    /// Creates a new builder-style object to manufacture [`DocumentClassificationJobFilter`](crate::model::DocumentClassificationJobFilter).
     pub fn builder() -> crate::model::document_classification_job_filter::Builder {
         crate::model::document_classification_job_filter::Builder::default()
     }
@@ -9959,11 +9912,10 @@ impl std::fmt::Debug for SyntaxToken {
         formatter.finish()
     }
 }
-/// See [`SyntaxToken`](crate::model::SyntaxToken)
+/// See [`SyntaxToken`](crate::model::SyntaxToken).
 pub mod syntax_token {
 
-    /// A builder for [`SyntaxToken`](crate::model::SyntaxToken)
-    #[non_exhaustive]
+    /// A builder for [`SyntaxToken`](crate::model::SyntaxToken).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token_id: std::option::Option<i32>,
@@ -10026,7 +9978,7 @@ pub mod syntax_token {
             self.part_of_speech = input;
             self
         }
-        /// Consumes the builder and constructs a [`SyntaxToken`](crate::model::SyntaxToken)
+        /// Consumes the builder and constructs a [`SyntaxToken`](crate::model::SyntaxToken).
         pub fn build(self) -> crate::model::SyntaxToken {
             crate::model::SyntaxToken {
                 token_id: self.token_id,
@@ -10039,7 +9991,7 @@ pub mod syntax_token {
     }
 }
 impl SyntaxToken {
-    /// Creates a new builder-style object to manufacture [`SyntaxToken`](crate::model::SyntaxToken)
+    /// Creates a new builder-style object to manufacture [`SyntaxToken`](crate::model::SyntaxToken).
     pub fn builder() -> crate::model::syntax_token::Builder {
         crate::model::syntax_token::Builder::default()
     }
@@ -10072,11 +10024,10 @@ impl std::fmt::Debug for PartOfSpeechTag {
         formatter.finish()
     }
 }
-/// See [`PartOfSpeechTag`](crate::model::PartOfSpeechTag)
+/// See [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
 pub mod part_of_speech_tag {
 
-    /// A builder for [`PartOfSpeechTag`](crate::model::PartOfSpeechTag)
-    #[non_exhaustive]
+    /// A builder for [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag: std::option::Option<crate::model::PartOfSpeechTagType>,
@@ -10106,7 +10057,7 @@ pub mod part_of_speech_tag {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`PartOfSpeechTag`](crate::model::PartOfSpeechTag)
+        /// Consumes the builder and constructs a [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
         pub fn build(self) -> crate::model::PartOfSpeechTag {
             crate::model::PartOfSpeechTag {
                 tag: self.tag,
@@ -10116,7 +10067,7 @@ pub mod part_of_speech_tag {
     }
 }
 impl PartOfSpeechTag {
-    /// Creates a new builder-style object to manufacture [`PartOfSpeechTag`](crate::model::PartOfSpeechTag)
+    /// Creates a new builder-style object to manufacture [`PartOfSpeechTag`](crate::model::PartOfSpeechTag).
     pub fn builder() -> crate::model::part_of_speech_tag::Builder {
         crate::model::part_of_speech_tag::Builder::default()
     }
@@ -10356,11 +10307,10 @@ impl std::fmt::Debug for SentimentScore {
         formatter.finish()
     }
 }
-/// See [`SentimentScore`](crate::model::SentimentScore)
+/// See [`SentimentScore`](crate::model::SentimentScore).
 pub mod sentiment_score {
 
-    /// A builder for [`SentimentScore`](crate::model::SentimentScore)
-    #[non_exhaustive]
+    /// A builder for [`SentimentScore`](crate::model::SentimentScore).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) positive: std::option::Option<f32>,
@@ -10409,7 +10359,7 @@ pub mod sentiment_score {
             self.mixed = input;
             self
         }
-        /// Consumes the builder and constructs a [`SentimentScore`](crate::model::SentimentScore)
+        /// Consumes the builder and constructs a [`SentimentScore`](crate::model::SentimentScore).
         pub fn build(self) -> crate::model::SentimentScore {
             crate::model::SentimentScore {
                 positive: self.positive,
@@ -10421,7 +10371,7 @@ pub mod sentiment_score {
     }
 }
 impl SentimentScore {
-    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore)
+    /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::model::SentimentScore).
     pub fn builder() -> crate::model::sentiment_score::Builder {
         crate::model::sentiment_score::Builder::default()
     }
@@ -10531,11 +10481,10 @@ impl std::fmt::Debug for PiiEntity {
         formatter.finish()
     }
 }
-/// See [`PiiEntity`](crate::model::PiiEntity)
+/// See [`PiiEntity`](crate::model::PiiEntity).
 pub mod pii_entity {
 
-    /// A builder for [`PiiEntity`](crate::model::PiiEntity)
-    #[non_exhaustive]
+    /// A builder for [`PiiEntity`](crate::model::PiiEntity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f32>,
@@ -10584,7 +10533,7 @@ pub mod pii_entity {
             self.end_offset = input;
             self
         }
-        /// Consumes the builder and constructs a [`PiiEntity`](crate::model::PiiEntity)
+        /// Consumes the builder and constructs a [`PiiEntity`](crate::model::PiiEntity).
         pub fn build(self) -> crate::model::PiiEntity {
             crate::model::PiiEntity {
                 score: self.score,
@@ -10596,7 +10545,7 @@ pub mod pii_entity {
     }
 }
 impl PiiEntity {
-    /// Creates a new builder-style object to manufacture [`PiiEntity`](crate::model::PiiEntity)
+    /// Creates a new builder-style object to manufacture [`PiiEntity`](crate::model::PiiEntity).
     pub fn builder() -> crate::model::pii_entity::Builder {
         crate::model::pii_entity::Builder::default()
     }
@@ -10643,11 +10592,10 @@ impl std::fmt::Debug for KeyPhrase {
         formatter.finish()
     }
 }
-/// See [`KeyPhrase`](crate::model::KeyPhrase)
+/// See [`KeyPhrase`](crate::model::KeyPhrase).
 pub mod key_phrase {
 
-    /// A builder for [`KeyPhrase`](crate::model::KeyPhrase)
-    #[non_exhaustive]
+    /// A builder for [`KeyPhrase`](crate::model::KeyPhrase).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f32>,
@@ -10696,7 +10644,7 @@ pub mod key_phrase {
             self.end_offset = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyPhrase`](crate::model::KeyPhrase)
+        /// Consumes the builder and constructs a [`KeyPhrase`](crate::model::KeyPhrase).
         pub fn build(self) -> crate::model::KeyPhrase {
             crate::model::KeyPhrase {
                 score: self.score,
@@ -10708,7 +10656,7 @@ pub mod key_phrase {
     }
 }
 impl KeyPhrase {
-    /// Creates a new builder-style object to manufacture [`KeyPhrase`](crate::model::KeyPhrase)
+    /// Creates a new builder-style object to manufacture [`KeyPhrase`](crate::model::KeyPhrase).
     pub fn builder() -> crate::model::key_phrase::Builder {
         crate::model::key_phrase::Builder::default()
     }
@@ -10763,11 +10711,10 @@ impl std::fmt::Debug for Entity {
         formatter.finish()
     }
 }
-/// See [`Entity`](crate::model::Entity)
+/// See [`Entity`](crate::model::Entity).
 pub mod entity {
 
-    /// A builder for [`Entity`](crate::model::Entity)
-    #[non_exhaustive]
+    /// A builder for [`Entity`](crate::model::Entity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) score: std::option::Option<f32>,
@@ -10827,7 +10774,7 @@ pub mod entity {
             self.end_offset = input;
             self
         }
-        /// Consumes the builder and constructs a [`Entity`](crate::model::Entity)
+        /// Consumes the builder and constructs a [`Entity`](crate::model::Entity).
         pub fn build(self) -> crate::model::Entity {
             crate::model::Entity {
                 score: self.score,
@@ -10840,7 +10787,7 @@ pub mod entity {
     }
 }
 impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity)
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
     pub fn builder() -> crate::model::entity::Builder {
         crate::model::entity::Builder::default()
     }
@@ -10966,11 +10913,10 @@ impl std::fmt::Debug for DominantLanguage {
         formatter.finish()
     }
 }
-/// See [`DominantLanguage`](crate::model::DominantLanguage)
+/// See [`DominantLanguage`](crate::model::DominantLanguage).
 pub mod dominant_language {
 
-    /// A builder for [`DominantLanguage`](crate::model::DominantLanguage)
-    #[non_exhaustive]
+    /// A builder for [`DominantLanguage`](crate::model::DominantLanguage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -11000,7 +10946,7 @@ pub mod dominant_language {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`DominantLanguage`](crate::model::DominantLanguage)
+        /// Consumes the builder and constructs a [`DominantLanguage`](crate::model::DominantLanguage).
         pub fn build(self) -> crate::model::DominantLanguage {
             crate::model::DominantLanguage {
                 language_code: self.language_code,
@@ -11010,7 +10956,7 @@ pub mod dominant_language {
     }
 }
 impl DominantLanguage {
-    /// Creates a new builder-style object to manufacture [`DominantLanguage`](crate::model::DominantLanguage)
+    /// Creates a new builder-style object to manufacture [`DominantLanguage`](crate::model::DominantLanguage).
     pub fn builder() -> crate::model::dominant_language::Builder {
         crate::model::dominant_language::Builder::default()
     }
@@ -11043,11 +10989,10 @@ impl std::fmt::Debug for EntityLabel {
         formatter.finish()
     }
 }
-/// See [`EntityLabel`](crate::model::EntityLabel)
+/// See [`EntityLabel`](crate::model::EntityLabel).
 pub mod entity_label {
 
-    /// A builder for [`EntityLabel`](crate::model::EntityLabel)
-    #[non_exhaustive]
+    /// A builder for [`EntityLabel`](crate::model::EntityLabel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::PiiEntityType>,
@@ -11074,7 +11019,7 @@ pub mod entity_label {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityLabel`](crate::model::EntityLabel)
+        /// Consumes the builder and constructs a [`EntityLabel`](crate::model::EntityLabel).
         pub fn build(self) -> crate::model::EntityLabel {
             crate::model::EntityLabel {
                 name: self.name,
@@ -11084,7 +11029,7 @@ pub mod entity_label {
     }
 }
 impl EntityLabel {
-    /// Creates a new builder-style object to manufacture [`EntityLabel`](crate::model::EntityLabel)
+    /// Creates a new builder-style object to manufacture [`EntityLabel`](crate::model::EntityLabel).
     pub fn builder() -> crate::model::entity_label::Builder {
         crate::model::entity_label::Builder::default()
     }
@@ -11117,11 +11062,10 @@ impl std::fmt::Debug for DocumentLabel {
         formatter.finish()
     }
 }
-/// See [`DocumentLabel`](crate::model::DocumentLabel)
+/// See [`DocumentLabel`](crate::model::DocumentLabel).
 pub mod document_label {
 
-    /// A builder for [`DocumentLabel`](crate::model::DocumentLabel)
-    #[non_exhaustive]
+    /// A builder for [`DocumentLabel`](crate::model::DocumentLabel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11148,7 +11092,7 @@ pub mod document_label {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentLabel`](crate::model::DocumentLabel)
+        /// Consumes the builder and constructs a [`DocumentLabel`](crate::model::DocumentLabel).
         pub fn build(self) -> crate::model::DocumentLabel {
             crate::model::DocumentLabel {
                 name: self.name,
@@ -11158,7 +11102,7 @@ pub mod document_label {
     }
 }
 impl DocumentLabel {
-    /// Creates a new builder-style object to manufacture [`DocumentLabel`](crate::model::DocumentLabel)
+    /// Creates a new builder-style object to manufacture [`DocumentLabel`](crate::model::DocumentLabel).
     pub fn builder() -> crate::model::document_label::Builder {
         crate::model::document_label::Builder::default()
     }
@@ -11191,11 +11135,10 @@ impl std::fmt::Debug for DocumentClass {
         formatter.finish()
     }
 }
-/// See [`DocumentClass`](crate::model::DocumentClass)
+/// See [`DocumentClass`](crate::model::DocumentClass).
 pub mod document_class {
 
-    /// A builder for [`DocumentClass`](crate::model::DocumentClass)
-    #[non_exhaustive]
+    /// A builder for [`DocumentClass`](crate::model::DocumentClass).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -11222,7 +11165,7 @@ pub mod document_class {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`DocumentClass`](crate::model::DocumentClass)
+        /// Consumes the builder and constructs a [`DocumentClass`](crate::model::DocumentClass).
         pub fn build(self) -> crate::model::DocumentClass {
             crate::model::DocumentClass {
                 name: self.name,
@@ -11232,7 +11175,7 @@ pub mod document_class {
     }
 }
 impl DocumentClass {
-    /// Creates a new builder-style object to manufacture [`DocumentClass`](crate::model::DocumentClass)
+    /// Creates a new builder-style object to manufacture [`DocumentClass`](crate::model::DocumentClass).
     pub fn builder() -> crate::model::document_class::Builder {
         crate::model::document_class::Builder::default()
     }
@@ -11272,11 +11215,10 @@ impl std::fmt::Debug for BatchItemError {
         formatter.finish()
     }
 }
-/// See [`BatchItemError`](crate::model::BatchItemError)
+/// See [`BatchItemError`](crate::model::BatchItemError).
 pub mod batch_item_error {
 
-    /// A builder for [`BatchItemError`](crate::model::BatchItemError)
-    #[non_exhaustive]
+    /// A builder for [`BatchItemError`](crate::model::BatchItemError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
@@ -11317,7 +11259,7 @@ pub mod batch_item_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchItemError`](crate::model::BatchItemError)
+        /// Consumes the builder and constructs a [`BatchItemError`](crate::model::BatchItemError).
         pub fn build(self) -> crate::model::BatchItemError {
             crate::model::BatchItemError {
                 index: self.index,
@@ -11328,7 +11270,7 @@ pub mod batch_item_error {
     }
 }
 impl BatchItemError {
-    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError)
+    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
     pub fn builder() -> crate::model::batch_item_error::Builder {
         crate::model::batch_item_error::Builder::default()
     }
@@ -11361,11 +11303,10 @@ impl std::fmt::Debug for BatchDetectSyntaxItemResult {
         formatter.finish()
     }
 }
-/// See [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult)
+/// See [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
 pub mod batch_detect_syntax_item_result {
 
-    /// A builder for [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
@@ -11401,7 +11342,7 @@ pub mod batch_detect_syntax_item_result {
             self.syntax_tokens = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult)
+        /// Consumes the builder and constructs a [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
         pub fn build(self) -> crate::model::BatchDetectSyntaxItemResult {
             crate::model::BatchDetectSyntaxItemResult {
                 index: self.index,
@@ -11411,7 +11352,7 @@ pub mod batch_detect_syntax_item_result {
     }
 }
 impl BatchDetectSyntaxItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult)
+    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxItemResult`](crate::model::BatchDetectSyntaxItemResult).
     pub fn builder() -> crate::model::batch_detect_syntax_item_result::Builder {
         crate::model::batch_detect_syntax_item_result::Builder::default()
     }
@@ -11451,11 +11392,10 @@ impl std::fmt::Debug for BatchDetectSentimentItemResult {
         formatter.finish()
     }
 }
-/// See [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult)
+/// See [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
 pub mod batch_detect_sentiment_item_result {
 
-    /// A builder for [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
@@ -11499,7 +11439,7 @@ pub mod batch_detect_sentiment_item_result {
             self.sentiment_score = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult)
+        /// Consumes the builder and constructs a [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
         pub fn build(self) -> crate::model::BatchDetectSentimentItemResult {
             crate::model::BatchDetectSentimentItemResult {
                 index: self.index,
@@ -11510,7 +11450,7 @@ pub mod batch_detect_sentiment_item_result {
     }
 }
 impl BatchDetectSentimentItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult)
+    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentItemResult`](crate::model::BatchDetectSentimentItemResult).
     pub fn builder() -> crate::model::batch_detect_sentiment_item_result::Builder {
         crate::model::batch_detect_sentiment_item_result::Builder::default()
     }
@@ -11543,11 +11483,10 @@ impl std::fmt::Debug for BatchDetectKeyPhrasesItemResult {
         formatter.finish()
     }
 }
-/// See [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult)
+/// See [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
 pub mod batch_detect_key_phrases_item_result {
 
-    /// A builder for [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
@@ -11583,7 +11522,7 @@ pub mod batch_detect_key_phrases_item_result {
             self.key_phrases = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult)
+        /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
         pub fn build(self) -> crate::model::BatchDetectKeyPhrasesItemResult {
             crate::model::BatchDetectKeyPhrasesItemResult {
                 index: self.index,
@@ -11593,7 +11532,7 @@ pub mod batch_detect_key_phrases_item_result {
     }
 }
 impl BatchDetectKeyPhrasesItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult)
+    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesItemResult`](crate::model::BatchDetectKeyPhrasesItemResult).
     pub fn builder() -> crate::model::batch_detect_key_phrases_item_result::Builder {
         crate::model::batch_detect_key_phrases_item_result::Builder::default()
     }
@@ -11626,11 +11565,10 @@ impl std::fmt::Debug for BatchDetectEntitiesItemResult {
         formatter.finish()
     }
 }
-/// See [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult)
+/// See [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
 pub mod batch_detect_entities_item_result {
 
-    /// A builder for [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
@@ -11666,7 +11604,7 @@ pub mod batch_detect_entities_item_result {
             self.entities = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult)
+        /// Consumes the builder and constructs a [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
         pub fn build(self) -> crate::model::BatchDetectEntitiesItemResult {
             crate::model::BatchDetectEntitiesItemResult {
                 index: self.index,
@@ -11676,7 +11614,7 @@ pub mod batch_detect_entities_item_result {
     }
 }
 impl BatchDetectEntitiesItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult)
+    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesItemResult`](crate::model::BatchDetectEntitiesItemResult).
     pub fn builder() -> crate::model::batch_detect_entities_item_result::Builder {
         crate::model::batch_detect_entities_item_result::Builder::default()
     }
@@ -11709,11 +11647,10 @@ impl std::fmt::Debug for BatchDetectDominantLanguageItemResult {
         formatter.finish()
     }
 }
-/// See [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult)
+/// See [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
 pub mod batch_detect_dominant_language_item_result {
 
-    /// A builder for [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult)
-    #[non_exhaustive]
+    /// A builder for [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) index: std::option::Option<i32>,
@@ -11749,7 +11686,7 @@ pub mod batch_detect_dominant_language_item_result {
             self.languages = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult)
+        /// Consumes the builder and constructs a [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
         pub fn build(self) -> crate::model::BatchDetectDominantLanguageItemResult {
             crate::model::BatchDetectDominantLanguageItemResult {
                 index: self.index,
@@ -11759,7 +11696,7 @@ pub mod batch_detect_dominant_language_item_result {
     }
 }
 impl BatchDetectDominantLanguageItemResult {
-    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult)
+    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageItemResult`](crate::model::BatchDetectDominantLanguageItemResult).
     pub fn builder() -> crate::model::batch_detect_dominant_language_item_result::Builder {
         crate::model::batch_detect_dominant_language_item_result::Builder::default()
     }

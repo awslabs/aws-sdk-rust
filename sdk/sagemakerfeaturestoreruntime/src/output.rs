@@ -9,22 +9,21 @@ impl std::fmt::Debug for PutRecordOutput {
         formatter.finish()
     }
 }
-/// See [`PutRecordOutput`](crate::output::PutRecordOutput)
+/// See [`PutRecordOutput`](crate::output::PutRecordOutput).
 pub mod put_record_output {
 
-    /// A builder for [`PutRecordOutput`](crate::output::PutRecordOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutRecordOutput`](crate::output::PutRecordOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutRecordOutput`](crate::output::PutRecordOutput)
+        /// Consumes the builder and constructs a [`PutRecordOutput`](crate::output::PutRecordOutput).
         pub fn build(self) -> crate::output::PutRecordOutput {
             crate::output::PutRecordOutput {}
         }
     }
 }
 impl PutRecordOutput {
-    /// Creates a new builder-style object to manufacture [`PutRecordOutput`](crate::output::PutRecordOutput)
+    /// Creates a new builder-style object to manufacture [`PutRecordOutput`](crate::output::PutRecordOutput).
     pub fn builder() -> crate::output::put_record_output::Builder {
         crate::output::put_record_output::Builder::default()
     }
@@ -50,11 +49,10 @@ impl std::fmt::Debug for GetRecordOutput {
         formatter.finish()
     }
 }
-/// See [`GetRecordOutput`](crate::output::GetRecordOutput)
+/// See [`GetRecordOutput`](crate::output::GetRecordOutput).
 pub mod get_record_output {
 
-    /// A builder for [`GetRecordOutput`](crate::output::GetRecordOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRecordOutput`](crate::output::GetRecordOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
@@ -79,7 +77,7 @@ pub mod get_record_output {
             self.record = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRecordOutput`](crate::output::GetRecordOutput)
+        /// Consumes the builder and constructs a [`GetRecordOutput`](crate::output::GetRecordOutput).
         pub fn build(self) -> crate::output::GetRecordOutput {
             crate::output::GetRecordOutput {
                 record: self.record,
@@ -88,7 +86,7 @@ pub mod get_record_output {
     }
 }
 impl GetRecordOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecordOutput`](crate::output::GetRecordOutput)
+    /// Creates a new builder-style object to manufacture [`GetRecordOutput`](crate::output::GetRecordOutput).
     pub fn builder() -> crate::output::get_record_output::Builder {
         crate::output::get_record_output::Builder::default()
     }
@@ -104,22 +102,21 @@ impl std::fmt::Debug for DeleteRecordOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRecordOutput`](crate::output::DeleteRecordOutput)
+/// See [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
 pub mod delete_record_output {
 
-    /// A builder for [`DeleteRecordOutput`](crate::output::DeleteRecordOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteRecordOutput`](crate::output::DeleteRecordOutput)
+        /// Consumes the builder and constructs a [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
         pub fn build(self) -> crate::output::DeleteRecordOutput {
             crate::output::DeleteRecordOutput {}
         }
     }
 }
 impl DeleteRecordOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRecordOutput`](crate::output::DeleteRecordOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRecordOutput`](crate::output::DeleteRecordOutput).
     pub fn builder() -> crate::output::delete_record_output::Builder {
         crate::output::delete_record_output::Builder::default()
     }
@@ -162,11 +159,10 @@ impl std::fmt::Debug for BatchGetRecordOutput {
         formatter.finish()
     }
 }
-/// See [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput)
+/// See [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
 pub mod batch_get_record_output {
 
-    /// A builder for [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records:
@@ -236,7 +232,7 @@ pub mod batch_get_record_output {
             self.unprocessed_identifiers = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput)
+        /// Consumes the builder and constructs a [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
         pub fn build(self) -> crate::output::BatchGetRecordOutput {
             crate::output::BatchGetRecordOutput {
                 records: self.records,
@@ -247,7 +243,7 @@ pub mod batch_get_record_output {
     }
 }
 impl BatchGetRecordOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput)
+    /// Creates a new builder-style object to manufacture [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput).
     pub fn builder() -> crate::output::batch_get_record_output::Builder {
         crate::output::batch_get_record_output::Builder::default()
     }

@@ -10,22 +10,21 @@ impl std::fmt::Debug for UpdateSubscriberOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput)
+/// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
 
-    /// A builder for [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput)
+        /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
         pub fn build(self) -> crate::output::UpdateSubscriberOutput {
             crate::output::UpdateSubscriberOutput {}
         }
     }
 }
 impl UpdateSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
     pub fn builder() -> crate::output::update_subscriber_output::Builder {
         crate::output::update_subscriber_output::Builder::default()
     }
@@ -41,22 +40,21 @@ impl std::fmt::Debug for UpdateNotificationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput)
+/// See [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
 pub mod update_notification_output {
 
-    /// A builder for [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput)
+        /// Consumes the builder and constructs a [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
         pub fn build(self) -> crate::output::UpdateNotificationOutput {
             crate::output::UpdateNotificationOutput {}
         }
     }
 }
 impl UpdateNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
     pub fn builder() -> crate::output::update_notification_output::Builder {
         crate::output::update_notification_output::Builder::default()
     }
@@ -103,11 +101,10 @@ impl std::fmt::Debug for UpdateBudgetActionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput)
+/// See [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
 pub mod update_budget_action_output {
 
-    /// A builder for [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -156,7 +153,7 @@ pub mod update_budget_action_output {
             self.new_action = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput)
+        /// Consumes the builder and constructs a [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
         pub fn build(self) -> crate::output::UpdateBudgetActionOutput {
             crate::output::UpdateBudgetActionOutput {
                 account_id: self.account_id,
@@ -168,7 +165,7 @@ pub mod update_budget_action_output {
     }
 }
 impl UpdateBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
     pub fn builder() -> crate::output::update_budget_action_output::Builder {
         crate::output::update_budget_action_output::Builder::default()
     }
@@ -184,22 +181,21 @@ impl std::fmt::Debug for UpdateBudgetOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput)
+/// See [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
 pub mod update_budget_output {
 
-    /// A builder for [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput)
+        /// Consumes the builder and constructs a [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
         pub fn build(self) -> crate::output::UpdateBudgetOutput {
             crate::output::UpdateBudgetOutput {}
         }
     }
 }
 impl UpdateBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
     pub fn builder() -> crate::output::update_budget_output::Builder {
         crate::output::update_budget_output::Builder::default()
     }
@@ -246,11 +242,10 @@ impl std::fmt::Debug for ExecuteBudgetActionOutput {
         formatter.finish()
     }
 }
-/// See [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput)
+/// See [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
 pub mod execute_budget_action_output {
 
-    /// A builder for [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -302,7 +297,7 @@ pub mod execute_budget_action_output {
             self.execution_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput)
+        /// Consumes the builder and constructs a [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
         pub fn build(self) -> crate::output::ExecuteBudgetActionOutput {
             crate::output::ExecuteBudgetActionOutput {
                 account_id: self.account_id,
@@ -314,7 +309,7 @@ pub mod execute_budget_action_output {
     }
 }
 impl ExecuteBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput)
+    /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
     pub fn builder() -> crate::output::execute_budget_action_output::Builder {
         crate::output::execute_budget_action_output::Builder::default()
     }
@@ -347,11 +342,10 @@ impl std::fmt::Debug for DescribeSubscribersForNotificationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput)
+/// See [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
 pub mod describe_subscribers_for_notification_output {
 
-    /// A builder for [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -387,7 +381,7 @@ pub mod describe_subscribers_for_notification_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput)
+        /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
         pub fn build(self) -> crate::output::DescribeSubscribersForNotificationOutput {
             crate::output::DescribeSubscribersForNotificationOutput {
                 subscribers: self.subscribers,
@@ -397,7 +391,7 @@ pub mod describe_subscribers_for_notification_output {
     }
 }
 impl DescribeSubscribersForNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
     pub fn builder() -> crate::output::describe_subscribers_for_notification_output::Builder {
         crate::output::describe_subscribers_for_notification_output::Builder::default()
     }
@@ -430,11 +424,10 @@ impl std::fmt::Debug for DescribeNotificationsForBudgetOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput)
+/// See [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
 pub mod describe_notifications_for_budget_output {
 
-    /// A builder for [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
@@ -470,7 +463,7 @@ pub mod describe_notifications_for_budget_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput)
+        /// Consumes the builder and constructs a [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
         pub fn build(self) -> crate::output::DescribeNotificationsForBudgetOutput {
             crate::output::DescribeNotificationsForBudgetOutput {
                 notifications: self.notifications,
@@ -480,7 +473,7 @@ pub mod describe_notifications_for_budget_output {
     }
 }
 impl DescribeNotificationsForBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
     pub fn builder() -> crate::output::describe_notifications_for_budget_output::Builder {
         crate::output::describe_notifications_for_budget_output::Builder::default()
     }
@@ -513,11 +506,10 @@ impl std::fmt::Debug for DescribeBudgetsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput)
+/// See [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
 pub mod describe_budgets_output {
 
-    /// A builder for [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budgets: std::option::Option<std::vec::Vec<crate::model::Budget>>,
@@ -553,7 +545,7 @@ pub mod describe_budgets_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
         pub fn build(self) -> crate::output::DescribeBudgetsOutput {
             crate::output::DescribeBudgetsOutput {
                 budgets: self.budgets,
@@ -563,7 +555,7 @@ pub mod describe_budgets_output {
     }
 }
 impl DescribeBudgetsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
     pub fn builder() -> crate::output::describe_budgets_output::Builder {
         crate::output::describe_budgets_output::Builder::default()
     }
@@ -603,11 +595,10 @@ impl std::fmt::Debug for DescribeBudgetPerformanceHistoryOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput)
+/// See [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
 pub mod describe_budget_performance_history_output {
 
-    /// A builder for [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget_performance_history:
@@ -643,7 +634,7 @@ pub mod describe_budget_performance_history_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
         pub fn build(self) -> crate::output::DescribeBudgetPerformanceHistoryOutput {
             crate::output::DescribeBudgetPerformanceHistoryOutput {
                 budget_performance_history: self.budget_performance_history,
@@ -653,7 +644,7 @@ pub mod describe_budget_performance_history_output {
     }
 }
 impl DescribeBudgetPerformanceHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
     pub fn builder() -> crate::output::describe_budget_performance_history_output::Builder {
         crate::output::describe_budget_performance_history_output::Builder::default()
     }
@@ -692,11 +683,10 @@ impl std::fmt::Debug for DescribeBudgetNotificationsForAccountOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
+/// See [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
 pub mod describe_budget_notifications_for_account_output {
 
-    /// A builder for [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget_notifications_for_account:
@@ -736,7 +726,7 @@ pub mod describe_budget_notifications_for_account_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
         pub fn build(self) -> crate::output::DescribeBudgetNotificationsForAccountOutput {
             crate::output::DescribeBudgetNotificationsForAccountOutput {
                 budget_notifications_for_account: self.budget_notifications_for_account,
@@ -746,7 +736,7 @@ pub mod describe_budget_notifications_for_account_output {
     }
 }
 impl DescribeBudgetNotificationsForAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
     pub fn builder() -> crate::output::describe_budget_notifications_for_account_output::Builder {
         crate::output::describe_budget_notifications_for_account_output::Builder::default()
     }
@@ -779,11 +769,10 @@ impl std::fmt::Debug for DescribeBudgetActionsForBudgetOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput)
+/// See [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
 pub mod describe_budget_actions_for_budget_output {
 
-    /// A builder for [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -819,7 +808,7 @@ pub mod describe_budget_actions_for_budget_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionsForBudgetOutput {
             crate::output::DescribeBudgetActionsForBudgetOutput {
                 actions: self.actions,
@@ -829,7 +818,7 @@ pub mod describe_budget_actions_for_budget_output {
     }
 }
 impl DescribeBudgetActionsForBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
     pub fn builder() -> crate::output::describe_budget_actions_for_budget_output::Builder {
         crate::output::describe_budget_actions_for_budget_output::Builder::default()
     }
@@ -862,11 +851,10 @@ impl std::fmt::Debug for DescribeBudgetActionsForAccountOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput)
+/// See [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
 pub mod describe_budget_actions_for_account_output {
 
-    /// A builder for [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -902,7 +890,7 @@ pub mod describe_budget_actions_for_account_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionsForAccountOutput {
             crate::output::DescribeBudgetActionsForAccountOutput {
                 actions: self.actions,
@@ -912,7 +900,7 @@ pub mod describe_budget_actions_for_account_output {
     }
 }
 impl DescribeBudgetActionsForAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
     pub fn builder() -> crate::output::describe_budget_actions_for_account_output::Builder {
         crate::output::describe_budget_actions_for_account_output::Builder::default()
     }
@@ -945,11 +933,10 @@ impl std::fmt::Debug for DescribeBudgetActionHistoriesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput)
+/// See [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
 pub mod describe_budget_action_histories_output {
 
-    /// A builder for [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_histories:
@@ -986,7 +973,7 @@ pub mod describe_budget_action_histories_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionHistoriesOutput {
             crate::output::DescribeBudgetActionHistoriesOutput {
                 action_histories: self.action_histories,
@@ -996,7 +983,7 @@ pub mod describe_budget_action_histories_output {
     }
 }
 impl DescribeBudgetActionHistoriesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
     pub fn builder() -> crate::output::describe_budget_action_histories_output::Builder {
         crate::output::describe_budget_action_histories_output::Builder::default()
     }
@@ -1036,11 +1023,10 @@ impl std::fmt::Debug for DescribeBudgetActionOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput)
+/// See [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
 pub mod describe_budget_action_output {
 
-    /// A builder for [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1078,7 +1064,7 @@ pub mod describe_budget_action_output {
             self.action = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionOutput {
             crate::output::DescribeBudgetActionOutput {
                 account_id: self.account_id,
@@ -1089,7 +1075,7 @@ pub mod describe_budget_action_output {
     }
 }
 impl DescribeBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
     pub fn builder() -> crate::output::describe_budget_action_output::Builder {
         crate::output::describe_budget_action_output::Builder::default()
     }
@@ -1115,11 +1101,10 @@ impl std::fmt::Debug for DescribeBudgetOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput)
+/// See [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
 pub mod describe_budget_output {
 
-    /// A builder for [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget: std::option::Option<crate::model::Budget>,
@@ -1135,7 +1120,7 @@ pub mod describe_budget_output {
             self.budget = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput)
+        /// Consumes the builder and constructs a [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
         pub fn build(self) -> crate::output::DescribeBudgetOutput {
             crate::output::DescribeBudgetOutput {
                 budget: self.budget,
@@ -1144,7 +1129,7 @@ pub mod describe_budget_output {
     }
 }
 impl DescribeBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
     pub fn builder() -> crate::output::describe_budget_output::Builder {
         crate::output::describe_budget_output::Builder::default()
     }
@@ -1160,22 +1145,21 @@ impl std::fmt::Debug for DeleteSubscriberOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput)
+/// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
 
-    /// A builder for [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput)
+        /// Consumes the builder and constructs a [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
         pub fn build(self) -> crate::output::DeleteSubscriberOutput {
             crate::output::DeleteSubscriberOutput {}
         }
     }
 }
 impl DeleteSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
     pub fn builder() -> crate::output::delete_subscriber_output::Builder {
         crate::output::delete_subscriber_output::Builder::default()
     }
@@ -1191,22 +1175,21 @@ impl std::fmt::Debug for DeleteNotificationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput)
+/// See [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
 pub mod delete_notification_output {
 
-    /// A builder for [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput)
+        /// Consumes the builder and constructs a [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
         pub fn build(self) -> crate::output::DeleteNotificationOutput {
             crate::output::DeleteNotificationOutput {}
         }
     }
 }
 impl DeleteNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
     pub fn builder() -> crate::output::delete_notification_output::Builder {
         crate::output::delete_notification_output::Builder::default()
     }
@@ -1246,11 +1229,10 @@ impl std::fmt::Debug for DeleteBudgetActionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput)
+/// See [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
 pub mod delete_budget_action_output {
 
-    /// A builder for [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1288,7 +1270,7 @@ pub mod delete_budget_action_output {
             self.action = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput)
+        /// Consumes the builder and constructs a [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
         pub fn build(self) -> crate::output::DeleteBudgetActionOutput {
             crate::output::DeleteBudgetActionOutput {
                 account_id: self.account_id,
@@ -1299,7 +1281,7 @@ pub mod delete_budget_action_output {
     }
 }
 impl DeleteBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
     pub fn builder() -> crate::output::delete_budget_action_output::Builder {
         crate::output::delete_budget_action_output::Builder::default()
     }
@@ -1315,22 +1297,21 @@ impl std::fmt::Debug for DeleteBudgetOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput)
+/// See [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
 pub mod delete_budget_output {
 
-    /// A builder for [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput)
+        /// Consumes the builder and constructs a [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
         pub fn build(self) -> crate::output::DeleteBudgetOutput {
             crate::output::DeleteBudgetOutput {}
         }
     }
 }
 impl DeleteBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
     pub fn builder() -> crate::output::delete_budget_output::Builder {
         crate::output::delete_budget_output::Builder::default()
     }
@@ -1346,22 +1327,21 @@ impl std::fmt::Debug for CreateSubscriberOutput {
         formatter.finish()
     }
 }
-/// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput)
+/// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
 
-    /// A builder for [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput)
+        /// Consumes the builder and constructs a [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
         pub fn build(self) -> crate::output::CreateSubscriberOutput {
             crate::output::CreateSubscriberOutput {}
         }
     }
 }
 impl CreateSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput)
+    /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
     pub fn builder() -> crate::output::create_subscriber_output::Builder {
         crate::output::create_subscriber_output::Builder::default()
     }
@@ -1377,22 +1357,21 @@ impl std::fmt::Debug for CreateNotificationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateNotificationOutput`](crate::output::CreateNotificationOutput)
+/// See [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
 pub mod create_notification_output {
 
-    /// A builder for [`CreateNotificationOutput`](crate::output::CreateNotificationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateNotificationOutput`](crate::output::CreateNotificationOutput)
+        /// Consumes the builder and constructs a [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
         pub fn build(self) -> crate::output::CreateNotificationOutput {
             crate::output::CreateNotificationOutput {}
         }
     }
 }
 impl CreateNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNotificationOutput`](crate::output::CreateNotificationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
     pub fn builder() -> crate::output::create_notification_output::Builder {
         crate::output::create_notification_output::Builder::default()
     }
@@ -1432,11 +1411,10 @@ impl std::fmt::Debug for CreateBudgetActionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput)
+/// See [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
 pub mod create_budget_action_output {
 
-    /// A builder for [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1474,7 +1452,7 @@ pub mod create_budget_action_output {
             self.action_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput)
+        /// Consumes the builder and constructs a [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
         pub fn build(self) -> crate::output::CreateBudgetActionOutput {
             crate::output::CreateBudgetActionOutput {
                 account_id: self.account_id,
@@ -1485,7 +1463,7 @@ pub mod create_budget_action_output {
     }
 }
 impl CreateBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
     pub fn builder() -> crate::output::create_budget_action_output::Builder {
         crate::output::create_budget_action_output::Builder::default()
     }
@@ -1501,22 +1479,21 @@ impl std::fmt::Debug for CreateBudgetOutput {
         formatter.finish()
     }
 }
-/// See [`CreateBudgetOutput`](crate::output::CreateBudgetOutput)
+/// See [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
 pub mod create_budget_output {
 
-    /// A builder for [`CreateBudgetOutput`](crate::output::CreateBudgetOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateBudgetOutput`](crate::output::CreateBudgetOutput)
+        /// Consumes the builder and constructs a [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
         pub fn build(self) -> crate::output::CreateBudgetOutput {
             crate::output::CreateBudgetOutput {}
         }
     }
 }
 impl CreateBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBudgetOutput`](crate::output::CreateBudgetOutput)
+    /// Creates a new builder-style object to manufacture [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
     pub fn builder() -> crate::output::create_budget_output::Builder {
         crate::output::create_budget_output::Builder::default()
     }

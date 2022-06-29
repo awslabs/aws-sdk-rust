@@ -82,11 +82,10 @@ impl std::fmt::Debug for StartSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`StartSnapshotOutput`](crate::output::StartSnapshotOutput)
+/// See [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
 pub mod start_snapshot_output {
 
-    /// A builder for [`StartSnapshotOutput`](crate::output::StartSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -216,7 +215,7 @@ pub mod start_snapshot_output {
             self.kms_key_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartSnapshotOutput`](crate::output::StartSnapshotOutput)
+        /// Consumes the builder and constructs a [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
         pub fn build(self) -> crate::output::StartSnapshotOutput {
             crate::output::StartSnapshotOutput {
                 description: self.description,
@@ -234,7 +233,7 @@ pub mod start_snapshot_output {
     }
 }
 impl StartSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`StartSnapshotOutput`](crate::output::StartSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`StartSnapshotOutput`](crate::output::StartSnapshotOutput).
     pub fn builder() -> crate::output::start_snapshot_output::Builder {
         crate::output::start_snapshot_output::Builder::default()
     }
@@ -267,11 +266,10 @@ impl std::fmt::Debug for PutSnapshotBlockOutput {
         formatter.finish()
     }
 }
-/// See [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput)
+/// See [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
 pub mod put_snapshot_block_output {
 
-    /// A builder for [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) checksum: std::option::Option<std::string::String>,
@@ -301,7 +299,7 @@ pub mod put_snapshot_block_output {
             self.checksum_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput)
+        /// Consumes the builder and constructs a [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
         pub fn build(self) -> crate::output::PutSnapshotBlockOutput {
             crate::output::PutSnapshotBlockOutput {
                 checksum: self.checksum,
@@ -311,7 +309,7 @@ pub mod put_snapshot_block_output {
     }
 }
 impl PutSnapshotBlockOutput {
-    /// Creates a new builder-style object to manufacture [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput)
+    /// Creates a new builder-style object to manufacture [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput).
     pub fn builder() -> crate::output::put_snapshot_block_output::Builder {
         crate::output::put_snapshot_block_output::Builder::default()
     }
@@ -365,11 +363,10 @@ impl std::fmt::Debug for ListSnapshotBlocksOutput {
         formatter.finish()
     }
 }
-/// See [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput)
+/// See [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
 pub mod list_snapshot_blocks_output {
 
-    /// A builder for [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
@@ -441,7 +438,7 @@ pub mod list_snapshot_blocks_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput)
+        /// Consumes the builder and constructs a [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
         pub fn build(self) -> crate::output::ListSnapshotBlocksOutput {
             crate::output::ListSnapshotBlocksOutput {
                 blocks: self.blocks,
@@ -454,7 +451,7 @@ pub mod list_snapshot_blocks_output {
     }
 }
 impl ListSnapshotBlocksOutput {
-    /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput)
+    /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput).
     pub fn builder() -> crate::output::list_snapshot_blocks_output::Builder {
         crate::output::list_snapshot_blocks_output::Builder::default()
     }
@@ -508,11 +505,10 @@ impl std::fmt::Debug for ListChangedBlocksOutput {
         formatter.finish()
     }
 }
-/// See [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput)
+/// See [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
 pub mod list_changed_blocks_output {
 
-    /// A builder for [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) changed_blocks: std::option::Option<std::vec::Vec<crate::model::ChangedBlock>>,
@@ -584,7 +580,7 @@ pub mod list_changed_blocks_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput)
+        /// Consumes the builder and constructs a [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
         pub fn build(self) -> crate::output::ListChangedBlocksOutput {
             crate::output::ListChangedBlocksOutput {
                 changed_blocks: self.changed_blocks,
@@ -597,7 +593,7 @@ pub mod list_changed_blocks_output {
     }
 }
 impl ListChangedBlocksOutput {
-    /// Creates a new builder-style object to manufacture [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput)
+    /// Creates a new builder-style object to manufacture [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput).
     pub fn builder() -> crate::output::list_changed_blocks_output::Builder {
         crate::output::list_changed_blocks_output::Builder::default()
     }
@@ -643,11 +639,10 @@ impl std::fmt::Debug for GetSnapshotBlockOutput {
         formatter.finish()
     }
 }
-/// See [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput)
+/// See [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
 pub mod get_snapshot_block_output {
 
-    /// A builder for [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_length: std::option::Option<i32>,
@@ -702,7 +697,7 @@ pub mod get_snapshot_block_output {
             self.checksum_algorithm = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput)
+        /// Consumes the builder and constructs a [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
         pub fn build(self) -> crate::output::GetSnapshotBlockOutput {
             crate::output::GetSnapshotBlockOutput {
                 data_length: self.data_length,
@@ -714,7 +709,7 @@ pub mod get_snapshot_block_output {
     }
 }
 impl GetSnapshotBlockOutput {
-    /// Creates a new builder-style object to manufacture [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput)
+    /// Creates a new builder-style object to manufacture [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput).
     pub fn builder() -> crate::output::get_snapshot_block_output::Builder {
         crate::output::get_snapshot_block_output::Builder::default()
     }
@@ -740,11 +735,10 @@ impl std::fmt::Debug for CompleteSnapshotOutput {
         formatter.finish()
     }
 }
-/// See [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput)
+/// See [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
 pub mod complete_snapshot_output {
 
-    /// A builder for [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput)
-    #[non_exhaustive]
+    /// A builder for [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -760,7 +754,7 @@ pub mod complete_snapshot_output {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput)
+        /// Consumes the builder and constructs a [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
         pub fn build(self) -> crate::output::CompleteSnapshotOutput {
             crate::output::CompleteSnapshotOutput {
                 status: self.status,
@@ -769,7 +763,7 @@ pub mod complete_snapshot_output {
     }
 }
 impl CompleteSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput)
+    /// Creates a new builder-style object to manufacture [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput).
     pub fn builder() -> crate::output::complete_snapshot_output::Builder {
         crate::output::complete_snapshot_output::Builder::default()
     }

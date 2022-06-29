@@ -26,11 +26,10 @@ impl std::fmt::Debug for ListMeshesOutput {
         formatter.finish()
     }
 }
-/// See [`ListMeshesOutput`](crate::output::ListMeshesOutput)
+/// See [`ListMeshesOutput`](crate::output::ListMeshesOutput).
 pub mod list_meshes_output {
 
-    /// A builder for [`ListMeshesOutput`](crate::output::ListMeshesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMeshesOutput`](crate::output::ListMeshesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) meshes: std::option::Option<std::vec::Vec<crate::model::MeshRef>>,
@@ -66,7 +65,7 @@ pub mod list_meshes_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMeshesOutput`](crate::output::ListMeshesOutput)
+        /// Consumes the builder and constructs a [`ListMeshesOutput`](crate::output::ListMeshesOutput).
         pub fn build(self) -> crate::output::ListMeshesOutput {
             crate::output::ListMeshesOutput {
                 meshes: self.meshes,
@@ -76,7 +75,7 @@ pub mod list_meshes_output {
     }
 }
 impl ListMeshesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMeshesOutput`](crate::output::ListMeshesOutput)
+    /// Creates a new builder-style object to manufacture [`ListMeshesOutput`](crate::output::ListMeshesOutput).
     pub fn builder() -> crate::output::list_meshes_output::Builder {
         crate::output::list_meshes_output::Builder::default()
     }
@@ -102,11 +101,10 @@ impl std::fmt::Debug for CreateMeshOutput {
         formatter.finish()
     }
 }
-/// See [`CreateMeshOutput`](crate::output::CreateMeshOutput)
+/// See [`CreateMeshOutput`](crate::output::CreateMeshOutput).
 pub mod create_mesh_output {
 
-    /// A builder for [`CreateMeshOutput`](crate::output::CreateMeshOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateMeshOutput`](crate::output::CreateMeshOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
@@ -122,14 +120,14 @@ pub mod create_mesh_output {
             self.mesh = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateMeshOutput`](crate::output::CreateMeshOutput)
+        /// Consumes the builder and constructs a [`CreateMeshOutput`](crate::output::CreateMeshOutput).
         pub fn build(self) -> crate::output::CreateMeshOutput {
             crate::output::CreateMeshOutput { mesh: self.mesh }
         }
     }
 }
 impl CreateMeshOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMeshOutput`](crate::output::CreateMeshOutput)
+    /// Creates a new builder-style object to manufacture [`CreateMeshOutput`](crate::output::CreateMeshOutput).
     pub fn builder() -> crate::output::create_mesh_output::Builder {
         crate::output::create_mesh_output::Builder::default()
     }
@@ -155,11 +153,10 @@ impl std::fmt::Debug for DeleteMeshOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteMeshOutput`](crate::output::DeleteMeshOutput)
+/// See [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
 pub mod delete_mesh_output {
 
-    /// A builder for [`DeleteMeshOutput`](crate::output::DeleteMeshOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
@@ -175,14 +172,14 @@ pub mod delete_mesh_output {
             self.mesh = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteMeshOutput`](crate::output::DeleteMeshOutput)
+        /// Consumes the builder and constructs a [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
         pub fn build(self) -> crate::output::DeleteMeshOutput {
             crate::output::DeleteMeshOutput { mesh: self.mesh }
         }
     }
 }
 impl DeleteMeshOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMeshOutput`](crate::output::DeleteMeshOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
     pub fn builder() -> crate::output::delete_mesh_output::Builder {
         crate::output::delete_mesh_output::Builder::default()
     }
@@ -208,11 +205,10 @@ impl std::fmt::Debug for UpdateMeshOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateMeshOutput`](crate::output::UpdateMeshOutput)
+/// See [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
 pub mod update_mesh_output {
 
-    /// A builder for [`UpdateMeshOutput`](crate::output::UpdateMeshOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
@@ -228,14 +224,14 @@ pub mod update_mesh_output {
             self.mesh = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateMeshOutput`](crate::output::UpdateMeshOutput)
+        /// Consumes the builder and constructs a [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
         pub fn build(self) -> crate::output::UpdateMeshOutput {
             crate::output::UpdateMeshOutput { mesh: self.mesh }
         }
     }
 }
 impl UpdateMeshOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMeshOutput`](crate::output::UpdateMeshOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
     pub fn builder() -> crate::output::update_mesh_output::Builder {
         crate::output::update_mesh_output::Builder::default()
     }
@@ -261,11 +257,10 @@ impl std::fmt::Debug for DescribeMeshOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeMeshOutput`](crate::output::DescribeMeshOutput)
+/// See [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
 pub mod describe_mesh_output {
 
-    /// A builder for [`DescribeMeshOutput`](crate::output::DescribeMeshOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
@@ -281,14 +276,14 @@ pub mod describe_mesh_output {
             self.mesh = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeMeshOutput`](crate::output::DescribeMeshOutput)
+        /// Consumes the builder and constructs a [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
         pub fn build(self) -> crate::output::DescribeMeshOutput {
             crate::output::DescribeMeshOutput { mesh: self.mesh }
         }
     }
 }
 impl DescribeMeshOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMeshOutput`](crate::output::DescribeMeshOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
     pub fn builder() -> crate::output::describe_mesh_output::Builder {
         crate::output::describe_mesh_output::Builder::default()
     }
@@ -321,11 +316,10 @@ impl std::fmt::Debug for ListVirtualServicesOutput {
         formatter.finish()
     }
 }
-/// See [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput)
+/// See [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
 pub mod list_virtual_services_output {
 
-    /// A builder for [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_services:
@@ -362,7 +356,7 @@ pub mod list_virtual_services_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput)
+        /// Consumes the builder and constructs a [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
         pub fn build(self) -> crate::output::ListVirtualServicesOutput {
             crate::output::ListVirtualServicesOutput {
                 virtual_services: self.virtual_services,
@@ -372,7 +366,7 @@ pub mod list_virtual_services_output {
     }
 }
 impl ListVirtualServicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
     pub fn builder() -> crate::output::list_virtual_services_output::Builder {
         crate::output::list_virtual_services_output::Builder::default()
     }
@@ -398,11 +392,10 @@ impl std::fmt::Debug for CreateVirtualServiceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput)
+/// See [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
 pub mod create_virtual_service_output {
 
-    /// A builder for [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
@@ -421,7 +414,7 @@ pub mod create_virtual_service_output {
             self.virtual_service = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput)
+        /// Consumes the builder and constructs a [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
         pub fn build(self) -> crate::output::CreateVirtualServiceOutput {
             crate::output::CreateVirtualServiceOutput {
                 virtual_service: self.virtual_service,
@@ -430,7 +423,7 @@ pub mod create_virtual_service_output {
     }
 }
 impl CreateVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
     pub fn builder() -> crate::output::create_virtual_service_output::Builder {
         crate::output::create_virtual_service_output::Builder::default()
     }
@@ -456,11 +449,10 @@ impl std::fmt::Debug for DeleteVirtualServiceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput)
+/// See [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
 pub mod delete_virtual_service_output {
 
-    /// A builder for [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
@@ -479,7 +471,7 @@ pub mod delete_virtual_service_output {
             self.virtual_service = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput)
+        /// Consumes the builder and constructs a [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
         pub fn build(self) -> crate::output::DeleteVirtualServiceOutput {
             crate::output::DeleteVirtualServiceOutput {
                 virtual_service: self.virtual_service,
@@ -488,7 +480,7 @@ pub mod delete_virtual_service_output {
     }
 }
 impl DeleteVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
     pub fn builder() -> crate::output::delete_virtual_service_output::Builder {
         crate::output::delete_virtual_service_output::Builder::default()
     }
@@ -514,11 +506,10 @@ impl std::fmt::Debug for UpdateVirtualServiceOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput)
+/// See [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
 pub mod update_virtual_service_output {
 
-    /// A builder for [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
@@ -537,7 +528,7 @@ pub mod update_virtual_service_output {
             self.virtual_service = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput)
+        /// Consumes the builder and constructs a [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
         pub fn build(self) -> crate::output::UpdateVirtualServiceOutput {
             crate::output::UpdateVirtualServiceOutput {
                 virtual_service: self.virtual_service,
@@ -546,7 +537,7 @@ pub mod update_virtual_service_output {
     }
 }
 impl UpdateVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
     pub fn builder() -> crate::output::update_virtual_service_output::Builder {
         crate::output::update_virtual_service_output::Builder::default()
     }
@@ -572,11 +563,10 @@ impl std::fmt::Debug for DescribeVirtualServiceOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput)
+/// See [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
 pub mod describe_virtual_service_output {
 
-    /// A builder for [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
@@ -595,7 +585,7 @@ pub mod describe_virtual_service_output {
             self.virtual_service = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput)
+        /// Consumes the builder and constructs a [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
         pub fn build(self) -> crate::output::DescribeVirtualServiceOutput {
             crate::output::DescribeVirtualServiceOutput {
                 virtual_service: self.virtual_service,
@@ -604,7 +594,7 @@ pub mod describe_virtual_service_output {
     }
 }
 impl DescribeVirtualServiceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
     pub fn builder() -> crate::output::describe_virtual_service_output::Builder {
         crate::output::describe_virtual_service_output::Builder::default()
     }
@@ -637,11 +627,10 @@ impl std::fmt::Debug for ListVirtualRoutersOutput {
         formatter.finish()
     }
 }
-/// See [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput)
+/// See [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
 pub mod list_virtual_routers_output {
 
-    /// A builder for [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_routers:
@@ -678,7 +667,7 @@ pub mod list_virtual_routers_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput)
+        /// Consumes the builder and constructs a [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
         pub fn build(self) -> crate::output::ListVirtualRoutersOutput {
             crate::output::ListVirtualRoutersOutput {
                 virtual_routers: self.virtual_routers,
@@ -688,7 +677,7 @@ pub mod list_virtual_routers_output {
     }
 }
 impl ListVirtualRoutersOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
     pub fn builder() -> crate::output::list_virtual_routers_output::Builder {
         crate::output::list_virtual_routers_output::Builder::default()
     }
@@ -714,11 +703,10 @@ impl std::fmt::Debug for CreateVirtualRouterOutput {
         formatter.finish()
     }
 }
-/// See [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput)
+/// See [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
 pub mod create_virtual_router_output {
 
-    /// A builder for [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
@@ -737,7 +725,7 @@ pub mod create_virtual_router_output {
             self.virtual_router = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput)
+        /// Consumes the builder and constructs a [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
         pub fn build(self) -> crate::output::CreateVirtualRouterOutput {
             crate::output::CreateVirtualRouterOutput {
                 virtual_router: self.virtual_router,
@@ -746,7 +734,7 @@ pub mod create_virtual_router_output {
     }
 }
 impl CreateVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
     pub fn builder() -> crate::output::create_virtual_router_output::Builder {
         crate::output::create_virtual_router_output::Builder::default()
     }
@@ -772,11 +760,10 @@ impl std::fmt::Debug for DeleteVirtualRouterOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput)
+/// See [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
 pub mod delete_virtual_router_output {
 
-    /// A builder for [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
@@ -795,7 +782,7 @@ pub mod delete_virtual_router_output {
             self.virtual_router = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput)
+        /// Consumes the builder and constructs a [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
         pub fn build(self) -> crate::output::DeleteVirtualRouterOutput {
             crate::output::DeleteVirtualRouterOutput {
                 virtual_router: self.virtual_router,
@@ -804,7 +791,7 @@ pub mod delete_virtual_router_output {
     }
 }
 impl DeleteVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
     pub fn builder() -> crate::output::delete_virtual_router_output::Builder {
         crate::output::delete_virtual_router_output::Builder::default()
     }
@@ -830,11 +817,10 @@ impl std::fmt::Debug for UpdateVirtualRouterOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput)
+/// See [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
 pub mod update_virtual_router_output {
 
-    /// A builder for [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
@@ -853,7 +839,7 @@ pub mod update_virtual_router_output {
             self.virtual_router = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput)
+        /// Consumes the builder and constructs a [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
         pub fn build(self) -> crate::output::UpdateVirtualRouterOutput {
             crate::output::UpdateVirtualRouterOutput {
                 virtual_router: self.virtual_router,
@@ -862,7 +848,7 @@ pub mod update_virtual_router_output {
     }
 }
 impl UpdateVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
     pub fn builder() -> crate::output::update_virtual_router_output::Builder {
         crate::output::update_virtual_router_output::Builder::default()
     }
@@ -888,11 +874,10 @@ impl std::fmt::Debug for DescribeVirtualRouterOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput)
+/// See [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
 pub mod describe_virtual_router_output {
 
-    /// A builder for [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
@@ -911,7 +896,7 @@ pub mod describe_virtual_router_output {
             self.virtual_router = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput)
+        /// Consumes the builder and constructs a [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
         pub fn build(self) -> crate::output::DescribeVirtualRouterOutput {
             crate::output::DescribeVirtualRouterOutput {
                 virtual_router: self.virtual_router,
@@ -920,7 +905,7 @@ pub mod describe_virtual_router_output {
     }
 }
 impl DescribeVirtualRouterOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
     pub fn builder() -> crate::output::describe_virtual_router_output::Builder {
         crate::output::describe_virtual_router_output::Builder::default()
     }
@@ -953,11 +938,10 @@ impl std::fmt::Debug for ListRoutesOutput {
         formatter.finish()
     }
 }
-/// See [`ListRoutesOutput`](crate::output::ListRoutesOutput)
+/// See [`ListRoutesOutput`](crate::output::ListRoutesOutput).
 pub mod list_routes_output {
 
-    /// A builder for [`ListRoutesOutput`](crate::output::ListRoutesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRoutesOutput`](crate::output::ListRoutesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routes: std::option::Option<std::vec::Vec<crate::model::RouteRef>>,
@@ -993,7 +977,7 @@ pub mod list_routes_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::output::ListRoutesOutput)
+        /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::output::ListRoutesOutput).
         pub fn build(self) -> crate::output::ListRoutesOutput {
             crate::output::ListRoutesOutput {
                 routes: self.routes,
@@ -1003,7 +987,7 @@ pub mod list_routes_output {
     }
 }
 impl ListRoutesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRoutesOutput`](crate::output::ListRoutesOutput)
+    /// Creates a new builder-style object to manufacture [`ListRoutesOutput`](crate::output::ListRoutesOutput).
     pub fn builder() -> crate::output::list_routes_output::Builder {
         crate::output::list_routes_output::Builder::default()
     }
@@ -1029,11 +1013,10 @@ impl std::fmt::Debug for CreateRouteOutput {
         formatter.finish()
     }
 }
-/// See [`CreateRouteOutput`](crate::output::CreateRouteOutput)
+/// See [`CreateRouteOutput`](crate::output::CreateRouteOutput).
 pub mod create_route_output {
 
-    /// A builder for [`CreateRouteOutput`](crate::output::CreateRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateRouteOutput`](crate::output::CreateRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
@@ -1049,14 +1032,14 @@ pub mod create_route_output {
             self.route = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRouteOutput`](crate::output::CreateRouteOutput)
+        /// Consumes the builder and constructs a [`CreateRouteOutput`](crate::output::CreateRouteOutput).
         pub fn build(self) -> crate::output::CreateRouteOutput {
             crate::output::CreateRouteOutput { route: self.route }
         }
     }
 }
 impl CreateRouteOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRouteOutput`](crate::output::CreateRouteOutput)
+    /// Creates a new builder-style object to manufacture [`CreateRouteOutput`](crate::output::CreateRouteOutput).
     pub fn builder() -> crate::output::create_route_output::Builder {
         crate::output::create_route_output::Builder::default()
     }
@@ -1082,11 +1065,10 @@ impl std::fmt::Debug for DeleteRouteOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRouteOutput`](crate::output::DeleteRouteOutput)
+/// See [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
 pub mod delete_route_output {
 
-    /// A builder for [`DeleteRouteOutput`](crate::output::DeleteRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
@@ -1102,14 +1084,14 @@ pub mod delete_route_output {
             self.route = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::output::DeleteRouteOutput)
+        /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
         pub fn build(self) -> crate::output::DeleteRouteOutput {
             crate::output::DeleteRouteOutput { route: self.route }
         }
     }
 }
 impl DeleteRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::output::DeleteRouteOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
     pub fn builder() -> crate::output::delete_route_output::Builder {
         crate::output::delete_route_output::Builder::default()
     }
@@ -1135,11 +1117,10 @@ impl std::fmt::Debug for UpdateRouteOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput)
+/// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
 pub mod update_route_output {
 
-    /// A builder for [`UpdateRouteOutput`](crate::output::UpdateRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
@@ -1155,14 +1136,14 @@ pub mod update_route_output {
             self.route = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::output::UpdateRouteOutput)
+        /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
         pub fn build(self) -> crate::output::UpdateRouteOutput {
             crate::output::UpdateRouteOutput { route: self.route }
         }
     }
 }
 impl UpdateRouteOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRouteOutput`](crate::output::UpdateRouteOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
     pub fn builder() -> crate::output::update_route_output::Builder {
         crate::output::update_route_output::Builder::default()
     }
@@ -1188,11 +1169,10 @@ impl std::fmt::Debug for DescribeRouteOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRouteOutput`](crate::output::DescribeRouteOutput)
+/// See [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
 pub mod describe_route_output {
 
-    /// A builder for [`DescribeRouteOutput`](crate::output::DescribeRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
@@ -1208,14 +1188,14 @@ pub mod describe_route_output {
             self.route = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRouteOutput`](crate::output::DescribeRouteOutput)
+        /// Consumes the builder and constructs a [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
         pub fn build(self) -> crate::output::DescribeRouteOutput {
             crate::output::DescribeRouteOutput { route: self.route }
         }
     }
 }
 impl DescribeRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRouteOutput`](crate::output::DescribeRouteOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
     pub fn builder() -> crate::output::describe_route_output::Builder {
         crate::output::describe_route_output::Builder::default()
     }
@@ -1248,11 +1228,10 @@ impl std::fmt::Debug for ListVirtualNodesOutput {
         formatter.finish()
     }
 }
-/// See [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput)
+/// See [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
 pub mod list_virtual_nodes_output {
 
-    /// A builder for [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_nodes: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>,
@@ -1288,7 +1267,7 @@ pub mod list_virtual_nodes_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput)
+        /// Consumes the builder and constructs a [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
         pub fn build(self) -> crate::output::ListVirtualNodesOutput {
             crate::output::ListVirtualNodesOutput {
                 virtual_nodes: self.virtual_nodes,
@@ -1298,7 +1277,7 @@ pub mod list_virtual_nodes_output {
     }
 }
 impl ListVirtualNodesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
     pub fn builder() -> crate::output::list_virtual_nodes_output::Builder {
         crate::output::list_virtual_nodes_output::Builder::default()
     }
@@ -1324,11 +1303,10 @@ impl std::fmt::Debug for CreateVirtualNodeOutput {
         formatter.finish()
     }
 }
-/// See [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput)
+/// See [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
 pub mod create_virtual_node_output {
 
-    /// A builder for [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
@@ -1347,7 +1325,7 @@ pub mod create_virtual_node_output {
             self.virtual_node = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput)
+        /// Consumes the builder and constructs a [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
         pub fn build(self) -> crate::output::CreateVirtualNodeOutput {
             crate::output::CreateVirtualNodeOutput {
                 virtual_node: self.virtual_node,
@@ -1356,7 +1334,7 @@ pub mod create_virtual_node_output {
     }
 }
 impl CreateVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
     pub fn builder() -> crate::output::create_virtual_node_output::Builder {
         crate::output::create_virtual_node_output::Builder::default()
     }
@@ -1382,11 +1360,10 @@ impl std::fmt::Debug for DeleteVirtualNodeOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput)
+/// See [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
 pub mod delete_virtual_node_output {
 
-    /// A builder for [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
@@ -1405,7 +1382,7 @@ pub mod delete_virtual_node_output {
             self.virtual_node = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput)
+        /// Consumes the builder and constructs a [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
         pub fn build(self) -> crate::output::DeleteVirtualNodeOutput {
             crate::output::DeleteVirtualNodeOutput {
                 virtual_node: self.virtual_node,
@@ -1414,7 +1391,7 @@ pub mod delete_virtual_node_output {
     }
 }
 impl DeleteVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
     pub fn builder() -> crate::output::delete_virtual_node_output::Builder {
         crate::output::delete_virtual_node_output::Builder::default()
     }
@@ -1440,11 +1417,10 @@ impl std::fmt::Debug for UpdateVirtualNodeOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput)
+/// See [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
 pub mod update_virtual_node_output {
 
-    /// A builder for [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
@@ -1463,7 +1439,7 @@ pub mod update_virtual_node_output {
             self.virtual_node = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput)
+        /// Consumes the builder and constructs a [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
         pub fn build(self) -> crate::output::UpdateVirtualNodeOutput {
             crate::output::UpdateVirtualNodeOutput {
                 virtual_node: self.virtual_node,
@@ -1472,7 +1448,7 @@ pub mod update_virtual_node_output {
     }
 }
 impl UpdateVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
     pub fn builder() -> crate::output::update_virtual_node_output::Builder {
         crate::output::update_virtual_node_output::Builder::default()
     }
@@ -1498,11 +1474,10 @@ impl std::fmt::Debug for DescribeVirtualNodeOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput)
+/// See [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
 pub mod describe_virtual_node_output {
 
-    /// A builder for [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
@@ -1521,7 +1496,7 @@ pub mod describe_virtual_node_output {
             self.virtual_node = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput)
+        /// Consumes the builder and constructs a [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
         pub fn build(self) -> crate::output::DescribeVirtualNodeOutput {
             crate::output::DescribeVirtualNodeOutput {
                 virtual_node: self.virtual_node,
@@ -1530,7 +1505,7 @@ pub mod describe_virtual_node_output {
     }
 }
 impl DescribeVirtualNodeOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
     pub fn builder() -> crate::output::describe_virtual_node_output::Builder {
         crate::output::describe_virtual_node_output::Builder::default()
     }
@@ -1563,11 +1538,10 @@ impl std::fmt::Debug for ListVirtualGatewaysOutput {
         formatter.finish()
     }
 }
-/// See [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput)
+/// See [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
 pub mod list_virtual_gateways_output {
 
-    /// A builder for [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateways:
@@ -1604,7 +1578,7 @@ pub mod list_virtual_gateways_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput)
+        /// Consumes the builder and constructs a [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
         pub fn build(self) -> crate::output::ListVirtualGatewaysOutput {
             crate::output::ListVirtualGatewaysOutput {
                 virtual_gateways: self.virtual_gateways,
@@ -1614,7 +1588,7 @@ pub mod list_virtual_gateways_output {
     }
 }
 impl ListVirtualGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
     pub fn builder() -> crate::output::list_virtual_gateways_output::Builder {
         crate::output::list_virtual_gateways_output::Builder::default()
     }
@@ -1640,11 +1614,10 @@ impl std::fmt::Debug for CreateVirtualGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput)
+/// See [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
 pub mod create_virtual_gateway_output {
 
-    /// A builder for [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
@@ -1663,7 +1636,7 @@ pub mod create_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput)
+        /// Consumes the builder and constructs a [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
         pub fn build(self) -> crate::output::CreateVirtualGatewayOutput {
             crate::output::CreateVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
@@ -1672,7 +1645,7 @@ pub mod create_virtual_gateway_output {
     }
 }
 impl CreateVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
     pub fn builder() -> crate::output::create_virtual_gateway_output::Builder {
         crate::output::create_virtual_gateway_output::Builder::default()
     }
@@ -1698,11 +1671,10 @@ impl std::fmt::Debug for DeleteVirtualGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput)
+/// See [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
 pub mod delete_virtual_gateway_output {
 
-    /// A builder for [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
@@ -1721,7 +1693,7 @@ pub mod delete_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput)
+        /// Consumes the builder and constructs a [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
         pub fn build(self) -> crate::output::DeleteVirtualGatewayOutput {
             crate::output::DeleteVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
@@ -1730,7 +1702,7 @@ pub mod delete_virtual_gateway_output {
     }
 }
 impl DeleteVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
     pub fn builder() -> crate::output::delete_virtual_gateway_output::Builder {
         crate::output::delete_virtual_gateway_output::Builder::default()
     }
@@ -1756,11 +1728,10 @@ impl std::fmt::Debug for UpdateVirtualGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput)
+/// See [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
 pub mod update_virtual_gateway_output {
 
-    /// A builder for [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
@@ -1779,7 +1750,7 @@ pub mod update_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput)
+        /// Consumes the builder and constructs a [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
         pub fn build(self) -> crate::output::UpdateVirtualGatewayOutput {
             crate::output::UpdateVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
@@ -1788,7 +1759,7 @@ pub mod update_virtual_gateway_output {
     }
 }
 impl UpdateVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
     pub fn builder() -> crate::output::update_virtual_gateway_output::Builder {
         crate::output::update_virtual_gateway_output::Builder::default()
     }
@@ -1814,11 +1785,10 @@ impl std::fmt::Debug for DescribeVirtualGatewayOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput)
+/// See [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
 pub mod describe_virtual_gateway_output {
 
-    /// A builder for [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
@@ -1837,7 +1807,7 @@ pub mod describe_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput)
+        /// Consumes the builder and constructs a [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
         pub fn build(self) -> crate::output::DescribeVirtualGatewayOutput {
             crate::output::DescribeVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
@@ -1846,7 +1816,7 @@ pub mod describe_virtual_gateway_output {
     }
 }
 impl DescribeVirtualGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
     pub fn builder() -> crate::output::describe_virtual_gateway_output::Builder {
         crate::output::describe_virtual_gateway_output::Builder::default()
     }
@@ -1879,11 +1849,10 @@ impl std::fmt::Debug for ListGatewayRoutesOutput {
         formatter.finish()
     }
 }
-/// See [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput)
+/// See [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
 pub mod list_gateway_routes_output {
 
-    /// A builder for [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_routes:
@@ -1920,7 +1889,7 @@ pub mod list_gateway_routes_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput)
+        /// Consumes the builder and constructs a [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
         pub fn build(self) -> crate::output::ListGatewayRoutesOutput {
             crate::output::ListGatewayRoutesOutput {
                 gateway_routes: self.gateway_routes,
@@ -1930,7 +1899,7 @@ pub mod list_gateway_routes_output {
     }
 }
 impl ListGatewayRoutesOutput {
-    /// Creates a new builder-style object to manufacture [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput)
+    /// Creates a new builder-style object to manufacture [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
     pub fn builder() -> crate::output::list_gateway_routes_output::Builder {
         crate::output::list_gateway_routes_output::Builder::default()
     }
@@ -1956,11 +1925,10 @@ impl std::fmt::Debug for CreateGatewayRouteOutput {
         formatter.finish()
     }
 }
-/// See [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput)
+/// See [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
 pub mod create_gateway_route_output {
 
-    /// A builder for [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
@@ -1979,7 +1947,7 @@ pub mod create_gateway_route_output {
             self.gateway_route = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput)
+        /// Consumes the builder and constructs a [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
         pub fn build(self) -> crate::output::CreateGatewayRouteOutput {
             crate::output::CreateGatewayRouteOutput {
                 gateway_route: self.gateway_route,
@@ -1988,7 +1956,7 @@ pub mod create_gateway_route_output {
     }
 }
 impl CreateGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput)
+    /// Creates a new builder-style object to manufacture [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
     pub fn builder() -> crate::output::create_gateway_route_output::Builder {
         crate::output::create_gateway_route_output::Builder::default()
     }
@@ -2014,11 +1982,10 @@ impl std::fmt::Debug for DeleteGatewayRouteOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput)
+/// See [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
 pub mod delete_gateway_route_output {
 
-    /// A builder for [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
@@ -2037,7 +2004,7 @@ pub mod delete_gateway_route_output {
             self.gateway_route = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput)
+        /// Consumes the builder and constructs a [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
         pub fn build(self) -> crate::output::DeleteGatewayRouteOutput {
             crate::output::DeleteGatewayRouteOutput {
                 gateway_route: self.gateway_route,
@@ -2046,7 +2013,7 @@ pub mod delete_gateway_route_output {
     }
 }
 impl DeleteGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
     pub fn builder() -> crate::output::delete_gateway_route_output::Builder {
         crate::output::delete_gateway_route_output::Builder::default()
     }
@@ -2072,11 +2039,10 @@ impl std::fmt::Debug for UpdateGatewayRouteOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput)
+/// See [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
 pub mod update_gateway_route_output {
 
-    /// A builder for [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
@@ -2095,7 +2061,7 @@ pub mod update_gateway_route_output {
             self.gateway_route = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput)
+        /// Consumes the builder and constructs a [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
         pub fn build(self) -> crate::output::UpdateGatewayRouteOutput {
             crate::output::UpdateGatewayRouteOutput {
                 gateway_route: self.gateway_route,
@@ -2104,7 +2070,7 @@ pub mod update_gateway_route_output {
     }
 }
 impl UpdateGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
     pub fn builder() -> crate::output::update_gateway_route_output::Builder {
         crate::output::update_gateway_route_output::Builder::default()
     }
@@ -2130,11 +2096,10 @@ impl std::fmt::Debug for DescribeGatewayRouteOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput)
+/// See [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
 pub mod describe_gateway_route_output {
 
-    /// A builder for [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
@@ -2153,7 +2118,7 @@ pub mod describe_gateway_route_output {
             self.gateway_route = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput)
+        /// Consumes the builder and constructs a [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
         pub fn build(self) -> crate::output::DescribeGatewayRouteOutput {
             crate::output::DescribeGatewayRouteOutput {
                 gateway_route: self.gateway_route,
@@ -2162,7 +2127,7 @@ pub mod describe_gateway_route_output {
     }
 }
 impl DescribeGatewayRouteOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
     pub fn builder() -> crate::output::describe_gateway_route_output::Builder {
         crate::output::describe_gateway_route_output::Builder::default()
     }
@@ -2178,22 +2143,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -2209,22 +2173,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -2257,11 +2220,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -2297,7 +2259,7 @@ pub mod list_tags_for_resource_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags,
@@ -2307,7 +2269,7 @@ pub mod list_tags_for_resource_output {
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }

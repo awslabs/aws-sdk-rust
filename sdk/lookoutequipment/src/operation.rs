@@ -10,7 +10,7 @@ pub struct CreateDataset {
     _private: (),
 }
 impl CreateDataset {
-    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput).
     pub fn builder() -> crate::input::create_dataset_input::Builder {
         crate::input::create_dataset_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateInferenceScheduler {
     _private: (),
 }
 impl CreateInferenceScheduler {
-    /// Creates a new builder-style object to manufacture [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput)
+    /// Creates a new builder-style object to manufacture [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput).
     pub fn builder() -> crate::input::create_inference_scheduler_input::Builder {
         crate::input::create_inference_scheduler_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateModel {
     _private: (),
 }
 impl CreateModel {
-    /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::input::CreateModelInput)
+    /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::input::CreateModelInput).
     pub fn builder() -> crate::input::create_model_input::Builder {
         crate::input::create_model_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct DeleteDataset {
     _private: (),
 }
 impl DeleteDataset {
-    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
     pub fn builder() -> crate::input::delete_dataset_input::Builder {
         crate::input::delete_dataset_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct DeleteInferenceScheduler {
     _private: (),
 }
 impl DeleteInferenceScheduler {
-    /// Creates a new builder-style object to manufacture [`DeleteInferenceSchedulerInput`](crate::input::DeleteInferenceSchedulerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInferenceSchedulerInput`](crate::input::DeleteInferenceSchedulerInput).
     pub fn builder() -> crate::input::delete_inference_scheduler_input::Builder {
         crate::input::delete_inference_scheduler_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct DeleteModel {
     _private: (),
 }
 impl DeleteModel {
-    /// Creates a new builder-style object to manufacture [`DeleteModelInput`](crate::input::DeleteModelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteModelInput`](crate::input::DeleteModelInput).
     pub fn builder() -> crate::input::delete_model_input::Builder {
         crate::input::delete_model_input::Builder::default()
     }
@@ -206,7 +206,7 @@ pub struct DescribeDataIngestionJob {
     _private: (),
 }
 impl DescribeDataIngestionJob {
-    /// Creates a new builder-style object to manufacture [`DescribeDataIngestionJobInput`](crate::input::DescribeDataIngestionJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDataIngestionJobInput`](crate::input::DescribeDataIngestionJobInput).
     pub fn builder() -> crate::input::describe_data_ingestion_job_input::Builder {
         crate::input::describe_data_ingestion_job_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct DescribeDataset {
     _private: (),
 }
 impl DescribeDataset {
-    /// Creates a new builder-style object to manufacture [`DescribeDatasetInput`](crate::input::DescribeDatasetInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDatasetInput`](crate::input::DescribeDatasetInput).
     pub fn builder() -> crate::input::describe_dataset_input::Builder {
         crate::input::describe_dataset_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DescribeInferenceScheduler {
     _private: (),
 }
 impl DescribeInferenceScheduler {
-    /// Creates a new builder-style object to manufacture [`DescribeInferenceSchedulerInput`](crate::input::DescribeInferenceSchedulerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInferenceSchedulerInput`](crate::input::DescribeInferenceSchedulerInput).
     pub fn builder() -> crate::input::describe_inference_scheduler_input::Builder {
         crate::input::describe_inference_scheduler_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DescribeModel {
     _private: (),
 }
 impl DescribeModel {
-    /// Creates a new builder-style object to manufacture [`DescribeModelInput`](crate::input::DescribeModelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeModelInput`](crate::input::DescribeModelInput).
     pub fn builder() -> crate::input::describe_model_input::Builder {
         crate::input::describe_model_input::Builder::default()
     }
@@ -340,7 +340,7 @@ pub struct ListDataIngestionJobs {
     _private: (),
 }
 impl ListDataIngestionJobs {
-    /// Creates a new builder-style object to manufacture [`ListDataIngestionJobsInput`](crate::input::ListDataIngestionJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListDataIngestionJobsInput`](crate::input::ListDataIngestionJobsInput).
     pub fn builder() -> crate::input::list_data_ingestion_jobs_input::Builder {
         crate::input::list_data_ingestion_jobs_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct ListDatasets {
     _private: (),
 }
 impl ListDatasets {
-    /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput)
+    /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput).
     pub fn builder() -> crate::input::list_datasets_input::Builder {
         crate::input::list_datasets_input::Builder::default()
     }
@@ -406,7 +406,7 @@ pub struct ListInferenceExecutions {
     _private: (),
 }
 impl ListInferenceExecutions {
-    /// Creates a new builder-style object to manufacture [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput).
     pub fn builder() -> crate::input::list_inference_executions_input::Builder {
         crate::input::list_inference_executions_input::Builder::default()
     }
@@ -440,7 +440,7 @@ pub struct ListInferenceSchedulers {
     _private: (),
 }
 impl ListInferenceSchedulers {
-    /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput)
+    /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput).
     pub fn builder() -> crate::input::list_inference_schedulers_input::Builder {
         crate::input::list_inference_schedulers_input::Builder::default()
     }
@@ -474,7 +474,7 @@ pub struct ListModels {
     _private: (),
 }
 impl ListModels {
-    /// Creates a new builder-style object to manufacture [`ListModelsInput`](crate::input::ListModelsInput)
+    /// Creates a new builder-style object to manufacture [`ListModelsInput`](crate::input::ListModelsInput).
     pub fn builder() -> crate::input::list_models_input::Builder {
         crate::input::list_models_input::Builder::default()
     }
@@ -506,7 +506,7 @@ pub struct ListSensorStatistics {
     _private: (),
 }
 impl ListSensorStatistics {
-    /// Creates a new builder-style object to manufacture [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput)
+    /// Creates a new builder-style object to manufacture [`ListSensorStatisticsInput`](crate::input::ListSensorStatisticsInput).
     pub fn builder() -> crate::input::list_sensor_statistics_input::Builder {
         crate::input::list_sensor_statistics_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -574,7 +574,7 @@ pub struct StartDataIngestionJob {
     _private: (),
 }
 impl StartDataIngestionJob {
-    /// Creates a new builder-style object to manufacture [`StartDataIngestionJobInput`](crate::input::StartDataIngestionJobInput)
+    /// Creates a new builder-style object to manufacture [`StartDataIngestionJobInput`](crate::input::StartDataIngestionJobInput).
     pub fn builder() -> crate::input::start_data_ingestion_job_input::Builder {
         crate::input::start_data_ingestion_job_input::Builder::default()
     }
@@ -608,7 +608,7 @@ pub struct StartInferenceScheduler {
     _private: (),
 }
 impl StartInferenceScheduler {
-    /// Creates a new builder-style object to manufacture [`StartInferenceSchedulerInput`](crate::input::StartInferenceSchedulerInput)
+    /// Creates a new builder-style object to manufacture [`StartInferenceSchedulerInput`](crate::input::StartInferenceSchedulerInput).
     pub fn builder() -> crate::input::start_inference_scheduler_input::Builder {
         crate::input::start_inference_scheduler_input::Builder::default()
     }
@@ -642,7 +642,7 @@ pub struct StopInferenceScheduler {
     _private: (),
 }
 impl StopInferenceScheduler {
-    /// Creates a new builder-style object to manufacture [`StopInferenceSchedulerInput`](crate::input::StopInferenceSchedulerInput)
+    /// Creates a new builder-style object to manufacture [`StopInferenceSchedulerInput`](crate::input::StopInferenceSchedulerInput).
     pub fn builder() -> crate::input::stop_inference_scheduler_input::Builder {
         crate::input::stop_inference_scheduler_input::Builder::default()
     }
@@ -676,7 +676,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -708,7 +708,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -740,7 +740,7 @@ pub struct UpdateInferenceScheduler {
     _private: (),
 }
 impl UpdateInferenceScheduler {
-    /// Creates a new builder-style object to manufacture [`UpdateInferenceSchedulerInput`](crate::input::UpdateInferenceSchedulerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateInferenceSchedulerInput`](crate::input::UpdateInferenceSchedulerInput).
     pub fn builder() -> crate::input::update_inference_scheduler_input::Builder {
         crate::input::update_inference_scheduler_input::Builder::default()
     }

@@ -243,11 +243,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -274,7 +273,7 @@ pub mod tag {
             self.tag_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 tag_key: self.tag_key,
@@ -284,7 +283,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -594,11 +593,10 @@ impl std::fmt::Debug for KeyMetadata {
         formatter.finish()
     }
 }
-/// See [`KeyMetadata`](crate::model::KeyMetadata)
+/// See [`KeyMetadata`](crate::model::KeyMetadata).
 pub mod key_metadata {
 
-    /// A builder for [`KeyMetadata`](crate::model::KeyMetadata)
-    #[non_exhaustive]
+    /// A builder for [`KeyMetadata`](crate::model::KeyMetadata).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
@@ -961,7 +959,7 @@ pub mod key_metadata {
             self.mac_algorithms = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata)
+        /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata).
         pub fn build(self) -> crate::model::KeyMetadata {
             crate::model::KeyMetadata {
                 aws_account_id: self.aws_account_id,
@@ -992,7 +990,7 @@ pub mod key_metadata {
     }
 }
 impl KeyMetadata {
-    /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata)
+    /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata).
     pub fn builder() -> crate::model::key_metadata::Builder {
         crate::model::key_metadata::Builder::default()
     }
@@ -1033,11 +1031,10 @@ impl std::fmt::Debug for MultiRegionConfiguration {
         formatter.finish()
     }
 }
-/// See [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
+/// See [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
 pub mod multi_region_configuration {
 
-    /// A builder for [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
@@ -1090,7 +1087,7 @@ pub mod multi_region_configuration {
             self.replica_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
+        /// Consumes the builder and constructs a [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
         pub fn build(self) -> crate::model::MultiRegionConfiguration {
             crate::model::MultiRegionConfiguration {
                 multi_region_key_type: self.multi_region_key_type,
@@ -1101,7 +1098,7 @@ pub mod multi_region_configuration {
     }
 }
 impl MultiRegionConfiguration {
-    /// Creates a new builder-style object to manufacture [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration)
+    /// Creates a new builder-style object to manufacture [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
     pub fn builder() -> crate::model::multi_region_configuration::Builder {
         crate::model::multi_region_configuration::Builder::default()
     }
@@ -1134,11 +1131,10 @@ impl std::fmt::Debug for MultiRegionKey {
         formatter.finish()
     }
 }
-/// See [`MultiRegionKey`](crate::model::MultiRegionKey)
+/// See [`MultiRegionKey`](crate::model::MultiRegionKey).
 pub mod multi_region_key {
 
-    /// A builder for [`MultiRegionKey`](crate::model::MultiRegionKey)
-    #[non_exhaustive]
+    /// A builder for [`MultiRegionKey`](crate::model::MultiRegionKey).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1165,7 +1161,7 @@ pub mod multi_region_key {
             self.region = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiRegionKey`](crate::model::MultiRegionKey)
+        /// Consumes the builder and constructs a [`MultiRegionKey`](crate::model::MultiRegionKey).
         pub fn build(self) -> crate::model::MultiRegionKey {
             crate::model::MultiRegionKey {
                 arn: self.arn,
@@ -1175,7 +1171,7 @@ pub mod multi_region_key {
     }
 }
 impl MultiRegionKey {
-    /// Creates a new builder-style object to manufacture [`MultiRegionKey`](crate::model::MultiRegionKey)
+    /// Creates a new builder-style object to manufacture [`MultiRegionKey`](crate::model::MultiRegionKey).
     pub fn builder() -> crate::model::multi_region_key::Builder {
         crate::model::multi_region_key::Builder::default()
     }
@@ -1821,11 +1817,10 @@ impl std::fmt::Debug for GrantListEntry {
         formatter.finish()
     }
 }
-/// See [`GrantListEntry`](crate::model::GrantListEntry)
+/// See [`GrantListEntry`](crate::model::GrantListEntry).
 pub mod grant_list_entry {
 
-    /// A builder for [`GrantListEntry`](crate::model::GrantListEntry)
-    #[non_exhaustive]
+    /// A builder for [`GrantListEntry`](crate::model::GrantListEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -1955,7 +1950,7 @@ pub mod grant_list_entry {
             self.constraints = input;
             self
         }
-        /// Consumes the builder and constructs a [`GrantListEntry`](crate::model::GrantListEntry)
+        /// Consumes the builder and constructs a [`GrantListEntry`](crate::model::GrantListEntry).
         pub fn build(self) -> crate::model::GrantListEntry {
             crate::model::GrantListEntry {
                 key_id: self.key_id,
@@ -1972,7 +1967,7 @@ pub mod grant_list_entry {
     }
 }
 impl GrantListEntry {
-    /// Creates a new builder-style object to manufacture [`GrantListEntry`](crate::model::GrantListEntry)
+    /// Creates a new builder-style object to manufacture [`GrantListEntry`](crate::model::GrantListEntry).
     pub fn builder() -> crate::model::grant_list_entry::Builder {
         crate::model::grant_list_entry::Builder::default()
     }
@@ -2018,11 +2013,10 @@ impl std::fmt::Debug for GrantConstraints {
         formatter.finish()
     }
 }
-/// See [`GrantConstraints`](crate::model::GrantConstraints)
+/// See [`GrantConstraints`](crate::model::GrantConstraints).
 pub mod grant_constraints {
 
-    /// A builder for [`GrantConstraints`](crate::model::GrantConstraints)
-    #[non_exhaustive]
+    /// A builder for [`GrantConstraints`](crate::model::GrantConstraints).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_context_subset: std::option::Option<
@@ -2083,7 +2077,7 @@ pub mod grant_constraints {
             self.encryption_context_equals = input;
             self
         }
-        /// Consumes the builder and constructs a [`GrantConstraints`](crate::model::GrantConstraints)
+        /// Consumes the builder and constructs a [`GrantConstraints`](crate::model::GrantConstraints).
         pub fn build(self) -> crate::model::GrantConstraints {
             crate::model::GrantConstraints {
                 encryption_context_subset: self.encryption_context_subset,
@@ -2093,7 +2087,7 @@ pub mod grant_constraints {
     }
 }
 impl GrantConstraints {
-    /// Creates a new builder-style object to manufacture [`GrantConstraints`](crate::model::GrantConstraints)
+    /// Creates a new builder-style object to manufacture [`GrantConstraints`](crate::model::GrantConstraints).
     pub fn builder() -> crate::model::grant_constraints::Builder {
         crate::model::grant_constraints::Builder::default()
     }
@@ -2258,11 +2252,10 @@ impl std::fmt::Debug for KeyListEntry {
         formatter.finish()
     }
 }
-/// See [`KeyListEntry`](crate::model::KeyListEntry)
+/// See [`KeyListEntry`](crate::model::KeyListEntry).
 pub mod key_list_entry {
 
-    /// A builder for [`KeyListEntry`](crate::model::KeyListEntry)
-    #[non_exhaustive]
+    /// A builder for [`KeyListEntry`](crate::model::KeyListEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_id: std::option::Option<std::string::String>,
@@ -2289,7 +2282,7 @@ pub mod key_list_entry {
             self.key_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyListEntry`](crate::model::KeyListEntry)
+        /// Consumes the builder and constructs a [`KeyListEntry`](crate::model::KeyListEntry).
         pub fn build(self) -> crate::model::KeyListEntry {
             crate::model::KeyListEntry {
                 key_id: self.key_id,
@@ -2299,7 +2292,7 @@ pub mod key_list_entry {
     }
 }
 impl KeyListEntry {
-    /// Creates a new builder-style object to manufacture [`KeyListEntry`](crate::model::KeyListEntry)
+    /// Creates a new builder-style object to manufacture [`KeyListEntry`](crate::model::KeyListEntry).
     pub fn builder() -> crate::model::key_list_entry::Builder {
         crate::model::key_list_entry::Builder::default()
     }
@@ -2353,11 +2346,10 @@ impl std::fmt::Debug for AliasListEntry {
         formatter.finish()
     }
 }
-/// See [`AliasListEntry`](crate::model::AliasListEntry)
+/// See [`AliasListEntry`](crate::model::AliasListEntry).
 pub mod alias_list_entry {
 
-    /// A builder for [`AliasListEntry`](crate::model::AliasListEntry)
-    #[non_exhaustive]
+    /// A builder for [`AliasListEntry`](crate::model::AliasListEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alias_name: std::option::Option<std::string::String>,
@@ -2426,7 +2418,7 @@ pub mod alias_list_entry {
             self.last_updated_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`AliasListEntry`](crate::model::AliasListEntry)
+        /// Consumes the builder and constructs a [`AliasListEntry`](crate::model::AliasListEntry).
         pub fn build(self) -> crate::model::AliasListEntry {
             crate::model::AliasListEntry {
                 alias_name: self.alias_name,
@@ -2439,7 +2431,7 @@ pub mod alias_list_entry {
     }
 }
 impl AliasListEntry {
-    /// Creates a new builder-style object to manufacture [`AliasListEntry`](crate::model::AliasListEntry)
+    /// Creates a new builder-style object to manufacture [`AliasListEntry`](crate::model::AliasListEntry).
     pub fn builder() -> crate::model::alias_list_entry::Builder {
         crate::model::alias_list_entry::Builder::default()
     }
@@ -2787,11 +2779,10 @@ impl std::fmt::Debug for CustomKeyStoresListEntry {
         formatter.finish()
     }
 }
-/// See [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry)
+/// See [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
 pub mod custom_key_stores_list_entry {
 
-    /// A builder for [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry)
-    #[non_exhaustive]
+    /// A builder for [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
@@ -2928,7 +2919,7 @@ pub mod custom_key_stores_list_entry {
             self.creation_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry)
+        /// Consumes the builder and constructs a [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
         pub fn build(self) -> crate::model::CustomKeyStoresListEntry {
             crate::model::CustomKeyStoresListEntry {
                 custom_key_store_id: self.custom_key_store_id,
@@ -2943,7 +2934,7 @@ pub mod custom_key_stores_list_entry {
     }
 }
 impl CustomKeyStoresListEntry {
-    /// Creates a new builder-style object to manufacture [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry)
+    /// Creates a new builder-style object to manufacture [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
     pub fn builder() -> crate::model::custom_key_stores_list_entry::Builder {
         crate::model::custom_key_stores_list_entry::Builder::default()
     }

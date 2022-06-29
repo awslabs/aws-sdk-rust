@@ -10,7 +10,7 @@ pub struct AcceptInputDeviceTransfer {
     _private: (),
 }
 impl AcceptInputDeviceTransfer {
-    /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferInput`](crate::input::AcceptInputDeviceTransferInput)
+    /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferInput`](crate::input::AcceptInputDeviceTransferInput).
     pub fn builder() -> crate::input::accept_input_device_transfer_input::Builder {
         crate::input::accept_input_device_transfer_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchDelete {
     _private: (),
 }
 impl BatchDelete {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteInput`](crate::input::BatchDeleteInput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteInput`](crate::input::BatchDeleteInput).
     pub fn builder() -> crate::input::batch_delete_input::Builder {
         crate::input::batch_delete_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct BatchStart {
     _private: (),
 }
 impl BatchStart {
-    /// Creates a new builder-style object to manufacture [`BatchStartInput`](crate::input::BatchStartInput)
+    /// Creates a new builder-style object to manufacture [`BatchStartInput`](crate::input::BatchStartInput).
     pub fn builder() -> crate::input::batch_start_input::Builder {
         crate::input::batch_start_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct BatchStop {
     _private: (),
 }
 impl BatchStop {
-    /// Creates a new builder-style object to manufacture [`BatchStopInput`](crate::input::BatchStopInput)
+    /// Creates a new builder-style object to manufacture [`BatchStopInput`](crate::input::BatchStopInput).
     pub fn builder() -> crate::input::batch_stop_input::Builder {
         crate::input::batch_stop_input::Builder::default()
     }
@@ -139,7 +139,7 @@ pub struct BatchUpdateSchedule {
     _private: (),
 }
 impl BatchUpdateSchedule {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateScheduleInput`](crate::input::BatchUpdateScheduleInput)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateScheduleInput`](crate::input::BatchUpdateScheduleInput).
     pub fn builder() -> crate::input::batch_update_schedule_input::Builder {
         crate::input::batch_update_schedule_input::Builder::default()
     }
@@ -173,7 +173,7 @@ pub struct CancelInputDeviceTransfer {
     _private: (),
 }
 impl CancelInputDeviceTransfer {
-    /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferInput`](crate::input::CancelInputDeviceTransferInput)
+    /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferInput`](crate::input::CancelInputDeviceTransferInput).
     pub fn builder() -> crate::input::cancel_input_device_transfer_input::Builder {
         crate::input::cancel_input_device_transfer_input::Builder::default()
     }
@@ -207,7 +207,7 @@ pub struct ClaimDevice {
     _private: (),
 }
 impl ClaimDevice {
-    /// Creates a new builder-style object to manufacture [`ClaimDeviceInput`](crate::input::ClaimDeviceInput)
+    /// Creates a new builder-style object to manufacture [`ClaimDeviceInput`](crate::input::ClaimDeviceInput).
     pub fn builder() -> crate::input::claim_device_input::Builder {
         crate::input::claim_device_input::Builder::default()
     }
@@ -239,7 +239,7 @@ pub struct CreateChannel {
     _private: (),
 }
 impl CreateChannel {
-    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput)
+    /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::input::CreateChannelInput).
     pub fn builder() -> crate::input::create_channel_input::Builder {
         crate::input::create_channel_input::Builder::default()
     }
@@ -271,7 +271,7 @@ pub struct CreateInput {
     _private: (),
 }
 impl CreateInput {
-    /// Creates a new builder-style object to manufacture [`CreateInputInput`](crate::input::CreateInputInput)
+    /// Creates a new builder-style object to manufacture [`CreateInputInput`](crate::input::CreateInputInput).
     pub fn builder() -> crate::input::create_input_input::Builder {
         crate::input::create_input_input::Builder::default()
     }
@@ -303,7 +303,7 @@ pub struct CreateInputSecurityGroup {
     _private: (),
 }
 impl CreateInputSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`CreateInputSecurityGroupInput`](crate::input::CreateInputSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateInputSecurityGroupInput`](crate::input::CreateInputSecurityGroupInput).
     pub fn builder() -> crate::input::create_input_security_group_input::Builder {
         crate::input::create_input_security_group_input::Builder::default()
     }
@@ -337,7 +337,7 @@ pub struct CreateMultiplex {
     _private: (),
 }
 impl CreateMultiplex {
-    /// Creates a new builder-style object to manufacture [`CreateMultiplexInput`](crate::input::CreateMultiplexInput)
+    /// Creates a new builder-style object to manufacture [`CreateMultiplexInput`](crate::input::CreateMultiplexInput).
     pub fn builder() -> crate::input::create_multiplex_input::Builder {
         crate::input::create_multiplex_input::Builder::default()
     }
@@ -371,7 +371,7 @@ pub struct CreateMultiplexProgram {
     _private: (),
 }
 impl CreateMultiplexProgram {
-    /// Creates a new builder-style object to manufacture [`CreateMultiplexProgramInput`](crate::input::CreateMultiplexProgramInput)
+    /// Creates a new builder-style object to manufacture [`CreateMultiplexProgramInput`](crate::input::CreateMultiplexProgramInput).
     pub fn builder() -> crate::input::create_multiplex_program_input::Builder {
         crate::input::create_multiplex_program_input::Builder::default()
     }
@@ -405,7 +405,7 @@ pub struct CreatePartnerInput {
     _private: (),
 }
 impl CreatePartnerInput {
-    /// Creates a new builder-style object to manufacture [`CreatePartnerInputInput`](crate::input::CreatePartnerInputInput)
+    /// Creates a new builder-style object to manufacture [`CreatePartnerInputInput`](crate::input::CreatePartnerInputInput).
     pub fn builder() -> crate::input::create_partner_input_input::Builder {
         crate::input::create_partner_input_input::Builder::default()
     }
@@ -439,7 +439,7 @@ pub struct CreateTags {
     _private: (),
 }
 impl CreateTags {
-    /// Creates a new builder-style object to manufacture [`CreateTagsInput`](crate::input::CreateTagsInput)
+    /// Creates a new builder-style object to manufacture [`CreateTagsInput`](crate::input::CreateTagsInput).
     pub fn builder() -> crate::input::create_tags_input::Builder {
         crate::input::create_tags_input::Builder::default()
     }
@@ -471,7 +471,7 @@ pub struct DeleteChannel {
     _private: (),
 }
 impl DeleteChannel {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteChannelInput`](crate::input::DeleteChannelInput).
     pub fn builder() -> crate::input::delete_channel_input::Builder {
         crate::input::delete_channel_input::Builder::default()
     }
@@ -503,7 +503,7 @@ pub struct DeleteInput {
     _private: (),
 }
 impl DeleteInput {
-    /// Creates a new builder-style object to manufacture [`DeleteInputInput`](crate::input::DeleteInputInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInputInput`](crate::input::DeleteInputInput).
     pub fn builder() -> crate::input::delete_input_input::Builder {
         crate::input::delete_input_input::Builder::default()
     }
@@ -535,7 +535,7 @@ pub struct DeleteInputSecurityGroup {
     _private: (),
 }
 impl DeleteInputSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupInput`](crate::input::DeleteInputSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupInput`](crate::input::DeleteInputSecurityGroupInput).
     pub fn builder() -> crate::input::delete_input_security_group_input::Builder {
         crate::input::delete_input_security_group_input::Builder::default()
     }
@@ -569,7 +569,7 @@ pub struct DeleteMultiplex {
     _private: (),
 }
 impl DeleteMultiplex {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiplexInput`](crate::input::DeleteMultiplexInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMultiplexInput`](crate::input::DeleteMultiplexInput).
     pub fn builder() -> crate::input::delete_multiplex_input::Builder {
         crate::input::delete_multiplex_input::Builder::default()
     }
@@ -603,7 +603,7 @@ pub struct DeleteMultiplexProgram {
     _private: (),
 }
 impl DeleteMultiplexProgram {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiplexProgramInput`](crate::input::DeleteMultiplexProgramInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMultiplexProgramInput`](crate::input::DeleteMultiplexProgramInput).
     pub fn builder() -> crate::input::delete_multiplex_program_input::Builder {
         crate::input::delete_multiplex_program_input::Builder::default()
     }
@@ -637,7 +637,7 @@ pub struct DeleteReservation {
     _private: (),
 }
 impl DeleteReservation {
-    /// Creates a new builder-style object to manufacture [`DeleteReservationInput`](crate::input::DeleteReservationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReservationInput`](crate::input::DeleteReservationInput).
     pub fn builder() -> crate::input::delete_reservation_input::Builder {
         crate::input::delete_reservation_input::Builder::default()
     }
@@ -671,7 +671,7 @@ pub struct DeleteSchedule {
     _private: (),
 }
 impl DeleteSchedule {
-    /// Creates a new builder-style object to manufacture [`DeleteScheduleInput`](crate::input::DeleteScheduleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteScheduleInput`](crate::input::DeleteScheduleInput).
     pub fn builder() -> crate::input::delete_schedule_input::Builder {
         crate::input::delete_schedule_input::Builder::default()
     }
@@ -703,7 +703,7 @@ pub struct DeleteTags {
     _private: (),
 }
 impl DeleteTags {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput).
     pub fn builder() -> crate::input::delete_tags_input::Builder {
         crate::input::delete_tags_input::Builder::default()
     }
@@ -735,7 +735,7 @@ pub struct DescribeChannel {
     _private: (),
 }
 impl DescribeChannel {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelInput`](crate::input::DescribeChannelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeChannelInput`](crate::input::DescribeChannelInput).
     pub fn builder() -> crate::input::describe_channel_input::Builder {
         crate::input::describe_channel_input::Builder::default()
     }
@@ -769,7 +769,7 @@ pub struct DescribeInput {
     _private: (),
 }
 impl DescribeInput {
-    /// Creates a new builder-style object to manufacture [`DescribeInputInput`](crate::input::DescribeInputInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInputInput`](crate::input::DescribeInputInput).
     pub fn builder() -> crate::input::describe_input_input::Builder {
         crate::input::describe_input_input::Builder::default()
     }
@@ -801,7 +801,7 @@ pub struct DescribeInputDevice {
     _private: (),
 }
 impl DescribeInputDevice {
-    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceInput`](crate::input::DescribeInputDeviceInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceInput`](crate::input::DescribeInputDeviceInput).
     pub fn builder() -> crate::input::describe_input_device_input::Builder {
         crate::input::describe_input_device_input::Builder::default()
     }
@@ -835,7 +835,7 @@ pub struct DescribeInputDeviceThumbnail {
     _private: (),
 }
 impl DescribeInputDeviceThumbnail {
-    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailInput`](crate::input::DescribeInputDeviceThumbnailInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailInput`](crate::input::DescribeInputDeviceThumbnailInput).
     pub fn builder() -> crate::input::describe_input_device_thumbnail_input::Builder {
         crate::input::describe_input_device_thumbnail_input::Builder::default()
     }
@@ -876,7 +876,7 @@ pub struct DescribeInputSecurityGroup {
     _private: (),
 }
 impl DescribeInputSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeInputSecurityGroupInput`](crate::input::DescribeInputSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInputSecurityGroupInput`](crate::input::DescribeInputSecurityGroupInput).
     pub fn builder() -> crate::input::describe_input_security_group_input::Builder {
         crate::input::describe_input_security_group_input::Builder::default()
     }
@@ -910,7 +910,7 @@ pub struct DescribeMultiplex {
     _private: (),
 }
 impl DescribeMultiplex {
-    /// Creates a new builder-style object to manufacture [`DescribeMultiplexInput`](crate::input::DescribeMultiplexInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMultiplexInput`](crate::input::DescribeMultiplexInput).
     pub fn builder() -> crate::input::describe_multiplex_input::Builder {
         crate::input::describe_multiplex_input::Builder::default()
     }
@@ -944,7 +944,7 @@ pub struct DescribeMultiplexProgram {
     _private: (),
 }
 impl DescribeMultiplexProgram {
-    /// Creates a new builder-style object to manufacture [`DescribeMultiplexProgramInput`](crate::input::DescribeMultiplexProgramInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMultiplexProgramInput`](crate::input::DescribeMultiplexProgramInput).
     pub fn builder() -> crate::input::describe_multiplex_program_input::Builder {
         crate::input::describe_multiplex_program_input::Builder::default()
     }
@@ -978,7 +978,7 @@ pub struct DescribeOffering {
     _private: (),
 }
 impl DescribeOffering {
-    /// Creates a new builder-style object to manufacture [`DescribeOfferingInput`](crate::input::DescribeOfferingInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOfferingInput`](crate::input::DescribeOfferingInput).
     pub fn builder() -> crate::input::describe_offering_input::Builder {
         crate::input::describe_offering_input::Builder::default()
     }
@@ -1012,7 +1012,7 @@ pub struct DescribeReservation {
     _private: (),
 }
 impl DescribeReservation {
-    /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::input::DescribeReservationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::input::DescribeReservationInput).
     pub fn builder() -> crate::input::describe_reservation_input::Builder {
         crate::input::describe_reservation_input::Builder::default()
     }
@@ -1046,7 +1046,7 @@ pub struct DescribeSchedule {
     _private: (),
 }
 impl DescribeSchedule {
-    /// Creates a new builder-style object to manufacture [`DescribeScheduleInput`](crate::input::DescribeScheduleInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScheduleInput`](crate::input::DescribeScheduleInput).
     pub fn builder() -> crate::input::describe_schedule_input::Builder {
         crate::input::describe_schedule_input::Builder::default()
     }
@@ -1080,7 +1080,7 @@ pub struct ListChannels {
     _private: (),
 }
 impl ListChannels {
-    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput)
+    /// Creates a new builder-style object to manufacture [`ListChannelsInput`](crate::input::ListChannelsInput).
     pub fn builder() -> crate::input::list_channels_input::Builder {
         crate::input::list_channels_input::Builder::default()
     }
@@ -1112,7 +1112,7 @@ pub struct ListInputDevices {
     _private: (),
 }
 impl ListInputDevices {
-    /// Creates a new builder-style object to manufacture [`ListInputDevicesInput`](crate::input::ListInputDevicesInput)
+    /// Creates a new builder-style object to manufacture [`ListInputDevicesInput`](crate::input::ListInputDevicesInput).
     pub fn builder() -> crate::input::list_input_devices_input::Builder {
         crate::input::list_input_devices_input::Builder::default()
     }
@@ -1146,7 +1146,7 @@ pub struct ListInputDeviceTransfers {
     _private: (),
 }
 impl ListInputDeviceTransfers {
-    /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersInput`](crate::input::ListInputDeviceTransfersInput)
+    /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersInput`](crate::input::ListInputDeviceTransfersInput).
     pub fn builder() -> crate::input::list_input_device_transfers_input::Builder {
         crate::input::list_input_device_transfers_input::Builder::default()
     }
@@ -1180,7 +1180,7 @@ pub struct ListInputs {
     _private: (),
 }
 impl ListInputs {
-    /// Creates a new builder-style object to manufacture [`ListInputsInput`](crate::input::ListInputsInput)
+    /// Creates a new builder-style object to manufacture [`ListInputsInput`](crate::input::ListInputsInput).
     pub fn builder() -> crate::input::list_inputs_input::Builder {
         crate::input::list_inputs_input::Builder::default()
     }
@@ -1212,7 +1212,7 @@ pub struct ListInputSecurityGroups {
     _private: (),
 }
 impl ListInputSecurityGroups {
-    /// Creates a new builder-style object to manufacture [`ListInputSecurityGroupsInput`](crate::input::ListInputSecurityGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListInputSecurityGroupsInput`](crate::input::ListInputSecurityGroupsInput).
     pub fn builder() -> crate::input::list_input_security_groups_input::Builder {
         crate::input::list_input_security_groups_input::Builder::default()
     }
@@ -1246,7 +1246,7 @@ pub struct ListMultiplexes {
     _private: (),
 }
 impl ListMultiplexes {
-    /// Creates a new builder-style object to manufacture [`ListMultiplexesInput`](crate::input::ListMultiplexesInput)
+    /// Creates a new builder-style object to manufacture [`ListMultiplexesInput`](crate::input::ListMultiplexesInput).
     pub fn builder() -> crate::input::list_multiplexes_input::Builder {
         crate::input::list_multiplexes_input::Builder::default()
     }
@@ -1280,7 +1280,7 @@ pub struct ListMultiplexPrograms {
     _private: (),
 }
 impl ListMultiplexPrograms {
-    /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsInput`](crate::input::ListMultiplexProgramsInput)
+    /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsInput`](crate::input::ListMultiplexProgramsInput).
     pub fn builder() -> crate::input::list_multiplex_programs_input::Builder {
         crate::input::list_multiplex_programs_input::Builder::default()
     }
@@ -1314,7 +1314,7 @@ pub struct ListOfferings {
     _private: (),
 }
 impl ListOfferings {
-    /// Creates a new builder-style object to manufacture [`ListOfferingsInput`](crate::input::ListOfferingsInput)
+    /// Creates a new builder-style object to manufacture [`ListOfferingsInput`](crate::input::ListOfferingsInput).
     pub fn builder() -> crate::input::list_offerings_input::Builder {
         crate::input::list_offerings_input::Builder::default()
     }
@@ -1346,7 +1346,7 @@ pub struct ListReservations {
     _private: (),
 }
 impl ListReservations {
-    /// Creates a new builder-style object to manufacture [`ListReservationsInput`](crate::input::ListReservationsInput)
+    /// Creates a new builder-style object to manufacture [`ListReservationsInput`](crate::input::ListReservationsInput).
     pub fn builder() -> crate::input::list_reservations_input::Builder {
         crate::input::list_reservations_input::Builder::default()
     }
@@ -1380,7 +1380,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1414,7 +1414,7 @@ pub struct PurchaseOffering {
     _private: (),
 }
 impl PurchaseOffering {
-    /// Creates a new builder-style object to manufacture [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput)
+    /// Creates a new builder-style object to manufacture [`PurchaseOfferingInput`](crate::input::PurchaseOfferingInput).
     pub fn builder() -> crate::input::purchase_offering_input::Builder {
         crate::input::purchase_offering_input::Builder::default()
     }
@@ -1448,7 +1448,7 @@ pub struct RejectInputDeviceTransfer {
     _private: (),
 }
 impl RejectInputDeviceTransfer {
-    /// Creates a new builder-style object to manufacture [`RejectInputDeviceTransferInput`](crate::input::RejectInputDeviceTransferInput)
+    /// Creates a new builder-style object to manufacture [`RejectInputDeviceTransferInput`](crate::input::RejectInputDeviceTransferInput).
     pub fn builder() -> crate::input::reject_input_device_transfer_input::Builder {
         crate::input::reject_input_device_transfer_input::Builder::default()
     }
@@ -1482,7 +1482,7 @@ pub struct StartChannel {
     _private: (),
 }
 impl StartChannel {
-    /// Creates a new builder-style object to manufacture [`StartChannelInput`](crate::input::StartChannelInput)
+    /// Creates a new builder-style object to manufacture [`StartChannelInput`](crate::input::StartChannelInput).
     pub fn builder() -> crate::input::start_channel_input::Builder {
         crate::input::start_channel_input::Builder::default()
     }
@@ -1514,7 +1514,7 @@ pub struct StartMultiplex {
     _private: (),
 }
 impl StartMultiplex {
-    /// Creates a new builder-style object to manufacture [`StartMultiplexInput`](crate::input::StartMultiplexInput)
+    /// Creates a new builder-style object to manufacture [`StartMultiplexInput`](crate::input::StartMultiplexInput).
     pub fn builder() -> crate::input::start_multiplex_input::Builder {
         crate::input::start_multiplex_input::Builder::default()
     }
@@ -1546,7 +1546,7 @@ pub struct StopChannel {
     _private: (),
 }
 impl StopChannel {
-    /// Creates a new builder-style object to manufacture [`StopChannelInput`](crate::input::StopChannelInput)
+    /// Creates a new builder-style object to manufacture [`StopChannelInput`](crate::input::StopChannelInput).
     pub fn builder() -> crate::input::stop_channel_input::Builder {
         crate::input::stop_channel_input::Builder::default()
     }
@@ -1578,7 +1578,7 @@ pub struct StopMultiplex {
     _private: (),
 }
 impl StopMultiplex {
-    /// Creates a new builder-style object to manufacture [`StopMultiplexInput`](crate::input::StopMultiplexInput)
+    /// Creates a new builder-style object to manufacture [`StopMultiplexInput`](crate::input::StopMultiplexInput).
     pub fn builder() -> crate::input::stop_multiplex_input::Builder {
         crate::input::stop_multiplex_input::Builder::default()
     }
@@ -1610,7 +1610,7 @@ pub struct TransferInputDevice {
     _private: (),
 }
 impl TransferInputDevice {
-    /// Creates a new builder-style object to manufacture [`TransferInputDeviceInput`](crate::input::TransferInputDeviceInput)
+    /// Creates a new builder-style object to manufacture [`TransferInputDeviceInput`](crate::input::TransferInputDeviceInput).
     pub fn builder() -> crate::input::transfer_input_device_input::Builder {
         crate::input::transfer_input_device_input::Builder::default()
     }
@@ -1644,7 +1644,7 @@ pub struct UpdateChannel {
     _private: (),
 }
 impl UpdateChannel {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::input::UpdateChannelInput).
     pub fn builder() -> crate::input::update_channel_input::Builder {
         crate::input::update_channel_input::Builder::default()
     }
@@ -1676,7 +1676,7 @@ pub struct UpdateChannelClass {
     _private: (),
 }
 impl UpdateChannelClass {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelClassInput`](crate::input::UpdateChannelClassInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChannelClassInput`](crate::input::UpdateChannelClassInput).
     pub fn builder() -> crate::input::update_channel_class_input::Builder {
         crate::input::update_channel_class_input::Builder::default()
     }
@@ -1710,7 +1710,7 @@ pub struct UpdateInput {
     _private: (),
 }
 impl UpdateInput {
-    /// Creates a new builder-style object to manufacture [`UpdateInputInput`](crate::input::UpdateInputInput)
+    /// Creates a new builder-style object to manufacture [`UpdateInputInput`](crate::input::UpdateInputInput).
     pub fn builder() -> crate::input::update_input_input::Builder {
         crate::input::update_input_input::Builder::default()
     }
@@ -1742,7 +1742,7 @@ pub struct UpdateInputDevice {
     _private: (),
 }
 impl UpdateInputDevice {
-    /// Creates a new builder-style object to manufacture [`UpdateInputDeviceInput`](crate::input::UpdateInputDeviceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateInputDeviceInput`](crate::input::UpdateInputDeviceInput).
     pub fn builder() -> crate::input::update_input_device_input::Builder {
         crate::input::update_input_device_input::Builder::default()
     }
@@ -1776,7 +1776,7 @@ pub struct UpdateInputSecurityGroup {
     _private: (),
 }
 impl UpdateInputSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateInputSecurityGroupInput`](crate::input::UpdateInputSecurityGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateInputSecurityGroupInput`](crate::input::UpdateInputSecurityGroupInput).
     pub fn builder() -> crate::input::update_input_security_group_input::Builder {
         crate::input::update_input_security_group_input::Builder::default()
     }
@@ -1810,7 +1810,7 @@ pub struct UpdateMultiplex {
     _private: (),
 }
 impl UpdateMultiplex {
-    /// Creates a new builder-style object to manufacture [`UpdateMultiplexInput`](crate::input::UpdateMultiplexInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMultiplexInput`](crate::input::UpdateMultiplexInput).
     pub fn builder() -> crate::input::update_multiplex_input::Builder {
         crate::input::update_multiplex_input::Builder::default()
     }
@@ -1844,7 +1844,7 @@ pub struct UpdateMultiplexProgram {
     _private: (),
 }
 impl UpdateMultiplexProgram {
-    /// Creates a new builder-style object to manufacture [`UpdateMultiplexProgramInput`](crate::input::UpdateMultiplexProgramInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMultiplexProgramInput`](crate::input::UpdateMultiplexProgramInput).
     pub fn builder() -> crate::input::update_multiplex_program_input::Builder {
         crate::input::update_multiplex_program_input::Builder::default()
     }
@@ -1878,7 +1878,7 @@ pub struct UpdateReservation {
     _private: (),
 }
 impl UpdateReservation {
-    /// Creates a new builder-style object to manufacture [`UpdateReservationInput`](crate::input::UpdateReservationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateReservationInput`](crate::input::UpdateReservationInput).
     pub fn builder() -> crate::input::update_reservation_input::Builder {
         crate::input::update_reservation_input::Builder::default()
     }

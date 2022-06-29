@@ -20,11 +20,10 @@ impl std::fmt::Debug for EgressAccessLogs {
         formatter.finish()
     }
 }
-/// See [`EgressAccessLogs`](crate::model::EgressAccessLogs)
+/// See [`EgressAccessLogs`](crate::model::EgressAccessLogs).
 pub mod egress_access_logs {
 
-    /// A builder for [`EgressAccessLogs`](crate::model::EgressAccessLogs)
-    #[non_exhaustive]
+    /// A builder for [`EgressAccessLogs`](crate::model::EgressAccessLogs).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_group_name: std::option::Option<std::string::String>,
@@ -43,7 +42,7 @@ pub mod egress_access_logs {
             self.log_group_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`EgressAccessLogs`](crate::model::EgressAccessLogs)
+        /// Consumes the builder and constructs a [`EgressAccessLogs`](crate::model::EgressAccessLogs).
         pub fn build(self) -> crate::model::EgressAccessLogs {
             crate::model::EgressAccessLogs {
                 log_group_name: self.log_group_name,
@@ -52,7 +51,7 @@ pub mod egress_access_logs {
     }
 }
 impl EgressAccessLogs {
-    /// Creates a new builder-style object to manufacture [`EgressAccessLogs`](crate::model::EgressAccessLogs)
+    /// Creates a new builder-style object to manufacture [`EgressAccessLogs`](crate::model::EgressAccessLogs).
     pub fn builder() -> crate::model::egress_access_logs::Builder {
         crate::model::egress_access_logs::Builder::default()
     }
@@ -85,11 +84,10 @@ impl std::fmt::Debug for Authorization {
         formatter.finish()
     }
 }
-/// See [`Authorization`](crate::model::Authorization)
+/// See [`Authorization`](crate::model::Authorization).
 pub mod authorization {
 
-    /// A builder for [`Authorization`](crate::model::Authorization)
-    #[non_exhaustive]
+    /// A builder for [`Authorization`](crate::model::Authorization).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cdn_identifier_secret: std::option::Option<std::string::String>,
@@ -122,7 +120,7 @@ pub mod authorization {
             self.secrets_role_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`Authorization`](crate::model::Authorization)
+        /// Consumes the builder and constructs a [`Authorization`](crate::model::Authorization).
         pub fn build(self) -> crate::model::Authorization {
             crate::model::Authorization {
                 cdn_identifier_secret: self.cdn_identifier_secret,
@@ -132,7 +130,7 @@ pub mod authorization {
     }
 }
 impl Authorization {
-    /// Creates a new builder-style object to manufacture [`Authorization`](crate::model::Authorization)
+    /// Creates a new builder-style object to manufacture [`Authorization`](crate::model::Authorization).
     pub fn builder() -> crate::model::authorization::Builder {
         crate::model::authorization::Builder::default()
     }
@@ -197,11 +195,10 @@ impl std::fmt::Debug for PackagingGroup {
         formatter.finish()
     }
 }
-/// See [`PackagingGroup`](crate::model::PackagingGroup)
+/// See [`PackagingGroup`](crate::model::PackagingGroup).
 pub mod packaging_group {
 
-    /// A builder for [`PackagingGroup`](crate::model::PackagingGroup)
-    #[non_exhaustive]
+    /// A builder for [`PackagingGroup`](crate::model::PackagingGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -295,7 +292,7 @@ pub mod packaging_group {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`PackagingGroup`](crate::model::PackagingGroup)
+        /// Consumes the builder and constructs a [`PackagingGroup`](crate::model::PackagingGroup).
         pub fn build(self) -> crate::model::PackagingGroup {
             crate::model::PackagingGroup {
                 arn: self.arn,
@@ -309,7 +306,7 @@ pub mod packaging_group {
     }
 }
 impl PackagingGroup {
-    /// Creates a new builder-style object to manufacture [`PackagingGroup`](crate::model::PackagingGroup)
+    /// Creates a new builder-style object to manufacture [`PackagingGroup`](crate::model::PackagingGroup).
     pub fn builder() -> crate::model::packaging_group::Builder {
         crate::model::packaging_group::Builder::default()
     }
@@ -388,11 +385,10 @@ impl std::fmt::Debug for PackagingConfiguration {
         formatter.finish()
     }
 }
-/// See [`PackagingConfiguration`](crate::model::PackagingConfiguration)
+/// See [`PackagingConfiguration`](crate::model::PackagingConfiguration).
 pub mod packaging_configuration {
 
-    /// A builder for [`PackagingConfiguration`](crate::model::PackagingConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`PackagingConfiguration`](crate::model::PackagingConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -517,7 +513,7 @@ pub mod packaging_configuration {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`PackagingConfiguration`](crate::model::PackagingConfiguration)
+        /// Consumes the builder and constructs a [`PackagingConfiguration`](crate::model::PackagingConfiguration).
         pub fn build(self) -> crate::model::PackagingConfiguration {
             crate::model::PackagingConfiguration {
                 arn: self.arn,
@@ -533,7 +529,7 @@ pub mod packaging_configuration {
     }
 }
 impl PackagingConfiguration {
-    /// Creates a new builder-style object to manufacture [`PackagingConfiguration`](crate::model::PackagingConfiguration)
+    /// Creates a new builder-style object to manufacture [`PackagingConfiguration`](crate::model::PackagingConfiguration).
     pub fn builder() -> crate::model::packaging_configuration::Builder {
         crate::model::packaging_configuration::Builder::default()
     }
@@ -573,11 +569,10 @@ impl std::fmt::Debug for MssPackage {
         formatter.finish()
     }
 }
-/// See [`MssPackage`](crate::model::MssPackage)
+/// See [`MssPackage`](crate::model::MssPackage).
 pub mod mss_package {
 
-    /// A builder for [`MssPackage`](crate::model::MssPackage)
-    #[non_exhaustive]
+    /// A builder for [`MssPackage`](crate::model::MssPackage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::MssEncryption>,
@@ -627,7 +622,7 @@ pub mod mss_package {
             self.segment_duration_seconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`MssPackage`](crate::model::MssPackage)
+        /// Consumes the builder and constructs a [`MssPackage`](crate::model::MssPackage).
         pub fn build(self) -> crate::model::MssPackage {
             crate::model::MssPackage {
                 encryption: self.encryption,
@@ -638,7 +633,7 @@ pub mod mss_package {
     }
 }
 impl MssPackage {
-    /// Creates a new builder-style object to manufacture [`MssPackage`](crate::model::MssPackage)
+    /// Creates a new builder-style object to manufacture [`MssPackage`](crate::model::MssPackage).
     pub fn builder() -> crate::model::mss_package::Builder {
         crate::model::mss_package::Builder::default()
     }
@@ -671,11 +666,10 @@ impl std::fmt::Debug for MssManifest {
         formatter.finish()
     }
 }
-/// See [`MssManifest`](crate::model::MssManifest)
+/// See [`MssManifest`](crate::model::MssManifest).
 pub mod mss_manifest {
 
-    /// A builder for [`MssManifest`](crate::model::MssManifest)
-    #[non_exhaustive]
+    /// A builder for [`MssManifest`](crate::model::MssManifest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_name: std::option::Option<std::string::String>,
@@ -708,7 +702,7 @@ pub mod mss_manifest {
             self.stream_selection = input;
             self
         }
-        /// Consumes the builder and constructs a [`MssManifest`](crate::model::MssManifest)
+        /// Consumes the builder and constructs a [`MssManifest`](crate::model::MssManifest).
         pub fn build(self) -> crate::model::MssManifest {
             crate::model::MssManifest {
                 manifest_name: self.manifest_name,
@@ -718,7 +712,7 @@ pub mod mss_manifest {
     }
 }
 impl MssManifest {
-    /// Creates a new builder-style object to manufacture [`MssManifest`](crate::model::MssManifest)
+    /// Creates a new builder-style object to manufacture [`MssManifest`](crate::model::MssManifest).
     pub fn builder() -> crate::model::mss_manifest::Builder {
         crate::model::mss_manifest::Builder::default()
     }
@@ -758,11 +752,10 @@ impl std::fmt::Debug for StreamSelection {
         formatter.finish()
     }
 }
-/// See [`StreamSelection`](crate::model::StreamSelection)
+/// See [`StreamSelection`](crate::model::StreamSelection).
 pub mod stream_selection {
 
-    /// A builder for [`StreamSelection`](crate::model::StreamSelection)
-    #[non_exhaustive]
+    /// A builder for [`StreamSelection`](crate::model::StreamSelection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_video_bits_per_second: std::option::Option<i32>,
@@ -803,7 +796,7 @@ pub mod stream_selection {
             self.stream_order = input;
             self
         }
-        /// Consumes the builder and constructs a [`StreamSelection`](crate::model::StreamSelection)
+        /// Consumes the builder and constructs a [`StreamSelection`](crate::model::StreamSelection).
         pub fn build(self) -> crate::model::StreamSelection {
             crate::model::StreamSelection {
                 max_video_bits_per_second: self.max_video_bits_per_second.unwrap_or_default(),
@@ -814,7 +807,7 @@ pub mod stream_selection {
     }
 }
 impl StreamSelection {
-    /// Creates a new builder-style object to manufacture [`StreamSelection`](crate::model::StreamSelection)
+    /// Creates a new builder-style object to manufacture [`StreamSelection`](crate::model::StreamSelection).
     pub fn builder() -> crate::model::stream_selection::Builder {
         crate::model::stream_selection::Builder::default()
     }
@@ -903,11 +896,10 @@ impl std::fmt::Debug for MssEncryption {
         formatter.finish()
     }
 }
-/// See [`MssEncryption`](crate::model::MssEncryption)
+/// See [`MssEncryption`](crate::model::MssEncryption).
 pub mod mss_encryption {
 
-    /// A builder for [`MssEncryption`](crate::model::MssEncryption)
-    #[non_exhaustive]
+    /// A builder for [`MssEncryption`](crate::model::MssEncryption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
@@ -926,7 +918,7 @@ pub mod mss_encryption {
             self.speke_key_provider = input;
             self
         }
-        /// Consumes the builder and constructs a [`MssEncryption`](crate::model::MssEncryption)
+        /// Consumes the builder and constructs a [`MssEncryption`](crate::model::MssEncryption).
         pub fn build(self) -> crate::model::MssEncryption {
             crate::model::MssEncryption {
                 speke_key_provider: self.speke_key_provider,
@@ -935,7 +927,7 @@ pub mod mss_encryption {
     }
 }
 impl MssEncryption {
-    /// Creates a new builder-style object to manufacture [`MssEncryption`](crate::model::MssEncryption)
+    /// Creates a new builder-style object to manufacture [`MssEncryption`](crate::model::MssEncryption).
     pub fn builder() -> crate::model::mss_encryption::Builder {
         crate::model::mss_encryption::Builder::default()
     }
@@ -975,11 +967,10 @@ impl std::fmt::Debug for SpekeKeyProvider {
         formatter.finish()
     }
 }
-/// See [`SpekeKeyProvider`](crate::model::SpekeKeyProvider)
+/// See [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
 pub mod speke_key_provider {
 
-    /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider)
-    #[non_exhaustive]
+    /// A builder for [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -1026,7 +1017,7 @@ pub mod speke_key_provider {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::model::SpekeKeyProvider)
+        /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
         pub fn build(self) -> crate::model::SpekeKeyProvider {
             crate::model::SpekeKeyProvider {
                 role_arn: self.role_arn,
@@ -1037,7 +1028,7 @@ pub mod speke_key_provider {
     }
 }
 impl SpekeKeyProvider {
-    /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::model::SpekeKeyProvider)
+    /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
     pub fn builder() -> crate::model::speke_key_provider::Builder {
         crate::model::speke_key_provider::Builder::default()
     }
@@ -1091,11 +1082,10 @@ impl std::fmt::Debug for HlsPackage {
         formatter.finish()
     }
 }
-/// See [`HlsPackage`](crate::model::HlsPackage)
+/// See [`HlsPackage`](crate::model::HlsPackage).
 pub mod hls_package {
 
-    /// A builder for [`HlsPackage`](crate::model::HlsPackage)
-    #[non_exhaustive]
+    /// A builder for [`HlsPackage`](crate::model::HlsPackage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::HlsEncryption>,
@@ -1167,7 +1157,7 @@ pub mod hls_package {
             self.use_audio_rendition_group = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsPackage`](crate::model::HlsPackage)
+        /// Consumes the builder and constructs a [`HlsPackage`](crate::model::HlsPackage).
         pub fn build(self) -> crate::model::HlsPackage {
             crate::model::HlsPackage {
                 encryption: self.encryption,
@@ -1180,7 +1170,7 @@ pub mod hls_package {
     }
 }
 impl HlsPackage {
-    /// Creates a new builder-style object to manufacture [`HlsPackage`](crate::model::HlsPackage)
+    /// Creates a new builder-style object to manufacture [`HlsPackage`](crate::model::HlsPackage).
     pub fn builder() -> crate::model::hls_package::Builder {
         crate::model::hls_package::Builder::default()
     }
@@ -1247,11 +1237,10 @@ impl std::fmt::Debug for HlsManifest {
         formatter.finish()
     }
 }
-/// See [`HlsManifest`](crate::model::HlsManifest)
+/// See [`HlsManifest`](crate::model::HlsManifest).
 pub mod hls_manifest {
 
-    /// A builder for [`HlsManifest`](crate::model::HlsManifest)
-    #[non_exhaustive]
+    /// A builder for [`HlsManifest`](crate::model::HlsManifest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<crate::model::AdMarkers>,
@@ -1334,7 +1323,7 @@ pub mod hls_manifest {
             self.stream_selection = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsManifest`](crate::model::HlsManifest)
+        /// Consumes the builder and constructs a [`HlsManifest`](crate::model::HlsManifest).
         pub fn build(self) -> crate::model::HlsManifest {
             crate::model::HlsManifest {
                 ad_markers: self.ad_markers,
@@ -1350,7 +1339,7 @@ pub mod hls_manifest {
     }
 }
 impl HlsManifest {
-    /// Creates a new builder-style object to manufacture [`HlsManifest`](crate::model::HlsManifest)
+    /// Creates a new builder-style object to manufacture [`HlsManifest`](crate::model::HlsManifest).
     pub fn builder() -> crate::model::hls_manifest::Builder {
         crate::model::hls_manifest::Builder::default()
     }
@@ -1452,11 +1441,10 @@ impl std::fmt::Debug for HlsEncryption {
         formatter.finish()
     }
 }
-/// See [`HlsEncryption`](crate::model::HlsEncryption)
+/// See [`HlsEncryption`](crate::model::HlsEncryption).
 pub mod hls_encryption {
 
-    /// A builder for [`HlsEncryption`](crate::model::HlsEncryption)
-    #[non_exhaustive]
+    /// A builder for [`HlsEncryption`](crate::model::HlsEncryption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
@@ -1506,7 +1494,7 @@ pub mod hls_encryption {
             self.speke_key_provider = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsEncryption`](crate::model::HlsEncryption)
+        /// Consumes the builder and constructs a [`HlsEncryption`](crate::model::HlsEncryption).
         pub fn build(self) -> crate::model::HlsEncryption {
             crate::model::HlsEncryption {
                 constant_initialization_vector: self.constant_initialization_vector,
@@ -1517,7 +1505,7 @@ pub mod hls_encryption {
     }
 }
 impl HlsEncryption {
-    /// Creates a new builder-style object to manufacture [`HlsEncryption`](crate::model::HlsEncryption)
+    /// Creates a new builder-style object to manufacture [`HlsEncryption`](crate::model::HlsEncryption).
     pub fn builder() -> crate::model::hls_encryption::Builder {
         crate::model::hls_encryption::Builder::default()
     }
@@ -1638,11 +1626,10 @@ impl std::fmt::Debug for DashPackage {
         formatter.finish()
     }
 }
-/// See [`DashPackage`](crate::model::DashPackage)
+/// See [`DashPackage`](crate::model::DashPackage).
 pub mod dash_package {
 
-    /// A builder for [`DashPackage`](crate::model::DashPackage)
-    #[non_exhaustive]
+    /// A builder for [`DashPackage`](crate::model::DashPackage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dash_manifests: std::option::Option<std::vec::Vec<crate::model::DashManifest>>,
@@ -1745,7 +1732,7 @@ pub mod dash_package {
             self.segment_template_format = input;
             self
         }
-        /// Consumes the builder and constructs a [`DashPackage`](crate::model::DashPackage)
+        /// Consumes the builder and constructs a [`DashPackage`](crate::model::DashPackage).
         pub fn build(self) -> crate::model::DashPackage {
             crate::model::DashPackage {
                 dash_manifests: self.dash_manifests,
@@ -1761,7 +1748,7 @@ pub mod dash_package {
     }
 }
 impl DashPackage {
-    /// Creates a new builder-style object to manufacture [`DashPackage`](crate::model::DashPackage)
+    /// Creates a new builder-style object to manufacture [`DashPackage`](crate::model::DashPackage).
     pub fn builder() -> crate::model::dash_package::Builder {
         crate::model::dash_package::Builder::default()
     }
@@ -1901,11 +1888,10 @@ impl std::fmt::Debug for DashEncryption {
         formatter.finish()
     }
 }
-/// See [`DashEncryption`](crate::model::DashEncryption)
+/// See [`DashEncryption`](crate::model::DashEncryption).
 pub mod dash_encryption {
 
-    /// A builder for [`DashEncryption`](crate::model::DashEncryption)
-    #[non_exhaustive]
+    /// A builder for [`DashEncryption`](crate::model::DashEncryption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) speke_key_provider: std::option::Option<crate::model::SpekeKeyProvider>,
@@ -1924,7 +1910,7 @@ pub mod dash_encryption {
             self.speke_key_provider = input;
             self
         }
-        /// Consumes the builder and constructs a [`DashEncryption`](crate::model::DashEncryption)
+        /// Consumes the builder and constructs a [`DashEncryption`](crate::model::DashEncryption).
         pub fn build(self) -> crate::model::DashEncryption {
             crate::model::DashEncryption {
                 speke_key_provider: self.speke_key_provider,
@@ -1933,7 +1919,7 @@ pub mod dash_encryption {
     }
 }
 impl DashEncryption {
-    /// Creates a new builder-style object to manufacture [`DashEncryption`](crate::model::DashEncryption)
+    /// Creates a new builder-style object to manufacture [`DashEncryption`](crate::model::DashEncryption).
     pub fn builder() -> crate::model::dash_encryption::Builder {
         crate::model::dash_encryption::Builder::default()
     }
@@ -1994,11 +1980,10 @@ impl std::fmt::Debug for DashManifest {
         formatter.finish()
     }
 }
-/// See [`DashManifest`](crate::model::DashManifest)
+/// See [`DashManifest`](crate::model::DashManifest).
 pub mod dash_manifest {
 
-    /// A builder for [`DashManifest`](crate::model::DashManifest)
-    #[non_exhaustive]
+    /// A builder for [`DashManifest`](crate::model::DashManifest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) manifest_layout: std::option::Option<crate::model::ManifestLayout>,
@@ -2081,7 +2066,7 @@ pub mod dash_manifest {
             self.stream_selection = input;
             self
         }
-        /// Consumes the builder and constructs a [`DashManifest`](crate::model::DashManifest)
+        /// Consumes the builder and constructs a [`DashManifest`](crate::model::DashManifest).
         pub fn build(self) -> crate::model::DashManifest {
             crate::model::DashManifest {
                 manifest_layout: self.manifest_layout,
@@ -2095,7 +2080,7 @@ pub mod dash_manifest {
     }
 }
 impl DashManifest {
-    /// Creates a new builder-style object to manufacture [`DashManifest`](crate::model::DashManifest)
+    /// Creates a new builder-style object to manufacture [`DashManifest`](crate::model::DashManifest).
     pub fn builder() -> crate::model::dash_manifest::Builder {
         crate::model::dash_manifest::Builder::default()
     }
@@ -2310,11 +2295,10 @@ impl std::fmt::Debug for CmafPackage {
         formatter.finish()
     }
 }
-/// See [`CmafPackage`](crate::model::CmafPackage)
+/// See [`CmafPackage`](crate::model::CmafPackage).
 pub mod cmaf_package {
 
-    /// A builder for [`CmafPackage`](crate::model::CmafPackage)
-    #[non_exhaustive]
+    /// A builder for [`CmafPackage`](crate::model::CmafPackage).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption: std::option::Option<crate::model::CmafEncryption>,
@@ -2378,7 +2362,7 @@ pub mod cmaf_package {
             self.segment_duration_seconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`CmafPackage`](crate::model::CmafPackage)
+        /// Consumes the builder and constructs a [`CmafPackage`](crate::model::CmafPackage).
         pub fn build(self) -> crate::model::CmafPackage {
             crate::model::CmafPackage {
                 encryption: self.encryption,
@@ -2392,7 +2376,7 @@ pub mod cmaf_package {
     }
 }
 impl CmafPackage {
-    /// Creates a new builder-style object to manufacture [`CmafPackage`](crate::model::CmafPackage)
+    /// Creates a new builder-style object to manufacture [`CmafPackage`](crate::model::CmafPackage).
     pub fn builder() -> crate::model::cmaf_package::Builder {
         crate::model::cmaf_package::Builder::default()
     }
@@ -2428,11 +2412,10 @@ impl std::fmt::Debug for CmafEncryption {
         formatter.finish()
     }
 }
-/// See [`CmafEncryption`](crate::model::CmafEncryption)
+/// See [`CmafEncryption`](crate::model::CmafEncryption).
 pub mod cmaf_encryption {
 
-    /// A builder for [`CmafEncryption`](crate::model::CmafEncryption)
-    #[non_exhaustive]
+    /// A builder for [`CmafEncryption`](crate::model::CmafEncryption).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_initialization_vector: std::option::Option<std::string::String>,
@@ -2468,7 +2451,7 @@ pub mod cmaf_encryption {
             self.speke_key_provider = input;
             self
         }
-        /// Consumes the builder and constructs a [`CmafEncryption`](crate::model::CmafEncryption)
+        /// Consumes the builder and constructs a [`CmafEncryption`](crate::model::CmafEncryption).
         pub fn build(self) -> crate::model::CmafEncryption {
             crate::model::CmafEncryption {
                 constant_initialization_vector: self.constant_initialization_vector,
@@ -2478,7 +2461,7 @@ pub mod cmaf_encryption {
     }
 }
 impl CmafEncryption {
-    /// Creates a new builder-style object to manufacture [`CmafEncryption`](crate::model::CmafEncryption)
+    /// Creates a new builder-style object to manufacture [`CmafEncryption`](crate::model::CmafEncryption).
     pub fn builder() -> crate::model::cmaf_encryption::Builder {
         crate::model::cmaf_encryption::Builder::default()
     }
@@ -2557,11 +2540,10 @@ impl std::fmt::Debug for AssetShallow {
         formatter.finish()
     }
 }
-/// See [`AssetShallow`](crate::model::AssetShallow)
+/// See [`AssetShallow`](crate::model::AssetShallow).
 pub mod asset_shallow {
 
-    /// A builder for [`AssetShallow`](crate::model::AssetShallow)
-    #[non_exhaustive]
+    /// A builder for [`AssetShallow`](crate::model::AssetShallow).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2677,7 +2659,7 @@ pub mod asset_shallow {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssetShallow`](crate::model::AssetShallow)
+        /// Consumes the builder and constructs a [`AssetShallow`](crate::model::AssetShallow).
         pub fn build(self) -> crate::model::AssetShallow {
             crate::model::AssetShallow {
                 arn: self.arn,
@@ -2693,7 +2675,7 @@ pub mod asset_shallow {
     }
 }
 impl AssetShallow {
-    /// Creates a new builder-style object to manufacture [`AssetShallow`](crate::model::AssetShallow)
+    /// Creates a new builder-style object to manufacture [`AssetShallow`](crate::model::AssetShallow).
     pub fn builder() -> crate::model::asset_shallow::Builder {
         crate::model::asset_shallow::Builder::default()
     }
@@ -2736,11 +2718,10 @@ impl std::fmt::Debug for EgressEndpoint {
         formatter.finish()
     }
 }
-/// See [`EgressEndpoint`](crate::model::EgressEndpoint)
+/// See [`EgressEndpoint`](crate::model::EgressEndpoint).
 pub mod egress_endpoint {
 
-    /// A builder for [`EgressEndpoint`](crate::model::EgressEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`EgressEndpoint`](crate::model::EgressEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) packaging_configuration_id: std::option::Option<std::string::String>,
@@ -2781,7 +2762,7 @@ pub mod egress_endpoint {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`EgressEndpoint`](crate::model::EgressEndpoint)
+        /// Consumes the builder and constructs a [`EgressEndpoint`](crate::model::EgressEndpoint).
         pub fn build(self) -> crate::model::EgressEndpoint {
             crate::model::EgressEndpoint {
                 packaging_configuration_id: self.packaging_configuration_id,
@@ -2792,7 +2773,7 @@ pub mod egress_endpoint {
     }
 }
 impl EgressEndpoint {
-    /// Creates a new builder-style object to manufacture [`EgressEndpoint`](crate::model::EgressEndpoint)
+    /// Creates a new builder-style object to manufacture [`EgressEndpoint`](crate::model::EgressEndpoint).
     pub fn builder() -> crate::model::egress_endpoint::Builder {
         crate::model::egress_endpoint::Builder::default()
     }

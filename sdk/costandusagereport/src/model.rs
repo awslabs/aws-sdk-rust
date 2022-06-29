@@ -102,11 +102,10 @@ impl std::fmt::Debug for ReportDefinition {
         formatter.finish()
     }
 }
-/// See [`ReportDefinition`](crate::model::ReportDefinition)
+/// See [`ReportDefinition`](crate::model::ReportDefinition).
 pub mod report_definition {
 
-    /// A builder for [`ReportDefinition`](crate::model::ReportDefinition)
-    #[non_exhaustive]
+    /// A builder for [`ReportDefinition`](crate::model::ReportDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_name: std::option::Option<std::string::String>,
@@ -278,7 +277,7 @@ pub mod report_definition {
             self.billing_view_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReportDefinition`](crate::model::ReportDefinition)
+        /// Consumes the builder and constructs a [`ReportDefinition`](crate::model::ReportDefinition).
         pub fn build(self) -> crate::model::ReportDefinition {
             crate::model::ReportDefinition {
                 report_name: self.report_name,
@@ -298,7 +297,7 @@ pub mod report_definition {
     }
 }
 impl ReportDefinition {
-    /// Creates a new builder-style object to manufacture [`ReportDefinition`](crate::model::ReportDefinition)
+    /// Creates a new builder-style object to manufacture [`ReportDefinition`](crate::model::ReportDefinition).
     pub fn builder() -> crate::model::report_definition::Builder {
         crate::model::report_definition::Builder::default()
     }

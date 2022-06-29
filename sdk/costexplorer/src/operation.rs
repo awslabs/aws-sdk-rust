@@ -10,7 +10,7 @@ pub struct CreateAnomalyMonitor {
     _private: (),
 }
 impl CreateAnomalyMonitor {
-    /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorInput`](crate::input::CreateAnomalyMonitorInput)
+    /// Creates a new builder-style object to manufacture [`CreateAnomalyMonitorInput`](crate::input::CreateAnomalyMonitorInput).
     pub fn builder() -> crate::input::create_anomaly_monitor_input::Builder {
         crate::input::create_anomaly_monitor_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateAnomalySubscription {
     _private: (),
 }
 impl CreateAnomalySubscription {
-    /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionInput`](crate::input::CreateAnomalySubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`CreateAnomalySubscriptionInput`](crate::input::CreateAnomalySubscriptionInput).
     pub fn builder() -> crate::input::create_anomaly_subscription_input::Builder {
         crate::input::create_anomaly_subscription_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateCostCategoryDefinition {
     _private: (),
 }
 impl CreateCostCategoryDefinition {
-    /// Creates a new builder-style object to manufacture [`CreateCostCategoryDefinitionInput`](crate::input::CreateCostCategoryDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`CreateCostCategoryDefinitionInput`](crate::input::CreateCostCategoryDefinitionInput).
     pub fn builder() -> crate::input::create_cost_category_definition_input::Builder {
         crate::input::create_cost_category_definition_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteAnomalyMonitor {
     _private: (),
 }
 impl DeleteAnomalyMonitor {
-    /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorInput`](crate::input::DeleteAnomalyMonitorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorInput`](crate::input::DeleteAnomalyMonitorInput).
     pub fn builder() -> crate::input::delete_anomaly_monitor_input::Builder {
         crate::input::delete_anomaly_monitor_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteAnomalySubscription {
     _private: (),
 }
 impl DeleteAnomalySubscription {
-    /// Creates a new builder-style object to manufacture [`DeleteAnomalySubscriptionInput`](crate::input::DeleteAnomalySubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAnomalySubscriptionInput`](crate::input::DeleteAnomalySubscriptionInput).
     pub fn builder() -> crate::input::delete_anomaly_subscription_input::Builder {
         crate::input::delete_anomaly_subscription_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteCostCategoryDefinition {
     _private: (),
 }
 impl DeleteCostCategoryDefinition {
-    /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionInput`](crate::input::DeleteCostCategoryDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionInput`](crate::input::DeleteCostCategoryDefinitionInput).
     pub fn builder() -> crate::input::delete_cost_category_definition_input::Builder {
         crate::input::delete_cost_category_definition_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DescribeCostCategoryDefinition {
     _private: (),
 }
 impl DescribeCostCategoryDefinition {
-    /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionInput`](crate::input::DescribeCostCategoryDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionInput`](crate::input::DescribeCostCategoryDefinitionInput).
     pub fn builder() -> crate::input::describe_cost_category_definition_input::Builder {
         crate::input::describe_cost_category_definition_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct GetAnomalies {
     _private: (),
 }
 impl GetAnomalies {
-    /// Creates a new builder-style object to manufacture [`GetAnomaliesInput`](crate::input::GetAnomaliesInput)
+    /// Creates a new builder-style object to manufacture [`GetAnomaliesInput`](crate::input::GetAnomaliesInput).
     pub fn builder() -> crate::input::get_anomalies_input::Builder {
         crate::input::get_anomalies_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct GetAnomalyMonitors {
     _private: (),
 }
 impl GetAnomalyMonitors {
-    /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsInput`](crate::input::GetAnomalyMonitorsInput)
+    /// Creates a new builder-style object to manufacture [`GetAnomalyMonitorsInput`](crate::input::GetAnomalyMonitorsInput).
     pub fn builder() -> crate::input::get_anomaly_monitors_input::Builder {
         crate::input::get_anomaly_monitors_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct GetAnomalySubscriptions {
     _private: (),
 }
 impl GetAnomalySubscriptions {
-    /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsInput`](crate::input::GetAnomalySubscriptionsInput)
+    /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsInput`](crate::input::GetAnomalySubscriptionsInput).
     pub fn builder() -> crate::input::get_anomaly_subscriptions_input::Builder {
         crate::input::get_anomaly_subscriptions_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct GetCostAndUsage {
     _private: (),
 }
 impl GetCostAndUsage {
-    /// Creates a new builder-style object to manufacture [`GetCostAndUsageInput`](crate::input::GetCostAndUsageInput)
+    /// Creates a new builder-style object to manufacture [`GetCostAndUsageInput`](crate::input::GetCostAndUsageInput).
     pub fn builder() -> crate::input::get_cost_and_usage_input::Builder {
         crate::input::get_cost_and_usage_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct GetCostAndUsageWithResources {
     _private: (),
 }
 impl GetCostAndUsageWithResources {
-    /// Creates a new builder-style object to manufacture [`GetCostAndUsageWithResourcesInput`](crate::input::GetCostAndUsageWithResourcesInput)
+    /// Creates a new builder-style object to manufacture [`GetCostAndUsageWithResourcesInput`](crate::input::GetCostAndUsageWithResourcesInput).
     pub fn builder() -> crate::input::get_cost_and_usage_with_resources_input::Builder {
         crate::input::get_cost_and_usage_with_resources_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct GetCostCategories {
     _private: (),
 }
 impl GetCostCategories {
-    /// Creates a new builder-style object to manufacture [`GetCostCategoriesInput`](crate::input::GetCostCategoriesInput)
+    /// Creates a new builder-style object to manufacture [`GetCostCategoriesInput`](crate::input::GetCostCategoriesInput).
     pub fn builder() -> crate::input::get_cost_categories_input::Builder {
         crate::input::get_cost_categories_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct GetCostForecast {
     _private: (),
 }
 impl GetCostForecast {
-    /// Creates a new builder-style object to manufacture [`GetCostForecastInput`](crate::input::GetCostForecastInput)
+    /// Creates a new builder-style object to manufacture [`GetCostForecastInput`](crate::input::GetCostForecastInput).
     pub fn builder() -> crate::input::get_cost_forecast_input::Builder {
         crate::input::get_cost_forecast_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct GetDimensionValues {
     _private: (),
 }
 impl GetDimensionValues {
-    /// Creates a new builder-style object to manufacture [`GetDimensionValuesInput`](crate::input::GetDimensionValuesInput)
+    /// Creates a new builder-style object to manufacture [`GetDimensionValuesInput`](crate::input::GetDimensionValuesInput).
     pub fn builder() -> crate::input::get_dimension_values_input::Builder {
         crate::input::get_dimension_values_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct GetReservationCoverage {
     _private: (),
 }
 impl GetReservationCoverage {
-    /// Creates a new builder-style object to manufacture [`GetReservationCoverageInput`](crate::input::GetReservationCoverageInput)
+    /// Creates a new builder-style object to manufacture [`GetReservationCoverageInput`](crate::input::GetReservationCoverageInput).
     pub fn builder() -> crate::input::get_reservation_coverage_input::Builder {
         crate::input::get_reservation_coverage_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct GetReservationPurchaseRecommendation {
     _private: (),
 }
 impl GetReservationPurchaseRecommendation {
-    /// Creates a new builder-style object to manufacture [`GetReservationPurchaseRecommendationInput`](crate::input::GetReservationPurchaseRecommendationInput)
+    /// Creates a new builder-style object to manufacture [`GetReservationPurchaseRecommendationInput`](crate::input::GetReservationPurchaseRecommendationInput).
     pub fn builder() -> crate::input::get_reservation_purchase_recommendation_input::Builder {
         crate::input::get_reservation_purchase_recommendation_input::Builder::default()
     }
@@ -586,7 +586,7 @@ pub struct GetReservationUtilization {
     _private: (),
 }
 impl GetReservationUtilization {
-    /// Creates a new builder-style object to manufacture [`GetReservationUtilizationInput`](crate::input::GetReservationUtilizationInput)
+    /// Creates a new builder-style object to manufacture [`GetReservationUtilizationInput`](crate::input::GetReservationUtilizationInput).
     pub fn builder() -> crate::input::get_reservation_utilization_input::Builder {
         crate::input::get_reservation_utilization_input::Builder::default()
     }
@@ -620,7 +620,7 @@ pub struct GetRightsizingRecommendation {
     _private: (),
 }
 impl GetRightsizingRecommendation {
-    /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationInput`](crate::input::GetRightsizingRecommendationInput)
+    /// Creates a new builder-style object to manufacture [`GetRightsizingRecommendationInput`](crate::input::GetRightsizingRecommendationInput).
     pub fn builder() -> crate::input::get_rightsizing_recommendation_input::Builder {
         crate::input::get_rightsizing_recommendation_input::Builder::default()
     }
@@ -654,7 +654,7 @@ pub struct GetSavingsPlansCoverage {
     _private: (),
 }
 impl GetSavingsPlansCoverage {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageInput`](crate::input::GetSavingsPlansCoverageInput)
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageInput`](crate::input::GetSavingsPlansCoverageInput).
     pub fn builder() -> crate::input::get_savings_plans_coverage_input::Builder {
         crate::input::get_savings_plans_coverage_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct GetSavingsPlansPurchaseRecommendation {
     _private: (),
 }
 impl GetSavingsPlansPurchaseRecommendation {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationInput`](crate::input::GetSavingsPlansPurchaseRecommendationInput)
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansPurchaseRecommendationInput`](crate::input::GetSavingsPlansPurchaseRecommendationInput).
     pub fn builder() -> crate::input::get_savings_plans_purchase_recommendation_input::Builder {
         crate::input::get_savings_plans_purchase_recommendation_input::Builder::default()
     }
@@ -724,7 +724,7 @@ pub struct GetSavingsPlansUtilization {
     _private: (),
 }
 impl GetSavingsPlansUtilization {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationInput`](crate::input::GetSavingsPlansUtilizationInput)
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationInput`](crate::input::GetSavingsPlansUtilizationInput).
     pub fn builder() -> crate::input::get_savings_plans_utilization_input::Builder {
         crate::input::get_savings_plans_utilization_input::Builder::default()
     }
@@ -758,7 +758,7 @@ pub struct GetSavingsPlansUtilizationDetails {
     _private: (),
 }
 impl GetSavingsPlansUtilizationDetails {
-    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsInput`](crate::input::GetSavingsPlansUtilizationDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsInput`](crate::input::GetSavingsPlansUtilizationDetailsInput).
     pub fn builder() -> crate::input::get_savings_plans_utilization_details_input::Builder {
         crate::input::get_savings_plans_utilization_details_input::Builder::default()
     }
@@ -792,7 +792,7 @@ pub struct GetTags {
     _private: (),
 }
 impl GetTags {
-    /// Creates a new builder-style object to manufacture [`GetTagsInput`](crate::input::GetTagsInput)
+    /// Creates a new builder-style object to manufacture [`GetTagsInput`](crate::input::GetTagsInput).
     pub fn builder() -> crate::input::get_tags_input::Builder {
         crate::input::get_tags_input::Builder::default()
     }
@@ -823,7 +823,7 @@ pub struct GetUsageForecast {
     _private: (),
 }
 impl GetUsageForecast {
-    /// Creates a new builder-style object to manufacture [`GetUsageForecastInput`](crate::input::GetUsageForecastInput)
+    /// Creates a new builder-style object to manufacture [`GetUsageForecastInput`](crate::input::GetUsageForecastInput).
     pub fn builder() -> crate::input::get_usage_forecast_input::Builder {
         crate::input::get_usage_forecast_input::Builder::default()
     }
@@ -857,7 +857,7 @@ pub struct ListCostAllocationTags {
     _private: (),
 }
 impl ListCostAllocationTags {
-    /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsInput`](crate::input::ListCostAllocationTagsInput).
     pub fn builder() -> crate::input::list_cost_allocation_tags_input::Builder {
         crate::input::list_cost_allocation_tags_input::Builder::default()
     }
@@ -891,7 +891,7 @@ pub struct ListCostCategoryDefinitions {
     _private: (),
 }
 impl ListCostCategoryDefinitions {
-    /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsInput`](crate::input::ListCostCategoryDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`ListCostCategoryDefinitionsInput`](crate::input::ListCostCategoryDefinitionsInput).
     pub fn builder() -> crate::input::list_cost_category_definitions_input::Builder {
         crate::input::list_cost_category_definitions_input::Builder::default()
     }
@@ -925,7 +925,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -959,7 +959,7 @@ pub struct ProvideAnomalyFeedback {
     _private: (),
 }
 impl ProvideAnomalyFeedback {
-    /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackInput`](crate::input::ProvideAnomalyFeedbackInput)
+    /// Creates a new builder-style object to manufacture [`ProvideAnomalyFeedbackInput`](crate::input::ProvideAnomalyFeedbackInput).
     pub fn builder() -> crate::input::provide_anomaly_feedback_input::Builder {
         crate::input::provide_anomaly_feedback_input::Builder::default()
     }
@@ -993,7 +993,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1025,7 +1025,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1057,7 +1057,7 @@ pub struct UpdateAnomalyMonitor {
     _private: (),
 }
 impl UpdateAnomalyMonitor {
-    /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorInput`](crate::input::UpdateAnomalyMonitorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorInput`](crate::input::UpdateAnomalyMonitorInput).
     pub fn builder() -> crate::input::update_anomaly_monitor_input::Builder {
         crate::input::update_anomaly_monitor_input::Builder::default()
     }
@@ -1091,7 +1091,7 @@ pub struct UpdateAnomalySubscription {
     _private: (),
 }
 impl UpdateAnomalySubscription {
-    /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionInput`](crate::input::UpdateAnomalySubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAnomalySubscriptionInput`](crate::input::UpdateAnomalySubscriptionInput).
     pub fn builder() -> crate::input::update_anomaly_subscription_input::Builder {
         crate::input::update_anomaly_subscription_input::Builder::default()
     }
@@ -1125,7 +1125,7 @@ pub struct UpdateCostAllocationTagsStatus {
     _private: (),
 }
 impl UpdateCostAllocationTagsStatus {
-    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusInput`](crate::input::UpdateCostAllocationTagsStatusInput).
     pub fn builder() -> crate::input::update_cost_allocation_tags_status_input::Builder {
         crate::input::update_cost_allocation_tags_status_input::Builder::default()
     }
@@ -1159,7 +1159,7 @@ pub struct UpdateCostCategoryDefinition {
     _private: (),
 }
 impl UpdateCostCategoryDefinition {
-    /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionInput`](crate::input::UpdateCostCategoryDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionInput`](crate::input::UpdateCostCategoryDefinitionInput).
     pub fn builder() -> crate::input::update_cost_category_definition_input::Builder {
         crate::input::update_cost_category_definition_input::Builder::default()
     }

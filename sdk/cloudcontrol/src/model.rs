@@ -107,11 +107,10 @@ impl std::fmt::Debug for ProgressEvent {
         formatter.finish()
     }
 }
-/// See [`ProgressEvent`](crate::model::ProgressEvent)
+/// See [`ProgressEvent`](crate::model::ProgressEvent).
 pub mod progress_event {
 
-    /// A builder for [`ProgressEvent`](crate::model::ProgressEvent)
-    #[non_exhaustive]
+    /// A builder for [`ProgressEvent`](crate::model::ProgressEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -274,7 +273,7 @@ pub mod progress_event {
             self.retry_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProgressEvent`](crate::model::ProgressEvent)
+        /// Consumes the builder and constructs a [`ProgressEvent`](crate::model::ProgressEvent).
         pub fn build(self) -> crate::model::ProgressEvent {
             crate::model::ProgressEvent {
                 type_name: self.type_name,
@@ -292,7 +291,7 @@ pub mod progress_event {
     }
 }
 impl ProgressEvent {
-    /// Creates a new builder-style object to manufacture [`ProgressEvent`](crate::model::ProgressEvent)
+    /// Creates a new builder-style object to manufacture [`ProgressEvent`](crate::model::ProgressEvent).
     pub fn builder() -> crate::model::progress_event::Builder {
         crate::model::progress_event::Builder::default()
     }
@@ -587,11 +586,10 @@ impl std::fmt::Debug for ResourceDescription {
         formatter.finish()
     }
 }
-/// See [`ResourceDescription`](crate::model::ResourceDescription)
+/// See [`ResourceDescription`](crate::model::ResourceDescription).
 pub mod resource_description {
 
-    /// A builder for [`ResourceDescription`](crate::model::ResourceDescription)
-    #[non_exhaustive]
+    /// A builder for [`ResourceDescription`](crate::model::ResourceDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -620,7 +618,7 @@ pub mod resource_description {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceDescription`](crate::model::ResourceDescription)
+        /// Consumes the builder and constructs a [`ResourceDescription`](crate::model::ResourceDescription).
         pub fn build(self) -> crate::model::ResourceDescription {
             crate::model::ResourceDescription {
                 identifier: self.identifier,
@@ -630,7 +628,7 @@ pub mod resource_description {
     }
 }
 impl ResourceDescription {
-    /// Creates a new builder-style object to manufacture [`ResourceDescription`](crate::model::ResourceDescription)
+    /// Creates a new builder-style object to manufacture [`ResourceDescription`](crate::model::ResourceDescription).
     pub fn builder() -> crate::model::resource_description::Builder {
         crate::model::resource_description::Builder::default()
     }
@@ -679,11 +677,10 @@ impl std::fmt::Debug for ResourceRequestStatusFilter {
         formatter.finish()
     }
 }
-/// See [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter)
+/// See [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
 pub mod resource_request_status_filter {
 
-    /// A builder for [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter)
-    #[non_exhaustive]
+    /// A builder for [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -745,7 +742,7 @@ pub mod resource_request_status_filter {
             self.operation_statuses = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter)
+        /// Consumes the builder and constructs a [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
         pub fn build(self) -> crate::model::ResourceRequestStatusFilter {
             crate::model::ResourceRequestStatusFilter {
                 operations: self.operations,
@@ -755,7 +752,7 @@ pub mod resource_request_status_filter {
     }
 }
 impl ResourceRequestStatusFilter {
-    /// Creates a new builder-style object to manufacture [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter)
+    /// Creates a new builder-style object to manufacture [`ResourceRequestStatusFilter`](crate::model::ResourceRequestStatusFilter).
     pub fn builder() -> crate::model::resource_request_status_filter::Builder {
         crate::model::resource_request_status_filter::Builder::default()
     }

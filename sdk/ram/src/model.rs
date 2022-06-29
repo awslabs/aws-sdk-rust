@@ -93,11 +93,10 @@ impl std::fmt::Debug for ResourceShare {
         formatter.finish()
     }
 }
-/// See [`ResourceShare`](crate::model::ResourceShare)
+/// See [`ResourceShare`](crate::model::ResourceShare).
 pub mod resource_share {
 
-    /// A builder for [`ResourceShare`](crate::model::ResourceShare)
-    #[non_exhaustive]
+    /// A builder for [`ResourceShare`](crate::model::ResourceShare).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
@@ -252,7 +251,7 @@ pub mod resource_share {
             self.feature_set = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceShare`](crate::model::ResourceShare)
+        /// Consumes the builder and constructs a [`ResourceShare`](crate::model::ResourceShare).
         pub fn build(self) -> crate::model::ResourceShare {
             crate::model::ResourceShare {
                 resource_share_arn: self.resource_share_arn,
@@ -270,7 +269,7 @@ pub mod resource_share {
     }
 }
 impl ResourceShare {
-    /// Creates a new builder-style object to manufacture [`ResourceShare`](crate::model::ResourceShare)
+    /// Creates a new builder-style object to manufacture [`ResourceShare`](crate::model::ResourceShare).
     pub fn builder() -> crate::model::resource_share::Builder {
         crate::model::resource_share::Builder::default()
     }
@@ -363,11 +362,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -394,7 +392,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -404,7 +402,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -562,11 +560,10 @@ impl std::fmt::Debug for ResourceShareInvitation {
         formatter.finish()
     }
 }
-/// See [`ResourceShareInvitation`](crate::model::ResourceShareInvitation)
+/// See [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
 pub mod resource_share_invitation {
 
-    /// A builder for [`ResourceShareInvitation`](crate::model::ResourceShareInvitation)
-    #[non_exhaustive]
+    /// A builder for [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_invitation_arn: std::option::Option<std::string::String>,
@@ -707,7 +704,7 @@ pub mod resource_share_invitation {
             self.receiver_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceShareInvitation`](crate::model::ResourceShareInvitation)
+        /// Consumes the builder and constructs a [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
         pub fn build(self) -> crate::model::ResourceShareInvitation {
             crate::model::ResourceShareInvitation {
                 resource_share_invitation_arn: self.resource_share_invitation_arn,
@@ -724,7 +721,7 @@ pub mod resource_share_invitation {
     }
 }
 impl ResourceShareInvitation {
-    /// Creates a new builder-style object to manufacture [`ResourceShareInvitation`](crate::model::ResourceShareInvitation)
+    /// Creates a new builder-style object to manufacture [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
     pub fn builder() -> crate::model::resource_share_invitation::Builder {
         crate::model::resource_share_invitation::Builder::default()
     }
@@ -830,11 +827,10 @@ impl std::fmt::Debug for ResourceShareAssociation {
         formatter.finish()
     }
 }
-/// See [`ResourceShareAssociation`](crate::model::ResourceShareAssociation)
+/// See [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
 pub mod resource_share_association {
 
-    /// A builder for [`ResourceShareAssociation`](crate::model::ResourceShareAssociation)
-    #[non_exhaustive]
+    /// A builder for [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_share_arn: std::option::Option<std::string::String>,
@@ -988,7 +984,7 @@ pub mod resource_share_association {
             self.external = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceShareAssociation`](crate::model::ResourceShareAssociation)
+        /// Consumes the builder and constructs a [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
         pub fn build(self) -> crate::model::ResourceShareAssociation {
             crate::model::ResourceShareAssociation {
                 resource_share_arn: self.resource_share_arn,
@@ -1005,7 +1001,7 @@ pub mod resource_share_association {
     }
 }
 impl ResourceShareAssociation {
-    /// Creates a new builder-style object to manufacture [`ResourceShareAssociation`](crate::model::ResourceShareAssociation)
+    /// Creates a new builder-style object to manufacture [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
     pub fn builder() -> crate::model::resource_share_association::Builder {
         crate::model::resource_share_association::Builder::default()
     }
@@ -1244,11 +1240,10 @@ impl std::fmt::Debug for ServiceNameAndResourceType {
         formatter.finish()
     }
 }
-/// See [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType)
+/// See [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
 pub mod service_name_and_resource_type {
 
-    /// A builder for [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType)
-    #[non_exhaustive]
+    /// A builder for [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_type: std::option::Option<std::string::String>,
@@ -1300,7 +1295,7 @@ pub mod service_name_and_resource_type {
             self.resource_region_scope = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType)
+        /// Consumes the builder and constructs a [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
         pub fn build(self) -> crate::model::ServiceNameAndResourceType {
             crate::model::ServiceNameAndResourceType {
                 resource_type: self.resource_type,
@@ -1311,7 +1306,7 @@ pub mod service_name_and_resource_type {
     }
 }
 impl ServiceNameAndResourceType {
-    /// Creates a new builder-style object to manufacture [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType)
+    /// Creates a new builder-style object to manufacture [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
     pub fn builder() -> crate::model::service_name_and_resource_type::Builder {
         crate::model::service_name_and_resource_type::Builder::default()
     }
@@ -1507,11 +1502,10 @@ impl std::fmt::Debug for ResourceSharePermissionSummary {
         formatter.finish()
     }
 }
-/// See [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary)
+/// See [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
 pub mod resource_share_permission_summary {
 
-    /// A builder for [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary)
-    #[non_exhaustive]
+    /// A builder for [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1624,7 +1618,7 @@ pub mod resource_share_permission_summary {
             self.is_resource_type_default = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary)
+        /// Consumes the builder and constructs a [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
         pub fn build(self) -> crate::model::ResourceSharePermissionSummary {
             crate::model::ResourceSharePermissionSummary {
                 arn: self.arn,
@@ -1641,7 +1635,7 @@ pub mod resource_share_permission_summary {
     }
 }
 impl ResourceSharePermissionSummary {
-    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary)
+    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
     pub fn builder() -> crate::model::resource_share_permission_summary::Builder {
         crate::model::resource_share_permission_summary::Builder::default()
     }
@@ -1731,11 +1725,10 @@ impl std::fmt::Debug for Resource {
         formatter.finish()
     }
 }
-/// See [`Resource`](crate::model::Resource)
+/// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
-    /// A builder for [`Resource`](crate::model::Resource)
-    #[non_exhaustive]
+    /// A builder for [`Resource`](crate::model::Resource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1868,7 +1861,7 @@ pub mod resource {
             self.resource_region_scope = input;
             self
         }
-        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource)
+        /// Consumes the builder and constructs a [`Resource`](crate::model::Resource).
         pub fn build(self) -> crate::model::Resource {
             crate::model::Resource {
                 arn: self.arn,
@@ -1885,7 +1878,7 @@ pub mod resource {
     }
 }
 impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource)
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
     pub fn builder() -> crate::model::resource::Builder {
         crate::model::resource::Builder::default()
     }
@@ -2067,11 +2060,10 @@ impl std::fmt::Debug for Principal {
         formatter.finish()
     }
 }
-/// See [`Principal`](crate::model::Principal)
+/// See [`Principal`](crate::model::Principal).
 pub mod principal {
 
-    /// A builder for [`Principal`](crate::model::Principal)
-    #[non_exhaustive]
+    /// A builder for [`Principal`](crate::model::Principal).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2140,7 +2132,7 @@ pub mod principal {
             self.external = input;
             self
         }
-        /// Consumes the builder and constructs a [`Principal`](crate::model::Principal)
+        /// Consumes the builder and constructs a [`Principal`](crate::model::Principal).
         pub fn build(self) -> crate::model::Principal {
             crate::model::Principal {
                 id: self.id,
@@ -2153,7 +2145,7 @@ pub mod principal {
     }
 }
 impl Principal {
-    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal)
+    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
     pub fn builder() -> crate::model::principal::Builder {
         crate::model::principal::Builder::default()
     }
@@ -2186,11 +2178,10 @@ impl std::fmt::Debug for TagFilter {
         formatter.finish()
     }
 }
-/// See [`TagFilter`](crate::model::TagFilter)
+/// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
-    /// A builder for [`TagFilter`](crate::model::TagFilter)
-    #[non_exhaustive]
+    /// A builder for [`TagFilter`](crate::model::TagFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_key: std::option::Option<std::string::String>,
@@ -2226,7 +2217,7 @@ pub mod tag_filter {
             self.tag_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter)
+        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter).
         pub fn build(self) -> crate::model::TagFilter {
             crate::model::TagFilter {
                 tag_key: self.tag_key,
@@ -2236,7 +2227,7 @@ pub mod tag_filter {
     }
 }
 impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter)
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
     pub fn builder() -> crate::model::tag_filter::Builder {
         crate::model::tag_filter::Builder::default()
     }
@@ -2318,11 +2309,10 @@ impl std::fmt::Debug for ResourceSharePermissionDetail {
         formatter.finish()
     }
 }
-/// See [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail)
+/// See [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
 pub mod resource_share_permission_detail {
 
-    /// A builder for [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail)
-    #[non_exhaustive]
+    /// A builder for [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2435,7 +2425,7 @@ pub mod resource_share_permission_detail {
             self.is_resource_type_default = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail)
+        /// Consumes the builder and constructs a [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
         pub fn build(self) -> crate::model::ResourceSharePermissionDetail {
             crate::model::ResourceSharePermissionDetail {
                 arn: self.arn,
@@ -2452,7 +2442,7 @@ pub mod resource_share_permission_detail {
     }
 }
 impl ResourceSharePermissionDetail {
-    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail)
+    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
     pub fn builder() -> crate::model::resource_share_permission_detail::Builder {
         crate::model::resource_share_permission_detail::Builder::default()
     }

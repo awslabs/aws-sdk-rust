@@ -64,11 +64,10 @@ impl std::fmt::Debug for StartSelector {
         formatter.finish()
     }
 }
-/// See [`StartSelector`](crate::model::StartSelector)
+/// See [`StartSelector`](crate::model::StartSelector).
 pub mod start_selector {
 
-    /// A builder for [`StartSelector`](crate::model::StartSelector)
-    #[non_exhaustive]
+    /// A builder for [`StartSelector`](crate::model::StartSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_selector_type: std::option::Option<crate::model::StartSelectorType>,
@@ -147,7 +146,7 @@ pub mod start_selector {
             self.continuation_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartSelector`](crate::model::StartSelector)
+        /// Consumes the builder and constructs a [`StartSelector`](crate::model::StartSelector).
         pub fn build(self) -> crate::model::StartSelector {
             crate::model::StartSelector {
                 start_selector_type: self.start_selector_type,
@@ -159,7 +158,7 @@ pub mod start_selector {
     }
 }
 impl StartSelector {
-    /// Creates a new builder-style object to manufacture [`StartSelector`](crate::model::StartSelector)
+    /// Creates a new builder-style object to manufacture [`StartSelector`](crate::model::StartSelector).
     pub fn builder() -> crate::model::start_selector::Builder {
         crate::model::start_selector::Builder::default()
     }

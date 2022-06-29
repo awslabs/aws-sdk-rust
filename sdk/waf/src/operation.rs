@@ -10,7 +10,7 @@ pub struct CreateByteMatchSet {
     _private: (),
 }
 impl CreateByteMatchSet {
-    /// Creates a new builder-style object to manufacture [`CreateByteMatchSetInput`](crate::input::CreateByteMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateByteMatchSetInput`](crate::input::CreateByteMatchSetInput).
     pub fn builder() -> crate::input::create_byte_match_set_input::Builder {
         crate::input::create_byte_match_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateGeoMatchSet {
     _private: (),
 }
 impl CreateGeoMatchSet {
-    /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetInput`](crate::input::CreateGeoMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetInput`](crate::input::CreateGeoMatchSetInput).
     pub fn builder() -> crate::input::create_geo_match_set_input::Builder {
         crate::input::create_geo_match_set_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateIPSet {
     _private: (),
 }
 impl CreateIPSet {
-    /// Creates a new builder-style object to manufacture [`CreateIpSetInput`](crate::input::CreateIpSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateIpSetInput`](crate::input::CreateIpSetInput).
     pub fn builder() -> crate::input::create_ip_set_input::Builder {
         crate::input::create_ip_set_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateRateBasedRule {
     _private: (),
 }
 impl CreateRateBasedRule {
-    /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleInput`](crate::input::CreateRateBasedRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleInput`](crate::input::CreateRateBasedRuleInput).
     pub fn builder() -> crate::input::create_rate_based_rule_input::Builder {
         crate::input::create_rate_based_rule_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateRegexMatchSet {
     _private: (),
 }
 impl CreateRegexMatchSet {
-    /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetInput`](crate::input::CreateRegexMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetInput`](crate::input::CreateRegexMatchSetInput).
     pub fn builder() -> crate::input::create_regex_match_set_input::Builder {
         crate::input::create_regex_match_set_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateRegexPatternSet {
     _private: (),
 }
 impl CreateRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetInput`](crate::input::CreateRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetInput`](crate::input::CreateRegexPatternSetInput).
     pub fn builder() -> crate::input::create_regex_pattern_set_input::Builder {
         crate::input::create_regex_pattern_set_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct CreateRule {
     _private: (),
 }
 impl CreateRule {
-    /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleInput`](crate::input::CreateRuleInput).
     pub fn builder() -> crate::input::create_rule_input::Builder {
         crate::input::create_rule_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct CreateRuleGroup {
     _private: (),
 }
 impl CreateRuleGroup {
-    /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleGroupInput`](crate::input::CreateRuleGroupInput).
     pub fn builder() -> crate::input::create_rule_group_input::Builder {
         crate::input::create_rule_group_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct CreateSizeConstraintSet {
     _private: (),
 }
 impl CreateSizeConstraintSet {
-    /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetInput`](crate::input::CreateSizeConstraintSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetInput`](crate::input::CreateSizeConstraintSetInput).
     pub fn builder() -> crate::input::create_size_constraint_set_input::Builder {
         crate::input::create_size_constraint_set_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct CreateSqlInjectionMatchSet {
     _private: (),
 }
 impl CreateSqlInjectionMatchSet {
-    /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetInput`](crate::input::CreateSqlInjectionMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetInput`](crate::input::CreateSqlInjectionMatchSetInput).
     pub fn builder() -> crate::input::create_sql_injection_match_set_input::Builder {
         crate::input::create_sql_injection_match_set_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct CreateWebACL {
     _private: (),
 }
 impl CreateWebACL {
-    /// Creates a new builder-style object to manufacture [`CreateWebAclInput`](crate::input::CreateWebAclInput)
+    /// Creates a new builder-style object to manufacture [`CreateWebAclInput`](crate::input::CreateWebAclInput).
     pub fn builder() -> crate::input::create_web_acl_input::Builder {
         crate::input::create_web_acl_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct CreateWebACLMigrationStack {
     _private: (),
 }
 impl CreateWebACLMigrationStack {
-    /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackInput`](crate::input::CreateWebAclMigrationStackInput)
+    /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackInput`](crate::input::CreateWebAclMigrationStackInput).
     pub fn builder() -> crate::input::create_web_acl_migration_stack_input::Builder {
         crate::input::create_web_acl_migration_stack_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct CreateXssMatchSet {
     _private: (),
 }
 impl CreateXssMatchSet {
-    /// Creates a new builder-style object to manufacture [`CreateXssMatchSetInput`](crate::input::CreateXssMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateXssMatchSetInput`](crate::input::CreateXssMatchSetInput).
     pub fn builder() -> crate::input::create_xss_match_set_input::Builder {
         crate::input::create_xss_match_set_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct DeleteByteMatchSet {
     _private: (),
 }
 impl DeleteByteMatchSet {
-    /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetInput`](crate::input::DeleteByteMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetInput`](crate::input::DeleteByteMatchSetInput).
     pub fn builder() -> crate::input::delete_byte_match_set_input::Builder {
         crate::input::delete_byte_match_set_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct DeleteGeoMatchSet {
     _private: (),
 }
 impl DeleteGeoMatchSet {
-    /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetInput`](crate::input::DeleteGeoMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetInput`](crate::input::DeleteGeoMatchSetInput).
     pub fn builder() -> crate::input::delete_geo_match_set_input::Builder {
         crate::input::delete_geo_match_set_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct DeleteIPSet {
     _private: (),
 }
 impl DeleteIPSet {
-    /// Creates a new builder-style object to manufacture [`DeleteIpSetInput`](crate::input::DeleteIpSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIpSetInput`](crate::input::DeleteIpSetInput).
     pub fn builder() -> crate::input::delete_ip_set_input::Builder {
         crate::input::delete_ip_set_input::Builder::default()
     }
@@ -546,7 +546,7 @@ pub struct DeleteLoggingConfiguration {
     _private: (),
 }
 impl DeleteLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::input::DeleteLoggingConfigurationInput).
     pub fn builder() -> crate::input::delete_logging_configuration_input::Builder {
         crate::input::delete_logging_configuration_input::Builder::default()
     }
@@ -580,7 +580,7 @@ pub struct DeletePermissionPolicy {
     _private: (),
 }
 impl DeletePermissionPolicy {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyInput`](crate::input::DeletePermissionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyInput`](crate::input::DeletePermissionPolicyInput).
     pub fn builder() -> crate::input::delete_permission_policy_input::Builder {
         crate::input::delete_permission_policy_input::Builder::default()
     }
@@ -614,7 +614,7 @@ pub struct DeleteRateBasedRule {
     _private: (),
 }
 impl DeleteRateBasedRule {
-    /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleInput`](crate::input::DeleteRateBasedRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleInput`](crate::input::DeleteRateBasedRuleInput).
     pub fn builder() -> crate::input::delete_rate_based_rule_input::Builder {
         crate::input::delete_rate_based_rule_input::Builder::default()
     }
@@ -648,7 +648,7 @@ pub struct DeleteRegexMatchSet {
     _private: (),
 }
 impl DeleteRegexMatchSet {
-    /// Creates a new builder-style object to manufacture [`DeleteRegexMatchSetInput`](crate::input::DeleteRegexMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRegexMatchSetInput`](crate::input::DeleteRegexMatchSetInput).
     pub fn builder() -> crate::input::delete_regex_match_set_input::Builder {
         crate::input::delete_regex_match_set_input::Builder::default()
     }
@@ -682,7 +682,7 @@ pub struct DeleteRegexPatternSet {
     _private: (),
 }
 impl DeleteRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetInput`](crate::input::DeleteRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetInput`](crate::input::DeleteRegexPatternSetInput).
     pub fn builder() -> crate::input::delete_regex_pattern_set_input::Builder {
         crate::input::delete_regex_pattern_set_input::Builder::default()
     }
@@ -716,7 +716,7 @@ pub struct DeleteRule {
     _private: (),
 }
 impl DeleteRule {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleInput`](crate::input::DeleteRuleInput).
     pub fn builder() -> crate::input::delete_rule_input::Builder {
         crate::input::delete_rule_input::Builder::default()
     }
@@ -748,7 +748,7 @@ pub struct DeleteRuleGroup {
     _private: (),
 }
 impl DeleteRuleGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupInput`](crate::input::DeleteRuleGroupInput).
     pub fn builder() -> crate::input::delete_rule_group_input::Builder {
         crate::input::delete_rule_group_input::Builder::default()
     }
@@ -782,7 +782,7 @@ pub struct DeleteSizeConstraintSet {
     _private: (),
 }
 impl DeleteSizeConstraintSet {
-    /// Creates a new builder-style object to manufacture [`DeleteSizeConstraintSetInput`](crate::input::DeleteSizeConstraintSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSizeConstraintSetInput`](crate::input::DeleteSizeConstraintSetInput).
     pub fn builder() -> crate::input::delete_size_constraint_set_input::Builder {
         crate::input::delete_size_constraint_set_input::Builder::default()
     }
@@ -816,7 +816,7 @@ pub struct DeleteSqlInjectionMatchSet {
     _private: (),
 }
 impl DeleteSqlInjectionMatchSet {
-    /// Creates a new builder-style object to manufacture [`DeleteSqlInjectionMatchSetInput`](crate::input::DeleteSqlInjectionMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSqlInjectionMatchSetInput`](crate::input::DeleteSqlInjectionMatchSetInput).
     pub fn builder() -> crate::input::delete_sql_injection_match_set_input::Builder {
         crate::input::delete_sql_injection_match_set_input::Builder::default()
     }
@@ -850,7 +850,7 @@ pub struct DeleteWebACL {
     _private: (),
 }
 impl DeleteWebACL {
-    /// Creates a new builder-style object to manufacture [`DeleteWebAclInput`](crate::input::DeleteWebAclInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWebAclInput`](crate::input::DeleteWebAclInput).
     pub fn builder() -> crate::input::delete_web_acl_input::Builder {
         crate::input::delete_web_acl_input::Builder::default()
     }
@@ -882,7 +882,7 @@ pub struct DeleteXssMatchSet {
     _private: (),
 }
 impl DeleteXssMatchSet {
-    /// Creates a new builder-style object to manufacture [`DeleteXssMatchSetInput`](crate::input::DeleteXssMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteXssMatchSetInput`](crate::input::DeleteXssMatchSetInput).
     pub fn builder() -> crate::input::delete_xss_match_set_input::Builder {
         crate::input::delete_xss_match_set_input::Builder::default()
     }
@@ -916,7 +916,7 @@ pub struct GetByteMatchSet {
     _private: (),
 }
 impl GetByteMatchSet {
-    /// Creates a new builder-style object to manufacture [`GetByteMatchSetInput`](crate::input::GetByteMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`GetByteMatchSetInput`](crate::input::GetByteMatchSetInput).
     pub fn builder() -> crate::input::get_byte_match_set_input::Builder {
         crate::input::get_byte_match_set_input::Builder::default()
     }
@@ -950,7 +950,7 @@ pub struct GetChangeToken {
     _private: (),
 }
 impl GetChangeToken {
-    /// Creates a new builder-style object to manufacture [`GetChangeTokenInput`](crate::input::GetChangeTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetChangeTokenInput`](crate::input::GetChangeTokenInput).
     pub fn builder() -> crate::input::get_change_token_input::Builder {
         crate::input::get_change_token_input::Builder::default()
     }
@@ -982,7 +982,7 @@ pub struct GetChangeTokenStatus {
     _private: (),
 }
 impl GetChangeTokenStatus {
-    /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusInput`](crate::input::GetChangeTokenStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusInput`](crate::input::GetChangeTokenStatusInput).
     pub fn builder() -> crate::input::get_change_token_status_input::Builder {
         crate::input::get_change_token_status_input::Builder::default()
     }
@@ -1016,7 +1016,7 @@ pub struct GetGeoMatchSet {
     _private: (),
 }
 impl GetGeoMatchSet {
-    /// Creates a new builder-style object to manufacture [`GetGeoMatchSetInput`](crate::input::GetGeoMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`GetGeoMatchSetInput`](crate::input::GetGeoMatchSetInput).
     pub fn builder() -> crate::input::get_geo_match_set_input::Builder {
         crate::input::get_geo_match_set_input::Builder::default()
     }
@@ -1048,7 +1048,7 @@ pub struct GetIPSet {
     _private: (),
 }
 impl GetIPSet {
-    /// Creates a new builder-style object to manufacture [`GetIpSetInput`](crate::input::GetIpSetInput)
+    /// Creates a new builder-style object to manufacture [`GetIpSetInput`](crate::input::GetIpSetInput).
     pub fn builder() -> crate::input::get_ip_set_input::Builder {
         crate::input::get_ip_set_input::Builder::default()
     }
@@ -1079,7 +1079,7 @@ pub struct GetLoggingConfiguration {
     _private: (),
 }
 impl GetLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::input::GetLoggingConfigurationInput).
     pub fn builder() -> crate::input::get_logging_configuration_input::Builder {
         crate::input::get_logging_configuration_input::Builder::default()
     }
@@ -1113,7 +1113,7 @@ pub struct GetPermissionPolicy {
     _private: (),
 }
 impl GetPermissionPolicy {
-    /// Creates a new builder-style object to manufacture [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput).
     pub fn builder() -> crate::input::get_permission_policy_input::Builder {
         crate::input::get_permission_policy_input::Builder::default()
     }
@@ -1147,7 +1147,7 @@ pub struct GetRateBasedRule {
     _private: (),
 }
 impl GetRateBasedRule {
-    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleInput`](crate::input::GetRateBasedRuleInput)
+    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleInput`](crate::input::GetRateBasedRuleInput).
     pub fn builder() -> crate::input::get_rate_based_rule_input::Builder {
         crate::input::get_rate_based_rule_input::Builder::default()
     }
@@ -1181,7 +1181,7 @@ pub struct GetRateBasedRuleManagedKeys {
     _private: (),
 }
 impl GetRateBasedRuleManagedKeys {
-    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysInput`](crate::input::GetRateBasedRuleManagedKeysInput)
+    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysInput`](crate::input::GetRateBasedRuleManagedKeysInput).
     pub fn builder() -> crate::input::get_rate_based_rule_managed_keys_input::Builder {
         crate::input::get_rate_based_rule_managed_keys_input::Builder::default()
     }
@@ -1215,7 +1215,7 @@ pub struct GetRegexMatchSet {
     _private: (),
 }
 impl GetRegexMatchSet {
-    /// Creates a new builder-style object to manufacture [`GetRegexMatchSetInput`](crate::input::GetRegexMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`GetRegexMatchSetInput`](crate::input::GetRegexMatchSetInput).
     pub fn builder() -> crate::input::get_regex_match_set_input::Builder {
         crate::input::get_regex_match_set_input::Builder::default()
     }
@@ -1249,7 +1249,7 @@ pub struct GetRegexPatternSet {
     _private: (),
 }
 impl GetRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`GetRegexPatternSetInput`](crate::input::GetRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`GetRegexPatternSetInput`](crate::input::GetRegexPatternSetInput).
     pub fn builder() -> crate::input::get_regex_pattern_set_input::Builder {
         crate::input::get_regex_pattern_set_input::Builder::default()
     }
@@ -1283,7 +1283,7 @@ pub struct GetRule {
     _private: (),
 }
 impl GetRule {
-    /// Creates a new builder-style object to manufacture [`GetRuleInput`](crate::input::GetRuleInput)
+    /// Creates a new builder-style object to manufacture [`GetRuleInput`](crate::input::GetRuleInput).
     pub fn builder() -> crate::input::get_rule_input::Builder {
         crate::input::get_rule_input::Builder::default()
     }
@@ -1314,7 +1314,7 @@ pub struct GetRuleGroup {
     _private: (),
 }
 impl GetRuleGroup {
-    /// Creates a new builder-style object to manufacture [`GetRuleGroupInput`](crate::input::GetRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetRuleGroupInput`](crate::input::GetRuleGroupInput).
     pub fn builder() -> crate::input::get_rule_group_input::Builder {
         crate::input::get_rule_group_input::Builder::default()
     }
@@ -1346,7 +1346,7 @@ pub struct GetSampledRequests {
     _private: (),
 }
 impl GetSampledRequests {
-    /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::input::GetSampledRequestsInput)
+    /// Creates a new builder-style object to manufacture [`GetSampledRequestsInput`](crate::input::GetSampledRequestsInput).
     pub fn builder() -> crate::input::get_sampled_requests_input::Builder {
         crate::input::get_sampled_requests_input::Builder::default()
     }
@@ -1380,7 +1380,7 @@ pub struct GetSizeConstraintSet {
     _private: (),
 }
 impl GetSizeConstraintSet {
-    /// Creates a new builder-style object to manufacture [`GetSizeConstraintSetInput`](crate::input::GetSizeConstraintSetInput)
+    /// Creates a new builder-style object to manufacture [`GetSizeConstraintSetInput`](crate::input::GetSizeConstraintSetInput).
     pub fn builder() -> crate::input::get_size_constraint_set_input::Builder {
         crate::input::get_size_constraint_set_input::Builder::default()
     }
@@ -1414,7 +1414,7 @@ pub struct GetSqlInjectionMatchSet {
     _private: (),
 }
 impl GetSqlInjectionMatchSet {
-    /// Creates a new builder-style object to manufacture [`GetSqlInjectionMatchSetInput`](crate::input::GetSqlInjectionMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`GetSqlInjectionMatchSetInput`](crate::input::GetSqlInjectionMatchSetInput).
     pub fn builder() -> crate::input::get_sql_injection_match_set_input::Builder {
         crate::input::get_sql_injection_match_set_input::Builder::default()
     }
@@ -1448,7 +1448,7 @@ pub struct GetWebACL {
     _private: (),
 }
 impl GetWebACL {
-    /// Creates a new builder-style object to manufacture [`GetWebAclInput`](crate::input::GetWebAclInput)
+    /// Creates a new builder-style object to manufacture [`GetWebAclInput`](crate::input::GetWebAclInput).
     pub fn builder() -> crate::input::get_web_acl_input::Builder {
         crate::input::get_web_acl_input::Builder::default()
     }
@@ -1479,7 +1479,7 @@ pub struct GetXssMatchSet {
     _private: (),
 }
 impl GetXssMatchSet {
-    /// Creates a new builder-style object to manufacture [`GetXssMatchSetInput`](crate::input::GetXssMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`GetXssMatchSetInput`](crate::input::GetXssMatchSetInput).
     pub fn builder() -> crate::input::get_xss_match_set_input::Builder {
         crate::input::get_xss_match_set_input::Builder::default()
     }
@@ -1511,7 +1511,7 @@ pub struct ListActivatedRulesInRuleGroup {
     _private: (),
 }
 impl ListActivatedRulesInRuleGroup {
-    /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupInput`](crate::input::ListActivatedRulesInRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupInput`](crate::input::ListActivatedRulesInRuleGroupInput).
     pub fn builder() -> crate::input::list_activated_rules_in_rule_group_input::Builder {
         crate::input::list_activated_rules_in_rule_group_input::Builder::default()
     }
@@ -1545,7 +1545,7 @@ pub struct ListByteMatchSets {
     _private: (),
 }
 impl ListByteMatchSets {
-    /// Creates a new builder-style object to manufacture [`ListByteMatchSetsInput`](crate::input::ListByteMatchSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListByteMatchSetsInput`](crate::input::ListByteMatchSetsInput).
     pub fn builder() -> crate::input::list_byte_match_sets_input::Builder {
         crate::input::list_byte_match_sets_input::Builder::default()
     }
@@ -1579,7 +1579,7 @@ pub struct ListGeoMatchSets {
     _private: (),
 }
 impl ListGeoMatchSets {
-    /// Creates a new builder-style object to manufacture [`ListGeoMatchSetsInput`](crate::input::ListGeoMatchSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListGeoMatchSetsInput`](crate::input::ListGeoMatchSetsInput).
     pub fn builder() -> crate::input::list_geo_match_sets_input::Builder {
         crate::input::list_geo_match_sets_input::Builder::default()
     }
@@ -1613,7 +1613,7 @@ pub struct ListIPSets {
     _private: (),
 }
 impl ListIPSets {
-    /// Creates a new builder-style object to manufacture [`ListIpSetsInput`](crate::input::ListIpSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListIpSetsInput`](crate::input::ListIpSetsInput).
     pub fn builder() -> crate::input::list_ip_sets_input::Builder {
         crate::input::list_ip_sets_input::Builder::default()
     }
@@ -1645,7 +1645,7 @@ pub struct ListLoggingConfigurations {
     _private: (),
 }
 impl ListLoggingConfigurations {
-    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput)
+    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::input::ListLoggingConfigurationsInput).
     pub fn builder() -> crate::input::list_logging_configurations_input::Builder {
         crate::input::list_logging_configurations_input::Builder::default()
     }
@@ -1679,7 +1679,7 @@ pub struct ListRateBasedRules {
     _private: (),
 }
 impl ListRateBasedRules {
-    /// Creates a new builder-style object to manufacture [`ListRateBasedRulesInput`](crate::input::ListRateBasedRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListRateBasedRulesInput`](crate::input::ListRateBasedRulesInput).
     pub fn builder() -> crate::input::list_rate_based_rules_input::Builder {
         crate::input::list_rate_based_rules_input::Builder::default()
     }
@@ -1713,7 +1713,7 @@ pub struct ListRegexMatchSets {
     _private: (),
 }
 impl ListRegexMatchSets {
-    /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsInput`](crate::input::ListRegexMatchSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsInput`](crate::input::ListRegexMatchSetsInput).
     pub fn builder() -> crate::input::list_regex_match_sets_input::Builder {
         crate::input::list_regex_match_sets_input::Builder::default()
     }
@@ -1747,7 +1747,7 @@ pub struct ListRegexPatternSets {
     _private: (),
 }
 impl ListRegexPatternSets {
-    /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput).
     pub fn builder() -> crate::input::list_regex_pattern_sets_input::Builder {
         crate::input::list_regex_pattern_sets_input::Builder::default()
     }
@@ -1781,7 +1781,7 @@ pub struct ListRuleGroups {
     _private: (),
 }
 impl ListRuleGroups {
-    /// Creates a new builder-style object to manufacture [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListRuleGroupsInput`](crate::input::ListRuleGroupsInput).
     pub fn builder() -> crate::input::list_rule_groups_input::Builder {
         crate::input::list_rule_groups_input::Builder::default()
     }
@@ -1813,7 +1813,7 @@ pub struct ListRules {
     _private: (),
 }
 impl ListRules {
-    /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListRulesInput`](crate::input::ListRulesInput).
     pub fn builder() -> crate::input::list_rules_input::Builder {
         crate::input::list_rules_input::Builder::default()
     }
@@ -1844,7 +1844,7 @@ pub struct ListSizeConstraintSets {
     _private: (),
 }
 impl ListSizeConstraintSets {
-    /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsInput`](crate::input::ListSizeConstraintSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsInput`](crate::input::ListSizeConstraintSetsInput).
     pub fn builder() -> crate::input::list_size_constraint_sets_input::Builder {
         crate::input::list_size_constraint_sets_input::Builder::default()
     }
@@ -1878,7 +1878,7 @@ pub struct ListSqlInjectionMatchSets {
     _private: (),
 }
 impl ListSqlInjectionMatchSets {
-    /// Creates a new builder-style object to manufacture [`ListSqlInjectionMatchSetsInput`](crate::input::ListSqlInjectionMatchSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListSqlInjectionMatchSetsInput`](crate::input::ListSqlInjectionMatchSetsInput).
     pub fn builder() -> crate::input::list_sql_injection_match_sets_input::Builder {
         crate::input::list_sql_injection_match_sets_input::Builder::default()
     }
@@ -1912,7 +1912,7 @@ pub struct ListSubscribedRuleGroups {
     _private: (),
 }
 impl ListSubscribedRuleGroups {
-    /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsInput`](crate::input::ListSubscribedRuleGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsInput`](crate::input::ListSubscribedRuleGroupsInput).
     pub fn builder() -> crate::input::list_subscribed_rule_groups_input::Builder {
         crate::input::list_subscribed_rule_groups_input::Builder::default()
     }
@@ -1946,7 +1946,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1980,7 +1980,7 @@ pub struct ListWebACLs {
     _private: (),
 }
 impl ListWebACLs {
-    /// Creates a new builder-style object to manufacture [`ListWebAcLsInput`](crate::input::ListWebAcLsInput)
+    /// Creates a new builder-style object to manufacture [`ListWebAcLsInput`](crate::input::ListWebAcLsInput).
     pub fn builder() -> crate::input::list_web_ac_ls_input::Builder {
         crate::input::list_web_ac_ls_input::Builder::default()
     }
@@ -2012,7 +2012,7 @@ pub struct ListXssMatchSets {
     _private: (),
 }
 impl ListXssMatchSets {
-    /// Creates a new builder-style object to manufacture [`ListXssMatchSetsInput`](crate::input::ListXssMatchSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListXssMatchSetsInput`](crate::input::ListXssMatchSetsInput).
     pub fn builder() -> crate::input::list_xss_match_sets_input::Builder {
         crate::input::list_xss_match_sets_input::Builder::default()
     }
@@ -2046,7 +2046,7 @@ pub struct PutLoggingConfiguration {
     _private: (),
 }
 impl PutLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationInput`](crate::input::PutLoggingConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationInput`](crate::input::PutLoggingConfigurationInput).
     pub fn builder() -> crate::input::put_logging_configuration_input::Builder {
         crate::input::put_logging_configuration_input::Builder::default()
     }
@@ -2080,7 +2080,7 @@ pub struct PutPermissionPolicy {
     _private: (),
 }
 impl PutPermissionPolicy {
-    /// Creates a new builder-style object to manufacture [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput).
     pub fn builder() -> crate::input::put_permission_policy_input::Builder {
         crate::input::put_permission_policy_input::Builder::default()
     }
@@ -2114,7 +2114,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -2146,7 +2146,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -2178,7 +2178,7 @@ pub struct UpdateByteMatchSet {
     _private: (),
 }
 impl UpdateByteMatchSet {
-    /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetInput`](crate::input::UpdateByteMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetInput`](crate::input::UpdateByteMatchSetInput).
     pub fn builder() -> crate::input::update_byte_match_set_input::Builder {
         crate::input::update_byte_match_set_input::Builder::default()
     }
@@ -2212,7 +2212,7 @@ pub struct UpdateGeoMatchSet {
     _private: (),
 }
 impl UpdateGeoMatchSet {
-    /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetInput`](crate::input::UpdateGeoMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetInput`](crate::input::UpdateGeoMatchSetInput).
     pub fn builder() -> crate::input::update_geo_match_set_input::Builder {
         crate::input::update_geo_match_set_input::Builder::default()
     }
@@ -2246,7 +2246,7 @@ pub struct UpdateIPSet {
     _private: (),
 }
 impl UpdateIPSet {
-    /// Creates a new builder-style object to manufacture [`UpdateIpSetInput`](crate::input::UpdateIpSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateIpSetInput`](crate::input::UpdateIpSetInput).
     pub fn builder() -> crate::input::update_ip_set_input::Builder {
         crate::input::update_ip_set_input::Builder::default()
     }
@@ -2278,7 +2278,7 @@ pub struct UpdateRateBasedRule {
     _private: (),
 }
 impl UpdateRateBasedRule {
-    /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleInput`](crate::input::UpdateRateBasedRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleInput`](crate::input::UpdateRateBasedRuleInput).
     pub fn builder() -> crate::input::update_rate_based_rule_input::Builder {
         crate::input::update_rate_based_rule_input::Builder::default()
     }
@@ -2312,7 +2312,7 @@ pub struct UpdateRegexMatchSet {
     _private: (),
 }
 impl UpdateRegexMatchSet {
-    /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetInput`](crate::input::UpdateRegexMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetInput`](crate::input::UpdateRegexMatchSetInput).
     pub fn builder() -> crate::input::update_regex_match_set_input::Builder {
         crate::input::update_regex_match_set_input::Builder::default()
     }
@@ -2346,7 +2346,7 @@ pub struct UpdateRegexPatternSet {
     _private: (),
 }
 impl UpdateRegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput).
     pub fn builder() -> crate::input::update_regex_pattern_set_input::Builder {
         crate::input::update_regex_pattern_set_input::Builder::default()
     }
@@ -2380,7 +2380,7 @@ pub struct UpdateRule {
     _private: (),
 }
 impl UpdateRule {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleInput`](crate::input::UpdateRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleInput`](crate::input::UpdateRuleInput).
     pub fn builder() -> crate::input::update_rule_input::Builder {
         crate::input::update_rule_input::Builder::default()
     }
@@ -2412,7 +2412,7 @@ pub struct UpdateRuleGroup {
     _private: (),
 }
 impl UpdateRuleGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupInput`](crate::input::UpdateRuleGroupInput).
     pub fn builder() -> crate::input::update_rule_group_input::Builder {
         crate::input::update_rule_group_input::Builder::default()
     }
@@ -2446,7 +2446,7 @@ pub struct UpdateSizeConstraintSet {
     _private: (),
 }
 impl UpdateSizeConstraintSet {
-    /// Creates a new builder-style object to manufacture [`UpdateSizeConstraintSetInput`](crate::input::UpdateSizeConstraintSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSizeConstraintSetInput`](crate::input::UpdateSizeConstraintSetInput).
     pub fn builder() -> crate::input::update_size_constraint_set_input::Builder {
         crate::input::update_size_constraint_set_input::Builder::default()
     }
@@ -2480,7 +2480,7 @@ pub struct UpdateSqlInjectionMatchSet {
     _private: (),
 }
 impl UpdateSqlInjectionMatchSet {
-    /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetInput`](crate::input::UpdateSqlInjectionMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetInput`](crate::input::UpdateSqlInjectionMatchSetInput).
     pub fn builder() -> crate::input::update_sql_injection_match_set_input::Builder {
         crate::input::update_sql_injection_match_set_input::Builder::default()
     }
@@ -2514,7 +2514,7 @@ pub struct UpdateWebACL {
     _private: (),
 }
 impl UpdateWebACL {
-    /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::input::UpdateWebAclInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWebAclInput`](crate::input::UpdateWebAclInput).
     pub fn builder() -> crate::input::update_web_acl_input::Builder {
         crate::input::update_web_acl_input::Builder::default()
     }
@@ -2546,7 +2546,7 @@ pub struct UpdateXssMatchSet {
     _private: (),
 }
 impl UpdateXssMatchSet {
-    /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetInput`](crate::input::UpdateXssMatchSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetInput`](crate::input::UpdateXssMatchSetInput).
     pub fn builder() -> crate::input::update_xss_match_set_input::Builder {
         crate::input::update_xss_match_set_input::Builder::default()
     }

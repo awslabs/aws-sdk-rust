@@ -10,7 +10,7 @@ pub struct BatchCreateTableRows {
     _private: (),
 }
 impl BatchCreateTableRows {
-    /// Creates a new builder-style object to manufacture [`BatchCreateTableRowsInput`](crate::input::BatchCreateTableRowsInput)
+    /// Creates a new builder-style object to manufacture [`BatchCreateTableRowsInput`](crate::input::BatchCreateTableRowsInput).
     pub fn builder() -> crate::input::batch_create_table_rows_input::Builder {
         crate::input::batch_create_table_rows_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct BatchDeleteTableRows {
     _private: (),
 }
 impl BatchDeleteTableRows {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteTableRowsInput`](crate::input::BatchDeleteTableRowsInput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteTableRowsInput`](crate::input::BatchDeleteTableRowsInput).
     pub fn builder() -> crate::input::batch_delete_table_rows_input::Builder {
         crate::input::batch_delete_table_rows_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct BatchUpdateTableRows {
     _private: (),
 }
 impl BatchUpdateTableRows {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateTableRowsInput`](crate::input::BatchUpdateTableRowsInput)
+    /// Creates a new builder-style object to manufacture [`BatchUpdateTableRowsInput`](crate::input::BatchUpdateTableRowsInput).
     pub fn builder() -> crate::input::batch_update_table_rows_input::Builder {
         crate::input::batch_update_table_rows_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct BatchUpsertTableRows {
     _private: (),
 }
 impl BatchUpsertTableRows {
-    /// Creates a new builder-style object to manufacture [`BatchUpsertTableRowsInput`](crate::input::BatchUpsertTableRowsInput)
+    /// Creates a new builder-style object to manufacture [`BatchUpsertTableRowsInput`](crate::input::BatchUpsertTableRowsInput).
     pub fn builder() -> crate::input::batch_upsert_table_rows_input::Builder {
         crate::input::batch_upsert_table_rows_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DescribeTableDataImportJob {
     _private: (),
 }
 impl DescribeTableDataImportJob {
-    /// Creates a new builder-style object to manufacture [`DescribeTableDataImportJobInput`](crate::input::DescribeTableDataImportJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTableDataImportJobInput`](crate::input::DescribeTableDataImportJobInput).
     pub fn builder() -> crate::input::describe_table_data_import_job_input::Builder {
         crate::input::describe_table_data_import_job_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct GetScreenData {
     _private: (),
 }
 impl GetScreenData {
-    /// Creates a new builder-style object to manufacture [`GetScreenDataInput`](crate::input::GetScreenDataInput)
+    /// Creates a new builder-style object to manufacture [`GetScreenDataInput`](crate::input::GetScreenDataInput).
     pub fn builder() -> crate::input::get_screen_data_input::Builder {
         crate::input::get_screen_data_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct InvokeScreenAutomation {
     _private: (),
 }
 impl InvokeScreenAutomation {
-    /// Creates a new builder-style object to manufacture [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput)
+    /// Creates a new builder-style object to manufacture [`InvokeScreenAutomationInput`](crate::input::InvokeScreenAutomationInput).
     pub fn builder() -> crate::input::invoke_screen_automation_input::Builder {
         crate::input::invoke_screen_automation_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct ListTableColumns {
     _private: (),
 }
 impl ListTableColumns {
-    /// Creates a new builder-style object to manufacture [`ListTableColumnsInput`](crate::input::ListTableColumnsInput)
+    /// Creates a new builder-style object to manufacture [`ListTableColumnsInput`](crate::input::ListTableColumnsInput).
     pub fn builder() -> crate::input::list_table_columns_input::Builder {
         crate::input::list_table_columns_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct ListTableRows {
     _private: (),
 }
 impl ListTableRows {
-    /// Creates a new builder-style object to manufacture [`ListTableRowsInput`](crate::input::ListTableRowsInput)
+    /// Creates a new builder-style object to manufacture [`ListTableRowsInput`](crate::input::ListTableRowsInput).
     pub fn builder() -> crate::input::list_table_rows_input::Builder {
         crate::input::list_table_rows_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct ListTables {
     _private: (),
 }
 impl ListTables {
-    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput)
+    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput).
     pub fn builder() -> crate::input::list_tables_input::Builder {
         crate::input::list_tables_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct QueryTableRows {
     _private: (),
 }
 impl QueryTableRows {
-    /// Creates a new builder-style object to manufacture [`QueryTableRowsInput`](crate::input::QueryTableRowsInput)
+    /// Creates a new builder-style object to manufacture [`QueryTableRowsInput`](crate::input::QueryTableRowsInput).
     pub fn builder() -> crate::input::query_table_rows_input::Builder {
         crate::input::query_table_rows_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct StartTableDataImportJob {
     _private: (),
 }
 impl StartTableDataImportJob {
-    /// Creates a new builder-style object to manufacture [`StartTableDataImportJobInput`](crate::input::StartTableDataImportJobInput)
+    /// Creates a new builder-style object to manufacture [`StartTableDataImportJobInput`](crate::input::StartTableDataImportJobInput).
     pub fn builder() -> crate::input::start_table_data_import_job_input::Builder {
         crate::input::start_table_data_import_job_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

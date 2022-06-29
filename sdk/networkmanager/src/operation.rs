@@ -10,7 +10,7 @@ pub struct AcceptAttachment {
     _private: (),
 }
 impl AcceptAttachment {
-    /// Creates a new builder-style object to manufacture [`AcceptAttachmentInput`](crate::input::AcceptAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`AcceptAttachmentInput`](crate::input::AcceptAttachmentInput).
     pub fn builder() -> crate::input::accept_attachment_input::Builder {
         crate::input::accept_attachment_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateConnectPeer {
     _private: (),
 }
 impl AssociateConnectPeer {
-    /// Creates a new builder-style object to manufacture [`AssociateConnectPeerInput`](crate::input::AssociateConnectPeerInput)
+    /// Creates a new builder-style object to manufacture [`AssociateConnectPeerInput`](crate::input::AssociateConnectPeerInput).
     pub fn builder() -> crate::input::associate_connect_peer_input::Builder {
         crate::input::associate_connect_peer_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AssociateCustomerGateway {
     _private: (),
 }
 impl AssociateCustomerGateway {
-    /// Creates a new builder-style object to manufacture [`AssociateCustomerGatewayInput`](crate::input::AssociateCustomerGatewayInput)
+    /// Creates a new builder-style object to manufacture [`AssociateCustomerGatewayInput`](crate::input::AssociateCustomerGatewayInput).
     pub fn builder() -> crate::input::associate_customer_gateway_input::Builder {
         crate::input::associate_customer_gateway_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct AssociateLink {
     _private: (),
 }
 impl AssociateLink {
-    /// Creates a new builder-style object to manufacture [`AssociateLinkInput`](crate::input::AssociateLinkInput)
+    /// Creates a new builder-style object to manufacture [`AssociateLinkInput`](crate::input::AssociateLinkInput).
     pub fn builder() -> crate::input::associate_link_input::Builder {
         crate::input::associate_link_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct AssociateTransitGatewayConnectPeer {
     _private: (),
 }
 impl AssociateTransitGatewayConnectPeer {
-    /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayConnectPeerInput`](crate::input::AssociateTransitGatewayConnectPeerInput)
+    /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayConnectPeerInput`](crate::input::AssociateTransitGatewayConnectPeerInput).
     pub fn builder() -> crate::input::associate_transit_gateway_connect_peer_input::Builder {
         crate::input::associate_transit_gateway_connect_peer_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct CreateConnectAttachment {
     _private: (),
 }
 impl CreateConnectAttachment {
-    /// Creates a new builder-style object to manufacture [`CreateConnectAttachmentInput`](crate::input::CreateConnectAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectAttachmentInput`](crate::input::CreateConnectAttachmentInput).
     pub fn builder() -> crate::input::create_connect_attachment_input::Builder {
         crate::input::create_connect_attachment_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct CreateConnection {
     _private: (),
 }
 impl CreateConnection {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput).
     pub fn builder() -> crate::input::create_connection_input::Builder {
         crate::input::create_connection_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct CreateConnectPeer {
     _private: (),
 }
 impl CreateConnectPeer {
-    /// Creates a new builder-style object to manufacture [`CreateConnectPeerInput`](crate::input::CreateConnectPeerInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectPeerInput`](crate::input::CreateConnectPeerInput).
     pub fn builder() -> crate::input::create_connect_peer_input::Builder {
         crate::input::create_connect_peer_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct CreateCoreNetwork {
     _private: (),
 }
 impl CreateCoreNetwork {
-    /// Creates a new builder-style object to manufacture [`CreateCoreNetworkInput`](crate::input::CreateCoreNetworkInput)
+    /// Creates a new builder-style object to manufacture [`CreateCoreNetworkInput`](crate::input::CreateCoreNetworkInput).
     pub fn builder() -> crate::input::create_core_network_input::Builder {
         crate::input::create_core_network_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct CreateDevice {
     _private: (),
 }
 impl CreateDevice {
-    /// Creates a new builder-style object to manufacture [`CreateDeviceInput`](crate::input::CreateDeviceInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeviceInput`](crate::input::CreateDeviceInput).
     pub fn builder() -> crate::input::create_device_input::Builder {
         crate::input::create_device_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct CreateGlobalNetwork {
     _private: (),
 }
 impl CreateGlobalNetwork {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalNetworkInput`](crate::input::CreateGlobalNetworkInput)
+    /// Creates a new builder-style object to manufacture [`CreateGlobalNetworkInput`](crate::input::CreateGlobalNetworkInput).
     pub fn builder() -> crate::input::create_global_network_input::Builder {
         crate::input::create_global_network_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct CreateLink {
     _private: (),
 }
 impl CreateLink {
-    /// Creates a new builder-style object to manufacture [`CreateLinkInput`](crate::input::CreateLinkInput)
+    /// Creates a new builder-style object to manufacture [`CreateLinkInput`](crate::input::CreateLinkInput).
     pub fn builder() -> crate::input::create_link_input::Builder {
         crate::input::create_link_input::Builder::default()
     }
@@ -412,7 +412,7 @@ pub struct CreateSite {
     _private: (),
 }
 impl CreateSite {
-    /// Creates a new builder-style object to manufacture [`CreateSiteInput`](crate::input::CreateSiteInput)
+    /// Creates a new builder-style object to manufacture [`CreateSiteInput`](crate::input::CreateSiteInput).
     pub fn builder() -> crate::input::create_site_input::Builder {
         crate::input::create_site_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct CreateSiteToSiteVpnAttachment {
     _private: (),
 }
 impl CreateSiteToSiteVpnAttachment {
-    /// Creates a new builder-style object to manufacture [`CreateSiteToSiteVpnAttachmentInput`](crate::input::CreateSiteToSiteVpnAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateSiteToSiteVpnAttachmentInput`](crate::input::CreateSiteToSiteVpnAttachmentInput).
     pub fn builder() -> crate::input::create_site_to_site_vpn_attachment_input::Builder {
         crate::input::create_site_to_site_vpn_attachment_input::Builder::default()
     }
@@ -478,7 +478,7 @@ pub struct CreateVpcAttachment {
     _private: (),
 }
 impl CreateVpcAttachment {
-    /// Creates a new builder-style object to manufacture [`CreateVpcAttachmentInput`](crate::input::CreateVpcAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateVpcAttachmentInput`](crate::input::CreateVpcAttachmentInput).
     pub fn builder() -> crate::input::create_vpc_attachment_input::Builder {
         crate::input::create_vpc_attachment_input::Builder::default()
     }
@@ -512,7 +512,7 @@ pub struct DeleteAttachment {
     _private: (),
 }
 impl DeleteAttachment {
-    /// Creates a new builder-style object to manufacture [`DeleteAttachmentInput`](crate::input::DeleteAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAttachmentInput`](crate::input::DeleteAttachmentInput).
     pub fn builder() -> crate::input::delete_attachment_input::Builder {
         crate::input::delete_attachment_input::Builder::default()
     }
@@ -546,7 +546,7 @@ pub struct DeleteConnection {
     _private: (),
 }
 impl DeleteConnection {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
     pub fn builder() -> crate::input::delete_connection_input::Builder {
         crate::input::delete_connection_input::Builder::default()
     }
@@ -580,7 +580,7 @@ pub struct DeleteConnectPeer {
     _private: (),
 }
 impl DeleteConnectPeer {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectPeerInput`](crate::input::DeleteConnectPeerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectPeerInput`](crate::input::DeleteConnectPeerInput).
     pub fn builder() -> crate::input::delete_connect_peer_input::Builder {
         crate::input::delete_connect_peer_input::Builder::default()
     }
@@ -614,7 +614,7 @@ pub struct DeleteCoreNetwork {
     _private: (),
 }
 impl DeleteCoreNetwork {
-    /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkInput`](crate::input::DeleteCoreNetworkInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkInput`](crate::input::DeleteCoreNetworkInput).
     pub fn builder() -> crate::input::delete_core_network_input::Builder {
         crate::input::delete_core_network_input::Builder::default()
     }
@@ -648,7 +648,7 @@ pub struct DeleteCoreNetworkPolicyVersion {
     _private: (),
 }
 impl DeleteCoreNetworkPolicyVersion {
-    /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkPolicyVersionInput`](crate::input::DeleteCoreNetworkPolicyVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCoreNetworkPolicyVersionInput`](crate::input::DeleteCoreNetworkPolicyVersionInput).
     pub fn builder() -> crate::input::delete_core_network_policy_version_input::Builder {
         crate::input::delete_core_network_policy_version_input::Builder::default()
     }
@@ -682,7 +682,7 @@ pub struct DeleteDevice {
     _private: (),
 }
 impl DeleteDevice {
-    /// Creates a new builder-style object to manufacture [`DeleteDeviceInput`](crate::input::DeleteDeviceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeviceInput`](crate::input::DeleteDeviceInput).
     pub fn builder() -> crate::input::delete_device_input::Builder {
         crate::input::delete_device_input::Builder::default()
     }
@@ -714,7 +714,7 @@ pub struct DeleteGlobalNetwork {
     _private: (),
 }
 impl DeleteGlobalNetwork {
-    /// Creates a new builder-style object to manufacture [`DeleteGlobalNetworkInput`](crate::input::DeleteGlobalNetworkInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalNetworkInput`](crate::input::DeleteGlobalNetworkInput).
     pub fn builder() -> crate::input::delete_global_network_input::Builder {
         crate::input::delete_global_network_input::Builder::default()
     }
@@ -748,7 +748,7 @@ pub struct DeleteLink {
     _private: (),
 }
 impl DeleteLink {
-    /// Creates a new builder-style object to manufacture [`DeleteLinkInput`](crate::input::DeleteLinkInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLinkInput`](crate::input::DeleteLinkInput).
     pub fn builder() -> crate::input::delete_link_input::Builder {
         crate::input::delete_link_input::Builder::default()
     }
@@ -780,7 +780,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -814,7 +814,7 @@ pub struct DeleteSite {
     _private: (),
 }
 impl DeleteSite {
-    /// Creates a new builder-style object to manufacture [`DeleteSiteInput`](crate::input::DeleteSiteInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSiteInput`](crate::input::DeleteSiteInput).
     pub fn builder() -> crate::input::delete_site_input::Builder {
         crate::input::delete_site_input::Builder::default()
     }
@@ -846,7 +846,7 @@ pub struct DeregisterTransitGateway {
     _private: (),
 }
 impl DeregisterTransitGateway {
-    /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayInput`](crate::input::DeregisterTransitGatewayInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayInput`](crate::input::DeregisterTransitGatewayInput).
     pub fn builder() -> crate::input::deregister_transit_gateway_input::Builder {
         crate::input::deregister_transit_gateway_input::Builder::default()
     }
@@ -880,7 +880,7 @@ pub struct DescribeGlobalNetworks {
     _private: (),
 }
 impl DescribeGlobalNetworks {
-    /// Creates a new builder-style object to manufacture [`DescribeGlobalNetworksInput`](crate::input::DescribeGlobalNetworksInput)
+    /// Creates a new builder-style object to manufacture [`DescribeGlobalNetworksInput`](crate::input::DescribeGlobalNetworksInput).
     pub fn builder() -> crate::input::describe_global_networks_input::Builder {
         crate::input::describe_global_networks_input::Builder::default()
     }
@@ -914,7 +914,7 @@ pub struct DisassociateConnectPeer {
     _private: (),
 }
 impl DisassociateConnectPeer {
-    /// Creates a new builder-style object to manufacture [`DisassociateConnectPeerInput`](crate::input::DisassociateConnectPeerInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateConnectPeerInput`](crate::input::DisassociateConnectPeerInput).
     pub fn builder() -> crate::input::disassociate_connect_peer_input::Builder {
         crate::input::disassociate_connect_peer_input::Builder::default()
     }
@@ -948,7 +948,7 @@ pub struct DisassociateCustomerGateway {
     _private: (),
 }
 impl DisassociateCustomerGateway {
-    /// Creates a new builder-style object to manufacture [`DisassociateCustomerGatewayInput`](crate::input::DisassociateCustomerGatewayInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateCustomerGatewayInput`](crate::input::DisassociateCustomerGatewayInput).
     pub fn builder() -> crate::input::disassociate_customer_gateway_input::Builder {
         crate::input::disassociate_customer_gateway_input::Builder::default()
     }
@@ -982,7 +982,7 @@ pub struct DisassociateLink {
     _private: (),
 }
 impl DisassociateLink {
-    /// Creates a new builder-style object to manufacture [`DisassociateLinkInput`](crate::input::DisassociateLinkInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateLinkInput`](crate::input::DisassociateLinkInput).
     pub fn builder() -> crate::input::disassociate_link_input::Builder {
         crate::input::disassociate_link_input::Builder::default()
     }
@@ -1016,7 +1016,7 @@ pub struct DisassociateTransitGatewayConnectPeer {
     _private: (),
 }
 impl DisassociateTransitGatewayConnectPeer {
-    /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayConnectPeerInput`](crate::input::DisassociateTransitGatewayConnectPeerInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateTransitGatewayConnectPeerInput`](crate::input::DisassociateTransitGatewayConnectPeerInput).
     pub fn builder() -> crate::input::disassociate_transit_gateway_connect_peer_input::Builder {
         crate::input::disassociate_transit_gateway_connect_peer_input::Builder::default()
     }
@@ -1052,7 +1052,7 @@ pub struct ExecuteCoreNetworkChangeSet {
     _private: (),
 }
 impl ExecuteCoreNetworkChangeSet {
-    /// Creates a new builder-style object to manufacture [`ExecuteCoreNetworkChangeSetInput`](crate::input::ExecuteCoreNetworkChangeSetInput)
+    /// Creates a new builder-style object to manufacture [`ExecuteCoreNetworkChangeSetInput`](crate::input::ExecuteCoreNetworkChangeSetInput).
     pub fn builder() -> crate::input::execute_core_network_change_set_input::Builder {
         crate::input::execute_core_network_change_set_input::Builder::default()
     }
@@ -1086,7 +1086,7 @@ pub struct GetConnectAttachment {
     _private: (),
 }
 impl GetConnectAttachment {
-    /// Creates a new builder-style object to manufacture [`GetConnectAttachmentInput`](crate::input::GetConnectAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectAttachmentInput`](crate::input::GetConnectAttachmentInput).
     pub fn builder() -> crate::input::get_connect_attachment_input::Builder {
         crate::input::get_connect_attachment_input::Builder::default()
     }
@@ -1120,7 +1120,7 @@ pub struct GetConnections {
     _private: (),
 }
 impl GetConnections {
-    /// Creates a new builder-style object to manufacture [`GetConnectionsInput`](crate::input::GetConnectionsInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectionsInput`](crate::input::GetConnectionsInput).
     pub fn builder() -> crate::input::get_connections_input::Builder {
         crate::input::get_connections_input::Builder::default()
     }
@@ -1152,7 +1152,7 @@ pub struct GetConnectPeer {
     _private: (),
 }
 impl GetConnectPeer {
-    /// Creates a new builder-style object to manufacture [`GetConnectPeerInput`](crate::input::GetConnectPeerInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectPeerInput`](crate::input::GetConnectPeerInput).
     pub fn builder() -> crate::input::get_connect_peer_input::Builder {
         crate::input::get_connect_peer_input::Builder::default()
     }
@@ -1184,7 +1184,7 @@ pub struct GetConnectPeerAssociations {
     _private: (),
 }
 impl GetConnectPeerAssociations {
-    /// Creates a new builder-style object to manufacture [`GetConnectPeerAssociationsInput`](crate::input::GetConnectPeerAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectPeerAssociationsInput`](crate::input::GetConnectPeerAssociationsInput).
     pub fn builder() -> crate::input::get_connect_peer_associations_input::Builder {
         crate::input::get_connect_peer_associations_input::Builder::default()
     }
@@ -1218,7 +1218,7 @@ pub struct GetCoreNetwork {
     _private: (),
 }
 impl GetCoreNetwork {
-    /// Creates a new builder-style object to manufacture [`GetCoreNetworkInput`](crate::input::GetCoreNetworkInput)
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkInput`](crate::input::GetCoreNetworkInput).
     pub fn builder() -> crate::input::get_core_network_input::Builder {
         crate::input::get_core_network_input::Builder::default()
     }
@@ -1250,7 +1250,7 @@ pub struct GetCoreNetworkChangeSet {
     _private: (),
 }
 impl GetCoreNetworkChangeSet {
-    /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeSetInput`](crate::input::GetCoreNetworkChangeSetInput)
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeSetInput`](crate::input::GetCoreNetworkChangeSetInput).
     pub fn builder() -> crate::input::get_core_network_change_set_input::Builder {
         crate::input::get_core_network_change_set_input::Builder::default()
     }
@@ -1284,7 +1284,7 @@ pub struct GetCoreNetworkPolicy {
     _private: (),
 }
 impl GetCoreNetworkPolicy {
-    /// Creates a new builder-style object to manufacture [`GetCoreNetworkPolicyInput`](crate::input::GetCoreNetworkPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetCoreNetworkPolicyInput`](crate::input::GetCoreNetworkPolicyInput).
     pub fn builder() -> crate::input::get_core_network_policy_input::Builder {
         crate::input::get_core_network_policy_input::Builder::default()
     }
@@ -1318,7 +1318,7 @@ pub struct GetCustomerGatewayAssociations {
     _private: (),
 }
 impl GetCustomerGatewayAssociations {
-    /// Creates a new builder-style object to manufacture [`GetCustomerGatewayAssociationsInput`](crate::input::GetCustomerGatewayAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`GetCustomerGatewayAssociationsInput`](crate::input::GetCustomerGatewayAssociationsInput).
     pub fn builder() -> crate::input::get_customer_gateway_associations_input::Builder {
         crate::input::get_customer_gateway_associations_input::Builder::default()
     }
@@ -1352,7 +1352,7 @@ pub struct GetDevices {
     _private: (),
 }
 impl GetDevices {
-    /// Creates a new builder-style object to manufacture [`GetDevicesInput`](crate::input::GetDevicesInput)
+    /// Creates a new builder-style object to manufacture [`GetDevicesInput`](crate::input::GetDevicesInput).
     pub fn builder() -> crate::input::get_devices_input::Builder {
         crate::input::get_devices_input::Builder::default()
     }
@@ -1384,7 +1384,7 @@ pub struct GetLinkAssociations {
     _private: (),
 }
 impl GetLinkAssociations {
-    /// Creates a new builder-style object to manufacture [`GetLinkAssociationsInput`](crate::input::GetLinkAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`GetLinkAssociationsInput`](crate::input::GetLinkAssociationsInput).
     pub fn builder() -> crate::input::get_link_associations_input::Builder {
         crate::input::get_link_associations_input::Builder::default()
     }
@@ -1418,7 +1418,7 @@ pub struct GetLinks {
     _private: (),
 }
 impl GetLinks {
-    /// Creates a new builder-style object to manufacture [`GetLinksInput`](crate::input::GetLinksInput)
+    /// Creates a new builder-style object to manufacture [`GetLinksInput`](crate::input::GetLinksInput).
     pub fn builder() -> crate::input::get_links_input::Builder {
         crate::input::get_links_input::Builder::default()
     }
@@ -1449,7 +1449,7 @@ pub struct GetNetworkResourceCounts {
     _private: (),
 }
 impl GetNetworkResourceCounts {
-    /// Creates a new builder-style object to manufacture [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput).
     pub fn builder() -> crate::input::get_network_resource_counts_input::Builder {
         crate::input::get_network_resource_counts_input::Builder::default()
     }
@@ -1483,7 +1483,7 @@ pub struct GetNetworkResourceRelationships {
     _private: (),
 }
 impl GetNetworkResourceRelationships {
-    /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput).
     pub fn builder() -> crate::input::get_network_resource_relationships_input::Builder {
         crate::input::get_network_resource_relationships_input::Builder::default()
     }
@@ -1517,7 +1517,7 @@ pub struct GetNetworkResources {
     _private: (),
 }
 impl GetNetworkResources {
-    /// Creates a new builder-style object to manufacture [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput).
     pub fn builder() -> crate::input::get_network_resources_input::Builder {
         crate::input::get_network_resources_input::Builder::default()
     }
@@ -1551,7 +1551,7 @@ pub struct GetNetworkRoutes {
     _private: (),
 }
 impl GetNetworkRoutes {
-    /// Creates a new builder-style object to manufacture [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput).
     pub fn builder() -> crate::input::get_network_routes_input::Builder {
         crate::input::get_network_routes_input::Builder::default()
     }
@@ -1585,7 +1585,7 @@ pub struct GetNetworkTelemetry {
     _private: (),
 }
 impl GetNetworkTelemetry {
-    /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput)
+    /// Creates a new builder-style object to manufacture [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput).
     pub fn builder() -> crate::input::get_network_telemetry_input::Builder {
         crate::input::get_network_telemetry_input::Builder::default()
     }
@@ -1619,7 +1619,7 @@ pub struct GetResourcePolicy {
     _private: (),
 }
 impl GetResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
         crate::input::get_resource_policy_input::Builder::default()
     }
@@ -1653,7 +1653,7 @@ pub struct GetRouteAnalysis {
     _private: (),
 }
 impl GetRouteAnalysis {
-    /// Creates a new builder-style object to manufacture [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput)
+    /// Creates a new builder-style object to manufacture [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput).
     pub fn builder() -> crate::input::get_route_analysis_input::Builder {
         crate::input::get_route_analysis_input::Builder::default()
     }
@@ -1687,7 +1687,7 @@ pub struct GetSites {
     _private: (),
 }
 impl GetSites {
-    /// Creates a new builder-style object to manufacture [`GetSitesInput`](crate::input::GetSitesInput)
+    /// Creates a new builder-style object to manufacture [`GetSitesInput`](crate::input::GetSitesInput).
     pub fn builder() -> crate::input::get_sites_input::Builder {
         crate::input::get_sites_input::Builder::default()
     }
@@ -1718,7 +1718,7 @@ pub struct GetSiteToSiteVpnAttachment {
     _private: (),
 }
 impl GetSiteToSiteVpnAttachment {
-    /// Creates a new builder-style object to manufacture [`GetSiteToSiteVpnAttachmentInput`](crate::input::GetSiteToSiteVpnAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`GetSiteToSiteVpnAttachmentInput`](crate::input::GetSiteToSiteVpnAttachmentInput).
     pub fn builder() -> crate::input::get_site_to_site_vpn_attachment_input::Builder {
         crate::input::get_site_to_site_vpn_attachment_input::Builder::default()
     }
@@ -1752,7 +1752,7 @@ pub struct GetTransitGatewayConnectPeerAssociations {
     _private: (),
 }
 impl GetTransitGatewayConnectPeerAssociations {
-    /// Creates a new builder-style object to manufacture [`GetTransitGatewayConnectPeerAssociationsInput`](crate::input::GetTransitGatewayConnectPeerAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayConnectPeerAssociationsInput`](crate::input::GetTransitGatewayConnectPeerAssociationsInput).
     pub fn builder() -> crate::input::get_transit_gateway_connect_peer_associations_input::Builder {
         crate::input::get_transit_gateway_connect_peer_associations_input::Builder::default()
     }
@@ -1790,7 +1790,7 @@ pub struct GetTransitGatewayRegistrations {
     _private: (),
 }
 impl GetTransitGatewayRegistrations {
-    /// Creates a new builder-style object to manufacture [`GetTransitGatewayRegistrationsInput`](crate::input::GetTransitGatewayRegistrationsInput)
+    /// Creates a new builder-style object to manufacture [`GetTransitGatewayRegistrationsInput`](crate::input::GetTransitGatewayRegistrationsInput).
     pub fn builder() -> crate::input::get_transit_gateway_registrations_input::Builder {
         crate::input::get_transit_gateway_registrations_input::Builder::default()
     }
@@ -1824,7 +1824,7 @@ pub struct GetVpcAttachment {
     _private: (),
 }
 impl GetVpcAttachment {
-    /// Creates a new builder-style object to manufacture [`GetVpcAttachmentInput`](crate::input::GetVpcAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`GetVpcAttachmentInput`](crate::input::GetVpcAttachmentInput).
     pub fn builder() -> crate::input::get_vpc_attachment_input::Builder {
         crate::input::get_vpc_attachment_input::Builder::default()
     }
@@ -1858,7 +1858,7 @@ pub struct ListAttachments {
     _private: (),
 }
 impl ListAttachments {
-    /// Creates a new builder-style object to manufacture [`ListAttachmentsInput`](crate::input::ListAttachmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListAttachmentsInput`](crate::input::ListAttachmentsInput).
     pub fn builder() -> crate::input::list_attachments_input::Builder {
         crate::input::list_attachments_input::Builder::default()
     }
@@ -1892,7 +1892,7 @@ pub struct ListConnectPeers {
     _private: (),
 }
 impl ListConnectPeers {
-    /// Creates a new builder-style object to manufacture [`ListConnectPeersInput`](crate::input::ListConnectPeersInput)
+    /// Creates a new builder-style object to manufacture [`ListConnectPeersInput`](crate::input::ListConnectPeersInput).
     pub fn builder() -> crate::input::list_connect_peers_input::Builder {
         crate::input::list_connect_peers_input::Builder::default()
     }
@@ -1926,7 +1926,7 @@ pub struct ListCoreNetworkPolicyVersions {
     _private: (),
 }
 impl ListCoreNetworkPolicyVersions {
-    /// Creates a new builder-style object to manufacture [`ListCoreNetworkPolicyVersionsInput`](crate::input::ListCoreNetworkPolicyVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListCoreNetworkPolicyVersionsInput`](crate::input::ListCoreNetworkPolicyVersionsInput).
     pub fn builder() -> crate::input::list_core_network_policy_versions_input::Builder {
         crate::input::list_core_network_policy_versions_input::Builder::default()
     }
@@ -1960,7 +1960,7 @@ pub struct ListCoreNetworks {
     _private: (),
 }
 impl ListCoreNetworks {
-    /// Creates a new builder-style object to manufacture [`ListCoreNetworksInput`](crate::input::ListCoreNetworksInput)
+    /// Creates a new builder-style object to manufacture [`ListCoreNetworksInput`](crate::input::ListCoreNetworksInput).
     pub fn builder() -> crate::input::list_core_networks_input::Builder {
         crate::input::list_core_networks_input::Builder::default()
     }
@@ -1994,7 +1994,7 @@ pub struct ListOrganizationServiceAccessStatus {
     _private: (),
 }
 impl ListOrganizationServiceAccessStatus {
-    /// Creates a new builder-style object to manufacture [`ListOrganizationServiceAccessStatusInput`](crate::input::ListOrganizationServiceAccessStatusInput)
+    /// Creates a new builder-style object to manufacture [`ListOrganizationServiceAccessStatusInput`](crate::input::ListOrganizationServiceAccessStatusInput).
     pub fn builder() -> crate::input::list_organization_service_access_status_input::Builder {
         crate::input::list_organization_service_access_status_input::Builder::default()
     }
@@ -2028,7 +2028,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -2062,7 +2062,7 @@ pub struct PutCoreNetworkPolicy {
     _private: (),
 }
 impl PutCoreNetworkPolicy {
-    /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyInput`](crate::input::PutCoreNetworkPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyInput`](crate::input::PutCoreNetworkPolicyInput).
     pub fn builder() -> crate::input::put_core_network_policy_input::Builder {
         crate::input::put_core_network_policy_input::Builder::default()
     }
@@ -2096,7 +2096,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -2130,7 +2130,7 @@ pub struct RegisterTransitGateway {
     _private: (),
 }
 impl RegisterTransitGateway {
-    /// Creates a new builder-style object to manufacture [`RegisterTransitGatewayInput`](crate::input::RegisterTransitGatewayInput)
+    /// Creates a new builder-style object to manufacture [`RegisterTransitGatewayInput`](crate::input::RegisterTransitGatewayInput).
     pub fn builder() -> crate::input::register_transit_gateway_input::Builder {
         crate::input::register_transit_gateway_input::Builder::default()
     }
@@ -2164,7 +2164,7 @@ pub struct RejectAttachment {
     _private: (),
 }
 impl RejectAttachment {
-    /// Creates a new builder-style object to manufacture [`RejectAttachmentInput`](crate::input::RejectAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`RejectAttachmentInput`](crate::input::RejectAttachmentInput).
     pub fn builder() -> crate::input::reject_attachment_input::Builder {
         crate::input::reject_attachment_input::Builder::default()
     }
@@ -2198,7 +2198,7 @@ pub struct RestoreCoreNetworkPolicyVersion {
     _private: (),
 }
 impl RestoreCoreNetworkPolicyVersion {
-    /// Creates a new builder-style object to manufacture [`RestoreCoreNetworkPolicyVersionInput`](crate::input::RestoreCoreNetworkPolicyVersionInput)
+    /// Creates a new builder-style object to manufacture [`RestoreCoreNetworkPolicyVersionInput`](crate::input::RestoreCoreNetworkPolicyVersionInput).
     pub fn builder() -> crate::input::restore_core_network_policy_version_input::Builder {
         crate::input::restore_core_network_policy_version_input::Builder::default()
     }
@@ -2232,7 +2232,7 @@ pub struct StartOrganizationServiceAccessUpdate {
     _private: (),
 }
 impl StartOrganizationServiceAccessUpdate {
-    /// Creates a new builder-style object to manufacture [`StartOrganizationServiceAccessUpdateInput`](crate::input::StartOrganizationServiceAccessUpdateInput)
+    /// Creates a new builder-style object to manufacture [`StartOrganizationServiceAccessUpdateInput`](crate::input::StartOrganizationServiceAccessUpdateInput).
     pub fn builder() -> crate::input::start_organization_service_access_update_input::Builder {
         crate::input::start_organization_service_access_update_input::Builder::default()
     }
@@ -2268,7 +2268,7 @@ pub struct StartRouteAnalysis {
     _private: (),
 }
 impl StartRouteAnalysis {
-    /// Creates a new builder-style object to manufacture [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput)
+    /// Creates a new builder-style object to manufacture [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput).
     pub fn builder() -> crate::input::start_route_analysis_input::Builder {
         crate::input::start_route_analysis_input::Builder::default()
     }
@@ -2302,7 +2302,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -2334,7 +2334,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -2366,7 +2366,7 @@ pub struct UpdateConnection {
     _private: (),
 }
 impl UpdateConnection {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::input::UpdateConnectionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
     pub fn builder() -> crate::input::update_connection_input::Builder {
         crate::input::update_connection_input::Builder::default()
     }
@@ -2400,7 +2400,7 @@ pub struct UpdateCoreNetwork {
     _private: (),
 }
 impl UpdateCoreNetwork {
-    /// Creates a new builder-style object to manufacture [`UpdateCoreNetworkInput`](crate::input::UpdateCoreNetworkInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCoreNetworkInput`](crate::input::UpdateCoreNetworkInput).
     pub fn builder() -> crate::input::update_core_network_input::Builder {
         crate::input::update_core_network_input::Builder::default()
     }
@@ -2434,7 +2434,7 @@ pub struct UpdateDevice {
     _private: (),
 }
 impl UpdateDevice {
-    /// Creates a new builder-style object to manufacture [`UpdateDeviceInput`](crate::input::UpdateDeviceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDeviceInput`](crate::input::UpdateDeviceInput).
     pub fn builder() -> crate::input::update_device_input::Builder {
         crate::input::update_device_input::Builder::default()
     }
@@ -2466,7 +2466,7 @@ pub struct UpdateGlobalNetwork {
     _private: (),
 }
 impl UpdateGlobalNetwork {
-    /// Creates a new builder-style object to manufacture [`UpdateGlobalNetworkInput`](crate::input::UpdateGlobalNetworkInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGlobalNetworkInput`](crate::input::UpdateGlobalNetworkInput).
     pub fn builder() -> crate::input::update_global_network_input::Builder {
         crate::input::update_global_network_input::Builder::default()
     }
@@ -2500,7 +2500,7 @@ pub struct UpdateLink {
     _private: (),
 }
 impl UpdateLink {
-    /// Creates a new builder-style object to manufacture [`UpdateLinkInput`](crate::input::UpdateLinkInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLinkInput`](crate::input::UpdateLinkInput).
     pub fn builder() -> crate::input::update_link_input::Builder {
         crate::input::update_link_input::Builder::default()
     }
@@ -2532,7 +2532,7 @@ pub struct UpdateNetworkResourceMetadata {
     _private: (),
 }
 impl UpdateNetworkResourceMetadata {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput).
     pub fn builder() -> crate::input::update_network_resource_metadata_input::Builder {
         crate::input::update_network_resource_metadata_input::Builder::default()
     }
@@ -2566,7 +2566,7 @@ pub struct UpdateSite {
     _private: (),
 }
 impl UpdateSite {
-    /// Creates a new builder-style object to manufacture [`UpdateSiteInput`](crate::input::UpdateSiteInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSiteInput`](crate::input::UpdateSiteInput).
     pub fn builder() -> crate::input::update_site_input::Builder {
         crate::input::update_site_input::Builder::default()
     }
@@ -2598,7 +2598,7 @@ pub struct UpdateVpcAttachment {
     _private: (),
 }
 impl UpdateVpcAttachment {
-    /// Creates a new builder-style object to manufacture [`UpdateVpcAttachmentInput`](crate::input::UpdateVpcAttachmentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVpcAttachmentInput`](crate::input::UpdateVpcAttachmentInput).
     pub fn builder() -> crate::input::update_vpc_attachment_input::Builder {
         crate::input::update_vpc_attachment_input::Builder::default()
     }

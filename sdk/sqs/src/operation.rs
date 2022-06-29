@@ -10,7 +10,7 @@ pub struct AddPermission {
     _private: (),
 }
 impl AddPermission {
-    /// Creates a new builder-style object to manufacture [`AddPermissionInput`](crate::input::AddPermissionInput)
+    /// Creates a new builder-style object to manufacture [`AddPermissionInput`](crate::input::AddPermissionInput).
     pub fn builder() -> crate::input::add_permission_input::Builder {
         crate::input::add_permission_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct ChangeMessageVisibility {
     _private: (),
 }
 impl ChangeMessageVisibility {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityInput`](crate::input::ChangeMessageVisibilityInput)
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityInput`](crate::input::ChangeMessageVisibilityInput).
     pub fn builder() -> crate::input::change_message_visibility_input::Builder {
         crate::input::change_message_visibility_input::Builder::default()
     }
@@ -102,7 +102,7 @@ pub struct ChangeMessageVisibilityBatch {
     _private: (),
 }
 impl ChangeMessageVisibilityBatch {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchInput`](crate::input::ChangeMessageVisibilityBatchInput)
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchInput`](crate::input::ChangeMessageVisibilityBatchInput).
     pub fn builder() -> crate::input::change_message_visibility_batch_input::Builder {
         crate::input::change_message_visibility_batch_input::Builder::default()
     }
@@ -136,7 +136,7 @@ pub struct CreateQueue {
     _private: (),
 }
 impl CreateQueue {
-    /// Creates a new builder-style object to manufacture [`CreateQueueInput`](crate::input::CreateQueueInput)
+    /// Creates a new builder-style object to manufacture [`CreateQueueInput`](crate::input::CreateQueueInput).
     pub fn builder() -> crate::input::create_queue_input::Builder {
         crate::input::create_queue_input::Builder::default()
     }
@@ -168,7 +168,7 @@ pub struct DeleteMessage {
     _private: (),
 }
 impl DeleteMessage {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageInput`](crate::input::DeleteMessageInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMessageInput`](crate::input::DeleteMessageInput).
     pub fn builder() -> crate::input::delete_message_input::Builder {
         crate::input::delete_message_input::Builder::default()
     }
@@ -200,7 +200,7 @@ pub struct DeleteMessageBatch {
     _private: (),
 }
 impl DeleteMessageBatch {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchInput`](crate::input::DeleteMessageBatchInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchInput`](crate::input::DeleteMessageBatchInput).
     pub fn builder() -> crate::input::delete_message_batch_input::Builder {
         crate::input::delete_message_batch_input::Builder::default()
     }
@@ -234,7 +234,7 @@ pub struct DeleteQueue {
     _private: (),
 }
 impl DeleteQueue {
-    /// Creates a new builder-style object to manufacture [`DeleteQueueInput`](crate::input::DeleteQueueInput)
+    /// Creates a new builder-style object to manufacture [`DeleteQueueInput`](crate::input::DeleteQueueInput).
     pub fn builder() -> crate::input::delete_queue_input::Builder {
         crate::input::delete_queue_input::Builder::default()
     }
@@ -266,7 +266,7 @@ pub struct GetQueueAttributes {
     _private: (),
 }
 impl GetQueueAttributes {
-    /// Creates a new builder-style object to manufacture [`GetQueueAttributesInput`](crate::input::GetQueueAttributesInput)
+    /// Creates a new builder-style object to manufacture [`GetQueueAttributesInput`](crate::input::GetQueueAttributesInput).
     pub fn builder() -> crate::input::get_queue_attributes_input::Builder {
         crate::input::get_queue_attributes_input::Builder::default()
     }
@@ -300,7 +300,7 @@ pub struct GetQueueUrl {
     _private: (),
 }
 impl GetQueueUrl {
-    /// Creates a new builder-style object to manufacture [`GetQueueUrlInput`](crate::input::GetQueueUrlInput)
+    /// Creates a new builder-style object to manufacture [`GetQueueUrlInput`](crate::input::GetQueueUrlInput).
     pub fn builder() -> crate::input::get_queue_url_input::Builder {
         crate::input::get_queue_url_input::Builder::default()
     }
@@ -332,7 +332,7 @@ pub struct ListDeadLetterSourceQueues {
     _private: (),
 }
 impl ListDeadLetterSourceQueues {
-    /// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesInput`](crate::input::ListDeadLetterSourceQueuesInput)
+    /// Creates a new builder-style object to manufacture [`ListDeadLetterSourceQueuesInput`](crate::input::ListDeadLetterSourceQueuesInput).
     pub fn builder() -> crate::input::list_dead_letter_source_queues_input::Builder {
         crate::input::list_dead_letter_source_queues_input::Builder::default()
     }
@@ -366,7 +366,7 @@ pub struct ListQueues {
     _private: (),
 }
 impl ListQueues {
-    /// Creates a new builder-style object to manufacture [`ListQueuesInput`](crate::input::ListQueuesInput)
+    /// Creates a new builder-style object to manufacture [`ListQueuesInput`](crate::input::ListQueuesInput).
     pub fn builder() -> crate::input::list_queues_input::Builder {
         crate::input::list_queues_input::Builder::default()
     }
@@ -398,7 +398,7 @@ pub struct ListQueueTags {
     _private: (),
 }
 impl ListQueueTags {
-    /// Creates a new builder-style object to manufacture [`ListQueueTagsInput`](crate::input::ListQueueTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListQueueTagsInput`](crate::input::ListQueueTagsInput).
     pub fn builder() -> crate::input::list_queue_tags_input::Builder {
         crate::input::list_queue_tags_input::Builder::default()
     }
@@ -430,7 +430,7 @@ pub struct PurgeQueue {
     _private: (),
 }
 impl PurgeQueue {
-    /// Creates a new builder-style object to manufacture [`PurgeQueueInput`](crate::input::PurgeQueueInput)
+    /// Creates a new builder-style object to manufacture [`PurgeQueueInput`](crate::input::PurgeQueueInput).
     pub fn builder() -> crate::input::purge_queue_input::Builder {
         crate::input::purge_queue_input::Builder::default()
     }
@@ -462,7 +462,7 @@ pub struct ReceiveMessage {
     _private: (),
 }
 impl ReceiveMessage {
-    /// Creates a new builder-style object to manufacture [`ReceiveMessageInput`](crate::input::ReceiveMessageInput)
+    /// Creates a new builder-style object to manufacture [`ReceiveMessageInput`](crate::input::ReceiveMessageInput).
     pub fn builder() -> crate::input::receive_message_input::Builder {
         crate::input::receive_message_input::Builder::default()
     }
@@ -494,7 +494,7 @@ pub struct RemovePermission {
     _private: (),
 }
 impl RemovePermission {
-    /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::input::RemovePermissionInput)
+    /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::input::RemovePermissionInput).
     pub fn builder() -> crate::input::remove_permission_input::Builder {
         crate::input::remove_permission_input::Builder::default()
     }
@@ -528,7 +528,7 @@ pub struct SendMessage {
     _private: (),
 }
 impl SendMessage {
-    /// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::input::SendMessageInput)
+    /// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::input::SendMessageInput).
     pub fn builder() -> crate::input::send_message_input::Builder {
         crate::input::send_message_input::Builder::default()
     }
@@ -560,7 +560,7 @@ pub struct SendMessageBatch {
     _private: (),
 }
 impl SendMessageBatch {
-    /// Creates a new builder-style object to manufacture [`SendMessageBatchInput`](crate::input::SendMessageBatchInput)
+    /// Creates a new builder-style object to manufacture [`SendMessageBatchInput`](crate::input::SendMessageBatchInput).
     pub fn builder() -> crate::input::send_message_batch_input::Builder {
         crate::input::send_message_batch_input::Builder::default()
     }
@@ -594,7 +594,7 @@ pub struct SetQueueAttributes {
     _private: (),
 }
 impl SetQueueAttributes {
-    /// Creates a new builder-style object to manufacture [`SetQueueAttributesInput`](crate::input::SetQueueAttributesInput)
+    /// Creates a new builder-style object to manufacture [`SetQueueAttributesInput`](crate::input::SetQueueAttributesInput).
     pub fn builder() -> crate::input::set_queue_attributes_input::Builder {
         crate::input::set_queue_attributes_input::Builder::default()
     }
@@ -628,7 +628,7 @@ pub struct TagQueue {
     _private: (),
 }
 impl TagQueue {
-    /// Creates a new builder-style object to manufacture [`TagQueueInput`](crate::input::TagQueueInput)
+    /// Creates a new builder-style object to manufacture [`TagQueueInput`](crate::input::TagQueueInput).
     pub fn builder() -> crate::input::tag_queue_input::Builder {
         crate::input::tag_queue_input::Builder::default()
     }
@@ -659,7 +659,7 @@ pub struct UntagQueue {
     _private: (),
 }
 impl UntagQueue {
-    /// Creates a new builder-style object to manufacture [`UntagQueueInput`](crate::input::UntagQueueInput)
+    /// Creates a new builder-style object to manufacture [`UntagQueueInput`](crate::input::UntagQueueInput).
     pub fn builder() -> crate::input::untag_queue_input::Builder {
         crate::input::untag_queue_input::Builder::default()
     }

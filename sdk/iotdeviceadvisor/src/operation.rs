@@ -10,7 +10,7 @@ pub struct CreateSuiteDefinition {
     _private: (),
 }
 impl CreateSuiteDefinition {
-    /// Creates a new builder-style object to manufacture [`CreateSuiteDefinitionInput`](crate::input::CreateSuiteDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`CreateSuiteDefinitionInput`](crate::input::CreateSuiteDefinitionInput).
     pub fn builder() -> crate::input::create_suite_definition_input::Builder {
         crate::input::create_suite_definition_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteSuiteDefinition {
     _private: (),
 }
 impl DeleteSuiteDefinition {
-    /// Creates a new builder-style object to manufacture [`DeleteSuiteDefinitionInput`](crate::input::DeleteSuiteDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSuiteDefinitionInput`](crate::input::DeleteSuiteDefinitionInput).
     pub fn builder() -> crate::input::delete_suite_definition_input::Builder {
         crate::input::delete_suite_definition_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetEndpoint {
     _private: (),
 }
 impl GetEndpoint {
-    /// Creates a new builder-style object to manufacture [`GetEndpointInput`](crate::input::GetEndpointInput)
+    /// Creates a new builder-style object to manufacture [`GetEndpointInput`](crate::input::GetEndpointInput).
     pub fn builder() -> crate::input::get_endpoint_input::Builder {
         crate::input::get_endpoint_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct GetSuiteDefinition {
     _private: (),
 }
 impl GetSuiteDefinition {
-    /// Creates a new builder-style object to manufacture [`GetSuiteDefinitionInput`](crate::input::GetSuiteDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`GetSuiteDefinitionInput`](crate::input::GetSuiteDefinitionInput).
     pub fn builder() -> crate::input::get_suite_definition_input::Builder {
         crate::input::get_suite_definition_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct GetSuiteRun {
     _private: (),
 }
 impl GetSuiteRun {
-    /// Creates a new builder-style object to manufacture [`GetSuiteRunInput`](crate::input::GetSuiteRunInput)
+    /// Creates a new builder-style object to manufacture [`GetSuiteRunInput`](crate::input::GetSuiteRunInput).
     pub fn builder() -> crate::input::get_suite_run_input::Builder {
         crate::input::get_suite_run_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct GetSuiteRunReport {
     _private: (),
 }
 impl GetSuiteRunReport {
-    /// Creates a new builder-style object to manufacture [`GetSuiteRunReportInput`](crate::input::GetSuiteRunReportInput)
+    /// Creates a new builder-style object to manufacture [`GetSuiteRunReportInput`](crate::input::GetSuiteRunReportInput).
     pub fn builder() -> crate::input::get_suite_run_report_input::Builder {
         crate::input::get_suite_run_report_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct ListSuiteDefinitions {
     _private: (),
 }
 impl ListSuiteDefinitions {
-    /// Creates a new builder-style object to manufacture [`ListSuiteDefinitionsInput`](crate::input::ListSuiteDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`ListSuiteDefinitionsInput`](crate::input::ListSuiteDefinitionsInput).
     pub fn builder() -> crate::input::list_suite_definitions_input::Builder {
         crate::input::list_suite_definitions_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct ListSuiteRuns {
     _private: (),
 }
 impl ListSuiteRuns {
-    /// Creates a new builder-style object to manufacture [`ListSuiteRunsInput`](crate::input::ListSuiteRunsInput)
+    /// Creates a new builder-style object to manufacture [`ListSuiteRunsInput`](crate::input::ListSuiteRunsInput).
     pub fn builder() -> crate::input::list_suite_runs_input::Builder {
         crate::input::list_suite_runs_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct StartSuiteRun {
     _private: (),
 }
 impl StartSuiteRun {
-    /// Creates a new builder-style object to manufacture [`StartSuiteRunInput`](crate::input::StartSuiteRunInput)
+    /// Creates a new builder-style object to manufacture [`StartSuiteRunInput`](crate::input::StartSuiteRunInput).
     pub fn builder() -> crate::input::start_suite_run_input::Builder {
         crate::input::start_suite_run_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct StopSuiteRun {
     _private: (),
 }
 impl StopSuiteRun {
-    /// Creates a new builder-style object to manufacture [`StopSuiteRunInput`](crate::input::StopSuiteRunInput)
+    /// Creates a new builder-style object to manufacture [`StopSuiteRunInput`](crate::input::StopSuiteRunInput).
     pub fn builder() -> crate::input::stop_suite_run_input::Builder {
         crate::input::stop_suite_run_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -406,7 +406,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -438,7 +438,7 @@ pub struct UpdateSuiteDefinition {
     _private: (),
 }
 impl UpdateSuiteDefinition {
-    /// Creates a new builder-style object to manufacture [`UpdateSuiteDefinitionInput`](crate::input::UpdateSuiteDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSuiteDefinitionInput`](crate::input::UpdateSuiteDefinitionInput).
     pub fn builder() -> crate::input::update_suite_definition_input::Builder {
         crate::input::update_suite_definition_input::Builder::default()
     }

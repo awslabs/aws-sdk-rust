@@ -10,7 +10,7 @@ pub struct AssociateFirewallRuleGroup {
     _private: (),
 }
 impl AssociateFirewallRuleGroup {
-    /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupInput`](crate::input::AssociateFirewallRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`AssociateFirewallRuleGroupInput`](crate::input::AssociateFirewallRuleGroupInput).
     pub fn builder() -> crate::input::associate_firewall_rule_group_input::Builder {
         crate::input::associate_firewall_rule_group_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateResolverEndpointIpAddress {
     _private: (),
 }
 impl AssociateResolverEndpointIpAddress {
-    /// Creates a new builder-style object to manufacture [`AssociateResolverEndpointIpAddressInput`](crate::input::AssociateResolverEndpointIpAddressInput)
+    /// Creates a new builder-style object to manufacture [`AssociateResolverEndpointIpAddressInput`](crate::input::AssociateResolverEndpointIpAddressInput).
     pub fn builder() -> crate::input::associate_resolver_endpoint_ip_address_input::Builder {
         crate::input::associate_resolver_endpoint_ip_address_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AssociateResolverQueryLogConfig {
     _private: (),
 }
 impl AssociateResolverQueryLogConfig {
-    /// Creates a new builder-style object to manufacture [`AssociateResolverQueryLogConfigInput`](crate::input::AssociateResolverQueryLogConfigInput)
+    /// Creates a new builder-style object to manufacture [`AssociateResolverQueryLogConfigInput`](crate::input::AssociateResolverQueryLogConfigInput).
     pub fn builder() -> crate::input::associate_resolver_query_log_config_input::Builder {
         crate::input::associate_resolver_query_log_config_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct AssociateResolverRule {
     _private: (),
 }
 impl AssociateResolverRule {
-    /// Creates a new builder-style object to manufacture [`AssociateResolverRuleInput`](crate::input::AssociateResolverRuleInput)
+    /// Creates a new builder-style object to manufacture [`AssociateResolverRuleInput`](crate::input::AssociateResolverRuleInput).
     pub fn builder() -> crate::input::associate_resolver_rule_input::Builder {
         crate::input::associate_resolver_rule_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateFirewallDomainList {
     _private: (),
 }
 impl CreateFirewallDomainList {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallDomainListInput`](crate::input::CreateFirewallDomainListInput)
+    /// Creates a new builder-style object to manufacture [`CreateFirewallDomainListInput`](crate::input::CreateFirewallDomainListInput).
     pub fn builder() -> crate::input::create_firewall_domain_list_input::Builder {
         crate::input::create_firewall_domain_list_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateFirewallRule {
     _private: (),
 }
 impl CreateFirewallRule {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleInput`](crate::input::CreateFirewallRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleInput`](crate::input::CreateFirewallRuleInput).
     pub fn builder() -> crate::input::create_firewall_rule_input::Builder {
         crate::input::create_firewall_rule_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct CreateFirewallRuleGroup {
     _private: (),
 }
 impl CreateFirewallRuleGroup {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupInput`](crate::input::CreateFirewallRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateFirewallRuleGroupInput`](crate::input::CreateFirewallRuleGroupInput).
     pub fn builder() -> crate::input::create_firewall_rule_group_input::Builder {
         crate::input::create_firewall_rule_group_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CreateResolverEndpoint {
     _private: (),
 }
 impl CreateResolverEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateResolverEndpointInput`](crate::input::CreateResolverEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateResolverEndpointInput`](crate::input::CreateResolverEndpointInput).
     pub fn builder() -> crate::input::create_resolver_endpoint_input::Builder {
         crate::input::create_resolver_endpoint_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct CreateResolverQueryLogConfig {
     _private: (),
 }
 impl CreateResolverQueryLogConfig {
-    /// Creates a new builder-style object to manufacture [`CreateResolverQueryLogConfigInput`](crate::input::CreateResolverQueryLogConfigInput)
+    /// Creates a new builder-style object to manufacture [`CreateResolverQueryLogConfigInput`](crate::input::CreateResolverQueryLogConfigInput).
     pub fn builder() -> crate::input::create_resolver_query_log_config_input::Builder {
         crate::input::create_resolver_query_log_config_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct CreateResolverRule {
     _private: (),
 }
 impl CreateResolverRule {
-    /// Creates a new builder-style object to manufacture [`CreateResolverRuleInput`](crate::input::CreateResolverRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateResolverRuleInput`](crate::input::CreateResolverRuleInput).
     pub fn builder() -> crate::input::create_resolver_rule_input::Builder {
         crate::input::create_resolver_rule_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct DeleteFirewallDomainList {
     _private: (),
 }
 impl DeleteFirewallDomainList {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallDomainListInput`](crate::input::DeleteFirewallDomainListInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallDomainListInput`](crate::input::DeleteFirewallDomainListInput).
     pub fn builder() -> crate::input::delete_firewall_domain_list_input::Builder {
         crate::input::delete_firewall_domain_list_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct DeleteFirewallRule {
     _private: (),
 }
 impl DeleteFirewallRule {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleInput`](crate::input::DeleteFirewallRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleInput`](crate::input::DeleteFirewallRuleInput).
     pub fn builder() -> crate::input::delete_firewall_rule_input::Builder {
         crate::input::delete_firewall_rule_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct DeleteFirewallRuleGroup {
     _private: (),
 }
 impl DeleteFirewallRuleGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleGroupInput`](crate::input::DeleteFirewallRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleGroupInput`](crate::input::DeleteFirewallRuleGroupInput).
     pub fn builder() -> crate::input::delete_firewall_rule_group_input::Builder {
         crate::input::delete_firewall_rule_group_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct DeleteResolverEndpoint {
     _private: (),
 }
 impl DeleteResolverEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointInput`](crate::input::DeleteResolverEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResolverEndpointInput`](crate::input::DeleteResolverEndpointInput).
     pub fn builder() -> crate::input::delete_resolver_endpoint_input::Builder {
         crate::input::delete_resolver_endpoint_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct DeleteResolverQueryLogConfig {
     _private: (),
 }
 impl DeleteResolverQueryLogConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteResolverQueryLogConfigInput`](crate::input::DeleteResolverQueryLogConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResolverQueryLogConfigInput`](crate::input::DeleteResolverQueryLogConfigInput).
     pub fn builder() -> crate::input::delete_resolver_query_log_config_input::Builder {
         crate::input::delete_resolver_query_log_config_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct DeleteResolverRule {
     _private: (),
 }
 impl DeleteResolverRule {
-    /// Creates a new builder-style object to manufacture [`DeleteResolverRuleInput`](crate::input::DeleteResolverRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResolverRuleInput`](crate::input::DeleteResolverRuleInput).
     pub fn builder() -> crate::input::delete_resolver_rule_input::Builder {
         crate::input::delete_resolver_rule_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct DisassociateFirewallRuleGroup {
     _private: (),
 }
 impl DisassociateFirewallRuleGroup {
-    /// Creates a new builder-style object to manufacture [`DisassociateFirewallRuleGroupInput`](crate::input::DisassociateFirewallRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateFirewallRuleGroupInput`](crate::input::DisassociateFirewallRuleGroupInput).
     pub fn builder() -> crate::input::disassociate_firewall_rule_group_input::Builder {
         crate::input::disassociate_firewall_rule_group_input::Builder::default()
     }
@@ -588,7 +588,7 @@ pub struct DisassociateResolverEndpointIpAddress {
     _private: (),
 }
 impl DisassociateResolverEndpointIpAddress {
-    /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressInput`](crate::input::DisassociateResolverEndpointIpAddressInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResolverEndpointIpAddressInput`](crate::input::DisassociateResolverEndpointIpAddressInput).
     pub fn builder() -> crate::input::disassociate_resolver_endpoint_ip_address_input::Builder {
         crate::input::disassociate_resolver_endpoint_ip_address_input::Builder::default()
     }
@@ -624,7 +624,7 @@ pub struct DisassociateResolverQueryLogConfig {
     _private: (),
 }
 impl DisassociateResolverQueryLogConfig {
-    /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigInput`](crate::input::DisassociateResolverQueryLogConfigInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResolverQueryLogConfigInput`](crate::input::DisassociateResolverQueryLogConfigInput).
     pub fn builder() -> crate::input::disassociate_resolver_query_log_config_input::Builder {
         crate::input::disassociate_resolver_query_log_config_input::Builder::default()
     }
@@ -658,7 +658,7 @@ pub struct DisassociateResolverRule {
     _private: (),
 }
 impl DisassociateResolverRule {
-    /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleInput`](crate::input::DisassociateResolverRuleInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleInput`](crate::input::DisassociateResolverRuleInput).
     pub fn builder() -> crate::input::disassociate_resolver_rule_input::Builder {
         crate::input::disassociate_resolver_rule_input::Builder::default()
     }
@@ -692,7 +692,7 @@ pub struct GetFirewallConfig {
     _private: (),
 }
 impl GetFirewallConfig {
-    /// Creates a new builder-style object to manufacture [`GetFirewallConfigInput`](crate::input::GetFirewallConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetFirewallConfigInput`](crate::input::GetFirewallConfigInput).
     pub fn builder() -> crate::input::get_firewall_config_input::Builder {
         crate::input::get_firewall_config_input::Builder::default()
     }
@@ -726,7 +726,7 @@ pub struct GetFirewallDomainList {
     _private: (),
 }
 impl GetFirewallDomainList {
-    /// Creates a new builder-style object to manufacture [`GetFirewallDomainListInput`](crate::input::GetFirewallDomainListInput)
+    /// Creates a new builder-style object to manufacture [`GetFirewallDomainListInput`](crate::input::GetFirewallDomainListInput).
     pub fn builder() -> crate::input::get_firewall_domain_list_input::Builder {
         crate::input::get_firewall_domain_list_input::Builder::default()
     }
@@ -760,7 +760,7 @@ pub struct GetFirewallRuleGroup {
     _private: (),
 }
 impl GetFirewallRuleGroup {
-    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupInput`](crate::input::GetFirewallRuleGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupInput`](crate::input::GetFirewallRuleGroupInput).
     pub fn builder() -> crate::input::get_firewall_rule_group_input::Builder {
         crate::input::get_firewall_rule_group_input::Builder::default()
     }
@@ -794,7 +794,7 @@ pub struct GetFirewallRuleGroupAssociation {
     _private: (),
 }
 impl GetFirewallRuleGroupAssociation {
-    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationInput`](crate::input::GetFirewallRuleGroupAssociationInput)
+    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupAssociationInput`](crate::input::GetFirewallRuleGroupAssociationInput).
     pub fn builder() -> crate::input::get_firewall_rule_group_association_input::Builder {
         crate::input::get_firewall_rule_group_association_input::Builder::default()
     }
@@ -828,7 +828,7 @@ pub struct GetFirewallRuleGroupPolicy {
     _private: (),
 }
 impl GetFirewallRuleGroupPolicy {
-    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyInput`](crate::input::GetFirewallRuleGroupPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupPolicyInput`](crate::input::GetFirewallRuleGroupPolicyInput).
     pub fn builder() -> crate::input::get_firewall_rule_group_policy_input::Builder {
         crate::input::get_firewall_rule_group_policy_input::Builder::default()
     }
@@ -862,7 +862,7 @@ pub struct GetResolverConfig {
     _private: (),
 }
 impl GetResolverConfig {
-    /// Creates a new builder-style object to manufacture [`GetResolverConfigInput`](crate::input::GetResolverConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverConfigInput`](crate::input::GetResolverConfigInput).
     pub fn builder() -> crate::input::get_resolver_config_input::Builder {
         crate::input::get_resolver_config_input::Builder::default()
     }
@@ -896,7 +896,7 @@ pub struct GetResolverDnssecConfig {
     _private: (),
 }
 impl GetResolverDnssecConfig {
-    /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigInput`](crate::input::GetResolverDnssecConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigInput`](crate::input::GetResolverDnssecConfigInput).
     pub fn builder() -> crate::input::get_resolver_dnssec_config_input::Builder {
         crate::input::get_resolver_dnssec_config_input::Builder::default()
     }
@@ -930,7 +930,7 @@ pub struct GetResolverEndpoint {
     _private: (),
 }
 impl GetResolverEndpoint {
-    /// Creates a new builder-style object to manufacture [`GetResolverEndpointInput`](crate::input::GetResolverEndpointInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverEndpointInput`](crate::input::GetResolverEndpointInput).
     pub fn builder() -> crate::input::get_resolver_endpoint_input::Builder {
         crate::input::get_resolver_endpoint_input::Builder::default()
     }
@@ -964,7 +964,7 @@ pub struct GetResolverQueryLogConfig {
     _private: (),
 }
 impl GetResolverQueryLogConfig {
-    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigInput`](crate::input::GetResolverQueryLogConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigInput`](crate::input::GetResolverQueryLogConfigInput).
     pub fn builder() -> crate::input::get_resolver_query_log_config_input::Builder {
         crate::input::get_resolver_query_log_config_input::Builder::default()
     }
@@ -998,7 +998,7 @@ pub struct GetResolverQueryLogConfigAssociation {
     _private: (),
 }
 impl GetResolverQueryLogConfigAssociation {
-    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigAssociationInput`](crate::input::GetResolverQueryLogConfigAssociationInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigAssociationInput`](crate::input::GetResolverQueryLogConfigAssociationInput).
     pub fn builder() -> crate::input::get_resolver_query_log_config_association_input::Builder {
         crate::input::get_resolver_query_log_config_association_input::Builder::default()
     }
@@ -1034,7 +1034,7 @@ pub struct GetResolverQueryLogConfigPolicy {
     _private: (),
 }
 impl GetResolverQueryLogConfigPolicy {
-    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyInput`](crate::input::GetResolverQueryLogConfigPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyInput`](crate::input::GetResolverQueryLogConfigPolicyInput).
     pub fn builder() -> crate::input::get_resolver_query_log_config_policy_input::Builder {
         crate::input::get_resolver_query_log_config_policy_input::Builder::default()
     }
@@ -1068,7 +1068,7 @@ pub struct GetResolverRule {
     _private: (),
 }
 impl GetResolverRule {
-    /// Creates a new builder-style object to manufacture [`GetResolverRuleInput`](crate::input::GetResolverRuleInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverRuleInput`](crate::input::GetResolverRuleInput).
     pub fn builder() -> crate::input::get_resolver_rule_input::Builder {
         crate::input::get_resolver_rule_input::Builder::default()
     }
@@ -1102,7 +1102,7 @@ pub struct GetResolverRuleAssociation {
     _private: (),
 }
 impl GetResolverRuleAssociation {
-    /// Creates a new builder-style object to manufacture [`GetResolverRuleAssociationInput`](crate::input::GetResolverRuleAssociationInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverRuleAssociationInput`](crate::input::GetResolverRuleAssociationInput).
     pub fn builder() -> crate::input::get_resolver_rule_association_input::Builder {
         crate::input::get_resolver_rule_association_input::Builder::default()
     }
@@ -1136,7 +1136,7 @@ pub struct GetResolverRulePolicy {
     _private: (),
 }
 impl GetResolverRulePolicy {
-    /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyInput`](crate::input::GetResolverRulePolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyInput`](crate::input::GetResolverRulePolicyInput).
     pub fn builder() -> crate::input::get_resolver_rule_policy_input::Builder {
         crate::input::get_resolver_rule_policy_input::Builder::default()
     }
@@ -1170,7 +1170,7 @@ pub struct ImportFirewallDomains {
     _private: (),
 }
 impl ImportFirewallDomains {
-    /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsInput`](crate::input::ImportFirewallDomainsInput)
+    /// Creates a new builder-style object to manufacture [`ImportFirewallDomainsInput`](crate::input::ImportFirewallDomainsInput).
     pub fn builder() -> crate::input::import_firewall_domains_input::Builder {
         crate::input::import_firewall_domains_input::Builder::default()
     }
@@ -1204,7 +1204,7 @@ pub struct ListFirewallConfigs {
     _private: (),
 }
 impl ListFirewallConfigs {
-    /// Creates a new builder-style object to manufacture [`ListFirewallConfigsInput`](crate::input::ListFirewallConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallConfigsInput`](crate::input::ListFirewallConfigsInput).
     pub fn builder() -> crate::input::list_firewall_configs_input::Builder {
         crate::input::list_firewall_configs_input::Builder::default()
     }
@@ -1238,7 +1238,7 @@ pub struct ListFirewallDomainLists {
     _private: (),
 }
 impl ListFirewallDomainLists {
-    /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsInput`](crate::input::ListFirewallDomainListsInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallDomainListsInput`](crate::input::ListFirewallDomainListsInput).
     pub fn builder() -> crate::input::list_firewall_domain_lists_input::Builder {
         crate::input::list_firewall_domain_lists_input::Builder::default()
     }
@@ -1272,7 +1272,7 @@ pub struct ListFirewallDomains {
     _private: (),
 }
 impl ListFirewallDomains {
-    /// Creates a new builder-style object to manufacture [`ListFirewallDomainsInput`](crate::input::ListFirewallDomainsInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallDomainsInput`](crate::input::ListFirewallDomainsInput).
     pub fn builder() -> crate::input::list_firewall_domains_input::Builder {
         crate::input::list_firewall_domains_input::Builder::default()
     }
@@ -1306,7 +1306,7 @@ pub struct ListFirewallRuleGroupAssociations {
     _private: (),
 }
 impl ListFirewallRuleGroupAssociations {
-    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsInput`](crate::input::ListFirewallRuleGroupAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupAssociationsInput`](crate::input::ListFirewallRuleGroupAssociationsInput).
     pub fn builder() -> crate::input::list_firewall_rule_group_associations_input::Builder {
         crate::input::list_firewall_rule_group_associations_input::Builder::default()
     }
@@ -1340,7 +1340,7 @@ pub struct ListFirewallRuleGroups {
     _private: (),
 }
 impl ListFirewallRuleGroups {
-    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsInput`](crate::input::ListFirewallRuleGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallRuleGroupsInput`](crate::input::ListFirewallRuleGroupsInput).
     pub fn builder() -> crate::input::list_firewall_rule_groups_input::Builder {
         crate::input::list_firewall_rule_groups_input::Builder::default()
     }
@@ -1374,7 +1374,7 @@ pub struct ListFirewallRules {
     _private: (),
 }
 impl ListFirewallRules {
-    /// Creates a new builder-style object to manufacture [`ListFirewallRulesInput`](crate::input::ListFirewallRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallRulesInput`](crate::input::ListFirewallRulesInput).
     pub fn builder() -> crate::input::list_firewall_rules_input::Builder {
         crate::input::list_firewall_rules_input::Builder::default()
     }
@@ -1408,7 +1408,7 @@ pub struct ListResolverConfigs {
     _private: (),
 }
 impl ListResolverConfigs {
-    /// Creates a new builder-style object to manufacture [`ListResolverConfigsInput`](crate::input::ListResolverConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverConfigsInput`](crate::input::ListResolverConfigsInput).
     pub fn builder() -> crate::input::list_resolver_configs_input::Builder {
         crate::input::list_resolver_configs_input::Builder::default()
     }
@@ -1442,7 +1442,7 @@ pub struct ListResolverDnssecConfigs {
     _private: (),
 }
 impl ListResolverDnssecConfigs {
-    /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsInput`](crate::input::ListResolverDnssecConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverDnssecConfigsInput`](crate::input::ListResolverDnssecConfigsInput).
     pub fn builder() -> crate::input::list_resolver_dnssec_configs_input::Builder {
         crate::input::list_resolver_dnssec_configs_input::Builder::default()
     }
@@ -1476,7 +1476,7 @@ pub struct ListResolverEndpointIpAddresses {
     _private: (),
 }
 impl ListResolverEndpointIpAddresses {
-    /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesInput`](crate::input::ListResolverEndpointIpAddressesInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesInput`](crate::input::ListResolverEndpointIpAddressesInput).
     pub fn builder() -> crate::input::list_resolver_endpoint_ip_addresses_input::Builder {
         crate::input::list_resolver_endpoint_ip_addresses_input::Builder::default()
     }
@@ -1510,7 +1510,7 @@ pub struct ListResolverEndpoints {
     _private: (),
 }
 impl ListResolverEndpoints {
-    /// Creates a new builder-style object to manufacture [`ListResolverEndpointsInput`](crate::input::ListResolverEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverEndpointsInput`](crate::input::ListResolverEndpointsInput).
     pub fn builder() -> crate::input::list_resolver_endpoints_input::Builder {
         crate::input::list_resolver_endpoints_input::Builder::default()
     }
@@ -1544,7 +1544,7 @@ pub struct ListResolverQueryLogConfigAssociations {
     _private: (),
 }
 impl ListResolverQueryLogConfigAssociations {
-    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigAssociationsInput`](crate::input::ListResolverQueryLogConfigAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigAssociationsInput`](crate::input::ListResolverQueryLogConfigAssociationsInput).
     pub fn builder() -> crate::input::list_resolver_query_log_config_associations_input::Builder {
         crate::input::list_resolver_query_log_config_associations_input::Builder::default()
     }
@@ -1582,7 +1582,7 @@ pub struct ListResolverQueryLogConfigs {
     _private: (),
 }
 impl ListResolverQueryLogConfigs {
-    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsInput`](crate::input::ListResolverQueryLogConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsInput`](crate::input::ListResolverQueryLogConfigsInput).
     pub fn builder() -> crate::input::list_resolver_query_log_configs_input::Builder {
         crate::input::list_resolver_query_log_configs_input::Builder::default()
     }
@@ -1616,7 +1616,7 @@ pub struct ListResolverRuleAssociations {
     _private: (),
 }
 impl ListResolverRuleAssociations {
-    /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsInput`](crate::input::ListResolverRuleAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverRuleAssociationsInput`](crate::input::ListResolverRuleAssociationsInput).
     pub fn builder() -> crate::input::list_resolver_rule_associations_input::Builder {
         crate::input::list_resolver_rule_associations_input::Builder::default()
     }
@@ -1650,7 +1650,7 @@ pub struct ListResolverRules {
     _private: (),
 }
 impl ListResolverRules {
-    /// Creates a new builder-style object to manufacture [`ListResolverRulesInput`](crate::input::ListResolverRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListResolverRulesInput`](crate::input::ListResolverRulesInput).
     pub fn builder() -> crate::input::list_resolver_rules_input::Builder {
         crate::input::list_resolver_rules_input::Builder::default()
     }
@@ -1684,7 +1684,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1718,7 +1718,7 @@ pub struct PutFirewallRuleGroupPolicy {
     _private: (),
 }
 impl PutFirewallRuleGroupPolicy {
-    /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyInput`](crate::input::PutFirewallRuleGroupPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutFirewallRuleGroupPolicyInput`](crate::input::PutFirewallRuleGroupPolicyInput).
     pub fn builder() -> crate::input::put_firewall_rule_group_policy_input::Builder {
         crate::input::put_firewall_rule_group_policy_input::Builder::default()
     }
@@ -1752,7 +1752,7 @@ pub struct PutResolverQueryLogConfigPolicy {
     _private: (),
 }
 impl PutResolverQueryLogConfigPolicy {
-    /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyInput`](crate::input::PutResolverQueryLogConfigPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResolverQueryLogConfigPolicyInput`](crate::input::PutResolverQueryLogConfigPolicyInput).
     pub fn builder() -> crate::input::put_resolver_query_log_config_policy_input::Builder {
         crate::input::put_resolver_query_log_config_policy_input::Builder::default()
     }
@@ -1786,7 +1786,7 @@ pub struct PutResolverRulePolicy {
     _private: (),
 }
 impl PutResolverRulePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyInput`](crate::input::PutResolverRulePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResolverRulePolicyInput`](crate::input::PutResolverRulePolicyInput).
     pub fn builder() -> crate::input::put_resolver_rule_policy_input::Builder {
         crate::input::put_resolver_rule_policy_input::Builder::default()
     }
@@ -1820,7 +1820,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1852,7 +1852,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1884,7 +1884,7 @@ pub struct UpdateFirewallConfig {
     _private: (),
 }
 impl UpdateFirewallConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallConfigInput`](crate::input::UpdateFirewallConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallConfigInput`](crate::input::UpdateFirewallConfigInput).
     pub fn builder() -> crate::input::update_firewall_config_input::Builder {
         crate::input::update_firewall_config_input::Builder::default()
     }
@@ -1918,7 +1918,7 @@ pub struct UpdateFirewallDomains {
     _private: (),
 }
 impl UpdateFirewallDomains {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsInput`](crate::input::UpdateFirewallDomainsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsInput`](crate::input::UpdateFirewallDomainsInput).
     pub fn builder() -> crate::input::update_firewall_domains_input::Builder {
         crate::input::update_firewall_domains_input::Builder::default()
     }
@@ -1952,7 +1952,7 @@ pub struct UpdateFirewallRule {
     _private: (),
 }
 impl UpdateFirewallRule {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleInput`](crate::input::UpdateFirewallRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleInput`](crate::input::UpdateFirewallRuleInput).
     pub fn builder() -> crate::input::update_firewall_rule_input::Builder {
         crate::input::update_firewall_rule_input::Builder::default()
     }
@@ -1986,7 +1986,7 @@ pub struct UpdateFirewallRuleGroupAssociation {
     _private: (),
 }
 impl UpdateFirewallRuleGroupAssociation {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationInput`](crate::input::UpdateFirewallRuleGroupAssociationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleGroupAssociationInput`](crate::input::UpdateFirewallRuleGroupAssociationInput).
     pub fn builder() -> crate::input::update_firewall_rule_group_association_input::Builder {
         crate::input::update_firewall_rule_group_association_input::Builder::default()
     }
@@ -2020,7 +2020,7 @@ pub struct UpdateResolverConfig {
     _private: (),
 }
 impl UpdateResolverConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverConfigInput`](crate::input::UpdateResolverConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResolverConfigInput`](crate::input::UpdateResolverConfigInput).
     pub fn builder() -> crate::input::update_resolver_config_input::Builder {
         crate::input::update_resolver_config_input::Builder::default()
     }
@@ -2054,7 +2054,7 @@ pub struct UpdateResolverDnssecConfig {
     _private: (),
 }
 impl UpdateResolverDnssecConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverDnssecConfigInput`](crate::input::UpdateResolverDnssecConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResolverDnssecConfigInput`](crate::input::UpdateResolverDnssecConfigInput).
     pub fn builder() -> crate::input::update_resolver_dnssec_config_input::Builder {
         crate::input::update_resolver_dnssec_config_input::Builder::default()
     }
@@ -2088,7 +2088,7 @@ pub struct UpdateResolverEndpoint {
     _private: (),
 }
 impl UpdateResolverEndpoint {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::input::UpdateResolverEndpointInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResolverEndpointInput`](crate::input::UpdateResolverEndpointInput).
     pub fn builder() -> crate::input::update_resolver_endpoint_input::Builder {
         crate::input::update_resolver_endpoint_input::Builder::default()
     }
@@ -2122,7 +2122,7 @@ pub struct UpdateResolverRule {
     _private: (),
 }
 impl UpdateResolverRule {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverRuleInput`](crate::input::UpdateResolverRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResolverRuleInput`](crate::input::UpdateResolverRuleInput).
     pub fn builder() -> crate::input::update_resolver_rule_input::Builder {
         crate::input::update_resolver_rule_input::Builder::default()
     }

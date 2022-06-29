@@ -40,11 +40,10 @@ impl std::fmt::Debug for Filter {
         formatter.finish()
     }
 }
-/// See [`Filter`](crate::model::Filter)
+/// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
-    /// A builder for [`Filter`](crate::model::Filter)
-    #[non_exhaustive]
+    /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FilterType>,
@@ -88,7 +87,7 @@ pub mod filter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
                 r#type: self.r#type,
@@ -99,7 +98,7 @@ pub mod filter {
     }
 }
 impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
     pub fn builder() -> crate::model::filter::Builder {
         crate::model::filter::Builder::default()
     }
@@ -176,11 +175,10 @@ impl std::fmt::Debug for AttributeValue {
         formatter.finish()
     }
 }
-/// See [`AttributeValue`](crate::model::AttributeValue)
+/// See [`AttributeValue`](crate::model::AttributeValue).
 pub mod attribute_value {
 
-    /// A builder for [`AttributeValue`](crate::model::AttributeValue)
-    #[non_exhaustive]
+    /// A builder for [`AttributeValue`](crate::model::AttributeValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
@@ -196,14 +194,14 @@ pub mod attribute_value {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`AttributeValue`](crate::model::AttributeValue)
+        /// Consumes the builder and constructs a [`AttributeValue`](crate::model::AttributeValue).
         pub fn build(self) -> crate::model::AttributeValue {
             crate::model::AttributeValue { value: self.value }
         }
     }
 }
 impl AttributeValue {
-    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue)
+    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
     pub fn builder() -> crate::model::attribute_value::Builder {
         crate::model::attribute_value::Builder::default()
     }
@@ -236,11 +234,10 @@ impl std::fmt::Debug for Service {
         formatter.finish()
     }
 }
-/// See [`Service`](crate::model::Service)
+/// See [`Service`](crate::model::Service).
 pub mod service {
 
-    /// A builder for [`Service`](crate::model::Service)
-    #[non_exhaustive]
+    /// A builder for [`Service`](crate::model::Service).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -276,7 +273,7 @@ pub mod service {
             self.attribute_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`Service`](crate::model::Service)
+        /// Consumes the builder and constructs a [`Service`](crate::model::Service).
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
                 service_code: self.service_code,
@@ -286,7 +283,7 @@ pub mod service {
     }
 }
 impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service)
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
     pub fn builder() -> crate::model::service::Builder {
         crate::model::service::Builder::default()
     }

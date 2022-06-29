@@ -10,7 +10,7 @@ pub struct CreateEndpoint {
     _private: (),
 }
 impl CreateEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::input::CreateEndpointInput).
     pub fn builder() -> crate::input::create_endpoint_input::Builder {
         crate::input::create_endpoint_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DeleteEndpoint {
     _private: (),
 }
 impl DeleteEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointInput`](crate::input::DeleteEndpointInput).
     pub fn builder() -> crate::input::delete_endpoint_input::Builder {
         crate::input::delete_endpoint_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct ListEndpoints {
     _private: (),
 }
 impl ListEndpoints {
-    /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`ListEndpointsInput`](crate::input::ListEndpointsInput).
     pub fn builder() -> crate::input::list_endpoints_input::Builder {
         crate::input::list_endpoints_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct ListSharedEndpoints {
     _private: (),
 }
 impl ListSharedEndpoints {
-    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsInput`](crate::input::ListSharedEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`ListSharedEndpointsInput`](crate::input::ListSharedEndpointsInput).
     pub fn builder() -> crate::input::list_shared_endpoints_input::Builder {
         crate::input::list_shared_endpoints_input::Builder::default()
     }

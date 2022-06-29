@@ -10,7 +10,7 @@ pub struct CreateComponent {
     _private: (),
 }
 impl CreateComponent {
-    /// Creates a new builder-style object to manufacture [`CreateComponentInput`](crate::input::CreateComponentInput)
+    /// Creates a new builder-style object to manufacture [`CreateComponentInput`](crate::input::CreateComponentInput).
     pub fn builder() -> crate::input::create_component_input::Builder {
         crate::input::create_component_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateTheme {
     _private: (),
 }
 impl CreateTheme {
-    /// Creates a new builder-style object to manufacture [`CreateThemeInput`](crate::input::CreateThemeInput)
+    /// Creates a new builder-style object to manufacture [`CreateThemeInput`](crate::input::CreateThemeInput).
     pub fn builder() -> crate::input::create_theme_input::Builder {
         crate::input::create_theme_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteComponent {
     _private: (),
 }
 impl DeleteComponent {
-    /// Creates a new builder-style object to manufacture [`DeleteComponentInput`](crate::input::DeleteComponentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteComponentInput`](crate::input::DeleteComponentInput).
     pub fn builder() -> crate::input::delete_component_input::Builder {
         crate::input::delete_component_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteTheme {
     _private: (),
 }
 impl DeleteTheme {
-    /// Creates a new builder-style object to manufacture [`DeleteThemeInput`](crate::input::DeleteThemeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteThemeInput`](crate::input::DeleteThemeInput).
     pub fn builder() -> crate::input::delete_theme_input::Builder {
         crate::input::delete_theme_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct ExchangeCodeForToken {
     _private: (),
 }
 impl ExchangeCodeForToken {
-    /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenInput`](crate::input::ExchangeCodeForTokenInput)
+    /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenInput`](crate::input::ExchangeCodeForTokenInput).
     pub fn builder() -> crate::input::exchange_code_for_token_input::Builder {
         crate::input::exchange_code_for_token_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct ExportComponents {
     _private: (),
 }
 impl ExportComponents {
-    /// Creates a new builder-style object to manufacture [`ExportComponentsInput`](crate::input::ExportComponentsInput)
+    /// Creates a new builder-style object to manufacture [`ExportComponentsInput`](crate::input::ExportComponentsInput).
     pub fn builder() -> crate::input::export_components_input::Builder {
         crate::input::export_components_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct ExportThemes {
     _private: (),
 }
 impl ExportThemes {
-    /// Creates a new builder-style object to manufacture [`ExportThemesInput`](crate::input::ExportThemesInput)
+    /// Creates a new builder-style object to manufacture [`ExportThemesInput`](crate::input::ExportThemesInput).
     pub fn builder() -> crate::input::export_themes_input::Builder {
         crate::input::export_themes_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct GetComponent {
     _private: (),
 }
 impl GetComponent {
-    /// Creates a new builder-style object to manufacture [`GetComponentInput`](crate::input::GetComponentInput)
+    /// Creates a new builder-style object to manufacture [`GetComponentInput`](crate::input::GetComponentInput).
     pub fn builder() -> crate::input::get_component_input::Builder {
         crate::input::get_component_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct GetTheme {
     _private: (),
 }
 impl GetTheme {
-    /// Creates a new builder-style object to manufacture [`GetThemeInput`](crate::input::GetThemeInput)
+    /// Creates a new builder-style object to manufacture [`GetThemeInput`](crate::input::GetThemeInput).
     pub fn builder() -> crate::input::get_theme_input::Builder {
         crate::input::get_theme_input::Builder::default()
     }
@@ -305,7 +305,7 @@ pub struct ListComponents {
     _private: (),
 }
 impl ListComponents {
-    /// Creates a new builder-style object to manufacture [`ListComponentsInput`](crate::input::ListComponentsInput)
+    /// Creates a new builder-style object to manufacture [`ListComponentsInput`](crate::input::ListComponentsInput).
     pub fn builder() -> crate::input::list_components_input::Builder {
         crate::input::list_components_input::Builder::default()
     }
@@ -337,7 +337,7 @@ pub struct ListThemes {
     _private: (),
 }
 impl ListThemes {
-    /// Creates a new builder-style object to manufacture [`ListThemesInput`](crate::input::ListThemesInput)
+    /// Creates a new builder-style object to manufacture [`ListThemesInput`](crate::input::ListThemesInput).
     pub fn builder() -> crate::input::list_themes_input::Builder {
         crate::input::list_themes_input::Builder::default()
     }
@@ -369,7 +369,7 @@ pub struct RefreshToken {
     _private: (),
 }
 impl RefreshToken {
-    /// Creates a new builder-style object to manufacture [`RefreshTokenInput`](crate::input::RefreshTokenInput)
+    /// Creates a new builder-style object to manufacture [`RefreshTokenInput`](crate::input::RefreshTokenInput).
     pub fn builder() -> crate::input::refresh_token_input::Builder {
         crate::input::refresh_token_input::Builder::default()
     }
@@ -401,7 +401,7 @@ pub struct UpdateComponent {
     _private: (),
 }
 impl UpdateComponent {
-    /// Creates a new builder-style object to manufacture [`UpdateComponentInput`](crate::input::UpdateComponentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateComponentInput`](crate::input::UpdateComponentInput).
     pub fn builder() -> crate::input::update_component_input::Builder {
         crate::input::update_component_input::Builder::default()
     }
@@ -435,7 +435,7 @@ pub struct UpdateTheme {
     _private: (),
 }
 impl UpdateTheme {
-    /// Creates a new builder-style object to manufacture [`UpdateThemeInput`](crate::input::UpdateThemeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateThemeInput`](crate::input::UpdateThemeInput).
     pub fn builder() -> crate::input::update_theme_input::Builder {
         crate::input::update_theme_input::Builder::default()
     }

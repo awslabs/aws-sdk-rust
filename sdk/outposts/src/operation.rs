@@ -10,7 +10,7 @@ pub struct CancelOrder {
     _private: (),
 }
 impl CancelOrder {
-    /// Creates a new builder-style object to manufacture [`CancelOrderInput`](crate::input::CancelOrderInput)
+    /// Creates a new builder-style object to manufacture [`CancelOrderInput`](crate::input::CancelOrderInput).
     pub fn builder() -> crate::input::cancel_order_input::Builder {
         crate::input::cancel_order_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateOrder {
     _private: (),
 }
 impl CreateOrder {
-    /// Creates a new builder-style object to manufacture [`CreateOrderInput`](crate::input::CreateOrderInput)
+    /// Creates a new builder-style object to manufacture [`CreateOrderInput`](crate::input::CreateOrderInput).
     pub fn builder() -> crate::input::create_order_input::Builder {
         crate::input::create_order_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreateOutpost {
     _private: (),
 }
 impl CreateOutpost {
-    /// Creates a new builder-style object to manufacture [`CreateOutpostInput`](crate::input::CreateOutpostInput)
+    /// Creates a new builder-style object to manufacture [`CreateOutpostInput`](crate::input::CreateOutpostInput).
     pub fn builder() -> crate::input::create_outpost_input::Builder {
         crate::input::create_outpost_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct CreateSite {
     _private: (),
 }
 impl CreateSite {
-    /// Creates a new builder-style object to manufacture [`CreateSiteInput`](crate::input::CreateSiteInput)
+    /// Creates a new builder-style object to manufacture [`CreateSiteInput`](crate::input::CreateSiteInput).
     pub fn builder() -> crate::input::create_site_input::Builder {
         crate::input::create_site_input::Builder::default()
     }
@@ -138,7 +138,7 @@ pub struct DeleteOutpost {
     _private: (),
 }
 impl DeleteOutpost {
-    /// Creates a new builder-style object to manufacture [`DeleteOutpostInput`](crate::input::DeleteOutpostInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOutpostInput`](crate::input::DeleteOutpostInput).
     pub fn builder() -> crate::input::delete_outpost_input::Builder {
         crate::input::delete_outpost_input::Builder::default()
     }
@@ -170,7 +170,7 @@ pub struct DeleteSite {
     _private: (),
 }
 impl DeleteSite {
-    /// Creates a new builder-style object to manufacture [`DeleteSiteInput`](crate::input::DeleteSiteInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSiteInput`](crate::input::DeleteSiteInput).
     pub fn builder() -> crate::input::delete_site_input::Builder {
         crate::input::delete_site_input::Builder::default()
     }
@@ -202,7 +202,7 @@ pub struct GetCatalogItem {
     _private: (),
 }
 impl GetCatalogItem {
-    /// Creates a new builder-style object to manufacture [`GetCatalogItemInput`](crate::input::GetCatalogItemInput)
+    /// Creates a new builder-style object to manufacture [`GetCatalogItemInput`](crate::input::GetCatalogItemInput).
     pub fn builder() -> crate::input::get_catalog_item_input::Builder {
         crate::input::get_catalog_item_input::Builder::default()
     }
@@ -234,7 +234,7 @@ pub struct GetConnection {
     _private: (),
 }
 impl GetConnection {
-    /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput).
     pub fn builder() -> crate::input::get_connection_input::Builder {
         crate::input::get_connection_input::Builder::default()
     }
@@ -266,7 +266,7 @@ pub struct GetOrder {
     _private: (),
 }
 impl GetOrder {
-    /// Creates a new builder-style object to manufacture [`GetOrderInput`](crate::input::GetOrderInput)
+    /// Creates a new builder-style object to manufacture [`GetOrderInput`](crate::input::GetOrderInput).
     pub fn builder() -> crate::input::get_order_input::Builder {
         crate::input::get_order_input::Builder::default()
     }
@@ -297,7 +297,7 @@ pub struct GetOutpost {
     _private: (),
 }
 impl GetOutpost {
-    /// Creates a new builder-style object to manufacture [`GetOutpostInput`](crate::input::GetOutpostInput)
+    /// Creates a new builder-style object to manufacture [`GetOutpostInput`](crate::input::GetOutpostInput).
     pub fn builder() -> crate::input::get_outpost_input::Builder {
         crate::input::get_outpost_input::Builder::default()
     }
@@ -329,7 +329,7 @@ pub struct GetOutpostInstanceTypes {
     _private: (),
 }
 impl GetOutpostInstanceTypes {
-    /// Creates a new builder-style object to manufacture [`GetOutpostInstanceTypesInput`](crate::input::GetOutpostInstanceTypesInput)
+    /// Creates a new builder-style object to manufacture [`GetOutpostInstanceTypesInput`](crate::input::GetOutpostInstanceTypesInput).
     pub fn builder() -> crate::input::get_outpost_instance_types_input::Builder {
         crate::input::get_outpost_instance_types_input::Builder::default()
     }
@@ -363,7 +363,7 @@ pub struct GetSite {
     _private: (),
 }
 impl GetSite {
-    /// Creates a new builder-style object to manufacture [`GetSiteInput`](crate::input::GetSiteInput)
+    /// Creates a new builder-style object to manufacture [`GetSiteInput`](crate::input::GetSiteInput).
     pub fn builder() -> crate::input::get_site_input::Builder {
         crate::input::get_site_input::Builder::default()
     }
@@ -394,7 +394,7 @@ pub struct GetSiteAddress {
     _private: (),
 }
 impl GetSiteAddress {
-    /// Creates a new builder-style object to manufacture [`GetSiteAddressInput`](crate::input::GetSiteAddressInput)
+    /// Creates a new builder-style object to manufacture [`GetSiteAddressInput`](crate::input::GetSiteAddressInput).
     pub fn builder() -> crate::input::get_site_address_input::Builder {
         crate::input::get_site_address_input::Builder::default()
     }
@@ -426,7 +426,7 @@ pub struct ListAssets {
     _private: (),
 }
 impl ListAssets {
-    /// Creates a new builder-style object to manufacture [`ListAssetsInput`](crate::input::ListAssetsInput)
+    /// Creates a new builder-style object to manufacture [`ListAssetsInput`](crate::input::ListAssetsInput).
     pub fn builder() -> crate::input::list_assets_input::Builder {
         crate::input::list_assets_input::Builder::default()
     }
@@ -458,7 +458,7 @@ pub struct ListCatalogItems {
     _private: (),
 }
 impl ListCatalogItems {
-    /// Creates a new builder-style object to manufacture [`ListCatalogItemsInput`](crate::input::ListCatalogItemsInput)
+    /// Creates a new builder-style object to manufacture [`ListCatalogItemsInput`](crate::input::ListCatalogItemsInput).
     pub fn builder() -> crate::input::list_catalog_items_input::Builder {
         crate::input::list_catalog_items_input::Builder::default()
     }
@@ -492,7 +492,7 @@ pub struct ListOrders {
     _private: (),
 }
 impl ListOrders {
-    /// Creates a new builder-style object to manufacture [`ListOrdersInput`](crate::input::ListOrdersInput)
+    /// Creates a new builder-style object to manufacture [`ListOrdersInput`](crate::input::ListOrdersInput).
     pub fn builder() -> crate::input::list_orders_input::Builder {
         crate::input::list_orders_input::Builder::default()
     }
@@ -524,7 +524,7 @@ pub struct ListOutposts {
     _private: (),
 }
 impl ListOutposts {
-    /// Creates a new builder-style object to manufacture [`ListOutpostsInput`](crate::input::ListOutpostsInput)
+    /// Creates a new builder-style object to manufacture [`ListOutpostsInput`](crate::input::ListOutpostsInput).
     pub fn builder() -> crate::input::list_outposts_input::Builder {
         crate::input::list_outposts_input::Builder::default()
     }
@@ -556,7 +556,7 @@ pub struct ListSites {
     _private: (),
 }
 impl ListSites {
-    /// Creates a new builder-style object to manufacture [`ListSitesInput`](crate::input::ListSitesInput)
+    /// Creates a new builder-style object to manufacture [`ListSitesInput`](crate::input::ListSitesInput).
     pub fn builder() -> crate::input::list_sites_input::Builder {
         crate::input::list_sites_input::Builder::default()
     }
@@ -587,7 +587,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -621,7 +621,7 @@ pub struct StartConnection {
     _private: (),
 }
 impl StartConnection {
-    /// Creates a new builder-style object to manufacture [`StartConnectionInput`](crate::input::StartConnectionInput)
+    /// Creates a new builder-style object to manufacture [`StartConnectionInput`](crate::input::StartConnectionInput).
     pub fn builder() -> crate::input::start_connection_input::Builder {
         crate::input::start_connection_input::Builder::default()
     }
@@ -655,7 +655,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -687,7 +687,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -719,7 +719,7 @@ pub struct UpdateOutpost {
     _private: (),
 }
 impl UpdateOutpost {
-    /// Creates a new builder-style object to manufacture [`UpdateOutpostInput`](crate::input::UpdateOutpostInput)
+    /// Creates a new builder-style object to manufacture [`UpdateOutpostInput`](crate::input::UpdateOutpostInput).
     pub fn builder() -> crate::input::update_outpost_input::Builder {
         crate::input::update_outpost_input::Builder::default()
     }
@@ -751,7 +751,7 @@ pub struct UpdateSite {
     _private: (),
 }
 impl UpdateSite {
-    /// Creates a new builder-style object to manufacture [`UpdateSiteInput`](crate::input::UpdateSiteInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSiteInput`](crate::input::UpdateSiteInput).
     pub fn builder() -> crate::input::update_site_input::Builder {
         crate::input::update_site_input::Builder::default()
     }
@@ -783,7 +783,7 @@ pub struct UpdateSiteAddress {
     _private: (),
 }
 impl UpdateSiteAddress {
-    /// Creates a new builder-style object to manufacture [`UpdateSiteAddressInput`](crate::input::UpdateSiteAddressInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSiteAddressInput`](crate::input::UpdateSiteAddressInput).
     pub fn builder() -> crate::input::update_site_address_input::Builder {
         crate::input::update_site_address_input::Builder::default()
     }
@@ -817,7 +817,7 @@ pub struct UpdateSiteRackPhysicalProperties {
     _private: (),
 }
 impl UpdateSiteRackPhysicalProperties {
-    /// Creates a new builder-style object to manufacture [`UpdateSiteRackPhysicalPropertiesInput`](crate::input::UpdateSiteRackPhysicalPropertiesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSiteRackPhysicalPropertiesInput`](crate::input::UpdateSiteRackPhysicalPropertiesInput).
     pub fn builder() -> crate::input::update_site_rack_physical_properties_input::Builder {
         crate::input::update_site_rack_physical_properties_input::Builder::default()
     }

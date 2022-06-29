@@ -10,7 +10,7 @@ pub struct CreateReplicationSet {
     _private: (),
 }
 impl CreateReplicationSet {
-    /// Creates a new builder-style object to manufacture [`CreateReplicationSetInput`](crate::input::CreateReplicationSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateReplicationSetInput`](crate::input::CreateReplicationSetInput).
     pub fn builder() -> crate::input::create_replication_set_input::Builder {
         crate::input::create_replication_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateResponsePlan {
     _private: (),
 }
 impl CreateResponsePlan {
-    /// Creates a new builder-style object to manufacture [`CreateResponsePlanInput`](crate::input::CreateResponsePlanInput)
+    /// Creates a new builder-style object to manufacture [`CreateResponsePlanInput`](crate::input::CreateResponsePlanInput).
     pub fn builder() -> crate::input::create_response_plan_input::Builder {
         crate::input::create_response_plan_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateTimelineEvent {
     _private: (),
 }
 impl CreateTimelineEvent {
-    /// Creates a new builder-style object to manufacture [`CreateTimelineEventInput`](crate::input::CreateTimelineEventInput)
+    /// Creates a new builder-style object to manufacture [`CreateTimelineEventInput`](crate::input::CreateTimelineEventInput).
     pub fn builder() -> crate::input::create_timeline_event_input::Builder {
         crate::input::create_timeline_event_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteIncidentRecord {
     _private: (),
 }
 impl DeleteIncidentRecord {
-    /// Creates a new builder-style object to manufacture [`DeleteIncidentRecordInput`](crate::input::DeleteIncidentRecordInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIncidentRecordInput`](crate::input::DeleteIncidentRecordInput).
     pub fn builder() -> crate::input::delete_incident_record_input::Builder {
         crate::input::delete_incident_record_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteReplicationSet {
     _private: (),
 }
 impl DeleteReplicationSet {
-    /// Creates a new builder-style object to manufacture [`DeleteReplicationSetInput`](crate::input::DeleteReplicationSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationSetInput`](crate::input::DeleteReplicationSetInput).
     pub fn builder() -> crate::input::delete_replication_set_input::Builder {
         crate::input::delete_replication_set_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeleteResponsePlan {
     _private: (),
 }
 impl DeleteResponsePlan {
-    /// Creates a new builder-style object to manufacture [`DeleteResponsePlanInput`](crate::input::DeleteResponsePlanInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResponsePlanInput`](crate::input::DeleteResponsePlanInput).
     pub fn builder() -> crate::input::delete_response_plan_input::Builder {
         crate::input::delete_response_plan_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DeleteTimelineEvent {
     _private: (),
 }
 impl DeleteTimelineEvent {
-    /// Creates a new builder-style object to manufacture [`DeleteTimelineEventInput`](crate::input::DeleteTimelineEventInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTimelineEventInput`](crate::input::DeleteTimelineEventInput).
     pub fn builder() -> crate::input::delete_timeline_event_input::Builder {
         crate::input::delete_timeline_event_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct GetIncidentRecord {
     _private: (),
 }
 impl GetIncidentRecord {
-    /// Creates a new builder-style object to manufacture [`GetIncidentRecordInput`](crate::input::GetIncidentRecordInput)
+    /// Creates a new builder-style object to manufacture [`GetIncidentRecordInput`](crate::input::GetIncidentRecordInput).
     pub fn builder() -> crate::input::get_incident_record_input::Builder {
         crate::input::get_incident_record_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct GetReplicationSet {
     _private: (),
 }
 impl GetReplicationSet {
-    /// Creates a new builder-style object to manufacture [`GetReplicationSetInput`](crate::input::GetReplicationSetInput)
+    /// Creates a new builder-style object to manufacture [`GetReplicationSetInput`](crate::input::GetReplicationSetInput).
     pub fn builder() -> crate::input::get_replication_set_input::Builder {
         crate::input::get_replication_set_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct GetResourcePolicies {
     _private: (),
 }
 impl GetResourcePolicies {
-    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput).
     pub fn builder() -> crate::input::get_resource_policies_input::Builder {
         crate::input::get_resource_policies_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct GetResponsePlan {
     _private: (),
 }
 impl GetResponsePlan {
-    /// Creates a new builder-style object to manufacture [`GetResponsePlanInput`](crate::input::GetResponsePlanInput)
+    /// Creates a new builder-style object to manufacture [`GetResponsePlanInput`](crate::input::GetResponsePlanInput).
     pub fn builder() -> crate::input::get_response_plan_input::Builder {
         crate::input::get_response_plan_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct GetTimelineEvent {
     _private: (),
 }
 impl GetTimelineEvent {
-    /// Creates a new builder-style object to manufacture [`GetTimelineEventInput`](crate::input::GetTimelineEventInput)
+    /// Creates a new builder-style object to manufacture [`GetTimelineEventInput`](crate::input::GetTimelineEventInput).
     pub fn builder() -> crate::input::get_timeline_event_input::Builder {
         crate::input::get_timeline_event_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct ListIncidentRecords {
     _private: (),
 }
 impl ListIncidentRecords {
-    /// Creates a new builder-style object to manufacture [`ListIncidentRecordsInput`](crate::input::ListIncidentRecordsInput)
+    /// Creates a new builder-style object to manufacture [`ListIncidentRecordsInput`](crate::input::ListIncidentRecordsInput).
     pub fn builder() -> crate::input::list_incident_records_input::Builder {
         crate::input::list_incident_records_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct ListRelatedItems {
     _private: (),
 }
 impl ListRelatedItems {
-    /// Creates a new builder-style object to manufacture [`ListRelatedItemsInput`](crate::input::ListRelatedItemsInput)
+    /// Creates a new builder-style object to manufacture [`ListRelatedItemsInput`](crate::input::ListRelatedItemsInput).
     pub fn builder() -> crate::input::list_related_items_input::Builder {
         crate::input::list_related_items_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct ListReplicationSets {
     _private: (),
 }
 impl ListReplicationSets {
-    /// Creates a new builder-style object to manufacture [`ListReplicationSetsInput`](crate::input::ListReplicationSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListReplicationSetsInput`](crate::input::ListReplicationSetsInput).
     pub fn builder() -> crate::input::list_replication_sets_input::Builder {
         crate::input::list_replication_sets_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct ListResponsePlans {
     _private: (),
 }
 impl ListResponsePlans {
-    /// Creates a new builder-style object to manufacture [`ListResponsePlansInput`](crate::input::ListResponsePlansInput)
+    /// Creates a new builder-style object to manufacture [`ListResponsePlansInput`](crate::input::ListResponsePlansInput).
     pub fn builder() -> crate::input::list_response_plans_input::Builder {
         crate::input::list_response_plans_input::Builder::default()
     }
@@ -588,7 +588,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -622,7 +622,7 @@ pub struct ListTimelineEvents {
     _private: (),
 }
 impl ListTimelineEvents {
-    /// Creates a new builder-style object to manufacture [`ListTimelineEventsInput`](crate::input::ListTimelineEventsInput)
+    /// Creates a new builder-style object to manufacture [`ListTimelineEventsInput`](crate::input::ListTimelineEventsInput).
     pub fn builder() -> crate::input::list_timeline_events_input::Builder {
         crate::input::list_timeline_events_input::Builder::default()
     }
@@ -656,7 +656,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -690,7 +690,7 @@ pub struct StartIncident {
     _private: (),
 }
 impl StartIncident {
-    /// Creates a new builder-style object to manufacture [`StartIncidentInput`](crate::input::StartIncidentInput)
+    /// Creates a new builder-style object to manufacture [`StartIncidentInput`](crate::input::StartIncidentInput).
     pub fn builder() -> crate::input::start_incident_input::Builder {
         crate::input::start_incident_input::Builder::default()
     }
@@ -722,7 +722,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -754,7 +754,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -786,7 +786,7 @@ pub struct UpdateDeletionProtection {
     _private: (),
 }
 impl UpdateDeletionProtection {
-    /// Creates a new builder-style object to manufacture [`UpdateDeletionProtectionInput`](crate::input::UpdateDeletionProtectionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDeletionProtectionInput`](crate::input::UpdateDeletionProtectionInput).
     pub fn builder() -> crate::input::update_deletion_protection_input::Builder {
         crate::input::update_deletion_protection_input::Builder::default()
     }
@@ -820,7 +820,7 @@ pub struct UpdateIncidentRecord {
     _private: (),
 }
 impl UpdateIncidentRecord {
-    /// Creates a new builder-style object to manufacture [`UpdateIncidentRecordInput`](crate::input::UpdateIncidentRecordInput)
+    /// Creates a new builder-style object to manufacture [`UpdateIncidentRecordInput`](crate::input::UpdateIncidentRecordInput).
     pub fn builder() -> crate::input::update_incident_record_input::Builder {
         crate::input::update_incident_record_input::Builder::default()
     }
@@ -854,7 +854,7 @@ pub struct UpdateRelatedItems {
     _private: (),
 }
 impl UpdateRelatedItems {
-    /// Creates a new builder-style object to manufacture [`UpdateRelatedItemsInput`](crate::input::UpdateRelatedItemsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRelatedItemsInput`](crate::input::UpdateRelatedItemsInput).
     pub fn builder() -> crate::input::update_related_items_input::Builder {
         crate::input::update_related_items_input::Builder::default()
     }
@@ -888,7 +888,7 @@ pub struct UpdateReplicationSet {
     _private: (),
 }
 impl UpdateReplicationSet {
-    /// Creates a new builder-style object to manufacture [`UpdateReplicationSetInput`](crate::input::UpdateReplicationSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateReplicationSetInput`](crate::input::UpdateReplicationSetInput).
     pub fn builder() -> crate::input::update_replication_set_input::Builder {
         crate::input::update_replication_set_input::Builder::default()
     }
@@ -922,7 +922,7 @@ pub struct UpdateResponsePlan {
     _private: (),
 }
 impl UpdateResponsePlan {
-    /// Creates a new builder-style object to manufacture [`UpdateResponsePlanInput`](crate::input::UpdateResponsePlanInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResponsePlanInput`](crate::input::UpdateResponsePlanInput).
     pub fn builder() -> crate::input::update_response_plan_input::Builder {
         crate::input::update_response_plan_input::Builder::default()
     }
@@ -956,7 +956,7 @@ pub struct UpdateTimelineEvent {
     _private: (),
 }
 impl UpdateTimelineEvent {
-    /// Creates a new builder-style object to manufacture [`UpdateTimelineEventInput`](crate::input::UpdateTimelineEventInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTimelineEventInput`](crate::input::UpdateTimelineEventInput).
     pub fn builder() -> crate::input::update_timeline_event_input::Builder {
         crate::input::update_timeline_event_input::Builder::default()
     }

@@ -40,11 +40,10 @@ impl std::fmt::Debug for FailureInfo {
         formatter.finish()
     }
 }
-/// See [`FailureInfo`](crate::model::FailureInfo)
+/// See [`FailureInfo`](crate::model::FailureInfo).
 pub mod failure_info {
 
-    /// A builder for [`FailureInfo`](crate::model::FailureInfo)
-    #[non_exhaustive]
+    /// A builder for [`FailureInfo`](crate::model::FailureInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status_code: std::option::Option<i32>,
@@ -88,7 +87,7 @@ pub mod failure_info {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailureInfo`](crate::model::FailureInfo)
+        /// Consumes the builder and constructs a [`FailureInfo`](crate::model::FailureInfo).
         pub fn build(self) -> crate::model::FailureInfo {
             crate::model::FailureInfo {
                 status_code: self.status_code.unwrap_or_default(),
@@ -99,7 +98,7 @@ pub mod failure_info {
     }
 }
 impl FailureInfo {
-    /// Creates a new builder-style object to manufacture [`FailureInfo`](crate::model::FailureInfo)
+    /// Creates a new builder-style object to manufacture [`FailureInfo`](crate::model::FailureInfo).
     pub fn builder() -> crate::model::failure_info::Builder {
         crate::model::failure_info::Builder::default()
     }
@@ -194,11 +193,10 @@ impl std::fmt::Debug for ResourceTagMapping {
         formatter.finish()
     }
 }
-/// See [`ResourceTagMapping`](crate::model::ResourceTagMapping)
+/// See [`ResourceTagMapping`](crate::model::ResourceTagMapping).
 pub mod resource_tag_mapping {
 
-    /// A builder for [`ResourceTagMapping`](crate::model::ResourceTagMapping)
-    #[non_exhaustive]
+    /// A builder for [`ResourceTagMapping`](crate::model::ResourceTagMapping).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
@@ -248,7 +246,7 @@ pub mod resource_tag_mapping {
             self.compliance_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceTagMapping`](crate::model::ResourceTagMapping)
+        /// Consumes the builder and constructs a [`ResourceTagMapping`](crate::model::ResourceTagMapping).
         pub fn build(self) -> crate::model::ResourceTagMapping {
             crate::model::ResourceTagMapping {
                 resource_arn: self.resource_arn,
@@ -259,7 +257,7 @@ pub mod resource_tag_mapping {
     }
 }
 impl ResourceTagMapping {
-    /// Creates a new builder-style object to manufacture [`ResourceTagMapping`](crate::model::ResourceTagMapping)
+    /// Creates a new builder-style object to manufacture [`ResourceTagMapping`](crate::model::ResourceTagMapping).
     pub fn builder() -> crate::model::resource_tag_mapping::Builder {
         crate::model::resource_tag_mapping::Builder::default()
     }
@@ -302,11 +300,10 @@ impl std::fmt::Debug for ComplianceDetails {
         formatter.finish()
     }
 }
-/// See [`ComplianceDetails`](crate::model::ComplianceDetails)
+/// See [`ComplianceDetails`](crate::model::ComplianceDetails).
 pub mod compliance_details {
 
-    /// A builder for [`ComplianceDetails`](crate::model::ComplianceDetails)
-    #[non_exhaustive]
+    /// A builder for [`ComplianceDetails`](crate::model::ComplianceDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) noncompliant_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -366,7 +363,7 @@ pub mod compliance_details {
             self.compliance_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComplianceDetails`](crate::model::ComplianceDetails)
+        /// Consumes the builder and constructs a [`ComplianceDetails`](crate::model::ComplianceDetails).
         pub fn build(self) -> crate::model::ComplianceDetails {
             crate::model::ComplianceDetails {
                 noncompliant_keys: self.noncompliant_keys,
@@ -377,7 +374,7 @@ pub mod compliance_details {
     }
 }
 impl ComplianceDetails {
-    /// Creates a new builder-style object to manufacture [`ComplianceDetails`](crate::model::ComplianceDetails)
+    /// Creates a new builder-style object to manufacture [`ComplianceDetails`](crate::model::ComplianceDetails).
     pub fn builder() -> crate::model::compliance_details::Builder {
         crate::model::compliance_details::Builder::default()
     }
@@ -410,11 +407,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -441,7 +437,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -451,7 +447,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -484,11 +480,10 @@ impl std::fmt::Debug for TagFilter {
         formatter.finish()
     }
 }
-/// See [`TagFilter`](crate::model::TagFilter)
+/// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
-    /// A builder for [`TagFilter`](crate::model::TagFilter)
-    #[non_exhaustive]
+    /// A builder for [`TagFilter`](crate::model::TagFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -524,7 +519,7 @@ pub mod tag_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter)
+        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter).
         pub fn build(self) -> crate::model::TagFilter {
             crate::model::TagFilter {
                 key: self.key,
@@ -534,7 +529,7 @@ pub mod tag_filter {
     }
 }
 impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter)
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
     pub fn builder() -> crate::model::tag_filter::Builder {
         crate::model::tag_filter::Builder::default()
     }
@@ -595,11 +590,10 @@ impl std::fmt::Debug for Summary {
         formatter.finish()
     }
 }
-/// See [`Summary`](crate::model::Summary)
+/// See [`Summary`](crate::model::Summary).
 pub mod summary {
 
-    /// A builder for [`Summary`](crate::model::Summary)
-    #[non_exhaustive]
+    /// A builder for [`Summary`](crate::model::Summary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_updated: std::option::Option<std::string::String>,
@@ -676,7 +670,7 @@ pub mod summary {
             self.non_compliant_resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`Summary`](crate::model::Summary)
+        /// Consumes the builder and constructs a [`Summary`](crate::model::Summary).
         pub fn build(self) -> crate::model::Summary {
             crate::model::Summary {
                 last_updated: self.last_updated,
@@ -690,7 +684,7 @@ pub mod summary {
     }
 }
 impl Summary {
-    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary)
+    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
     pub fn builder() -> crate::model::summary::Builder {
         crate::model::summary::Builder::default()
     }

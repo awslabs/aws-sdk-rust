@@ -41,11 +41,10 @@ impl std::fmt::Debug for LogPattern {
         formatter.finish()
     }
 }
-/// See [`LogPattern`](crate::model::LogPattern)
+/// See [`LogPattern`](crate::model::LogPattern).
 pub mod log_pattern {
 
-    /// A builder for [`LogPattern`](crate::model::LogPattern)
-    #[non_exhaustive]
+    /// A builder for [`LogPattern`](crate::model::LogPattern).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pattern_set_name: std::option::Option<std::string::String>,
@@ -97,7 +96,7 @@ pub mod log_pattern {
             self.rank = input;
             self
         }
-        /// Consumes the builder and constructs a [`LogPattern`](crate::model::LogPattern)
+        /// Consumes the builder and constructs a [`LogPattern`](crate::model::LogPattern).
         pub fn build(self) -> crate::model::LogPattern {
             crate::model::LogPattern {
                 pattern_set_name: self.pattern_set_name,
@@ -109,7 +108,7 @@ pub mod log_pattern {
     }
 }
 impl LogPattern {
-    /// Creates a new builder-style object to manufacture [`LogPattern`](crate::model::LogPattern)
+    /// Creates a new builder-style object to manufacture [`LogPattern`](crate::model::LogPattern).
     pub fn builder() -> crate::model::log_pattern::Builder {
         crate::model::log_pattern::Builder::default()
     }
@@ -330,11 +329,10 @@ impl std::fmt::Debug for ApplicationInfo {
         formatter.finish()
     }
 }
-/// See [`ApplicationInfo`](crate::model::ApplicationInfo)
+/// See [`ApplicationInfo`](crate::model::ApplicationInfo).
 pub mod application_info {
 
-    /// A builder for [`ApplicationInfo`](crate::model::ApplicationInfo)
-    #[non_exhaustive]
+    /// A builder for [`ApplicationInfo`](crate::model::ApplicationInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_group_name: std::option::Option<std::string::String>,
@@ -444,7 +442,7 @@ pub mod application_info {
             self.discovery_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApplicationInfo`](crate::model::ApplicationInfo)
+        /// Consumes the builder and constructs a [`ApplicationInfo`](crate::model::ApplicationInfo).
         pub fn build(self) -> crate::model::ApplicationInfo {
             crate::model::ApplicationInfo {
                 resource_group_name: self.resource_group_name,
@@ -460,7 +458,7 @@ pub mod application_info {
     }
 }
 impl ApplicationInfo {
-    /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo)
+    /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo).
     pub fn builder() -> crate::model::application_info::Builder {
         crate::model::application_info::Builder::default()
     }
@@ -554,11 +552,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -585,7 +582,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -595,7 +592,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -704,11 +701,10 @@ impl std::fmt::Debug for Problem {
         formatter.finish()
     }
 }
-/// See [`Problem`](crate::model::Problem)
+/// See [`Problem`](crate::model::Problem).
 pub mod problem {
 
-    /// A builder for [`Problem`](crate::model::Problem)
-    #[non_exhaustive]
+    /// A builder for [`Problem`](crate::model::Problem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -880,7 +876,7 @@ pub mod problem {
             self.last_recurrence_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Problem`](crate::model::Problem)
+        /// Consumes the builder and constructs a [`Problem`](crate::model::Problem).
         pub fn build(self) -> crate::model::Problem {
             crate::model::Problem {
                 id: self.id,
@@ -900,7 +896,7 @@ pub mod problem {
     }
 }
 impl Problem {
-    /// Creates a new builder-style object to manufacture [`Problem`](crate::model::Problem)
+    /// Creates a new builder-style object to manufacture [`Problem`](crate::model::Problem).
     pub fn builder() -> crate::model::problem::Builder {
         crate::model::problem::Builder::default()
     }
@@ -1199,11 +1195,10 @@ impl std::fmt::Debug for ConfigurationEvent {
         formatter.finish()
     }
 }
-/// See [`ConfigurationEvent`](crate::model::ConfigurationEvent)
+/// See [`ConfigurationEvent`](crate::model::ConfigurationEvent).
 pub mod configuration_event {
 
-    /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent)
-    #[non_exhaustive]
+    /// A builder for [`ConfigurationEvent`](crate::model::ConfigurationEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitored_resource_arn: std::option::Option<std::string::String>,
@@ -1293,7 +1288,7 @@ pub mod configuration_event {
             self.event_resource_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::model::ConfigurationEvent)
+        /// Consumes the builder and constructs a [`ConfigurationEvent`](crate::model::ConfigurationEvent).
         pub fn build(self) -> crate::model::ConfigurationEvent {
             crate::model::ConfigurationEvent {
                 monitored_resource_arn: self.monitored_resource_arn,
@@ -1307,7 +1302,7 @@ pub mod configuration_event {
     }
 }
 impl ConfigurationEvent {
-    /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent)
+    /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
     pub fn builder() -> crate::model::configuration_event::Builder {
         crate::model::configuration_event::Builder::default()
     }
@@ -1514,11 +1509,10 @@ impl std::fmt::Debug for ApplicationComponent {
         formatter.finish()
     }
 }
-/// See [`ApplicationComponent`](crate::model::ApplicationComponent)
+/// See [`ApplicationComponent`](crate::model::ApplicationComponent).
 pub mod application_component {
 
-    /// A builder for [`ApplicationComponent`](crate::model::ApplicationComponent)
-    #[non_exhaustive]
+    /// A builder for [`ApplicationComponent`](crate::model::ApplicationComponent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -1632,7 +1626,7 @@ pub mod application_component {
             self.detected_workload = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApplicationComponent`](crate::model::ApplicationComponent)
+        /// Consumes the builder and constructs a [`ApplicationComponent`](crate::model::ApplicationComponent).
         pub fn build(self) -> crate::model::ApplicationComponent {
             crate::model::ApplicationComponent {
                 component_name: self.component_name,
@@ -1647,7 +1641,7 @@ pub mod application_component {
     }
 }
 impl ApplicationComponent {
-    /// Creates a new builder-style object to manufacture [`ApplicationComponent`](crate::model::ApplicationComponent)
+    /// Creates a new builder-style object to manufacture [`ApplicationComponent`](crate::model::ApplicationComponent).
     pub fn builder() -> crate::model::application_component::Builder {
         crate::model::application_component::Builder::default()
     }
@@ -1728,11 +1722,10 @@ impl std::fmt::Debug for RelatedObservations {
         formatter.finish()
     }
 }
-/// See [`RelatedObservations`](crate::model::RelatedObservations)
+/// See [`RelatedObservations`](crate::model::RelatedObservations).
 pub mod related_observations {
 
-    /// A builder for [`RelatedObservations`](crate::model::RelatedObservations)
-    #[non_exhaustive]
+    /// A builder for [`RelatedObservations`](crate::model::RelatedObservations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) observation_list: std::option::Option<std::vec::Vec<crate::model::Observation>>,
@@ -1757,7 +1750,7 @@ pub mod related_observations {
             self.observation_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`RelatedObservations`](crate::model::RelatedObservations)
+        /// Consumes the builder and constructs a [`RelatedObservations`](crate::model::RelatedObservations).
         pub fn build(self) -> crate::model::RelatedObservations {
             crate::model::RelatedObservations {
                 observation_list: self.observation_list,
@@ -1766,7 +1759,7 @@ pub mod related_observations {
     }
 }
 impl RelatedObservations {
-    /// Creates a new builder-style object to manufacture [`RelatedObservations`](crate::model::RelatedObservations)
+    /// Creates a new builder-style object to manufacture [`RelatedObservations`](crate::model::RelatedObservations).
     pub fn builder() -> crate::model::related_observations::Builder {
         crate::model::related_observations::Builder::default()
     }
@@ -2117,11 +2110,10 @@ impl std::fmt::Debug for Observation {
         formatter.finish()
     }
 }
-/// See [`Observation`](crate::model::Observation)
+/// See [`Observation`](crate::model::Observation).
 pub mod observation {
 
-    /// A builder for [`Observation`](crate::model::Observation)
-    #[non_exhaustive]
+    /// A builder for [`Observation`](crate::model::Observation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2715,7 +2707,7 @@ pub mod observation {
             self.x_ray_node_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`Observation`](crate::model::Observation)
+        /// Consumes the builder and constructs a [`Observation`](crate::model::Observation).
         pub fn build(self) -> crate::model::Observation {
             crate::model::Observation {
                 id: self.id,
@@ -2768,7 +2760,7 @@ pub mod observation {
     }
 }
 impl Observation {
-    /// Creates a new builder-style object to manufacture [`Observation`](crate::model::Observation)
+    /// Creates a new builder-style object to manufacture [`Observation`](crate::model::Observation).
     pub fn builder() -> crate::model::observation::Builder {
         crate::model::observation::Builder::default()
     }

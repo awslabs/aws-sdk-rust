@@ -21,11 +21,10 @@ impl std::fmt::Debug for UpdateResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
+/// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
 pub mod update_resource_output {
 
-    /// A builder for [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -46,7 +45,7 @@ pub mod update_resource_output {
             self.progress_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
+        /// Consumes the builder and constructs a [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
         pub fn build(self) -> crate::output::UpdateResourceOutput {
             crate::output::UpdateResourceOutput {
                 progress_event: self.progress_event,
@@ -55,7 +54,7 @@ pub mod update_resource_output {
     }
 }
 impl UpdateResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
     pub fn builder() -> crate::output::update_resource_output::Builder {
         crate::output::update_resource_output::Builder::default()
     }
@@ -98,11 +97,10 @@ impl std::fmt::Debug for ListResourcesOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+/// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
 
-    /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourcesOutput`](crate::output::ListResourcesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -150,7 +148,7 @@ pub mod list_resources_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+        /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput).
         pub fn build(self) -> crate::output::ListResourcesOutput {
             crate::output::ListResourcesOutput {
                 type_name: self.type_name,
@@ -161,7 +159,7 @@ pub mod list_resources_output {
     }
 }
 impl ListResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput).
     pub fn builder() -> crate::output::list_resources_output::Builder {
         crate::output::list_resources_output::Builder::default()
     }
@@ -200,11 +198,10 @@ impl std::fmt::Debug for ListResourceRequestsOutput {
         formatter.finish()
     }
 }
-/// See [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput)
+/// See [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
 pub mod list_resource_requests_output {
 
-    /// A builder for [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_request_status_summaries:
@@ -244,7 +241,7 @@ pub mod list_resource_requests_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput)
+        /// Consumes the builder and constructs a [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
         pub fn build(self) -> crate::output::ListResourceRequestsOutput {
             crate::output::ListResourceRequestsOutput {
                 resource_request_status_summaries: self.resource_request_status_summaries,
@@ -254,7 +251,7 @@ pub mod list_resource_requests_output {
     }
 }
 impl ListResourceRequestsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput)
+    /// Creates a new builder-style object to manufacture [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
     pub fn builder() -> crate::output::list_resource_requests_output::Builder {
         crate::output::list_resource_requests_output::Builder::default()
     }
@@ -280,11 +277,10 @@ impl std::fmt::Debug for GetResourceRequestStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput)
+/// See [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
 pub mod get_resource_request_status_output {
 
-    /// A builder for [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -303,7 +299,7 @@ pub mod get_resource_request_status_output {
             self.progress_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput)
+        /// Consumes the builder and constructs a [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
         pub fn build(self) -> crate::output::GetResourceRequestStatusOutput {
             crate::output::GetResourceRequestStatusOutput {
                 progress_event: self.progress_event,
@@ -312,7 +308,7 @@ pub mod get_resource_request_status_output {
     }
 }
 impl GetResourceRequestStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
     pub fn builder() -> crate::output::get_resource_request_status_output::Builder {
         crate::output::get_resource_request_status_output::Builder::default()
     }
@@ -345,11 +341,10 @@ impl std::fmt::Debug for GetResourceOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceOutput`](crate::output::GetResourceOutput)
+/// See [`GetResourceOutput`](crate::output::GetResourceOutput).
 pub mod get_resource_output {
 
-    /// A builder for [`GetResourceOutput`](crate::output::GetResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceOutput`](crate::output::GetResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -379,7 +374,7 @@ pub mod get_resource_output {
             self.resource_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceOutput`](crate::output::GetResourceOutput)
+        /// Consumes the builder and constructs a [`GetResourceOutput`](crate::output::GetResourceOutput).
         pub fn build(self) -> crate::output::GetResourceOutput {
             crate::output::GetResourceOutput {
                 type_name: self.type_name,
@@ -389,7 +384,7 @@ pub mod get_resource_output {
     }
 }
 impl GetResourceOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceOutput`](crate::output::GetResourceOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceOutput`](crate::output::GetResourceOutput).
     pub fn builder() -> crate::output::get_resource_output::Builder {
         crate::output::get_resource_output::Builder::default()
     }
@@ -417,11 +412,10 @@ impl std::fmt::Debug for DeleteResourceOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteResourceOutput`](crate::output::DeleteResourceOutput)
+/// See [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
 pub mod delete_resource_output {
 
-    /// A builder for [`DeleteResourceOutput`](crate::output::DeleteResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -442,7 +436,7 @@ pub mod delete_resource_output {
             self.progress_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteResourceOutput`](crate::output::DeleteResourceOutput)
+        /// Consumes the builder and constructs a [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
         pub fn build(self) -> crate::output::DeleteResourceOutput {
             crate::output::DeleteResourceOutput {
                 progress_event: self.progress_event,
@@ -451,7 +445,7 @@ pub mod delete_resource_output {
     }
 }
 impl DeleteResourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceOutput`](crate::output::DeleteResourceOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
     pub fn builder() -> crate::output::delete_resource_output::Builder {
         crate::output::delete_resource_output::Builder::default()
     }
@@ -479,11 +473,10 @@ impl std::fmt::Debug for CreateResourceOutput {
         formatter.finish()
     }
 }
-/// See [`CreateResourceOutput`](crate::output::CreateResourceOutput)
+/// See [`CreateResourceOutput`](crate::output::CreateResourceOutput).
 pub mod create_resource_output {
 
-    /// A builder for [`CreateResourceOutput`](crate::output::CreateResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateResourceOutput`](crate::output::CreateResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -504,7 +497,7 @@ pub mod create_resource_output {
             self.progress_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateResourceOutput`](crate::output::CreateResourceOutput)
+        /// Consumes the builder and constructs a [`CreateResourceOutput`](crate::output::CreateResourceOutput).
         pub fn build(self) -> crate::output::CreateResourceOutput {
             crate::output::CreateResourceOutput {
                 progress_event: self.progress_event,
@@ -513,7 +506,7 @@ pub mod create_resource_output {
     }
 }
 impl CreateResourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResourceOutput`](crate::output::CreateResourceOutput)
+    /// Creates a new builder-style object to manufacture [`CreateResourceOutput`](crate::output::CreateResourceOutput).
     pub fn builder() -> crate::output::create_resource_output::Builder {
         crate::output::create_resource_output::Builder::default()
     }
@@ -539,11 +532,10 @@ impl std::fmt::Debug for CancelResourceRequestOutput {
         formatter.finish()
     }
 }
-/// See [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput)
+/// See [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
 pub mod cancel_resource_request_output {
 
-    /// A builder for [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) progress_event: std::option::Option<crate::model::ProgressEvent>,
@@ -562,7 +554,7 @@ pub mod cancel_resource_request_output {
             self.progress_event = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput)
+        /// Consumes the builder and constructs a [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
         pub fn build(self) -> crate::output::CancelResourceRequestOutput {
             crate::output::CancelResourceRequestOutput {
                 progress_event: self.progress_event,
@@ -571,7 +563,7 @@ pub mod cancel_resource_request_output {
     }
 }
 impl CancelResourceRequestOutput {
-    /// Creates a new builder-style object to manufacture [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput)
+    /// Creates a new builder-style object to manufacture [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
     pub fn builder() -> crate::output::cancel_resource_request_output::Builder {
         crate::output::cancel_resource_request_output::Builder::default()
     }

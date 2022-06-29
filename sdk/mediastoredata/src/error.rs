@@ -575,11 +575,10 @@ impl std::fmt::Display for InternalServerError {
     }
 }
 impl std::error::Error for InternalServerError {}
-/// See [`InternalServerError`](crate::error::InternalServerError)
+/// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
 
-    /// A builder for [`InternalServerError`](crate::error::InternalServerError)
-    #[non_exhaustive]
+    /// A builder for [`InternalServerError`](crate::error::InternalServerError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -595,7 +594,7 @@ pub mod internal_server_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
+        /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError).
         pub fn build(self) -> crate::error::InternalServerError {
             crate::error::InternalServerError {
                 message: self.message,
@@ -604,7 +603,7 @@ pub mod internal_server_error {
     }
 }
 impl InternalServerError {
-    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError)
+    /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
     pub fn builder() -> crate::error::internal_server_error::Builder {
         crate::error::internal_server_error::Builder::default()
     }
@@ -640,11 +639,10 @@ impl std::fmt::Display for ContainerNotFoundException {
     }
 }
 impl std::error::Error for ContainerNotFoundException {}
-/// See [`ContainerNotFoundException`](crate::error::ContainerNotFoundException)
+/// See [`ContainerNotFoundException`](crate::error::ContainerNotFoundException).
 pub mod container_not_found_exception {
 
-    /// A builder for [`ContainerNotFoundException`](crate::error::ContainerNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`ContainerNotFoundException`](crate::error::ContainerNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -660,7 +658,7 @@ pub mod container_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContainerNotFoundException`](crate::error::ContainerNotFoundException)
+        /// Consumes the builder and constructs a [`ContainerNotFoundException`](crate::error::ContainerNotFoundException).
         pub fn build(self) -> crate::error::ContainerNotFoundException {
             crate::error::ContainerNotFoundException {
                 message: self.message,
@@ -669,7 +667,7 @@ pub mod container_not_found_exception {
     }
 }
 impl ContainerNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ContainerNotFoundException`](crate::error::ContainerNotFoundException)
+    /// Creates a new builder-style object to manufacture [`ContainerNotFoundException`](crate::error::ContainerNotFoundException).
     pub fn builder() -> crate::error::container_not_found_exception::Builder {
         crate::error::container_not_found_exception::Builder::default()
     }
@@ -705,11 +703,10 @@ impl std::fmt::Display for RequestedRangeNotSatisfiableException {
     }
 }
 impl std::error::Error for RequestedRangeNotSatisfiableException {}
-/// See [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException)
+/// See [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException).
 pub mod requested_range_not_satisfiable_exception {
 
-    /// A builder for [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException)
-    #[non_exhaustive]
+    /// A builder for [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -725,7 +722,7 @@ pub mod requested_range_not_satisfiable_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException)
+        /// Consumes the builder and constructs a [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException).
         pub fn build(self) -> crate::error::RequestedRangeNotSatisfiableException {
             crate::error::RequestedRangeNotSatisfiableException {
                 message: self.message,
@@ -734,7 +731,7 @@ pub mod requested_range_not_satisfiable_exception {
     }
 }
 impl RequestedRangeNotSatisfiableException {
-    /// Creates a new builder-style object to manufacture [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException)
+    /// Creates a new builder-style object to manufacture [`RequestedRangeNotSatisfiableException`](crate::error::RequestedRangeNotSatisfiableException).
     pub fn builder() -> crate::error::requested_range_not_satisfiable_exception::Builder {
         crate::error::requested_range_not_satisfiable_exception::Builder::default()
     }
@@ -770,11 +767,10 @@ impl std::fmt::Display for ObjectNotFoundException {
     }
 }
 impl std::error::Error for ObjectNotFoundException {}
-/// See [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
+/// See [`ObjectNotFoundException`](crate::error::ObjectNotFoundException).
 pub mod object_not_found_exception {
 
-    /// A builder for [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`ObjectNotFoundException`](crate::error::ObjectNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -790,7 +786,7 @@ pub mod object_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
+        /// Consumes the builder and constructs a [`ObjectNotFoundException`](crate::error::ObjectNotFoundException).
         pub fn build(self) -> crate::error::ObjectNotFoundException {
             crate::error::ObjectNotFoundException {
                 message: self.message,
@@ -799,7 +795,7 @@ pub mod object_not_found_exception {
     }
 }
 impl ObjectNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ObjectNotFoundException`](crate::error::ObjectNotFoundException)
+    /// Creates a new builder-style object to manufacture [`ObjectNotFoundException`](crate::error::ObjectNotFoundException).
     pub fn builder() -> crate::error::object_not_found_exception::Builder {
         crate::error::object_not_found_exception::Builder::default()
     }

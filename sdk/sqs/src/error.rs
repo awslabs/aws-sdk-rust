@@ -1972,11 +1972,10 @@ impl std::fmt::Display for InvalidAttributeName {
     }
 }
 impl std::error::Error for InvalidAttributeName {}
-/// See [`InvalidAttributeName`](crate::error::InvalidAttributeName)
+/// See [`InvalidAttributeName`](crate::error::InvalidAttributeName).
 pub mod invalid_attribute_name {
 
-    /// A builder for [`InvalidAttributeName`](crate::error::InvalidAttributeName)
-    #[non_exhaustive]
+    /// A builder for [`InvalidAttributeName`](crate::error::InvalidAttributeName).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1992,7 +1991,7 @@ pub mod invalid_attribute_name {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidAttributeName`](crate::error::InvalidAttributeName)
+        /// Consumes the builder and constructs a [`InvalidAttributeName`](crate::error::InvalidAttributeName).
         pub fn build(self) -> crate::error::InvalidAttributeName {
             crate::error::InvalidAttributeName {
                 message: self.message,
@@ -2001,7 +2000,7 @@ pub mod invalid_attribute_name {
     }
 }
 impl InvalidAttributeName {
-    /// Creates a new builder-style object to manufacture [`InvalidAttributeName`](crate::error::InvalidAttributeName)
+    /// Creates a new builder-style object to manufacture [`InvalidAttributeName`](crate::error::InvalidAttributeName).
     pub fn builder() -> crate::error::invalid_attribute_name::Builder {
         crate::error::invalid_attribute_name::Builder::default()
     }
@@ -2037,11 +2036,10 @@ impl std::fmt::Display for UnsupportedOperation {
     }
 }
 impl std::error::Error for UnsupportedOperation {}
-/// See [`UnsupportedOperation`](crate::error::UnsupportedOperation)
+/// See [`UnsupportedOperation`](crate::error::UnsupportedOperation).
 pub mod unsupported_operation {
 
-    /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedOperation`](crate::error::UnsupportedOperation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2057,7 +2055,7 @@ pub mod unsupported_operation {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedOperation`](crate::error::UnsupportedOperation)
+        /// Consumes the builder and constructs a [`UnsupportedOperation`](crate::error::UnsupportedOperation).
         pub fn build(self) -> crate::error::UnsupportedOperation {
             crate::error::UnsupportedOperation {
                 message: self.message,
@@ -2066,7 +2064,7 @@ pub mod unsupported_operation {
     }
 }
 impl UnsupportedOperation {
-    /// Creates a new builder-style object to manufacture [`UnsupportedOperation`](crate::error::UnsupportedOperation)
+    /// Creates a new builder-style object to manufacture [`UnsupportedOperation`](crate::error::UnsupportedOperation).
     pub fn builder() -> crate::error::unsupported_operation::Builder {
         crate::error::unsupported_operation::Builder::default()
     }
@@ -2102,11 +2100,10 @@ impl std::fmt::Display for TooManyEntriesInBatchRequest {
     }
 }
 impl std::error::Error for TooManyEntriesInBatchRequest {}
-/// See [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
+/// See [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest).
 pub mod too_many_entries_in_batch_request {
 
-    /// A builder for [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
-    #[non_exhaustive]
+    /// A builder for [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2122,7 +2119,7 @@ pub mod too_many_entries_in_batch_request {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
+        /// Consumes the builder and constructs a [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest).
         pub fn build(self) -> crate::error::TooManyEntriesInBatchRequest {
             crate::error::TooManyEntriesInBatchRequest {
                 message: self.message,
@@ -2131,7 +2128,7 @@ pub mod too_many_entries_in_batch_request {
     }
 }
 impl TooManyEntriesInBatchRequest {
-    /// Creates a new builder-style object to manufacture [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest)
+    /// Creates a new builder-style object to manufacture [`TooManyEntriesInBatchRequest`](crate::error::TooManyEntriesInBatchRequest).
     pub fn builder() -> crate::error::too_many_entries_in_batch_request::Builder {
         crate::error::too_many_entries_in_batch_request::Builder::default()
     }
@@ -2167,11 +2164,10 @@ impl std::fmt::Display for InvalidBatchEntryId {
     }
 }
 impl std::error::Error for InvalidBatchEntryId {}
-/// See [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
+/// See [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId).
 pub mod invalid_batch_entry_id {
 
-    /// A builder for [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
-    #[non_exhaustive]
+    /// A builder for [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2187,7 +2183,7 @@ pub mod invalid_batch_entry_id {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
+        /// Consumes the builder and constructs a [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId).
         pub fn build(self) -> crate::error::InvalidBatchEntryId {
             crate::error::InvalidBatchEntryId {
                 message: self.message,
@@ -2196,7 +2192,7 @@ pub mod invalid_batch_entry_id {
     }
 }
 impl InvalidBatchEntryId {
-    /// Creates a new builder-style object to manufacture [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId)
+    /// Creates a new builder-style object to manufacture [`InvalidBatchEntryId`](crate::error::InvalidBatchEntryId).
     pub fn builder() -> crate::error::invalid_batch_entry_id::Builder {
         crate::error::invalid_batch_entry_id::Builder::default()
     }
@@ -2232,11 +2228,10 @@ impl std::fmt::Display for EmptyBatchRequest {
     }
 }
 impl std::error::Error for EmptyBatchRequest {}
-/// See [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
+/// See [`EmptyBatchRequest`](crate::error::EmptyBatchRequest).
 pub mod empty_batch_request {
 
-    /// A builder for [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
-    #[non_exhaustive]
+    /// A builder for [`EmptyBatchRequest`](crate::error::EmptyBatchRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2252,7 +2247,7 @@ pub mod empty_batch_request {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
+        /// Consumes the builder and constructs a [`EmptyBatchRequest`](crate::error::EmptyBatchRequest).
         pub fn build(self) -> crate::error::EmptyBatchRequest {
             crate::error::EmptyBatchRequest {
                 message: self.message,
@@ -2261,7 +2256,7 @@ pub mod empty_batch_request {
     }
 }
 impl EmptyBatchRequest {
-    /// Creates a new builder-style object to manufacture [`EmptyBatchRequest`](crate::error::EmptyBatchRequest)
+    /// Creates a new builder-style object to manufacture [`EmptyBatchRequest`](crate::error::EmptyBatchRequest).
     pub fn builder() -> crate::error::empty_batch_request::Builder {
         crate::error::empty_batch_request::Builder::default()
     }
@@ -2297,11 +2292,10 @@ impl std::fmt::Display for BatchRequestTooLong {
     }
 }
 impl std::error::Error for BatchRequestTooLong {}
-/// See [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
+/// See [`BatchRequestTooLong`](crate::error::BatchRequestTooLong).
 pub mod batch_request_too_long {
 
-    /// A builder for [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
-    #[non_exhaustive]
+    /// A builder for [`BatchRequestTooLong`](crate::error::BatchRequestTooLong).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2317,7 +2311,7 @@ pub mod batch_request_too_long {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
+        /// Consumes the builder and constructs a [`BatchRequestTooLong`](crate::error::BatchRequestTooLong).
         pub fn build(self) -> crate::error::BatchRequestTooLong {
             crate::error::BatchRequestTooLong {
                 message: self.message,
@@ -2326,7 +2320,7 @@ pub mod batch_request_too_long {
     }
 }
 impl BatchRequestTooLong {
-    /// Creates a new builder-style object to manufacture [`BatchRequestTooLong`](crate::error::BatchRequestTooLong)
+    /// Creates a new builder-style object to manufacture [`BatchRequestTooLong`](crate::error::BatchRequestTooLong).
     pub fn builder() -> crate::error::batch_request_too_long::Builder {
         crate::error::batch_request_too_long::Builder::default()
     }
@@ -2362,11 +2356,10 @@ impl std::fmt::Display for BatchEntryIdsNotDistinct {
     }
 }
 impl std::error::Error for BatchEntryIdsNotDistinct {}
-/// See [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
+/// See [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct).
 pub mod batch_entry_ids_not_distinct {
 
-    /// A builder for [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
-    #[non_exhaustive]
+    /// A builder for [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2382,7 +2375,7 @@ pub mod batch_entry_ids_not_distinct {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
+        /// Consumes the builder and constructs a [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct).
         pub fn build(self) -> crate::error::BatchEntryIdsNotDistinct {
             crate::error::BatchEntryIdsNotDistinct {
                 message: self.message,
@@ -2391,7 +2384,7 @@ pub mod batch_entry_ids_not_distinct {
     }
 }
 impl BatchEntryIdsNotDistinct {
-    /// Creates a new builder-style object to manufacture [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct)
+    /// Creates a new builder-style object to manufacture [`BatchEntryIdsNotDistinct`](crate::error::BatchEntryIdsNotDistinct).
     pub fn builder() -> crate::error::batch_entry_ids_not_distinct::Builder {
         crate::error::batch_entry_ids_not_distinct::Builder::default()
     }
@@ -2427,11 +2420,10 @@ impl std::fmt::Display for InvalidMessageContents {
     }
 }
 impl std::error::Error for InvalidMessageContents {}
-/// See [`InvalidMessageContents`](crate::error::InvalidMessageContents)
+/// See [`InvalidMessageContents`](crate::error::InvalidMessageContents).
 pub mod invalid_message_contents {
 
-    /// A builder for [`InvalidMessageContents`](crate::error::InvalidMessageContents)
-    #[non_exhaustive]
+    /// A builder for [`InvalidMessageContents`](crate::error::InvalidMessageContents).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2447,7 +2439,7 @@ pub mod invalid_message_contents {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidMessageContents`](crate::error::InvalidMessageContents)
+        /// Consumes the builder and constructs a [`InvalidMessageContents`](crate::error::InvalidMessageContents).
         pub fn build(self) -> crate::error::InvalidMessageContents {
             crate::error::InvalidMessageContents {
                 message: self.message,
@@ -2456,7 +2448,7 @@ pub mod invalid_message_contents {
     }
 }
 impl InvalidMessageContents {
-    /// Creates a new builder-style object to manufacture [`InvalidMessageContents`](crate::error::InvalidMessageContents)
+    /// Creates a new builder-style object to manufacture [`InvalidMessageContents`](crate::error::InvalidMessageContents).
     pub fn builder() -> crate::error::invalid_message_contents::Builder {
         crate::error::invalid_message_contents::Builder::default()
     }
@@ -2492,11 +2484,10 @@ impl std::fmt::Display for OverLimit {
     }
 }
 impl std::error::Error for OverLimit {}
-/// See [`OverLimit`](crate::error::OverLimit)
+/// See [`OverLimit`](crate::error::OverLimit).
 pub mod over_limit {
 
-    /// A builder for [`OverLimit`](crate::error::OverLimit)
-    #[non_exhaustive]
+    /// A builder for [`OverLimit`](crate::error::OverLimit).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2512,7 +2503,7 @@ pub mod over_limit {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`OverLimit`](crate::error::OverLimit)
+        /// Consumes the builder and constructs a [`OverLimit`](crate::error::OverLimit).
         pub fn build(self) -> crate::error::OverLimit {
             crate::error::OverLimit {
                 message: self.message,
@@ -2521,7 +2512,7 @@ pub mod over_limit {
     }
 }
 impl OverLimit {
-    /// Creates a new builder-style object to manufacture [`OverLimit`](crate::error::OverLimit)
+    /// Creates a new builder-style object to manufacture [`OverLimit`](crate::error::OverLimit).
     pub fn builder() -> crate::error::over_limit::Builder {
         crate::error::over_limit::Builder::default()
     }
@@ -2557,11 +2548,10 @@ impl std::fmt::Display for QueueDoesNotExist {
     }
 }
 impl std::error::Error for QueueDoesNotExist {}
-/// See [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
+/// See [`QueueDoesNotExist`](crate::error::QueueDoesNotExist).
 pub mod queue_does_not_exist {
 
-    /// A builder for [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
-    #[non_exhaustive]
+    /// A builder for [`QueueDoesNotExist`](crate::error::QueueDoesNotExist).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2577,7 +2567,7 @@ pub mod queue_does_not_exist {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
+        /// Consumes the builder and constructs a [`QueueDoesNotExist`](crate::error::QueueDoesNotExist).
         pub fn build(self) -> crate::error::QueueDoesNotExist {
             crate::error::QueueDoesNotExist {
                 message: self.message,
@@ -2586,7 +2576,7 @@ pub mod queue_does_not_exist {
     }
 }
 impl QueueDoesNotExist {
-    /// Creates a new builder-style object to manufacture [`QueueDoesNotExist`](crate::error::QueueDoesNotExist)
+    /// Creates a new builder-style object to manufacture [`QueueDoesNotExist`](crate::error::QueueDoesNotExist).
     pub fn builder() -> crate::error::queue_does_not_exist::Builder {
         crate::error::queue_does_not_exist::Builder::default()
     }
@@ -2622,11 +2612,10 @@ impl std::fmt::Display for PurgeQueueInProgress {
     }
 }
 impl std::error::Error for PurgeQueueInProgress {}
-/// See [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
+/// See [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress).
 pub mod purge_queue_in_progress {
 
-    /// A builder for [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
-    #[non_exhaustive]
+    /// A builder for [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2642,7 +2631,7 @@ pub mod purge_queue_in_progress {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
+        /// Consumes the builder and constructs a [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress).
         pub fn build(self) -> crate::error::PurgeQueueInProgress {
             crate::error::PurgeQueueInProgress {
                 message: self.message,
@@ -2651,7 +2640,7 @@ pub mod purge_queue_in_progress {
     }
 }
 impl PurgeQueueInProgress {
-    /// Creates a new builder-style object to manufacture [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress)
+    /// Creates a new builder-style object to manufacture [`PurgeQueueInProgress`](crate::error::PurgeQueueInProgress).
     pub fn builder() -> crate::error::purge_queue_in_progress::Builder {
         crate::error::purge_queue_in_progress::Builder::default()
     }
@@ -2687,11 +2676,10 @@ impl std::fmt::Display for ReceiptHandleIsInvalid {
     }
 }
 impl std::error::Error for ReceiptHandleIsInvalid {}
-/// See [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
+/// See [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid).
 pub mod receipt_handle_is_invalid {
 
-    /// A builder for [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
-    #[non_exhaustive]
+    /// A builder for [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2707,7 +2695,7 @@ pub mod receipt_handle_is_invalid {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
+        /// Consumes the builder and constructs a [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid).
         pub fn build(self) -> crate::error::ReceiptHandleIsInvalid {
             crate::error::ReceiptHandleIsInvalid {
                 message: self.message,
@@ -2716,7 +2704,7 @@ pub mod receipt_handle_is_invalid {
     }
 }
 impl ReceiptHandleIsInvalid {
-    /// Creates a new builder-style object to manufacture [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid)
+    /// Creates a new builder-style object to manufacture [`ReceiptHandleIsInvalid`](crate::error::ReceiptHandleIsInvalid).
     pub fn builder() -> crate::error::receipt_handle_is_invalid::Builder {
         crate::error::receipt_handle_is_invalid::Builder::default()
     }
@@ -2752,11 +2740,10 @@ impl std::fmt::Display for InvalidIdFormat {
     }
 }
 impl std::error::Error for InvalidIdFormat {}
-/// See [`InvalidIdFormat`](crate::error::InvalidIdFormat)
+/// See [`InvalidIdFormat`](crate::error::InvalidIdFormat).
 pub mod invalid_id_format {
 
-    /// A builder for [`InvalidIdFormat`](crate::error::InvalidIdFormat)
-    #[non_exhaustive]
+    /// A builder for [`InvalidIdFormat`](crate::error::InvalidIdFormat).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2772,7 +2759,7 @@ pub mod invalid_id_format {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidIdFormat`](crate::error::InvalidIdFormat)
+        /// Consumes the builder and constructs a [`InvalidIdFormat`](crate::error::InvalidIdFormat).
         pub fn build(self) -> crate::error::InvalidIdFormat {
             crate::error::InvalidIdFormat {
                 message: self.message,
@@ -2781,7 +2768,7 @@ pub mod invalid_id_format {
     }
 }
 impl InvalidIdFormat {
-    /// Creates a new builder-style object to manufacture [`InvalidIdFormat`](crate::error::InvalidIdFormat)
+    /// Creates a new builder-style object to manufacture [`InvalidIdFormat`](crate::error::InvalidIdFormat).
     pub fn builder() -> crate::error::invalid_id_format::Builder {
         crate::error::invalid_id_format::Builder::default()
     }
@@ -2817,11 +2804,10 @@ impl std::fmt::Display for QueueNameExists {
     }
 }
 impl std::error::Error for QueueNameExists {}
-/// See [`QueueNameExists`](crate::error::QueueNameExists)
+/// See [`QueueNameExists`](crate::error::QueueNameExists).
 pub mod queue_name_exists {
 
-    /// A builder for [`QueueNameExists`](crate::error::QueueNameExists)
-    #[non_exhaustive]
+    /// A builder for [`QueueNameExists`](crate::error::QueueNameExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2837,7 +2823,7 @@ pub mod queue_name_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueueNameExists`](crate::error::QueueNameExists)
+        /// Consumes the builder and constructs a [`QueueNameExists`](crate::error::QueueNameExists).
         pub fn build(self) -> crate::error::QueueNameExists {
             crate::error::QueueNameExists {
                 message: self.message,
@@ -2846,7 +2832,7 @@ pub mod queue_name_exists {
     }
 }
 impl QueueNameExists {
-    /// Creates a new builder-style object to manufacture [`QueueNameExists`](crate::error::QueueNameExists)
+    /// Creates a new builder-style object to manufacture [`QueueNameExists`](crate::error::QueueNameExists).
     pub fn builder() -> crate::error::queue_name_exists::Builder {
         crate::error::queue_name_exists::Builder::default()
     }
@@ -2882,11 +2868,10 @@ impl std::fmt::Display for QueueDeletedRecently {
     }
 }
 impl std::error::Error for QueueDeletedRecently {}
-/// See [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
+/// See [`QueueDeletedRecently`](crate::error::QueueDeletedRecently).
 pub mod queue_deleted_recently {
 
-    /// A builder for [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
-    #[non_exhaustive]
+    /// A builder for [`QueueDeletedRecently`](crate::error::QueueDeletedRecently).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2902,7 +2887,7 @@ pub mod queue_deleted_recently {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
+        /// Consumes the builder and constructs a [`QueueDeletedRecently`](crate::error::QueueDeletedRecently).
         pub fn build(self) -> crate::error::QueueDeletedRecently {
             crate::error::QueueDeletedRecently {
                 message: self.message,
@@ -2911,7 +2896,7 @@ pub mod queue_deleted_recently {
     }
 }
 impl QueueDeletedRecently {
-    /// Creates a new builder-style object to manufacture [`QueueDeletedRecently`](crate::error::QueueDeletedRecently)
+    /// Creates a new builder-style object to manufacture [`QueueDeletedRecently`](crate::error::QueueDeletedRecently).
     pub fn builder() -> crate::error::queue_deleted_recently::Builder {
         crate::error::queue_deleted_recently::Builder::default()
     }
@@ -2947,11 +2932,10 @@ impl std::fmt::Display for MessageNotInflight {
     }
 }
 impl std::error::Error for MessageNotInflight {}
-/// See [`MessageNotInflight`](crate::error::MessageNotInflight)
+/// See [`MessageNotInflight`](crate::error::MessageNotInflight).
 pub mod message_not_inflight {
 
-    /// A builder for [`MessageNotInflight`](crate::error::MessageNotInflight)
-    #[non_exhaustive]
+    /// A builder for [`MessageNotInflight`](crate::error::MessageNotInflight).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2967,7 +2951,7 @@ pub mod message_not_inflight {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessageNotInflight`](crate::error::MessageNotInflight)
+        /// Consumes the builder and constructs a [`MessageNotInflight`](crate::error::MessageNotInflight).
         pub fn build(self) -> crate::error::MessageNotInflight {
             crate::error::MessageNotInflight {
                 message: self.message,
@@ -2976,7 +2960,7 @@ pub mod message_not_inflight {
     }
 }
 impl MessageNotInflight {
-    /// Creates a new builder-style object to manufacture [`MessageNotInflight`](crate::error::MessageNotInflight)
+    /// Creates a new builder-style object to manufacture [`MessageNotInflight`](crate::error::MessageNotInflight).
     pub fn builder() -> crate::error::message_not_inflight::Builder {
         crate::error::message_not_inflight::Builder::default()
     }

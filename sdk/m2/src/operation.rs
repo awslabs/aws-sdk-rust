@@ -10,7 +10,7 @@ pub struct CancelBatchJobExecution {
     _private: (),
 }
 impl CancelBatchJobExecution {
-    /// Creates a new builder-style object to manufacture [`CancelBatchJobExecutionInput`](crate::input::CancelBatchJobExecutionInput)
+    /// Creates a new builder-style object to manufacture [`CancelBatchJobExecutionInput`](crate::input::CancelBatchJobExecutionInput).
     pub fn builder() -> crate::input::cancel_batch_job_execution_input::Builder {
         crate::input::cancel_batch_job_execution_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateDataSetImportTask {
     _private: (),
 }
 impl CreateDataSetImportTask {
-    /// Creates a new builder-style object to manufacture [`CreateDataSetImportTaskInput`](crate::input::CreateDataSetImportTaskInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataSetImportTaskInput`](crate::input::CreateDataSetImportTaskInput).
     pub fn builder() -> crate::input::create_data_set_import_task_input::Builder {
         crate::input::create_data_set_import_task_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateDeployment {
     _private: (),
 }
 impl CreateDeployment {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
     pub fn builder() -> crate::input::create_deployment_input::Builder {
         crate::input::create_deployment_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateEnvironment {
     _private: (),
 }
 impl CreateEnvironment {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
     pub fn builder() -> crate::input::create_environment_input::Builder {
         crate::input::create_environment_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeleteApplicationFromEnvironment {
     _private: (),
 }
 impl DeleteApplicationFromEnvironment {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationFromEnvironmentInput`](crate::input::DeleteApplicationFromEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationFromEnvironmentInput`](crate::input::DeleteApplicationFromEnvironmentInput).
     pub fn builder() -> crate::input::delete_application_from_environment_input::Builder {
         crate::input::delete_application_from_environment_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DeleteEnvironment {
     _private: (),
 }
 impl DeleteEnvironment {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
     pub fn builder() -> crate::input::delete_environment_input::Builder {
         crate::input::delete_environment_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct GetApplication {
     _private: (),
 }
 impl GetApplication {
-    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput).
     pub fn builder() -> crate::input::get_application_input::Builder {
         crate::input::get_application_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct GetApplicationVersion {
     _private: (),
 }
 impl GetApplicationVersion {
-    /// Creates a new builder-style object to manufacture [`GetApplicationVersionInput`](crate::input::GetApplicationVersionInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationVersionInput`](crate::input::GetApplicationVersionInput).
     pub fn builder() -> crate::input::get_application_version_input::Builder {
         crate::input::get_application_version_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct GetBatchJobExecution {
     _private: (),
 }
 impl GetBatchJobExecution {
-    /// Creates a new builder-style object to manufacture [`GetBatchJobExecutionInput`](crate::input::GetBatchJobExecutionInput)
+    /// Creates a new builder-style object to manufacture [`GetBatchJobExecutionInput`](crate::input::GetBatchJobExecutionInput).
     pub fn builder() -> crate::input::get_batch_job_execution_input::Builder {
         crate::input::get_batch_job_execution_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct GetDataSetDetails {
     _private: (),
 }
 impl GetDataSetDetails {
-    /// Creates a new builder-style object to manufacture [`GetDataSetDetailsInput`](crate::input::GetDataSetDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetDataSetDetailsInput`](crate::input::GetDataSetDetailsInput).
     pub fn builder() -> crate::input::get_data_set_details_input::Builder {
         crate::input::get_data_set_details_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct GetDataSetImportTask {
     _private: (),
 }
 impl GetDataSetImportTask {
-    /// Creates a new builder-style object to manufacture [`GetDataSetImportTaskInput`](crate::input::GetDataSetImportTaskInput)
+    /// Creates a new builder-style object to manufacture [`GetDataSetImportTaskInput`](crate::input::GetDataSetImportTaskInput).
     pub fn builder() -> crate::input::get_data_set_import_task_input::Builder {
         crate::input::get_data_set_import_task_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct GetDeployment {
     _private: (),
 }
 impl GetDeployment {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput).
     pub fn builder() -> crate::input::get_deployment_input::Builder {
         crate::input::get_deployment_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct GetEnvironment {
     _private: (),
 }
 impl GetEnvironment {
-    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
     pub fn builder() -> crate::input::get_environment_input::Builder {
         crate::input::get_environment_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct ListApplications {
     _private: (),
 }
 impl ListApplications {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
     pub fn builder() -> crate::input::list_applications_input::Builder {
         crate::input::list_applications_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct ListApplicationVersions {
     _private: (),
 }
 impl ListApplicationVersions {
-    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput).
     pub fn builder() -> crate::input::list_application_versions_input::Builder {
         crate::input::list_application_versions_input::Builder::default()
     }
@@ -582,7 +582,7 @@ pub struct ListBatchJobDefinitions {
     _private: (),
 }
 impl ListBatchJobDefinitions {
-    /// Creates a new builder-style object to manufacture [`ListBatchJobDefinitionsInput`](crate::input::ListBatchJobDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`ListBatchJobDefinitionsInput`](crate::input::ListBatchJobDefinitionsInput).
     pub fn builder() -> crate::input::list_batch_job_definitions_input::Builder {
         crate::input::list_batch_job_definitions_input::Builder::default()
     }
@@ -616,7 +616,7 @@ pub struct ListBatchJobExecutions {
     _private: (),
 }
 impl ListBatchJobExecutions {
-    /// Creates a new builder-style object to manufacture [`ListBatchJobExecutionsInput`](crate::input::ListBatchJobExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListBatchJobExecutionsInput`](crate::input::ListBatchJobExecutionsInput).
     pub fn builder() -> crate::input::list_batch_job_executions_input::Builder {
         crate::input::list_batch_job_executions_input::Builder::default()
     }
@@ -650,7 +650,7 @@ pub struct ListDataSetImportHistory {
     _private: (),
 }
 impl ListDataSetImportHistory {
-    /// Creates a new builder-style object to manufacture [`ListDataSetImportHistoryInput`](crate::input::ListDataSetImportHistoryInput)
+    /// Creates a new builder-style object to manufacture [`ListDataSetImportHistoryInput`](crate::input::ListDataSetImportHistoryInput).
     pub fn builder() -> crate::input::list_data_set_import_history_input::Builder {
         crate::input::list_data_set_import_history_input::Builder::default()
     }
@@ -684,7 +684,7 @@ pub struct ListDataSets {
     _private: (),
 }
 impl ListDataSets {
-    /// Creates a new builder-style object to manufacture [`ListDataSetsInput`](crate::input::ListDataSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListDataSetsInput`](crate::input::ListDataSetsInput).
     pub fn builder() -> crate::input::list_data_sets_input::Builder {
         crate::input::list_data_sets_input::Builder::default()
     }
@@ -716,7 +716,7 @@ pub struct ListDeployments {
     _private: (),
 }
 impl ListDeployments {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
     pub fn builder() -> crate::input::list_deployments_input::Builder {
         crate::input::list_deployments_input::Builder::default()
     }
@@ -750,7 +750,7 @@ pub struct ListEngineVersions {
     _private: (),
 }
 impl ListEngineVersions {
-    /// Creates a new builder-style object to manufacture [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput).
     pub fn builder() -> crate::input::list_engine_versions_input::Builder {
         crate::input::list_engine_versions_input::Builder::default()
     }
@@ -784,7 +784,7 @@ pub struct ListEnvironments {
     _private: (),
 }
 impl ListEnvironments {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
     pub fn builder() -> crate::input::list_environments_input::Builder {
         crate::input::list_environments_input::Builder::default()
     }
@@ -818,7 +818,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -852,7 +852,7 @@ pub struct StartApplication {
     _private: (),
 }
 impl StartApplication {
-    /// Creates a new builder-style object to manufacture [`StartApplicationInput`](crate::input::StartApplicationInput)
+    /// Creates a new builder-style object to manufacture [`StartApplicationInput`](crate::input::StartApplicationInput).
     pub fn builder() -> crate::input::start_application_input::Builder {
         crate::input::start_application_input::Builder::default()
     }
@@ -886,7 +886,7 @@ pub struct StartBatchJob {
     _private: (),
 }
 impl StartBatchJob {
-    /// Creates a new builder-style object to manufacture [`StartBatchJobInput`](crate::input::StartBatchJobInput)
+    /// Creates a new builder-style object to manufacture [`StartBatchJobInput`](crate::input::StartBatchJobInput).
     pub fn builder() -> crate::input::start_batch_job_input::Builder {
         crate::input::start_batch_job_input::Builder::default()
     }
@@ -918,7 +918,7 @@ pub struct StopApplication {
     _private: (),
 }
 impl StopApplication {
-    /// Creates a new builder-style object to manufacture [`StopApplicationInput`](crate::input::StopApplicationInput)
+    /// Creates a new builder-style object to manufacture [`StopApplicationInput`](crate::input::StopApplicationInput).
     pub fn builder() -> crate::input::stop_application_input::Builder {
         crate::input::stop_application_input::Builder::default()
     }
@@ -952,7 +952,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -984,7 +984,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1016,7 +1016,7 @@ pub struct UpdateApplication {
     _private: (),
 }
 impl UpdateApplication {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
     pub fn builder() -> crate::input::update_application_input::Builder {
         crate::input::update_application_input::Builder::default()
     }
@@ -1050,7 +1050,7 @@ pub struct UpdateEnvironment {
     _private: (),
 }
 impl UpdateEnvironment {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
     pub fn builder() -> crate::input::update_environment_input::Builder {
         crate::input::update_environment_input::Builder::default()
     }

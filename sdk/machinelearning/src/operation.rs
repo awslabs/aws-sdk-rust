@@ -10,7 +10,7 @@ pub struct AddTags {
     _private: (),
 }
 impl AddTags {
-    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
     pub fn builder() -> crate::input::add_tags_input::Builder {
         crate::input::add_tags_input::Builder::default()
     }
@@ -41,7 +41,7 @@ pub struct CreateBatchPrediction {
     _private: (),
 }
 impl CreateBatchPrediction {
-    /// Creates a new builder-style object to manufacture [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput)
+    /// Creates a new builder-style object to manufacture [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput).
     pub fn builder() -> crate::input::create_batch_prediction_input::Builder {
         crate::input::create_batch_prediction_input::Builder::default()
     }
@@ -75,7 +75,7 @@ pub struct CreateDataSourceFromRDS {
     _private: (),
 }
 impl CreateDataSourceFromRDS {
-    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput).
     pub fn builder() -> crate::input::create_data_source_from_rds_input::Builder {
         crate::input::create_data_source_from_rds_input::Builder::default()
     }
@@ -109,7 +109,7 @@ pub struct CreateDataSourceFromRedshift {
     _private: (),
 }
 impl CreateDataSourceFromRedshift {
-    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput).
     pub fn builder() -> crate::input::create_data_source_from_redshift_input::Builder {
         crate::input::create_data_source_from_redshift_input::Builder::default()
     }
@@ -143,7 +143,7 @@ pub struct CreateDataSourceFromS3 {
     _private: (),
 }
 impl CreateDataSourceFromS3 {
-    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input)
+    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input).
     pub fn builder() -> crate::input::create_data_source_from_s3_input::Builder {
         crate::input::create_data_source_from_s3_input::Builder::default()
     }
@@ -177,7 +177,7 @@ pub struct CreateEvaluation {
     _private: (),
 }
 impl CreateEvaluation {
-    /// Creates a new builder-style object to manufacture [`CreateEvaluationInput`](crate::input::CreateEvaluationInput)
+    /// Creates a new builder-style object to manufacture [`CreateEvaluationInput`](crate::input::CreateEvaluationInput).
     pub fn builder() -> crate::input::create_evaluation_input::Builder {
         crate::input::create_evaluation_input::Builder::default()
     }
@@ -211,7 +211,7 @@ pub struct CreateMLModel {
     _private: (),
 }
 impl CreateMLModel {
-    /// Creates a new builder-style object to manufacture [`CreateMlModelInput`](crate::input::CreateMlModelInput)
+    /// Creates a new builder-style object to manufacture [`CreateMlModelInput`](crate::input::CreateMlModelInput).
     pub fn builder() -> crate::input::create_ml_model_input::Builder {
         crate::input::create_ml_model_input::Builder::default()
     }
@@ -243,7 +243,7 @@ pub struct CreateRealtimeEndpoint {
     _private: (),
 }
 impl CreateRealtimeEndpoint {
-    /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput)
+    /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput).
     pub fn builder() -> crate::input::create_realtime_endpoint_input::Builder {
         crate::input::create_realtime_endpoint_input::Builder::default()
     }
@@ -277,7 +277,7 @@ pub struct DeleteBatchPrediction {
     _private: (),
 }
 impl DeleteBatchPrediction {
-    /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput).
     pub fn builder() -> crate::input::delete_batch_prediction_input::Builder {
         crate::input::delete_batch_prediction_input::Builder::default()
     }
@@ -311,7 +311,7 @@ pub struct DeleteDataSource {
     _private: (),
 }
 impl DeleteDataSource {
-    /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
     pub fn builder() -> crate::input::delete_data_source_input::Builder {
         crate::input::delete_data_source_input::Builder::default()
     }
@@ -345,7 +345,7 @@ pub struct DeleteEvaluation {
     _private: (),
 }
 impl DeleteEvaluation {
-    /// Creates a new builder-style object to manufacture [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput).
     pub fn builder() -> crate::input::delete_evaluation_input::Builder {
         crate::input::delete_evaluation_input::Builder::default()
     }
@@ -379,7 +379,7 @@ pub struct DeleteMLModel {
     _private: (),
 }
 impl DeleteMLModel {
-    /// Creates a new builder-style object to manufacture [`DeleteMlModelInput`](crate::input::DeleteMlModelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMlModelInput`](crate::input::DeleteMlModelInput).
     pub fn builder() -> crate::input::delete_ml_model_input::Builder {
         crate::input::delete_ml_model_input::Builder::default()
     }
@@ -411,7 +411,7 @@ pub struct DeleteRealtimeEndpoint {
     _private: (),
 }
 impl DeleteRealtimeEndpoint {
-    /// Creates a new builder-style object to manufacture [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput).
     pub fn builder() -> crate::input::delete_realtime_endpoint_input::Builder {
         crate::input::delete_realtime_endpoint_input::Builder::default()
     }
@@ -445,7 +445,7 @@ pub struct DeleteTags {
     _private: (),
 }
 impl DeleteTags {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTagsInput`](crate::input::DeleteTagsInput).
     pub fn builder() -> crate::input::delete_tags_input::Builder {
         crate::input::delete_tags_input::Builder::default()
     }
@@ -477,7 +477,7 @@ pub struct DescribeBatchPredictions {
     _private: (),
 }
 impl DescribeBatchPredictions {
-    /// Creates a new builder-style object to manufacture [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput).
     pub fn builder() -> crate::input::describe_batch_predictions_input::Builder {
         crate::input::describe_batch_predictions_input::Builder::default()
     }
@@ -511,7 +511,7 @@ pub struct DescribeDataSources {
     _private: (),
 }
 impl DescribeDataSources {
-    /// Creates a new builder-style object to manufacture [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput).
     pub fn builder() -> crate::input::describe_data_sources_input::Builder {
         crate::input::describe_data_sources_input::Builder::default()
     }
@@ -545,7 +545,7 @@ pub struct DescribeEvaluations {
     _private: (),
 }
 impl DescribeEvaluations {
-    /// Creates a new builder-style object to manufacture [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput).
     pub fn builder() -> crate::input::describe_evaluations_input::Builder {
         crate::input::describe_evaluations_input::Builder::default()
     }
@@ -579,7 +579,7 @@ pub struct DescribeMLModels {
     _private: (),
 }
 impl DescribeMLModels {
-    /// Creates a new builder-style object to manufacture [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput).
     pub fn builder() -> crate::input::describe_ml_models_input::Builder {
         crate::input::describe_ml_models_input::Builder::default()
     }
@@ -613,7 +613,7 @@ pub struct DescribeTags {
     _private: (),
 }
 impl DescribeTags {
-    /// Creates a new builder-style object to manufacture [`DescribeTagsInput`](crate::input::DescribeTagsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTagsInput`](crate::input::DescribeTagsInput).
     pub fn builder() -> crate::input::describe_tags_input::Builder {
         crate::input::describe_tags_input::Builder::default()
     }
@@ -645,7 +645,7 @@ pub struct GetBatchPrediction {
     _private: (),
 }
 impl GetBatchPrediction {
-    /// Creates a new builder-style object to manufacture [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput)
+    /// Creates a new builder-style object to manufacture [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput).
     pub fn builder() -> crate::input::get_batch_prediction_input::Builder {
         crate::input::get_batch_prediction_input::Builder::default()
     }
@@ -679,7 +679,7 @@ pub struct GetDataSource {
     _private: (),
 }
 impl GetDataSource {
-    /// Creates a new builder-style object to manufacture [`GetDataSourceInput`](crate::input::GetDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`GetDataSourceInput`](crate::input::GetDataSourceInput).
     pub fn builder() -> crate::input::get_data_source_input::Builder {
         crate::input::get_data_source_input::Builder::default()
     }
@@ -711,7 +711,7 @@ pub struct GetEvaluation {
     _private: (),
 }
 impl GetEvaluation {
-    /// Creates a new builder-style object to manufacture [`GetEvaluationInput`](crate::input::GetEvaluationInput)
+    /// Creates a new builder-style object to manufacture [`GetEvaluationInput`](crate::input::GetEvaluationInput).
     pub fn builder() -> crate::input::get_evaluation_input::Builder {
         crate::input::get_evaluation_input::Builder::default()
     }
@@ -743,7 +743,7 @@ pub struct GetMLModel {
     _private: (),
 }
 impl GetMLModel {
-    /// Creates a new builder-style object to manufacture [`GetMlModelInput`](crate::input::GetMlModelInput)
+    /// Creates a new builder-style object to manufacture [`GetMlModelInput`](crate::input::GetMlModelInput).
     pub fn builder() -> crate::input::get_ml_model_input::Builder {
         crate::input::get_ml_model_input::Builder::default()
     }
@@ -775,7 +775,7 @@ pub struct Predict {
     _private: (),
 }
 impl Predict {
-    /// Creates a new builder-style object to manufacture [`PredictInput`](crate::input::PredictInput)
+    /// Creates a new builder-style object to manufacture [`PredictInput`](crate::input::PredictInput).
     pub fn builder() -> crate::input::predict_input::Builder {
         crate::input::predict_input::Builder::default()
     }
@@ -806,7 +806,7 @@ pub struct UpdateBatchPrediction {
     _private: (),
 }
 impl UpdateBatchPrediction {
-    /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput).
     pub fn builder() -> crate::input::update_batch_prediction_input::Builder {
         crate::input::update_batch_prediction_input::Builder::default()
     }
@@ -840,7 +840,7 @@ pub struct UpdateDataSource {
     _private: (),
 }
 impl UpdateDataSource {
-    /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
     pub fn builder() -> crate::input::update_data_source_input::Builder {
         crate::input::update_data_source_input::Builder::default()
     }
@@ -874,7 +874,7 @@ pub struct UpdateEvaluation {
     _private: (),
 }
 impl UpdateEvaluation {
-    /// Creates a new builder-style object to manufacture [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput).
     pub fn builder() -> crate::input::update_evaluation_input::Builder {
         crate::input::update_evaluation_input::Builder::default()
     }
@@ -908,7 +908,7 @@ pub struct UpdateMLModel {
     _private: (),
 }
 impl UpdateMLModel {
-    /// Creates a new builder-style object to manufacture [`UpdateMlModelInput`](crate::input::UpdateMlModelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateMlModelInput`](crate::input::UpdateMlModelInput).
     pub fn builder() -> crate::input::update_ml_model_input::Builder {
         crate::input::update_ml_model_input::Builder::default()
     }

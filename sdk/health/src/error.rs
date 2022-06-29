@@ -1323,11 +1323,10 @@ impl std::fmt::Display for ConcurrentModificationException {
     }
 }
 impl std::error::Error for ConcurrentModificationException {}
-/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+/// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
 pub mod concurrent_modification_exception {
 
-    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
-    #[non_exhaustive]
+    /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1343,7 +1342,7 @@ pub mod concurrent_modification_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+        /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
         pub fn build(self) -> crate::error::ConcurrentModificationException {
             crate::error::ConcurrentModificationException {
                 message: self.message,
@@ -1352,7 +1351,7 @@ pub mod concurrent_modification_exception {
     }
 }
 impl ConcurrentModificationException {
-    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException)
+    /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
         crate::error::concurrent_modification_exception::Builder::default()
     }
@@ -1388,11 +1387,10 @@ impl std::fmt::Display for UnsupportedLocale {
     }
 }
 impl std::error::Error for UnsupportedLocale {}
-/// See [`UnsupportedLocale`](crate::error::UnsupportedLocale)
+/// See [`UnsupportedLocale`](crate::error::UnsupportedLocale).
 pub mod unsupported_locale {
 
-    /// A builder for [`UnsupportedLocale`](crate::error::UnsupportedLocale)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedLocale`](crate::error::UnsupportedLocale).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1408,7 +1406,7 @@ pub mod unsupported_locale {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedLocale`](crate::error::UnsupportedLocale)
+        /// Consumes the builder and constructs a [`UnsupportedLocale`](crate::error::UnsupportedLocale).
         pub fn build(self) -> crate::error::UnsupportedLocale {
             crate::error::UnsupportedLocale {
                 message: self.message,
@@ -1417,7 +1415,7 @@ pub mod unsupported_locale {
     }
 }
 impl UnsupportedLocale {
-    /// Creates a new builder-style object to manufacture [`UnsupportedLocale`](crate::error::UnsupportedLocale)
+    /// Creates a new builder-style object to manufacture [`UnsupportedLocale`](crate::error::UnsupportedLocale).
     pub fn builder() -> crate::error::unsupported_locale::Builder {
         crate::error::unsupported_locale::Builder::default()
     }
@@ -1453,11 +1451,10 @@ impl std::fmt::Display for InvalidPaginationToken {
     }
 }
 impl std::error::Error for InvalidPaginationToken {}
-/// See [`InvalidPaginationToken`](crate::error::InvalidPaginationToken)
+/// See [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
 pub mod invalid_pagination_token {
 
-    /// A builder for [`InvalidPaginationToken`](crate::error::InvalidPaginationToken)
-    #[non_exhaustive]
+    /// A builder for [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -1473,7 +1470,7 @@ pub mod invalid_pagination_token {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidPaginationToken`](crate::error::InvalidPaginationToken)
+        /// Consumes the builder and constructs a [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
         pub fn build(self) -> crate::error::InvalidPaginationToken {
             crate::error::InvalidPaginationToken {
                 message: self.message,
@@ -1482,7 +1479,7 @@ pub mod invalid_pagination_token {
     }
 }
 impl InvalidPaginationToken {
-    /// Creates a new builder-style object to manufacture [`InvalidPaginationToken`](crate::error::InvalidPaginationToken)
+    /// Creates a new builder-style object to manufacture [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
     pub fn builder() -> crate::error::invalid_pagination_token::Builder {
         crate::error::invalid_pagination_token::Builder::default()
     }

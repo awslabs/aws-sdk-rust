@@ -58,11 +58,10 @@ impl std::fmt::Debug for EventDestinationDefinition {
         formatter.finish()
     }
 }
-/// See [`EventDestinationDefinition`](crate::model::EventDestinationDefinition)
+/// See [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
 pub mod event_destination_definition {
 
-    /// A builder for [`EventDestinationDefinition`](crate::model::EventDestinationDefinition)
-    #[non_exhaustive]
+    /// A builder for [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_destination:
@@ -149,7 +148,7 @@ pub mod event_destination_definition {
             self.sns_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventDestinationDefinition`](crate::model::EventDestinationDefinition)
+        /// Consumes the builder and constructs a [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
         pub fn build(self) -> crate::model::EventDestinationDefinition {
             crate::model::EventDestinationDefinition {
                 cloud_watch_logs_destination: self.cloud_watch_logs_destination,
@@ -162,7 +161,7 @@ pub mod event_destination_definition {
     }
 }
 impl EventDestinationDefinition {
-    /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition)
+    /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
     pub fn builder() -> crate::model::event_destination_definition::Builder {
         crate::model::event_destination_definition::Builder::default()
     }
@@ -188,11 +187,10 @@ impl std::fmt::Debug for SnsDestination {
         formatter.finish()
     }
 }
-/// See [`SnsDestination`](crate::model::SnsDestination)
+/// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
 
-    /// A builder for [`SnsDestination`](crate::model::SnsDestination)
-    #[non_exhaustive]
+    /// A builder for [`SnsDestination`](crate::model::SnsDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic_arn: std::option::Option<std::string::String>,
@@ -208,7 +206,7 @@ pub mod sns_destination {
             self.topic_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnsDestination`](crate::model::SnsDestination)
+        /// Consumes the builder and constructs a [`SnsDestination`](crate::model::SnsDestination).
         pub fn build(self) -> crate::model::SnsDestination {
             crate::model::SnsDestination {
                 topic_arn: self.topic_arn,
@@ -217,7 +215,7 @@ pub mod sns_destination {
     }
 }
 impl SnsDestination {
-    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination)
+    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
     pub fn builder() -> crate::model::sns_destination::Builder {
         crate::model::sns_destination::Builder::default()
     }
@@ -333,11 +331,10 @@ impl std::fmt::Debug for KinesisFirehoseDestination {
         formatter.finish()
     }
 }
-/// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination)
+/// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
 
-    /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination)
-    #[non_exhaustive]
+    /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
@@ -367,7 +364,7 @@ pub mod kinesis_firehose_destination {
             self.iam_role_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination)
+        /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
         pub fn build(self) -> crate::model::KinesisFirehoseDestination {
             crate::model::KinesisFirehoseDestination {
                 delivery_stream_arn: self.delivery_stream_arn,
@@ -377,7 +374,7 @@ pub mod kinesis_firehose_destination {
     }
 }
 impl KinesisFirehoseDestination {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination)
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
     pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
         crate::model::kinesis_firehose_destination::Builder::default()
     }
@@ -410,11 +407,10 @@ impl std::fmt::Debug for CloudWatchLogsDestination {
         formatter.finish()
     }
 }
-/// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination)
+/// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
 pub mod cloud_watch_logs_destination {
 
-    /// A builder for [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination)
-    #[non_exhaustive]
+    /// A builder for [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
@@ -444,7 +440,7 @@ pub mod cloud_watch_logs_destination {
             self.log_group_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination)
+        /// Consumes the builder and constructs a [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
         pub fn build(self) -> crate::model::CloudWatchLogsDestination {
             crate::model::CloudWatchLogsDestination {
                 iam_role_arn: self.iam_role_arn,
@@ -454,7 +450,7 @@ pub mod cloud_watch_logs_destination {
     }
 }
 impl CloudWatchLogsDestination {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination)
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
     pub fn builder() -> crate::model::cloud_watch_logs_destination::Builder {
         crate::model::cloud_watch_logs_destination::Builder::default()
     }
@@ -496,11 +492,10 @@ impl std::fmt::Debug for VoiceMessageContent {
         formatter.finish()
     }
 }
-/// See [`VoiceMessageContent`](crate::model::VoiceMessageContent)
+/// See [`VoiceMessageContent`](crate::model::VoiceMessageContent).
 pub mod voice_message_content {
 
-    /// A builder for [`VoiceMessageContent`](crate::model::VoiceMessageContent)
-    #[non_exhaustive]
+    /// A builder for [`VoiceMessageContent`](crate::model::VoiceMessageContent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) call_instructions_message:
@@ -551,7 +546,7 @@ pub mod voice_message_content {
             self.ssml_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`VoiceMessageContent`](crate::model::VoiceMessageContent)
+        /// Consumes the builder and constructs a [`VoiceMessageContent`](crate::model::VoiceMessageContent).
         pub fn build(self) -> crate::model::VoiceMessageContent {
             crate::model::VoiceMessageContent {
                 call_instructions_message: self.call_instructions_message,
@@ -562,7 +557,7 @@ pub mod voice_message_content {
     }
 }
 impl VoiceMessageContent {
-    /// Creates a new builder-style object to manufacture [`VoiceMessageContent`](crate::model::VoiceMessageContent)
+    /// Creates a new builder-style object to manufacture [`VoiceMessageContent`](crate::model::VoiceMessageContent).
     pub fn builder() -> crate::model::voice_message_content::Builder {
         crate::model::voice_message_content::Builder::default()
     }
@@ -602,11 +597,10 @@ impl std::fmt::Debug for SsmlMessageType {
         formatter.finish()
     }
 }
-/// See [`SsmlMessageType`](crate::model::SsmlMessageType)
+/// See [`SsmlMessageType`](crate::model::SsmlMessageType).
 pub mod ssml_message_type {
 
-    /// A builder for [`SsmlMessageType`](crate::model::SsmlMessageType)
-    #[non_exhaustive]
+    /// A builder for [`SsmlMessageType`](crate::model::SsmlMessageType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -647,7 +641,7 @@ pub mod ssml_message_type {
             self.voice_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SsmlMessageType`](crate::model::SsmlMessageType)
+        /// Consumes the builder and constructs a [`SsmlMessageType`](crate::model::SsmlMessageType).
         pub fn build(self) -> crate::model::SsmlMessageType {
             crate::model::SsmlMessageType {
                 language_code: self.language_code,
@@ -658,7 +652,7 @@ pub mod ssml_message_type {
     }
 }
 impl SsmlMessageType {
-    /// Creates a new builder-style object to manufacture [`SsmlMessageType`](crate::model::SsmlMessageType)
+    /// Creates a new builder-style object to manufacture [`SsmlMessageType`](crate::model::SsmlMessageType).
     pub fn builder() -> crate::model::ssml_message_type::Builder {
         crate::model::ssml_message_type::Builder::default()
     }
@@ -698,11 +692,10 @@ impl std::fmt::Debug for PlainTextMessageType {
         formatter.finish()
     }
 }
-/// See [`PlainTextMessageType`](crate::model::PlainTextMessageType)
+/// See [`PlainTextMessageType`](crate::model::PlainTextMessageType).
 pub mod plain_text_message_type {
 
-    /// A builder for [`PlainTextMessageType`](crate::model::PlainTextMessageType)
-    #[non_exhaustive]
+    /// A builder for [`PlainTextMessageType`](crate::model::PlainTextMessageType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -743,7 +736,7 @@ pub mod plain_text_message_type {
             self.voice_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlainTextMessageType`](crate::model::PlainTextMessageType)
+        /// Consumes the builder and constructs a [`PlainTextMessageType`](crate::model::PlainTextMessageType).
         pub fn build(self) -> crate::model::PlainTextMessageType {
             crate::model::PlainTextMessageType {
                 language_code: self.language_code,
@@ -754,7 +747,7 @@ pub mod plain_text_message_type {
     }
 }
 impl PlainTextMessageType {
-    /// Creates a new builder-style object to manufacture [`PlainTextMessageType`](crate::model::PlainTextMessageType)
+    /// Creates a new builder-style object to manufacture [`PlainTextMessageType`](crate::model::PlainTextMessageType).
     pub fn builder() -> crate::model::plain_text_message_type::Builder {
         crate::model::plain_text_message_type::Builder::default()
     }
@@ -780,11 +773,10 @@ impl std::fmt::Debug for CallInstructionsMessageType {
         formatter.finish()
     }
 }
-/// See [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType)
+/// See [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
 pub mod call_instructions_message_type {
 
-    /// A builder for [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType)
-    #[non_exhaustive]
+    /// A builder for [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text: std::option::Option<std::string::String>,
@@ -800,14 +792,14 @@ pub mod call_instructions_message_type {
             self.text = input;
             self
         }
-        /// Consumes the builder and constructs a [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType)
+        /// Consumes the builder and constructs a [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
         pub fn build(self) -> crate::model::CallInstructionsMessageType {
             crate::model::CallInstructionsMessageType { text: self.text }
         }
     }
 }
 impl CallInstructionsMessageType {
-    /// Creates a new builder-style object to manufacture [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType)
+    /// Creates a new builder-style object to manufacture [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
     pub fn builder() -> crate::model::call_instructions_message_type::Builder {
         crate::model::call_instructions_message_type::Builder::default()
     }
@@ -878,11 +870,10 @@ impl std::fmt::Debug for EventDestination {
         formatter.finish()
     }
 }
-/// See [`EventDestination`](crate::model::EventDestination)
+/// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
 
-    /// A builder for [`EventDestination`](crate::model::EventDestination)
-    #[non_exhaustive]
+    /// A builder for [`EventDestination`](crate::model::EventDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_watch_logs_destination:
@@ -980,7 +971,7 @@ pub mod event_destination {
             self.sns_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventDestination`](crate::model::EventDestination)
+        /// Consumes the builder and constructs a [`EventDestination`](crate::model::EventDestination).
         pub fn build(self) -> crate::model::EventDestination {
             crate::model::EventDestination {
                 cloud_watch_logs_destination: self.cloud_watch_logs_destination,
@@ -994,7 +985,7 @@ pub mod event_destination {
     }
 }
 impl EventDestination {
-    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination)
+    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
     pub fn builder() -> crate::model::event_destination::Builder {
         crate::model::event_destination::Builder::default()
     }

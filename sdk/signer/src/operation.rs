@@ -10,7 +10,7 @@ pub struct AddProfilePermission {
     _private: (),
 }
 impl AddProfilePermission {
-    /// Creates a new builder-style object to manufacture [`AddProfilePermissionInput`](crate::input::AddProfilePermissionInput)
+    /// Creates a new builder-style object to manufacture [`AddProfilePermissionInput`](crate::input::AddProfilePermissionInput).
     pub fn builder() -> crate::input::add_profile_permission_input::Builder {
         crate::input::add_profile_permission_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CancelSigningProfile {
     _private: (),
 }
 impl CancelSigningProfile {
-    /// Creates a new builder-style object to manufacture [`CancelSigningProfileInput`](crate::input::CancelSigningProfileInput)
+    /// Creates a new builder-style object to manufacture [`CancelSigningProfileInput`](crate::input::CancelSigningProfileInput).
     pub fn builder() -> crate::input::cancel_signing_profile_input::Builder {
         crate::input::cancel_signing_profile_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeSigningJob {
     _private: (),
 }
 impl DescribeSigningJob {
-    /// Creates a new builder-style object to manufacture [`DescribeSigningJobInput`](crate::input::DescribeSigningJobInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSigningJobInput`](crate::input::DescribeSigningJobInput).
     pub fn builder() -> crate::input::describe_signing_job_input::Builder {
         crate::input::describe_signing_job_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct GetSigningPlatform {
     _private: (),
 }
 impl GetSigningPlatform {
-    /// Creates a new builder-style object to manufacture [`GetSigningPlatformInput`](crate::input::GetSigningPlatformInput)
+    /// Creates a new builder-style object to manufacture [`GetSigningPlatformInput`](crate::input::GetSigningPlatformInput).
     pub fn builder() -> crate::input::get_signing_platform_input::Builder {
         crate::input::get_signing_platform_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct GetSigningProfile {
     _private: (),
 }
 impl GetSigningProfile {
-    /// Creates a new builder-style object to manufacture [`GetSigningProfileInput`](crate::input::GetSigningProfileInput)
+    /// Creates a new builder-style object to manufacture [`GetSigningProfileInput`](crate::input::GetSigningProfileInput).
     pub fn builder() -> crate::input::get_signing_profile_input::Builder {
         crate::input::get_signing_profile_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct ListProfilePermissions {
     _private: (),
 }
 impl ListProfilePermissions {
-    /// Creates a new builder-style object to manufacture [`ListProfilePermissionsInput`](crate::input::ListProfilePermissionsInput)
+    /// Creates a new builder-style object to manufacture [`ListProfilePermissionsInput`](crate::input::ListProfilePermissionsInput).
     pub fn builder() -> crate::input::list_profile_permissions_input::Builder {
         crate::input::list_profile_permissions_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct ListSigningJobs {
     _private: (),
 }
 impl ListSigningJobs {
-    /// Creates a new builder-style object to manufacture [`ListSigningJobsInput`](crate::input::ListSigningJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListSigningJobsInput`](crate::input::ListSigningJobsInput).
     pub fn builder() -> crate::input::list_signing_jobs_input::Builder {
         crate::input::list_signing_jobs_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct ListSigningPlatforms {
     _private: (),
 }
 impl ListSigningPlatforms {
-    /// Creates a new builder-style object to manufacture [`ListSigningPlatformsInput`](crate::input::ListSigningPlatformsInput)
+    /// Creates a new builder-style object to manufacture [`ListSigningPlatformsInput`](crate::input::ListSigningPlatformsInput).
     pub fn builder() -> crate::input::list_signing_platforms_input::Builder {
         crate::input::list_signing_platforms_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct ListSigningProfiles {
     _private: (),
 }
 impl ListSigningProfiles {
-    /// Creates a new builder-style object to manufacture [`ListSigningProfilesInput`](crate::input::ListSigningProfilesInput)
+    /// Creates a new builder-style object to manufacture [`ListSigningProfilesInput`](crate::input::ListSigningProfilesInput).
     pub fn builder() -> crate::input::list_signing_profiles_input::Builder {
         crate::input::list_signing_profiles_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct PutSigningProfile {
     _private: (),
 }
 impl PutSigningProfile {
-    /// Creates a new builder-style object to manufacture [`PutSigningProfileInput`](crate::input::PutSigningProfileInput)
+    /// Creates a new builder-style object to manufacture [`PutSigningProfileInput`](crate::input::PutSigningProfileInput).
     pub fn builder() -> crate::input::put_signing_profile_input::Builder {
         crate::input::put_signing_profile_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct RemoveProfilePermission {
     _private: (),
 }
 impl RemoveProfilePermission {
-    /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionInput`](crate::input::RemoveProfilePermissionInput)
+    /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionInput`](crate::input::RemoveProfilePermissionInput).
     pub fn builder() -> crate::input::remove_profile_permission_input::Builder {
         crate::input::remove_profile_permission_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct RevokeSignature {
     _private: (),
 }
 impl RevokeSignature {
-    /// Creates a new builder-style object to manufacture [`RevokeSignatureInput`](crate::input::RevokeSignatureInput)
+    /// Creates a new builder-style object to manufacture [`RevokeSignatureInput`](crate::input::RevokeSignatureInput).
     pub fn builder() -> crate::input::revoke_signature_input::Builder {
         crate::input::revoke_signature_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct RevokeSigningProfile {
     _private: (),
 }
 impl RevokeSigningProfile {
-    /// Creates a new builder-style object to manufacture [`RevokeSigningProfileInput`](crate::input::RevokeSigningProfileInput)
+    /// Creates a new builder-style object to manufacture [`RevokeSigningProfileInput`](crate::input::RevokeSigningProfileInput).
     pub fn builder() -> crate::input::revoke_signing_profile_input::Builder {
         crate::input::revoke_signing_profile_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct StartSigningJob {
     _private: (),
 }
 impl StartSigningJob {
-    /// Creates a new builder-style object to manufacture [`StartSigningJobInput`](crate::input::StartSigningJobInput)
+    /// Creates a new builder-style object to manufacture [`StartSigningJobInput`](crate::input::StartSigningJobInput).
     pub fn builder() -> crate::input::start_signing_job_input::Builder {
         crate::input::start_signing_job_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

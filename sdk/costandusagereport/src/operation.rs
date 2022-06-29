@@ -10,7 +10,7 @@ pub struct DeleteReportDefinition {
     _private: (),
 }
 impl DeleteReportDefinition {
-    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput).
     pub fn builder() -> crate::input::delete_report_definition_input::Builder {
         crate::input::delete_report_definition_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DescribeReportDefinitions {
     _private: (),
 }
 impl DescribeReportDefinitions {
-    /// Creates a new builder-style object to manufacture [`DescribeReportDefinitionsInput`](crate::input::DescribeReportDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeReportDefinitionsInput`](crate::input::DescribeReportDefinitionsInput).
     pub fn builder() -> crate::input::describe_report_definitions_input::Builder {
         crate::input::describe_report_definitions_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct ModifyReportDefinition {
     _private: (),
 }
 impl ModifyReportDefinition {
-    /// Creates a new builder-style object to manufacture [`ModifyReportDefinitionInput`](crate::input::ModifyReportDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`ModifyReportDefinitionInput`](crate::input::ModifyReportDefinitionInput).
     pub fn builder() -> crate::input::modify_report_definition_input::Builder {
         crate::input::modify_report_definition_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct PutReportDefinition {
     _private: (),
 }
 impl PutReportDefinition {
-    /// Creates a new builder-style object to manufacture [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput).
     pub fn builder() -> crate::input::put_report_definition_input::Builder {
         crate::input::put_report_definition_input::Builder::default()
     }

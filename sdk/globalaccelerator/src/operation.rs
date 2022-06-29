@@ -10,7 +10,7 @@ pub struct AddCustomRoutingEndpoints {
     _private: (),
 }
 impl AddCustomRoutingEndpoints {
-    /// Creates a new builder-style object to manufacture [`AddCustomRoutingEndpointsInput`](crate::input::AddCustomRoutingEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`AddCustomRoutingEndpointsInput`](crate::input::AddCustomRoutingEndpointsInput).
     pub fn builder() -> crate::input::add_custom_routing_endpoints_input::Builder {
         crate::input::add_custom_routing_endpoints_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AdvertiseByoipCidr {
     _private: (),
 }
 impl AdvertiseByoipCidr {
-    /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrInput`](crate::input::AdvertiseByoipCidrInput)
+    /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrInput`](crate::input::AdvertiseByoipCidrInput).
     pub fn builder() -> crate::input::advertise_byoip_cidr_input::Builder {
         crate::input::advertise_byoip_cidr_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AllowCustomRoutingTraffic {
     _private: (),
 }
 impl AllowCustomRoutingTraffic {
-    /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficInput`](crate::input::AllowCustomRoutingTrafficInput)
+    /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficInput`](crate::input::AllowCustomRoutingTrafficInput).
     pub fn builder() -> crate::input::allow_custom_routing_traffic_input::Builder {
         crate::input::allow_custom_routing_traffic_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateAccelerator {
     _private: (),
 }
 impl CreateAccelerator {
-    /// Creates a new builder-style object to manufacture [`CreateAcceleratorInput`](crate::input::CreateAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`CreateAcceleratorInput`](crate::input::CreateAcceleratorInput).
     pub fn builder() -> crate::input::create_accelerator_input::Builder {
         crate::input::create_accelerator_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateCustomRoutingAccelerator {
     _private: (),
 }
 impl CreateCustomRoutingAccelerator {
-    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorInput`](crate::input::CreateCustomRoutingAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorInput`](crate::input::CreateCustomRoutingAcceleratorInput).
     pub fn builder() -> crate::input::create_custom_routing_accelerator_input::Builder {
         crate::input::create_custom_routing_accelerator_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateCustomRoutingEndpointGroup {
     _private: (),
 }
 impl CreateCustomRoutingEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingEndpointGroupInput`](crate::input::CreateCustomRoutingEndpointGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingEndpointGroupInput`](crate::input::CreateCustomRoutingEndpointGroupInput).
     pub fn builder() -> crate::input::create_custom_routing_endpoint_group_input::Builder {
         crate::input::create_custom_routing_endpoint_group_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct CreateCustomRoutingListener {
     _private: (),
 }
 impl CreateCustomRoutingListener {
-    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingListenerInput`](crate::input::CreateCustomRoutingListenerInput)
+    /// Creates a new builder-style object to manufacture [`CreateCustomRoutingListenerInput`](crate::input::CreateCustomRoutingListenerInput).
     pub fn builder() -> crate::input::create_custom_routing_listener_input::Builder {
         crate::input::create_custom_routing_listener_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CreateEndpointGroup {
     _private: (),
 }
 impl CreateEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointGroupInput`](crate::input::CreateEndpointGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateEndpointGroupInput`](crate::input::CreateEndpointGroupInput).
     pub fn builder() -> crate::input::create_endpoint_group_input::Builder {
         crate::input::create_endpoint_group_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct CreateListener {
     _private: (),
 }
 impl CreateListener {
-    /// Creates a new builder-style object to manufacture [`CreateListenerInput`](crate::input::CreateListenerInput)
+    /// Creates a new builder-style object to manufacture [`CreateListenerInput`](crate::input::CreateListenerInput).
     pub fn builder() -> crate::input::create_listener_input::Builder {
         crate::input::create_listener_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct DeleteAccelerator {
     _private: (),
 }
 impl DeleteAccelerator {
-    /// Creates a new builder-style object to manufacture [`DeleteAcceleratorInput`](crate::input::DeleteAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAcceleratorInput`](crate::input::DeleteAcceleratorInput).
     pub fn builder() -> crate::input::delete_accelerator_input::Builder {
         crate::input::delete_accelerator_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct DeleteCustomRoutingAccelerator {
     _private: (),
 }
 impl DeleteCustomRoutingAccelerator {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorInput`](crate::input::DeleteCustomRoutingAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorInput`](crate::input::DeleteCustomRoutingAcceleratorInput).
     pub fn builder() -> crate::input::delete_custom_routing_accelerator_input::Builder {
         crate::input::delete_custom_routing_accelerator_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct DeleteCustomRoutingEndpointGroup {
     _private: (),
 }
 impl DeleteCustomRoutingEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupInput`](crate::input::DeleteCustomRoutingEndpointGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupInput`](crate::input::DeleteCustomRoutingEndpointGroupInput).
     pub fn builder() -> crate::input::delete_custom_routing_endpoint_group_input::Builder {
         crate::input::delete_custom_routing_endpoint_group_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct DeleteCustomRoutingListener {
     _private: (),
 }
 impl DeleteCustomRoutingListener {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerInput`](crate::input::DeleteCustomRoutingListenerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerInput`](crate::input::DeleteCustomRoutingListenerInput).
     pub fn builder() -> crate::input::delete_custom_routing_listener_input::Builder {
         crate::input::delete_custom_routing_listener_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct DeleteEndpointGroup {
     _private: (),
 }
 impl DeleteEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupInput`](crate::input::DeleteEndpointGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupInput`](crate::input::DeleteEndpointGroupInput).
     pub fn builder() -> crate::input::delete_endpoint_group_input::Builder {
         crate::input::delete_endpoint_group_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct DeleteListener {
     _private: (),
 }
 impl DeleteListener {
-    /// Creates a new builder-style object to manufacture [`DeleteListenerInput`](crate::input::DeleteListenerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteListenerInput`](crate::input::DeleteListenerInput).
     pub fn builder() -> crate::input::delete_listener_input::Builder {
         crate::input::delete_listener_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DenyCustomRoutingTraffic {
     _private: (),
 }
 impl DenyCustomRoutingTraffic {
-    /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficInput`](crate::input::DenyCustomRoutingTrafficInput)
+    /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficInput`](crate::input::DenyCustomRoutingTrafficInput).
     pub fn builder() -> crate::input::deny_custom_routing_traffic_input::Builder {
         crate::input::deny_custom_routing_traffic_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct DeprovisionByoipCidr {
     _private: (),
 }
 impl DeprovisionByoipCidr {
-    /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrInput`](crate::input::DeprovisionByoipCidrInput)
+    /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrInput`](crate::input::DeprovisionByoipCidrInput).
     pub fn builder() -> crate::input::deprovision_byoip_cidr_input::Builder {
         crate::input::deprovision_byoip_cidr_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct DescribeAccelerator {
     _private: (),
 }
 impl DescribeAccelerator {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorInput`](crate::input::DescribeAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorInput`](crate::input::DescribeAcceleratorInput).
     pub fn builder() -> crate::input::describe_accelerator_input::Builder {
         crate::input::describe_accelerator_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct DescribeAcceleratorAttributes {
     _private: (),
 }
 impl DescribeAcceleratorAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesInput`](crate::input::DescribeAcceleratorAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesInput`](crate::input::DescribeAcceleratorAttributesInput).
     pub fn builder() -> crate::input::describe_accelerator_attributes_input::Builder {
         crate::input::describe_accelerator_attributes_input::Builder::default()
     }
@@ -652,7 +652,7 @@ pub struct DescribeCustomRoutingAccelerator {
     _private: (),
 }
 impl DescribeCustomRoutingAccelerator {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorInput`](crate::input::DescribeCustomRoutingAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorInput`](crate::input::DescribeCustomRoutingAcceleratorInput).
     pub fn builder() -> crate::input::describe_custom_routing_accelerator_input::Builder {
         crate::input::describe_custom_routing_accelerator_input::Builder::default()
     }
@@ -686,7 +686,7 @@ pub struct DescribeCustomRoutingAcceleratorAttributes {
     _private: (),
 }
 impl DescribeCustomRoutingAcceleratorAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::input::DescribeCustomRoutingAcceleratorAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::input::DescribeCustomRoutingAcceleratorAttributesInput).
     pub fn builder() -> crate::input::describe_custom_routing_accelerator_attributes_input::Builder
     {
         crate::input::describe_custom_routing_accelerator_attributes_input::Builder::default()
@@ -725,7 +725,7 @@ pub struct DescribeCustomRoutingEndpointGroup {
     _private: (),
 }
 impl DescribeCustomRoutingEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingEndpointGroupInput`](crate::input::DescribeCustomRoutingEndpointGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingEndpointGroupInput`](crate::input::DescribeCustomRoutingEndpointGroupInput).
     pub fn builder() -> crate::input::describe_custom_routing_endpoint_group_input::Builder {
         crate::input::describe_custom_routing_endpoint_group_input::Builder::default()
     }
@@ -759,7 +759,7 @@ pub struct DescribeCustomRoutingListener {
     _private: (),
 }
 impl DescribeCustomRoutingListener {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerInput`](crate::input::DescribeCustomRoutingListenerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerInput`](crate::input::DescribeCustomRoutingListenerInput).
     pub fn builder() -> crate::input::describe_custom_routing_listener_input::Builder {
         crate::input::describe_custom_routing_listener_input::Builder::default()
     }
@@ -793,7 +793,7 @@ pub struct DescribeEndpointGroup {
     _private: (),
 }
 impl DescribeEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupInput`](crate::input::DescribeEndpointGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupInput`](crate::input::DescribeEndpointGroupInput).
     pub fn builder() -> crate::input::describe_endpoint_group_input::Builder {
         crate::input::describe_endpoint_group_input::Builder::default()
     }
@@ -827,7 +827,7 @@ pub struct DescribeListener {
     _private: (),
 }
 impl DescribeListener {
-    /// Creates a new builder-style object to manufacture [`DescribeListenerInput`](crate::input::DescribeListenerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeListenerInput`](crate::input::DescribeListenerInput).
     pub fn builder() -> crate::input::describe_listener_input::Builder {
         crate::input::describe_listener_input::Builder::default()
     }
@@ -861,7 +861,7 @@ pub struct ListAccelerators {
     _private: (),
 }
 impl ListAccelerators {
-    /// Creates a new builder-style object to manufacture [`ListAcceleratorsInput`](crate::input::ListAcceleratorsInput)
+    /// Creates a new builder-style object to manufacture [`ListAcceleratorsInput`](crate::input::ListAcceleratorsInput).
     pub fn builder() -> crate::input::list_accelerators_input::Builder {
         crate::input::list_accelerators_input::Builder::default()
     }
@@ -895,7 +895,7 @@ pub struct ListByoipCidrs {
     _private: (),
 }
 impl ListByoipCidrs {
-    /// Creates a new builder-style object to manufacture [`ListByoipCidrsInput`](crate::input::ListByoipCidrsInput)
+    /// Creates a new builder-style object to manufacture [`ListByoipCidrsInput`](crate::input::ListByoipCidrsInput).
     pub fn builder() -> crate::input::list_byoip_cidrs_input::Builder {
         crate::input::list_byoip_cidrs_input::Builder::default()
     }
@@ -927,7 +927,7 @@ pub struct ListCustomRoutingAccelerators {
     _private: (),
 }
 impl ListCustomRoutingAccelerators {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsInput`](crate::input::ListCustomRoutingAcceleratorsInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsInput`](crate::input::ListCustomRoutingAcceleratorsInput).
     pub fn builder() -> crate::input::list_custom_routing_accelerators_input::Builder {
         crate::input::list_custom_routing_accelerators_input::Builder::default()
     }
@@ -961,7 +961,7 @@ pub struct ListCustomRoutingEndpointGroups {
     _private: (),
 }
 impl ListCustomRoutingEndpointGroups {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsInput`](crate::input::ListCustomRoutingEndpointGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsInput`](crate::input::ListCustomRoutingEndpointGroupsInput).
     pub fn builder() -> crate::input::list_custom_routing_endpoint_groups_input::Builder {
         crate::input::list_custom_routing_endpoint_groups_input::Builder::default()
     }
@@ -995,7 +995,7 @@ pub struct ListCustomRoutingListeners {
     _private: (),
 }
 impl ListCustomRoutingListeners {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersInput`](crate::input::ListCustomRoutingListenersInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersInput`](crate::input::ListCustomRoutingListenersInput).
     pub fn builder() -> crate::input::list_custom_routing_listeners_input::Builder {
         crate::input::list_custom_routing_listeners_input::Builder::default()
     }
@@ -1029,7 +1029,7 @@ pub struct ListCustomRoutingPortMappings {
     _private: (),
 }
 impl ListCustomRoutingPortMappings {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsInput`](crate::input::ListCustomRoutingPortMappingsInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsInput`](crate::input::ListCustomRoutingPortMappingsInput).
     pub fn builder() -> crate::input::list_custom_routing_port_mappings_input::Builder {
         crate::input::list_custom_routing_port_mappings_input::Builder::default()
     }
@@ -1063,7 +1063,7 @@ pub struct ListCustomRoutingPortMappingsByDestination {
     _private: (),
 }
 impl ListCustomRoutingPortMappingsByDestination {
-    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationInput`](crate::input::ListCustomRoutingPortMappingsByDestinationInput)
+    /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationInput`](crate::input::ListCustomRoutingPortMappingsByDestinationInput).
     pub fn builder() -> crate::input::list_custom_routing_port_mappings_by_destination_input::Builder
     {
         crate::input::list_custom_routing_port_mappings_by_destination_input::Builder::default()
@@ -1102,7 +1102,7 @@ pub struct ListEndpointGroups {
     _private: (),
 }
 impl ListEndpointGroups {
-    /// Creates a new builder-style object to manufacture [`ListEndpointGroupsInput`](crate::input::ListEndpointGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListEndpointGroupsInput`](crate::input::ListEndpointGroupsInput).
     pub fn builder() -> crate::input::list_endpoint_groups_input::Builder {
         crate::input::list_endpoint_groups_input::Builder::default()
     }
@@ -1136,7 +1136,7 @@ pub struct ListListeners {
     _private: (),
 }
 impl ListListeners {
-    /// Creates a new builder-style object to manufacture [`ListListenersInput`](crate::input::ListListenersInput)
+    /// Creates a new builder-style object to manufacture [`ListListenersInput`](crate::input::ListListenersInput).
     pub fn builder() -> crate::input::list_listeners_input::Builder {
         crate::input::list_listeners_input::Builder::default()
     }
@@ -1168,7 +1168,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1202,7 +1202,7 @@ pub struct ProvisionByoipCidr {
     _private: (),
 }
 impl ProvisionByoipCidr {
-    /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrInput`](crate::input::ProvisionByoipCidrInput)
+    /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrInput`](crate::input::ProvisionByoipCidrInput).
     pub fn builder() -> crate::input::provision_byoip_cidr_input::Builder {
         crate::input::provision_byoip_cidr_input::Builder::default()
     }
@@ -1236,7 +1236,7 @@ pub struct RemoveCustomRoutingEndpoints {
     _private: (),
 }
 impl RemoveCustomRoutingEndpoints {
-    /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsInput`](crate::input::RemoveCustomRoutingEndpointsInput)
+    /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsInput`](crate::input::RemoveCustomRoutingEndpointsInput).
     pub fn builder() -> crate::input::remove_custom_routing_endpoints_input::Builder {
         crate::input::remove_custom_routing_endpoints_input::Builder::default()
     }
@@ -1270,7 +1270,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1302,7 +1302,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1334,7 +1334,7 @@ pub struct UpdateAccelerator {
     _private: (),
 }
 impl UpdateAccelerator {
-    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorInput`](crate::input::UpdateAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorInput`](crate::input::UpdateAcceleratorInput).
     pub fn builder() -> crate::input::update_accelerator_input::Builder {
         crate::input::update_accelerator_input::Builder::default()
     }
@@ -1368,7 +1368,7 @@ pub struct UpdateAcceleratorAttributes {
     _private: (),
 }
 impl UpdateAcceleratorAttributes {
-    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorAttributesInput`](crate::input::UpdateAcceleratorAttributesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAcceleratorAttributesInput`](crate::input::UpdateAcceleratorAttributesInput).
     pub fn builder() -> crate::input::update_accelerator_attributes_input::Builder {
         crate::input::update_accelerator_attributes_input::Builder::default()
     }
@@ -1402,7 +1402,7 @@ pub struct UpdateCustomRoutingAccelerator {
     _private: (),
 }
 impl UpdateCustomRoutingAccelerator {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorInput`](crate::input::UpdateCustomRoutingAcceleratorInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorInput`](crate::input::UpdateCustomRoutingAcceleratorInput).
     pub fn builder() -> crate::input::update_custom_routing_accelerator_input::Builder {
         crate::input::update_custom_routing_accelerator_input::Builder::default()
     }
@@ -1436,7 +1436,7 @@ pub struct UpdateCustomRoutingAcceleratorAttributes {
     _private: (),
 }
 impl UpdateCustomRoutingAcceleratorAttributes {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorAttributesInput`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorAttributesInput`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput).
     pub fn builder() -> crate::input::update_custom_routing_accelerator_attributes_input::Builder {
         crate::input::update_custom_routing_accelerator_attributes_input::Builder::default()
     }
@@ -1474,7 +1474,7 @@ pub struct UpdateCustomRoutingListener {
     _private: (),
 }
 impl UpdateCustomRoutingListener {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerInput`](crate::input::UpdateCustomRoutingListenerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerInput`](crate::input::UpdateCustomRoutingListenerInput).
     pub fn builder() -> crate::input::update_custom_routing_listener_input::Builder {
         crate::input::update_custom_routing_listener_input::Builder::default()
     }
@@ -1508,7 +1508,7 @@ pub struct UpdateEndpointGroup {
     _private: (),
 }
 impl UpdateEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupInput`](crate::input::UpdateEndpointGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupInput`](crate::input::UpdateEndpointGroupInput).
     pub fn builder() -> crate::input::update_endpoint_group_input::Builder {
         crate::input::update_endpoint_group_input::Builder::default()
     }
@@ -1542,7 +1542,7 @@ pub struct UpdateListener {
     _private: (),
 }
 impl UpdateListener {
-    /// Creates a new builder-style object to manufacture [`UpdateListenerInput`](crate::input::UpdateListenerInput)
+    /// Creates a new builder-style object to manufacture [`UpdateListenerInput`](crate::input::UpdateListenerInput).
     pub fn builder() -> crate::input::update_listener_input::Builder {
         crate::input::update_listener_input::Builder::default()
     }
@@ -1574,7 +1574,7 @@ pub struct WithdrawByoipCidr {
     _private: (),
 }
 impl WithdrawByoipCidr {
-    /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrInput`](crate::input::WithdrawByoipCidrInput)
+    /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrInput`](crate::input::WithdrawByoipCidrInput).
     pub fn builder() -> crate::input::withdraw_byoip_cidr_input::Builder {
         crate::input::withdraw_byoip_cidr_input::Builder::default()
     }

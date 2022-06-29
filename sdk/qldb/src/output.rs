@@ -33,11 +33,10 @@ impl std::fmt::Debug for UpdateLedgerPermissionsModeOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput)
+/// See [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
 pub mod update_ledger_permissions_mode_output {
 
-    /// A builder for [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -78,7 +77,7 @@ pub mod update_ledger_permissions_mode_output {
             self.permissions_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput)
+        /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
         pub fn build(self) -> crate::output::UpdateLedgerPermissionsModeOutput {
             crate::output::UpdateLedgerPermissionsModeOutput {
                 name: self.name,
@@ -89,7 +88,7 @@ pub mod update_ledger_permissions_mode_output {
     }
 }
 impl UpdateLedgerPermissionsModeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
     pub fn builder() -> crate::output::update_ledger_permissions_mode_output::Builder {
         crate::output::update_ledger_permissions_mode_output::Builder::default()
     }
@@ -154,11 +153,10 @@ impl std::fmt::Debug for UpdateLedgerOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
+/// See [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
 pub mod update_ledger_output {
 
-    /// A builder for [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -241,7 +239,7 @@ pub mod update_ledger_output {
             self.encryption_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
+        /// Consumes the builder and constructs a [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
         pub fn build(self) -> crate::output::UpdateLedgerOutput {
             crate::output::UpdateLedgerOutput {
                 name: self.name,
@@ -255,7 +253,7 @@ pub mod update_ledger_output {
     }
 }
 impl UpdateLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
     pub fn builder() -> crate::output::update_ledger_output::Builder {
         crate::output::update_ledger_output::Builder::default()
     }
@@ -271,22 +269,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -302,22 +299,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -343,11 +339,10 @@ impl std::fmt::Debug for StreamJournalToKinesisOutput {
         formatter.finish()
     }
 }
-/// See [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
+/// See [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
 pub mod stream_journal_to_kinesis_output {
 
-    /// A builder for [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
-    #[non_exhaustive]
+    /// A builder for [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -363,7 +358,7 @@ pub mod stream_journal_to_kinesis_output {
             self.stream_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
+        /// Consumes the builder and constructs a [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
         pub fn build(self) -> crate::output::StreamJournalToKinesisOutput {
             crate::output::StreamJournalToKinesisOutput {
                 stream_id: self.stream_id,
@@ -372,7 +367,7 @@ pub mod stream_journal_to_kinesis_output {
     }
 }
 impl StreamJournalToKinesisOutput {
-    /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
+    /// Creates a new builder-style object to manufacture [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
     pub fn builder() -> crate::output::stream_journal_to_kinesis_output::Builder {
         crate::output::stream_journal_to_kinesis_output::Builder::default()
     }
@@ -404,11 +399,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -447,14 +441,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -495,11 +489,10 @@ impl std::fmt::Debug for ListLedgersOutput {
         formatter.finish()
     }
 }
-/// See [`ListLedgersOutput`](crate::output::ListLedgersOutput)
+/// See [`ListLedgersOutput`](crate::output::ListLedgersOutput).
 pub mod list_ledgers_output {
 
-    /// A builder for [`ListLedgersOutput`](crate::output::ListLedgersOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListLedgersOutput`](crate::output::ListLedgersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
@@ -543,7 +536,7 @@ pub mod list_ledgers_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListLedgersOutput`](crate::output::ListLedgersOutput)
+        /// Consumes the builder and constructs a [`ListLedgersOutput`](crate::output::ListLedgersOutput).
         pub fn build(self) -> crate::output::ListLedgersOutput {
             crate::output::ListLedgersOutput {
                 ledgers: self.ledgers,
@@ -553,7 +546,7 @@ pub mod list_ledgers_output {
     }
 }
 impl ListLedgersOutput {
-    /// Creates a new builder-style object to manufacture [`ListLedgersOutput`](crate::output::ListLedgersOutput)
+    /// Creates a new builder-style object to manufacture [`ListLedgersOutput`](crate::output::ListLedgersOutput).
     pub fn builder() -> crate::output::list_ledgers_output::Builder {
         crate::output::list_ledgers_output::Builder::default()
     }
@@ -595,11 +588,10 @@ impl std::fmt::Debug for ListJournalS3ExportsForLedgerOutput {
         formatter.finish()
     }
 }
-/// See [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
+/// See [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
 pub mod list_journal_s3_exports_for_ledger_output {
 
-    /// A builder for [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journal_s3_exports:
@@ -645,7 +637,7 @@ pub mod list_journal_s3_exports_for_ledger_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
+        /// Consumes the builder and constructs a [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
         pub fn build(self) -> crate::output::ListJournalS3ExportsForLedgerOutput {
             crate::output::ListJournalS3ExportsForLedgerOutput {
                 journal_s3_exports: self.journal_s3_exports,
@@ -655,7 +647,7 @@ pub mod list_journal_s3_exports_for_ledger_output {
     }
 }
 impl ListJournalS3ExportsForLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
+    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
     pub fn builder() -> crate::output::list_journal_s3_exports_for_ledger_output::Builder {
         crate::output::list_journal_s3_exports_for_ledger_output::Builder::default()
     }
@@ -697,11 +689,10 @@ impl std::fmt::Debug for ListJournalS3ExportsOutput {
         formatter.finish()
     }
 }
-/// See [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
+/// See [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
 pub mod list_journal_s3_exports_output {
 
-    /// A builder for [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) journal_s3_exports:
@@ -747,7 +738,7 @@ pub mod list_journal_s3_exports_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
+        /// Consumes the builder and constructs a [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
         pub fn build(self) -> crate::output::ListJournalS3ExportsOutput {
             crate::output::ListJournalS3ExportsOutput {
                 journal_s3_exports: self.journal_s3_exports,
@@ -757,7 +748,7 @@ pub mod list_journal_s3_exports_output {
     }
 }
 impl ListJournalS3ExportsOutput {
-    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
+    /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
     pub fn builder() -> crate::output::list_journal_s3_exports_output::Builder {
         crate::output::list_journal_s3_exports_output::Builder::default()
     }
@@ -796,11 +787,10 @@ impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerOutput {
         formatter.finish()
     }
 }
-/// See [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
+/// See [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
 pub mod list_journal_kinesis_streams_for_ledger_output {
 
-    /// A builder for [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) streams:
@@ -845,7 +835,7 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
+        /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
         pub fn build(self) -> crate::output::ListJournalKinesisStreamsForLedgerOutput {
             crate::output::ListJournalKinesisStreamsForLedgerOutput {
                 streams: self.streams,
@@ -855,7 +845,7 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
     }
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
+    /// Creates a new builder-style object to manufacture [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
     pub fn builder() -> crate::output::list_journal_kinesis_streams_for_ledger_output::Builder {
         crate::output::list_journal_kinesis_streams_for_ledger_output::Builder::default()
     }
@@ -888,11 +878,10 @@ impl std::fmt::Debug for GetRevisionOutput {
         formatter.finish()
     }
 }
-/// See [`GetRevisionOutput`](crate::output::GetRevisionOutput)
+/// See [`GetRevisionOutput`](crate::output::GetRevisionOutput).
 pub mod get_revision_output {
 
-    /// A builder for [`GetRevisionOutput`](crate::output::GetRevisionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRevisionOutput`](crate::output::GetRevisionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) proof: std::option::Option<crate::model::ValueHolder>,
@@ -922,7 +911,7 @@ pub mod get_revision_output {
             self.revision = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRevisionOutput`](crate::output::GetRevisionOutput)
+        /// Consumes the builder and constructs a [`GetRevisionOutput`](crate::output::GetRevisionOutput).
         pub fn build(self) -> crate::output::GetRevisionOutput {
             crate::output::GetRevisionOutput {
                 proof: self.proof,
@@ -932,7 +921,7 @@ pub mod get_revision_output {
     }
 }
 impl GetRevisionOutput {
-    /// Creates a new builder-style object to manufacture [`GetRevisionOutput`](crate::output::GetRevisionOutput)
+    /// Creates a new builder-style object to manufacture [`GetRevisionOutput`](crate::output::GetRevisionOutput).
     pub fn builder() -> crate::output::get_revision_output::Builder {
         crate::output::get_revision_output::Builder::default()
     }
@@ -965,11 +954,10 @@ impl std::fmt::Debug for GetDigestOutput {
         formatter.finish()
     }
 }
-/// See [`GetDigestOutput`](crate::output::GetDigestOutput)
+/// See [`GetDigestOutput`](crate::output::GetDigestOutput).
 pub mod get_digest_output {
 
-    /// A builder for [`GetDigestOutput`](crate::output::GetDigestOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDigestOutput`](crate::output::GetDigestOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) digest: std::option::Option<aws_smithy_types::Blob>,
@@ -999,7 +987,7 @@ pub mod get_digest_output {
             self.digest_tip_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDigestOutput`](crate::output::GetDigestOutput)
+        /// Consumes the builder and constructs a [`GetDigestOutput`](crate::output::GetDigestOutput).
         pub fn build(self) -> crate::output::GetDigestOutput {
             crate::output::GetDigestOutput {
                 digest: self.digest,
@@ -1009,7 +997,7 @@ pub mod get_digest_output {
     }
 }
 impl GetDigestOutput {
-    /// Creates a new builder-style object to manufacture [`GetDigestOutput`](crate::output::GetDigestOutput)
+    /// Creates a new builder-style object to manufacture [`GetDigestOutput`](crate::output::GetDigestOutput).
     pub fn builder() -> crate::output::get_digest_output::Builder {
         crate::output::get_digest_output::Builder::default()
     }
@@ -1042,11 +1030,10 @@ impl std::fmt::Debug for GetBlockOutput {
         formatter.finish()
     }
 }
-/// See [`GetBlockOutput`](crate::output::GetBlockOutput)
+/// See [`GetBlockOutput`](crate::output::GetBlockOutput).
 pub mod get_block_output {
 
-    /// A builder for [`GetBlockOutput`](crate::output::GetBlockOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetBlockOutput`](crate::output::GetBlockOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) block: std::option::Option<crate::model::ValueHolder>,
@@ -1073,7 +1060,7 @@ pub mod get_block_output {
             self.proof = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetBlockOutput`](crate::output::GetBlockOutput)
+        /// Consumes the builder and constructs a [`GetBlockOutput`](crate::output::GetBlockOutput).
         pub fn build(self) -> crate::output::GetBlockOutput {
             crate::output::GetBlockOutput {
                 block: self.block,
@@ -1083,7 +1070,7 @@ pub mod get_block_output {
     }
 }
 impl GetBlockOutput {
-    /// Creates a new builder-style object to manufacture [`GetBlockOutput`](crate::output::GetBlockOutput)
+    /// Creates a new builder-style object to manufacture [`GetBlockOutput`](crate::output::GetBlockOutput).
     pub fn builder() -> crate::output::get_block_output::Builder {
         crate::output::get_block_output::Builder::default()
     }
@@ -1111,11 +1098,10 @@ impl std::fmt::Debug for ExportJournalToS3Output {
         formatter.finish()
     }
 }
-/// See [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
+/// See [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
 pub mod export_journal_to_s3_output {
 
-    /// A builder for [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
-    #[non_exhaustive]
+    /// A builder for [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -1133,7 +1119,7 @@ pub mod export_journal_to_s3_output {
             self.export_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
+        /// Consumes the builder and constructs a [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
         pub fn build(self) -> crate::output::ExportJournalToS3Output {
             crate::output::ExportJournalToS3Output {
                 export_id: self.export_id,
@@ -1142,7 +1128,7 @@ pub mod export_journal_to_s3_output {
     }
 }
 impl ExportJournalToS3Output {
-    /// Creates a new builder-style object to manufacture [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
+    /// Creates a new builder-style object to manufacture [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
     pub fn builder() -> crate::output::export_journal_to_s3_output::Builder {
         crate::output::export_journal_to_s3_output::Builder::default()
     }
@@ -1214,11 +1200,10 @@ impl std::fmt::Debug for DescribeLedgerOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
+/// See [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
 pub mod describe_ledger_output {
 
-    /// A builder for [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1315,7 +1300,7 @@ pub mod describe_ledger_output {
             self.encryption_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
+        /// Consumes the builder and constructs a [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
         pub fn build(self) -> crate::output::DescribeLedgerOutput {
             crate::output::DescribeLedgerOutput {
                 name: self.name,
@@ -1330,7 +1315,7 @@ pub mod describe_ledger_output {
     }
 }
 impl DescribeLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
     pub fn builder() -> crate::output::describe_ledger_output::Builder {
         crate::output::describe_ledger_output::Builder::default()
     }
@@ -1358,11 +1343,10 @@ impl std::fmt::Debug for DescribeJournalS3ExportOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
+/// See [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
 pub mod describe_journal_s3_export_output {
 
-    /// A builder for [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_description:
@@ -1385,7 +1369,7 @@ pub mod describe_journal_s3_export_output {
             self.export_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
+        /// Consumes the builder and constructs a [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
         pub fn build(self) -> crate::output::DescribeJournalS3ExportOutput {
             crate::output::DescribeJournalS3ExportOutput {
                 export_description: self.export_description,
@@ -1394,7 +1378,7 @@ pub mod describe_journal_s3_export_output {
     }
 }
 impl DescribeJournalS3ExportOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
     pub fn builder() -> crate::output::describe_journal_s3_export_output::Builder {
         crate::output::describe_journal_s3_export_output::Builder::default()
     }
@@ -1420,11 +1404,10 @@ impl std::fmt::Debug for DescribeJournalKinesisStreamOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
+/// See [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
 pub mod describe_journal_kinesis_stream_output {
 
-    /// A builder for [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
@@ -1443,7 +1426,7 @@ pub mod describe_journal_kinesis_stream_output {
             self.stream = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
+        /// Consumes the builder and constructs a [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
         pub fn build(self) -> crate::output::DescribeJournalKinesisStreamOutput {
             crate::output::DescribeJournalKinesisStreamOutput {
                 stream: self.stream,
@@ -1452,7 +1435,7 @@ pub mod describe_journal_kinesis_stream_output {
     }
 }
 impl DescribeJournalKinesisStreamOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
     pub fn builder() -> crate::output::describe_journal_kinesis_stream_output::Builder {
         crate::output::describe_journal_kinesis_stream_output::Builder::default()
     }
@@ -1468,22 +1451,21 @@ impl std::fmt::Debug for DeleteLedgerOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
+/// See [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
 pub mod delete_ledger_output {
 
-    /// A builder for [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
+        /// Consumes the builder and constructs a [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
         pub fn build(self) -> crate::output::DeleteLedgerOutput {
             crate::output::DeleteLedgerOutput {}
         }
     }
 }
 impl DeleteLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
     pub fn builder() -> crate::output::delete_ledger_output::Builder {
         crate::output::delete_ledger_output::Builder::default()
     }
@@ -1553,11 +1535,10 @@ impl std::fmt::Debug for CreateLedgerOutput {
         formatter.finish()
     }
 }
-/// See [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
+/// See [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
 pub mod create_ledger_output {
 
-    /// A builder for [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1647,7 +1628,7 @@ pub mod create_ledger_output {
             self.kms_key_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
+        /// Consumes the builder and constructs a [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
         pub fn build(self) -> crate::output::CreateLedgerOutput {
             crate::output::CreateLedgerOutput {
                 name: self.name,
@@ -1662,7 +1643,7 @@ pub mod create_ledger_output {
     }
 }
 impl CreateLedgerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
+    /// Creates a new builder-style object to manufacture [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
     pub fn builder() -> crate::output::create_ledger_output::Builder {
         crate::output::create_ledger_output::Builder::default()
     }
@@ -1688,11 +1669,10 @@ impl std::fmt::Debug for CancelJournalKinesisStreamOutput {
         formatter.finish()
     }
 }
-/// See [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)
+/// See [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
 pub mod cancel_journal_kinesis_stream_output {
 
-    /// A builder for [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -1708,7 +1688,7 @@ pub mod cancel_journal_kinesis_stream_output {
             self.stream_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)
+        /// Consumes the builder and constructs a [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
         pub fn build(self) -> crate::output::CancelJournalKinesisStreamOutput {
             crate::output::CancelJournalKinesisStreamOutput {
                 stream_id: self.stream_id,
@@ -1717,7 +1697,7 @@ pub mod cancel_journal_kinesis_stream_output {
     }
 }
 impl CancelJournalKinesisStreamOutput {
-    /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)
+    /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
     pub fn builder() -> crate::output::cancel_journal_kinesis_stream_output::Builder {
         crate::output::cancel_journal_kinesis_stream_output::Builder::default()
     }

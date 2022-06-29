@@ -10,7 +10,7 @@ pub struct AcceptPage {
     _private: (),
 }
 impl AcceptPage {
-    /// Creates a new builder-style object to manufacture [`AcceptPageInput`](crate::input::AcceptPageInput)
+    /// Creates a new builder-style object to manufacture [`AcceptPageInput`](crate::input::AcceptPageInput).
     pub fn builder() -> crate::input::accept_page_input::Builder {
         crate::input::accept_page_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct ActivateContactChannel {
     _private: (),
 }
 impl ActivateContactChannel {
-    /// Creates a new builder-style object to manufacture [`ActivateContactChannelInput`](crate::input::ActivateContactChannelInput)
+    /// Creates a new builder-style object to manufacture [`ActivateContactChannelInput`](crate::input::ActivateContactChannelInput).
     pub fn builder() -> crate::input::activate_contact_channel_input::Builder {
         crate::input::activate_contact_channel_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateContact {
     _private: (),
 }
 impl CreateContact {
-    /// Creates a new builder-style object to manufacture [`CreateContactInput`](crate::input::CreateContactInput)
+    /// Creates a new builder-style object to manufacture [`CreateContactInput`](crate::input::CreateContactInput).
     pub fn builder() -> crate::input::create_contact_input::Builder {
         crate::input::create_contact_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateContactChannel {
     _private: (),
 }
 impl CreateContactChannel {
-    /// Creates a new builder-style object to manufacture [`CreateContactChannelInput`](crate::input::CreateContactChannelInput)
+    /// Creates a new builder-style object to manufacture [`CreateContactChannelInput`](crate::input::CreateContactChannelInput).
     pub fn builder() -> crate::input::create_contact_channel_input::Builder {
         crate::input::create_contact_channel_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DeactivateContactChannel {
     _private: (),
 }
 impl DeactivateContactChannel {
-    /// Creates a new builder-style object to manufacture [`DeactivateContactChannelInput`](crate::input::DeactivateContactChannelInput)
+    /// Creates a new builder-style object to manufacture [`DeactivateContactChannelInput`](crate::input::DeactivateContactChannelInput).
     pub fn builder() -> crate::input::deactivate_contact_channel_input::Builder {
         crate::input::deactivate_contact_channel_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DeleteContact {
     _private: (),
 }
 impl DeleteContact {
-    /// Creates a new builder-style object to manufacture [`DeleteContactInput`](crate::input::DeleteContactInput)
+    /// Creates a new builder-style object to manufacture [`DeleteContactInput`](crate::input::DeleteContactInput).
     pub fn builder() -> crate::input::delete_contact_input::Builder {
         crate::input::delete_contact_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DeleteContactChannel {
     _private: (),
 }
 impl DeleteContactChannel {
-    /// Creates a new builder-style object to manufacture [`DeleteContactChannelInput`](crate::input::DeleteContactChannelInput)
+    /// Creates a new builder-style object to manufacture [`DeleteContactChannelInput`](crate::input::DeleteContactChannelInput).
     pub fn builder() -> crate::input::delete_contact_channel_input::Builder {
         crate::input::delete_contact_channel_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DescribeEngagement {
     _private: (),
 }
 impl DescribeEngagement {
-    /// Creates a new builder-style object to manufacture [`DescribeEngagementInput`](crate::input::DescribeEngagementInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEngagementInput`](crate::input::DescribeEngagementInput).
     pub fn builder() -> crate::input::describe_engagement_input::Builder {
         crate::input::describe_engagement_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct DescribePage {
     _private: (),
 }
 impl DescribePage {
-    /// Creates a new builder-style object to manufacture [`DescribePageInput`](crate::input::DescribePageInput)
+    /// Creates a new builder-style object to manufacture [`DescribePageInput`](crate::input::DescribePageInput).
     pub fn builder() -> crate::input::describe_page_input::Builder {
         crate::input::describe_page_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct GetContact {
     _private: (),
 }
 impl GetContact {
-    /// Creates a new builder-style object to manufacture [`GetContactInput`](crate::input::GetContactInput)
+    /// Creates a new builder-style object to manufacture [`GetContactInput`](crate::input::GetContactInput).
     pub fn builder() -> crate::input::get_contact_input::Builder {
         crate::input::get_contact_input::Builder::default()
     }
@@ -340,7 +340,7 @@ pub struct GetContactChannel {
     _private: (),
 }
 impl GetContactChannel {
-    /// Creates a new builder-style object to manufacture [`GetContactChannelInput`](crate::input::GetContactChannelInput)
+    /// Creates a new builder-style object to manufacture [`GetContactChannelInput`](crate::input::GetContactChannelInput).
     pub fn builder() -> crate::input::get_contact_channel_input::Builder {
         crate::input::get_contact_channel_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct GetContactPolicy {
     _private: (),
 }
 impl GetContactPolicy {
-    /// Creates a new builder-style object to manufacture [`GetContactPolicyInput`](crate::input::GetContactPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetContactPolicyInput`](crate::input::GetContactPolicyInput).
     pub fn builder() -> crate::input::get_contact_policy_input::Builder {
         crate::input::get_contact_policy_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct ListContactChannels {
     _private: (),
 }
 impl ListContactChannels {
-    /// Creates a new builder-style object to manufacture [`ListContactChannelsInput`](crate::input::ListContactChannelsInput)
+    /// Creates a new builder-style object to manufacture [`ListContactChannelsInput`](crate::input::ListContactChannelsInput).
     pub fn builder() -> crate::input::list_contact_channels_input::Builder {
         crate::input::list_contact_channels_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct ListContacts {
     _private: (),
 }
 impl ListContacts {
-    /// Creates a new builder-style object to manufacture [`ListContactsInput`](crate::input::ListContactsInput)
+    /// Creates a new builder-style object to manufacture [`ListContactsInput`](crate::input::ListContactsInput).
     pub fn builder() -> crate::input::list_contacts_input::Builder {
         crate::input::list_contacts_input::Builder::default()
     }
@@ -474,7 +474,7 @@ pub struct ListEngagements {
     _private: (),
 }
 impl ListEngagements {
-    /// Creates a new builder-style object to manufacture [`ListEngagementsInput`](crate::input::ListEngagementsInput)
+    /// Creates a new builder-style object to manufacture [`ListEngagementsInput`](crate::input::ListEngagementsInput).
     pub fn builder() -> crate::input::list_engagements_input::Builder {
         crate::input::list_engagements_input::Builder::default()
     }
@@ -508,7 +508,7 @@ pub struct ListPageReceipts {
     _private: (),
 }
 impl ListPageReceipts {
-    /// Creates a new builder-style object to manufacture [`ListPageReceiptsInput`](crate::input::ListPageReceiptsInput)
+    /// Creates a new builder-style object to manufacture [`ListPageReceiptsInput`](crate::input::ListPageReceiptsInput).
     pub fn builder() -> crate::input::list_page_receipts_input::Builder {
         crate::input::list_page_receipts_input::Builder::default()
     }
@@ -542,7 +542,7 @@ pub struct ListPagesByContact {
     _private: (),
 }
 impl ListPagesByContact {
-    /// Creates a new builder-style object to manufacture [`ListPagesByContactInput`](crate::input::ListPagesByContactInput)
+    /// Creates a new builder-style object to manufacture [`ListPagesByContactInput`](crate::input::ListPagesByContactInput).
     pub fn builder() -> crate::input::list_pages_by_contact_input::Builder {
         crate::input::list_pages_by_contact_input::Builder::default()
     }
@@ -576,7 +576,7 @@ pub struct ListPagesByEngagement {
     _private: (),
 }
 impl ListPagesByEngagement {
-    /// Creates a new builder-style object to manufacture [`ListPagesByEngagementInput`](crate::input::ListPagesByEngagementInput)
+    /// Creates a new builder-style object to manufacture [`ListPagesByEngagementInput`](crate::input::ListPagesByEngagementInput).
     pub fn builder() -> crate::input::list_pages_by_engagement_input::Builder {
         crate::input::list_pages_by_engagement_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct PutContactPolicy {
     _private: (),
 }
 impl PutContactPolicy {
-    /// Creates a new builder-style object to manufacture [`PutContactPolicyInput`](crate::input::PutContactPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutContactPolicyInput`](crate::input::PutContactPolicyInput).
     pub fn builder() -> crate::input::put_contact_policy_input::Builder {
         crate::input::put_contact_policy_input::Builder::default()
     }
@@ -678,7 +678,7 @@ pub struct SendActivationCode {
     _private: (),
 }
 impl SendActivationCode {
-    /// Creates a new builder-style object to manufacture [`SendActivationCodeInput`](crate::input::SendActivationCodeInput)
+    /// Creates a new builder-style object to manufacture [`SendActivationCodeInput`](crate::input::SendActivationCodeInput).
     pub fn builder() -> crate::input::send_activation_code_input::Builder {
         crate::input::send_activation_code_input::Builder::default()
     }
@@ -712,7 +712,7 @@ pub struct StartEngagement {
     _private: (),
 }
 impl StartEngagement {
-    /// Creates a new builder-style object to manufacture [`StartEngagementInput`](crate::input::StartEngagementInput)
+    /// Creates a new builder-style object to manufacture [`StartEngagementInput`](crate::input::StartEngagementInput).
     pub fn builder() -> crate::input::start_engagement_input::Builder {
         crate::input::start_engagement_input::Builder::default()
     }
@@ -746,7 +746,7 @@ pub struct StopEngagement {
     _private: (),
 }
 impl StopEngagement {
-    /// Creates a new builder-style object to manufacture [`StopEngagementInput`](crate::input::StopEngagementInput)
+    /// Creates a new builder-style object to manufacture [`StopEngagementInput`](crate::input::StopEngagementInput).
     pub fn builder() -> crate::input::stop_engagement_input::Builder {
         crate::input::stop_engagement_input::Builder::default()
     }
@@ -778,7 +778,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -810,7 +810,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -842,7 +842,7 @@ pub struct UpdateContact {
     _private: (),
 }
 impl UpdateContact {
-    /// Creates a new builder-style object to manufacture [`UpdateContactInput`](crate::input::UpdateContactInput)
+    /// Creates a new builder-style object to manufacture [`UpdateContactInput`](crate::input::UpdateContactInput).
     pub fn builder() -> crate::input::update_contact_input::Builder {
         crate::input::update_contact_input::Builder::default()
     }
@@ -874,7 +874,7 @@ pub struct UpdateContactChannel {
     _private: (),
 }
 impl UpdateContactChannel {
-    /// Creates a new builder-style object to manufacture [`UpdateContactChannelInput`](crate::input::UpdateContactChannelInput)
+    /// Creates a new builder-style object to manufacture [`UpdateContactChannelInput`](crate::input::UpdateContactChannelInput).
     pub fn builder() -> crate::input::update_contact_channel_input::Builder {
         crate::input::update_contact_channel_input::Builder::default()
     }

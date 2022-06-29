@@ -10,7 +10,7 @@ pub struct AddTagsToStream {
     _private: (),
 }
 impl AddTagsToStream {
-    /// Creates a new builder-style object to manufacture [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToStreamInput`](crate::input::AddTagsToStreamInput).
     pub fn builder() -> crate::input::add_tags_to_stream_input::Builder {
         crate::input::add_tags_to_stream_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateStream {
     _private: (),
 }
 impl CreateStream {
-    /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::input::CreateStreamInput)
+    /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::input::CreateStreamInput).
     pub fn builder() -> crate::input::create_stream_input::Builder {
         crate::input::create_stream_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DecreaseStreamRetentionPeriod {
     _private: (),
 }
 impl DecreaseStreamRetentionPeriod {
-    /// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput)
+    /// Creates a new builder-style object to manufacture [`DecreaseStreamRetentionPeriodInput`](crate::input::DecreaseStreamRetentionPeriodInput).
     pub fn builder() -> crate::input::decrease_stream_retention_period_input::Builder {
         crate::input::decrease_stream_retention_period_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteStream {
     _private: (),
 }
 impl DeleteStream {
-    /// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::input::DeleteStreamInput)
+    /// Creates a new builder-style object to manufacture [`DeleteStreamInput`](crate::input::DeleteStreamInput).
     pub fn builder() -> crate::input::delete_stream_input::Builder {
         crate::input::delete_stream_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DeregisterStreamConsumer {
     _private: (),
 }
 impl DeregisterStreamConsumer {
-    /// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerInput`](crate::input::DeregisterStreamConsumerInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerInput`](crate::input::DeregisterStreamConsumerInput).
     pub fn builder() -> crate::input::deregister_stream_consumer_input::Builder {
         crate::input::deregister_stream_consumer_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DescribeLimits {
     _private: (),
 }
 impl DescribeLimits {
-    /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::input::DescribeLimitsInput).
     pub fn builder() -> crate::input::describe_limits_input::Builder {
         crate::input::describe_limits_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DescribeStream {
     _private: (),
 }
 impl DescribeStream {
-    /// Creates a new builder-style object to manufacture [`DescribeStreamInput`](crate::input::DescribeStreamInput)
+    /// Creates a new builder-style object to manufacture [`DescribeStreamInput`](crate::input::DescribeStreamInput).
     pub fn builder() -> crate::input::describe_stream_input::Builder {
         crate::input::describe_stream_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct DescribeStreamConsumer {
     _private: (),
 }
 impl DescribeStreamConsumer {
-    /// Creates a new builder-style object to manufacture [`DescribeStreamConsumerInput`](crate::input::DescribeStreamConsumerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeStreamConsumerInput`](crate::input::DescribeStreamConsumerInput).
     pub fn builder() -> crate::input::describe_stream_consumer_input::Builder {
         crate::input::describe_stream_consumer_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DescribeStreamSummary {
     _private: (),
 }
 impl DescribeStreamSummary {
-    /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput)
+    /// Creates a new builder-style object to manufacture [`DescribeStreamSummaryInput`](crate::input::DescribeStreamSummaryInput).
     pub fn builder() -> crate::input::describe_stream_summary_input::Builder {
         crate::input::describe_stream_summary_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DisableEnhancedMonitoring {
     _private: (),
 }
 impl DisableEnhancedMonitoring {
-    /// Creates a new builder-style object to manufacture [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput)
+    /// Creates a new builder-style object to manufacture [`DisableEnhancedMonitoringInput`](crate::input::DisableEnhancedMonitoringInput).
     pub fn builder() -> crate::input::disable_enhanced_monitoring_input::Builder {
         crate::input::disable_enhanced_monitoring_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct EnableEnhancedMonitoring {
     _private: (),
 }
 impl EnableEnhancedMonitoring {
-    /// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput)
+    /// Creates a new builder-style object to manufacture [`EnableEnhancedMonitoringInput`](crate::input::EnableEnhancedMonitoringInput).
     pub fn builder() -> crate::input::enable_enhanced_monitoring_input::Builder {
         crate::input::enable_enhanced_monitoring_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct GetRecords {
     _private: (),
 }
 impl GetRecords {
-    /// Creates a new builder-style object to manufacture [`GetRecordsInput`](crate::input::GetRecordsInput)
+    /// Creates a new builder-style object to manufacture [`GetRecordsInput`](crate::input::GetRecordsInput).
     pub fn builder() -> crate::input::get_records_input::Builder {
         crate::input::get_records_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct GetShardIterator {
     _private: (),
 }
 impl GetShardIterator {
-    /// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::input::GetShardIteratorInput)
+    /// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::input::GetShardIteratorInput).
     pub fn builder() -> crate::input::get_shard_iterator_input::Builder {
         crate::input::get_shard_iterator_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct IncreaseStreamRetentionPeriod {
     _private: (),
 }
 impl IncreaseStreamRetentionPeriod {
-    /// Creates a new builder-style object to manufacture [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput)
+    /// Creates a new builder-style object to manufacture [`IncreaseStreamRetentionPeriodInput`](crate::input::IncreaseStreamRetentionPeriodInput).
     pub fn builder() -> crate::input::increase_stream_retention_period_input::Builder {
         crate::input::increase_stream_retention_period_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct ListShards {
     _private: (),
 }
 impl ListShards {
-    /// Creates a new builder-style object to manufacture [`ListShardsInput`](crate::input::ListShardsInput)
+    /// Creates a new builder-style object to manufacture [`ListShardsInput`](crate::input::ListShardsInput).
     pub fn builder() -> crate::input::list_shards_input::Builder {
         crate::input::list_shards_input::Builder::default()
     }
@@ -508,7 +508,7 @@ pub struct ListStreamConsumers {
     _private: (),
 }
 impl ListStreamConsumers {
-    /// Creates a new builder-style object to manufacture [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput)
+    /// Creates a new builder-style object to manufacture [`ListStreamConsumersInput`](crate::input::ListStreamConsumersInput).
     pub fn builder() -> crate::input::list_stream_consumers_input::Builder {
         crate::input::list_stream_consumers_input::Builder::default()
     }
@@ -542,7 +542,7 @@ pub struct ListStreams {
     _private: (),
 }
 impl ListStreams {
-    /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput)
+    /// Creates a new builder-style object to manufacture [`ListStreamsInput`](crate::input::ListStreamsInput).
     pub fn builder() -> crate::input::list_streams_input::Builder {
         crate::input::list_streams_input::Builder::default()
     }
@@ -574,7 +574,7 @@ pub struct ListTagsForStream {
     _private: (),
 }
 impl ListTagsForStream {
-    /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput).
     pub fn builder() -> crate::input::list_tags_for_stream_input::Builder {
         crate::input::list_tags_for_stream_input::Builder::default()
     }
@@ -608,7 +608,7 @@ pub struct MergeShards {
     _private: (),
 }
 impl MergeShards {
-    /// Creates a new builder-style object to manufacture [`MergeShardsInput`](crate::input::MergeShardsInput)
+    /// Creates a new builder-style object to manufacture [`MergeShardsInput`](crate::input::MergeShardsInput).
     pub fn builder() -> crate::input::merge_shards_input::Builder {
         crate::input::merge_shards_input::Builder::default()
     }
@@ -640,7 +640,7 @@ pub struct PutRecord {
     _private: (),
 }
 impl PutRecord {
-    /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput)
+    /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput).
     pub fn builder() -> crate::input::put_record_input::Builder {
         crate::input::put_record_input::Builder::default()
     }
@@ -671,7 +671,7 @@ pub struct PutRecords {
     _private: (),
 }
 impl PutRecords {
-    /// Creates a new builder-style object to manufacture [`PutRecordsInput`](crate::input::PutRecordsInput)
+    /// Creates a new builder-style object to manufacture [`PutRecordsInput`](crate::input::PutRecordsInput).
     pub fn builder() -> crate::input::put_records_input::Builder {
         crate::input::put_records_input::Builder::default()
     }
@@ -703,7 +703,7 @@ pub struct RegisterStreamConsumer {
     _private: (),
 }
 impl RegisterStreamConsumer {
-    /// Creates a new builder-style object to manufacture [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput)
+    /// Creates a new builder-style object to manufacture [`RegisterStreamConsumerInput`](crate::input::RegisterStreamConsumerInput).
     pub fn builder() -> crate::input::register_stream_consumer_input::Builder {
         crate::input::register_stream_consumer_input::Builder::default()
     }
@@ -737,7 +737,7 @@ pub struct RemoveTagsFromStream {
     _private: (),
 }
 impl RemoveTagsFromStream {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromStreamInput`](crate::input::RemoveTagsFromStreamInput).
     pub fn builder() -> crate::input::remove_tags_from_stream_input::Builder {
         crate::input::remove_tags_from_stream_input::Builder::default()
     }
@@ -771,7 +771,7 @@ pub struct SplitShard {
     _private: (),
 }
 impl SplitShard {
-    /// Creates a new builder-style object to manufacture [`SplitShardInput`](crate::input::SplitShardInput)
+    /// Creates a new builder-style object to manufacture [`SplitShardInput`](crate::input::SplitShardInput).
     pub fn builder() -> crate::input::split_shard_input::Builder {
         crate::input::split_shard_input::Builder::default()
     }
@@ -803,7 +803,7 @@ pub struct StartStreamEncryption {
     _private: (),
 }
 impl StartStreamEncryption {
-    /// Creates a new builder-style object to manufacture [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput)
+    /// Creates a new builder-style object to manufacture [`StartStreamEncryptionInput`](crate::input::StartStreamEncryptionInput).
     pub fn builder() -> crate::input::start_stream_encryption_input::Builder {
         crate::input::start_stream_encryption_input::Builder::default()
     }
@@ -837,7 +837,7 @@ pub struct StopStreamEncryption {
     _private: (),
 }
 impl StopStreamEncryption {
-    /// Creates a new builder-style object to manufacture [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput)
+    /// Creates a new builder-style object to manufacture [`StopStreamEncryptionInput`](crate::input::StopStreamEncryptionInput).
     pub fn builder() -> crate::input::stop_stream_encryption_input::Builder {
         crate::input::stop_stream_encryption_input::Builder::default()
     }
@@ -871,7 +871,7 @@ pub struct UpdateShardCount {
     _private: (),
 }
 impl UpdateShardCount {
-    /// Creates a new builder-style object to manufacture [`UpdateShardCountInput`](crate::input::UpdateShardCountInput)
+    /// Creates a new builder-style object to manufacture [`UpdateShardCountInput`](crate::input::UpdateShardCountInput).
     pub fn builder() -> crate::input::update_shard_count_input::Builder {
         crate::input::update_shard_count_input::Builder::default()
     }
@@ -905,7 +905,7 @@ pub struct UpdateStreamMode {
     _private: (),
 }
 impl UpdateStreamMode {
-    /// Creates a new builder-style object to manufacture [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateStreamModeInput`](crate::input::UpdateStreamModeInput).
     pub fn builder() -> crate::input::update_stream_mode_input::Builder {
         crate::input::update_stream_mode_input::Builder::default()
     }

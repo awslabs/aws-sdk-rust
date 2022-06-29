@@ -10,7 +10,7 @@ pub struct AssociateDRTLogBucket {
     _private: (),
 }
 impl AssociateDRTLogBucket {
-    /// Creates a new builder-style object to manufacture [`AssociateDrtLogBucketInput`](crate::input::AssociateDrtLogBucketInput)
+    /// Creates a new builder-style object to manufacture [`AssociateDrtLogBucketInput`](crate::input::AssociateDrtLogBucketInput).
     pub fn builder() -> crate::input::associate_drt_log_bucket_input::Builder {
         crate::input::associate_drt_log_bucket_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateDRTRole {
     _private: (),
 }
 impl AssociateDRTRole {
-    /// Creates a new builder-style object to manufacture [`AssociateDrtRoleInput`](crate::input::AssociateDrtRoleInput)
+    /// Creates a new builder-style object to manufacture [`AssociateDrtRoleInput`](crate::input::AssociateDrtRoleInput).
     pub fn builder() -> crate::input::associate_drt_role_input::Builder {
         crate::input::associate_drt_role_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct AssociateHealthCheck {
     _private: (),
 }
 impl AssociateHealthCheck {
-    /// Creates a new builder-style object to manufacture [`AssociateHealthCheckInput`](crate::input::AssociateHealthCheckInput)
+    /// Creates a new builder-style object to manufacture [`AssociateHealthCheckInput`](crate::input::AssociateHealthCheckInput).
     pub fn builder() -> crate::input::associate_health_check_input::Builder {
         crate::input::associate_health_check_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct AssociateProactiveEngagementDetails {
     _private: (),
 }
 impl AssociateProactiveEngagementDetails {
-    /// Creates a new builder-style object to manufacture [`AssociateProactiveEngagementDetailsInput`](crate::input::AssociateProactiveEngagementDetailsInput)
+    /// Creates a new builder-style object to manufacture [`AssociateProactiveEngagementDetailsInput`](crate::input::AssociateProactiveEngagementDetailsInput).
     pub fn builder() -> crate::input::associate_proactive_engagement_details_input::Builder {
         crate::input::associate_proactive_engagement_details_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateProtection {
     _private: (),
 }
 impl CreateProtection {
-    /// Creates a new builder-style object to manufacture [`CreateProtectionInput`](crate::input::CreateProtectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateProtectionInput`](crate::input::CreateProtectionInput).
     pub fn builder() -> crate::input::create_protection_input::Builder {
         crate::input::create_protection_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateProtectionGroup {
     _private: (),
 }
 impl CreateProtectionGroup {
-    /// Creates a new builder-style object to manufacture [`CreateProtectionGroupInput`](crate::input::CreateProtectionGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateProtectionGroupInput`](crate::input::CreateProtectionGroupInput).
     pub fn builder() -> crate::input::create_protection_group_input::Builder {
         crate::input::create_protection_group_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct CreateSubscription {
     _private: (),
 }
 impl CreateSubscription {
-    /// Creates a new builder-style object to manufacture [`CreateSubscriptionInput`](crate::input::CreateSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`CreateSubscriptionInput`](crate::input::CreateSubscriptionInput).
     pub fn builder() -> crate::input::create_subscription_input::Builder {
         crate::input::create_subscription_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DeleteProtection {
     _private: (),
 }
 impl DeleteProtection {
-    /// Creates a new builder-style object to manufacture [`DeleteProtectionInput`](crate::input::DeleteProtectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProtectionInput`](crate::input::DeleteProtectionInput).
     pub fn builder() -> crate::input::delete_protection_input::Builder {
         crate::input::delete_protection_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DeleteProtectionGroup {
     _private: (),
 }
 impl DeleteProtectionGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteProtectionGroupInput`](crate::input::DeleteProtectionGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProtectionGroupInput`](crate::input::DeleteProtectionGroupInput).
     pub fn builder() -> crate::input::delete_protection_group_input::Builder {
         crate::input::delete_protection_group_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct DeleteSubscription {
     _private: (),
 }
 impl DeleteSubscription {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionInput`](crate::input::DeleteSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionInput`](crate::input::DeleteSubscriptionInput).
     pub fn builder() -> crate::input::delete_subscription_input::Builder {
         crate::input::delete_subscription_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct DescribeAttack {
     _private: (),
 }
 impl DescribeAttack {
-    /// Creates a new builder-style object to manufacture [`DescribeAttackInput`](crate::input::DescribeAttackInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAttackInput`](crate::input::DescribeAttackInput).
     pub fn builder() -> crate::input::describe_attack_input::Builder {
         crate::input::describe_attack_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct DescribeAttackStatistics {
     _private: (),
 }
 impl DescribeAttackStatistics {
-    /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsInput`](crate::input::DescribeAttackStatisticsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsInput`](crate::input::DescribeAttackStatisticsInput).
     pub fn builder() -> crate::input::describe_attack_statistics_input::Builder {
         crate::input::describe_attack_statistics_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct DescribeDRTAccess {
     _private: (),
 }
 impl DescribeDRTAccess {
-    /// Creates a new builder-style object to manufacture [`DescribeDrtAccessInput`](crate::input::DescribeDrtAccessInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDrtAccessInput`](crate::input::DescribeDrtAccessInput).
     pub fn builder() -> crate::input::describe_drt_access_input::Builder {
         crate::input::describe_drt_access_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct DescribeEmergencyContactSettings {
     _private: (),
 }
 impl DescribeEmergencyContactSettings {
-    /// Creates a new builder-style object to manufacture [`DescribeEmergencyContactSettingsInput`](crate::input::DescribeEmergencyContactSettingsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeEmergencyContactSettingsInput`](crate::input::DescribeEmergencyContactSettingsInput).
     pub fn builder() -> crate::input::describe_emergency_contact_settings_input::Builder {
         crate::input::describe_emergency_contact_settings_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct DescribeProtection {
     _private: (),
 }
 impl DescribeProtection {
-    /// Creates a new builder-style object to manufacture [`DescribeProtectionInput`](crate::input::DescribeProtectionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeProtectionInput`](crate::input::DescribeProtectionInput).
     pub fn builder() -> crate::input::describe_protection_input::Builder {
         crate::input::describe_protection_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct DescribeProtectionGroup {
     _private: (),
 }
 impl DescribeProtectionGroup {
-    /// Creates a new builder-style object to manufacture [`DescribeProtectionGroupInput`](crate::input::DescribeProtectionGroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeProtectionGroupInput`](crate::input::DescribeProtectionGroupInput).
     pub fn builder() -> crate::input::describe_protection_group_input::Builder {
         crate::input::describe_protection_group_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct DescribeSubscription {
     _private: (),
 }
 impl DescribeSubscription {
-    /// Creates a new builder-style object to manufacture [`DescribeSubscriptionInput`](crate::input::DescribeSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSubscriptionInput`](crate::input::DescribeSubscriptionInput).
     pub fn builder() -> crate::input::describe_subscription_input::Builder {
         crate::input::describe_subscription_input::Builder::default()
     }
@@ -586,7 +586,7 @@ pub struct DisableApplicationLayerAutomaticResponse {
     _private: (),
 }
 impl DisableApplicationLayerAutomaticResponse {
-    /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput)
+    /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput).
     pub fn builder() -> crate::input::disable_application_layer_automatic_response_input::Builder {
         crate::input::disable_application_layer_automatic_response_input::Builder::default()
     }
@@ -624,7 +624,7 @@ pub struct DisableProactiveEngagement {
     _private: (),
 }
 impl DisableProactiveEngagement {
-    /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementInput`](crate::input::DisableProactiveEngagementInput)
+    /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementInput`](crate::input::DisableProactiveEngagementInput).
     pub fn builder() -> crate::input::disable_proactive_engagement_input::Builder {
         crate::input::disable_proactive_engagement_input::Builder::default()
     }
@@ -658,7 +658,7 @@ pub struct DisassociateDRTLogBucket {
     _private: (),
 }
 impl DisassociateDRTLogBucket {
-    /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketInput`](crate::input::DisassociateDrtLogBucketInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketInput`](crate::input::DisassociateDrtLogBucketInput).
     pub fn builder() -> crate::input::disassociate_drt_log_bucket_input::Builder {
         crate::input::disassociate_drt_log_bucket_input::Builder::default()
     }
@@ -692,7 +692,7 @@ pub struct DisassociateDRTRole {
     _private: (),
 }
 impl DisassociateDRTRole {
-    /// Creates a new builder-style object to manufacture [`DisassociateDrtRoleInput`](crate::input::DisassociateDrtRoleInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateDrtRoleInput`](crate::input::DisassociateDrtRoleInput).
     pub fn builder() -> crate::input::disassociate_drt_role_input::Builder {
         crate::input::disassociate_drt_role_input::Builder::default()
     }
@@ -726,7 +726,7 @@ pub struct DisassociateHealthCheck {
     _private: (),
 }
 impl DisassociateHealthCheck {
-    /// Creates a new builder-style object to manufacture [`DisassociateHealthCheckInput`](crate::input::DisassociateHealthCheckInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateHealthCheckInput`](crate::input::DisassociateHealthCheckInput).
     pub fn builder() -> crate::input::disassociate_health_check_input::Builder {
         crate::input::disassociate_health_check_input::Builder::default()
     }
@@ -760,7 +760,7 @@ pub struct EnableApplicationLayerAutomaticResponse {
     _private: (),
 }
 impl EnableApplicationLayerAutomaticResponse {
-    /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput)
+    /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput).
     pub fn builder() -> crate::input::enable_application_layer_automatic_response_input::Builder {
         crate::input::enable_application_layer_automatic_response_input::Builder::default()
     }
@@ -798,7 +798,7 @@ pub struct EnableProactiveEngagement {
     _private: (),
 }
 impl EnableProactiveEngagement {
-    /// Creates a new builder-style object to manufacture [`EnableProactiveEngagementInput`](crate::input::EnableProactiveEngagementInput)
+    /// Creates a new builder-style object to manufacture [`EnableProactiveEngagementInput`](crate::input::EnableProactiveEngagementInput).
     pub fn builder() -> crate::input::enable_proactive_engagement_input::Builder {
         crate::input::enable_proactive_engagement_input::Builder::default()
     }
@@ -832,7 +832,7 @@ pub struct GetSubscriptionState {
     _private: (),
 }
 impl GetSubscriptionState {
-    /// Creates a new builder-style object to manufacture [`GetSubscriptionStateInput`](crate::input::GetSubscriptionStateInput)
+    /// Creates a new builder-style object to manufacture [`GetSubscriptionStateInput`](crate::input::GetSubscriptionStateInput).
     pub fn builder() -> crate::input::get_subscription_state_input::Builder {
         crate::input::get_subscription_state_input::Builder::default()
     }
@@ -866,7 +866,7 @@ pub struct ListAttacks {
     _private: (),
 }
 impl ListAttacks {
-    /// Creates a new builder-style object to manufacture [`ListAttacksInput`](crate::input::ListAttacksInput)
+    /// Creates a new builder-style object to manufacture [`ListAttacksInput`](crate::input::ListAttacksInput).
     pub fn builder() -> crate::input::list_attacks_input::Builder {
         crate::input::list_attacks_input::Builder::default()
     }
@@ -898,7 +898,7 @@ pub struct ListProtectionGroups {
     _private: (),
 }
 impl ListProtectionGroups {
-    /// Creates a new builder-style object to manufacture [`ListProtectionGroupsInput`](crate::input::ListProtectionGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListProtectionGroupsInput`](crate::input::ListProtectionGroupsInput).
     pub fn builder() -> crate::input::list_protection_groups_input::Builder {
         crate::input::list_protection_groups_input::Builder::default()
     }
@@ -932,7 +932,7 @@ pub struct ListProtections {
     _private: (),
 }
 impl ListProtections {
-    /// Creates a new builder-style object to manufacture [`ListProtectionsInput`](crate::input::ListProtectionsInput)
+    /// Creates a new builder-style object to manufacture [`ListProtectionsInput`](crate::input::ListProtectionsInput).
     pub fn builder() -> crate::input::list_protections_input::Builder {
         crate::input::list_protections_input::Builder::default()
     }
@@ -966,7 +966,7 @@ pub struct ListResourcesInProtectionGroup {
     _private: (),
 }
 impl ListResourcesInProtectionGroup {
-    /// Creates a new builder-style object to manufacture [`ListResourcesInProtectionGroupInput`](crate::input::ListResourcesInProtectionGroupInput)
+    /// Creates a new builder-style object to manufacture [`ListResourcesInProtectionGroupInput`](crate::input::ListResourcesInProtectionGroupInput).
     pub fn builder() -> crate::input::list_resources_in_protection_group_input::Builder {
         crate::input::list_resources_in_protection_group_input::Builder::default()
     }
@@ -1000,7 +1000,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1034,7 +1034,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1066,7 +1066,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1098,7 +1098,7 @@ pub struct UpdateApplicationLayerAutomaticResponse {
     _private: (),
 }
 impl UpdateApplicationLayerAutomaticResponse {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput).
     pub fn builder() -> crate::input::update_application_layer_automatic_response_input::Builder {
         crate::input::update_application_layer_automatic_response_input::Builder::default()
     }
@@ -1136,7 +1136,7 @@ pub struct UpdateEmergencyContactSettings {
     _private: (),
 }
 impl UpdateEmergencyContactSettings {
-    /// Creates a new builder-style object to manufacture [`UpdateEmergencyContactSettingsInput`](crate::input::UpdateEmergencyContactSettingsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEmergencyContactSettingsInput`](crate::input::UpdateEmergencyContactSettingsInput).
     pub fn builder() -> crate::input::update_emergency_contact_settings_input::Builder {
         crate::input::update_emergency_contact_settings_input::Builder::default()
     }
@@ -1170,7 +1170,7 @@ pub struct UpdateProtectionGroup {
     _private: (),
 }
 impl UpdateProtectionGroup {
-    /// Creates a new builder-style object to manufacture [`UpdateProtectionGroupInput`](crate::input::UpdateProtectionGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdateProtectionGroupInput`](crate::input::UpdateProtectionGroupInput).
     pub fn builder() -> crate::input::update_protection_group_input::Builder {
         crate::input::update_protection_group_input::Builder::default()
     }
@@ -1204,7 +1204,7 @@ pub struct UpdateSubscription {
     _private: (),
 }
 impl UpdateSubscription {
-    /// Creates a new builder-style object to manufacture [`UpdateSubscriptionInput`](crate::input::UpdateSubscriptionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriptionInput`](crate::input::UpdateSubscriptionInput).
     pub fn builder() -> crate::input::update_subscription_input::Builder {
         crate::input::update_subscription_input::Builder::default()
     }

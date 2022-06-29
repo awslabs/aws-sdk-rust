@@ -93,11 +93,10 @@ impl std::fmt::Debug for ParentEntityUpdateRequest {
         formatter.finish()
     }
 }
-/// See [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest)
+/// See [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
 pub mod parent_entity_update_request {
 
-    /// A builder for [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest)
-    #[non_exhaustive]
+    /// A builder for [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_type: std::option::Option<crate::model::ParentEntityUpdateType>,
@@ -130,7 +129,7 @@ pub mod parent_entity_update_request {
             self.parent_entity_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest)
+        /// Consumes the builder and constructs a [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
         pub fn build(self) -> crate::model::ParentEntityUpdateRequest {
             crate::model::ParentEntityUpdateRequest {
                 update_type: self.update_type,
@@ -140,7 +139,7 @@ pub mod parent_entity_update_request {
     }
 }
 impl ParentEntityUpdateRequest {
-    /// Creates a new builder-style object to manufacture [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest)
+    /// Creates a new builder-style object to manufacture [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
     pub fn builder() -> crate::model::parent_entity_update_request::Builder {
         crate::model::parent_entity_update_request::Builder::default()
     }
@@ -248,11 +247,10 @@ impl std::fmt::Debug for ComponentUpdateRequest {
         formatter.finish()
     }
 }
-/// See [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest)
+/// See [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
 pub mod component_update_request {
 
-    /// A builder for [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest)
-    #[non_exhaustive]
+    /// A builder for [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_type: std::option::Option<crate::model::ComponentUpdateType>,
@@ -324,7 +322,7 @@ pub mod component_update_request {
             self.property_updates = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest)
+        /// Consumes the builder and constructs a [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
         pub fn build(self) -> crate::model::ComponentUpdateRequest {
             crate::model::ComponentUpdateRequest {
                 update_type: self.update_type,
@@ -336,7 +334,7 @@ pub mod component_update_request {
     }
 }
 impl ComponentUpdateRequest {
-    /// Creates a new builder-style object to manufacture [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest)
+    /// Creates a new builder-style object to manufacture [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
     pub fn builder() -> crate::model::component_update_request::Builder {
         crate::model::component_update_request::Builder::default()
     }
@@ -376,11 +374,10 @@ impl std::fmt::Debug for PropertyRequest {
         formatter.finish()
     }
 }
-/// See [`PropertyRequest`](crate::model::PropertyRequest)
+/// See [`PropertyRequest`](crate::model::PropertyRequest).
 pub mod property_request {
 
-    /// A builder for [`PropertyRequest`](crate::model::PropertyRequest)
-    #[non_exhaustive]
+    /// A builder for [`PropertyRequest`](crate::model::PropertyRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<crate::model::PropertyDefinitionRequest>,
@@ -424,7 +421,7 @@ pub mod property_request {
             self.update_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyRequest`](crate::model::PropertyRequest)
+        /// Consumes the builder and constructs a [`PropertyRequest`](crate::model::PropertyRequest).
         pub fn build(self) -> crate::model::PropertyRequest {
             crate::model::PropertyRequest {
                 definition: self.definition,
@@ -435,7 +432,7 @@ pub mod property_request {
     }
 }
 impl PropertyRequest {
-    /// Creates a new builder-style object to manufacture [`PropertyRequest`](crate::model::PropertyRequest)
+    /// Creates a new builder-style object to manufacture [`PropertyRequest`](crate::model::PropertyRequest).
     pub fn builder() -> crate::model::property_request::Builder {
         crate::model::property_request::Builder::default()
     }
@@ -581,11 +578,10 @@ impl std::fmt::Debug for DataValue {
         formatter.finish()
     }
 }
-/// See [`DataValue`](crate::model::DataValue)
+/// See [`DataValue`](crate::model::DataValue).
 pub mod data_value {
 
-    /// A builder for [`DataValue`](crate::model::DataValue)
-    #[non_exhaustive]
+    /// A builder for [`DataValue`](crate::model::DataValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) boolean_value: std::option::Option<bool>,
@@ -718,7 +714,7 @@ pub mod data_value {
             self.expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataValue`](crate::model::DataValue)
+        /// Consumes the builder and constructs a [`DataValue`](crate::model::DataValue).
         pub fn build(self) -> crate::model::DataValue {
             crate::model::DataValue {
                 boolean_value: self.boolean_value,
@@ -735,7 +731,7 @@ pub mod data_value {
     }
 }
 impl DataValue {
-    /// Creates a new builder-style object to manufacture [`DataValue`](crate::model::DataValue)
+    /// Creates a new builder-style object to manufacture [`DataValue`](crate::model::DataValue).
     pub fn builder() -> crate::model::data_value::Builder {
         crate::model::data_value::Builder::default()
     }
@@ -768,11 +764,10 @@ impl std::fmt::Debug for RelationshipValue {
         formatter.finish()
     }
 }
-/// See [`RelationshipValue`](crate::model::RelationshipValue)
+/// See [`RelationshipValue`](crate::model::RelationshipValue).
 pub mod relationship_value {
 
-    /// A builder for [`RelationshipValue`](crate::model::RelationshipValue)
-    #[non_exhaustive]
+    /// A builder for [`RelationshipValue`](crate::model::RelationshipValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_entity_id: std::option::Option<std::string::String>,
@@ -805,7 +800,7 @@ pub mod relationship_value {
             self.target_component_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`RelationshipValue`](crate::model::RelationshipValue)
+        /// Consumes the builder and constructs a [`RelationshipValue`](crate::model::RelationshipValue).
         pub fn build(self) -> crate::model::RelationshipValue {
             crate::model::RelationshipValue {
                 target_entity_id: self.target_entity_id,
@@ -815,7 +810,7 @@ pub mod relationship_value {
     }
 }
 impl RelationshipValue {
-    /// Creates a new builder-style object to manufacture [`RelationshipValue`](crate::model::RelationshipValue)
+    /// Creates a new builder-style object to manufacture [`RelationshipValue`](crate::model::RelationshipValue).
     pub fn builder() -> crate::model::relationship_value::Builder {
         crate::model::relationship_value::Builder::default()
     }
@@ -887,11 +882,10 @@ impl std::fmt::Debug for PropertyDefinitionRequest {
         formatter.finish()
     }
 }
-/// See [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest)
+/// See [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
 pub mod property_definition_request {
 
-    /// A builder for [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest)
-    #[non_exhaustive]
+    /// A builder for [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_type: std::option::Option<crate::model::DataType>,
@@ -993,7 +987,7 @@ pub mod property_definition_request {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest)
+        /// Consumes the builder and constructs a [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
         pub fn build(self) -> crate::model::PropertyDefinitionRequest {
             crate::model::PropertyDefinitionRequest {
                 data_type: self.data_type,
@@ -1008,7 +1002,7 @@ pub mod property_definition_request {
     }
 }
 impl PropertyDefinitionRequest {
-    /// Creates a new builder-style object to manufacture [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest)
+    /// Creates a new builder-style object to manufacture [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
     pub fn builder() -> crate::model::property_definition_request::Builder {
         crate::model::property_definition_request::Builder::default()
     }
@@ -1062,11 +1056,10 @@ impl std::fmt::Debug for DataType {
         formatter.finish()
     }
 }
-/// See [`DataType`](crate::model::DataType)
+/// See [`DataType`](crate::model::DataType).
 pub mod data_type {
 
-    /// A builder for [`DataType`](crate::model::DataType)
-    #[non_exhaustive]
+    /// A builder for [`DataType`](crate::model::DataType).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
@@ -1147,7 +1140,7 @@ pub mod data_type {
             self.relationship = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataType`](crate::model::DataType)
+        /// Consumes the builder and constructs a [`DataType`](crate::model::DataType).
         pub fn build(self) -> crate::model::DataType {
             crate::model::DataType {
                 r#type: self.r#type,
@@ -1160,7 +1153,7 @@ pub mod data_type {
     }
 }
 impl DataType {
-    /// Creates a new builder-style object to manufacture [`DataType`](crate::model::DataType)
+    /// Creates a new builder-style object to manufacture [`DataType`](crate::model::DataType).
     pub fn builder() -> crate::model::data_type::Builder {
         crate::model::data_type::Builder::default()
     }
@@ -1193,11 +1186,10 @@ impl std::fmt::Debug for Relationship {
         formatter.finish()
     }
 }
-/// See [`Relationship`](crate::model::Relationship)
+/// See [`Relationship`](crate::model::Relationship).
 pub mod relationship {
 
-    /// A builder for [`Relationship`](crate::model::Relationship)
-    #[non_exhaustive]
+    /// A builder for [`Relationship`](crate::model::Relationship).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_component_type_id: std::option::Option<std::string::String>,
@@ -1230,7 +1222,7 @@ pub mod relationship {
             self.relationship_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`Relationship`](crate::model::Relationship)
+        /// Consumes the builder and constructs a [`Relationship`](crate::model::Relationship).
         pub fn build(self) -> crate::model::Relationship {
             crate::model::Relationship {
                 target_component_type_id: self.target_component_type_id,
@@ -1240,7 +1232,7 @@ pub mod relationship {
     }
 }
 impl Relationship {
-    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship)
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
     pub fn builder() -> crate::model::relationship::Builder {
         crate::model::relationship::Builder::default()
     }
@@ -1427,11 +1419,10 @@ impl std::fmt::Debug for FunctionRequest {
         formatter.finish()
     }
 }
-/// See [`FunctionRequest`](crate::model::FunctionRequest)
+/// See [`FunctionRequest`](crate::model::FunctionRequest).
 pub mod function_request {
 
-    /// A builder for [`FunctionRequest`](crate::model::FunctionRequest)
-    #[non_exhaustive]
+    /// A builder for [`FunctionRequest`](crate::model::FunctionRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1475,7 +1466,7 @@ pub mod function_request {
             self.implemented_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`FunctionRequest`](crate::model::FunctionRequest)
+        /// Consumes the builder and constructs a [`FunctionRequest`](crate::model::FunctionRequest).
         pub fn build(self) -> crate::model::FunctionRequest {
             crate::model::FunctionRequest {
                 required_properties: self.required_properties,
@@ -1486,7 +1477,7 @@ pub mod function_request {
     }
 }
 impl FunctionRequest {
-    /// Creates a new builder-style object to manufacture [`FunctionRequest`](crate::model::FunctionRequest)
+    /// Creates a new builder-style object to manufacture [`FunctionRequest`](crate::model::FunctionRequest).
     pub fn builder() -> crate::model::function_request::Builder {
         crate::model::function_request::Builder::default()
     }
@@ -1519,11 +1510,10 @@ impl std::fmt::Debug for DataConnector {
         formatter.finish()
     }
 }
-/// See [`DataConnector`](crate::model::DataConnector)
+/// See [`DataConnector`](crate::model::DataConnector).
 pub mod data_connector {
 
-    /// A builder for [`DataConnector`](crate::model::DataConnector)
-    #[non_exhaustive]
+    /// A builder for [`DataConnector`](crate::model::DataConnector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda: std::option::Option<crate::model::LambdaFunction>,
@@ -1553,7 +1543,7 @@ pub mod data_connector {
             self.is_native = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataConnector`](crate::model::DataConnector)
+        /// Consumes the builder and constructs a [`DataConnector`](crate::model::DataConnector).
         pub fn build(self) -> crate::model::DataConnector {
             crate::model::DataConnector {
                 lambda: self.lambda,
@@ -1563,7 +1553,7 @@ pub mod data_connector {
     }
 }
 impl DataConnector {
-    /// Creates a new builder-style object to manufacture [`DataConnector`](crate::model::DataConnector)
+    /// Creates a new builder-style object to manufacture [`DataConnector`](crate::model::DataConnector).
     pub fn builder() -> crate::model::data_connector::Builder {
         crate::model::data_connector::Builder::default()
     }
@@ -1589,11 +1579,10 @@ impl std::fmt::Debug for LambdaFunction {
         formatter.finish()
     }
 }
-/// See [`LambdaFunction`](crate::model::LambdaFunction)
+/// See [`LambdaFunction`](crate::model::LambdaFunction).
 pub mod lambda_function {
 
-    /// A builder for [`LambdaFunction`](crate::model::LambdaFunction)
-    #[non_exhaustive]
+    /// A builder for [`LambdaFunction`](crate::model::LambdaFunction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1609,14 +1598,14 @@ pub mod lambda_function {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaFunction`](crate::model::LambdaFunction)
+        /// Consumes the builder and constructs a [`LambdaFunction`](crate::model::LambdaFunction).
         pub fn build(self) -> crate::model::LambdaFunction {
             crate::model::LambdaFunction { arn: self.arn }
         }
     }
 }
 impl LambdaFunction {
-    /// Creates a new builder-style object to manufacture [`LambdaFunction`](crate::model::LambdaFunction)
+    /// Creates a new builder-style object to manufacture [`LambdaFunction`](crate::model::LambdaFunction).
     pub fn builder() -> crate::model::lambda_function::Builder {
         crate::model::lambda_function::Builder::default()
     }
@@ -1725,11 +1714,10 @@ impl std::fmt::Debug for WorkspaceSummary {
         formatter.finish()
     }
 }
-/// See [`WorkspaceSummary`](crate::model::WorkspaceSummary)
+/// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
 pub mod workspace_summary {
 
-    /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary)
-    #[non_exhaustive]
+    /// A builder for [`WorkspaceSummary`](crate::model::WorkspaceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
@@ -1795,7 +1783,7 @@ pub mod workspace_summary {
             self.update_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary)
+        /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::model::WorkspaceSummary).
         pub fn build(self) -> crate::model::WorkspaceSummary {
             crate::model::WorkspaceSummary {
                 workspace_id: self.workspace_id,
@@ -1808,7 +1796,7 @@ pub mod workspace_summary {
     }
 }
 impl WorkspaceSummary {
-    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary)
+    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
     pub fn builder() -> crate::model::workspace_summary::Builder {
         crate::model::workspace_summary::Builder::default()
     }
@@ -1869,11 +1857,10 @@ impl std::fmt::Debug for SceneSummary {
         formatter.finish()
     }
 }
-/// See [`SceneSummary`](crate::model::SceneSummary)
+/// See [`SceneSummary`](crate::model::SceneSummary).
 pub mod scene_summary {
 
-    /// A builder for [`SceneSummary`](crate::model::SceneSummary)
-    #[non_exhaustive]
+    /// A builder for [`SceneSummary`](crate::model::SceneSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scene_id: std::option::Option<std::string::String>,
@@ -1953,7 +1940,7 @@ pub mod scene_summary {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`SceneSummary`](crate::model::SceneSummary)
+        /// Consumes the builder and constructs a [`SceneSummary`](crate::model::SceneSummary).
         pub fn build(self) -> crate::model::SceneSummary {
             crate::model::SceneSummary {
                 scene_id: self.scene_id,
@@ -1967,7 +1954,7 @@ pub mod scene_summary {
     }
 }
 impl SceneSummary {
-    /// Creates a new builder-style object to manufacture [`SceneSummary`](crate::model::SceneSummary)
+    /// Creates a new builder-style object to manufacture [`SceneSummary`](crate::model::SceneSummary).
     pub fn builder() -> crate::model::scene_summary::Builder {
         crate::model::scene_summary::Builder::default()
     }
@@ -2049,11 +2036,10 @@ impl std::fmt::Debug for EntitySummary {
         formatter.finish()
     }
 }
-/// See [`EntitySummary`](crate::model::EntitySummary)
+/// See [`EntitySummary`](crate::model::EntitySummary).
 pub mod entity_summary {
 
-    /// A builder for [`EntitySummary`](crate::model::EntitySummary)
-    #[non_exhaustive]
+    /// A builder for [`EntitySummary`](crate::model::EntitySummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_id: std::option::Option<std::string::String>,
@@ -2166,7 +2152,7 @@ pub mod entity_summary {
             self.update_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntitySummary`](crate::model::EntitySummary)
+        /// Consumes the builder and constructs a [`EntitySummary`](crate::model::EntitySummary).
         pub fn build(self) -> crate::model::EntitySummary {
             crate::model::EntitySummary {
                 entity_id: self.entity_id,
@@ -2183,7 +2169,7 @@ pub mod entity_summary {
     }
 }
 impl EntitySummary {
-    /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::model::EntitySummary)
+    /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::model::EntitySummary).
     pub fn builder() -> crate::model::entity_summary::Builder {
         crate::model::entity_summary::Builder::default()
     }
@@ -2216,11 +2202,10 @@ impl std::fmt::Debug for Status {
         formatter.finish()
     }
 }
-/// See [`Status`](crate::model::Status)
+/// See [`Status`](crate::model::Status).
 pub mod status {
 
-    /// A builder for [`Status`](crate::model::Status)
-    #[non_exhaustive]
+    /// A builder for [`Status`](crate::model::Status).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) state: std::option::Option<crate::model::State>,
@@ -2247,7 +2232,7 @@ pub mod status {
             self.error = input;
             self
         }
-        /// Consumes the builder and constructs a [`Status`](crate::model::Status)
+        /// Consumes the builder and constructs a [`Status`](crate::model::Status).
         pub fn build(self) -> crate::model::Status {
             crate::model::Status {
                 state: self.state,
@@ -2257,7 +2242,7 @@ pub mod status {
     }
 }
 impl Status {
-    /// Creates a new builder-style object to manufacture [`Status`](crate::model::Status)
+    /// Creates a new builder-style object to manufacture [`Status`](crate::model::Status).
     pub fn builder() -> crate::model::status::Builder {
         crate::model::status::Builder::default()
     }
@@ -2290,11 +2275,10 @@ impl std::fmt::Debug for ErrorDetails {
         formatter.finish()
     }
 }
-/// See [`ErrorDetails`](crate::model::ErrorDetails)
+/// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
 
-    /// A builder for [`ErrorDetails`](crate::model::ErrorDetails)
-    #[non_exhaustive]
+    /// A builder for [`ErrorDetails`](crate::model::ErrorDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) code: std::option::Option<crate::model::ErrorCode>,
@@ -2321,7 +2305,7 @@ pub mod error_details {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails)
+        /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails).
         pub fn build(self) -> crate::model::ErrorDetails {
             crate::model::ErrorDetails {
                 code: self.code,
@@ -2331,7 +2315,7 @@ pub mod error_details {
     }
 }
 impl ErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails)
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
     pub fn builder() -> crate::model::error_details::Builder {
         crate::model::error_details::Builder::default()
     }
@@ -2513,11 +2497,10 @@ impl std::fmt::Debug for ComponentTypeSummary {
         formatter.finish()
     }
 }
-/// See [`ComponentTypeSummary`](crate::model::ComponentTypeSummary)
+/// See [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
 pub mod component_type_summary {
 
-    /// A builder for [`ComponentTypeSummary`](crate::model::ComponentTypeSummary)
-    #[non_exhaustive]
+    /// A builder for [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2597,7 +2580,7 @@ pub mod component_type_summary {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComponentTypeSummary`](crate::model::ComponentTypeSummary)
+        /// Consumes the builder and constructs a [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
         pub fn build(self) -> crate::model::ComponentTypeSummary {
             crate::model::ComponentTypeSummary {
                 arn: self.arn,
@@ -2611,7 +2594,7 @@ pub mod component_type_summary {
     }
 }
 impl ComponentTypeSummary {
-    /// Creates a new builder-style object to manufacture [`ComponentTypeSummary`](crate::model::ComponentTypeSummary)
+    /// Creates a new builder-style object to manufacture [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
     pub fn builder() -> crate::model::component_type_summary::Builder {
         crate::model::component_type_summary::Builder::default()
     }
@@ -2714,11 +2697,10 @@ impl std::fmt::Debug for PropertyValueHistory {
         formatter.finish()
     }
 }
-/// See [`PropertyValueHistory`](crate::model::PropertyValueHistory)
+/// See [`PropertyValueHistory`](crate::model::PropertyValueHistory).
 pub mod property_value_history {
 
-    /// A builder for [`PropertyValueHistory`](crate::model::PropertyValueHistory)
-    #[non_exhaustive]
+    /// A builder for [`PropertyValueHistory`](crate::model::PropertyValueHistory).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_property_reference:
@@ -2761,7 +2743,7 @@ pub mod property_value_history {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyValueHistory`](crate::model::PropertyValueHistory)
+        /// Consumes the builder and constructs a [`PropertyValueHistory`](crate::model::PropertyValueHistory).
         pub fn build(self) -> crate::model::PropertyValueHistory {
             crate::model::PropertyValueHistory {
                 entity_property_reference: self.entity_property_reference,
@@ -2771,7 +2753,7 @@ pub mod property_value_history {
     }
 }
 impl PropertyValueHistory {
-    /// Creates a new builder-style object to manufacture [`PropertyValueHistory`](crate::model::PropertyValueHistory)
+    /// Creates a new builder-style object to manufacture [`PropertyValueHistory`](crate::model::PropertyValueHistory).
     pub fn builder() -> crate::model::property_value_history::Builder {
         crate::model::property_value_history::Builder::default()
     }
@@ -2837,11 +2819,10 @@ impl std::fmt::Debug for PropertyValue {
         formatter.finish()
     }
 }
-/// See [`PropertyValue`](crate::model::PropertyValue)
+/// See [`PropertyValue`](crate::model::PropertyValue).
 pub mod property_value {
 
-    /// A builder for [`PropertyValue`](crate::model::PropertyValue)
-    #[non_exhaustive]
+    /// A builder for [`PropertyValue`](crate::model::PropertyValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2908,7 +2889,7 @@ pub mod property_value {
             self.time = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyValue`](crate::model::PropertyValue)
+        /// Consumes the builder and constructs a [`PropertyValue`](crate::model::PropertyValue).
         pub fn build(self) -> crate::model::PropertyValue {
             crate::model::PropertyValue {
                 timestamp: self.timestamp,
@@ -2919,7 +2900,7 @@ pub mod property_value {
     }
 }
 impl PropertyValue {
-    /// Creates a new builder-style object to manufacture [`PropertyValue`](crate::model::PropertyValue)
+    /// Creates a new builder-style object to manufacture [`PropertyValue`](crate::model::PropertyValue).
     pub fn builder() -> crate::model::property_value::Builder {
         crate::model::property_value::Builder::default()
     }
@@ -2970,11 +2951,10 @@ impl std::fmt::Debug for EntityPropertyReference {
         formatter.finish()
     }
 }
-/// See [`EntityPropertyReference`](crate::model::EntityPropertyReference)
+/// See [`EntityPropertyReference`](crate::model::EntityPropertyReference).
 pub mod entity_property_reference {
 
-    /// A builder for [`EntityPropertyReference`](crate::model::EntityPropertyReference)
-    #[non_exhaustive]
+    /// A builder for [`EntityPropertyReference`](crate::model::EntityPropertyReference).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -3046,7 +3026,7 @@ pub mod entity_property_reference {
             self.property_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`EntityPropertyReference`](crate::model::EntityPropertyReference)
+        /// Consumes the builder and constructs a [`EntityPropertyReference`](crate::model::EntityPropertyReference).
         pub fn build(self) -> crate::model::EntityPropertyReference {
             crate::model::EntityPropertyReference {
                 component_name: self.component_name,
@@ -3058,7 +3038,7 @@ pub mod entity_property_reference {
     }
 }
 impl EntityPropertyReference {
-    /// Creates a new builder-style object to manufacture [`EntityPropertyReference`](crate::model::EntityPropertyReference)
+    /// Creates a new builder-style object to manufacture [`EntityPropertyReference`](crate::model::EntityPropertyReference).
     pub fn builder() -> crate::model::entity_property_reference::Builder {
         crate::model::entity_property_reference::Builder::default()
     }
@@ -3146,11 +3126,10 @@ impl std::fmt::Debug for InterpolationParameters {
         formatter.finish()
     }
 }
-/// See [`InterpolationParameters`](crate::model::InterpolationParameters)
+/// See [`InterpolationParameters`](crate::model::InterpolationParameters).
 pub mod interpolation_parameters {
 
-    /// A builder for [`InterpolationParameters`](crate::model::InterpolationParameters)
-    #[non_exhaustive]
+    /// A builder for [`InterpolationParameters`](crate::model::InterpolationParameters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interpolation_type: std::option::Option<crate::model::InterpolationType>,
@@ -3180,7 +3159,7 @@ pub mod interpolation_parameters {
             self.interval_in_seconds = input;
             self
         }
-        /// Consumes the builder and constructs a [`InterpolationParameters`](crate::model::InterpolationParameters)
+        /// Consumes the builder and constructs a [`InterpolationParameters`](crate::model::InterpolationParameters).
         pub fn build(self) -> crate::model::InterpolationParameters {
             crate::model::InterpolationParameters {
                 interpolation_type: self.interpolation_type,
@@ -3190,7 +3169,7 @@ pub mod interpolation_parameters {
     }
 }
 impl InterpolationParameters {
-    /// Creates a new builder-style object to manufacture [`InterpolationParameters`](crate::model::InterpolationParameters)
+    /// Creates a new builder-style object to manufacture [`InterpolationParameters`](crate::model::InterpolationParameters).
     pub fn builder() -> crate::model::interpolation_parameters::Builder {
         crate::model::interpolation_parameters::Builder::default()
     }
@@ -3281,11 +3260,10 @@ impl std::fmt::Debug for PropertyFilter {
         formatter.finish()
     }
 }
-/// See [`PropertyFilter`](crate::model::PropertyFilter)
+/// See [`PropertyFilter`](crate::model::PropertyFilter).
 pub mod property_filter {
 
-    /// A builder for [`PropertyFilter`](crate::model::PropertyFilter)
-    #[non_exhaustive]
+    /// A builder for [`PropertyFilter`](crate::model::PropertyFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property_name: std::option::Option<std::string::String>,
@@ -3326,7 +3304,7 @@ pub mod property_filter {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyFilter`](crate::model::PropertyFilter)
+        /// Consumes the builder and constructs a [`PropertyFilter`](crate::model::PropertyFilter).
         pub fn build(self) -> crate::model::PropertyFilter {
             crate::model::PropertyFilter {
                 property_name: self.property_name,
@@ -3337,7 +3315,7 @@ pub mod property_filter {
     }
 }
 impl PropertyFilter {
-    /// Creates a new builder-style object to manufacture [`PropertyFilter`](crate::model::PropertyFilter)
+    /// Creates a new builder-style object to manufacture [`PropertyFilter`](crate::model::PropertyFilter).
     pub fn builder() -> crate::model::property_filter::Builder {
         crate::model::property_filter::Builder::default()
     }
@@ -3372,11 +3350,10 @@ impl std::fmt::Debug for PropertyLatestValue {
         formatter.finish()
     }
 }
-/// See [`PropertyLatestValue`](crate::model::PropertyLatestValue)
+/// See [`PropertyLatestValue`](crate::model::PropertyLatestValue).
 pub mod property_latest_value {
 
-    /// A builder for [`PropertyLatestValue`](crate::model::PropertyLatestValue)
-    #[non_exhaustive]
+    /// A builder for [`PropertyLatestValue`](crate::model::PropertyLatestValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) property_reference: std::option::Option<crate::model::EntityPropertyReference>,
@@ -3409,7 +3386,7 @@ pub mod property_latest_value {
             self.property_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyLatestValue`](crate::model::PropertyLatestValue)
+        /// Consumes the builder and constructs a [`PropertyLatestValue`](crate::model::PropertyLatestValue).
         pub fn build(self) -> crate::model::PropertyLatestValue {
             crate::model::PropertyLatestValue {
                 property_reference: self.property_reference,
@@ -3419,7 +3396,7 @@ pub mod property_latest_value {
     }
 }
 impl PropertyLatestValue {
-    /// Creates a new builder-style object to manufacture [`PropertyLatestValue`](crate::model::PropertyLatestValue)
+    /// Creates a new builder-style object to manufacture [`PropertyLatestValue`](crate::model::PropertyLatestValue).
     pub fn builder() -> crate::model::property_latest_value::Builder {
         crate::model::property_latest_value::Builder::default()
     }
@@ -3486,11 +3463,10 @@ impl std::fmt::Debug for ComponentResponse {
         formatter.finish()
     }
 }
-/// See [`ComponentResponse`](crate::model::ComponentResponse)
+/// See [`ComponentResponse`](crate::model::ComponentResponse).
 pub mod component_response {
 
-    /// A builder for [`ComponentResponse`](crate::model::ComponentResponse)
-    #[non_exhaustive]
+    /// A builder for [`ComponentResponse`](crate::model::ComponentResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_name: std::option::Option<std::string::String>,
@@ -3584,7 +3560,7 @@ pub mod component_response {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComponentResponse`](crate::model::ComponentResponse)
+        /// Consumes the builder and constructs a [`ComponentResponse`](crate::model::ComponentResponse).
         pub fn build(self) -> crate::model::ComponentResponse {
             crate::model::ComponentResponse {
                 component_name: self.component_name,
@@ -3598,7 +3574,7 @@ pub mod component_response {
     }
 }
 impl ComponentResponse {
-    /// Creates a new builder-style object to manufacture [`ComponentResponse`](crate::model::ComponentResponse)
+    /// Creates a new builder-style object to manufacture [`ComponentResponse`](crate::model::ComponentResponse).
     pub fn builder() -> crate::model::component_response::Builder {
         crate::model::component_response::Builder::default()
     }
@@ -3631,11 +3607,10 @@ impl std::fmt::Debug for PropertyResponse {
         formatter.finish()
     }
 }
-/// See [`PropertyResponse`](crate::model::PropertyResponse)
+/// See [`PropertyResponse`](crate::model::PropertyResponse).
 pub mod property_response {
 
-    /// A builder for [`PropertyResponse`](crate::model::PropertyResponse)
-    #[non_exhaustive]
+    /// A builder for [`PropertyResponse`](crate::model::PropertyResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) definition: std::option::Option<crate::model::PropertyDefinitionResponse>,
@@ -3665,7 +3640,7 @@ pub mod property_response {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyResponse`](crate::model::PropertyResponse)
+        /// Consumes the builder and constructs a [`PropertyResponse`](crate::model::PropertyResponse).
         pub fn build(self) -> crate::model::PropertyResponse {
             crate::model::PropertyResponse {
                 definition: self.definition,
@@ -3675,7 +3650,7 @@ pub mod property_response {
     }
 }
 impl PropertyResponse {
-    /// Creates a new builder-style object to manufacture [`PropertyResponse`](crate::model::PropertyResponse)
+    /// Creates a new builder-style object to manufacture [`PropertyResponse`](crate::model::PropertyResponse).
     pub fn builder() -> crate::model::property_response::Builder {
         crate::model::property_response::Builder::default()
     }
@@ -3768,11 +3743,10 @@ impl std::fmt::Debug for PropertyDefinitionResponse {
         formatter.finish()
     }
 }
-/// See [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse)
+/// See [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
 pub mod property_definition_response {
 
-    /// A builder for [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse)
-    #[non_exhaustive]
+    /// A builder for [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_type: std::option::Option<crate::model::DataType>,
@@ -3907,7 +3881,7 @@ pub mod property_definition_response {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse)
+        /// Consumes the builder and constructs a [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
         pub fn build(self) -> crate::model::PropertyDefinitionResponse {
             crate::model::PropertyDefinitionResponse {
                 data_type: self.data_type,
@@ -3925,7 +3899,7 @@ pub mod property_definition_response {
     }
 }
 impl PropertyDefinitionResponse {
-    /// Creates a new builder-style object to manufacture [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse)
+    /// Creates a new builder-style object to manufacture [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
     pub fn builder() -> crate::model::property_definition_response::Builder {
         crate::model::property_definition_response::Builder::default()
     }
@@ -3972,11 +3946,10 @@ impl std::fmt::Debug for FunctionResponse {
         formatter.finish()
     }
 }
-/// See [`FunctionResponse`](crate::model::FunctionResponse)
+/// See [`FunctionResponse`](crate::model::FunctionResponse).
 pub mod function_response {
 
-    /// A builder for [`FunctionResponse`](crate::model::FunctionResponse)
-    #[non_exhaustive]
+    /// A builder for [`FunctionResponse`](crate::model::FunctionResponse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4031,7 +4004,7 @@ pub mod function_response {
             self.is_inherited = input;
             self
         }
-        /// Consumes the builder and constructs a [`FunctionResponse`](crate::model::FunctionResponse)
+        /// Consumes the builder and constructs a [`FunctionResponse`](crate::model::FunctionResponse).
         pub fn build(self) -> crate::model::FunctionResponse {
             crate::model::FunctionResponse {
                 required_properties: self.required_properties,
@@ -4043,7 +4016,7 @@ pub mod function_response {
     }
 }
 impl FunctionResponse {
-    /// Creates a new builder-style object to manufacture [`FunctionResponse`](crate::model::FunctionResponse)
+    /// Creates a new builder-style object to manufacture [`FunctionResponse`](crate::model::FunctionResponse).
     pub fn builder() -> crate::model::function_response::Builder {
         crate::model::function_response::Builder::default()
     }
@@ -4089,11 +4062,10 @@ impl std::fmt::Debug for ComponentRequest {
         formatter.finish()
     }
 }
-/// See [`ComponentRequest`](crate::model::ComponentRequest)
+/// See [`ComponentRequest`](crate::model::ComponentRequest).
 pub mod component_request {
 
-    /// A builder for [`ComponentRequest`](crate::model::ComponentRequest)
-    #[non_exhaustive]
+    /// A builder for [`ComponentRequest`](crate::model::ComponentRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -4151,7 +4123,7 @@ pub mod component_request {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComponentRequest`](crate::model::ComponentRequest)
+        /// Consumes the builder and constructs a [`ComponentRequest`](crate::model::ComponentRequest).
         pub fn build(self) -> crate::model::ComponentRequest {
             crate::model::ComponentRequest {
                 description: self.description,
@@ -4162,7 +4134,7 @@ pub mod component_request {
     }
 }
 impl ComponentRequest {
-    /// Creates a new builder-style object to manufacture [`ComponentRequest`](crate::model::ComponentRequest)
+    /// Creates a new builder-style object to manufacture [`ComponentRequest`](crate::model::ComponentRequest).
     pub fn builder() -> crate::model::component_request::Builder {
         crate::model::component_request::Builder::default()
     }
@@ -4188,11 +4160,10 @@ impl std::fmt::Debug for BatchPutPropertyErrorEntry {
         formatter.finish()
     }
 }
-/// See [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry)
+/// See [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
 pub mod batch_put_property_error_entry {
 
-    /// A builder for [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry)
-    #[non_exhaustive]
+    /// A builder for [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchPutPropertyError>>,
@@ -4217,7 +4188,7 @@ pub mod batch_put_property_error_entry {
             self.errors = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry)
+        /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
         pub fn build(self) -> crate::model::BatchPutPropertyErrorEntry {
             crate::model::BatchPutPropertyErrorEntry {
                 errors: self.errors,
@@ -4226,7 +4197,7 @@ pub mod batch_put_property_error_entry {
     }
 }
 impl BatchPutPropertyErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry)
+    /// Creates a new builder-style object to manufacture [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
     pub fn builder() -> crate::model::batch_put_property_error_entry::Builder {
         crate::model::batch_put_property_error_entry::Builder::default()
     }
@@ -4266,11 +4237,10 @@ impl std::fmt::Debug for BatchPutPropertyError {
         formatter.finish()
     }
 }
-/// See [`BatchPutPropertyError`](crate::model::BatchPutPropertyError)
+/// See [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
 pub mod batch_put_property_error {
 
-    /// A builder for [`BatchPutPropertyError`](crate::model::BatchPutPropertyError)
-    #[non_exhaustive]
+    /// A builder for [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<std::string::String>,
@@ -4314,7 +4284,7 @@ pub mod batch_put_property_error {
             self.entry = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchPutPropertyError`](crate::model::BatchPutPropertyError)
+        /// Consumes the builder and constructs a [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
         pub fn build(self) -> crate::model::BatchPutPropertyError {
             crate::model::BatchPutPropertyError {
                 error_code: self.error_code,
@@ -4325,7 +4295,7 @@ pub mod batch_put_property_error {
     }
 }
 impl BatchPutPropertyError {
-    /// Creates a new builder-style object to manufacture [`BatchPutPropertyError`](crate::model::BatchPutPropertyError)
+    /// Creates a new builder-style object to manufacture [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
     pub fn builder() -> crate::model::batch_put_property_error::Builder {
         crate::model::batch_put_property_error::Builder::default()
     }
@@ -4360,11 +4330,10 @@ impl std::fmt::Debug for PropertyValueEntry {
         formatter.finish()
     }
 }
-/// See [`PropertyValueEntry`](crate::model::PropertyValueEntry)
+/// See [`PropertyValueEntry`](crate::model::PropertyValueEntry).
 pub mod property_value_entry {
 
-    /// A builder for [`PropertyValueEntry`](crate::model::PropertyValueEntry)
-    #[non_exhaustive]
+    /// A builder for [`PropertyValueEntry`](crate::model::PropertyValueEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_property_reference:
@@ -4407,7 +4376,7 @@ pub mod property_value_entry {
             self.property_values = input;
             self
         }
-        /// Consumes the builder and constructs a [`PropertyValueEntry`](crate::model::PropertyValueEntry)
+        /// Consumes the builder and constructs a [`PropertyValueEntry`](crate::model::PropertyValueEntry).
         pub fn build(self) -> crate::model::PropertyValueEntry {
             crate::model::PropertyValueEntry {
                 entity_property_reference: self.entity_property_reference,
@@ -4417,7 +4386,7 @@ pub mod property_value_entry {
     }
 }
 impl PropertyValueEntry {
-    /// Creates a new builder-style object to manufacture [`PropertyValueEntry`](crate::model::PropertyValueEntry)
+    /// Creates a new builder-style object to manufacture [`PropertyValueEntry`](crate::model::PropertyValueEntry).
     pub fn builder() -> crate::model::property_value_entry::Builder {
         crate::model::property_value_entry::Builder::default()
     }

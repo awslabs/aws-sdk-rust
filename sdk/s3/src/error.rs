@@ -7767,11 +7767,10 @@ impl std::fmt::Display for ObjectAlreadyInActiveTierError {
     }
 }
 impl std::error::Error for ObjectAlreadyInActiveTierError {}
-/// See [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
+/// See [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
 pub mod object_already_in_active_tier_error {
 
-    /// A builder for [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
-    #[non_exhaustive]
+    /// A builder for [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7787,7 +7786,7 @@ pub mod object_already_in_active_tier_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
+        /// Consumes the builder and constructs a [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
         pub fn build(self) -> crate::error::ObjectAlreadyInActiveTierError {
             crate::error::ObjectAlreadyInActiveTierError {
                 message: self.message,
@@ -7796,7 +7795,7 @@ pub mod object_already_in_active_tier_error {
     }
 }
 impl ObjectAlreadyInActiveTierError {
-    /// Creates a new builder-style object to manufacture [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError)
+    /// Creates a new builder-style object to manufacture [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
     pub fn builder() -> crate::error::object_already_in_active_tier_error::Builder {
         crate::error::object_already_in_active_tier_error::Builder::default()
     }
@@ -7832,11 +7831,10 @@ impl std::fmt::Display for NoSuchKey {
     }
 }
 impl std::error::Error for NoSuchKey {}
-/// See [`NoSuchKey`](crate::error::NoSuchKey)
+/// See [`NoSuchKey`](crate::error::NoSuchKey).
 pub mod no_such_key {
 
-    /// A builder for [`NoSuchKey`](crate::error::NoSuchKey)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchKey`](crate::error::NoSuchKey).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7852,7 +7850,7 @@ pub mod no_such_key {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchKey`](crate::error::NoSuchKey)
+        /// Consumes the builder and constructs a [`NoSuchKey`](crate::error::NoSuchKey).
         pub fn build(self) -> crate::error::NoSuchKey {
             crate::error::NoSuchKey {
                 message: self.message,
@@ -7861,7 +7859,7 @@ pub mod no_such_key {
     }
 }
 impl NoSuchKey {
-    /// Creates a new builder-style object to manufacture [`NoSuchKey`](crate::error::NoSuchKey)
+    /// Creates a new builder-style object to manufacture [`NoSuchKey`](crate::error::NoSuchKey).
     pub fn builder() -> crate::error::no_such_key::Builder {
         crate::error::no_such_key::Builder::default()
     }
@@ -7897,11 +7895,10 @@ impl std::fmt::Display for NoSuchBucket {
     }
 }
 impl std::error::Error for NoSuchBucket {}
-/// See [`NoSuchBucket`](crate::error::NoSuchBucket)
+/// See [`NoSuchBucket`](crate::error::NoSuchBucket).
 pub mod no_such_bucket {
 
-    /// A builder for [`NoSuchBucket`](crate::error::NoSuchBucket)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchBucket`](crate::error::NoSuchBucket).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7917,7 +7914,7 @@ pub mod no_such_bucket {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchBucket`](crate::error::NoSuchBucket)
+        /// Consumes the builder and constructs a [`NoSuchBucket`](crate::error::NoSuchBucket).
         pub fn build(self) -> crate::error::NoSuchBucket {
             crate::error::NoSuchBucket {
                 message: self.message,
@@ -7926,7 +7923,7 @@ pub mod no_such_bucket {
     }
 }
 impl NoSuchBucket {
-    /// Creates a new builder-style object to manufacture [`NoSuchBucket`](crate::error::NoSuchBucket)
+    /// Creates a new builder-style object to manufacture [`NoSuchBucket`](crate::error::NoSuchBucket).
     pub fn builder() -> crate::error::no_such_bucket::Builder {
         crate::error::no_such_bucket::Builder::default()
     }
@@ -7962,11 +7959,10 @@ impl std::fmt::Display for NotFound {
     }
 }
 impl std::error::Error for NotFound {}
-/// See [`NotFound`](crate::error::NotFound)
+/// See [`NotFound`](crate::error::NotFound).
 pub mod not_found {
 
-    /// A builder for [`NotFound`](crate::error::NotFound)
-    #[non_exhaustive]
+    /// A builder for [`NotFound`](crate::error::NotFound).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -7982,7 +7978,7 @@ pub mod not_found {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotFound`](crate::error::NotFound)
+        /// Consumes the builder and constructs a [`NotFound`](crate::error::NotFound).
         pub fn build(self) -> crate::error::NotFound {
             crate::error::NotFound {
                 message: self.message,
@@ -7991,7 +7987,7 @@ pub mod not_found {
     }
 }
 impl NotFound {
-    /// Creates a new builder-style object to manufacture [`NotFound`](crate::error::NotFound)
+    /// Creates a new builder-style object to manufacture [`NotFound`](crate::error::NotFound).
     pub fn builder() -> crate::error::not_found::Builder {
         crate::error::not_found::Builder::default()
     }
@@ -8043,11 +8039,10 @@ impl std::fmt::Display for InvalidObjectState {
     }
 }
 impl std::error::Error for InvalidObjectState {}
-/// See [`InvalidObjectState`](crate::error::InvalidObjectState)
+/// See [`InvalidObjectState`](crate::error::InvalidObjectState).
 pub mod invalid_object_state {
 
-    /// A builder for [`InvalidObjectState`](crate::error::InvalidObjectState)
-    #[non_exhaustive]
+    /// A builder for [`InvalidObjectState`](crate::error::InvalidObjectState).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
@@ -8091,7 +8086,7 @@ pub mod invalid_object_state {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidObjectState`](crate::error::InvalidObjectState)
+        /// Consumes the builder and constructs a [`InvalidObjectState`](crate::error::InvalidObjectState).
         pub fn build(self) -> crate::error::InvalidObjectState {
             crate::error::InvalidObjectState {
                 storage_class: self.storage_class,
@@ -8102,7 +8097,7 @@ pub mod invalid_object_state {
     }
 }
 impl InvalidObjectState {
-    /// Creates a new builder-style object to manufacture [`InvalidObjectState`](crate::error::InvalidObjectState)
+    /// Creates a new builder-style object to manufacture [`InvalidObjectState`](crate::error::InvalidObjectState).
     pub fn builder() -> crate::error::invalid_object_state::Builder {
         crate::error::invalid_object_state::Builder::default()
     }
@@ -8138,11 +8133,10 @@ impl std::fmt::Display for BucketAlreadyOwnedByYou {
     }
 }
 impl std::error::Error for BucketAlreadyOwnedByYou {}
-/// See [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
+/// See [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
 pub mod bucket_already_owned_by_you {
 
-    /// A builder for [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
-    #[non_exhaustive]
+    /// A builder for [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8158,7 +8152,7 @@ pub mod bucket_already_owned_by_you {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
+        /// Consumes the builder and constructs a [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
         pub fn build(self) -> crate::error::BucketAlreadyOwnedByYou {
             crate::error::BucketAlreadyOwnedByYou {
                 message: self.message,
@@ -8167,7 +8161,7 @@ pub mod bucket_already_owned_by_you {
     }
 }
 impl BucketAlreadyOwnedByYou {
-    /// Creates a new builder-style object to manufacture [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou)
+    /// Creates a new builder-style object to manufacture [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
     pub fn builder() -> crate::error::bucket_already_owned_by_you::Builder {
         crate::error::bucket_already_owned_by_you::Builder::default()
     }
@@ -8203,11 +8197,10 @@ impl std::fmt::Display for BucketAlreadyExists {
     }
 }
 impl std::error::Error for BucketAlreadyExists {}
-/// See [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
+/// See [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
 pub mod bucket_already_exists {
 
-    /// A builder for [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
-    #[non_exhaustive]
+    /// A builder for [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8223,7 +8216,7 @@ pub mod bucket_already_exists {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
+        /// Consumes the builder and constructs a [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
         pub fn build(self) -> crate::error::BucketAlreadyExists {
             crate::error::BucketAlreadyExists {
                 message: self.message,
@@ -8232,7 +8225,7 @@ pub mod bucket_already_exists {
     }
 }
 impl BucketAlreadyExists {
-    /// Creates a new builder-style object to manufacture [`BucketAlreadyExists`](crate::error::BucketAlreadyExists)
+    /// Creates a new builder-style object to manufacture [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
     pub fn builder() -> crate::error::bucket_already_exists::Builder {
         crate::error::bucket_already_exists::Builder::default()
     }
@@ -8268,11 +8261,10 @@ impl std::fmt::Display for ObjectNotInActiveTierError {
     }
 }
 impl std::error::Error for ObjectNotInActiveTierError {}
-/// See [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
+/// See [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
 pub mod object_not_in_active_tier_error {
 
-    /// A builder for [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
-    #[non_exhaustive]
+    /// A builder for [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8288,7 +8280,7 @@ pub mod object_not_in_active_tier_error {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
+        /// Consumes the builder and constructs a [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
         pub fn build(self) -> crate::error::ObjectNotInActiveTierError {
             crate::error::ObjectNotInActiveTierError {
                 message: self.message,
@@ -8297,7 +8289,7 @@ pub mod object_not_in_active_tier_error {
     }
 }
 impl ObjectNotInActiveTierError {
-    /// Creates a new builder-style object to manufacture [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError)
+    /// Creates a new builder-style object to manufacture [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
     pub fn builder() -> crate::error::object_not_in_active_tier_error::Builder {
         crate::error::object_not_in_active_tier_error::Builder::default()
     }
@@ -8333,11 +8325,10 @@ impl std::fmt::Display for NoSuchUpload {
     }
 }
 impl std::error::Error for NoSuchUpload {}
-/// See [`NoSuchUpload`](crate::error::NoSuchUpload)
+/// See [`NoSuchUpload`](crate::error::NoSuchUpload).
 pub mod no_such_upload {
 
-    /// A builder for [`NoSuchUpload`](crate::error::NoSuchUpload)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchUpload`](crate::error::NoSuchUpload).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -8353,7 +8344,7 @@ pub mod no_such_upload {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchUpload`](crate::error::NoSuchUpload)
+        /// Consumes the builder and constructs a [`NoSuchUpload`](crate::error::NoSuchUpload).
         pub fn build(self) -> crate::error::NoSuchUpload {
             crate::error::NoSuchUpload {
                 message: self.message,
@@ -8362,7 +8353,7 @@ pub mod no_such_upload {
     }
 }
 impl NoSuchUpload {
-    /// Creates a new builder-style object to manufacture [`NoSuchUpload`](crate::error::NoSuchUpload)
+    /// Creates a new builder-style object to manufacture [`NoSuchUpload`](crate::error::NoSuchUpload).
     pub fn builder() -> crate::error::no_such_upload::Builder {
         crate::error::no_such_upload::Builder::default()
     }

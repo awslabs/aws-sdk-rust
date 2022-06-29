@@ -10,7 +10,7 @@ pub struct CountClosedWorkflowExecutions {
     _private: (),
 }
 impl CountClosedWorkflowExecutions {
-    /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput).
     pub fn builder() -> crate::input::count_closed_workflow_executions_input::Builder {
         crate::input::count_closed_workflow_executions_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CountOpenWorkflowExecutions {
     _private: (),
 }
 impl CountOpenWorkflowExecutions {
-    /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput).
     pub fn builder() -> crate::input::count_open_workflow_executions_input::Builder {
         crate::input::count_open_workflow_executions_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CountPendingActivityTasks {
     _private: (),
 }
 impl CountPendingActivityTasks {
-    /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput)
+    /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput).
     pub fn builder() -> crate::input::count_pending_activity_tasks_input::Builder {
         crate::input::count_pending_activity_tasks_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CountPendingDecisionTasks {
     _private: (),
 }
 impl CountPendingDecisionTasks {
-    /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput)
+    /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput).
     pub fn builder() -> crate::input::count_pending_decision_tasks_input::Builder {
         crate::input::count_pending_decision_tasks_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeprecateActivityType {
     _private: (),
 }
 impl DeprecateActivityType {
-    /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput).
     pub fn builder() -> crate::input::deprecate_activity_type_input::Builder {
         crate::input::deprecate_activity_type_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeprecateDomain {
     _private: (),
 }
 impl DeprecateDomain {
-    /// Creates a new builder-style object to manufacture [`DeprecateDomainInput`](crate::input::DeprecateDomainInput)
+    /// Creates a new builder-style object to manufacture [`DeprecateDomainInput`](crate::input::DeprecateDomainInput).
     pub fn builder() -> crate::input::deprecate_domain_input::Builder {
         crate::input::deprecate_domain_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeprecateWorkflowType {
     _private: (),
 }
 impl DeprecateWorkflowType {
-    /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput).
     pub fn builder() -> crate::input::deprecate_workflow_type_input::Builder {
         crate::input::deprecate_workflow_type_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DescribeActivityType {
     _private: (),
 }
 impl DescribeActivityType {
-    /// Creates a new builder-style object to manufacture [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput)
+    /// Creates a new builder-style object to manufacture [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput).
     pub fn builder() -> crate::input::describe_activity_type_input::Builder {
         crate::input::describe_activity_type_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DescribeDomain {
     _private: (),
 }
 impl DescribeDomain {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainInput`](crate::input::DescribeDomainInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainInput`](crate::input::DescribeDomainInput).
     pub fn builder() -> crate::input::describe_domain_input::Builder {
         crate::input::describe_domain_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct DescribeWorkflowExecution {
     _private: (),
 }
 impl DescribeWorkflowExecution {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput).
     pub fn builder() -> crate::input::describe_workflow_execution_input::Builder {
         crate::input::describe_workflow_execution_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct DescribeWorkflowType {
     _private: (),
 }
 impl DescribeWorkflowType {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput).
     pub fn builder() -> crate::input::describe_workflow_type_input::Builder {
         crate::input::describe_workflow_type_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct GetWorkflowExecutionHistory {
     _private: (),
 }
 impl GetWorkflowExecutionHistory {
-    /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput).
     pub fn builder() -> crate::input::get_workflow_execution_history_input::Builder {
         crate::input::get_workflow_execution_history_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct ListActivityTypes {
     _private: (),
 }
 impl ListActivityTypes {
-    /// Creates a new builder-style object to manufacture [`ListActivityTypesInput`](crate::input::ListActivityTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListActivityTypesInput`](crate::input::ListActivityTypesInput).
     pub fn builder() -> crate::input::list_activity_types_input::Builder {
         crate::input::list_activity_types_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct ListClosedWorkflowExecutions {
     _private: (),
 }
 impl ListClosedWorkflowExecutions {
-    /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput).
     pub fn builder() -> crate::input::list_closed_workflow_executions_input::Builder {
         crate::input::list_closed_workflow_executions_input::Builder::default()
     }
@@ -484,7 +484,7 @@ pub struct ListDomains {
     _private: (),
 }
 impl ListDomains {
-    /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainsInput`](crate::input::ListDomainsInput).
     pub fn builder() -> crate::input::list_domains_input::Builder {
         crate::input::list_domains_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct ListOpenWorkflowExecutions {
     _private: (),
 }
 impl ListOpenWorkflowExecutions {
-    /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput)
+    /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput).
     pub fn builder() -> crate::input::list_open_workflow_executions_input::Builder {
         crate::input::list_open_workflow_executions_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct ListWorkflowTypes {
     _private: (),
 }
 impl ListWorkflowTypes {
-    /// Creates a new builder-style object to manufacture [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput).
     pub fn builder() -> crate::input::list_workflow_types_input::Builder {
         crate::input::list_workflow_types_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct PollForActivityTask {
     _private: (),
 }
 impl PollForActivityTask {
-    /// Creates a new builder-style object to manufacture [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput)
+    /// Creates a new builder-style object to manufacture [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput).
     pub fn builder() -> crate::input::poll_for_activity_task_input::Builder {
         crate::input::poll_for_activity_task_input::Builder::default()
     }
@@ -652,7 +652,7 @@ pub struct PollForDecisionTask {
     _private: (),
 }
 impl PollForDecisionTask {
-    /// Creates a new builder-style object to manufacture [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput)
+    /// Creates a new builder-style object to manufacture [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput).
     pub fn builder() -> crate::input::poll_for_decision_task_input::Builder {
         crate::input::poll_for_decision_task_input::Builder::default()
     }
@@ -686,7 +686,7 @@ pub struct RecordActivityTaskHeartbeat {
     _private: (),
 }
 impl RecordActivityTaskHeartbeat {
-    /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput)
+    /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput).
     pub fn builder() -> crate::input::record_activity_task_heartbeat_input::Builder {
         crate::input::record_activity_task_heartbeat_input::Builder::default()
     }
@@ -720,7 +720,7 @@ pub struct RegisterActivityType {
     _private: (),
 }
 impl RegisterActivityType {
-    /// Creates a new builder-style object to manufacture [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput)
+    /// Creates a new builder-style object to manufacture [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput).
     pub fn builder() -> crate::input::register_activity_type_input::Builder {
         crate::input::register_activity_type_input::Builder::default()
     }
@@ -754,7 +754,7 @@ pub struct RegisterDomain {
     _private: (),
 }
 impl RegisterDomain {
-    /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::input::RegisterDomainInput)
+    /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::input::RegisterDomainInput).
     pub fn builder() -> crate::input::register_domain_input::Builder {
         crate::input::register_domain_input::Builder::default()
     }
@@ -786,7 +786,7 @@ pub struct RegisterWorkflowType {
     _private: (),
 }
 impl RegisterWorkflowType {
-    /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput)
+    /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput).
     pub fn builder() -> crate::input::register_workflow_type_input::Builder {
         crate::input::register_workflow_type_input::Builder::default()
     }
@@ -820,7 +820,7 @@ pub struct RequestCancelWorkflowExecution {
     _private: (),
 }
 impl RequestCancelWorkflowExecution {
-    /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput)
+    /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput).
     pub fn builder() -> crate::input::request_cancel_workflow_execution_input::Builder {
         crate::input::request_cancel_workflow_execution_input::Builder::default()
     }
@@ -854,7 +854,7 @@ pub struct RespondActivityTaskCanceled {
     _private: (),
 }
 impl RespondActivityTaskCanceled {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput)
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput).
     pub fn builder() -> crate::input::respond_activity_task_canceled_input::Builder {
         crate::input::respond_activity_task_canceled_input::Builder::default()
     }
@@ -888,7 +888,7 @@ pub struct RespondActivityTaskCompleted {
     _private: (),
 }
 impl RespondActivityTaskCompleted {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput)
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput).
     pub fn builder() -> crate::input::respond_activity_task_completed_input::Builder {
         crate::input::respond_activity_task_completed_input::Builder::default()
     }
@@ -922,7 +922,7 @@ pub struct RespondActivityTaskFailed {
     _private: (),
 }
 impl RespondActivityTaskFailed {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput)
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput).
     pub fn builder() -> crate::input::respond_activity_task_failed_input::Builder {
         crate::input::respond_activity_task_failed_input::Builder::default()
     }
@@ -956,7 +956,7 @@ pub struct RespondDecisionTaskCompleted {
     _private: (),
 }
 impl RespondDecisionTaskCompleted {
-    /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput)
+    /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput).
     pub fn builder() -> crate::input::respond_decision_task_completed_input::Builder {
         crate::input::respond_decision_task_completed_input::Builder::default()
     }
@@ -990,7 +990,7 @@ pub struct SignalWorkflowExecution {
     _private: (),
 }
 impl SignalWorkflowExecution {
-    /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput)
+    /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput).
     pub fn builder() -> crate::input::signal_workflow_execution_input::Builder {
         crate::input::signal_workflow_execution_input::Builder::default()
     }
@@ -1024,7 +1024,7 @@ pub struct StartWorkflowExecution {
     _private: (),
 }
 impl StartWorkflowExecution {
-    /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput)
+    /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput).
     pub fn builder() -> crate::input::start_workflow_execution_input::Builder {
         crate::input::start_workflow_execution_input::Builder::default()
     }
@@ -1058,7 +1058,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1090,7 +1090,7 @@ pub struct TerminateWorkflowExecution {
     _private: (),
 }
 impl TerminateWorkflowExecution {
-    /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput)
+    /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput).
     pub fn builder() -> crate::input::terminate_workflow_execution_input::Builder {
         crate::input::terminate_workflow_execution_input::Builder::default()
     }
@@ -1124,7 +1124,7 @@ pub struct UndeprecateActivityType {
     _private: (),
 }
 impl UndeprecateActivityType {
-    /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput)
+    /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput).
     pub fn builder() -> crate::input::undeprecate_activity_type_input::Builder {
         crate::input::undeprecate_activity_type_input::Builder::default()
     }
@@ -1158,7 +1158,7 @@ pub struct UndeprecateDomain {
     _private: (),
 }
 impl UndeprecateDomain {
-    /// Creates a new builder-style object to manufacture [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput)
+    /// Creates a new builder-style object to manufacture [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput).
     pub fn builder() -> crate::input::undeprecate_domain_input::Builder {
         crate::input::undeprecate_domain_input::Builder::default()
     }
@@ -1192,7 +1192,7 @@ pub struct UndeprecateWorkflowType {
     _private: (),
 }
 impl UndeprecateWorkflowType {
-    /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput)
+    /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput).
     pub fn builder() -> crate::input::undeprecate_workflow_type_input::Builder {
         crate::input::undeprecate_workflow_type_input::Builder::default()
     }
@@ -1226,7 +1226,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

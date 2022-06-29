@@ -26,11 +26,10 @@ impl std::fmt::Debug for UpdateEnrollmentStatusOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput)
+/// See [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
 pub mod update_enrollment_status_output {
 
-    /// A builder for [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -60,7 +59,7 @@ pub mod update_enrollment_status_output {
             self.status_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput)
+        /// Consumes the builder and constructs a [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
         pub fn build(self) -> crate::output::UpdateEnrollmentStatusOutput {
             crate::output::UpdateEnrollmentStatusOutput {
                 status: self.status,
@@ -70,7 +69,7 @@ pub mod update_enrollment_status_output {
     }
 }
 impl UpdateEnrollmentStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
     pub fn builder() -> crate::output::update_enrollment_status_output::Builder {
         crate::output::update_enrollment_status_output::Builder::default()
     }
@@ -86,22 +85,21 @@ impl std::fmt::Debug for PutRecommendationPreferencesOutput {
         formatter.finish()
     }
 }
-/// See [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+/// See [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
 pub mod put_recommendation_preferences_output {
 
-    /// A builder for [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+        /// Consumes the builder and constructs a [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::PutRecommendationPreferencesOutput {
             crate::output::PutRecommendationPreferencesOutput {}
         }
     }
 }
 impl PutRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput)
+    /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
     pub fn builder() -> crate::output::put_recommendation_preferences_output::Builder {
         crate::output::put_recommendation_preferences_output::Builder::default()
     }
@@ -139,11 +137,10 @@ impl std::fmt::Debug for GetRecommendationSummariesOutput {
         formatter.finish()
     }
 }
-/// See [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput)
+/// See [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
 pub mod get_recommendation_summaries_output {
 
-    /// A builder for [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -185,7 +182,7 @@ pub mod get_recommendation_summaries_output {
             self.recommendation_summaries = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput)
+        /// Consumes the builder and constructs a [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
         pub fn build(self) -> crate::output::GetRecommendationSummariesOutput {
             crate::output::GetRecommendationSummariesOutput {
                 next_token: self.next_token,
@@ -195,7 +192,7 @@ pub mod get_recommendation_summaries_output {
     }
 }
 impl GetRecommendationSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput)
+    /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
     pub fn builder() -> crate::output::get_recommendation_summaries_output::Builder {
         crate::output::get_recommendation_summaries_output::Builder::default()
     }
@@ -236,11 +233,10 @@ impl std::fmt::Debug for GetRecommendationPreferencesOutput {
         formatter.finish()
     }
 }
-/// See [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
+/// See [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
 pub mod get_recommendation_preferences_output {
 
-    /// A builder for [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -284,7 +280,7 @@ pub mod get_recommendation_preferences_output {
             self.recommendation_preferences_details = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
+        /// Consumes the builder and constructs a [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::GetRecommendationPreferencesOutput {
             crate::output::GetRecommendationPreferencesOutput {
                 next_token: self.next_token,
@@ -294,7 +290,7 @@ pub mod get_recommendation_preferences_output {
     }
 }
 impl GetRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput)
+    /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
     pub fn builder() -> crate::output::get_recommendation_preferences_output::Builder {
         crate::output::get_recommendation_preferences_output::Builder::default()
     }
@@ -335,11 +331,10 @@ impl std::fmt::Debug for GetLambdaFunctionRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput)
+/// See [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
 pub mod get_lambda_function_recommendations_output {
 
-    /// A builder for [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -381,7 +376,7 @@ pub mod get_lambda_function_recommendations_output {
             self.lambda_function_recommendations = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput)
+        /// Consumes the builder and constructs a [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
         pub fn build(self) -> crate::output::GetLambdaFunctionRecommendationsOutput {
             crate::output::GetLambdaFunctionRecommendationsOutput {
                 next_token: self.next_token,
@@ -391,7 +386,7 @@ pub mod get_lambda_function_recommendations_output {
     }
 }
 impl GetLambdaFunctionRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
     pub fn builder() -> crate::output::get_lambda_function_recommendations_output::Builder {
         crate::output::get_lambda_function_recommendations_output::Builder::default()
     }
@@ -432,11 +427,10 @@ impl std::fmt::Debug for GetEnrollmentStatusesForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
+/// See [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
 pub mod get_enrollment_statuses_for_organization_output {
 
-    /// A builder for [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_enrollment_statuses:
@@ -478,7 +472,7 @@ pub mod get_enrollment_statuses_for_organization_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
+        /// Consumes the builder and constructs a [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
         pub fn build(self) -> crate::output::GetEnrollmentStatusesForOrganizationOutput {
             crate::output::GetEnrollmentStatusesForOrganizationOutput {
                 account_enrollment_statuses: self.account_enrollment_statuses,
@@ -488,7 +482,7 @@ pub mod get_enrollment_statuses_for_organization_output {
     }
 }
 impl GetEnrollmentStatusesForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
     pub fn builder() -> crate::output::get_enrollment_statuses_for_organization_output::Builder {
         crate::output::get_enrollment_statuses_for_organization_output::Builder::default()
     }
@@ -547,11 +541,10 @@ impl std::fmt::Debug for GetEnrollmentStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
+/// See [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
 pub mod get_enrollment_status_output {
 
-    /// A builder for [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::Status>,
@@ -622,7 +615,7 @@ pub mod get_enrollment_status_output {
             self.number_of_member_accounts_opted_in = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
+        /// Consumes the builder and constructs a [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
         pub fn build(self) -> crate::output::GetEnrollmentStatusOutput {
             crate::output::GetEnrollmentStatusOutput {
                 status: self.status,
@@ -635,7 +628,7 @@ pub mod get_enrollment_status_output {
     }
 }
 impl GetEnrollmentStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
     pub fn builder() -> crate::output::get_enrollment_status_output::Builder {
         crate::output::get_enrollment_status_output::Builder::default()
     }
@@ -673,11 +666,10 @@ impl std::fmt::Debug for GetEffectiveRecommendationPreferencesOutput {
         formatter.finish()
     }
 }
-/// See [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
+/// See [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
 pub mod get_effective_recommendation_preferences_output {
 
-    /// A builder for [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enhanced_infrastructure_metrics:
@@ -706,7 +698,7 @@ pub mod get_effective_recommendation_preferences_output {
             self.enhanced_infrastructure_metrics = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
+        /// Consumes the builder and constructs a [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::GetEffectiveRecommendationPreferencesOutput {
             crate::output::GetEffectiveRecommendationPreferencesOutput {
                 enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
@@ -715,7 +707,7 @@ pub mod get_effective_recommendation_preferences_output {
     }
 }
 impl GetEffectiveRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput)
+    /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
     pub fn builder() -> crate::output::get_effective_recommendation_preferences_output::Builder {
         crate::output::get_effective_recommendation_preferences_output::Builder::default()
     }
@@ -747,11 +739,10 @@ impl std::fmt::Debug for GetEc2RecommendationProjectedMetricsOutput {
         formatter.finish()
     }
 }
-/// See [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput)
+/// See [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
 pub mod get_ec2_recommendation_projected_metrics_output {
 
-    /// A builder for [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommended_option_projected_metrics:
@@ -784,7 +775,7 @@ pub mod get_ec2_recommendation_projected_metrics_output {
             self.recommended_option_projected_metrics = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput)
+        /// Consumes the builder and constructs a [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
         pub fn build(self) -> crate::output::GetEc2RecommendationProjectedMetricsOutput {
             crate::output::GetEc2RecommendationProjectedMetricsOutput {
                 recommended_option_projected_metrics: self.recommended_option_projected_metrics,
@@ -793,7 +784,7 @@ pub mod get_ec2_recommendation_projected_metrics_output {
     }
 }
 impl GetEc2RecommendationProjectedMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput)
+    /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
     pub fn builder() -> crate::output::get_ec2_recommendation_projected_metrics_output::Builder {
         crate::output::get_ec2_recommendation_projected_metrics_output::Builder::default()
     }
@@ -840,11 +831,10 @@ impl std::fmt::Debug for GetEc2InstanceRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput)
+/// See [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
 pub mod get_ec2_instance_recommendations_output {
 
-    /// A builder for [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -908,7 +898,7 @@ pub mod get_ec2_instance_recommendations_output {
             self.errors = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput)
+        /// Consumes the builder and constructs a [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
         pub fn build(self) -> crate::output::GetEc2InstanceRecommendationsOutput {
             crate::output::GetEc2InstanceRecommendationsOutput {
                 next_token: self.next_token,
@@ -919,7 +909,7 @@ pub mod get_ec2_instance_recommendations_output {
     }
 }
 impl GetEc2InstanceRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
     pub fn builder() -> crate::output::get_ec2_instance_recommendations_output::Builder {
         crate::output::get_ec2_instance_recommendations_output::Builder::default()
     }
@@ -966,11 +956,10 @@ impl std::fmt::Debug for GetEbsVolumeRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput)
+/// See [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
 pub mod get_ebs_volume_recommendations_output {
 
-    /// A builder for [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1031,7 +1020,7 @@ pub mod get_ebs_volume_recommendations_output {
             self.errors = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput)
+        /// Consumes the builder and constructs a [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
         pub fn build(self) -> crate::output::GetEbsVolumeRecommendationsOutput {
             crate::output::GetEbsVolumeRecommendationsOutput {
                 next_token: self.next_token,
@@ -1042,7 +1031,7 @@ pub mod get_ebs_volume_recommendations_output {
     }
 }
 impl GetEbsVolumeRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
     pub fn builder() -> crate::output::get_ebs_volume_recommendations_output::Builder {
         crate::output::get_ebs_volume_recommendations_output::Builder::default()
     }
@@ -1092,11 +1081,10 @@ impl std::fmt::Debug for GetAutoScalingGroupRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput)
+/// See [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
 pub mod get_auto_scaling_group_recommendations_output {
 
-    /// A builder for [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1160,7 +1148,7 @@ pub mod get_auto_scaling_group_recommendations_output {
             self.errors = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput)
+        /// Consumes the builder and constructs a [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
         pub fn build(self) -> crate::output::GetAutoScalingGroupRecommendationsOutput {
             crate::output::GetAutoScalingGroupRecommendationsOutput {
                 next_token: self.next_token,
@@ -1171,7 +1159,7 @@ pub mod get_auto_scaling_group_recommendations_output {
     }
 }
 impl GetAutoScalingGroupRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
     pub fn builder() -> crate::output::get_auto_scaling_group_recommendations_output::Builder {
         crate::output::get_auto_scaling_group_recommendations_output::Builder::default()
     }
@@ -1206,11 +1194,10 @@ impl std::fmt::Debug for ExportLambdaFunctionRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput)
+/// See [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
 pub mod export_lambda_function_recommendations_output {
 
-    /// A builder for [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1242,7 +1229,7 @@ pub mod export_lambda_function_recommendations_output {
             self.s3_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput)
+        /// Consumes the builder and constructs a [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportLambdaFunctionRecommendationsOutput {
             crate::output::ExportLambdaFunctionRecommendationsOutput {
                 job_id: self.job_id,
@@ -1252,7 +1239,7 @@ pub mod export_lambda_function_recommendations_output {
     }
 }
 impl ExportLambdaFunctionRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
     pub fn builder() -> crate::output::export_lambda_function_recommendations_output::Builder {
         crate::output::export_lambda_function_recommendations_output::Builder::default()
     }
@@ -1287,11 +1274,10 @@ impl std::fmt::Debug for ExportEc2InstanceRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput)
+/// See [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
 pub mod export_ec2_instance_recommendations_output {
 
-    /// A builder for [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1323,7 +1309,7 @@ pub mod export_ec2_instance_recommendations_output {
             self.s3_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput)
+        /// Consumes the builder and constructs a [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportEc2InstanceRecommendationsOutput {
             crate::output::ExportEc2InstanceRecommendationsOutput {
                 job_id: self.job_id,
@@ -1333,7 +1319,7 @@ pub mod export_ec2_instance_recommendations_output {
     }
 }
 impl ExportEc2InstanceRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
     pub fn builder() -> crate::output::export_ec2_instance_recommendations_output::Builder {
         crate::output::export_ec2_instance_recommendations_output::Builder::default()
     }
@@ -1368,11 +1354,10 @@ impl std::fmt::Debug for ExportEbsVolumeRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput)
+/// See [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
 pub mod export_ebs_volume_recommendations_output {
 
-    /// A builder for [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1404,7 +1389,7 @@ pub mod export_ebs_volume_recommendations_output {
             self.s3_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput)
+        /// Consumes the builder and constructs a [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportEbsVolumeRecommendationsOutput {
             crate::output::ExportEbsVolumeRecommendationsOutput {
                 job_id: self.job_id,
@@ -1414,7 +1399,7 @@ pub mod export_ebs_volume_recommendations_output {
     }
 }
 impl ExportEbsVolumeRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
     pub fn builder() -> crate::output::export_ebs_volume_recommendations_output::Builder {
         crate::output::export_ebs_volume_recommendations_output::Builder::default()
     }
@@ -1449,11 +1434,10 @@ impl std::fmt::Debug for ExportAutoScalingGroupRecommendationsOutput {
         formatter.finish()
     }
 }
-/// See [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput)
+/// See [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
 pub mod export_auto_scaling_group_recommendations_output {
 
-    /// A builder for [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -1485,7 +1469,7 @@ pub mod export_auto_scaling_group_recommendations_output {
             self.s3_destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput)
+        /// Consumes the builder and constructs a [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
         pub fn build(self) -> crate::output::ExportAutoScalingGroupRecommendationsOutput {
             crate::output::ExportAutoScalingGroupRecommendationsOutput {
                 job_id: self.job_id,
@@ -1495,7 +1479,7 @@ pub mod export_auto_scaling_group_recommendations_output {
     }
 }
 impl ExportAutoScalingGroupRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput)
+    /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
     pub fn builder() -> crate::output::export_auto_scaling_group_recommendations_output::Builder {
         crate::output::export_auto_scaling_group_recommendations_output::Builder::default()
     }
@@ -1536,11 +1520,10 @@ impl std::fmt::Debug for DescribeRecommendationExportJobsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput)
+/// See [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
 pub mod describe_recommendation_export_jobs_output {
 
-    /// A builder for [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recommendation_export_jobs:
@@ -1582,7 +1565,7 @@ pub mod describe_recommendation_export_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput)
+        /// Consumes the builder and constructs a [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
         pub fn build(self) -> crate::output::DescribeRecommendationExportJobsOutput {
             crate::output::DescribeRecommendationExportJobsOutput {
                 recommendation_export_jobs: self.recommendation_export_jobs,
@@ -1592,7 +1575,7 @@ pub mod describe_recommendation_export_jobs_output {
     }
 }
 impl DescribeRecommendationExportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
     pub fn builder() -> crate::output::describe_recommendation_export_jobs_output::Builder {
         crate::output::describe_recommendation_export_jobs_output::Builder::default()
     }
@@ -1608,22 +1591,21 @@ impl std::fmt::Debug for DeleteRecommendationPreferencesOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+/// See [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
 pub mod delete_recommendation_preferences_output {
 
-    /// A builder for [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+        /// Consumes the builder and constructs a [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
         pub fn build(self) -> crate::output::DeleteRecommendationPreferencesOutput {
             crate::output::DeleteRecommendationPreferencesOutput {}
         }
     }
 }
 impl DeleteRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
     pub fn builder() -> crate::output::delete_recommendation_preferences_output::Builder {
         crate::output::delete_recommendation_preferences_output::Builder::default()
     }

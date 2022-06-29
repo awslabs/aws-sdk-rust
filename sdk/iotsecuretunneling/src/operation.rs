@@ -10,7 +10,7 @@ pub struct CloseTunnel {
     _private: (),
 }
 impl CloseTunnel {
-    /// Creates a new builder-style object to manufacture [`CloseTunnelInput`](crate::input::CloseTunnelInput)
+    /// Creates a new builder-style object to manufacture [`CloseTunnelInput`](crate::input::CloseTunnelInput).
     pub fn builder() -> crate::input::close_tunnel_input::Builder {
         crate::input::close_tunnel_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DescribeTunnel {
     _private: (),
 }
 impl DescribeTunnel {
-    /// Creates a new builder-style object to manufacture [`DescribeTunnelInput`](crate::input::DescribeTunnelInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTunnelInput`](crate::input::DescribeTunnelInput).
     pub fn builder() -> crate::input::describe_tunnel_input::Builder {
         crate::input::describe_tunnel_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct ListTunnels {
     _private: (),
 }
 impl ListTunnels {
-    /// Creates a new builder-style object to manufacture [`ListTunnelsInput`](crate::input::ListTunnelsInput)
+    /// Creates a new builder-style object to manufacture [`ListTunnelsInput`](crate::input::ListTunnelsInput).
     pub fn builder() -> crate::input::list_tunnels_input::Builder {
         crate::input::list_tunnels_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct OpenTunnel {
     _private: (),
 }
 impl OpenTunnel {
-    /// Creates a new builder-style object to manufacture [`OpenTunnelInput`](crate::input::OpenTunnelInput)
+    /// Creates a new builder-style object to manufacture [`OpenTunnelInput`](crate::input::OpenTunnelInput).
     pub fn builder() -> crate::input::open_tunnel_input::Builder {
         crate::input::open_tunnel_input::Builder::default()
     }
@@ -172,7 +172,7 @@ pub struct RotateTunnelAccessToken {
     _private: (),
 }
 impl RotateTunnelAccessToken {
-    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput)
+    /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenInput`](crate::input::RotateTunnelAccessTokenInput).
     pub fn builder() -> crate::input::rotate_tunnel_access_token_input::Builder {
         crate::input::rotate_tunnel_access_token_input::Builder::default()
     }
@@ -206,7 +206,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -238,7 +238,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

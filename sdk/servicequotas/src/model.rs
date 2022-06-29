@@ -27,11 +27,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -68,7 +67,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -185,11 +184,10 @@ impl std::fmt::Debug for RequestedServiceQuotaChange {
         formatter.finish()
     }
 }
-/// See [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange)
+/// See [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
 pub mod requested_service_quota_change {
 
-    /// A builder for [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange)
-    #[non_exhaustive]
+    /// A builder for [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -357,7 +355,7 @@ pub mod requested_service_quota_change {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange)
+        /// Consumes the builder and constructs a [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
         pub fn build(self) -> crate::model::RequestedServiceQuotaChange {
             crate::model::RequestedServiceQuotaChange {
                 id: self.id,
@@ -379,7 +377,7 @@ pub mod requested_service_quota_change {
     }
 }
 impl RequestedServiceQuotaChange {
-    /// Creates a new builder-style object to manufacture [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange)
+    /// Creates a new builder-style object to manufacture [`RequestedServiceQuotaChange`](crate::model::RequestedServiceQuotaChange).
     pub fn builder() -> crate::model::requested_service_quota_change::Builder {
         crate::model::requested_service_quota_change::Builder::default()
     }
@@ -527,11 +525,10 @@ impl std::fmt::Debug for ServiceQuotaIncreaseRequestInTemplate {
         formatter.finish()
     }
 }
-/// See [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate)
+/// See [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
 pub mod service_quota_increase_request_in_template {
 
-    /// A builder for [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate)
-    #[non_exhaustive]
+    /// A builder for [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -624,7 +621,7 @@ pub mod service_quota_increase_request_in_template {
             self.global_quota = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate)
+        /// Consumes the builder and constructs a [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
         pub fn build(self) -> crate::model::ServiceQuotaIncreaseRequestInTemplate {
             crate::model::ServiceQuotaIncreaseRequestInTemplate {
                 service_code: self.service_code,
@@ -640,7 +637,7 @@ pub mod service_quota_increase_request_in_template {
     }
 }
 impl ServiceQuotaIncreaseRequestInTemplate {
-    /// Creates a new builder-style object to manufacture [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate)
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaIncreaseRequestInTemplate`](crate::model::ServiceQuotaIncreaseRequestInTemplate).
     pub fn builder() -> crate::model::service_quota_increase_request_in_template::Builder {
         crate::model::service_quota_increase_request_in_template::Builder::default()
     }
@@ -673,11 +670,10 @@ impl std::fmt::Debug for ServiceInfo {
         formatter.finish()
     }
 }
-/// See [`ServiceInfo`](crate::model::ServiceInfo)
+/// See [`ServiceInfo`](crate::model::ServiceInfo).
 pub mod service_info {
 
-    /// A builder for [`ServiceInfo`](crate::model::ServiceInfo)
-    #[non_exhaustive]
+    /// A builder for [`ServiceInfo`](crate::model::ServiceInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -704,7 +700,7 @@ pub mod service_info {
             self.service_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceInfo`](crate::model::ServiceInfo)
+        /// Consumes the builder and constructs a [`ServiceInfo`](crate::model::ServiceInfo).
         pub fn build(self) -> crate::model::ServiceInfo {
             crate::model::ServiceInfo {
                 service_code: self.service_code,
@@ -714,7 +710,7 @@ pub mod service_info {
     }
 }
 impl ServiceInfo {
-    /// Creates a new builder-style object to manufacture [`ServiceInfo`](crate::model::ServiceInfo)
+    /// Creates a new builder-style object to manufacture [`ServiceInfo`](crate::model::ServiceInfo).
     pub fn builder() -> crate::model::service_info::Builder {
         crate::model::service_info::Builder::default()
     }
@@ -817,11 +813,10 @@ impl std::fmt::Debug for ServiceQuota {
         formatter.finish()
     }
 }
-/// See [`ServiceQuota`](crate::model::ServiceQuota)
+/// See [`ServiceQuota`](crate::model::ServiceQuota).
 pub mod service_quota {
 
-    /// A builder for [`ServiceQuota`](crate::model::ServiceQuota)
-    #[non_exhaustive]
+    /// A builder for [`ServiceQuota`](crate::model::ServiceQuota).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_code: std::option::Option<std::string::String>,
@@ -964,7 +959,7 @@ pub mod service_quota {
             self.error_reason = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceQuota`](crate::model::ServiceQuota)
+        /// Consumes the builder and constructs a [`ServiceQuota`](crate::model::ServiceQuota).
         pub fn build(self) -> crate::model::ServiceQuota {
             crate::model::ServiceQuota {
                 service_code: self.service_code,
@@ -984,7 +979,7 @@ pub mod service_quota {
     }
 }
 impl ServiceQuota {
-    /// Creates a new builder-style object to manufacture [`ServiceQuota`](crate::model::ServiceQuota)
+    /// Creates a new builder-style object to manufacture [`ServiceQuota`](crate::model::ServiceQuota).
     pub fn builder() -> crate::model::service_quota::Builder {
         crate::model::service_quota::Builder::default()
     }
@@ -1029,11 +1024,10 @@ impl std::fmt::Debug for ErrorReason {
         formatter.finish()
     }
 }
-/// See [`ErrorReason`](crate::model::ErrorReason)
+/// See [`ErrorReason`](crate::model::ErrorReason).
 pub mod error_reason {
 
-    /// A builder for [`ErrorReason`](crate::model::ErrorReason)
-    #[non_exhaustive]
+    /// A builder for [`ErrorReason`](crate::model::ErrorReason).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
@@ -1078,7 +1072,7 @@ pub mod error_reason {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ErrorReason`](crate::model::ErrorReason)
+        /// Consumes the builder and constructs a [`ErrorReason`](crate::model::ErrorReason).
         pub fn build(self) -> crate::model::ErrorReason {
             crate::model::ErrorReason {
                 error_code: self.error_code,
@@ -1088,7 +1082,7 @@ pub mod error_reason {
     }
 }
 impl ErrorReason {
-    /// Creates a new builder-style object to manufacture [`ErrorReason`](crate::model::ErrorReason)
+    /// Creates a new builder-style object to manufacture [`ErrorReason`](crate::model::ErrorReason).
     pub fn builder() -> crate::model::error_reason::Builder {
         crate::model::error_reason::Builder::default()
     }
@@ -1189,11 +1183,10 @@ impl std::fmt::Debug for QuotaPeriod {
         formatter.finish()
     }
 }
-/// See [`QuotaPeriod`](crate::model::QuotaPeriod)
+/// See [`QuotaPeriod`](crate::model::QuotaPeriod).
 pub mod quota_period {
 
-    /// A builder for [`QuotaPeriod`](crate::model::QuotaPeriod)
-    #[non_exhaustive]
+    /// A builder for [`QuotaPeriod`](crate::model::QuotaPeriod).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) period_value: std::option::Option<i32>,
@@ -1223,7 +1216,7 @@ pub mod quota_period {
             self.period_unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`QuotaPeriod`](crate::model::QuotaPeriod)
+        /// Consumes the builder and constructs a [`QuotaPeriod`](crate::model::QuotaPeriod).
         pub fn build(self) -> crate::model::QuotaPeriod {
             crate::model::QuotaPeriod {
                 period_value: self.period_value,
@@ -1233,7 +1226,7 @@ pub mod quota_period {
     }
 }
 impl QuotaPeriod {
-    /// Creates a new builder-style object to manufacture [`QuotaPeriod`](crate::model::QuotaPeriod)
+    /// Creates a new builder-style object to manufacture [`QuotaPeriod`](crate::model::QuotaPeriod).
     pub fn builder() -> crate::model::quota_period::Builder {
         crate::model::quota_period::Builder::default()
     }
@@ -1370,11 +1363,10 @@ impl std::fmt::Debug for MetricInfo {
         formatter.finish()
     }
 }
-/// See [`MetricInfo`](crate::model::MetricInfo)
+/// See [`MetricInfo`](crate::model::MetricInfo).
 pub mod metric_info {
 
-    /// A builder for [`MetricInfo`](crate::model::MetricInfo)
-    #[non_exhaustive]
+    /// A builder for [`MetricInfo`](crate::model::MetricInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_namespace: std::option::Option<std::string::String>,
@@ -1449,7 +1441,7 @@ pub mod metric_info {
             self.metric_statistic_recommendation = input;
             self
         }
-        /// Consumes the builder and constructs a [`MetricInfo`](crate::model::MetricInfo)
+        /// Consumes the builder and constructs a [`MetricInfo`](crate::model::MetricInfo).
         pub fn build(self) -> crate::model::MetricInfo {
             crate::model::MetricInfo {
                 metric_namespace: self.metric_namespace,
@@ -1461,7 +1453,7 @@ pub mod metric_info {
     }
 }
 impl MetricInfo {
-    /// Creates a new builder-style object to manufacture [`MetricInfo`](crate::model::MetricInfo)
+    /// Creates a new builder-style object to manufacture [`MetricInfo`](crate::model::MetricInfo).
     pub fn builder() -> crate::model::metric_info::Builder {
         crate::model::metric_info::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct GetMedia {
     _private: (),
 }
 impl GetMedia {
-    /// Creates a new builder-style object to manufacture [`GetMediaInput`](crate::input::GetMediaInput)
+    /// Creates a new builder-style object to manufacture [`GetMediaInput`](crate::input::GetMediaInput).
     pub fn builder() -> crate::input::get_media_input::Builder {
         crate::input::get_media_input::Builder::default()
     }

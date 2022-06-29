@@ -10,7 +10,7 @@ pub struct CompleteSnapshot {
     _private: (),
 }
 impl CompleteSnapshot {
-    /// Creates a new builder-style object to manufacture [`CompleteSnapshotInput`](crate::input::CompleteSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`CompleteSnapshotInput`](crate::input::CompleteSnapshotInput).
     pub fn builder() -> crate::input::complete_snapshot_input::Builder {
         crate::input::complete_snapshot_input::Builder::default()
     }
@@ -130,7 +130,7 @@ pub struct GetSnapshotBlock {
     _private: (),
 }
 impl GetSnapshotBlock {
-    /// Creates a new builder-style object to manufacture [`GetSnapshotBlockInput`](crate::input::GetSnapshotBlockInput)
+    /// Creates a new builder-style object to manufacture [`GetSnapshotBlockInput`](crate::input::GetSnapshotBlockInput).
     pub fn builder() -> crate::input::get_snapshot_block_input::Builder {
         crate::input::get_snapshot_block_input::Builder::default()
     }
@@ -257,7 +257,7 @@ pub struct ListChangedBlocks {
     _private: (),
 }
 impl ListChangedBlocks {
-    /// Creates a new builder-style object to manufacture [`ListChangedBlocksInput`](crate::input::ListChangedBlocksInput)
+    /// Creates a new builder-style object to manufacture [`ListChangedBlocksInput`](crate::input::ListChangedBlocksInput).
     pub fn builder() -> crate::input::list_changed_blocks_input::Builder {
         crate::input::list_changed_blocks_input::Builder::default()
     }
@@ -377,7 +377,7 @@ pub struct ListSnapshotBlocks {
     _private: (),
 }
 impl ListSnapshotBlocks {
-    /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksInput`](crate::input::ListSnapshotBlocksInput)
+    /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksInput`](crate::input::ListSnapshotBlocksInput).
     pub fn builder() -> crate::input::list_snapshot_blocks_input::Builder {
         crate::input::list_snapshot_blocks_input::Builder::default()
     }
@@ -497,7 +497,7 @@ pub struct PutSnapshotBlock {
     _private: (),
 }
 impl PutSnapshotBlock {
-    /// Creates a new builder-style object to manufacture [`PutSnapshotBlockInput`](crate::input::PutSnapshotBlockInput)
+    /// Creates a new builder-style object to manufacture [`PutSnapshotBlockInput`](crate::input::PutSnapshotBlockInput).
     pub fn builder() -> crate::input::put_snapshot_block_input::Builder {
         crate::input::put_snapshot_block_input::Builder::default()
     }
@@ -617,7 +617,7 @@ pub struct StartSnapshot {
     _private: (),
 }
 impl StartSnapshot {
-    /// Creates a new builder-style object to manufacture [`StartSnapshotInput`](crate::input::StartSnapshotInput)
+    /// Creates a new builder-style object to manufacture [`StartSnapshotInput`](crate::input::StartSnapshotInput).
     pub fn builder() -> crate::input::start_snapshot_input::Builder {
         crate::input::start_snapshot_input::Builder::default()
     }

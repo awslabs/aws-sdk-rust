@@ -9,22 +9,21 @@ impl std::fmt::Debug for UpdateRoutingControlStatesOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
+/// See [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
 pub mod update_routing_control_states_output {
 
-    /// A builder for [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
+        /// Consumes the builder and constructs a [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
         pub fn build(self) -> crate::output::UpdateRoutingControlStatesOutput {
             crate::output::UpdateRoutingControlStatesOutput {}
         }
     }
 }
 impl UpdateRoutingControlStatesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
     pub fn builder() -> crate::output::update_routing_control_states_output::Builder {
         crate::output::update_routing_control_states_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UpdateRoutingControlStateOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
+/// See [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
 pub mod update_routing_control_state_output {
 
-    /// A builder for [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
+        /// Consumes the builder and constructs a [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
         pub fn build(self) -> crate::output::UpdateRoutingControlStateOutput {
             crate::output::UpdateRoutingControlStateOutput {}
         }
     }
 }
 impl UpdateRoutingControlStateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
     pub fn builder() -> crate::output::update_routing_control_state_output::Builder {
         crate::output::update_routing_control_state_output::Builder::default()
     }
@@ -88,11 +86,10 @@ impl std::fmt::Debug for ListRoutingControlsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
+/// See [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
 pub mod list_routing_controls_output {
 
-    /// A builder for [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_controls:
@@ -129,7 +126,7 @@ pub mod list_routing_controls_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
+        /// Consumes the builder and constructs a [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
         pub fn build(self) -> crate::output::ListRoutingControlsOutput {
             crate::output::ListRoutingControlsOutput {
                 routing_controls: self.routing_controls,
@@ -139,7 +136,7 @@ pub mod list_routing_controls_output {
     }
 }
 impl ListRoutingControlsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
     pub fn builder() -> crate::output::list_routing_controls_output::Builder {
         crate::output::list_routing_controls_output::Builder::default()
     }
@@ -179,11 +176,10 @@ impl std::fmt::Debug for GetRoutingControlStateOutput {
         formatter.finish()
     }
 }
-/// See [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput)
+/// See [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
 pub mod get_routing_control_state_output {
 
-    /// A builder for [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
@@ -230,7 +226,7 @@ pub mod get_routing_control_state_output {
             self.routing_control_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput)
+        /// Consumes the builder and constructs a [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
         pub fn build(self) -> crate::output::GetRoutingControlStateOutput {
             crate::output::GetRoutingControlStateOutput {
                 routing_control_arn: self.routing_control_arn,
@@ -241,7 +237,7 @@ pub mod get_routing_control_state_output {
     }
 }
 impl GetRoutingControlStateOutput {
-    /// Creates a new builder-style object to manufacture [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput)
+    /// Creates a new builder-style object to manufacture [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
     pub fn builder() -> crate::output::get_routing_control_state_output::Builder {
         crate::output::get_routing_control_state_output::Builder::default()
     }

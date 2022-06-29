@@ -37,11 +37,10 @@ impl std::fmt::Debug for PlacementTemplate {
         formatter.finish()
     }
 }
-/// See [`PlacementTemplate`](crate::model::PlacementTemplate)
+/// See [`PlacementTemplate`](crate::model::PlacementTemplate).
 pub mod placement_template {
 
-    /// A builder for [`PlacementTemplate`](crate::model::PlacementTemplate)
-    #[non_exhaustive]
+    /// A builder for [`PlacementTemplate`](crate::model::PlacementTemplate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_attributes: std::option::Option<
@@ -102,7 +101,7 @@ pub mod placement_template {
             self.device_templates = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlacementTemplate`](crate::model::PlacementTemplate)
+        /// Consumes the builder and constructs a [`PlacementTemplate`](crate::model::PlacementTemplate).
         pub fn build(self) -> crate::model::PlacementTemplate {
             crate::model::PlacementTemplate {
                 default_attributes: self.default_attributes,
@@ -112,7 +111,7 @@ pub mod placement_template {
     }
 }
 impl PlacementTemplate {
-    /// Creates a new builder-style object to manufacture [`PlacementTemplate`](crate::model::PlacementTemplate)
+    /// Creates a new builder-style object to manufacture [`PlacementTemplate`](crate::model::PlacementTemplate).
     pub fn builder() -> crate::model::placement_template::Builder {
         crate::model::placement_template::Builder::default()
     }
@@ -149,11 +148,10 @@ impl std::fmt::Debug for DeviceTemplate {
         formatter.finish()
     }
 }
-/// See [`DeviceTemplate`](crate::model::DeviceTemplate)
+/// See [`DeviceTemplate`](crate::model::DeviceTemplate).
 pub mod device_template {
 
-    /// A builder for [`DeviceTemplate`](crate::model::DeviceTemplate)
-    #[non_exhaustive]
+    /// A builder for [`DeviceTemplate`](crate::model::DeviceTemplate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_type: std::option::Option<std::string::String>,
@@ -197,7 +195,7 @@ pub mod device_template {
             self.callback_overrides = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceTemplate`](crate::model::DeviceTemplate)
+        /// Consumes the builder and constructs a [`DeviceTemplate`](crate::model::DeviceTemplate).
         pub fn build(self) -> crate::model::DeviceTemplate {
             crate::model::DeviceTemplate {
                 device_type: self.device_type,
@@ -207,7 +205,7 @@ pub mod device_template {
     }
 }
 impl DeviceTemplate {
-    /// Creates a new builder-style object to manufacture [`DeviceTemplate`](crate::model::DeviceTemplate)
+    /// Creates a new builder-style object to manufacture [`DeviceTemplate`](crate::model::DeviceTemplate).
     pub fn builder() -> crate::model::device_template::Builder {
         crate::model::device_template::Builder::default()
     }
@@ -265,11 +263,10 @@ impl std::fmt::Debug for ProjectSummary {
         formatter.finish()
     }
 }
-/// See [`ProjectSummary`](crate::model::ProjectSummary)
+/// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
 
-    /// A builder for [`ProjectSummary`](crate::model::ProjectSummary)
-    #[non_exhaustive]
+    /// A builder for [`ProjectSummary`](crate::model::ProjectSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -352,7 +349,7 @@ pub mod project_summary {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary)
+        /// Consumes the builder and constructs a [`ProjectSummary`](crate::model::ProjectSummary).
         pub fn build(self) -> crate::model::ProjectSummary {
             crate::model::ProjectSummary {
                 arn: self.arn,
@@ -365,7 +362,7 @@ pub mod project_summary {
     }
 }
 impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary)
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
     pub fn builder() -> crate::model::project_summary::Builder {
         crate::model::project_summary::Builder::default()
     }
@@ -412,11 +409,10 @@ impl std::fmt::Debug for PlacementSummary {
         formatter.finish()
     }
 }
-/// See [`PlacementSummary`](crate::model::PlacementSummary)
+/// See [`PlacementSummary`](crate::model::PlacementSummary).
 pub mod placement_summary {
 
-    /// A builder for [`PlacementSummary`](crate::model::PlacementSummary)
-    #[non_exhaustive]
+    /// A builder for [`PlacementSummary`](crate::model::PlacementSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -474,7 +470,7 @@ pub mod placement_summary {
             self.updated_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlacementSummary`](crate::model::PlacementSummary)
+        /// Consumes the builder and constructs a [`PlacementSummary`](crate::model::PlacementSummary).
         pub fn build(self) -> crate::model::PlacementSummary {
             crate::model::PlacementSummary {
                 project_name: self.project_name,
@@ -486,7 +482,7 @@ pub mod placement_summary {
     }
 }
 impl PlacementSummary {
-    /// Creates a new builder-style object to manufacture [`PlacementSummary`](crate::model::PlacementSummary)
+    /// Creates a new builder-style object to manufacture [`PlacementSummary`](crate::model::PlacementSummary).
     pub fn builder() -> crate::model::placement_summary::Builder {
         crate::model::placement_summary::Builder::default()
     }
@@ -558,11 +554,10 @@ impl std::fmt::Debug for ProjectDescription {
         formatter.finish()
     }
 }
-/// See [`ProjectDescription`](crate::model::ProjectDescription)
+/// See [`ProjectDescription`](crate::model::ProjectDescription).
 pub mod project_description {
 
-    /// A builder for [`ProjectDescription`](crate::model::ProjectDescription)
-    #[non_exhaustive]
+    /// A builder for [`ProjectDescription`](crate::model::ProjectDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -670,7 +665,7 @@ pub mod project_description {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProjectDescription`](crate::model::ProjectDescription)
+        /// Consumes the builder and constructs a [`ProjectDescription`](crate::model::ProjectDescription).
         pub fn build(self) -> crate::model::ProjectDescription {
             crate::model::ProjectDescription {
                 arn: self.arn,
@@ -685,7 +680,7 @@ pub mod project_description {
     }
 }
 impl ProjectDescription {
-    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription)
+    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
     pub fn builder() -> crate::model::project_description::Builder {
         crate::model::project_description::Builder::default()
     }
@@ -743,11 +738,10 @@ impl std::fmt::Debug for PlacementDescription {
         formatter.finish()
     }
 }
-/// See [`PlacementDescription`](crate::model::PlacementDescription)
+/// See [`PlacementDescription`](crate::model::PlacementDescription).
 pub mod placement_description {
 
-    /// A builder for [`PlacementDescription`](crate::model::PlacementDescription)
-    #[non_exhaustive]
+    /// A builder for [`PlacementDescription`](crate::model::PlacementDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) project_name: std::option::Option<std::string::String>,
@@ -833,7 +827,7 @@ pub mod placement_description {
             self.updated_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`PlacementDescription`](crate::model::PlacementDescription)
+        /// Consumes the builder and constructs a [`PlacementDescription`](crate::model::PlacementDescription).
         pub fn build(self) -> crate::model::PlacementDescription {
             crate::model::PlacementDescription {
                 project_name: self.project_name,
@@ -846,7 +840,7 @@ pub mod placement_description {
     }
 }
 impl PlacementDescription {
-    /// Creates a new builder-style object to manufacture [`PlacementDescription`](crate::model::PlacementDescription)
+    /// Creates a new builder-style object to manufacture [`PlacementDescription`](crate::model::PlacementDescription).
     pub fn builder() -> crate::model::placement_description::Builder {
         crate::model::placement_description::Builder::default()
     }

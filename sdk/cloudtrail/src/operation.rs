@@ -10,7 +10,7 @@ pub struct AddTags {
     _private: (),
 }
 impl AddTags {
-    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::input::AddTagsInput).
     pub fn builder() -> crate::input::add_tags_input::Builder {
         crate::input::add_tags_input::Builder::default()
     }
@@ -41,7 +41,7 @@ pub struct CancelQuery {
     _private: (),
 }
 impl CancelQuery {
-    /// Creates a new builder-style object to manufacture [`CancelQueryInput`](crate::input::CancelQueryInput)
+    /// Creates a new builder-style object to manufacture [`CancelQueryInput`](crate::input::CancelQueryInput).
     pub fn builder() -> crate::input::cancel_query_input::Builder {
         crate::input::cancel_query_input::Builder::default()
     }
@@ -73,7 +73,7 @@ pub struct CreateEventDataStore {
     _private: (),
 }
 impl CreateEventDataStore {
-    /// Creates a new builder-style object to manufacture [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput)
+    /// Creates a new builder-style object to manufacture [`CreateEventDataStoreInput`](crate::input::CreateEventDataStoreInput).
     pub fn builder() -> crate::input::create_event_data_store_input::Builder {
         crate::input::create_event_data_store_input::Builder::default()
     }
@@ -107,7 +107,7 @@ pub struct CreateTrail {
     _private: (),
 }
 impl CreateTrail {
-    /// Creates a new builder-style object to manufacture [`CreateTrailInput`](crate::input::CreateTrailInput)
+    /// Creates a new builder-style object to manufacture [`CreateTrailInput`](crate::input::CreateTrailInput).
     pub fn builder() -> crate::input::create_trail_input::Builder {
         crate::input::create_trail_input::Builder::default()
     }
@@ -139,7 +139,7 @@ pub struct DeleteEventDataStore {
     _private: (),
 }
 impl DeleteEventDataStore {
-    /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventDataStoreInput`](crate::input::DeleteEventDataStoreInput).
     pub fn builder() -> crate::input::delete_event_data_store_input::Builder {
         crate::input::delete_event_data_store_input::Builder::default()
     }
@@ -173,7 +173,7 @@ pub struct DeleteTrail {
     _private: (),
 }
 impl DeleteTrail {
-    /// Creates a new builder-style object to manufacture [`DeleteTrailInput`](crate::input::DeleteTrailInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTrailInput`](crate::input::DeleteTrailInput).
     pub fn builder() -> crate::input::delete_trail_input::Builder {
         crate::input::delete_trail_input::Builder::default()
     }
@@ -205,7 +205,7 @@ pub struct DescribeQuery {
     _private: (),
 }
 impl DescribeQuery {
-    /// Creates a new builder-style object to manufacture [`DescribeQueryInput`](crate::input::DescribeQueryInput)
+    /// Creates a new builder-style object to manufacture [`DescribeQueryInput`](crate::input::DescribeQueryInput).
     pub fn builder() -> crate::input::describe_query_input::Builder {
         crate::input::describe_query_input::Builder::default()
     }
@@ -237,7 +237,7 @@ pub struct DescribeTrails {
     _private: (),
 }
 impl DescribeTrails {
-    /// Creates a new builder-style object to manufacture [`DescribeTrailsInput`](crate::input::DescribeTrailsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTrailsInput`](crate::input::DescribeTrailsInput).
     pub fn builder() -> crate::input::describe_trails_input::Builder {
         crate::input::describe_trails_input::Builder::default()
     }
@@ -269,7 +269,7 @@ pub struct GetEventDataStore {
     _private: (),
 }
 impl GetEventDataStore {
-    /// Creates a new builder-style object to manufacture [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput)
+    /// Creates a new builder-style object to manufacture [`GetEventDataStoreInput`](crate::input::GetEventDataStoreInput).
     pub fn builder() -> crate::input::get_event_data_store_input::Builder {
         crate::input::get_event_data_store_input::Builder::default()
     }
@@ -303,7 +303,7 @@ pub struct GetEventSelectors {
     _private: (),
 }
 impl GetEventSelectors {
-    /// Creates a new builder-style object to manufacture [`GetEventSelectorsInput`](crate::input::GetEventSelectorsInput)
+    /// Creates a new builder-style object to manufacture [`GetEventSelectorsInput`](crate::input::GetEventSelectorsInput).
     pub fn builder() -> crate::input::get_event_selectors_input::Builder {
         crate::input::get_event_selectors_input::Builder::default()
     }
@@ -337,7 +337,7 @@ pub struct GetInsightSelectors {
     _private: (),
 }
 impl GetInsightSelectors {
-    /// Creates a new builder-style object to manufacture [`GetInsightSelectorsInput`](crate::input::GetInsightSelectorsInput)
+    /// Creates a new builder-style object to manufacture [`GetInsightSelectorsInput`](crate::input::GetInsightSelectorsInput).
     pub fn builder() -> crate::input::get_insight_selectors_input::Builder {
         crate::input::get_insight_selectors_input::Builder::default()
     }
@@ -371,7 +371,7 @@ pub struct GetQueryResults {
     _private: (),
 }
 impl GetQueryResults {
-    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput).
     pub fn builder() -> crate::input::get_query_results_input::Builder {
         crate::input::get_query_results_input::Builder::default()
     }
@@ -405,7 +405,7 @@ pub struct GetTrail {
     _private: (),
 }
 impl GetTrail {
-    /// Creates a new builder-style object to manufacture [`GetTrailInput`](crate::input::GetTrailInput)
+    /// Creates a new builder-style object to manufacture [`GetTrailInput`](crate::input::GetTrailInput).
     pub fn builder() -> crate::input::get_trail_input::Builder {
         crate::input::get_trail_input::Builder::default()
     }
@@ -436,7 +436,7 @@ pub struct GetTrailStatus {
     _private: (),
 }
 impl GetTrailStatus {
-    /// Creates a new builder-style object to manufacture [`GetTrailStatusInput`](crate::input::GetTrailStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetTrailStatusInput`](crate::input::GetTrailStatusInput).
     pub fn builder() -> crate::input::get_trail_status_input::Builder {
         crate::input::get_trail_status_input::Builder::default()
     }
@@ -468,7 +468,7 @@ pub struct ListEventDataStores {
     _private: (),
 }
 impl ListEventDataStores {
-    /// Creates a new builder-style object to manufacture [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput)
+    /// Creates a new builder-style object to manufacture [`ListEventDataStoresInput`](crate::input::ListEventDataStoresInput).
     pub fn builder() -> crate::input::list_event_data_stores_input::Builder {
         crate::input::list_event_data_stores_input::Builder::default()
     }
@@ -502,7 +502,7 @@ pub struct ListPublicKeys {
     _private: (),
 }
 impl ListPublicKeys {
-    /// Creates a new builder-style object to manufacture [`ListPublicKeysInput`](crate::input::ListPublicKeysInput)
+    /// Creates a new builder-style object to manufacture [`ListPublicKeysInput`](crate::input::ListPublicKeysInput).
     pub fn builder() -> crate::input::list_public_keys_input::Builder {
         crate::input::list_public_keys_input::Builder::default()
     }
@@ -534,7 +534,7 @@ pub struct ListQueries {
     _private: (),
 }
 impl ListQueries {
-    /// Creates a new builder-style object to manufacture [`ListQueriesInput`](crate::input::ListQueriesInput)
+    /// Creates a new builder-style object to manufacture [`ListQueriesInput`](crate::input::ListQueriesInput).
     pub fn builder() -> crate::input::list_queries_input::Builder {
         crate::input::list_queries_input::Builder::default()
     }
@@ -566,7 +566,7 @@ pub struct ListTags {
     _private: (),
 }
 impl ListTags {
-    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
     }
@@ -597,7 +597,7 @@ pub struct ListTrails {
     _private: (),
 }
 impl ListTrails {
-    /// Creates a new builder-style object to manufacture [`ListTrailsInput`](crate::input::ListTrailsInput)
+    /// Creates a new builder-style object to manufacture [`ListTrailsInput`](crate::input::ListTrailsInput).
     pub fn builder() -> crate::input::list_trails_input::Builder {
         crate::input::list_trails_input::Builder::default()
     }
@@ -629,7 +629,7 @@ pub struct LookupEvents {
     _private: (),
 }
 impl LookupEvents {
-    /// Creates a new builder-style object to manufacture [`LookupEventsInput`](crate::input::LookupEventsInput)
+    /// Creates a new builder-style object to manufacture [`LookupEventsInput`](crate::input::LookupEventsInput).
     pub fn builder() -> crate::input::lookup_events_input::Builder {
         crate::input::lookup_events_input::Builder::default()
     }
@@ -661,7 +661,7 @@ pub struct PutEventSelectors {
     _private: (),
 }
 impl PutEventSelectors {
-    /// Creates a new builder-style object to manufacture [`PutEventSelectorsInput`](crate::input::PutEventSelectorsInput)
+    /// Creates a new builder-style object to manufacture [`PutEventSelectorsInput`](crate::input::PutEventSelectorsInput).
     pub fn builder() -> crate::input::put_event_selectors_input::Builder {
         crate::input::put_event_selectors_input::Builder::default()
     }
@@ -695,7 +695,7 @@ pub struct PutInsightSelectors {
     _private: (),
 }
 impl PutInsightSelectors {
-    /// Creates a new builder-style object to manufacture [`PutInsightSelectorsInput`](crate::input::PutInsightSelectorsInput)
+    /// Creates a new builder-style object to manufacture [`PutInsightSelectorsInput`](crate::input::PutInsightSelectorsInput).
     pub fn builder() -> crate::input::put_insight_selectors_input::Builder {
         crate::input::put_insight_selectors_input::Builder::default()
     }
@@ -729,7 +729,7 @@ pub struct RemoveTags {
     _private: (),
 }
 impl RemoveTags {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsInput`](crate::input::RemoveTagsInput).
     pub fn builder() -> crate::input::remove_tags_input::Builder {
         crate::input::remove_tags_input::Builder::default()
     }
@@ -761,7 +761,7 @@ pub struct RestoreEventDataStore {
     _private: (),
 }
 impl RestoreEventDataStore {
-    /// Creates a new builder-style object to manufacture [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput)
+    /// Creates a new builder-style object to manufacture [`RestoreEventDataStoreInput`](crate::input::RestoreEventDataStoreInput).
     pub fn builder() -> crate::input::restore_event_data_store_input::Builder {
         crate::input::restore_event_data_store_input::Builder::default()
     }
@@ -795,7 +795,7 @@ pub struct StartLogging {
     _private: (),
 }
 impl StartLogging {
-    /// Creates a new builder-style object to manufacture [`StartLoggingInput`](crate::input::StartLoggingInput)
+    /// Creates a new builder-style object to manufacture [`StartLoggingInput`](crate::input::StartLoggingInput).
     pub fn builder() -> crate::input::start_logging_input::Builder {
         crate::input::start_logging_input::Builder::default()
     }
@@ -827,7 +827,7 @@ pub struct StartQuery {
     _private: (),
 }
 impl StartQuery {
-    /// Creates a new builder-style object to manufacture [`StartQueryInput`](crate::input::StartQueryInput)
+    /// Creates a new builder-style object to manufacture [`StartQueryInput`](crate::input::StartQueryInput).
     pub fn builder() -> crate::input::start_query_input::Builder {
         crate::input::start_query_input::Builder::default()
     }
@@ -859,7 +859,7 @@ pub struct StopLogging {
     _private: (),
 }
 impl StopLogging {
-    /// Creates a new builder-style object to manufacture [`StopLoggingInput`](crate::input::StopLoggingInput)
+    /// Creates a new builder-style object to manufacture [`StopLoggingInput`](crate::input::StopLoggingInput).
     pub fn builder() -> crate::input::stop_logging_input::Builder {
         crate::input::stop_logging_input::Builder::default()
     }
@@ -891,7 +891,7 @@ pub struct UpdateEventDataStore {
     _private: (),
 }
 impl UpdateEventDataStore {
-    /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventDataStoreInput`](crate::input::UpdateEventDataStoreInput).
     pub fn builder() -> crate::input::update_event_data_store_input::Builder {
         crate::input::update_event_data_store_input::Builder::default()
     }
@@ -925,7 +925,7 @@ pub struct UpdateTrail {
     _private: (),
 }
 impl UpdateTrail {
-    /// Creates a new builder-style object to manufacture [`UpdateTrailInput`](crate::input::UpdateTrailInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTrailInput`](crate::input::UpdateTrailInput).
     pub fn builder() -> crate::input::update_trail_input::Builder {
         crate::input::update_trail_input::Builder::default()
     }

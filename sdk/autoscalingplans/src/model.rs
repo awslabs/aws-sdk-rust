@@ -219,11 +219,10 @@ impl std::fmt::Debug for ScalingInstruction {
         formatter.finish()
     }
 }
-/// See [`ScalingInstruction`](crate::model::ScalingInstruction)
+/// See [`ScalingInstruction`](crate::model::ScalingInstruction).
 pub mod scaling_instruction {
 
-    /// A builder for [`ScalingInstruction`](crate::model::ScalingInstruction)
-    #[non_exhaustive]
+    /// A builder for [`ScalingInstruction`](crate::model::ScalingInstruction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_namespace: std::option::Option<crate::model::ServiceNamespace>,
@@ -505,7 +504,7 @@ pub mod scaling_instruction {
             self.disable_dynamic_scaling = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingInstruction`](crate::model::ScalingInstruction)
+        /// Consumes the builder and constructs a [`ScalingInstruction`](crate::model::ScalingInstruction).
         pub fn build(self) -> crate::model::ScalingInstruction {
             crate::model::ScalingInstruction {
                 service_namespace: self.service_namespace,
@@ -528,7 +527,7 @@ pub mod scaling_instruction {
     }
 }
 impl ScalingInstruction {
-    /// Creates a new builder-style object to manufacture [`ScalingInstruction`](crate::model::ScalingInstruction)
+    /// Creates a new builder-style object to manufacture [`ScalingInstruction`](crate::model::ScalingInstruction).
     pub fn builder() -> crate::model::scaling_instruction::Builder {
         crate::model::scaling_instruction::Builder::default()
     }
@@ -774,11 +773,10 @@ impl std::fmt::Debug for CustomizedLoadMetricSpecification {
         formatter.finish()
     }
 }
-/// See [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification)
+/// See [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
 pub mod customized_load_metric_specification {
 
-    /// A builder for [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification)
-    #[non_exhaustive]
+    /// A builder for [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -852,7 +850,7 @@ pub mod customized_load_metric_specification {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification)
+        /// Consumes the builder and constructs a [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
         pub fn build(self) -> crate::model::CustomizedLoadMetricSpecification {
             crate::model::CustomizedLoadMetricSpecification {
                 metric_name: self.metric_name,
@@ -865,7 +863,7 @@ pub mod customized_load_metric_specification {
     }
 }
 impl CustomizedLoadMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification)
+    /// Creates a new builder-style object to manufacture [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
     pub fn builder() -> crate::model::customized_load_metric_specification::Builder {
         crate::model::customized_load_metric_specification::Builder::default()
     }
@@ -965,11 +963,10 @@ impl std::fmt::Debug for MetricDimension {
         formatter.finish()
     }
 }
-/// See [`MetricDimension`](crate::model::MetricDimension)
+/// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
 
-    /// A builder for [`MetricDimension`](crate::model::MetricDimension)
-    #[non_exhaustive]
+    /// A builder for [`MetricDimension`](crate::model::MetricDimension).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -996,7 +993,7 @@ pub mod metric_dimension {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`MetricDimension`](crate::model::MetricDimension)
+        /// Consumes the builder and constructs a [`MetricDimension`](crate::model::MetricDimension).
         pub fn build(self) -> crate::model::MetricDimension {
             crate::model::MetricDimension {
                 name: self.name,
@@ -1006,7 +1003,7 @@ pub mod metric_dimension {
     }
 }
 impl MetricDimension {
-    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension)
+    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
     pub fn builder() -> crate::model::metric_dimension::Builder {
         crate::model::metric_dimension::Builder::default()
     }
@@ -1101,11 +1098,10 @@ impl std::fmt::Debug for PredefinedLoadMetricSpecification {
         formatter.finish()
     }
 }
-/// See [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification)
+/// See [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
 pub mod predefined_load_metric_specification {
 
-    /// A builder for [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification)
-    #[non_exhaustive]
+    /// A builder for [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_load_metric_type: std::option::Option<crate::model::LoadMetricType>,
@@ -1194,7 +1190,7 @@ pub mod predefined_load_metric_specification {
             self.resource_label = input;
             self
         }
-        /// Consumes the builder and constructs a [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification)
+        /// Consumes the builder and constructs a [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
         pub fn build(self) -> crate::model::PredefinedLoadMetricSpecification {
             crate::model::PredefinedLoadMetricSpecification {
                 predefined_load_metric_type: self.predefined_load_metric_type,
@@ -1204,7 +1200,7 @@ pub mod predefined_load_metric_specification {
     }
 }
 impl PredefinedLoadMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification)
+    /// Creates a new builder-style object to manufacture [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
     pub fn builder() -> crate::model::predefined_load_metric_specification::Builder {
         crate::model::predefined_load_metric_specification::Builder::default()
     }
@@ -1358,11 +1354,10 @@ impl std::fmt::Debug for TargetTrackingConfiguration {
         formatter.finish()
     }
 }
-/// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration)
+/// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
 pub mod target_tracking_configuration {
 
-    /// A builder for [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_scaling_metric_specification:
@@ -1464,7 +1459,7 @@ pub mod target_tracking_configuration {
             self.estimated_instance_warmup = input;
             self
         }
-        /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration)
+        /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
         pub fn build(self) -> crate::model::TargetTrackingConfiguration {
             crate::model::TargetTrackingConfiguration {
                 predefined_scaling_metric_specification: self
@@ -1481,7 +1476,7 @@ pub mod target_tracking_configuration {
     }
 }
 impl TargetTrackingConfiguration {
-    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration)
+    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
     pub fn builder() -> crate::model::target_tracking_configuration::Builder {
         crate::model::target_tracking_configuration::Builder::default()
     }
@@ -1543,11 +1538,10 @@ impl std::fmt::Debug for CustomizedScalingMetricSpecification {
         formatter.finish()
     }
 }
-/// See [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification)
+/// See [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
 pub mod customized_scaling_metric_specification {
 
-    /// A builder for [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification)
-    #[non_exhaustive]
+    /// A builder for [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
@@ -1621,7 +1615,7 @@ pub mod customized_scaling_metric_specification {
             self.unit = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification)
+        /// Consumes the builder and constructs a [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
         pub fn build(self) -> crate::model::CustomizedScalingMetricSpecification {
             crate::model::CustomizedScalingMetricSpecification {
                 metric_name: self.metric_name,
@@ -1634,7 +1628,7 @@ pub mod customized_scaling_metric_specification {
     }
 }
 impl CustomizedScalingMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification)
+    /// Creates a new builder-style object to manufacture [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
     pub fn builder() -> crate::model::customized_scaling_metric_specification::Builder {
         crate::model::customized_scaling_metric_specification::Builder::default()
     }
@@ -1728,11 +1722,10 @@ impl std::fmt::Debug for PredefinedScalingMetricSpecification {
         formatter.finish()
     }
 }
-/// See [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification)
+/// See [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
 pub mod predefined_scaling_metric_specification {
 
-    /// A builder for [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification)
-    #[non_exhaustive]
+    /// A builder for [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predefined_scaling_metric_type:
@@ -1825,7 +1818,7 @@ pub mod predefined_scaling_metric_specification {
             self.resource_label = input;
             self
         }
-        /// Consumes the builder and constructs a [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification)
+        /// Consumes the builder and constructs a [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
         pub fn build(self) -> crate::model::PredefinedScalingMetricSpecification {
             crate::model::PredefinedScalingMetricSpecification {
                 predefined_scaling_metric_type: self.predefined_scaling_metric_type,
@@ -1835,7 +1828,7 @@ pub mod predefined_scaling_metric_specification {
     }
 }
 impl PredefinedScalingMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification)
+    /// Creates a new builder-style object to manufacture [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
     pub fn builder() -> crate::model::predefined_scaling_metric_specification::Builder {
         crate::model::predefined_scaling_metric_specification::Builder::default()
     }
@@ -2176,11 +2169,10 @@ impl std::fmt::Debug for ApplicationSource {
         formatter.finish()
     }
 }
-/// See [`ApplicationSource`](crate::model::ApplicationSource)
+/// See [`ApplicationSource`](crate::model::ApplicationSource).
 pub mod application_source {
 
-    /// A builder for [`ApplicationSource`](crate::model::ApplicationSource)
-    #[non_exhaustive]
+    /// A builder for [`ApplicationSource`](crate::model::ApplicationSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cloud_formation_stack_arn: std::option::Option<std::string::String>,
@@ -2219,7 +2211,7 @@ pub mod application_source {
             self.tag_filters = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApplicationSource`](crate::model::ApplicationSource)
+        /// Consumes the builder and constructs a [`ApplicationSource`](crate::model::ApplicationSource).
         pub fn build(self) -> crate::model::ApplicationSource {
             crate::model::ApplicationSource {
                 cloud_formation_stack_arn: self.cloud_formation_stack_arn,
@@ -2229,7 +2221,7 @@ pub mod application_source {
     }
 }
 impl ApplicationSource {
-    /// Creates a new builder-style object to manufacture [`ApplicationSource`](crate::model::ApplicationSource)
+    /// Creates a new builder-style object to manufacture [`ApplicationSource`](crate::model::ApplicationSource).
     pub fn builder() -> crate::model::application_source::Builder {
         crate::model::application_source::Builder::default()
     }
@@ -2262,11 +2254,10 @@ impl std::fmt::Debug for TagFilter {
         formatter.finish()
     }
 }
-/// See [`TagFilter`](crate::model::TagFilter)
+/// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
-    /// A builder for [`TagFilter`](crate::model::TagFilter)
-    #[non_exhaustive]
+    /// A builder for [`TagFilter`](crate::model::TagFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2302,7 +2293,7 @@ pub mod tag_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter)
+        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter).
         pub fn build(self) -> crate::model::TagFilter {
             crate::model::TagFilter {
                 key: self.key,
@@ -2312,7 +2303,7 @@ pub mod tag_filter {
     }
 }
 impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter)
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
     pub fn builder() -> crate::model::tag_filter::Builder {
         crate::model::tag_filter::Builder::default()
     }
@@ -2345,11 +2336,10 @@ impl std::fmt::Debug for Datapoint {
         formatter.finish()
     }
 }
-/// See [`Datapoint`](crate::model::Datapoint)
+/// See [`Datapoint`](crate::model::Datapoint).
 pub mod datapoint {
 
-    /// A builder for [`Datapoint`](crate::model::Datapoint)
-    #[non_exhaustive]
+    /// A builder for [`Datapoint`](crate::model::Datapoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2379,7 +2369,7 @@ pub mod datapoint {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Datapoint`](crate::model::Datapoint)
+        /// Consumes the builder and constructs a [`Datapoint`](crate::model::Datapoint).
         pub fn build(self) -> crate::model::Datapoint {
             crate::model::Datapoint {
                 timestamp: self.timestamp,
@@ -2389,7 +2379,7 @@ pub mod datapoint {
     }
 }
 impl Datapoint {
-    /// Creates a new builder-style object to manufacture [`Datapoint`](crate::model::Datapoint)
+    /// Creates a new builder-style object to manufacture [`Datapoint`](crate::model::Datapoint).
     pub fn builder() -> crate::model::datapoint::Builder {
         crate::model::datapoint::Builder::default()
     }
@@ -2552,11 +2542,10 @@ impl std::fmt::Debug for ScalingPlan {
         formatter.finish()
     }
 }
-/// See [`ScalingPlan`](crate::model::ScalingPlan)
+/// See [`ScalingPlan`](crate::model::ScalingPlan).
 pub mod scaling_plan {
 
-    /// A builder for [`ScalingPlan`](crate::model::ScalingPlan)
-    #[non_exhaustive]
+    /// A builder for [`ScalingPlan`](crate::model::ScalingPlan).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
@@ -2697,7 +2686,7 @@ pub mod scaling_plan {
             self.creation_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingPlan`](crate::model::ScalingPlan)
+        /// Consumes the builder and constructs a [`ScalingPlan`](crate::model::ScalingPlan).
         pub fn build(self) -> crate::model::ScalingPlan {
             crate::model::ScalingPlan {
                 scaling_plan_name: self.scaling_plan_name,
@@ -2713,7 +2702,7 @@ pub mod scaling_plan {
     }
 }
 impl ScalingPlan {
-    /// Creates a new builder-style object to manufacture [`ScalingPlan`](crate::model::ScalingPlan)
+    /// Creates a new builder-style object to manufacture [`ScalingPlan`](crate::model::ScalingPlan).
     pub fn builder() -> crate::model::scaling_plan::Builder {
         crate::model::scaling_plan::Builder::default()
     }
@@ -2922,11 +2911,10 @@ impl std::fmt::Debug for ScalingPlanResource {
         formatter.finish()
     }
 }
-/// See [`ScalingPlanResource`](crate::model::ScalingPlanResource)
+/// See [`ScalingPlanResource`](crate::model::ScalingPlanResource).
 pub mod scaling_plan_resource {
 
-    /// A builder for [`ScalingPlanResource`](crate::model::ScalingPlanResource)
-    #[non_exhaustive]
+    /// A builder for [`ScalingPlanResource`](crate::model::ScalingPlanResource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
@@ -3090,7 +3078,7 @@ pub mod scaling_plan_resource {
             self.scaling_status_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingPlanResource`](crate::model::ScalingPlanResource)
+        /// Consumes the builder and constructs a [`ScalingPlanResource`](crate::model::ScalingPlanResource).
         pub fn build(self) -> crate::model::ScalingPlanResource {
             crate::model::ScalingPlanResource {
                 scaling_plan_name: self.scaling_plan_name,
@@ -3106,7 +3094,7 @@ pub mod scaling_plan_resource {
     }
 }
 impl ScalingPlanResource {
-    /// Creates a new builder-style object to manufacture [`ScalingPlanResource`](crate::model::ScalingPlanResource)
+    /// Creates a new builder-style object to manufacture [`ScalingPlanResource`](crate::model::ScalingPlanResource).
     pub fn builder() -> crate::model::scaling_plan_resource::Builder {
         crate::model::scaling_plan_resource::Builder::default()
     }
@@ -3211,11 +3199,10 @@ impl std::fmt::Debug for ScalingPolicy {
         formatter.finish()
     }
 }
-/// See [`ScalingPolicy`](crate::model::ScalingPolicy)
+/// See [`ScalingPolicy`](crate::model::ScalingPolicy).
 pub mod scaling_policy {
 
-    /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy)
-    #[non_exhaustive]
+    /// A builder for [`ScalingPolicy`](crate::model::ScalingPolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_name: std::option::Option<std::string::String>,
@@ -3263,7 +3250,7 @@ pub mod scaling_policy {
             self.target_tracking_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScalingPolicy`](crate::model::ScalingPolicy)
+        /// Consumes the builder and constructs a [`ScalingPolicy`](crate::model::ScalingPolicy).
         pub fn build(self) -> crate::model::ScalingPolicy {
             crate::model::ScalingPolicy {
                 policy_name: self.policy_name,
@@ -3274,7 +3261,7 @@ pub mod scaling_policy {
     }
 }
 impl ScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy)
+    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
     pub fn builder() -> crate::model::scaling_policy::Builder {
         crate::model::scaling_policy::Builder::default()
     }

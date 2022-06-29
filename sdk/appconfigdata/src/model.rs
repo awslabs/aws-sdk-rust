@@ -136,11 +136,10 @@ impl std::fmt::Debug for InvalidParameterDetail {
         formatter.finish()
     }
 }
-/// See [`InvalidParameterDetail`](crate::model::InvalidParameterDetail)
+/// See [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
 pub mod invalid_parameter_detail {
 
-    /// A builder for [`InvalidParameterDetail`](crate::model::InvalidParameterDetail)
-    #[non_exhaustive]
+    /// A builder for [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) problem: std::option::Option<crate::model::InvalidParameterProblem>,
@@ -159,7 +158,7 @@ pub mod invalid_parameter_detail {
             self.problem = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidParameterDetail`](crate::model::InvalidParameterDetail)
+        /// Consumes the builder and constructs a [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
         pub fn build(self) -> crate::model::InvalidParameterDetail {
             crate::model::InvalidParameterDetail {
                 problem: self.problem,
@@ -168,7 +167,7 @@ pub mod invalid_parameter_detail {
     }
 }
 impl InvalidParameterDetail {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterDetail`](crate::model::InvalidParameterDetail)
+    /// Creates a new builder-style object to manufacture [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
     pub fn builder() -> crate::model::invalid_parameter_detail::Builder {
         crate::model::invalid_parameter_detail::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct GetRoutingControlState {
     _private: (),
 }
 impl GetRoutingControlState {
-    /// Creates a new builder-style object to manufacture [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput)
+    /// Creates a new builder-style object to manufacture [`GetRoutingControlStateInput`](crate::input::GetRoutingControlStateInput).
     pub fn builder() -> crate::input::get_routing_control_state_input::Builder {
         crate::input::get_routing_control_state_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct ListRoutingControls {
     _private: (),
 }
 impl ListRoutingControls {
-    /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput)
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput).
     pub fn builder() -> crate::input::list_routing_controls_input::Builder {
         crate::input::list_routing_controls_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct UpdateRoutingControlState {
     _private: (),
 }
 impl UpdateRoutingControlState {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateInput`](crate::input::UpdateRoutingControlStateInput).
     pub fn builder() -> crate::input::update_routing_control_state_input::Builder {
         crate::input::update_routing_control_state_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct UpdateRoutingControlStates {
     _private: (),
 }
 impl UpdateRoutingControlStates {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesInput`](crate::input::UpdateRoutingControlStatesInput).
     pub fn builder() -> crate::input::update_routing_control_states_input::Builder {
         crate::input::update_routing_control_states_input::Builder::default()
     }

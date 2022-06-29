@@ -70,11 +70,10 @@ impl std::fmt::Debug for GatingRule {
         formatter.finish()
     }
 }
-/// See [`GatingRule`](crate::model::GatingRule)
+/// See [`GatingRule`](crate::model::GatingRule).
 pub mod gating_rule {
 
-    /// A builder for [`GatingRule`](crate::model::GatingRule)
-    #[non_exhaustive]
+    /// A builder for [`GatingRule`](crate::model::GatingRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -194,7 +193,7 @@ pub mod gating_rule {
             self.wait_period_ms = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatingRule`](crate::model::GatingRule)
+        /// Consumes the builder and constructs a [`GatingRule`](crate::model::GatingRule).
         pub fn build(self) -> crate::model::GatingRule {
             crate::model::GatingRule {
                 control_panel_arn: self.control_panel_arn,
@@ -210,7 +209,7 @@ pub mod gating_rule {
     }
 }
 impl GatingRule {
-    /// Creates a new builder-style object to manufacture [`GatingRule`](crate::model::GatingRule)
+    /// Creates a new builder-style object to manufacture [`GatingRule`](crate::model::GatingRule).
     pub fn builder() -> crate::model::gating_rule::Builder {
         crate::model::gating_rule::Builder::default()
     }
@@ -309,11 +308,10 @@ impl std::fmt::Debug for RuleConfig {
         formatter.finish()
     }
 }
-/// See [`RuleConfig`](crate::model::RuleConfig)
+/// See [`RuleConfig`](crate::model::RuleConfig).
 pub mod rule_config {
 
-    /// A builder for [`RuleConfig`](crate::model::RuleConfig)
-    #[non_exhaustive]
+    /// A builder for [`RuleConfig`](crate::model::RuleConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inverted: std::option::Option<bool>,
@@ -351,7 +349,7 @@ pub mod rule_config {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`RuleConfig`](crate::model::RuleConfig)
+        /// Consumes the builder and constructs a [`RuleConfig`](crate::model::RuleConfig).
         pub fn build(self) -> crate::model::RuleConfig {
             crate::model::RuleConfig {
                 inverted: self.inverted.unwrap_or_default(),
@@ -362,7 +360,7 @@ pub mod rule_config {
     }
 }
 impl RuleConfig {
-    /// Creates a new builder-style object to manufacture [`RuleConfig`](crate::model::RuleConfig)
+    /// Creates a new builder-style object to manufacture [`RuleConfig`](crate::model::RuleConfig).
     pub fn builder() -> crate::model::rule_config::Builder {
         crate::model::rule_config::Builder::default()
     }
@@ -489,11 +487,10 @@ impl std::fmt::Debug for AssertionRule {
         formatter.finish()
     }
 }
-/// See [`AssertionRule`](crate::model::AssertionRule)
+/// See [`AssertionRule`](crate::model::AssertionRule).
 pub mod assertion_rule {
 
-    /// A builder for [`AssertionRule`](crate::model::AssertionRule)
-    #[non_exhaustive]
+    /// A builder for [`AssertionRule`](crate::model::AssertionRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -593,7 +590,7 @@ pub mod assertion_rule {
             self.wait_period_ms = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssertionRule`](crate::model::AssertionRule)
+        /// Consumes the builder and constructs a [`AssertionRule`](crate::model::AssertionRule).
         pub fn build(self) -> crate::model::AssertionRule {
             crate::model::AssertionRule {
                 asserted_controls: self.asserted_controls,
@@ -608,7 +605,7 @@ pub mod assertion_rule {
     }
 }
 impl AssertionRule {
-    /// Creates a new builder-style object to manufacture [`AssertionRule`](crate::model::AssertionRule)
+    /// Creates a new builder-style object to manufacture [`AssertionRule`](crate::model::AssertionRule).
     pub fn builder() -> crate::model::assertion_rule::Builder {
         crate::model::assertion_rule::Builder::default()
     }
@@ -648,11 +645,10 @@ impl std::fmt::Debug for GatingRuleUpdate {
         formatter.finish()
     }
 }
-/// See [`GatingRuleUpdate`](crate::model::GatingRuleUpdate)
+/// See [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
 pub mod gating_rule_update {
 
-    /// A builder for [`GatingRuleUpdate`](crate::model::GatingRuleUpdate)
-    #[non_exhaustive]
+    /// A builder for [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -693,7 +689,7 @@ pub mod gating_rule_update {
             self.wait_period_ms = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatingRuleUpdate`](crate::model::GatingRuleUpdate)
+        /// Consumes the builder and constructs a [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
         pub fn build(self) -> crate::model::GatingRuleUpdate {
             crate::model::GatingRuleUpdate {
                 name: self.name,
@@ -704,7 +700,7 @@ pub mod gating_rule_update {
     }
 }
 impl GatingRuleUpdate {
-    /// Creates a new builder-style object to manufacture [`GatingRuleUpdate`](crate::model::GatingRuleUpdate)
+    /// Creates a new builder-style object to manufacture [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
     pub fn builder() -> crate::model::gating_rule_update::Builder {
         crate::model::gating_rule_update::Builder::default()
     }
@@ -744,11 +740,10 @@ impl std::fmt::Debug for AssertionRuleUpdate {
         formatter.finish()
     }
 }
-/// See [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate)
+/// See [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
 pub mod assertion_rule_update {
 
-    /// A builder for [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate)
-    #[non_exhaustive]
+    /// A builder for [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -789,7 +784,7 @@ pub mod assertion_rule_update {
             self.wait_period_ms = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate)
+        /// Consumes the builder and constructs a [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
         pub fn build(self) -> crate::model::AssertionRuleUpdate {
             crate::model::AssertionRuleUpdate {
                 name: self.name,
@@ -800,7 +795,7 @@ pub mod assertion_rule_update {
     }
 }
 impl AssertionRuleUpdate {
-    /// Creates a new builder-style object to manufacture [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate)
+    /// Creates a new builder-style object to manufacture [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
     pub fn builder() -> crate::model::assertion_rule_update::Builder {
         crate::model::assertion_rule_update::Builder::default()
     }
@@ -847,11 +842,10 @@ impl std::fmt::Debug for RoutingControl {
         formatter.finish()
     }
 }
-/// See [`RoutingControl`](crate::model::RoutingControl)
+/// See [`RoutingControl`](crate::model::RoutingControl).
 pub mod routing_control {
 
-    /// A builder for [`RoutingControl`](crate::model::RoutingControl)
-    #[non_exhaustive]
+    /// A builder for [`RoutingControl`](crate::model::RoutingControl).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -906,7 +900,7 @@ pub mod routing_control {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoutingControl`](crate::model::RoutingControl)
+        /// Consumes the builder and constructs a [`RoutingControl`](crate::model::RoutingControl).
         pub fn build(self) -> crate::model::RoutingControl {
             crate::model::RoutingControl {
                 control_panel_arn: self.control_panel_arn,
@@ -918,7 +912,7 @@ pub mod routing_control {
     }
 }
 impl RoutingControl {
-    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl)
+    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl).
     pub fn builder() -> crate::model::routing_control::Builder {
         crate::model::routing_control::Builder::default()
     }
@@ -979,11 +973,10 @@ impl std::fmt::Debug for ControlPanel {
         formatter.finish()
     }
 }
-/// See [`ControlPanel`](crate::model::ControlPanel)
+/// See [`ControlPanel`](crate::model::ControlPanel).
 pub mod control_panel {
 
-    /// A builder for [`ControlPanel`](crate::model::ControlPanel)
-    #[non_exhaustive]
+    /// A builder for [`ControlPanel`](crate::model::ControlPanel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -1057,7 +1050,7 @@ pub mod control_panel {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ControlPanel`](crate::model::ControlPanel)
+        /// Consumes the builder and constructs a [`ControlPanel`](crate::model::ControlPanel).
         pub fn build(self) -> crate::model::ControlPanel {
             crate::model::ControlPanel {
                 cluster_arn: self.cluster_arn,
@@ -1071,7 +1064,7 @@ pub mod control_panel {
     }
 }
 impl ControlPanel {
-    /// Creates a new builder-style object to manufacture [`ControlPanel`](crate::model::ControlPanel)
+    /// Creates a new builder-style object to manufacture [`ControlPanel`](crate::model::ControlPanel).
     pub fn builder() -> crate::model::control_panel::Builder {
         crate::model::control_panel::Builder::default()
     }
@@ -1106,11 +1099,10 @@ impl std::fmt::Debug for Rule {
         formatter.finish()
     }
 }
-/// See [`Rule`](crate::model::Rule)
+/// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
-    /// A builder for [`Rule`](crate::model::Rule)
-    #[non_exhaustive]
+    /// A builder for [`Rule`](crate::model::Rule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) assertion: std::option::Option<crate::model::AssertionRule>,
@@ -1142,7 +1134,7 @@ pub mod rule {
             self.gating = input;
             self
         }
-        /// Consumes the builder and constructs a [`Rule`](crate::model::Rule)
+        /// Consumes the builder and constructs a [`Rule`](crate::model::Rule).
         pub fn build(self) -> crate::model::Rule {
             crate::model::Rule {
                 assertion: self.assertion,
@@ -1152,7 +1144,7 @@ pub mod rule {
     }
 }
 impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule)
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
     pub fn builder() -> crate::model::rule::Builder {
         crate::model::rule::Builder::default()
     }
@@ -1201,11 +1193,10 @@ impl std::fmt::Debug for Cluster {
         formatter.finish()
     }
 }
-/// See [`Cluster`](crate::model::Cluster)
+/// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
-    /// A builder for [`Cluster`](crate::model::Cluster)
-    #[non_exhaustive]
+    /// A builder for [`Cluster`](crate::model::Cluster).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
@@ -1266,7 +1257,7 @@ pub mod cluster {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster)
+        /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
                 cluster_arn: self.cluster_arn,
@@ -1278,7 +1269,7 @@ pub mod cluster {
     }
 }
 impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster)
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
     pub fn builder() -> crate::model::cluster::Builder {
         crate::model::cluster::Builder::default()
     }
@@ -1313,11 +1304,10 @@ impl std::fmt::Debug for ClusterEndpoint {
         formatter.finish()
     }
 }
-/// See [`ClusterEndpoint`](crate::model::ClusterEndpoint)
+/// See [`ClusterEndpoint`](crate::model::ClusterEndpoint).
 pub mod cluster_endpoint {
 
-    /// A builder for [`ClusterEndpoint`](crate::model::ClusterEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`ClusterEndpoint`](crate::model::ClusterEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -1346,7 +1336,7 @@ pub mod cluster_endpoint {
             self.region = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClusterEndpoint`](crate::model::ClusterEndpoint)
+        /// Consumes the builder and constructs a [`ClusterEndpoint`](crate::model::ClusterEndpoint).
         pub fn build(self) -> crate::model::ClusterEndpoint {
             crate::model::ClusterEndpoint {
                 endpoint: self.endpoint,
@@ -1356,7 +1346,7 @@ pub mod cluster_endpoint {
     }
 }
 impl ClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`ClusterEndpoint`](crate::model::ClusterEndpoint)
+    /// Creates a new builder-style object to manufacture [`ClusterEndpoint`](crate::model::ClusterEndpoint).
     pub fn builder() -> crate::model::cluster_endpoint::Builder {
         crate::model::cluster_endpoint::Builder::default()
     }
@@ -1419,11 +1409,10 @@ impl std::fmt::Debug for NewGatingRule {
         formatter.finish()
     }
 }
-/// See [`NewGatingRule`](crate::model::NewGatingRule)
+/// See [`NewGatingRule`](crate::model::NewGatingRule).
 pub mod new_gating_rule {
 
-    /// A builder for [`NewGatingRule`](crate::model::NewGatingRule)
-    #[non_exhaustive]
+    /// A builder for [`NewGatingRule`](crate::model::NewGatingRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -1520,7 +1509,7 @@ pub mod new_gating_rule {
             self.wait_period_ms = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewGatingRule`](crate::model::NewGatingRule)
+        /// Consumes the builder and constructs a [`NewGatingRule`](crate::model::NewGatingRule).
         pub fn build(self) -> crate::model::NewGatingRule {
             crate::model::NewGatingRule {
                 control_panel_arn: self.control_panel_arn,
@@ -1534,7 +1523,7 @@ pub mod new_gating_rule {
     }
 }
 impl NewGatingRule {
-    /// Creates a new builder-style object to manufacture [`NewGatingRule`](crate::model::NewGatingRule)
+    /// Creates a new builder-style object to manufacture [`NewGatingRule`](crate::model::NewGatingRule).
     pub fn builder() -> crate::model::new_gating_rule::Builder {
         crate::model::new_gating_rule::Builder::default()
     }
@@ -1588,11 +1577,10 @@ impl std::fmt::Debug for NewAssertionRule {
         formatter.finish()
     }
 }
-/// See [`NewAssertionRule`](crate::model::NewAssertionRule)
+/// See [`NewAssertionRule`](crate::model::NewAssertionRule).
 pub mod new_assertion_rule {
 
-    /// A builder for [`NewAssertionRule`](crate::model::NewAssertionRule)
-    #[non_exhaustive]
+    /// A builder for [`NewAssertionRule`](crate::model::NewAssertionRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) asserted_controls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1667,7 +1655,7 @@ pub mod new_assertion_rule {
             self.wait_period_ms = input;
             self
         }
-        /// Consumes the builder and constructs a [`NewAssertionRule`](crate::model::NewAssertionRule)
+        /// Consumes the builder and constructs a [`NewAssertionRule`](crate::model::NewAssertionRule).
         pub fn build(self) -> crate::model::NewAssertionRule {
             crate::model::NewAssertionRule {
                 asserted_controls: self.asserted_controls,
@@ -1680,7 +1668,7 @@ pub mod new_assertion_rule {
     }
 }
 impl NewAssertionRule {
-    /// Creates a new builder-style object to manufacture [`NewAssertionRule`](crate::model::NewAssertionRule)
+    /// Creates a new builder-style object to manufacture [`NewAssertionRule`](crate::model::NewAssertionRule).
     pub fn builder() -> crate::model::new_assertion_rule::Builder {
         crate::model::new_assertion_rule::Builder::default()
     }

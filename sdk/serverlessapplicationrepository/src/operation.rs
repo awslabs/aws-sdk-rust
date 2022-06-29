@@ -10,7 +10,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateApplicationVersion {
     _private: (),
 }
 impl CreateApplicationVersion {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput).
     pub fn builder() -> crate::input::create_application_version_input::Builder {
         crate::input::create_application_version_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateCloudFormationChangeSet {
     _private: (),
 }
 impl CreateCloudFormationChangeSet {
-    /// Creates a new builder-style object to manufacture [`CreateCloudFormationChangeSetInput`](crate::input::CreateCloudFormationChangeSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateCloudFormationChangeSetInput`](crate::input::CreateCloudFormationChangeSetInput).
     pub fn builder() -> crate::input::create_cloud_formation_change_set_input::Builder {
         crate::input::create_cloud_formation_change_set_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateCloudFormationTemplate {
     _private: (),
 }
 impl CreateCloudFormationTemplate {
-    /// Creates a new builder-style object to manufacture [`CreateCloudFormationTemplateInput`](crate::input::CreateCloudFormationTemplateInput)
+    /// Creates a new builder-style object to manufacture [`CreateCloudFormationTemplateInput`](crate::input::CreateCloudFormationTemplateInput).
     pub fn builder() -> crate::input::create_cloud_formation_template_input::Builder {
         crate::input::create_cloud_formation_template_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct GetApplication {
     _private: (),
 }
 impl GetApplication {
-    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput).
     pub fn builder() -> crate::input::get_application_input::Builder {
         crate::input::get_application_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct GetApplicationPolicy {
     _private: (),
 }
 impl GetApplicationPolicy {
-    /// Creates a new builder-style object to manufacture [`GetApplicationPolicyInput`](crate::input::GetApplicationPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationPolicyInput`](crate::input::GetApplicationPolicyInput).
     pub fn builder() -> crate::input::get_application_policy_input::Builder {
         crate::input::get_application_policy_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct GetCloudFormationTemplate {
     _private: (),
 }
 impl GetCloudFormationTemplate {
-    /// Creates a new builder-style object to manufacture [`GetCloudFormationTemplateInput`](crate::input::GetCloudFormationTemplateInput)
+    /// Creates a new builder-style object to manufacture [`GetCloudFormationTemplateInput`](crate::input::GetCloudFormationTemplateInput).
     pub fn builder() -> crate::input::get_cloud_formation_template_input::Builder {
         crate::input::get_cloud_formation_template_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct ListApplicationDependencies {
     _private: (),
 }
 impl ListApplicationDependencies {
-    /// Creates a new builder-style object to manufacture [`ListApplicationDependenciesInput`](crate::input::ListApplicationDependenciesInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationDependenciesInput`](crate::input::ListApplicationDependenciesInput).
     pub fn builder() -> crate::input::list_application_dependencies_input::Builder {
         crate::input::list_application_dependencies_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct ListApplications {
     _private: (),
 }
 impl ListApplications {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
     pub fn builder() -> crate::input::list_applications_input::Builder {
         crate::input::list_applications_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct ListApplicationVersions {
     _private: (),
 }
 impl ListApplicationVersions {
-    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::input::ListApplicationVersionsInput).
     pub fn builder() -> crate::input::list_application_versions_input::Builder {
         crate::input::list_application_versions_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct PutApplicationPolicy {
     _private: (),
 }
 impl PutApplicationPolicy {
-    /// Creates a new builder-style object to manufacture [`PutApplicationPolicyInput`](crate::input::PutApplicationPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutApplicationPolicyInput`](crate::input::PutApplicationPolicyInput).
     pub fn builder() -> crate::input::put_application_policy_input::Builder {
         crate::input::put_application_policy_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct UnshareApplication {
     _private: (),
 }
 impl UnshareApplication {
-    /// Creates a new builder-style object to manufacture [`UnshareApplicationInput`](crate::input::UnshareApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UnshareApplicationInput`](crate::input::UnshareApplicationInput).
     pub fn builder() -> crate::input::unshare_application_input::Builder {
         crate::input::unshare_application_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct UpdateApplication {
     _private: (),
 }
 impl UpdateApplication {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
     pub fn builder() -> crate::input::update_application_input::Builder {
         crate::input::update_application_input::Builder::default()
     }

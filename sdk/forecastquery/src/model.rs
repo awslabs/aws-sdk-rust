@@ -38,11 +38,10 @@ impl std::fmt::Debug for Forecast {
         formatter.finish()
     }
 }
-/// See [`Forecast`](crate::model::Forecast)
+/// See [`Forecast`](crate::model::Forecast).
 pub mod forecast {
 
-    /// A builder for [`Forecast`](crate::model::Forecast)
-    #[non_exhaustive]
+    /// A builder for [`Forecast`](crate::model::Forecast).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) predictions: std::option::Option<
@@ -90,7 +89,7 @@ pub mod forecast {
             self.predictions = input;
             self
         }
-        /// Consumes the builder and constructs a [`Forecast`](crate::model::Forecast)
+        /// Consumes the builder and constructs a [`Forecast`](crate::model::Forecast).
         pub fn build(self) -> crate::model::Forecast {
             crate::model::Forecast {
                 predictions: self.predictions,
@@ -99,7 +98,7 @@ pub mod forecast {
     }
 }
 impl Forecast {
-    /// Creates a new builder-style object to manufacture [`Forecast`](crate::model::Forecast)
+    /// Creates a new builder-style object to manufacture [`Forecast`](crate::model::Forecast).
     pub fn builder() -> crate::model::forecast::Builder {
         crate::model::forecast::Builder::default()
     }
@@ -132,11 +131,10 @@ impl std::fmt::Debug for DataPoint {
         formatter.finish()
     }
 }
-/// See [`DataPoint`](crate::model::DataPoint)
+/// See [`DataPoint`](crate::model::DataPoint).
 pub mod data_point {
 
-    /// A builder for [`DataPoint`](crate::model::DataPoint)
-    #[non_exhaustive]
+    /// A builder for [`DataPoint`](crate::model::DataPoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<std::string::String>,
@@ -163,7 +161,7 @@ pub mod data_point {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataPoint`](crate::model::DataPoint)
+        /// Consumes the builder and constructs a [`DataPoint`](crate::model::DataPoint).
         pub fn build(self) -> crate::model::DataPoint {
             crate::model::DataPoint {
                 timestamp: self.timestamp,
@@ -173,7 +171,7 @@ pub mod data_point {
     }
 }
 impl DataPoint {
-    /// Creates a new builder-style object to manufacture [`DataPoint`](crate::model::DataPoint)
+    /// Creates a new builder-style object to manufacture [`DataPoint`](crate::model::DataPoint).
     pub fn builder() -> crate::model::data_point::Builder {
         crate::model::data_point::Builder::default()
     }

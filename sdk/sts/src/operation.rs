@@ -10,7 +10,7 @@ pub struct AssumeRole {
     _private: (),
 }
 impl AssumeRole {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleInput`](crate::input::AssumeRoleInput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleInput`](crate::input::AssumeRoleInput).
     pub fn builder() -> crate::input::assume_role_input::Builder {
         crate::input::assume_role_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct AssumeRoleWithSAML {
     _private: (),
 }
 impl AssumeRoleWithSAML {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithSamlInput`](crate::input::AssumeRoleWithSamlInput).
     pub fn builder() -> crate::input::assume_role_with_saml_input::Builder {
         crate::input::assume_role_with_saml_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct AssumeRoleWithWebIdentity {
     _private: (),
 }
 impl AssumeRoleWithWebIdentity {
-    /// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityInput`](crate::input::AssumeRoleWithWebIdentityInput)
+    /// Creates a new builder-style object to manufacture [`AssumeRoleWithWebIdentityInput`](crate::input::AssumeRoleWithWebIdentityInput).
     pub fn builder() -> crate::input::assume_role_with_web_identity_input::Builder {
         crate::input::assume_role_with_web_identity_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DecodeAuthorizationMessage {
     _private: (),
 }
 impl DecodeAuthorizationMessage {
-    /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageInput`](crate::input::DecodeAuthorizationMessageInput)
+    /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageInput`](crate::input::DecodeAuthorizationMessageInput).
     pub fn builder() -> crate::input::decode_authorization_message_input::Builder {
         crate::input::decode_authorization_message_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct GetAccessKeyInfo {
     _private: (),
 }
 impl GetAccessKeyInfo {
-    /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput)
+    /// Creates a new builder-style object to manufacture [`GetAccessKeyInfoInput`](crate::input::GetAccessKeyInfoInput).
     pub fn builder() -> crate::input::get_access_key_info_input::Builder {
         crate::input::get_access_key_info_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct GetCallerIdentity {
     _private: (),
 }
 impl GetCallerIdentity {
-    /// Creates a new builder-style object to manufacture [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput)
+    /// Creates a new builder-style object to manufacture [`GetCallerIdentityInput`](crate::input::GetCallerIdentityInput).
     pub fn builder() -> crate::input::get_caller_identity_input::Builder {
         crate::input::get_caller_identity_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct GetFederationToken {
     _private: (),
 }
 impl GetFederationToken {
-    /// Creates a new builder-style object to manufacture [`GetFederationTokenInput`](crate::input::GetFederationTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetFederationTokenInput`](crate::input::GetFederationTokenInput).
     pub fn builder() -> crate::input::get_federation_token_input::Builder {
         crate::input::get_federation_token_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct GetSessionToken {
     _private: (),
 }
 impl GetSessionToken {
-    /// Creates a new builder-style object to manufacture [`GetSessionTokenInput`](crate::input::GetSessionTokenInput)
+    /// Creates a new builder-style object to manufacture [`GetSessionTokenInput`](crate::input::GetSessionTokenInput).
     pub fn builder() -> crate::input::get_session_token_input::Builder {
         crate::input::get_session_token_input::Builder::default()
     }

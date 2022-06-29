@@ -2453,11 +2453,10 @@ impl std::fmt::Display for ServerException {
     }
 }
 impl std::error::Error for ServerException {}
-/// See [`ServerException`](crate::error::ServerException)
+/// See [`ServerException`](crate::error::ServerException).
 pub mod server_exception {
 
-    /// A builder for [`ServerException`](crate::error::ServerException)
-    #[non_exhaustive]
+    /// A builder for [`ServerException`](crate::error::ServerException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2473,7 +2472,7 @@ pub mod server_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServerException`](crate::error::ServerException)
+        /// Consumes the builder and constructs a [`ServerException`](crate::error::ServerException).
         pub fn build(self) -> crate::error::ServerException {
             crate::error::ServerException {
                 message: self.message,
@@ -2482,7 +2481,7 @@ pub mod server_exception {
     }
 }
 impl ServerException {
-    /// Creates a new builder-style object to manufacture [`ServerException`](crate::error::ServerException)
+    /// Creates a new builder-style object to manufacture [`ServerException`](crate::error::ServerException).
     pub fn builder() -> crate::error::server_exception::Builder {
         crate::error::server_exception::Builder::default()
     }
@@ -2518,11 +2517,10 @@ impl std::fmt::Display for ClientException {
     }
 }
 impl std::error::Error for ClientException {}
-/// See [`ClientException`](crate::error::ClientException)
+/// See [`ClientException`](crate::error::ClientException).
 pub mod client_exception {
 
-    /// A builder for [`ClientException`](crate::error::ClientException)
-    #[non_exhaustive]
+    /// A builder for [`ClientException`](crate::error::ClientException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -2538,7 +2536,7 @@ pub mod client_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ClientException`](crate::error::ClientException)
+        /// Consumes the builder and constructs a [`ClientException`](crate::error::ClientException).
         pub fn build(self) -> crate::error::ClientException {
             crate::error::ClientException {
                 message: self.message,
@@ -2547,7 +2545,7 @@ pub mod client_exception {
     }
 }
 impl ClientException {
-    /// Creates a new builder-style object to manufacture [`ClientException`](crate::error::ClientException)
+    /// Creates a new builder-style object to manufacture [`ClientException`](crate::error::ClientException).
     pub fn builder() -> crate::error::client_exception::Builder {
         crate::error::client_exception::Builder::default()
     }

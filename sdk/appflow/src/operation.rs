@@ -10,7 +10,7 @@ pub struct CreateConnectorProfile {
     _private: (),
 }
 impl CreateConnectorProfile {
-    /// Creates a new builder-style object to manufacture [`CreateConnectorProfileInput`](crate::input::CreateConnectorProfileInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectorProfileInput`](crate::input::CreateConnectorProfileInput).
     pub fn builder() -> crate::input::create_connector_profile_input::Builder {
         crate::input::create_connector_profile_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateFlow {
     _private: (),
 }
 impl CreateFlow {
-    /// Creates a new builder-style object to manufacture [`CreateFlowInput`](crate::input::CreateFlowInput)
+    /// Creates a new builder-style object to manufacture [`CreateFlowInput`](crate::input::CreateFlowInput).
     pub fn builder() -> crate::input::create_flow_input::Builder {
         crate::input::create_flow_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteConnectorProfile {
     _private: (),
 }
 impl DeleteConnectorProfile {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileInput`](crate::input::DeleteConnectorProfileInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileInput`](crate::input::DeleteConnectorProfileInput).
     pub fn builder() -> crate::input::delete_connector_profile_input::Builder {
         crate::input::delete_connector_profile_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteFlow {
     _private: (),
 }
 impl DeleteFlow {
-    /// Creates a new builder-style object to manufacture [`DeleteFlowInput`](crate::input::DeleteFlowInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFlowInput`](crate::input::DeleteFlowInput).
     pub fn builder() -> crate::input::delete_flow_input::Builder {
         crate::input::delete_flow_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DescribeConnector {
     _private: (),
 }
 impl DescribeConnector {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::input::DescribeConnectorInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::input::DescribeConnectorInput).
     pub fn builder() -> crate::input::describe_connector_input::Builder {
         crate::input::describe_connector_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct DescribeConnectorEntity {
     _private: (),
 }
 impl DescribeConnectorEntity {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityInput`](crate::input::DescribeConnectorEntityInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityInput`](crate::input::DescribeConnectorEntityInput).
     pub fn builder() -> crate::input::describe_connector_entity_input::Builder {
         crate::input::describe_connector_entity_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DescribeConnectorProfiles {
     _private: (),
 }
 impl DescribeConnectorProfiles {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesInput`](crate::input::DescribeConnectorProfilesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesInput`](crate::input::DescribeConnectorProfilesInput).
     pub fn builder() -> crate::input::describe_connector_profiles_input::Builder {
         crate::input::describe_connector_profiles_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DescribeConnectors {
     _private: (),
 }
 impl DescribeConnectors {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorsInput`](crate::input::DescribeConnectorsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorsInput`](crate::input::DescribeConnectorsInput).
     pub fn builder() -> crate::input::describe_connectors_input::Builder {
         crate::input::describe_connectors_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DescribeFlow {
     _private: (),
 }
 impl DescribeFlow {
-    /// Creates a new builder-style object to manufacture [`DescribeFlowInput`](crate::input::DescribeFlowInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFlowInput`](crate::input::DescribeFlowInput).
     pub fn builder() -> crate::input::describe_flow_input::Builder {
         crate::input::describe_flow_input::Builder::default()
     }
@@ -310,7 +310,7 @@ pub struct DescribeFlowExecutionRecords {
     _private: (),
 }
 impl DescribeFlowExecutionRecords {
-    /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsInput`](crate::input::DescribeFlowExecutionRecordsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsInput`](crate::input::DescribeFlowExecutionRecordsInput).
     pub fn builder() -> crate::input::describe_flow_execution_records_input::Builder {
         crate::input::describe_flow_execution_records_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct ListConnectorEntities {
     _private: (),
 }
 impl ListConnectorEntities {
-    /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesInput`](crate::input::ListConnectorEntitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesInput`](crate::input::ListConnectorEntitiesInput).
     pub fn builder() -> crate::input::list_connector_entities_input::Builder {
         crate::input::list_connector_entities_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct ListConnectors {
     _private: (),
 }
 impl ListConnectors {
-    /// Creates a new builder-style object to manufacture [`ListConnectorsInput`](crate::input::ListConnectorsInput)
+    /// Creates a new builder-style object to manufacture [`ListConnectorsInput`](crate::input::ListConnectorsInput).
     pub fn builder() -> crate::input::list_connectors_input::Builder {
         crate::input::list_connectors_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct ListFlows {
     _private: (),
 }
 impl ListFlows {
-    /// Creates a new builder-style object to manufacture [`ListFlowsInput`](crate::input::ListFlowsInput)
+    /// Creates a new builder-style object to manufacture [`ListFlowsInput`](crate::input::ListFlowsInput).
     pub fn builder() -> crate::input::list_flows_input::Builder {
         crate::input::list_flows_input::Builder::default()
     }
@@ -441,7 +441,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -475,7 +475,7 @@ pub struct RegisterConnector {
     _private: (),
 }
 impl RegisterConnector {
-    /// Creates a new builder-style object to manufacture [`RegisterConnectorInput`](crate::input::RegisterConnectorInput)
+    /// Creates a new builder-style object to manufacture [`RegisterConnectorInput`](crate::input::RegisterConnectorInput).
     pub fn builder() -> crate::input::register_connector_input::Builder {
         crate::input::register_connector_input::Builder::default()
     }
@@ -509,7 +509,7 @@ pub struct StartFlow {
     _private: (),
 }
 impl StartFlow {
-    /// Creates a new builder-style object to manufacture [`StartFlowInput`](crate::input::StartFlowInput)
+    /// Creates a new builder-style object to manufacture [`StartFlowInput`](crate::input::StartFlowInput).
     pub fn builder() -> crate::input::start_flow_input::Builder {
         crate::input::start_flow_input::Builder::default()
     }
@@ -540,7 +540,7 @@ pub struct StopFlow {
     _private: (),
 }
 impl StopFlow {
-    /// Creates a new builder-style object to manufacture [`StopFlowInput`](crate::input::StopFlowInput)
+    /// Creates a new builder-style object to manufacture [`StopFlowInput`](crate::input::StopFlowInput).
     pub fn builder() -> crate::input::stop_flow_input::Builder {
         crate::input::stop_flow_input::Builder::default()
     }
@@ -571,7 +571,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -603,7 +603,7 @@ pub struct UnregisterConnector {
     _private: (),
 }
 impl UnregisterConnector {
-    /// Creates a new builder-style object to manufacture [`UnregisterConnectorInput`](crate::input::UnregisterConnectorInput)
+    /// Creates a new builder-style object to manufacture [`UnregisterConnectorInput`](crate::input::UnregisterConnectorInput).
     pub fn builder() -> crate::input::unregister_connector_input::Builder {
         crate::input::unregister_connector_input::Builder::default()
     }
@@ -637,7 +637,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -669,7 +669,7 @@ pub struct UpdateConnectorProfile {
     _private: (),
 }
 impl UpdateConnectorProfile {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileInput`](crate::input::UpdateConnectorProfileInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileInput`](crate::input::UpdateConnectorProfileInput).
     pub fn builder() -> crate::input::update_connector_profile_input::Builder {
         crate::input::update_connector_profile_input::Builder::default()
     }
@@ -703,7 +703,7 @@ pub struct UpdateFlow {
     _private: (),
 }
 impl UpdateFlow {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowInput`](crate::input::UpdateFlowInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFlowInput`](crate::input::UpdateFlowInput).
     pub fn builder() -> crate::input::update_flow_input::Builder {
         crate::input::update_flow_input::Builder::default()
     }

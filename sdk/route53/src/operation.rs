@@ -10,7 +10,7 @@ pub struct ActivateKeySigningKey {
     _private: (),
 }
 impl ActivateKeySigningKey {
-    /// Creates a new builder-style object to manufacture [`ActivateKeySigningKeyInput`](crate::input::ActivateKeySigningKeyInput)
+    /// Creates a new builder-style object to manufacture [`ActivateKeySigningKeyInput`](crate::input::ActivateKeySigningKeyInput).
     pub fn builder() -> crate::input::activate_key_signing_key_input::Builder {
         crate::input::activate_key_signing_key_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateVPCWithHostedZone {
     _private: (),
 }
 impl AssociateVPCWithHostedZone {
-    /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneInput`](crate::input::AssociateVpcWithHostedZoneInput).
     pub fn builder() -> crate::input::associate_vpc_with_hosted_zone_input::Builder {
         crate::input::associate_vpc_with_hosted_zone_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct ChangeCidrCollection {
     _private: (),
 }
 impl ChangeCidrCollection {
-    /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput)
+    /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionInput`](crate::input::ChangeCidrCollectionInput).
     pub fn builder() -> crate::input::change_cidr_collection_input::Builder {
         crate::input::change_cidr_collection_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ChangeResourceRecordSets {
     _private: (),
 }
 impl ChangeResourceRecordSets {
-    /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsInput`](crate::input::ChangeResourceRecordSetsInput)
+    /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsInput`](crate::input::ChangeResourceRecordSetsInput).
     pub fn builder() -> crate::input::change_resource_record_sets_input::Builder {
         crate::input::change_resource_record_sets_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct ChangeTagsForResource {
     _private: (),
 }
 impl ChangeTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceInput`](crate::input::ChangeTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceInput`](crate::input::ChangeTagsForResourceInput).
     pub fn builder() -> crate::input::change_tags_for_resource_input::Builder {
         crate::input::change_tags_for_resource_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct CreateCidrCollection {
     _private: (),
 }
 impl CreateCidrCollection {
-    /// Creates a new builder-style object to manufacture [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateCidrCollectionInput`](crate::input::CreateCidrCollectionInput).
     pub fn builder() -> crate::input::create_cidr_collection_input::Builder {
         crate::input::create_cidr_collection_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct CreateHealthCheck {
     _private: (),
 }
 impl CreateHealthCheck {
-    /// Creates a new builder-style object to manufacture [`CreateHealthCheckInput`](crate::input::CreateHealthCheckInput)
+    /// Creates a new builder-style object to manufacture [`CreateHealthCheckInput`](crate::input::CreateHealthCheckInput).
     pub fn builder() -> crate::input::create_health_check_input::Builder {
         crate::input::create_health_check_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct CreateHostedZone {
     _private: (),
 }
 impl CreateHostedZone {
-    /// Creates a new builder-style object to manufacture [`CreateHostedZoneInput`](crate::input::CreateHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`CreateHostedZoneInput`](crate::input::CreateHostedZoneInput).
     pub fn builder() -> crate::input::create_hosted_zone_input::Builder {
         crate::input::create_hosted_zone_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct CreateKeySigningKey {
     _private: (),
 }
 impl CreateKeySigningKey {
-    /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyInput`](crate::input::CreateKeySigningKeyInput)
+    /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyInput`](crate::input::CreateKeySigningKeyInput).
     pub fn builder() -> crate::input::create_key_signing_key_input::Builder {
         crate::input::create_key_signing_key_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct CreateQueryLoggingConfig {
     _private: (),
 }
 impl CreateQueryLoggingConfig {
-    /// Creates a new builder-style object to manufacture [`CreateQueryLoggingConfigInput`](crate::input::CreateQueryLoggingConfigInput)
+    /// Creates a new builder-style object to manufacture [`CreateQueryLoggingConfigInput`](crate::input::CreateQueryLoggingConfigInput).
     pub fn builder() -> crate::input::create_query_logging_config_input::Builder {
         crate::input::create_query_logging_config_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct CreateReusableDelegationSet {
     _private: (),
 }
 impl CreateReusableDelegationSet {
-    /// Creates a new builder-style object to manufacture [`CreateReusableDelegationSetInput`](crate::input::CreateReusableDelegationSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateReusableDelegationSetInput`](crate::input::CreateReusableDelegationSetInput).
     pub fn builder() -> crate::input::create_reusable_delegation_set_input::Builder {
         crate::input::create_reusable_delegation_set_input::Builder::default()
     }
@@ -384,7 +384,7 @@ pub struct CreateTrafficPolicy {
     _private: (),
 }
 impl CreateTrafficPolicy {
-    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInput`](crate::input::CreateTrafficPolicyInput)
+    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInput`](crate::input::CreateTrafficPolicyInput).
     pub fn builder() -> crate::input::create_traffic_policy_input::Builder {
         crate::input::create_traffic_policy_input::Builder::default()
     }
@@ -418,7 +418,7 @@ pub struct CreateTrafficPolicyInstance {
     _private: (),
 }
 impl CreateTrafficPolicyInstance {
-    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInstanceInput`](crate::input::CreateTrafficPolicyInstanceInput)
+    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInstanceInput`](crate::input::CreateTrafficPolicyInstanceInput).
     pub fn builder() -> crate::input::create_traffic_policy_instance_input::Builder {
         crate::input::create_traffic_policy_instance_input::Builder::default()
     }
@@ -452,7 +452,7 @@ pub struct CreateTrafficPolicyVersion {
     _private: (),
 }
 impl CreateTrafficPolicyVersion {
-    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionInput`](crate::input::CreateTrafficPolicyVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionInput`](crate::input::CreateTrafficPolicyVersionInput).
     pub fn builder() -> crate::input::create_traffic_policy_version_input::Builder {
         crate::input::create_traffic_policy_version_input::Builder::default()
     }
@@ -486,7 +486,7 @@ pub struct CreateVPCAssociationAuthorization {
     _private: (),
 }
 impl CreateVPCAssociationAuthorization {
-    /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationInput`](crate::input::CreateVpcAssociationAuthorizationInput).
     pub fn builder() -> crate::input::create_vpc_association_authorization_input::Builder {
         crate::input::create_vpc_association_authorization_input::Builder::default()
     }
@@ -520,7 +520,7 @@ pub struct DeactivateKeySigningKey {
     _private: (),
 }
 impl DeactivateKeySigningKey {
-    /// Creates a new builder-style object to manufacture [`DeactivateKeySigningKeyInput`](crate::input::DeactivateKeySigningKeyInput)
+    /// Creates a new builder-style object to manufacture [`DeactivateKeySigningKeyInput`](crate::input::DeactivateKeySigningKeyInput).
     pub fn builder() -> crate::input::deactivate_key_signing_key_input::Builder {
         crate::input::deactivate_key_signing_key_input::Builder::default()
     }
@@ -554,7 +554,7 @@ pub struct DeleteCidrCollection {
     _private: (),
 }
 impl DeleteCidrCollection {
-    /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionInput`](crate::input::DeleteCidrCollectionInput).
     pub fn builder() -> crate::input::delete_cidr_collection_input::Builder {
         crate::input::delete_cidr_collection_input::Builder::default()
     }
@@ -588,7 +588,7 @@ pub struct DeleteHealthCheck {
     _private: (),
 }
 impl DeleteHealthCheck {
-    /// Creates a new builder-style object to manufacture [`DeleteHealthCheckInput`](crate::input::DeleteHealthCheckInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHealthCheckInput`](crate::input::DeleteHealthCheckInput).
     pub fn builder() -> crate::input::delete_health_check_input::Builder {
         crate::input::delete_health_check_input::Builder::default()
     }
@@ -622,7 +622,7 @@ pub struct DeleteHostedZone {
     _private: (),
 }
 impl DeleteHostedZone {
-    /// Creates a new builder-style object to manufacture [`DeleteHostedZoneInput`](crate::input::DeleteHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHostedZoneInput`](crate::input::DeleteHostedZoneInput).
     pub fn builder() -> crate::input::delete_hosted_zone_input::Builder {
         crate::input::delete_hosted_zone_input::Builder::default()
     }
@@ -656,7 +656,7 @@ pub struct DeleteKeySigningKey {
     _private: (),
 }
 impl DeleteKeySigningKey {
-    /// Creates a new builder-style object to manufacture [`DeleteKeySigningKeyInput`](crate::input::DeleteKeySigningKeyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteKeySigningKeyInput`](crate::input::DeleteKeySigningKeyInput).
     pub fn builder() -> crate::input::delete_key_signing_key_input::Builder {
         crate::input::delete_key_signing_key_input::Builder::default()
     }
@@ -690,7 +690,7 @@ pub struct DeleteQueryLoggingConfig {
     _private: (),
 }
 impl DeleteQueryLoggingConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteQueryLoggingConfigInput`](crate::input::DeleteQueryLoggingConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteQueryLoggingConfigInput`](crate::input::DeleteQueryLoggingConfigInput).
     pub fn builder() -> crate::input::delete_query_logging_config_input::Builder {
         crate::input::delete_query_logging_config_input::Builder::default()
     }
@@ -724,7 +724,7 @@ pub struct DeleteReusableDelegationSet {
     _private: (),
 }
 impl DeleteReusableDelegationSet {
-    /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetInput`](crate::input::DeleteReusableDelegationSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetInput`](crate::input::DeleteReusableDelegationSetInput).
     pub fn builder() -> crate::input::delete_reusable_delegation_set_input::Builder {
         crate::input::delete_reusable_delegation_set_input::Builder::default()
     }
@@ -758,7 +758,7 @@ pub struct DeleteTrafficPolicy {
     _private: (),
 }
 impl DeleteTrafficPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInput`](crate::input::DeleteTrafficPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInput`](crate::input::DeleteTrafficPolicyInput).
     pub fn builder() -> crate::input::delete_traffic_policy_input::Builder {
         crate::input::delete_traffic_policy_input::Builder::default()
     }
@@ -792,7 +792,7 @@ pub struct DeleteTrafficPolicyInstance {
     _private: (),
 }
 impl DeleteTrafficPolicyInstance {
-    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInstanceInput`](crate::input::DeleteTrafficPolicyInstanceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInstanceInput`](crate::input::DeleteTrafficPolicyInstanceInput).
     pub fn builder() -> crate::input::delete_traffic_policy_instance_input::Builder {
         crate::input::delete_traffic_policy_instance_input::Builder::default()
     }
@@ -826,7 +826,7 @@ pub struct DeleteVPCAssociationAuthorization {
     _private: (),
 }
 impl DeleteVPCAssociationAuthorization {
-    /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationInput`](crate::input::DeleteVpcAssociationAuthorizationInput).
     pub fn builder() -> crate::input::delete_vpc_association_authorization_input::Builder {
         crate::input::delete_vpc_association_authorization_input::Builder::default()
     }
@@ -860,7 +860,7 @@ pub struct DisableHostedZoneDNSSEC {
     _private: (),
 }
 impl DisableHostedZoneDNSSEC {
-    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput)
+    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecInput`](crate::input::DisableHostedZoneDnssecInput).
     pub fn builder() -> crate::input::disable_hosted_zone_dnssec_input::Builder {
         crate::input::disable_hosted_zone_dnssec_input::Builder::default()
     }
@@ -894,7 +894,7 @@ pub struct DisassociateVPCFromHostedZone {
     _private: (),
 }
 impl DisassociateVPCFromHostedZone {
-    /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneInput`](crate::input::DisassociateVpcFromHostedZoneInput).
     pub fn builder() -> crate::input::disassociate_vpc_from_hosted_zone_input::Builder {
         crate::input::disassociate_vpc_from_hosted_zone_input::Builder::default()
     }
@@ -928,7 +928,7 @@ pub struct EnableHostedZoneDNSSEC {
     _private: (),
 }
 impl EnableHostedZoneDNSSEC {
-    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput)
+    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecInput`](crate::input::EnableHostedZoneDnssecInput).
     pub fn builder() -> crate::input::enable_hosted_zone_dnssec_input::Builder {
         crate::input::enable_hosted_zone_dnssec_input::Builder::default()
     }
@@ -962,7 +962,7 @@ pub struct GetAccountLimit {
     _private: (),
 }
 impl GetAccountLimit {
-    /// Creates a new builder-style object to manufacture [`GetAccountLimitInput`](crate::input::GetAccountLimitInput)
+    /// Creates a new builder-style object to manufacture [`GetAccountLimitInput`](crate::input::GetAccountLimitInput).
     pub fn builder() -> crate::input::get_account_limit_input::Builder {
         crate::input::get_account_limit_input::Builder::default()
     }
@@ -996,7 +996,7 @@ pub struct GetChange {
     _private: (),
 }
 impl GetChange {
-    /// Creates a new builder-style object to manufacture [`GetChangeInput`](crate::input::GetChangeInput)
+    /// Creates a new builder-style object to manufacture [`GetChangeInput`](crate::input::GetChangeInput).
     pub fn builder() -> crate::input::get_change_input::Builder {
         crate::input::get_change_input::Builder::default()
     }
@@ -1047,7 +1047,7 @@ pub struct GetCheckerIpRanges {
     _private: (),
 }
 impl GetCheckerIpRanges {
-    /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesInput`](crate::input::GetCheckerIpRangesInput)
+    /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesInput`](crate::input::GetCheckerIpRangesInput).
     pub fn builder() -> crate::input::get_checker_ip_ranges_input::Builder {
         crate::input::get_checker_ip_ranges_input::Builder::default()
     }
@@ -1081,7 +1081,7 @@ pub struct GetDNSSEC {
     _private: (),
 }
 impl GetDNSSEC {
-    /// Creates a new builder-style object to manufacture [`GetDnssecInput`](crate::input::GetDnssecInput)
+    /// Creates a new builder-style object to manufacture [`GetDnssecInput`](crate::input::GetDnssecInput).
     pub fn builder() -> crate::input::get_dnssec_input::Builder {
         crate::input::get_dnssec_input::Builder::default()
     }
@@ -1112,7 +1112,7 @@ pub struct GetGeoLocation {
     _private: (),
 }
 impl GetGeoLocation {
-    /// Creates a new builder-style object to manufacture [`GetGeoLocationInput`](crate::input::GetGeoLocationInput)
+    /// Creates a new builder-style object to manufacture [`GetGeoLocationInput`](crate::input::GetGeoLocationInput).
     pub fn builder() -> crate::input::get_geo_location_input::Builder {
         crate::input::get_geo_location_input::Builder::default()
     }
@@ -1144,7 +1144,7 @@ pub struct GetHealthCheck {
     _private: (),
 }
 impl GetHealthCheck {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckInput`](crate::input::GetHealthCheckInput)
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckInput`](crate::input::GetHealthCheckInput).
     pub fn builder() -> crate::input::get_health_check_input::Builder {
         crate::input::get_health_check_input::Builder::default()
     }
@@ -1176,7 +1176,7 @@ pub struct GetHealthCheckCount {
     _private: (),
 }
 impl GetHealthCheckCount {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckCountInput`](crate::input::GetHealthCheckCountInput)
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckCountInput`](crate::input::GetHealthCheckCountInput).
     pub fn builder() -> crate::input::get_health_check_count_input::Builder {
         crate::input::get_health_check_count_input::Builder::default()
     }
@@ -1210,7 +1210,7 @@ pub struct GetHealthCheckLastFailureReason {
     _private: (),
 }
 impl GetHealthCheckLastFailureReason {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckLastFailureReasonInput`](crate::input::GetHealthCheckLastFailureReasonInput)
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckLastFailureReasonInput`](crate::input::GetHealthCheckLastFailureReasonInput).
     pub fn builder() -> crate::input::get_health_check_last_failure_reason_input::Builder {
         crate::input::get_health_check_last_failure_reason_input::Builder::default()
     }
@@ -1244,7 +1244,7 @@ pub struct GetHealthCheckStatus {
     _private: (),
 }
 impl GetHealthCheckStatus {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckStatusInput`](crate::input::GetHealthCheckStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckStatusInput`](crate::input::GetHealthCheckStatusInput).
     pub fn builder() -> crate::input::get_health_check_status_input::Builder {
         crate::input::get_health_check_status_input::Builder::default()
     }
@@ -1278,7 +1278,7 @@ pub struct GetHostedZone {
     _private: (),
 }
 impl GetHostedZone {
-    /// Creates a new builder-style object to manufacture [`GetHostedZoneInput`](crate::input::GetHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`GetHostedZoneInput`](crate::input::GetHostedZoneInput).
     pub fn builder() -> crate::input::get_hosted_zone_input::Builder {
         crate::input::get_hosted_zone_input::Builder::default()
     }
@@ -1310,7 +1310,7 @@ pub struct GetHostedZoneCount {
     _private: (),
 }
 impl GetHostedZoneCount {
-    /// Creates a new builder-style object to manufacture [`GetHostedZoneCountInput`](crate::input::GetHostedZoneCountInput)
+    /// Creates a new builder-style object to manufacture [`GetHostedZoneCountInput`](crate::input::GetHostedZoneCountInput).
     pub fn builder() -> crate::input::get_hosted_zone_count_input::Builder {
         crate::input::get_hosted_zone_count_input::Builder::default()
     }
@@ -1344,7 +1344,7 @@ pub struct GetHostedZoneLimit {
     _private: (),
 }
 impl GetHostedZoneLimit {
-    /// Creates a new builder-style object to manufacture [`GetHostedZoneLimitInput`](crate::input::GetHostedZoneLimitInput)
+    /// Creates a new builder-style object to manufacture [`GetHostedZoneLimitInput`](crate::input::GetHostedZoneLimitInput).
     pub fn builder() -> crate::input::get_hosted_zone_limit_input::Builder {
         crate::input::get_hosted_zone_limit_input::Builder::default()
     }
@@ -1378,7 +1378,7 @@ pub struct GetQueryLoggingConfig {
     _private: (),
 }
 impl GetQueryLoggingConfig {
-    /// Creates a new builder-style object to manufacture [`GetQueryLoggingConfigInput`](crate::input::GetQueryLoggingConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetQueryLoggingConfigInput`](crate::input::GetQueryLoggingConfigInput).
     pub fn builder() -> crate::input::get_query_logging_config_input::Builder {
         crate::input::get_query_logging_config_input::Builder::default()
     }
@@ -1412,7 +1412,7 @@ pub struct GetReusableDelegationSet {
     _private: (),
 }
 impl GetReusableDelegationSet {
-    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetInput`](crate::input::GetReusableDelegationSetInput)
+    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetInput`](crate::input::GetReusableDelegationSetInput).
     pub fn builder() -> crate::input::get_reusable_delegation_set_input::Builder {
         crate::input::get_reusable_delegation_set_input::Builder::default()
     }
@@ -1469,7 +1469,7 @@ pub struct GetReusableDelegationSetLimit {
     _private: (),
 }
 impl GetReusableDelegationSetLimit {
-    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitInput`](crate::input::GetReusableDelegationSetLimitInput)
+    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitInput`](crate::input::GetReusableDelegationSetLimitInput).
     pub fn builder() -> crate::input::get_reusable_delegation_set_limit_input::Builder {
         crate::input::get_reusable_delegation_set_limit_input::Builder::default()
     }
@@ -1503,7 +1503,7 @@ pub struct GetTrafficPolicy {
     _private: (),
 }
 impl GetTrafficPolicy {
-    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInput`](crate::input::GetTrafficPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInput`](crate::input::GetTrafficPolicyInput).
     pub fn builder() -> crate::input::get_traffic_policy_input::Builder {
         crate::input::get_traffic_policy_input::Builder::default()
     }
@@ -1537,7 +1537,7 @@ pub struct GetTrafficPolicyInstance {
     _private: (),
 }
 impl GetTrafficPolicyInstance {
-    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceInput`](crate::input::GetTrafficPolicyInstanceInput)
+    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceInput`](crate::input::GetTrafficPolicyInstanceInput).
     pub fn builder() -> crate::input::get_traffic_policy_instance_input::Builder {
         crate::input::get_traffic_policy_instance_input::Builder::default()
     }
@@ -1571,7 +1571,7 @@ pub struct GetTrafficPolicyInstanceCount {
     _private: (),
 }
 impl GetTrafficPolicyInstanceCount {
-    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountInput`](crate::input::GetTrafficPolicyInstanceCountInput)
+    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountInput`](crate::input::GetTrafficPolicyInstanceCountInput).
     pub fn builder() -> crate::input::get_traffic_policy_instance_count_input::Builder {
         crate::input::get_traffic_policy_instance_count_input::Builder::default()
     }
@@ -1605,7 +1605,7 @@ pub struct ListCidrBlocks {
     _private: (),
 }
 impl ListCidrBlocks {
-    /// Creates a new builder-style object to manufacture [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput)
+    /// Creates a new builder-style object to manufacture [`ListCidrBlocksInput`](crate::input::ListCidrBlocksInput).
     pub fn builder() -> crate::input::list_cidr_blocks_input::Builder {
         crate::input::list_cidr_blocks_input::Builder::default()
     }
@@ -1637,7 +1637,7 @@ pub struct ListCidrCollections {
     _private: (),
 }
 impl ListCidrCollections {
-    /// Creates a new builder-style object to manufacture [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput)
+    /// Creates a new builder-style object to manufacture [`ListCidrCollectionsInput`](crate::input::ListCidrCollectionsInput).
     pub fn builder() -> crate::input::list_cidr_collections_input::Builder {
         crate::input::list_cidr_collections_input::Builder::default()
     }
@@ -1671,7 +1671,7 @@ pub struct ListCidrLocations {
     _private: (),
 }
 impl ListCidrLocations {
-    /// Creates a new builder-style object to manufacture [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput)
+    /// Creates a new builder-style object to manufacture [`ListCidrLocationsInput`](crate::input::ListCidrLocationsInput).
     pub fn builder() -> crate::input::list_cidr_locations_input::Builder {
         crate::input::list_cidr_locations_input::Builder::default()
     }
@@ -1705,7 +1705,7 @@ pub struct ListGeoLocations {
     _private: (),
 }
 impl ListGeoLocations {
-    /// Creates a new builder-style object to manufacture [`ListGeoLocationsInput`](crate::input::ListGeoLocationsInput)
+    /// Creates a new builder-style object to manufacture [`ListGeoLocationsInput`](crate::input::ListGeoLocationsInput).
     pub fn builder() -> crate::input::list_geo_locations_input::Builder {
         crate::input::list_geo_locations_input::Builder::default()
     }
@@ -1739,7 +1739,7 @@ pub struct ListHealthChecks {
     _private: (),
 }
 impl ListHealthChecks {
-    /// Creates a new builder-style object to manufacture [`ListHealthChecksInput`](crate::input::ListHealthChecksInput)
+    /// Creates a new builder-style object to manufacture [`ListHealthChecksInput`](crate::input::ListHealthChecksInput).
     pub fn builder() -> crate::input::list_health_checks_input::Builder {
         crate::input::list_health_checks_input::Builder::default()
     }
@@ -1773,7 +1773,7 @@ pub struct ListHostedZones {
     _private: (),
 }
 impl ListHostedZones {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesInput`](crate::input::ListHostedZonesInput)
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesInput`](crate::input::ListHostedZonesInput).
     pub fn builder() -> crate::input::list_hosted_zones_input::Builder {
         crate::input::list_hosted_zones_input::Builder::default()
     }
@@ -1807,7 +1807,7 @@ pub struct ListHostedZonesByName {
     _private: (),
 }
 impl ListHostedZonesByName {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesByNameInput`](crate::input::ListHostedZonesByNameInput)
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesByNameInput`](crate::input::ListHostedZonesByNameInput).
     pub fn builder() -> crate::input::list_hosted_zones_by_name_input::Builder {
         crate::input::list_hosted_zones_by_name_input::Builder::default()
     }
@@ -1841,7 +1841,7 @@ pub struct ListHostedZonesByVPC {
     _private: (),
 }
 impl ListHostedZonesByVPC {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput)
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcInput`](crate::input::ListHostedZonesByVpcInput).
     pub fn builder() -> crate::input::list_hosted_zones_by_vpc_input::Builder {
         crate::input::list_hosted_zones_by_vpc_input::Builder::default()
     }
@@ -1875,7 +1875,7 @@ pub struct ListQueryLoggingConfigs {
     _private: (),
 }
 impl ListQueryLoggingConfigs {
-    /// Creates a new builder-style object to manufacture [`ListQueryLoggingConfigsInput`](crate::input::ListQueryLoggingConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListQueryLoggingConfigsInput`](crate::input::ListQueryLoggingConfigsInput).
     pub fn builder() -> crate::input::list_query_logging_configs_input::Builder {
         crate::input::list_query_logging_configs_input::Builder::default()
     }
@@ -1909,7 +1909,7 @@ pub struct ListResourceRecordSets {
     _private: (),
 }
 impl ListResourceRecordSets {
-    /// Creates a new builder-style object to manufacture [`ListResourceRecordSetsInput`](crate::input::ListResourceRecordSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListResourceRecordSetsInput`](crate::input::ListResourceRecordSetsInput).
     pub fn builder() -> crate::input::list_resource_record_sets_input::Builder {
         crate::input::list_resource_record_sets_input::Builder::default()
     }
@@ -1966,7 +1966,7 @@ pub struct ListReusableDelegationSets {
     _private: (),
 }
 impl ListReusableDelegationSets {
-    /// Creates a new builder-style object to manufacture [`ListReusableDelegationSetsInput`](crate::input::ListReusableDelegationSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListReusableDelegationSetsInput`](crate::input::ListReusableDelegationSetsInput).
     pub fn builder() -> crate::input::list_reusable_delegation_sets_input::Builder {
         crate::input::list_reusable_delegation_sets_input::Builder::default()
     }
@@ -2000,7 +2000,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -2034,7 +2034,7 @@ pub struct ListTagsForResources {
     _private: (),
 }
 impl ListTagsForResources {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput).
     pub fn builder() -> crate::input::list_tags_for_resources_input::Builder {
         crate::input::list_tags_for_resources_input::Builder::default()
     }
@@ -2068,7 +2068,7 @@ pub struct ListTrafficPolicies {
     _private: (),
 }
 impl ListTrafficPolicies {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesInput`](crate::input::ListTrafficPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesInput`](crate::input::ListTrafficPoliciesInput).
     pub fn builder() -> crate::input::list_traffic_policies_input::Builder {
         crate::input::list_traffic_policies_input::Builder::default()
     }
@@ -2102,7 +2102,7 @@ pub struct ListTrafficPolicyInstances {
     _private: (),
 }
 impl ListTrafficPolicyInstances {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesInput`](crate::input::ListTrafficPolicyInstancesInput)
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesInput`](crate::input::ListTrafficPolicyInstancesInput).
     pub fn builder() -> crate::input::list_traffic_policy_instances_input::Builder {
         crate::input::list_traffic_policy_instances_input::Builder::default()
     }
@@ -2136,7 +2136,7 @@ pub struct ListTrafficPolicyInstancesByHostedZone {
     _private: (),
 }
 impl ListTrafficPolicyInstancesByHostedZone {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByHostedZoneInput`](crate::input::ListTrafficPolicyInstancesByHostedZoneInput)
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByHostedZoneInput`](crate::input::ListTrafficPolicyInstancesByHostedZoneInput).
     pub fn builder() -> crate::input::list_traffic_policy_instances_by_hosted_zone_input::Builder {
         crate::input::list_traffic_policy_instances_by_hosted_zone_input::Builder::default()
     }
@@ -2174,7 +2174,7 @@ pub struct ListTrafficPolicyInstancesByPolicy {
     _private: (),
 }
 impl ListTrafficPolicyInstancesByPolicy {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByPolicyInput`](crate::input::ListTrafficPolicyInstancesByPolicyInput)
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByPolicyInput`](crate::input::ListTrafficPolicyInstancesByPolicyInput).
     pub fn builder() -> crate::input::list_traffic_policy_instances_by_policy_input::Builder {
         crate::input::list_traffic_policy_instances_by_policy_input::Builder::default()
     }
@@ -2208,7 +2208,7 @@ pub struct ListTrafficPolicyVersions {
     _private: (),
 }
 impl ListTrafficPolicyVersions {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyVersionsInput`](crate::input::ListTrafficPolicyVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyVersionsInput`](crate::input::ListTrafficPolicyVersionsInput).
     pub fn builder() -> crate::input::list_traffic_policy_versions_input::Builder {
         crate::input::list_traffic_policy_versions_input::Builder::default()
     }
@@ -2242,7 +2242,7 @@ pub struct ListVPCAssociationAuthorizations {
     _private: (),
 }
 impl ListVPCAssociationAuthorizations {
-    /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput)
+    /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsInput`](crate::input::ListVpcAssociationAuthorizationsInput).
     pub fn builder() -> crate::input::list_vpc_association_authorizations_input::Builder {
         crate::input::list_vpc_association_authorizations_input::Builder::default()
     }
@@ -2276,7 +2276,7 @@ pub struct TestDNSAnswer {
     _private: (),
 }
 impl TestDNSAnswer {
-    /// Creates a new builder-style object to manufacture [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput)
+    /// Creates a new builder-style object to manufacture [`TestDnsAnswerInput`](crate::input::TestDnsAnswerInput).
     pub fn builder() -> crate::input::test_dns_answer_input::Builder {
         crate::input::test_dns_answer_input::Builder::default()
     }
@@ -2308,7 +2308,7 @@ pub struct UpdateHealthCheck {
     _private: (),
 }
 impl UpdateHealthCheck {
-    /// Creates a new builder-style object to manufacture [`UpdateHealthCheckInput`](crate::input::UpdateHealthCheckInput)
+    /// Creates a new builder-style object to manufacture [`UpdateHealthCheckInput`](crate::input::UpdateHealthCheckInput).
     pub fn builder() -> crate::input::update_health_check_input::Builder {
         crate::input::update_health_check_input::Builder::default()
     }
@@ -2342,7 +2342,7 @@ pub struct UpdateHostedZoneComment {
     _private: (),
 }
 impl UpdateHostedZoneComment {
-    /// Creates a new builder-style object to manufacture [`UpdateHostedZoneCommentInput`](crate::input::UpdateHostedZoneCommentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateHostedZoneCommentInput`](crate::input::UpdateHostedZoneCommentInput).
     pub fn builder() -> crate::input::update_hosted_zone_comment_input::Builder {
         crate::input::update_hosted_zone_comment_input::Builder::default()
     }
@@ -2376,7 +2376,7 @@ pub struct UpdateTrafficPolicyComment {
     _private: (),
 }
 impl UpdateTrafficPolicyComment {
-    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentInput`](crate::input::UpdateTrafficPolicyCommentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentInput`](crate::input::UpdateTrafficPolicyCommentInput).
     pub fn builder() -> crate::input::update_traffic_policy_comment_input::Builder {
         crate::input::update_traffic_policy_comment_input::Builder::default()
     }
@@ -2410,7 +2410,7 @@ pub struct UpdateTrafficPolicyInstance {
     _private: (),
 }
 impl UpdateTrafficPolicyInstance {
-    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceInput`](crate::input::UpdateTrafficPolicyInstanceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceInput`](crate::input::UpdateTrafficPolicyInstanceInput).
     pub fn builder() -> crate::input::update_traffic_policy_instance_input::Builder {
         crate::input::update_traffic_policy_instance_input::Builder::default()
     }

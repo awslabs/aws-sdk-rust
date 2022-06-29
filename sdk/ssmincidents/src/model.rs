@@ -227,11 +227,10 @@ impl std::fmt::Debug for SsmAutomation {
         formatter.finish()
     }
 }
-/// See [`SsmAutomation`](crate::model::SsmAutomation)
+/// See [`SsmAutomation`](crate::model::SsmAutomation).
 pub mod ssm_automation {
 
-    /// A builder for [`SsmAutomation`](crate::model::SsmAutomation)
-    #[non_exhaustive]
+    /// A builder for [`SsmAutomation`](crate::model::SsmAutomation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -348,7 +347,7 @@ pub mod ssm_automation {
             self.dynamic_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`SsmAutomation`](crate::model::SsmAutomation)
+        /// Consumes the builder and constructs a [`SsmAutomation`](crate::model::SsmAutomation).
         pub fn build(self) -> crate::model::SsmAutomation {
             crate::model::SsmAutomation {
                 role_arn: self.role_arn,
@@ -362,7 +361,7 @@ pub mod ssm_automation {
     }
 }
 impl SsmAutomation {
-    /// Creates a new builder-style object to manufacture [`SsmAutomation`](crate::model::SsmAutomation)
+    /// Creates a new builder-style object to manufacture [`SsmAutomation`](crate::model::SsmAutomation).
     pub fn builder() -> crate::model::ssm_automation::Builder {
         crate::model::ssm_automation::Builder::default()
     }
@@ -578,22 +577,21 @@ impl std::fmt::Debug for EmptyChatChannel {
         formatter.finish()
     }
 }
-/// See [`EmptyChatChannel`](crate::model::EmptyChatChannel)
+/// See [`EmptyChatChannel`](crate::model::EmptyChatChannel).
 pub mod empty_chat_channel {
 
-    /// A builder for [`EmptyChatChannel`](crate::model::EmptyChatChannel)
-    #[non_exhaustive]
+    /// A builder for [`EmptyChatChannel`](crate::model::EmptyChatChannel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EmptyChatChannel`](crate::model::EmptyChatChannel)
+        /// Consumes the builder and constructs a [`EmptyChatChannel`](crate::model::EmptyChatChannel).
         pub fn build(self) -> crate::model::EmptyChatChannel {
             crate::model::EmptyChatChannel {}
         }
     }
 }
 impl EmptyChatChannel {
-    /// Creates a new builder-style object to manufacture [`EmptyChatChannel`](crate::model::EmptyChatChannel)
+    /// Creates a new builder-style object to manufacture [`EmptyChatChannel`](crate::model::EmptyChatChannel).
     pub fn builder() -> crate::model::empty_chat_channel::Builder {
         crate::model::empty_chat_channel::Builder::default()
     }
@@ -711,11 +709,10 @@ impl std::fmt::Debug for DeleteRegionAction {
         formatter.finish()
     }
 }
-/// See [`DeleteRegionAction`](crate::model::DeleteRegionAction)
+/// See [`DeleteRegionAction`](crate::model::DeleteRegionAction).
 pub mod delete_region_action {
 
-    /// A builder for [`DeleteRegionAction`](crate::model::DeleteRegionAction)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRegionAction`](crate::model::DeleteRegionAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -731,7 +728,7 @@ pub mod delete_region_action {
             self.region_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteRegionAction`](crate::model::DeleteRegionAction)
+        /// Consumes the builder and constructs a [`DeleteRegionAction`](crate::model::DeleteRegionAction).
         pub fn build(self) -> crate::model::DeleteRegionAction {
             crate::model::DeleteRegionAction {
                 region_name: self.region_name,
@@ -740,7 +737,7 @@ pub mod delete_region_action {
     }
 }
 impl DeleteRegionAction {
-    /// Creates a new builder-style object to manufacture [`DeleteRegionAction`](crate::model::DeleteRegionAction)
+    /// Creates a new builder-style object to manufacture [`DeleteRegionAction`](crate::model::DeleteRegionAction).
     pub fn builder() -> crate::model::delete_region_action::Builder {
         crate::model::delete_region_action::Builder::default()
     }
@@ -773,11 +770,10 @@ impl std::fmt::Debug for AddRegionAction {
         formatter.finish()
     }
 }
-/// See [`AddRegionAction`](crate::model::AddRegionAction)
+/// See [`AddRegionAction`](crate::model::AddRegionAction).
 pub mod add_region_action {
 
-    /// A builder for [`AddRegionAction`](crate::model::AddRegionAction)
-    #[non_exhaustive]
+    /// A builder for [`AddRegionAction`](crate::model::AddRegionAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) region_name: std::option::Option<std::string::String>,
@@ -807,7 +803,7 @@ pub mod add_region_action {
             self.sse_kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddRegionAction`](crate::model::AddRegionAction)
+        /// Consumes the builder and constructs a [`AddRegionAction`](crate::model::AddRegionAction).
         pub fn build(self) -> crate::model::AddRegionAction {
             crate::model::AddRegionAction {
                 region_name: self.region_name,
@@ -817,7 +813,7 @@ pub mod add_region_action {
     }
 }
 impl AddRegionAction {
-    /// Creates a new builder-style object to manufacture [`AddRegionAction`](crate::model::AddRegionAction)
+    /// Creates a new builder-style object to manufacture [`AddRegionAction`](crate::model::AddRegionAction).
     pub fn builder() -> crate::model::add_region_action::Builder {
         crate::model::add_region_action::Builder::default()
     }
@@ -901,11 +897,10 @@ impl std::fmt::Debug for ItemIdentifier {
         formatter.finish()
     }
 }
-/// See [`ItemIdentifier`](crate::model::ItemIdentifier)
+/// See [`ItemIdentifier`](crate::model::ItemIdentifier).
 pub mod item_identifier {
 
-    /// A builder for [`ItemIdentifier`](crate::model::ItemIdentifier)
-    #[non_exhaustive]
+    /// A builder for [`ItemIdentifier`](crate::model::ItemIdentifier).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<crate::model::ItemValue>,
@@ -932,7 +927,7 @@ pub mod item_identifier {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`ItemIdentifier`](crate::model::ItemIdentifier)
+        /// Consumes the builder and constructs a [`ItemIdentifier`](crate::model::ItemIdentifier).
         pub fn build(self) -> crate::model::ItemIdentifier {
             crate::model::ItemIdentifier {
                 value: self.value,
@@ -942,7 +937,7 @@ pub mod item_identifier {
     }
 }
 impl ItemIdentifier {
-    /// Creates a new builder-style object to manufacture [`ItemIdentifier`](crate::model::ItemIdentifier)
+    /// Creates a new builder-style object to manufacture [`ItemIdentifier`](crate::model::ItemIdentifier).
     pub fn builder() -> crate::model::item_identifier::Builder {
         crate::model::item_identifier::Builder::default()
     }
@@ -1129,11 +1124,10 @@ impl std::fmt::Debug for RelatedItem {
         formatter.finish()
     }
 }
-/// See [`RelatedItem`](crate::model::RelatedItem)
+/// See [`RelatedItem`](crate::model::RelatedItem).
 pub mod related_item {
 
-    /// A builder for [`RelatedItem`](crate::model::RelatedItem)
-    #[non_exhaustive]
+    /// A builder for [`RelatedItem`](crate::model::RelatedItem).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<crate::model::ItemIdentifier>,
@@ -1163,7 +1157,7 @@ pub mod related_item {
             self.title = input;
             self
         }
-        /// Consumes the builder and constructs a [`RelatedItem`](crate::model::RelatedItem)
+        /// Consumes the builder and constructs a [`RelatedItem`](crate::model::RelatedItem).
         pub fn build(self) -> crate::model::RelatedItem {
             crate::model::RelatedItem {
                 identifier: self.identifier,
@@ -1173,7 +1167,7 @@ pub mod related_item {
     }
 }
 impl RelatedItem {
-    /// Creates a new builder-style object to manufacture [`RelatedItem`](crate::model::RelatedItem)
+    /// Creates a new builder-style object to manufacture [`RelatedItem`](crate::model::RelatedItem).
     pub fn builder() -> crate::model::related_item::Builder {
         crate::model::related_item::Builder::default()
     }
@@ -1275,11 +1269,10 @@ impl std::fmt::Debug for TriggerDetails {
         formatter.finish()
     }
 }
-/// See [`TriggerDetails`](crate::model::TriggerDetails)
+/// See [`TriggerDetails`](crate::model::TriggerDetails).
 pub mod trigger_details {
 
-    /// A builder for [`TriggerDetails`](crate::model::TriggerDetails)
-    #[non_exhaustive]
+    /// A builder for [`TriggerDetails`](crate::model::TriggerDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<std::string::String>,
@@ -1331,7 +1324,7 @@ pub mod trigger_details {
             self.raw_data = input;
             self
         }
-        /// Consumes the builder and constructs a [`TriggerDetails`](crate::model::TriggerDetails)
+        /// Consumes the builder and constructs a [`TriggerDetails`](crate::model::TriggerDetails).
         pub fn build(self) -> crate::model::TriggerDetails {
             crate::model::TriggerDetails {
                 source: self.source,
@@ -1343,7 +1336,7 @@ pub mod trigger_details {
     }
 }
 impl TriggerDetails {
-    /// Creates a new builder-style object to manufacture [`TriggerDetails`](crate::model::TriggerDetails)
+    /// Creates a new builder-style object to manufacture [`TriggerDetails`](crate::model::TriggerDetails).
     pub fn builder() -> crate::model::trigger_details::Builder {
         crate::model::trigger_details::Builder::default()
     }
@@ -1397,11 +1390,10 @@ impl std::fmt::Debug for EventSummary {
         formatter.finish()
     }
 }
-/// See [`EventSummary`](crate::model::EventSummary)
+/// See [`EventSummary`](crate::model::EventSummary).
 pub mod event_summary {
 
-    /// A builder for [`EventSummary`](crate::model::EventSummary)
-    #[non_exhaustive]
+    /// A builder for [`EventSummary`](crate::model::EventSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
@@ -1470,7 +1462,7 @@ pub mod event_summary {
             self.event_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`EventSummary`](crate::model::EventSummary)
+        /// Consumes the builder and constructs a [`EventSummary`](crate::model::EventSummary).
         pub fn build(self) -> crate::model::EventSummary {
             crate::model::EventSummary {
                 incident_record_arn: self.incident_record_arn,
@@ -1483,7 +1475,7 @@ pub mod event_summary {
     }
 }
 impl EventSummary {
-    /// Creates a new builder-style object to manufacture [`EventSummary`](crate::model::EventSummary)
+    /// Creates a new builder-style object to manufacture [`EventSummary`](crate::model::EventSummary).
     pub fn builder() -> crate::model::event_summary::Builder {
         crate::model::event_summary::Builder::default()
     }
@@ -1622,11 +1614,10 @@ impl std::fmt::Debug for Filter {
         formatter.finish()
     }
 }
-/// See [`Filter`](crate::model::Filter)
+/// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
-    /// A builder for [`Filter`](crate::model::Filter)
-    #[non_exhaustive]
+    /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1656,7 +1647,7 @@ pub mod filter {
             self.condition = input;
             self
         }
-        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
                 key: self.key,
@@ -1666,7 +1657,7 @@ pub mod filter {
     }
 }
 impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
     pub fn builder() -> crate::model::filter::Builder {
         crate::model::filter::Builder::default()
     }
@@ -1825,11 +1816,10 @@ impl std::fmt::Debug for ResponsePlanSummary {
         formatter.finish()
     }
 }
-/// See [`ResponsePlanSummary`](crate::model::ResponsePlanSummary)
+/// See [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
 pub mod response_plan_summary {
 
-    /// A builder for [`ResponsePlanSummary`](crate::model::ResponsePlanSummary)
-    #[non_exhaustive]
+    /// A builder for [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1867,7 +1857,7 @@ pub mod response_plan_summary {
             self.display_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResponsePlanSummary`](crate::model::ResponsePlanSummary)
+        /// Consumes the builder and constructs a [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
         pub fn build(self) -> crate::model::ResponsePlanSummary {
             crate::model::ResponsePlanSummary {
                 arn: self.arn,
@@ -1878,7 +1868,7 @@ pub mod response_plan_summary {
     }
 }
 impl ResponsePlanSummary {
-    /// Creates a new builder-style object to manufacture [`ResponsePlanSummary`](crate::model::ResponsePlanSummary)
+    /// Creates a new builder-style object to manufacture [`ResponsePlanSummary`](crate::model::ResponsePlanSummary).
     pub fn builder() -> crate::model::response_plan_summary::Builder {
         crate::model::response_plan_summary::Builder::default()
     }
@@ -1948,11 +1938,10 @@ impl std::fmt::Debug for IncidentRecordSummary {
         formatter.finish()
     }
 }
-/// See [`IncidentRecordSummary`](crate::model::IncidentRecordSummary)
+/// See [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
 pub mod incident_record_summary {
 
-    /// A builder for [`IncidentRecordSummary`](crate::model::IncidentRecordSummary)
-    #[non_exhaustive]
+    /// A builder for [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2046,7 +2035,7 @@ pub mod incident_record_summary {
             self.incident_record_source = input;
             self
         }
-        /// Consumes the builder and constructs a [`IncidentRecordSummary`](crate::model::IncidentRecordSummary)
+        /// Consumes the builder and constructs a [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
         pub fn build(self) -> crate::model::IncidentRecordSummary {
             crate::model::IncidentRecordSummary {
                 arn: self.arn,
@@ -2061,7 +2050,7 @@ pub mod incident_record_summary {
     }
 }
 impl IncidentRecordSummary {
-    /// Creates a new builder-style object to manufacture [`IncidentRecordSummary`](crate::model::IncidentRecordSummary)
+    /// Creates a new builder-style object to manufacture [`IncidentRecordSummary`](crate::model::IncidentRecordSummary).
     pub fn builder() -> crate::model::incident_record_summary::Builder {
         crate::model::incident_record_summary::Builder::default()
     }
@@ -2108,11 +2097,10 @@ impl std::fmt::Debug for IncidentRecordSource {
         formatter.finish()
     }
 }
-/// See [`IncidentRecordSource`](crate::model::IncidentRecordSource)
+/// See [`IncidentRecordSource`](crate::model::IncidentRecordSource).
 pub mod incident_record_source {
 
-    /// A builder for [`IncidentRecordSource`](crate::model::IncidentRecordSource)
-    #[non_exhaustive]
+    /// A builder for [`IncidentRecordSource`](crate::model::IncidentRecordSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) created_by: std::option::Option<std::string::String>,
@@ -2161,7 +2149,7 @@ pub mod incident_record_source {
             self.source = input;
             self
         }
-        /// Consumes the builder and constructs a [`IncidentRecordSource`](crate::model::IncidentRecordSource)
+        /// Consumes the builder and constructs a [`IncidentRecordSource`](crate::model::IncidentRecordSource).
         pub fn build(self) -> crate::model::IncidentRecordSource {
             crate::model::IncidentRecordSource {
                 created_by: self.created_by,
@@ -2173,7 +2161,7 @@ pub mod incident_record_source {
     }
 }
 impl IncidentRecordSource {
-    /// Creates a new builder-style object to manufacture [`IncidentRecordSource`](crate::model::IncidentRecordSource)
+    /// Creates a new builder-style object to manufacture [`IncidentRecordSource`](crate::model::IncidentRecordSource).
     pub fn builder() -> crate::model::incident_record_source::Builder {
         crate::model::incident_record_source::Builder::default()
     }
@@ -2234,11 +2222,10 @@ impl std::fmt::Debug for TimelineEvent {
         formatter.finish()
     }
 }
-/// See [`TimelineEvent`](crate::model::TimelineEvent)
+/// See [`TimelineEvent`](crate::model::TimelineEvent).
 pub mod timeline_event {
 
-    /// A builder for [`TimelineEvent`](crate::model::TimelineEvent)
-    #[non_exhaustive]
+    /// A builder for [`TimelineEvent`](crate::model::TimelineEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) incident_record_arn: std::option::Option<std::string::String>,
@@ -2318,7 +2305,7 @@ pub mod timeline_event {
             self.event_data = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimelineEvent`](crate::model::TimelineEvent)
+        /// Consumes the builder and constructs a [`TimelineEvent`](crate::model::TimelineEvent).
         pub fn build(self) -> crate::model::TimelineEvent {
             crate::model::TimelineEvent {
                 incident_record_arn: self.incident_record_arn,
@@ -2332,7 +2319,7 @@ pub mod timeline_event {
     }
 }
 impl TimelineEvent {
-    /// Creates a new builder-style object to manufacture [`TimelineEvent`](crate::model::TimelineEvent)
+    /// Creates a new builder-style object to manufacture [`TimelineEvent`](crate::model::TimelineEvent).
     pub fn builder() -> crate::model::timeline_event::Builder {
         crate::model::timeline_event::Builder::default()
     }
@@ -2389,11 +2376,10 @@ impl std::fmt::Debug for IncidentTemplate {
         formatter.finish()
     }
 }
-/// See [`IncidentTemplate`](crate::model::IncidentTemplate)
+/// See [`IncidentTemplate`](crate::model::IncidentTemplate).
 pub mod incident_template {
 
-    /// A builder for [`IncidentTemplate`](crate::model::IncidentTemplate)
-    #[non_exhaustive]
+    /// A builder for [`IncidentTemplate`](crate::model::IncidentTemplate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) title: std::option::Option<std::string::String>,
@@ -2466,7 +2452,7 @@ pub mod incident_template {
             self.notification_targets = input;
             self
         }
-        /// Consumes the builder and constructs a [`IncidentTemplate`](crate::model::IncidentTemplate)
+        /// Consumes the builder and constructs a [`IncidentTemplate`](crate::model::IncidentTemplate).
         pub fn build(self) -> crate::model::IncidentTemplate {
             crate::model::IncidentTemplate {
                 title: self.title,
@@ -2479,7 +2465,7 @@ pub mod incident_template {
     }
 }
 impl IncidentTemplate {
-    /// Creates a new builder-style object to manufacture [`IncidentTemplate`](crate::model::IncidentTemplate)
+    /// Creates a new builder-style object to manufacture [`IncidentTemplate`](crate::model::IncidentTemplate).
     pub fn builder() -> crate::model::incident_template::Builder {
         crate::model::incident_template::Builder::default()
     }
@@ -2519,11 +2505,10 @@ impl std::fmt::Debug for ResourcePolicy {
         formatter.finish()
     }
 }
-/// See [`ResourcePolicy`](crate::model::ResourcePolicy)
+/// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
 
-    /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy)
-    #[non_exhaustive]
+    /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_document: std::option::Option<std::string::String>,
@@ -2567,7 +2552,7 @@ pub mod resource_policy {
             self.ram_resource_share_region = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy)
+        /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
         pub fn build(self) -> crate::model::ResourcePolicy {
             crate::model::ResourcePolicy {
                 policy_document: self.policy_document,
@@ -2578,7 +2563,7 @@ pub mod resource_policy {
     }
 }
 impl ResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy)
+    /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
     pub fn builder() -> crate::model::resource_policy::Builder {
         crate::model::resource_policy::Builder::default()
     }
@@ -2659,11 +2644,10 @@ impl std::fmt::Debug for ReplicationSet {
         formatter.finish()
     }
 }
-/// See [`ReplicationSet`](crate::model::ReplicationSet)
+/// See [`ReplicationSet`](crate::model::ReplicationSet).
 pub mod replication_set {
 
-    /// A builder for [`ReplicationSet`](crate::model::ReplicationSet)
-    #[non_exhaustive]
+    /// A builder for [`ReplicationSet`](crate::model::ReplicationSet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2785,7 +2769,7 @@ pub mod replication_set {
             self.last_modified_by = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReplicationSet`](crate::model::ReplicationSet)
+        /// Consumes the builder and constructs a [`ReplicationSet`](crate::model::ReplicationSet).
         pub fn build(self) -> crate::model::ReplicationSet {
             crate::model::ReplicationSet {
                 arn: self.arn,
@@ -2801,7 +2785,7 @@ pub mod replication_set {
     }
 }
 impl ReplicationSet {
-    /// Creates a new builder-style object to manufacture [`ReplicationSet`](crate::model::ReplicationSet)
+    /// Creates a new builder-style object to manufacture [`ReplicationSet`](crate::model::ReplicationSet).
     pub fn builder() -> crate::model::replication_set::Builder {
         crate::model::replication_set::Builder::default()
     }
@@ -2915,11 +2899,10 @@ impl std::fmt::Debug for RegionInfo {
         formatter.finish()
     }
 }
-/// See [`RegionInfo`](crate::model::RegionInfo)
+/// See [`RegionInfo`](crate::model::RegionInfo).
 pub mod region_info {
 
-    /// A builder for [`RegionInfo`](crate::model::RegionInfo)
-    #[non_exhaustive]
+    /// A builder for [`RegionInfo`](crate::model::RegionInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sse_kms_key_id: std::option::Option<std::string::String>,
@@ -2980,7 +2963,7 @@ pub mod region_info {
             self.status_update_date_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegionInfo`](crate::model::RegionInfo)
+        /// Consumes the builder and constructs a [`RegionInfo`](crate::model::RegionInfo).
         pub fn build(self) -> crate::model::RegionInfo {
             crate::model::RegionInfo {
                 sse_kms_key_id: self.sse_kms_key_id,
@@ -2992,7 +2975,7 @@ pub mod region_info {
     }
 }
 impl RegionInfo {
-    /// Creates a new builder-style object to manufacture [`RegionInfo`](crate::model::RegionInfo)
+    /// Creates a new builder-style object to manufacture [`RegionInfo`](crate::model::RegionInfo).
     pub fn builder() -> crate::model::region_info::Builder {
         crate::model::region_info::Builder::default()
     }
@@ -3180,11 +3163,10 @@ impl std::fmt::Debug for IncidentRecord {
         formatter.finish()
     }
 }
-/// See [`IncidentRecord`](crate::model::IncidentRecord)
+/// See [`IncidentRecord`](crate::model::IncidentRecord).
 pub mod incident_record {
 
-    /// A builder for [`IncidentRecord`](crate::model::IncidentRecord)
-    #[non_exhaustive]
+    /// A builder for [`IncidentRecord`](crate::model::IncidentRecord).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3387,7 +3369,7 @@ pub mod incident_record {
             self.notification_targets = input;
             self
         }
-        /// Consumes the builder and constructs a [`IncidentRecord`](crate::model::IncidentRecord)
+        /// Consumes the builder and constructs a [`IncidentRecord`](crate::model::IncidentRecord).
         pub fn build(self) -> crate::model::IncidentRecord {
             crate::model::IncidentRecord {
                 arn: self.arn,
@@ -3409,7 +3391,7 @@ pub mod incident_record {
     }
 }
 impl IncidentRecord {
-    /// Creates a new builder-style object to manufacture [`IncidentRecord`](crate::model::IncidentRecord)
+    /// Creates a new builder-style object to manufacture [`IncidentRecord`](crate::model::IncidentRecord).
     pub fn builder() -> crate::model::incident_record::Builder {
         crate::model::incident_record::Builder::default()
     }
@@ -3472,11 +3454,10 @@ impl std::fmt::Debug for RegionMapInputValue {
         formatter.finish()
     }
 }
-/// See [`RegionMapInputValue`](crate::model::RegionMapInputValue)
+/// See [`RegionMapInputValue`](crate::model::RegionMapInputValue).
 pub mod region_map_input_value {
 
-    /// A builder for [`RegionMapInputValue`](crate::model::RegionMapInputValue)
-    #[non_exhaustive]
+    /// A builder for [`RegionMapInputValue`](crate::model::RegionMapInputValue).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sse_kms_key_id: std::option::Option<std::string::String>,
@@ -3495,7 +3476,7 @@ pub mod region_map_input_value {
             self.sse_kms_key_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegionMapInputValue`](crate::model::RegionMapInputValue)
+        /// Consumes the builder and constructs a [`RegionMapInputValue`](crate::model::RegionMapInputValue).
         pub fn build(self) -> crate::model::RegionMapInputValue {
             crate::model::RegionMapInputValue {
                 sse_kms_key_id: self.sse_kms_key_id,
@@ -3504,7 +3485,7 @@ pub mod region_map_input_value {
     }
 }
 impl RegionMapInputValue {
-    /// Creates a new builder-style object to manufacture [`RegionMapInputValue`](crate::model::RegionMapInputValue)
+    /// Creates a new builder-style object to manufacture [`RegionMapInputValue`](crate::model::RegionMapInputValue).
     pub fn builder() -> crate::model::region_map_input_value::Builder {
         crate::model::region_map_input_value::Builder::default()
     }

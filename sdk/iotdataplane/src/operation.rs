@@ -10,7 +10,7 @@ pub struct DeleteThingShadow {
     _private: (),
 }
 impl DeleteThingShadow {
-    /// Creates a new builder-style object to manufacture [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput)
+    /// Creates a new builder-style object to manufacture [`DeleteThingShadowInput`](crate::input::DeleteThingShadowInput).
     pub fn builder() -> crate::input::delete_thing_shadow_input::Builder {
         crate::input::delete_thing_shadow_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetRetainedMessage {
     _private: (),
 }
 impl GetRetainedMessage {
-    /// Creates a new builder-style object to manufacture [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput)
+    /// Creates a new builder-style object to manufacture [`GetRetainedMessageInput`](crate::input::GetRetainedMessageInput).
     pub fn builder() -> crate::input::get_retained_message_input::Builder {
         crate::input::get_retained_message_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetThingShadow {
     _private: (),
 }
 impl GetThingShadow {
-    /// Creates a new builder-style object to manufacture [`GetThingShadowInput`](crate::input::GetThingShadowInput)
+    /// Creates a new builder-style object to manufacture [`GetThingShadowInput`](crate::input::GetThingShadowInput).
     pub fn builder() -> crate::input::get_thing_shadow_input::Builder {
         crate::input::get_thing_shadow_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct ListNamedShadowsForThing {
     _private: (),
 }
 impl ListNamedShadowsForThing {
-    /// Creates a new builder-style object to manufacture [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput)
+    /// Creates a new builder-style object to manufacture [`ListNamedShadowsForThingInput`](crate::input::ListNamedShadowsForThingInput).
     pub fn builder() -> crate::input::list_named_shadows_for_thing_input::Builder {
         crate::input::list_named_shadows_for_thing_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct ListRetainedMessages {
     _private: (),
 }
 impl ListRetainedMessages {
-    /// Creates a new builder-style object to manufacture [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput)
+    /// Creates a new builder-style object to manufacture [`ListRetainedMessagesInput`](crate::input::ListRetainedMessagesInput).
     pub fn builder() -> crate::input::list_retained_messages_input::Builder {
         crate::input::list_retained_messages_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct Publish {
     _private: (),
 }
 impl Publish {
-    /// Creates a new builder-style object to manufacture [`PublishInput`](crate::input::PublishInput)
+    /// Creates a new builder-style object to manufacture [`PublishInput`](crate::input::PublishInput).
     pub fn builder() -> crate::input::publish_input::Builder {
         crate::input::publish_input::Builder::default()
     }
@@ -209,7 +209,7 @@ pub struct UpdateThingShadow {
     _private: (),
 }
 impl UpdateThingShadow {
-    /// Creates a new builder-style object to manufacture [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput)
+    /// Creates a new builder-style object to manufacture [`UpdateThingShadowInput`](crate::input::UpdateThingShadowInput).
     pub fn builder() -> crate::input::update_thing_shadow_input::Builder {
         crate::input::update_thing_shadow_input::Builder::default()
     }

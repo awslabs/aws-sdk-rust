@@ -10,7 +10,7 @@ pub struct AssociateOriginationIdentity {
     _private: (),
 }
 impl AssociateOriginationIdentity {
-    /// Creates a new builder-style object to manufacture [`AssociateOriginationIdentityInput`](crate::input::AssociateOriginationIdentityInput)
+    /// Creates a new builder-style object to manufacture [`AssociateOriginationIdentityInput`](crate::input::AssociateOriginationIdentityInput).
     pub fn builder() -> crate::input::associate_origination_identity_input::Builder {
         crate::input::associate_origination_identity_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateConfigurationSet {
     _private: (),
 }
 impl CreateConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput).
     pub fn builder() -> crate::input::create_configuration_set_input::Builder {
         crate::input::create_configuration_set_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateEventDestination {
     _private: (),
 }
 impl CreateEventDestination {
-    /// Creates a new builder-style object to manufacture [`CreateEventDestinationInput`](crate::input::CreateEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`CreateEventDestinationInput`](crate::input::CreateEventDestinationInput).
     pub fn builder() -> crate::input::create_event_destination_input::Builder {
         crate::input::create_event_destination_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateOptOutList {
     _private: (),
 }
 impl CreateOptOutList {
-    /// Creates a new builder-style object to manufacture [`CreateOptOutListInput`](crate::input::CreateOptOutListInput)
+    /// Creates a new builder-style object to manufacture [`CreateOptOutListInput`](crate::input::CreateOptOutListInput).
     pub fn builder() -> crate::input::create_opt_out_list_input::Builder {
         crate::input::create_opt_out_list_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreatePool {
     _private: (),
 }
 impl CreatePool {
-    /// Creates a new builder-style object to manufacture [`CreatePoolInput`](crate::input::CreatePoolInput)
+    /// Creates a new builder-style object to manufacture [`CreatePoolInput`](crate::input::CreatePoolInput).
     pub fn builder() -> crate::input::create_pool_input::Builder {
         crate::input::create_pool_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeleteConfigurationSet {
     _private: (),
 }
 impl DeleteConfigurationSet {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput).
     pub fn builder() -> crate::input::delete_configuration_set_input::Builder {
         crate::input::delete_configuration_set_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DeleteDefaultMessageType {
     _private: (),
 }
 impl DeleteDefaultMessageType {
-    /// Creates a new builder-style object to manufacture [`DeleteDefaultMessageTypeInput`](crate::input::DeleteDefaultMessageTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDefaultMessageTypeInput`](crate::input::DeleteDefaultMessageTypeInput).
     pub fn builder() -> crate::input::delete_default_message_type_input::Builder {
         crate::input::delete_default_message_type_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct DeleteDefaultSenderId {
     _private: (),
 }
 impl DeleteDefaultSenderId {
-    /// Creates a new builder-style object to manufacture [`DeleteDefaultSenderIdInput`](crate::input::DeleteDefaultSenderIdInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDefaultSenderIdInput`](crate::input::DeleteDefaultSenderIdInput).
     pub fn builder() -> crate::input::delete_default_sender_id_input::Builder {
         crate::input::delete_default_sender_id_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct DeleteEventDestination {
     _private: (),
 }
 impl DeleteEventDestination {
-    /// Creates a new builder-style object to manufacture [`DeleteEventDestinationInput`](crate::input::DeleteEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventDestinationInput`](crate::input::DeleteEventDestinationInput).
     pub fn builder() -> crate::input::delete_event_destination_input::Builder {
         crate::input::delete_event_destination_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct DeleteKeyword {
     _private: (),
 }
 impl DeleteKeyword {
-    /// Creates a new builder-style object to manufacture [`DeleteKeywordInput`](crate::input::DeleteKeywordInput)
+    /// Creates a new builder-style object to manufacture [`DeleteKeywordInput`](crate::input::DeleteKeywordInput).
     pub fn builder() -> crate::input::delete_keyword_input::Builder {
         crate::input::delete_keyword_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DeleteOptedOutNumber {
     _private: (),
 }
 impl DeleteOptedOutNumber {
-    /// Creates a new builder-style object to manufacture [`DeleteOptedOutNumberInput`](crate::input::DeleteOptedOutNumberInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOptedOutNumberInput`](crate::input::DeleteOptedOutNumberInput).
     pub fn builder() -> crate::input::delete_opted_out_number_input::Builder {
         crate::input::delete_opted_out_number_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DeleteOptOutList {
     _private: (),
 }
 impl DeleteOptOutList {
-    /// Creates a new builder-style object to manufacture [`DeleteOptOutListInput`](crate::input::DeleteOptOutListInput)
+    /// Creates a new builder-style object to manufacture [`DeleteOptOutListInput`](crate::input::DeleteOptOutListInput).
     pub fn builder() -> crate::input::delete_opt_out_list_input::Builder {
         crate::input::delete_opt_out_list_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DeletePool {
     _private: (),
 }
 impl DeletePool {
-    /// Creates a new builder-style object to manufacture [`DeletePoolInput`](crate::input::DeletePoolInput)
+    /// Creates a new builder-style object to manufacture [`DeletePoolInput`](crate::input::DeletePoolInput).
     pub fn builder() -> crate::input::delete_pool_input::Builder {
         crate::input::delete_pool_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct DeleteTextMessageSpendLimitOverride {
     _private: (),
 }
 impl DeleteTextMessageSpendLimitOverride {
-    /// Creates a new builder-style object to manufacture [`DeleteTextMessageSpendLimitOverrideInput`](crate::input::DeleteTextMessageSpendLimitOverrideInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTextMessageSpendLimitOverrideInput`](crate::input::DeleteTextMessageSpendLimitOverrideInput).
     pub fn builder() -> crate::input::delete_text_message_spend_limit_override_input::Builder {
         crate::input::delete_text_message_spend_limit_override_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DeleteVoiceMessageSpendLimitOverride {
     _private: (),
 }
 impl DeleteVoiceMessageSpendLimitOverride {
-    /// Creates a new builder-style object to manufacture [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::input::DeleteVoiceMessageSpendLimitOverrideInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::input::DeleteVoiceMessageSpendLimitOverrideInput).
     pub fn builder() -> crate::input::delete_voice_message_spend_limit_override_input::Builder {
         crate::input::delete_voice_message_spend_limit_override_input::Builder::default()
     }
@@ -518,7 +518,7 @@ pub struct DescribeAccountAttributes {
     _private: (),
 }
 impl DescribeAccountAttributes {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput).
     pub fn builder() -> crate::input::describe_account_attributes_input::Builder {
         crate::input::describe_account_attributes_input::Builder::default()
     }
@@ -552,7 +552,7 @@ pub struct DescribeAccountLimits {
     _private: (),
 }
 impl DescribeAccountLimits {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput).
     pub fn builder() -> crate::input::describe_account_limits_input::Builder {
         crate::input::describe_account_limits_input::Builder::default()
     }
@@ -586,7 +586,7 @@ pub struct DescribeConfigurationSets {
     _private: (),
 }
 impl DescribeConfigurationSets {
-    /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetsInput`](crate::input::DescribeConfigurationSetsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetsInput`](crate::input::DescribeConfigurationSetsInput).
     pub fn builder() -> crate::input::describe_configuration_sets_input::Builder {
         crate::input::describe_configuration_sets_input::Builder::default()
     }
@@ -620,7 +620,7 @@ pub struct DescribeKeywords {
     _private: (),
 }
 impl DescribeKeywords {
-    /// Creates a new builder-style object to manufacture [`DescribeKeywordsInput`](crate::input::DescribeKeywordsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeKeywordsInput`](crate::input::DescribeKeywordsInput).
     pub fn builder() -> crate::input::describe_keywords_input::Builder {
         crate::input::describe_keywords_input::Builder::default()
     }
@@ -654,7 +654,7 @@ pub struct DescribeOptedOutNumbers {
     _private: (),
 }
 impl DescribeOptedOutNumbers {
-    /// Creates a new builder-style object to manufacture [`DescribeOptedOutNumbersInput`](crate::input::DescribeOptedOutNumbersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOptedOutNumbersInput`](crate::input::DescribeOptedOutNumbersInput).
     pub fn builder() -> crate::input::describe_opted_out_numbers_input::Builder {
         crate::input::describe_opted_out_numbers_input::Builder::default()
     }
@@ -688,7 +688,7 @@ pub struct DescribeOptOutLists {
     _private: (),
 }
 impl DescribeOptOutLists {
-    /// Creates a new builder-style object to manufacture [`DescribeOptOutListsInput`](crate::input::DescribeOptOutListsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeOptOutListsInput`](crate::input::DescribeOptOutListsInput).
     pub fn builder() -> crate::input::describe_opt_out_lists_input::Builder {
         crate::input::describe_opt_out_lists_input::Builder::default()
     }
@@ -722,7 +722,7 @@ pub struct DescribePhoneNumbers {
     _private: (),
 }
 impl DescribePhoneNumbers {
-    /// Creates a new builder-style object to manufacture [`DescribePhoneNumbersInput`](crate::input::DescribePhoneNumbersInput)
+    /// Creates a new builder-style object to manufacture [`DescribePhoneNumbersInput`](crate::input::DescribePhoneNumbersInput).
     pub fn builder() -> crate::input::describe_phone_numbers_input::Builder {
         crate::input::describe_phone_numbers_input::Builder::default()
     }
@@ -756,7 +756,7 @@ pub struct DescribePools {
     _private: (),
 }
 impl DescribePools {
-    /// Creates a new builder-style object to manufacture [`DescribePoolsInput`](crate::input::DescribePoolsInput)
+    /// Creates a new builder-style object to manufacture [`DescribePoolsInput`](crate::input::DescribePoolsInput).
     pub fn builder() -> crate::input::describe_pools_input::Builder {
         crate::input::describe_pools_input::Builder::default()
     }
@@ -788,7 +788,7 @@ pub struct DescribeSenderIds {
     _private: (),
 }
 impl DescribeSenderIds {
-    /// Creates a new builder-style object to manufacture [`DescribeSenderIdsInput`](crate::input::DescribeSenderIdsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSenderIdsInput`](crate::input::DescribeSenderIdsInput).
     pub fn builder() -> crate::input::describe_sender_ids_input::Builder {
         crate::input::describe_sender_ids_input::Builder::default()
     }
@@ -822,7 +822,7 @@ pub struct DescribeSpendLimits {
     _private: (),
 }
 impl DescribeSpendLimits {
-    /// Creates a new builder-style object to manufacture [`DescribeSpendLimitsInput`](crate::input::DescribeSpendLimitsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSpendLimitsInput`](crate::input::DescribeSpendLimitsInput).
     pub fn builder() -> crate::input::describe_spend_limits_input::Builder {
         crate::input::describe_spend_limits_input::Builder::default()
     }
@@ -856,7 +856,7 @@ pub struct DisassociateOriginationIdentity {
     _private: (),
 }
 impl DisassociateOriginationIdentity {
-    /// Creates a new builder-style object to manufacture [`DisassociateOriginationIdentityInput`](crate::input::DisassociateOriginationIdentityInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateOriginationIdentityInput`](crate::input::DisassociateOriginationIdentityInput).
     pub fn builder() -> crate::input::disassociate_origination_identity_input::Builder {
         crate::input::disassociate_origination_identity_input::Builder::default()
     }
@@ -890,7 +890,7 @@ pub struct ListPoolOriginationIdentities {
     _private: (),
 }
 impl ListPoolOriginationIdentities {
-    /// Creates a new builder-style object to manufacture [`ListPoolOriginationIdentitiesInput`](crate::input::ListPoolOriginationIdentitiesInput)
+    /// Creates a new builder-style object to manufacture [`ListPoolOriginationIdentitiesInput`](crate::input::ListPoolOriginationIdentitiesInput).
     pub fn builder() -> crate::input::list_pool_origination_identities_input::Builder {
         crate::input::list_pool_origination_identities_input::Builder::default()
     }
@@ -924,7 +924,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -958,7 +958,7 @@ pub struct PutKeyword {
     _private: (),
 }
 impl PutKeyword {
-    /// Creates a new builder-style object to manufacture [`PutKeywordInput`](crate::input::PutKeywordInput)
+    /// Creates a new builder-style object to manufacture [`PutKeywordInput`](crate::input::PutKeywordInput).
     pub fn builder() -> crate::input::put_keyword_input::Builder {
         crate::input::put_keyword_input::Builder::default()
     }
@@ -990,7 +990,7 @@ pub struct PutOptedOutNumber {
     _private: (),
 }
 impl PutOptedOutNumber {
-    /// Creates a new builder-style object to manufacture [`PutOptedOutNumberInput`](crate::input::PutOptedOutNumberInput)
+    /// Creates a new builder-style object to manufacture [`PutOptedOutNumberInput`](crate::input::PutOptedOutNumberInput).
     pub fn builder() -> crate::input::put_opted_out_number_input::Builder {
         crate::input::put_opted_out_number_input::Builder::default()
     }
@@ -1024,7 +1024,7 @@ pub struct ReleasePhoneNumber {
     _private: (),
 }
 impl ReleasePhoneNumber {
-    /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberInput`](crate::input::ReleasePhoneNumberInput).
     pub fn builder() -> crate::input::release_phone_number_input::Builder {
         crate::input::release_phone_number_input::Builder::default()
     }
@@ -1058,7 +1058,7 @@ pub struct RequestPhoneNumber {
     _private: (),
 }
 impl RequestPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`RequestPhoneNumberInput`](crate::input::RequestPhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`RequestPhoneNumberInput`](crate::input::RequestPhoneNumberInput).
     pub fn builder() -> crate::input::request_phone_number_input::Builder {
         crate::input::request_phone_number_input::Builder::default()
     }
@@ -1092,7 +1092,7 @@ pub struct SendTextMessage {
     _private: (),
 }
 impl SendTextMessage {
-    /// Creates a new builder-style object to manufacture [`SendTextMessageInput`](crate::input::SendTextMessageInput)
+    /// Creates a new builder-style object to manufacture [`SendTextMessageInput`](crate::input::SendTextMessageInput).
     pub fn builder() -> crate::input::send_text_message_input::Builder {
         crate::input::send_text_message_input::Builder::default()
     }
@@ -1126,7 +1126,7 @@ pub struct SendVoiceMessage {
     _private: (),
 }
 impl SendVoiceMessage {
-    /// Creates a new builder-style object to manufacture [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput)
+    /// Creates a new builder-style object to manufacture [`SendVoiceMessageInput`](crate::input::SendVoiceMessageInput).
     pub fn builder() -> crate::input::send_voice_message_input::Builder {
         crate::input::send_voice_message_input::Builder::default()
     }
@@ -1160,7 +1160,7 @@ pub struct SetDefaultMessageType {
     _private: (),
 }
 impl SetDefaultMessageType {
-    /// Creates a new builder-style object to manufacture [`SetDefaultMessageTypeInput`](crate::input::SetDefaultMessageTypeInput)
+    /// Creates a new builder-style object to manufacture [`SetDefaultMessageTypeInput`](crate::input::SetDefaultMessageTypeInput).
     pub fn builder() -> crate::input::set_default_message_type_input::Builder {
         crate::input::set_default_message_type_input::Builder::default()
     }
@@ -1194,7 +1194,7 @@ pub struct SetDefaultSenderId {
     _private: (),
 }
 impl SetDefaultSenderId {
-    /// Creates a new builder-style object to manufacture [`SetDefaultSenderIdInput`](crate::input::SetDefaultSenderIdInput)
+    /// Creates a new builder-style object to manufacture [`SetDefaultSenderIdInput`](crate::input::SetDefaultSenderIdInput).
     pub fn builder() -> crate::input::set_default_sender_id_input::Builder {
         crate::input::set_default_sender_id_input::Builder::default()
     }
@@ -1228,7 +1228,7 @@ pub struct SetTextMessageSpendLimitOverride {
     _private: (),
 }
 impl SetTextMessageSpendLimitOverride {
-    /// Creates a new builder-style object to manufacture [`SetTextMessageSpendLimitOverrideInput`](crate::input::SetTextMessageSpendLimitOverrideInput)
+    /// Creates a new builder-style object to manufacture [`SetTextMessageSpendLimitOverrideInput`](crate::input::SetTextMessageSpendLimitOverrideInput).
     pub fn builder() -> crate::input::set_text_message_spend_limit_override_input::Builder {
         crate::input::set_text_message_spend_limit_override_input::Builder::default()
     }
@@ -1262,7 +1262,7 @@ pub struct SetVoiceMessageSpendLimitOverride {
     _private: (),
 }
 impl SetVoiceMessageSpendLimitOverride {
-    /// Creates a new builder-style object to manufacture [`SetVoiceMessageSpendLimitOverrideInput`](crate::input::SetVoiceMessageSpendLimitOverrideInput)
+    /// Creates a new builder-style object to manufacture [`SetVoiceMessageSpendLimitOverrideInput`](crate::input::SetVoiceMessageSpendLimitOverrideInput).
     pub fn builder() -> crate::input::set_voice_message_spend_limit_override_input::Builder {
         crate::input::set_voice_message_spend_limit_override_input::Builder::default()
     }
@@ -1296,7 +1296,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1328,7 +1328,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1360,7 +1360,7 @@ pub struct UpdateEventDestination {
     _private: (),
 }
 impl UpdateEventDestination {
-    /// Creates a new builder-style object to manufacture [`UpdateEventDestinationInput`](crate::input::UpdateEventDestinationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventDestinationInput`](crate::input::UpdateEventDestinationInput).
     pub fn builder() -> crate::input::update_event_destination_input::Builder {
         crate::input::update_event_destination_input::Builder::default()
     }
@@ -1394,7 +1394,7 @@ pub struct UpdatePhoneNumber {
     _private: (),
 }
 impl UpdatePhoneNumber {
-    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberInput`](crate::input::UpdatePhoneNumberInput).
     pub fn builder() -> crate::input::update_phone_number_input::Builder {
         crate::input::update_phone_number_input::Builder::default()
     }
@@ -1428,7 +1428,7 @@ pub struct UpdatePool {
     _private: (),
 }
 impl UpdatePool {
-    /// Creates a new builder-style object to manufacture [`UpdatePoolInput`](crate::input::UpdatePoolInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePoolInput`](crate::input::UpdatePoolInput).
     pub fn builder() -> crate::input::update_pool_input::Builder {
         crate::input::update_pool_input::Builder::default()
     }

@@ -77,11 +77,10 @@ impl std::fmt::Debug for OutputDataConfig {
         formatter.finish()
     }
 }
-/// See [`OutputDataConfig`](crate::model::OutputDataConfig)
+/// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
 
-    /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -108,7 +107,7 @@ pub mod output_data_config {
             self.s3_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig)
+        /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig).
         pub fn build(self) -> crate::model::OutputDataConfig {
             crate::model::OutputDataConfig {
                 s3_bucket: self.s3_bucket,
@@ -118,7 +117,7 @@ pub mod output_data_config {
     }
 }
 impl OutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig)
+    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
     pub fn builder() -> crate::model::output_data_config::Builder {
         crate::model::output_data_config::Builder::default()
     }
@@ -153,11 +152,10 @@ impl std::fmt::Debug for InputDataConfig {
         formatter.finish()
     }
 }
-/// See [`InputDataConfig`](crate::model::InputDataConfig)
+/// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
 
-    /// A builder for [`InputDataConfig`](crate::model::InputDataConfig)
-    #[non_exhaustive]
+    /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
@@ -186,7 +184,7 @@ pub mod input_data_config {
             self.s3_key = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDataConfig`](crate::model::InputDataConfig)
+        /// Consumes the builder and constructs a [`InputDataConfig`](crate::model::InputDataConfig).
         pub fn build(self) -> crate::model::InputDataConfig {
             crate::model::InputDataConfig {
                 s3_bucket: self.s3_bucket,
@@ -196,7 +194,7 @@ pub mod input_data_config {
     }
 }
 impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig)
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
     pub fn builder() -> crate::model::input_data_config::Builder {
         crate::model::input_data_config::Builder::default()
     }
@@ -313,11 +311,10 @@ impl std::fmt::Debug for ComprehendMedicalAsyncJobProperties {
         formatter.finish()
     }
 }
-/// See [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties)
+/// See [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
 pub mod comprehend_medical_async_job_properties {
 
-    /// A builder for [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties)
-    #[non_exhaustive]
+    /// A builder for [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -506,7 +503,7 @@ pub mod comprehend_medical_async_job_properties {
             self.model_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties)
+        /// Consumes the builder and constructs a [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
         pub fn build(self) -> crate::model::ComprehendMedicalAsyncJobProperties {
             crate::model::ComprehendMedicalAsyncJobProperties {
                 job_id: self.job_id,
@@ -528,7 +525,7 @@ pub mod comprehend_medical_async_job_properties {
     }
 }
 impl ComprehendMedicalAsyncJobProperties {
-    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties)
+    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobProperties`](crate::model::ComprehendMedicalAsyncJobProperties).
     pub fn builder() -> crate::model::comprehend_medical_async_job_properties::Builder {
         crate::model::comprehend_medical_async_job_properties::Builder::default()
     }
@@ -658,11 +655,10 @@ impl std::fmt::Debug for ComprehendMedicalAsyncJobFilter {
         formatter.finish()
     }
 }
-/// See [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter)
+/// See [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
 pub mod comprehend_medical_async_job_filter {
 
-    /// A builder for [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter)
-    #[non_exhaustive]
+    /// A builder for [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
@@ -720,7 +716,7 @@ pub mod comprehend_medical_async_job_filter {
             self.submit_time_after = input;
             self
         }
-        /// Consumes the builder and constructs a [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter)
+        /// Consumes the builder and constructs a [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
         pub fn build(self) -> crate::model::ComprehendMedicalAsyncJobFilter {
             crate::model::ComprehendMedicalAsyncJobFilter {
                 job_name: self.job_name,
@@ -732,7 +728,7 @@ pub mod comprehend_medical_async_job_filter {
     }
 }
 impl ComprehendMedicalAsyncJobFilter {
-    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter)
+    /// Creates a new builder-style object to manufacture [`ComprehendMedicalAsyncJobFilter`](crate::model::ComprehendMedicalAsyncJobFilter).
     pub fn builder() -> crate::model::comprehend_medical_async_job_filter::Builder {
         crate::model::comprehend_medical_async_job_filter::Builder::default()
     }
@@ -758,11 +754,10 @@ impl std::fmt::Debug for Characters {
         formatter.finish()
     }
 }
-/// See [`Characters`](crate::model::Characters)
+/// See [`Characters`](crate::model::Characters).
 pub mod characters {
 
-    /// A builder for [`Characters`](crate::model::Characters)
-    #[non_exhaustive]
+    /// A builder for [`Characters`](crate::model::Characters).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) original_text_characters: std::option::Option<i32>,
@@ -778,7 +773,7 @@ pub mod characters {
             self.original_text_characters = input;
             self
         }
-        /// Consumes the builder and constructs a [`Characters`](crate::model::Characters)
+        /// Consumes the builder and constructs a [`Characters`](crate::model::Characters).
         pub fn build(self) -> crate::model::Characters {
             crate::model::Characters {
                 original_text_characters: self.original_text_characters,
@@ -787,7 +782,7 @@ pub mod characters {
     }
 }
 impl Characters {
-    /// Creates a new builder-style object to manufacture [`Characters`](crate::model::Characters)
+    /// Creates a new builder-style object to manufacture [`Characters`](crate::model::Characters).
     pub fn builder() -> crate::model::characters::Builder {
         crate::model::characters::Builder::default()
     }
@@ -827,11 +822,10 @@ impl std::fmt::Debug for SnomedctDetails {
         formatter.finish()
     }
 }
-/// See [`SnomedctDetails`](crate::model::SnomedctDetails)
+/// See [`SnomedctDetails`](crate::model::SnomedctDetails).
 pub mod snomedct_details {
 
-    /// A builder for [`SnomedctDetails`](crate::model::SnomedctDetails)
-    #[non_exhaustive]
+    /// A builder for [`SnomedctDetails`](crate::model::SnomedctDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) edition: std::option::Option<std::string::String>,
@@ -869,7 +863,7 @@ pub mod snomedct_details {
             self.version_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnomedctDetails`](crate::model::SnomedctDetails)
+        /// Consumes the builder and constructs a [`SnomedctDetails`](crate::model::SnomedctDetails).
         pub fn build(self) -> crate::model::SnomedctDetails {
             crate::model::SnomedctDetails {
                 edition: self.edition,
@@ -880,7 +874,7 @@ pub mod snomedct_details {
     }
 }
 impl SnomedctDetails {
-    /// Creates a new builder-style object to manufacture [`SnomedctDetails`](crate::model::SnomedctDetails)
+    /// Creates a new builder-style object to manufacture [`SnomedctDetails`](crate::model::SnomedctDetails).
     pub fn builder() -> crate::model::snomedct_details::Builder {
         crate::model::snomedct_details::Builder::default()
     }
@@ -969,11 +963,10 @@ impl std::fmt::Debug for SnomedctEntity {
         formatter.finish()
     }
 }
-/// See [`SnomedctEntity`](crate::model::SnomedctEntity)
+/// See [`SnomedctEntity`](crate::model::SnomedctEntity).
 pub mod snomedct_entity {
 
-    /// A builder for [`SnomedctEntity`](crate::model::SnomedctEntity)
-    #[non_exhaustive]
+    /// A builder for [`SnomedctEntity`](crate::model::SnomedctEntity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
@@ -1122,7 +1115,7 @@ pub mod snomedct_entity {
             self.snomedct_concepts = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnomedctEntity`](crate::model::SnomedctEntity)
+        /// Consumes the builder and constructs a [`SnomedctEntity`](crate::model::SnomedctEntity).
         pub fn build(self) -> crate::model::SnomedctEntity {
             crate::model::SnomedctEntity {
                 id: self.id,
@@ -1140,7 +1133,7 @@ pub mod snomedct_entity {
     }
 }
 impl SnomedctEntity {
-    /// Creates a new builder-style object to manufacture [`SnomedctEntity`](crate::model::SnomedctEntity)
+    /// Creates a new builder-style object to manufacture [`SnomedctEntity`](crate::model::SnomedctEntity).
     pub fn builder() -> crate::model::snomedct_entity::Builder {
         crate::model::snomedct_entity::Builder::default()
     }
@@ -1180,11 +1173,10 @@ impl std::fmt::Debug for SnomedctConcept {
         formatter.finish()
     }
 }
-/// See [`SnomedctConcept`](crate::model::SnomedctConcept)
+/// See [`SnomedctConcept`](crate::model::SnomedctConcept).
 pub mod snomedct_concept {
 
-    /// A builder for [`SnomedctConcept`](crate::model::SnomedctConcept)
-    #[non_exhaustive]
+    /// A builder for [`SnomedctConcept`](crate::model::SnomedctConcept).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1222,7 +1214,7 @@ pub mod snomedct_concept {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnomedctConcept`](crate::model::SnomedctConcept)
+        /// Consumes the builder and constructs a [`SnomedctConcept`](crate::model::SnomedctConcept).
         pub fn build(self) -> crate::model::SnomedctConcept {
             crate::model::SnomedctConcept {
                 description: self.description,
@@ -1233,7 +1225,7 @@ pub mod snomedct_concept {
     }
 }
 impl SnomedctConcept {
-    /// Creates a new builder-style object to manufacture [`SnomedctConcept`](crate::model::SnomedctConcept)
+    /// Creates a new builder-style object to manufacture [`SnomedctConcept`](crate::model::SnomedctConcept).
     pub fn builder() -> crate::model::snomedct_concept::Builder {
         crate::model::snomedct_concept::Builder::default()
     }
@@ -1266,11 +1258,10 @@ impl std::fmt::Debug for SnomedctTrait {
         formatter.finish()
     }
 }
-/// See [`SnomedctTrait`](crate::model::SnomedctTrait)
+/// See [`SnomedctTrait`](crate::model::SnomedctTrait).
 pub mod snomedct_trait {
 
-    /// A builder for [`SnomedctTrait`](crate::model::SnomedctTrait)
-    #[non_exhaustive]
+    /// A builder for [`SnomedctTrait`](crate::model::SnomedctTrait).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::SnomedctTraitName>,
@@ -1300,7 +1291,7 @@ pub mod snomedct_trait {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnomedctTrait`](crate::model::SnomedctTrait)
+        /// Consumes the builder and constructs a [`SnomedctTrait`](crate::model::SnomedctTrait).
         pub fn build(self) -> crate::model::SnomedctTrait {
             crate::model::SnomedctTrait {
                 name: self.name,
@@ -1310,7 +1301,7 @@ pub mod snomedct_trait {
     }
 }
 impl SnomedctTrait {
-    /// Creates a new builder-style object to manufacture [`SnomedctTrait`](crate::model::SnomedctTrait)
+    /// Creates a new builder-style object to manufacture [`SnomedctTrait`](crate::model::SnomedctTrait).
     pub fn builder() -> crate::model::snomedct_trait::Builder {
         crate::model::snomedct_trait::Builder::default()
     }
@@ -1471,11 +1462,10 @@ impl std::fmt::Debug for SnomedctAttribute {
         formatter.finish()
     }
 }
-/// See [`SnomedctAttribute`](crate::model::SnomedctAttribute)
+/// See [`SnomedctAttribute`](crate::model::SnomedctAttribute).
 pub mod snomedct_attribute {
 
-    /// A builder for [`SnomedctAttribute`](crate::model::SnomedctAttribute)
-    #[non_exhaustive]
+    /// A builder for [`SnomedctAttribute`](crate::model::SnomedctAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category: std::option::Option<crate::model::SnomedctEntityCategory>,
@@ -1629,7 +1619,7 @@ pub mod snomedct_attribute {
             self.snomedct_concepts = input;
             self
         }
-        /// Consumes the builder and constructs a [`SnomedctAttribute`](crate::model::SnomedctAttribute)
+        /// Consumes the builder and constructs a [`SnomedctAttribute`](crate::model::SnomedctAttribute).
         pub fn build(self) -> crate::model::SnomedctAttribute {
             crate::model::SnomedctAttribute {
                 category: self.category,
@@ -1648,7 +1638,7 @@ pub mod snomedct_attribute {
     }
 }
 impl SnomedctAttribute {
-    /// Creates a new builder-style object to manufacture [`SnomedctAttribute`](crate::model::SnomedctAttribute)
+    /// Creates a new builder-style object to manufacture [`SnomedctAttribute`](crate::model::SnomedctAttribute).
     pub fn builder() -> crate::model::snomedct_attribute::Builder {
         crate::model::snomedct_attribute::Builder::default()
     }
@@ -2015,11 +2005,10 @@ impl std::fmt::Debug for RxNormEntity {
         formatter.finish()
     }
 }
-/// See [`RxNormEntity`](crate::model::RxNormEntity)
+/// See [`RxNormEntity`](crate::model::RxNormEntity).
 pub mod rx_norm_entity {
 
-    /// A builder for [`RxNormEntity`](crate::model::RxNormEntity)
-    #[non_exhaustive]
+    /// A builder for [`RxNormEntity`](crate::model::RxNormEntity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
@@ -2168,7 +2157,7 @@ pub mod rx_norm_entity {
             self.rx_norm_concepts = input;
             self
         }
-        /// Consumes the builder and constructs a [`RxNormEntity`](crate::model::RxNormEntity)
+        /// Consumes the builder and constructs a [`RxNormEntity`](crate::model::RxNormEntity).
         pub fn build(self) -> crate::model::RxNormEntity {
             crate::model::RxNormEntity {
                 id: self.id,
@@ -2186,7 +2175,7 @@ pub mod rx_norm_entity {
     }
 }
 impl RxNormEntity {
-    /// Creates a new builder-style object to manufacture [`RxNormEntity`](crate::model::RxNormEntity)
+    /// Creates a new builder-style object to manufacture [`RxNormEntity`](crate::model::RxNormEntity).
     pub fn builder() -> crate::model::rx_norm_entity::Builder {
         crate::model::rx_norm_entity::Builder::default()
     }
@@ -2226,11 +2215,10 @@ impl std::fmt::Debug for RxNormConcept {
         formatter.finish()
     }
 }
-/// See [`RxNormConcept`](crate::model::RxNormConcept)
+/// See [`RxNormConcept`](crate::model::RxNormConcept).
 pub mod rx_norm_concept {
 
-    /// A builder for [`RxNormConcept`](crate::model::RxNormConcept)
-    #[non_exhaustive]
+    /// A builder for [`RxNormConcept`](crate::model::RxNormConcept).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -2268,7 +2256,7 @@ pub mod rx_norm_concept {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`RxNormConcept`](crate::model::RxNormConcept)
+        /// Consumes the builder and constructs a [`RxNormConcept`](crate::model::RxNormConcept).
         pub fn build(self) -> crate::model::RxNormConcept {
             crate::model::RxNormConcept {
                 description: self.description,
@@ -2279,7 +2267,7 @@ pub mod rx_norm_concept {
     }
 }
 impl RxNormConcept {
-    /// Creates a new builder-style object to manufacture [`RxNormConcept`](crate::model::RxNormConcept)
+    /// Creates a new builder-style object to manufacture [`RxNormConcept`](crate::model::RxNormConcept).
     pub fn builder() -> crate::model::rx_norm_concept::Builder {
         crate::model::rx_norm_concept::Builder::default()
     }
@@ -2312,11 +2300,10 @@ impl std::fmt::Debug for RxNormTrait {
         formatter.finish()
     }
 }
-/// See [`RxNormTrait`](crate::model::RxNormTrait)
+/// See [`RxNormTrait`](crate::model::RxNormTrait).
 pub mod rx_norm_trait {
 
-    /// A builder for [`RxNormTrait`](crate::model::RxNormTrait)
-    #[non_exhaustive]
+    /// A builder for [`RxNormTrait`](crate::model::RxNormTrait).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::RxNormTraitName>,
@@ -2346,7 +2333,7 @@ pub mod rx_norm_trait {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`RxNormTrait`](crate::model::RxNormTrait)
+        /// Consumes the builder and constructs a [`RxNormTrait`](crate::model::RxNormTrait).
         pub fn build(self) -> crate::model::RxNormTrait {
             crate::model::RxNormTrait {
                 name: self.name,
@@ -2356,7 +2343,7 @@ pub mod rx_norm_trait {
     }
 }
 impl RxNormTrait {
-    /// Creates a new builder-style object to manufacture [`RxNormTrait`](crate::model::RxNormTrait)
+    /// Creates a new builder-style object to manufacture [`RxNormTrait`](crate::model::RxNormTrait).
     pub fn builder() -> crate::model::rx_norm_trait::Builder {
         crate::model::rx_norm_trait::Builder::default()
     }
@@ -2482,11 +2469,10 @@ impl std::fmt::Debug for RxNormAttribute {
         formatter.finish()
     }
 }
-/// See [`RxNormAttribute`](crate::model::RxNormAttribute)
+/// See [`RxNormAttribute`](crate::model::RxNormAttribute).
 pub mod rx_norm_attribute {
 
-    /// A builder for [`RxNormAttribute`](crate::model::RxNormAttribute)
-    #[non_exhaustive]
+    /// A builder for [`RxNormAttribute`](crate::model::RxNormAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RxNormAttributeType>,
@@ -2591,7 +2577,7 @@ pub mod rx_norm_attribute {
             self.traits = input;
             self
         }
-        /// Consumes the builder and constructs a [`RxNormAttribute`](crate::model::RxNormAttribute)
+        /// Consumes the builder and constructs a [`RxNormAttribute`](crate::model::RxNormAttribute).
         pub fn build(self) -> crate::model::RxNormAttribute {
             crate::model::RxNormAttribute {
                 r#type: self.r#type,
@@ -2607,7 +2593,7 @@ pub mod rx_norm_attribute {
     }
 }
 impl RxNormAttribute {
-    /// Creates a new builder-style object to manufacture [`RxNormAttribute`](crate::model::RxNormAttribute)
+    /// Creates a new builder-style object to manufacture [`RxNormAttribute`](crate::model::RxNormAttribute).
     pub fn builder() -> crate::model::rx_norm_attribute::Builder {
         crate::model::rx_norm_attribute::Builder::default()
     }
@@ -2885,11 +2871,10 @@ impl std::fmt::Debug for Icd10CmEntity {
         formatter.finish()
     }
 }
-/// See [`Icd10CmEntity`](crate::model::Icd10CmEntity)
+/// See [`Icd10CmEntity`](crate::model::Icd10CmEntity).
 pub mod icd10_cm_entity {
 
-    /// A builder for [`Icd10CmEntity`](crate::model::Icd10CmEntity)
-    #[non_exhaustive]
+    /// A builder for [`Icd10CmEntity`](crate::model::Icd10CmEntity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
@@ -3038,7 +3023,7 @@ pub mod icd10_cm_entity {
             self.icd10_cm_concepts = input;
             self
         }
-        /// Consumes the builder and constructs a [`Icd10CmEntity`](crate::model::Icd10CmEntity)
+        /// Consumes the builder and constructs a [`Icd10CmEntity`](crate::model::Icd10CmEntity).
         pub fn build(self) -> crate::model::Icd10CmEntity {
             crate::model::Icd10CmEntity {
                 id: self.id,
@@ -3056,7 +3041,7 @@ pub mod icd10_cm_entity {
     }
 }
 impl Icd10CmEntity {
-    /// Creates a new builder-style object to manufacture [`Icd10CmEntity`](crate::model::Icd10CmEntity)
+    /// Creates a new builder-style object to manufacture [`Icd10CmEntity`](crate::model::Icd10CmEntity).
     pub fn builder() -> crate::model::icd10_cm_entity::Builder {
         crate::model::icd10_cm_entity::Builder::default()
     }
@@ -3096,11 +3081,10 @@ impl std::fmt::Debug for Icd10CmConcept {
         formatter.finish()
     }
 }
-/// See [`Icd10CmConcept`](crate::model::Icd10CmConcept)
+/// See [`Icd10CmConcept`](crate::model::Icd10CmConcept).
 pub mod icd10_cm_concept {
 
-    /// A builder for [`Icd10CmConcept`](crate::model::Icd10CmConcept)
-    #[non_exhaustive]
+    /// A builder for [`Icd10CmConcept`](crate::model::Icd10CmConcept).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -3138,7 +3122,7 @@ pub mod icd10_cm_concept {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`Icd10CmConcept`](crate::model::Icd10CmConcept)
+        /// Consumes the builder and constructs a [`Icd10CmConcept`](crate::model::Icd10CmConcept).
         pub fn build(self) -> crate::model::Icd10CmConcept {
             crate::model::Icd10CmConcept {
                 description: self.description,
@@ -3149,7 +3133,7 @@ pub mod icd10_cm_concept {
     }
 }
 impl Icd10CmConcept {
-    /// Creates a new builder-style object to manufacture [`Icd10CmConcept`](crate::model::Icd10CmConcept)
+    /// Creates a new builder-style object to manufacture [`Icd10CmConcept`](crate::model::Icd10CmConcept).
     pub fn builder() -> crate::model::icd10_cm_concept::Builder {
         crate::model::icd10_cm_concept::Builder::default()
     }
@@ -3182,11 +3166,10 @@ impl std::fmt::Debug for Icd10CmTrait {
         formatter.finish()
     }
 }
-/// See [`Icd10CmTrait`](crate::model::Icd10CmTrait)
+/// See [`Icd10CmTrait`](crate::model::Icd10CmTrait).
 pub mod icd10_cm_trait {
 
-    /// A builder for [`Icd10CmTrait`](crate::model::Icd10CmTrait)
-    #[non_exhaustive]
+    /// A builder for [`Icd10CmTrait`](crate::model::Icd10CmTrait).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::Icd10CmTraitName>,
@@ -3216,7 +3199,7 @@ pub mod icd10_cm_trait {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`Icd10CmTrait`](crate::model::Icd10CmTrait)
+        /// Consumes the builder and constructs a [`Icd10CmTrait`](crate::model::Icd10CmTrait).
         pub fn build(self) -> crate::model::Icd10CmTrait {
             crate::model::Icd10CmTrait {
                 name: self.name,
@@ -3226,7 +3209,7 @@ pub mod icd10_cm_trait {
     }
 }
 impl Icd10CmTrait {
-    /// Creates a new builder-style object to manufacture [`Icd10CmTrait`](crate::model::Icd10CmTrait)
+    /// Creates a new builder-style object to manufacture [`Icd10CmTrait`](crate::model::Icd10CmTrait).
     pub fn builder() -> crate::model::icd10_cm_trait::Builder {
         crate::model::icd10_cm_trait::Builder::default()
     }
@@ -3378,11 +3361,10 @@ impl std::fmt::Debug for Icd10CmAttribute {
         formatter.finish()
     }
 }
-/// See [`Icd10CmAttribute`](crate::model::Icd10CmAttribute)
+/// See [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
 pub mod icd10_cm_attribute {
 
-    /// A builder for [`Icd10CmAttribute`](crate::model::Icd10CmAttribute)
-    #[non_exhaustive]
+    /// A builder for [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::Icd10CmAttributeType>,
@@ -3515,7 +3497,7 @@ pub mod icd10_cm_attribute {
             self.relationship_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`Icd10CmAttribute`](crate::model::Icd10CmAttribute)
+        /// Consumes the builder and constructs a [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
         pub fn build(self) -> crate::model::Icd10CmAttribute {
             crate::model::Icd10CmAttribute {
                 r#type: self.r#type,
@@ -3533,7 +3515,7 @@ pub mod icd10_cm_attribute {
     }
 }
 impl Icd10CmAttribute {
-    /// Creates a new builder-style object to manufacture [`Icd10CmAttribute`](crate::model::Icd10CmAttribute)
+    /// Creates a new builder-style object to manufacture [`Icd10CmAttribute`](crate::model::Icd10CmAttribute).
     pub fn builder() -> crate::model::icd10_cm_attribute::Builder {
         crate::model::icd10_cm_attribute::Builder::default()
     }
@@ -3859,11 +3841,10 @@ impl std::fmt::Debug for Entity {
         formatter.finish()
     }
 }
-/// See [`Entity`](crate::model::Entity)
+/// See [`Entity`](crate::model::Entity).
 pub mod entity {
 
-    /// A builder for [`Entity`](crate::model::Entity)
-    #[non_exhaustive]
+    /// A builder for [`Entity`](crate::model::Entity).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<i32>,
@@ -3988,7 +3969,7 @@ pub mod entity {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`Entity`](crate::model::Entity)
+        /// Consumes the builder and constructs a [`Entity`](crate::model::Entity).
         pub fn build(self) -> crate::model::Entity {
             crate::model::Entity {
                 id: self.id,
@@ -4005,7 +3986,7 @@ pub mod entity {
     }
 }
 impl Entity {
-    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity)
+    /// Creates a new builder-style object to manufacture [`Entity`](crate::model::Entity).
     pub fn builder() -> crate::model::entity::Builder {
         crate::model::entity::Builder::default()
     }
@@ -4094,11 +4075,10 @@ impl std::fmt::Debug for Attribute {
         formatter.finish()
     }
 }
-/// See [`Attribute`](crate::model::Attribute)
+/// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
 
-    /// A builder for [`Attribute`](crate::model::Attribute)
-    #[non_exhaustive]
+    /// A builder for [`Attribute`](crate::model::Attribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EntitySubType>,
@@ -4228,7 +4208,7 @@ pub mod attribute {
             self.traits = input;
             self
         }
-        /// Consumes the builder and constructs a [`Attribute`](crate::model::Attribute)
+        /// Consumes the builder and constructs a [`Attribute`](crate::model::Attribute).
         pub fn build(self) -> crate::model::Attribute {
             crate::model::Attribute {
                 r#type: self.r#type,
@@ -4246,7 +4226,7 @@ pub mod attribute {
     }
 }
 impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute)
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
     pub fn builder() -> crate::model::attribute::Builder {
         crate::model::attribute::Builder::default()
     }
@@ -4279,11 +4259,10 @@ impl std::fmt::Debug for Trait {
         formatter.finish()
     }
 }
-/// See [`Trait`](crate::model::Trait)
+/// See [`Trait`](crate::model::Trait).
 pub mod r#trait {
 
-    /// A builder for [`Trait`](crate::model::Trait)
-    #[non_exhaustive]
+    /// A builder for [`Trait`](crate::model::Trait).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::AttributeName>,
@@ -4310,7 +4289,7 @@ pub mod r#trait {
             self.score = input;
             self
         }
-        /// Consumes the builder and constructs a [`Trait`](crate::model::Trait)
+        /// Consumes the builder and constructs a [`Trait`](crate::model::Trait).
         pub fn build(self) -> crate::model::Trait {
             crate::model::Trait {
                 name: self.name,
@@ -4320,7 +4299,7 @@ pub mod r#trait {
     }
 }
 impl Trait {
-    /// Creates a new builder-style object to manufacture [`Trait`](crate::model::Trait)
+    /// Creates a new builder-style object to manufacture [`Trait`](crate::model::Trait).
     pub fn builder() -> crate::model::r#trait::Builder {
         crate::model::r#trait::Builder::default()
     }
@@ -4875,11 +4854,10 @@ impl std::fmt::Debug for UnmappedAttribute {
         formatter.finish()
     }
 }
-/// See [`UnmappedAttribute`](crate::model::UnmappedAttribute)
+/// See [`UnmappedAttribute`](crate::model::UnmappedAttribute).
 pub mod unmapped_attribute {
 
-    /// A builder for [`UnmappedAttribute`](crate::model::UnmappedAttribute)
-    #[non_exhaustive]
+    /// A builder for [`UnmappedAttribute`](crate::model::UnmappedAttribute).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::EntityType>,
@@ -4909,7 +4887,7 @@ pub mod unmapped_attribute {
             self.attribute = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnmappedAttribute`](crate::model::UnmappedAttribute)
+        /// Consumes the builder and constructs a [`UnmappedAttribute`](crate::model::UnmappedAttribute).
         pub fn build(self) -> crate::model::UnmappedAttribute {
             crate::model::UnmappedAttribute {
                 r#type: self.r#type,
@@ -4919,7 +4897,7 @@ pub mod unmapped_attribute {
     }
 }
 impl UnmappedAttribute {
-    /// Creates a new builder-style object to manufacture [`UnmappedAttribute`](crate::model::UnmappedAttribute)
+    /// Creates a new builder-style object to manufacture [`UnmappedAttribute`](crate::model::UnmappedAttribute).
     pub fn builder() -> crate::model::unmapped_attribute::Builder {
         crate::model::unmapped_attribute::Builder::default()
     }

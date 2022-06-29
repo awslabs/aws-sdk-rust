@@ -9,22 +9,21 @@ impl std::fmt::Debug for PutRawMessageContentOutput {
         formatter.finish()
     }
 }
-/// See [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
+/// See [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
 pub mod put_raw_message_content_output {
 
-    /// A builder for [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
+        /// Consumes the builder and constructs a [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
         pub fn build(self) -> crate::output::PutRawMessageContentOutput {
             crate::output::PutRawMessageContentOutput {}
         }
     }
 }
 impl PutRawMessageContentOutput {
-    /// Creates a new builder-style object to manufacture [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
+    /// Creates a new builder-style object to manufacture [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput).
     pub fn builder() -> crate::output::put_raw_message_content_output::Builder {
         crate::output::put_raw_message_content_output::Builder::default()
     }
@@ -49,11 +48,10 @@ impl std::fmt::Debug for GetRawMessageContentOutput {
         formatter.finish()
     }
 }
-/// See [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput)
+/// See [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
 pub mod get_raw_message_content_output {
 
-    /// A builder for [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_content: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -72,7 +70,7 @@ pub mod get_raw_message_content_output {
             self.message_content = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput)
+        /// Consumes the builder and constructs a [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
         pub fn build(self) -> crate::output::GetRawMessageContentOutput {
             crate::output::GetRawMessageContentOutput {
                 message_content: self.message_content.unwrap_or_default(),
@@ -81,7 +79,7 @@ pub mod get_raw_message_content_output {
     }
 }
 impl GetRawMessageContentOutput {
-    /// Creates a new builder-style object to manufacture [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput)
+    /// Creates a new builder-style object to manufacture [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput).
     pub fn builder() -> crate::output::get_raw_message_content_output::Builder {
         crate::output::get_raw_message_content_output::Builder::default()
     }

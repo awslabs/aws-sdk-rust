@@ -10,7 +10,7 @@ pub struct AcceptDirectConnectGatewayAssociationProposal {
     _private: (),
 }
 impl AcceptDirectConnectGatewayAssociationProposal {
-    /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput)
+    /// Creates a new builder-style object to manufacture [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput).
     pub fn builder(
     ) -> crate::input::accept_direct_connect_gateway_association_proposal_input::Builder {
         crate::input::accept_direct_connect_gateway_association_proposal_input::Builder::default()
@@ -49,7 +49,7 @@ pub struct AllocateConnectionOnInterconnect {
     _private: (),
 }
 impl AllocateConnectionOnInterconnect {
-    /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectInput`](crate::input::AllocateConnectionOnInterconnectInput)
+    /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectInput`](crate::input::AllocateConnectionOnInterconnectInput).
     pub fn builder() -> crate::input::allocate_connection_on_interconnect_input::Builder {
         crate::input::allocate_connection_on_interconnect_input::Builder::default()
     }
@@ -83,7 +83,7 @@ pub struct AllocateHostedConnection {
     _private: (),
 }
 impl AllocateHostedConnection {
-    /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionInput`](crate::input::AllocateHostedConnectionInput)
+    /// Creates a new builder-style object to manufacture [`AllocateHostedConnectionInput`](crate::input::AllocateHostedConnectionInput).
     pub fn builder() -> crate::input::allocate_hosted_connection_input::Builder {
         crate::input::allocate_hosted_connection_input::Builder::default()
     }
@@ -117,7 +117,7 @@ pub struct AllocatePrivateVirtualInterface {
     _private: (),
 }
 impl AllocatePrivateVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceInput`](crate::input::AllocatePrivateVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`AllocatePrivateVirtualInterfaceInput`](crate::input::AllocatePrivateVirtualInterfaceInput).
     pub fn builder() -> crate::input::allocate_private_virtual_interface_input::Builder {
         crate::input::allocate_private_virtual_interface_input::Builder::default()
     }
@@ -151,7 +151,7 @@ pub struct AllocatePublicVirtualInterface {
     _private: (),
 }
 impl AllocatePublicVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceInput`](crate::input::AllocatePublicVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceInput`](crate::input::AllocatePublicVirtualInterfaceInput).
     pub fn builder() -> crate::input::allocate_public_virtual_interface_input::Builder {
         crate::input::allocate_public_virtual_interface_input::Builder::default()
     }
@@ -185,7 +185,7 @@ pub struct AllocateTransitVirtualInterface {
     _private: (),
 }
 impl AllocateTransitVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceInput`](crate::input::AllocateTransitVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`AllocateTransitVirtualInterfaceInput`](crate::input::AllocateTransitVirtualInterfaceInput).
     pub fn builder() -> crate::input::allocate_transit_virtual_interface_input::Builder {
         crate::input::allocate_transit_virtual_interface_input::Builder::default()
     }
@@ -219,7 +219,7 @@ pub struct AssociateConnectionWithLag {
     _private: (),
 }
 impl AssociateConnectionWithLag {
-    /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagInput`](crate::input::AssociateConnectionWithLagInput)
+    /// Creates a new builder-style object to manufacture [`AssociateConnectionWithLagInput`](crate::input::AssociateConnectionWithLagInput).
     pub fn builder() -> crate::input::associate_connection_with_lag_input::Builder {
         crate::input::associate_connection_with_lag_input::Builder::default()
     }
@@ -253,7 +253,7 @@ pub struct AssociateHostedConnection {
     _private: (),
 }
 impl AssociateHostedConnection {
-    /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionInput`](crate::input::AssociateHostedConnectionInput)
+    /// Creates a new builder-style object to manufacture [`AssociateHostedConnectionInput`](crate::input::AssociateHostedConnectionInput).
     pub fn builder() -> crate::input::associate_hosted_connection_input::Builder {
         crate::input::associate_hosted_connection_input::Builder::default()
     }
@@ -287,7 +287,7 @@ pub struct AssociateMacSecKey {
     _private: (),
 }
 impl AssociateMacSecKey {
-    /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyInput`](crate::input::AssociateMacSecKeyInput)
+    /// Creates a new builder-style object to manufacture [`AssociateMacSecKeyInput`](crate::input::AssociateMacSecKeyInput).
     pub fn builder() -> crate::input::associate_mac_sec_key_input::Builder {
         crate::input::associate_mac_sec_key_input::Builder::default()
     }
@@ -321,7 +321,7 @@ pub struct AssociateVirtualInterface {
     _private: (),
 }
 impl AssociateVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceInput`](crate::input::AssociateVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`AssociateVirtualInterfaceInput`](crate::input::AssociateVirtualInterfaceInput).
     pub fn builder() -> crate::input::associate_virtual_interface_input::Builder {
         crate::input::associate_virtual_interface_input::Builder::default()
     }
@@ -355,7 +355,7 @@ pub struct ConfirmConnection {
     _private: (),
 }
 impl ConfirmConnection {
-    /// Creates a new builder-style object to manufacture [`ConfirmConnectionInput`](crate::input::ConfirmConnectionInput)
+    /// Creates a new builder-style object to manufacture [`ConfirmConnectionInput`](crate::input::ConfirmConnectionInput).
     pub fn builder() -> crate::input::confirm_connection_input::Builder {
         crate::input::confirm_connection_input::Builder::default()
     }
@@ -389,7 +389,7 @@ pub struct ConfirmCustomerAgreement {
     _private: (),
 }
 impl ConfirmCustomerAgreement {
-    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementInput`](crate::input::ConfirmCustomerAgreementInput)
+    /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementInput`](crate::input::ConfirmCustomerAgreementInput).
     pub fn builder() -> crate::input::confirm_customer_agreement_input::Builder {
         crate::input::confirm_customer_agreement_input::Builder::default()
     }
@@ -423,7 +423,7 @@ pub struct ConfirmPrivateVirtualInterface {
     _private: (),
 }
 impl ConfirmPrivateVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceInput`](crate::input::ConfirmPrivateVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceInput`](crate::input::ConfirmPrivateVirtualInterfaceInput).
     pub fn builder() -> crate::input::confirm_private_virtual_interface_input::Builder {
         crate::input::confirm_private_virtual_interface_input::Builder::default()
     }
@@ -457,7 +457,7 @@ pub struct ConfirmPublicVirtualInterface {
     _private: (),
 }
 impl ConfirmPublicVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceInput`](crate::input::ConfirmPublicVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceInput`](crate::input::ConfirmPublicVirtualInterfaceInput).
     pub fn builder() -> crate::input::confirm_public_virtual_interface_input::Builder {
         crate::input::confirm_public_virtual_interface_input::Builder::default()
     }
@@ -491,7 +491,7 @@ pub struct ConfirmTransitVirtualInterface {
     _private: (),
 }
 impl ConfirmTransitVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceInput`](crate::input::ConfirmTransitVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`ConfirmTransitVirtualInterfaceInput`](crate::input::ConfirmTransitVirtualInterfaceInput).
     pub fn builder() -> crate::input::confirm_transit_virtual_interface_input::Builder {
         crate::input::confirm_transit_virtual_interface_input::Builder::default()
     }
@@ -525,7 +525,7 @@ pub struct CreateBGPPeer {
     _private: (),
 }
 impl CreateBGPPeer {
-    /// Creates a new builder-style object to manufacture [`CreateBgpPeerInput`](crate::input::CreateBgpPeerInput)
+    /// Creates a new builder-style object to manufacture [`CreateBgpPeerInput`](crate::input::CreateBgpPeerInput).
     pub fn builder() -> crate::input::create_bgp_peer_input::Builder {
         crate::input::create_bgp_peer_input::Builder::default()
     }
@@ -557,7 +557,7 @@ pub struct CreateConnection {
     _private: (),
 }
 impl CreateConnection {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput)
+    /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::input::CreateConnectionInput).
     pub fn builder() -> crate::input::create_connection_input::Builder {
         crate::input::create_connection_input::Builder::default()
     }
@@ -591,7 +591,7 @@ pub struct CreateDirectConnectGateway {
     _private: (),
 }
 impl CreateDirectConnectGateway {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayInput`](crate::input::CreateDirectConnectGatewayInput)
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayInput`](crate::input::CreateDirectConnectGatewayInput).
     pub fn builder() -> crate::input::create_direct_connect_gateway_input::Builder {
         crate::input::create_direct_connect_gateway_input::Builder::default()
     }
@@ -625,7 +625,7 @@ pub struct CreateDirectConnectGatewayAssociation {
     _private: (),
 }
 impl CreateDirectConnectGatewayAssociation {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationInput`](crate::input::CreateDirectConnectGatewayAssociationInput)
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationInput`](crate::input::CreateDirectConnectGatewayAssociationInput).
     pub fn builder() -> crate::input::create_direct_connect_gateway_association_input::Builder {
         crate::input::create_direct_connect_gateway_association_input::Builder::default()
     }
@@ -661,7 +661,7 @@ pub struct CreateDirectConnectGatewayAssociationProposal {
     _private: (),
 }
 impl CreateDirectConnectGatewayAssociationProposal {
-    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalInput`](crate::input::CreateDirectConnectGatewayAssociationProposalInput)
+    /// Creates a new builder-style object to manufacture [`CreateDirectConnectGatewayAssociationProposalInput`](crate::input::CreateDirectConnectGatewayAssociationProposalInput).
     pub fn builder(
     ) -> crate::input::create_direct_connect_gateway_association_proposal_input::Builder {
         crate::input::create_direct_connect_gateway_association_proposal_input::Builder::default()
@@ -700,7 +700,7 @@ pub struct CreateInterconnect {
     _private: (),
 }
 impl CreateInterconnect {
-    /// Creates a new builder-style object to manufacture [`CreateInterconnectInput`](crate::input::CreateInterconnectInput)
+    /// Creates a new builder-style object to manufacture [`CreateInterconnectInput`](crate::input::CreateInterconnectInput).
     pub fn builder() -> crate::input::create_interconnect_input::Builder {
         crate::input::create_interconnect_input::Builder::default()
     }
@@ -734,7 +734,7 @@ pub struct CreateLag {
     _private: (),
 }
 impl CreateLag {
-    /// Creates a new builder-style object to manufacture [`CreateLagInput`](crate::input::CreateLagInput)
+    /// Creates a new builder-style object to manufacture [`CreateLagInput`](crate::input::CreateLagInput).
     pub fn builder() -> crate::input::create_lag_input::Builder {
         crate::input::create_lag_input::Builder::default()
     }
@@ -765,7 +765,7 @@ pub struct CreatePrivateVirtualInterface {
     _private: (),
 }
 impl CreatePrivateVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceInput`](crate::input::CreatePrivateVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`CreatePrivateVirtualInterfaceInput`](crate::input::CreatePrivateVirtualInterfaceInput).
     pub fn builder() -> crate::input::create_private_virtual_interface_input::Builder {
         crate::input::create_private_virtual_interface_input::Builder::default()
     }
@@ -799,7 +799,7 @@ pub struct CreatePublicVirtualInterface {
     _private: (),
 }
 impl CreatePublicVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceInput`](crate::input::CreatePublicVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceInput`](crate::input::CreatePublicVirtualInterfaceInput).
     pub fn builder() -> crate::input::create_public_virtual_interface_input::Builder {
         crate::input::create_public_virtual_interface_input::Builder::default()
     }
@@ -833,7 +833,7 @@ pub struct CreateTransitVirtualInterface {
     _private: (),
 }
 impl CreateTransitVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceInput`](crate::input::CreateTransitVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceInput`](crate::input::CreateTransitVirtualInterfaceInput).
     pub fn builder() -> crate::input::create_transit_virtual_interface_input::Builder {
         crate::input::create_transit_virtual_interface_input::Builder::default()
     }
@@ -867,7 +867,7 @@ pub struct DeleteBGPPeer {
     _private: (),
 }
 impl DeleteBGPPeer {
-    /// Creates a new builder-style object to manufacture [`DeleteBgpPeerInput`](crate::input::DeleteBgpPeerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBgpPeerInput`](crate::input::DeleteBgpPeerInput).
     pub fn builder() -> crate::input::delete_bgp_peer_input::Builder {
         crate::input::delete_bgp_peer_input::Builder::default()
     }
@@ -899,7 +899,7 @@ pub struct DeleteConnection {
     _private: (),
 }
 impl DeleteConnection {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
     pub fn builder() -> crate::input::delete_connection_input::Builder {
         crate::input::delete_connection_input::Builder::default()
     }
@@ -933,7 +933,7 @@ pub struct DeleteDirectConnectGateway {
     _private: (),
 }
 impl DeleteDirectConnectGateway {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayInput`](crate::input::DeleteDirectConnectGatewayInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayInput`](crate::input::DeleteDirectConnectGatewayInput).
     pub fn builder() -> crate::input::delete_direct_connect_gateway_input::Builder {
         crate::input::delete_direct_connect_gateway_input::Builder::default()
     }
@@ -967,7 +967,7 @@ pub struct DeleteDirectConnectGatewayAssociation {
     _private: (),
 }
 impl DeleteDirectConnectGatewayAssociation {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationInput`](crate::input::DeleteDirectConnectGatewayAssociationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationInput`](crate::input::DeleteDirectConnectGatewayAssociationInput).
     pub fn builder() -> crate::input::delete_direct_connect_gateway_association_input::Builder {
         crate::input::delete_direct_connect_gateway_association_input::Builder::default()
     }
@@ -1003,7 +1003,7 @@ pub struct DeleteDirectConnectGatewayAssociationProposal {
     _private: (),
 }
 impl DeleteDirectConnectGatewayAssociationProposal {
-    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::input::DeleteDirectConnectGatewayAssociationProposalInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::input::DeleteDirectConnectGatewayAssociationProposalInput).
     pub fn builder(
     ) -> crate::input::delete_direct_connect_gateway_association_proposal_input::Builder {
         crate::input::delete_direct_connect_gateway_association_proposal_input::Builder::default()
@@ -1042,7 +1042,7 @@ pub struct DeleteInterconnect {
     _private: (),
 }
 impl DeleteInterconnect {
-    /// Creates a new builder-style object to manufacture [`DeleteInterconnectInput`](crate::input::DeleteInterconnectInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInterconnectInput`](crate::input::DeleteInterconnectInput).
     pub fn builder() -> crate::input::delete_interconnect_input::Builder {
         crate::input::delete_interconnect_input::Builder::default()
     }
@@ -1076,7 +1076,7 @@ pub struct DeleteLag {
     _private: (),
 }
 impl DeleteLag {
-    /// Creates a new builder-style object to manufacture [`DeleteLagInput`](crate::input::DeleteLagInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLagInput`](crate::input::DeleteLagInput).
     pub fn builder() -> crate::input::delete_lag_input::Builder {
         crate::input::delete_lag_input::Builder::default()
     }
@@ -1107,7 +1107,7 @@ pub struct DeleteVirtualInterface {
     _private: (),
 }
 impl DeleteVirtualInterface {
-    /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceInput`](crate::input::DeleteVirtualInterfaceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteVirtualInterfaceInput`](crate::input::DeleteVirtualInterfaceInput).
     pub fn builder() -> crate::input::delete_virtual_interface_input::Builder {
         crate::input::delete_virtual_interface_input::Builder::default()
     }
@@ -1141,7 +1141,7 @@ pub struct DescribeConnectionLoa {
     _private: (),
 }
 impl DescribeConnectionLoa {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaInput`](crate::input::DescribeConnectionLoaInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionLoaInput`](crate::input::DescribeConnectionLoaInput).
     pub fn builder() -> crate::input::describe_connection_loa_input::Builder {
         crate::input::describe_connection_loa_input::Builder::default()
     }
@@ -1175,7 +1175,7 @@ pub struct DescribeConnections {
     _private: (),
 }
 impl DescribeConnections {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput).
     pub fn builder() -> crate::input::describe_connections_input::Builder {
         crate::input::describe_connections_input::Builder::default()
     }
@@ -1209,7 +1209,7 @@ pub struct DescribeConnectionsOnInterconnect {
     _private: (),
 }
 impl DescribeConnectionsOnInterconnect {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectInput`](crate::input::DescribeConnectionsOnInterconnectInput)
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionsOnInterconnectInput`](crate::input::DescribeConnectionsOnInterconnectInput).
     pub fn builder() -> crate::input::describe_connections_on_interconnect_input::Builder {
         crate::input::describe_connections_on_interconnect_input::Builder::default()
     }
@@ -1243,7 +1243,7 @@ pub struct DescribeCustomerMetadata {
     _private: (),
 }
 impl DescribeCustomerMetadata {
-    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput).
     pub fn builder() -> crate::input::describe_customer_metadata_input::Builder {
         crate::input::describe_customer_metadata_input::Builder::default()
     }
@@ -1277,7 +1277,7 @@ pub struct DescribeDirectConnectGatewayAssociationProposals {
     _private: (),
 }
 impl DescribeDirectConnectGatewayAssociationProposals {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput).
     pub fn builder(
     ) -> crate::input::describe_direct_connect_gateway_association_proposals_input::Builder {
         crate::input::describe_direct_connect_gateway_association_proposals_input::Builder::default(
@@ -1315,7 +1315,7 @@ pub struct DescribeDirectConnectGatewayAssociations {
     _private: (),
 }
 impl DescribeDirectConnectGatewayAssociations {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsInput`](crate::input::DescribeDirectConnectGatewayAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsInput`](crate::input::DescribeDirectConnectGatewayAssociationsInput).
     pub fn builder() -> crate::input::describe_direct_connect_gateway_associations_input::Builder {
         crate::input::describe_direct_connect_gateway_associations_input::Builder::default()
     }
@@ -1353,7 +1353,7 @@ pub struct DescribeDirectConnectGatewayAttachments {
     _private: (),
 }
 impl DescribeDirectConnectGatewayAttachments {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsInput`](crate::input::DescribeDirectConnectGatewayAttachmentsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAttachmentsInput`](crate::input::DescribeDirectConnectGatewayAttachmentsInput).
     pub fn builder() -> crate::input::describe_direct_connect_gateway_attachments_input::Builder {
         crate::input::describe_direct_connect_gateway_attachments_input::Builder::default()
     }
@@ -1391,7 +1391,7 @@ pub struct DescribeDirectConnectGateways {
     _private: (),
 }
 impl DescribeDirectConnectGateways {
-    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysInput`](crate::input::DescribeDirectConnectGatewaysInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewaysInput`](crate::input::DescribeDirectConnectGatewaysInput).
     pub fn builder() -> crate::input::describe_direct_connect_gateways_input::Builder {
         crate::input::describe_direct_connect_gateways_input::Builder::default()
     }
@@ -1425,7 +1425,7 @@ pub struct DescribeHostedConnections {
     _private: (),
 }
 impl DescribeHostedConnections {
-    /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsInput`](crate::input::DescribeHostedConnectionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHostedConnectionsInput`](crate::input::DescribeHostedConnectionsInput).
     pub fn builder() -> crate::input::describe_hosted_connections_input::Builder {
         crate::input::describe_hosted_connections_input::Builder::default()
     }
@@ -1459,7 +1459,7 @@ pub struct DescribeInterconnectLoa {
     _private: (),
 }
 impl DescribeInterconnectLoa {
-    /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaInput`](crate::input::DescribeInterconnectLoaInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInterconnectLoaInput`](crate::input::DescribeInterconnectLoaInput).
     pub fn builder() -> crate::input::describe_interconnect_loa_input::Builder {
         crate::input::describe_interconnect_loa_input::Builder::default()
     }
@@ -1493,7 +1493,7 @@ pub struct DescribeInterconnects {
     _private: (),
 }
 impl DescribeInterconnects {
-    /// Creates a new builder-style object to manufacture [`DescribeInterconnectsInput`](crate::input::DescribeInterconnectsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInterconnectsInput`](crate::input::DescribeInterconnectsInput).
     pub fn builder() -> crate::input::describe_interconnects_input::Builder {
         crate::input::describe_interconnects_input::Builder::default()
     }
@@ -1527,7 +1527,7 @@ pub struct DescribeLags {
     _private: (),
 }
 impl DescribeLags {
-    /// Creates a new builder-style object to manufacture [`DescribeLagsInput`](crate::input::DescribeLagsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLagsInput`](crate::input::DescribeLagsInput).
     pub fn builder() -> crate::input::describe_lags_input::Builder {
         crate::input::describe_lags_input::Builder::default()
     }
@@ -1559,7 +1559,7 @@ pub struct DescribeLoa {
     _private: (),
 }
 impl DescribeLoa {
-    /// Creates a new builder-style object to manufacture [`DescribeLoaInput`](crate::input::DescribeLoaInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLoaInput`](crate::input::DescribeLoaInput).
     pub fn builder() -> crate::input::describe_loa_input::Builder {
         crate::input::describe_loa_input::Builder::default()
     }
@@ -1591,7 +1591,7 @@ pub struct DescribeLocations {
     _private: (),
 }
 impl DescribeLocations {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationsInput`](crate::input::DescribeLocationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLocationsInput`](crate::input::DescribeLocationsInput).
     pub fn builder() -> crate::input::describe_locations_input::Builder {
         crate::input::describe_locations_input::Builder::default()
     }
@@ -1625,7 +1625,7 @@ pub struct DescribeRouterConfiguration {
     _private: (),
 }
 impl DescribeRouterConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationInput`](crate::input::DescribeRouterConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeRouterConfigurationInput`](crate::input::DescribeRouterConfigurationInput).
     pub fn builder() -> crate::input::describe_router_configuration_input::Builder {
         crate::input::describe_router_configuration_input::Builder::default()
     }
@@ -1659,7 +1659,7 @@ pub struct DescribeTags {
     _private: (),
 }
 impl DescribeTags {
-    /// Creates a new builder-style object to manufacture [`DescribeTagsInput`](crate::input::DescribeTagsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTagsInput`](crate::input::DescribeTagsInput).
     pub fn builder() -> crate::input::describe_tags_input::Builder {
         crate::input::describe_tags_input::Builder::default()
     }
@@ -1691,7 +1691,7 @@ pub struct DescribeVirtualGateways {
     _private: (),
 }
 impl DescribeVirtualGateways {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysInput`](crate::input::DescribeVirtualGatewaysInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewaysInput`](crate::input::DescribeVirtualGatewaysInput).
     pub fn builder() -> crate::input::describe_virtual_gateways_input::Builder {
         crate::input::describe_virtual_gateways_input::Builder::default()
     }
@@ -1725,7 +1725,7 @@ pub struct DescribeVirtualInterfaces {
     _private: (),
 }
 impl DescribeVirtualInterfaces {
-    /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesInput`](crate::input::DescribeVirtualInterfacesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeVirtualInterfacesInput`](crate::input::DescribeVirtualInterfacesInput).
     pub fn builder() -> crate::input::describe_virtual_interfaces_input::Builder {
         crate::input::describe_virtual_interfaces_input::Builder::default()
     }
@@ -1759,7 +1759,7 @@ pub struct DisassociateConnectionFromLag {
     _private: (),
 }
 impl DisassociateConnectionFromLag {
-    /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagInput`](crate::input::DisassociateConnectionFromLagInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateConnectionFromLagInput`](crate::input::DisassociateConnectionFromLagInput).
     pub fn builder() -> crate::input::disassociate_connection_from_lag_input::Builder {
         crate::input::disassociate_connection_from_lag_input::Builder::default()
     }
@@ -1793,7 +1793,7 @@ pub struct DisassociateMacSecKey {
     _private: (),
 }
 impl DisassociateMacSecKey {
-    /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyInput`](crate::input::DisassociateMacSecKeyInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyInput`](crate::input::DisassociateMacSecKeyInput).
     pub fn builder() -> crate::input::disassociate_mac_sec_key_input::Builder {
         crate::input::disassociate_mac_sec_key_input::Builder::default()
     }
@@ -1827,7 +1827,7 @@ pub struct ListVirtualInterfaceTestHistory {
     _private: (),
 }
 impl ListVirtualInterfaceTestHistory {
-    /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryInput`](crate::input::ListVirtualInterfaceTestHistoryInput)
+    /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryInput`](crate::input::ListVirtualInterfaceTestHistoryInput).
     pub fn builder() -> crate::input::list_virtual_interface_test_history_input::Builder {
         crate::input::list_virtual_interface_test_history_input::Builder::default()
     }
@@ -1861,7 +1861,7 @@ pub struct StartBgpFailoverTest {
     _private: (),
 }
 impl StartBgpFailoverTest {
-    /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestInput`](crate::input::StartBgpFailoverTestInput)
+    /// Creates a new builder-style object to manufacture [`StartBgpFailoverTestInput`](crate::input::StartBgpFailoverTestInput).
     pub fn builder() -> crate::input::start_bgp_failover_test_input::Builder {
         crate::input::start_bgp_failover_test_input::Builder::default()
     }
@@ -1895,7 +1895,7 @@ pub struct StopBgpFailoverTest {
     _private: (),
 }
 impl StopBgpFailoverTest {
-    /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestInput`](crate::input::StopBgpFailoverTestInput)
+    /// Creates a new builder-style object to manufacture [`StopBgpFailoverTestInput`](crate::input::StopBgpFailoverTestInput).
     pub fn builder() -> crate::input::stop_bgp_failover_test_input::Builder {
         crate::input::stop_bgp_failover_test_input::Builder::default()
     }
@@ -1929,7 +1929,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1961,7 +1961,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1993,7 +1993,7 @@ pub struct UpdateConnection {
     _private: (),
 }
 impl UpdateConnection {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::input::UpdateConnectionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::input::UpdateConnectionInput).
     pub fn builder() -> crate::input::update_connection_input::Builder {
         crate::input::update_connection_input::Builder::default()
     }
@@ -2027,7 +2027,7 @@ pub struct UpdateDirectConnectGateway {
     _private: (),
 }
 impl UpdateDirectConnectGateway {
-    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayInput`](crate::input::UpdateDirectConnectGatewayInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayInput`](crate::input::UpdateDirectConnectGatewayInput).
     pub fn builder() -> crate::input::update_direct_connect_gateway_input::Builder {
         crate::input::update_direct_connect_gateway_input::Builder::default()
     }
@@ -2061,7 +2061,7 @@ pub struct UpdateDirectConnectGatewayAssociation {
     _private: (),
 }
 impl UpdateDirectConnectGatewayAssociation {
-    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationInput`](crate::input::UpdateDirectConnectGatewayAssociationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDirectConnectGatewayAssociationInput`](crate::input::UpdateDirectConnectGatewayAssociationInput).
     pub fn builder() -> crate::input::update_direct_connect_gateway_association_input::Builder {
         crate::input::update_direct_connect_gateway_association_input::Builder::default()
     }
@@ -2097,7 +2097,7 @@ pub struct UpdateLag {
     _private: (),
 }
 impl UpdateLag {
-    /// Creates a new builder-style object to manufacture [`UpdateLagInput`](crate::input::UpdateLagInput)
+    /// Creates a new builder-style object to manufacture [`UpdateLagInput`](crate::input::UpdateLagInput).
     pub fn builder() -> crate::input::update_lag_input::Builder {
         crate::input::update_lag_input::Builder::default()
     }
@@ -2128,7 +2128,7 @@ pub struct UpdateVirtualInterfaceAttributes {
     _private: (),
 }
 impl UpdateVirtualInterfaceAttributes {
-    /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesInput`](crate::input::UpdateVirtualInterfaceAttributesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesInput`](crate::input::UpdateVirtualInterfaceAttributesInput).
     pub fn builder() -> crate::input::update_virtual_interface_attributes_input::Builder {
         crate::input::update_virtual_interface_attributes_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct CancelRotateSecret {
     _private: (),
 }
 impl CancelRotateSecret {
-    /// Creates a new builder-style object to manufacture [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput)
+    /// Creates a new builder-style object to manufacture [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput).
     pub fn builder() -> crate::input::cancel_rotate_secret_input::Builder {
         crate::input::cancel_rotate_secret_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateSecret {
     _private: (),
 }
 impl CreateSecret {
-    /// Creates a new builder-style object to manufacture [`CreateSecretInput`](crate::input::CreateSecretInput)
+    /// Creates a new builder-style object to manufacture [`CreateSecretInput`](crate::input::CreateSecretInput).
     pub fn builder() -> crate::input::create_secret_input::Builder {
         crate::input::create_secret_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DeleteSecret {
     _private: (),
 }
 impl DeleteSecret {
-    /// Creates a new builder-style object to manufacture [`DeleteSecretInput`](crate::input::DeleteSecretInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSecretInput`](crate::input::DeleteSecretInput).
     pub fn builder() -> crate::input::delete_secret_input::Builder {
         crate::input::delete_secret_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DescribeSecret {
     _private: (),
 }
 impl DescribeSecret {
-    /// Creates a new builder-style object to manufacture [`DescribeSecretInput`](crate::input::DescribeSecretInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSecretInput`](crate::input::DescribeSecretInput).
     pub fn builder() -> crate::input::describe_secret_input::Builder {
         crate::input::describe_secret_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct GetRandomPassword {
     _private: (),
 }
 impl GetRandomPassword {
-    /// Creates a new builder-style object to manufacture [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput)
+    /// Creates a new builder-style object to manufacture [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput).
     pub fn builder() -> crate::input::get_random_password_input::Builder {
         crate::input::get_random_password_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct GetResourcePolicy {
     _private: (),
 }
 impl GetResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput).
     pub fn builder() -> crate::input::get_resource_policy_input::Builder {
         crate::input::get_resource_policy_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct GetSecretValue {
     _private: (),
 }
 impl GetSecretValue {
-    /// Creates a new builder-style object to manufacture [`GetSecretValueInput`](crate::input::GetSecretValueInput)
+    /// Creates a new builder-style object to manufacture [`GetSecretValueInput`](crate::input::GetSecretValueInput).
     pub fn builder() -> crate::input::get_secret_value_input::Builder {
         crate::input::get_secret_value_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct ListSecrets {
     _private: (),
 }
 impl ListSecrets {
-    /// Creates a new builder-style object to manufacture [`ListSecretsInput`](crate::input::ListSecretsInput)
+    /// Creates a new builder-style object to manufacture [`ListSecretsInput`](crate::input::ListSecretsInput).
     pub fn builder() -> crate::input::list_secrets_input::Builder {
         crate::input::list_secrets_input::Builder::default()
     }
@@ -306,7 +306,7 @@ pub struct ListSecretVersionIds {
     _private: (),
 }
 impl ListSecretVersionIds {
-    /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput)
+    /// Creates a new builder-style object to manufacture [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput).
     pub fn builder() -> crate::input::list_secret_version_ids_input::Builder {
         crate::input::list_secret_version_ids_input::Builder::default()
     }
@@ -340,7 +340,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct PutSecretValue {
     _private: (),
 }
 impl PutSecretValue {
-    /// Creates a new builder-style object to manufacture [`PutSecretValueInput`](crate::input::PutSecretValueInput)
+    /// Creates a new builder-style object to manufacture [`PutSecretValueInput`](crate::input::PutSecretValueInput).
     pub fn builder() -> crate::input::put_secret_value_input::Builder {
         crate::input::put_secret_value_input::Builder::default()
     }
@@ -406,7 +406,7 @@ pub struct RemoveRegionsFromReplication {
     _private: (),
 }
 impl RemoveRegionsFromReplication {
-    /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationInput`](crate::input::RemoveRegionsFromReplicationInput)
+    /// Creates a new builder-style object to manufacture [`RemoveRegionsFromReplicationInput`](crate::input::RemoveRegionsFromReplicationInput).
     pub fn builder() -> crate::input::remove_regions_from_replication_input::Builder {
         crate::input::remove_regions_from_replication_input::Builder::default()
     }
@@ -440,7 +440,7 @@ pub struct ReplicateSecretToRegions {
     _private: (),
 }
 impl ReplicateSecretToRegions {
-    /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsInput`](crate::input::ReplicateSecretToRegionsInput)
+    /// Creates a new builder-style object to manufacture [`ReplicateSecretToRegionsInput`](crate::input::ReplicateSecretToRegionsInput).
     pub fn builder() -> crate::input::replicate_secret_to_regions_input::Builder {
         crate::input::replicate_secret_to_regions_input::Builder::default()
     }
@@ -474,7 +474,7 @@ pub struct RestoreSecret {
     _private: (),
 }
 impl RestoreSecret {
-    /// Creates a new builder-style object to manufacture [`RestoreSecretInput`](crate::input::RestoreSecretInput)
+    /// Creates a new builder-style object to manufacture [`RestoreSecretInput`](crate::input::RestoreSecretInput).
     pub fn builder() -> crate::input::restore_secret_input::Builder {
         crate::input::restore_secret_input::Builder::default()
     }
@@ -506,7 +506,7 @@ pub struct RotateSecret {
     _private: (),
 }
 impl RotateSecret {
-    /// Creates a new builder-style object to manufacture [`RotateSecretInput`](crate::input::RotateSecretInput)
+    /// Creates a new builder-style object to manufacture [`RotateSecretInput`](crate::input::RotateSecretInput).
     pub fn builder() -> crate::input::rotate_secret_input::Builder {
         crate::input::rotate_secret_input::Builder::default()
     }
@@ -538,7 +538,7 @@ pub struct StopReplicationToReplica {
     _private: (),
 }
 impl StopReplicationToReplica {
-    /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaInput`](crate::input::StopReplicationToReplicaInput)
+    /// Creates a new builder-style object to manufacture [`StopReplicationToReplicaInput`](crate::input::StopReplicationToReplicaInput).
     pub fn builder() -> crate::input::stop_replication_to_replica_input::Builder {
         crate::input::stop_replication_to_replica_input::Builder::default()
     }
@@ -572,7 +572,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -604,7 +604,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -636,7 +636,7 @@ pub struct UpdateSecret {
     _private: (),
 }
 impl UpdateSecret {
-    /// Creates a new builder-style object to manufacture [`UpdateSecretInput`](crate::input::UpdateSecretInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSecretInput`](crate::input::UpdateSecretInput).
     pub fn builder() -> crate::input::update_secret_input::Builder {
         crate::input::update_secret_input::Builder::default()
     }
@@ -668,7 +668,7 @@ pub struct UpdateSecretVersionStage {
     _private: (),
 }
 impl UpdateSecretVersionStage {
-    /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageInput`](crate::input::UpdateSecretVersionStageInput)
+    /// Creates a new builder-style object to manufacture [`UpdateSecretVersionStageInput`](crate::input::UpdateSecretVersionStageInput).
     pub fn builder() -> crate::input::update_secret_version_stage_input::Builder {
         crate::input::update_secret_version_stage_input::Builder::default()
     }
@@ -702,7 +702,7 @@ pub struct ValidateResourcePolicy {
     _private: (),
 }
 impl ValidateResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput).
     pub fn builder() -> crate::input::validate_resource_policy_input::Builder {
         crate::input::validate_resource_policy_input::Builder::default()
     }

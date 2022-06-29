@@ -129,11 +129,10 @@ impl std::fmt::Debug for PutSessionOutput {
         formatter.finish()
     }
 }
-/// See [`PutSessionOutput`](crate::output::PutSessionOutput)
+/// See [`PutSessionOutput`](crate::output::PutSessionOutput).
 pub mod put_session_output {
 
-    /// A builder for [`PutSessionOutput`](crate::output::PutSessionOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutSessionOutput`](crate::output::PutSessionOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -325,7 +324,7 @@ pub mod put_session_output {
             self.active_contexts = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutSessionOutput`](crate::output::PutSessionOutput)
+        /// Consumes the builder and constructs a [`PutSessionOutput`](crate::output::PutSessionOutput).
         pub fn build(self) -> crate::output::PutSessionOutput {
             crate::output::PutSessionOutput {
                 content_type: self.content_type,
@@ -345,7 +344,7 @@ pub mod put_session_output {
     }
 }
 impl PutSessionOutput {
-    /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::output::PutSessionOutput)
+    /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::output::PutSessionOutput).
     pub fn builder() -> crate::output::put_session_output::Builder {
         crate::output::put_session_output::Builder::default()
     }
@@ -514,11 +513,10 @@ impl std::fmt::Debug for PostTextOutput {
         formatter.finish()
     }
 }
-/// See [`PostTextOutput`](crate::output::PostTextOutput)
+/// See [`PostTextOutput`](crate::output::PostTextOutput).
 pub mod post_text_output {
 
-    /// A builder for [`PostTextOutput`](crate::output::PostTextOutput)
-    #[non_exhaustive]
+    /// A builder for [`PostTextOutput`](crate::output::PostTextOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) intent_name: std::option::Option<std::string::String>,
@@ -792,7 +790,7 @@ pub mod post_text_output {
             self.active_contexts = input;
             self
         }
-        /// Consumes the builder and constructs a [`PostTextOutput`](crate::output::PostTextOutput)
+        /// Consumes the builder and constructs a [`PostTextOutput`](crate::output::PostTextOutput).
         pub fn build(self) -> crate::output::PostTextOutput {
             crate::output::PostTextOutput {
                 intent_name: self.intent_name,
@@ -814,7 +812,7 @@ pub mod post_text_output {
     }
 }
 impl PostTextOutput {
-    /// Creates a new builder-style object to manufacture [`PostTextOutput`](crate::output::PostTextOutput)
+    /// Creates a new builder-style object to manufacture [`PostTextOutput`](crate::output::PostTextOutput).
     pub fn builder() -> crate::output::post_text_output::Builder {
         crate::output::post_text_output::Builder::default()
     }
@@ -1023,11 +1021,10 @@ impl std::fmt::Debug for PostContentOutput {
         formatter.finish()
     }
 }
-/// See [`PostContentOutput`](crate::output::PostContentOutput)
+/// See [`PostContentOutput`](crate::output::PostContentOutput).
 pub mod post_content_output {
 
-    /// A builder for [`PostContentOutput`](crate::output::PostContentOutput)
-    #[non_exhaustive]
+    /// A builder for [`PostContentOutput`](crate::output::PostContentOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
@@ -1328,7 +1325,7 @@ pub mod post_content_output {
             self.active_contexts = input;
             self
         }
-        /// Consumes the builder and constructs a [`PostContentOutput`](crate::output::PostContentOutput)
+        /// Consumes the builder and constructs a [`PostContentOutput`](crate::output::PostContentOutput).
         pub fn build(self) -> crate::output::PostContentOutput {
             crate::output::PostContentOutput {
                 content_type: self.content_type,
@@ -1354,7 +1351,7 @@ pub mod post_content_output {
     }
 }
 impl PostContentOutput {
-    /// Creates a new builder-style object to manufacture [`PostContentOutput`](crate::output::PostContentOutput)
+    /// Creates a new builder-style object to manufacture [`PostContentOutput`](crate::output::PostContentOutput).
     pub fn builder() -> crate::output::post_content_output::Builder {
         crate::output::post_content_output::Builder::default()
     }
@@ -1421,11 +1418,10 @@ impl std::fmt::Debug for GetSessionOutput {
         formatter.finish()
     }
 }
-/// See [`GetSessionOutput`](crate::output::GetSessionOutput)
+/// See [`GetSessionOutput`](crate::output::GetSessionOutput).
 pub mod get_session_output {
 
-    /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetSessionOutput`](crate::output::GetSessionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recent_intent_summary_view:
@@ -1528,7 +1524,7 @@ pub mod get_session_output {
             self.active_contexts = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetSessionOutput`](crate::output::GetSessionOutput)
+        /// Consumes the builder and constructs a [`GetSessionOutput`](crate::output::GetSessionOutput).
         pub fn build(self) -> crate::output::GetSessionOutput {
             crate::output::GetSessionOutput {
                 recent_intent_summary_view: self.recent_intent_summary_view,
@@ -1541,7 +1537,7 @@ pub mod get_session_output {
     }
 }
 impl GetSessionOutput {
-    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput)
+    /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::output::GetSessionOutput).
     pub fn builder() -> crate::output::get_session_output::Builder {
         crate::output::get_session_output::Builder::default()
     }
@@ -1588,11 +1584,10 @@ impl std::fmt::Debug for DeleteSessionOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
+/// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
 pub mod delete_session_output {
 
-    /// A builder for [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bot_name: std::option::Option<std::string::String>,
@@ -1641,7 +1636,7 @@ pub mod delete_session_output {
             self.session_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
+        /// Consumes the builder and constructs a [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
         pub fn build(self) -> crate::output::DeleteSessionOutput {
             crate::output::DeleteSessionOutput {
                 bot_name: self.bot_name,
@@ -1653,7 +1648,7 @@ pub mod delete_session_output {
     }
 }
 impl DeleteSessionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::output::DeleteSessionOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
     pub fn builder() -> crate::output::delete_session_output::Builder {
         crate::output::delete_session_output::Builder::default()
     }

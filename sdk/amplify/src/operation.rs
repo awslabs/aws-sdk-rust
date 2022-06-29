@@ -10,7 +10,7 @@ pub struct CreateApp {
     _private: (),
 }
 impl CreateApp {
-    /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput)
+    /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::input::CreateAppInput).
     pub fn builder() -> crate::input::create_app_input::Builder {
         crate::input::create_app_input::Builder::default()
     }
@@ -41,7 +41,7 @@ pub struct CreateBackendEnvironment {
     _private: (),
 }
 impl CreateBackendEnvironment {
-    /// Creates a new builder-style object to manufacture [`CreateBackendEnvironmentInput`](crate::input::CreateBackendEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateBackendEnvironmentInput`](crate::input::CreateBackendEnvironmentInput).
     pub fn builder() -> crate::input::create_backend_environment_input::Builder {
         crate::input::create_backend_environment_input::Builder::default()
     }
@@ -75,7 +75,7 @@ pub struct CreateBranch {
     _private: (),
 }
 impl CreateBranch {
-    /// Creates a new builder-style object to manufacture [`CreateBranchInput`](crate::input::CreateBranchInput)
+    /// Creates a new builder-style object to manufacture [`CreateBranchInput`](crate::input::CreateBranchInput).
     pub fn builder() -> crate::input::create_branch_input::Builder {
         crate::input::create_branch_input::Builder::default()
     }
@@ -107,7 +107,7 @@ pub struct CreateDeployment {
     _private: (),
 }
 impl CreateDeployment {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
     pub fn builder() -> crate::input::create_deployment_input::Builder {
         crate::input::create_deployment_input::Builder::default()
     }
@@ -141,7 +141,7 @@ pub struct CreateDomainAssociation {
     _private: (),
 }
 impl CreateDomainAssociation {
-    /// Creates a new builder-style object to manufacture [`CreateDomainAssociationInput`](crate::input::CreateDomainAssociationInput)
+    /// Creates a new builder-style object to manufacture [`CreateDomainAssociationInput`](crate::input::CreateDomainAssociationInput).
     pub fn builder() -> crate::input::create_domain_association_input::Builder {
         crate::input::create_domain_association_input::Builder::default()
     }
@@ -175,7 +175,7 @@ pub struct CreateWebhook {
     _private: (),
 }
 impl CreateWebhook {
-    /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::input::CreateWebhookInput)
+    /// Creates a new builder-style object to manufacture [`CreateWebhookInput`](crate::input::CreateWebhookInput).
     pub fn builder() -> crate::input::create_webhook_input::Builder {
         crate::input::create_webhook_input::Builder::default()
     }
@@ -207,7 +207,7 @@ pub struct DeleteApp {
     _private: (),
 }
 impl DeleteApp {
-    /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::input::DeleteAppInput).
     pub fn builder() -> crate::input::delete_app_input::Builder {
         crate::input::delete_app_input::Builder::default()
     }
@@ -238,7 +238,7 @@ pub struct DeleteBackendEnvironment {
     _private: (),
 }
 impl DeleteBackendEnvironment {
-    /// Creates a new builder-style object to manufacture [`DeleteBackendEnvironmentInput`](crate::input::DeleteBackendEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBackendEnvironmentInput`](crate::input::DeleteBackendEnvironmentInput).
     pub fn builder() -> crate::input::delete_backend_environment_input::Builder {
         crate::input::delete_backend_environment_input::Builder::default()
     }
@@ -272,7 +272,7 @@ pub struct DeleteBranch {
     _private: (),
 }
 impl DeleteBranch {
-    /// Creates a new builder-style object to manufacture [`DeleteBranchInput`](crate::input::DeleteBranchInput)
+    /// Creates a new builder-style object to manufacture [`DeleteBranchInput`](crate::input::DeleteBranchInput).
     pub fn builder() -> crate::input::delete_branch_input::Builder {
         crate::input::delete_branch_input::Builder::default()
     }
@@ -304,7 +304,7 @@ pub struct DeleteDomainAssociation {
     _private: (),
 }
 impl DeleteDomainAssociation {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainAssociationInput`](crate::input::DeleteDomainAssociationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainAssociationInput`](crate::input::DeleteDomainAssociationInput).
     pub fn builder() -> crate::input::delete_domain_association_input::Builder {
         crate::input::delete_domain_association_input::Builder::default()
     }
@@ -338,7 +338,7 @@ pub struct DeleteJob {
     _private: (),
 }
 impl DeleteJob {
-    /// Creates a new builder-style object to manufacture [`DeleteJobInput`](crate::input::DeleteJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteJobInput`](crate::input::DeleteJobInput).
     pub fn builder() -> crate::input::delete_job_input::Builder {
         crate::input::delete_job_input::Builder::default()
     }
@@ -369,7 +369,7 @@ pub struct DeleteWebhook {
     _private: (),
 }
 impl DeleteWebhook {
-    /// Creates a new builder-style object to manufacture [`DeleteWebhookInput`](crate::input::DeleteWebhookInput)
+    /// Creates a new builder-style object to manufacture [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
     pub fn builder() -> crate::input::delete_webhook_input::Builder {
         crate::input::delete_webhook_input::Builder::default()
     }
@@ -401,7 +401,7 @@ pub struct GenerateAccessLogs {
     _private: (),
 }
 impl GenerateAccessLogs {
-    /// Creates a new builder-style object to manufacture [`GenerateAccessLogsInput`](crate::input::GenerateAccessLogsInput)
+    /// Creates a new builder-style object to manufacture [`GenerateAccessLogsInput`](crate::input::GenerateAccessLogsInput).
     pub fn builder() -> crate::input::generate_access_logs_input::Builder {
         crate::input::generate_access_logs_input::Builder::default()
     }
@@ -435,7 +435,7 @@ pub struct GetApp {
     _private: (),
 }
 impl GetApp {
-    /// Creates a new builder-style object to manufacture [`GetAppInput`](crate::input::GetAppInput)
+    /// Creates a new builder-style object to manufacture [`GetAppInput`](crate::input::GetAppInput).
     pub fn builder() -> crate::input::get_app_input::Builder {
         crate::input::get_app_input::Builder::default()
     }
@@ -466,7 +466,7 @@ pub struct GetArtifactUrl {
     _private: (),
 }
 impl GetArtifactUrl {
-    /// Creates a new builder-style object to manufacture [`GetArtifactUrlInput`](crate::input::GetArtifactUrlInput)
+    /// Creates a new builder-style object to manufacture [`GetArtifactUrlInput`](crate::input::GetArtifactUrlInput).
     pub fn builder() -> crate::input::get_artifact_url_input::Builder {
         crate::input::get_artifact_url_input::Builder::default()
     }
@@ -498,7 +498,7 @@ pub struct GetBackendEnvironment {
     _private: (),
 }
 impl GetBackendEnvironment {
-    /// Creates a new builder-style object to manufacture [`GetBackendEnvironmentInput`](crate::input::GetBackendEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`GetBackendEnvironmentInput`](crate::input::GetBackendEnvironmentInput).
     pub fn builder() -> crate::input::get_backend_environment_input::Builder {
         crate::input::get_backend_environment_input::Builder::default()
     }
@@ -532,7 +532,7 @@ pub struct GetBranch {
     _private: (),
 }
 impl GetBranch {
-    /// Creates a new builder-style object to manufacture [`GetBranchInput`](crate::input::GetBranchInput)
+    /// Creates a new builder-style object to manufacture [`GetBranchInput`](crate::input::GetBranchInput).
     pub fn builder() -> crate::input::get_branch_input::Builder {
         crate::input::get_branch_input::Builder::default()
     }
@@ -563,7 +563,7 @@ pub struct GetDomainAssociation {
     _private: (),
 }
 impl GetDomainAssociation {
-    /// Creates a new builder-style object to manufacture [`GetDomainAssociationInput`](crate::input::GetDomainAssociationInput)
+    /// Creates a new builder-style object to manufacture [`GetDomainAssociationInput`](crate::input::GetDomainAssociationInput).
     pub fn builder() -> crate::input::get_domain_association_input::Builder {
         crate::input::get_domain_association_input::Builder::default()
     }
@@ -597,7 +597,7 @@ pub struct GetJob {
     _private: (),
 }
 impl GetJob {
-    /// Creates a new builder-style object to manufacture [`GetJobInput`](crate::input::GetJobInput)
+    /// Creates a new builder-style object to manufacture [`GetJobInput`](crate::input::GetJobInput).
     pub fn builder() -> crate::input::get_job_input::Builder {
         crate::input::get_job_input::Builder::default()
     }
@@ -628,7 +628,7 @@ pub struct GetWebhook {
     _private: (),
 }
 impl GetWebhook {
-    /// Creates a new builder-style object to manufacture [`GetWebhookInput`](crate::input::GetWebhookInput)
+    /// Creates a new builder-style object to manufacture [`GetWebhookInput`](crate::input::GetWebhookInput).
     pub fn builder() -> crate::input::get_webhook_input::Builder {
         crate::input::get_webhook_input::Builder::default()
     }
@@ -660,7 +660,7 @@ pub struct ListApps {
     _private: (),
 }
 impl ListApps {
-    /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput)
+    /// Creates a new builder-style object to manufacture [`ListAppsInput`](crate::input::ListAppsInput).
     pub fn builder() -> crate::input::list_apps_input::Builder {
         crate::input::list_apps_input::Builder::default()
     }
@@ -691,7 +691,7 @@ pub struct ListArtifacts {
     _private: (),
 }
 impl ListArtifacts {
-    /// Creates a new builder-style object to manufacture [`ListArtifactsInput`](crate::input::ListArtifactsInput)
+    /// Creates a new builder-style object to manufacture [`ListArtifactsInput`](crate::input::ListArtifactsInput).
     pub fn builder() -> crate::input::list_artifacts_input::Builder {
         crate::input::list_artifacts_input::Builder::default()
     }
@@ -723,7 +723,7 @@ pub struct ListBackendEnvironments {
     _private: (),
 }
 impl ListBackendEnvironments {
-    /// Creates a new builder-style object to manufacture [`ListBackendEnvironmentsInput`](crate::input::ListBackendEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListBackendEnvironmentsInput`](crate::input::ListBackendEnvironmentsInput).
     pub fn builder() -> crate::input::list_backend_environments_input::Builder {
         crate::input::list_backend_environments_input::Builder::default()
     }
@@ -757,7 +757,7 @@ pub struct ListBranches {
     _private: (),
 }
 impl ListBranches {
-    /// Creates a new builder-style object to manufacture [`ListBranchesInput`](crate::input::ListBranchesInput)
+    /// Creates a new builder-style object to manufacture [`ListBranchesInput`](crate::input::ListBranchesInput).
     pub fn builder() -> crate::input::list_branches_input::Builder {
         crate::input::list_branches_input::Builder::default()
     }
@@ -789,7 +789,7 @@ pub struct ListDomainAssociations {
     _private: (),
 }
 impl ListDomainAssociations {
-    /// Creates a new builder-style object to manufacture [`ListDomainAssociationsInput`](crate::input::ListDomainAssociationsInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainAssociationsInput`](crate::input::ListDomainAssociationsInput).
     pub fn builder() -> crate::input::list_domain_associations_input::Builder {
         crate::input::list_domain_associations_input::Builder::default()
     }
@@ -823,7 +823,7 @@ pub struct ListJobs {
     _private: (),
 }
 impl ListJobs {
-    /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput)
+    /// Creates a new builder-style object to manufacture [`ListJobsInput`](crate::input::ListJobsInput).
     pub fn builder() -> crate::input::list_jobs_input::Builder {
         crate::input::list_jobs_input::Builder::default()
     }
@@ -854,7 +854,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -888,7 +888,7 @@ pub struct ListWebhooks {
     _private: (),
 }
 impl ListWebhooks {
-    /// Creates a new builder-style object to manufacture [`ListWebhooksInput`](crate::input::ListWebhooksInput)
+    /// Creates a new builder-style object to manufacture [`ListWebhooksInput`](crate::input::ListWebhooksInput).
     pub fn builder() -> crate::input::list_webhooks_input::Builder {
         crate::input::list_webhooks_input::Builder::default()
     }
@@ -920,7 +920,7 @@ pub struct StartDeployment {
     _private: (),
 }
 impl StartDeployment {
-    /// Creates a new builder-style object to manufacture [`StartDeploymentInput`](crate::input::StartDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`StartDeploymentInput`](crate::input::StartDeploymentInput).
     pub fn builder() -> crate::input::start_deployment_input::Builder {
         crate::input::start_deployment_input::Builder::default()
     }
@@ -954,7 +954,7 @@ pub struct StartJob {
     _private: (),
 }
 impl StartJob {
-    /// Creates a new builder-style object to manufacture [`StartJobInput`](crate::input::StartJobInput)
+    /// Creates a new builder-style object to manufacture [`StartJobInput`](crate::input::StartJobInput).
     pub fn builder() -> crate::input::start_job_input::Builder {
         crate::input::start_job_input::Builder::default()
     }
@@ -985,7 +985,7 @@ pub struct StopJob {
     _private: (),
 }
 impl StopJob {
-    /// Creates a new builder-style object to manufacture [`StopJobInput`](crate::input::StopJobInput)
+    /// Creates a new builder-style object to manufacture [`StopJobInput`](crate::input::StopJobInput).
     pub fn builder() -> crate::input::stop_job_input::Builder {
         crate::input::stop_job_input::Builder::default()
     }
@@ -1016,7 +1016,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1048,7 +1048,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1080,7 +1080,7 @@ pub struct UpdateApp {
     _private: (),
 }
 impl UpdateApp {
-    /// Creates a new builder-style object to manufacture [`UpdateAppInput`](crate::input::UpdateAppInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAppInput`](crate::input::UpdateAppInput).
     pub fn builder() -> crate::input::update_app_input::Builder {
         crate::input::update_app_input::Builder::default()
     }
@@ -1111,7 +1111,7 @@ pub struct UpdateBranch {
     _private: (),
 }
 impl UpdateBranch {
-    /// Creates a new builder-style object to manufacture [`UpdateBranchInput`](crate::input::UpdateBranchInput)
+    /// Creates a new builder-style object to manufacture [`UpdateBranchInput`](crate::input::UpdateBranchInput).
     pub fn builder() -> crate::input::update_branch_input::Builder {
         crate::input::update_branch_input::Builder::default()
     }
@@ -1143,7 +1143,7 @@ pub struct UpdateDomainAssociation {
     _private: (),
 }
 impl UpdateDomainAssociation {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainAssociationInput`](crate::input::UpdateDomainAssociationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainAssociationInput`](crate::input::UpdateDomainAssociationInput).
     pub fn builder() -> crate::input::update_domain_association_input::Builder {
         crate::input::update_domain_association_input::Builder::default()
     }
@@ -1177,7 +1177,7 @@ pub struct UpdateWebhook {
     _private: (),
 }
 impl UpdateWebhook {
-    /// Creates a new builder-style object to manufacture [`UpdateWebhookInput`](crate::input::UpdateWebhookInput)
+    /// Creates a new builder-style object to manufacture [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
     pub fn builder() -> crate::input::update_webhook_input::Builder {
         crate::input::update_webhook_input::Builder::default()
     }

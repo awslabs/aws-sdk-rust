@@ -9,22 +9,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for UndeprecateWorkflowTypeOutput {
         formatter.finish()
     }
 }
-/// See [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput)
+/// See [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
 pub mod undeprecate_workflow_type_output {
 
-    /// A builder for [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput)
+        /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
         pub fn build(self) -> crate::output::UndeprecateWorkflowTypeOutput {
             crate::output::UndeprecateWorkflowTypeOutput {}
         }
     }
 }
 impl UndeprecateWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput)
+    /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput).
     pub fn builder() -> crate::output::undeprecate_workflow_type_output::Builder {
         crate::output::undeprecate_workflow_type_output::Builder::default()
     }
@@ -71,22 +69,21 @@ impl std::fmt::Debug for UndeprecateDomainOutput {
         formatter.finish()
     }
 }
-/// See [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput)
+/// See [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
 pub mod undeprecate_domain_output {
 
-    /// A builder for [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput)
+        /// Consumes the builder and constructs a [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
         pub fn build(self) -> crate::output::UndeprecateDomainOutput {
             crate::output::UndeprecateDomainOutput {}
         }
     }
 }
 impl UndeprecateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput)
+    /// Creates a new builder-style object to manufacture [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput).
     pub fn builder() -> crate::output::undeprecate_domain_output::Builder {
         crate::output::undeprecate_domain_output::Builder::default()
     }
@@ -102,22 +99,21 @@ impl std::fmt::Debug for UndeprecateActivityTypeOutput {
         formatter.finish()
     }
 }
-/// See [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput)
+/// See [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
 pub mod undeprecate_activity_type_output {
 
-    /// A builder for [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput)
+        /// Consumes the builder and constructs a [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
         pub fn build(self) -> crate::output::UndeprecateActivityTypeOutput {
             crate::output::UndeprecateActivityTypeOutput {}
         }
     }
 }
 impl UndeprecateActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput)
+    /// Creates a new builder-style object to manufacture [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput).
     pub fn builder() -> crate::output::undeprecate_activity_type_output::Builder {
         crate::output::undeprecate_activity_type_output::Builder::default()
     }
@@ -133,22 +129,21 @@ impl std::fmt::Debug for TerminateWorkflowExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput)
+/// See [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
 pub mod terminate_workflow_execution_output {
 
-    /// A builder for [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput)
+        /// Consumes the builder and constructs a [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::TerminateWorkflowExecutionOutput {
             crate::output::TerminateWorkflowExecutionOutput {}
         }
     }
 }
 impl TerminateWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput).
     pub fn builder() -> crate::output::terminate_workflow_execution_output::Builder {
         crate::output::terminate_workflow_execution_output::Builder::default()
     }
@@ -164,22 +159,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -205,11 +199,10 @@ impl std::fmt::Debug for StartWorkflowExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput)
+/// See [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
 pub mod start_workflow_execution_output {
 
-    /// A builder for [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) run_id: std::option::Option<std::string::String>,
@@ -225,7 +218,7 @@ pub mod start_workflow_execution_output {
             self.run_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput)
+        /// Consumes the builder and constructs a [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::StartWorkflowExecutionOutput {
             crate::output::StartWorkflowExecutionOutput {
                 run_id: self.run_id,
@@ -234,7 +227,7 @@ pub mod start_workflow_execution_output {
     }
 }
 impl StartWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput).
     pub fn builder() -> crate::output::start_workflow_execution_output::Builder {
         crate::output::start_workflow_execution_output::Builder::default()
     }
@@ -250,22 +243,21 @@ impl std::fmt::Debug for SignalWorkflowExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput)
+/// See [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
 pub mod signal_workflow_execution_output {
 
-    /// A builder for [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput)
+        /// Consumes the builder and constructs a [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::SignalWorkflowExecutionOutput {
             crate::output::SignalWorkflowExecutionOutput {}
         }
     }
 }
 impl SignalWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput).
     pub fn builder() -> crate::output::signal_workflow_execution_output::Builder {
         crate::output::signal_workflow_execution_output::Builder::default()
     }
@@ -281,22 +273,21 @@ impl std::fmt::Debug for RespondDecisionTaskCompletedOutput {
         formatter.finish()
     }
 }
-/// See [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput)
+/// See [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
 pub mod respond_decision_task_completed_output {
 
-    /// A builder for [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput)
-    #[non_exhaustive]
+    /// A builder for [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput)
+        /// Consumes the builder and constructs a [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
         pub fn build(self) -> crate::output::RespondDecisionTaskCompletedOutput {
             crate::output::RespondDecisionTaskCompletedOutput {}
         }
     }
 }
 impl RespondDecisionTaskCompletedOutput {
-    /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput)
+    /// Creates a new builder-style object to manufacture [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput).
     pub fn builder() -> crate::output::respond_decision_task_completed_output::Builder {
         crate::output::respond_decision_task_completed_output::Builder::default()
     }
@@ -312,22 +303,21 @@ impl std::fmt::Debug for RespondActivityTaskFailedOutput {
         formatter.finish()
     }
 }
-/// See [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput)
+/// See [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
 pub mod respond_activity_task_failed_output {
 
-    /// A builder for [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput)
-    #[non_exhaustive]
+    /// A builder for [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput)
+        /// Consumes the builder and constructs a [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskFailedOutput {
             crate::output::RespondActivityTaskFailedOutput {}
         }
     }
 }
 impl RespondActivityTaskFailedOutput {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput)
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput).
     pub fn builder() -> crate::output::respond_activity_task_failed_output::Builder {
         crate::output::respond_activity_task_failed_output::Builder::default()
     }
@@ -343,22 +333,21 @@ impl std::fmt::Debug for RespondActivityTaskCompletedOutput {
         formatter.finish()
     }
 }
-/// See [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput)
+/// See [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
 pub mod respond_activity_task_completed_output {
 
-    /// A builder for [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput)
-    #[non_exhaustive]
+    /// A builder for [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput)
+        /// Consumes the builder and constructs a [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskCompletedOutput {
             crate::output::RespondActivityTaskCompletedOutput {}
         }
     }
 }
 impl RespondActivityTaskCompletedOutput {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput)
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput).
     pub fn builder() -> crate::output::respond_activity_task_completed_output::Builder {
         crate::output::respond_activity_task_completed_output::Builder::default()
     }
@@ -374,22 +363,21 @@ impl std::fmt::Debug for RespondActivityTaskCanceledOutput {
         formatter.finish()
     }
 }
-/// See [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput)
+/// See [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
 pub mod respond_activity_task_canceled_output {
 
-    /// A builder for [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput)
-    #[non_exhaustive]
+    /// A builder for [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput)
+        /// Consumes the builder and constructs a [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
         pub fn build(self) -> crate::output::RespondActivityTaskCanceledOutput {
             crate::output::RespondActivityTaskCanceledOutput {}
         }
     }
 }
 impl RespondActivityTaskCanceledOutput {
-    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput)
+    /// Creates a new builder-style object to manufacture [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput).
     pub fn builder() -> crate::output::respond_activity_task_canceled_output::Builder {
         crate::output::respond_activity_task_canceled_output::Builder::default()
     }
@@ -405,22 +393,21 @@ impl std::fmt::Debug for RequestCancelWorkflowExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput)
+/// See [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
 pub mod request_cancel_workflow_execution_output {
 
-    /// A builder for [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput)
+        /// Consumes the builder and constructs a [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::RequestCancelWorkflowExecutionOutput {
             crate::output::RequestCancelWorkflowExecutionOutput {}
         }
     }
 }
 impl RequestCancelWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput).
     pub fn builder() -> crate::output::request_cancel_workflow_execution_output::Builder {
         crate::output::request_cancel_workflow_execution_output::Builder::default()
     }
@@ -436,22 +423,21 @@ impl std::fmt::Debug for RegisterWorkflowTypeOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput)
+/// See [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
 pub mod register_workflow_type_output {
 
-    /// A builder for [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput)
+        /// Consumes the builder and constructs a [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
         pub fn build(self) -> crate::output::RegisterWorkflowTypeOutput {
             crate::output::RegisterWorkflowTypeOutput {}
         }
     }
 }
 impl RegisterWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput).
     pub fn builder() -> crate::output::register_workflow_type_output::Builder {
         crate::output::register_workflow_type_output::Builder::default()
     }
@@ -467,22 +453,21 @@ impl std::fmt::Debug for RegisterDomainOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
+/// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
 pub mod register_domain_output {
 
-    /// A builder for [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
+        /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
         pub fn build(self) -> crate::output::RegisterDomainOutput {
             crate::output::RegisterDomainOutput {}
         }
     }
 }
 impl RegisterDomainOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
     pub fn builder() -> crate::output::register_domain_output::Builder {
         crate::output::register_domain_output::Builder::default()
     }
@@ -498,22 +483,21 @@ impl std::fmt::Debug for RegisterActivityTypeOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput)
+/// See [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
 pub mod register_activity_type_output {
 
-    /// A builder for [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput)
+        /// Consumes the builder and constructs a [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
         pub fn build(self) -> crate::output::RegisterActivityTypeOutput {
             crate::output::RegisterActivityTypeOutput {}
         }
     }
 }
 impl RegisterActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput).
     pub fn builder() -> crate::output::register_activity_type_output::Builder {
         crate::output::register_activity_type_output::Builder::default()
     }
@@ -539,11 +523,10 @@ impl std::fmt::Debug for RecordActivityTaskHeartbeatOutput {
         formatter.finish()
     }
 }
-/// See [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput)
+/// See [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
 pub mod record_activity_task_heartbeat_output {
 
-    /// A builder for [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput)
-    #[non_exhaustive]
+    /// A builder for [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cancel_requested: std::option::Option<bool>,
@@ -559,7 +542,7 @@ pub mod record_activity_task_heartbeat_output {
             self.cancel_requested = input;
             self
         }
-        /// Consumes the builder and constructs a [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput)
+        /// Consumes the builder and constructs a [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
         pub fn build(self) -> crate::output::RecordActivityTaskHeartbeatOutput {
             crate::output::RecordActivityTaskHeartbeatOutput {
                 cancel_requested: self.cancel_requested.unwrap_or_default(),
@@ -568,7 +551,7 @@ pub mod record_activity_task_heartbeat_output {
     }
 }
 impl RecordActivityTaskHeartbeatOutput {
-    /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput)
+    /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput).
     pub fn builder() -> crate::output::record_activity_task_heartbeat_output::Builder {
         crate::output::record_activity_task_heartbeat_output::Builder::default()
     }
@@ -638,11 +621,10 @@ impl std::fmt::Debug for PollForDecisionTaskOutput {
         formatter.finish()
     }
 }
-/// See [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput)
+/// See [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
 pub mod poll_for_decision_task_output {
 
-    /// A builder for [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -744,7 +726,7 @@ pub mod poll_for_decision_task_output {
             self.previous_started_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput)
+        /// Consumes the builder and constructs a [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
         pub fn build(self) -> crate::output::PollForDecisionTaskOutput {
             crate::output::PollForDecisionTaskOutput {
                 task_token: self.task_token,
@@ -759,7 +741,7 @@ pub mod poll_for_decision_task_output {
     }
 }
 impl PollForDecisionTaskOutput {
-    /// Creates a new builder-style object to manufacture [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput)
+    /// Creates a new builder-style object to manufacture [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput).
     pub fn builder() -> crate::output::poll_for_decision_task_output::Builder {
         crate::output::poll_for_decision_task_output::Builder::default()
     }
@@ -820,11 +802,10 @@ impl std::fmt::Debug for PollForActivityTaskOutput {
         formatter.finish()
     }
 }
-/// See [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput)
+/// See [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
 pub mod poll_for_activity_task_output {
 
-    /// A builder for [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput)
-    #[non_exhaustive]
+    /// A builder for [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_token: std::option::Option<std::string::String>,
@@ -901,7 +882,7 @@ pub mod poll_for_activity_task_output {
             self.input = input;
             self
         }
-        /// Consumes the builder and constructs a [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput)
+        /// Consumes the builder and constructs a [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
         pub fn build(self) -> crate::output::PollForActivityTaskOutput {
             crate::output::PollForActivityTaskOutput {
                 task_token: self.task_token,
@@ -915,7 +896,7 @@ pub mod poll_for_activity_task_output {
     }
 }
 impl PollForActivityTaskOutput {
-    /// Creates a new builder-style object to manufacture [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput)
+    /// Creates a new builder-style object to manufacture [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput).
     pub fn builder() -> crate::output::poll_for_activity_task_output::Builder {
         crate::output::poll_for_activity_task_output::Builder::default()
     }
@@ -950,11 +931,10 @@ impl std::fmt::Debug for ListWorkflowTypesOutput {
         formatter.finish()
     }
 }
-/// See [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput)
+/// See [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
 pub mod list_workflow_types_output {
 
-    /// A builder for [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_infos: std::option::Option<std::vec::Vec<crate::model::WorkflowTypeInfo>>,
@@ -995,7 +975,7 @@ pub mod list_workflow_types_output {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput)
+        /// Consumes the builder and constructs a [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
         pub fn build(self) -> crate::output::ListWorkflowTypesOutput {
             crate::output::ListWorkflowTypesOutput {
                 type_infos: self.type_infos,
@@ -1005,7 +985,7 @@ pub mod list_workflow_types_output {
     }
 }
 impl ListWorkflowTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput)
+    /// Creates a new builder-style object to manufacture [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput).
     pub fn builder() -> crate::output::list_workflow_types_output::Builder {
         crate::output::list_workflow_types_output::Builder::default()
     }
@@ -1031,11 +1011,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -1060,14 +1039,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -1102,11 +1081,10 @@ impl std::fmt::Debug for ListOpenWorkflowExecutionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput)
+/// See [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
 pub mod list_open_workflow_executions_output {
 
-    /// A builder for [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_infos:
@@ -1148,7 +1126,7 @@ pub mod list_open_workflow_executions_output {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput)
+        /// Consumes the builder and constructs a [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::ListOpenWorkflowExecutionsOutput {
             crate::output::ListOpenWorkflowExecutionsOutput {
                 execution_infos: self.execution_infos,
@@ -1158,7 +1136,7 @@ pub mod list_open_workflow_executions_output {
     }
 }
 impl ListOpenWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput).
     pub fn builder() -> crate::output::list_open_workflow_executions_output::Builder {
         crate::output::list_open_workflow_executions_output::Builder::default()
     }
@@ -1193,11 +1171,10 @@ impl std::fmt::Debug for ListDomainsOutput {
         formatter.finish()
     }
 }
-/// See [`ListDomainsOutput`](crate::output::ListDomainsOutput)
+/// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
 
-    /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_infos: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
@@ -1238,7 +1215,7 @@ pub mod list_domains_output {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput)
+        /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
                 domain_infos: self.domain_infos,
@@ -1248,7 +1225,7 @@ pub mod list_domains_output {
     }
 }
 impl ListDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput)
+    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
     pub fn builder() -> crate::output::list_domains_output::Builder {
         crate::output::list_domains_output::Builder::default()
     }
@@ -1283,11 +1260,10 @@ impl std::fmt::Debug for ListClosedWorkflowExecutionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput)
+/// See [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
 pub mod list_closed_workflow_executions_output {
 
-    /// A builder for [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_infos:
@@ -1329,7 +1305,7 @@ pub mod list_closed_workflow_executions_output {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput)
+        /// Consumes the builder and constructs a [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::ListClosedWorkflowExecutionsOutput {
             crate::output::ListClosedWorkflowExecutionsOutput {
                 execution_infos: self.execution_infos,
@@ -1339,7 +1315,7 @@ pub mod list_closed_workflow_executions_output {
     }
 }
 impl ListClosedWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput).
     pub fn builder() -> crate::output::list_closed_workflow_executions_output::Builder {
         crate::output::list_closed_workflow_executions_output::Builder::default()
     }
@@ -1374,11 +1350,10 @@ impl std::fmt::Debug for ListActivityTypesOutput {
         formatter.finish()
     }
 }
-/// See [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput)
+/// See [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
 pub mod list_activity_types_output {
 
-    /// A builder for [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_infos: std::option::Option<std::vec::Vec<crate::model::ActivityTypeInfo>>,
@@ -1419,7 +1394,7 @@ pub mod list_activity_types_output {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput)
+        /// Consumes the builder and constructs a [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
         pub fn build(self) -> crate::output::ListActivityTypesOutput {
             crate::output::ListActivityTypesOutput {
                 type_infos: self.type_infos,
@@ -1429,7 +1404,7 @@ pub mod list_activity_types_output {
     }
 }
 impl ListActivityTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput)
+    /// Creates a new builder-style object to manufacture [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput).
     pub fn builder() -> crate::output::list_activity_types_output::Builder {
         crate::output::list_activity_types_output::Builder::default()
     }
@@ -1464,11 +1439,10 @@ impl std::fmt::Debug for GetWorkflowExecutionHistoryOutput {
         formatter.finish()
     }
 }
-/// See [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput)
+/// See [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
 pub mod get_workflow_execution_history_output {
 
-    /// A builder for [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::HistoryEvent>>,
@@ -1509,7 +1483,7 @@ pub mod get_workflow_execution_history_output {
             self.next_page_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput)
+        /// Consumes the builder and constructs a [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
         pub fn build(self) -> crate::output::GetWorkflowExecutionHistoryOutput {
             crate::output::GetWorkflowExecutionHistoryOutput {
                 events: self.events,
@@ -1519,7 +1493,7 @@ pub mod get_workflow_execution_history_output {
     }
 }
 impl GetWorkflowExecutionHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput)
+    /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput).
     pub fn builder() -> crate::output::get_workflow_execution_history_output::Builder {
         crate::output::get_workflow_execution_history_output::Builder::default()
     }
@@ -1562,11 +1536,10 @@ impl std::fmt::Debug for DescribeWorkflowTypeOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput)
+/// See [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
 pub mod describe_workflow_type_output {
 
-    /// A builder for [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_info: std::option::Option<crate::model::WorkflowTypeInfo>,
@@ -1609,7 +1582,7 @@ pub mod describe_workflow_type_output {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput)
+        /// Consumes the builder and constructs a [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
         pub fn build(self) -> crate::output::DescribeWorkflowTypeOutput {
             crate::output::DescribeWorkflowTypeOutput {
                 type_info: self.type_info,
@@ -1619,7 +1592,7 @@ pub mod describe_workflow_type_output {
     }
 }
 impl DescribeWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput).
     pub fn builder() -> crate::output::describe_workflow_type_output::Builder {
         crate::output::describe_workflow_type_output::Builder::default()
     }
@@ -1680,11 +1653,10 @@ impl std::fmt::Debug for DescribeWorkflowExecutionOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput)
+/// See [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
 pub mod describe_workflow_execution_output {
 
-    /// A builder for [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) execution_info: std::option::Option<crate::model::WorkflowExecutionInfo>,
@@ -1763,7 +1735,7 @@ pub mod describe_workflow_execution_output {
             self.latest_execution_context = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput)
+        /// Consumes the builder and constructs a [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
         pub fn build(self) -> crate::output::DescribeWorkflowExecutionOutput {
             crate::output::DescribeWorkflowExecutionOutput {
                 execution_info: self.execution_info,
@@ -1776,7 +1748,7 @@ pub mod describe_workflow_execution_output {
     }
 }
 impl DescribeWorkflowExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput).
     pub fn builder() -> crate::output::describe_workflow_execution_output::Builder {
         crate::output::describe_workflow_execution_output::Builder::default()
     }
@@ -1809,11 +1781,10 @@ impl std::fmt::Debug for DescribeDomainOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
+/// See [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
 pub mod describe_domain_output {
 
-    /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_info: std::option::Option<crate::model::DomainInfo>,
@@ -1846,7 +1817,7 @@ pub mod describe_domain_output {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
+        /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
         pub fn build(self) -> crate::output::DescribeDomainOutput {
             crate::output::DescribeDomainOutput {
                 domain_info: self.domain_info,
@@ -1856,7 +1827,7 @@ pub mod describe_domain_output {
     }
 }
 impl DescribeDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::output::DescribeDomainOutput).
     pub fn builder() -> crate::output::describe_domain_output::Builder {
         crate::output::describe_domain_output::Builder::default()
     }
@@ -1899,11 +1870,10 @@ impl std::fmt::Debug for DescribeActivityTypeOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput)
+/// See [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
 pub mod describe_activity_type_output {
 
-    /// A builder for [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_info: std::option::Option<crate::model::ActivityTypeInfo>,
@@ -1946,7 +1916,7 @@ pub mod describe_activity_type_output {
             self.configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput)
+        /// Consumes the builder and constructs a [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
         pub fn build(self) -> crate::output::DescribeActivityTypeOutput {
             crate::output::DescribeActivityTypeOutput {
                 type_info: self.type_info,
@@ -1956,7 +1926,7 @@ pub mod describe_activity_type_output {
     }
 }
 impl DescribeActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput).
     pub fn builder() -> crate::output::describe_activity_type_output::Builder {
         crate::output::describe_activity_type_output::Builder::default()
     }
@@ -1972,22 +1942,21 @@ impl std::fmt::Debug for DeprecateWorkflowTypeOutput {
         formatter.finish()
     }
 }
-/// See [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput)
+/// See [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
 pub mod deprecate_workflow_type_output {
 
-    /// A builder for [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput)
+        /// Consumes the builder and constructs a [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
         pub fn build(self) -> crate::output::DeprecateWorkflowTypeOutput {
             crate::output::DeprecateWorkflowTypeOutput {}
         }
     }
 }
 impl DeprecateWorkflowTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput)
+    /// Creates a new builder-style object to manufacture [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput).
     pub fn builder() -> crate::output::deprecate_workflow_type_output::Builder {
         crate::output::deprecate_workflow_type_output::Builder::default()
     }
@@ -2003,22 +1972,21 @@ impl std::fmt::Debug for DeprecateDomainOutput {
         formatter.finish()
     }
 }
-/// See [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput)
+/// See [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
 pub mod deprecate_domain_output {
 
-    /// A builder for [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput)
+        /// Consumes the builder and constructs a [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
         pub fn build(self) -> crate::output::DeprecateDomainOutput {
             crate::output::DeprecateDomainOutput {}
         }
     }
 }
 impl DeprecateDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput)
+    /// Creates a new builder-style object to manufacture [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput).
     pub fn builder() -> crate::output::deprecate_domain_output::Builder {
         crate::output::deprecate_domain_output::Builder::default()
     }
@@ -2034,22 +2002,21 @@ impl std::fmt::Debug for DeprecateActivityTypeOutput {
         formatter.finish()
     }
 }
-/// See [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput)
+/// See [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
 pub mod deprecate_activity_type_output {
 
-    /// A builder for [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput)
+        /// Consumes the builder and constructs a [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
         pub fn build(self) -> crate::output::DeprecateActivityTypeOutput {
             crate::output::DeprecateActivityTypeOutput {}
         }
     }
 }
 impl DeprecateActivityTypeOutput {
-    /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput)
+    /// Creates a new builder-style object to manufacture [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput).
     pub fn builder() -> crate::output::deprecate_activity_type_output::Builder {
         crate::output::deprecate_activity_type_output::Builder::default()
     }
@@ -2082,11 +2049,10 @@ impl std::fmt::Debug for CountPendingDecisionTasksOutput {
         formatter.finish()
     }
 }
-/// See [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput)
+/// See [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
 pub mod count_pending_decision_tasks_output {
 
-    /// A builder for [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput)
-    #[non_exhaustive]
+    /// A builder for [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -2113,7 +2079,7 @@ pub mod count_pending_decision_tasks_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput)
+        /// Consumes the builder and constructs a [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
         pub fn build(self) -> crate::output::CountPendingDecisionTasksOutput {
             crate::output::CountPendingDecisionTasksOutput {
                 count: self.count.unwrap_or_default(),
@@ -2123,7 +2089,7 @@ pub mod count_pending_decision_tasks_output {
     }
 }
 impl CountPendingDecisionTasksOutput {
-    /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput)
+    /// Creates a new builder-style object to manufacture [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput).
     pub fn builder() -> crate::output::count_pending_decision_tasks_output::Builder {
         crate::output::count_pending_decision_tasks_output::Builder::default()
     }
@@ -2156,11 +2122,10 @@ impl std::fmt::Debug for CountPendingActivityTasksOutput {
         formatter.finish()
     }
 }
-/// See [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput)
+/// See [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
 pub mod count_pending_activity_tasks_output {
 
-    /// A builder for [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput)
-    #[non_exhaustive]
+    /// A builder for [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -2187,7 +2152,7 @@ pub mod count_pending_activity_tasks_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput)
+        /// Consumes the builder and constructs a [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
         pub fn build(self) -> crate::output::CountPendingActivityTasksOutput {
             crate::output::CountPendingActivityTasksOutput {
                 count: self.count.unwrap_or_default(),
@@ -2197,7 +2162,7 @@ pub mod count_pending_activity_tasks_output {
     }
 }
 impl CountPendingActivityTasksOutput {
-    /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput)
+    /// Creates a new builder-style object to manufacture [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput).
     pub fn builder() -> crate::output::count_pending_activity_tasks_output::Builder {
         crate::output::count_pending_activity_tasks_output::Builder::default()
     }
@@ -2230,11 +2195,10 @@ impl std::fmt::Debug for CountOpenWorkflowExecutionsOutput {
         formatter.finish()
     }
 }
-/// See [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput)
+/// See [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
 pub mod count_open_workflow_executions_output {
 
-    /// A builder for [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -2261,7 +2225,7 @@ pub mod count_open_workflow_executions_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput)
+        /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::CountOpenWorkflowExecutionsOutput {
             crate::output::CountOpenWorkflowExecutionsOutput {
                 count: self.count.unwrap_or_default(),
@@ -2271,7 +2235,7 @@ pub mod count_open_workflow_executions_output {
     }
 }
 impl CountOpenWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput)
+    /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput).
     pub fn builder() -> crate::output::count_open_workflow_executions_output::Builder {
         crate::output::count_open_workflow_executions_output::Builder::default()
     }
@@ -2304,11 +2268,10 @@ impl std::fmt::Debug for CountClosedWorkflowExecutionsOutput {
         formatter.finish()
     }
 }
-/// See [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput)
+/// See [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
 pub mod count_closed_workflow_executions_output {
 
-    /// A builder for [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) count: std::option::Option<i32>,
@@ -2335,7 +2298,7 @@ pub mod count_closed_workflow_executions_output {
             self.truncated = input;
             self
         }
-        /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput)
+        /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
         pub fn build(self) -> crate::output::CountClosedWorkflowExecutionsOutput {
             crate::output::CountClosedWorkflowExecutionsOutput {
                 count: self.count.unwrap_or_default(),
@@ -2345,7 +2308,7 @@ pub mod count_closed_workflow_executions_output {
     }
 }
 impl CountClosedWorkflowExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput)
+    /// Creates a new builder-style object to manufacture [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput).
     pub fn builder() -> crate::output::count_closed_workflow_executions_output::Builder {
         crate::output::count_closed_workflow_executions_output::Builder::default()
     }

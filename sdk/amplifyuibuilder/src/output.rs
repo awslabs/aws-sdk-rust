@@ -26,11 +26,10 @@ impl std::fmt::Debug for ExportThemesOutput {
         formatter.finish()
     }
 }
-/// See [`ExportThemesOutput`](crate::output::ExportThemesOutput)
+/// See [`ExportThemesOutput`](crate::output::ExportThemesOutput).
 pub mod export_themes_output {
 
-    /// A builder for [`ExportThemesOutput`](crate::output::ExportThemesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExportThemesOutput`](crate::output::ExportThemesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Theme>>,
@@ -66,7 +65,7 @@ pub mod export_themes_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportThemesOutput`](crate::output::ExportThemesOutput)
+        /// Consumes the builder and constructs a [`ExportThemesOutput`](crate::output::ExportThemesOutput).
         pub fn build(self) -> crate::output::ExportThemesOutput {
             crate::output::ExportThemesOutput {
                 entities: self.entities,
@@ -76,7 +75,7 @@ pub mod export_themes_output {
     }
 }
 impl ExportThemesOutput {
-    /// Creates a new builder-style object to manufacture [`ExportThemesOutput`](crate::output::ExportThemesOutput)
+    /// Creates a new builder-style object to manufacture [`ExportThemesOutput`](crate::output::ExportThemesOutput).
     pub fn builder() -> crate::output::export_themes_output::Builder {
         crate::output::export_themes_output::Builder::default()
     }
@@ -109,11 +108,10 @@ impl std::fmt::Debug for ListThemesOutput {
         formatter.finish()
     }
 }
-/// See [`ListThemesOutput`](crate::output::ListThemesOutput)
+/// See [`ListThemesOutput`](crate::output::ListThemesOutput).
 pub mod list_themes_output {
 
-    /// A builder for [`ListThemesOutput`](crate::output::ListThemesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListThemesOutput`](crate::output::ListThemesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::ThemeSummary>>,
@@ -149,7 +147,7 @@ pub mod list_themes_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListThemesOutput`](crate::output::ListThemesOutput)
+        /// Consumes the builder and constructs a [`ListThemesOutput`](crate::output::ListThemesOutput).
         pub fn build(self) -> crate::output::ListThemesOutput {
             crate::output::ListThemesOutput {
                 entities: self.entities,
@@ -159,7 +157,7 @@ pub mod list_themes_output {
     }
 }
 impl ListThemesOutput {
-    /// Creates a new builder-style object to manufacture [`ListThemesOutput`](crate::output::ListThemesOutput)
+    /// Creates a new builder-style object to manufacture [`ListThemesOutput`](crate::output::ListThemesOutput).
     pub fn builder() -> crate::output::list_themes_output::Builder {
         crate::output::list_themes_output::Builder::default()
     }
@@ -185,11 +183,10 @@ impl std::fmt::Debug for CreateThemeOutput {
         formatter.finish()
     }
 }
-/// See [`CreateThemeOutput`](crate::output::CreateThemeOutput)
+/// See [`CreateThemeOutput`](crate::output::CreateThemeOutput).
 pub mod create_theme_output {
 
-    /// A builder for [`CreateThemeOutput`](crate::output::CreateThemeOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateThemeOutput`](crate::output::CreateThemeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Theme>,
@@ -205,7 +202,7 @@ pub mod create_theme_output {
             self.entity = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateThemeOutput`](crate::output::CreateThemeOutput)
+        /// Consumes the builder and constructs a [`CreateThemeOutput`](crate::output::CreateThemeOutput).
         pub fn build(self) -> crate::output::CreateThemeOutput {
             crate::output::CreateThemeOutput {
                 entity: self.entity,
@@ -214,7 +211,7 @@ pub mod create_theme_output {
     }
 }
 impl CreateThemeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateThemeOutput`](crate::output::CreateThemeOutput)
+    /// Creates a new builder-style object to manufacture [`CreateThemeOutput`](crate::output::CreateThemeOutput).
     pub fn builder() -> crate::output::create_theme_output::Builder {
         crate::output::create_theme_output::Builder::default()
     }
@@ -230,22 +227,21 @@ impl std::fmt::Debug for DeleteThemeOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteThemeOutput`](crate::output::DeleteThemeOutput)
+/// See [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
 pub mod delete_theme_output {
 
-    /// A builder for [`DeleteThemeOutput`](crate::output::DeleteThemeOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteThemeOutput`](crate::output::DeleteThemeOutput)
+        /// Consumes the builder and constructs a [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
         pub fn build(self) -> crate::output::DeleteThemeOutput {
             crate::output::DeleteThemeOutput {}
         }
     }
 }
 impl DeleteThemeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteThemeOutput`](crate::output::DeleteThemeOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteThemeOutput`](crate::output::DeleteThemeOutput).
     pub fn builder() -> crate::output::delete_theme_output::Builder {
         crate::output::delete_theme_output::Builder::default()
     }
@@ -271,11 +267,10 @@ impl std::fmt::Debug for UpdateThemeOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateThemeOutput`](crate::output::UpdateThemeOutput)
+/// See [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
 pub mod update_theme_output {
 
-    /// A builder for [`UpdateThemeOutput`](crate::output::UpdateThemeOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Theme>,
@@ -291,7 +286,7 @@ pub mod update_theme_output {
             self.entity = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateThemeOutput`](crate::output::UpdateThemeOutput)
+        /// Consumes the builder and constructs a [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
         pub fn build(self) -> crate::output::UpdateThemeOutput {
             crate::output::UpdateThemeOutput {
                 entity: self.entity,
@@ -300,7 +295,7 @@ pub mod update_theme_output {
     }
 }
 impl UpdateThemeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateThemeOutput`](crate::output::UpdateThemeOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateThemeOutput`](crate::output::UpdateThemeOutput).
     pub fn builder() -> crate::output::update_theme_output::Builder {
         crate::output::update_theme_output::Builder::default()
     }
@@ -326,11 +321,10 @@ impl std::fmt::Debug for GetThemeOutput {
         formatter.finish()
     }
 }
-/// See [`GetThemeOutput`](crate::output::GetThemeOutput)
+/// See [`GetThemeOutput`](crate::output::GetThemeOutput).
 pub mod get_theme_output {
 
-    /// A builder for [`GetThemeOutput`](crate::output::GetThemeOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetThemeOutput`](crate::output::GetThemeOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) theme: std::option::Option<crate::model::Theme>,
@@ -346,14 +340,14 @@ pub mod get_theme_output {
             self.theme = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetThemeOutput`](crate::output::GetThemeOutput)
+        /// Consumes the builder and constructs a [`GetThemeOutput`](crate::output::GetThemeOutput).
         pub fn build(self) -> crate::output::GetThemeOutput {
             crate::output::GetThemeOutput { theme: self.theme }
         }
     }
 }
 impl GetThemeOutput {
-    /// Creates a new builder-style object to manufacture [`GetThemeOutput`](crate::output::GetThemeOutput)
+    /// Creates a new builder-style object to manufacture [`GetThemeOutput`](crate::output::GetThemeOutput).
     pub fn builder() -> crate::output::get_theme_output::Builder {
         crate::output::get_theme_output::Builder::default()
     }
@@ -386,11 +380,10 @@ impl std::fmt::Debug for ExportComponentsOutput {
         formatter.finish()
     }
 }
-/// See [`ExportComponentsOutput`](crate::output::ExportComponentsOutput)
+/// See [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
 pub mod export_components_output {
 
-    /// A builder for [`ExportComponentsOutput`](crate::output::ExportComponentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Component>>,
@@ -426,7 +419,7 @@ pub mod export_components_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportComponentsOutput`](crate::output::ExportComponentsOutput)
+        /// Consumes the builder and constructs a [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
         pub fn build(self) -> crate::output::ExportComponentsOutput {
             crate::output::ExportComponentsOutput {
                 entities: self.entities,
@@ -436,7 +429,7 @@ pub mod export_components_output {
     }
 }
 impl ExportComponentsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportComponentsOutput`](crate::output::ExportComponentsOutput)
+    /// Creates a new builder-style object to manufacture [`ExportComponentsOutput`](crate::output::ExportComponentsOutput).
     pub fn builder() -> crate::output::export_components_output::Builder {
         crate::output::export_components_output::Builder::default()
     }
@@ -469,11 +462,10 @@ impl std::fmt::Debug for ListComponentsOutput {
         formatter.finish()
     }
 }
-/// See [`ListComponentsOutput`](crate::output::ListComponentsOutput)
+/// See [`ListComponentsOutput`](crate::output::ListComponentsOutput).
 pub mod list_components_output {
 
-    /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListComponentsOutput`](crate::output::ListComponentsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
@@ -509,7 +501,7 @@ pub mod list_components_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::output::ListComponentsOutput)
+        /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::output::ListComponentsOutput).
         pub fn build(self) -> crate::output::ListComponentsOutput {
             crate::output::ListComponentsOutput {
                 entities: self.entities,
@@ -519,7 +511,7 @@ pub mod list_components_output {
     }
 }
 impl ListComponentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::output::ListComponentsOutput)
+    /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::output::ListComponentsOutput).
     pub fn builder() -> crate::output::list_components_output::Builder {
         crate::output::list_components_output::Builder::default()
     }
@@ -545,11 +537,10 @@ impl std::fmt::Debug for CreateComponentOutput {
         formatter.finish()
     }
 }
-/// See [`CreateComponentOutput`](crate::output::CreateComponentOutput)
+/// See [`CreateComponentOutput`](crate::output::CreateComponentOutput).
 pub mod create_component_output {
 
-    /// A builder for [`CreateComponentOutput`](crate::output::CreateComponentOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateComponentOutput`](crate::output::CreateComponentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Component>,
@@ -565,7 +556,7 @@ pub mod create_component_output {
             self.entity = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateComponentOutput`](crate::output::CreateComponentOutput)
+        /// Consumes the builder and constructs a [`CreateComponentOutput`](crate::output::CreateComponentOutput).
         pub fn build(self) -> crate::output::CreateComponentOutput {
             crate::output::CreateComponentOutput {
                 entity: self.entity,
@@ -574,7 +565,7 @@ pub mod create_component_output {
     }
 }
 impl CreateComponentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateComponentOutput`](crate::output::CreateComponentOutput)
+    /// Creates a new builder-style object to manufacture [`CreateComponentOutput`](crate::output::CreateComponentOutput).
     pub fn builder() -> crate::output::create_component_output::Builder {
         crate::output::create_component_output::Builder::default()
     }
@@ -590,22 +581,21 @@ impl std::fmt::Debug for DeleteComponentOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
+/// See [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
 pub mod delete_component_output {
 
-    /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
+        /// Consumes the builder and constructs a [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
         pub fn build(self) -> crate::output::DeleteComponentOutput {
             crate::output::DeleteComponentOutput {}
         }
     }
 }
 impl DeleteComponentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
     pub fn builder() -> crate::output::delete_component_output::Builder {
         crate::output::delete_component_output::Builder::default()
     }
@@ -631,11 +621,10 @@ impl std::fmt::Debug for UpdateComponentOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateComponentOutput`](crate::output::UpdateComponentOutput)
+/// See [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
 pub mod update_component_output {
 
-    /// A builder for [`UpdateComponentOutput`](crate::output::UpdateComponentOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity: std::option::Option<crate::model::Component>,
@@ -651,7 +640,7 @@ pub mod update_component_output {
             self.entity = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateComponentOutput`](crate::output::UpdateComponentOutput)
+        /// Consumes the builder and constructs a [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
         pub fn build(self) -> crate::output::UpdateComponentOutput {
             crate::output::UpdateComponentOutput {
                 entity: self.entity,
@@ -660,7 +649,7 @@ pub mod update_component_output {
     }
 }
 impl UpdateComponentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateComponentOutput`](crate::output::UpdateComponentOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateComponentOutput`](crate::output::UpdateComponentOutput).
     pub fn builder() -> crate::output::update_component_output::Builder {
         crate::output::update_component_output::Builder::default()
     }
@@ -686,11 +675,10 @@ impl std::fmt::Debug for GetComponentOutput {
         formatter.finish()
     }
 }
-/// See [`GetComponentOutput`](crate::output::GetComponentOutput)
+/// See [`GetComponentOutput`](crate::output::GetComponentOutput).
 pub mod get_component_output {
 
-    /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetComponentOutput`](crate::output::GetComponentOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component: std::option::Option<crate::model::Component>,
@@ -709,7 +697,7 @@ pub mod get_component_output {
             self.component = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetComponentOutput`](crate::output::GetComponentOutput)
+        /// Consumes the builder and constructs a [`GetComponentOutput`](crate::output::GetComponentOutput).
         pub fn build(self) -> crate::output::GetComponentOutput {
             crate::output::GetComponentOutput {
                 component: self.component,
@@ -718,7 +706,7 @@ pub mod get_component_output {
     }
 }
 impl GetComponentOutput {
-    /// Creates a new builder-style object to manufacture [`GetComponentOutput`](crate::output::GetComponentOutput)
+    /// Creates a new builder-style object to manufacture [`GetComponentOutput`](crate::output::GetComponentOutput).
     pub fn builder() -> crate::output::get_component_output::Builder {
         crate::output::get_component_output::Builder::default()
     }
@@ -751,11 +739,10 @@ impl std::fmt::Debug for RefreshTokenOutput {
         formatter.finish()
     }
 }
-/// See [`RefreshTokenOutput`](crate::output::RefreshTokenOutput)
+/// See [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
 pub mod refresh_token_output {
 
-    /// A builder for [`RefreshTokenOutput`](crate::output::RefreshTokenOutput)
-    #[non_exhaustive]
+    /// A builder for [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -782,7 +769,7 @@ pub mod refresh_token_output {
             self.expires_in = input;
             self
         }
-        /// Consumes the builder and constructs a [`RefreshTokenOutput`](crate::output::RefreshTokenOutput)
+        /// Consumes the builder and constructs a [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
         pub fn build(self) -> crate::output::RefreshTokenOutput {
             crate::output::RefreshTokenOutput {
                 access_token: self.access_token,
@@ -792,7 +779,7 @@ pub mod refresh_token_output {
     }
 }
 impl RefreshTokenOutput {
-    /// Creates a new builder-style object to manufacture [`RefreshTokenOutput`](crate::output::RefreshTokenOutput)
+    /// Creates a new builder-style object to manufacture [`RefreshTokenOutput`](crate::output::RefreshTokenOutput).
     pub fn builder() -> crate::output::refresh_token_output::Builder {
         crate::output::refresh_token_output::Builder::default()
     }
@@ -832,11 +819,10 @@ impl std::fmt::Debug for ExchangeCodeForTokenOutput {
         formatter.finish()
     }
 }
-/// See [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput)
+/// See [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
 pub mod exchange_code_for_token_output {
 
-    /// A builder for [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput)
-    #[non_exhaustive]
+    /// A builder for [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -877,7 +863,7 @@ pub mod exchange_code_for_token_output {
             self.refresh_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput)
+        /// Consumes the builder and constructs a [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
         pub fn build(self) -> crate::output::ExchangeCodeForTokenOutput {
             crate::output::ExchangeCodeForTokenOutput {
                 access_token: self.access_token,
@@ -888,7 +874,7 @@ pub mod exchange_code_for_token_output {
     }
 }
 impl ExchangeCodeForTokenOutput {
-    /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput)
+    /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenOutput`](crate::output::ExchangeCodeForTokenOutput).
     pub fn builder() -> crate::output::exchange_code_for_token_output::Builder {
         crate::output::exchange_code_for_token_output::Builder::default()
     }

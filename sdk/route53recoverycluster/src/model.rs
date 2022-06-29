@@ -27,11 +27,10 @@ impl std::fmt::Debug for ValidationExceptionField {
         formatter.finish()
     }
 }
-/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+/// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
-    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField)
-    #[non_exhaustive]
+    /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -58,7 +57,7 @@ pub mod validation_exception_field {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+        /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
                 name: self.name,
@@ -68,7 +67,7 @@ pub mod validation_exception_field {
     }
 }
 impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField)
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     pub fn builder() -> crate::model::validation_exception_field::Builder {
         crate::model::validation_exception_field::Builder::default()
     }
@@ -169,11 +168,10 @@ impl std::fmt::Debug for UpdateRoutingControlStateEntry {
         formatter.finish()
     }
 }
-/// See [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry)
+/// See [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
 pub mod update_routing_control_state_entry {
 
-    /// A builder for [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
@@ -206,7 +204,7 @@ pub mod update_routing_control_state_entry {
             self.routing_control_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry)
+        /// Consumes the builder and constructs a [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
         pub fn build(self) -> crate::model::UpdateRoutingControlStateEntry {
             crate::model::UpdateRoutingControlStateEntry {
                 routing_control_arn: self.routing_control_arn,
@@ -216,7 +214,7 @@ pub mod update_routing_control_state_entry {
     }
 }
 impl UpdateRoutingControlStateEntry {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry)
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
     pub fn builder() -> crate::model::update_routing_control_state_entry::Builder {
         crate::model::update_routing_control_state_entry::Builder::default()
     }
@@ -325,11 +323,10 @@ impl std::fmt::Debug for RoutingControl {
         formatter.finish()
     }
 }
-/// See [`RoutingControl`](crate::model::RoutingControl)
+/// See [`RoutingControl`](crate::model::RoutingControl).
 pub mod routing_control {
 
-    /// A builder for [`RoutingControl`](crate::model::RoutingControl)
-    #[non_exhaustive]
+    /// A builder for [`RoutingControl`](crate::model::RoutingControl).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_panel_arn: std::option::Option<std::string::String>,
@@ -404,7 +401,7 @@ pub mod routing_control {
             self.routing_control_state = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoutingControl`](crate::model::RoutingControl)
+        /// Consumes the builder and constructs a [`RoutingControl`](crate::model::RoutingControl).
         pub fn build(self) -> crate::model::RoutingControl {
             crate::model::RoutingControl {
                 control_panel_arn: self.control_panel_arn,
@@ -417,7 +414,7 @@ pub mod routing_control {
     }
 }
 impl RoutingControl {
-    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl)
+    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl).
     pub fn builder() -> crate::model::routing_control::Builder {
         crate::model::routing_control::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct AssociateApi {
     _private: (),
 }
 impl AssociateApi {
-    /// Creates a new builder-style object to manufacture [`AssociateApiInput`](crate::input::AssociateApiInput)
+    /// Creates a new builder-style object to manufacture [`AssociateApiInput`](crate::input::AssociateApiInput).
     pub fn builder() -> crate::input::associate_api_input::Builder {
         crate::input::associate_api_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct CreateApiCache {
     _private: (),
 }
 impl CreateApiCache {
-    /// Creates a new builder-style object to manufacture [`CreateApiCacheInput`](crate::input::CreateApiCacheInput)
+    /// Creates a new builder-style object to manufacture [`CreateApiCacheInput`](crate::input::CreateApiCacheInput).
     pub fn builder() -> crate::input::create_api_cache_input::Builder {
         crate::input::create_api_cache_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct CreateApiKey {
     _private: (),
 }
 impl CreateApiKey {
-    /// Creates a new builder-style object to manufacture [`CreateApiKeyInput`](crate::input::CreateApiKeyInput)
+    /// Creates a new builder-style object to manufacture [`CreateApiKeyInput`](crate::input::CreateApiKeyInput).
     pub fn builder() -> crate::input::create_api_key_input::Builder {
         crate::input::create_api_key_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct CreateDataSource {
     _private: (),
 }
 impl CreateDataSource {
-    /// Creates a new builder-style object to manufacture [`CreateDataSourceInput`](crate::input::CreateDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataSourceInput`](crate::input::CreateDataSourceInput).
     pub fn builder() -> crate::input::create_data_source_input::Builder {
         crate::input::create_data_source_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct CreateDomainName {
     _private: (),
 }
 impl CreateDomainName {
-    /// Creates a new builder-style object to manufacture [`CreateDomainNameInput`](crate::input::CreateDomainNameInput)
+    /// Creates a new builder-style object to manufacture [`CreateDomainNameInput`](crate::input::CreateDomainNameInput).
     pub fn builder() -> crate::input::create_domain_name_input::Builder {
         crate::input::create_domain_name_input::Builder::default()
     }
@@ -174,7 +174,7 @@ pub struct CreateFunction {
     _private: (),
 }
 impl CreateFunction {
-    /// Creates a new builder-style object to manufacture [`CreateFunctionInput`](crate::input::CreateFunctionInput)
+    /// Creates a new builder-style object to manufacture [`CreateFunctionInput`](crate::input::CreateFunctionInput).
     pub fn builder() -> crate::input::create_function_input::Builder {
         crate::input::create_function_input::Builder::default()
     }
@@ -206,7 +206,7 @@ pub struct CreateGraphqlApi {
     _private: (),
 }
 impl CreateGraphqlApi {
-    /// Creates a new builder-style object to manufacture [`CreateGraphqlApiInput`](crate::input::CreateGraphqlApiInput)
+    /// Creates a new builder-style object to manufacture [`CreateGraphqlApiInput`](crate::input::CreateGraphqlApiInput).
     pub fn builder() -> crate::input::create_graphql_api_input::Builder {
         crate::input::create_graphql_api_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct CreateResolver {
     _private: (),
 }
 impl CreateResolver {
-    /// Creates a new builder-style object to manufacture [`CreateResolverInput`](crate::input::CreateResolverInput)
+    /// Creates a new builder-style object to manufacture [`CreateResolverInput`](crate::input::CreateResolverInput).
     pub fn builder() -> crate::input::create_resolver_input::Builder {
         crate::input::create_resolver_input::Builder::default()
     }
@@ -272,7 +272,7 @@ pub struct CreateType {
     _private: (),
 }
 impl CreateType {
-    /// Creates a new builder-style object to manufacture [`CreateTypeInput`](crate::input::CreateTypeInput)
+    /// Creates a new builder-style object to manufacture [`CreateTypeInput`](crate::input::CreateTypeInput).
     pub fn builder() -> crate::input::create_type_input::Builder {
         crate::input::create_type_input::Builder::default()
     }
@@ -304,7 +304,7 @@ pub struct DeleteApiCache {
     _private: (),
 }
 impl DeleteApiCache {
-    /// Creates a new builder-style object to manufacture [`DeleteApiCacheInput`](crate::input::DeleteApiCacheInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApiCacheInput`](crate::input::DeleteApiCacheInput).
     pub fn builder() -> crate::input::delete_api_cache_input::Builder {
         crate::input::delete_api_cache_input::Builder::default()
     }
@@ -336,7 +336,7 @@ pub struct DeleteApiKey {
     _private: (),
 }
 impl DeleteApiKey {
-    /// Creates a new builder-style object to manufacture [`DeleteApiKeyInput`](crate::input::DeleteApiKeyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApiKeyInput`](crate::input::DeleteApiKeyInput).
     pub fn builder() -> crate::input::delete_api_key_input::Builder {
         crate::input::delete_api_key_input::Builder::default()
     }
@@ -368,7 +368,7 @@ pub struct DeleteDataSource {
     _private: (),
 }
 impl DeleteDataSource {
-    /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput).
     pub fn builder() -> crate::input::delete_data_source_input::Builder {
         crate::input::delete_data_source_input::Builder::default()
     }
@@ -402,7 +402,7 @@ pub struct DeleteDomainName {
     _private: (),
 }
 impl DeleteDomainName {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainNameInput`](crate::input::DeleteDomainNameInput).
     pub fn builder() -> crate::input::delete_domain_name_input::Builder {
         crate::input::delete_domain_name_input::Builder::default()
     }
@@ -436,7 +436,7 @@ pub struct DeleteFunction {
     _private: (),
 }
 impl DeleteFunction {
-    /// Creates a new builder-style object to manufacture [`DeleteFunctionInput`](crate::input::DeleteFunctionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
     pub fn builder() -> crate::input::delete_function_input::Builder {
         crate::input::delete_function_input::Builder::default()
     }
@@ -468,7 +468,7 @@ pub struct DeleteGraphqlApi {
     _private: (),
 }
 impl DeleteGraphqlApi {
-    /// Creates a new builder-style object to manufacture [`DeleteGraphqlApiInput`](crate::input::DeleteGraphqlApiInput)
+    /// Creates a new builder-style object to manufacture [`DeleteGraphqlApiInput`](crate::input::DeleteGraphqlApiInput).
     pub fn builder() -> crate::input::delete_graphql_api_input::Builder {
         crate::input::delete_graphql_api_input::Builder::default()
     }
@@ -502,7 +502,7 @@ pub struct DeleteResolver {
     _private: (),
 }
 impl DeleteResolver {
-    /// Creates a new builder-style object to manufacture [`DeleteResolverInput`](crate::input::DeleteResolverInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResolverInput`](crate::input::DeleteResolverInput).
     pub fn builder() -> crate::input::delete_resolver_input::Builder {
         crate::input::delete_resolver_input::Builder::default()
     }
@@ -534,7 +534,7 @@ pub struct DeleteType {
     _private: (),
 }
 impl DeleteType {
-    /// Creates a new builder-style object to manufacture [`DeleteTypeInput`](crate::input::DeleteTypeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTypeInput`](crate::input::DeleteTypeInput).
     pub fn builder() -> crate::input::delete_type_input::Builder {
         crate::input::delete_type_input::Builder::default()
     }
@@ -566,7 +566,7 @@ pub struct DisassociateApi {
     _private: (),
 }
 impl DisassociateApi {
-    /// Creates a new builder-style object to manufacture [`DisassociateApiInput`](crate::input::DisassociateApiInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateApiInput`](crate::input::DisassociateApiInput).
     pub fn builder() -> crate::input::disassociate_api_input::Builder {
         crate::input::disassociate_api_input::Builder::default()
     }
@@ -600,7 +600,7 @@ pub struct FlushApiCache {
     _private: (),
 }
 impl FlushApiCache {
-    /// Creates a new builder-style object to manufacture [`FlushApiCacheInput`](crate::input::FlushApiCacheInput)
+    /// Creates a new builder-style object to manufacture [`FlushApiCacheInput`](crate::input::FlushApiCacheInput).
     pub fn builder() -> crate::input::flush_api_cache_input::Builder {
         crate::input::flush_api_cache_input::Builder::default()
     }
@@ -632,7 +632,7 @@ pub struct GetApiAssociation {
     _private: (),
 }
 impl GetApiAssociation {
-    /// Creates a new builder-style object to manufacture [`GetApiAssociationInput`](crate::input::GetApiAssociationInput)
+    /// Creates a new builder-style object to manufacture [`GetApiAssociationInput`](crate::input::GetApiAssociationInput).
     pub fn builder() -> crate::input::get_api_association_input::Builder {
         crate::input::get_api_association_input::Builder::default()
     }
@@ -666,7 +666,7 @@ pub struct GetApiCache {
     _private: (),
 }
 impl GetApiCache {
-    /// Creates a new builder-style object to manufacture [`GetApiCacheInput`](crate::input::GetApiCacheInput)
+    /// Creates a new builder-style object to manufacture [`GetApiCacheInput`](crate::input::GetApiCacheInput).
     pub fn builder() -> crate::input::get_api_cache_input::Builder {
         crate::input::get_api_cache_input::Builder::default()
     }
@@ -698,7 +698,7 @@ pub struct GetDataSource {
     _private: (),
 }
 impl GetDataSource {
-    /// Creates a new builder-style object to manufacture [`GetDataSourceInput`](crate::input::GetDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`GetDataSourceInput`](crate::input::GetDataSourceInput).
     pub fn builder() -> crate::input::get_data_source_input::Builder {
         crate::input::get_data_source_input::Builder::default()
     }
@@ -730,7 +730,7 @@ pub struct GetDomainName {
     _private: (),
 }
 impl GetDomainName {
-    /// Creates a new builder-style object to manufacture [`GetDomainNameInput`](crate::input::GetDomainNameInput)
+    /// Creates a new builder-style object to manufacture [`GetDomainNameInput`](crate::input::GetDomainNameInput).
     pub fn builder() -> crate::input::get_domain_name_input::Builder {
         crate::input::get_domain_name_input::Builder::default()
     }
@@ -762,7 +762,7 @@ pub struct GetFunction {
     _private: (),
 }
 impl GetFunction {
-    /// Creates a new builder-style object to manufacture [`GetFunctionInput`](crate::input::GetFunctionInput)
+    /// Creates a new builder-style object to manufacture [`GetFunctionInput`](crate::input::GetFunctionInput).
     pub fn builder() -> crate::input::get_function_input::Builder {
         crate::input::get_function_input::Builder::default()
     }
@@ -794,7 +794,7 @@ pub struct GetGraphqlApi {
     _private: (),
 }
 impl GetGraphqlApi {
-    /// Creates a new builder-style object to manufacture [`GetGraphqlApiInput`](crate::input::GetGraphqlApiInput)
+    /// Creates a new builder-style object to manufacture [`GetGraphqlApiInput`](crate::input::GetGraphqlApiInput).
     pub fn builder() -> crate::input::get_graphql_api_input::Builder {
         crate::input::get_graphql_api_input::Builder::default()
     }
@@ -826,7 +826,7 @@ pub struct GetIntrospectionSchema {
     _private: (),
 }
 impl GetIntrospectionSchema {
-    /// Creates a new builder-style object to manufacture [`GetIntrospectionSchemaInput`](crate::input::GetIntrospectionSchemaInput)
+    /// Creates a new builder-style object to manufacture [`GetIntrospectionSchemaInput`](crate::input::GetIntrospectionSchemaInput).
     pub fn builder() -> crate::input::get_introspection_schema_input::Builder {
         crate::input::get_introspection_schema_input::Builder::default()
     }
@@ -860,7 +860,7 @@ pub struct GetResolver {
     _private: (),
 }
 impl GetResolver {
-    /// Creates a new builder-style object to manufacture [`GetResolverInput`](crate::input::GetResolverInput)
+    /// Creates a new builder-style object to manufacture [`GetResolverInput`](crate::input::GetResolverInput).
     pub fn builder() -> crate::input::get_resolver_input::Builder {
         crate::input::get_resolver_input::Builder::default()
     }
@@ -892,7 +892,7 @@ pub struct GetSchemaCreationStatus {
     _private: (),
 }
 impl GetSchemaCreationStatus {
-    /// Creates a new builder-style object to manufacture [`GetSchemaCreationStatusInput`](crate::input::GetSchemaCreationStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetSchemaCreationStatusInput`](crate::input::GetSchemaCreationStatusInput).
     pub fn builder() -> crate::input::get_schema_creation_status_input::Builder {
         crate::input::get_schema_creation_status_input::Builder::default()
     }
@@ -926,7 +926,7 @@ pub struct GetType {
     _private: (),
 }
 impl GetType {
-    /// Creates a new builder-style object to manufacture [`GetTypeInput`](crate::input::GetTypeInput)
+    /// Creates a new builder-style object to manufacture [`GetTypeInput`](crate::input::GetTypeInput).
     pub fn builder() -> crate::input::get_type_input::Builder {
         crate::input::get_type_input::Builder::default()
     }
@@ -957,7 +957,7 @@ pub struct ListApiKeys {
     _private: (),
 }
 impl ListApiKeys {
-    /// Creates a new builder-style object to manufacture [`ListApiKeysInput`](crate::input::ListApiKeysInput)
+    /// Creates a new builder-style object to manufacture [`ListApiKeysInput`](crate::input::ListApiKeysInput).
     pub fn builder() -> crate::input::list_api_keys_input::Builder {
         crate::input::list_api_keys_input::Builder::default()
     }
@@ -989,7 +989,7 @@ pub struct ListDataSources {
     _private: (),
 }
 impl ListDataSources {
-    /// Creates a new builder-style object to manufacture [`ListDataSourcesInput`](crate::input::ListDataSourcesInput)
+    /// Creates a new builder-style object to manufacture [`ListDataSourcesInput`](crate::input::ListDataSourcesInput).
     pub fn builder() -> crate::input::list_data_sources_input::Builder {
         crate::input::list_data_sources_input::Builder::default()
     }
@@ -1023,7 +1023,7 @@ pub struct ListDomainNames {
     _private: (),
 }
 impl ListDomainNames {
-    /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
     pub fn builder() -> crate::input::list_domain_names_input::Builder {
         crate::input::list_domain_names_input::Builder::default()
     }
@@ -1057,7 +1057,7 @@ pub struct ListFunctions {
     _private: (),
 }
 impl ListFunctions {
-    /// Creates a new builder-style object to manufacture [`ListFunctionsInput`](crate::input::ListFunctionsInput)
+    /// Creates a new builder-style object to manufacture [`ListFunctionsInput`](crate::input::ListFunctionsInput).
     pub fn builder() -> crate::input::list_functions_input::Builder {
         crate::input::list_functions_input::Builder::default()
     }
@@ -1089,7 +1089,7 @@ pub struct ListGraphqlApis {
     _private: (),
 }
 impl ListGraphqlApis {
-    /// Creates a new builder-style object to manufacture [`ListGraphqlApisInput`](crate::input::ListGraphqlApisInput)
+    /// Creates a new builder-style object to manufacture [`ListGraphqlApisInput`](crate::input::ListGraphqlApisInput).
     pub fn builder() -> crate::input::list_graphql_apis_input::Builder {
         crate::input::list_graphql_apis_input::Builder::default()
     }
@@ -1123,7 +1123,7 @@ pub struct ListResolvers {
     _private: (),
 }
 impl ListResolvers {
-    /// Creates a new builder-style object to manufacture [`ListResolversInput`](crate::input::ListResolversInput)
+    /// Creates a new builder-style object to manufacture [`ListResolversInput`](crate::input::ListResolversInput).
     pub fn builder() -> crate::input::list_resolvers_input::Builder {
         crate::input::list_resolvers_input::Builder::default()
     }
@@ -1155,7 +1155,7 @@ pub struct ListResolversByFunction {
     _private: (),
 }
 impl ListResolversByFunction {
-    /// Creates a new builder-style object to manufacture [`ListResolversByFunctionInput`](crate::input::ListResolversByFunctionInput)
+    /// Creates a new builder-style object to manufacture [`ListResolversByFunctionInput`](crate::input::ListResolversByFunctionInput).
     pub fn builder() -> crate::input::list_resolvers_by_function_input::Builder {
         crate::input::list_resolvers_by_function_input::Builder::default()
     }
@@ -1189,7 +1189,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -1223,7 +1223,7 @@ pub struct ListTypes {
     _private: (),
 }
 impl ListTypes {
-    /// Creates a new builder-style object to manufacture [`ListTypesInput`](crate::input::ListTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListTypesInput`](crate::input::ListTypesInput).
     pub fn builder() -> crate::input::list_types_input::Builder {
         crate::input::list_types_input::Builder::default()
     }
@@ -1254,7 +1254,7 @@ pub struct StartSchemaCreation {
     _private: (),
 }
 impl StartSchemaCreation {
-    /// Creates a new builder-style object to manufacture [`StartSchemaCreationInput`](crate::input::StartSchemaCreationInput)
+    /// Creates a new builder-style object to manufacture [`StartSchemaCreationInput`](crate::input::StartSchemaCreationInput).
     pub fn builder() -> crate::input::start_schema_creation_input::Builder {
         crate::input::start_schema_creation_input::Builder::default()
     }
@@ -1288,7 +1288,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1320,7 +1320,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1352,7 +1352,7 @@ pub struct UpdateApiCache {
     _private: (),
 }
 impl UpdateApiCache {
-    /// Creates a new builder-style object to manufacture [`UpdateApiCacheInput`](crate::input::UpdateApiCacheInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApiCacheInput`](crate::input::UpdateApiCacheInput).
     pub fn builder() -> crate::input::update_api_cache_input::Builder {
         crate::input::update_api_cache_input::Builder::default()
     }
@@ -1384,7 +1384,7 @@ pub struct UpdateApiKey {
     _private: (),
 }
 impl UpdateApiKey {
-    /// Creates a new builder-style object to manufacture [`UpdateApiKeyInput`](crate::input::UpdateApiKeyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApiKeyInput`](crate::input::UpdateApiKeyInput).
     pub fn builder() -> crate::input::update_api_key_input::Builder {
         crate::input::update_api_key_input::Builder::default()
     }
@@ -1416,7 +1416,7 @@ pub struct UpdateDataSource {
     _private: (),
 }
 impl UpdateDataSource {
-    /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput).
     pub fn builder() -> crate::input::update_data_source_input::Builder {
         crate::input::update_data_source_input::Builder::default()
     }
@@ -1450,7 +1450,7 @@ pub struct UpdateDomainName {
     _private: (),
 }
 impl UpdateDomainName {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainNameInput`](crate::input::UpdateDomainNameInput).
     pub fn builder() -> crate::input::update_domain_name_input::Builder {
         crate::input::update_domain_name_input::Builder::default()
     }
@@ -1484,7 +1484,7 @@ pub struct UpdateFunction {
     _private: (),
 }
 impl UpdateFunction {
-    /// Creates a new builder-style object to manufacture [`UpdateFunctionInput`](crate::input::UpdateFunctionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionInput`](crate::input::UpdateFunctionInput).
     pub fn builder() -> crate::input::update_function_input::Builder {
         crate::input::update_function_input::Builder::default()
     }
@@ -1516,7 +1516,7 @@ pub struct UpdateGraphqlApi {
     _private: (),
 }
 impl UpdateGraphqlApi {
-    /// Creates a new builder-style object to manufacture [`UpdateGraphqlApiInput`](crate::input::UpdateGraphqlApiInput)
+    /// Creates a new builder-style object to manufacture [`UpdateGraphqlApiInput`](crate::input::UpdateGraphqlApiInput).
     pub fn builder() -> crate::input::update_graphql_api_input::Builder {
         crate::input::update_graphql_api_input::Builder::default()
     }
@@ -1550,7 +1550,7 @@ pub struct UpdateResolver {
     _private: (),
 }
 impl UpdateResolver {
-    /// Creates a new builder-style object to manufacture [`UpdateResolverInput`](crate::input::UpdateResolverInput)
+    /// Creates a new builder-style object to manufacture [`UpdateResolverInput`](crate::input::UpdateResolverInput).
     pub fn builder() -> crate::input::update_resolver_input::Builder {
         crate::input::update_resolver_input::Builder::default()
     }
@@ -1582,7 +1582,7 @@ pub struct UpdateType {
     _private: (),
 }
 impl UpdateType {
-    /// Creates a new builder-style object to manufacture [`UpdateTypeInput`](crate::input::UpdateTypeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateTypeInput`](crate::input::UpdateTypeInput).
     pub fn builder() -> crate::input::update_type_input::Builder {
         crate::input::update_type_input::Builder::default()
     }

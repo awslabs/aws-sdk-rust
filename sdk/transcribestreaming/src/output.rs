@@ -197,11 +197,10 @@ impl std::fmt::Debug for StartStreamTranscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
+/// See [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
 pub mod start_stream_transcription_output {
 
-    /// A builder for [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -538,10 +537,10 @@ pub mod start_stream_transcription_output {
             self.vocabulary_filter_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
+        /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
         pub fn build(
             self,
-        ) -> std::result::Result<
+        ) -> Result<
             crate::output::StartStreamTranscriptionOutput,
             aws_smithy_http::operation::BuildError,
         > {
@@ -561,7 +560,7 @@ pub mod start_stream_transcription_output {
                     ,
                     transcript_result_stream: self.transcript_result_stream
                         .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "transcript_result_stream", details: "transcript_result_stream was not specified but it is required when building StartStreamTranscriptionOutput"}
+                            aws_smithy_http::operation::BuildError::MissingField { field: "transcript_result_stream", details: "transcript_result_stream was not specified but it is required when building StartStreamTranscriptionOutput" }
                         )?
                     ,
                     vocabulary_filter_name: self.vocabulary_filter_name
@@ -606,7 +605,7 @@ pub mod start_stream_transcription_output {
     }
 }
 impl StartStreamTranscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
     pub fn builder() -> crate::output::start_stream_transcription_output::Builder {
         crate::output::start_stream_transcription_output::Builder::default()
     }
@@ -732,11 +731,10 @@ impl std::fmt::Debug for StartMedicalStreamTranscriptionOutput {
         formatter.finish()
     }
 }
-/// See [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput)
+/// See [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
 pub mod start_medical_stream_transcription_output {
 
-    /// A builder for [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
@@ -925,10 +923,10 @@ pub mod start_medical_stream_transcription_output {
             self.content_identification_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput)
+        /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
         pub fn build(
             self,
-        ) -> std::result::Result<
+        ) -> Result<
             crate::output::StartMedicalStreamTranscriptionOutput,
             aws_smithy_http::operation::BuildError,
         > {
@@ -955,7 +953,7 @@ pub mod start_medical_stream_transcription_output {
                     ,
                     transcript_result_stream: self.transcript_result_stream
                         .ok_or(
-                            aws_smithy_http::operation::BuildError::MissingField { field: "transcript_result_stream", details: "transcript_result_stream was not specified but it is required when building StartMedicalStreamTranscriptionOutput"}
+                            aws_smithy_http::operation::BuildError::MissingField { field: "transcript_result_stream", details: "transcript_result_stream was not specified but it is required when building StartMedicalStreamTranscriptionOutput" }
                         )?
                     ,
                     enable_channel_identification: self.enable_channel_identification
@@ -971,7 +969,7 @@ pub mod start_medical_stream_transcription_output {
     }
 }
 impl StartMedicalStreamTranscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput)
+    /// Creates a new builder-style object to manufacture [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
     pub fn builder() -> crate::output::start_medical_stream_transcription_output::Builder {
         crate::output::start_medical_stream_transcription_output::Builder::default()
     }

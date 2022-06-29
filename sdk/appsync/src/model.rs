@@ -48,11 +48,10 @@ impl std::fmt::Debug for Type {
         formatter.finish()
     }
 }
-/// See [`Type`](crate::model::Type)
+/// See [`Type`](crate::model::Type).
 pub mod r#type {
 
-    /// A builder for [`Type`](crate::model::Type)
-    #[non_exhaustive]
+    /// A builder for [`Type`](crate::model::Type).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -115,7 +114,7 @@ pub mod r#type {
             self.format = input;
             self
         }
-        /// Consumes the builder and constructs a [`Type`](crate::model::Type)
+        /// Consumes the builder and constructs a [`Type`](crate::model::Type).
         pub fn build(self) -> crate::model::Type {
             crate::model::Type {
                 name: self.name,
@@ -128,7 +127,7 @@ pub mod r#type {
     }
 }
 impl Type {
-    /// Creates a new builder-style object to manufacture [`Type`](crate::model::Type)
+    /// Creates a new builder-style object to manufacture [`Type`](crate::model::Type).
     pub fn builder() -> crate::model::r#type::Builder {
         crate::model::r#type::Builder::default()
     }
@@ -287,11 +286,10 @@ impl std::fmt::Debug for Resolver {
         formatter.finish()
     }
 }
-/// See [`Resolver`](crate::model::Resolver)
+/// See [`Resolver`](crate::model::Resolver).
 pub mod resolver {
 
-    /// A builder for [`Resolver`](crate::model::Resolver)
-    #[non_exhaustive]
+    /// A builder for [`Resolver`](crate::model::Resolver).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) type_name: std::option::Option<std::string::String>,
@@ -443,7 +441,7 @@ pub mod resolver {
             self.max_batch_size = input;
             self
         }
-        /// Consumes the builder and constructs a [`Resolver`](crate::model::Resolver)
+        /// Consumes the builder and constructs a [`Resolver`](crate::model::Resolver).
         pub fn build(self) -> crate::model::Resolver {
             crate::model::Resolver {
                 type_name: self.type_name,
@@ -462,7 +460,7 @@ pub mod resolver {
     }
 }
 impl Resolver {
-    /// Creates a new builder-style object to manufacture [`Resolver`](crate::model::Resolver)
+    /// Creates a new builder-style object to manufacture [`Resolver`](crate::model::Resolver).
     pub fn builder() -> crate::model::resolver::Builder {
         crate::model::resolver::Builder::default()
     }
@@ -499,11 +497,10 @@ impl std::fmt::Debug for CachingConfig {
         formatter.finish()
     }
 }
-/// See [`CachingConfig`](crate::model::CachingConfig)
+/// See [`CachingConfig`](crate::model::CachingConfig).
 pub mod caching_config {
 
-    /// A builder for [`CachingConfig`](crate::model::CachingConfig)
-    #[non_exhaustive]
+    /// A builder for [`CachingConfig`](crate::model::CachingConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ttl: std::option::Option<i64>,
@@ -543,7 +540,7 @@ pub mod caching_config {
             self.caching_keys = input;
             self
         }
-        /// Consumes the builder and constructs a [`CachingConfig`](crate::model::CachingConfig)
+        /// Consumes the builder and constructs a [`CachingConfig`](crate::model::CachingConfig).
         pub fn build(self) -> crate::model::CachingConfig {
             crate::model::CachingConfig {
                 ttl: self.ttl.unwrap_or_default(),
@@ -553,7 +550,7 @@ pub mod caching_config {
     }
 }
 impl CachingConfig {
-    /// Creates a new builder-style object to manufacture [`CachingConfig`](crate::model::CachingConfig)
+    /// Creates a new builder-style object to manufacture [`CachingConfig`](crate::model::CachingConfig).
     pub fn builder() -> crate::model::caching_config::Builder {
         crate::model::caching_config::Builder::default()
     }
@@ -618,11 +615,10 @@ impl std::fmt::Debug for SyncConfig {
         formatter.finish()
     }
 }
-/// See [`SyncConfig`](crate::model::SyncConfig)
+/// See [`SyncConfig`](crate::model::SyncConfig).
 pub mod sync_config {
 
-    /// A builder for [`SyncConfig`](crate::model::SyncConfig)
-    #[non_exhaustive]
+    /// A builder for [`SyncConfig`](crate::model::SyncConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) conflict_handler: std::option::Option<crate::model::ConflictHandlerType>,
@@ -691,7 +687,7 @@ pub mod sync_config {
             self.lambda_conflict_handler_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`SyncConfig`](crate::model::SyncConfig)
+        /// Consumes the builder and constructs a [`SyncConfig`](crate::model::SyncConfig).
         pub fn build(self) -> crate::model::SyncConfig {
             crate::model::SyncConfig {
                 conflict_handler: self.conflict_handler,
@@ -702,7 +698,7 @@ pub mod sync_config {
     }
 }
 impl SyncConfig {
-    /// Creates a new builder-style object to manufacture [`SyncConfig`](crate::model::SyncConfig)
+    /// Creates a new builder-style object to manufacture [`SyncConfig`](crate::model::SyncConfig).
     pub fn builder() -> crate::model::sync_config::Builder {
         crate::model::sync_config::Builder::default()
     }
@@ -731,11 +727,10 @@ impl std::fmt::Debug for LambdaConflictHandlerConfig {
         formatter.finish()
     }
 }
-/// See [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig)
+/// See [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
 pub mod lambda_conflict_handler_config {
 
-    /// A builder for [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig)
-    #[non_exhaustive]
+    /// A builder for [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_conflict_handler_arn: std::option::Option<std::string::String>,
@@ -757,7 +752,7 @@ pub mod lambda_conflict_handler_config {
             self.lambda_conflict_handler_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig)
+        /// Consumes the builder and constructs a [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
         pub fn build(self) -> crate::model::LambdaConflictHandlerConfig {
             crate::model::LambdaConflictHandlerConfig {
                 lambda_conflict_handler_arn: self.lambda_conflict_handler_arn,
@@ -766,7 +761,7 @@ pub mod lambda_conflict_handler_config {
     }
 }
 impl LambdaConflictHandlerConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig)
+    /// Creates a new builder-style object to manufacture [`LambdaConflictHandlerConfig`](crate::model::LambdaConflictHandlerConfig).
     pub fn builder() -> crate::model::lambda_conflict_handler_config::Builder {
         crate::model::lambda_conflict_handler_config::Builder::default()
     }
@@ -910,11 +905,10 @@ impl std::fmt::Debug for PipelineConfig {
         formatter.finish()
     }
 }
-/// See [`PipelineConfig`](crate::model::PipelineConfig)
+/// See [`PipelineConfig`](crate::model::PipelineConfig).
 pub mod pipeline_config {
 
-    /// A builder for [`PipelineConfig`](crate::model::PipelineConfig)
-    #[non_exhaustive]
+    /// A builder for [`PipelineConfig`](crate::model::PipelineConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) functions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -939,7 +933,7 @@ pub mod pipeline_config {
             self.functions = input;
             self
         }
-        /// Consumes the builder and constructs a [`PipelineConfig`](crate::model::PipelineConfig)
+        /// Consumes the builder and constructs a [`PipelineConfig`](crate::model::PipelineConfig).
         pub fn build(self) -> crate::model::PipelineConfig {
             crate::model::PipelineConfig {
                 functions: self.functions,
@@ -948,7 +942,7 @@ pub mod pipeline_config {
     }
 }
 impl PipelineConfig {
-    /// Creates a new builder-style object to manufacture [`PipelineConfig`](crate::model::PipelineConfig)
+    /// Creates a new builder-style object to manufacture [`PipelineConfig`](crate::model::PipelineConfig).
     pub fn builder() -> crate::model::pipeline_config::Builder {
         crate::model::pipeline_config::Builder::default()
     }
@@ -1131,11 +1125,10 @@ impl std::fmt::Debug for GraphqlApi {
         formatter.finish()
     }
 }
-/// See [`GraphqlApi`](crate::model::GraphqlApi)
+/// See [`GraphqlApi`](crate::model::GraphqlApi).
 pub mod graphql_api {
 
-    /// A builder for [`GraphqlApi`](crate::model::GraphqlApi)
-    #[non_exhaustive]
+    /// A builder for [`GraphqlApi`](crate::model::GraphqlApi).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1354,7 +1347,7 @@ pub mod graphql_api {
             self.lambda_authorizer_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`GraphqlApi`](crate::model::GraphqlApi)
+        /// Consumes the builder and constructs a [`GraphqlApi`](crate::model::GraphqlApi).
         pub fn build(self) -> crate::model::GraphqlApi {
             crate::model::GraphqlApi {
                 name: self.name,
@@ -1375,7 +1368,7 @@ pub mod graphql_api {
     }
 }
 impl GraphqlApi {
-    /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::model::GraphqlApi)
+    /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::model::GraphqlApi).
     pub fn builder() -> crate::model::graphql_api::Builder {
         crate::model::graphql_api::Builder::default()
     }
@@ -1425,11 +1418,10 @@ impl std::fmt::Debug for LambdaAuthorizerConfig {
         formatter.finish()
     }
 }
-/// See [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
+/// See [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
 pub mod lambda_authorizer_config {
 
-    /// A builder for [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
-    #[non_exhaustive]
+    /// A builder for [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
@@ -1483,7 +1475,7 @@ pub mod lambda_authorizer_config {
             self.identity_validation_expression = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
+        /// Consumes the builder and constructs a [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
         pub fn build(self) -> crate::model::LambdaAuthorizerConfig {
             crate::model::LambdaAuthorizerConfig {
                 authorizer_result_ttl_in_seconds: self
@@ -1496,7 +1488,7 @@ pub mod lambda_authorizer_config {
     }
 }
 impl LambdaAuthorizerConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
+    /// Creates a new builder-style object to manufacture [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig).
     pub fn builder() -> crate::model::lambda_authorizer_config::Builder {
         crate::model::lambda_authorizer_config::Builder::default()
     }
@@ -1547,11 +1539,10 @@ impl std::fmt::Debug for AdditionalAuthenticationProvider {
         formatter.finish()
     }
 }
-/// See [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider)
+/// See [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
 pub mod additional_authentication_provider {
 
-    /// A builder for [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider)
-    #[non_exhaustive]
+    /// A builder for [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
@@ -1616,7 +1607,7 @@ pub mod additional_authentication_provider {
             self.lambda_authorizer_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider)
+        /// Consumes the builder and constructs a [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
         pub fn build(self) -> crate::model::AdditionalAuthenticationProvider {
             crate::model::AdditionalAuthenticationProvider {
                 authentication_type: self.authentication_type,
@@ -1628,7 +1619,7 @@ pub mod additional_authentication_provider {
     }
 }
 impl AdditionalAuthenticationProvider {
-    /// Creates a new builder-style object to manufacture [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider)
+    /// Creates a new builder-style object to manufacture [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider).
     pub fn builder() -> crate::model::additional_authentication_provider::Builder {
         crate::model::additional_authentication_provider::Builder::default()
     }
@@ -1668,11 +1659,10 @@ impl std::fmt::Debug for CognitoUserPoolConfig {
         formatter.finish()
     }
 }
-/// See [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig)
+/// See [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
 pub mod cognito_user_pool_config {
 
-    /// A builder for [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig)
-    #[non_exhaustive]
+    /// A builder for [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -1713,7 +1703,7 @@ pub mod cognito_user_pool_config {
             self.app_id_client_regex = input;
             self
         }
-        /// Consumes the builder and constructs a [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig)
+        /// Consumes the builder and constructs a [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
         pub fn build(self) -> crate::model::CognitoUserPoolConfig {
             crate::model::CognitoUserPoolConfig {
                 user_pool_id: self.user_pool_id,
@@ -1724,7 +1714,7 @@ pub mod cognito_user_pool_config {
     }
 }
 impl CognitoUserPoolConfig {
-    /// Creates a new builder-style object to manufacture [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig)
+    /// Creates a new builder-style object to manufacture [`CognitoUserPoolConfig`](crate::model::CognitoUserPoolConfig).
     pub fn builder() -> crate::model::cognito_user_pool_config::Builder {
         crate::model::cognito_user_pool_config::Builder::default()
     }
@@ -1771,11 +1761,10 @@ impl std::fmt::Debug for OpenIdConnectConfig {
         formatter.finish()
     }
 }
-/// See [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig)
+/// See [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
 pub mod open_id_connect_config {
 
-    /// A builder for [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig)
-    #[non_exhaustive]
+    /// A builder for [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) issuer: std::option::Option<std::string::String>,
@@ -1824,7 +1813,7 @@ pub mod open_id_connect_config {
             self.auth_ttl = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig)
+        /// Consumes the builder and constructs a [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
         pub fn build(self) -> crate::model::OpenIdConnectConfig {
             crate::model::OpenIdConnectConfig {
                 issuer: self.issuer,
@@ -1836,7 +1825,7 @@ pub mod open_id_connect_config {
     }
 }
 impl OpenIdConnectConfig {
-    /// Creates a new builder-style object to manufacture [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig)
+    /// Creates a new builder-style object to manufacture [`OpenIdConnectConfig`](crate::model::OpenIdConnectConfig).
     pub fn builder() -> crate::model::open_id_connect_config::Builder {
         crate::model::open_id_connect_config::Builder::default()
     }
@@ -1956,11 +1945,10 @@ impl std::fmt::Debug for UserPoolConfig {
         formatter.finish()
     }
 }
-/// See [`UserPoolConfig`](crate::model::UserPoolConfig)
+/// See [`UserPoolConfig`](crate::model::UserPoolConfig).
 pub mod user_pool_config {
 
-    /// A builder for [`UserPoolConfig`](crate::model::UserPoolConfig)
-    #[non_exhaustive]
+    /// A builder for [`UserPoolConfig`](crate::model::UserPoolConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_pool_id: std::option::Option<std::string::String>,
@@ -2015,7 +2003,7 @@ pub mod user_pool_config {
             self.app_id_client_regex = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserPoolConfig`](crate::model::UserPoolConfig)
+        /// Consumes the builder and constructs a [`UserPoolConfig`](crate::model::UserPoolConfig).
         pub fn build(self) -> crate::model::UserPoolConfig {
             crate::model::UserPoolConfig {
                 user_pool_id: self.user_pool_id,
@@ -2027,7 +2015,7 @@ pub mod user_pool_config {
     }
 }
 impl UserPoolConfig {
-    /// Creates a new builder-style object to manufacture [`UserPoolConfig`](crate::model::UserPoolConfig)
+    /// Creates a new builder-style object to manufacture [`UserPoolConfig`](crate::model::UserPoolConfig).
     pub fn builder() -> crate::model::user_pool_config::Builder {
         crate::model::user_pool_config::Builder::default()
     }
@@ -2150,11 +2138,10 @@ impl std::fmt::Debug for LogConfig {
         formatter.finish()
     }
 }
-/// See [`LogConfig`](crate::model::LogConfig)
+/// See [`LogConfig`](crate::model::LogConfig).
 pub mod log_config {
 
-    /// A builder for [`LogConfig`](crate::model::LogConfig)
-    #[non_exhaustive]
+    /// A builder for [`LogConfig`](crate::model::LogConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_log_level: std::option::Option<crate::model::FieldLogLevel>,
@@ -2226,7 +2213,7 @@ pub mod log_config {
             self.exclude_verbose_content = input;
             self
         }
-        /// Consumes the builder and constructs a [`LogConfig`](crate::model::LogConfig)
+        /// Consumes the builder and constructs a [`LogConfig`](crate::model::LogConfig).
         pub fn build(self) -> crate::model::LogConfig {
             crate::model::LogConfig {
                 field_log_level: self.field_log_level,
@@ -2237,7 +2224,7 @@ pub mod log_config {
     }
 }
 impl LogConfig {
-    /// Creates a new builder-style object to manufacture [`LogConfig`](crate::model::LogConfig)
+    /// Creates a new builder-style object to manufacture [`LogConfig`](crate::model::LogConfig).
     pub fn builder() -> crate::model::log_config::Builder {
         crate::model::log_config::Builder::default()
     }
@@ -2387,11 +2374,10 @@ impl std::fmt::Debug for FunctionConfiguration {
         formatter.finish()
     }
 }
-/// See [`FunctionConfiguration`](crate::model::FunctionConfiguration)
+/// See [`FunctionConfiguration`](crate::model::FunctionConfiguration).
 pub mod function_configuration {
 
-    /// A builder for [`FunctionConfiguration`](crate::model::FunctionConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`FunctionConfiguration`](crate::model::FunctionConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) function_id: std::option::Option<std::string::String>,
@@ -2523,7 +2509,7 @@ pub mod function_configuration {
             self.max_batch_size = input;
             self
         }
-        /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration)
+        /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::model::FunctionConfiguration).
         pub fn build(self) -> crate::model::FunctionConfiguration {
             crate::model::FunctionConfiguration {
                 function_id: self.function_id,
@@ -2541,7 +2527,7 @@ pub mod function_configuration {
     }
 }
 impl FunctionConfiguration {
-    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration)
+    /// Creates a new builder-style object to manufacture [`FunctionConfiguration`](crate::model::FunctionConfiguration).
     pub fn builder() -> crate::model::function_configuration::Builder {
         crate::model::function_configuration::Builder::default()
     }
@@ -2595,11 +2581,10 @@ impl std::fmt::Debug for DomainNameConfig {
         formatter.finish()
     }
 }
-/// See [`DomainNameConfig`](crate::model::DomainNameConfig)
+/// See [`DomainNameConfig`](crate::model::DomainNameConfig).
 pub mod domain_name_config {
 
-    /// A builder for [`DomainNameConfig`](crate::model::DomainNameConfig)
-    #[non_exhaustive]
+    /// A builder for [`DomainNameConfig`](crate::model::DomainNameConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -2668,7 +2653,7 @@ pub mod domain_name_config {
             self.hosted_zone_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainNameConfig`](crate::model::DomainNameConfig)
+        /// Consumes the builder and constructs a [`DomainNameConfig`](crate::model::DomainNameConfig).
         pub fn build(self) -> crate::model::DomainNameConfig {
             crate::model::DomainNameConfig {
                 domain_name: self.domain_name,
@@ -2681,7 +2666,7 @@ pub mod domain_name_config {
     }
 }
 impl DomainNameConfig {
-    /// Creates a new builder-style object to manufacture [`DomainNameConfig`](crate::model::DomainNameConfig)
+    /// Creates a new builder-style object to manufacture [`DomainNameConfig`](crate::model::DomainNameConfig).
     pub fn builder() -> crate::model::domain_name_config::Builder {
         crate::model::domain_name_config::Builder::default()
     }
@@ -2809,11 +2794,10 @@ impl std::fmt::Debug for DataSource {
         formatter.finish()
     }
 }
-/// See [`DataSource`](crate::model::DataSource)
+/// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
 
-    /// A builder for [`DataSource`](crate::model::DataSource)
-    #[non_exhaustive]
+    /// A builder for [`DataSource`](crate::model::DataSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_source_arn: std::option::Option<std::string::String>,
@@ -2996,7 +2980,7 @@ pub mod data_source {
             self.relational_database_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource)
+        /// Consumes the builder and constructs a [`DataSource`](crate::model::DataSource).
         pub fn build(self) -> crate::model::DataSource {
             crate::model::DataSource {
                 data_source_arn: self.data_source_arn,
@@ -3015,7 +2999,7 @@ pub mod data_source {
     }
 }
 impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource)
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
     pub fn builder() -> crate::model::data_source::Builder {
         crate::model::data_source::Builder::default()
     }
@@ -3062,11 +3046,10 @@ impl std::fmt::Debug for RelationalDatabaseDataSourceConfig {
         formatter.finish()
     }
 }
-/// See [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig)
+/// See [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
 pub mod relational_database_data_source_config {
 
-    /// A builder for [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig)
-    #[non_exhaustive]
+    /// A builder for [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) relational_database_source_type:
@@ -3113,7 +3096,7 @@ pub mod relational_database_data_source_config {
             self.rds_http_endpoint_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig)
+        /// Consumes the builder and constructs a [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
         pub fn build(self) -> crate::model::RelationalDatabaseDataSourceConfig {
             crate::model::RelationalDatabaseDataSourceConfig {
                 relational_database_source_type: self.relational_database_source_type,
@@ -3123,7 +3106,7 @@ pub mod relational_database_data_source_config {
     }
 }
 impl RelationalDatabaseDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig)
+    /// Creates a new builder-style object to manufacture [`RelationalDatabaseDataSourceConfig`](crate::model::RelationalDatabaseDataSourceConfig).
     pub fn builder() -> crate::model::relational_database_data_source_config::Builder {
         crate::model::relational_database_data_source_config::Builder::default()
     }
@@ -3177,11 +3160,10 @@ impl std::fmt::Debug for RdsHttpEndpointConfig {
         formatter.finish()
     }
 }
-/// See [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig)
+/// See [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
 pub mod rds_http_endpoint_config {
 
-    /// A builder for [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig)
-    #[non_exhaustive]
+    /// A builder for [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aws_region: std::option::Option<std::string::String>,
@@ -3250,7 +3232,7 @@ pub mod rds_http_endpoint_config {
             self.aws_secret_store_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig)
+        /// Consumes the builder and constructs a [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
         pub fn build(self) -> crate::model::RdsHttpEndpointConfig {
             crate::model::RdsHttpEndpointConfig {
                 aws_region: self.aws_region,
@@ -3263,7 +3245,7 @@ pub mod rds_http_endpoint_config {
     }
 }
 impl RdsHttpEndpointConfig {
-    /// Creates a new builder-style object to manufacture [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig)
+    /// Creates a new builder-style object to manufacture [`RdsHttpEndpointConfig`](crate::model::RdsHttpEndpointConfig).
     pub fn builder() -> crate::model::rds_http_endpoint_config::Builder {
         crate::model::rds_http_endpoint_config::Builder::default()
     }
@@ -3347,11 +3329,10 @@ impl std::fmt::Debug for HttpDataSourceConfig {
         formatter.finish()
     }
 }
-/// See [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig)
+/// See [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
 pub mod http_data_source_config {
 
-    /// A builder for [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig)
-    #[non_exhaustive]
+    /// A builder for [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -3381,7 +3362,7 @@ pub mod http_data_source_config {
             self.authorization_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig)
+        /// Consumes the builder and constructs a [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
         pub fn build(self) -> crate::model::HttpDataSourceConfig {
             crate::model::HttpDataSourceConfig {
                 endpoint: self.endpoint,
@@ -3391,7 +3372,7 @@ pub mod http_data_source_config {
     }
 }
 impl HttpDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig)
+    /// Creates a new builder-style object to manufacture [`HttpDataSourceConfig`](crate::model::HttpDataSourceConfig).
     pub fn builder() -> crate::model::http_data_source_config::Builder {
         crate::model::http_data_source_config::Builder::default()
     }
@@ -3430,11 +3411,10 @@ impl std::fmt::Debug for AuthorizationConfig {
         formatter.finish()
     }
 }
-/// See [`AuthorizationConfig`](crate::model::AuthorizationConfig)
+/// See [`AuthorizationConfig`](crate::model::AuthorizationConfig).
 pub mod authorization_config {
 
-    /// A builder for [`AuthorizationConfig`](crate::model::AuthorizationConfig)
-    #[non_exhaustive]
+    /// A builder for [`AuthorizationConfig`](crate::model::AuthorizationConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_type: std::option::Option<crate::model::AuthorizationType>,
@@ -3473,7 +3453,7 @@ pub mod authorization_config {
             self.aws_iam_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`AuthorizationConfig`](crate::model::AuthorizationConfig)
+        /// Consumes the builder and constructs a [`AuthorizationConfig`](crate::model::AuthorizationConfig).
         pub fn build(self) -> crate::model::AuthorizationConfig {
             crate::model::AuthorizationConfig {
                 authorization_type: self.authorization_type,
@@ -3483,7 +3463,7 @@ pub mod authorization_config {
     }
 }
 impl AuthorizationConfig {
-    /// Creates a new builder-style object to manufacture [`AuthorizationConfig`](crate::model::AuthorizationConfig)
+    /// Creates a new builder-style object to manufacture [`AuthorizationConfig`](crate::model::AuthorizationConfig).
     pub fn builder() -> crate::model::authorization_config::Builder {
         crate::model::authorization_config::Builder::default()
     }
@@ -3516,11 +3496,10 @@ impl std::fmt::Debug for AwsIamConfig {
         formatter.finish()
     }
 }
-/// See [`AwsIamConfig`](crate::model::AwsIamConfig)
+/// See [`AwsIamConfig`](crate::model::AwsIamConfig).
 pub mod aws_iam_config {
 
-    /// A builder for [`AwsIamConfig`](crate::model::AwsIamConfig)
-    #[non_exhaustive]
+    /// A builder for [`AwsIamConfig`](crate::model::AwsIamConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) signing_region: std::option::Option<std::string::String>,
@@ -3553,7 +3532,7 @@ pub mod aws_iam_config {
             self.signing_service_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AwsIamConfig`](crate::model::AwsIamConfig)
+        /// Consumes the builder and constructs a [`AwsIamConfig`](crate::model::AwsIamConfig).
         pub fn build(self) -> crate::model::AwsIamConfig {
             crate::model::AwsIamConfig {
                 signing_region: self.signing_region,
@@ -3563,7 +3542,7 @@ pub mod aws_iam_config {
     }
 }
 impl AwsIamConfig {
-    /// Creates a new builder-style object to manufacture [`AwsIamConfig`](crate::model::AwsIamConfig)
+    /// Creates a new builder-style object to manufacture [`AwsIamConfig`](crate::model::AwsIamConfig).
     pub fn builder() -> crate::model::aws_iam_config::Builder {
         crate::model::aws_iam_config::Builder::default()
     }
@@ -3647,11 +3626,10 @@ impl std::fmt::Debug for OpenSearchServiceDataSourceConfig {
         formatter.finish()
     }
 }
-/// See [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
+/// See [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
 pub mod open_search_service_data_source_config {
 
-    /// A builder for [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
-    #[non_exhaustive]
+    /// A builder for [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -3678,7 +3656,7 @@ pub mod open_search_service_data_source_config {
             self.aws_region = input;
             self
         }
-        /// Consumes the builder and constructs a [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
+        /// Consumes the builder and constructs a [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
         pub fn build(self) -> crate::model::OpenSearchServiceDataSourceConfig {
             crate::model::OpenSearchServiceDataSourceConfig {
                 endpoint: self.endpoint,
@@ -3688,7 +3666,7 @@ pub mod open_search_service_data_source_config {
     }
 }
 impl OpenSearchServiceDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig)
+    /// Creates a new builder-style object to manufacture [`OpenSearchServiceDataSourceConfig`](crate::model::OpenSearchServiceDataSourceConfig).
     pub fn builder() -> crate::model::open_search_service_data_source_config::Builder {
         crate::model::open_search_service_data_source_config::Builder::default()
     }
@@ -3722,11 +3700,10 @@ impl std::fmt::Debug for ElasticsearchDataSourceConfig {
         formatter.finish()
     }
 }
-/// See [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig)
+/// See [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
 pub mod elasticsearch_data_source_config {
 
-    /// A builder for [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig)
-    #[non_exhaustive]
+    /// A builder for [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -3753,7 +3730,7 @@ pub mod elasticsearch_data_source_config {
             self.aws_region = input;
             self
         }
-        /// Consumes the builder and constructs a [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig)
+        /// Consumes the builder and constructs a [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
         pub fn build(self) -> crate::model::ElasticsearchDataSourceConfig {
             crate::model::ElasticsearchDataSourceConfig {
                 endpoint: self.endpoint,
@@ -3763,7 +3740,7 @@ pub mod elasticsearch_data_source_config {
     }
 }
 impl ElasticsearchDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig)
+    /// Creates a new builder-style object to manufacture [`ElasticsearchDataSourceConfig`](crate::model::ElasticsearchDataSourceConfig).
     pub fn builder() -> crate::model::elasticsearch_data_source_config::Builder {
         crate::model::elasticsearch_data_source_config::Builder::default()
     }
@@ -3789,11 +3766,10 @@ impl std::fmt::Debug for LambdaDataSourceConfig {
         formatter.finish()
     }
 }
-/// See [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig)
+/// See [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
 pub mod lambda_data_source_config {
 
-    /// A builder for [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig)
-    #[non_exhaustive]
+    /// A builder for [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
@@ -3812,7 +3788,7 @@ pub mod lambda_data_source_config {
             self.lambda_function_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig)
+        /// Consumes the builder and constructs a [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
         pub fn build(self) -> crate::model::LambdaDataSourceConfig {
             crate::model::LambdaDataSourceConfig {
                 lambda_function_arn: self.lambda_function_arn,
@@ -3821,7 +3797,7 @@ pub mod lambda_data_source_config {
     }
 }
 impl LambdaDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig)
+    /// Creates a new builder-style object to manufacture [`LambdaDataSourceConfig`](crate::model::LambdaDataSourceConfig).
     pub fn builder() -> crate::model::lambda_data_source_config::Builder {
         crate::model::lambda_data_source_config::Builder::default()
     }
@@ -3875,11 +3851,10 @@ impl std::fmt::Debug for DynamodbDataSourceConfig {
         formatter.finish()
     }
 }
-/// See [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig)
+/// See [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
 pub mod dynamodb_data_source_config {
 
-    /// A builder for [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig)
-    #[non_exhaustive]
+    /// A builder for [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) table_name: std::option::Option<std::string::String>,
@@ -3942,7 +3917,7 @@ pub mod dynamodb_data_source_config {
             self.versioned = input;
             self
         }
-        /// Consumes the builder and constructs a [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig)
+        /// Consumes the builder and constructs a [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
         pub fn build(self) -> crate::model::DynamodbDataSourceConfig {
             crate::model::DynamodbDataSourceConfig {
                 table_name: self.table_name,
@@ -3955,7 +3930,7 @@ pub mod dynamodb_data_source_config {
     }
 }
 impl DynamodbDataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig)
+    /// Creates a new builder-style object to manufacture [`DynamodbDataSourceConfig`](crate::model::DynamodbDataSourceConfig).
     pub fn builder() -> crate::model::dynamodb_data_source_config::Builder {
         crate::model::dynamodb_data_source_config::Builder::default()
     }
@@ -3995,11 +3970,10 @@ impl std::fmt::Debug for DeltaSyncConfig {
         formatter.finish()
     }
 }
-/// See [`DeltaSyncConfig`](crate::model::DeltaSyncConfig)
+/// See [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
 pub mod delta_sync_config {
 
-    /// A builder for [`DeltaSyncConfig`](crate::model::DeltaSyncConfig)
-    #[non_exhaustive]
+    /// A builder for [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) base_table_ttl: std::option::Option<i64>,
@@ -4040,7 +4014,7 @@ pub mod delta_sync_config {
             self.delta_sync_table_ttl = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeltaSyncConfig`](crate::model::DeltaSyncConfig)
+        /// Consumes the builder and constructs a [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
         pub fn build(self) -> crate::model::DeltaSyncConfig {
             crate::model::DeltaSyncConfig {
                 base_table_ttl: self.base_table_ttl.unwrap_or_default(),
@@ -4051,7 +4025,7 @@ pub mod delta_sync_config {
     }
 }
 impl DeltaSyncConfig {
-    /// Creates a new builder-style object to manufacture [`DeltaSyncConfig`](crate::model::DeltaSyncConfig)
+    /// Creates a new builder-style object to manufacture [`DeltaSyncConfig`](crate::model::DeltaSyncConfig).
     pub fn builder() -> crate::model::delta_sync_config::Builder {
         crate::model::delta_sync_config::Builder::default()
     }
@@ -4199,11 +4173,10 @@ impl std::fmt::Debug for ApiKey {
         formatter.finish()
     }
 }
-/// See [`ApiKey`](crate::model::ApiKey)
+/// See [`ApiKey`](crate::model::ApiKey).
 pub mod api_key {
 
-    /// A builder for [`ApiKey`](crate::model::ApiKey)
-    #[non_exhaustive]
+    /// A builder for [`ApiKey`](crate::model::ApiKey).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4252,7 +4225,7 @@ pub mod api_key {
             self.deletes = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiKey`](crate::model::ApiKey)
+        /// Consumes the builder and constructs a [`ApiKey`](crate::model::ApiKey).
         pub fn build(self) -> crate::model::ApiKey {
             crate::model::ApiKey {
                 id: self.id,
@@ -4264,7 +4237,7 @@ pub mod api_key {
     }
 }
 impl ApiKey {
-    /// Creates a new builder-style object to manufacture [`ApiKey`](crate::model::ApiKey)
+    /// Creates a new builder-style object to manufacture [`ApiKey`](crate::model::ApiKey).
     pub fn builder() -> crate::model::api_key::Builder {
         crate::model::api_key::Builder::default()
     }
@@ -4397,11 +4370,10 @@ impl std::fmt::Debug for ApiCache {
         formatter.finish()
     }
 }
-/// See [`ApiCache`](crate::model::ApiCache)
+/// See [`ApiCache`](crate::model::ApiCache).
 pub mod api_cache {
 
-    /// A builder for [`ApiCache`](crate::model::ApiCache)
-    #[non_exhaustive]
+    /// A builder for [`ApiCache`](crate::model::ApiCache).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ttl: std::option::Option<i64>,
@@ -4544,7 +4516,7 @@ pub mod api_cache {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiCache`](crate::model::ApiCache)
+        /// Consumes the builder and constructs a [`ApiCache`](crate::model::ApiCache).
         pub fn build(self) -> crate::model::ApiCache {
             crate::model::ApiCache {
                 ttl: self.ttl.unwrap_or_default(),
@@ -4558,7 +4530,7 @@ pub mod api_cache {
     }
 }
 impl ApiCache {
-    /// Creates a new builder-style object to manufacture [`ApiCache`](crate::model::ApiCache)
+    /// Creates a new builder-style object to manufacture [`ApiCache`](crate::model::ApiCache).
     pub fn builder() -> crate::model::api_cache::Builder {
         crate::model::api_cache::Builder::default()
     }
@@ -4993,11 +4965,10 @@ impl std::fmt::Debug for ApiAssociation {
         formatter.finish()
     }
 }
-/// See [`ApiAssociation`](crate::model::ApiAssociation)
+/// See [`ApiAssociation`](crate::model::ApiAssociation).
 pub mod api_association {
 
-    /// A builder for [`ApiAssociation`](crate::model::ApiAssociation)
-    #[non_exhaustive]
+    /// A builder for [`ApiAssociation`](crate::model::ApiAssociation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -5062,7 +5033,7 @@ pub mod api_association {
             self.deployment_detail = input;
             self
         }
-        /// Consumes the builder and constructs a [`ApiAssociation`](crate::model::ApiAssociation)
+        /// Consumes the builder and constructs a [`ApiAssociation`](crate::model::ApiAssociation).
         pub fn build(self) -> crate::model::ApiAssociation {
             crate::model::ApiAssociation {
                 domain_name: self.domain_name,
@@ -5074,7 +5045,7 @@ pub mod api_association {
     }
 }
 impl ApiAssociation {
-    /// Creates a new builder-style object to manufacture [`ApiAssociation`](crate::model::ApiAssociation)
+    /// Creates a new builder-style object to manufacture [`ApiAssociation`](crate::model::ApiAssociation).
     pub fn builder() -> crate::model::api_association::Builder {
         crate::model::api_association::Builder::default()
     }

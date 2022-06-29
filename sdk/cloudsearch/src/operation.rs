@@ -10,7 +10,7 @@ pub struct BuildSuggesters {
     _private: (),
 }
 impl BuildSuggesters {
-    /// Creates a new builder-style object to manufacture [`BuildSuggestersInput`](crate::input::BuildSuggestersInput)
+    /// Creates a new builder-style object to manufacture [`BuildSuggestersInput`](crate::input::BuildSuggestersInput).
     pub fn builder() -> crate::input::build_suggesters_input::Builder {
         crate::input::build_suggesters_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateDomain {
     _private: (),
 }
 impl CreateDomain {
-    /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::input::CreateDomainInput)
+    /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::input::CreateDomainInput).
     pub fn builder() -> crate::input::create_domain_input::Builder {
         crate::input::create_domain_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct DefineAnalysisScheme {
     _private: (),
 }
 impl DefineAnalysisScheme {
-    /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeInput`](crate::input::DefineAnalysisSchemeInput)
+    /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeInput`](crate::input::DefineAnalysisSchemeInput).
     pub fn builder() -> crate::input::define_analysis_scheme_input::Builder {
         crate::input::define_analysis_scheme_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DefineExpression {
     _private: (),
 }
 impl DefineExpression {
-    /// Creates a new builder-style object to manufacture [`DefineExpressionInput`](crate::input::DefineExpressionInput)
+    /// Creates a new builder-style object to manufacture [`DefineExpressionInput`](crate::input::DefineExpressionInput).
     pub fn builder() -> crate::input::define_expression_input::Builder {
         crate::input::define_expression_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct DefineIndexField {
     _private: (),
 }
 impl DefineIndexField {
-    /// Creates a new builder-style object to manufacture [`DefineIndexFieldInput`](crate::input::DefineIndexFieldInput)
+    /// Creates a new builder-style object to manufacture [`DefineIndexFieldInput`](crate::input::DefineIndexFieldInput).
     pub fn builder() -> crate::input::define_index_field_input::Builder {
         crate::input::define_index_field_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DefineSuggester {
     _private: (),
 }
 impl DefineSuggester {
-    /// Creates a new builder-style object to manufacture [`DefineSuggesterInput`](crate::input::DefineSuggesterInput)
+    /// Creates a new builder-style object to manufacture [`DefineSuggesterInput`](crate::input::DefineSuggesterInput).
     pub fn builder() -> crate::input::define_suggester_input::Builder {
         crate::input::define_suggester_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DeleteAnalysisScheme {
     _private: (),
 }
 impl DeleteAnalysisScheme {
-    /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeInput`](crate::input::DeleteAnalysisSchemeInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAnalysisSchemeInput`](crate::input::DeleteAnalysisSchemeInput).
     pub fn builder() -> crate::input::delete_analysis_scheme_input::Builder {
         crate::input::delete_analysis_scheme_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct DeleteDomain {
     _private: (),
 }
 impl DeleteDomain {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDomainInput`](crate::input::DeleteDomainInput).
     pub fn builder() -> crate::input::delete_domain_input::Builder {
         crate::input::delete_domain_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteExpression {
     _private: (),
 }
 impl DeleteExpression {
-    /// Creates a new builder-style object to manufacture [`DeleteExpressionInput`](crate::input::DeleteExpressionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteExpressionInput`](crate::input::DeleteExpressionInput).
     pub fn builder() -> crate::input::delete_expression_input::Builder {
         crate::input::delete_expression_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DeleteIndexField {
     _private: (),
 }
 impl DeleteIndexField {
-    /// Creates a new builder-style object to manufacture [`DeleteIndexFieldInput`](crate::input::DeleteIndexFieldInput)
+    /// Creates a new builder-style object to manufacture [`DeleteIndexFieldInput`](crate::input::DeleteIndexFieldInput).
     pub fn builder() -> crate::input::delete_index_field_input::Builder {
         crate::input::delete_index_field_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DeleteSuggester {
     _private: (),
 }
 impl DeleteSuggester {
-    /// Creates a new builder-style object to manufacture [`DeleteSuggesterInput`](crate::input::DeleteSuggesterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSuggesterInput`](crate::input::DeleteSuggesterInput).
     pub fn builder() -> crate::input::delete_suggester_input::Builder {
         crate::input::delete_suggester_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DescribeAnalysisSchemes {
     _private: (),
 }
 impl DescribeAnalysisSchemes {
-    /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesInput`](crate::input::DescribeAnalysisSchemesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesInput`](crate::input::DescribeAnalysisSchemesInput).
     pub fn builder() -> crate::input::describe_analysis_schemes_input::Builder {
         crate::input::describe_analysis_schemes_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DescribeAvailabilityOptions {
     _private: (),
 }
 impl DescribeAvailabilityOptions {
-    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsInput`](crate::input::DescribeAvailabilityOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAvailabilityOptionsInput`](crate::input::DescribeAvailabilityOptionsInput).
     pub fn builder() -> crate::input::describe_availability_options_input::Builder {
         crate::input::describe_availability_options_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct DescribeDomainEndpointOptions {
     _private: (),
 }
 impl DescribeDomainEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsInput`](crate::input::DescribeDomainEndpointOptionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsInput`](crate::input::DescribeDomainEndpointOptionsInput).
     pub fn builder() -> crate::input::describe_domain_endpoint_options_input::Builder {
         crate::input::describe_domain_endpoint_options_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DescribeDomains {
     _private: (),
 }
 impl DescribeDomains {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainsInput`](crate::input::DescribeDomainsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDomainsInput`](crate::input::DescribeDomainsInput).
     pub fn builder() -> crate::input::describe_domains_input::Builder {
         crate::input::describe_domains_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DescribeExpressions {
     _private: (),
 }
 impl DescribeExpressions {
-    /// Creates a new builder-style object to manufacture [`DescribeExpressionsInput`](crate::input::DescribeExpressionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeExpressionsInput`](crate::input::DescribeExpressionsInput).
     pub fn builder() -> crate::input::describe_expressions_input::Builder {
         crate::input::describe_expressions_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct DescribeIndexFields {
     _private: (),
 }
 impl DescribeIndexFields {
-    /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsInput`](crate::input::DescribeIndexFieldsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsInput`](crate::input::DescribeIndexFieldsInput).
     pub fn builder() -> crate::input::describe_index_fields_input::Builder {
         crate::input::describe_index_fields_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct DescribeScalingParameters {
     _private: (),
 }
 impl DescribeScalingParameters {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingParametersInput`](crate::input::DescribeScalingParametersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeScalingParametersInput`](crate::input::DescribeScalingParametersInput).
     pub fn builder() -> crate::input::describe_scaling_parameters_input::Builder {
         crate::input::describe_scaling_parameters_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct DescribeServiceAccessPolicies {
     _private: (),
 }
 impl DescribeServiceAccessPolicies {
-    /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesInput`](crate::input::DescribeServiceAccessPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeServiceAccessPoliciesInput`](crate::input::DescribeServiceAccessPoliciesInput).
     pub fn builder() -> crate::input::describe_service_access_policies_input::Builder {
         crate::input::describe_service_access_policies_input::Builder::default()
     }
@@ -652,7 +652,7 @@ pub struct DescribeSuggesters {
     _private: (),
 }
 impl DescribeSuggesters {
-    /// Creates a new builder-style object to manufacture [`DescribeSuggestersInput`](crate::input::DescribeSuggestersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSuggestersInput`](crate::input::DescribeSuggestersInput).
     pub fn builder() -> crate::input::describe_suggesters_input::Builder {
         crate::input::describe_suggesters_input::Builder::default()
     }
@@ -686,7 +686,7 @@ pub struct IndexDocuments {
     _private: (),
 }
 impl IndexDocuments {
-    /// Creates a new builder-style object to manufacture [`IndexDocumentsInput`](crate::input::IndexDocumentsInput)
+    /// Creates a new builder-style object to manufacture [`IndexDocumentsInput`](crate::input::IndexDocumentsInput).
     pub fn builder() -> crate::input::index_documents_input::Builder {
         crate::input::index_documents_input::Builder::default()
     }
@@ -718,7 +718,7 @@ pub struct ListDomainNames {
     _private: (),
 }
 impl ListDomainNames {
-    /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput)
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesInput`](crate::input::ListDomainNamesInput).
     pub fn builder() -> crate::input::list_domain_names_input::Builder {
         crate::input::list_domain_names_input::Builder::default()
     }
@@ -752,7 +752,7 @@ pub struct UpdateAvailabilityOptions {
     _private: (),
 }
 impl UpdateAvailabilityOptions {
-    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsInput`](crate::input::UpdateAvailabilityOptionsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAvailabilityOptionsInput`](crate::input::UpdateAvailabilityOptionsInput).
     pub fn builder() -> crate::input::update_availability_options_input::Builder {
         crate::input::update_availability_options_input::Builder::default()
     }
@@ -786,7 +786,7 @@ pub struct UpdateDomainEndpointOptions {
     _private: (),
 }
 impl UpdateDomainEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsInput`](crate::input::UpdateDomainEndpointOptionsInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDomainEndpointOptionsInput`](crate::input::UpdateDomainEndpointOptionsInput).
     pub fn builder() -> crate::input::update_domain_endpoint_options_input::Builder {
         crate::input::update_domain_endpoint_options_input::Builder::default()
     }
@@ -820,7 +820,7 @@ pub struct UpdateScalingParameters {
     _private: (),
 }
 impl UpdateScalingParameters {
-    /// Creates a new builder-style object to manufacture [`UpdateScalingParametersInput`](crate::input::UpdateScalingParametersInput)
+    /// Creates a new builder-style object to manufacture [`UpdateScalingParametersInput`](crate::input::UpdateScalingParametersInput).
     pub fn builder() -> crate::input::update_scaling_parameters_input::Builder {
         crate::input::update_scaling_parameters_input::Builder::default()
     }
@@ -854,7 +854,7 @@ pub struct UpdateServiceAccessPolicies {
     _private: (),
 }
 impl UpdateServiceAccessPolicies {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesInput`](crate::input::UpdateServiceAccessPoliciesInput)
+    /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesInput`](crate::input::UpdateServiceAccessPoliciesInput).
     pub fn builder() -> crate::input::update_service_access_policies_input::Builder {
         crate::input::update_service_access_policies_input::Builder::default()
     }

@@ -26,11 +26,10 @@ impl std::fmt::Debug for ListAvailableResourceMetricsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput)
+/// See [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
 pub mod list_available_resource_metrics_output {
 
-    /// A builder for [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metrics:
@@ -67,7 +66,7 @@ pub mod list_available_resource_metrics_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput)
+        /// Consumes the builder and constructs a [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
         pub fn build(self) -> crate::output::ListAvailableResourceMetricsOutput {
             crate::output::ListAvailableResourceMetricsOutput {
                 metrics: self.metrics,
@@ -77,7 +76,7 @@ pub mod list_available_resource_metrics_output {
     }
 }
 impl ListAvailableResourceMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
     pub fn builder() -> crate::output::list_available_resource_metrics_output::Builder {
         crate::output::list_available_resource_metrics_output::Builder::default()
     }
@@ -110,11 +109,10 @@ impl std::fmt::Debug for ListAvailableResourceDimensionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput)
+/// See [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
 pub mod list_available_resource_dimensions_output {
 
-    /// A builder for [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric_dimensions:
@@ -151,7 +149,7 @@ pub mod list_available_resource_dimensions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput)
+        /// Consumes the builder and constructs a [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
         pub fn build(self) -> crate::output::ListAvailableResourceDimensionsOutput {
             crate::output::ListAvailableResourceDimensionsOutput {
                 metric_dimensions: self.metric_dimensions,
@@ -161,7 +159,7 @@ pub mod list_available_resource_dimensions_output {
     }
 }
 impl ListAvailableResourceDimensionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
     pub fn builder() -> crate::output::list_available_resource_dimensions_output::Builder {
         crate::output::list_available_resource_dimensions_output::Builder::default()
     }
@@ -215,11 +213,10 @@ impl std::fmt::Debug for GetResourceMetricsOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput)
+/// See [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
 pub mod get_resource_metrics_output {
 
-    /// A builder for [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -295,7 +292,7 @@ pub mod get_resource_metrics_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput)
+        /// Consumes the builder and constructs a [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
         pub fn build(self) -> crate::output::GetResourceMetricsOutput {
             crate::output::GetResourceMetricsOutput {
                 aligned_start_time: self.aligned_start_time,
@@ -308,7 +305,7 @@ pub mod get_resource_metrics_output {
     }
 }
 impl GetResourceMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
     pub fn builder() -> crate::output::get_resource_metrics_output::Builder {
         crate::output::get_resource_metrics_output::Builder::default()
     }
@@ -347,11 +344,10 @@ impl std::fmt::Debug for GetResourceMetadataOutput {
         formatter.finish()
     }
 }
-/// See [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput)
+/// See [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
 pub mod get_resource_metadata_output {
 
-    /// A builder for [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identifier: std::option::Option<std::string::String>,
@@ -395,7 +391,7 @@ pub mod get_resource_metadata_output {
             self.features = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput)
+        /// Consumes the builder and constructs a [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
         pub fn build(self) -> crate::output::GetResourceMetadataOutput {
             crate::output::GetResourceMetadataOutput {
                 identifier: self.identifier,
@@ -405,7 +401,7 @@ pub mod get_resource_metadata_output {
     }
 }
 impl GetResourceMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput)
+    /// Creates a new builder-style object to manufacture [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
     pub fn builder() -> crate::output::get_resource_metadata_output::Builder {
         crate::output::get_resource_metadata_output::Builder::default()
     }
@@ -431,11 +427,10 @@ impl std::fmt::Debug for GetDimensionKeyDetailsOutput {
         formatter.finish()
     }
 }
-/// See [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput)
+/// See [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
 pub mod get_dimension_key_details_output {
 
-    /// A builder for [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDetail>>,
@@ -460,7 +455,7 @@ pub mod get_dimension_key_details_output {
             self.dimensions = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput)
+        /// Consumes the builder and constructs a [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
         pub fn build(self) -> crate::output::GetDimensionKeyDetailsOutput {
             crate::output::GetDimensionKeyDetailsOutput {
                 dimensions: self.dimensions,
@@ -469,7 +464,7 @@ pub mod get_dimension_key_details_output {
     }
 }
 impl GetDimensionKeyDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput)
+    /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
     pub fn builder() -> crate::output::get_dimension_key_details_output::Builder {
         crate::output::get_dimension_key_details_output::Builder::default()
     }
@@ -523,11 +518,10 @@ impl std::fmt::Debug for DescribeDimensionKeysOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput)
+/// See [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
 pub mod describe_dimension_keys_output {
 
-    /// A builder for [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -612,7 +606,7 @@ pub mod describe_dimension_keys_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput)
+        /// Consumes the builder and constructs a [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
         pub fn build(self) -> crate::output::DescribeDimensionKeysOutput {
             crate::output::DescribeDimensionKeysOutput {
                 aligned_start_time: self.aligned_start_time,
@@ -625,7 +619,7 @@ pub mod describe_dimension_keys_output {
     }
 }
 impl DescribeDimensionKeysOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
     pub fn builder() -> crate::output::describe_dimension_keys_output::Builder {
         crate::output::describe_dimension_keys_output::Builder::default()
     }

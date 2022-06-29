@@ -10,7 +10,7 @@ pub struct AssociateKmsKey {
     _private: (),
 }
 impl AssociateKmsKey {
-    /// Creates a new builder-style object to manufacture [`AssociateKmsKeyInput`](crate::input::AssociateKmsKeyInput)
+    /// Creates a new builder-style object to manufacture [`AssociateKmsKeyInput`](crate::input::AssociateKmsKeyInput).
     pub fn builder() -> crate::input::associate_kms_key_input::Builder {
         crate::input::associate_kms_key_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CancelExportTask {
     _private: (),
 }
 impl CancelExportTask {
-    /// Creates a new builder-style object to manufacture [`CancelExportTaskInput`](crate::input::CancelExportTaskInput)
+    /// Creates a new builder-style object to manufacture [`CancelExportTaskInput`](crate::input::CancelExportTaskInput).
     pub fn builder() -> crate::input::cancel_export_task_input::Builder {
         crate::input::cancel_export_task_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateExportTask {
     _private: (),
 }
 impl CreateExportTask {
-    /// Creates a new builder-style object to manufacture [`CreateExportTaskInput`](crate::input::CreateExportTaskInput)
+    /// Creates a new builder-style object to manufacture [`CreateExportTaskInput`](crate::input::CreateExportTaskInput).
     pub fn builder() -> crate::input::create_export_task_input::Builder {
         crate::input::create_export_task_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateLogGroup {
     _private: (),
 }
 impl CreateLogGroup {
-    /// Creates a new builder-style object to manufacture [`CreateLogGroupInput`](crate::input::CreateLogGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateLogGroupInput`](crate::input::CreateLogGroupInput).
     pub fn builder() -> crate::input::create_log_group_input::Builder {
         crate::input::create_log_group_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct CreateLogStream {
     _private: (),
 }
 impl CreateLogStream {
-    /// Creates a new builder-style object to manufacture [`CreateLogStreamInput`](crate::input::CreateLogStreamInput)
+    /// Creates a new builder-style object to manufacture [`CreateLogStreamInput`](crate::input::CreateLogStreamInput).
     pub fn builder() -> crate::input::create_log_stream_input::Builder {
         crate::input::create_log_stream_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct DeleteDestination {
     _private: (),
 }
 impl DeleteDestination {
-    /// Creates a new builder-style object to manufacture [`DeleteDestinationInput`](crate::input::DeleteDestinationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDestinationInput`](crate::input::DeleteDestinationInput).
     pub fn builder() -> crate::input::delete_destination_input::Builder {
         crate::input::delete_destination_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct DeleteLogGroup {
     _private: (),
 }
 impl DeleteLogGroup {
-    /// Creates a new builder-style object to manufacture [`DeleteLogGroupInput`](crate::input::DeleteLogGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLogGroupInput`](crate::input::DeleteLogGroupInput).
     pub fn builder() -> crate::input::delete_log_group_input::Builder {
         crate::input::delete_log_group_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct DeleteLogStream {
     _private: (),
 }
 impl DeleteLogStream {
-    /// Creates a new builder-style object to manufacture [`DeleteLogStreamInput`](crate::input::DeleteLogStreamInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLogStreamInput`](crate::input::DeleteLogStreamInput).
     pub fn builder() -> crate::input::delete_log_stream_input::Builder {
         crate::input::delete_log_stream_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct DeleteMetricFilter {
     _private: (),
 }
 impl DeleteMetricFilter {
-    /// Creates a new builder-style object to manufacture [`DeleteMetricFilterInput`](crate::input::DeleteMetricFilterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMetricFilterInput`](crate::input::DeleteMetricFilterInput).
     pub fn builder() -> crate::input::delete_metric_filter_input::Builder {
         crate::input::delete_metric_filter_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct DeleteQueryDefinition {
     _private: (),
 }
 impl DeleteQueryDefinition {
-    /// Creates a new builder-style object to manufacture [`DeleteQueryDefinitionInput`](crate::input::DeleteQueryDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteQueryDefinitionInput`](crate::input::DeleteQueryDefinitionInput).
     pub fn builder() -> crate::input::delete_query_definition_input::Builder {
         crate::input::delete_query_definition_input::Builder::default()
     }
@@ -346,7 +346,7 @@ pub struct DeleteResourcePolicy {
     _private: (),
 }
 impl DeleteResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput).
     pub fn builder() -> crate::input::delete_resource_policy_input::Builder {
         crate::input::delete_resource_policy_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct DeleteRetentionPolicy {
     _private: (),
 }
 impl DeleteRetentionPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteRetentionPolicyInput`](crate::input::DeleteRetentionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteRetentionPolicyInput`](crate::input::DeleteRetentionPolicyInput).
     pub fn builder() -> crate::input::delete_retention_policy_input::Builder {
         crate::input::delete_retention_policy_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct DeleteSubscriptionFilter {
     _private: (),
 }
 impl DeleteSubscriptionFilter {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionFilterInput`](crate::input::DeleteSubscriptionFilterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionFilterInput`](crate::input::DeleteSubscriptionFilterInput).
     pub fn builder() -> crate::input::delete_subscription_filter_input::Builder {
         crate::input::delete_subscription_filter_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct DescribeDestinations {
     _private: (),
 }
 impl DescribeDestinations {
-    /// Creates a new builder-style object to manufacture [`DescribeDestinationsInput`](crate::input::DescribeDestinationsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDestinationsInput`](crate::input::DescribeDestinationsInput).
     pub fn builder() -> crate::input::describe_destinations_input::Builder {
         crate::input::describe_destinations_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct DescribeExportTasks {
     _private: (),
 }
 impl DescribeExportTasks {
-    /// Creates a new builder-style object to manufacture [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput)
+    /// Creates a new builder-style object to manufacture [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput).
     pub fn builder() -> crate::input::describe_export_tasks_input::Builder {
         crate::input::describe_export_tasks_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct DescribeLogGroups {
     _private: (),
 }
 impl DescribeLogGroups {
-    /// Creates a new builder-style object to manufacture [`DescribeLogGroupsInput`](crate::input::DescribeLogGroupsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLogGroupsInput`](crate::input::DescribeLogGroupsInput).
     pub fn builder() -> crate::input::describe_log_groups_input::Builder {
         crate::input::describe_log_groups_input::Builder::default()
     }
@@ -550,7 +550,7 @@ pub struct DescribeLogStreams {
     _private: (),
 }
 impl DescribeLogStreams {
-    /// Creates a new builder-style object to manufacture [`DescribeLogStreamsInput`](crate::input::DescribeLogStreamsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLogStreamsInput`](crate::input::DescribeLogStreamsInput).
     pub fn builder() -> crate::input::describe_log_streams_input::Builder {
         crate::input::describe_log_streams_input::Builder::default()
     }
@@ -584,7 +584,7 @@ pub struct DescribeMetricFilters {
     _private: (),
 }
 impl DescribeMetricFilters {
-    /// Creates a new builder-style object to manufacture [`DescribeMetricFiltersInput`](crate::input::DescribeMetricFiltersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeMetricFiltersInput`](crate::input::DescribeMetricFiltersInput).
     pub fn builder() -> crate::input::describe_metric_filters_input::Builder {
         crate::input::describe_metric_filters_input::Builder::default()
     }
@@ -618,7 +618,7 @@ pub struct DescribeQueries {
     _private: (),
 }
 impl DescribeQueries {
-    /// Creates a new builder-style object to manufacture [`DescribeQueriesInput`](crate::input::DescribeQueriesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeQueriesInput`](crate::input::DescribeQueriesInput).
     pub fn builder() -> crate::input::describe_queries_input::Builder {
         crate::input::describe_queries_input::Builder::default()
     }
@@ -652,7 +652,7 @@ pub struct DescribeQueryDefinitions {
     _private: (),
 }
 impl DescribeQueryDefinitions {
-    /// Creates a new builder-style object to manufacture [`DescribeQueryDefinitionsInput`](crate::input::DescribeQueryDefinitionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeQueryDefinitionsInput`](crate::input::DescribeQueryDefinitionsInput).
     pub fn builder() -> crate::input::describe_query_definitions_input::Builder {
         crate::input::describe_query_definitions_input::Builder::default()
     }
@@ -686,7 +686,7 @@ pub struct DescribeResourcePolicies {
     _private: (),
 }
 impl DescribeResourcePolicies {
-    /// Creates a new builder-style object to manufacture [`DescribeResourcePoliciesInput`](crate::input::DescribeResourcePoliciesInput)
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePoliciesInput`](crate::input::DescribeResourcePoliciesInput).
     pub fn builder() -> crate::input::describe_resource_policies_input::Builder {
         crate::input::describe_resource_policies_input::Builder::default()
     }
@@ -720,7 +720,7 @@ pub struct DescribeSubscriptionFilters {
     _private: (),
 }
 impl DescribeSubscriptionFilters {
-    /// Creates a new builder-style object to manufacture [`DescribeSubscriptionFiltersInput`](crate::input::DescribeSubscriptionFiltersInput)
+    /// Creates a new builder-style object to manufacture [`DescribeSubscriptionFiltersInput`](crate::input::DescribeSubscriptionFiltersInput).
     pub fn builder() -> crate::input::describe_subscription_filters_input::Builder {
         crate::input::describe_subscription_filters_input::Builder::default()
     }
@@ -754,7 +754,7 @@ pub struct DisassociateKmsKey {
     _private: (),
 }
 impl DisassociateKmsKey {
-    /// Creates a new builder-style object to manufacture [`DisassociateKmsKeyInput`](crate::input::DisassociateKmsKeyInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateKmsKeyInput`](crate::input::DisassociateKmsKeyInput).
     pub fn builder() -> crate::input::disassociate_kms_key_input::Builder {
         crate::input::disassociate_kms_key_input::Builder::default()
     }
@@ -788,7 +788,7 @@ pub struct FilterLogEvents {
     _private: (),
 }
 impl FilterLogEvents {
-    /// Creates a new builder-style object to manufacture [`FilterLogEventsInput`](crate::input::FilterLogEventsInput)
+    /// Creates a new builder-style object to manufacture [`FilterLogEventsInput`](crate::input::FilterLogEventsInput).
     pub fn builder() -> crate::input::filter_log_events_input::Builder {
         crate::input::filter_log_events_input::Builder::default()
     }
@@ -822,7 +822,7 @@ pub struct GetLogEvents {
     _private: (),
 }
 impl GetLogEvents {
-    /// Creates a new builder-style object to manufacture [`GetLogEventsInput`](crate::input::GetLogEventsInput)
+    /// Creates a new builder-style object to manufacture [`GetLogEventsInput`](crate::input::GetLogEventsInput).
     pub fn builder() -> crate::input::get_log_events_input::Builder {
         crate::input::get_log_events_input::Builder::default()
     }
@@ -854,7 +854,7 @@ pub struct GetLogGroupFields {
     _private: (),
 }
 impl GetLogGroupFields {
-    /// Creates a new builder-style object to manufacture [`GetLogGroupFieldsInput`](crate::input::GetLogGroupFieldsInput)
+    /// Creates a new builder-style object to manufacture [`GetLogGroupFieldsInput`](crate::input::GetLogGroupFieldsInput).
     pub fn builder() -> crate::input::get_log_group_fields_input::Builder {
         crate::input::get_log_group_fields_input::Builder::default()
     }
@@ -888,7 +888,7 @@ pub struct GetLogRecord {
     _private: (),
 }
 impl GetLogRecord {
-    /// Creates a new builder-style object to manufacture [`GetLogRecordInput`](crate::input::GetLogRecordInput)
+    /// Creates a new builder-style object to manufacture [`GetLogRecordInput`](crate::input::GetLogRecordInput).
     pub fn builder() -> crate::input::get_log_record_input::Builder {
         crate::input::get_log_record_input::Builder::default()
     }
@@ -920,7 +920,7 @@ pub struct GetQueryResults {
     _private: (),
 }
 impl GetQueryResults {
-    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput)
+    /// Creates a new builder-style object to manufacture [`GetQueryResultsInput`](crate::input::GetQueryResultsInput).
     pub fn builder() -> crate::input::get_query_results_input::Builder {
         crate::input::get_query_results_input::Builder::default()
     }
@@ -954,7 +954,7 @@ pub struct ListTagsLogGroup {
     _private: (),
 }
 impl ListTagsLogGroup {
-    /// Creates a new builder-style object to manufacture [`ListTagsLogGroupInput`](crate::input::ListTagsLogGroupInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsLogGroupInput`](crate::input::ListTagsLogGroupInput).
     pub fn builder() -> crate::input::list_tags_log_group_input::Builder {
         crate::input::list_tags_log_group_input::Builder::default()
     }
@@ -988,7 +988,7 @@ pub struct PutDestination {
     _private: (),
 }
 impl PutDestination {
-    /// Creates a new builder-style object to manufacture [`PutDestinationInput`](crate::input::PutDestinationInput)
+    /// Creates a new builder-style object to manufacture [`PutDestinationInput`](crate::input::PutDestinationInput).
     pub fn builder() -> crate::input::put_destination_input::Builder {
         crate::input::put_destination_input::Builder::default()
     }
@@ -1020,7 +1020,7 @@ pub struct PutDestinationPolicy {
     _private: (),
 }
 impl PutDestinationPolicy {
-    /// Creates a new builder-style object to manufacture [`PutDestinationPolicyInput`](crate::input::PutDestinationPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutDestinationPolicyInput`](crate::input::PutDestinationPolicyInput).
     pub fn builder() -> crate::input::put_destination_policy_input::Builder {
         crate::input::put_destination_policy_input::Builder::default()
     }
@@ -1054,7 +1054,7 @@ pub struct PutLogEvents {
     _private: (),
 }
 impl PutLogEvents {
-    /// Creates a new builder-style object to manufacture [`PutLogEventsInput`](crate::input::PutLogEventsInput)
+    /// Creates a new builder-style object to manufacture [`PutLogEventsInput`](crate::input::PutLogEventsInput).
     pub fn builder() -> crate::input::put_log_events_input::Builder {
         crate::input::put_log_events_input::Builder::default()
     }
@@ -1086,7 +1086,7 @@ pub struct PutMetricFilter {
     _private: (),
 }
 impl PutMetricFilter {
-    /// Creates a new builder-style object to manufacture [`PutMetricFilterInput`](crate::input::PutMetricFilterInput)
+    /// Creates a new builder-style object to manufacture [`PutMetricFilterInput`](crate::input::PutMetricFilterInput).
     pub fn builder() -> crate::input::put_metric_filter_input::Builder {
         crate::input::put_metric_filter_input::Builder::default()
     }
@@ -1120,7 +1120,7 @@ pub struct PutQueryDefinition {
     _private: (),
 }
 impl PutQueryDefinition {
-    /// Creates a new builder-style object to manufacture [`PutQueryDefinitionInput`](crate::input::PutQueryDefinitionInput)
+    /// Creates a new builder-style object to manufacture [`PutQueryDefinitionInput`](crate::input::PutQueryDefinitionInput).
     pub fn builder() -> crate::input::put_query_definition_input::Builder {
         crate::input::put_query_definition_input::Builder::default()
     }
@@ -1154,7 +1154,7 @@ pub struct PutResourcePolicy {
     _private: (),
 }
 impl PutResourcePolicy {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput).
     pub fn builder() -> crate::input::put_resource_policy_input::Builder {
         crate::input::put_resource_policy_input::Builder::default()
     }
@@ -1188,7 +1188,7 @@ pub struct PutRetentionPolicy {
     _private: (),
 }
 impl PutRetentionPolicy {
-    /// Creates a new builder-style object to manufacture [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput).
     pub fn builder() -> crate::input::put_retention_policy_input::Builder {
         crate::input::put_retention_policy_input::Builder::default()
     }
@@ -1222,7 +1222,7 @@ pub struct PutSubscriptionFilter {
     _private: (),
 }
 impl PutSubscriptionFilter {
-    /// Creates a new builder-style object to manufacture [`PutSubscriptionFilterInput`](crate::input::PutSubscriptionFilterInput)
+    /// Creates a new builder-style object to manufacture [`PutSubscriptionFilterInput`](crate::input::PutSubscriptionFilterInput).
     pub fn builder() -> crate::input::put_subscription_filter_input::Builder {
         crate::input::put_subscription_filter_input::Builder::default()
     }
@@ -1256,7 +1256,7 @@ pub struct StartQuery {
     _private: (),
 }
 impl StartQuery {
-    /// Creates a new builder-style object to manufacture [`StartQueryInput`](crate::input::StartQueryInput)
+    /// Creates a new builder-style object to manufacture [`StartQueryInput`](crate::input::StartQueryInput).
     pub fn builder() -> crate::input::start_query_input::Builder {
         crate::input::start_query_input::Builder::default()
     }
@@ -1288,7 +1288,7 @@ pub struct StopQuery {
     _private: (),
 }
 impl StopQuery {
-    /// Creates a new builder-style object to manufacture [`StopQueryInput`](crate::input::StopQueryInput)
+    /// Creates a new builder-style object to manufacture [`StopQueryInput`](crate::input::StopQueryInput).
     pub fn builder() -> crate::input::stop_query_input::Builder {
         crate::input::stop_query_input::Builder::default()
     }
@@ -1319,7 +1319,7 @@ pub struct TagLogGroup {
     _private: (),
 }
 impl TagLogGroup {
-    /// Creates a new builder-style object to manufacture [`TagLogGroupInput`](crate::input::TagLogGroupInput)
+    /// Creates a new builder-style object to manufacture [`TagLogGroupInput`](crate::input::TagLogGroupInput).
     pub fn builder() -> crate::input::tag_log_group_input::Builder {
         crate::input::tag_log_group_input::Builder::default()
     }
@@ -1351,7 +1351,7 @@ pub struct TestMetricFilter {
     _private: (),
 }
 impl TestMetricFilter {
-    /// Creates a new builder-style object to manufacture [`TestMetricFilterInput`](crate::input::TestMetricFilterInput)
+    /// Creates a new builder-style object to manufacture [`TestMetricFilterInput`](crate::input::TestMetricFilterInput).
     pub fn builder() -> crate::input::test_metric_filter_input::Builder {
         crate::input::test_metric_filter_input::Builder::default()
     }
@@ -1385,7 +1385,7 @@ pub struct UntagLogGroup {
     _private: (),
 }
 impl UntagLogGroup {
-    /// Creates a new builder-style object to manufacture [`UntagLogGroupInput`](crate::input::UntagLogGroupInput)
+    /// Creates a new builder-style object to manufacture [`UntagLogGroupInput`](crate::input::UntagLogGroupInput).
     pub fn builder() -> crate::input::untag_log_group_input::Builder {
         crate::input::untag_log_group_input::Builder::default()
     }

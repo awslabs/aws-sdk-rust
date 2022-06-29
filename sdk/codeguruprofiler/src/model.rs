@@ -125,11 +125,10 @@ impl std::fmt::Debug for NotificationConfiguration {
         formatter.finish()
     }
 }
-/// See [`NotificationConfiguration`](crate::model::NotificationConfiguration)
+/// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
 
-    /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`NotificationConfiguration`](crate::model::NotificationConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -154,7 +153,7 @@ pub mod notification_configuration {
             self.channels = input;
             self
         }
-        /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::model::NotificationConfiguration)
+        /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::model::NotificationConfiguration).
         pub fn build(self) -> crate::model::NotificationConfiguration {
             crate::model::NotificationConfiguration {
                 channels: self.channels,
@@ -163,7 +162,7 @@ pub mod notification_configuration {
     }
 }
 impl NotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration)
+    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
     pub fn builder() -> crate::model::notification_configuration::Builder {
         crate::model::notification_configuration::Builder::default()
     }
@@ -205,11 +204,10 @@ impl std::fmt::Debug for Channel {
         formatter.finish()
     }
 }
-/// See [`Channel`](crate::model::Channel)
+/// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
-    /// A builder for [`Channel`](crate::model::Channel)
-    #[non_exhaustive]
+    /// A builder for [`Channel`](crate::model::Channel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -254,7 +252,7 @@ pub mod channel {
             self.event_publishers = input;
             self
         }
-        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel)
+        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
         pub fn build(self) -> crate::model::Channel {
             crate::model::Channel {
                 id: self.id,
@@ -265,7 +263,7 @@ pub mod channel {
     }
 }
 impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel)
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
     pub fn builder() -> crate::model::channel::Builder {
         crate::model::channel::Builder::default()
     }
@@ -342,11 +340,10 @@ impl std::fmt::Debug for ProfileTime {
         formatter.finish()
     }
 }
-/// See [`ProfileTime`](crate::model::ProfileTime)
+/// See [`ProfileTime`](crate::model::ProfileTime).
 pub mod profile_time {
 
-    /// A builder for [`ProfileTime`](crate::model::ProfileTime)
-    #[non_exhaustive]
+    /// A builder for [`ProfileTime`](crate::model::ProfileTime).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
@@ -362,14 +359,14 @@ pub mod profile_time {
             self.start = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProfileTime`](crate::model::ProfileTime)
+        /// Consumes the builder and constructs a [`ProfileTime`](crate::model::ProfileTime).
         pub fn build(self) -> crate::model::ProfileTime {
             crate::model::ProfileTime { start: self.start }
         }
     }
 }
 impl ProfileTime {
-    /// Creates a new builder-style object to manufacture [`ProfileTime`](crate::model::ProfileTime)
+    /// Creates a new builder-style object to manufacture [`ProfileTime`](crate::model::ProfileTime).
     pub fn builder() -> crate::model::profile_time::Builder {
         crate::model::profile_time::Builder::default()
     }
@@ -537,11 +534,10 @@ impl std::fmt::Debug for FindingsReportSummary {
         formatter.finish()
     }
 }
-/// See [`FindingsReportSummary`](crate::model::FindingsReportSummary)
+/// See [`FindingsReportSummary`](crate::model::FindingsReportSummary).
 pub mod findings_report_summary {
 
-    /// A builder for [`FindingsReportSummary`](crate::model::FindingsReportSummary)
-    #[non_exhaustive]
+    /// A builder for [`FindingsReportSummary`](crate::model::FindingsReportSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -610,7 +606,7 @@ pub mod findings_report_summary {
             self.total_number_of_findings = input;
             self
         }
-        /// Consumes the builder and constructs a [`FindingsReportSummary`](crate::model::FindingsReportSummary)
+        /// Consumes the builder and constructs a [`FindingsReportSummary`](crate::model::FindingsReportSummary).
         pub fn build(self) -> crate::model::FindingsReportSummary {
             crate::model::FindingsReportSummary {
                 id: self.id,
@@ -623,7 +619,7 @@ pub mod findings_report_summary {
     }
 }
 impl FindingsReportSummary {
-    /// Creates a new builder-style object to manufacture [`FindingsReportSummary`](crate::model::FindingsReportSummary)
+    /// Creates a new builder-style object to manufacture [`FindingsReportSummary`](crate::model::FindingsReportSummary).
     pub fn builder() -> crate::model::findings_report_summary::Builder {
         crate::model::findings_report_summary::Builder::default()
     }
@@ -663,11 +659,10 @@ impl std::fmt::Debug for Anomaly {
         formatter.finish()
     }
 }
-/// See [`Anomaly`](crate::model::Anomaly)
+/// See [`Anomaly`](crate::model::Anomaly).
 pub mod anomaly {
 
-    /// A builder for [`Anomaly`](crate::model::Anomaly)
-    #[non_exhaustive]
+    /// A builder for [`Anomaly`](crate::model::Anomaly).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) metric: std::option::Option<crate::model::Metric>,
@@ -714,7 +709,7 @@ pub mod anomaly {
             self.instances = input;
             self
         }
-        /// Consumes the builder and constructs a [`Anomaly`](crate::model::Anomaly)
+        /// Consumes the builder and constructs a [`Anomaly`](crate::model::Anomaly).
         pub fn build(self) -> crate::model::Anomaly {
             crate::model::Anomaly {
                 metric: self.metric,
@@ -725,7 +720,7 @@ pub mod anomaly {
     }
 }
 impl Anomaly {
-    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly)
+    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
     pub fn builder() -> crate::model::anomaly::Builder {
         crate::model::anomaly::Builder::default()
     }
@@ -772,11 +767,10 @@ impl std::fmt::Debug for AnomalyInstance {
         formatter.finish()
     }
 }
-/// See [`AnomalyInstance`](crate::model::AnomalyInstance)
+/// See [`AnomalyInstance`](crate::model::AnomalyInstance).
 pub mod anomaly_instance {
 
-    /// A builder for [`AnomalyInstance`](crate::model::AnomalyInstance)
-    #[non_exhaustive]
+    /// A builder for [`AnomalyInstance`](crate::model::AnomalyInstance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -834,7 +828,7 @@ pub mod anomaly_instance {
             self.user_feedback = input;
             self
         }
-        /// Consumes the builder and constructs a [`AnomalyInstance`](crate::model::AnomalyInstance)
+        /// Consumes the builder and constructs a [`AnomalyInstance`](crate::model::AnomalyInstance).
         pub fn build(self) -> crate::model::AnomalyInstance {
             crate::model::AnomalyInstance {
                 id: self.id,
@@ -846,7 +840,7 @@ pub mod anomaly_instance {
     }
 }
 impl AnomalyInstance {
-    /// Creates a new builder-style object to manufacture [`AnomalyInstance`](crate::model::AnomalyInstance)
+    /// Creates a new builder-style object to manufacture [`AnomalyInstance`](crate::model::AnomalyInstance).
     pub fn builder() -> crate::model::anomaly_instance::Builder {
         crate::model::anomaly_instance::Builder::default()
     }
@@ -872,11 +866,10 @@ impl std::fmt::Debug for UserFeedback {
         formatter.finish()
     }
 }
-/// See [`UserFeedback`](crate::model::UserFeedback)
+/// See [`UserFeedback`](crate::model::UserFeedback).
 pub mod user_feedback {
 
-    /// A builder for [`UserFeedback`](crate::model::UserFeedback)
-    #[non_exhaustive]
+    /// A builder for [`UserFeedback`](crate::model::UserFeedback).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FeedbackType>,
@@ -892,7 +885,7 @@ pub mod user_feedback {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserFeedback`](crate::model::UserFeedback)
+        /// Consumes the builder and constructs a [`UserFeedback`](crate::model::UserFeedback).
         pub fn build(self) -> crate::model::UserFeedback {
             crate::model::UserFeedback {
                 r#type: self.r#type,
@@ -901,7 +894,7 @@ pub mod user_feedback {
     }
 }
 impl UserFeedback {
-    /// Creates a new builder-style object to manufacture [`UserFeedback`](crate::model::UserFeedback)
+    /// Creates a new builder-style object to manufacture [`UserFeedback`](crate::model::UserFeedback).
     pub fn builder() -> crate::model::user_feedback::Builder {
         crate::model::user_feedback::Builder::default()
     }
@@ -941,11 +934,10 @@ impl std::fmt::Debug for Metric {
         formatter.finish()
     }
 }
-/// See [`Metric`](crate::model::Metric)
+/// See [`Metric`](crate::model::Metric).
 pub mod metric {
 
-    /// A builder for [`Metric`](crate::model::Metric)
-    #[non_exhaustive]
+    /// A builder for [`Metric`](crate::model::Metric).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_name: std::option::Option<std::string::String>,
@@ -992,7 +984,7 @@ pub mod metric {
             self.thread_states = input;
             self
         }
-        /// Consumes the builder and constructs a [`Metric`](crate::model::Metric)
+        /// Consumes the builder and constructs a [`Metric`](crate::model::Metric).
         pub fn build(self) -> crate::model::Metric {
             crate::model::Metric {
                 frame_name: self.frame_name,
@@ -1003,7 +995,7 @@ pub mod metric {
     }
 }
 impl Metric {
-    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric)
+    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
     pub fn builder() -> crate::model::metric::Builder {
         crate::model::metric::Builder::default()
     }
@@ -1115,11 +1107,10 @@ impl std::fmt::Debug for Recommendation {
         formatter.finish()
     }
 }
-/// See [`Recommendation`](crate::model::Recommendation)
+/// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
 
-    /// A builder for [`Recommendation`](crate::model::Recommendation)
-    #[non_exhaustive]
+    /// A builder for [`Recommendation`](crate::model::Recommendation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) all_matches_count: std::option::Option<i32>,
@@ -1205,7 +1196,7 @@ pub mod recommendation {
             self.end_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation)
+        /// Consumes the builder and constructs a [`Recommendation`](crate::model::Recommendation).
         pub fn build(self) -> crate::model::Recommendation {
             crate::model::Recommendation {
                 all_matches_count: self.all_matches_count,
@@ -1219,7 +1210,7 @@ pub mod recommendation {
     }
 }
 impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation)
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
     pub fn builder() -> crate::model::recommendation::Builder {
         crate::model::recommendation::Builder::default()
     }
@@ -1259,11 +1250,10 @@ impl std::fmt::Debug for Match {
         formatter.finish()
     }
 }
-/// See [`Match`](crate::model::Match)
+/// See [`Match`](crate::model::Match).
 pub mod r#match {
 
-    /// A builder for [`Match`](crate::model::Match)
-    #[non_exhaustive]
+    /// A builder for [`Match`](crate::model::Match).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) target_frames_index: std::option::Option<i32>,
@@ -1304,7 +1294,7 @@ pub mod r#match {
             self.threshold_breach_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Match`](crate::model::Match)
+        /// Consumes the builder and constructs a [`Match`](crate::model::Match).
         pub fn build(self) -> crate::model::Match {
             crate::model::Match {
                 target_frames_index: self.target_frames_index,
@@ -1315,7 +1305,7 @@ pub mod r#match {
     }
 }
 impl Match {
-    /// Creates a new builder-style object to manufacture [`Match`](crate::model::Match)
+    /// Creates a new builder-style object to manufacture [`Match`](crate::model::Match).
     pub fn builder() -> crate::model::r#match::Builder {
         crate::model::r#match::Builder::default()
     }
@@ -1383,11 +1373,10 @@ impl std::fmt::Debug for Pattern {
         formatter.finish()
     }
 }
-/// See [`Pattern`](crate::model::Pattern)
+/// See [`Pattern`](crate::model::Pattern).
 pub mod pattern {
 
-    /// A builder for [`Pattern`](crate::model::Pattern)
-    #[non_exhaustive]
+    /// A builder for [`Pattern`](crate::model::Pattern).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1491,7 +1480,7 @@ pub mod pattern {
             self.counters_to_aggregate = input;
             self
         }
-        /// Consumes the builder and constructs a [`Pattern`](crate::model::Pattern)
+        /// Consumes the builder and constructs a [`Pattern`](crate::model::Pattern).
         pub fn build(self) -> crate::model::Pattern {
             crate::model::Pattern {
                 id: self.id,
@@ -1506,7 +1495,7 @@ pub mod pattern {
     }
 }
 impl Pattern {
-    /// Creates a new builder-style object to manufacture [`Pattern`](crate::model::Pattern)
+    /// Creates a new builder-style object to manufacture [`Pattern`](crate::model::Pattern).
     pub fn builder() -> crate::model::pattern::Builder {
         crate::model::pattern::Builder::default()
     }
@@ -1566,11 +1555,10 @@ impl std::fmt::Debug for AgentConfiguration {
         formatter.finish()
     }
 }
-/// See [`AgentConfiguration`](crate::model::AgentConfiguration)
+/// See [`AgentConfiguration`](crate::model::AgentConfiguration).
 pub mod agent_configuration {
 
-    /// A builder for [`AgentConfiguration`](crate::model::AgentConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AgentConfiguration`](crate::model::AgentConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) should_profile: std::option::Option<bool>,
@@ -1639,7 +1627,7 @@ pub mod agent_configuration {
             self.agent_parameters = input;
             self
         }
-        /// Consumes the builder and constructs a [`AgentConfiguration`](crate::model::AgentConfiguration)
+        /// Consumes the builder and constructs a [`AgentConfiguration`](crate::model::AgentConfiguration).
         pub fn build(self) -> crate::model::AgentConfiguration {
             crate::model::AgentConfiguration {
                 should_profile: self.should_profile,
@@ -1650,7 +1638,7 @@ pub mod agent_configuration {
     }
 }
 impl AgentConfiguration {
-    /// Creates a new builder-style object to manufacture [`AgentConfiguration`](crate::model::AgentConfiguration)
+    /// Creates a new builder-style object to manufacture [`AgentConfiguration`](crate::model::AgentConfiguration).
     pub fn builder() -> crate::model::agent_configuration::Builder {
         crate::model::agent_configuration::Builder::default()
     }
@@ -1865,11 +1853,10 @@ impl std::fmt::Debug for FrameMetricDatum {
         formatter.finish()
     }
 }
-/// See [`FrameMetricDatum`](crate::model::FrameMetricDatum)
+/// See [`FrameMetricDatum`](crate::model::FrameMetricDatum).
 pub mod frame_metric_datum {
 
-    /// A builder for [`FrameMetricDatum`](crate::model::FrameMetricDatum)
-    #[non_exhaustive]
+    /// A builder for [`FrameMetricDatum`](crate::model::FrameMetricDatum).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_metric: std::option::Option<crate::model::FrameMetric>,
@@ -1905,7 +1892,7 @@ pub mod frame_metric_datum {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`FrameMetricDatum`](crate::model::FrameMetricDatum)
+        /// Consumes the builder and constructs a [`FrameMetricDatum`](crate::model::FrameMetricDatum).
         pub fn build(self) -> crate::model::FrameMetricDatum {
             crate::model::FrameMetricDatum {
                 frame_metric: self.frame_metric,
@@ -1915,7 +1902,7 @@ pub mod frame_metric_datum {
     }
 }
 impl FrameMetricDatum {
-    /// Creates a new builder-style object to manufacture [`FrameMetricDatum`](crate::model::FrameMetricDatum)
+    /// Creates a new builder-style object to manufacture [`FrameMetricDatum`](crate::model::FrameMetricDatum).
     pub fn builder() -> crate::model::frame_metric_datum::Builder {
         crate::model::frame_metric_datum::Builder::default()
     }
@@ -1955,11 +1942,10 @@ impl std::fmt::Debug for FrameMetric {
         formatter.finish()
     }
 }
-/// See [`FrameMetric`](crate::model::FrameMetric)
+/// See [`FrameMetric`](crate::model::FrameMetric).
 pub mod frame_metric {
 
-    /// A builder for [`FrameMetric`](crate::model::FrameMetric)
-    #[non_exhaustive]
+    /// A builder for [`FrameMetric`](crate::model::FrameMetric).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_name: std::option::Option<std::string::String>,
@@ -2006,7 +1992,7 @@ pub mod frame_metric {
             self.thread_states = input;
             self
         }
-        /// Consumes the builder and constructs a [`FrameMetric`](crate::model::FrameMetric)
+        /// Consumes the builder and constructs a [`FrameMetric`](crate::model::FrameMetric).
         pub fn build(self) -> crate::model::FrameMetric {
             crate::model::FrameMetric {
                 frame_name: self.frame_name,
@@ -2017,7 +2003,7 @@ pub mod frame_metric {
     }
 }
 impl FrameMetric {
-    /// Creates a new builder-style object to manufacture [`FrameMetric`](crate::model::FrameMetric)
+    /// Creates a new builder-style object to manufacture [`FrameMetric`](crate::model::FrameMetric).
     pub fn builder() -> crate::model::frame_metric::Builder {
         crate::model::frame_metric::Builder::default()
     }
@@ -2043,11 +2029,10 @@ impl std::fmt::Debug for TimestampStructure {
         formatter.finish()
     }
 }
-/// See [`TimestampStructure`](crate::model::TimestampStructure)
+/// See [`TimestampStructure`](crate::model::TimestampStructure).
 pub mod timestamp_structure {
 
-    /// A builder for [`TimestampStructure`](crate::model::TimestampStructure)
-    #[non_exhaustive]
+    /// A builder for [`TimestampStructure`](crate::model::TimestampStructure).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<aws_smithy_types::DateTime>,
@@ -2063,14 +2048,14 @@ pub mod timestamp_structure {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimestampStructure`](crate::model::TimestampStructure)
+        /// Consumes the builder and constructs a [`TimestampStructure`](crate::model::TimestampStructure).
         pub fn build(self) -> crate::model::TimestampStructure {
             crate::model::TimestampStructure { value: self.value }
         }
     }
 }
 impl TimestampStructure {
-    /// Creates a new builder-style object to manufacture [`TimestampStructure`](crate::model::TimestampStructure)
+    /// Creates a new builder-style object to manufacture [`TimestampStructure`](crate::model::TimestampStructure).
     pub fn builder() -> crate::model::timestamp_structure::Builder {
         crate::model::timestamp_structure::Builder::default()
     }
@@ -2154,11 +2139,10 @@ impl std::fmt::Debug for ProfilingGroupDescription {
         formatter.finish()
     }
 }
-/// See [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription)
+/// See [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
 pub mod profiling_group_description {
 
-    /// A builder for [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription)
-    #[non_exhaustive]
+    /// A builder for [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2287,7 +2271,7 @@ pub mod profiling_group_description {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription)
+        /// Consumes the builder and constructs a [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
         pub fn build(self) -> crate::model::ProfilingGroupDescription {
             crate::model::ProfilingGroupDescription {
                 name: self.name,
@@ -2303,7 +2287,7 @@ pub mod profiling_group_description {
     }
 }
 impl ProfilingGroupDescription {
-    /// Creates a new builder-style object to manufacture [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription)
+    /// Creates a new builder-style object to manufacture [`ProfilingGroupDescription`](crate::model::ProfilingGroupDescription).
     pub fn builder() -> crate::model::profiling_group_description::Builder {
         crate::model::profiling_group_description::Builder::default()
     }
@@ -2408,11 +2392,10 @@ impl std::fmt::Debug for ProfilingStatus {
         formatter.finish()
     }
 }
-/// See [`ProfilingStatus`](crate::model::ProfilingStatus)
+/// See [`ProfilingStatus`](crate::model::ProfilingStatus).
 pub mod profiling_status {
 
-    /// A builder for [`ProfilingStatus`](crate::model::ProfilingStatus)
-    #[non_exhaustive]
+    /// A builder for [`ProfilingStatus`](crate::model::ProfilingStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) latest_agent_profile_reported_at:
@@ -2467,7 +2450,7 @@ pub mod profiling_status {
             self.latest_agent_orchestrated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProfilingStatus`](crate::model::ProfilingStatus)
+        /// Consumes the builder and constructs a [`ProfilingStatus`](crate::model::ProfilingStatus).
         pub fn build(self) -> crate::model::ProfilingStatus {
             crate::model::ProfilingStatus {
                 latest_agent_profile_reported_at: self.latest_agent_profile_reported_at,
@@ -2478,7 +2461,7 @@ pub mod profiling_status {
     }
 }
 impl ProfilingStatus {
-    /// Creates a new builder-style object to manufacture [`ProfilingStatus`](crate::model::ProfilingStatus)
+    /// Creates a new builder-style object to manufacture [`ProfilingStatus`](crate::model::ProfilingStatus).
     pub fn builder() -> crate::model::profiling_status::Builder {
         crate::model::profiling_status::Builder::default()
     }
@@ -2523,11 +2506,10 @@ impl std::fmt::Debug for AggregatedProfileTime {
         formatter.finish()
     }
 }
-/// See [`AggregatedProfileTime`](crate::model::AggregatedProfileTime)
+/// See [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
 pub mod aggregated_profile_time {
 
-    /// A builder for [`AggregatedProfileTime`](crate::model::AggregatedProfileTime)
-    #[non_exhaustive]
+    /// A builder for [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
@@ -2569,7 +2551,7 @@ pub mod aggregated_profile_time {
             self.period = input;
             self
         }
-        /// Consumes the builder and constructs a [`AggregatedProfileTime`](crate::model::AggregatedProfileTime)
+        /// Consumes the builder and constructs a [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
         pub fn build(self) -> crate::model::AggregatedProfileTime {
             crate::model::AggregatedProfileTime {
                 start: self.start,
@@ -2579,7 +2561,7 @@ pub mod aggregated_profile_time {
     }
 }
 impl AggregatedProfileTime {
-    /// Creates a new builder-style object to manufacture [`AggregatedProfileTime`](crate::model::AggregatedProfileTime)
+    /// Creates a new builder-style object to manufacture [`AggregatedProfileTime`](crate::model::AggregatedProfileTime).
     pub fn builder() -> crate::model::aggregated_profile_time::Builder {
         crate::model::aggregated_profile_time::Builder::default()
     }
@@ -2605,11 +2587,10 @@ impl std::fmt::Debug for AgentOrchestrationConfig {
         formatter.finish()
     }
 }
-/// See [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig)
+/// See [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
 pub mod agent_orchestration_config {
 
-    /// A builder for [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig)
-    #[non_exhaustive]
+    /// A builder for [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_enabled: std::option::Option<bool>,
@@ -2625,7 +2606,7 @@ pub mod agent_orchestration_config {
             self.profiling_enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig)
+        /// Consumes the builder and constructs a [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
         pub fn build(self) -> crate::model::AgentOrchestrationConfig {
             crate::model::AgentOrchestrationConfig {
                 profiling_enabled: self.profiling_enabled,
@@ -2634,7 +2615,7 @@ pub mod agent_orchestration_config {
     }
 }
 impl AgentOrchestrationConfig {
-    /// Creates a new builder-style object to manufacture [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig)
+    /// Creates a new builder-style object to manufacture [`AgentOrchestrationConfig`](crate::model::AgentOrchestrationConfig).
     pub fn builder() -> crate::model::agent_orchestration_config::Builder {
         crate::model::agent_orchestration_config::Builder::default()
     }

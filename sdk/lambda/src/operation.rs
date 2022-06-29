@@ -10,7 +10,7 @@ pub struct AddLayerVersionPermission {
     _private: (),
 }
 impl AddLayerVersionPermission {
-    /// Creates a new builder-style object to manufacture [`AddLayerVersionPermissionInput`](crate::input::AddLayerVersionPermissionInput)
+    /// Creates a new builder-style object to manufacture [`AddLayerVersionPermissionInput`](crate::input::AddLayerVersionPermissionInput).
     pub fn builder() -> crate::input::add_layer_version_permission_input::Builder {
         crate::input::add_layer_version_permission_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AddPermission {
     _private: (),
 }
 impl AddPermission {
-    /// Creates a new builder-style object to manufacture [`AddPermissionInput`](crate::input::AddPermissionInput)
+    /// Creates a new builder-style object to manufacture [`AddPermissionInput`](crate::input::AddPermissionInput).
     pub fn builder() -> crate::input::add_permission_input::Builder {
         crate::input::add_permission_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateAlias {
     _private: (),
 }
 impl CreateAlias {
-    /// Creates a new builder-style object to manufacture [`CreateAliasInput`](crate::input::CreateAliasInput)
+    /// Creates a new builder-style object to manufacture [`CreateAliasInput`](crate::input::CreateAliasInput).
     pub fn builder() -> crate::input::create_alias_input::Builder {
         crate::input::create_alias_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct CreateCodeSigningConfig {
     _private: (),
 }
 impl CreateCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`CreateCodeSigningConfigInput`](crate::input::CreateCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`CreateCodeSigningConfigInput`](crate::input::CreateCodeSigningConfigInput).
     pub fn builder() -> crate::input::create_code_signing_config_input::Builder {
         crate::input::create_code_signing_config_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateEventSourceMapping {
     _private: (),
 }
 impl CreateEventSourceMapping {
-    /// Creates a new builder-style object to manufacture [`CreateEventSourceMappingInput`](crate::input::CreateEventSourceMappingInput)
+    /// Creates a new builder-style object to manufacture [`CreateEventSourceMappingInput`](crate::input::CreateEventSourceMappingInput).
     pub fn builder() -> crate::input::create_event_source_mapping_input::Builder {
         crate::input::create_event_source_mapping_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct CreateFunction {
     _private: (),
 }
 impl CreateFunction {
-    /// Creates a new builder-style object to manufacture [`CreateFunctionInput`](crate::input::CreateFunctionInput)
+    /// Creates a new builder-style object to manufacture [`CreateFunctionInput`](crate::input::CreateFunctionInput).
     pub fn builder() -> crate::input::create_function_input::Builder {
         crate::input::create_function_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct CreateFunctionUrlConfig {
     _private: (),
 }
 impl CreateFunctionUrlConfig {
-    /// Creates a new builder-style object to manufacture [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput)
+    /// Creates a new builder-style object to manufacture [`CreateFunctionUrlConfigInput`](crate::input::CreateFunctionUrlConfigInput).
     pub fn builder() -> crate::input::create_function_url_config_input::Builder {
         crate::input::create_function_url_config_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DeleteAlias {
     _private: (),
 }
 impl DeleteAlias {
-    /// Creates a new builder-style object to manufacture [`DeleteAliasInput`](crate::input::DeleteAliasInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAliasInput`](crate::input::DeleteAliasInput).
     pub fn builder() -> crate::input::delete_alias_input::Builder {
         crate::input::delete_alias_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DeleteCodeSigningConfig {
     _private: (),
 }
 impl DeleteCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteCodeSigningConfigInput`](crate::input::DeleteCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCodeSigningConfigInput`](crate::input::DeleteCodeSigningConfigInput).
     pub fn builder() -> crate::input::delete_code_signing_config_input::Builder {
         crate::input::delete_code_signing_config_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DeleteEventSourceMapping {
     _private: (),
 }
 impl DeleteEventSourceMapping {
-    /// Creates a new builder-style object to manufacture [`DeleteEventSourceMappingInput`](crate::input::DeleteEventSourceMappingInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEventSourceMappingInput`](crate::input::DeleteEventSourceMappingInput).
     pub fn builder() -> crate::input::delete_event_source_mapping_input::Builder {
         crate::input::delete_event_source_mapping_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DeleteFunction {
     _private: (),
 }
 impl DeleteFunction {
-    /// Creates a new builder-style object to manufacture [`DeleteFunctionInput`](crate::input::DeleteFunctionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionInput`](crate::input::DeleteFunctionInput).
     pub fn builder() -> crate::input::delete_function_input::Builder {
         crate::input::delete_function_input::Builder::default()
     }
@@ -374,7 +374,7 @@ pub struct DeleteFunctionCodeSigningConfig {
     _private: (),
 }
 impl DeleteFunctionCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteFunctionCodeSigningConfigInput`](crate::input::DeleteFunctionCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionCodeSigningConfigInput`](crate::input::DeleteFunctionCodeSigningConfigInput).
     pub fn builder() -> crate::input::delete_function_code_signing_config_input::Builder {
         crate::input::delete_function_code_signing_config_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct DeleteFunctionConcurrency {
     _private: (),
 }
 impl DeleteFunctionConcurrency {
-    /// Creates a new builder-style object to manufacture [`DeleteFunctionConcurrencyInput`](crate::input::DeleteFunctionConcurrencyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionConcurrencyInput`](crate::input::DeleteFunctionConcurrencyInput).
     pub fn builder() -> crate::input::delete_function_concurrency_input::Builder {
         crate::input::delete_function_concurrency_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct DeleteFunctionEventInvokeConfig {
     _private: (),
 }
 impl DeleteFunctionEventInvokeConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteFunctionEventInvokeConfigInput`](crate::input::DeleteFunctionEventInvokeConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionEventInvokeConfigInput`](crate::input::DeleteFunctionEventInvokeConfigInput).
     pub fn builder() -> crate::input::delete_function_event_invoke_config_input::Builder {
         crate::input::delete_function_event_invoke_config_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct DeleteFunctionUrlConfig {
     _private: (),
 }
 impl DeleteFunctionUrlConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFunctionUrlConfigInput`](crate::input::DeleteFunctionUrlConfigInput).
     pub fn builder() -> crate::input::delete_function_url_config_input::Builder {
         crate::input::delete_function_url_config_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct DeleteLayerVersion {
     _private: (),
 }
 impl DeleteLayerVersion {
-    /// Creates a new builder-style object to manufacture [`DeleteLayerVersionInput`](crate::input::DeleteLayerVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLayerVersionInput`](crate::input::DeleteLayerVersionInput).
     pub fn builder() -> crate::input::delete_layer_version_input::Builder {
         crate::input::delete_layer_version_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct DeleteProvisionedConcurrencyConfig {
     _private: (),
 }
 impl DeleteProvisionedConcurrencyConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteProvisionedConcurrencyConfigInput`](crate::input::DeleteProvisionedConcurrencyConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProvisionedConcurrencyConfigInput`](crate::input::DeleteProvisionedConcurrencyConfigInput).
     pub fn builder() -> crate::input::delete_provisioned_concurrency_config_input::Builder {
         crate::input::delete_provisioned_concurrency_config_input::Builder::default()
     }
@@ -578,7 +578,7 @@ pub struct GetAccountSettings {
     _private: (),
 }
 impl GetAccountSettings {
-    /// Creates a new builder-style object to manufacture [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput)
+    /// Creates a new builder-style object to manufacture [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput).
     pub fn builder() -> crate::input::get_account_settings_input::Builder {
         crate::input::get_account_settings_input::Builder::default()
     }
@@ -612,7 +612,7 @@ pub struct GetAlias {
     _private: (),
 }
 impl GetAlias {
-    /// Creates a new builder-style object to manufacture [`GetAliasInput`](crate::input::GetAliasInput)
+    /// Creates a new builder-style object to manufacture [`GetAliasInput`](crate::input::GetAliasInput).
     pub fn builder() -> crate::input::get_alias_input::Builder {
         crate::input::get_alias_input::Builder::default()
     }
@@ -643,7 +643,7 @@ pub struct GetCodeSigningConfig {
     _private: (),
 }
 impl GetCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`GetCodeSigningConfigInput`](crate::input::GetCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetCodeSigningConfigInput`](crate::input::GetCodeSigningConfigInput).
     pub fn builder() -> crate::input::get_code_signing_config_input::Builder {
         crate::input::get_code_signing_config_input::Builder::default()
     }
@@ -677,7 +677,7 @@ pub struct GetEventSourceMapping {
     _private: (),
 }
 impl GetEventSourceMapping {
-    /// Creates a new builder-style object to manufacture [`GetEventSourceMappingInput`](crate::input::GetEventSourceMappingInput)
+    /// Creates a new builder-style object to manufacture [`GetEventSourceMappingInput`](crate::input::GetEventSourceMappingInput).
     pub fn builder() -> crate::input::get_event_source_mapping_input::Builder {
         crate::input::get_event_source_mapping_input::Builder::default()
     }
@@ -711,7 +711,7 @@ pub struct GetFunction {
     _private: (),
 }
 impl GetFunction {
-    /// Creates a new builder-style object to manufacture [`GetFunctionInput`](crate::input::GetFunctionInput)
+    /// Creates a new builder-style object to manufacture [`GetFunctionInput`](crate::input::GetFunctionInput).
     pub fn builder() -> crate::input::get_function_input::Builder {
         crate::input::get_function_input::Builder::default()
     }
@@ -743,7 +743,7 @@ pub struct GetFunctionCodeSigningConfig {
     _private: (),
 }
 impl GetFunctionCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`GetFunctionCodeSigningConfigInput`](crate::input::GetFunctionCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetFunctionCodeSigningConfigInput`](crate::input::GetFunctionCodeSigningConfigInput).
     pub fn builder() -> crate::input::get_function_code_signing_config_input::Builder {
         crate::input::get_function_code_signing_config_input::Builder::default()
     }
@@ -777,7 +777,7 @@ pub struct GetFunctionConcurrency {
     _private: (),
 }
 impl GetFunctionConcurrency {
-    /// Creates a new builder-style object to manufacture [`GetFunctionConcurrencyInput`](crate::input::GetFunctionConcurrencyInput)
+    /// Creates a new builder-style object to manufacture [`GetFunctionConcurrencyInput`](crate::input::GetFunctionConcurrencyInput).
     pub fn builder() -> crate::input::get_function_concurrency_input::Builder {
         crate::input::get_function_concurrency_input::Builder::default()
     }
@@ -811,7 +811,7 @@ pub struct GetFunctionConfiguration {
     _private: (),
 }
 impl GetFunctionConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetFunctionConfigurationInput`](crate::input::GetFunctionConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetFunctionConfigurationInput`](crate::input::GetFunctionConfigurationInput).
     pub fn builder() -> crate::input::get_function_configuration_input::Builder {
         crate::input::get_function_configuration_input::Builder::default()
     }
@@ -845,7 +845,7 @@ pub struct GetFunctionEventInvokeConfig {
     _private: (),
 }
 impl GetFunctionEventInvokeConfig {
-    /// Creates a new builder-style object to manufacture [`GetFunctionEventInvokeConfigInput`](crate::input::GetFunctionEventInvokeConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetFunctionEventInvokeConfigInput`](crate::input::GetFunctionEventInvokeConfigInput).
     pub fn builder() -> crate::input::get_function_event_invoke_config_input::Builder {
         crate::input::get_function_event_invoke_config_input::Builder::default()
     }
@@ -879,7 +879,7 @@ pub struct GetFunctionUrlConfig {
     _private: (),
 }
 impl GetFunctionUrlConfig {
-    /// Creates a new builder-style object to manufacture [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetFunctionUrlConfigInput`](crate::input::GetFunctionUrlConfigInput).
     pub fn builder() -> crate::input::get_function_url_config_input::Builder {
         crate::input::get_function_url_config_input::Builder::default()
     }
@@ -913,7 +913,7 @@ pub struct GetLayerVersion {
     _private: (),
 }
 impl GetLayerVersion {
-    /// Creates a new builder-style object to manufacture [`GetLayerVersionInput`](crate::input::GetLayerVersionInput)
+    /// Creates a new builder-style object to manufacture [`GetLayerVersionInput`](crate::input::GetLayerVersionInput).
     pub fn builder() -> crate::input::get_layer_version_input::Builder {
         crate::input::get_layer_version_input::Builder::default()
     }
@@ -947,7 +947,7 @@ pub struct GetLayerVersionByArn {
     _private: (),
 }
 impl GetLayerVersionByArn {
-    /// Creates a new builder-style object to manufacture [`GetLayerVersionByArnInput`](crate::input::GetLayerVersionByArnInput)
+    /// Creates a new builder-style object to manufacture [`GetLayerVersionByArnInput`](crate::input::GetLayerVersionByArnInput).
     pub fn builder() -> crate::input::get_layer_version_by_arn_input::Builder {
         crate::input::get_layer_version_by_arn_input::Builder::default()
     }
@@ -981,7 +981,7 @@ pub struct GetLayerVersionPolicy {
     _private: (),
 }
 impl GetLayerVersionPolicy {
-    /// Creates a new builder-style object to manufacture [`GetLayerVersionPolicyInput`](crate::input::GetLayerVersionPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetLayerVersionPolicyInput`](crate::input::GetLayerVersionPolicyInput).
     pub fn builder() -> crate::input::get_layer_version_policy_input::Builder {
         crate::input::get_layer_version_policy_input::Builder::default()
     }
@@ -1015,7 +1015,7 @@ pub struct GetPolicy {
     _private: (),
 }
 impl GetPolicy {
-    /// Creates a new builder-style object to manufacture [`GetPolicyInput`](crate::input::GetPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetPolicyInput`](crate::input::GetPolicyInput).
     pub fn builder() -> crate::input::get_policy_input::Builder {
         crate::input::get_policy_input::Builder::default()
     }
@@ -1046,7 +1046,7 @@ pub struct GetProvisionedConcurrencyConfig {
     _private: (),
 }
 impl GetProvisionedConcurrencyConfig {
-    /// Creates a new builder-style object to manufacture [`GetProvisionedConcurrencyConfigInput`](crate::input::GetProvisionedConcurrencyConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetProvisionedConcurrencyConfigInput`](crate::input::GetProvisionedConcurrencyConfigInput).
     pub fn builder() -> crate::input::get_provisioned_concurrency_config_input::Builder {
         crate::input::get_provisioned_concurrency_config_input::Builder::default()
     }
@@ -1080,7 +1080,7 @@ pub struct Invoke {
     _private: (),
 }
 impl Invoke {
-    /// Creates a new builder-style object to manufacture [`InvokeInput`](crate::input::InvokeInput)
+    /// Creates a new builder-style object to manufacture [`InvokeInput`](crate::input::InvokeInput).
     pub fn builder() -> crate::input::invoke_input::Builder {
         crate::input::invoke_input::Builder::default()
     }
@@ -1111,7 +1111,7 @@ pub struct InvokeAsync {
     _private: (),
 }
 impl InvokeAsync {
-    /// Creates a new builder-style object to manufacture [`InvokeAsyncInput`](crate::input::InvokeAsyncInput)
+    /// Creates a new builder-style object to manufacture [`InvokeAsyncInput`](crate::input::InvokeAsyncInput).
     pub fn builder() -> crate::input::invoke_async_input::Builder {
         crate::input::invoke_async_input::Builder::default()
     }
@@ -1143,7 +1143,7 @@ pub struct ListAliases {
     _private: (),
 }
 impl ListAliases {
-    /// Creates a new builder-style object to manufacture [`ListAliasesInput`](crate::input::ListAliasesInput)
+    /// Creates a new builder-style object to manufacture [`ListAliasesInput`](crate::input::ListAliasesInput).
     pub fn builder() -> crate::input::list_aliases_input::Builder {
         crate::input::list_aliases_input::Builder::default()
     }
@@ -1175,7 +1175,7 @@ pub struct ListCodeSigningConfigs {
     _private: (),
 }
 impl ListCodeSigningConfigs {
-    /// Creates a new builder-style object to manufacture [`ListCodeSigningConfigsInput`](crate::input::ListCodeSigningConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListCodeSigningConfigsInput`](crate::input::ListCodeSigningConfigsInput).
     pub fn builder() -> crate::input::list_code_signing_configs_input::Builder {
         crate::input::list_code_signing_configs_input::Builder::default()
     }
@@ -1209,7 +1209,7 @@ pub struct ListEventSourceMappings {
     _private: (),
 }
 impl ListEventSourceMappings {
-    /// Creates a new builder-style object to manufacture [`ListEventSourceMappingsInput`](crate::input::ListEventSourceMappingsInput)
+    /// Creates a new builder-style object to manufacture [`ListEventSourceMappingsInput`](crate::input::ListEventSourceMappingsInput).
     pub fn builder() -> crate::input::list_event_source_mappings_input::Builder {
         crate::input::list_event_source_mappings_input::Builder::default()
     }
@@ -1243,7 +1243,7 @@ pub struct ListFunctionEventInvokeConfigs {
     _private: (),
 }
 impl ListFunctionEventInvokeConfigs {
-    /// Creates a new builder-style object to manufacture [`ListFunctionEventInvokeConfigsInput`](crate::input::ListFunctionEventInvokeConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListFunctionEventInvokeConfigsInput`](crate::input::ListFunctionEventInvokeConfigsInput).
     pub fn builder() -> crate::input::list_function_event_invoke_configs_input::Builder {
         crate::input::list_function_event_invoke_configs_input::Builder::default()
     }
@@ -1277,7 +1277,7 @@ pub struct ListFunctions {
     _private: (),
 }
 impl ListFunctions {
-    /// Creates a new builder-style object to manufacture [`ListFunctionsInput`](crate::input::ListFunctionsInput)
+    /// Creates a new builder-style object to manufacture [`ListFunctionsInput`](crate::input::ListFunctionsInput).
     pub fn builder() -> crate::input::list_functions_input::Builder {
         crate::input::list_functions_input::Builder::default()
     }
@@ -1309,7 +1309,7 @@ pub struct ListFunctionsByCodeSigningConfig {
     _private: (),
 }
 impl ListFunctionsByCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`ListFunctionsByCodeSigningConfigInput`](crate::input::ListFunctionsByCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`ListFunctionsByCodeSigningConfigInput`](crate::input::ListFunctionsByCodeSigningConfigInput).
     pub fn builder() -> crate::input::list_functions_by_code_signing_config_input::Builder {
         crate::input::list_functions_by_code_signing_config_input::Builder::default()
     }
@@ -1343,7 +1343,7 @@ pub struct ListFunctionUrlConfigs {
     _private: (),
 }
 impl ListFunctionUrlConfigs {
-    /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsInput`](crate::input::ListFunctionUrlConfigsInput).
     pub fn builder() -> crate::input::list_function_url_configs_input::Builder {
         crate::input::list_function_url_configs_input::Builder::default()
     }
@@ -1377,7 +1377,7 @@ pub struct ListLayers {
     _private: (),
 }
 impl ListLayers {
-    /// Creates a new builder-style object to manufacture [`ListLayersInput`](crate::input::ListLayersInput)
+    /// Creates a new builder-style object to manufacture [`ListLayersInput`](crate::input::ListLayersInput).
     pub fn builder() -> crate::input::list_layers_input::Builder {
         crate::input::list_layers_input::Builder::default()
     }
@@ -1409,7 +1409,7 @@ pub struct ListLayerVersions {
     _private: (),
 }
 impl ListLayerVersions {
-    /// Creates a new builder-style object to manufacture [`ListLayerVersionsInput`](crate::input::ListLayerVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListLayerVersionsInput`](crate::input::ListLayerVersionsInput).
     pub fn builder() -> crate::input::list_layer_versions_input::Builder {
         crate::input::list_layer_versions_input::Builder::default()
     }
@@ -1443,7 +1443,7 @@ pub struct ListProvisionedConcurrencyConfigs {
     _private: (),
 }
 impl ListProvisionedConcurrencyConfigs {
-    /// Creates a new builder-style object to manufacture [`ListProvisionedConcurrencyConfigsInput`](crate::input::ListProvisionedConcurrencyConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListProvisionedConcurrencyConfigsInput`](crate::input::ListProvisionedConcurrencyConfigsInput).
     pub fn builder() -> crate::input::list_provisioned_concurrency_configs_input::Builder {
         crate::input::list_provisioned_concurrency_configs_input::Builder::default()
     }
@@ -1477,7 +1477,7 @@ pub struct ListTags {
     _private: (),
 }
 impl ListTags {
-    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsInput`](crate::input::ListTagsInput).
     pub fn builder() -> crate::input::list_tags_input::Builder {
         crate::input::list_tags_input::Builder::default()
     }
@@ -1508,7 +1508,7 @@ pub struct ListVersionsByFunction {
     _private: (),
 }
 impl ListVersionsByFunction {
-    /// Creates a new builder-style object to manufacture [`ListVersionsByFunctionInput`](crate::input::ListVersionsByFunctionInput)
+    /// Creates a new builder-style object to manufacture [`ListVersionsByFunctionInput`](crate::input::ListVersionsByFunctionInput).
     pub fn builder() -> crate::input::list_versions_by_function_input::Builder {
         crate::input::list_versions_by_function_input::Builder::default()
     }
@@ -1542,7 +1542,7 @@ pub struct PublishLayerVersion {
     _private: (),
 }
 impl PublishLayerVersion {
-    /// Creates a new builder-style object to manufacture [`PublishLayerVersionInput`](crate::input::PublishLayerVersionInput)
+    /// Creates a new builder-style object to manufacture [`PublishLayerVersionInput`](crate::input::PublishLayerVersionInput).
     pub fn builder() -> crate::input::publish_layer_version_input::Builder {
         crate::input::publish_layer_version_input::Builder::default()
     }
@@ -1576,7 +1576,7 @@ pub struct PublishVersion {
     _private: (),
 }
 impl PublishVersion {
-    /// Creates a new builder-style object to manufacture [`PublishVersionInput`](crate::input::PublishVersionInput)
+    /// Creates a new builder-style object to manufacture [`PublishVersionInput`](crate::input::PublishVersionInput).
     pub fn builder() -> crate::input::publish_version_input::Builder {
         crate::input::publish_version_input::Builder::default()
     }
@@ -1608,7 +1608,7 @@ pub struct PutFunctionCodeSigningConfig {
     _private: (),
 }
 impl PutFunctionCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`PutFunctionCodeSigningConfigInput`](crate::input::PutFunctionCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`PutFunctionCodeSigningConfigInput`](crate::input::PutFunctionCodeSigningConfigInput).
     pub fn builder() -> crate::input::put_function_code_signing_config_input::Builder {
         crate::input::put_function_code_signing_config_input::Builder::default()
     }
@@ -1642,7 +1642,7 @@ pub struct PutFunctionConcurrency {
     _private: (),
 }
 impl PutFunctionConcurrency {
-    /// Creates a new builder-style object to manufacture [`PutFunctionConcurrencyInput`](crate::input::PutFunctionConcurrencyInput)
+    /// Creates a new builder-style object to manufacture [`PutFunctionConcurrencyInput`](crate::input::PutFunctionConcurrencyInput).
     pub fn builder() -> crate::input::put_function_concurrency_input::Builder {
         crate::input::put_function_concurrency_input::Builder::default()
     }
@@ -1676,7 +1676,7 @@ pub struct PutFunctionEventInvokeConfig {
     _private: (),
 }
 impl PutFunctionEventInvokeConfig {
-    /// Creates a new builder-style object to manufacture [`PutFunctionEventInvokeConfigInput`](crate::input::PutFunctionEventInvokeConfigInput)
+    /// Creates a new builder-style object to manufacture [`PutFunctionEventInvokeConfigInput`](crate::input::PutFunctionEventInvokeConfigInput).
     pub fn builder() -> crate::input::put_function_event_invoke_config_input::Builder {
         crate::input::put_function_event_invoke_config_input::Builder::default()
     }
@@ -1710,7 +1710,7 @@ pub struct PutProvisionedConcurrencyConfig {
     _private: (),
 }
 impl PutProvisionedConcurrencyConfig {
-    /// Creates a new builder-style object to manufacture [`PutProvisionedConcurrencyConfigInput`](crate::input::PutProvisionedConcurrencyConfigInput)
+    /// Creates a new builder-style object to manufacture [`PutProvisionedConcurrencyConfigInput`](crate::input::PutProvisionedConcurrencyConfigInput).
     pub fn builder() -> crate::input::put_provisioned_concurrency_config_input::Builder {
         crate::input::put_provisioned_concurrency_config_input::Builder::default()
     }
@@ -1744,7 +1744,7 @@ pub struct RemoveLayerVersionPermission {
     _private: (),
 }
 impl RemoveLayerVersionPermission {
-    /// Creates a new builder-style object to manufacture [`RemoveLayerVersionPermissionInput`](crate::input::RemoveLayerVersionPermissionInput)
+    /// Creates a new builder-style object to manufacture [`RemoveLayerVersionPermissionInput`](crate::input::RemoveLayerVersionPermissionInput).
     pub fn builder() -> crate::input::remove_layer_version_permission_input::Builder {
         crate::input::remove_layer_version_permission_input::Builder::default()
     }
@@ -1778,7 +1778,7 @@ pub struct RemovePermission {
     _private: (),
 }
 impl RemovePermission {
-    /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::input::RemovePermissionInput)
+    /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::input::RemovePermissionInput).
     pub fn builder() -> crate::input::remove_permission_input::Builder {
         crate::input::remove_permission_input::Builder::default()
     }
@@ -1812,7 +1812,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -1844,7 +1844,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1876,7 +1876,7 @@ pub struct UpdateAlias {
     _private: (),
 }
 impl UpdateAlias {
-    /// Creates a new builder-style object to manufacture [`UpdateAliasInput`](crate::input::UpdateAliasInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAliasInput`](crate::input::UpdateAliasInput).
     pub fn builder() -> crate::input::update_alias_input::Builder {
         crate::input::update_alias_input::Builder::default()
     }
@@ -1908,7 +1908,7 @@ pub struct UpdateCodeSigningConfig {
     _private: (),
 }
 impl UpdateCodeSigningConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateCodeSigningConfigInput`](crate::input::UpdateCodeSigningConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCodeSigningConfigInput`](crate::input::UpdateCodeSigningConfigInput).
     pub fn builder() -> crate::input::update_code_signing_config_input::Builder {
         crate::input::update_code_signing_config_input::Builder::default()
     }
@@ -1942,7 +1942,7 @@ pub struct UpdateEventSourceMapping {
     _private: (),
 }
 impl UpdateEventSourceMapping {
-    /// Creates a new builder-style object to manufacture [`UpdateEventSourceMappingInput`](crate::input::UpdateEventSourceMappingInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEventSourceMappingInput`](crate::input::UpdateEventSourceMappingInput).
     pub fn builder() -> crate::input::update_event_source_mapping_input::Builder {
         crate::input::update_event_source_mapping_input::Builder::default()
     }
@@ -1976,7 +1976,7 @@ pub struct UpdateFunctionCode {
     _private: (),
 }
 impl UpdateFunctionCode {
-    /// Creates a new builder-style object to manufacture [`UpdateFunctionCodeInput`](crate::input::UpdateFunctionCodeInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionCodeInput`](crate::input::UpdateFunctionCodeInput).
     pub fn builder() -> crate::input::update_function_code_input::Builder {
         crate::input::update_function_code_input::Builder::default()
     }
@@ -2010,7 +2010,7 @@ pub struct UpdateFunctionConfiguration {
     _private: (),
 }
 impl UpdateFunctionConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateFunctionConfigurationInput`](crate::input::UpdateFunctionConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionConfigurationInput`](crate::input::UpdateFunctionConfigurationInput).
     pub fn builder() -> crate::input::update_function_configuration_input::Builder {
         crate::input::update_function_configuration_input::Builder::default()
     }
@@ -2044,7 +2044,7 @@ pub struct UpdateFunctionEventInvokeConfig {
     _private: (),
 }
 impl UpdateFunctionEventInvokeConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateFunctionEventInvokeConfigInput`](crate::input::UpdateFunctionEventInvokeConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionEventInvokeConfigInput`](crate::input::UpdateFunctionEventInvokeConfigInput).
     pub fn builder() -> crate::input::update_function_event_invoke_config_input::Builder {
         crate::input::update_function_event_invoke_config_input::Builder::default()
     }
@@ -2078,7 +2078,7 @@ pub struct UpdateFunctionUrlConfig {
     _private: (),
 }
 impl UpdateFunctionUrlConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateFunctionUrlConfigInput`](crate::input::UpdateFunctionUrlConfigInput).
     pub fn builder() -> crate::input::update_function_url_config_input::Builder {
         crate::input::update_function_url_config_input::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct DescribeDimensionKeys {
     _private: (),
 }
 impl DescribeDimensionKeys {
-    /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysInput`](crate::input::DescribeDimensionKeysInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysInput`](crate::input::DescribeDimensionKeysInput).
     pub fn builder() -> crate::input::describe_dimension_keys_input::Builder {
         crate::input::describe_dimension_keys_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetDimensionKeyDetails {
     _private: (),
 }
 impl GetDimensionKeyDetails {
-    /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsInput`](crate::input::GetDimensionKeyDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsInput`](crate::input::GetDimensionKeyDetailsInput).
     pub fn builder() -> crate::input::get_dimension_key_details_input::Builder {
         crate::input::get_dimension_key_details_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetResourceMetadata {
     _private: (),
 }
 impl GetResourceMetadata {
-    /// Creates a new builder-style object to manufacture [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceMetadataInput`](crate::input::GetResourceMetadataInput).
     pub fn builder() -> crate::input::get_resource_metadata_input::Builder {
         crate::input::get_resource_metadata_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct GetResourceMetrics {
     _private: (),
 }
 impl GetResourceMetrics {
-    /// Creates a new builder-style object to manufacture [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput)
+    /// Creates a new builder-style object to manufacture [`GetResourceMetricsInput`](crate::input::GetResourceMetricsInput).
     pub fn builder() -> crate::input::get_resource_metrics_input::Builder {
         crate::input::get_resource_metrics_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct ListAvailableResourceDimensions {
     _private: (),
 }
 impl ListAvailableResourceDimensions {
-    /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsInput`](crate::input::ListAvailableResourceDimensionsInput).
     pub fn builder() -> crate::input::list_available_resource_dimensions_input::Builder {
         crate::input::list_available_resource_dimensions_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct ListAvailableResourceMetrics {
     _private: (),
 }
 impl ListAvailableResourceMetrics {
-    /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsInput`](crate::input::ListAvailableResourceMetricsInput).
     pub fn builder() -> crate::input::list_available_resource_metrics_input::Builder {
         crate::input::list_available_resource_metrics_input::Builder::default()
     }

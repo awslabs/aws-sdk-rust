@@ -10,22 +10,21 @@ impl std::fmt::Debug for UpdateConfigurationSetEventDestinationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput)
+/// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
 
-    /// A builder for [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput)
+        /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::UpdateConfigurationSetEventDestinationOutput {
             crate::output::UpdateConfigurationSetEventDestinationOutput {}
         }
     }
 }
 impl UpdateConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
     pub fn builder() -> crate::output::update_configuration_set_event_destination_output::Builder {
         crate::output::update_configuration_set_event_destination_output::Builder::default()
     }
@@ -51,11 +50,10 @@ impl std::fmt::Debug for SendVoiceMessageOutput {
         formatter.finish()
     }
 }
-/// See [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput)
+/// See [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
 pub mod send_voice_message_output {
 
-    /// A builder for [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput)
-    #[non_exhaustive]
+    /// A builder for [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
@@ -71,7 +69,7 @@ pub mod send_voice_message_output {
             self.message_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput)
+        /// Consumes the builder and constructs a [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
         pub fn build(self) -> crate::output::SendVoiceMessageOutput {
             crate::output::SendVoiceMessageOutput {
                 message_id: self.message_id,
@@ -80,7 +78,7 @@ pub mod send_voice_message_output {
     }
 }
 impl SendVoiceMessageOutput {
-    /// Creates a new builder-style object to manufacture [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput)
+    /// Creates a new builder-style object to manufacture [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
     pub fn builder() -> crate::output::send_voice_message_output::Builder {
         crate::output::send_voice_message_output::Builder::default()
     }
@@ -113,11 +111,10 @@ impl std::fmt::Debug for ListConfigurationSetsOutput {
         formatter.finish()
     }
 }
-/// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput)
+/// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
 pub mod list_configuration_sets_output {
 
-    /// A builder for [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -153,7 +150,7 @@ pub mod list_configuration_sets_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput)
+        /// Consumes the builder and constructs a [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
         pub fn build(self) -> crate::output::ListConfigurationSetsOutput {
             crate::output::ListConfigurationSetsOutput {
                 configuration_sets: self.configuration_sets,
@@ -163,7 +160,7 @@ pub mod list_configuration_sets_output {
     }
 }
 impl ListConfigurationSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput)
+    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
     pub fn builder() -> crate::output::list_configuration_sets_output::Builder {
         crate::output::list_configuration_sets_output::Builder::default()
     }
@@ -189,11 +186,10 @@ impl std::fmt::Debug for GetConfigurationSetEventDestinationsOutput {
         formatter.finish()
     }
 }
-/// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput)
+/// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
 pub mod get_configuration_set_event_destinations_output {
 
-    /// A builder for [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_destinations:
@@ -219,7 +215,7 @@ pub mod get_configuration_set_event_destinations_output {
             self.event_destinations = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput)
+        /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
         pub fn build(self) -> crate::output::GetConfigurationSetEventDestinationsOutput {
             crate::output::GetConfigurationSetEventDestinationsOutput {
                 event_destinations: self.event_destinations,
@@ -228,7 +224,7 @@ pub mod get_configuration_set_event_destinations_output {
     }
 }
 impl GetConfigurationSetEventDestinationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput)
+    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
     pub fn builder() -> crate::output::get_configuration_set_event_destinations_output::Builder {
         crate::output::get_configuration_set_event_destinations_output::Builder::default()
     }
@@ -244,22 +240,21 @@ impl std::fmt::Debug for DeleteConfigurationSetEventDestinationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput)
+/// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
 
-    /// A builder for [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput)
+        /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationSetEventDestinationOutput {
             crate::output::DeleteConfigurationSetEventDestinationOutput {}
         }
     }
 }
 impl DeleteConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
     pub fn builder() -> crate::output::delete_configuration_set_event_destination_output::Builder {
         crate::output::delete_configuration_set_event_destination_output::Builder::default()
     }
@@ -275,22 +270,21 @@ impl std::fmt::Debug for DeleteConfigurationSetOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput)
+/// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
 
-    /// A builder for [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput)
+        /// Consumes the builder and constructs a [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationSetOutput {
             crate::output::DeleteConfigurationSetOutput {}
         }
     }
 }
 impl DeleteConfigurationSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
     pub fn builder() -> crate::output::delete_configuration_set_output::Builder {
         crate::output::delete_configuration_set_output::Builder::default()
     }
@@ -306,22 +300,21 @@ impl std::fmt::Debug for CreateConfigurationSetEventDestinationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput)
+/// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
 
-    /// A builder for [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput)
+        /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::CreateConfigurationSetEventDestinationOutput {
             crate::output::CreateConfigurationSetEventDestinationOutput {}
         }
     }
 }
 impl CreateConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
     pub fn builder() -> crate::output::create_configuration_set_event_destination_output::Builder {
         crate::output::create_configuration_set_event_destination_output::Builder::default()
     }
@@ -337,22 +330,21 @@ impl std::fmt::Debug for CreateConfigurationSetOutput {
         formatter.finish()
     }
 }
-/// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
+/// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
 
-    /// A builder for [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
+        /// Consumes the builder and constructs a [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
         pub fn build(self) -> crate::output::CreateConfigurationSetOutput {
             crate::output::CreateConfigurationSetOutput {}
         }
     }
 }
 impl CreateConfigurationSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
     pub fn builder() -> crate::output::create_configuration_set_output::Builder {
         crate::output::create_configuration_set_output::Builder::default()
     }

@@ -10,7 +10,7 @@ pub struct AddTagsToResource {
     _private: (),
 }
 impl AddTagsToResource {
-    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput)
+    /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput).
     pub fn builder() -> crate::input::add_tags_to_resource_input::Builder {
         crate::input::add_tags_to_resource_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateHapg {
     _private: (),
 }
 impl CreateHapg {
-    /// Creates a new builder-style object to manufacture [`CreateHapgInput`](crate::input::CreateHapgInput)
+    /// Creates a new builder-style object to manufacture [`CreateHapgInput`](crate::input::CreateHapgInput).
     pub fn builder() -> crate::input::create_hapg_input::Builder {
         crate::input::create_hapg_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct CreateHsm {
     _private: (),
 }
 impl CreateHsm {
-    /// Creates a new builder-style object to manufacture [`CreateHsmInput`](crate::input::CreateHsmInput)
+    /// Creates a new builder-style object to manufacture [`CreateHsmInput`](crate::input::CreateHsmInput).
     pub fn builder() -> crate::input::create_hsm_input::Builder {
         crate::input::create_hsm_input::Builder::default()
     }
@@ -107,7 +107,7 @@ pub struct CreateLunaClient {
     _private: (),
 }
 impl CreateLunaClient {
-    /// Creates a new builder-style object to manufacture [`CreateLunaClientInput`](crate::input::CreateLunaClientInput)
+    /// Creates a new builder-style object to manufacture [`CreateLunaClientInput`](crate::input::CreateLunaClientInput).
     pub fn builder() -> crate::input::create_luna_client_input::Builder {
         crate::input::create_luna_client_input::Builder::default()
     }
@@ -141,7 +141,7 @@ pub struct DeleteHapg {
     _private: (),
 }
 impl DeleteHapg {
-    /// Creates a new builder-style object to manufacture [`DeleteHapgInput`](crate::input::DeleteHapgInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHapgInput`](crate::input::DeleteHapgInput).
     pub fn builder() -> crate::input::delete_hapg_input::Builder {
         crate::input::delete_hapg_input::Builder::default()
     }
@@ -173,7 +173,7 @@ pub struct DeleteHsm {
     _private: (),
 }
 impl DeleteHsm {
-    /// Creates a new builder-style object to manufacture [`DeleteHsmInput`](crate::input::DeleteHsmInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHsmInput`](crate::input::DeleteHsmInput).
     pub fn builder() -> crate::input::delete_hsm_input::Builder {
         crate::input::delete_hsm_input::Builder::default()
     }
@@ -204,7 +204,7 @@ pub struct DeleteLunaClient {
     _private: (),
 }
 impl DeleteLunaClient {
-    /// Creates a new builder-style object to manufacture [`DeleteLunaClientInput`](crate::input::DeleteLunaClientInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLunaClientInput`](crate::input::DeleteLunaClientInput).
     pub fn builder() -> crate::input::delete_luna_client_input::Builder {
         crate::input::delete_luna_client_input::Builder::default()
     }
@@ -238,7 +238,7 @@ pub struct DescribeHapg {
     _private: (),
 }
 impl DescribeHapg {
-    /// Creates a new builder-style object to manufacture [`DescribeHapgInput`](crate::input::DescribeHapgInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHapgInput`](crate::input::DescribeHapgInput).
     pub fn builder() -> crate::input::describe_hapg_input::Builder {
         crate::input::describe_hapg_input::Builder::default()
     }
@@ -270,7 +270,7 @@ pub struct DescribeHsm {
     _private: (),
 }
 impl DescribeHsm {
-    /// Creates a new builder-style object to manufacture [`DescribeHsmInput`](crate::input::DescribeHsmInput)
+    /// Creates a new builder-style object to manufacture [`DescribeHsmInput`](crate::input::DescribeHsmInput).
     pub fn builder() -> crate::input::describe_hsm_input::Builder {
         crate::input::describe_hsm_input::Builder::default()
     }
@@ -302,7 +302,7 @@ pub struct DescribeLunaClient {
     _private: (),
 }
 impl DescribeLunaClient {
-    /// Creates a new builder-style object to manufacture [`DescribeLunaClientInput`](crate::input::DescribeLunaClientInput)
+    /// Creates a new builder-style object to manufacture [`DescribeLunaClientInput`](crate::input::DescribeLunaClientInput).
     pub fn builder() -> crate::input::describe_luna_client_input::Builder {
         crate::input::describe_luna_client_input::Builder::default()
     }
@@ -336,7 +336,7 @@ pub struct GetConfig {
     _private: (),
 }
 impl GetConfig {
-    /// Creates a new builder-style object to manufacture [`GetConfigInput`](crate::input::GetConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetConfigInput`](crate::input::GetConfigInput).
     pub fn builder() -> crate::input::get_config_input::Builder {
         crate::input::get_config_input::Builder::default()
     }
@@ -367,7 +367,7 @@ pub struct ListAvailableZones {
     _private: (),
 }
 impl ListAvailableZones {
-    /// Creates a new builder-style object to manufacture [`ListAvailableZonesInput`](crate::input::ListAvailableZonesInput)
+    /// Creates a new builder-style object to manufacture [`ListAvailableZonesInput`](crate::input::ListAvailableZonesInput).
     pub fn builder() -> crate::input::list_available_zones_input::Builder {
         crate::input::list_available_zones_input::Builder::default()
     }
@@ -401,7 +401,7 @@ pub struct ListHapgs {
     _private: (),
 }
 impl ListHapgs {
-    /// Creates a new builder-style object to manufacture [`ListHapgsInput`](crate::input::ListHapgsInput)
+    /// Creates a new builder-style object to manufacture [`ListHapgsInput`](crate::input::ListHapgsInput).
     pub fn builder() -> crate::input::list_hapgs_input::Builder {
         crate::input::list_hapgs_input::Builder::default()
     }
@@ -432,7 +432,7 @@ pub struct ListHsms {
     _private: (),
 }
 impl ListHsms {
-    /// Creates a new builder-style object to manufacture [`ListHsmsInput`](crate::input::ListHsmsInput)
+    /// Creates a new builder-style object to manufacture [`ListHsmsInput`](crate::input::ListHsmsInput).
     pub fn builder() -> crate::input::list_hsms_input::Builder {
         crate::input::list_hsms_input::Builder::default()
     }
@@ -463,7 +463,7 @@ pub struct ListLunaClients {
     _private: (),
 }
 impl ListLunaClients {
-    /// Creates a new builder-style object to manufacture [`ListLunaClientsInput`](crate::input::ListLunaClientsInput)
+    /// Creates a new builder-style object to manufacture [`ListLunaClientsInput`](crate::input::ListLunaClientsInput).
     pub fn builder() -> crate::input::list_luna_clients_input::Builder {
         crate::input::list_luna_clients_input::Builder::default()
     }
@@ -497,7 +497,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -531,7 +531,7 @@ pub struct ModifyHapg {
     _private: (),
 }
 impl ModifyHapg {
-    /// Creates a new builder-style object to manufacture [`ModifyHapgInput`](crate::input::ModifyHapgInput)
+    /// Creates a new builder-style object to manufacture [`ModifyHapgInput`](crate::input::ModifyHapgInput).
     pub fn builder() -> crate::input::modify_hapg_input::Builder {
         crate::input::modify_hapg_input::Builder::default()
     }
@@ -563,7 +563,7 @@ pub struct ModifyHsm {
     _private: (),
 }
 impl ModifyHsm {
-    /// Creates a new builder-style object to manufacture [`ModifyHsmInput`](crate::input::ModifyHsmInput)
+    /// Creates a new builder-style object to manufacture [`ModifyHsmInput`](crate::input::ModifyHsmInput).
     pub fn builder() -> crate::input::modify_hsm_input::Builder {
         crate::input::modify_hsm_input::Builder::default()
     }
@@ -594,7 +594,7 @@ pub struct ModifyLunaClient {
     _private: (),
 }
 impl ModifyLunaClient {
-    /// Creates a new builder-style object to manufacture [`ModifyLunaClientInput`](crate::input::ModifyLunaClientInput)
+    /// Creates a new builder-style object to manufacture [`ModifyLunaClientInput`](crate::input::ModifyLunaClientInput).
     pub fn builder() -> crate::input::modify_luna_client_input::Builder {
         crate::input::modify_luna_client_input::Builder::default()
     }
@@ -628,7 +628,7 @@ pub struct RemoveTagsFromResource {
     _private: (),
 }
 impl RemoveTagsFromResource {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput)
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput).
     pub fn builder() -> crate::input::remove_tags_from_resource_input::Builder {
         crate::input::remove_tags_from_resource_input::Builder::default()
     }

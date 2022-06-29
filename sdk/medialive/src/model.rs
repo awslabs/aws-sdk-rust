@@ -145,11 +145,10 @@ impl std::fmt::Debug for Reservation {
         formatter.finish()
     }
 }
-/// See [`Reservation`](crate::model::Reservation)
+/// See [`Reservation`](crate::model::Reservation).
 pub mod reservation {
 
-    /// A builder for [`Reservation`](crate::model::Reservation)
-    #[non_exhaustive]
+    /// A builder for [`Reservation`](crate::model::Reservation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -394,7 +393,7 @@ pub mod reservation {
             self.usage_price = input;
             self
         }
-        /// Consumes the builder and constructs a [`Reservation`](crate::model::Reservation)
+        /// Consumes the builder and constructs a [`Reservation`](crate::model::Reservation).
         pub fn build(self) -> crate::model::Reservation {
             crate::model::Reservation {
                 arn: self.arn,
@@ -420,7 +419,7 @@ pub mod reservation {
     }
 }
 impl Reservation {
-    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation)
+    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation).
     pub fn builder() -> crate::model::reservation::Builder {
         crate::model::reservation::Builder::default()
     }
@@ -560,11 +559,10 @@ impl std::fmt::Debug for ReservationResourceSpecification {
         formatter.finish()
     }
 }
-/// See [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification)
+/// See [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
 pub mod reservation_resource_specification {
 
-    /// A builder for [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification)
-    #[non_exhaustive]
+    /// A builder for [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_class: std::option::Option<crate::model::ChannelClass>,
@@ -685,7 +683,7 @@ pub mod reservation_resource_specification {
             self.video_quality = input;
             self
         }
-        /// Consumes the builder and constructs a [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification)
+        /// Consumes the builder and constructs a [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
         pub fn build(self) -> crate::model::ReservationResourceSpecification {
             crate::model::ReservationResourceSpecification {
                 channel_class: self.channel_class,
@@ -701,7 +699,7 @@ pub mod reservation_resource_specification {
     }
 }
 impl ReservationResourceSpecification {
-    /// Creates a new builder-style object to manufacture [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification)
+    /// Creates a new builder-style object to manufacture [`ReservationResourceSpecification`](crate::model::ReservationResourceSpecification).
     pub fn builder() -> crate::model::reservation_resource_specification::Builder {
         crate::model::reservation_resource_specification::Builder::default()
     }
@@ -1320,11 +1318,10 @@ impl std::fmt::Debug for ValidationError {
         formatter.finish()
     }
 }
-/// See [`ValidationError`](crate::model::ValidationError)
+/// See [`ValidationError`](crate::model::ValidationError).
 pub mod validation_error {
 
-    /// A builder for [`ValidationError`](crate::model::ValidationError)
-    #[non_exhaustive]
+    /// A builder for [`ValidationError`](crate::model::ValidationError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) element_path: std::option::Option<std::string::String>,
@@ -1354,7 +1351,7 @@ pub mod validation_error {
             self.error_message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ValidationError`](crate::model::ValidationError)
+        /// Consumes the builder and constructs a [`ValidationError`](crate::model::ValidationError).
         pub fn build(self) -> crate::model::ValidationError {
             crate::model::ValidationError {
                 element_path: self.element_path,
@@ -1364,7 +1361,7 @@ pub mod validation_error {
     }
 }
 impl ValidationError {
-    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::model::ValidationError)
+    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::model::ValidationError).
     pub fn builder() -> crate::model::validation_error::Builder {
         crate::model::validation_error::Builder::default()
     }
@@ -1429,11 +1426,10 @@ impl std::fmt::Debug for MultiplexProgram {
         formatter.finish()
     }
 }
-/// See [`MultiplexProgram`](crate::model::MultiplexProgram)
+/// See [`MultiplexProgram`](crate::model::MultiplexProgram).
 pub mod multiplex_program {
 
-    /// A builder for [`MultiplexProgram`](crate::model::MultiplexProgram)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexProgram`](crate::model::MultiplexProgram).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -1520,7 +1516,7 @@ pub mod multiplex_program {
             self.program_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexProgram`](crate::model::MultiplexProgram)
+        /// Consumes the builder and constructs a [`MultiplexProgram`](crate::model::MultiplexProgram).
         pub fn build(self) -> crate::model::MultiplexProgram {
             crate::model::MultiplexProgram {
                 channel_id: self.channel_id,
@@ -1533,7 +1529,7 @@ pub mod multiplex_program {
     }
 }
 impl MultiplexProgram {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgram`](crate::model::MultiplexProgram)
+    /// Creates a new builder-style object to manufacture [`MultiplexProgram`](crate::model::MultiplexProgram).
     pub fn builder() -> crate::model::multiplex_program::Builder {
         crate::model::multiplex_program::Builder::default()
     }
@@ -1566,11 +1562,10 @@ impl std::fmt::Debug for MultiplexProgramPipelineDetail {
         formatter.finish()
     }
 }
-/// See [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail)
+/// See [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
 pub mod multiplex_program_pipeline_detail {
 
-    /// A builder for [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_channel_pipeline: std::option::Option<std::string::String>,
@@ -1600,7 +1595,7 @@ pub mod multiplex_program_pipeline_detail {
             self.pipeline_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail)
+        /// Consumes the builder and constructs a [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
         pub fn build(self) -> crate::model::MultiplexProgramPipelineDetail {
             crate::model::MultiplexProgramPipelineDetail {
                 active_channel_pipeline: self.active_channel_pipeline,
@@ -1610,7 +1605,7 @@ pub mod multiplex_program_pipeline_detail {
     }
 }
 impl MultiplexProgramPipelineDetail {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail)
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramPipelineDetail`](crate::model::MultiplexProgramPipelineDetail).
     pub fn builder() -> crate::model::multiplex_program_pipeline_detail::Builder {
         crate::model::multiplex_program_pipeline_detail::Builder::default()
     }
@@ -1720,11 +1715,10 @@ impl std::fmt::Debug for MultiplexProgramPacketIdentifiersMap {
         formatter.finish()
     }
 }
-/// See [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap)
+/// See [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
 pub mod multiplex_program_packet_identifiers_map {
 
-    /// A builder for [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_pids: std::option::Option<std::vec::Vec<i32>>,
@@ -1896,7 +1890,7 @@ pub mod multiplex_program_packet_identifiers_map {
             self.video_pid = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap)
+        /// Consumes the builder and constructs a [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
         pub fn build(self) -> crate::model::MultiplexProgramPacketIdentifiersMap {
             crate::model::MultiplexProgramPacketIdentifiersMap {
                 audio_pids: self.audio_pids,
@@ -1917,7 +1911,7 @@ pub mod multiplex_program_packet_identifiers_map {
     }
 }
 impl MultiplexProgramPacketIdentifiersMap {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap)
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramPacketIdentifiersMap`](crate::model::MultiplexProgramPacketIdentifiersMap).
     pub fn builder() -> crate::model::multiplex_program_packet_identifiers_map::Builder {
         crate::model::multiplex_program_packet_identifiers_map::Builder::default()
     }
@@ -1971,11 +1965,10 @@ impl std::fmt::Debug for MultiplexProgramSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings)
+/// See [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
 pub mod multiplex_program_settings {
 
-    /// A builder for [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) preferred_channel_pipeline:
@@ -2041,7 +2034,7 @@ pub mod multiplex_program_settings {
             self.video_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings)
+        /// Consumes the builder and constructs a [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
         pub fn build(self) -> crate::model::MultiplexProgramSettings {
             crate::model::MultiplexProgramSettings {
                 preferred_channel_pipeline: self.preferred_channel_pipeline,
@@ -2053,7 +2046,7 @@ pub mod multiplex_program_settings {
     }
 }
 impl MultiplexProgramSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramSettings`](crate::model::MultiplexProgramSettings).
     pub fn builder() -> crate::model::multiplex_program_settings::Builder {
         crate::model::multiplex_program_settings::Builder::default()
     }
@@ -2088,11 +2081,10 @@ impl std::fmt::Debug for MultiplexVideoSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings)
+/// See [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
 pub mod multiplex_video_settings {
 
-    /// A builder for [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) constant_bitrate: std::option::Option<i32>,
@@ -2126,7 +2118,7 @@ pub mod multiplex_video_settings {
             self.statmux_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings)
+        /// Consumes the builder and constructs a [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
         pub fn build(self) -> crate::model::MultiplexVideoSettings {
             crate::model::MultiplexVideoSettings {
                 constant_bitrate: self.constant_bitrate.unwrap_or_default(),
@@ -2136,7 +2128,7 @@ pub mod multiplex_video_settings {
     }
 }
 impl MultiplexVideoSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexVideoSettings`](crate::model::MultiplexVideoSettings).
     pub fn builder() -> crate::model::multiplex_video_settings::Builder {
         crate::model::multiplex_video_settings::Builder::default()
     }
@@ -2176,11 +2168,10 @@ impl std::fmt::Debug for MultiplexStatmuxVideoSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings)
+/// See [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
 pub mod multiplex_statmux_video_settings {
 
-    /// A builder for [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maximum_bitrate: std::option::Option<i32>,
@@ -2218,7 +2209,7 @@ pub mod multiplex_statmux_video_settings {
             self.priority = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings)
+        /// Consumes the builder and constructs a [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
         pub fn build(self) -> crate::model::MultiplexStatmuxVideoSettings {
             crate::model::MultiplexStatmuxVideoSettings {
                 maximum_bitrate: self.maximum_bitrate.unwrap_or_default(),
@@ -2229,7 +2220,7 @@ pub mod multiplex_statmux_video_settings {
     }
 }
 impl MultiplexStatmuxVideoSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexStatmuxVideoSettings`](crate::model::MultiplexStatmuxVideoSettings).
     pub fn builder() -> crate::model::multiplex_statmux_video_settings::Builder {
         crate::model::multiplex_statmux_video_settings::Builder::default()
     }
@@ -2262,11 +2253,10 @@ impl std::fmt::Debug for MultiplexProgramServiceDescriptor {
         formatter.finish()
     }
 }
-/// See [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor)
+/// See [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
 pub mod multiplex_program_service_descriptor {
 
-    /// A builder for [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) provider_name: std::option::Option<std::string::String>,
@@ -2296,7 +2286,7 @@ pub mod multiplex_program_service_descriptor {
             self.service_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor)
+        /// Consumes the builder and constructs a [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
         pub fn build(self) -> crate::model::MultiplexProgramServiceDescriptor {
             crate::model::MultiplexProgramServiceDescriptor {
                 provider_name: self.provider_name,
@@ -2306,7 +2296,7 @@ pub mod multiplex_program_service_descriptor {
     }
 }
 impl MultiplexProgramServiceDescriptor {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor)
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramServiceDescriptor`](crate::model::MultiplexProgramServiceDescriptor).
     pub fn builder() -> crate::model::multiplex_program_service_descriptor::Builder {
         crate::model::multiplex_program_service_descriptor::Builder::default()
     }
@@ -2462,11 +2452,10 @@ impl std::fmt::Debug for Multiplex {
         formatter.finish()
     }
 }
-/// See [`Multiplex`](crate::model::Multiplex)
+/// See [`Multiplex`](crate::model::Multiplex).
 pub mod multiplex {
 
-    /// A builder for [`Multiplex`](crate::model::Multiplex)
-    #[non_exhaustive]
+    /// A builder for [`Multiplex`](crate::model::Multiplex).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2623,7 +2612,7 @@ pub mod multiplex {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`Multiplex`](crate::model::Multiplex)
+        /// Consumes the builder and constructs a [`Multiplex`](crate::model::Multiplex).
         pub fn build(self) -> crate::model::Multiplex {
             crate::model::Multiplex {
                 arn: self.arn,
@@ -2641,7 +2630,7 @@ pub mod multiplex {
     }
 }
 impl Multiplex {
-    /// Creates a new builder-style object to manufacture [`Multiplex`](crate::model::Multiplex)
+    /// Creates a new builder-style object to manufacture [`Multiplex`](crate::model::Multiplex).
     pub fn builder() -> crate::model::multiplex::Builder {
         crate::model::multiplex::Builder::default()
     }
@@ -2787,11 +2776,10 @@ impl std::fmt::Debug for MultiplexSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexSettings`](crate::model::MultiplexSettings)
+/// See [`MultiplexSettings`](crate::model::MultiplexSettings).
 pub mod multiplex_settings {
 
-    /// A builder for [`MultiplexSettings`](crate::model::MultiplexSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexSettings`](crate::model::MultiplexSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maximum_video_buffer_delay_milliseconds: std::option::Option<i32>,
@@ -2846,7 +2834,7 @@ pub mod multiplex_settings {
             self.transport_stream_reserved_bitrate = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexSettings`](crate::model::MultiplexSettings)
+        /// Consumes the builder and constructs a [`MultiplexSettings`](crate::model::MultiplexSettings).
         pub fn build(self) -> crate::model::MultiplexSettings {
             crate::model::MultiplexSettings {
                 maximum_video_buffer_delay_milliseconds: self
@@ -2862,7 +2850,7 @@ pub mod multiplex_settings {
     }
 }
 impl MultiplexSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexSettings`](crate::model::MultiplexSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexSettings`](crate::model::MultiplexSettings).
     pub fn builder() -> crate::model::multiplex_settings::Builder {
         crate::model::multiplex_settings::Builder::default()
     }
@@ -2891,11 +2879,10 @@ impl std::fmt::Debug for MultiplexOutputDestination {
         formatter.finish()
     }
 }
-/// See [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination)
+/// See [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
 pub mod multiplex_output_destination {
 
-    /// A builder for [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_connect_settings:
@@ -2920,7 +2907,7 @@ pub mod multiplex_output_destination {
             self.media_connect_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination)
+        /// Consumes the builder and constructs a [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
         pub fn build(self) -> crate::model::MultiplexOutputDestination {
             crate::model::MultiplexOutputDestination {
                 media_connect_settings: self.media_connect_settings,
@@ -2929,7 +2916,7 @@ pub mod multiplex_output_destination {
     }
 }
 impl MultiplexOutputDestination {
-    /// Creates a new builder-style object to manufacture [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination)
+    /// Creates a new builder-style object to manufacture [`MultiplexOutputDestination`](crate::model::MultiplexOutputDestination).
     pub fn builder() -> crate::model::multiplex_output_destination::Builder {
         crate::model::multiplex_output_destination::Builder::default()
     }
@@ -2955,11 +2942,10 @@ impl std::fmt::Debug for MultiplexMediaConnectOutputDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings)
+/// See [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
 pub mod multiplex_media_connect_output_destination_settings {
 
-    /// A builder for [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entitlement_arn: std::option::Option<std::string::String>,
@@ -2978,7 +2964,7 @@ pub mod multiplex_media_connect_output_destination_settings {
             self.entitlement_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings)
+        /// Consumes the builder and constructs a [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
         pub fn build(self) -> crate::model::MultiplexMediaConnectOutputDestinationSettings {
             crate::model::MultiplexMediaConnectOutputDestinationSettings {
                 entitlement_arn: self.entitlement_arn,
@@ -2987,7 +2973,7 @@ pub mod multiplex_media_connect_output_destination_settings {
     }
 }
 impl MultiplexMediaConnectOutputDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexMediaConnectOutputDestinationSettings`](crate::model::MultiplexMediaConnectOutputDestinationSettings).
     pub fn builder() -> crate::model::multiplex_media_connect_output_destination_settings::Builder {
         crate::model::multiplex_media_connect_output_destination_settings::Builder::default()
     }
@@ -3052,11 +3038,10 @@ impl std::fmt::Debug for InputSecurityGroup {
         formatter.finish()
     }
 }
-/// See [`InputSecurityGroup`](crate::model::InputSecurityGroup)
+/// See [`InputSecurityGroup`](crate::model::InputSecurityGroup).
 pub mod input_security_group {
 
-    /// A builder for [`InputSecurityGroup`](crate::model::InputSecurityGroup)
-    #[non_exhaustive]
+    /// A builder for [`InputSecurityGroup`](crate::model::InputSecurityGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3166,7 +3151,7 @@ pub mod input_security_group {
             self.whitelist_rules = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputSecurityGroup`](crate::model::InputSecurityGroup)
+        /// Consumes the builder and constructs a [`InputSecurityGroup`](crate::model::InputSecurityGroup).
         pub fn build(self) -> crate::model::InputSecurityGroup {
             crate::model::InputSecurityGroup {
                 arn: self.arn,
@@ -3180,7 +3165,7 @@ pub mod input_security_group {
     }
 }
 impl InputSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`InputSecurityGroup`](crate::model::InputSecurityGroup)
+    /// Creates a new builder-style object to manufacture [`InputSecurityGroup`](crate::model::InputSecurityGroup).
     pub fn builder() -> crate::model::input_security_group::Builder {
         crate::model::input_security_group::Builder::default()
     }
@@ -3206,11 +3191,10 @@ impl std::fmt::Debug for InputWhitelistRule {
         formatter.finish()
     }
 }
-/// See [`InputWhitelistRule`](crate::model::InputWhitelistRule)
+/// See [`InputWhitelistRule`](crate::model::InputWhitelistRule).
 pub mod input_whitelist_rule {
 
-    /// A builder for [`InputWhitelistRule`](crate::model::InputWhitelistRule)
-    #[non_exhaustive]
+    /// A builder for [`InputWhitelistRule`](crate::model::InputWhitelistRule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
@@ -3226,14 +3210,14 @@ pub mod input_whitelist_rule {
             self.cidr = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputWhitelistRule`](crate::model::InputWhitelistRule)
+        /// Consumes the builder and constructs a [`InputWhitelistRule`](crate::model::InputWhitelistRule).
         pub fn build(self) -> crate::model::InputWhitelistRule {
             crate::model::InputWhitelistRule { cidr: self.cidr }
         }
     }
 }
 impl InputWhitelistRule {
-    /// Creates a new builder-style object to manufacture [`InputWhitelistRule`](crate::model::InputWhitelistRule)
+    /// Creates a new builder-style object to manufacture [`InputWhitelistRule`](crate::model::InputWhitelistRule).
     pub fn builder() -> crate::model::input_whitelist_rule::Builder {
         crate::model::input_whitelist_rule::Builder::default()
     }
@@ -3322,11 +3306,10 @@ impl std::fmt::Debug for InputWhitelistRuleCidr {
         formatter.finish()
     }
 }
-/// See [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr)
+/// See [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
 pub mod input_whitelist_rule_cidr {
 
-    /// A builder for [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr)
-    #[non_exhaustive]
+    /// A builder for [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cidr: std::option::Option<std::string::String>,
@@ -3342,14 +3325,14 @@ pub mod input_whitelist_rule_cidr {
             self.cidr = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr)
+        /// Consumes the builder and constructs a [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
         pub fn build(self) -> crate::model::InputWhitelistRuleCidr {
             crate::model::InputWhitelistRuleCidr { cidr: self.cidr }
         }
     }
 }
 impl InputWhitelistRuleCidr {
-    /// Creates a new builder-style object to manufacture [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr)
+    /// Creates a new builder-style object to manufacture [`InputWhitelistRuleCidr`](crate::model::InputWhitelistRuleCidr).
     pub fn builder() -> crate::model::input_whitelist_rule_cidr::Builder {
         crate::model::input_whitelist_rule_cidr::Builder::default()
     }
@@ -3426,11 +3409,10 @@ impl std::fmt::Debug for InputDeviceUhdSettings {
         formatter.finish()
     }
 }
-/// See [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings)
+/// See [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
 pub mod input_device_uhd_settings {
 
-    /// A builder for [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_input: std::option::Option<crate::model::InputDeviceActiveInput>,
@@ -3535,7 +3517,7 @@ pub mod input_device_uhd_settings {
             self.width = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings)
+        /// Consumes the builder and constructs a [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
         pub fn build(self) -> crate::model::InputDeviceUhdSettings {
             crate::model::InputDeviceUhdSettings {
                 active_input: self.active_input,
@@ -3551,7 +3533,7 @@ pub mod input_device_uhd_settings {
     }
 }
 impl InputDeviceUhdSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings)
+    /// Creates a new builder-style object to manufacture [`InputDeviceUhdSettings`](crate::model::InputDeviceUhdSettings).
     pub fn builder() -> crate::model::input_device_uhd_settings::Builder {
         crate::model::input_device_uhd_settings::Builder::default()
     }
@@ -3880,11 +3862,10 @@ impl std::fmt::Debug for InputDeviceNetworkSettings {
         formatter.finish()
     }
 }
-/// See [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings)
+/// See [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
 pub mod input_device_network_settings {
 
-    /// A builder for [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3956,7 +3937,7 @@ pub mod input_device_network_settings {
             self.subnet_mask = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings)
+        /// Consumes the builder and constructs a [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
         pub fn build(self) -> crate::model::InputDeviceNetworkSettings {
             crate::model::InputDeviceNetworkSettings {
                 dns_addresses: self.dns_addresses,
@@ -3969,7 +3950,7 @@ pub mod input_device_network_settings {
     }
 }
 impl InputDeviceNetworkSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings)
+    /// Creates a new builder-style object to manufacture [`InputDeviceNetworkSettings`](crate::model::InputDeviceNetworkSettings).
     pub fn builder() -> crate::model::input_device_network_settings::Builder {
         crate::model::input_device_network_settings::Builder::default()
     }
@@ -4101,11 +4082,10 @@ impl std::fmt::Debug for InputDeviceHdSettings {
         formatter.finish()
     }
 }
-/// See [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings)
+/// See [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
 pub mod input_device_hd_settings {
 
-    /// A builder for [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_input: std::option::Option<crate::model::InputDeviceActiveInput>,
@@ -4210,7 +4190,7 @@ pub mod input_device_hd_settings {
             self.width = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings)
+        /// Consumes the builder and constructs a [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
         pub fn build(self) -> crate::model::InputDeviceHdSettings {
             crate::model::InputDeviceHdSettings {
                 active_input: self.active_input,
@@ -4226,7 +4206,7 @@ pub mod input_device_hd_settings {
     }
 }
 impl InputDeviceHdSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings)
+    /// Creates a new builder-style object to manufacture [`InputDeviceHdSettings`](crate::model::InputDeviceHdSettings).
     pub fn builder() -> crate::model::input_device_hd_settings::Builder {
         crate::model::input_device_hd_settings::Builder::default()
     }
@@ -4426,11 +4406,10 @@ impl std::fmt::Debug for InputDeviceConfigurableSettings {
         formatter.finish()
     }
 }
-/// See [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings)
+/// See [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
 pub mod input_device_configurable_settings {
 
-    /// A builder for [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configured_input: std::option::Option<crate::model::InputDeviceConfiguredInput>,
@@ -4460,7 +4439,7 @@ pub mod input_device_configurable_settings {
             self.max_bitrate = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings)
+        /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
         pub fn build(self) -> crate::model::InputDeviceConfigurableSettings {
             crate::model::InputDeviceConfigurableSettings {
                 configured_input: self.configured_input,
@@ -4470,7 +4449,7 @@ pub mod input_device_configurable_settings {
     }
 }
 impl InputDeviceConfigurableSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings)
+    /// Creates a new builder-style object to manufacture [`InputDeviceConfigurableSettings`](crate::model::InputDeviceConfigurableSettings).
     pub fn builder() -> crate::model::input_device_configurable_settings::Builder {
         crate::model::input_device_configurable_settings::Builder::default()
     }
@@ -4605,11 +4584,10 @@ impl std::fmt::Debug for Input {
         formatter.finish()
     }
 }
-/// See [`Input`](crate::model::Input)
+/// See [`Input`](crate::model::Input).
 pub mod input {
 
-    /// A builder for [`Input`](crate::model::Input)
-    #[non_exhaustive]
+    /// A builder for [`Input`](crate::model::Input).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4878,7 +4856,7 @@ pub mod input {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`Input`](crate::model::Input)
+        /// Consumes the builder and constructs a [`Input`](crate::model::Input).
         pub fn build(self) -> crate::model::Input {
             crate::model::Input {
                 arn: self.arn,
@@ -4902,7 +4880,7 @@ pub mod input {
     }
 }
 impl Input {
-    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input)
+    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
     pub fn builder() -> crate::model::input::Builder {
         crate::model::input::Builder::default()
     }
@@ -5107,11 +5085,10 @@ impl std::fmt::Debug for InputSource {
         formatter.finish()
     }
 }
-/// See [`InputSource`](crate::model::InputSource)
+/// See [`InputSource`](crate::model::InputSource).
 pub mod input_source {
 
-    /// A builder for [`InputSource`](crate::model::InputSource)
-    #[non_exhaustive]
+    /// A builder for [`InputSource`](crate::model::InputSource).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_param: std::option::Option<std::string::String>,
@@ -5152,7 +5129,7 @@ pub mod input_source {
             self.username = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputSource`](crate::model::InputSource)
+        /// Consumes the builder and constructs a [`InputSource`](crate::model::InputSource).
         pub fn build(self) -> crate::model::InputSource {
             crate::model::InputSource {
                 password_param: self.password_param,
@@ -5163,7 +5140,7 @@ pub mod input_source {
     }
 }
 impl InputSource {
-    /// Creates a new builder-style object to manufacture [`InputSource`](crate::model::InputSource)
+    /// Creates a new builder-style object to manufacture [`InputSource`](crate::model::InputSource).
     pub fn builder() -> crate::model::input_source::Builder {
         crate::model::input_source::Builder::default()
     }
@@ -5189,11 +5166,10 @@ impl std::fmt::Debug for MediaConnectFlow {
         formatter.finish()
     }
 }
-/// See [`MediaConnectFlow`](crate::model::MediaConnectFlow)
+/// See [`MediaConnectFlow`](crate::model::MediaConnectFlow).
 pub mod media_connect_flow {
 
-    /// A builder for [`MediaConnectFlow`](crate::model::MediaConnectFlow)
-    #[non_exhaustive]
+    /// A builder for [`MediaConnectFlow`](crate::model::MediaConnectFlow).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -5209,7 +5185,7 @@ pub mod media_connect_flow {
             self.flow_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaConnectFlow`](crate::model::MediaConnectFlow)
+        /// Consumes the builder and constructs a [`MediaConnectFlow`](crate::model::MediaConnectFlow).
         pub fn build(self) -> crate::model::MediaConnectFlow {
             crate::model::MediaConnectFlow {
                 flow_arn: self.flow_arn,
@@ -5218,7 +5194,7 @@ pub mod media_connect_flow {
     }
 }
 impl MediaConnectFlow {
-    /// Creates a new builder-style object to manufacture [`MediaConnectFlow`](crate::model::MediaConnectFlow)
+    /// Creates a new builder-style object to manufacture [`MediaConnectFlow`](crate::model::MediaConnectFlow).
     pub fn builder() -> crate::model::media_connect_flow::Builder {
         crate::model::media_connect_flow::Builder::default()
     }
@@ -5301,11 +5277,10 @@ impl std::fmt::Debug for InputDeviceSettings {
         formatter.finish()
     }
 }
-/// See [`InputDeviceSettings`](crate::model::InputDeviceSettings)
+/// See [`InputDeviceSettings`](crate::model::InputDeviceSettings).
 pub mod input_device_settings {
 
-    /// A builder for [`InputDeviceSettings`](crate::model::InputDeviceSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputDeviceSettings`](crate::model::InputDeviceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5321,14 +5296,14 @@ pub mod input_device_settings {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDeviceSettings`](crate::model::InputDeviceSettings)
+        /// Consumes the builder and constructs a [`InputDeviceSettings`](crate::model::InputDeviceSettings).
         pub fn build(self) -> crate::model::InputDeviceSettings {
             crate::model::InputDeviceSettings { id: self.id }
         }
     }
 }
 impl InputDeviceSettings {
-    /// Creates a new builder-style object to manufacture [`InputDeviceSettings`](crate::model::InputDeviceSettings)
+    /// Creates a new builder-style object to manufacture [`InputDeviceSettings`](crate::model::InputDeviceSettings).
     pub fn builder() -> crate::model::input_device_settings::Builder {
         crate::model::input_device_settings::Builder::default()
     }
@@ -5430,11 +5405,10 @@ impl std::fmt::Debug for InputDestination {
         formatter.finish()
     }
 }
-/// See [`InputDestination`](crate::model::InputDestination)
+/// See [`InputDestination`](crate::model::InputDestination).
 pub mod input_destination {
 
-    /// A builder for [`InputDestination`](crate::model::InputDestination)
-    #[non_exhaustive]
+    /// A builder for [`InputDestination`](crate::model::InputDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip: std::option::Option<std::string::String>,
@@ -5486,7 +5460,7 @@ pub mod input_destination {
             self.vpc = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDestination`](crate::model::InputDestination)
+        /// Consumes the builder and constructs a [`InputDestination`](crate::model::InputDestination).
         pub fn build(self) -> crate::model::InputDestination {
             crate::model::InputDestination {
                 ip: self.ip,
@@ -5498,7 +5472,7 @@ pub mod input_destination {
     }
 }
 impl InputDestination {
-    /// Creates a new builder-style object to manufacture [`InputDestination`](crate::model::InputDestination)
+    /// Creates a new builder-style object to manufacture [`InputDestination`](crate::model::InputDestination).
     pub fn builder() -> crate::model::input_destination::Builder {
         crate::model::input_destination::Builder::default()
     }
@@ -5531,11 +5505,10 @@ impl std::fmt::Debug for InputDestinationVpc {
         formatter.finish()
     }
 }
-/// See [`InputDestinationVpc`](crate::model::InputDestinationVpc)
+/// See [`InputDestinationVpc`](crate::model::InputDestinationVpc).
 pub mod input_destination_vpc {
 
-    /// A builder for [`InputDestinationVpc`](crate::model::InputDestinationVpc)
-    #[non_exhaustive]
+    /// A builder for [`InputDestinationVpc`](crate::model::InputDestinationVpc).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -5568,7 +5541,7 @@ pub mod input_destination_vpc {
             self.network_interface_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDestinationVpc`](crate::model::InputDestinationVpc)
+        /// Consumes the builder and constructs a [`InputDestinationVpc`](crate::model::InputDestinationVpc).
         pub fn build(self) -> crate::model::InputDestinationVpc {
             crate::model::InputDestinationVpc {
                 availability_zone: self.availability_zone,
@@ -5578,7 +5551,7 @@ pub mod input_destination_vpc {
     }
 }
 impl InputDestinationVpc {
-    /// Creates a new builder-style object to manufacture [`InputDestinationVpc`](crate::model::InputDestinationVpc)
+    /// Creates a new builder-style object to manufacture [`InputDestinationVpc`](crate::model::InputDestinationVpc).
     pub fn builder() -> crate::model::input_destination_vpc::Builder {
         crate::model::input_destination_vpc::Builder::default()
     }
@@ -5618,11 +5591,10 @@ impl std::fmt::Debug for InputSourceRequest {
         formatter.finish()
     }
 }
-/// See [`InputSourceRequest`](crate::model::InputSourceRequest)
+/// See [`InputSourceRequest`](crate::model::InputSourceRequest).
 pub mod input_source_request {
 
-    /// A builder for [`InputSourceRequest`](crate::model::InputSourceRequest)
-    #[non_exhaustive]
+    /// A builder for [`InputSourceRequest`](crate::model::InputSourceRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_param: std::option::Option<std::string::String>,
@@ -5663,7 +5635,7 @@ pub mod input_source_request {
             self.username = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputSourceRequest`](crate::model::InputSourceRequest)
+        /// Consumes the builder and constructs a [`InputSourceRequest`](crate::model::InputSourceRequest).
         pub fn build(self) -> crate::model::InputSourceRequest {
             crate::model::InputSourceRequest {
                 password_param: self.password_param,
@@ -5674,7 +5646,7 @@ pub mod input_source_request {
     }
 }
 impl InputSourceRequest {
-    /// Creates a new builder-style object to manufacture [`InputSourceRequest`](crate::model::InputSourceRequest)
+    /// Creates a new builder-style object to manufacture [`InputSourceRequest`](crate::model::InputSourceRequest).
     pub fn builder() -> crate::model::input_source_request::Builder {
         crate::model::input_source_request::Builder::default()
     }
@@ -5700,11 +5672,10 @@ impl std::fmt::Debug for MediaConnectFlowRequest {
         formatter.finish()
     }
 }
-/// See [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest)
+/// See [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
 pub mod media_connect_flow_request {
 
-    /// A builder for [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest)
-    #[non_exhaustive]
+    /// A builder for [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
@@ -5720,7 +5691,7 @@ pub mod media_connect_flow_request {
             self.flow_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest)
+        /// Consumes the builder and constructs a [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
         pub fn build(self) -> crate::model::MediaConnectFlowRequest {
             crate::model::MediaConnectFlowRequest {
                 flow_arn: self.flow_arn,
@@ -5729,7 +5700,7 @@ pub mod media_connect_flow_request {
     }
 }
 impl MediaConnectFlowRequest {
-    /// Creates a new builder-style object to manufacture [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest)
+    /// Creates a new builder-style object to manufacture [`MediaConnectFlowRequest`](crate::model::MediaConnectFlowRequest).
     pub fn builder() -> crate::model::media_connect_flow_request::Builder {
         crate::model::media_connect_flow_request::Builder::default()
     }
@@ -5755,11 +5726,10 @@ impl std::fmt::Debug for InputDeviceRequest {
         formatter.finish()
     }
 }
-/// See [`InputDeviceRequest`](crate::model::InputDeviceRequest)
+/// See [`InputDeviceRequest`](crate::model::InputDeviceRequest).
 pub mod input_device_request {
 
-    /// A builder for [`InputDeviceRequest`](crate::model::InputDeviceRequest)
-    #[non_exhaustive]
+    /// A builder for [`InputDeviceRequest`](crate::model::InputDeviceRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5775,14 +5745,14 @@ pub mod input_device_request {
             self.id = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDeviceRequest`](crate::model::InputDeviceRequest)
+        /// Consumes the builder and constructs a [`InputDeviceRequest`](crate::model::InputDeviceRequest).
         pub fn build(self) -> crate::model::InputDeviceRequest {
             crate::model::InputDeviceRequest { id: self.id }
         }
     }
 }
 impl InputDeviceRequest {
-    /// Creates a new builder-style object to manufacture [`InputDeviceRequest`](crate::model::InputDeviceRequest)
+    /// Creates a new builder-style object to manufacture [`InputDeviceRequest`](crate::model::InputDeviceRequest).
     pub fn builder() -> crate::model::input_device_request::Builder {
         crate::model::input_device_request::Builder::default()
     }
@@ -5808,11 +5778,10 @@ impl std::fmt::Debug for InputDestinationRequest {
         formatter.finish()
     }
 }
-/// See [`InputDestinationRequest`](crate::model::InputDestinationRequest)
+/// See [`InputDestinationRequest`](crate::model::InputDestinationRequest).
 pub mod input_destination_request {
 
-    /// A builder for [`InputDestinationRequest`](crate::model::InputDestinationRequest)
-    #[non_exhaustive]
+    /// A builder for [`InputDestinationRequest`](crate::model::InputDestinationRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_name: std::option::Option<std::string::String>,
@@ -5828,7 +5797,7 @@ pub mod input_destination_request {
             self.stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDestinationRequest`](crate::model::InputDestinationRequest)
+        /// Consumes the builder and constructs a [`InputDestinationRequest`](crate::model::InputDestinationRequest).
         pub fn build(self) -> crate::model::InputDestinationRequest {
             crate::model::InputDestinationRequest {
                 stream_name: self.stream_name,
@@ -5837,7 +5806,7 @@ pub mod input_destination_request {
     }
 }
 impl InputDestinationRequest {
-    /// Creates a new builder-style object to manufacture [`InputDestinationRequest`](crate::model::InputDestinationRequest)
+    /// Creates a new builder-style object to manufacture [`InputDestinationRequest`](crate::model::InputDestinationRequest).
     pub fn builder() -> crate::model::input_destination_request::Builder {
         crate::model::input_destination_request::Builder::default()
     }
@@ -5988,11 +5957,10 @@ impl std::fmt::Debug for Channel {
         formatter.finish()
     }
 }
-/// See [`Channel`](crate::model::Channel)
+/// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
-    /// A builder for [`Channel`](crate::model::Channel)
-    #[non_exhaustive]
+    /// A builder for [`Channel`](crate::model::Channel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6274,7 +6242,7 @@ pub mod channel {
             self.vpc = input;
             self
         }
-        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel)
+        /// Consumes the builder and constructs a [`Channel`](crate::model::Channel).
         pub fn build(self) -> crate::model::Channel {
             crate::model::Channel {
                 arn: self.arn,
@@ -6300,7 +6268,7 @@ pub mod channel {
     }
 }
 impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel)
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
     pub fn builder() -> crate::model::channel::Builder {
         crate::model::channel::Builder::default()
     }
@@ -6347,11 +6315,10 @@ impl std::fmt::Debug for VpcOutputSettingsDescription {
         formatter.finish()
     }
 }
-/// See [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription)
+/// See [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
 pub mod vpc_output_settings_description {
 
-    /// A builder for [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription)
-    #[non_exhaustive]
+    /// A builder for [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6436,7 +6403,7 @@ pub mod vpc_output_settings_description {
             self.subnet_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription)
+        /// Consumes the builder and constructs a [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
         pub fn build(self) -> crate::model::VpcOutputSettingsDescription {
             crate::model::VpcOutputSettingsDescription {
                 availability_zones: self.availability_zones,
@@ -6448,7 +6415,7 @@ pub mod vpc_output_settings_description {
     }
 }
 impl VpcOutputSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription)
+    /// Creates a new builder-style object to manufacture [`VpcOutputSettingsDescription`](crate::model::VpcOutputSettingsDescription).
     pub fn builder() -> crate::model::vpc_output_settings_description::Builder {
         crate::model::vpc_output_settings_description::Builder::default()
     }
@@ -6617,11 +6584,10 @@ impl std::fmt::Debug for PipelineDetail {
         formatter.finish()
     }
 }
-/// See [`PipelineDetail`](crate::model::PipelineDetail)
+/// See [`PipelineDetail`](crate::model::PipelineDetail).
 pub mod pipeline_detail {
 
-    /// A builder for [`PipelineDetail`](crate::model::PipelineDetail)
-    #[non_exhaustive]
+    /// A builder for [`PipelineDetail`](crate::model::PipelineDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_input_attachment_name: std::option::Option<std::string::String>,
@@ -6702,7 +6668,7 @@ pub mod pipeline_detail {
             self.pipeline_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`PipelineDetail`](crate::model::PipelineDetail)
+        /// Consumes the builder and constructs a [`PipelineDetail`](crate::model::PipelineDetail).
         pub fn build(self) -> crate::model::PipelineDetail {
             crate::model::PipelineDetail {
                 active_input_attachment_name: self.active_input_attachment_name,
@@ -6715,7 +6681,7 @@ pub mod pipeline_detail {
     }
 }
 impl PipelineDetail {
-    /// Creates a new builder-style object to manufacture [`PipelineDetail`](crate::model::PipelineDetail)
+    /// Creates a new builder-style object to manufacture [`PipelineDetail`](crate::model::PipelineDetail).
     pub fn builder() -> crate::model::pipeline_detail::Builder {
         crate::model::pipeline_detail::Builder::default()
     }
@@ -6765,11 +6731,10 @@ impl std::fmt::Debug for MaintenanceStatus {
         formatter.finish()
     }
 }
-/// See [`MaintenanceStatus`](crate::model::MaintenanceStatus)
+/// See [`MaintenanceStatus`](crate::model::MaintenanceStatus).
 pub mod maintenance_status {
 
-    /// A builder for [`MaintenanceStatus`](crate::model::MaintenanceStatus)
-    #[non_exhaustive]
+    /// A builder for [`MaintenanceStatus`](crate::model::MaintenanceStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -6830,7 +6795,7 @@ pub mod maintenance_status {
             self.maintenance_start_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`MaintenanceStatus`](crate::model::MaintenanceStatus)
+        /// Consumes the builder and constructs a [`MaintenanceStatus`](crate::model::MaintenanceStatus).
         pub fn build(self) -> crate::model::MaintenanceStatus {
             crate::model::MaintenanceStatus {
                 maintenance_day: self.maintenance_day,
@@ -6842,7 +6807,7 @@ pub mod maintenance_status {
     }
 }
 impl MaintenanceStatus {
-    /// Creates a new builder-style object to manufacture [`MaintenanceStatus`](crate::model::MaintenanceStatus)
+    /// Creates a new builder-style object to manufacture [`MaintenanceStatus`](crate::model::MaintenanceStatus).
     pub fn builder() -> crate::model::maintenance_status::Builder {
         crate::model::maintenance_status::Builder::default()
     }
@@ -7032,11 +6997,10 @@ impl std::fmt::Debug for InputSpecification {
         formatter.finish()
     }
 }
-/// See [`InputSpecification`](crate::model::InputSpecification)
+/// See [`InputSpecification`](crate::model::InputSpecification).
 pub mod input_specification {
 
-    /// A builder for [`InputSpecification`](crate::model::InputSpecification)
-    #[non_exhaustive]
+    /// A builder for [`InputSpecification`](crate::model::InputSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec: std::option::Option<crate::model::InputCodec>,
@@ -7080,7 +7044,7 @@ pub mod input_specification {
             self.resolution = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputSpecification`](crate::model::InputSpecification)
+        /// Consumes the builder and constructs a [`InputSpecification`](crate::model::InputSpecification).
         pub fn build(self) -> crate::model::InputSpecification {
             crate::model::InputSpecification {
                 codec: self.codec,
@@ -7091,7 +7055,7 @@ pub mod input_specification {
     }
 }
 impl InputSpecification {
-    /// Creates a new builder-style object to manufacture [`InputSpecification`](crate::model::InputSpecification)
+    /// Creates a new builder-style object to manufacture [`InputSpecification`](crate::model::InputSpecification).
     pub fn builder() -> crate::model::input_specification::Builder {
         crate::model::input_specification::Builder::default()
     }
@@ -7321,11 +7285,10 @@ impl std::fmt::Debug for InputAttachment {
         formatter.finish()
     }
 }
-/// See [`InputAttachment`](crate::model::InputAttachment)
+/// See [`InputAttachment`](crate::model::InputAttachment).
 pub mod input_attachment {
 
-    /// A builder for [`InputAttachment`](crate::model::InputAttachment)
-    #[non_exhaustive]
+    /// A builder for [`InputAttachment`](crate::model::InputAttachment).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) automatic_input_failover_settings:
@@ -7387,7 +7350,7 @@ pub mod input_attachment {
             self.input_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputAttachment`](crate::model::InputAttachment)
+        /// Consumes the builder and constructs a [`InputAttachment`](crate::model::InputAttachment).
         pub fn build(self) -> crate::model::InputAttachment {
             crate::model::InputAttachment {
                 automatic_input_failover_settings: self.automatic_input_failover_settings,
@@ -7399,7 +7362,7 @@ pub mod input_attachment {
     }
 }
 impl InputAttachment {
-    /// Creates a new builder-style object to manufacture [`InputAttachment`](crate::model::InputAttachment)
+    /// Creates a new builder-style object to manufacture [`InputAttachment`](crate::model::InputAttachment).
     pub fn builder() -> crate::model::input_attachment::Builder {
         crate::model::input_attachment::Builder::default()
     }
@@ -7501,11 +7464,10 @@ impl std::fmt::Debug for InputSettings {
         formatter.finish()
     }
 }
-/// See [`InputSettings`](crate::model::InputSettings)
+/// See [`InputSettings`](crate::model::InputSettings).
 pub mod input_settings {
 
-    /// A builder for [`InputSettings`](crate::model::InputSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputSettings`](crate::model::InputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_selectors: std::option::Option<std::vec::Vec<crate::model::AudioSelector>>,
@@ -7675,7 +7637,7 @@ pub mod input_settings {
             self.video_selector = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputSettings`](crate::model::InputSettings)
+        /// Consumes the builder and constructs a [`InputSettings`](crate::model::InputSettings).
         pub fn build(self) -> crate::model::InputSettings {
             crate::model::InputSettings {
                 audio_selectors: self.audio_selectors,
@@ -7694,7 +7656,7 @@ pub mod input_settings {
     }
 }
 impl InputSettings {
-    /// Creates a new builder-style object to manufacture [`InputSettings`](crate::model::InputSettings)
+    /// Creates a new builder-style object to manufacture [`InputSettings`](crate::model::InputSettings).
     pub fn builder() -> crate::model::input_settings::Builder {
         crate::model::input_settings::Builder::default()
     }
@@ -7745,11 +7707,10 @@ impl std::fmt::Debug for VideoSelector {
         formatter.finish()
     }
 }
-/// See [`VideoSelector`](crate::model::VideoSelector)
+/// See [`VideoSelector`](crate::model::VideoSelector).
 pub mod video_selector {
 
-    /// A builder for [`VideoSelector`](crate::model::VideoSelector)
-    #[non_exhaustive]
+    /// A builder for [`VideoSelector`](crate::model::VideoSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) color_space: std::option::Option<crate::model::VideoSelectorColorSpace>,
@@ -7818,7 +7779,7 @@ pub mod video_selector {
             self.selector_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoSelector`](crate::model::VideoSelector)
+        /// Consumes the builder and constructs a [`VideoSelector`](crate::model::VideoSelector).
         pub fn build(self) -> crate::model::VideoSelector {
             crate::model::VideoSelector {
                 color_space: self.color_space,
@@ -7830,7 +7791,7 @@ pub mod video_selector {
     }
 }
 impl VideoSelector {
-    /// Creates a new builder-style object to manufacture [`VideoSelector`](crate::model::VideoSelector)
+    /// Creates a new builder-style object to manufacture [`VideoSelector`](crate::model::VideoSelector).
     pub fn builder() -> crate::model::video_selector::Builder {
         crate::model::video_selector::Builder::default()
     }
@@ -7865,11 +7826,10 @@ impl std::fmt::Debug for VideoSelectorSettings {
         formatter.finish()
     }
 }
-/// See [`VideoSelectorSettings`](crate::model::VideoSelectorSettings)
+/// See [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
 pub mod video_selector_settings {
 
-    /// A builder for [`VideoSelectorSettings`](crate::model::VideoSelectorSettings)
-    #[non_exhaustive]
+    /// A builder for [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) video_selector_pid: std::option::Option<crate::model::VideoSelectorPid>,
@@ -7906,7 +7866,7 @@ pub mod video_selector_settings {
             self.video_selector_program_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoSelectorSettings`](crate::model::VideoSelectorSettings)
+        /// Consumes the builder and constructs a [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
         pub fn build(self) -> crate::model::VideoSelectorSettings {
             crate::model::VideoSelectorSettings {
                 video_selector_pid: self.video_selector_pid,
@@ -7916,7 +7876,7 @@ pub mod video_selector_settings {
     }
 }
 impl VideoSelectorSettings {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorSettings`](crate::model::VideoSelectorSettings)
+    /// Creates a new builder-style object to manufacture [`VideoSelectorSettings`](crate::model::VideoSelectorSettings).
     pub fn builder() -> crate::model::video_selector_settings::Builder {
         crate::model::video_selector_settings::Builder::default()
     }
@@ -7942,11 +7902,10 @@ impl std::fmt::Debug for VideoSelectorProgramId {
         formatter.finish()
     }
 }
-/// See [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId)
+/// See [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
 pub mod video_selector_program_id {
 
-    /// A builder for [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId)
-    #[non_exhaustive]
+    /// A builder for [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) program_id: std::option::Option<i32>,
@@ -7962,7 +7921,7 @@ pub mod video_selector_program_id {
             self.program_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId)
+        /// Consumes the builder and constructs a [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
         pub fn build(self) -> crate::model::VideoSelectorProgramId {
             crate::model::VideoSelectorProgramId {
                 program_id: self.program_id.unwrap_or_default(),
@@ -7971,7 +7930,7 @@ pub mod video_selector_program_id {
     }
 }
 impl VideoSelectorProgramId {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId)
+    /// Creates a new builder-style object to manufacture [`VideoSelectorProgramId`](crate::model::VideoSelectorProgramId).
     pub fn builder() -> crate::model::video_selector_program_id::Builder {
         crate::model::video_selector_program_id::Builder::default()
     }
@@ -7997,11 +7956,10 @@ impl std::fmt::Debug for VideoSelectorPid {
         formatter.finish()
     }
 }
-/// See [`VideoSelectorPid`](crate::model::VideoSelectorPid)
+/// See [`VideoSelectorPid`](crate::model::VideoSelectorPid).
 pub mod video_selector_pid {
 
-    /// A builder for [`VideoSelectorPid`](crate::model::VideoSelectorPid)
-    #[non_exhaustive]
+    /// A builder for [`VideoSelectorPid`](crate::model::VideoSelectorPid).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pid: std::option::Option<i32>,
@@ -8017,7 +7975,7 @@ pub mod video_selector_pid {
             self.pid = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoSelectorPid`](crate::model::VideoSelectorPid)
+        /// Consumes the builder and constructs a [`VideoSelectorPid`](crate::model::VideoSelectorPid).
         pub fn build(self) -> crate::model::VideoSelectorPid {
             crate::model::VideoSelectorPid {
                 pid: self.pid.unwrap_or_default(),
@@ -8026,7 +7984,7 @@ pub mod video_selector_pid {
     }
 }
 impl VideoSelectorPid {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorPid`](crate::model::VideoSelectorPid)
+    /// Creates a new builder-style object to manufacture [`VideoSelectorPid`](crate::model::VideoSelectorPid).
     pub fn builder() -> crate::model::video_selector_pid::Builder {
         crate::model::video_selector_pid::Builder::default()
     }
@@ -8107,11 +8065,10 @@ impl std::fmt::Debug for VideoSelectorColorSpaceSettings {
         formatter.finish()
     }
 }
-/// See [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings)
+/// See [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
 pub mod video_selector_color_space_settings {
 
-    /// A builder for [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings)
-    #[non_exhaustive]
+    /// A builder for [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hdr10_settings: std::option::Option<crate::model::Hdr10Settings>,
@@ -8130,7 +8087,7 @@ pub mod video_selector_color_space_settings {
             self.hdr10_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings)
+        /// Consumes the builder and constructs a [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
         pub fn build(self) -> crate::model::VideoSelectorColorSpaceSettings {
             crate::model::VideoSelectorColorSpaceSettings {
                 hdr10_settings: self.hdr10_settings,
@@ -8139,7 +8096,7 @@ pub mod video_selector_color_space_settings {
     }
 }
 impl VideoSelectorColorSpaceSettings {
-    /// Creates a new builder-style object to manufacture [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings)
+    /// Creates a new builder-style object to manufacture [`VideoSelectorColorSpaceSettings`](crate::model::VideoSelectorColorSpaceSettings).
     pub fn builder() -> crate::model::video_selector_color_space_settings::Builder {
         crate::model::video_selector_color_space_settings::Builder::default()
     }
@@ -8172,11 +8129,10 @@ impl std::fmt::Debug for Hdr10Settings {
         formatter.finish()
     }
 }
-/// See [`Hdr10Settings`](crate::model::Hdr10Settings)
+/// See [`Hdr10Settings`](crate::model::Hdr10Settings).
 pub mod hdr10_settings {
 
-    /// A builder for [`Hdr10Settings`](crate::model::Hdr10Settings)
-    #[non_exhaustive]
+    /// A builder for [`Hdr10Settings`](crate::model::Hdr10Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) max_cll: std::option::Option<i32>,
@@ -8203,7 +8159,7 @@ pub mod hdr10_settings {
             self.max_fall = input;
             self
         }
-        /// Consumes the builder and constructs a [`Hdr10Settings`](crate::model::Hdr10Settings)
+        /// Consumes the builder and constructs a [`Hdr10Settings`](crate::model::Hdr10Settings).
         pub fn build(self) -> crate::model::Hdr10Settings {
             crate::model::Hdr10Settings {
                 max_cll: self.max_cll.unwrap_or_default(),
@@ -8213,7 +8169,7 @@ pub mod hdr10_settings {
     }
 }
 impl Hdr10Settings {
-    /// Creates a new builder-style object to manufacture [`Hdr10Settings`](crate::model::Hdr10Settings)
+    /// Creates a new builder-style object to manufacture [`Hdr10Settings`](crate::model::Hdr10Settings).
     pub fn builder() -> crate::model::hdr10_settings::Builder {
         crate::model::hdr10_settings::Builder::default()
     }
@@ -8425,11 +8381,10 @@ impl std::fmt::Debug for NetworkInputSettings {
         formatter.finish()
     }
 }
-/// See [`NetworkInputSettings`](crate::model::NetworkInputSettings)
+/// See [`NetworkInputSettings`](crate::model::NetworkInputSettings).
 pub mod network_input_settings {
 
-    /// A builder for [`NetworkInputSettings`](crate::model::NetworkInputSettings)
-    #[non_exhaustive]
+    /// A builder for [`NetworkInputSettings`](crate::model::NetworkInputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hls_input_settings: std::option::Option<crate::model::HlsInputSettings>,
@@ -8466,7 +8421,7 @@ pub mod network_input_settings {
             self.server_validation = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkInputSettings`](crate::model::NetworkInputSettings)
+        /// Consumes the builder and constructs a [`NetworkInputSettings`](crate::model::NetworkInputSettings).
         pub fn build(self) -> crate::model::NetworkInputSettings {
             crate::model::NetworkInputSettings {
                 hls_input_settings: self.hls_input_settings,
@@ -8476,7 +8431,7 @@ pub mod network_input_settings {
     }
 }
 impl NetworkInputSettings {
-    /// Creates a new builder-style object to manufacture [`NetworkInputSettings`](crate::model::NetworkInputSettings)
+    /// Creates a new builder-style object to manufacture [`NetworkInputSettings`](crate::model::NetworkInputSettings).
     pub fn builder() -> crate::model::network_input_settings::Builder {
         crate::model::network_input_settings::Builder::default()
     }
@@ -8592,11 +8547,10 @@ impl std::fmt::Debug for HlsInputSettings {
         formatter.finish()
     }
 }
-/// See [`HlsInputSettings`](crate::model::HlsInputSettings)
+/// See [`HlsInputSettings`](crate::model::HlsInputSettings).
 pub mod hls_input_settings {
 
-    /// A builder for [`HlsInputSettings`](crate::model::HlsInputSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsInputSettings`](crate::model::HlsInputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bandwidth: std::option::Option<i32>,
@@ -8659,7 +8613,7 @@ pub mod hls_input_settings {
             self.scte35_source = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsInputSettings`](crate::model::HlsInputSettings)
+        /// Consumes the builder and constructs a [`HlsInputSettings`](crate::model::HlsInputSettings).
         pub fn build(self) -> crate::model::HlsInputSettings {
             crate::model::HlsInputSettings {
                 bandwidth: self.bandwidth.unwrap_or_default(),
@@ -8672,7 +8626,7 @@ pub mod hls_input_settings {
     }
 }
 impl HlsInputSettings {
-    /// Creates a new builder-style object to manufacture [`HlsInputSettings`](crate::model::HlsInputSettings)
+    /// Creates a new builder-style object to manufacture [`HlsInputSettings`](crate::model::HlsInputSettings).
     pub fn builder() -> crate::model::hls_input_settings::Builder {
         crate::model::hls_input_settings::Builder::default()
     }
@@ -8936,11 +8890,10 @@ impl std::fmt::Debug for CaptionSelector {
         formatter.finish()
     }
 }
-/// See [`CaptionSelector`](crate::model::CaptionSelector)
+/// See [`CaptionSelector`](crate::model::CaptionSelector).
 pub mod caption_selector {
 
-    /// A builder for [`CaptionSelector`](crate::model::CaptionSelector)
-    #[non_exhaustive]
+    /// A builder for [`CaptionSelector`](crate::model::CaptionSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -8984,7 +8937,7 @@ pub mod caption_selector {
             self.selector_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`CaptionSelector`](crate::model::CaptionSelector)
+        /// Consumes the builder and constructs a [`CaptionSelector`](crate::model::CaptionSelector).
         pub fn build(self) -> crate::model::CaptionSelector {
             crate::model::CaptionSelector {
                 language_code: self.language_code,
@@ -8995,7 +8948,7 @@ pub mod caption_selector {
     }
 }
 impl CaptionSelector {
-    /// Creates a new builder-style object to manufacture [`CaptionSelector`](crate::model::CaptionSelector)
+    /// Creates a new builder-style object to manufacture [`CaptionSelector`](crate::model::CaptionSelector).
     pub fn builder() -> crate::model::caption_selector::Builder {
         crate::model::caption_selector::Builder::default()
     }
@@ -9075,11 +9028,10 @@ impl std::fmt::Debug for CaptionSelectorSettings {
         formatter.finish()
     }
 }
-/// See [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings)
+/// See [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
 pub mod caption_selector_settings {
 
-    /// A builder for [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings)
-    #[non_exhaustive]
+    /// A builder for [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ancillary_source_settings:
@@ -9197,7 +9149,7 @@ pub mod caption_selector_settings {
             self.teletext_source_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings)
+        /// Consumes the builder and constructs a [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
         pub fn build(self) -> crate::model::CaptionSelectorSettings {
             crate::model::CaptionSelectorSettings {
                 ancillary_source_settings: self.ancillary_source_settings,
@@ -9212,7 +9164,7 @@ pub mod caption_selector_settings {
     }
 }
 impl CaptionSelectorSettings {
-    /// Creates a new builder-style object to manufacture [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings)
+    /// Creates a new builder-style object to manufacture [`CaptionSelectorSettings`](crate::model::CaptionSelectorSettings).
     pub fn builder() -> crate::model::caption_selector_settings::Builder {
         crate::model::caption_selector_settings::Builder::default()
     }
@@ -9245,11 +9197,10 @@ impl std::fmt::Debug for TeletextSourceSettings {
         formatter.finish()
     }
 }
-/// See [`TeletextSourceSettings`](crate::model::TeletextSourceSettings)
+/// See [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
 pub mod teletext_source_settings {
 
-    /// A builder for [`TeletextSourceSettings`](crate::model::TeletextSourceSettings)
-    #[non_exhaustive]
+    /// A builder for [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_rectangle: std::option::Option<crate::model::CaptionRectangle>,
@@ -9279,7 +9230,7 @@ pub mod teletext_source_settings {
             self.page_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`TeletextSourceSettings`](crate::model::TeletextSourceSettings)
+        /// Consumes the builder and constructs a [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
         pub fn build(self) -> crate::model::TeletextSourceSettings {
             crate::model::TeletextSourceSettings {
                 output_rectangle: self.output_rectangle,
@@ -9289,7 +9240,7 @@ pub mod teletext_source_settings {
     }
 }
 impl TeletextSourceSettings {
-    /// Creates a new builder-style object to manufacture [`TeletextSourceSettings`](crate::model::TeletextSourceSettings)
+    /// Creates a new builder-style object to manufacture [`TeletextSourceSettings`](crate::model::TeletextSourceSettings).
     pub fn builder() -> crate::model::teletext_source_settings::Builder {
         crate::model::teletext_source_settings::Builder::default()
     }
@@ -9336,11 +9287,10 @@ impl std::fmt::Debug for CaptionRectangle {
         formatter.finish()
     }
 }
-/// See [`CaptionRectangle`](crate::model::CaptionRectangle)
+/// See [`CaptionRectangle`](crate::model::CaptionRectangle).
 pub mod caption_rectangle {
 
-    /// A builder for [`CaptionRectangle`](crate::model::CaptionRectangle)
-    #[non_exhaustive]
+    /// A builder for [`CaptionRectangle`](crate::model::CaptionRectangle).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) height: std::option::Option<f64>,
@@ -9389,7 +9339,7 @@ pub mod caption_rectangle {
             self.width = input;
             self
         }
-        /// Consumes the builder and constructs a [`CaptionRectangle`](crate::model::CaptionRectangle)
+        /// Consumes the builder and constructs a [`CaptionRectangle`](crate::model::CaptionRectangle).
         pub fn build(self) -> crate::model::CaptionRectangle {
             crate::model::CaptionRectangle {
                 height: self.height.unwrap_or_default(),
@@ -9401,7 +9351,7 @@ pub mod caption_rectangle {
     }
 }
 impl CaptionRectangle {
-    /// Creates a new builder-style object to manufacture [`CaptionRectangle`](crate::model::CaptionRectangle)
+    /// Creates a new builder-style object to manufacture [`CaptionRectangle`](crate::model::CaptionRectangle).
     pub fn builder() -> crate::model::caption_rectangle::Builder {
         crate::model::caption_rectangle::Builder::default()
     }
@@ -9434,11 +9384,10 @@ impl std::fmt::Debug for Scte27SourceSettings {
         formatter.finish()
     }
 }
-/// See [`Scte27SourceSettings`](crate::model::Scte27SourceSettings)
+/// See [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
 pub mod scte27_source_settings {
 
-    /// A builder for [`Scte27SourceSettings`](crate::model::Scte27SourceSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ocr_language: std::option::Option<crate::model::Scte27OcrLanguage>,
@@ -9468,7 +9417,7 @@ pub mod scte27_source_settings {
             self.pid = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte27SourceSettings`](crate::model::Scte27SourceSettings)
+        /// Consumes the builder and constructs a [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
         pub fn build(self) -> crate::model::Scte27SourceSettings {
             crate::model::Scte27SourceSettings {
                 ocr_language: self.ocr_language,
@@ -9478,7 +9427,7 @@ pub mod scte27_source_settings {
     }
 }
 impl Scte27SourceSettings {
-    /// Creates a new builder-style object to manufacture [`Scte27SourceSettings`](crate::model::Scte27SourceSettings)
+    /// Creates a new builder-style object to manufacture [`Scte27SourceSettings`](crate::model::Scte27SourceSettings).
     pub fn builder() -> crate::model::scte27_source_settings::Builder {
         crate::model::scte27_source_settings::Builder::default()
     }
@@ -9582,11 +9531,10 @@ impl std::fmt::Debug for Scte20SourceSettings {
         formatter.finish()
     }
 }
-/// See [`Scte20SourceSettings`](crate::model::Scte20SourceSettings)
+/// See [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
 pub mod scte20_source_settings {
 
-    /// A builder for [`Scte20SourceSettings`](crate::model::Scte20SourceSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) convert608_to708: std::option::Option<crate::model::Scte20Convert608To708>,
@@ -9616,7 +9564,7 @@ pub mod scte20_source_settings {
             self.source608_channel_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte20SourceSettings`](crate::model::Scte20SourceSettings)
+        /// Consumes the builder and constructs a [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
         pub fn build(self) -> crate::model::Scte20SourceSettings {
             crate::model::Scte20SourceSettings {
                 convert608_to708: self.convert608_to708,
@@ -9626,7 +9574,7 @@ pub mod scte20_source_settings {
     }
 }
 impl Scte20SourceSettings {
-    /// Creates a new builder-style object to manufacture [`Scte20SourceSettings`](crate::model::Scte20SourceSettings)
+    /// Creates a new builder-style object to manufacture [`Scte20SourceSettings`](crate::model::Scte20SourceSettings).
     pub fn builder() -> crate::model::scte20_source_settings::Builder {
         crate::model::scte20_source_settings::Builder::default()
     }
@@ -9728,11 +9676,10 @@ impl std::fmt::Debug for EmbeddedSourceSettings {
         formatter.finish()
     }
 }
-/// See [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings)
+/// See [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
 pub mod embedded_source_settings {
 
-    /// A builder for [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings)
-    #[non_exhaustive]
+    /// A builder for [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) convert608_to708: std::option::Option<crate::model::EmbeddedConvert608To708>,
@@ -9787,7 +9734,7 @@ pub mod embedded_source_settings {
             self.source608_track_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings)
+        /// Consumes the builder and constructs a [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
         pub fn build(self) -> crate::model::EmbeddedSourceSettings {
             crate::model::EmbeddedSourceSettings {
                 convert608_to708: self.convert608_to708,
@@ -9799,7 +9746,7 @@ pub mod embedded_source_settings {
     }
 }
 impl EmbeddedSourceSettings {
-    /// Creates a new builder-style object to manufacture [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings)
+    /// Creates a new builder-style object to manufacture [`EmbeddedSourceSettings`](crate::model::EmbeddedSourceSettings).
     pub fn builder() -> crate::model::embedded_source_settings::Builder {
         crate::model::embedded_source_settings::Builder::default()
     }
@@ -9942,11 +9889,10 @@ impl std::fmt::Debug for DvbSubSourceSettings {
         formatter.finish()
     }
 }
-/// See [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings)
+/// See [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
 pub mod dvb_sub_source_settings {
 
-    /// A builder for [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings)
-    #[non_exhaustive]
+    /// A builder for [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ocr_language: std::option::Option<crate::model::DvbSubOcrLanguage>,
@@ -9976,7 +9922,7 @@ pub mod dvb_sub_source_settings {
             self.pid = input;
             self
         }
-        /// Consumes the builder and constructs a [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings)
+        /// Consumes the builder and constructs a [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
         pub fn build(self) -> crate::model::DvbSubSourceSettings {
             crate::model::DvbSubSourceSettings {
                 ocr_language: self.ocr_language,
@@ -9986,7 +9932,7 @@ pub mod dvb_sub_source_settings {
     }
 }
 impl DvbSubSourceSettings {
-    /// Creates a new builder-style object to manufacture [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings)
+    /// Creates a new builder-style object to manufacture [`DvbSubSourceSettings`](crate::model::DvbSubSourceSettings).
     pub fn builder() -> crate::model::dvb_sub_source_settings::Builder {
         crate::model::dvb_sub_source_settings::Builder::default()
     }
@@ -10073,22 +10019,21 @@ impl std::fmt::Debug for AribSourceSettings {
         formatter.finish()
     }
 }
-/// See [`AribSourceSettings`](crate::model::AribSourceSettings)
+/// See [`AribSourceSettings`](crate::model::AribSourceSettings).
 pub mod arib_source_settings {
 
-    /// A builder for [`AribSourceSettings`](crate::model::AribSourceSettings)
-    #[non_exhaustive]
+    /// A builder for [`AribSourceSettings`](crate::model::AribSourceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AribSourceSettings`](crate::model::AribSourceSettings)
+        /// Consumes the builder and constructs a [`AribSourceSettings`](crate::model::AribSourceSettings).
         pub fn build(self) -> crate::model::AribSourceSettings {
             crate::model::AribSourceSettings {}
         }
     }
 }
 impl AribSourceSettings {
-    /// Creates a new builder-style object to manufacture [`AribSourceSettings`](crate::model::AribSourceSettings)
+    /// Creates a new builder-style object to manufacture [`AribSourceSettings`](crate::model::AribSourceSettings).
     pub fn builder() -> crate::model::arib_source_settings::Builder {
         crate::model::arib_source_settings::Builder::default()
     }
@@ -10117,11 +10062,10 @@ impl std::fmt::Debug for AncillarySourceSettings {
         formatter.finish()
     }
 }
-/// See [`AncillarySourceSettings`](crate::model::AncillarySourceSettings)
+/// See [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
 pub mod ancillary_source_settings {
 
-    /// A builder for [`AncillarySourceSettings`](crate::model::AncillarySourceSettings)
-    #[non_exhaustive]
+    /// A builder for [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_ancillary_channel_number: std::option::Option<i32>,
@@ -10140,7 +10084,7 @@ pub mod ancillary_source_settings {
             self.source_ancillary_channel_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`AncillarySourceSettings`](crate::model::AncillarySourceSettings)
+        /// Consumes the builder and constructs a [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
         pub fn build(self) -> crate::model::AncillarySourceSettings {
             crate::model::AncillarySourceSettings {
                 source_ancillary_channel_number: self
@@ -10151,7 +10095,7 @@ pub mod ancillary_source_settings {
     }
 }
 impl AncillarySourceSettings {
-    /// Creates a new builder-style object to manufacture [`AncillarySourceSettings`](crate::model::AncillarySourceSettings)
+    /// Creates a new builder-style object to manufacture [`AncillarySourceSettings`](crate::model::AncillarySourceSettings).
     pub fn builder() -> crate::model::ancillary_source_settings::Builder {
         crate::model::ancillary_source_settings::Builder::default()
     }
@@ -10184,11 +10128,10 @@ impl std::fmt::Debug for AudioSelector {
         formatter.finish()
     }
 }
-/// See [`AudioSelector`](crate::model::AudioSelector)
+/// See [`AudioSelector`](crate::model::AudioSelector).
 pub mod audio_selector {
 
-    /// A builder for [`AudioSelector`](crate::model::AudioSelector)
-    #[non_exhaustive]
+    /// A builder for [`AudioSelector`](crate::model::AudioSelector).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -10218,7 +10161,7 @@ pub mod audio_selector {
             self.selector_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioSelector`](crate::model::AudioSelector)
+        /// Consumes the builder and constructs a [`AudioSelector`](crate::model::AudioSelector).
         pub fn build(self) -> crate::model::AudioSelector {
             crate::model::AudioSelector {
                 name: self.name,
@@ -10228,7 +10171,7 @@ pub mod audio_selector {
     }
 }
 impl AudioSelector {
-    /// Creates a new builder-style object to manufacture [`AudioSelector`](crate::model::AudioSelector)
+    /// Creates a new builder-style object to manufacture [`AudioSelector`](crate::model::AudioSelector).
     pub fn builder() -> crate::model::audio_selector::Builder {
         crate::model::audio_selector::Builder::default()
     }
@@ -10283,11 +10226,10 @@ impl std::fmt::Debug for AudioSelectorSettings {
         formatter.finish()
     }
 }
-/// See [`AudioSelectorSettings`](crate::model::AudioSelectorSettings)
+/// See [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
 pub mod audio_selector_settings {
 
-    /// A builder for [`AudioSelectorSettings`](crate::model::AudioSelectorSettings)
-    #[non_exhaustive]
+    /// A builder for [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_hls_rendition_selection:
@@ -10356,7 +10298,7 @@ pub mod audio_selector_settings {
             self.audio_track_selection = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioSelectorSettings`](crate::model::AudioSelectorSettings)
+        /// Consumes the builder and constructs a [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
         pub fn build(self) -> crate::model::AudioSelectorSettings {
             crate::model::AudioSelectorSettings {
                 audio_hls_rendition_selection: self.audio_hls_rendition_selection,
@@ -10368,7 +10310,7 @@ pub mod audio_selector_settings {
     }
 }
 impl AudioSelectorSettings {
-    /// Creates a new builder-style object to manufacture [`AudioSelectorSettings`](crate::model::AudioSelectorSettings)
+    /// Creates a new builder-style object to manufacture [`AudioSelectorSettings`](crate::model::AudioSelectorSettings).
     pub fn builder() -> crate::model::audio_selector_settings::Builder {
         crate::model::audio_selector_settings::Builder::default()
     }
@@ -10394,11 +10336,10 @@ impl std::fmt::Debug for AudioTrackSelection {
         formatter.finish()
     }
 }
-/// See [`AudioTrackSelection`](crate::model::AudioTrackSelection)
+/// See [`AudioTrackSelection`](crate::model::AudioTrackSelection).
 pub mod audio_track_selection {
 
-    /// A builder for [`AudioTrackSelection`](crate::model::AudioTrackSelection)
-    #[non_exhaustive]
+    /// A builder for [`AudioTrackSelection`](crate::model::AudioTrackSelection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tracks: std::option::Option<std::vec::Vec<crate::model::AudioTrack>>,
@@ -10423,7 +10364,7 @@ pub mod audio_track_selection {
             self.tracks = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioTrackSelection`](crate::model::AudioTrackSelection)
+        /// Consumes the builder and constructs a [`AudioTrackSelection`](crate::model::AudioTrackSelection).
         pub fn build(self) -> crate::model::AudioTrackSelection {
             crate::model::AudioTrackSelection {
                 tracks: self.tracks,
@@ -10432,7 +10373,7 @@ pub mod audio_track_selection {
     }
 }
 impl AudioTrackSelection {
-    /// Creates a new builder-style object to manufacture [`AudioTrackSelection`](crate::model::AudioTrackSelection)
+    /// Creates a new builder-style object to manufacture [`AudioTrackSelection`](crate::model::AudioTrackSelection).
     pub fn builder() -> crate::model::audio_track_selection::Builder {
         crate::model::audio_track_selection::Builder::default()
     }
@@ -10458,11 +10399,10 @@ impl std::fmt::Debug for AudioTrack {
         formatter.finish()
     }
 }
-/// See [`AudioTrack`](crate::model::AudioTrack)
+/// See [`AudioTrack`](crate::model::AudioTrack).
 pub mod audio_track {
 
-    /// A builder for [`AudioTrack`](crate::model::AudioTrack)
-    #[non_exhaustive]
+    /// A builder for [`AudioTrack`](crate::model::AudioTrack).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) track: std::option::Option<i32>,
@@ -10478,7 +10418,7 @@ pub mod audio_track {
             self.track = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioTrack`](crate::model::AudioTrack)
+        /// Consumes the builder and constructs a [`AudioTrack`](crate::model::AudioTrack).
         pub fn build(self) -> crate::model::AudioTrack {
             crate::model::AudioTrack {
                 track: self.track.unwrap_or_default(),
@@ -10487,7 +10427,7 @@ pub mod audio_track {
     }
 }
 impl AudioTrack {
-    /// Creates a new builder-style object to manufacture [`AudioTrack`](crate::model::AudioTrack)
+    /// Creates a new builder-style object to manufacture [`AudioTrack`](crate::model::AudioTrack).
     pub fn builder() -> crate::model::audio_track::Builder {
         crate::model::audio_track::Builder::default()
     }
@@ -10513,11 +10453,10 @@ impl std::fmt::Debug for AudioPidSelection {
         formatter.finish()
     }
 }
-/// See [`AudioPidSelection`](crate::model::AudioPidSelection)
+/// See [`AudioPidSelection`](crate::model::AudioPidSelection).
 pub mod audio_pid_selection {
 
-    /// A builder for [`AudioPidSelection`](crate::model::AudioPidSelection)
-    #[non_exhaustive]
+    /// A builder for [`AudioPidSelection`](crate::model::AudioPidSelection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pid: std::option::Option<i32>,
@@ -10533,7 +10472,7 @@ pub mod audio_pid_selection {
             self.pid = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioPidSelection`](crate::model::AudioPidSelection)
+        /// Consumes the builder and constructs a [`AudioPidSelection`](crate::model::AudioPidSelection).
         pub fn build(self) -> crate::model::AudioPidSelection {
             crate::model::AudioPidSelection {
                 pid: self.pid.unwrap_or_default(),
@@ -10542,7 +10481,7 @@ pub mod audio_pid_selection {
     }
 }
 impl AudioPidSelection {
-    /// Creates a new builder-style object to manufacture [`AudioPidSelection`](crate::model::AudioPidSelection)
+    /// Creates a new builder-style object to manufacture [`AudioPidSelection`](crate::model::AudioPidSelection).
     pub fn builder() -> crate::model::audio_pid_selection::Builder {
         crate::model::audio_pid_selection::Builder::default()
     }
@@ -10577,11 +10516,10 @@ impl std::fmt::Debug for AudioLanguageSelection {
         formatter.finish()
     }
 }
-/// See [`AudioLanguageSelection`](crate::model::AudioLanguageSelection)
+/// See [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
 pub mod audio_language_selection {
 
-    /// A builder for [`AudioLanguageSelection`](crate::model::AudioLanguageSelection)
-    #[non_exhaustive]
+    /// A builder for [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) language_code: std::option::Option<std::string::String>,
@@ -10618,7 +10556,7 @@ pub mod audio_language_selection {
             self.language_selection_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioLanguageSelection`](crate::model::AudioLanguageSelection)
+        /// Consumes the builder and constructs a [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
         pub fn build(self) -> crate::model::AudioLanguageSelection {
             crate::model::AudioLanguageSelection {
                 language_code: self.language_code,
@@ -10628,7 +10566,7 @@ pub mod audio_language_selection {
     }
 }
 impl AudioLanguageSelection {
-    /// Creates a new builder-style object to manufacture [`AudioLanguageSelection`](crate::model::AudioLanguageSelection)
+    /// Creates a new builder-style object to manufacture [`AudioLanguageSelection`](crate::model::AudioLanguageSelection).
     pub fn builder() -> crate::model::audio_language_selection::Builder {
         crate::model::audio_language_selection::Builder::default()
     }
@@ -10716,11 +10654,10 @@ impl std::fmt::Debug for AudioHlsRenditionSelection {
         formatter.finish()
     }
 }
-/// See [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
+/// See [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
 pub mod audio_hls_rendition_selection {
 
-    /// A builder for [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
-    #[non_exhaustive]
+    /// A builder for [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_id: std::option::Option<std::string::String>,
@@ -10747,7 +10684,7 @@ pub mod audio_hls_rendition_selection {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
+        /// Consumes the builder and constructs a [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
         pub fn build(self) -> crate::model::AudioHlsRenditionSelection {
             crate::model::AudioHlsRenditionSelection {
                 group_id: self.group_id,
@@ -10757,7 +10694,7 @@ pub mod audio_hls_rendition_selection {
     }
 }
 impl AudioHlsRenditionSelection {
-    /// Creates a new builder-style object to manufacture [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection)
+    /// Creates a new builder-style object to manufacture [`AudioHlsRenditionSelection`](crate::model::AudioHlsRenditionSelection).
     pub fn builder() -> crate::model::audio_hls_rendition_selection::Builder {
         crate::model::audio_hls_rendition_selection::Builder::default()
     }
@@ -10804,11 +10741,10 @@ impl std::fmt::Debug for AutomaticInputFailoverSettings {
         formatter.finish()
     }
 }
-/// See [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings)
+/// See [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
 pub mod automatic_input_failover_settings {
 
-    /// A builder for [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings)
-    #[non_exhaustive]
+    /// A builder for [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error_clear_time_msec: std::option::Option<i32>,
@@ -10873,7 +10809,7 @@ pub mod automatic_input_failover_settings {
             self.secondary_input_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings)
+        /// Consumes the builder and constructs a [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
         pub fn build(self) -> crate::model::AutomaticInputFailoverSettings {
             crate::model::AutomaticInputFailoverSettings {
                 error_clear_time_msec: self.error_clear_time_msec.unwrap_or_default(),
@@ -10885,7 +10821,7 @@ pub mod automatic_input_failover_settings {
     }
 }
 impl AutomaticInputFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings)
+    /// Creates a new builder-style object to manufacture [`AutomaticInputFailoverSettings`](crate::model::AutomaticInputFailoverSettings).
     pub fn builder() -> crate::model::automatic_input_failover_settings::Builder {
         crate::model::automatic_input_failover_settings::Builder::default()
     }
@@ -10973,11 +10909,10 @@ impl std::fmt::Debug for FailoverCondition {
         formatter.finish()
     }
 }
-/// See [`FailoverCondition`](crate::model::FailoverCondition)
+/// See [`FailoverCondition`](crate::model::FailoverCondition).
 pub mod failover_condition {
 
-    /// A builder for [`FailoverCondition`](crate::model::FailoverCondition)
-    #[non_exhaustive]
+    /// A builder for [`FailoverCondition`](crate::model::FailoverCondition).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failover_condition_settings:
@@ -11000,7 +10935,7 @@ pub mod failover_condition {
             self.failover_condition_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailoverCondition`](crate::model::FailoverCondition)
+        /// Consumes the builder and constructs a [`FailoverCondition`](crate::model::FailoverCondition).
         pub fn build(self) -> crate::model::FailoverCondition {
             crate::model::FailoverCondition {
                 failover_condition_settings: self.failover_condition_settings,
@@ -11009,7 +10944,7 @@ pub mod failover_condition {
     }
 }
 impl FailoverCondition {
-    /// Creates a new builder-style object to manufacture [`FailoverCondition`](crate::model::FailoverCondition)
+    /// Creates a new builder-style object to manufacture [`FailoverCondition`](crate::model::FailoverCondition).
     pub fn builder() -> crate::model::failover_condition::Builder {
         crate::model::failover_condition::Builder::default()
     }
@@ -11055,11 +10990,10 @@ impl std::fmt::Debug for FailoverConditionSettings {
         formatter.finish()
     }
 }
-/// See [`FailoverConditionSettings`](crate::model::FailoverConditionSettings)
+/// See [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
 pub mod failover_condition_settings {
 
-    /// A builder for [`FailoverConditionSettings`](crate::model::FailoverConditionSettings)
-    #[non_exhaustive]
+    /// A builder for [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_silence_settings:
@@ -11118,7 +11052,7 @@ pub mod failover_condition_settings {
             self.video_black_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`FailoverConditionSettings`](crate::model::FailoverConditionSettings)
+        /// Consumes the builder and constructs a [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
         pub fn build(self) -> crate::model::FailoverConditionSettings {
             crate::model::FailoverConditionSettings {
                 audio_silence_settings: self.audio_silence_settings,
@@ -11129,7 +11063,7 @@ pub mod failover_condition_settings {
     }
 }
 impl FailoverConditionSettings {
-    /// Creates a new builder-style object to manufacture [`FailoverConditionSettings`](crate::model::FailoverConditionSettings)
+    /// Creates a new builder-style object to manufacture [`FailoverConditionSettings`](crate::model::FailoverConditionSettings).
     pub fn builder() -> crate::model::failover_condition_settings::Builder {
         crate::model::failover_condition_settings::Builder::default()
     }
@@ -11165,11 +11099,10 @@ impl std::fmt::Debug for VideoBlackFailoverSettings {
         formatter.finish()
     }
 }
-/// See [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings)
+/// See [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
 pub mod video_black_failover_settings {
 
-    /// A builder for [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings)
-    #[non_exhaustive]
+    /// A builder for [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) black_detect_threshold: std::option::Option<f64>,
@@ -11196,7 +11129,7 @@ pub mod video_black_failover_settings {
             self.video_black_threshold_msec = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings)
+        /// Consumes the builder and constructs a [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
         pub fn build(self) -> crate::model::VideoBlackFailoverSettings {
             crate::model::VideoBlackFailoverSettings {
                 black_detect_threshold: self.black_detect_threshold.unwrap_or_default(),
@@ -11206,7 +11139,7 @@ pub mod video_black_failover_settings {
     }
 }
 impl VideoBlackFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings)
+    /// Creates a new builder-style object to manufacture [`VideoBlackFailoverSettings`](crate::model::VideoBlackFailoverSettings).
     pub fn builder() -> crate::model::video_black_failover_settings::Builder {
         crate::model::video_black_failover_settings::Builder::default()
     }
@@ -11232,11 +11165,10 @@ impl std::fmt::Debug for InputLossFailoverSettings {
         formatter.finish()
     }
 }
-/// See [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings)
+/// See [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
 pub mod input_loss_failover_settings {
 
-    /// A builder for [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_loss_threshold_msec: std::option::Option<i32>,
@@ -11252,7 +11184,7 @@ pub mod input_loss_failover_settings {
             self.input_loss_threshold_msec = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings)
+        /// Consumes the builder and constructs a [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
         pub fn build(self) -> crate::model::InputLossFailoverSettings {
             crate::model::InputLossFailoverSettings {
                 input_loss_threshold_msec: self.input_loss_threshold_msec.unwrap_or_default(),
@@ -11261,7 +11193,7 @@ pub mod input_loss_failover_settings {
     }
 }
 impl InputLossFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings)
+    /// Creates a new builder-style object to manufacture [`InputLossFailoverSettings`](crate::model::InputLossFailoverSettings).
     pub fn builder() -> crate::model::input_loss_failover_settings::Builder {
         crate::model::input_loss_failover_settings::Builder::default()
     }
@@ -11297,11 +11229,10 @@ impl std::fmt::Debug for AudioSilenceFailoverSettings {
         formatter.finish()
     }
 }
-/// See [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings)
+/// See [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
 pub mod audio_silence_failover_settings {
 
-    /// A builder for [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings)
-    #[non_exhaustive]
+    /// A builder for [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_selector_name: std::option::Option<std::string::String>,
@@ -11331,7 +11262,7 @@ pub mod audio_silence_failover_settings {
             self.audio_silence_threshold_msec = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings)
+        /// Consumes the builder and constructs a [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
         pub fn build(self) -> crate::model::AudioSilenceFailoverSettings {
             crate::model::AudioSilenceFailoverSettings {
                 audio_selector_name: self.audio_selector_name,
@@ -11341,7 +11272,7 @@ pub mod audio_silence_failover_settings {
     }
 }
 impl AudioSilenceFailoverSettings {
-    /// Creates a new builder-style object to manufacture [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings)
+    /// Creates a new builder-style object to manufacture [`AudioSilenceFailoverSettings`](crate::model::AudioSilenceFailoverSettings).
     pub fn builder() -> crate::model::audio_silence_failover_settings::Builder {
         crate::model::audio_silence_failover_settings::Builder::default()
     }
@@ -11452,11 +11383,10 @@ impl std::fmt::Debug for EncoderSettings {
         formatter.finish()
     }
 }
-/// See [`EncoderSettings`](crate::model::EncoderSettings)
+/// See [`EncoderSettings`](crate::model::EncoderSettings).
 pub mod encoder_settings {
 
-    /// A builder for [`EncoderSettings`](crate::model::EncoderSettings)
-    #[non_exhaustive]
+    /// A builder for [`EncoderSettings`](crate::model::EncoderSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_descriptions:
@@ -11660,7 +11590,7 @@ pub mod encoder_settings {
             self.video_descriptions = input;
             self
         }
-        /// Consumes the builder and constructs a [`EncoderSettings`](crate::model::EncoderSettings)
+        /// Consumes the builder and constructs a [`EncoderSettings`](crate::model::EncoderSettings).
         pub fn build(self) -> crate::model::EncoderSettings {
             crate::model::EncoderSettings {
                 audio_descriptions: self.audio_descriptions,
@@ -11680,7 +11610,7 @@ pub mod encoder_settings {
     }
 }
 impl EncoderSettings {
-    /// Creates a new builder-style object to manufacture [`EncoderSettings`](crate::model::EncoderSettings)
+    /// Creates a new builder-style object to manufacture [`EncoderSettings`](crate::model::EncoderSettings).
     pub fn builder() -> crate::model::encoder_settings::Builder {
         crate::model::encoder_settings::Builder::default()
     }
@@ -11752,11 +11682,10 @@ impl std::fmt::Debug for VideoDescription {
         formatter.finish()
     }
 }
-/// See [`VideoDescription`](crate::model::VideoDescription)
+/// See [`VideoDescription`](crate::model::VideoDescription).
 pub mod video_description {
 
-    /// A builder for [`VideoDescription`](crate::model::VideoDescription)
-    #[non_exhaustive]
+    /// A builder for [`VideoDescription`](crate::model::VideoDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) codec_settings: std::option::Option<crate::model::VideoCodecSettings>,
@@ -11851,7 +11780,7 @@ pub mod video_description {
             self.width = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoDescription`](crate::model::VideoDescription)
+        /// Consumes the builder and constructs a [`VideoDescription`](crate::model::VideoDescription).
         pub fn build(self) -> crate::model::VideoDescription {
             crate::model::VideoDescription {
                 codec_settings: self.codec_settings,
@@ -11866,7 +11795,7 @@ pub mod video_description {
     }
 }
 impl VideoDescription {
-    /// Creates a new builder-style object to manufacture [`VideoDescription`](crate::model::VideoDescription)
+    /// Creates a new builder-style object to manufacture [`VideoDescription`](crate::model::VideoDescription).
     pub fn builder() -> crate::model::video_description::Builder {
         crate::model::video_description::Builder::default()
     }
@@ -12029,11 +11958,10 @@ impl std::fmt::Debug for VideoCodecSettings {
         formatter.finish()
     }
 }
-/// See [`VideoCodecSettings`](crate::model::VideoCodecSettings)
+/// See [`VideoCodecSettings`](crate::model::VideoCodecSettings).
 pub mod video_codec_settings {
 
-    /// A builder for [`VideoCodecSettings`](crate::model::VideoCodecSettings)
-    #[non_exhaustive]
+    /// A builder for [`VideoCodecSettings`](crate::model::VideoCodecSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_capture_settings: std::option::Option<crate::model::FrameCaptureSettings>,
@@ -12094,7 +12022,7 @@ pub mod video_codec_settings {
             self.mpeg2_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`VideoCodecSettings`](crate::model::VideoCodecSettings)
+        /// Consumes the builder and constructs a [`VideoCodecSettings`](crate::model::VideoCodecSettings).
         pub fn build(self) -> crate::model::VideoCodecSettings {
             crate::model::VideoCodecSettings {
                 frame_capture_settings: self.frame_capture_settings,
@@ -12106,7 +12034,7 @@ pub mod video_codec_settings {
     }
 }
 impl VideoCodecSettings {
-    /// Creates a new builder-style object to manufacture [`VideoCodecSettings`](crate::model::VideoCodecSettings)
+    /// Creates a new builder-style object to manufacture [`VideoCodecSettings`](crate::model::VideoCodecSettings).
     pub fn builder() -> crate::model::video_codec_settings::Builder {
         crate::model::video_codec_settings::Builder::default()
     }
@@ -12241,11 +12169,10 @@ impl std::fmt::Debug for Mpeg2Settings {
         formatter.finish()
     }
 }
-/// See [`Mpeg2Settings`](crate::model::Mpeg2Settings)
+/// See [`Mpeg2Settings`](crate::model::Mpeg2Settings).
 pub mod mpeg2_settings {
 
-    /// A builder for [`Mpeg2Settings`](crate::model::Mpeg2Settings)
-    #[non_exhaustive]
+    /// A builder for [`Mpeg2Settings`](crate::model::Mpeg2Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
@@ -12464,7 +12391,7 @@ pub mod mpeg2_settings {
             self.timecode_insertion = input;
             self
         }
-        /// Consumes the builder and constructs a [`Mpeg2Settings`](crate::model::Mpeg2Settings)
+        /// Consumes the builder and constructs a [`Mpeg2Settings`](crate::model::Mpeg2Settings).
         pub fn build(self) -> crate::model::Mpeg2Settings {
             crate::model::Mpeg2Settings {
                 adaptive_quantization: self.adaptive_quantization,
@@ -12488,7 +12415,7 @@ pub mod mpeg2_settings {
     }
 }
 impl Mpeg2Settings {
-    /// Creates a new builder-style object to manufacture [`Mpeg2Settings`](crate::model::Mpeg2Settings)
+    /// Creates a new builder-style object to manufacture [`Mpeg2Settings`](crate::model::Mpeg2Settings).
     pub fn builder() -> crate::model::mpeg2_settings::Builder {
         crate::model::mpeg2_settings::Builder::default()
     }
@@ -12830,11 +12757,10 @@ impl std::fmt::Debug for Mpeg2FilterSettings {
         formatter.finish()
     }
 }
-/// See [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings)
+/// See [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
 pub mod mpeg2_filter_settings {
 
-    /// A builder for [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings)
-    #[non_exhaustive]
+    /// A builder for [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) temporal_filter_settings:
@@ -12857,7 +12783,7 @@ pub mod mpeg2_filter_settings {
             self.temporal_filter_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings)
+        /// Consumes the builder and constructs a [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
         pub fn build(self) -> crate::model::Mpeg2FilterSettings {
             crate::model::Mpeg2FilterSettings {
                 temporal_filter_settings: self.temporal_filter_settings,
@@ -12866,7 +12792,7 @@ pub mod mpeg2_filter_settings {
     }
 }
 impl Mpeg2FilterSettings {
-    /// Creates a new builder-style object to manufacture [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings)
+    /// Creates a new builder-style object to manufacture [`Mpeg2FilterSettings`](crate::model::Mpeg2FilterSettings).
     pub fn builder() -> crate::model::mpeg2_filter_settings::Builder {
         crate::model::mpeg2_filter_settings::Builder::default()
     }
@@ -12902,11 +12828,10 @@ impl std::fmt::Debug for TemporalFilterSettings {
         formatter.finish()
     }
 }
-/// See [`TemporalFilterSettings`](crate::model::TemporalFilterSettings)
+/// See [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
 pub mod temporal_filter_settings {
 
-    /// A builder for [`TemporalFilterSettings`](crate::model::TemporalFilterSettings)
-    #[non_exhaustive]
+    /// A builder for [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) post_filter_sharpening:
@@ -12943,7 +12868,7 @@ pub mod temporal_filter_settings {
             self.strength = input;
             self
         }
-        /// Consumes the builder and constructs a [`TemporalFilterSettings`](crate::model::TemporalFilterSettings)
+        /// Consumes the builder and constructs a [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
         pub fn build(self) -> crate::model::TemporalFilterSettings {
             crate::model::TemporalFilterSettings {
                 post_filter_sharpening: self.post_filter_sharpening,
@@ -12953,7 +12878,7 @@ pub mod temporal_filter_settings {
     }
 }
 impl TemporalFilterSettings {
-    /// Creates a new builder-style object to manufacture [`TemporalFilterSettings`](crate::model::TemporalFilterSettings)
+    /// Creates a new builder-style object to manufacture [`TemporalFilterSettings`](crate::model::TemporalFilterSettings).
     pub fn builder() -> crate::model::temporal_filter_settings::Builder {
         crate::model::temporal_filter_settings::Builder::default()
     }
@@ -13672,11 +13597,10 @@ impl std::fmt::Debug for H265Settings {
         formatter.finish()
     }
 }
-/// See [`H265Settings`](crate::model::H265Settings)
+/// See [`H265Settings`](crate::model::H265Settings).
 pub mod h265_settings {
 
-    /// A builder for [`H265Settings`](crate::model::H265Settings)
-    #[non_exhaustive]
+    /// A builder for [`H265Settings`](crate::model::H265Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
@@ -14058,7 +13982,7 @@ pub mod h265_settings {
             self.timecode_insertion = input;
             self
         }
-        /// Consumes the builder and constructs a [`H265Settings`](crate::model::H265Settings)
+        /// Consumes the builder and constructs a [`H265Settings`](crate::model::H265Settings).
         pub fn build(self) -> crate::model::H265Settings {
             crate::model::H265Settings {
                 adaptive_quantization: self.adaptive_quantization,
@@ -14095,7 +14019,7 @@ pub mod h265_settings {
     }
 }
 impl H265Settings {
-    /// Creates a new builder-style object to manufacture [`H265Settings`](crate::model::H265Settings)
+    /// Creates a new builder-style object to manufacture [`H265Settings`](crate::model::H265Settings).
     pub fn builder() -> crate::model::h265_settings::Builder {
         crate::model::h265_settings::Builder::default()
     }
@@ -14744,11 +14668,10 @@ impl std::fmt::Debug for H265FilterSettings {
         formatter.finish()
     }
 }
-/// See [`H265FilterSettings`](crate::model::H265FilterSettings)
+/// See [`H265FilterSettings`](crate::model::H265FilterSettings).
 pub mod h265_filter_settings {
 
-    /// A builder for [`H265FilterSettings`](crate::model::H265FilterSettings)
-    #[non_exhaustive]
+    /// A builder for [`H265FilterSettings`](crate::model::H265FilterSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) temporal_filter_settings:
@@ -14771,7 +14694,7 @@ pub mod h265_filter_settings {
             self.temporal_filter_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`H265FilterSettings`](crate::model::H265FilterSettings)
+        /// Consumes the builder and constructs a [`H265FilterSettings`](crate::model::H265FilterSettings).
         pub fn build(self) -> crate::model::H265FilterSettings {
             crate::model::H265FilterSettings {
                 temporal_filter_settings: self.temporal_filter_settings,
@@ -14780,7 +14703,7 @@ pub mod h265_filter_settings {
     }
 }
 impl H265FilterSettings {
-    /// Creates a new builder-style object to manufacture [`H265FilterSettings`](crate::model::H265FilterSettings)
+    /// Creates a new builder-style object to manufacture [`H265FilterSettings`](crate::model::H265FilterSettings).
     pub fn builder() -> crate::model::h265_filter_settings::Builder {
         crate::model::h265_filter_settings::Builder::default()
     }
@@ -14833,11 +14756,10 @@ impl std::fmt::Debug for H265ColorSpaceSettings {
         formatter.finish()
     }
 }
-/// See [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings)
+/// See [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
 pub mod h265_color_space_settings {
 
-    /// A builder for [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings)
-    #[non_exhaustive]
+    /// A builder for [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) color_space_passthrough_settings:
@@ -14902,7 +14824,7 @@ pub mod h265_color_space_settings {
             self.rec709_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings)
+        /// Consumes the builder and constructs a [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
         pub fn build(self) -> crate::model::H265ColorSpaceSettings {
             crate::model::H265ColorSpaceSettings {
                 color_space_passthrough_settings: self.color_space_passthrough_settings,
@@ -14914,7 +14836,7 @@ pub mod h265_color_space_settings {
     }
 }
 impl H265ColorSpaceSettings {
-    /// Creates a new builder-style object to manufacture [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings)
+    /// Creates a new builder-style object to manufacture [`H265ColorSpaceSettings`](crate::model::H265ColorSpaceSettings).
     pub fn builder() -> crate::model::h265_color_space_settings::Builder {
         crate::model::h265_color_space_settings::Builder::default()
     }
@@ -14930,22 +14852,21 @@ impl std::fmt::Debug for Rec709Settings {
         formatter.finish()
     }
 }
-/// See [`Rec709Settings`](crate::model::Rec709Settings)
+/// See [`Rec709Settings`](crate::model::Rec709Settings).
 pub mod rec709_settings {
 
-    /// A builder for [`Rec709Settings`](crate::model::Rec709Settings)
-    #[non_exhaustive]
+    /// A builder for [`Rec709Settings`](crate::model::Rec709Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`Rec709Settings`](crate::model::Rec709Settings)
+        /// Consumes the builder and constructs a [`Rec709Settings`](crate::model::Rec709Settings).
         pub fn build(self) -> crate::model::Rec709Settings {
             crate::model::Rec709Settings {}
         }
     }
 }
 impl Rec709Settings {
-    /// Creates a new builder-style object to manufacture [`Rec709Settings`](crate::model::Rec709Settings)
+    /// Creates a new builder-style object to manufacture [`Rec709Settings`](crate::model::Rec709Settings).
     pub fn builder() -> crate::model::rec709_settings::Builder {
         crate::model::rec709_settings::Builder::default()
     }
@@ -14961,22 +14882,21 @@ impl std::fmt::Debug for Rec601Settings {
         formatter.finish()
     }
 }
-/// See [`Rec601Settings`](crate::model::Rec601Settings)
+/// See [`Rec601Settings`](crate::model::Rec601Settings).
 pub mod rec601_settings {
 
-    /// A builder for [`Rec601Settings`](crate::model::Rec601Settings)
-    #[non_exhaustive]
+    /// A builder for [`Rec601Settings`](crate::model::Rec601Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`Rec601Settings`](crate::model::Rec601Settings)
+        /// Consumes the builder and constructs a [`Rec601Settings`](crate::model::Rec601Settings).
         pub fn build(self) -> crate::model::Rec601Settings {
             crate::model::Rec601Settings {}
         }
     }
 }
 impl Rec601Settings {
-    /// Creates a new builder-style object to manufacture [`Rec601Settings`](crate::model::Rec601Settings)
+    /// Creates a new builder-style object to manufacture [`Rec601Settings`](crate::model::Rec601Settings).
     pub fn builder() -> crate::model::rec601_settings::Builder {
         crate::model::rec601_settings::Builder::default()
     }
@@ -14992,22 +14912,21 @@ impl std::fmt::Debug for ColorSpacePassthroughSettings {
         formatter.finish()
     }
 }
-/// See [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings)
+/// See [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
 pub mod color_space_passthrough_settings {
 
-    /// A builder for [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings)
-    #[non_exhaustive]
+    /// A builder for [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings)
+        /// Consumes the builder and constructs a [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
         pub fn build(self) -> crate::model::ColorSpacePassthroughSettings {
             crate::model::ColorSpacePassthroughSettings {}
         }
     }
 }
 impl ColorSpacePassthroughSettings {
-    /// Creates a new builder-style object to manufacture [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings)
+    /// Creates a new builder-style object to manufacture [`ColorSpacePassthroughSettings`](crate::model::ColorSpacePassthroughSettings).
     pub fn builder() -> crate::model::color_space_passthrough_settings::Builder {
         crate::model::color_space_passthrough_settings::Builder::default()
     }
@@ -15508,11 +15427,10 @@ impl std::fmt::Debug for H264Settings {
         formatter.finish()
     }
 }
-/// See [`H264Settings`](crate::model::H264Settings)
+/// See [`H264Settings`](crate::model::H264Settings).
 pub mod h264_settings {
 
-    /// A builder for [`H264Settings`](crate::model::H264Settings)
-    #[non_exhaustive]
+    /// A builder for [`H264Settings`](crate::model::H264Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) adaptive_quantization:
@@ -16046,7 +15964,7 @@ pub mod h264_settings {
             self.timecode_insertion = input;
             self
         }
-        /// Consumes the builder and constructs a [`H264Settings`](crate::model::H264Settings)
+        /// Consumes the builder and constructs a [`H264Settings`](crate::model::H264Settings).
         pub fn build(self) -> crate::model::H264Settings {
             crate::model::H264Settings {
                 adaptive_quantization: self.adaptive_quantization,
@@ -16095,7 +16013,7 @@ pub mod h264_settings {
     }
 }
 impl H264Settings {
-    /// Creates a new builder-style object to manufacture [`H264Settings`](crate::model::H264Settings)
+    /// Creates a new builder-style object to manufacture [`H264Settings`](crate::model::H264Settings).
     pub fn builder() -> crate::model::h264_settings::Builder {
         crate::model::h264_settings::Builder::default()
     }
@@ -17226,11 +17144,10 @@ impl std::fmt::Debug for H264FilterSettings {
         formatter.finish()
     }
 }
-/// See [`H264FilterSettings`](crate::model::H264FilterSettings)
+/// See [`H264FilterSettings`](crate::model::H264FilterSettings).
 pub mod h264_filter_settings {
 
-    /// A builder for [`H264FilterSettings`](crate::model::H264FilterSettings)
-    #[non_exhaustive]
+    /// A builder for [`H264FilterSettings`](crate::model::H264FilterSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) temporal_filter_settings:
@@ -17253,7 +17170,7 @@ pub mod h264_filter_settings {
             self.temporal_filter_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`H264FilterSettings`](crate::model::H264FilterSettings)
+        /// Consumes the builder and constructs a [`H264FilterSettings`](crate::model::H264FilterSettings).
         pub fn build(self) -> crate::model::H264FilterSettings {
             crate::model::H264FilterSettings {
                 temporal_filter_settings: self.temporal_filter_settings,
@@ -17262,7 +17179,7 @@ pub mod h264_filter_settings {
     }
 }
 impl H264FilterSettings {
-    /// Creates a new builder-style object to manufacture [`H264FilterSettings`](crate::model::H264FilterSettings)
+    /// Creates a new builder-style object to manufacture [`H264FilterSettings`](crate::model::H264FilterSettings).
     pub fn builder() -> crate::model::h264_filter_settings::Builder {
         crate::model::h264_filter_settings::Builder::default()
     }
@@ -17363,11 +17280,10 @@ impl std::fmt::Debug for H264ColorSpaceSettings {
         formatter.finish()
     }
 }
-/// See [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings)
+/// See [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
 pub mod h264_color_space_settings {
 
-    /// A builder for [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings)
-    #[non_exhaustive]
+    /// A builder for [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) color_space_passthrough_settings:
@@ -17418,7 +17334,7 @@ pub mod h264_color_space_settings {
             self.rec709_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings)
+        /// Consumes the builder and constructs a [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
         pub fn build(self) -> crate::model::H264ColorSpaceSettings {
             crate::model::H264ColorSpaceSettings {
                 color_space_passthrough_settings: self.color_space_passthrough_settings,
@@ -17429,7 +17345,7 @@ pub mod h264_color_space_settings {
     }
 }
 impl H264ColorSpaceSettings {
-    /// Creates a new builder-style object to manufacture [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings)
+    /// Creates a new builder-style object to manufacture [`H264ColorSpaceSettings`](crate::model::H264ColorSpaceSettings).
     pub fn builder() -> crate::model::h264_color_space_settings::Builder {
         crate::model::h264_color_space_settings::Builder::default()
     }
@@ -17594,11 +17510,10 @@ impl std::fmt::Debug for FrameCaptureSettings {
         formatter.finish()
     }
 }
-/// See [`FrameCaptureSettings`](crate::model::FrameCaptureSettings)
+/// See [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
 pub mod frame_capture_settings {
 
-    /// A builder for [`FrameCaptureSettings`](crate::model::FrameCaptureSettings)
-    #[non_exhaustive]
+    /// A builder for [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) capture_interval: std::option::Option<i32>,
@@ -17632,7 +17547,7 @@ pub mod frame_capture_settings {
             self.capture_interval_units = input;
             self
         }
-        /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::model::FrameCaptureSettings)
+        /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
         pub fn build(self) -> crate::model::FrameCaptureSettings {
             crate::model::FrameCaptureSettings {
                 capture_interval: self.capture_interval.unwrap_or_default(),
@@ -17642,7 +17557,7 @@ pub mod frame_capture_settings {
     }
 }
 impl FrameCaptureSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureSettings`](crate::model::FrameCaptureSettings)
+    /// Creates a new builder-style object to manufacture [`FrameCaptureSettings`](crate::model::FrameCaptureSettings).
     pub fn builder() -> crate::model::frame_capture_settings::Builder {
         crate::model::frame_capture_settings::Builder::default()
     }
@@ -17730,11 +17645,10 @@ impl std::fmt::Debug for TimecodeConfig {
         formatter.finish()
     }
 }
-/// See [`TimecodeConfig`](crate::model::TimecodeConfig)
+/// See [`TimecodeConfig`](crate::model::TimecodeConfig).
 pub mod timecode_config {
 
-    /// A builder for [`TimecodeConfig`](crate::model::TimecodeConfig)
-    #[non_exhaustive]
+    /// A builder for [`TimecodeConfig`](crate::model::TimecodeConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source: std::option::Option<crate::model::TimecodeConfigSource>,
@@ -17764,7 +17678,7 @@ pub mod timecode_config {
             self.sync_threshold = input;
             self
         }
-        /// Consumes the builder and constructs a [`TimecodeConfig`](crate::model::TimecodeConfig)
+        /// Consumes the builder and constructs a [`TimecodeConfig`](crate::model::TimecodeConfig).
         pub fn build(self) -> crate::model::TimecodeConfig {
             crate::model::TimecodeConfig {
                 source: self.source,
@@ -17774,7 +17688,7 @@ pub mod timecode_config {
     }
 }
 impl TimecodeConfig {
-    /// Creates a new builder-style object to manufacture [`TimecodeConfig`](crate::model::TimecodeConfig)
+    /// Creates a new builder-style object to manufacture [`TimecodeConfig`](crate::model::TimecodeConfig).
     pub fn builder() -> crate::model::timecode_config::Builder {
         crate::model::timecode_config::Builder::default()
     }
@@ -17873,11 +17787,10 @@ impl std::fmt::Debug for OutputGroup {
         formatter.finish()
     }
 }
-/// See [`OutputGroup`](crate::model::OutputGroup)
+/// See [`OutputGroup`](crate::model::OutputGroup).
 pub mod output_group {
 
-    /// A builder for [`OutputGroup`](crate::model::OutputGroup)
-    #[non_exhaustive]
+    /// A builder for [`OutputGroup`](crate::model::OutputGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -17927,7 +17840,7 @@ pub mod output_group {
             self.outputs = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputGroup`](crate::model::OutputGroup)
+        /// Consumes the builder and constructs a [`OutputGroup`](crate::model::OutputGroup).
         pub fn build(self) -> crate::model::OutputGroup {
             crate::model::OutputGroup {
                 name: self.name,
@@ -17938,7 +17851,7 @@ pub mod output_group {
     }
 }
 impl OutputGroup {
-    /// Creates a new builder-style object to manufacture [`OutputGroup`](crate::model::OutputGroup)
+    /// Creates a new builder-style object to manufacture [`OutputGroup`](crate::model::OutputGroup).
     pub fn builder() -> crate::model::output_group::Builder {
         crate::model::output_group::Builder::default()
     }
@@ -17992,11 +17905,10 @@ impl std::fmt::Debug for Output {
         formatter.finish()
     }
 }
-/// See [`Output`](crate::model::Output)
+/// See [`Output`](crate::model::Output).
 pub mod output {
 
-    /// A builder for [`Output`](crate::model::Output)
-    #[non_exhaustive]
+    /// A builder for [`Output`](crate::model::Output).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_description_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18081,7 +17993,7 @@ pub mod output {
             self.video_description_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Output`](crate::model::Output)
+        /// Consumes the builder and constructs a [`Output`](crate::model::Output).
         pub fn build(self) -> crate::model::Output {
             crate::model::Output {
                 audio_description_names: self.audio_description_names,
@@ -18094,7 +18006,7 @@ pub mod output {
     }
 }
 impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output)
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
     pub fn builder() -> crate::model::output::Builder {
         crate::model::output::Builder::default()
     }
@@ -18187,11 +18099,10 @@ impl std::fmt::Debug for OutputSettings {
         formatter.finish()
     }
 }
-/// See [`OutputSettings`](crate::model::OutputSettings)
+/// See [`OutputSettings`](crate::model::OutputSettings).
 pub mod output_settings {
 
-    /// A builder for [`OutputSettings`](crate::model::OutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`OutputSettings`](crate::model::OutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_output_settings:
@@ -18328,7 +18239,7 @@ pub mod output_settings {
             self.udp_output_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputSettings`](crate::model::OutputSettings)
+        /// Consumes the builder and constructs a [`OutputSettings`](crate::model::OutputSettings).
         pub fn build(self) -> crate::model::OutputSettings {
             crate::model::OutputSettings {
                 archive_output_settings: self.archive_output_settings,
@@ -18344,7 +18255,7 @@ pub mod output_settings {
     }
 }
 impl OutputSettings {
-    /// Creates a new builder-style object to manufacture [`OutputSettings`](crate::model::OutputSettings)
+    /// Creates a new builder-style object to manufacture [`OutputSettings`](crate::model::OutputSettings).
     pub fn builder() -> crate::model::output_settings::Builder {
         crate::model::output_settings::Builder::default()
     }
@@ -18391,11 +18302,10 @@ impl std::fmt::Debug for UdpOutputSettings {
         formatter.finish()
     }
 }
-/// See [`UdpOutputSettings`](crate::model::UdpOutputSettings)
+/// See [`UdpOutputSettings`](crate::model::UdpOutputSettings).
 pub mod udp_output_settings {
 
-    /// A builder for [`UdpOutputSettings`](crate::model::UdpOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`UdpOutputSettings`](crate::model::UdpOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) buffer_msec: std::option::Option<i32>,
@@ -18453,7 +18363,7 @@ pub mod udp_output_settings {
             self.fec_output_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`UdpOutputSettings`](crate::model::UdpOutputSettings)
+        /// Consumes the builder and constructs a [`UdpOutputSettings`](crate::model::UdpOutputSettings).
         pub fn build(self) -> crate::model::UdpOutputSettings {
             crate::model::UdpOutputSettings {
                 buffer_msec: self.buffer_msec.unwrap_or_default(),
@@ -18465,7 +18375,7 @@ pub mod udp_output_settings {
     }
 }
 impl UdpOutputSettings {
-    /// Creates a new builder-style object to manufacture [`UdpOutputSettings`](crate::model::UdpOutputSettings)
+    /// Creates a new builder-style object to manufacture [`UdpOutputSettings`](crate::model::UdpOutputSettings).
     pub fn builder() -> crate::model::udp_output_settings::Builder {
         crate::model::udp_output_settings::Builder::default()
     }
@@ -18505,11 +18415,10 @@ impl std::fmt::Debug for FecOutputSettings {
         formatter.finish()
     }
 }
-/// See [`FecOutputSettings`](crate::model::FecOutputSettings)
+/// See [`FecOutputSettings`](crate::model::FecOutputSettings).
 pub mod fec_output_settings {
 
-    /// A builder for [`FecOutputSettings`](crate::model::FecOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`FecOutputSettings`](crate::model::FecOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) column_depth: std::option::Option<i32>,
@@ -18550,7 +18459,7 @@ pub mod fec_output_settings {
             self.row_length = input;
             self
         }
-        /// Consumes the builder and constructs a [`FecOutputSettings`](crate::model::FecOutputSettings)
+        /// Consumes the builder and constructs a [`FecOutputSettings`](crate::model::FecOutputSettings).
         pub fn build(self) -> crate::model::FecOutputSettings {
             crate::model::FecOutputSettings {
                 column_depth: self.column_depth.unwrap_or_default(),
@@ -18561,7 +18470,7 @@ pub mod fec_output_settings {
     }
 }
 impl FecOutputSettings {
-    /// Creates a new builder-style object to manufacture [`FecOutputSettings`](crate::model::FecOutputSettings)
+    /// Creates a new builder-style object to manufacture [`FecOutputSettings`](crate::model::FecOutputSettings).
     pub fn builder() -> crate::model::fec_output_settings::Builder {
         crate::model::fec_output_settings::Builder::default()
     }
@@ -18642,11 +18551,10 @@ impl std::fmt::Debug for OutputLocationRef {
         formatter.finish()
     }
 }
-/// See [`OutputLocationRef`](crate::model::OutputLocationRef)
+/// See [`OutputLocationRef`](crate::model::OutputLocationRef).
 pub mod output_location_ref {
 
-    /// A builder for [`OutputLocationRef`](crate::model::OutputLocationRef)
-    #[non_exhaustive]
+    /// A builder for [`OutputLocationRef`](crate::model::OutputLocationRef).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination_ref_id: std::option::Option<std::string::String>,
@@ -18665,7 +18573,7 @@ pub mod output_location_ref {
             self.destination_ref_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputLocationRef`](crate::model::OutputLocationRef)
+        /// Consumes the builder and constructs a [`OutputLocationRef`](crate::model::OutputLocationRef).
         pub fn build(self) -> crate::model::OutputLocationRef {
             crate::model::OutputLocationRef {
                 destination_ref_id: self.destination_ref_id,
@@ -18674,7 +18582,7 @@ pub mod output_location_ref {
     }
 }
 impl OutputLocationRef {
-    /// Creates a new builder-style object to manufacture [`OutputLocationRef`](crate::model::OutputLocationRef)
+    /// Creates a new builder-style object to manufacture [`OutputLocationRef`](crate::model::OutputLocationRef).
     pub fn builder() -> crate::model::output_location_ref::Builder {
         crate::model::output_location_ref::Builder::default()
     }
@@ -18700,11 +18608,10 @@ impl std::fmt::Debug for UdpContainerSettings {
         formatter.finish()
     }
 }
-/// See [`UdpContainerSettings`](crate::model::UdpContainerSettings)
+/// See [`UdpContainerSettings`](crate::model::UdpContainerSettings).
 pub mod udp_container_settings {
 
-    /// A builder for [`UdpContainerSettings`](crate::model::UdpContainerSettings)
-    #[non_exhaustive]
+    /// A builder for [`UdpContainerSettings`](crate::model::UdpContainerSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) m2ts_settings: std::option::Option<crate::model::M2tsSettings>,
@@ -18723,7 +18630,7 @@ pub mod udp_container_settings {
             self.m2ts_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`UdpContainerSettings`](crate::model::UdpContainerSettings)
+        /// Consumes the builder and constructs a [`UdpContainerSettings`](crate::model::UdpContainerSettings).
         pub fn build(self) -> crate::model::UdpContainerSettings {
             crate::model::UdpContainerSettings {
                 m2ts_settings: self.m2ts_settings,
@@ -18732,7 +18639,7 @@ pub mod udp_container_settings {
     }
 }
 impl UdpContainerSettings {
-    /// Creates a new builder-style object to manufacture [`UdpContainerSettings`](crate::model::UdpContainerSettings)
+    /// Creates a new builder-style object to manufacture [`UdpContainerSettings`](crate::model::UdpContainerSettings).
     pub fn builder() -> crate::model::udp_container_settings::Builder {
         crate::model::udp_container_settings::Builder::default()
     }
@@ -19094,11 +19001,10 @@ impl std::fmt::Debug for M2tsSettings {
         formatter.finish()
     }
 }
-/// See [`M2tsSettings`](crate::model::M2tsSettings)
+/// See [`M2tsSettings`](crate::model::M2tsSettings).
 pub mod m2ts_settings {
 
-    /// A builder for [`M2tsSettings`](crate::model::M2tsSettings)
-    #[non_exhaustive]
+    /// A builder for [`M2tsSettings`](crate::model::M2tsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) absent_input_audio_behavior:
@@ -19713,7 +19619,7 @@ pub mod m2ts_settings {
             self.video_pid = input;
             self
         }
-        /// Consumes the builder and constructs a [`M2tsSettings`](crate::model::M2tsSettings)
+        /// Consumes the builder and constructs a [`M2tsSettings`](crate::model::M2tsSettings).
         pub fn build(self) -> crate::model::M2tsSettings {
             crate::model::M2tsSettings {
                 absent_input_audio_behavior: self.absent_input_audio_behavior,
@@ -19768,7 +19674,7 @@ pub mod m2ts_settings {
     }
 }
 impl M2tsSettings {
-    /// Creates a new builder-style object to manufacture [`M2tsSettings`](crate::model::M2tsSettings)
+    /// Creates a new builder-style object to manufacture [`M2tsSettings`](crate::model::M2tsSettings).
     pub fn builder() -> crate::model::m2ts_settings::Builder {
         crate::model::m2ts_settings::Builder::default()
     }
@@ -20477,11 +20383,10 @@ impl std::fmt::Debug for DvbTdtSettings {
         formatter.finish()
     }
 }
-/// See [`DvbTdtSettings`](crate::model::DvbTdtSettings)
+/// See [`DvbTdtSettings`](crate::model::DvbTdtSettings).
 pub mod dvb_tdt_settings {
 
-    /// A builder for [`DvbTdtSettings`](crate::model::DvbTdtSettings)
-    #[non_exhaustive]
+    /// A builder for [`DvbTdtSettings`](crate::model::DvbTdtSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rep_interval: std::option::Option<i32>,
@@ -20497,7 +20402,7 @@ pub mod dvb_tdt_settings {
             self.rep_interval = input;
             self
         }
-        /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::model::DvbTdtSettings)
+        /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::model::DvbTdtSettings).
         pub fn build(self) -> crate::model::DvbTdtSettings {
             crate::model::DvbTdtSettings {
                 rep_interval: self.rep_interval.unwrap_or_default(),
@@ -20506,7 +20411,7 @@ pub mod dvb_tdt_settings {
     }
 }
 impl DvbTdtSettings {
-    /// Creates a new builder-style object to manufacture [`DvbTdtSettings`](crate::model::DvbTdtSettings)
+    /// Creates a new builder-style object to manufacture [`DvbTdtSettings`](crate::model::DvbTdtSettings).
     pub fn builder() -> crate::model::dvb_tdt_settings::Builder {
         crate::model::dvb_tdt_settings::Builder::default()
     }
@@ -20553,11 +20458,10 @@ impl std::fmt::Debug for DvbSdtSettings {
         formatter.finish()
     }
 }
-/// See [`DvbSdtSettings`](crate::model::DvbSdtSettings)
+/// See [`DvbSdtSettings`](crate::model::DvbSdtSettings).
 pub mod dvb_sdt_settings {
 
-    /// A builder for [`DvbSdtSettings`](crate::model::DvbSdtSettings)
-    #[non_exhaustive]
+    /// A builder for [`DvbSdtSettings`](crate::model::DvbSdtSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_sdt: std::option::Option<crate::model::DvbSdtOutputSdt>,
@@ -20612,7 +20516,7 @@ pub mod dvb_sdt_settings {
             self.service_provider_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`DvbSdtSettings`](crate::model::DvbSdtSettings)
+        /// Consumes the builder and constructs a [`DvbSdtSettings`](crate::model::DvbSdtSettings).
         pub fn build(self) -> crate::model::DvbSdtSettings {
             crate::model::DvbSdtSettings {
                 output_sdt: self.output_sdt,
@@ -20624,7 +20528,7 @@ pub mod dvb_sdt_settings {
     }
 }
 impl DvbSdtSettings {
-    /// Creates a new builder-style object to manufacture [`DvbSdtSettings`](crate::model::DvbSdtSettings)
+    /// Creates a new builder-style object to manufacture [`DvbSdtSettings`](crate::model::DvbSdtSettings).
     pub fn builder() -> crate::model::dvb_sdt_settings::Builder {
         crate::model::dvb_sdt_settings::Builder::default()
     }
@@ -20732,11 +20636,10 @@ impl std::fmt::Debug for DvbNitSettings {
         formatter.finish()
     }
 }
-/// See [`DvbNitSettings`](crate::model::DvbNitSettings)
+/// See [`DvbNitSettings`](crate::model::DvbNitSettings).
 pub mod dvb_nit_settings {
 
-    /// A builder for [`DvbNitSettings`](crate::model::DvbNitSettings)
-    #[non_exhaustive]
+    /// A builder for [`DvbNitSettings`](crate::model::DvbNitSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_id: std::option::Option<i32>,
@@ -20774,7 +20677,7 @@ pub mod dvb_nit_settings {
             self.rep_interval = input;
             self
         }
-        /// Consumes the builder and constructs a [`DvbNitSettings`](crate::model::DvbNitSettings)
+        /// Consumes the builder and constructs a [`DvbNitSettings`](crate::model::DvbNitSettings).
         pub fn build(self) -> crate::model::DvbNitSettings {
             crate::model::DvbNitSettings {
                 network_id: self.network_id.unwrap_or_default(),
@@ -20785,7 +20688,7 @@ pub mod dvb_nit_settings {
     }
 }
 impl DvbNitSettings {
-    /// Creates a new builder-style object to manufacture [`DvbNitSettings`](crate::model::DvbNitSettings)
+    /// Creates a new builder-style object to manufacture [`DvbNitSettings`](crate::model::DvbNitSettings).
     pub fn builder() -> crate::model::dvb_nit_settings::Builder {
         crate::model::dvb_nit_settings::Builder::default()
     }
@@ -21219,11 +21122,10 @@ impl std::fmt::Debug for RtmpOutputSettings {
         formatter.finish()
     }
 }
-/// See [`RtmpOutputSettings`](crate::model::RtmpOutputSettings)
+/// See [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
 pub mod rtmp_output_settings {
 
-    /// A builder for [`RtmpOutputSettings`](crate::model::RtmpOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_mode: std::option::Option<crate::model::RtmpOutputCertificateMode>,
@@ -21278,7 +21180,7 @@ pub mod rtmp_output_settings {
             self.num_retries = input;
             self
         }
-        /// Consumes the builder and constructs a [`RtmpOutputSettings`](crate::model::RtmpOutputSettings)
+        /// Consumes the builder and constructs a [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
         pub fn build(self) -> crate::model::RtmpOutputSettings {
             crate::model::RtmpOutputSettings {
                 certificate_mode: self.certificate_mode,
@@ -21290,7 +21192,7 @@ pub mod rtmp_output_settings {
     }
 }
 impl RtmpOutputSettings {
-    /// Creates a new builder-style object to manufacture [`RtmpOutputSettings`](crate::model::RtmpOutputSettings)
+    /// Creates a new builder-style object to manufacture [`RtmpOutputSettings`](crate::model::RtmpOutputSettings).
     pub fn builder() -> crate::model::rtmp_output_settings::Builder {
         crate::model::rtmp_output_settings::Builder::default()
     }
@@ -21371,11 +21273,10 @@ impl std::fmt::Debug for MultiplexOutputSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings)
+/// See [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
 pub mod multiplex_output_settings {
 
-    /// A builder for [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<crate::model::OutputLocationRef>,
@@ -21394,7 +21295,7 @@ pub mod multiplex_output_settings {
             self.destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings)
+        /// Consumes the builder and constructs a [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
         pub fn build(self) -> crate::model::MultiplexOutputSettings {
             crate::model::MultiplexOutputSettings {
                 destination: self.destination,
@@ -21403,7 +21304,7 @@ pub mod multiplex_output_settings {
     }
 }
 impl MultiplexOutputSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexOutputSettings`](crate::model::MultiplexOutputSettings).
     pub fn builder() -> crate::model::multiplex_output_settings::Builder {
         crate::model::multiplex_output_settings::Builder::default()
     }
@@ -21438,11 +21339,10 @@ impl std::fmt::Debug for MsSmoothOutputSettings {
         formatter.finish()
     }
 }
-/// See [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings)
+/// See [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
 pub mod ms_smooth_output_settings {
 
-    /// A builder for [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) h265_packaging_type:
@@ -21479,7 +21379,7 @@ pub mod ms_smooth_output_settings {
             self.name_modifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings)
+        /// Consumes the builder and constructs a [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
         pub fn build(self) -> crate::model::MsSmoothOutputSettings {
             crate::model::MsSmoothOutputSettings {
                 h265_packaging_type: self.h265_packaging_type,
@@ -21489,7 +21389,7 @@ pub mod ms_smooth_output_settings {
     }
 }
 impl MsSmoothOutputSettings {
-    /// Creates a new builder-style object to manufacture [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings)
+    /// Creates a new builder-style object to manufacture [`MsSmoothOutputSettings`](crate::model::MsSmoothOutputSettings).
     pub fn builder() -> crate::model::ms_smooth_output_settings::Builder {
         crate::model::ms_smooth_output_settings::Builder::default()
     }
@@ -21560,22 +21460,21 @@ impl std::fmt::Debug for MediaPackageOutputSettings {
         formatter.finish()
     }
 }
-/// See [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings)
+/// See [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
 pub mod media_package_output_settings {
 
-    /// A builder for [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings)
+        /// Consumes the builder and constructs a [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
         pub fn build(self) -> crate::model::MediaPackageOutputSettings {
             crate::model::MediaPackageOutputSettings {}
         }
     }
 }
 impl MediaPackageOutputSettings {
-    /// Creates a new builder-style object to manufacture [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings)
+    /// Creates a new builder-style object to manufacture [`MediaPackageOutputSettings`](crate::model::MediaPackageOutputSettings).
     pub fn builder() -> crate::model::media_package_output_settings::Builder {
         crate::model::media_package_output_settings::Builder::default()
     }
@@ -21622,11 +21521,10 @@ impl std::fmt::Debug for HlsOutputSettings {
         formatter.finish()
     }
 }
-/// See [`HlsOutputSettings`](crate::model::HlsOutputSettings)
+/// See [`HlsOutputSettings`](crate::model::HlsOutputSettings).
 pub mod hls_output_settings {
 
-    /// A builder for [`HlsOutputSettings`](crate::model::HlsOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsOutputSettings`](crate::model::HlsOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) h265_packaging_type: std::option::Option<crate::model::HlsH265PackagingType>,
@@ -21687,7 +21585,7 @@ pub mod hls_output_settings {
             self.segment_modifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsOutputSettings`](crate::model::HlsOutputSettings)
+        /// Consumes the builder and constructs a [`HlsOutputSettings`](crate::model::HlsOutputSettings).
         pub fn build(self) -> crate::model::HlsOutputSettings {
             crate::model::HlsOutputSettings {
                 h265_packaging_type: self.h265_packaging_type,
@@ -21699,7 +21597,7 @@ pub mod hls_output_settings {
     }
 }
 impl HlsOutputSettings {
-    /// Creates a new builder-style object to manufacture [`HlsOutputSettings`](crate::model::HlsOutputSettings)
+    /// Creates a new builder-style object to manufacture [`HlsOutputSettings`](crate::model::HlsOutputSettings).
     pub fn builder() -> crate::model::hls_output_settings::Builder {
         crate::model::hls_output_settings::Builder::default()
     }
@@ -21753,11 +21651,10 @@ impl std::fmt::Debug for HlsSettings {
         formatter.finish()
     }
 }
-/// See [`HlsSettings`](crate::model::HlsSettings)
+/// See [`HlsSettings`](crate::model::HlsSettings).
 pub mod hls_settings {
 
-    /// A builder for [`HlsSettings`](crate::model::HlsSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsSettings`](crate::model::HlsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_only_hls_settings: std::option::Option<crate::model::AudioOnlyHlsSettings>,
@@ -21825,7 +21722,7 @@ pub mod hls_settings {
             self.standard_hls_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsSettings`](crate::model::HlsSettings)
+        /// Consumes the builder and constructs a [`HlsSettings`](crate::model::HlsSettings).
         pub fn build(self) -> crate::model::HlsSettings {
             crate::model::HlsSettings {
                 audio_only_hls_settings: self.audio_only_hls_settings,
@@ -21837,7 +21734,7 @@ pub mod hls_settings {
     }
 }
 impl HlsSettings {
-    /// Creates a new builder-style object to manufacture [`HlsSettings`](crate::model::HlsSettings)
+    /// Creates a new builder-style object to manufacture [`HlsSettings`](crate::model::HlsSettings).
     pub fn builder() -> crate::model::hls_settings::Builder {
         crate::model::hls_settings::Builder::default()
     }
@@ -21870,11 +21767,10 @@ impl std::fmt::Debug for StandardHlsSettings {
         formatter.finish()
     }
 }
-/// See [`StandardHlsSettings`](crate::model::StandardHlsSettings)
+/// See [`StandardHlsSettings`](crate::model::StandardHlsSettings).
 pub mod standard_hls_settings {
 
-    /// A builder for [`StandardHlsSettings`](crate::model::StandardHlsSettings)
-    #[non_exhaustive]
+    /// A builder for [`StandardHlsSettings`](crate::model::StandardHlsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_rendition_sets: std::option::Option<std::string::String>,
@@ -21907,7 +21803,7 @@ pub mod standard_hls_settings {
             self.m3u8_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`StandardHlsSettings`](crate::model::StandardHlsSettings)
+        /// Consumes the builder and constructs a [`StandardHlsSettings`](crate::model::StandardHlsSettings).
         pub fn build(self) -> crate::model::StandardHlsSettings {
             crate::model::StandardHlsSettings {
                 audio_rendition_sets: self.audio_rendition_sets,
@@ -21917,7 +21813,7 @@ pub mod standard_hls_settings {
     }
 }
 impl StandardHlsSettings {
-    /// Creates a new builder-style object to manufacture [`StandardHlsSettings`](crate::model::StandardHlsSettings)
+    /// Creates a new builder-style object to manufacture [`StandardHlsSettings`](crate::model::StandardHlsSettings).
     pub fn builder() -> crate::model::standard_hls_settings::Builder {
         crate::model::standard_hls_settings::Builder::default()
     }
@@ -22059,11 +21955,10 @@ impl std::fmt::Debug for M3u8Settings {
         formatter.finish()
     }
 }
-/// See [`M3u8Settings`](crate::model::M3u8Settings)
+/// See [`M3u8Settings`](crate::model::M3u8Settings).
 pub mod m3u8_settings {
 
-    /// A builder for [`M3u8Settings`](crate::model::M3u8Settings)
-    #[non_exhaustive]
+    /// A builder for [`M3u8Settings`](crate::model::M3u8Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_frames_per_pes: std::option::Option<i32>,
@@ -22274,7 +22169,7 @@ pub mod m3u8_settings {
             self.video_pid = input;
             self
         }
-        /// Consumes the builder and constructs a [`M3u8Settings`](crate::model::M3u8Settings)
+        /// Consumes the builder and constructs a [`M3u8Settings`](crate::model::M3u8Settings).
         pub fn build(self) -> crate::model::M3u8Settings {
             crate::model::M3u8Settings {
                 audio_frames_per_pes: self.audio_frames_per_pes.unwrap_or_default(),
@@ -22299,7 +22194,7 @@ pub mod m3u8_settings {
     }
 }
 impl M3u8Settings {
-    /// Creates a new builder-style object to manufacture [`M3u8Settings`](crate::model::M3u8Settings)
+    /// Creates a new builder-style object to manufacture [`M3u8Settings`](crate::model::M3u8Settings).
     pub fn builder() -> crate::model::m3u8_settings::Builder {
         crate::model::m3u8_settings::Builder::default()
     }
@@ -22535,22 +22430,21 @@ impl std::fmt::Debug for FrameCaptureHlsSettings {
         formatter.finish()
     }
 }
-/// See [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings)
+/// See [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
 pub mod frame_capture_hls_settings {
 
-    /// A builder for [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings)
-    #[non_exhaustive]
+    /// A builder for [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings)
+        /// Consumes the builder and constructs a [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
         pub fn build(self) -> crate::model::FrameCaptureHlsSettings {
             crate::model::FrameCaptureHlsSettings {}
         }
     }
 }
 impl FrameCaptureHlsSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings)
+    /// Creates a new builder-style object to manufacture [`FrameCaptureHlsSettings`](crate::model::FrameCaptureHlsSettings).
     pub fn builder() -> crate::model::frame_capture_hls_settings::Builder {
         crate::model::frame_capture_hls_settings::Builder::default()
     }
@@ -22594,11 +22488,10 @@ impl std::fmt::Debug for Fmp4HlsSettings {
         formatter.finish()
     }
 }
-/// See [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings)
+/// See [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
 pub mod fmp4_hls_settings {
 
-    /// A builder for [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings)
-    #[non_exhaustive]
+    /// A builder for [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_rendition_sets: std::option::Option<std::string::String>,
@@ -22649,7 +22542,7 @@ pub mod fmp4_hls_settings {
             self.timed_metadata_behavior = input;
             self
         }
-        /// Consumes the builder and constructs a [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings)
+        /// Consumes the builder and constructs a [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
         pub fn build(self) -> crate::model::Fmp4HlsSettings {
             crate::model::Fmp4HlsSettings {
                 audio_rendition_sets: self.audio_rendition_sets,
@@ -22660,7 +22553,7 @@ pub mod fmp4_hls_settings {
     }
 }
 impl Fmp4HlsSettings {
-    /// Creates a new builder-style object to manufacture [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings)
+    /// Creates a new builder-style object to manufacture [`Fmp4HlsSettings`](crate::model::Fmp4HlsSettings).
     pub fn builder() -> crate::model::fmp4_hls_settings::Builder {
         crate::model::fmp4_hls_settings::Builder::default()
     }
@@ -22817,11 +22710,10 @@ impl std::fmt::Debug for AudioOnlyHlsSettings {
         formatter.finish()
     }
 }
-/// See [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings)
+/// See [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
 pub mod audio_only_hls_settings {
 
-    /// A builder for [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings)
-    #[non_exhaustive]
+    /// A builder for [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_group_id: std::option::Option<std::string::String>,
@@ -22882,7 +22774,7 @@ pub mod audio_only_hls_settings {
             self.segment_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings)
+        /// Consumes the builder and constructs a [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
         pub fn build(self) -> crate::model::AudioOnlyHlsSettings {
             crate::model::AudioOnlyHlsSettings {
                 audio_group_id: self.audio_group_id,
@@ -22894,7 +22786,7 @@ pub mod audio_only_hls_settings {
     }
 }
 impl AudioOnlyHlsSettings {
-    /// Creates a new builder-style object to manufacture [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings)
+    /// Creates a new builder-style object to manufacture [`AudioOnlyHlsSettings`](crate::model::AudioOnlyHlsSettings).
     pub fn builder() -> crate::model::audio_only_hls_settings::Builder {
         crate::model::audio_only_hls_settings::Builder::default()
     }
@@ -23061,11 +22953,10 @@ impl std::fmt::Debug for InputLocation {
         formatter.finish()
     }
 }
-/// See [`InputLocation`](crate::model::InputLocation)
+/// See [`InputLocation`](crate::model::InputLocation).
 pub mod input_location {
 
-    /// A builder for [`InputLocation`](crate::model::InputLocation)
-    #[non_exhaustive]
+    /// A builder for [`InputLocation`](crate::model::InputLocation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_param: std::option::Option<std::string::String>,
@@ -23106,7 +22997,7 @@ pub mod input_location {
             self.username = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputLocation`](crate::model::InputLocation)
+        /// Consumes the builder and constructs a [`InputLocation`](crate::model::InputLocation).
         pub fn build(self) -> crate::model::InputLocation {
             crate::model::InputLocation {
                 password_param: self.password_param,
@@ -23117,7 +23008,7 @@ pub mod input_location {
     }
 }
 impl InputLocation {
-    /// Creates a new builder-style object to manufacture [`InputLocation`](crate::model::InputLocation)
+    /// Creates a new builder-style object to manufacture [`InputLocation`](crate::model::InputLocation).
     pub fn builder() -> crate::model::input_location::Builder {
         crate::model::input_location::Builder::default()
     }
@@ -23198,11 +23089,10 @@ impl std::fmt::Debug for FrameCaptureOutputSettings {
         formatter.finish()
     }
 }
-/// See [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings)
+/// See [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
 pub mod frame_capture_output_settings {
 
-    /// A builder for [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name_modifier: std::option::Option<std::string::String>,
@@ -23221,7 +23111,7 @@ pub mod frame_capture_output_settings {
             self.name_modifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings)
+        /// Consumes the builder and constructs a [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
         pub fn build(self) -> crate::model::FrameCaptureOutputSettings {
             crate::model::FrameCaptureOutputSettings {
                 name_modifier: self.name_modifier,
@@ -23230,7 +23120,7 @@ pub mod frame_capture_output_settings {
     }
 }
 impl FrameCaptureOutputSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings)
+    /// Creates a new builder-style object to manufacture [`FrameCaptureOutputSettings`](crate::model::FrameCaptureOutputSettings).
     pub fn builder() -> crate::model::frame_capture_output_settings::Builder {
         crate::model::frame_capture_output_settings::Builder::default()
     }
@@ -23272,11 +23162,10 @@ impl std::fmt::Debug for ArchiveOutputSettings {
         formatter.finish()
     }
 }
-/// See [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings)
+/// See [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
 pub mod archive_output_settings {
 
-    /// A builder for [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) container_settings: std::option::Option<crate::model::ArchiveContainerSettings>,
@@ -23320,7 +23209,7 @@ pub mod archive_output_settings {
             self.name_modifier = input;
             self
         }
-        /// Consumes the builder and constructs a [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings)
+        /// Consumes the builder and constructs a [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
         pub fn build(self) -> crate::model::ArchiveOutputSettings {
             crate::model::ArchiveOutputSettings {
                 container_settings: self.container_settings,
@@ -23331,7 +23220,7 @@ pub mod archive_output_settings {
     }
 }
 impl ArchiveOutputSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings)
+    /// Creates a new builder-style object to manufacture [`ArchiveOutputSettings`](crate::model::ArchiveOutputSettings).
     pub fn builder() -> crate::model::archive_output_settings::Builder {
         crate::model::archive_output_settings::Builder::default()
     }
@@ -23364,11 +23253,10 @@ impl std::fmt::Debug for ArchiveContainerSettings {
         formatter.finish()
     }
 }
-/// See [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings)
+/// See [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
 pub mod archive_container_settings {
 
-    /// A builder for [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings)
-    #[non_exhaustive]
+    /// A builder for [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) m2ts_settings: std::option::Option<crate::model::M2tsSettings>,
@@ -23401,7 +23289,7 @@ pub mod archive_container_settings {
             self.raw_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings)
+        /// Consumes the builder and constructs a [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
         pub fn build(self) -> crate::model::ArchiveContainerSettings {
             crate::model::ArchiveContainerSettings {
                 m2ts_settings: self.m2ts_settings,
@@ -23411,7 +23299,7 @@ pub mod archive_container_settings {
     }
 }
 impl ArchiveContainerSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings)
+    /// Creates a new builder-style object to manufacture [`ArchiveContainerSettings`](crate::model::ArchiveContainerSettings).
     pub fn builder() -> crate::model::archive_container_settings::Builder {
         crate::model::archive_container_settings::Builder::default()
     }
@@ -23427,22 +23315,21 @@ impl std::fmt::Debug for RawSettings {
         formatter.finish()
     }
 }
-/// See [`RawSettings`](crate::model::RawSettings)
+/// See [`RawSettings`](crate::model::RawSettings).
 pub mod raw_settings {
 
-    /// A builder for [`RawSettings`](crate::model::RawSettings)
-    #[non_exhaustive]
+    /// A builder for [`RawSettings`](crate::model::RawSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RawSettings`](crate::model::RawSettings)
+        /// Consumes the builder and constructs a [`RawSettings`](crate::model::RawSettings).
         pub fn build(self) -> crate::model::RawSettings {
             crate::model::RawSettings {}
         }
     }
 }
 impl RawSettings {
-    /// Creates a new builder-style object to manufacture [`RawSettings`](crate::model::RawSettings)
+    /// Creates a new builder-style object to manufacture [`RawSettings`](crate::model::RawSettings).
     pub fn builder() -> crate::model::raw_settings::Builder {
         crate::model::raw_settings::Builder::default()
     }
@@ -23533,11 +23420,10 @@ impl std::fmt::Debug for OutputGroupSettings {
         formatter.finish()
     }
 }
-/// See [`OutputGroupSettings`](crate::model::OutputGroupSettings)
+/// See [`OutputGroupSettings`](crate::model::OutputGroupSettings).
 pub mod output_group_settings {
 
-    /// A builder for [`OutputGroupSettings`](crate::model::OutputGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`OutputGroupSettings`](crate::model::OutputGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_group_settings: std::option::Option<crate::model::ArchiveGroupSettings>,
@@ -23670,7 +23556,7 @@ pub mod output_group_settings {
             self.udp_group_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::model::OutputGroupSettings)
+        /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::model::OutputGroupSettings).
         pub fn build(self) -> crate::model::OutputGroupSettings {
             crate::model::OutputGroupSettings {
                 archive_group_settings: self.archive_group_settings,
@@ -23686,7 +23572,7 @@ pub mod output_group_settings {
     }
 }
 impl OutputGroupSettings {
-    /// Creates a new builder-style object to manufacture [`OutputGroupSettings`](crate::model::OutputGroupSettings)
+    /// Creates a new builder-style object to manufacture [`OutputGroupSettings`](crate::model::OutputGroupSettings).
     pub fn builder() -> crate::model::output_group_settings::Builder {
         crate::model::output_group_settings::Builder::default()
     }
@@ -23730,11 +23616,10 @@ impl std::fmt::Debug for UdpGroupSettings {
         formatter.finish()
     }
 }
-/// See [`UdpGroupSettings`](crate::model::UdpGroupSettings)
+/// See [`UdpGroupSettings`](crate::model::UdpGroupSettings).
 pub mod udp_group_settings {
 
-    /// A builder for [`UdpGroupSettings`](crate::model::UdpGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`UdpGroupSettings`](crate::model::UdpGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_loss_action: std::option::Option<crate::model::InputLossActionForUdpOut>,
@@ -23782,7 +23667,7 @@ pub mod udp_group_settings {
             self.timed_metadata_id3_period = input;
             self
         }
-        /// Consumes the builder and constructs a [`UdpGroupSettings`](crate::model::UdpGroupSettings)
+        /// Consumes the builder and constructs a [`UdpGroupSettings`](crate::model::UdpGroupSettings).
         pub fn build(self) -> crate::model::UdpGroupSettings {
             crate::model::UdpGroupSettings {
                 input_loss_action: self.input_loss_action,
@@ -23793,7 +23678,7 @@ pub mod udp_group_settings {
     }
 }
 impl UdpGroupSettings {
-    /// Creates a new builder-style object to manufacture [`UdpGroupSettings`](crate::model::UdpGroupSettings)
+    /// Creates a new builder-style object to manufacture [`UdpGroupSettings`](crate::model::UdpGroupSettings).
     pub fn builder() -> crate::model::udp_group_settings::Builder {
         crate::model::udp_group_settings::Builder::default()
     }
@@ -23983,11 +23868,10 @@ impl std::fmt::Debug for RtmpGroupSettings {
         formatter.finish()
     }
 }
-/// See [`RtmpGroupSettings`](crate::model::RtmpGroupSettings)
+/// See [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
 pub mod rtmp_group_settings {
 
-    /// A builder for [`RtmpGroupSettings`](crate::model::RtmpGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<std::vec::Vec<crate::model::RtmpAdMarkers>>,
@@ -24090,7 +23974,7 @@ pub mod rtmp_group_settings {
             self.restart_delay = input;
             self
         }
-        /// Consumes the builder and constructs a [`RtmpGroupSettings`](crate::model::RtmpGroupSettings)
+        /// Consumes the builder and constructs a [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
         pub fn build(self) -> crate::model::RtmpGroupSettings {
             crate::model::RtmpGroupSettings {
                 ad_markers: self.ad_markers,
@@ -24105,7 +23989,7 @@ pub mod rtmp_group_settings {
     }
 }
 impl RtmpGroupSettings {
-    /// Creates a new builder-style object to manufacture [`RtmpGroupSettings`](crate::model::RtmpGroupSettings)
+    /// Creates a new builder-style object to manufacture [`RtmpGroupSettings`](crate::model::RtmpGroupSettings).
     pub fn builder() -> crate::model::rtmp_group_settings::Builder {
         crate::model::rtmp_group_settings::Builder::default()
     }
@@ -24396,22 +24280,21 @@ impl std::fmt::Debug for MultiplexGroupSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings)
+/// See [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
 pub mod multiplex_group_settings {
 
-    /// A builder for [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings)
+        /// Consumes the builder and constructs a [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
         pub fn build(self) -> crate::model::MultiplexGroupSettings {
             crate::model::MultiplexGroupSettings {}
         }
     }
 }
 impl MultiplexGroupSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexGroupSettings`](crate::model::MultiplexGroupSettings).
     pub fn builder() -> crate::model::multiplex_group_settings::Builder {
         crate::model::multiplex_group_settings::Builder::default()
     }
@@ -24584,11 +24467,10 @@ impl std::fmt::Debug for MsSmoothGroupSettings {
         formatter.finish()
     }
 }
-/// See [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings)
+/// See [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
 pub mod ms_smooth_group_settings {
 
-    /// A builder for [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) acquisition_point_id: std::option::Option<std::string::String>,
@@ -24865,7 +24747,7 @@ pub mod ms_smooth_group_settings {
             self.timestamp_offset_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings)
+        /// Consumes the builder and constructs a [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
         pub fn build(self) -> crate::model::MsSmoothGroupSettings {
             crate::model::MsSmoothGroupSettings {
                 acquisition_point_id: self.acquisition_point_id,
@@ -24892,7 +24774,7 @@ pub mod ms_smooth_group_settings {
     }
 }
 impl MsSmoothGroupSettings {
-    /// Creates a new builder-style object to manufacture [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings)
+    /// Creates a new builder-style object to manufacture [`MsSmoothGroupSettings`](crate::model::MsSmoothGroupSettings).
     pub fn builder() -> crate::model::ms_smooth_group_settings::Builder {
         crate::model::ms_smooth_group_settings::Builder::default()
     }
@@ -25421,11 +25303,10 @@ impl std::fmt::Debug for MediaPackageGroupSettings {
         formatter.finish()
     }
 }
-/// See [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings)
+/// See [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
 pub mod media_package_group_settings {
 
-    /// A builder for [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<crate::model::OutputLocationRef>,
@@ -25444,7 +25325,7 @@ pub mod media_package_group_settings {
             self.destination = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings)
+        /// Consumes the builder and constructs a [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
         pub fn build(self) -> crate::model::MediaPackageGroupSettings {
             crate::model::MediaPackageGroupSettings {
                 destination: self.destination,
@@ -25453,7 +25334,7 @@ pub mod media_package_group_settings {
     }
 }
 impl MediaPackageGroupSettings {
-    /// Creates a new builder-style object to manufacture [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings)
+    /// Creates a new builder-style object to manufacture [`MediaPackageGroupSettings`](crate::model::MediaPackageGroupSettings).
     pub fn builder() -> crate::model::media_package_group_settings::Builder {
         crate::model::media_package_group_settings::Builder::default()
     }
@@ -25803,11 +25684,10 @@ impl std::fmt::Debug for HlsGroupSettings {
         formatter.finish()
     }
 }
-/// See [`HlsGroupSettings`](crate::model::HlsGroupSettings)
+/// See [`HlsGroupSettings`](crate::model::HlsGroupSettings).
 pub mod hls_group_settings {
 
-    /// A builder for [`HlsGroupSettings`](crate::model::HlsGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsGroupSettings`](crate::model::HlsGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_markers: std::option::Option<std::vec::Vec<crate::model::HlsAdMarkers>>,
@@ -26428,7 +26308,7 @@ pub mod hls_group_settings {
             self.ts_file_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsGroupSettings`](crate::model::HlsGroupSettings)
+        /// Consumes the builder and constructs a [`HlsGroupSettings`](crate::model::HlsGroupSettings).
         pub fn build(self) -> crate::model::HlsGroupSettings {
             crate::model::HlsGroupSettings {
                 ad_markers: self.ad_markers,
@@ -26479,7 +26359,7 @@ pub mod hls_group_settings {
     }
 }
 impl HlsGroupSettings {
-    /// Creates a new builder-style object to manufacture [`HlsGroupSettings`](crate::model::HlsGroupSettings)
+    /// Creates a new builder-style object to manufacture [`HlsGroupSettings`](crate::model::HlsGroupSettings).
     pub fn builder() -> crate::model::hls_group_settings::Builder {
         crate::model::hls_group_settings::Builder::default()
     }
@@ -27126,11 +27006,10 @@ impl std::fmt::Debug for KeyProviderSettings {
         formatter.finish()
     }
 }
-/// See [`KeyProviderSettings`](crate::model::KeyProviderSettings)
+/// See [`KeyProviderSettings`](crate::model::KeyProviderSettings).
 pub mod key_provider_settings {
 
-    /// A builder for [`KeyProviderSettings`](crate::model::KeyProviderSettings)
-    #[non_exhaustive]
+    /// A builder for [`KeyProviderSettings`](crate::model::KeyProviderSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) static_key_settings: std::option::Option<crate::model::StaticKeySettings>,
@@ -27149,7 +27028,7 @@ pub mod key_provider_settings {
             self.static_key_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`KeyProviderSettings`](crate::model::KeyProviderSettings)
+        /// Consumes the builder and constructs a [`KeyProviderSettings`](crate::model::KeyProviderSettings).
         pub fn build(self) -> crate::model::KeyProviderSettings {
             crate::model::KeyProviderSettings {
                 static_key_settings: self.static_key_settings,
@@ -27158,7 +27037,7 @@ pub mod key_provider_settings {
     }
 }
 impl KeyProviderSettings {
-    /// Creates a new builder-style object to manufacture [`KeyProviderSettings`](crate::model::KeyProviderSettings)
+    /// Creates a new builder-style object to manufacture [`KeyProviderSettings`](crate::model::KeyProviderSettings).
     pub fn builder() -> crate::model::key_provider_settings::Builder {
         crate::model::key_provider_settings::Builder::default()
     }
@@ -27191,11 +27070,10 @@ impl std::fmt::Debug for StaticKeySettings {
         formatter.finish()
     }
 }
-/// See [`StaticKeySettings`](crate::model::StaticKeySettings)
+/// See [`StaticKeySettings`](crate::model::StaticKeySettings).
 pub mod static_key_settings {
 
-    /// A builder for [`StaticKeySettings`](crate::model::StaticKeySettings)
-    #[non_exhaustive]
+    /// A builder for [`StaticKeySettings`](crate::model::StaticKeySettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key_provider_server: std::option::Option<crate::model::InputLocation>,
@@ -27228,7 +27106,7 @@ pub mod static_key_settings {
             self.static_key_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`StaticKeySettings`](crate::model::StaticKeySettings)
+        /// Consumes the builder and constructs a [`StaticKeySettings`](crate::model::StaticKeySettings).
         pub fn build(self) -> crate::model::StaticKeySettings {
             crate::model::StaticKeySettings {
                 key_provider_server: self.key_provider_server,
@@ -27238,7 +27116,7 @@ pub mod static_key_settings {
     }
 }
 impl StaticKeySettings {
-    /// Creates a new builder-style object to manufacture [`StaticKeySettings`](crate::model::StaticKeySettings)
+    /// Creates a new builder-style object to manufacture [`StaticKeySettings`](crate::model::StaticKeySettings).
     pub fn builder() -> crate::model::static_key_settings::Builder {
         crate::model::static_key_settings::Builder::default()
     }
@@ -27626,11 +27504,10 @@ impl std::fmt::Debug for HlsCdnSettings {
         formatter.finish()
     }
 }
-/// See [`HlsCdnSettings`](crate::model::HlsCdnSettings)
+/// See [`HlsCdnSettings`](crate::model::HlsCdnSettings).
 pub mod hls_cdn_settings {
 
-    /// A builder for [`HlsCdnSettings`](crate::model::HlsCdnSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsCdnSettings`](crate::model::HlsCdnSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hls_akamai_settings: std::option::Option<crate::model::HlsAkamaiSettings>,
@@ -27709,7 +27586,7 @@ pub mod hls_cdn_settings {
             self.hls_webdav_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsCdnSettings`](crate::model::HlsCdnSettings)
+        /// Consumes the builder and constructs a [`HlsCdnSettings`](crate::model::HlsCdnSettings).
         pub fn build(self) -> crate::model::HlsCdnSettings {
             crate::model::HlsCdnSettings {
                 hls_akamai_settings: self.hls_akamai_settings,
@@ -27722,7 +27599,7 @@ pub mod hls_cdn_settings {
     }
 }
 impl HlsCdnSettings {
-    /// Creates a new builder-style object to manufacture [`HlsCdnSettings`](crate::model::HlsCdnSettings)
+    /// Creates a new builder-style object to manufacture [`HlsCdnSettings`](crate::model::HlsCdnSettings).
     pub fn builder() -> crate::model::hls_cdn_settings::Builder {
         crate::model::hls_cdn_settings::Builder::default()
     }
@@ -27778,11 +27655,10 @@ impl std::fmt::Debug for HlsWebdavSettings {
         formatter.finish()
     }
 }
-/// See [`HlsWebdavSettings`](crate::model::HlsWebdavSettings)
+/// See [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
 pub mod hls_webdav_settings {
 
-    /// A builder for [`HlsWebdavSettings`](crate::model::HlsWebdavSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_retry_interval: std::option::Option<i32>,
@@ -27848,7 +27724,7 @@ pub mod hls_webdav_settings {
             self.restart_delay = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsWebdavSettings`](crate::model::HlsWebdavSettings)
+        /// Consumes the builder and constructs a [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
         pub fn build(self) -> crate::model::HlsWebdavSettings {
             crate::model::HlsWebdavSettings {
                 connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
@@ -27861,7 +27737,7 @@ pub mod hls_webdav_settings {
     }
 }
 impl HlsWebdavSettings {
-    /// Creates a new builder-style object to manufacture [`HlsWebdavSettings`](crate::model::HlsWebdavSettings)
+    /// Creates a new builder-style object to manufacture [`HlsWebdavSettings`](crate::model::HlsWebdavSettings).
     pub fn builder() -> crate::model::hls_webdav_settings::Builder {
         crate::model::hls_webdav_settings::Builder::default()
     }
@@ -27942,11 +27818,10 @@ impl std::fmt::Debug for HlsS3Settings {
         formatter.finish()
     }
 }
-/// See [`HlsS3Settings`](crate::model::HlsS3Settings)
+/// See [`HlsS3Settings`](crate::model::HlsS3Settings).
 pub mod hls_s3_settings {
 
-    /// A builder for [`HlsS3Settings`](crate::model::HlsS3Settings)
-    #[non_exhaustive]
+    /// A builder for [`HlsS3Settings`](crate::model::HlsS3Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canned_acl: std::option::Option<crate::model::S3CannedAcl>,
@@ -27965,7 +27840,7 @@ pub mod hls_s3_settings {
             self.canned_acl = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsS3Settings`](crate::model::HlsS3Settings)
+        /// Consumes the builder and constructs a [`HlsS3Settings`](crate::model::HlsS3Settings).
         pub fn build(self) -> crate::model::HlsS3Settings {
             crate::model::HlsS3Settings {
                 canned_acl: self.canned_acl,
@@ -27974,7 +27849,7 @@ pub mod hls_s3_settings {
     }
 }
 impl HlsS3Settings {
-    /// Creates a new builder-style object to manufacture [`HlsS3Settings`](crate::model::HlsS3Settings)
+    /// Creates a new builder-style object to manufacture [`HlsS3Settings`](crate::model::HlsS3Settings).
     pub fn builder() -> crate::model::hls_s3_settings::Builder {
         crate::model::hls_s3_settings::Builder::default()
     }
@@ -28098,11 +27973,10 @@ impl std::fmt::Debug for HlsMediaStoreSettings {
         formatter.finish()
     }
 }
-/// See [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings)
+/// See [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
 pub mod hls_media_store_settings {
 
-    /// A builder for [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_retry_interval: std::option::Option<i32>,
@@ -28169,7 +28043,7 @@ pub mod hls_media_store_settings {
             self.restart_delay = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings)
+        /// Consumes the builder and constructs a [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
         pub fn build(self) -> crate::model::HlsMediaStoreSettings {
             crate::model::HlsMediaStoreSettings {
                 connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
@@ -28182,7 +28056,7 @@ pub mod hls_media_store_settings {
     }
 }
 impl HlsMediaStoreSettings {
-    /// Creates a new builder-style object to manufacture [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings)
+    /// Creates a new builder-style object to manufacture [`HlsMediaStoreSettings`](crate::model::HlsMediaStoreSettings).
     pub fn builder() -> crate::model::hls_media_store_settings::Builder {
         crate::model::hls_media_store_settings::Builder::default()
     }
@@ -28280,11 +28154,10 @@ impl std::fmt::Debug for HlsBasicPutSettings {
         formatter.finish()
     }
 }
-/// See [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings)
+/// See [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
 pub mod hls_basic_put_settings {
 
-    /// A builder for [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_retry_interval: std::option::Option<i32>,
@@ -28333,7 +28206,7 @@ pub mod hls_basic_put_settings {
             self.restart_delay = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings)
+        /// Consumes the builder and constructs a [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
         pub fn build(self) -> crate::model::HlsBasicPutSettings {
             crate::model::HlsBasicPutSettings {
                 connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
@@ -28345,7 +28218,7 @@ pub mod hls_basic_put_settings {
     }
 }
 impl HlsBasicPutSettings {
-    /// Creates a new builder-style object to manufacture [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings)
+    /// Creates a new builder-style object to manufacture [`HlsBasicPutSettings`](crate::model::HlsBasicPutSettings).
     pub fn builder() -> crate::model::hls_basic_put_settings::Builder {
         crate::model::hls_basic_put_settings::Builder::default()
     }
@@ -28415,11 +28288,10 @@ impl std::fmt::Debug for HlsAkamaiSettings {
         formatter.finish()
     }
 }
-/// See [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings)
+/// See [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
 pub mod hls_akamai_settings {
 
-    /// A builder for [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_retry_interval: std::option::Option<i32>,
@@ -28507,7 +28379,7 @@ pub mod hls_akamai_settings {
             self.token = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings)
+        /// Consumes the builder and constructs a [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
         pub fn build(self) -> crate::model::HlsAkamaiSettings {
             crate::model::HlsAkamaiSettings {
                 connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
@@ -28522,7 +28394,7 @@ pub mod hls_akamai_settings {
     }
 }
 impl HlsAkamaiSettings {
-    /// Creates a new builder-style object to manufacture [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings)
+    /// Creates a new builder-style object to manufacture [`HlsAkamaiSettings`](crate::model::HlsAkamaiSettings).
     pub fn builder() -> crate::model::hls_akamai_settings::Builder {
         crate::model::hls_akamai_settings::Builder::default()
     }
@@ -28951,11 +28823,10 @@ impl std::fmt::Debug for CaptionLanguageMapping {
         formatter.finish()
     }
 }
-/// See [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping)
+/// See [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
 pub mod caption_language_mapping {
 
-    /// A builder for [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping)
-    #[non_exhaustive]
+    /// A builder for [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caption_channel: std::option::Option<i32>,
@@ -28999,7 +28870,7 @@ pub mod caption_language_mapping {
             self.language_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping)
+        /// Consumes the builder and constructs a [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
         pub fn build(self) -> crate::model::CaptionLanguageMapping {
             crate::model::CaptionLanguageMapping {
                 caption_channel: self.caption_channel.unwrap_or_default(),
@@ -29010,7 +28881,7 @@ pub mod caption_language_mapping {
     }
 }
 impl CaptionLanguageMapping {
-    /// Creates a new builder-style object to manufacture [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping)
+    /// Creates a new builder-style object to manufacture [`CaptionLanguageMapping`](crate::model::CaptionLanguageMapping).
     pub fn builder() -> crate::model::caption_language_mapping::Builder {
         crate::model::caption_language_mapping::Builder::default()
     }
@@ -29107,11 +28978,10 @@ impl std::fmt::Debug for FrameCaptureGroupSettings {
         formatter.finish()
     }
 }
-/// See [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings)
+/// See [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
 pub mod frame_capture_group_settings {
 
-    /// A builder for [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) destination: std::option::Option<crate::model::OutputLocationRef>,
@@ -29148,7 +29018,7 @@ pub mod frame_capture_group_settings {
             self.frame_capture_cdn_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings)
+        /// Consumes the builder and constructs a [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
         pub fn build(self) -> crate::model::FrameCaptureGroupSettings {
             crate::model::FrameCaptureGroupSettings {
                 destination: self.destination,
@@ -29158,7 +29028,7 @@ pub mod frame_capture_group_settings {
     }
 }
 impl FrameCaptureGroupSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings)
+    /// Creates a new builder-style object to manufacture [`FrameCaptureGroupSettings`](crate::model::FrameCaptureGroupSettings).
     pub fn builder() -> crate::model::frame_capture_group_settings::Builder {
         crate::model::frame_capture_group_settings::Builder::default()
     }
@@ -29186,11 +29056,10 @@ impl std::fmt::Debug for FrameCaptureCdnSettings {
         formatter.finish()
     }
 }
-/// See [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings)
+/// See [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
 pub mod frame_capture_cdn_settings {
 
-    /// A builder for [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings)
-    #[non_exhaustive]
+    /// A builder for [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) frame_capture_s3_settings:
@@ -29213,7 +29082,7 @@ pub mod frame_capture_cdn_settings {
             self.frame_capture_s3_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings)
+        /// Consumes the builder and constructs a [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
         pub fn build(self) -> crate::model::FrameCaptureCdnSettings {
             crate::model::FrameCaptureCdnSettings {
                 frame_capture_s3_settings: self.frame_capture_s3_settings,
@@ -29222,7 +29091,7 @@ pub mod frame_capture_cdn_settings {
     }
 }
 impl FrameCaptureCdnSettings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings)
+    /// Creates a new builder-style object to manufacture [`FrameCaptureCdnSettings`](crate::model::FrameCaptureCdnSettings).
     pub fn builder() -> crate::model::frame_capture_cdn_settings::Builder {
         crate::model::frame_capture_cdn_settings::Builder::default()
     }
@@ -29248,11 +29117,10 @@ impl std::fmt::Debug for FrameCaptureS3Settings {
         formatter.finish()
     }
 }
-/// See [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings)
+/// See [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
 pub mod frame_capture_s3_settings {
 
-    /// A builder for [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings)
-    #[non_exhaustive]
+    /// A builder for [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canned_acl: std::option::Option<crate::model::S3CannedAcl>,
@@ -29271,7 +29139,7 @@ pub mod frame_capture_s3_settings {
             self.canned_acl = input;
             self
         }
-        /// Consumes the builder and constructs a [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings)
+        /// Consumes the builder and constructs a [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
         pub fn build(self) -> crate::model::FrameCaptureS3Settings {
             crate::model::FrameCaptureS3Settings {
                 canned_acl: self.canned_acl,
@@ -29280,7 +29148,7 @@ pub mod frame_capture_s3_settings {
     }
 }
 impl FrameCaptureS3Settings {
-    /// Creates a new builder-style object to manufacture [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings)
+    /// Creates a new builder-style object to manufacture [`FrameCaptureS3Settings`](crate::model::FrameCaptureS3Settings).
     pub fn builder() -> crate::model::frame_capture_s3_settings::Builder {
         crate::model::frame_capture_s3_settings::Builder::default()
     }
@@ -29320,11 +29188,10 @@ impl std::fmt::Debug for ArchiveGroupSettings {
         formatter.finish()
     }
 }
-/// See [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings)
+/// See [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
 pub mod archive_group_settings {
 
-    /// A builder for [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings)
-    #[non_exhaustive]
+    /// A builder for [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_cdn_settings: std::option::Option<crate::model::ArchiveCdnSettings>,
@@ -29368,7 +29235,7 @@ pub mod archive_group_settings {
             self.rollover_interval = input;
             self
         }
-        /// Consumes the builder and constructs a [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings)
+        /// Consumes the builder and constructs a [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
         pub fn build(self) -> crate::model::ArchiveGroupSettings {
             crate::model::ArchiveGroupSettings {
                 archive_cdn_settings: self.archive_cdn_settings,
@@ -29379,7 +29246,7 @@ pub mod archive_group_settings {
     }
 }
 impl ArchiveGroupSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings)
+    /// Creates a new builder-style object to manufacture [`ArchiveGroupSettings`](crate::model::ArchiveGroupSettings).
     pub fn builder() -> crate::model::archive_group_settings::Builder {
         crate::model::archive_group_settings::Builder::default()
     }
@@ -29405,11 +29272,10 @@ impl std::fmt::Debug for ArchiveCdnSettings {
         formatter.finish()
     }
 }
-/// See [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings)
+/// See [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
 pub mod archive_cdn_settings {
 
-    /// A builder for [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings)
-    #[non_exhaustive]
+    /// A builder for [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_s3_settings: std::option::Option<crate::model::ArchiveS3Settings>,
@@ -29428,7 +29294,7 @@ pub mod archive_cdn_settings {
             self.archive_s3_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings)
+        /// Consumes the builder and constructs a [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
         pub fn build(self) -> crate::model::ArchiveCdnSettings {
             crate::model::ArchiveCdnSettings {
                 archive_s3_settings: self.archive_s3_settings,
@@ -29437,7 +29303,7 @@ pub mod archive_cdn_settings {
     }
 }
 impl ArchiveCdnSettings {
-    /// Creates a new builder-style object to manufacture [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings)
+    /// Creates a new builder-style object to manufacture [`ArchiveCdnSettings`](crate::model::ArchiveCdnSettings).
     pub fn builder() -> crate::model::archive_cdn_settings::Builder {
         crate::model::archive_cdn_settings::Builder::default()
     }
@@ -29463,11 +29329,10 @@ impl std::fmt::Debug for ArchiveS3Settings {
         formatter.finish()
     }
 }
-/// See [`ArchiveS3Settings`](crate::model::ArchiveS3Settings)
+/// See [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
 pub mod archive_s3_settings {
 
-    /// A builder for [`ArchiveS3Settings`](crate::model::ArchiveS3Settings)
-    #[non_exhaustive]
+    /// A builder for [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) canned_acl: std::option::Option<crate::model::S3CannedAcl>,
@@ -29486,7 +29351,7 @@ pub mod archive_s3_settings {
             self.canned_acl = input;
             self
         }
-        /// Consumes the builder and constructs a [`ArchiveS3Settings`](crate::model::ArchiveS3Settings)
+        /// Consumes the builder and constructs a [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
         pub fn build(self) -> crate::model::ArchiveS3Settings {
             crate::model::ArchiveS3Settings {
                 canned_acl: self.canned_acl,
@@ -29495,7 +29360,7 @@ pub mod archive_s3_settings {
     }
 }
 impl ArchiveS3Settings {
-    /// Creates a new builder-style object to manufacture [`ArchiveS3Settings`](crate::model::ArchiveS3Settings)
+    /// Creates a new builder-style object to manufacture [`ArchiveS3Settings`](crate::model::ArchiveS3Settings).
     pub fn builder() -> crate::model::archive_s3_settings::Builder {
         crate::model::archive_s3_settings::Builder::default()
     }
@@ -29533,11 +29398,10 @@ impl std::fmt::Debug for NielsenConfiguration {
         formatter.finish()
     }
 }
-/// See [`NielsenConfiguration`](crate::model::NielsenConfiguration)
+/// See [`NielsenConfiguration`](crate::model::NielsenConfiguration).
 pub mod nielsen_configuration {
 
-    /// A builder for [`NielsenConfiguration`](crate::model::NielsenConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`NielsenConfiguration`](crate::model::NielsenConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) distributor_id: std::option::Option<std::string::String>,
@@ -29574,7 +29438,7 @@ pub mod nielsen_configuration {
             self.nielsen_pcm_to_id3_tagging = input;
             self
         }
-        /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::model::NielsenConfiguration)
+        /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::model::NielsenConfiguration).
         pub fn build(self) -> crate::model::NielsenConfiguration {
             crate::model::NielsenConfiguration {
                 distributor_id: self.distributor_id,
@@ -29584,7 +29448,7 @@ pub mod nielsen_configuration {
     }
 }
 impl NielsenConfiguration {
-    /// Creates a new builder-style object to manufacture [`NielsenConfiguration`](crate::model::NielsenConfiguration)
+    /// Creates a new builder-style object to manufacture [`NielsenConfiguration`](crate::model::NielsenConfiguration).
     pub fn builder() -> crate::model::nielsen_configuration::Builder {
         crate::model::nielsen_configuration::Builder::default()
     }
@@ -29676,11 +29540,10 @@ impl std::fmt::Debug for MotionGraphicsConfiguration {
         formatter.finish()
     }
 }
-/// See [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration)
+/// See [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
 pub mod motion_graphics_configuration {
 
-    /// A builder for [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) motion_graphics_insertion:
@@ -29721,7 +29584,7 @@ pub mod motion_graphics_configuration {
             self.motion_graphics_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration)
+        /// Consumes the builder and constructs a [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
         pub fn build(self) -> crate::model::MotionGraphicsConfiguration {
             crate::model::MotionGraphicsConfiguration {
                 motion_graphics_insertion: self.motion_graphics_insertion,
@@ -29731,7 +29594,7 @@ pub mod motion_graphics_configuration {
     }
 }
 impl MotionGraphicsConfiguration {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration)
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsConfiguration`](crate::model::MotionGraphicsConfiguration).
     pub fn builder() -> crate::model::motion_graphics_configuration::Builder {
         crate::model::motion_graphics_configuration::Builder::default()
     }
@@ -29763,11 +29626,10 @@ impl std::fmt::Debug for MotionGraphicsSettings {
         formatter.finish()
     }
 }
-/// See [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings)
+/// See [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
 pub mod motion_graphics_settings {
 
-    /// A builder for [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings)
-    #[non_exhaustive]
+    /// A builder for [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) html_motion_graphics_settings:
@@ -29790,7 +29652,7 @@ pub mod motion_graphics_settings {
             self.html_motion_graphics_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings)
+        /// Consumes the builder and constructs a [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
         pub fn build(self) -> crate::model::MotionGraphicsSettings {
             crate::model::MotionGraphicsSettings {
                 html_motion_graphics_settings: self.html_motion_graphics_settings,
@@ -29799,7 +29661,7 @@ pub mod motion_graphics_settings {
     }
 }
 impl MotionGraphicsSettings {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings)
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsSettings`](crate::model::MotionGraphicsSettings).
     pub fn builder() -> crate::model::motion_graphics_settings::Builder {
         crate::model::motion_graphics_settings::Builder::default()
     }
@@ -29815,22 +29677,21 @@ impl std::fmt::Debug for HtmlMotionGraphicsSettings {
         formatter.finish()
     }
 }
-/// See [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings)
+/// See [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
 pub mod html_motion_graphics_settings {
 
-    /// A builder for [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings)
-    #[non_exhaustive]
+    /// A builder for [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings)
+        /// Consumes the builder and constructs a [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
         pub fn build(self) -> crate::model::HtmlMotionGraphicsSettings {
             crate::model::HtmlMotionGraphicsSettings {}
         }
     }
 }
 impl HtmlMotionGraphicsSettings {
-    /// Creates a new builder-style object to manufacture [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings)
+    /// Creates a new builder-style object to manufacture [`HtmlMotionGraphicsSettings`](crate::model::HtmlMotionGraphicsSettings).
     pub fn builder() -> crate::model::html_motion_graphics_settings::Builder {
         crate::model::html_motion_graphics_settings::Builder::default()
     }
@@ -29960,11 +29821,10 @@ impl std::fmt::Debug for GlobalConfiguration {
         formatter.finish()
     }
 }
-/// See [`GlobalConfiguration`](crate::model::GlobalConfiguration)
+/// See [`GlobalConfiguration`](crate::model::GlobalConfiguration).
 pub mod global_configuration {
 
-    /// A builder for [`GlobalConfiguration`](crate::model::GlobalConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`GlobalConfiguration`](crate::model::GlobalConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) initial_audio_gain: std::option::Option<i32>,
@@ -30066,7 +29926,7 @@ pub mod global_configuration {
             self.support_low_framerate_inputs = input;
             self
         }
-        /// Consumes the builder and constructs a [`GlobalConfiguration`](crate::model::GlobalConfiguration)
+        /// Consumes the builder and constructs a [`GlobalConfiguration`](crate::model::GlobalConfiguration).
         pub fn build(self) -> crate::model::GlobalConfiguration {
             crate::model::GlobalConfiguration {
                 initial_audio_gain: self.initial_audio_gain.unwrap_or_default(),
@@ -30080,7 +29940,7 @@ pub mod global_configuration {
     }
 }
 impl GlobalConfiguration {
-    /// Creates a new builder-style object to manufacture [`GlobalConfiguration`](crate::model::GlobalConfiguration)
+    /// Creates a new builder-style object to manufacture [`GlobalConfiguration`](crate::model::GlobalConfiguration).
     pub fn builder() -> crate::model::global_configuration::Builder {
         crate::model::global_configuration::Builder::default()
     }
@@ -30299,11 +30159,10 @@ impl std::fmt::Debug for InputLossBehavior {
         formatter.finish()
     }
 }
-/// See [`InputLossBehavior`](crate::model::InputLossBehavior)
+/// See [`InputLossBehavior`](crate::model::InputLossBehavior).
 pub mod input_loss_behavior {
 
-    /// A builder for [`InputLossBehavior`](crate::model::InputLossBehavior)
-    #[non_exhaustive]
+    /// A builder for [`InputLossBehavior`](crate::model::InputLossBehavior).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) black_frame_msec: std::option::Option<i32>,
@@ -30372,7 +30231,7 @@ pub mod input_loss_behavior {
             self.repeat_frame_msec = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputLossBehavior`](crate::model::InputLossBehavior)
+        /// Consumes the builder and constructs a [`InputLossBehavior`](crate::model::InputLossBehavior).
         pub fn build(self) -> crate::model::InputLossBehavior {
             crate::model::InputLossBehavior {
                 black_frame_msec: self.black_frame_msec.unwrap_or_default(),
@@ -30385,7 +30244,7 @@ pub mod input_loss_behavior {
     }
 }
 impl InputLossBehavior {
-    /// Creates a new builder-style object to manufacture [`InputLossBehavior`](crate::model::InputLossBehavior)
+    /// Creates a new builder-style object to manufacture [`InputLossBehavior`](crate::model::InputLossBehavior).
     pub fn builder() -> crate::model::input_loss_behavior::Builder {
         crate::model::input_loss_behavior::Builder::default()
     }
@@ -30527,11 +30386,10 @@ impl std::fmt::Debug for FeatureActivations {
         formatter.finish()
     }
 }
-/// See [`FeatureActivations`](crate::model::FeatureActivations)
+/// See [`FeatureActivations`](crate::model::FeatureActivations).
 pub mod feature_activations {
 
-    /// A builder for [`FeatureActivations`](crate::model::FeatureActivations)
-    #[non_exhaustive]
+    /// A builder for [`FeatureActivations`](crate::model::FeatureActivations).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_prepare_schedule_actions:
@@ -30554,7 +30412,7 @@ pub mod feature_activations {
             self.input_prepare_schedule_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`FeatureActivations`](crate::model::FeatureActivations)
+        /// Consumes the builder and constructs a [`FeatureActivations`](crate::model::FeatureActivations).
         pub fn build(self) -> crate::model::FeatureActivations {
             crate::model::FeatureActivations {
                 input_prepare_schedule_actions: self.input_prepare_schedule_actions,
@@ -30563,7 +30421,7 @@ pub mod feature_activations {
     }
 }
 impl FeatureActivations {
-    /// Creates a new builder-style object to manufacture [`FeatureActivations`](crate::model::FeatureActivations)
+    /// Creates a new builder-style object to manufacture [`FeatureActivations`](crate::model::FeatureActivations).
     pub fn builder() -> crate::model::feature_activations::Builder {
         crate::model::feature_activations::Builder::default()
     }
@@ -30674,11 +30532,10 @@ impl std::fmt::Debug for CaptionDescription {
         formatter.finish()
     }
 }
-/// See [`CaptionDescription`](crate::model::CaptionDescription)
+/// See [`CaptionDescription`](crate::model::CaptionDescription).
 pub mod caption_description {
 
-    /// A builder for [`CaptionDescription`](crate::model::CaptionDescription)
-    #[non_exhaustive]
+    /// A builder for [`CaptionDescription`](crate::model::CaptionDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) caption_selector_name: std::option::Option<std::string::String>,
@@ -30754,7 +30611,7 @@ pub mod caption_description {
             self.name = input;
             self
         }
-        /// Consumes the builder and constructs a [`CaptionDescription`](crate::model::CaptionDescription)
+        /// Consumes the builder and constructs a [`CaptionDescription`](crate::model::CaptionDescription).
         pub fn build(self) -> crate::model::CaptionDescription {
             crate::model::CaptionDescription {
                 caption_selector_name: self.caption_selector_name,
@@ -30767,7 +30624,7 @@ pub mod caption_description {
     }
 }
 impl CaptionDescription {
-    /// Creates a new builder-style object to manufacture [`CaptionDescription`](crate::model::CaptionDescription)
+    /// Creates a new builder-style object to manufacture [`CaptionDescription`](crate::model::CaptionDescription).
     pub fn builder() -> crate::model::caption_description::Builder {
         crate::model::caption_description::Builder::default()
     }
@@ -30942,11 +30799,10 @@ impl std::fmt::Debug for CaptionDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings)
+/// See [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
 pub mod caption_destination_settings {
 
-    /// A builder for [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arib_destination_settings:
@@ -31185,7 +31041,7 @@ pub mod caption_destination_settings {
             self.webvtt_destination_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings)
+        /// Consumes the builder and constructs a [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
         pub fn build(self) -> crate::model::CaptionDestinationSettings {
             crate::model::CaptionDestinationSettings {
                 arib_destination_settings: self.arib_destination_settings,
@@ -31208,7 +31064,7 @@ pub mod caption_destination_settings {
     }
 }
 impl CaptionDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`CaptionDestinationSettings`](crate::model::CaptionDestinationSettings).
     pub fn builder() -> crate::model::caption_destination_settings::Builder {
         crate::model::caption_destination_settings::Builder::default()
     }
@@ -31236,11 +31092,10 @@ impl std::fmt::Debug for WebvttDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
+/// See [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
 pub mod webvtt_destination_settings {
 
-    /// A builder for [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style_control: std::option::Option<crate::model::WebvttDestinationStyleControl>,
@@ -31259,7 +31114,7 @@ pub mod webvtt_destination_settings {
             self.style_control = input;
             self
         }
-        /// Consumes the builder and constructs a [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
+        /// Consumes the builder and constructs a [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
         pub fn build(self) -> crate::model::WebvttDestinationSettings {
             crate::model::WebvttDestinationSettings {
                 style_control: self.style_control,
@@ -31268,7 +31123,7 @@ pub mod webvtt_destination_settings {
     }
 }
 impl WebvttDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`WebvttDestinationSettings`](crate::model::WebvttDestinationSettings).
     pub fn builder() -> crate::model::webvtt_destination_settings::Builder {
         crate::model::webvtt_destination_settings::Builder::default()
     }
@@ -31349,11 +31204,10 @@ impl std::fmt::Debug for TtmlDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings)
+/// See [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
 pub mod ttml_destination_settings {
 
-    /// A builder for [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) style_control: std::option::Option<crate::model::TtmlDestinationStyleControl>,
@@ -31372,7 +31226,7 @@ pub mod ttml_destination_settings {
             self.style_control = input;
             self
         }
-        /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings)
+        /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
         pub fn build(self) -> crate::model::TtmlDestinationSettings {
             crate::model::TtmlDestinationSettings {
                 style_control: self.style_control,
@@ -31381,7 +31235,7 @@ pub mod ttml_destination_settings {
     }
 }
 impl TtmlDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`TtmlDestinationSettings`](crate::model::TtmlDestinationSettings).
     pub fn builder() -> crate::model::ttml_destination_settings::Builder {
         crate::model::ttml_destination_settings::Builder::default()
     }
@@ -31452,22 +31306,21 @@ impl std::fmt::Debug for TeletextDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings)
+/// See [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
 pub mod teletext_destination_settings {
 
-    /// A builder for [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings)
+        /// Consumes the builder and constructs a [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
         pub fn build(self) -> crate::model::TeletextDestinationSettings {
             crate::model::TeletextDestinationSettings {}
         }
     }
 }
 impl TeletextDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`TeletextDestinationSettings`](crate::model::TeletextDestinationSettings).
     pub fn builder() -> crate::model::teletext_destination_settings::Builder {
         crate::model::teletext_destination_settings::Builder::default()
     }
@@ -31483,22 +31336,21 @@ impl std::fmt::Debug for SmpteTtDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings)
+/// See [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
 pub mod smpte_tt_destination_settings {
 
-    /// A builder for [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings)
+        /// Consumes the builder and constructs a [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
         pub fn build(self) -> crate::model::SmpteTtDestinationSettings {
             crate::model::SmpteTtDestinationSettings {}
         }
     }
 }
 impl SmpteTtDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`SmpteTtDestinationSettings`](crate::model::SmpteTtDestinationSettings).
     pub fn builder() -> crate::model::smpte_tt_destination_settings::Builder {
         crate::model::smpte_tt_destination_settings::Builder::default()
     }
@@ -31514,22 +31366,21 @@ impl std::fmt::Debug for Scte27DestinationSettings {
         formatter.finish()
     }
 }
-/// See [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings)
+/// See [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
 pub mod scte27_destination_settings {
 
-    /// A builder for [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings)
+        /// Consumes the builder and constructs a [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
         pub fn build(self) -> crate::model::Scte27DestinationSettings {
             crate::model::Scte27DestinationSettings {}
         }
     }
 }
 impl Scte27DestinationSettings {
-    /// Creates a new builder-style object to manufacture [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings)
+    /// Creates a new builder-style object to manufacture [`Scte27DestinationSettings`](crate::model::Scte27DestinationSettings).
     pub fn builder() -> crate::model::scte27_destination_settings::Builder {
         crate::model::scte27_destination_settings::Builder::default()
     }
@@ -31545,22 +31396,21 @@ impl std::fmt::Debug for Scte20PlusEmbeddedDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings)
+/// See [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
 pub mod scte20_plus_embedded_destination_settings {
 
-    /// A builder for [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings)
+        /// Consumes the builder and constructs a [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
         pub fn build(self) -> crate::model::Scte20PlusEmbeddedDestinationSettings {
             crate::model::Scte20PlusEmbeddedDestinationSettings {}
         }
     }
 }
 impl Scte20PlusEmbeddedDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`Scte20PlusEmbeddedDestinationSettings`](crate::model::Scte20PlusEmbeddedDestinationSettings).
     pub fn builder() -> crate::model::scte20_plus_embedded_destination_settings::Builder {
         crate::model::scte20_plus_embedded_destination_settings::Builder::default()
     }
@@ -31576,22 +31426,21 @@ impl std::fmt::Debug for RtmpCaptionInfoDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings)
+/// See [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
 pub mod rtmp_caption_info_destination_settings {
 
-    /// A builder for [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings)
+        /// Consumes the builder and constructs a [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
         pub fn build(self) -> crate::model::RtmpCaptionInfoDestinationSettings {
             crate::model::RtmpCaptionInfoDestinationSettings {}
         }
     }
 }
 impl RtmpCaptionInfoDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`RtmpCaptionInfoDestinationSettings`](crate::model::RtmpCaptionInfoDestinationSettings).
     pub fn builder() -> crate::model::rtmp_caption_info_destination_settings::Builder {
         crate::model::rtmp_caption_info_destination_settings::Builder::default()
     }
@@ -31607,22 +31456,21 @@ impl std::fmt::Debug for EmbeddedPlusScte20DestinationSettings {
         formatter.finish()
     }
 }
-/// See [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings)
+/// See [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
 pub mod embedded_plus_scte20_destination_settings {
 
-    /// A builder for [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings)
+        /// Consumes the builder and constructs a [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
         pub fn build(self) -> crate::model::EmbeddedPlusScte20DestinationSettings {
             crate::model::EmbeddedPlusScte20DestinationSettings {}
         }
     }
 }
 impl EmbeddedPlusScte20DestinationSettings {
-    /// Creates a new builder-style object to manufacture [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings)
+    /// Creates a new builder-style object to manufacture [`EmbeddedPlusScte20DestinationSettings`](crate::model::EmbeddedPlusScte20DestinationSettings).
     pub fn builder() -> crate::model::embedded_plus_scte20_destination_settings::Builder {
         crate::model::embedded_plus_scte20_destination_settings::Builder::default()
     }
@@ -31638,22 +31486,21 @@ impl std::fmt::Debug for EmbeddedDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings)
+/// See [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
 pub mod embedded_destination_settings {
 
-    /// A builder for [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings)
+        /// Consumes the builder and constructs a [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
         pub fn build(self) -> crate::model::EmbeddedDestinationSettings {
             crate::model::EmbeddedDestinationSettings {}
         }
     }
 }
 impl EmbeddedDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`EmbeddedDestinationSettings`](crate::model::EmbeddedDestinationSettings).
     pub fn builder() -> crate::model::embedded_destination_settings::Builder {
         crate::model::embedded_destination_settings::Builder::default()
     }
@@ -31702,11 +31549,10 @@ impl std::fmt::Debug for EbuTtDDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings)
+/// See [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
 pub mod ebu_tt_d_destination_settings {
 
-    /// A builder for [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) copyright_holder: std::option::Option<std::string::String>,
@@ -31764,7 +31610,7 @@ pub mod ebu_tt_d_destination_settings {
             self.style_control = input;
             self
         }
-        /// Consumes the builder and constructs a [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings)
+        /// Consumes the builder and constructs a [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
         pub fn build(self) -> crate::model::EbuTtDDestinationSettings {
             crate::model::EbuTtDDestinationSettings {
                 copyright_holder: self.copyright_holder,
@@ -31776,7 +31622,7 @@ pub mod ebu_tt_d_destination_settings {
     }
 }
 impl EbuTtDDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`EbuTtDDestinationSettings`](crate::model::EbuTtDDestinationSettings).
     pub fn builder() -> crate::model::ebu_tt_d_destination_settings::Builder {
         crate::model::ebu_tt_d_destination_settings::Builder::default()
     }
@@ -32031,11 +31877,10 @@ impl std::fmt::Debug for DvbSubDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings)
+/// See [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
 pub mod dvb_sub_destination_settings {
 
-    /// A builder for [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::DvbSubDestinationAlignment>,
@@ -32253,7 +32098,7 @@ pub mod dvb_sub_destination_settings {
             self.y_position = input;
             self
         }
-        /// Consumes the builder and constructs a [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings)
+        /// Consumes the builder and constructs a [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
         pub fn build(self) -> crate::model::DvbSubDestinationSettings {
             crate::model::DvbSubDestinationSettings {
                 alignment: self.alignment,
@@ -32278,7 +32123,7 @@ pub mod dvb_sub_destination_settings {
     }
 }
 impl DvbSubDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`DvbSubDestinationSettings`](crate::model::DvbSubDestinationSettings).
     pub fn builder() -> crate::model::dvb_sub_destination_settings::Builder {
         crate::model::dvb_sub_destination_settings::Builder::default()
     }
@@ -32792,11 +32637,10 @@ impl std::fmt::Debug for BurnInDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings)
+/// See [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
 pub mod burn_in_destination_settings {
 
-    /// A builder for [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alignment: std::option::Option<crate::model::BurnInAlignment>,
@@ -33010,7 +32854,7 @@ pub mod burn_in_destination_settings {
             self.y_position = input;
             self
         }
-        /// Consumes the builder and constructs a [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings)
+        /// Consumes the builder and constructs a [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
         pub fn build(self) -> crate::model::BurnInDestinationSettings {
             crate::model::BurnInDestinationSettings {
                 alignment: self.alignment,
@@ -33035,7 +32879,7 @@ pub mod burn_in_destination_settings {
     }
 }
 impl BurnInDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`BurnInDestinationSettings`](crate::model::BurnInDestinationSettings).
     pub fn builder() -> crate::model::burn_in_destination_settings::Builder {
         crate::model::burn_in_destination_settings::Builder::default()
     }
@@ -33425,22 +33269,21 @@ impl std::fmt::Debug for AribDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`AribDestinationSettings`](crate::model::AribDestinationSettings)
+/// See [`AribDestinationSettings`](crate::model::AribDestinationSettings).
 pub mod arib_destination_settings {
 
-    /// A builder for [`AribDestinationSettings`](crate::model::AribDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`AribDestinationSettings`](crate::model::AribDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`AribDestinationSettings`](crate::model::AribDestinationSettings)
+        /// Consumes the builder and constructs a [`AribDestinationSettings`](crate::model::AribDestinationSettings).
         pub fn build(self) -> crate::model::AribDestinationSettings {
             crate::model::AribDestinationSettings {}
         }
     }
 }
 impl AribDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`AribDestinationSettings`](crate::model::AribDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`AribDestinationSettings`](crate::model::AribDestinationSettings).
     pub fn builder() -> crate::model::arib_destination_settings::Builder {
         crate::model::arib_destination_settings::Builder::default()
     }
@@ -33499,11 +33342,10 @@ impl std::fmt::Debug for BlackoutSlate {
         formatter.finish()
     }
 }
-/// See [`BlackoutSlate`](crate::model::BlackoutSlate)
+/// See [`BlackoutSlate`](crate::model::BlackoutSlate).
 pub mod blackout_slate {
 
-    /// A builder for [`BlackoutSlate`](crate::model::BlackoutSlate)
-    #[non_exhaustive]
+    /// A builder for [`BlackoutSlate`](crate::model::BlackoutSlate).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blackout_slate_image: std::option::Option<crate::model::InputLocation>,
@@ -33579,7 +33421,7 @@ pub mod blackout_slate {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`BlackoutSlate`](crate::model::BlackoutSlate)
+        /// Consumes the builder and constructs a [`BlackoutSlate`](crate::model::BlackoutSlate).
         pub fn build(self) -> crate::model::BlackoutSlate {
             crate::model::BlackoutSlate {
                 blackout_slate_image: self.blackout_slate_image,
@@ -33592,7 +33434,7 @@ pub mod blackout_slate {
     }
 }
 impl BlackoutSlate {
-    /// Creates a new builder-style object to manufacture [`BlackoutSlate`](crate::model::BlackoutSlate)
+    /// Creates a new builder-style object to manufacture [`BlackoutSlate`](crate::model::BlackoutSlate).
     pub fn builder() -> crate::model::blackout_slate::Builder {
         crate::model::blackout_slate::Builder::default()
     }
@@ -33728,11 +33570,10 @@ impl std::fmt::Debug for AvailConfiguration {
         formatter.finish()
     }
 }
-/// See [`AvailConfiguration`](crate::model::AvailConfiguration)
+/// See [`AvailConfiguration`](crate::model::AvailConfiguration).
 pub mod avail_configuration {
 
-    /// A builder for [`AvailConfiguration`](crate::model::AvailConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`AvailConfiguration`](crate::model::AvailConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avail_settings: std::option::Option<crate::model::AvailSettings>,
@@ -33751,7 +33592,7 @@ pub mod avail_configuration {
             self.avail_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`AvailConfiguration`](crate::model::AvailConfiguration)
+        /// Consumes the builder and constructs a [`AvailConfiguration`](crate::model::AvailConfiguration).
         pub fn build(self) -> crate::model::AvailConfiguration {
             crate::model::AvailConfiguration {
                 avail_settings: self.avail_settings,
@@ -33760,7 +33601,7 @@ pub mod avail_configuration {
     }
 }
 impl AvailConfiguration {
-    /// Creates a new builder-style object to manufacture [`AvailConfiguration`](crate::model::AvailConfiguration)
+    /// Creates a new builder-style object to manufacture [`AvailConfiguration`](crate::model::AvailConfiguration).
     pub fn builder() -> crate::model::avail_configuration::Builder {
         crate::model::avail_configuration::Builder::default()
     }
@@ -33795,11 +33636,10 @@ impl std::fmt::Debug for AvailSettings {
         formatter.finish()
     }
 }
-/// See [`AvailSettings`](crate::model::AvailSettings)
+/// See [`AvailSettings`](crate::model::AvailSettings).
 pub mod avail_settings {
 
-    /// A builder for [`AvailSettings`](crate::model::AvailSettings)
-    #[non_exhaustive]
+    /// A builder for [`AvailSettings`](crate::model::AvailSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scte35_splice_insert: std::option::Option<crate::model::Scte35SpliceInsert>,
@@ -33835,7 +33675,7 @@ pub mod avail_settings {
             self.scte35_time_signal_apos = input;
             self
         }
-        /// Consumes the builder and constructs a [`AvailSettings`](crate::model::AvailSettings)
+        /// Consumes the builder and constructs a [`AvailSettings`](crate::model::AvailSettings).
         pub fn build(self) -> crate::model::AvailSettings {
             crate::model::AvailSettings {
                 scte35_splice_insert: self.scte35_splice_insert,
@@ -33845,7 +33685,7 @@ pub mod avail_settings {
     }
 }
 impl AvailSettings {
-    /// Creates a new builder-style object to manufacture [`AvailSettings`](crate::model::AvailSettings)
+    /// Creates a new builder-style object to manufacture [`AvailSettings`](crate::model::AvailSettings).
     pub fn builder() -> crate::model::avail_settings::Builder {
         crate::model::avail_settings::Builder::default()
     }
@@ -33891,11 +33731,10 @@ impl std::fmt::Debug for Scte35TimeSignalApos {
         formatter.finish()
     }
 }
-/// See [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos)
+/// See [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
 pub mod scte35_time_signal_apos {
 
-    /// A builder for [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos)
-    #[non_exhaustive]
+    /// A builder for [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_avail_offset: std::option::Option<i32>,
@@ -33947,7 +33786,7 @@ pub mod scte35_time_signal_apos {
             self.web_delivery_allowed_flag = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos)
+        /// Consumes the builder and constructs a [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
         pub fn build(self) -> crate::model::Scte35TimeSignalApos {
             crate::model::Scte35TimeSignalApos {
                 ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
@@ -33958,7 +33797,7 @@ pub mod scte35_time_signal_apos {
     }
 }
 impl Scte35TimeSignalApos {
-    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos)
+    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalApos`](crate::model::Scte35TimeSignalApos).
     pub fn builder() -> crate::model::scte35_time_signal_apos::Builder {
         crate::model::scte35_time_signal_apos::Builder::default()
     }
@@ -34114,11 +33953,10 @@ impl std::fmt::Debug for Scte35SpliceInsert {
         formatter.finish()
     }
 }
-/// See [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert)
+/// See [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
 pub mod scte35_splice_insert {
 
-    /// A builder for [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert)
-    #[non_exhaustive]
+    /// A builder for [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ad_avail_offset: std::option::Option<i32>,
@@ -34170,7 +34008,7 @@ pub mod scte35_splice_insert {
             self.web_delivery_allowed_flag = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert)
+        /// Consumes the builder and constructs a [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
         pub fn build(self) -> crate::model::Scte35SpliceInsert {
             crate::model::Scte35SpliceInsert {
                 ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
@@ -34181,7 +34019,7 @@ pub mod scte35_splice_insert {
     }
 }
 impl Scte35SpliceInsert {
-    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert)
+    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsert`](crate::model::Scte35SpliceInsert).
     pub fn builder() -> crate::model::scte35_splice_insert::Builder {
         crate::model::scte35_splice_insert::Builder::default()
     }
@@ -34324,11 +34162,10 @@ impl std::fmt::Debug for AvailBlanking {
         formatter.finish()
     }
 }
-/// See [`AvailBlanking`](crate::model::AvailBlanking)
+/// See [`AvailBlanking`](crate::model::AvailBlanking).
 pub mod avail_blanking {
 
-    /// A builder for [`AvailBlanking`](crate::model::AvailBlanking)
-    #[non_exhaustive]
+    /// A builder for [`AvailBlanking`](crate::model::AvailBlanking).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) avail_blanking_image: std::option::Option<crate::model::InputLocation>,
@@ -34361,7 +34198,7 @@ pub mod avail_blanking {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`AvailBlanking`](crate::model::AvailBlanking)
+        /// Consumes the builder and constructs a [`AvailBlanking`](crate::model::AvailBlanking).
         pub fn build(self) -> crate::model::AvailBlanking {
             crate::model::AvailBlanking {
                 avail_blanking_image: self.avail_blanking_image,
@@ -34371,7 +34208,7 @@ pub mod avail_blanking {
     }
 }
 impl AvailBlanking {
-    /// Creates a new builder-style object to manufacture [`AvailBlanking`](crate::model::AvailBlanking)
+    /// Creates a new builder-style object to manufacture [`AvailBlanking`](crate::model::AvailBlanking).
     pub fn builder() -> crate::model::avail_blanking::Builder {
         crate::model::avail_blanking::Builder::default()
     }
@@ -34537,11 +34374,10 @@ impl std::fmt::Debug for AudioDescription {
         formatter.finish()
     }
 }
-/// See [`AudioDescription`](crate::model::AudioDescription)
+/// See [`AudioDescription`](crate::model::AudioDescription).
 pub mod audio_description {
 
-    /// A builder for [`AudioDescription`](crate::model::AudioDescription)
-    #[non_exhaustive]
+    /// A builder for [`AudioDescription`](crate::model::AudioDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) audio_normalization_settings:
@@ -34710,7 +34546,7 @@ pub mod audio_description {
             self.stream_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioDescription`](crate::model::AudioDescription)
+        /// Consumes the builder and constructs a [`AudioDescription`](crate::model::AudioDescription).
         pub fn build(self) -> crate::model::AudioDescription {
             crate::model::AudioDescription {
                 audio_normalization_settings: self.audio_normalization_settings,
@@ -34729,7 +34565,7 @@ pub mod audio_description {
     }
 }
 impl AudioDescription {
-    /// Creates a new builder-style object to manufacture [`AudioDescription`](crate::model::AudioDescription)
+    /// Creates a new builder-style object to manufacture [`AudioDescription`](crate::model::AudioDescription).
     pub fn builder() -> crate::model::audio_description::Builder {
         crate::model::audio_description::Builder::default()
     }
@@ -34769,11 +34605,10 @@ impl std::fmt::Debug for RemixSettings {
         formatter.finish()
     }
 }
-/// See [`RemixSettings`](crate::model::RemixSettings)
+/// See [`RemixSettings`](crate::model::RemixSettings).
 pub mod remix_settings {
 
-    /// A builder for [`RemixSettings`](crate::model::RemixSettings)
-    #[non_exhaustive]
+    /// A builder for [`RemixSettings`](crate::model::RemixSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_mappings:
@@ -34821,7 +34656,7 @@ pub mod remix_settings {
             self.channels_out = input;
             self
         }
-        /// Consumes the builder and constructs a [`RemixSettings`](crate::model::RemixSettings)
+        /// Consumes the builder and constructs a [`RemixSettings`](crate::model::RemixSettings).
         pub fn build(self) -> crate::model::RemixSettings {
             crate::model::RemixSettings {
                 channel_mappings: self.channel_mappings,
@@ -34832,7 +34667,7 @@ pub mod remix_settings {
     }
 }
 impl RemixSettings {
-    /// Creates a new builder-style object to manufacture [`RemixSettings`](crate::model::RemixSettings)
+    /// Creates a new builder-style object to manufacture [`RemixSettings`](crate::model::RemixSettings).
     pub fn builder() -> crate::model::remix_settings::Builder {
         crate::model::remix_settings::Builder::default()
     }
@@ -34865,11 +34700,10 @@ impl std::fmt::Debug for AudioChannelMapping {
         formatter.finish()
     }
 }
-/// See [`AudioChannelMapping`](crate::model::AudioChannelMapping)
+/// See [`AudioChannelMapping`](crate::model::AudioChannelMapping).
 pub mod audio_channel_mapping {
 
-    /// A builder for [`AudioChannelMapping`](crate::model::AudioChannelMapping)
-    #[non_exhaustive]
+    /// A builder for [`AudioChannelMapping`](crate::model::AudioChannelMapping).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_channel_levels:
@@ -34906,7 +34740,7 @@ pub mod audio_channel_mapping {
             self.output_channel = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioChannelMapping`](crate::model::AudioChannelMapping)
+        /// Consumes the builder and constructs a [`AudioChannelMapping`](crate::model::AudioChannelMapping).
         pub fn build(self) -> crate::model::AudioChannelMapping {
             crate::model::AudioChannelMapping {
                 input_channel_levels: self.input_channel_levels,
@@ -34916,7 +34750,7 @@ pub mod audio_channel_mapping {
     }
 }
 impl AudioChannelMapping {
-    /// Creates a new builder-style object to manufacture [`AudioChannelMapping`](crate::model::AudioChannelMapping)
+    /// Creates a new builder-style object to manufacture [`AudioChannelMapping`](crate::model::AudioChannelMapping).
     pub fn builder() -> crate::model::audio_channel_mapping::Builder {
         crate::model::audio_channel_mapping::Builder::default()
     }
@@ -34949,11 +34783,10 @@ impl std::fmt::Debug for InputChannelLevel {
         formatter.finish()
     }
 }
-/// See [`InputChannelLevel`](crate::model::InputChannelLevel)
+/// See [`InputChannelLevel`](crate::model::InputChannelLevel).
 pub mod input_channel_level {
 
-    /// A builder for [`InputChannelLevel`](crate::model::InputChannelLevel)
-    #[non_exhaustive]
+    /// A builder for [`InputChannelLevel`](crate::model::InputChannelLevel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gain: std::option::Option<i32>,
@@ -34980,7 +34813,7 @@ pub mod input_channel_level {
             self.input_channel = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputChannelLevel`](crate::model::InputChannelLevel)
+        /// Consumes the builder and constructs a [`InputChannelLevel`](crate::model::InputChannelLevel).
         pub fn build(self) -> crate::model::InputChannelLevel {
             crate::model::InputChannelLevel {
                 gain: self.gain.unwrap_or_default(),
@@ -34990,7 +34823,7 @@ pub mod input_channel_level {
     }
 }
 impl InputChannelLevel {
-    /// Creates a new builder-style object to manufacture [`InputChannelLevel`](crate::model::InputChannelLevel)
+    /// Creates a new builder-style object to manufacture [`InputChannelLevel`](crate::model::InputChannelLevel).
     pub fn builder() -> crate::model::input_channel_level::Builder {
         crate::model::input_channel_level::Builder::default()
     }
@@ -35106,11 +34939,10 @@ impl std::fmt::Debug for AudioCodecSettings {
         formatter.finish()
     }
 }
-/// See [`AudioCodecSettings`](crate::model::AudioCodecSettings)
+/// See [`AudioCodecSettings`](crate::model::AudioCodecSettings).
 pub mod audio_codec_settings {
 
-    /// A builder for [`AudioCodecSettings`](crate::model::AudioCodecSettings)
-    #[non_exhaustive]
+    /// A builder for [`AudioCodecSettings`](crate::model::AudioCodecSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aac_settings: std::option::Option<crate::model::AacSettings>,
@@ -35199,7 +35031,7 @@ pub mod audio_codec_settings {
             self.wav_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioCodecSettings`](crate::model::AudioCodecSettings)
+        /// Consumes the builder and constructs a [`AudioCodecSettings`](crate::model::AudioCodecSettings).
         pub fn build(self) -> crate::model::AudioCodecSettings {
             crate::model::AudioCodecSettings {
                 aac_settings: self.aac_settings,
@@ -35213,7 +35045,7 @@ pub mod audio_codec_settings {
     }
 }
 impl AudioCodecSettings {
-    /// Creates a new builder-style object to manufacture [`AudioCodecSettings`](crate::model::AudioCodecSettings)
+    /// Creates a new builder-style object to manufacture [`AudioCodecSettings`](crate::model::AudioCodecSettings).
     pub fn builder() -> crate::model::audio_codec_settings::Builder {
         crate::model::audio_codec_settings::Builder::default()
     }
@@ -35253,11 +35085,10 @@ impl std::fmt::Debug for WavSettings {
         formatter.finish()
     }
 }
-/// See [`WavSettings`](crate::model::WavSettings)
+/// See [`WavSettings`](crate::model::WavSettings).
 pub mod wav_settings {
 
-    /// A builder for [`WavSettings`](crate::model::WavSettings)
-    #[non_exhaustive]
+    /// A builder for [`WavSettings`](crate::model::WavSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bit_depth: std::option::Option<f64>,
@@ -35298,7 +35129,7 @@ pub mod wav_settings {
             self.sample_rate = input;
             self
         }
-        /// Consumes the builder and constructs a [`WavSettings`](crate::model::WavSettings)
+        /// Consumes the builder and constructs a [`WavSettings`](crate::model::WavSettings).
         pub fn build(self) -> crate::model::WavSettings {
             crate::model::WavSettings {
                 bit_depth: self.bit_depth.unwrap_or_default(),
@@ -35309,7 +35140,7 @@ pub mod wav_settings {
     }
 }
 impl WavSettings {
-    /// Creates a new builder-style object to manufacture [`WavSettings`](crate::model::WavSettings)
+    /// Creates a new builder-style object to manufacture [`WavSettings`](crate::model::WavSettings).
     pub fn builder() -> crate::model::wav_settings::Builder {
         crate::model::wav_settings::Builder::default()
     }
@@ -35393,22 +35224,21 @@ impl std::fmt::Debug for PassThroughSettings {
         formatter.finish()
     }
 }
-/// See [`PassThroughSettings`](crate::model::PassThroughSettings)
+/// See [`PassThroughSettings`](crate::model::PassThroughSettings).
 pub mod pass_through_settings {
 
-    /// A builder for [`PassThroughSettings`](crate::model::PassThroughSettings)
-    #[non_exhaustive]
+    /// A builder for [`PassThroughSettings`](crate::model::PassThroughSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PassThroughSettings`](crate::model::PassThroughSettings)
+        /// Consumes the builder and constructs a [`PassThroughSettings`](crate::model::PassThroughSettings).
         pub fn build(self) -> crate::model::PassThroughSettings {
             crate::model::PassThroughSettings {}
         }
     }
 }
 impl PassThroughSettings {
-    /// Creates a new builder-style object to manufacture [`PassThroughSettings`](crate::model::PassThroughSettings)
+    /// Creates a new builder-style object to manufacture [`PassThroughSettings`](crate::model::PassThroughSettings).
     pub fn builder() -> crate::model::pass_through_settings::Builder {
         crate::model::pass_through_settings::Builder::default()
     }
@@ -35448,11 +35278,10 @@ impl std::fmt::Debug for Mp2Settings {
         formatter.finish()
     }
 }
-/// See [`Mp2Settings`](crate::model::Mp2Settings)
+/// See [`Mp2Settings`](crate::model::Mp2Settings).
 pub mod mp2_settings {
 
-    /// A builder for [`Mp2Settings`](crate::model::Mp2Settings)
-    #[non_exhaustive]
+    /// A builder for [`Mp2Settings`](crate::model::Mp2Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<f64>,
@@ -35493,7 +35322,7 @@ pub mod mp2_settings {
             self.sample_rate = input;
             self
         }
-        /// Consumes the builder and constructs a [`Mp2Settings`](crate::model::Mp2Settings)
+        /// Consumes the builder and constructs a [`Mp2Settings`](crate::model::Mp2Settings).
         pub fn build(self) -> crate::model::Mp2Settings {
             crate::model::Mp2Settings {
                 bitrate: self.bitrate.unwrap_or_default(),
@@ -35504,7 +35333,7 @@ pub mod mp2_settings {
     }
 }
 impl Mp2Settings {
-    /// Creates a new builder-style object to manufacture [`Mp2Settings`](crate::model::Mp2Settings)
+    /// Creates a new builder-style object to manufacture [`Mp2Settings`](crate::model::Mp2Settings).
     pub fn builder() -> crate::model::mp2_settings::Builder {
         crate::model::mp2_settings::Builder::default()
     }
@@ -35722,11 +35551,10 @@ impl std::fmt::Debug for Eac3Settings {
         formatter.finish()
     }
 }
-/// See [`Eac3Settings`](crate::model::Eac3Settings)
+/// See [`Eac3Settings`](crate::model::Eac3Settings).
 pub mod eac3_settings {
 
-    /// A builder for [`Eac3Settings`](crate::model::Eac3Settings)
-    #[non_exhaustive]
+    /// A builder for [`Eac3Settings`](crate::model::Eac3Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attenuation_control: std::option::Option<crate::model::Eac3AttenuationControl>,
@@ -35990,7 +35818,7 @@ pub mod eac3_settings {
             self.surround_mode = input;
             self
         }
-        /// Consumes the builder and constructs a [`Eac3Settings`](crate::model::Eac3Settings)
+        /// Consumes the builder and constructs a [`Eac3Settings`](crate::model::Eac3Settings).
         pub fn build(self) -> crate::model::Eac3Settings {
             crate::model::Eac3Settings {
                 attenuation_control: self.attenuation_control,
@@ -36018,7 +35846,7 @@ pub mod eac3_settings {
     }
 }
 impl Eac3Settings {
-    /// Creates a new builder-style object to manufacture [`Eac3Settings`](crate::model::Eac3Settings)
+    /// Creates a new builder-style object to manufacture [`Eac3Settings`](crate::model::Eac3Settings).
     pub fn builder() -> crate::model::eac3_settings::Builder {
         crate::model::eac3_settings::Builder::default()
     }
@@ -36940,11 +36768,10 @@ impl std::fmt::Debug for Ac3Settings {
         formatter.finish()
     }
 }
-/// See [`Ac3Settings`](crate::model::Ac3Settings)
+/// See [`Ac3Settings`](crate::model::Ac3Settings).
 pub mod ac3_settings {
 
-    /// A builder for [`Ac3Settings`](crate::model::Ac3Settings)
-    #[non_exhaustive]
+    /// A builder for [`Ac3Settings`](crate::model::Ac3Settings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<f64>,
@@ -37041,7 +36868,7 @@ pub mod ac3_settings {
             self.metadata_control = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ac3Settings`](crate::model::Ac3Settings)
+        /// Consumes the builder and constructs a [`Ac3Settings`](crate::model::Ac3Settings).
         pub fn build(self) -> crate::model::Ac3Settings {
             crate::model::Ac3Settings {
                 bitrate: self.bitrate.unwrap_or_default(),
@@ -37056,7 +36883,7 @@ pub mod ac3_settings {
     }
 }
 impl Ac3Settings {
-    /// Creates a new builder-style object to manufacture [`Ac3Settings`](crate::model::Ac3Settings)
+    /// Creates a new builder-style object to manufacture [`Ac3Settings`](crate::model::Ac3Settings).
     pub fn builder() -> crate::model::ac3_settings::Builder {
         crate::model::ac3_settings::Builder::default()
     }
@@ -37459,11 +37286,10 @@ impl std::fmt::Debug for AacSettings {
         formatter.finish()
     }
 }
-/// See [`AacSettings`](crate::model::AacSettings)
+/// See [`AacSettings`](crate::model::AacSettings).
 pub mod aac_settings {
 
-    /// A builder for [`AacSettings`](crate::model::AacSettings)
-    #[non_exhaustive]
+    /// A builder for [`AacSettings`](crate::model::AacSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bitrate: std::option::Option<f64>,
@@ -37582,7 +37408,7 @@ pub mod aac_settings {
             self.vbr_quality = input;
             self
         }
-        /// Consumes the builder and constructs a [`AacSettings`](crate::model::AacSettings)
+        /// Consumes the builder and constructs a [`AacSettings`](crate::model::AacSettings).
         pub fn build(self) -> crate::model::AacSettings {
             crate::model::AacSettings {
                 bitrate: self.bitrate.unwrap_or_default(),
@@ -37599,7 +37425,7 @@ pub mod aac_settings {
     }
 }
 impl AacSettings {
-    /// Creates a new builder-style object to manufacture [`AacSettings`](crate::model::AacSettings)
+    /// Creates a new builder-style object to manufacture [`AacSettings`](crate::model::AacSettings).
     pub fn builder() -> crate::model::aac_settings::Builder {
         crate::model::aac_settings::Builder::default()
     }
@@ -38045,11 +37871,10 @@ impl std::fmt::Debug for AudioWatermarkSettings {
         formatter.finish()
     }
 }
-/// See [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
+/// See [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
 pub mod audio_watermark_settings {
 
-    /// A builder for [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
-    #[non_exhaustive]
+    /// A builder for [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nielsen_watermarks_settings:
@@ -38072,7 +37897,7 @@ pub mod audio_watermark_settings {
             self.nielsen_watermarks_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
+        /// Consumes the builder and constructs a [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
         pub fn build(self) -> crate::model::AudioWatermarkSettings {
             crate::model::AudioWatermarkSettings {
                 nielsen_watermarks_settings: self.nielsen_watermarks_settings,
@@ -38081,7 +37906,7 @@ pub mod audio_watermark_settings {
     }
 }
 impl AudioWatermarkSettings {
-    /// Creates a new builder-style object to manufacture [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings)
+    /// Creates a new builder-style object to manufacture [`AudioWatermarkSettings`](crate::model::AudioWatermarkSettings).
     pub fn builder() -> crate::model::audio_watermark_settings::Builder {
         crate::model::audio_watermark_settings::Builder::default()
     }
@@ -38129,11 +37954,10 @@ impl std::fmt::Debug for NielsenWatermarksSettings {
         formatter.finish()
     }
 }
-/// See [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
+/// See [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
 pub mod nielsen_watermarks_settings {
 
-    /// A builder for [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
-    #[non_exhaustive]
+    /// A builder for [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) nielsen_cbet_settings: std::option::Option<crate::model::NielsenCbet>,
@@ -38184,7 +38008,7 @@ pub mod nielsen_watermarks_settings {
             self.nielsen_naes_ii_nw_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
+        /// Consumes the builder and constructs a [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
         pub fn build(self) -> crate::model::NielsenWatermarksSettings {
             crate::model::NielsenWatermarksSettings {
                 nielsen_cbet_settings: self.nielsen_cbet_settings,
@@ -38195,7 +38019,7 @@ pub mod nielsen_watermarks_settings {
     }
 }
 impl NielsenWatermarksSettings {
-    /// Creates a new builder-style object to manufacture [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings)
+    /// Creates a new builder-style object to manufacture [`NielsenWatermarksSettings`](crate::model::NielsenWatermarksSettings).
     pub fn builder() -> crate::model::nielsen_watermarks_settings::Builder {
         crate::model::nielsen_watermarks_settings::Builder::default()
     }
@@ -38228,11 +38052,10 @@ impl std::fmt::Debug for NielsenNaesIiNw {
         formatter.finish()
     }
 }
-/// See [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
+/// See [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
 pub mod nielsen_naes_ii_nw {
 
-    /// A builder for [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
-    #[non_exhaustive]
+    /// A builder for [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) check_digit_string: std::option::Option<std::string::String>,
@@ -38262,7 +38085,7 @@ pub mod nielsen_naes_ii_nw {
             self.sid = input;
             self
         }
-        /// Consumes the builder and constructs a [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
+        /// Consumes the builder and constructs a [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
         pub fn build(self) -> crate::model::NielsenNaesIiNw {
             crate::model::NielsenNaesIiNw {
                 check_digit_string: self.check_digit_string,
@@ -38272,7 +38095,7 @@ pub mod nielsen_naes_ii_nw {
     }
 }
 impl NielsenNaesIiNw {
-    /// Creates a new builder-style object to manufacture [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw)
+    /// Creates a new builder-style object to manufacture [`NielsenNaesIiNw`](crate::model::NielsenNaesIiNw).
     pub fn builder() -> crate::model::nielsen_naes_ii_nw::Builder {
         crate::model::nielsen_naes_ii_nw::Builder::default()
     }
@@ -38369,11 +38192,10 @@ impl std::fmt::Debug for NielsenCbet {
         formatter.finish()
     }
 }
-/// See [`NielsenCbet`](crate::model::NielsenCbet)
+/// See [`NielsenCbet`](crate::model::NielsenCbet).
 pub mod nielsen_cbet {
 
-    /// A builder for [`NielsenCbet`](crate::model::NielsenCbet)
-    #[non_exhaustive]
+    /// A builder for [`NielsenCbet`](crate::model::NielsenCbet).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cbet_check_digit_string: std::option::Option<std::string::String>,
@@ -38421,7 +38243,7 @@ pub mod nielsen_cbet {
             self.csid = input;
             self
         }
-        /// Consumes the builder and constructs a [`NielsenCbet`](crate::model::NielsenCbet)
+        /// Consumes the builder and constructs a [`NielsenCbet`](crate::model::NielsenCbet).
         pub fn build(self) -> crate::model::NielsenCbet {
             crate::model::NielsenCbet {
                 cbet_check_digit_string: self.cbet_check_digit_string,
@@ -38432,7 +38254,7 @@ pub mod nielsen_cbet {
     }
 }
 impl NielsenCbet {
-    /// Creates a new builder-style object to manufacture [`NielsenCbet`](crate::model::NielsenCbet)
+    /// Creates a new builder-style object to manufacture [`NielsenCbet`](crate::model::NielsenCbet).
     pub fn builder() -> crate::model::nielsen_cbet::Builder {
         crate::model::nielsen_cbet::Builder::default()
     }
@@ -38652,11 +38474,10 @@ impl std::fmt::Debug for AudioNormalizationSettings {
         formatter.finish()
     }
 }
-/// See [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings)
+/// See [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
 pub mod audio_normalization_settings {
 
-    /// A builder for [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings)
-    #[non_exhaustive]
+    /// A builder for [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) algorithm: std::option::Option<crate::model::AudioNormalizationAlgorithm>,
@@ -38704,7 +38525,7 @@ pub mod audio_normalization_settings {
             self.target_lkfs = input;
             self
         }
-        /// Consumes the builder and constructs a [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings)
+        /// Consumes the builder and constructs a [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
         pub fn build(self) -> crate::model::AudioNormalizationSettings {
             crate::model::AudioNormalizationSettings {
                 algorithm: self.algorithm,
@@ -38715,7 +38536,7 @@ pub mod audio_normalization_settings {
     }
 }
 impl AudioNormalizationSettings {
-    /// Creates a new builder-style object to manufacture [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings)
+    /// Creates a new builder-style object to manufacture [`AudioNormalizationSettings`](crate::model::AudioNormalizationSettings).
     pub fn builder() -> crate::model::audio_normalization_settings::Builder {
         crate::model::audio_normalization_settings::Builder::default()
     }
@@ -38847,11 +38668,10 @@ impl std::fmt::Debug for ChannelEgressEndpoint {
         formatter.finish()
     }
 }
-/// See [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint)
+/// See [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
 pub mod channel_egress_endpoint {
 
-    /// A builder for [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint)
-    #[non_exhaustive]
+    /// A builder for [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_ip: std::option::Option<std::string::String>,
@@ -38867,7 +38687,7 @@ pub mod channel_egress_endpoint {
             self.source_ip = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint)
+        /// Consumes the builder and constructs a [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
         pub fn build(self) -> crate::model::ChannelEgressEndpoint {
             crate::model::ChannelEgressEndpoint {
                 source_ip: self.source_ip,
@@ -38876,7 +38696,7 @@ pub mod channel_egress_endpoint {
     }
 }
 impl ChannelEgressEndpoint {
-    /// Creates a new builder-style object to manufacture [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint)
+    /// Creates a new builder-style object to manufacture [`ChannelEgressEndpoint`](crate::model::ChannelEgressEndpoint).
     pub fn builder() -> crate::model::channel_egress_endpoint::Builder {
         crate::model::channel_egress_endpoint::Builder::default()
     }
@@ -38929,11 +38749,10 @@ impl std::fmt::Debug for OutputDestination {
         formatter.finish()
     }
 }
-/// See [`OutputDestination`](crate::model::OutputDestination)
+/// See [`OutputDestination`](crate::model::OutputDestination).
 pub mod output_destination {
 
-    /// A builder for [`OutputDestination`](crate::model::OutputDestination)
-    #[non_exhaustive]
+    /// A builder for [`OutputDestination`](crate::model::OutputDestination).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -39014,7 +38833,7 @@ pub mod output_destination {
             self.settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputDestination`](crate::model::OutputDestination)
+        /// Consumes the builder and constructs a [`OutputDestination`](crate::model::OutputDestination).
         pub fn build(self) -> crate::model::OutputDestination {
             crate::model::OutputDestination {
                 id: self.id,
@@ -39026,7 +38845,7 @@ pub mod output_destination {
     }
 }
 impl OutputDestination {
-    /// Creates a new builder-style object to manufacture [`OutputDestination`](crate::model::OutputDestination)
+    /// Creates a new builder-style object to manufacture [`OutputDestination`](crate::model::OutputDestination).
     pub fn builder() -> crate::model::output_destination::Builder {
         crate::model::output_destination::Builder::default()
     }
@@ -39073,11 +38892,10 @@ impl std::fmt::Debug for OutputDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`OutputDestinationSettings`](crate::model::OutputDestinationSettings)
+/// See [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
 pub mod output_destination_settings {
 
-    /// A builder for [`OutputDestinationSettings`](crate::model::OutputDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) password_param: std::option::Option<std::string::String>,
@@ -39129,7 +38947,7 @@ pub mod output_destination_settings {
             self.username = input;
             self
         }
-        /// Consumes the builder and constructs a [`OutputDestinationSettings`](crate::model::OutputDestinationSettings)
+        /// Consumes the builder and constructs a [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
         pub fn build(self) -> crate::model::OutputDestinationSettings {
             crate::model::OutputDestinationSettings {
                 password_param: self.password_param,
@@ -39141,7 +38959,7 @@ pub mod output_destination_settings {
     }
 }
 impl OutputDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`OutputDestinationSettings`](crate::model::OutputDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`OutputDestinationSettings`](crate::model::OutputDestinationSettings).
     pub fn builder() -> crate::model::output_destination_settings::Builder {
         crate::model::output_destination_settings::Builder::default()
     }
@@ -39174,11 +38992,10 @@ impl std::fmt::Debug for MultiplexProgramChannelDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings)
+/// See [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
 pub mod multiplex_program_channel_destination_settings {
 
-    /// A builder for [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) multiplex_id: std::option::Option<std::string::String>,
@@ -39205,7 +39022,7 @@ pub mod multiplex_program_channel_destination_settings {
             self.program_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings)
+        /// Consumes the builder and constructs a [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
         pub fn build(self) -> crate::model::MultiplexProgramChannelDestinationSettings {
             crate::model::MultiplexProgramChannelDestinationSettings {
                 multiplex_id: self.multiplex_id,
@@ -39215,7 +39032,7 @@ pub mod multiplex_program_channel_destination_settings {
     }
 }
 impl MultiplexProgramChannelDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramChannelDestinationSettings`](crate::model::MultiplexProgramChannelDestinationSettings).
     pub fn builder() -> crate::model::multiplex_program_channel_destination_settings::Builder {
         crate::model::multiplex_program_channel_destination_settings::Builder::default()
     }
@@ -39241,11 +39058,10 @@ impl std::fmt::Debug for MediaPackageOutputDestinationSettings {
         formatter.finish()
     }
 }
-/// See [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings)
+/// See [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
 pub mod media_package_output_destination_settings {
 
-    /// A builder for [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings)
-    #[non_exhaustive]
+    /// A builder for [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -39261,7 +39077,7 @@ pub mod media_package_output_destination_settings {
             self.channel_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings)
+        /// Consumes the builder and constructs a [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
         pub fn build(self) -> crate::model::MediaPackageOutputDestinationSettings {
             crate::model::MediaPackageOutputDestinationSettings {
                 channel_id: self.channel_id,
@@ -39270,7 +39086,7 @@ pub mod media_package_output_destination_settings {
     }
 }
 impl MediaPackageOutputDestinationSettings {
-    /// Creates a new builder-style object to manufacture [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings)
+    /// Creates a new builder-style object to manufacture [`MediaPackageOutputDestinationSettings`](crate::model::MediaPackageOutputDestinationSettings).
     pub fn builder() -> crate::model::media_package_output_destination_settings::Builder {
         crate::model::media_package_output_destination_settings::Builder::default()
     }
@@ -39296,11 +39112,10 @@ impl std::fmt::Debug for CdiInputSpecification {
         formatter.finish()
     }
 }
-/// See [`CdiInputSpecification`](crate::model::CdiInputSpecification)
+/// See [`CdiInputSpecification`](crate::model::CdiInputSpecification).
 pub mod cdi_input_specification {
 
-    /// A builder for [`CdiInputSpecification`](crate::model::CdiInputSpecification)
-    #[non_exhaustive]
+    /// A builder for [`CdiInputSpecification`](crate::model::CdiInputSpecification).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resolution: std::option::Option<crate::model::CdiInputResolution>,
@@ -39319,7 +39134,7 @@ pub mod cdi_input_specification {
             self.resolution = input;
             self
         }
-        /// Consumes the builder and constructs a [`CdiInputSpecification`](crate::model::CdiInputSpecification)
+        /// Consumes the builder and constructs a [`CdiInputSpecification`](crate::model::CdiInputSpecification).
         pub fn build(self) -> crate::model::CdiInputSpecification {
             crate::model::CdiInputSpecification {
                 resolution: self.resolution,
@@ -39328,7 +39143,7 @@ pub mod cdi_input_specification {
     }
 }
 impl CdiInputSpecification {
-    /// Creates a new builder-style object to manufacture [`CdiInputSpecification`](crate::model::CdiInputSpecification)
+    /// Creates a new builder-style object to manufacture [`CdiInputSpecification`](crate::model::CdiInputSpecification).
     pub fn builder() -> crate::model::cdi_input_specification::Builder {
         crate::model::cdi_input_specification::Builder::default()
     }
@@ -39434,11 +39249,10 @@ impl std::fmt::Debug for MaintenanceUpdateSettings {
         formatter.finish()
     }
 }
-/// See [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings)
+/// See [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
 pub mod maintenance_update_settings {
 
-    /// A builder for [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings)
-    #[non_exhaustive]
+    /// A builder for [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -39485,7 +39299,7 @@ pub mod maintenance_update_settings {
             self.maintenance_start_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings)
+        /// Consumes the builder and constructs a [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
         pub fn build(self) -> crate::model::MaintenanceUpdateSettings {
             crate::model::MaintenanceUpdateSettings {
                 maintenance_day: self.maintenance_day,
@@ -39496,7 +39310,7 @@ pub mod maintenance_update_settings {
     }
 }
 impl MaintenanceUpdateSettings {
-    /// Creates a new builder-style object to manufacture [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings)
+    /// Creates a new builder-style object to manufacture [`MaintenanceUpdateSettings`](crate::model::MaintenanceUpdateSettings).
     pub fn builder() -> crate::model::maintenance_update_settings::Builder {
         crate::model::maintenance_update_settings::Builder::default()
     }
@@ -39594,11 +39408,10 @@ impl std::fmt::Debug for Offering {
         formatter.finish()
     }
 }
-/// See [`Offering`](crate::model::Offering)
+/// See [`Offering`](crate::model::Offering).
 pub mod offering {
 
-    /// A builder for [`Offering`](crate::model::Offering)
-    #[non_exhaustive]
+    /// A builder for [`Offering`](crate::model::Offering).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -39743,7 +39556,7 @@ pub mod offering {
             self.usage_price = input;
             self
         }
-        /// Consumes the builder and constructs a [`Offering`](crate::model::Offering)
+        /// Consumes the builder and constructs a [`Offering`](crate::model::Offering).
         pub fn build(self) -> crate::model::Offering {
             crate::model::Offering {
                 arn: self.arn,
@@ -39762,7 +39575,7 @@ pub mod offering {
     }
 }
 impl Offering {
-    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering)
+    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
     pub fn builder() -> crate::model::offering::Builder {
         crate::model::offering::Builder::default()
     }
@@ -39795,11 +39608,10 @@ impl std::fmt::Debug for MultiplexProgramSummary {
         formatter.finish()
     }
 }
-/// See [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary)
+/// See [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
 pub mod multiplex_program_summary {
 
-    /// A builder for [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_id: std::option::Option<std::string::String>,
@@ -39826,7 +39638,7 @@ pub mod multiplex_program_summary {
             self.program_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary)
+        /// Consumes the builder and constructs a [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
         pub fn build(self) -> crate::model::MultiplexProgramSummary {
             crate::model::MultiplexProgramSummary {
                 channel_id: self.channel_id,
@@ -39836,7 +39648,7 @@ pub mod multiplex_program_summary {
     }
 }
 impl MultiplexProgramSummary {
-    /// Creates a new builder-style object to manufacture [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary)
+    /// Creates a new builder-style object to manufacture [`MultiplexProgramSummary`](crate::model::MultiplexProgramSummary).
     pub fn builder() -> crate::model::multiplex_program_summary::Builder {
         crate::model::multiplex_program_summary::Builder::default()
     }
@@ -39924,11 +39736,10 @@ impl std::fmt::Debug for MultiplexSummary {
         formatter.finish()
     }
 }
-/// See [`MultiplexSummary`](crate::model::MultiplexSummary)
+/// See [`MultiplexSummary`](crate::model::MultiplexSummary).
 pub mod multiplex_summary {
 
-    /// A builder for [`MultiplexSummary`](crate::model::MultiplexSummary)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexSummary`](crate::model::MultiplexSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -40064,7 +39875,7 @@ pub mod multiplex_summary {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexSummary`](crate::model::MultiplexSummary)
+        /// Consumes the builder and constructs a [`MultiplexSummary`](crate::model::MultiplexSummary).
         pub fn build(self) -> crate::model::MultiplexSummary {
             crate::model::MultiplexSummary {
                 arn: self.arn,
@@ -40081,7 +39892,7 @@ pub mod multiplex_summary {
     }
 }
 impl MultiplexSummary {
-    /// Creates a new builder-style object to manufacture [`MultiplexSummary`](crate::model::MultiplexSummary)
+    /// Creates a new builder-style object to manufacture [`MultiplexSummary`](crate::model::MultiplexSummary).
     pub fn builder() -> crate::model::multiplex_summary::Builder {
         crate::model::multiplex_summary::Builder::default()
     }
@@ -40107,11 +39918,10 @@ impl std::fmt::Debug for MultiplexSettingsSummary {
         formatter.finish()
     }
 }
-/// See [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary)
+/// See [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
 pub mod multiplex_settings_summary {
 
-    /// A builder for [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary)
-    #[non_exhaustive]
+    /// A builder for [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transport_stream_bitrate: std::option::Option<i32>,
@@ -40127,7 +39937,7 @@ pub mod multiplex_settings_summary {
             self.transport_stream_bitrate = input;
             self
         }
-        /// Consumes the builder and constructs a [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary)
+        /// Consumes the builder and constructs a [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
         pub fn build(self) -> crate::model::MultiplexSettingsSummary {
             crate::model::MultiplexSettingsSummary {
                 transport_stream_bitrate: self.transport_stream_bitrate.unwrap_or_default(),
@@ -40136,7 +39946,7 @@ pub mod multiplex_settings_summary {
     }
 }
 impl MultiplexSettingsSummary {
-    /// Creates a new builder-style object to manufacture [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary)
+    /// Creates a new builder-style object to manufacture [`MultiplexSettingsSummary`](crate::model::MultiplexSettingsSummary).
     pub fn builder() -> crate::model::multiplex_settings_summary::Builder {
         crate::model::multiplex_settings_summary::Builder::default()
     }
@@ -40183,11 +39993,10 @@ impl std::fmt::Debug for TransferringInputDeviceSummary {
         formatter.finish()
     }
 }
-/// See [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary)
+/// See [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
 pub mod transferring_input_device_summary {
 
-    /// A builder for [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary)
-    #[non_exhaustive]
+    /// A builder for [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -40242,7 +40051,7 @@ pub mod transferring_input_device_summary {
             self.transfer_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary)
+        /// Consumes the builder and constructs a [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
         pub fn build(self) -> crate::model::TransferringInputDeviceSummary {
             crate::model::TransferringInputDeviceSummary {
                 id: self.id,
@@ -40254,7 +40063,7 @@ pub mod transferring_input_device_summary {
     }
 }
 impl TransferringInputDeviceSummary {
-    /// Creates a new builder-style object to manufacture [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary)
+    /// Creates a new builder-style object to manufacture [`TransferringInputDeviceSummary`](crate::model::TransferringInputDeviceSummary).
     pub fn builder() -> crate::model::transferring_input_device_summary::Builder {
         crate::model::transferring_input_device_summary::Builder::default()
     }
@@ -40423,11 +40232,10 @@ impl std::fmt::Debug for InputDeviceSummary {
         formatter.finish()
     }
 }
-/// See [`InputDeviceSummary`](crate::model::InputDeviceSummary)
+/// See [`InputDeviceSummary`](crate::model::InputDeviceSummary).
 pub mod input_device_summary {
 
-    /// A builder for [`InputDeviceSummary`](crate::model::InputDeviceSummary)
-    #[non_exhaustive]
+    /// A builder for [`InputDeviceSummary`](crate::model::InputDeviceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -40592,7 +40400,7 @@ pub mod input_device_summary {
             self.uhd_device_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputDeviceSummary`](crate::model::InputDeviceSummary)
+        /// Consumes the builder and constructs a [`InputDeviceSummary`](crate::model::InputDeviceSummary).
         pub fn build(self) -> crate::model::InputDeviceSummary {
             crate::model::InputDeviceSummary {
                 arn: self.arn,
@@ -40612,7 +40420,7 @@ pub mod input_device_summary {
     }
 }
 impl InputDeviceSummary {
-    /// Creates a new builder-style object to manufacture [`InputDeviceSummary`](crate::model::InputDeviceSummary)
+    /// Creates a new builder-style object to manufacture [`InputDeviceSummary`](crate::model::InputDeviceSummary).
     pub fn builder() -> crate::model::input_device_summary::Builder {
         crate::model::input_device_summary::Builder::default()
     }
@@ -40749,11 +40557,10 @@ impl std::fmt::Debug for ChannelSummary {
         formatter.finish()
     }
 }
-/// See [`ChannelSummary`](crate::model::ChannelSummary)
+/// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
 
-    /// A builder for [`ChannelSummary`](crate::model::ChannelSummary)
-    #[non_exhaustive]
+    /// A builder for [`ChannelSummary`](crate::model::ChannelSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -41000,7 +40807,7 @@ pub mod channel_summary {
             self.vpc = input;
             self
         }
-        /// Consumes the builder and constructs a [`ChannelSummary`](crate::model::ChannelSummary)
+        /// Consumes the builder and constructs a [`ChannelSummary`](crate::model::ChannelSummary).
         pub fn build(self) -> crate::model::ChannelSummary {
             crate::model::ChannelSummary {
                 arn: self.arn,
@@ -41024,7 +40831,7 @@ pub mod channel_summary {
     }
 }
 impl ChannelSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary)
+    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
     pub fn builder() -> crate::model::channel_summary::Builder {
         crate::model::channel_summary::Builder::default()
     }
@@ -41072,11 +40879,10 @@ impl std::fmt::Debug for ScheduleAction {
         formatter.finish()
     }
 }
-/// See [`ScheduleAction`](crate::model::ScheduleAction)
+/// See [`ScheduleAction`](crate::model::ScheduleAction).
 pub mod schedule_action {
 
-    /// A builder for [`ScheduleAction`](crate::model::ScheduleAction)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleAction`](crate::model::ScheduleAction).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_name: std::option::Option<std::string::String>,
@@ -41128,7 +40934,7 @@ pub mod schedule_action {
             self.schedule_action_start_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleAction`](crate::model::ScheduleAction)
+        /// Consumes the builder and constructs a [`ScheduleAction`](crate::model::ScheduleAction).
         pub fn build(self) -> crate::model::ScheduleAction {
             crate::model::ScheduleAction {
                 action_name: self.action_name,
@@ -41139,7 +40945,7 @@ pub mod schedule_action {
     }
 }
 impl ScheduleAction {
-    /// Creates a new builder-style object to manufacture [`ScheduleAction`](crate::model::ScheduleAction)
+    /// Creates a new builder-style object to manufacture [`ScheduleAction`](crate::model::ScheduleAction).
     pub fn builder() -> crate::model::schedule_action::Builder {
         crate::model::schedule_action::Builder::default()
     }
@@ -41197,11 +41003,10 @@ impl std::fmt::Debug for ScheduleActionStartSettings {
         formatter.finish()
     }
 }
-/// See [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings)
+/// See [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
 pub mod schedule_action_start_settings {
 
-    /// A builder for [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fixed_mode_schedule_action_start_settings:
@@ -41260,7 +41065,7 @@ pub mod schedule_action_start_settings {
             self.immediate_mode_schedule_action_start_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings)
+        /// Consumes the builder and constructs a [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
         pub fn build(self) -> crate::model::ScheduleActionStartSettings {
             crate::model::ScheduleActionStartSettings {
                 fixed_mode_schedule_action_start_settings: self
@@ -41274,7 +41079,7 @@ pub mod schedule_action_start_settings {
     }
 }
 impl ScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings)
+    /// Creates a new builder-style object to manufacture [`ScheduleActionStartSettings`](crate::model::ScheduleActionStartSettings).
     pub fn builder() -> crate::model::schedule_action_start_settings::Builder {
         crate::model::schedule_action_start_settings::Builder::default()
     }
@@ -41290,22 +41095,21 @@ impl std::fmt::Debug for ImmediateModeScheduleActionStartSettings {
         formatter.finish()
     }
 }
-/// See [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings)
+/// See [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
 pub mod immediate_mode_schedule_action_start_settings {
 
-    /// A builder for [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings)
-    #[non_exhaustive]
+    /// A builder for [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings)
+        /// Consumes the builder and constructs a [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
         pub fn build(self) -> crate::model::ImmediateModeScheduleActionStartSettings {
             crate::model::ImmediateModeScheduleActionStartSettings {}
         }
     }
 }
 impl ImmediateModeScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings)
+    /// Creates a new builder-style object to manufacture [`ImmediateModeScheduleActionStartSettings`](crate::model::ImmediateModeScheduleActionStartSettings).
     pub fn builder() -> crate::model::immediate_mode_schedule_action_start_settings::Builder {
         crate::model::immediate_mode_schedule_action_start_settings::Builder::default()
     }
@@ -41338,11 +41142,10 @@ impl std::fmt::Debug for FollowModeScheduleActionStartSettings {
         formatter.finish()
     }
 }
-/// See [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings)
+/// See [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
 pub mod follow_mode_schedule_action_start_settings {
 
-    /// A builder for [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings)
-    #[non_exhaustive]
+    /// A builder for [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) follow_point: std::option::Option<crate::model::FollowPoint>,
@@ -41375,7 +41178,7 @@ pub mod follow_mode_schedule_action_start_settings {
             self.reference_action_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings)
+        /// Consumes the builder and constructs a [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
         pub fn build(self) -> crate::model::FollowModeScheduleActionStartSettings {
             crate::model::FollowModeScheduleActionStartSettings {
                 follow_point: self.follow_point,
@@ -41385,7 +41188,7 @@ pub mod follow_mode_schedule_action_start_settings {
     }
 }
 impl FollowModeScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings)
+    /// Creates a new builder-style object to manufacture [`FollowModeScheduleActionStartSettings`](crate::model::FollowModeScheduleActionStartSettings).
     pub fn builder() -> crate::model::follow_mode_schedule_action_start_settings::Builder {
         crate::model::follow_mode_schedule_action_start_settings::Builder::default()
     }
@@ -41466,11 +41269,10 @@ impl std::fmt::Debug for FixedModeScheduleActionStartSettings {
         formatter.finish()
     }
 }
-/// See [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings)
+/// See [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
 pub mod fixed_mode_schedule_action_start_settings {
 
-    /// A builder for [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings)
-    #[non_exhaustive]
+    /// A builder for [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time: std::option::Option<std::string::String>,
@@ -41486,14 +41288,14 @@ pub mod fixed_mode_schedule_action_start_settings {
             self.time = input;
             self
         }
-        /// Consumes the builder and constructs a [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings)
+        /// Consumes the builder and constructs a [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
         pub fn build(self) -> crate::model::FixedModeScheduleActionStartSettings {
             crate::model::FixedModeScheduleActionStartSettings { time: self.time }
         }
     }
 }
 impl FixedModeScheduleActionStartSettings {
-    /// Creates a new builder-style object to manufacture [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings)
+    /// Creates a new builder-style object to manufacture [`FixedModeScheduleActionStartSettings`](crate::model::FixedModeScheduleActionStartSettings).
     pub fn builder() -> crate::model::fixed_mode_schedule_action_start_settings::Builder {
         crate::model::fixed_mode_schedule_action_start_settings::Builder::default()
     }
@@ -41657,11 +41459,10 @@ impl std::fmt::Debug for ScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`ScheduleActionSettings`](crate::model::ScheduleActionSettings)
+/// See [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
 pub mod schedule_action_settings {
 
-    /// A builder for [`ScheduleActionSettings`](crate::model::ScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hls_id3_segment_tagging_settings:
@@ -41884,7 +41685,7 @@ pub mod schedule_action_settings {
             self.static_image_deactivate_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`ScheduleActionSettings`](crate::model::ScheduleActionSettings)
+        /// Consumes the builder and constructs a [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
         pub fn build(self) -> crate::model::ScheduleActionSettings {
             crate::model::ScheduleActionSettings {
                 hls_id3_segment_tagging_settings: self.hls_id3_segment_tagging_settings,
@@ -41906,7 +41707,7 @@ pub mod schedule_action_settings {
     }
 }
 impl ScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`ScheduleActionSettings`](crate::model::ScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`ScheduleActionSettings`](crate::model::ScheduleActionSettings).
     pub fn builder() -> crate::model::schedule_action_settings::Builder {
         crate::model::schedule_action_settings::Builder::default()
     }
@@ -41939,11 +41740,10 @@ impl std::fmt::Debug for StaticImageDeactivateScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings)
+/// See [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
 pub mod static_image_deactivate_schedule_action_settings {
 
-    /// A builder for [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fade_out: std::option::Option<i32>,
@@ -41970,7 +41770,7 @@ pub mod static_image_deactivate_schedule_action_settings {
             self.layer = input;
             self
         }
-        /// Consumes the builder and constructs a [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings)
+        /// Consumes the builder and constructs a [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
         pub fn build(self) -> crate::model::StaticImageDeactivateScheduleActionSettings {
             crate::model::StaticImageDeactivateScheduleActionSettings {
                 fade_out: self.fade_out.unwrap_or_default(),
@@ -41980,7 +41780,7 @@ pub mod static_image_deactivate_schedule_action_settings {
     }
 }
 impl StaticImageDeactivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`StaticImageDeactivateScheduleActionSettings`](crate::model::StaticImageDeactivateScheduleActionSettings).
     pub fn builder() -> crate::model::static_image_deactivate_schedule_action_settings::Builder {
         crate::model::static_image_deactivate_schedule_action_settings::Builder::default()
     }
@@ -42069,11 +41869,10 @@ impl std::fmt::Debug for StaticImageActivateScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings)
+/// See [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
 pub mod static_image_activate_schedule_action_settings {
 
-    /// A builder for [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration: std::option::Option<i32>,
@@ -42191,7 +41990,7 @@ pub mod static_image_activate_schedule_action_settings {
             self.width = input;
             self
         }
-        /// Consumes the builder and constructs a [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings)
+        /// Consumes the builder and constructs a [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
         pub fn build(self) -> crate::model::StaticImageActivateScheduleActionSettings {
             crate::model::StaticImageActivateScheduleActionSettings {
                 duration: self.duration.unwrap_or_default(),
@@ -42209,7 +42008,7 @@ pub mod static_image_activate_schedule_action_settings {
     }
 }
 impl StaticImageActivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`StaticImageActivateScheduleActionSettings`](crate::model::StaticImageActivateScheduleActionSettings).
     pub fn builder() -> crate::model::static_image_activate_schedule_action_settings::Builder {
         crate::model::static_image_activate_schedule_action_settings::Builder::default()
     }
@@ -42235,11 +42034,10 @@ impl std::fmt::Debug for Scte35TimeSignalScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings)
+/// See [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
 pub mod scte35_time_signal_schedule_action_settings {
 
-    /// A builder for [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scte35_descriptors:
@@ -42265,7 +42063,7 @@ pub mod scte35_time_signal_schedule_action_settings {
             self.scte35_descriptors = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings)
+        /// Consumes the builder and constructs a [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
         pub fn build(self) -> crate::model::Scte35TimeSignalScheduleActionSettings {
             crate::model::Scte35TimeSignalScheduleActionSettings {
                 scte35_descriptors: self.scte35_descriptors,
@@ -42274,7 +42072,7 @@ pub mod scte35_time_signal_schedule_action_settings {
     }
 }
 impl Scte35TimeSignalScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`Scte35TimeSignalScheduleActionSettings`](crate::model::Scte35TimeSignalScheduleActionSettings).
     pub fn builder() -> crate::model::scte35_time_signal_schedule_action_settings::Builder {
         crate::model::scte35_time_signal_schedule_action_settings::Builder::default()
     }
@@ -42305,11 +42103,10 @@ impl std::fmt::Debug for Scte35Descriptor {
         formatter.finish()
     }
 }
-/// See [`Scte35Descriptor`](crate::model::Scte35Descriptor)
+/// See [`Scte35Descriptor`](crate::model::Scte35Descriptor).
 pub mod scte35_descriptor {
 
-    /// A builder for [`Scte35Descriptor`](crate::model::Scte35Descriptor)
-    #[non_exhaustive]
+    /// A builder for [`Scte35Descriptor`](crate::model::Scte35Descriptor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scte35_descriptor_settings:
@@ -42332,7 +42129,7 @@ pub mod scte35_descriptor {
             self.scte35_descriptor_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35Descriptor`](crate::model::Scte35Descriptor)
+        /// Consumes the builder and constructs a [`Scte35Descriptor`](crate::model::Scte35Descriptor).
         pub fn build(self) -> crate::model::Scte35Descriptor {
             crate::model::Scte35Descriptor {
                 scte35_descriptor_settings: self.scte35_descriptor_settings,
@@ -42341,7 +42138,7 @@ pub mod scte35_descriptor {
     }
 }
 impl Scte35Descriptor {
-    /// Creates a new builder-style object to manufacture [`Scte35Descriptor`](crate::model::Scte35Descriptor)
+    /// Creates a new builder-style object to manufacture [`Scte35Descriptor`](crate::model::Scte35Descriptor).
     pub fn builder() -> crate::model::scte35_descriptor::Builder {
         crate::model::scte35_descriptor::Builder::default()
     }
@@ -42374,11 +42171,10 @@ impl std::fmt::Debug for Scte35DescriptorSettings {
         formatter.finish()
     }
 }
-/// See [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings)
+/// See [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
 pub mod scte35_descriptor_settings {
 
-    /// A builder for [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) segmentation_descriptor_scte35_descriptor_settings:
@@ -42401,7 +42197,7 @@ pub mod scte35_descriptor_settings {
             self.segmentation_descriptor_scte35_descriptor_settings = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings)
+        /// Consumes the builder and constructs a [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
         pub fn build(self) -> crate::model::Scte35DescriptorSettings {
             crate::model::Scte35DescriptorSettings {
                 segmentation_descriptor_scte35_descriptor_settings: self
@@ -42411,7 +42207,7 @@ pub mod scte35_descriptor_settings {
     }
 }
 impl Scte35DescriptorSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings)
+    /// Creates a new builder-style object to manufacture [`Scte35DescriptorSettings`](crate::model::Scte35DescriptorSettings).
     pub fn builder() -> crate::model::scte35_descriptor_settings::Builder {
         crate::model::scte35_descriptor_settings::Builder::default()
     }
@@ -42515,11 +42311,10 @@ impl std::fmt::Debug for Scte35SegmentationDescriptor {
         formatter.finish()
     }
 }
-/// See [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor)
+/// See [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
 pub mod scte35_segmentation_descriptor {
 
-    /// A builder for [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor)
-    #[non_exhaustive]
+    /// A builder for [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delivery_restrictions:
@@ -42662,7 +42457,7 @@ pub mod scte35_segmentation_descriptor {
             self.sub_segments_expected = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor)
+        /// Consumes the builder and constructs a [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
         pub fn build(self) -> crate::model::Scte35SegmentationDescriptor {
             crate::model::Scte35SegmentationDescriptor {
                 delivery_restrictions: self.delivery_restrictions,
@@ -42681,7 +42476,7 @@ pub mod scte35_segmentation_descriptor {
     }
 }
 impl Scte35SegmentationDescriptor {
-    /// Creates a new builder-style object to manufacture [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor)
+    /// Creates a new builder-style object to manufacture [`Scte35SegmentationDescriptor`](crate::model::Scte35SegmentationDescriptor).
     pub fn builder() -> crate::model::scte35_segmentation_descriptor::Builder {
         crate::model::scte35_segmentation_descriptor::Builder::default()
     }
@@ -42802,11 +42597,10 @@ impl std::fmt::Debug for Scte35DeliveryRestrictions {
         formatter.finish()
     }
 }
-/// See [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions)
+/// See [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
 pub mod scte35_delivery_restrictions {
 
-    /// A builder for [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions)
-    #[non_exhaustive]
+    /// A builder for [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) archive_allowed_flag:
@@ -42882,7 +42676,7 @@ pub mod scte35_delivery_restrictions {
             self.web_delivery_allowed_flag = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions)
+        /// Consumes the builder and constructs a [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
         pub fn build(self) -> crate::model::Scte35DeliveryRestrictions {
             crate::model::Scte35DeliveryRestrictions {
                 archive_allowed_flag: self.archive_allowed_flag,
@@ -42894,7 +42688,7 @@ pub mod scte35_delivery_restrictions {
     }
 }
 impl Scte35DeliveryRestrictions {
-    /// Creates a new builder-style object to manufacture [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions)
+    /// Creates a new builder-style object to manufacture [`Scte35DeliveryRestrictions`](crate::model::Scte35DeliveryRestrictions).
     pub fn builder() -> crate::model::scte35_delivery_restrictions::Builder {
         crate::model::scte35_delivery_restrictions::Builder::default()
     }
@@ -43160,11 +42954,10 @@ impl std::fmt::Debug for Scte35SpliceInsertScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings)
+/// See [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
 pub mod scte35_splice_insert_schedule_action_settings {
 
-    /// A builder for [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration: std::option::Option<i64>,
@@ -43191,7 +42984,7 @@ pub mod scte35_splice_insert_schedule_action_settings {
             self.splice_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings)
+        /// Consumes the builder and constructs a [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
         pub fn build(self) -> crate::model::Scte35SpliceInsertScheduleActionSettings {
             crate::model::Scte35SpliceInsertScheduleActionSettings {
                 duration: self.duration.unwrap_or_default(),
@@ -43201,7 +42994,7 @@ pub mod scte35_splice_insert_schedule_action_settings {
     }
 }
 impl Scte35SpliceInsertScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`Scte35SpliceInsertScheduleActionSettings`](crate::model::Scte35SpliceInsertScheduleActionSettings).
     pub fn builder() -> crate::model::scte35_splice_insert_schedule_action_settings::Builder {
         crate::model::scte35_splice_insert_schedule_action_settings::Builder::default()
     }
@@ -43227,11 +43020,10 @@ impl std::fmt::Debug for Scte35ReturnToNetworkScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings)
+/// See [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
 pub mod scte35_return_to_network_schedule_action_settings {
 
-    /// A builder for [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) splice_event_id: std::option::Option<i64>,
@@ -43247,7 +43039,7 @@ pub mod scte35_return_to_network_schedule_action_settings {
             self.splice_event_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings)
+        /// Consumes the builder and constructs a [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
         pub fn build(self) -> crate::model::Scte35ReturnToNetworkScheduleActionSettings {
             crate::model::Scte35ReturnToNetworkScheduleActionSettings {
                 splice_event_id: self.splice_event_id.unwrap_or_default(),
@@ -43256,7 +43048,7 @@ pub mod scte35_return_to_network_schedule_action_settings {
     }
 }
 impl Scte35ReturnToNetworkScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`Scte35ReturnToNetworkScheduleActionSettings`](crate::model::Scte35ReturnToNetworkScheduleActionSettings).
     pub fn builder() -> crate::model::scte35_return_to_network_schedule_action_settings::Builder {
         crate::model::scte35_return_to_network_schedule_action_settings::Builder::default()
     }
@@ -43282,11 +43074,10 @@ impl std::fmt::Debug for PauseStateScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings)
+/// See [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
 pub mod pause_state_schedule_action_settings {
 
-    /// A builder for [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipelines:
@@ -43312,7 +43103,7 @@ pub mod pause_state_schedule_action_settings {
             self.pipelines = input;
             self
         }
-        /// Consumes the builder and constructs a [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings)
+        /// Consumes the builder and constructs a [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
         pub fn build(self) -> crate::model::PauseStateScheduleActionSettings {
             crate::model::PauseStateScheduleActionSettings {
                 pipelines: self.pipelines,
@@ -43321,7 +43112,7 @@ pub mod pause_state_schedule_action_settings {
     }
 }
 impl PauseStateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`PauseStateScheduleActionSettings`](crate::model::PauseStateScheduleActionSettings).
     pub fn builder() -> crate::model::pause_state_schedule_action_settings::Builder {
         crate::model::pause_state_schedule_action_settings::Builder::default()
     }
@@ -43347,11 +43138,10 @@ impl std::fmt::Debug for PipelinePauseStateSettings {
         formatter.finish()
     }
 }
-/// See [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings)
+/// See [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
 pub mod pipeline_pause_state_settings {
 
-    /// A builder for [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings)
-    #[non_exhaustive]
+    /// A builder for [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pipeline_id: std::option::Option<crate::model::PipelineId>,
@@ -43370,7 +43160,7 @@ pub mod pipeline_pause_state_settings {
             self.pipeline_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings)
+        /// Consumes the builder and constructs a [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
         pub fn build(self) -> crate::model::PipelinePauseStateSettings {
             crate::model::PipelinePauseStateSettings {
                 pipeline_id: self.pipeline_id,
@@ -43379,7 +43169,7 @@ pub mod pipeline_pause_state_settings {
     }
 }
 impl PipelinePauseStateSettings {
-    /// Creates a new builder-style object to manufacture [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings)
+    /// Creates a new builder-style object to manufacture [`PipelinePauseStateSettings`](crate::model::PipelinePauseStateSettings).
     pub fn builder() -> crate::model::pipeline_pause_state_settings::Builder {
         crate::model::pipeline_pause_state_settings::Builder::default()
     }
@@ -43450,22 +43240,21 @@ impl std::fmt::Debug for MotionGraphicsDeactivateScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings)
+/// See [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
 pub mod motion_graphics_deactivate_schedule_action_settings {
 
-    /// A builder for [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings)
+        /// Consumes the builder and constructs a [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
         pub fn build(self) -> crate::model::MotionGraphicsDeactivateScheduleActionSettings {
             crate::model::MotionGraphicsDeactivateScheduleActionSettings {}
         }
     }
 }
 impl MotionGraphicsDeactivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsDeactivateScheduleActionSettings`](crate::model::MotionGraphicsDeactivateScheduleActionSettings).
     pub fn builder() -> crate::model::motion_graphics_deactivate_schedule_action_settings::Builder {
         crate::model::motion_graphics_deactivate_schedule_action_settings::Builder::default()
     }
@@ -43512,11 +43301,10 @@ impl std::fmt::Debug for MotionGraphicsActivateScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings)
+/// See [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
 pub mod motion_graphics_activate_schedule_action_settings {
 
-    /// A builder for [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration: std::option::Option<i64>,
@@ -43568,7 +43356,7 @@ pub mod motion_graphics_activate_schedule_action_settings {
             self.username = input;
             self
         }
-        /// Consumes the builder and constructs a [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings)
+        /// Consumes the builder and constructs a [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
         pub fn build(self) -> crate::model::MotionGraphicsActivateScheduleActionSettings {
             crate::model::MotionGraphicsActivateScheduleActionSettings {
                 duration: self.duration.unwrap_or_default(),
@@ -43580,7 +43368,7 @@ pub mod motion_graphics_activate_schedule_action_settings {
     }
 }
 impl MotionGraphicsActivateScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`MotionGraphicsActivateScheduleActionSettings`](crate::model::MotionGraphicsActivateScheduleActionSettings).
     pub fn builder() -> crate::model::motion_graphics_activate_schedule_action_settings::Builder {
         crate::model::motion_graphics_activate_schedule_action_settings::Builder::default()
     }
@@ -43625,11 +43413,10 @@ impl std::fmt::Debug for InputSwitchScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings)
+/// See [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
 pub mod input_switch_schedule_action_settings {
 
-    /// A builder for [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_attachment_name_reference: std::option::Option<std::string::String>,
@@ -43689,7 +43476,7 @@ pub mod input_switch_schedule_action_settings {
             self.url_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings)
+        /// Consumes the builder and constructs a [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
         pub fn build(self) -> crate::model::InputSwitchScheduleActionSettings {
             crate::model::InputSwitchScheduleActionSettings {
                 input_attachment_name_reference: self.input_attachment_name_reference,
@@ -43700,7 +43487,7 @@ pub mod input_switch_schedule_action_settings {
     }
 }
 impl InputSwitchScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`InputSwitchScheduleActionSettings`](crate::model::InputSwitchScheduleActionSettings).
     pub fn builder() -> crate::model::input_switch_schedule_action_settings::Builder {
         crate::model::input_switch_schedule_action_settings::Builder::default()
     }
@@ -43740,11 +43527,10 @@ impl std::fmt::Debug for InputClippingSettings {
         formatter.finish()
     }
 }
-/// See [`InputClippingSettings`](crate::model::InputClippingSettings)
+/// See [`InputClippingSettings`](crate::model::InputClippingSettings).
 pub mod input_clipping_settings {
 
-    /// A builder for [`InputClippingSettings`](crate::model::InputClippingSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputClippingSettings`](crate::model::InputClippingSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_timecode_source: std::option::Option<crate::model::InputTimecodeSource>,
@@ -43791,7 +43577,7 @@ pub mod input_clipping_settings {
             self.stop_timecode = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputClippingSettings`](crate::model::InputClippingSettings)
+        /// Consumes the builder and constructs a [`InputClippingSettings`](crate::model::InputClippingSettings).
         pub fn build(self) -> crate::model::InputClippingSettings {
             crate::model::InputClippingSettings {
                 input_timecode_source: self.input_timecode_source,
@@ -43802,7 +43588,7 @@ pub mod input_clipping_settings {
     }
 }
 impl InputClippingSettings {
-    /// Creates a new builder-style object to manufacture [`InputClippingSettings`](crate::model::InputClippingSettings)
+    /// Creates a new builder-style object to manufacture [`InputClippingSettings`](crate::model::InputClippingSettings).
     pub fn builder() -> crate::model::input_clipping_settings::Builder {
         crate::model::input_clipping_settings::Builder::default()
     }
@@ -43840,11 +43626,10 @@ impl std::fmt::Debug for StopTimecode {
         formatter.finish()
     }
 }
-/// See [`StopTimecode`](crate::model::StopTimecode)
+/// See [`StopTimecode`](crate::model::StopTimecode).
 pub mod stop_timecode {
 
-    /// A builder for [`StopTimecode`](crate::model::StopTimecode)
-    #[non_exhaustive]
+    /// A builder for [`StopTimecode`](crate::model::StopTimecode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_frame_clipping_behavior:
@@ -43878,7 +43663,7 @@ pub mod stop_timecode {
             self.timecode = input;
             self
         }
-        /// Consumes the builder and constructs a [`StopTimecode`](crate::model::StopTimecode)
+        /// Consumes the builder and constructs a [`StopTimecode`](crate::model::StopTimecode).
         pub fn build(self) -> crate::model::StopTimecode {
             crate::model::StopTimecode {
                 last_frame_clipping_behavior: self.last_frame_clipping_behavior,
@@ -43888,7 +43673,7 @@ pub mod stop_timecode {
     }
 }
 impl StopTimecode {
-    /// Creates a new builder-style object to manufacture [`StopTimecode`](crate::model::StopTimecode)
+    /// Creates a new builder-style object to manufacture [`StopTimecode`](crate::model::StopTimecode).
     pub fn builder() -> crate::model::stop_timecode::Builder {
         crate::model::stop_timecode::Builder::default()
     }
@@ -43969,11 +43754,10 @@ impl std::fmt::Debug for StartTimecode {
         formatter.finish()
     }
 }
-/// See [`StartTimecode`](crate::model::StartTimecode)
+/// See [`StartTimecode`](crate::model::StartTimecode).
 pub mod start_timecode {
 
-    /// A builder for [`StartTimecode`](crate::model::StartTimecode)
-    #[non_exhaustive]
+    /// A builder for [`StartTimecode`](crate::model::StartTimecode).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timecode: std::option::Option<std::string::String>,
@@ -43989,7 +43773,7 @@ pub mod start_timecode {
             self.timecode = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartTimecode`](crate::model::StartTimecode)
+        /// Consumes the builder and constructs a [`StartTimecode`](crate::model::StartTimecode).
         pub fn build(self) -> crate::model::StartTimecode {
             crate::model::StartTimecode {
                 timecode: self.timecode,
@@ -43998,7 +43782,7 @@ pub mod start_timecode {
     }
 }
 impl StartTimecode {
-    /// Creates a new builder-style object to manufacture [`StartTimecode`](crate::model::StartTimecode)
+    /// Creates a new builder-style object to manufacture [`StartTimecode`](crate::model::StartTimecode).
     pub fn builder() -> crate::model::start_timecode::Builder {
         crate::model::start_timecode::Builder::default()
     }
@@ -44098,11 +43882,10 @@ impl std::fmt::Debug for InputPrepareScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings)
+/// See [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
 pub mod input_prepare_schedule_action_settings {
 
-    /// A builder for [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_attachment_name_reference: std::option::Option<std::string::String>,
@@ -44162,7 +43945,7 @@ pub mod input_prepare_schedule_action_settings {
             self.url_path = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings)
+        /// Consumes the builder and constructs a [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
         pub fn build(self) -> crate::model::InputPrepareScheduleActionSettings {
             crate::model::InputPrepareScheduleActionSettings {
                 input_attachment_name_reference: self.input_attachment_name_reference,
@@ -44173,7 +43956,7 @@ pub mod input_prepare_schedule_action_settings {
     }
 }
 impl InputPrepareScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`InputPrepareScheduleActionSettings`](crate::model::InputPrepareScheduleActionSettings).
     pub fn builder() -> crate::model::input_prepare_schedule_action_settings::Builder {
         crate::model::input_prepare_schedule_action_settings::Builder::default()
     }
@@ -44199,11 +43982,10 @@ impl std::fmt::Debug for HlsTimedMetadataScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings)
+/// See [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
 pub mod hls_timed_metadata_schedule_action_settings {
 
-    /// A builder for [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id3: std::option::Option<std::string::String>,
@@ -44219,14 +44001,14 @@ pub mod hls_timed_metadata_schedule_action_settings {
             self.id3 = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings)
+        /// Consumes the builder and constructs a [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
         pub fn build(self) -> crate::model::HlsTimedMetadataScheduleActionSettings {
             crate::model::HlsTimedMetadataScheduleActionSettings { id3: self.id3 }
         }
     }
 }
 impl HlsTimedMetadataScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`HlsTimedMetadataScheduleActionSettings`](crate::model::HlsTimedMetadataScheduleActionSettings).
     pub fn builder() -> crate::model::hls_timed_metadata_schedule_action_settings::Builder {
         crate::model::hls_timed_metadata_schedule_action_settings::Builder::default()
     }
@@ -44252,11 +44034,10 @@ impl std::fmt::Debug for HlsId3SegmentTaggingScheduleActionSettings {
         formatter.finish()
     }
 }
-/// See [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings)
+/// See [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
 pub mod hls_id3_segment_tagging_schedule_action_settings {
 
-    /// A builder for [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings)
-    #[non_exhaustive]
+    /// A builder for [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag: std::option::Option<std::string::String>,
@@ -44272,14 +44053,14 @@ pub mod hls_id3_segment_tagging_schedule_action_settings {
             self.tag = input;
             self
         }
-        /// Consumes the builder and constructs a [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings)
+        /// Consumes the builder and constructs a [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
         pub fn build(self) -> crate::model::HlsId3SegmentTaggingScheduleActionSettings {
             crate::model::HlsId3SegmentTaggingScheduleActionSettings { tag: self.tag }
         }
     }
 }
 impl HlsId3SegmentTaggingScheduleActionSettings {
-    /// Creates a new builder-style object to manufacture [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings)
+    /// Creates a new builder-style object to manufacture [`HlsId3SegmentTaggingScheduleActionSettings`](crate::model::HlsId3SegmentTaggingScheduleActionSettings).
     pub fn builder() -> crate::model::hls_id3_segment_tagging_schedule_action_settings::Builder {
         crate::model::hls_id3_segment_tagging_schedule_action_settings::Builder::default()
     }
@@ -44414,11 +44195,10 @@ impl std::fmt::Debug for InputVpcRequest {
         formatter.finish()
     }
 }
-/// See [`InputVpcRequest`](crate::model::InputVpcRequest)
+/// See [`InputVpcRequest`](crate::model::InputVpcRequest).
 pub mod input_vpc_request {
 
-    /// A builder for [`InputVpcRequest`](crate::model::InputVpcRequest)
-    #[non_exhaustive]
+    /// A builder for [`InputVpcRequest`](crate::model::InputVpcRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44463,7 +44243,7 @@ pub mod input_vpc_request {
             self.subnet_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`InputVpcRequest`](crate::model::InputVpcRequest)
+        /// Consumes the builder and constructs a [`InputVpcRequest`](crate::model::InputVpcRequest).
         pub fn build(self) -> crate::model::InputVpcRequest {
             crate::model::InputVpcRequest {
                 security_group_ids: self.security_group_ids,
@@ -44473,7 +44253,7 @@ pub mod input_vpc_request {
     }
 }
 impl InputVpcRequest {
-    /// Creates a new builder-style object to manufacture [`InputVpcRequest`](crate::model::InputVpcRequest)
+    /// Creates a new builder-style object to manufacture [`InputVpcRequest`](crate::model::InputVpcRequest).
     pub fn builder() -> crate::model::input_vpc_request::Builder {
         crate::model::input_vpc_request::Builder::default()
     }
@@ -44516,11 +44296,10 @@ impl std::fmt::Debug for VpcOutputSettings {
         formatter.finish()
     }
 }
-/// See [`VpcOutputSettings`](crate::model::VpcOutputSettings)
+/// See [`VpcOutputSettings`](crate::model::VpcOutputSettings).
 pub mod vpc_output_settings {
 
-    /// A builder for [`VpcOutputSettings`](crate::model::VpcOutputSettings)
-    #[non_exhaustive]
+    /// A builder for [`VpcOutputSettings`](crate::model::VpcOutputSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) public_address_allocation_ids:
@@ -44589,7 +44368,7 @@ pub mod vpc_output_settings {
             self.subnet_ids = input;
             self
         }
-        /// Consumes the builder and constructs a [`VpcOutputSettings`](crate::model::VpcOutputSettings)
+        /// Consumes the builder and constructs a [`VpcOutputSettings`](crate::model::VpcOutputSettings).
         pub fn build(self) -> crate::model::VpcOutputSettings {
             crate::model::VpcOutputSettings {
                 public_address_allocation_ids: self.public_address_allocation_ids,
@@ -44600,7 +44379,7 @@ pub mod vpc_output_settings {
     }
 }
 impl VpcOutputSettings {
-    /// Creates a new builder-style object to manufacture [`VpcOutputSettings`](crate::model::VpcOutputSettings)
+    /// Creates a new builder-style object to manufacture [`VpcOutputSettings`](crate::model::VpcOutputSettings).
     pub fn builder() -> crate::model::vpc_output_settings::Builder {
         crate::model::vpc_output_settings::Builder::default()
     }
@@ -44633,11 +44412,10 @@ impl std::fmt::Debug for MaintenanceCreateSettings {
         formatter.finish()
     }
 }
-/// See [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings)
+/// See [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
 pub mod maintenance_create_settings {
 
-    /// A builder for [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings)
-    #[non_exhaustive]
+    /// A builder for [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) maintenance_day: std::option::Option<crate::model::MaintenanceDay>,
@@ -44670,7 +44448,7 @@ pub mod maintenance_create_settings {
             self.maintenance_start_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings)
+        /// Consumes the builder and constructs a [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
         pub fn build(self) -> crate::model::MaintenanceCreateSettings {
             crate::model::MaintenanceCreateSettings {
                 maintenance_day: self.maintenance_day,
@@ -44680,7 +44458,7 @@ pub mod maintenance_create_settings {
     }
 }
 impl MaintenanceCreateSettings {
-    /// Creates a new builder-style object to manufacture [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings)
+    /// Creates a new builder-style object to manufacture [`MaintenanceCreateSettings`](crate::model::MaintenanceCreateSettings).
     pub fn builder() -> crate::model::maintenance_create_settings::Builder {
         crate::model::maintenance_create_settings::Builder::default()
     }
@@ -44706,11 +44484,10 @@ impl std::fmt::Debug for BatchScheduleActionDeleteResult {
         formatter.finish()
     }
 }
-/// See [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult)
+/// See [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
 pub mod batch_schedule_action_delete_result {
 
-    /// A builder for [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult)
-    #[non_exhaustive]
+    /// A builder for [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_actions:
@@ -44736,7 +44513,7 @@ pub mod batch_schedule_action_delete_result {
             self.schedule_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult)
+        /// Consumes the builder and constructs a [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
         pub fn build(self) -> crate::model::BatchScheduleActionDeleteResult {
             crate::model::BatchScheduleActionDeleteResult {
                 schedule_actions: self.schedule_actions,
@@ -44745,7 +44522,7 @@ pub mod batch_schedule_action_delete_result {
     }
 }
 impl BatchScheduleActionDeleteResult {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult)
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteResult`](crate::model::BatchScheduleActionDeleteResult).
     pub fn builder() -> crate::model::batch_schedule_action_delete_result::Builder {
         crate::model::batch_schedule_action_delete_result::Builder::default()
     }
@@ -44771,11 +44548,10 @@ impl std::fmt::Debug for BatchScheduleActionCreateResult {
         formatter.finish()
     }
 }
-/// See [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult)
+/// See [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
 pub mod batch_schedule_action_create_result {
 
-    /// A builder for [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult)
-    #[non_exhaustive]
+    /// A builder for [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_actions:
@@ -44801,7 +44577,7 @@ pub mod batch_schedule_action_create_result {
             self.schedule_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult)
+        /// Consumes the builder and constructs a [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
         pub fn build(self) -> crate::model::BatchScheduleActionCreateResult {
             crate::model::BatchScheduleActionCreateResult {
                 schedule_actions: self.schedule_actions,
@@ -44810,7 +44586,7 @@ pub mod batch_schedule_action_create_result {
     }
 }
 impl BatchScheduleActionCreateResult {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult)
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateResult`](crate::model::BatchScheduleActionCreateResult).
     pub fn builder() -> crate::model::batch_schedule_action_create_result::Builder {
         crate::model::batch_schedule_action_create_result::Builder::default()
     }
@@ -44836,11 +44612,10 @@ impl std::fmt::Debug for BatchScheduleActionDeleteRequest {
         formatter.finish()
     }
 }
-/// See [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest)
+/// See [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
 pub mod batch_schedule_action_delete_request {
 
-    /// A builder for [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest)
-    #[non_exhaustive]
+    /// A builder for [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -44865,7 +44640,7 @@ pub mod batch_schedule_action_delete_request {
             self.action_names = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest)
+        /// Consumes the builder and constructs a [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
         pub fn build(self) -> crate::model::BatchScheduleActionDeleteRequest {
             crate::model::BatchScheduleActionDeleteRequest {
                 action_names: self.action_names,
@@ -44874,7 +44649,7 @@ pub mod batch_schedule_action_delete_request {
     }
 }
 impl BatchScheduleActionDeleteRequest {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest)
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionDeleteRequest`](crate::model::BatchScheduleActionDeleteRequest).
     pub fn builder() -> crate::model::batch_schedule_action_delete_request::Builder {
         crate::model::batch_schedule_action_delete_request::Builder::default()
     }
@@ -44900,11 +44675,10 @@ impl std::fmt::Debug for BatchScheduleActionCreateRequest {
         formatter.finish()
     }
 }
-/// See [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest)
+/// See [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
 pub mod batch_schedule_action_create_request {
 
-    /// A builder for [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest)
-    #[non_exhaustive]
+    /// A builder for [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_actions:
@@ -44930,7 +44704,7 @@ pub mod batch_schedule_action_create_request {
             self.schedule_actions = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest)
+        /// Consumes the builder and constructs a [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
         pub fn build(self) -> crate::model::BatchScheduleActionCreateRequest {
             crate::model::BatchScheduleActionCreateRequest {
                 schedule_actions: self.schedule_actions,
@@ -44939,7 +44713,7 @@ pub mod batch_schedule_action_create_request {
     }
 }
 impl BatchScheduleActionCreateRequest {
-    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest)
+    /// Creates a new builder-style object to manufacture [`BatchScheduleActionCreateRequest`](crate::model::BatchScheduleActionCreateRequest).
     pub fn builder() -> crate::model::batch_schedule_action_create_request::Builder {
         crate::model::batch_schedule_action_create_request::Builder::default()
     }
@@ -44979,11 +44753,10 @@ impl std::fmt::Debug for BatchSuccessfulResultModel {
         formatter.finish()
     }
 }
-/// See [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel)
+/// See [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
 pub mod batch_successful_result_model {
 
-    /// A builder for [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel)
-    #[non_exhaustive]
+    /// A builder for [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -45021,7 +44794,7 @@ pub mod batch_successful_result_model {
             self.state = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel)
+        /// Consumes the builder and constructs a [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
         pub fn build(self) -> crate::model::BatchSuccessfulResultModel {
             crate::model::BatchSuccessfulResultModel {
                 arn: self.arn,
@@ -45032,7 +44805,7 @@ pub mod batch_successful_result_model {
     }
 }
 impl BatchSuccessfulResultModel {
-    /// Creates a new builder-style object to manufacture [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel)
+    /// Creates a new builder-style object to manufacture [`BatchSuccessfulResultModel`](crate::model::BatchSuccessfulResultModel).
     pub fn builder() -> crate::model::batch_successful_result_model::Builder {
         crate::model::batch_successful_result_model::Builder::default()
     }
@@ -45079,11 +44852,10 @@ impl std::fmt::Debug for BatchFailedResultModel {
         formatter.finish()
     }
 }
-/// See [`BatchFailedResultModel`](crate::model::BatchFailedResultModel)
+/// See [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).
 pub mod batch_failed_result_model {
 
-    /// A builder for [`BatchFailedResultModel`](crate::model::BatchFailedResultModel)
-    #[non_exhaustive]
+    /// A builder for [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -45132,7 +44904,7 @@ pub mod batch_failed_result_model {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchFailedResultModel`](crate::model::BatchFailedResultModel)
+        /// Consumes the builder and constructs a [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).
         pub fn build(self) -> crate::model::BatchFailedResultModel {
             crate::model::BatchFailedResultModel {
                 arn: self.arn,
@@ -45144,7 +44916,7 @@ pub mod batch_failed_result_model {
     }
 }
 impl BatchFailedResultModel {
-    /// Creates a new builder-style object to manufacture [`BatchFailedResultModel`](crate::model::BatchFailedResultModel)
+    /// Creates a new builder-style object to manufacture [`BatchFailedResultModel`](crate::model::BatchFailedResultModel).
     pub fn builder() -> crate::model::batch_failed_result_model::Builder {
         crate::model::batch_failed_result_model::Builder::default()
     }

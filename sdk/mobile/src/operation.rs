@@ -10,7 +10,7 @@ pub struct CreateProject {
     _private: (),
 }
 impl CreateProject {
-    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput)
+    /// Creates a new builder-style object to manufacture [`CreateProjectInput`](crate::input::CreateProjectInput).
     pub fn builder() -> crate::input::create_project_input::Builder {
         crate::input::create_project_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DeleteProject {
     _private: (),
 }
 impl DeleteProject {
-    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput)
+    /// Creates a new builder-style object to manufacture [`DeleteProjectInput`](crate::input::DeleteProjectInput).
     pub fn builder() -> crate::input::delete_project_input::Builder {
         crate::input::delete_project_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct DescribeBundle {
     _private: (),
 }
 impl DescribeBundle {
-    /// Creates a new builder-style object to manufacture [`DescribeBundleInput`](crate::input::DescribeBundleInput)
+    /// Creates a new builder-style object to manufacture [`DescribeBundleInput`](crate::input::DescribeBundleInput).
     pub fn builder() -> crate::input::describe_bundle_input::Builder {
         crate::input::describe_bundle_input::Builder::default()
     }
@@ -106,7 +106,7 @@ pub struct DescribeProject {
     _private: (),
 }
 impl DescribeProject {
-    /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput)
+    /// Creates a new builder-style object to manufacture [`DescribeProjectInput`](crate::input::DescribeProjectInput).
     pub fn builder() -> crate::input::describe_project_input::Builder {
         crate::input::describe_project_input::Builder::default()
     }
@@ -140,7 +140,7 @@ pub struct ExportBundle {
     _private: (),
 }
 impl ExportBundle {
-    /// Creates a new builder-style object to manufacture [`ExportBundleInput`](crate::input::ExportBundleInput)
+    /// Creates a new builder-style object to manufacture [`ExportBundleInput`](crate::input::ExportBundleInput).
     pub fn builder() -> crate::input::export_bundle_input::Builder {
         crate::input::export_bundle_input::Builder::default()
     }
@@ -172,7 +172,7 @@ pub struct ExportProject {
     _private: (),
 }
 impl ExportProject {
-    /// Creates a new builder-style object to manufacture [`ExportProjectInput`](crate::input::ExportProjectInput)
+    /// Creates a new builder-style object to manufacture [`ExportProjectInput`](crate::input::ExportProjectInput).
     pub fn builder() -> crate::input::export_project_input::Builder {
         crate::input::export_project_input::Builder::default()
     }
@@ -204,7 +204,7 @@ pub struct ListBundles {
     _private: (),
 }
 impl ListBundles {
-    /// Creates a new builder-style object to manufacture [`ListBundlesInput`](crate::input::ListBundlesInput)
+    /// Creates a new builder-style object to manufacture [`ListBundlesInput`](crate::input::ListBundlesInput).
     pub fn builder() -> crate::input::list_bundles_input::Builder {
         crate::input::list_bundles_input::Builder::default()
     }
@@ -236,7 +236,7 @@ pub struct ListProjects {
     _private: (),
 }
 impl ListProjects {
-    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput)
+    /// Creates a new builder-style object to manufacture [`ListProjectsInput`](crate::input::ListProjectsInput).
     pub fn builder() -> crate::input::list_projects_input::Builder {
         crate::input::list_projects_input::Builder::default()
     }
@@ -268,7 +268,7 @@ pub struct UpdateProject {
     _private: (),
 }
 impl UpdateProject {
-    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput)
+    /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput).
     pub fn builder() -> crate::input::update_project_input::Builder {
         crate::input::update_project_input::Builder::default()
     }

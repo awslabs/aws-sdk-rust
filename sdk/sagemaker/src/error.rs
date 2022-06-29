@@ -22910,11 +22910,10 @@ impl std::fmt::Display for ResourceLimitExceeded {
     }
 }
 impl std::error::Error for ResourceLimitExceeded {}
-/// See [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded)
+/// See [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
 pub mod resource_limit_exceeded {
 
-    /// A builder for [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded)
-    #[non_exhaustive]
+    /// A builder for [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22930,7 +22929,7 @@ pub mod resource_limit_exceeded {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded)
+        /// Consumes the builder and constructs a [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
         pub fn build(self) -> crate::error::ResourceLimitExceeded {
             crate::error::ResourceLimitExceeded {
                 message: self.message,
@@ -22939,7 +22938,7 @@ pub mod resource_limit_exceeded {
     }
 }
 impl ResourceLimitExceeded {
-    /// Creates a new builder-style object to manufacture [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded)
+    /// Creates a new builder-style object to manufacture [`ResourceLimitExceeded`](crate::error::ResourceLimitExceeded).
     pub fn builder() -> crate::error::resource_limit_exceeded::Builder {
         crate::error::resource_limit_exceeded::Builder::default()
     }
@@ -22975,11 +22974,10 @@ impl std::fmt::Display for ResourceNotFound {
     }
 }
 impl std::error::Error for ResourceNotFound {}
-/// See [`ResourceNotFound`](crate::error::ResourceNotFound)
+/// See [`ResourceNotFound`](crate::error::ResourceNotFound).
 pub mod resource_not_found {
 
-    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFound`](crate::error::ResourceNotFound).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -22995,7 +22993,7 @@ pub mod resource_not_found {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound)
+        /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound).
         pub fn build(self) -> crate::error::ResourceNotFound {
             crate::error::ResourceNotFound {
                 message: self.message,
@@ -23004,7 +23002,7 @@ pub mod resource_not_found {
     }
 }
 impl ResourceNotFound {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFound`](crate::error::ResourceNotFound).
     pub fn builder() -> crate::error::resource_not_found::Builder {
         crate::error::resource_not_found::Builder::default()
     }
@@ -23040,11 +23038,10 @@ impl std::fmt::Display for ResourceInUse {
     }
 }
 impl std::error::Error for ResourceInUse {}
-/// See [`ResourceInUse`](crate::error::ResourceInUse)
+/// See [`ResourceInUse`](crate::error::ResourceInUse).
 pub mod resource_in_use {
 
-    /// A builder for [`ResourceInUse`](crate::error::ResourceInUse)
-    #[non_exhaustive]
+    /// A builder for [`ResourceInUse`](crate::error::ResourceInUse).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23060,7 +23057,7 @@ pub mod resource_in_use {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceInUse`](crate::error::ResourceInUse)
+        /// Consumes the builder and constructs a [`ResourceInUse`](crate::error::ResourceInUse).
         pub fn build(self) -> crate::error::ResourceInUse {
             crate::error::ResourceInUse {
                 message: self.message,
@@ -23069,7 +23066,7 @@ pub mod resource_in_use {
     }
 }
 impl ResourceInUse {
-    /// Creates a new builder-style object to manufacture [`ResourceInUse`](crate::error::ResourceInUse)
+    /// Creates a new builder-style object to manufacture [`ResourceInUse`](crate::error::ResourceInUse).
     pub fn builder() -> crate::error::resource_in_use::Builder {
         crate::error::resource_in_use::Builder::default()
     }
@@ -23105,11 +23102,10 @@ impl std::fmt::Display for ConflictException {
     }
 }
 impl std::error::Error for ConflictException {}
-/// See [`ConflictException`](crate::error::ConflictException)
+/// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
 
-    /// A builder for [`ConflictException`](crate::error::ConflictException)
-    #[non_exhaustive]
+    /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -23125,7 +23121,7 @@ pub mod conflict_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException)
+        /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
                 message: self.message,
@@ -23134,7 +23130,7 @@ pub mod conflict_exception {
     }
 }
 impl ConflictException {
-    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException)
+    /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
     pub fn builder() -> crate::error::conflict_exception::Builder {
         crate::error::conflict_exception::Builder::default()
     }

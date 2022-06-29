@@ -10,7 +10,7 @@ pub struct CreateDeliveryStream {
     _private: (),
 }
 impl CreateDeliveryStream {
-    /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamInput`](crate::input::CreateDeliveryStreamInput).
     pub fn builder() -> crate::input::create_delivery_stream_input::Builder {
         crate::input::create_delivery_stream_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteDeliveryStream {
     _private: (),
 }
 impl DeleteDeliveryStream {
-    /// Creates a new builder-style object to manufacture [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeliveryStreamInput`](crate::input::DeleteDeliveryStreamInput).
     pub fn builder() -> crate::input::delete_delivery_stream_input::Builder {
         crate::input::delete_delivery_stream_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeDeliveryStream {
     _private: (),
 }
 impl DescribeDeliveryStream {
-    /// Creates a new builder-style object to manufacture [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeliveryStreamInput`](crate::input::DescribeDeliveryStreamInput).
     pub fn builder() -> crate::input::describe_delivery_stream_input::Builder {
         crate::input::describe_delivery_stream_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct ListDeliveryStreams {
     _private: (),
 }
 impl ListDeliveryStreams {
-    /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsInput`](crate::input::ListDeliveryStreamsInput).
     pub fn builder() -> crate::input::list_delivery_streams_input::Builder {
         crate::input::list_delivery_streams_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct ListTagsForDeliveryStream {
     _private: (),
 }
 impl ListTagsForDeliveryStream {
-    /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamInput`](crate::input::ListTagsForDeliveryStreamInput).
     pub fn builder() -> crate::input::list_tags_for_delivery_stream_input::Builder {
         crate::input::list_tags_for_delivery_stream_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct PutRecord {
     _private: (),
 }
 impl PutRecord {
-    /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput)
+    /// Creates a new builder-style object to manufacture [`PutRecordInput`](crate::input::PutRecordInput).
     pub fn builder() -> crate::input::put_record_input::Builder {
         crate::input::put_record_input::Builder::default()
     }
@@ -211,7 +211,7 @@ pub struct PutRecordBatch {
     _private: (),
 }
 impl PutRecordBatch {
-    /// Creates a new builder-style object to manufacture [`PutRecordBatchInput`](crate::input::PutRecordBatchInput)
+    /// Creates a new builder-style object to manufacture [`PutRecordBatchInput`](crate::input::PutRecordBatchInput).
     pub fn builder() -> crate::input::put_record_batch_input::Builder {
         crate::input::put_record_batch_input::Builder::default()
     }
@@ -243,7 +243,7 @@ pub struct StartDeliveryStreamEncryption {
     _private: (),
 }
 impl StartDeliveryStreamEncryption {
-    /// Creates a new builder-style object to manufacture [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput)
+    /// Creates a new builder-style object to manufacture [`StartDeliveryStreamEncryptionInput`](crate::input::StartDeliveryStreamEncryptionInput).
     pub fn builder() -> crate::input::start_delivery_stream_encryption_input::Builder {
         crate::input::start_delivery_stream_encryption_input::Builder::default()
     }
@@ -277,7 +277,7 @@ pub struct StopDeliveryStreamEncryption {
     _private: (),
 }
 impl StopDeliveryStreamEncryption {
-    /// Creates a new builder-style object to manufacture [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput)
+    /// Creates a new builder-style object to manufacture [`StopDeliveryStreamEncryptionInput`](crate::input::StopDeliveryStreamEncryptionInput).
     pub fn builder() -> crate::input::stop_delivery_stream_encryption_input::Builder {
         crate::input::stop_delivery_stream_encryption_input::Builder::default()
     }
@@ -311,7 +311,7 @@ pub struct TagDeliveryStream {
     _private: (),
 }
 impl TagDeliveryStream {
-    /// Creates a new builder-style object to manufacture [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput)
+    /// Creates a new builder-style object to manufacture [`TagDeliveryStreamInput`](crate::input::TagDeliveryStreamInput).
     pub fn builder() -> crate::input::tag_delivery_stream_input::Builder {
         crate::input::tag_delivery_stream_input::Builder::default()
     }
@@ -345,7 +345,7 @@ pub struct UntagDeliveryStream {
     _private: (),
 }
 impl UntagDeliveryStream {
-    /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput)
+    /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamInput`](crate::input::UntagDeliveryStreamInput).
     pub fn builder() -> crate::input::untag_delivery_stream_input::Builder {
         crate::input::untag_delivery_stream_input::Builder::default()
     }
@@ -379,7 +379,7 @@ pub struct UpdateDestination {
     _private: (),
 }
 impl UpdateDestination {
-    /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::input::UpdateDestinationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::input::UpdateDestinationInput).
     pub fn builder() -> crate::input::update_destination_input::Builder {
         crate::input::update_destination_input::Builder::default()
     }

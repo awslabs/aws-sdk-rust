@@ -10,7 +10,7 @@ pub struct CreateNotificationRule {
     _private: (),
 }
 impl CreateNotificationRule {
-    /// Creates a new builder-style object to manufacture [`CreateNotificationRuleInput`](crate::input::CreateNotificationRuleInput)
+    /// Creates a new builder-style object to manufacture [`CreateNotificationRuleInput`](crate::input::CreateNotificationRuleInput).
     pub fn builder() -> crate::input::create_notification_rule_input::Builder {
         crate::input::create_notification_rule_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteNotificationRule {
     _private: (),
 }
 impl DeleteNotificationRule {
-    /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleInput`](crate::input::DeleteNotificationRuleInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleInput`](crate::input::DeleteNotificationRuleInput).
     pub fn builder() -> crate::input::delete_notification_rule_input::Builder {
         crate::input::delete_notification_rule_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DeleteTarget {
     _private: (),
 }
 impl DeleteTarget {
-    /// Creates a new builder-style object to manufacture [`DeleteTargetInput`](crate::input::DeleteTargetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteTargetInput`](crate::input::DeleteTargetInput).
     pub fn builder() -> crate::input::delete_target_input::Builder {
         crate::input::delete_target_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct DescribeNotificationRule {
     _private: (),
 }
 impl DescribeNotificationRule {
-    /// Creates a new builder-style object to manufacture [`DescribeNotificationRuleInput`](crate::input::DescribeNotificationRuleInput)
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationRuleInput`](crate::input::DescribeNotificationRuleInput).
     pub fn builder() -> crate::input::describe_notification_rule_input::Builder {
         crate::input::describe_notification_rule_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct ListEventTypes {
     _private: (),
 }
 impl ListEventTypes {
-    /// Creates a new builder-style object to manufacture [`ListEventTypesInput`](crate::input::ListEventTypesInput)
+    /// Creates a new builder-style object to manufacture [`ListEventTypesInput`](crate::input::ListEventTypesInput).
     pub fn builder() -> crate::input::list_event_types_input::Builder {
         crate::input::list_event_types_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct ListNotificationRules {
     _private: (),
 }
 impl ListNotificationRules {
-    /// Creates a new builder-style object to manufacture [`ListNotificationRulesInput`](crate::input::ListNotificationRulesInput)
+    /// Creates a new builder-style object to manufacture [`ListNotificationRulesInput`](crate::input::ListNotificationRulesInput).
     pub fn builder() -> crate::input::list_notification_rules_input::Builder {
         crate::input::list_notification_rules_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct ListTargets {
     _private: (),
 }
 impl ListTargets {
-    /// Creates a new builder-style object to manufacture [`ListTargetsInput`](crate::input::ListTargetsInput)
+    /// Creates a new builder-style object to manufacture [`ListTargetsInput`](crate::input::ListTargetsInput).
     pub fn builder() -> crate::input::list_targets_input::Builder {
         crate::input::list_targets_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct Subscribe {
     _private: (),
 }
 impl Subscribe {
-    /// Creates a new builder-style object to manufacture [`SubscribeInput`](crate::input::SubscribeInput)
+    /// Creates a new builder-style object to manufacture [`SubscribeInput`](crate::input::SubscribeInput).
     pub fn builder() -> crate::input::subscribe_input::Builder {
         crate::input::subscribe_input::Builder::default()
     }
@@ -307,7 +307,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -339,7 +339,7 @@ pub struct Unsubscribe {
     _private: (),
 }
 impl Unsubscribe {
-    /// Creates a new builder-style object to manufacture [`UnsubscribeInput`](crate::input::UnsubscribeInput)
+    /// Creates a new builder-style object to manufacture [`UnsubscribeInput`](crate::input::UnsubscribeInput).
     pub fn builder() -> crate::input::unsubscribe_input::Builder {
         crate::input::unsubscribe_input::Builder::default()
     }
@@ -371,7 +371,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -403,7 +403,7 @@ pub struct UpdateNotificationRule {
     _private: (),
 }
 impl UpdateNotificationRule {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationRuleInput`](crate::input::UpdateNotificationRuleInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationRuleInput`](crate::input::UpdateNotificationRuleInput).
     pub fn builder() -> crate::input::update_notification_rule_input::Builder {
         crate::input::update_notification_rule_input::Builder::default()
     }

@@ -4891,11 +4891,10 @@ impl std::fmt::Display for ServiceTemporarilyUnavailableException {
     }
 }
 impl std::error::Error for ServiceTemporarilyUnavailableException {}
-/// See [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException)
+/// See [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException).
 pub mod service_temporarily_unavailable_exception {
 
-    /// A builder for [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException)
-    #[non_exhaustive]
+    /// A builder for [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -4922,7 +4921,7 @@ pub mod service_temporarily_unavailable_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException)
+        /// Consumes the builder and constructs a [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException).
         pub fn build(self) -> crate::error::ServiceTemporarilyUnavailableException {
             crate::error::ServiceTemporarilyUnavailableException {
                 message: self.message,
@@ -4932,7 +4931,7 @@ pub mod service_temporarily_unavailable_exception {
     }
 }
 impl ServiceTemporarilyUnavailableException {
-    /// Creates a new builder-style object to manufacture [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException)
+    /// Creates a new builder-style object to manufacture [`ServiceTemporarilyUnavailableException`](crate::error::ServiceTemporarilyUnavailableException).
     pub fn builder() -> crate::error::service_temporarily_unavailable_exception::Builder {
         crate::error::service_temporarily_unavailable_exception::Builder::default()
     }
@@ -4984,11 +4983,10 @@ impl std::fmt::Display for NoSuchEntityException {
     }
 }
 impl std::error::Error for NoSuchEntityException {}
-/// See [`NoSuchEntityException`](crate::error::NoSuchEntityException)
+/// See [`NoSuchEntityException`](crate::error::NoSuchEntityException).
 pub mod no_such_entity_exception {
 
-    /// A builder for [`NoSuchEntityException`](crate::error::NoSuchEntityException)
-    #[non_exhaustive]
+    /// A builder for [`NoSuchEntityException`](crate::error::NoSuchEntityException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5029,7 +5027,7 @@ pub mod no_such_entity_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`NoSuchEntityException`](crate::error::NoSuchEntityException)
+        /// Consumes the builder and constructs a [`NoSuchEntityException`](crate::error::NoSuchEntityException).
         pub fn build(self) -> crate::error::NoSuchEntityException {
             crate::error::NoSuchEntityException {
                 message: self.message,
@@ -5040,7 +5038,7 @@ pub mod no_such_entity_exception {
     }
 }
 impl NoSuchEntityException {
-    /// Creates a new builder-style object to manufacture [`NoSuchEntityException`](crate::error::NoSuchEntityException)
+    /// Creates a new builder-style object to manufacture [`NoSuchEntityException`](crate::error::NoSuchEntityException).
     pub fn builder() -> crate::error::no_such_entity_exception::Builder {
         crate::error::no_such_entity_exception::Builder::default()
     }
@@ -5092,11 +5090,10 @@ impl std::fmt::Display for InvalidInputException {
     }
 }
 impl std::error::Error for InvalidInputException {}
-/// See [`InvalidInputException`](crate::error::InvalidInputException)
+/// See [`InvalidInputException`](crate::error::InvalidInputException).
 pub mod invalid_input_exception {
 
-    /// A builder for [`InvalidInputException`](crate::error::InvalidInputException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidInputException`](crate::error::InvalidInputException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5137,7 +5134,7 @@ pub mod invalid_input_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidInputException`](crate::error::InvalidInputException)
+        /// Consumes the builder and constructs a [`InvalidInputException`](crate::error::InvalidInputException).
         pub fn build(self) -> crate::error::InvalidInputException {
             crate::error::InvalidInputException {
                 message: self.message,
@@ -5148,7 +5145,7 @@ pub mod invalid_input_exception {
     }
 }
 impl InvalidInputException {
-    /// Creates a new builder-style object to manufacture [`InvalidInputException`](crate::error::InvalidInputException)
+    /// Creates a new builder-style object to manufacture [`InvalidInputException`](crate::error::InvalidInputException).
     pub fn builder() -> crate::error::invalid_input_exception::Builder {
         crate::error::invalid_input_exception::Builder::default()
     }
@@ -5193,11 +5190,10 @@ impl std::fmt::Display for InternalException {
     }
 }
 impl std::error::Error for InternalException {}
-/// See [`InternalException`](crate::error::InternalException)
+/// See [`InternalException`](crate::error::InternalException).
 pub mod internal_exception {
 
-    /// A builder for [`InternalException`](crate::error::InternalException)
-    #[non_exhaustive]
+    /// A builder for [`InternalException`](crate::error::InternalException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5224,7 +5220,7 @@ pub mod internal_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`InternalException`](crate::error::InternalException)
+        /// Consumes the builder and constructs a [`InternalException`](crate::error::InternalException).
         pub fn build(self) -> crate::error::InternalException {
             crate::error::InternalException {
                 message: self.message,
@@ -5234,7 +5230,7 @@ pub mod internal_exception {
     }
 }
 impl InternalException {
-    /// Creates a new builder-style object to manufacture [`InternalException`](crate::error::InternalException)
+    /// Creates a new builder-style object to manufacture [`InternalException`](crate::error::InternalException).
     pub fn builder() -> crate::error::internal_exception::Builder {
         crate::error::internal_exception::Builder::default()
     }
@@ -5286,11 +5282,10 @@ impl std::fmt::Display for AccessDeniedException {
     }
 }
 impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
 
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
-    #[non_exhaustive]
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5331,7 +5326,7 @@ pub mod access_denied_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
                 message: self.message,
@@ -5342,7 +5337,7 @@ pub mod access_denied_exception {
     }
 }
 impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
     pub fn builder() -> crate::error::access_denied_exception::Builder {
         crate::error::access_denied_exception::Builder::default()
     }
@@ -5394,11 +5389,10 @@ impl std::fmt::Display for LimitExceededException {
     }
 }
 impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
+/// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
 
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5439,7 +5433,7 @@ pub mod limit_exceeded_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
                 message: self.message,
@@ -5450,7 +5444,7 @@ pub mod limit_exceeded_exception {
     }
 }
 impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
     pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
         crate::error::limit_exceeded_exception::Builder::default()
     }
@@ -5504,11 +5498,10 @@ impl std::fmt::Display for InvalidCrossAccountRoleException {
     }
 }
 impl std::error::Error for InvalidCrossAccountRoleException {}
-/// See [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException)
+/// See [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException).
 pub mod invalid_cross_account_role_exception {
 
-    /// A builder for [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException)
-    #[non_exhaustive]
+    /// A builder for [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5549,7 +5542,7 @@ pub mod invalid_cross_account_role_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException)
+        /// Consumes the builder and constructs a [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException).
         pub fn build(self) -> crate::error::InvalidCrossAccountRoleException {
             crate::error::InvalidCrossAccountRoleException {
                 message: self.message,
@@ -5560,7 +5553,7 @@ pub mod invalid_cross_account_role_exception {
     }
 }
 impl InvalidCrossAccountRoleException {
-    /// Creates a new builder-style object to manufacture [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException)
+    /// Creates a new builder-style object to manufacture [`InvalidCrossAccountRoleException`](crate::error::InvalidCrossAccountRoleException).
     pub fn builder() -> crate::error::invalid_cross_account_role_exception::Builder {
         crate::error::invalid_cross_account_role_exception::Builder::default()
     }
@@ -5619,11 +5612,10 @@ impl std::fmt::Display for AgentsAlreadyRunningAssessmentException {
     }
 }
 impl std::error::Error for AgentsAlreadyRunningAssessmentException {}
-/// See [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException)
+/// See [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException).
 pub mod agents_already_running_assessment_exception {
 
-    /// A builder for [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException)
-    #[non_exhaustive]
+    /// A builder for [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5682,7 +5674,7 @@ pub mod agents_already_running_assessment_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException)
+        /// Consumes the builder and constructs a [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException).
         pub fn build(self) -> crate::error::AgentsAlreadyRunningAssessmentException {
             crate::error::AgentsAlreadyRunningAssessmentException {
                 message: self.message,
@@ -5694,7 +5686,7 @@ pub mod agents_already_running_assessment_exception {
     }
 }
 impl AgentsAlreadyRunningAssessmentException {
-    /// Creates a new builder-style object to manufacture [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException)
+    /// Creates a new builder-style object to manufacture [`AgentsAlreadyRunningAssessmentException`](crate::error::AgentsAlreadyRunningAssessmentException).
     pub fn builder() -> crate::error::agents_already_running_assessment_exception::Builder {
         crate::error::agents_already_running_assessment_exception::Builder::default()
     }
@@ -5739,11 +5731,10 @@ impl std::fmt::Display for UnsupportedFeatureException {
     }
 }
 impl std::error::Error for UnsupportedFeatureException {}
-/// See [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
+/// See [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
 pub mod unsupported_feature_exception {
 
-    /// A builder for [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
-    #[non_exhaustive]
+    /// A builder for [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5770,7 +5761,7 @@ pub mod unsupported_feature_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
+        /// Consumes the builder and constructs a [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
         pub fn build(self) -> crate::error::UnsupportedFeatureException {
             crate::error::UnsupportedFeatureException {
                 message: self.message,
@@ -5780,7 +5771,7 @@ pub mod unsupported_feature_exception {
     }
 }
 impl UnsupportedFeatureException {
-    /// Creates a new builder-style object to manufacture [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException)
+    /// Creates a new builder-style object to manufacture [`UnsupportedFeatureException`](crate::error::UnsupportedFeatureException).
     pub fn builder() -> crate::error::unsupported_feature_exception::Builder {
         crate::error::unsupported_feature_exception::Builder::default()
     }
@@ -5842,11 +5833,10 @@ impl std::fmt::Display for AssessmentRunInProgressException {
     }
 }
 impl std::error::Error for AssessmentRunInProgressException {}
-/// See [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException)
+/// See [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException).
 pub mod assessment_run_in_progress_exception {
 
-    /// A builder for [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException)
-    #[non_exhaustive]
+    /// A builder for [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5907,7 +5897,7 @@ pub mod assessment_run_in_progress_exception {
             self.can_retry = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException)
+        /// Consumes the builder and constructs a [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException).
         pub fn build(self) -> crate::error::AssessmentRunInProgressException {
             crate::error::AssessmentRunInProgressException {
                 message: self.message,
@@ -5919,7 +5909,7 @@ pub mod assessment_run_in_progress_exception {
     }
 }
 impl AssessmentRunInProgressException {
-    /// Creates a new builder-style object to manufacture [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException)
+    /// Creates a new builder-style object to manufacture [`AssessmentRunInProgressException`](crate::error::AssessmentRunInProgressException).
     pub fn builder() -> crate::error::assessment_run_in_progress_exception::Builder {
         crate::error::assessment_run_in_progress_exception::Builder::default()
     }
@@ -5955,11 +5945,10 @@ impl std::fmt::Display for PreviewGenerationInProgressException {
     }
 }
 impl std::error::Error for PreviewGenerationInProgressException {}
-/// See [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException)
+/// See [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException).
 pub mod preview_generation_in_progress_exception {
 
-    /// A builder for [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException)
-    #[non_exhaustive]
+    /// A builder for [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -5975,7 +5964,7 @@ pub mod preview_generation_in_progress_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException)
+        /// Consumes the builder and constructs a [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException).
         pub fn build(self) -> crate::error::PreviewGenerationInProgressException {
             crate::error::PreviewGenerationInProgressException {
                 message: self.message,
@@ -5984,7 +5973,7 @@ pub mod preview_generation_in_progress_exception {
     }
 }
 impl PreviewGenerationInProgressException {
-    /// Creates a new builder-style object to manufacture [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException)
+    /// Creates a new builder-style object to manufacture [`PreviewGenerationInProgressException`](crate::error::PreviewGenerationInProgressException).
     pub fn builder() -> crate::error::preview_generation_in_progress_exception::Builder {
         crate::error::preview_generation_in_progress_exception::Builder::default()
     }

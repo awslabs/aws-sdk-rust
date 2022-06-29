@@ -33,11 +33,10 @@ impl std::fmt::Debug for PutObjectOutput {
         formatter.finish()
     }
 }
-/// See [`PutObjectOutput`](crate::output::PutObjectOutput)
+/// See [`PutObjectOutput`](crate::output::PutObjectOutput).
 pub mod put_object_output {
 
-    /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutObjectOutput`](crate::output::PutObjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_sha256: std::option::Option<std::string::String>,
@@ -81,7 +80,7 @@ pub mod put_object_output {
             self.storage_class = input;
             self
         }
-        /// Consumes the builder and constructs a [`PutObjectOutput`](crate::output::PutObjectOutput)
+        /// Consumes the builder and constructs a [`PutObjectOutput`](crate::output::PutObjectOutput).
         pub fn build(self) -> crate::output::PutObjectOutput {
             crate::output::PutObjectOutput {
                 content_sha256: self.content_sha256,
@@ -92,7 +91,7 @@ pub mod put_object_output {
     }
 }
 impl PutObjectOutput {
-    /// Creates a new builder-style object to manufacture [`PutObjectOutput`](crate::output::PutObjectOutput)
+    /// Creates a new builder-style object to manufacture [`PutObjectOutput`](crate::output::PutObjectOutput).
     pub fn builder() -> crate::output::put_object_output::Builder {
         crate::output::put_object_output::Builder::default()
     }
@@ -125,11 +124,10 @@ impl std::fmt::Debug for ListItemsOutput {
         formatter.finish()
     }
 }
-/// See [`ListItemsOutput`](crate::output::ListItemsOutput)
+/// See [`ListItemsOutput`](crate::output::ListItemsOutput).
 pub mod list_items_output {
 
-    /// A builder for [`ListItemsOutput`](crate::output::ListItemsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListItemsOutput`](crate::output::ListItemsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Item>>,
@@ -165,7 +163,7 @@ pub mod list_items_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListItemsOutput`](crate::output::ListItemsOutput)
+        /// Consumes the builder and constructs a [`ListItemsOutput`](crate::output::ListItemsOutput).
         pub fn build(self) -> crate::output::ListItemsOutput {
             crate::output::ListItemsOutput {
                 items: self.items,
@@ -175,7 +173,7 @@ pub mod list_items_output {
     }
 }
 impl ListItemsOutput {
-    /// Creates a new builder-style object to manufacture [`ListItemsOutput`](crate::output::ListItemsOutput)
+    /// Creates a new builder-style object to manufacture [`ListItemsOutput`](crate::output::ListItemsOutput).
     pub fn builder() -> crate::output::list_items_output::Builder {
         crate::output::list_items_output::Builder::default()
     }
@@ -251,11 +249,10 @@ impl std::fmt::Debug for GetObjectOutput {
         formatter.finish()
     }
 }
-/// See [`GetObjectOutput`](crate::output::GetObjectOutput)
+/// See [`GetObjectOutput`](crate::output::GetObjectOutput).
 pub mod get_object_output {
 
-    /// A builder for [`GetObjectOutput`](crate::output::GetObjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetObjectOutput`](crate::output::GetObjectOutput).
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -362,7 +359,7 @@ pub mod get_object_output {
             self.status_code = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetObjectOutput`](crate::output::GetObjectOutput)
+        /// Consumes the builder and constructs a [`GetObjectOutput`](crate::output::GetObjectOutput).
         pub fn build(self) -> crate::output::GetObjectOutput {
             crate::output::GetObjectOutput {
                 body: self.body.unwrap_or_default(),
@@ -378,7 +375,7 @@ pub mod get_object_output {
     }
 }
 impl GetObjectOutput {
-    /// Creates a new builder-style object to manufacture [`GetObjectOutput`](crate::output::GetObjectOutput)
+    /// Creates a new builder-style object to manufacture [`GetObjectOutput`](crate::output::GetObjectOutput).
     pub fn builder() -> crate::output::get_object_output::Builder {
         crate::output::get_object_output::Builder::default()
     }
@@ -434,11 +431,10 @@ impl std::fmt::Debug for DescribeObjectOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeObjectOutput`](crate::output::DescribeObjectOutput)
+/// See [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
 pub mod describe_object_output {
 
-    /// A builder for [`DescribeObjectOutput`](crate::output::DescribeObjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
@@ -506,7 +502,7 @@ pub mod describe_object_output {
             self.last_modified = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeObjectOutput`](crate::output::DescribeObjectOutput)
+        /// Consumes the builder and constructs a [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
         pub fn build(self) -> crate::output::DescribeObjectOutput {
             crate::output::DescribeObjectOutput {
                 e_tag: self.e_tag,
@@ -519,7 +515,7 @@ pub mod describe_object_output {
     }
 }
 impl DescribeObjectOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeObjectOutput`](crate::output::DescribeObjectOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeObjectOutput`](crate::output::DescribeObjectOutput).
     pub fn builder() -> crate::output::describe_object_output::Builder {
         crate::output::describe_object_output::Builder::default()
     }
@@ -535,22 +531,21 @@ impl std::fmt::Debug for DeleteObjectOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
+/// See [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
 pub mod delete_object_output {
 
-    /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
+        /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
         pub fn build(self) -> crate::output::DeleteObjectOutput {
             crate::output::DeleteObjectOutput {}
         }
     }
 }
 impl DeleteObjectOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteObjectOutput`](crate::output::DeleteObjectOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteObjectOutput`](crate::output::DeleteObjectOutput).
     pub fn builder() -> crate::output::delete_object_output::Builder {
         crate::output::delete_object_output::Builder::default()
     }

@@ -250,11 +250,10 @@ impl std::fmt::Display for ResourceNotFoundException {
     }
 }
 impl std::error::Error for ResourceNotFoundException {}
-/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+/// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
 
-    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
-    #[non_exhaustive]
+    /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -270,7 +269,7 @@ pub mod resource_not_found_exception {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+        /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
                 message: self.message,
@@ -279,7 +278,7 @@ pub mod resource_not_found_exception {
     }
 }
 impl ResourceNotFoundException {
-    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException)
+    /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
     }
@@ -315,11 +314,10 @@ impl std::fmt::Display for MessageRejected {
     }
 }
 impl std::error::Error for MessageRejected {}
-/// See [`MessageRejected`](crate::error::MessageRejected)
+/// See [`MessageRejected`](crate::error::MessageRejected).
 pub mod message_rejected {
 
-    /// A builder for [`MessageRejected`](crate::error::MessageRejected)
-    #[non_exhaustive]
+    /// A builder for [`MessageRejected`](crate::error::MessageRejected).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -335,7 +333,7 @@ pub mod message_rejected {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessageRejected`](crate::error::MessageRejected)
+        /// Consumes the builder and constructs a [`MessageRejected`](crate::error::MessageRejected).
         pub fn build(self) -> crate::error::MessageRejected {
             crate::error::MessageRejected {
                 message: self.message,
@@ -344,7 +342,7 @@ pub mod message_rejected {
     }
 }
 impl MessageRejected {
-    /// Creates a new builder-style object to manufacture [`MessageRejected`](crate::error::MessageRejected)
+    /// Creates a new builder-style object to manufacture [`MessageRejected`](crate::error::MessageRejected).
     pub fn builder() -> crate::error::message_rejected::Builder {
         crate::error::message_rejected::Builder::default()
     }
@@ -380,11 +378,10 @@ impl std::fmt::Display for MessageFrozen {
     }
 }
 impl std::error::Error for MessageFrozen {}
-/// See [`MessageFrozen`](crate::error::MessageFrozen)
+/// See [`MessageFrozen`](crate::error::MessageFrozen).
 pub mod message_frozen {
 
-    /// A builder for [`MessageFrozen`](crate::error::MessageFrozen)
-    #[non_exhaustive]
+    /// A builder for [`MessageFrozen`](crate::error::MessageFrozen).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -400,7 +397,7 @@ pub mod message_frozen {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`MessageFrozen`](crate::error::MessageFrozen)
+        /// Consumes the builder and constructs a [`MessageFrozen`](crate::error::MessageFrozen).
         pub fn build(self) -> crate::error::MessageFrozen {
             crate::error::MessageFrozen {
                 message: self.message,
@@ -409,7 +406,7 @@ pub mod message_frozen {
     }
 }
 impl MessageFrozen {
-    /// Creates a new builder-style object to manufacture [`MessageFrozen`](crate::error::MessageFrozen)
+    /// Creates a new builder-style object to manufacture [`MessageFrozen`](crate::error::MessageFrozen).
     pub fn builder() -> crate::error::message_frozen::Builder {
         crate::error::message_frozen::Builder::default()
     }
@@ -450,11 +447,10 @@ impl std::fmt::Display for InvalidContentLocation {
     }
 }
 impl std::error::Error for InvalidContentLocation {}
-/// See [`InvalidContentLocation`](crate::error::InvalidContentLocation)
+/// See [`InvalidContentLocation`](crate::error::InvalidContentLocation).
 pub mod invalid_content_location {
 
-    /// A builder for [`InvalidContentLocation`](crate::error::InvalidContentLocation)
-    #[non_exhaustive]
+    /// A builder for [`InvalidContentLocation`](crate::error::InvalidContentLocation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
@@ -470,7 +466,7 @@ pub mod invalid_content_location {
             self.message = input;
             self
         }
-        /// Consumes the builder and constructs a [`InvalidContentLocation`](crate::error::InvalidContentLocation)
+        /// Consumes the builder and constructs a [`InvalidContentLocation`](crate::error::InvalidContentLocation).
         pub fn build(self) -> crate::error::InvalidContentLocation {
             crate::error::InvalidContentLocation {
                 message: self.message,
@@ -479,7 +475,7 @@ pub mod invalid_content_location {
     }
 }
 impl InvalidContentLocation {
-    /// Creates a new builder-style object to manufacture [`InvalidContentLocation`](crate::error::InvalidContentLocation)
+    /// Creates a new builder-style object to manufacture [`InvalidContentLocation`](crate::error::InvalidContentLocation).
     pub fn builder() -> crate::error::invalid_content_location::Builder {
         crate::error::invalid_content_location::Builder::default()
     }

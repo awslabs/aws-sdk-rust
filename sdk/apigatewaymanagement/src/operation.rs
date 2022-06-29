@@ -10,7 +10,7 @@ pub struct DeleteConnection {
     _private: (),
 }
 impl DeleteConnection {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::input::DeleteConnectionInput).
     pub fn builder() -> crate::input::delete_connection_input::Builder {
         crate::input::delete_connection_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetConnection {
     _private: (),
 }
 impl GetConnection {
-    /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectionInput`](crate::input::GetConnectionInput).
     pub fn builder() -> crate::input::get_connection_input::Builder {
         crate::input::get_connection_input::Builder::default()
     }
@@ -76,7 +76,7 @@ pub struct PostToConnection {
     _private: (),
 }
 impl PostToConnection {
-    /// Creates a new builder-style object to manufacture [`PostToConnectionInput`](crate::input::PostToConnectionInput)
+    /// Creates a new builder-style object to manufacture [`PostToConnectionInput`](crate::input::PostToConnectionInput).
     pub fn builder() -> crate::input::post_to_connection_input::Builder {
         crate::input::post_to_connection_input::Builder::default()
     }

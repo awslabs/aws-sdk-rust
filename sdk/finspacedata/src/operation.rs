@@ -10,7 +10,7 @@ pub struct AssociateUserToPermissionGroup {
     _private: (),
 }
 impl AssociateUserToPermissionGroup {
-    /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupInput`](crate::input::AssociateUserToPermissionGroupInput)
+    /// Creates a new builder-style object to manufacture [`AssociateUserToPermissionGroupInput`](crate::input::AssociateUserToPermissionGroupInput).
     pub fn builder() -> crate::input::associate_user_to_permission_group_input::Builder {
         crate::input::associate_user_to_permission_group_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateChangeset {
     _private: (),
 }
 impl CreateChangeset {
-    /// Creates a new builder-style object to manufacture [`CreateChangesetInput`](crate::input::CreateChangesetInput)
+    /// Creates a new builder-style object to manufacture [`CreateChangesetInput`](crate::input::CreateChangesetInput).
     pub fn builder() -> crate::input::create_changeset_input::Builder {
         crate::input::create_changeset_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateDataset {
     _private: (),
 }
 impl CreateDataset {
-    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput)
+    /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::input::CreateDatasetInput).
     pub fn builder() -> crate::input::create_dataset_input::Builder {
         crate::input::create_dataset_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateDataView {
     _private: (),
 }
 impl CreateDataView {
-    /// Creates a new builder-style object to manufacture [`CreateDataViewInput`](crate::input::CreateDataViewInput)
+    /// Creates a new builder-style object to manufacture [`CreateDataViewInput`](crate::input::CreateDataViewInput).
     pub fn builder() -> crate::input::create_data_view_input::Builder {
         crate::input::create_data_view_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreatePermissionGroup {
     _private: (),
 }
 impl CreatePermissionGroup {
-    /// Creates a new builder-style object to manufacture [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput)
+    /// Creates a new builder-style object to manufacture [`CreatePermissionGroupInput`](crate::input::CreatePermissionGroupInput).
     pub fn builder() -> crate::input::create_permission_group_input::Builder {
         crate::input::create_permission_group_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct CreateUser {
     _private: (),
 }
 impl CreateUser {
-    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput)
+    /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::input::CreateUserInput).
     pub fn builder() -> crate::input::create_user_input::Builder {
         crate::input::create_user_input::Builder::default()
     }
@@ -208,7 +208,7 @@ pub struct DeleteDataset {
     _private: (),
 }
 impl DeleteDataset {
-    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDatasetInput`](crate::input::DeleteDatasetInput).
     pub fn builder() -> crate::input::delete_dataset_input::Builder {
         crate::input::delete_dataset_input::Builder::default()
     }
@@ -240,7 +240,7 @@ pub struct DeletePermissionGroup {
     _private: (),
 }
 impl DeletePermissionGroup {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput)
+    /// Creates a new builder-style object to manufacture [`DeletePermissionGroupInput`](crate::input::DeletePermissionGroupInput).
     pub fn builder() -> crate::input::delete_permission_group_input::Builder {
         crate::input::delete_permission_group_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DisableUser {
     _private: (),
 }
 impl DisableUser {
-    /// Creates a new builder-style object to manufacture [`DisableUserInput`](crate::input::DisableUserInput)
+    /// Creates a new builder-style object to manufacture [`DisableUserInput`](crate::input::DisableUserInput).
     pub fn builder() -> crate::input::disable_user_input::Builder {
         crate::input::disable_user_input::Builder::default()
     }
@@ -306,7 +306,7 @@ pub struct DisassociateUserFromPermissionGroup {
     _private: (),
 }
 impl DisassociateUserFromPermissionGroup {
-    /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupInput`](crate::input::DisassociateUserFromPermissionGroupInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateUserFromPermissionGroupInput`](crate::input::DisassociateUserFromPermissionGroupInput).
     pub fn builder() -> crate::input::disassociate_user_from_permission_group_input::Builder {
         crate::input::disassociate_user_from_permission_group_input::Builder::default()
     }
@@ -340,7 +340,7 @@ pub struct EnableUser {
     _private: (),
 }
 impl EnableUser {
-    /// Creates a new builder-style object to manufacture [`EnableUserInput`](crate::input::EnableUserInput)
+    /// Creates a new builder-style object to manufacture [`EnableUserInput`](crate::input::EnableUserInput).
     pub fn builder() -> crate::input::enable_user_input::Builder {
         crate::input::enable_user_input::Builder::default()
     }
@@ -372,7 +372,7 @@ pub struct GetChangeset {
     _private: (),
 }
 impl GetChangeset {
-    /// Creates a new builder-style object to manufacture [`GetChangesetInput`](crate::input::GetChangesetInput)
+    /// Creates a new builder-style object to manufacture [`GetChangesetInput`](crate::input::GetChangesetInput).
     pub fn builder() -> crate::input::get_changeset_input::Builder {
         crate::input::get_changeset_input::Builder::default()
     }
@@ -404,7 +404,7 @@ pub struct GetDataset {
     _private: (),
 }
 impl GetDataset {
-    /// Creates a new builder-style object to manufacture [`GetDatasetInput`](crate::input::GetDatasetInput)
+    /// Creates a new builder-style object to manufacture [`GetDatasetInput`](crate::input::GetDatasetInput).
     pub fn builder() -> crate::input::get_dataset_input::Builder {
         crate::input::get_dataset_input::Builder::default()
     }
@@ -436,7 +436,7 @@ pub struct GetDataView {
     _private: (),
 }
 impl GetDataView {
-    /// Creates a new builder-style object to manufacture [`GetDataViewInput`](crate::input::GetDataViewInput)
+    /// Creates a new builder-style object to manufacture [`GetDataViewInput`](crate::input::GetDataViewInput).
     pub fn builder() -> crate::input::get_data_view_input::Builder {
         crate::input::get_data_view_input::Builder::default()
     }
@@ -468,7 +468,7 @@ pub struct GetPermissionGroup {
     _private: (),
 }
 impl GetPermissionGroup {
-    /// Creates a new builder-style object to manufacture [`GetPermissionGroupInput`](crate::input::GetPermissionGroupInput)
+    /// Creates a new builder-style object to manufacture [`GetPermissionGroupInput`](crate::input::GetPermissionGroupInput).
     pub fn builder() -> crate::input::get_permission_group_input::Builder {
         crate::input::get_permission_group_input::Builder::default()
     }
@@ -502,7 +502,7 @@ pub struct GetProgrammaticAccessCredentials {
     _private: (),
 }
 impl GetProgrammaticAccessCredentials {
-    /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsInput`](crate::input::GetProgrammaticAccessCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`GetProgrammaticAccessCredentialsInput`](crate::input::GetProgrammaticAccessCredentialsInput).
     pub fn builder() -> crate::input::get_programmatic_access_credentials_input::Builder {
         crate::input::get_programmatic_access_credentials_input::Builder::default()
     }
@@ -536,7 +536,7 @@ pub struct GetUser {
     _private: (),
 }
 impl GetUser {
-    /// Creates a new builder-style object to manufacture [`GetUserInput`](crate::input::GetUserInput)
+    /// Creates a new builder-style object to manufacture [`GetUserInput`](crate::input::GetUserInput).
     pub fn builder() -> crate::input::get_user_input::Builder {
         crate::input::get_user_input::Builder::default()
     }
@@ -567,7 +567,7 @@ pub struct GetWorkingLocation {
     _private: (),
 }
 impl GetWorkingLocation {
-    /// Creates a new builder-style object to manufacture [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput)
+    /// Creates a new builder-style object to manufacture [`GetWorkingLocationInput`](crate::input::GetWorkingLocationInput).
     pub fn builder() -> crate::input::get_working_location_input::Builder {
         crate::input::get_working_location_input::Builder::default()
     }
@@ -601,7 +601,7 @@ pub struct ListChangesets {
     _private: (),
 }
 impl ListChangesets {
-    /// Creates a new builder-style object to manufacture [`ListChangesetsInput`](crate::input::ListChangesetsInput)
+    /// Creates a new builder-style object to manufacture [`ListChangesetsInput`](crate::input::ListChangesetsInput).
     pub fn builder() -> crate::input::list_changesets_input::Builder {
         crate::input::list_changesets_input::Builder::default()
     }
@@ -633,7 +633,7 @@ pub struct ListDatasets {
     _private: (),
 }
 impl ListDatasets {
-    /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput)
+    /// Creates a new builder-style object to manufacture [`ListDatasetsInput`](crate::input::ListDatasetsInput).
     pub fn builder() -> crate::input::list_datasets_input::Builder {
         crate::input::list_datasets_input::Builder::default()
     }
@@ -665,7 +665,7 @@ pub struct ListDataViews {
     _private: (),
 }
 impl ListDataViews {
-    /// Creates a new builder-style object to manufacture [`ListDataViewsInput`](crate::input::ListDataViewsInput)
+    /// Creates a new builder-style object to manufacture [`ListDataViewsInput`](crate::input::ListDataViewsInput).
     pub fn builder() -> crate::input::list_data_views_input::Builder {
         crate::input::list_data_views_input::Builder::default()
     }
@@ -697,7 +697,7 @@ pub struct ListPermissionGroups {
     _private: (),
 }
 impl ListPermissionGroups {
-    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsInput`](crate::input::ListPermissionGroupsInput).
     pub fn builder() -> crate::input::list_permission_groups_input::Builder {
         crate::input::list_permission_groups_input::Builder::default()
     }
@@ -731,7 +731,7 @@ pub struct ListPermissionGroupsByUser {
     _private: (),
 }
 impl ListPermissionGroupsByUser {
-    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserInput`](crate::input::ListPermissionGroupsByUserInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionGroupsByUserInput`](crate::input::ListPermissionGroupsByUserInput).
     pub fn builder() -> crate::input::list_permission_groups_by_user_input::Builder {
         crate::input::list_permission_groups_by_user_input::Builder::default()
     }
@@ -765,7 +765,7 @@ pub struct ListUsers {
     _private: (),
 }
 impl ListUsers {
-    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput)
+    /// Creates a new builder-style object to manufacture [`ListUsersInput`](crate::input::ListUsersInput).
     pub fn builder() -> crate::input::list_users_input::Builder {
         crate::input::list_users_input::Builder::default()
     }
@@ -796,7 +796,7 @@ pub struct ListUsersByPermissionGroup {
     _private: (),
 }
 impl ListUsersByPermissionGroup {
-    /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupInput`](crate::input::ListUsersByPermissionGroupInput)
+    /// Creates a new builder-style object to manufacture [`ListUsersByPermissionGroupInput`](crate::input::ListUsersByPermissionGroupInput).
     pub fn builder() -> crate::input::list_users_by_permission_group_input::Builder {
         crate::input::list_users_by_permission_group_input::Builder::default()
     }
@@ -830,7 +830,7 @@ pub struct ResetUserPassword {
     _private: (),
 }
 impl ResetUserPassword {
-    /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput)
+    /// Creates a new builder-style object to manufacture [`ResetUserPasswordInput`](crate::input::ResetUserPasswordInput).
     pub fn builder() -> crate::input::reset_user_password_input::Builder {
         crate::input::reset_user_password_input::Builder::default()
     }
@@ -864,7 +864,7 @@ pub struct UpdateChangeset {
     _private: (),
 }
 impl UpdateChangeset {
-    /// Creates a new builder-style object to manufacture [`UpdateChangesetInput`](crate::input::UpdateChangesetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateChangesetInput`](crate::input::UpdateChangesetInput).
     pub fn builder() -> crate::input::update_changeset_input::Builder {
         crate::input::update_changeset_input::Builder::default()
     }
@@ -898,7 +898,7 @@ pub struct UpdateDataset {
     _private: (),
 }
 impl UpdateDataset {
-    /// Creates a new builder-style object to manufacture [`UpdateDatasetInput`](crate::input::UpdateDatasetInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDatasetInput`](crate::input::UpdateDatasetInput).
     pub fn builder() -> crate::input::update_dataset_input::Builder {
         crate::input::update_dataset_input::Builder::default()
     }
@@ -930,7 +930,7 @@ pub struct UpdatePermissionGroup {
     _private: (),
 }
 impl UpdatePermissionGroup {
-    /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePermissionGroupInput`](crate::input::UpdatePermissionGroupInput).
     pub fn builder() -> crate::input::update_permission_group_input::Builder {
         crate::input::update_permission_group_input::Builder::default()
     }
@@ -964,7 +964,7 @@ pub struct UpdateUser {
     _private: (),
 }
 impl UpdateUser {
-    /// Creates a new builder-style object to manufacture [`UpdateUserInput`](crate::input::UpdateUserInput)
+    /// Creates a new builder-style object to manufacture [`UpdateUserInput`](crate::input::UpdateUserInput).
     pub fn builder() -> crate::input::update_user_input::Builder {
         crate::input::update_user_input::Builder::default()
     }

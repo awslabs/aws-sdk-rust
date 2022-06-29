@@ -10,7 +10,7 @@ pub struct SendCommand {
     _private: (),
 }
 impl SendCommand {
-    /// Creates a new builder-style object to manufacture [`SendCommandInput`](crate::input::SendCommandInput)
+    /// Creates a new builder-style object to manufacture [`SendCommandInput`](crate::input::SendCommandInput).
     pub fn builder() -> crate::input::send_command_input::Builder {
         crate::input::send_command_input::Builder::default()
     }

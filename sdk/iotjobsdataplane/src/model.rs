@@ -38,11 +38,10 @@ impl std::fmt::Debug for JobExecutionState {
         formatter.finish()
     }
 }
-/// See [`JobExecutionState`](crate::model::JobExecutionState)
+/// See [`JobExecutionState`](crate::model::JobExecutionState).
 pub mod job_execution_state {
 
-    /// A builder for [`JobExecutionState`](crate::model::JobExecutionState)
-    #[non_exhaustive]
+    /// A builder for [`JobExecutionState`](crate::model::JobExecutionState).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::JobExecutionStatus>,
@@ -100,7 +99,7 @@ pub mod job_execution_state {
             self.version_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`JobExecutionState`](crate::model::JobExecutionState)
+        /// Consumes the builder and constructs a [`JobExecutionState`](crate::model::JobExecutionState).
         pub fn build(self) -> crate::model::JobExecutionState {
             crate::model::JobExecutionState {
                 status: self.status,
@@ -111,7 +110,7 @@ pub mod job_execution_state {
     }
 }
 impl JobExecutionState {
-    /// Creates a new builder-style object to manufacture [`JobExecutionState`](crate::model::JobExecutionState)
+    /// Creates a new builder-style object to manufacture [`JobExecutionState`](crate::model::JobExecutionState).
     pub fn builder() -> crate::model::job_execution_state::Builder {
         crate::model::job_execution_state::Builder::default()
     }
@@ -302,11 +301,10 @@ impl std::fmt::Debug for JobExecution {
         formatter.finish()
     }
 }
-/// See [`JobExecution`](crate::model::JobExecution)
+/// See [`JobExecution`](crate::model::JobExecution).
 pub mod job_execution {
 
-    /// A builder for [`JobExecution`](crate::model::JobExecution)
-    #[non_exhaustive]
+    /// A builder for [`JobExecution`](crate::model::JobExecution).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -455,7 +453,7 @@ pub mod job_execution {
             self.job_document = input;
             self
         }
-        /// Consumes the builder and constructs a [`JobExecution`](crate::model::JobExecution)
+        /// Consumes the builder and constructs a [`JobExecution`](crate::model::JobExecution).
         pub fn build(self) -> crate::model::JobExecution {
             crate::model::JobExecution {
                 job_id: self.job_id,
@@ -474,7 +472,7 @@ pub mod job_execution {
     }
 }
 impl JobExecution {
-    /// Creates a new builder-style object to manufacture [`JobExecution`](crate::model::JobExecution)
+    /// Creates a new builder-style object to manufacture [`JobExecution`](crate::model::JobExecution).
     pub fn builder() -> crate::model::job_execution::Builder {
         crate::model::job_execution::Builder::default()
     }
@@ -535,11 +533,10 @@ impl std::fmt::Debug for JobExecutionSummary {
         formatter.finish()
     }
 }
-/// See [`JobExecutionSummary`](crate::model::JobExecutionSummary)
+/// See [`JobExecutionSummary`](crate::model::JobExecutionSummary).
 pub mod job_execution_summary {
 
-    /// A builder for [`JobExecutionSummary`](crate::model::JobExecutionSummary)
-    #[non_exhaustive]
+    /// A builder for [`JobExecutionSummary`](crate::model::JobExecutionSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
@@ -610,7 +607,7 @@ pub mod job_execution_summary {
             self.execution_number = input;
             self
         }
-        /// Consumes the builder and constructs a [`JobExecutionSummary`](crate::model::JobExecutionSummary)
+        /// Consumes the builder and constructs a [`JobExecutionSummary`](crate::model::JobExecutionSummary).
         pub fn build(self) -> crate::model::JobExecutionSummary {
             crate::model::JobExecutionSummary {
                 job_id: self.job_id,
@@ -624,7 +621,7 @@ pub mod job_execution_summary {
     }
 }
 impl JobExecutionSummary {
-    /// Creates a new builder-style object to manufacture [`JobExecutionSummary`](crate::model::JobExecutionSummary)
+    /// Creates a new builder-style object to manufacture [`JobExecutionSummary`](crate::model::JobExecutionSummary).
     pub fn builder() -> crate::model::job_execution_summary::Builder {
         crate::model::job_execution_summary::Builder::default()
     }

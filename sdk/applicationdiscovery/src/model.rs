@@ -34,11 +34,10 @@ impl std::fmt::Debug for AgentConfigurationStatus {
         formatter.finish()
     }
 }
-/// See [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus)
+/// See [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
 pub mod agent_configuration_status {
 
-    /// A builder for [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus)
-    #[non_exhaustive]
+    /// A builder for [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_id: std::option::Option<std::string::String>,
@@ -76,7 +75,7 @@ pub mod agent_configuration_status {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus)
+        /// Consumes the builder and constructs a [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
         pub fn build(self) -> crate::model::AgentConfigurationStatus {
             crate::model::AgentConfigurationStatus {
                 agent_id: self.agent_id,
@@ -87,7 +86,7 @@ pub mod agent_configuration_status {
     }
 }
 impl AgentConfigurationStatus {
-    /// Creates a new builder-style object to manufacture [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus)
+    /// Creates a new builder-style object to manufacture [`AgentConfigurationStatus`](crate::model::AgentConfigurationStatus).
     pub fn builder() -> crate::model::agent_configuration_status::Builder {
         crate::model::agent_configuration_status::Builder::default()
     }
@@ -210,11 +209,10 @@ impl std::fmt::Debug for ImportTask {
         formatter.finish()
     }
 }
-/// See [`ImportTask`](crate::model::ImportTask)
+/// See [`ImportTask`](crate::model::ImportTask).
 pub mod import_task {
 
-    /// A builder for [`ImportTask`](crate::model::ImportTask)
-    #[non_exhaustive]
+    /// A builder for [`ImportTask`](crate::model::ImportTask).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_task_id: std::option::Option<std::string::String>,
@@ -390,7 +388,7 @@ pub mod import_task {
             self.errors_and_failed_entries_zip = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportTask`](crate::model::ImportTask)
+        /// Consumes the builder and constructs a [`ImportTask`](crate::model::ImportTask).
         pub fn build(self) -> crate::model::ImportTask {
             crate::model::ImportTask {
                 import_task_id: self.import_task_id,
@@ -411,7 +409,7 @@ pub mod import_task {
     }
 }
 impl ImportTask {
-    /// Creates a new builder-style object to manufacture [`ImportTask`](crate::model::ImportTask)
+    /// Creates a new builder-style object to manufacture [`ImportTask`](crate::model::ImportTask).
     pub fn builder() -> crate::model::import_task::Builder {
         crate::model::import_task::Builder::default()
     }
@@ -554,11 +552,10 @@ impl std::fmt::Debug for ExportFilter {
         formatter.finish()
     }
 }
-/// See [`ExportFilter`](crate::model::ExportFilter)
+/// See [`ExportFilter`](crate::model::ExportFilter).
 pub mod export_filter {
 
-    /// A builder for [`ExportFilter`](crate::model::ExportFilter)
-    #[non_exhaustive]
+    /// A builder for [`ExportFilter`](crate::model::ExportFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -605,7 +602,7 @@ pub mod export_filter {
             self.condition = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportFilter`](crate::model::ExportFilter)
+        /// Consumes the builder and constructs a [`ExportFilter`](crate::model::ExportFilter).
         pub fn build(self) -> crate::model::ExportFilter {
             crate::model::ExportFilter {
                 name: self.name,
@@ -616,7 +613,7 @@ pub mod export_filter {
     }
 }
 impl ExportFilter {
-    /// Creates a new builder-style object to manufacture [`ExportFilter`](crate::model::ExportFilter)
+    /// Creates a new builder-style object to manufacture [`ExportFilter`](crate::model::ExportFilter).
     pub fn builder() -> crate::model::export_filter::Builder {
         crate::model::export_filter::Builder::default()
     }
@@ -776,11 +773,10 @@ impl std::fmt::Debug for NeighborConnectionDetail {
         formatter.finish()
     }
 }
-/// See [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail)
+/// See [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
 pub mod neighbor_connection_detail {
 
-    /// A builder for [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail)
-    #[non_exhaustive]
+    /// A builder for [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
@@ -849,7 +845,7 @@ pub mod neighbor_connection_detail {
             self.connections_count = input;
             self
         }
-        /// Consumes the builder and constructs a [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail)
+        /// Consumes the builder and constructs a [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
         pub fn build(self) -> crate::model::NeighborConnectionDetail {
             crate::model::NeighborConnectionDetail {
                 source_server_id: self.source_server_id,
@@ -862,7 +858,7 @@ pub mod neighbor_connection_detail {
     }
 }
 impl NeighborConnectionDetail {
-    /// Creates a new builder-style object to manufacture [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail)
+    /// Creates a new builder-style object to manufacture [`NeighborConnectionDetail`](crate::model::NeighborConnectionDetail).
     pub fn builder() -> crate::model::neighbor_connection_detail::Builder {
         crate::model::neighbor_connection_detail::Builder::default()
     }
@@ -895,11 +891,10 @@ impl std::fmt::Debug for OrderByElement {
         formatter.finish()
     }
 }
-/// See [`OrderByElement`](crate::model::OrderByElement)
+/// See [`OrderByElement`](crate::model::OrderByElement).
 pub mod order_by_element {
 
-    /// A builder for [`OrderByElement`](crate::model::OrderByElement)
-    #[non_exhaustive]
+    /// A builder for [`OrderByElement`](crate::model::OrderByElement).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) field_name: std::option::Option<std::string::String>,
@@ -929,7 +924,7 @@ pub mod order_by_element {
             self.sort_order = input;
             self
         }
-        /// Consumes the builder and constructs a [`OrderByElement`](crate::model::OrderByElement)
+        /// Consumes the builder and constructs a [`OrderByElement`](crate::model::OrderByElement).
         pub fn build(self) -> crate::model::OrderByElement {
             crate::model::OrderByElement {
                 field_name: self.field_name,
@@ -939,7 +934,7 @@ pub mod order_by_element {
     }
 }
 impl OrderByElement {
-    /// Creates a new builder-style object to manufacture [`OrderByElement`](crate::model::OrderByElement)
+    /// Creates a new builder-style object to manufacture [`OrderByElement`](crate::model::OrderByElement).
     pub fn builder() -> crate::model::order_by_element::Builder {
         crate::model::order_by_element::Builder::default()
     }
@@ -1035,11 +1030,10 @@ impl std::fmt::Debug for Filter {
         formatter.finish()
     }
 }
-/// See [`Filter`](crate::model::Filter)
+/// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
-    /// A builder for [`Filter`](crate::model::Filter)
-    #[non_exhaustive]
+    /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1086,7 +1080,7 @@ pub mod filter {
             self.condition = input;
             self
         }
-        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
                 name: self.name,
@@ -1097,7 +1091,7 @@ pub mod filter {
     }
 }
 impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
     pub fn builder() -> crate::model::filter::Builder {
         crate::model::filter::Builder::default()
     }
@@ -1228,11 +1222,10 @@ impl std::fmt::Debug for CustomerMeCollectorInfo {
         formatter.finish()
     }
 }
-/// See [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
+/// See [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
 pub mod customer_me_collector_info {
 
-    /// A builder for [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
-    #[non_exhaustive]
+    /// A builder for [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_me_collectors: std::option::Option<i32>,
@@ -1314,7 +1307,7 @@ pub mod customer_me_collector_info {
             self.unknown_me_collectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
+        /// Consumes the builder and constructs a [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
         pub fn build(self) -> crate::model::CustomerMeCollectorInfo {
             crate::model::CustomerMeCollectorInfo {
                 active_me_collectors: self.active_me_collectors.unwrap_or_default(),
@@ -1329,7 +1322,7 @@ pub mod customer_me_collector_info {
     }
 }
 impl CustomerMeCollectorInfo {
-    /// Creates a new builder-style object to manufacture [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo)
+    /// Creates a new builder-style object to manufacture [`CustomerMeCollectorInfo`](crate::model::CustomerMeCollectorInfo).
     pub fn builder() -> crate::model::customer_me_collector_info::Builder {
         crate::model::customer_me_collector_info::Builder::default()
     }
@@ -1397,11 +1390,10 @@ impl std::fmt::Debug for CustomerConnectorInfo {
         formatter.finish()
     }
 }
-/// See [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo)
+/// See [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
 pub mod customer_connector_info {
 
-    /// A builder for [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo)
-    #[non_exhaustive]
+    /// A builder for [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_connectors: std::option::Option<i32>,
@@ -1483,7 +1475,7 @@ pub mod customer_connector_info {
             self.unknown_connectors = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo)
+        /// Consumes the builder and constructs a [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
         pub fn build(self) -> crate::model::CustomerConnectorInfo {
             crate::model::CustomerConnectorInfo {
                 active_connectors: self.active_connectors.unwrap_or_default(),
@@ -1498,7 +1490,7 @@ pub mod customer_connector_info {
     }
 }
 impl CustomerConnectorInfo {
-    /// Creates a new builder-style object to manufacture [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo)
+    /// Creates a new builder-style object to manufacture [`CustomerConnectorInfo`](crate::model::CustomerConnectorInfo).
     pub fn builder() -> crate::model::customer_connector_info::Builder {
         crate::model::customer_connector_info::Builder::default()
     }
@@ -1566,11 +1558,10 @@ impl std::fmt::Debug for CustomerAgentInfo {
         formatter.finish()
     }
 }
-/// See [`CustomerAgentInfo`](crate::model::CustomerAgentInfo)
+/// See [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
 pub mod customer_agent_info {
 
-    /// A builder for [`CustomerAgentInfo`](crate::model::CustomerAgentInfo)
-    #[non_exhaustive]
+    /// A builder for [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) active_agents: std::option::Option<i32>,
@@ -1652,7 +1643,7 @@ pub mod customer_agent_info {
             self.unknown_agents = input;
             self
         }
-        /// Consumes the builder and constructs a [`CustomerAgentInfo`](crate::model::CustomerAgentInfo)
+        /// Consumes the builder and constructs a [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
         pub fn build(self) -> crate::model::CustomerAgentInfo {
             crate::model::CustomerAgentInfo {
                 active_agents: self.active_agents.unwrap_or_default(),
@@ -1667,7 +1658,7 @@ pub mod customer_agent_info {
     }
 }
 impl CustomerAgentInfo {
-    /// Creates a new builder-style object to manufacture [`CustomerAgentInfo`](crate::model::CustomerAgentInfo)
+    /// Creates a new builder-style object to manufacture [`CustomerAgentInfo`](crate::model::CustomerAgentInfo).
     pub fn builder() -> crate::model::customer_agent_info::Builder {
         crate::model::customer_agent_info::Builder::default()
     }
@@ -1721,11 +1712,10 @@ impl std::fmt::Debug for ConfigurationTag {
         formatter.finish()
     }
 }
-/// See [`ConfigurationTag`](crate::model::ConfigurationTag)
+/// See [`ConfigurationTag`](crate::model::ConfigurationTag).
 pub mod configuration_tag {
 
-    /// A builder for [`ConfigurationTag`](crate::model::ConfigurationTag)
-    #[non_exhaustive]
+    /// A builder for [`ConfigurationTag`](crate::model::ConfigurationTag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_type: std::option::Option<crate::model::ConfigurationItemType>,
@@ -1794,7 +1784,7 @@ pub mod configuration_tag {
             self.time_of_creation = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConfigurationTag`](crate::model::ConfigurationTag)
+        /// Consumes the builder and constructs a [`ConfigurationTag`](crate::model::ConfigurationTag).
         pub fn build(self) -> crate::model::ConfigurationTag {
             crate::model::ConfigurationTag {
                 configuration_type: self.configuration_type,
@@ -1807,7 +1797,7 @@ pub mod configuration_tag {
     }
 }
 impl ConfigurationTag {
-    /// Creates a new builder-style object to manufacture [`ConfigurationTag`](crate::model::ConfigurationTag)
+    /// Creates a new builder-style object to manufacture [`ConfigurationTag`](crate::model::ConfigurationTag).
     pub fn builder() -> crate::model::configuration_tag::Builder {
         crate::model::configuration_tag::Builder::default()
     }
@@ -1840,11 +1830,10 @@ impl std::fmt::Debug for TagFilter {
         formatter.finish()
     }
 }
-/// See [`TagFilter`](crate::model::TagFilter)
+/// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
-    /// A builder for [`TagFilter`](crate::model::TagFilter)
-    #[non_exhaustive]
+    /// A builder for [`TagFilter`](crate::model::TagFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -1880,7 +1869,7 @@ pub mod tag_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter)
+        /// Consumes the builder and constructs a [`TagFilter`](crate::model::TagFilter).
         pub fn build(self) -> crate::model::TagFilter {
             crate::model::TagFilter {
                 name: self.name,
@@ -1890,7 +1879,7 @@ pub mod tag_filter {
     }
 }
 impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter)
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
     pub fn builder() -> crate::model::tag_filter::Builder {
         crate::model::tag_filter::Builder::default()
     }
@@ -1925,11 +1914,10 @@ impl std::fmt::Debug for ImportTaskFilter {
         formatter.finish()
     }
 }
-/// See [`ImportTaskFilter`](crate::model::ImportTaskFilter)
+/// See [`ImportTaskFilter`](crate::model::ImportTaskFilter).
 pub mod import_task_filter {
 
-    /// A builder for [`ImportTaskFilter`](crate::model::ImportTaskFilter)
-    #[non_exhaustive]
+    /// A builder for [`ImportTaskFilter`](crate::model::ImportTaskFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ImportTaskFilterName>,
@@ -1968,7 +1956,7 @@ pub mod import_task_filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`ImportTaskFilter`](crate::model::ImportTaskFilter)
+        /// Consumes the builder and constructs a [`ImportTaskFilter`](crate::model::ImportTaskFilter).
         pub fn build(self) -> crate::model::ImportTaskFilter {
             crate::model::ImportTaskFilter {
                 name: self.name,
@@ -1978,7 +1966,7 @@ pub mod import_task_filter {
     }
 }
 impl ImportTaskFilter {
-    /// Creates a new builder-style object to manufacture [`ImportTaskFilter`](crate::model::ImportTaskFilter)
+    /// Creates a new builder-style object to manufacture [`ImportTaskFilter`](crate::model::ImportTaskFilter).
     pub fn builder() -> crate::model::import_task_filter::Builder {
         crate::model::import_task_filter::Builder::default()
     }
@@ -2115,11 +2103,10 @@ impl std::fmt::Debug for ExportInfo {
         formatter.finish()
     }
 }
-/// See [`ExportInfo`](crate::model::ExportInfo)
+/// See [`ExportInfo`](crate::model::ExportInfo).
 pub mod export_info {
 
-    /// A builder for [`ExportInfo`](crate::model::ExportInfo)
-    #[non_exhaustive]
+    /// A builder for [`ExportInfo`](crate::model::ExportInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -2233,7 +2220,7 @@ pub mod export_info {
             self.requested_end_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`ExportInfo`](crate::model::ExportInfo)
+        /// Consumes the builder and constructs a [`ExportInfo`](crate::model::ExportInfo).
         pub fn build(self) -> crate::model::ExportInfo {
             crate::model::ExportInfo {
                 export_id: self.export_id,
@@ -2249,7 +2236,7 @@ pub mod export_info {
     }
 }
 impl ExportInfo {
-    /// Creates a new builder-style object to manufacture [`ExportInfo`](crate::model::ExportInfo)
+    /// Creates a new builder-style object to manufacture [`ExportInfo`](crate::model::ExportInfo).
     pub fn builder() -> crate::model::export_info::Builder {
         crate::model::export_info::Builder::default()
     }
@@ -2447,11 +2434,10 @@ impl std::fmt::Debug for ContinuousExportDescription {
         formatter.finish()
     }
 }
-/// See [`ContinuousExportDescription`](crate::model::ContinuousExportDescription)
+/// See [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
 pub mod continuous_export_description {
 
-    /// A builder for [`ContinuousExportDescription`](crate::model::ContinuousExportDescription)
-    #[non_exhaustive]
+    /// A builder for [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
@@ -2636,7 +2622,7 @@ pub mod continuous_export_description {
             self.schema_storage_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContinuousExportDescription`](crate::model::ContinuousExportDescription)
+        /// Consumes the builder and constructs a [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
         pub fn build(self) -> crate::model::ContinuousExportDescription {
             crate::model::ContinuousExportDescription {
                 export_id: self.export_id,
@@ -2652,7 +2638,7 @@ pub mod continuous_export_description {
     }
 }
 impl ContinuousExportDescription {
-    /// Creates a new builder-style object to manufacture [`ContinuousExportDescription`](crate::model::ContinuousExportDescription)
+    /// Creates a new builder-style object to manufacture [`ContinuousExportDescription`](crate::model::ContinuousExportDescription).
     pub fn builder() -> crate::model::continuous_export_description::Builder {
         crate::model::continuous_export_description::Builder::default()
     }
@@ -2826,11 +2812,10 @@ impl std::fmt::Debug for AgentInfo {
         formatter.finish()
     }
 }
-/// See [`AgentInfo`](crate::model::AgentInfo)
+/// See [`AgentInfo`](crate::model::AgentInfo).
 pub mod agent_info {
 
-    /// A builder for [`AgentInfo`](crate::model::AgentInfo)
-    #[non_exhaustive]
+    /// A builder for [`AgentInfo`](crate::model::AgentInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_id: std::option::Option<std::string::String>,
@@ -2964,7 +2949,7 @@ pub mod agent_info {
             self.registered_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`AgentInfo`](crate::model::AgentInfo)
+        /// Consumes the builder and constructs a [`AgentInfo`](crate::model::AgentInfo).
         pub fn build(self) -> crate::model::AgentInfo {
             crate::model::AgentInfo {
                 agent_id: self.agent_id,
@@ -2982,7 +2967,7 @@ pub mod agent_info {
     }
 }
 impl AgentInfo {
-    /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::model::AgentInfo)
+    /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::model::AgentInfo).
     pub fn builder() -> crate::model::agent_info::Builder {
         crate::model::agent_info::Builder::default()
     }
@@ -3093,11 +3078,10 @@ impl std::fmt::Debug for AgentNetworkInfo {
         formatter.finish()
     }
 }
-/// See [`AgentNetworkInfo`](crate::model::AgentNetworkInfo)
+/// See [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
 pub mod agent_network_info {
 
-    /// A builder for [`AgentNetworkInfo`](crate::model::AgentNetworkInfo)
-    #[non_exhaustive]
+    /// A builder for [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_address: std::option::Option<std::string::String>,
@@ -3124,7 +3108,7 @@ pub mod agent_network_info {
             self.mac_address = input;
             self
         }
-        /// Consumes the builder and constructs a [`AgentNetworkInfo`](crate::model::AgentNetworkInfo)
+        /// Consumes the builder and constructs a [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
         pub fn build(self) -> crate::model::AgentNetworkInfo {
             crate::model::AgentNetworkInfo {
                 ip_address: self.ip_address,
@@ -3134,7 +3118,7 @@ pub mod agent_network_info {
     }
 }
 impl AgentNetworkInfo {
-    /// Creates a new builder-style object to manufacture [`AgentNetworkInfo`](crate::model::AgentNetworkInfo)
+    /// Creates a new builder-style object to manufacture [`AgentNetworkInfo`](crate::model::AgentNetworkInfo).
     pub fn builder() -> crate::model::agent_network_info::Builder {
         crate::model::agent_network_info::Builder::default()
     }
@@ -3169,11 +3153,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -3200,7 +3183,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -3210,7 +3193,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -3250,11 +3233,10 @@ impl std::fmt::Debug for BatchDeleteImportDataError {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError)
+/// See [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
 pub mod batch_delete_import_data_error {
 
-    /// A builder for [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_task_id: std::option::Option<std::string::String>,
@@ -3301,7 +3283,7 @@ pub mod batch_delete_import_data_error {
             self.error_description = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError)
+        /// Consumes the builder and constructs a [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
         pub fn build(self) -> crate::model::BatchDeleteImportDataError {
             crate::model::BatchDeleteImportDataError {
                 import_task_id: self.import_task_id,
@@ -3312,7 +3294,7 @@ pub mod batch_delete_import_data_error {
     }
 }
 impl BatchDeleteImportDataError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteImportDataError`](crate::model::BatchDeleteImportDataError).
     pub fn builder() -> crate::model::batch_delete_import_data_error::Builder {
         crate::model::batch_delete_import_data_error::Builder::default()
     }

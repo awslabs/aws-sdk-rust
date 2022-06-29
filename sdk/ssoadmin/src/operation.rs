@@ -10,7 +10,7 @@ pub struct AttachManagedPolicyToPermissionSet {
     _private: (),
 }
 impl AttachManagedPolicyToPermissionSet {
-    /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetInput`](crate::input::AttachManagedPolicyToPermissionSetInput).
     pub fn builder() -> crate::input::attach_managed_policy_to_permission_set_input::Builder {
         crate::input::attach_managed_policy_to_permission_set_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateAccountAssignment {
     _private: (),
 }
 impl CreateAccountAssignment {
-    /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentInput`](crate::input::CreateAccountAssignmentInput).
     pub fn builder() -> crate::input::create_account_assignment_input::Builder {
         crate::input::create_account_assignment_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
 impl CreateInstanceAccessControlAttributeConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::input::CreateInstanceAccessControlAttributeConfigurationInput).
     pub fn builder(
     ) -> crate::input::create_instance_access_control_attribute_configuration_input::Builder {
         crate::input::create_instance_access_control_attribute_configuration_input::Builder::default(
@@ -116,7 +116,7 @@ pub struct CreatePermissionSet {
     _private: (),
 }
 impl CreatePermissionSet {
-    /// Creates a new builder-style object to manufacture [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`CreatePermissionSetInput`](crate::input::CreatePermissionSetInput).
     pub fn builder() -> crate::input::create_permission_set_input::Builder {
         crate::input::create_permission_set_input::Builder::default()
     }
@@ -150,7 +150,7 @@ pub struct DeleteAccountAssignment {
     _private: (),
 }
 impl DeleteAccountAssignment {
-    /// Creates a new builder-style object to manufacture [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAccountAssignmentInput`](crate::input::DeleteAccountAssignmentInput).
     pub fn builder() -> crate::input::delete_account_assignment_input::Builder {
         crate::input::delete_account_assignment_input::Builder::default()
     }
@@ -184,7 +184,7 @@ pub struct DeleteInlinePolicyFromPermissionSet {
     _private: (),
 }
 impl DeleteInlinePolicyFromPermissionSet {
-    /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetInput`](crate::input::DeleteInlinePolicyFromPermissionSetInput).
     pub fn builder() -> crate::input::delete_inline_policy_from_permission_set_input::Builder {
         crate::input::delete_inline_policy_from_permission_set_input::Builder::default()
     }
@@ -220,7 +220,7 @@ pub struct DeleteInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
 impl DeleteInstanceAccessControlAttributeConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceAccessControlAttributeConfigurationInput`](crate::input::DeleteInstanceAccessControlAttributeConfigurationInput).
     pub fn builder(
     ) -> crate::input::delete_instance_access_control_attribute_configuration_input::Builder {
         crate::input::delete_instance_access_control_attribute_configuration_input::Builder::default(
@@ -258,7 +258,7 @@ pub struct DeletePermissionSet {
     _private: (),
 }
 impl DeletePermissionSet {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`DeletePermissionSetInput`](crate::input::DeletePermissionSetInput).
     pub fn builder() -> crate::input::delete_permission_set_input::Builder {
         crate::input::delete_permission_set_input::Builder::default()
     }
@@ -292,7 +292,7 @@ pub struct DescribeAccountAssignmentCreationStatus {
     _private: (),
 }
 impl DescribeAccountAssignmentCreationStatus {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentCreationStatusInput`](crate::input::DescribeAccountAssignmentCreationStatusInput).
     pub fn builder() -> crate::input::describe_account_assignment_creation_status_input::Builder {
         crate::input::describe_account_assignment_creation_status_input::Builder::default()
     }
@@ -330,7 +330,7 @@ pub struct DescribeAccountAssignmentDeletionStatus {
     _private: (),
 }
 impl DescribeAccountAssignmentDeletionStatus {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusInput`](crate::input::DescribeAccountAssignmentDeletionStatusInput).
     pub fn builder() -> crate::input::describe_account_assignment_deletion_status_input::Builder {
         crate::input::describe_account_assignment_deletion_status_input::Builder::default()
     }
@@ -368,7 +368,7 @@ pub struct DescribeInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
 impl DescribeInstanceAccessControlAttributeConfiguration {
-    /// Creates a new builder-style object to manufacture [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::input::DescribeInstanceAccessControlAttributeConfigurationInput).
     pub fn builder(
     ) -> crate::input::describe_instance_access_control_attribute_configuration_input::Builder {
         crate::input::describe_instance_access_control_attribute_configuration_input::Builder::default()
@@ -405,7 +405,7 @@ pub struct DescribePermissionSet {
     _private: (),
 }
 impl DescribePermissionSet {
-    /// Creates a new builder-style object to manufacture [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`DescribePermissionSetInput`](crate::input::DescribePermissionSetInput).
     pub fn builder() -> crate::input::describe_permission_set_input::Builder {
         crate::input::describe_permission_set_input::Builder::default()
     }
@@ -439,7 +439,7 @@ pub struct DescribePermissionSetProvisioningStatus {
     _private: (),
 }
 impl DescribePermissionSetProvisioningStatus {
-    /// Creates a new builder-style object to manufacture [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput)
+    /// Creates a new builder-style object to manufacture [`DescribePermissionSetProvisioningStatusInput`](crate::input::DescribePermissionSetProvisioningStatusInput).
     pub fn builder() -> crate::input::describe_permission_set_provisioning_status_input::Builder {
         crate::input::describe_permission_set_provisioning_status_input::Builder::default()
     }
@@ -477,7 +477,7 @@ pub struct DetachManagedPolicyFromPermissionSet {
     _private: (),
 }
 impl DetachManagedPolicyFromPermissionSet {
-    /// Creates a new builder-style object to manufacture [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`DetachManagedPolicyFromPermissionSetInput`](crate::input::DetachManagedPolicyFromPermissionSetInput).
     pub fn builder() -> crate::input::detach_managed_policy_from_permission_set_input::Builder {
         crate::input::detach_managed_policy_from_permission_set_input::Builder::default()
     }
@@ -513,7 +513,7 @@ pub struct GetInlinePolicyForPermissionSet {
     _private: (),
 }
 impl GetInlinePolicyForPermissionSet {
-    /// Creates a new builder-style object to manufacture [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`GetInlinePolicyForPermissionSetInput`](crate::input::GetInlinePolicyForPermissionSetInput).
     pub fn builder() -> crate::input::get_inline_policy_for_permission_set_input::Builder {
         crate::input::get_inline_policy_for_permission_set_input::Builder::default()
     }
@@ -547,7 +547,7 @@ pub struct ListAccountAssignmentCreationStatus {
     _private: (),
 }
 impl ListAccountAssignmentCreationStatus {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentCreationStatusInput`](crate::input::ListAccountAssignmentCreationStatusInput).
     pub fn builder() -> crate::input::list_account_assignment_creation_status_input::Builder {
         crate::input::list_account_assignment_creation_status_input::Builder::default()
     }
@@ -581,7 +581,7 @@ pub struct ListAccountAssignmentDeletionStatus {
     _private: (),
 }
 impl ListAccountAssignmentDeletionStatus {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentDeletionStatusInput`](crate::input::ListAccountAssignmentDeletionStatusInput).
     pub fn builder() -> crate::input::list_account_assignment_deletion_status_input::Builder {
         crate::input::list_account_assignment_deletion_status_input::Builder::default()
     }
@@ -615,7 +615,7 @@ pub struct ListAccountAssignments {
     _private: (),
 }
 impl ListAccountAssignments {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsInput`](crate::input::ListAccountAssignmentsInput).
     pub fn builder() -> crate::input::list_account_assignments_input::Builder {
         crate::input::list_account_assignments_input::Builder::default()
     }
@@ -649,7 +649,7 @@ pub struct ListAccountsForProvisionedPermissionSet {
     _private: (),
 }
 impl ListAccountsForProvisionedPermissionSet {
-    /// Creates a new builder-style object to manufacture [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountsForProvisionedPermissionSetInput`](crate::input::ListAccountsForProvisionedPermissionSetInput).
     pub fn builder() -> crate::input::list_accounts_for_provisioned_permission_set_input::Builder {
         crate::input::list_accounts_for_provisioned_permission_set_input::Builder::default()
     }
@@ -687,7 +687,7 @@ pub struct ListInstances {
     _private: (),
 }
 impl ListInstances {
-    /// Creates a new builder-style object to manufacture [`ListInstancesInput`](crate::input::ListInstancesInput)
+    /// Creates a new builder-style object to manufacture [`ListInstancesInput`](crate::input::ListInstancesInput).
     pub fn builder() -> crate::input::list_instances_input::Builder {
         crate::input::list_instances_input::Builder::default()
     }
@@ -719,7 +719,7 @@ pub struct ListManagedPoliciesInPermissionSet {
     _private: (),
 }
 impl ListManagedPoliciesInPermissionSet {
-    /// Creates a new builder-style object to manufacture [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`ListManagedPoliciesInPermissionSetInput`](crate::input::ListManagedPoliciesInPermissionSetInput).
     pub fn builder() -> crate::input::list_managed_policies_in_permission_set_input::Builder {
         crate::input::list_managed_policies_in_permission_set_input::Builder::default()
     }
@@ -753,7 +753,7 @@ pub struct ListPermissionSetProvisioningStatus {
     _private: (),
 }
 impl ListPermissionSetProvisioningStatus {
-    /// Creates a new builder-style object to manufacture [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionSetProvisioningStatusInput`](crate::input::ListPermissionSetProvisioningStatusInput).
     pub fn builder() -> crate::input::list_permission_set_provisioning_status_input::Builder {
         crate::input::list_permission_set_provisioning_status_input::Builder::default()
     }
@@ -787,7 +787,7 @@ pub struct ListPermissionSets {
     _private: (),
 }
 impl ListPermissionSets {
-    /// Creates a new builder-style object to manufacture [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionSetsInput`](crate::input::ListPermissionSetsInput).
     pub fn builder() -> crate::input::list_permission_sets_input::Builder {
         crate::input::list_permission_sets_input::Builder::default()
     }
@@ -821,7 +821,7 @@ pub struct ListPermissionSetsProvisionedToAccount {
     _private: (),
 }
 impl ListPermissionSetsProvisionedToAccount {
-    /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput)
+    /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountInput`](crate::input::ListPermissionSetsProvisionedToAccountInput).
     pub fn builder() -> crate::input::list_permission_sets_provisioned_to_account_input::Builder {
         crate::input::list_permission_sets_provisioned_to_account_input::Builder::default()
     }
@@ -859,7 +859,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -893,7 +893,7 @@ pub struct ProvisionPermissionSet {
     _private: (),
 }
 impl ProvisionPermissionSet {
-    /// Creates a new builder-style object to manufacture [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`ProvisionPermissionSetInput`](crate::input::ProvisionPermissionSetInput).
     pub fn builder() -> crate::input::provision_permission_set_input::Builder {
         crate::input::provision_permission_set_input::Builder::default()
     }
@@ -927,7 +927,7 @@ pub struct PutInlinePolicyToPermissionSet {
     _private: (),
 }
 impl PutInlinePolicyToPermissionSet {
-    /// Creates a new builder-style object to manufacture [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`PutInlinePolicyToPermissionSetInput`](crate::input::PutInlinePolicyToPermissionSetInput).
     pub fn builder() -> crate::input::put_inline_policy_to_permission_set_input::Builder {
         crate::input::put_inline_policy_to_permission_set_input::Builder::default()
     }
@@ -961,7 +961,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -993,7 +993,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -1025,7 +1025,7 @@ pub struct UpdateInstanceAccessControlAttributeConfiguration {
     _private: (),
 }
 impl UpdateInstanceAccessControlAttributeConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::input::UpdateInstanceAccessControlAttributeConfigurationInput).
     pub fn builder(
     ) -> crate::input::update_instance_access_control_attribute_configuration_input::Builder {
         crate::input::update_instance_access_control_attribute_configuration_input::Builder::default(
@@ -1063,7 +1063,7 @@ pub struct UpdatePermissionSet {
     _private: (),
 }
 impl UpdatePermissionSet {
-    /// Creates a new builder-style object to manufacture [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput)
+    /// Creates a new builder-style object to manufacture [`UpdatePermissionSetInput`](crate::input::UpdatePermissionSetInput).
     pub fn builder() -> crate::input::update_permission_set_input::Builder {
         crate::input::update_permission_set_input::Builder::default()
     }

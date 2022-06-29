@@ -10,7 +10,7 @@ pub struct CreateCampaign {
     _private: (),
 }
 impl CreateCampaign {
-    /// Creates a new builder-style object to manufacture [`CreateCampaignInput`](crate::input::CreateCampaignInput)
+    /// Creates a new builder-style object to manufacture [`CreateCampaignInput`](crate::input::CreateCampaignInput).
     pub fn builder() -> crate::input::create_campaign_input::Builder {
         crate::input::create_campaign_input::Builder::default()
     }
@@ -42,7 +42,7 @@ pub struct DeleteCampaign {
     _private: (),
 }
 impl DeleteCampaign {
-    /// Creates a new builder-style object to manufacture [`DeleteCampaignInput`](crate::input::DeleteCampaignInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCampaignInput`](crate::input::DeleteCampaignInput).
     pub fn builder() -> crate::input::delete_campaign_input::Builder {
         crate::input::delete_campaign_input::Builder::default()
     }
@@ -74,7 +74,7 @@ pub struct DeleteConnectInstanceConfig {
     _private: (),
 }
 impl DeleteConnectInstanceConfig {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigInput`](crate::input::DeleteConnectInstanceConfigInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigInput`](crate::input::DeleteConnectInstanceConfigInput).
     pub fn builder() -> crate::input::delete_connect_instance_config_input::Builder {
         crate::input::delete_connect_instance_config_input::Builder::default()
     }
@@ -108,7 +108,7 @@ pub struct DeleteInstanceOnboardingJob {
     _private: (),
 }
 impl DeleteInstanceOnboardingJob {
-    /// Creates a new builder-style object to manufacture [`DeleteInstanceOnboardingJobInput`](crate::input::DeleteInstanceOnboardingJobInput)
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceOnboardingJobInput`](crate::input::DeleteInstanceOnboardingJobInput).
     pub fn builder() -> crate::input::delete_instance_onboarding_job_input::Builder {
         crate::input::delete_instance_onboarding_job_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct DescribeCampaign {
     _private: (),
 }
 impl DescribeCampaign {
-    /// Creates a new builder-style object to manufacture [`DescribeCampaignInput`](crate::input::DescribeCampaignInput)
+    /// Creates a new builder-style object to manufacture [`DescribeCampaignInput`](crate::input::DescribeCampaignInput).
     pub fn builder() -> crate::input::describe_campaign_input::Builder {
         crate::input::describe_campaign_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct GetCampaignState {
     _private: (),
 }
 impl GetCampaignState {
-    /// Creates a new builder-style object to manufacture [`GetCampaignStateInput`](crate::input::GetCampaignStateInput)
+    /// Creates a new builder-style object to manufacture [`GetCampaignStateInput`](crate::input::GetCampaignStateInput).
     pub fn builder() -> crate::input::get_campaign_state_input::Builder {
         crate::input::get_campaign_state_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct GetCampaignStateBatch {
     _private: (),
 }
 impl GetCampaignStateBatch {
-    /// Creates a new builder-style object to manufacture [`GetCampaignStateBatchInput`](crate::input::GetCampaignStateBatchInput)
+    /// Creates a new builder-style object to manufacture [`GetCampaignStateBatchInput`](crate::input::GetCampaignStateBatchInput).
     pub fn builder() -> crate::input::get_campaign_state_batch_input::Builder {
         crate::input::get_campaign_state_batch_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct GetConnectInstanceConfig {
     _private: (),
 }
 impl GetConnectInstanceConfig {
-    /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigInput`](crate::input::GetConnectInstanceConfigInput)
+    /// Creates a new builder-style object to manufacture [`GetConnectInstanceConfigInput`](crate::input::GetConnectInstanceConfigInput).
     pub fn builder() -> crate::input::get_connect_instance_config_input::Builder {
         crate::input::get_connect_instance_config_input::Builder::default()
     }
@@ -278,7 +278,7 @@ pub struct GetInstanceOnboardingJobStatus {
     _private: (),
 }
 impl GetInstanceOnboardingJobStatus {
-    /// Creates a new builder-style object to manufacture [`GetInstanceOnboardingJobStatusInput`](crate::input::GetInstanceOnboardingJobStatusInput)
+    /// Creates a new builder-style object to manufacture [`GetInstanceOnboardingJobStatusInput`](crate::input::GetInstanceOnboardingJobStatusInput).
     pub fn builder() -> crate::input::get_instance_onboarding_job_status_input::Builder {
         crate::input::get_instance_onboarding_job_status_input::Builder::default()
     }
@@ -312,7 +312,7 @@ pub struct ListCampaigns {
     _private: (),
 }
 impl ListCampaigns {
-    /// Creates a new builder-style object to manufacture [`ListCampaignsInput`](crate::input::ListCampaignsInput)
+    /// Creates a new builder-style object to manufacture [`ListCampaignsInput`](crate::input::ListCampaignsInput).
     pub fn builder() -> crate::input::list_campaigns_input::Builder {
         crate::input::list_campaigns_input::Builder::default()
     }
@@ -344,7 +344,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -378,7 +378,7 @@ pub struct PauseCampaign {
     _private: (),
 }
 impl PauseCampaign {
-    /// Creates a new builder-style object to manufacture [`PauseCampaignInput`](crate::input::PauseCampaignInput)
+    /// Creates a new builder-style object to manufacture [`PauseCampaignInput`](crate::input::PauseCampaignInput).
     pub fn builder() -> crate::input::pause_campaign_input::Builder {
         crate::input::pause_campaign_input::Builder::default()
     }
@@ -410,7 +410,7 @@ pub struct PutDialRequestBatch {
     _private: (),
 }
 impl PutDialRequestBatch {
-    /// Creates a new builder-style object to manufacture [`PutDialRequestBatchInput`](crate::input::PutDialRequestBatchInput)
+    /// Creates a new builder-style object to manufacture [`PutDialRequestBatchInput`](crate::input::PutDialRequestBatchInput).
     pub fn builder() -> crate::input::put_dial_request_batch_input::Builder {
         crate::input::put_dial_request_batch_input::Builder::default()
     }
@@ -444,7 +444,7 @@ pub struct ResumeCampaign {
     _private: (),
 }
 impl ResumeCampaign {
-    /// Creates a new builder-style object to manufacture [`ResumeCampaignInput`](crate::input::ResumeCampaignInput)
+    /// Creates a new builder-style object to manufacture [`ResumeCampaignInput`](crate::input::ResumeCampaignInput).
     pub fn builder() -> crate::input::resume_campaign_input::Builder {
         crate::input::resume_campaign_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct StartCampaign {
     _private: (),
 }
 impl StartCampaign {
-    /// Creates a new builder-style object to manufacture [`StartCampaignInput`](crate::input::StartCampaignInput)
+    /// Creates a new builder-style object to manufacture [`StartCampaignInput`](crate::input::StartCampaignInput).
     pub fn builder() -> crate::input::start_campaign_input::Builder {
         crate::input::start_campaign_input::Builder::default()
     }
@@ -508,7 +508,7 @@ pub struct StartInstanceOnboardingJob {
     _private: (),
 }
 impl StartInstanceOnboardingJob {
-    /// Creates a new builder-style object to manufacture [`StartInstanceOnboardingJobInput`](crate::input::StartInstanceOnboardingJobInput)
+    /// Creates a new builder-style object to manufacture [`StartInstanceOnboardingJobInput`](crate::input::StartInstanceOnboardingJobInput).
     pub fn builder() -> crate::input::start_instance_onboarding_job_input::Builder {
         crate::input::start_instance_onboarding_job_input::Builder::default()
     }
@@ -542,7 +542,7 @@ pub struct StopCampaign {
     _private: (),
 }
 impl StopCampaign {
-    /// Creates a new builder-style object to manufacture [`StopCampaignInput`](crate::input::StopCampaignInput)
+    /// Creates a new builder-style object to manufacture [`StopCampaignInput`](crate::input::StopCampaignInput).
     pub fn builder() -> crate::input::stop_campaign_input::Builder {
         crate::input::stop_campaign_input::Builder::default()
     }
@@ -574,7 +574,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -606,7 +606,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -638,7 +638,7 @@ pub struct UpdateCampaignDialerConfig {
     _private: (),
 }
 impl UpdateCampaignDialerConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateCampaignDialerConfigInput`](crate::input::UpdateCampaignDialerConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCampaignDialerConfigInput`](crate::input::UpdateCampaignDialerConfigInput).
     pub fn builder() -> crate::input::update_campaign_dialer_config_input::Builder {
         crate::input::update_campaign_dialer_config_input::Builder::default()
     }
@@ -672,7 +672,7 @@ pub struct UpdateCampaignName {
     _private: (),
 }
 impl UpdateCampaignName {
-    /// Creates a new builder-style object to manufacture [`UpdateCampaignNameInput`](crate::input::UpdateCampaignNameInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCampaignNameInput`](crate::input::UpdateCampaignNameInput).
     pub fn builder() -> crate::input::update_campaign_name_input::Builder {
         crate::input::update_campaign_name_input::Builder::default()
     }
@@ -706,7 +706,7 @@ pub struct UpdateCampaignOutboundCallConfig {
     _private: (),
 }
 impl UpdateCampaignOutboundCallConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateCampaignOutboundCallConfigInput`](crate::input::UpdateCampaignOutboundCallConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateCampaignOutboundCallConfigInput`](crate::input::UpdateCampaignOutboundCallConfigInput).
     pub fn builder() -> crate::input::update_campaign_outbound_call_config_input::Builder {
         crate::input::update_campaign_outbound_call_config_input::Builder::default()
     }

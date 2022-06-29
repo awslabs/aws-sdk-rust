@@ -84,11 +84,10 @@ impl std::fmt::Debug for WebsiteCaSummary {
         formatter.finish()
     }
 }
-/// See [`WebsiteCaSummary`](crate::model::WebsiteCaSummary)
+/// See [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
 pub mod website_ca_summary {
 
-    /// A builder for [`WebsiteCaSummary`](crate::model::WebsiteCaSummary)
-    #[non_exhaustive]
+    /// A builder for [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) website_ca_id: std::option::Option<std::string::String>,
@@ -132,7 +131,7 @@ pub mod website_ca_summary {
             self.display_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`WebsiteCaSummary`](crate::model::WebsiteCaSummary)
+        /// Consumes the builder and constructs a [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
         pub fn build(self) -> crate::model::WebsiteCaSummary {
             crate::model::WebsiteCaSummary {
                 website_ca_id: self.website_ca_id,
@@ -143,7 +142,7 @@ pub mod website_ca_summary {
     }
 }
 impl WebsiteCaSummary {
-    /// Creates a new builder-style object to manufacture [`WebsiteCaSummary`](crate::model::WebsiteCaSummary)
+    /// Creates a new builder-style object to manufacture [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
     pub fn builder() -> crate::model::website_ca_summary::Builder {
         crate::model::website_ca_summary::Builder::default()
     }
@@ -195,11 +194,10 @@ impl std::fmt::Debug for WebsiteAuthorizationProviderSummary {
         formatter.finish()
     }
 }
-/// See [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary)
+/// See [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
 pub mod website_authorization_provider_summary {
 
-    /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary)
-    #[non_exhaustive]
+    /// A builder for [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) authorization_provider_id: std::option::Option<std::string::String>,
@@ -261,7 +259,7 @@ pub mod website_authorization_provider_summary {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary)
+        /// Consumes the builder and constructs a [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
         pub fn build(self) -> crate::model::WebsiteAuthorizationProviderSummary {
             crate::model::WebsiteAuthorizationProviderSummary {
                 authorization_provider_id: self.authorization_provider_id,
@@ -273,7 +271,7 @@ pub mod website_authorization_provider_summary {
     }
 }
 impl WebsiteAuthorizationProviderSummary {
-    /// Creates a new builder-style object to manufacture [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary)
+    /// Creates a new builder-style object to manufacture [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
     pub fn builder() -> crate::model::website_authorization_provider_summary::Builder {
         crate::model::website_authorization_provider_summary::Builder::default()
     }
@@ -403,11 +401,10 @@ impl std::fmt::Debug for FleetSummary {
         formatter.finish()
     }
 }
-/// See [`FleetSummary`](crate::model::FleetSummary)
+/// See [`FleetSummary`](crate::model::FleetSummary).
 pub mod fleet_summary {
 
-    /// A builder for [`FleetSummary`](crate::model::FleetSummary)
-    #[non_exhaustive]
+    /// A builder for [`FleetSummary`](crate::model::FleetSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
@@ -526,7 +523,7 @@ pub mod fleet_summary {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`FleetSummary`](crate::model::FleetSummary)
+        /// Consumes the builder and constructs a [`FleetSummary`](crate::model::FleetSummary).
         pub fn build(self) -> crate::model::FleetSummary {
             crate::model::FleetSummary {
                 fleet_arn: self.fleet_arn,
@@ -542,7 +539,7 @@ pub mod fleet_summary {
     }
 }
 impl FleetSummary {
-    /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary)
+    /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary).
     pub fn builder() -> crate::model::fleet_summary::Builder {
         crate::model::fleet_summary::Builder::default()
     }
@@ -667,11 +664,10 @@ impl std::fmt::Debug for DomainSummary {
         formatter.finish()
     }
 }
-/// See [`DomainSummary`](crate::model::DomainSummary)
+/// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
 
-    /// A builder for [`DomainSummary`](crate::model::DomainSummary)
-    #[non_exhaustive]
+    /// A builder for [`DomainSummary`](crate::model::DomainSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
@@ -726,7 +722,7 @@ pub mod domain_summary {
             self.domain_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary)
+        /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary).
         pub fn build(self) -> crate::model::DomainSummary {
             crate::model::DomainSummary {
                 domain_name: self.domain_name,
@@ -738,7 +734,7 @@ pub mod domain_summary {
     }
 }
 impl DomainSummary {
-    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary)
+    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
     pub fn builder() -> crate::model::domain_summary::Builder {
         crate::model::domain_summary::Builder::default()
     }
@@ -859,11 +855,10 @@ impl std::fmt::Debug for DeviceSummary {
         formatter.finish()
     }
 }
-/// See [`DeviceSummary`](crate::model::DeviceSummary)
+/// See [`DeviceSummary`](crate::model::DeviceSummary).
 pub mod device_summary {
 
-    /// A builder for [`DeviceSummary`](crate::model::DeviceSummary)
-    #[non_exhaustive]
+    /// A builder for [`DeviceSummary`](crate::model::DeviceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
@@ -893,7 +888,7 @@ pub mod device_summary {
             self.device_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceSummary`](crate::model::DeviceSummary)
+        /// Consumes the builder and constructs a [`DeviceSummary`](crate::model::DeviceSummary).
         pub fn build(self) -> crate::model::DeviceSummary {
             crate::model::DeviceSummary {
                 device_id: self.device_id,
@@ -903,7 +898,7 @@ pub mod device_summary {
     }
 }
 impl DeviceSummary {
-    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary)
+    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
     pub fn builder() -> crate::model::device_summary::Builder {
         crate::model::device_summary::Builder::default()
     }

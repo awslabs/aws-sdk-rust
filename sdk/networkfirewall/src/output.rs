@@ -44,11 +44,10 @@ impl std::fmt::Debug for UpdateSubnetChangeProtectionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput)
+/// See [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput).
 pub mod update_subnet_change_protection_output {
 
-    /// A builder for [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -104,7 +103,7 @@ pub mod update_subnet_change_protection_output {
             self.subnet_change_protection = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput)
+        /// Consumes the builder and constructs a [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput).
         pub fn build(self) -> crate::output::UpdateSubnetChangeProtectionOutput {
             crate::output::UpdateSubnetChangeProtectionOutput {
                 update_token: self.update_token,
@@ -116,7 +115,7 @@ pub mod update_subnet_change_protection_output {
     }
 }
 impl UpdateSubnetChangeProtectionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateSubnetChangeProtectionOutput`](crate::output::UpdateSubnetChangeProtectionOutput).
     pub fn builder() -> crate::output::update_subnet_change_protection_output::Builder {
         crate::output::update_subnet_change_protection_output::Builder::default()
     }
@@ -151,11 +150,10 @@ impl std::fmt::Debug for UpdateRuleGroupOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput)
+/// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
 pub mod update_rule_group_output {
 
-    /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -187,7 +185,7 @@ pub mod update_rule_group_output {
             self.rule_group_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput)
+        /// Consumes the builder and constructs a [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
         pub fn build(self) -> crate::output::UpdateRuleGroupOutput {
             crate::output::UpdateRuleGroupOutput {
                 update_token: self.update_token,
@@ -197,7 +195,7 @@ pub mod update_rule_group_output {
     }
 }
 impl UpdateRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
     pub fn builder() -> crate::output::update_rule_group_output::Builder {
         crate::output::update_rule_group_output::Builder::default()
     }
@@ -239,11 +237,10 @@ impl std::fmt::Debug for UpdateLoggingConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput)
+/// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
 pub mod update_logging_configuration_output {
 
-    /// A builder for [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -287,7 +284,7 @@ pub mod update_logging_configuration_output {
             self.logging_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput)
+        /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLoggingConfigurationOutput {
             crate::output::UpdateLoggingConfigurationOutput {
                 firewall_arn: self.firewall_arn,
@@ -298,7 +295,7 @@ pub mod update_logging_configuration_output {
     }
 }
 impl UpdateLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
     pub fn builder() -> crate::output::update_logging_configuration_output::Builder {
         crate::output::update_logging_configuration_output::Builder::default()
     }
@@ -352,11 +349,10 @@ impl std::fmt::Debug for UpdateFirewallPolicyChangeProtectionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput)
+/// See [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput).
 pub mod update_firewall_policy_change_protection_output {
 
-    /// A builder for [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -415,7 +411,7 @@ pub mod update_firewall_policy_change_protection_output {
             self.firewall_policy_change_protection = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput)
+        /// Consumes the builder and constructs a [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput).
         pub fn build(self) -> crate::output::UpdateFirewallPolicyChangeProtectionOutput {
             crate::output::UpdateFirewallPolicyChangeProtectionOutput {
                 update_token: self.update_token,
@@ -429,7 +425,7 @@ pub mod update_firewall_policy_change_protection_output {
     }
 }
 impl UpdateFirewallPolicyChangeProtectionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyChangeProtectionOutput`](crate::output::UpdateFirewallPolicyChangeProtectionOutput).
     pub fn builder() -> crate::output::update_firewall_policy_change_protection_output::Builder {
         crate::output::update_firewall_policy_change_protection_output::Builder::default()
     }
@@ -466,11 +462,10 @@ impl std::fmt::Debug for UpdateFirewallPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput)
+/// See [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput).
 pub mod update_firewall_policy_output {
 
-    /// A builder for [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -506,7 +501,7 @@ pub mod update_firewall_policy_output {
             self.firewall_policy_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput)
+        /// Consumes the builder and constructs a [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput).
         pub fn build(self) -> crate::output::UpdateFirewallPolicyOutput {
             crate::output::UpdateFirewallPolicyOutput {
                 update_token: self.update_token,
@@ -516,7 +511,7 @@ pub mod update_firewall_policy_output {
     }
 }
 impl UpdateFirewallPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallPolicyOutput`](crate::output::UpdateFirewallPolicyOutput).
     pub fn builder() -> crate::output::update_firewall_policy_output::Builder {
         crate::output::update_firewall_policy_output::Builder::default()
     }
@@ -569,11 +564,10 @@ impl std::fmt::Debug for UpdateFirewallEncryptionConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput)
+/// See [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput).
 pub mod update_firewall_encryption_configuration_output {
 
-    /// A builder for [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -636,7 +630,7 @@ pub mod update_firewall_encryption_configuration_output {
             self.encryption_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput)
+        /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateFirewallEncryptionConfigurationOutput {
             crate::output::UpdateFirewallEncryptionConfigurationOutput {
                 firewall_arn: self.firewall_arn,
@@ -648,7 +642,7 @@ pub mod update_firewall_encryption_configuration_output {
     }
 }
 impl UpdateFirewallEncryptionConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationOutput`](crate::output::UpdateFirewallEncryptionConfigurationOutput).
     pub fn builder() -> crate::output::update_firewall_encryption_configuration_output::Builder {
         crate::output::update_firewall_encryption_configuration_output::Builder::default()
     }
@@ -699,11 +693,10 @@ impl std::fmt::Debug for UpdateFirewallDescriptionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput)
+/// See [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput).
 pub mod update_firewall_description_output {
 
-    /// A builder for [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -759,7 +752,7 @@ pub mod update_firewall_description_output {
             self.update_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput)
+        /// Consumes the builder and constructs a [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput).
         pub fn build(self) -> crate::output::UpdateFirewallDescriptionOutput {
             crate::output::UpdateFirewallDescriptionOutput {
                 firewall_arn: self.firewall_arn,
@@ -771,7 +764,7 @@ pub mod update_firewall_description_output {
     }
 }
 impl UpdateFirewallDescriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallDescriptionOutput`](crate::output::UpdateFirewallDescriptionOutput).
     pub fn builder() -> crate::output::update_firewall_description_output::Builder {
         crate::output::update_firewall_description_output::Builder::default()
     }
@@ -822,11 +815,10 @@ impl std::fmt::Debug for UpdateFirewallDeleteProtectionOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput)
+/// See [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput).
 pub mod update_firewall_delete_protection_output {
 
-    /// A builder for [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -882,7 +874,7 @@ pub mod update_firewall_delete_protection_output {
             self.update_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput)
+        /// Consumes the builder and constructs a [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput).
         pub fn build(self) -> crate::output::UpdateFirewallDeleteProtectionOutput {
             crate::output::UpdateFirewallDeleteProtectionOutput {
                 firewall_arn: self.firewall_arn,
@@ -894,7 +886,7 @@ pub mod update_firewall_delete_protection_output {
     }
 }
 impl UpdateFirewallDeleteProtectionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFirewallDeleteProtectionOutput`](crate::output::UpdateFirewallDeleteProtectionOutput).
     pub fn builder() -> crate::output::update_firewall_delete_protection_output::Builder {
         crate::output::update_firewall_delete_protection_output::Builder::default()
     }
@@ -910,22 +902,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -941,22 +932,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -972,22 +962,21 @@ impl std::fmt::Debug for PutResourcePolicyOutput {
         formatter.finish()
     }
 }
-/// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+/// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
 
-    /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+        /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {}
         }
     }
 }
 impl PutResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     pub fn builder() -> crate::output::put_resource_policy_output::Builder {
         crate::output::put_resource_policy_output::Builder::default()
     }
@@ -1020,11 +1009,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1060,7 +1048,7 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 next_token: self.next_token,
@@ -1070,7 +1058,7 @@ pub mod list_tags_for_resource_output {
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -1103,11 +1091,10 @@ impl std::fmt::Debug for ListRuleGroupsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput)
+/// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
 pub mod list_rule_groups_output {
 
-    /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1143,7 +1130,7 @@ pub mod list_rule_groups_output {
             self.rule_groups = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput)
+        /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListRuleGroupsOutput {
             crate::output::ListRuleGroupsOutput {
                 next_token: self.next_token,
@@ -1153,7 +1140,7 @@ pub mod list_rule_groups_output {
     }
 }
 impl ListRuleGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
     pub fn builder() -> crate::output::list_rule_groups_output::Builder {
         crate::output::list_rule_groups_output::Builder::default()
     }
@@ -1186,11 +1173,10 @@ impl std::fmt::Debug for ListFirewallsOutput {
         formatter.finish()
     }
 }
-/// See [`ListFirewallsOutput`](crate::output::ListFirewallsOutput)
+/// See [`ListFirewallsOutput`](crate::output::ListFirewallsOutput).
 pub mod list_firewalls_output {
 
-    /// A builder for [`ListFirewallsOutput`](crate::output::ListFirewallsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFirewallsOutput`](crate::output::ListFirewallsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1226,7 +1212,7 @@ pub mod list_firewalls_output {
             self.firewalls = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFirewallsOutput`](crate::output::ListFirewallsOutput)
+        /// Consumes the builder and constructs a [`ListFirewallsOutput`](crate::output::ListFirewallsOutput).
         pub fn build(self) -> crate::output::ListFirewallsOutput {
             crate::output::ListFirewallsOutput {
                 next_token: self.next_token,
@@ -1236,7 +1222,7 @@ pub mod list_firewalls_output {
     }
 }
 impl ListFirewallsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallsOutput`](crate::output::ListFirewallsOutput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallsOutput`](crate::output::ListFirewallsOutput).
     pub fn builder() -> crate::output::list_firewalls_output::Builder {
         crate::output::list_firewalls_output::Builder::default()
     }
@@ -1271,11 +1257,10 @@ impl std::fmt::Debug for ListFirewallPoliciesOutput {
         formatter.finish()
     }
 }
-/// See [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput)
+/// See [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput).
 pub mod list_firewall_policies_output {
 
-    /// A builder for [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -1312,7 +1297,7 @@ pub mod list_firewall_policies_output {
             self.firewall_policies = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput)
+        /// Consumes the builder and constructs a [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput).
         pub fn build(self) -> crate::output::ListFirewallPoliciesOutput {
             crate::output::ListFirewallPoliciesOutput {
                 next_token: self.next_token,
@@ -1322,7 +1307,7 @@ pub mod list_firewall_policies_output {
     }
 }
 impl ListFirewallPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput)
+    /// Creates a new builder-style object to manufacture [`ListFirewallPoliciesOutput`](crate::output::ListFirewallPoliciesOutput).
     pub fn builder() -> crate::output::list_firewall_policies_output::Builder {
         crate::output::list_firewall_policies_output::Builder::default()
     }
@@ -1373,11 +1358,10 @@ impl std::fmt::Debug for DisassociateSubnetsOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput)
+/// See [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput).
 pub mod disassociate_subnets_output {
 
-    /// A builder for [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -1442,7 +1426,7 @@ pub mod disassociate_subnets_output {
             self.update_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput)
+        /// Consumes the builder and constructs a [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput).
         pub fn build(self) -> crate::output::DisassociateSubnetsOutput {
             crate::output::DisassociateSubnetsOutput {
                 firewall_arn: self.firewall_arn,
@@ -1454,7 +1438,7 @@ pub mod disassociate_subnets_output {
     }
 }
 impl DisassociateSubnetsOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateSubnetsOutput`](crate::output::DisassociateSubnetsOutput).
     pub fn builder() -> crate::output::disassociate_subnets_output::Builder {
         crate::output::disassociate_subnets_output::Builder::default()
     }
@@ -1532,11 +1516,10 @@ impl std::fmt::Debug for DescribeRuleGroupMetadataOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
+/// See [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput).
 pub mod describe_rule_group_metadata_output {
 
-    /// A builder for [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_arn: std::option::Option<std::string::String>,
@@ -1640,7 +1623,7 @@ pub mod describe_rule_group_metadata_output {
             self.last_modified_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
+        /// Consumes the builder and constructs a [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput).
         pub fn build(self) -> crate::output::DescribeRuleGroupMetadataOutput {
             crate::output::DescribeRuleGroupMetadataOutput {
                 rule_group_arn: self.rule_group_arn,
@@ -1655,7 +1638,7 @@ pub mod describe_rule_group_metadata_output {
     }
 }
 impl DescribeRuleGroupMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupMetadataOutput`](crate::output::DescribeRuleGroupMetadataOutput).
     pub fn builder() -> crate::output::describe_rule_group_metadata_output::Builder {
         crate::output::describe_rule_group_metadata_output::Builder::default()
     }
@@ -1701,11 +1684,10 @@ impl std::fmt::Debug for DescribeRuleGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput)
+/// See [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput).
 pub mod describe_rule_group_output {
 
-    /// A builder for [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -1755,7 +1737,7 @@ pub mod describe_rule_group_output {
             self.rule_group_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput)
+        /// Consumes the builder and constructs a [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput).
         pub fn build(self) -> crate::output::DescribeRuleGroupOutput {
             crate::output::DescribeRuleGroupOutput {
                 update_token: self.update_token,
@@ -1766,7 +1748,7 @@ pub mod describe_rule_group_output {
     }
 }
 impl DescribeRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRuleGroupOutput`](crate::output::DescribeRuleGroupOutput).
     pub fn builder() -> crate::output::describe_rule_group_output::Builder {
         crate::output::describe_rule_group_output::Builder::default()
     }
@@ -1792,11 +1774,10 @@ impl std::fmt::Debug for DescribeResourcePolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
+/// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
 pub mod describe_resource_policy_output {
 
-    /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
@@ -1812,7 +1793,7 @@ pub mod describe_resource_policy_output {
             self.policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
+        /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
         pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
             crate::output::DescribeResourcePolicyOutput {
                 policy: self.policy,
@@ -1821,7 +1802,7 @@ pub mod describe_resource_policy_output {
     }
 }
 impl DescribeResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
     pub fn builder() -> crate::output::describe_resource_policy_output::Builder {
         crate::output::describe_resource_policy_output::Builder::default()
     }
@@ -1856,11 +1837,10 @@ impl std::fmt::Debug for DescribeLoggingConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput)
+/// See [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
 pub mod describe_logging_configuration_output {
 
-    /// A builder for [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -1890,7 +1870,7 @@ pub mod describe_logging_configuration_output {
             self.logging_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput)
+        /// Consumes the builder and constructs a [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeLoggingConfigurationOutput {
             crate::output::DescribeLoggingConfigurationOutput {
                 firewall_arn: self.firewall_arn,
@@ -1900,7 +1880,7 @@ pub mod describe_logging_configuration_output {
     }
 }
 impl DescribeLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
     pub fn builder() -> crate::output::describe_logging_configuration_output::Builder {
         crate::output::describe_logging_configuration_output::Builder::default()
     }
@@ -1944,11 +1924,10 @@ impl std::fmt::Debug for DescribeFirewallPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput)
+/// See [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput).
 pub mod describe_firewall_policy_output {
 
-    /// A builder for [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -1998,7 +1977,7 @@ pub mod describe_firewall_policy_output {
             self.firewall_policy = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput)
+        /// Consumes the builder and constructs a [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput).
         pub fn build(self) -> crate::output::DescribeFirewallPolicyOutput {
             crate::output::DescribeFirewallPolicyOutput {
                 update_token: self.update_token,
@@ -2009,7 +1988,7 @@ pub mod describe_firewall_policy_output {
     }
 }
 impl DescribeFirewallPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFirewallPolicyOutput`](crate::output::DescribeFirewallPolicyOutput).
     pub fn builder() -> crate::output::describe_firewall_policy_output::Builder {
         crate::output::describe_firewall_policy_output::Builder::default()
     }
@@ -2053,11 +2032,10 @@ impl std::fmt::Debug for DescribeFirewallOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput)
+/// See [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput).
 pub mod describe_firewall_output {
 
-    /// A builder for [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -2102,7 +2080,7 @@ pub mod describe_firewall_output {
             self.firewall_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput)
+        /// Consumes the builder and constructs a [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput).
         pub fn build(self) -> crate::output::DescribeFirewallOutput {
             crate::output::DescribeFirewallOutput {
                 update_token: self.update_token,
@@ -2113,7 +2091,7 @@ pub mod describe_firewall_output {
     }
 }
 impl DescribeFirewallOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFirewallOutput`](crate::output::DescribeFirewallOutput).
     pub fn builder() -> crate::output::describe_firewall_output::Builder {
         crate::output::describe_firewall_output::Builder::default()
     }
@@ -2139,11 +2117,10 @@ impl std::fmt::Debug for DeleteRuleGroupOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput)
+/// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
 pub mod delete_rule_group_output {
 
-    /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_group_response: std::option::Option<crate::model::RuleGroupResponse>,
@@ -2162,7 +2139,7 @@ pub mod delete_rule_group_output {
             self.rule_group_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput)
+        /// Consumes the builder and constructs a [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
         pub fn build(self) -> crate::output::DeleteRuleGroupOutput {
             crate::output::DeleteRuleGroupOutput {
                 rule_group_response: self.rule_group_response,
@@ -2171,7 +2148,7 @@ pub mod delete_rule_group_output {
     }
 }
 impl DeleteRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
     pub fn builder() -> crate::output::delete_rule_group_output::Builder {
         crate::output::delete_rule_group_output::Builder::default()
     }
@@ -2187,22 +2164,21 @@ impl std::fmt::Debug for DeleteResourcePolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+/// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
 
-    /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+        /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
             crate::output::DeleteResourcePolicyOutput {}
         }
     }
 }
 impl DeleteResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
         crate::output::delete_resource_policy_output::Builder::default()
     }
@@ -2230,11 +2206,10 @@ impl std::fmt::Debug for DeleteFirewallPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput)
+/// See [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput).
 pub mod delete_firewall_policy_output {
 
-    /// A builder for [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_policy_response:
@@ -2257,7 +2232,7 @@ pub mod delete_firewall_policy_output {
             self.firewall_policy_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput)
+        /// Consumes the builder and constructs a [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput).
         pub fn build(self) -> crate::output::DeleteFirewallPolicyOutput {
             crate::output::DeleteFirewallPolicyOutput {
                 firewall_policy_response: self.firewall_policy_response,
@@ -2266,7 +2241,7 @@ pub mod delete_firewall_policy_output {
     }
 }
 impl DeleteFirewallPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallPolicyOutput`](crate::output::DeleteFirewallPolicyOutput).
     pub fn builder() -> crate::output::delete_firewall_policy_output::Builder {
         crate::output::delete_firewall_policy_output::Builder::default()
     }
@@ -2301,11 +2276,10 @@ impl std::fmt::Debug for DeleteFirewallOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput)
+/// See [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput).
 pub mod delete_firewall_output {
 
-    /// A builder for [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall: std::option::Option<crate::model::Firewall>,
@@ -2337,7 +2311,7 @@ pub mod delete_firewall_output {
             self.firewall_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput)
+        /// Consumes the builder and constructs a [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput).
         pub fn build(self) -> crate::output::DeleteFirewallOutput {
             crate::output::DeleteFirewallOutput {
                 firewall: self.firewall,
@@ -2347,7 +2321,7 @@ pub mod delete_firewall_output {
     }
 }
 impl DeleteFirewallOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteFirewallOutput`](crate::output::DeleteFirewallOutput).
     pub fn builder() -> crate::output::delete_firewall_output::Builder {
         crate::output::delete_firewall_output::Builder::default()
     }
@@ -2382,11 +2356,10 @@ impl std::fmt::Debug for CreateRuleGroupOutput {
         formatter.finish()
     }
 }
-/// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput)
+/// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
 pub mod create_rule_group_output {
 
-    /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -2418,7 +2391,7 @@ pub mod create_rule_group_output {
             self.rule_group_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput)
+        /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
         pub fn build(self) -> crate::output::CreateRuleGroupOutput {
             crate::output::CreateRuleGroupOutput {
                 update_token: self.update_token,
@@ -2428,7 +2401,7 @@ pub mod create_rule_group_output {
     }
 }
 impl CreateRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput)
+    /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
     pub fn builder() -> crate::output::create_rule_group_output::Builder {
         crate::output::create_rule_group_output::Builder::default()
     }
@@ -2465,11 +2438,10 @@ impl std::fmt::Debug for CreateFirewallPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput)
+/// See [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput).
 pub mod create_firewall_policy_output {
 
-    /// A builder for [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) update_token: std::option::Option<std::string::String>,
@@ -2505,7 +2477,7 @@ pub mod create_firewall_policy_output {
             self.firewall_policy_response = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput)
+        /// Consumes the builder and constructs a [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput).
         pub fn build(self) -> crate::output::CreateFirewallPolicyOutput {
             crate::output::CreateFirewallPolicyOutput {
                 update_token: self.update_token,
@@ -2515,7 +2487,7 @@ pub mod create_firewall_policy_output {
     }
 }
 impl CreateFirewallPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFirewallPolicyOutput`](crate::output::CreateFirewallPolicyOutput).
     pub fn builder() -> crate::output::create_firewall_policy_output::Builder {
         crate::output::create_firewall_policy_output::Builder::default()
     }
@@ -2548,11 +2520,10 @@ impl std::fmt::Debug for CreateFirewallOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFirewallOutput`](crate::output::CreateFirewallOutput)
+/// See [`CreateFirewallOutput`](crate::output::CreateFirewallOutput).
 pub mod create_firewall_output {
 
-    /// A builder for [`CreateFirewallOutput`](crate::output::CreateFirewallOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFirewallOutput`](crate::output::CreateFirewallOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall: std::option::Option<crate::model::Firewall>,
@@ -2582,7 +2553,7 @@ pub mod create_firewall_output {
             self.firewall_status = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFirewallOutput`](crate::output::CreateFirewallOutput)
+        /// Consumes the builder and constructs a [`CreateFirewallOutput`](crate::output::CreateFirewallOutput).
         pub fn build(self) -> crate::output::CreateFirewallOutput {
             crate::output::CreateFirewallOutput {
                 firewall: self.firewall,
@@ -2592,7 +2563,7 @@ pub mod create_firewall_output {
     }
 }
 impl CreateFirewallOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFirewallOutput`](crate::output::CreateFirewallOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFirewallOutput`](crate::output::CreateFirewallOutput).
     pub fn builder() -> crate::output::create_firewall_output::Builder {
         crate::output::create_firewall_output::Builder::default()
     }
@@ -2643,11 +2614,10 @@ impl std::fmt::Debug for AssociateSubnetsOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput)
+/// See [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput).
 pub mod associate_subnets_output {
 
-    /// A builder for [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -2712,7 +2682,7 @@ pub mod associate_subnets_output {
             self.update_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput)
+        /// Consumes the builder and constructs a [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput).
         pub fn build(self) -> crate::output::AssociateSubnetsOutput {
             crate::output::AssociateSubnetsOutput {
                 firewall_arn: self.firewall_arn,
@@ -2724,7 +2694,7 @@ pub mod associate_subnets_output {
     }
 }
 impl AssociateSubnetsOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateSubnetsOutput`](crate::output::AssociateSubnetsOutput).
     pub fn builder() -> crate::output::associate_subnets_output::Builder {
         crate::output::associate_subnets_output::Builder::default()
     }
@@ -2775,11 +2745,10 @@ impl std::fmt::Debug for AssociateFirewallPolicyOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput)
+/// See [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput).
 pub mod associate_firewall_policy_output {
 
-    /// A builder for [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) firewall_arn: std::option::Option<std::string::String>,
@@ -2838,7 +2807,7 @@ pub mod associate_firewall_policy_output {
             self.update_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput)
+        /// Consumes the builder and constructs a [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput).
         pub fn build(self) -> crate::output::AssociateFirewallPolicyOutput {
             crate::output::AssociateFirewallPolicyOutput {
                 firewall_arn: self.firewall_arn,
@@ -2850,7 +2819,7 @@ pub mod associate_firewall_policy_output {
     }
 }
 impl AssociateFirewallPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateFirewallPolicyOutput`](crate::output::AssociateFirewallPolicyOutput).
     pub fn builder() -> crate::output::associate_firewall_policy_output::Builder {
         crate::output::associate_firewall_policy_output::Builder::default()
     }

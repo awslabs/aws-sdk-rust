@@ -46,11 +46,10 @@ impl std::fmt::Debug for UpdateMeetingRoomConfiguration {
         formatter.finish()
     }
 }
-/// See [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration)
+/// See [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
 pub mod update_meeting_room_configuration {
 
-    /// A builder for [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
@@ -115,7 +114,7 @@ pub mod update_meeting_room_configuration {
             self.require_check_in = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration)
+        /// Consumes the builder and constructs a [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
         pub fn build(self) -> crate::model::UpdateMeetingRoomConfiguration {
             crate::model::UpdateMeetingRoomConfiguration {
                 room_utilization_metrics_enabled: self.room_utilization_metrics_enabled,
@@ -127,7 +126,7 @@ pub mod update_meeting_room_configuration {
     }
 }
 impl UpdateMeetingRoomConfiguration {
-    /// Creates a new builder-style object to manufacture [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration)
+    /// Creates a new builder-style object to manufacture [`UpdateMeetingRoomConfiguration`](crate::model::UpdateMeetingRoomConfiguration).
     pub fn builder() -> crate::model::update_meeting_room_configuration::Builder {
         crate::model::update_meeting_room_configuration::Builder::default()
     }
@@ -160,11 +159,10 @@ impl std::fmt::Debug for UpdateRequireCheckIn {
         formatter.finish()
     }
 }
-/// See [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn)
+/// See [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
 pub mod update_require_check_in {
 
-    /// A builder for [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_after_minutes: std::option::Option<i32>,
@@ -191,7 +189,7 @@ pub mod update_require_check_in {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn)
+        /// Consumes the builder and constructs a [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
         pub fn build(self) -> crate::model::UpdateRequireCheckIn {
             crate::model::UpdateRequireCheckIn {
                 release_after_minutes: self.release_after_minutes,
@@ -201,7 +199,7 @@ pub mod update_require_check_in {
     }
 }
 impl UpdateRequireCheckIn {
-    /// Creates a new builder-style object to manufacture [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn)
+    /// Creates a new builder-style object to manufacture [`UpdateRequireCheckIn`](crate::model::UpdateRequireCheckIn).
     pub fn builder() -> crate::model::update_require_check_in::Builder {
         crate::model::update_require_check_in::Builder::default()
     }
@@ -234,11 +232,10 @@ impl std::fmt::Debug for UpdateInstantBooking {
         formatter.finish()
     }
 }
-/// See [`UpdateInstantBooking`](crate::model::UpdateInstantBooking)
+/// See [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
 pub mod update_instant_booking {
 
-    /// A builder for [`UpdateInstantBooking`](crate::model::UpdateInstantBooking)
-    #[non_exhaustive]
+    /// A builder for [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i32>,
@@ -265,7 +262,7 @@ pub mod update_instant_booking {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateInstantBooking`](crate::model::UpdateInstantBooking)
+        /// Consumes the builder and constructs a [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
         pub fn build(self) -> crate::model::UpdateInstantBooking {
             crate::model::UpdateInstantBooking {
                 duration_in_minutes: self.duration_in_minutes,
@@ -275,7 +272,7 @@ pub mod update_instant_booking {
     }
 }
 impl UpdateInstantBooking {
-    /// Creates a new builder-style object to manufacture [`UpdateInstantBooking`](crate::model::UpdateInstantBooking)
+    /// Creates a new builder-style object to manufacture [`UpdateInstantBooking`](crate::model::UpdateInstantBooking).
     pub fn builder() -> crate::model::update_instant_booking::Builder {
         crate::model::update_instant_booking::Builder::default()
     }
@@ -315,11 +312,10 @@ impl std::fmt::Debug for UpdateEndOfMeetingReminder {
         formatter.finish()
     }
 }
-/// See [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder)
+/// See [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
 pub mod update_end_of_meeting_reminder {
 
-    /// A builder for [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder)
-    #[non_exhaustive]
+    /// A builder for [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
@@ -369,7 +365,7 @@ pub mod update_end_of_meeting_reminder {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder)
+        /// Consumes the builder and constructs a [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
         pub fn build(self) -> crate::model::UpdateEndOfMeetingReminder {
             crate::model::UpdateEndOfMeetingReminder {
                 reminder_at_minutes: self.reminder_at_minutes,
@@ -380,7 +376,7 @@ pub mod update_end_of_meeting_reminder {
     }
 }
 impl UpdateEndOfMeetingReminder {
-    /// Creates a new builder-style object to manufacture [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder)
+    /// Creates a new builder-style object to manufacture [`UpdateEndOfMeetingReminder`](crate::model::UpdateEndOfMeetingReminder).
     pub fn builder() -> crate::model::update_end_of_meeting_reminder::Builder {
         crate::model::update_end_of_meeting_reminder::Builder::default()
     }
@@ -658,11 +654,10 @@ impl std::fmt::Debug for SipAddress {
         formatter.finish()
     }
 }
-/// See [`SipAddress`](crate::model::SipAddress)
+/// See [`SipAddress`](crate::model::SipAddress).
 pub mod sip_address {
 
-    /// A builder for [`SipAddress`](crate::model::SipAddress)
-    #[non_exhaustive]
+    /// A builder for [`SipAddress`](crate::model::SipAddress).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) uri: std::option::Option<std::string::String>,
@@ -689,7 +684,7 @@ pub mod sip_address {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`SipAddress`](crate::model::SipAddress)
+        /// Consumes the builder and constructs a [`SipAddress`](crate::model::SipAddress).
         pub fn build(self) -> crate::model::SipAddress {
             crate::model::SipAddress {
                 uri: self.uri,
@@ -699,7 +694,7 @@ pub mod sip_address {
     }
 }
 impl SipAddress {
-    /// Creates a new builder-style object to manufacture [`SipAddress`](crate::model::SipAddress)
+    /// Creates a new builder-style object to manufacture [`SipAddress`](crate::model::SipAddress).
     pub fn builder() -> crate::model::sip_address::Builder {
         crate::model::sip_address::Builder::default()
     }
@@ -783,11 +778,10 @@ impl std::fmt::Debug for PhoneNumber {
         formatter.finish()
     }
 }
-/// See [`PhoneNumber`](crate::model::PhoneNumber)
+/// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
 
-    /// A builder for [`PhoneNumber`](crate::model::PhoneNumber)
-    #[non_exhaustive]
+    /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) number: std::option::Option<std::string::String>,
@@ -817,7 +811,7 @@ pub mod phone_number {
             self.r#type = input;
             self
         }
-        /// Consumes the builder and constructs a [`PhoneNumber`](crate::model::PhoneNumber)
+        /// Consumes the builder and constructs a [`PhoneNumber`](crate::model::PhoneNumber).
         pub fn build(self) -> crate::model::PhoneNumber {
             crate::model::PhoneNumber {
                 number: self.number,
@@ -827,7 +821,7 @@ pub mod phone_number {
     }
 }
 impl PhoneNumber {
-    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber)
+    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
     pub fn builder() -> crate::model::phone_number::Builder {
         crate::model::phone_number::Builder::default()
     }
@@ -917,11 +911,10 @@ impl std::fmt::Debug for MeetingSetting {
         formatter.finish()
     }
 }
-/// See [`MeetingSetting`](crate::model::MeetingSetting)
+/// See [`MeetingSetting`](crate::model::MeetingSetting).
 pub mod meeting_setting {
 
-    /// A builder for [`MeetingSetting`](crate::model::MeetingSetting)
-    #[non_exhaustive]
+    /// A builder for [`MeetingSetting`](crate::model::MeetingSetting).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) require_pin: std::option::Option<crate::model::RequirePin>,
@@ -940,7 +933,7 @@ pub mod meeting_setting {
             self.require_pin = input;
             self
         }
-        /// Consumes the builder and constructs a [`MeetingSetting`](crate::model::MeetingSetting)
+        /// Consumes the builder and constructs a [`MeetingSetting`](crate::model::MeetingSetting).
         pub fn build(self) -> crate::model::MeetingSetting {
             crate::model::MeetingSetting {
                 require_pin: self.require_pin,
@@ -949,7 +942,7 @@ pub mod meeting_setting {
     }
 }
 impl MeetingSetting {
-    /// Creates a new builder-style object to manufacture [`MeetingSetting`](crate::model::MeetingSetting)
+    /// Creates a new builder-style object to manufacture [`MeetingSetting`](crate::model::MeetingSetting).
     pub fn builder() -> crate::model::meeting_setting::Builder {
         crate::model::meeting_setting::Builder::default()
     }
@@ -1055,11 +1048,10 @@ impl std::fmt::Debug for PstnDialIn {
         formatter.finish()
     }
 }
-/// See [`PstnDialIn`](crate::model::PstnDialIn)
+/// See [`PstnDialIn`](crate::model::PstnDialIn).
 pub mod pstn_dial_in {
 
-    /// A builder for [`PstnDialIn`](crate::model::PstnDialIn)
-    #[non_exhaustive]
+    /// A builder for [`PstnDialIn`](crate::model::PstnDialIn).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) country_code: std::option::Option<std::string::String>,
@@ -1114,7 +1106,7 @@ pub mod pstn_dial_in {
             self.one_click_pin_delay = input;
             self
         }
-        /// Consumes the builder and constructs a [`PstnDialIn`](crate::model::PstnDialIn)
+        /// Consumes the builder and constructs a [`PstnDialIn`](crate::model::PstnDialIn).
         pub fn build(self) -> crate::model::PstnDialIn {
             crate::model::PstnDialIn {
                 country_code: self.country_code,
@@ -1126,7 +1118,7 @@ pub mod pstn_dial_in {
     }
 }
 impl PstnDialIn {
-    /// Creates a new builder-style object to manufacture [`PstnDialIn`](crate::model::PstnDialIn)
+    /// Creates a new builder-style object to manufacture [`PstnDialIn`](crate::model::PstnDialIn).
     pub fn builder() -> crate::model::pstn_dial_in::Builder {
         crate::model::pstn_dial_in::Builder::default()
     }
@@ -1159,11 +1151,10 @@ impl std::fmt::Debug for IpDialIn {
         formatter.finish()
     }
 }
-/// See [`IpDialIn`](crate::model::IpDialIn)
+/// See [`IpDialIn`](crate::model::IpDialIn).
 pub mod ip_dial_in {
 
-    /// A builder for [`IpDialIn`](crate::model::IpDialIn)
-    #[non_exhaustive]
+    /// A builder for [`IpDialIn`](crate::model::IpDialIn).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -1193,7 +1184,7 @@ pub mod ip_dial_in {
             self.comms_protocol = input;
             self
         }
-        /// Consumes the builder and constructs a [`IpDialIn`](crate::model::IpDialIn)
+        /// Consumes the builder and constructs a [`IpDialIn`](crate::model::IpDialIn).
         pub fn build(self) -> crate::model::IpDialIn {
             crate::model::IpDialIn {
                 endpoint: self.endpoint,
@@ -1203,7 +1194,7 @@ pub mod ip_dial_in {
     }
 }
 impl IpDialIn {
-    /// Creates a new builder-style object to manufacture [`IpDialIn`](crate::model::IpDialIn)
+    /// Creates a new builder-style object to manufacture [`IpDialIn`](crate::model::IpDialIn).
     pub fn builder() -> crate::model::ip_dial_in::Builder {
         crate::model::ip_dial_in::Builder::default()
     }
@@ -1386,11 +1377,10 @@ impl std::fmt::Debug for BusinessReportRecurrence {
         formatter.finish()
     }
 }
-/// See [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence)
+/// See [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
 pub mod business_report_recurrence {
 
-    /// A builder for [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence)
-    #[non_exhaustive]
+    /// A builder for [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<std::string::String>,
@@ -1406,7 +1396,7 @@ pub mod business_report_recurrence {
             self.start_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence)
+        /// Consumes the builder and constructs a [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
         pub fn build(self) -> crate::model::BusinessReportRecurrence {
             crate::model::BusinessReportRecurrence {
                 start_date: self.start_date,
@@ -1415,7 +1405,7 @@ pub mod business_report_recurrence {
     }
 }
 impl BusinessReportRecurrence {
-    /// Creates a new builder-style object to manufacture [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence)
+    /// Creates a new builder-style object to manufacture [`BusinessReportRecurrence`](crate::model::BusinessReportRecurrence).
     pub fn builder() -> crate::model::business_report_recurrence::Builder {
         crate::model::business_report_recurrence::Builder::default()
     }
@@ -1503,11 +1493,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1534,7 +1523,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -1544,7 +1533,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -1672,11 +1661,10 @@ impl std::fmt::Debug for Content {
         formatter.finish()
     }
 }
-/// See [`Content`](crate::model::Content)
+/// See [`Content`](crate::model::Content).
 pub mod content {
 
-    /// A builder for [`Content`](crate::model::Content)
-    #[non_exhaustive]
+    /// A builder for [`Content`](crate::model::Content).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) text_list: std::option::Option<std::vec::Vec<crate::model::Text>>,
@@ -1741,7 +1729,7 @@ pub mod content {
             self.audio_list = input;
             self
         }
-        /// Consumes the builder and constructs a [`Content`](crate::model::Content)
+        /// Consumes the builder and constructs a [`Content`](crate::model::Content).
         pub fn build(self) -> crate::model::Content {
             crate::model::Content {
                 text_list: self.text_list,
@@ -1752,7 +1740,7 @@ pub mod content {
     }
 }
 impl Content {
-    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content)
+    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
     pub fn builder() -> crate::model::content::Builder {
         crate::model::content::Builder::default()
     }
@@ -1793,11 +1781,10 @@ impl std::fmt::Debug for Audio {
         formatter.finish()
     }
 }
-/// See [`Audio`](crate::model::Audio)
+/// See [`Audio`](crate::model::Audio).
 pub mod audio {
 
-    /// A builder for [`Audio`](crate::model::Audio)
-    #[non_exhaustive]
+    /// A builder for [`Audio`](crate::model::Audio).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -1824,7 +1811,7 @@ pub mod audio {
             self.location = input;
             self
         }
-        /// Consumes the builder and constructs a [`Audio`](crate::model::Audio)
+        /// Consumes the builder and constructs a [`Audio`](crate::model::Audio).
         pub fn build(self) -> crate::model::Audio {
             crate::model::Audio {
                 locale: self.locale,
@@ -1834,7 +1821,7 @@ pub mod audio {
     }
 }
 impl Audio {
-    /// Creates a new builder-style object to manufacture [`Audio`](crate::model::Audio)
+    /// Creates a new builder-style object to manufacture [`Audio`](crate::model::Audio).
     pub fn builder() -> crate::model::audio::Builder {
         crate::model::audio::Builder::default()
     }
@@ -1918,11 +1905,10 @@ impl std::fmt::Debug for Ssml {
         formatter.finish()
     }
 }
-/// See [`Ssml`](crate::model::Ssml)
+/// See [`Ssml`](crate::model::Ssml).
 pub mod ssml {
 
-    /// A builder for [`Ssml`](crate::model::Ssml)
-    #[non_exhaustive]
+    /// A builder for [`Ssml`](crate::model::Ssml).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -1949,7 +1935,7 @@ pub mod ssml {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Ssml`](crate::model::Ssml)
+        /// Consumes the builder and constructs a [`Ssml`](crate::model::Ssml).
         pub fn build(self) -> crate::model::Ssml {
             crate::model::Ssml {
                 locale: self.locale,
@@ -1959,7 +1945,7 @@ pub mod ssml {
     }
 }
 impl Ssml {
-    /// Creates a new builder-style object to manufacture [`Ssml`](crate::model::Ssml)
+    /// Creates a new builder-style object to manufacture [`Ssml`](crate::model::Ssml).
     pub fn builder() -> crate::model::ssml::Builder {
         crate::model::ssml::Builder::default()
     }
@@ -1992,11 +1978,10 @@ impl std::fmt::Debug for Text {
         formatter.finish()
     }
 }
-/// See [`Text`](crate::model::Text)
+/// See [`Text`](crate::model::Text).
 pub mod text {
 
-    /// A builder for [`Text`](crate::model::Text)
-    #[non_exhaustive]
+    /// A builder for [`Text`](crate::model::Text).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locale: std::option::Option<crate::model::Locale>,
@@ -2023,7 +2008,7 @@ pub mod text {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Text`](crate::model::Text)
+        /// Consumes the builder and constructs a [`Text`](crate::model::Text).
         pub fn build(self) -> crate::model::Text {
             crate::model::Text {
                 locale: self.locale,
@@ -2033,7 +2018,7 @@ pub mod text {
     }
 }
 impl Text {
-    /// Creates a new builder-style object to manufacture [`Text`](crate::model::Text)
+    /// Creates a new builder-style object to manufacture [`Text`](crate::model::Text).
     pub fn builder() -> crate::model::text::Builder {
         crate::model::text::Builder::default()
     }
@@ -2066,11 +2051,10 @@ impl std::fmt::Debug for Filter {
         formatter.finish()
     }
 }
-/// See [`Filter`](crate::model::Filter)
+/// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
-    /// A builder for [`Filter`](crate::model::Filter)
-    #[non_exhaustive]
+    /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2106,7 +2090,7 @@ pub mod filter {
             self.values = input;
             self
         }
-        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
+        /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
                 key: self.key,
@@ -2116,7 +2100,7 @@ pub mod filter {
     }
 }
 impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter)
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
     pub fn builder() -> crate::model::filter::Builder {
         crate::model::filter::Builder::default()
     }
@@ -2177,11 +2161,10 @@ impl std::fmt::Debug for UserData {
         formatter.finish()
     }
 }
-/// See [`UserData`](crate::model::UserData)
+/// See [`UserData`](crate::model::UserData).
 pub mod user_data {
 
-    /// A builder for [`UserData`](crate::model::UserData)
-    #[non_exhaustive]
+    /// A builder for [`UserData`](crate::model::UserData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
@@ -2258,7 +2241,7 @@ pub mod user_data {
             self.enrollment_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`UserData`](crate::model::UserData)
+        /// Consumes the builder and constructs a [`UserData`](crate::model::UserData).
         pub fn build(self) -> crate::model::UserData {
             crate::model::UserData {
                 user_arn: self.user_arn,
@@ -2272,7 +2255,7 @@ pub mod user_data {
     }
 }
 impl UserData {
-    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData)
+    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
     pub fn builder() -> crate::model::user_data::Builder {
         crate::model::user_data::Builder::default()
     }
@@ -2378,11 +2361,10 @@ impl std::fmt::Debug for Sort {
         formatter.finish()
     }
 }
-/// See [`Sort`](crate::model::Sort)
+/// See [`Sort`](crate::model::Sort).
 pub mod sort {
 
-    /// A builder for [`Sort`](crate::model::Sort)
-    #[non_exhaustive]
+    /// A builder for [`Sort`](crate::model::Sort).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -2409,7 +2391,7 @@ pub mod sort {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Sort`](crate::model::Sort)
+        /// Consumes the builder and constructs a [`Sort`](crate::model::Sort).
         pub fn build(self) -> crate::model::Sort {
             crate::model::Sort {
                 key: self.key,
@@ -2419,7 +2401,7 @@ pub mod sort {
     }
 }
 impl Sort {
-    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort)
+    /// Creates a new builder-style object to manufacture [`Sort`](crate::model::Sort).
     pub fn builder() -> crate::model::sort::Builder {
         crate::model::sort::Builder::default()
     }
@@ -2514,11 +2496,10 @@ impl std::fmt::Debug for SkillGroupData {
         formatter.finish()
     }
 }
-/// See [`SkillGroupData`](crate::model::SkillGroupData)
+/// See [`SkillGroupData`](crate::model::SkillGroupData).
 pub mod skill_group_data {
 
-    /// A builder for [`SkillGroupData`](crate::model::SkillGroupData)
-    #[non_exhaustive]
+    /// A builder for [`SkillGroupData`](crate::model::SkillGroupData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_group_arn: std::option::Option<std::string::String>,
@@ -2562,7 +2543,7 @@ pub mod skill_group_data {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`SkillGroupData`](crate::model::SkillGroupData)
+        /// Consumes the builder and constructs a [`SkillGroupData`](crate::model::SkillGroupData).
         pub fn build(self) -> crate::model::SkillGroupData {
             crate::model::SkillGroupData {
                 skill_group_arn: self.skill_group_arn,
@@ -2573,7 +2554,7 @@ pub mod skill_group_data {
     }
 }
 impl SkillGroupData {
-    /// Creates a new builder-style object to manufacture [`SkillGroupData`](crate::model::SkillGroupData)
+    /// Creates a new builder-style object to manufacture [`SkillGroupData`](crate::model::SkillGroupData).
     pub fn builder() -> crate::model::skill_group_data::Builder {
         crate::model::skill_group_data::Builder::default()
     }
@@ -2634,11 +2615,10 @@ impl std::fmt::Debug for RoomData {
         formatter.finish()
     }
 }
-/// See [`RoomData`](crate::model::RoomData)
+/// See [`RoomData`](crate::model::RoomData).
 pub mod room_data {
 
-    /// A builder for [`RoomData`](crate::model::RoomData)
-    #[non_exhaustive]
+    /// A builder for [`RoomData`](crate::model::RoomData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_arn: std::option::Option<std::string::String>,
@@ -2712,7 +2692,7 @@ pub mod room_data {
             self.profile_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoomData`](crate::model::RoomData)
+        /// Consumes the builder and constructs a [`RoomData`](crate::model::RoomData).
         pub fn build(self) -> crate::model::RoomData {
             crate::model::RoomData {
                 room_arn: self.room_arn,
@@ -2726,7 +2706,7 @@ pub mod room_data {
     }
 }
 impl RoomData {
-    /// Creates a new builder-style object to manufacture [`RoomData`](crate::model::RoomData)
+    /// Creates a new builder-style object to manufacture [`RoomData`](crate::model::RoomData).
     pub fn builder() -> crate::model::room_data::Builder {
         crate::model::room_data::Builder::default()
     }
@@ -2808,11 +2788,10 @@ impl std::fmt::Debug for ProfileData {
         formatter.finish()
     }
 }
-/// See [`ProfileData`](crate::model::ProfileData)
+/// See [`ProfileData`](crate::model::ProfileData).
 pub mod profile_data {
 
-    /// A builder for [`ProfileData`](crate::model::ProfileData)
-    #[non_exhaustive]
+    /// A builder for [`ProfileData`](crate::model::ProfileData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_arn: std::option::Option<std::string::String>,
@@ -2922,7 +2901,7 @@ pub mod profile_data {
             self.locale = input;
             self
         }
-        /// Consumes the builder and constructs a [`ProfileData`](crate::model::ProfileData)
+        /// Consumes the builder and constructs a [`ProfileData`](crate::model::ProfileData).
         pub fn build(self) -> crate::model::ProfileData {
             crate::model::ProfileData {
                 profile_arn: self.profile_arn,
@@ -2939,7 +2918,7 @@ pub mod profile_data {
     }
 }
 impl ProfileData {
-    /// Creates a new builder-style object to manufacture [`ProfileData`](crate::model::ProfileData)
+    /// Creates a new builder-style object to manufacture [`ProfileData`](crate::model::ProfileData).
     pub fn builder() -> crate::model::profile_data::Builder {
         crate::model::profile_data::Builder::default()
     }
@@ -3007,11 +2986,10 @@ impl std::fmt::Debug for NetworkProfileData {
         formatter.finish()
     }
 }
-/// See [`NetworkProfileData`](crate::model::NetworkProfileData)
+/// See [`NetworkProfileData`](crate::model::NetworkProfileData).
 pub mod network_profile_data {
 
-    /// A builder for [`NetworkProfileData`](crate::model::NetworkProfileData)
-    #[non_exhaustive]
+    /// A builder for [`NetworkProfileData`](crate::model::NetworkProfileData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
@@ -3108,7 +3086,7 @@ pub mod network_profile_data {
             self.certificate_authority_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkProfileData`](crate::model::NetworkProfileData)
+        /// Consumes the builder and constructs a [`NetworkProfileData`](crate::model::NetworkProfileData).
         pub fn build(self) -> crate::model::NetworkProfileData {
             crate::model::NetworkProfileData {
                 network_profile_arn: self.network_profile_arn,
@@ -3123,7 +3101,7 @@ pub mod network_profile_data {
     }
 }
 impl NetworkProfileData {
-    /// Creates a new builder-style object to manufacture [`NetworkProfileData`](crate::model::NetworkProfileData)
+    /// Creates a new builder-style object to manufacture [`NetworkProfileData`](crate::model::NetworkProfileData).
     pub fn builder() -> crate::model::network_profile_data::Builder {
         crate::model::network_profile_data::Builder::default()
     }
@@ -3351,11 +3329,10 @@ impl std::fmt::Debug for DeviceData {
         formatter.finish()
     }
 }
-/// See [`DeviceData`](crate::model::DeviceData)
+/// See [`DeviceData`](crate::model::DeviceData).
 pub mod device_data {
 
-    /// A builder for [`DeviceData`](crate::model::DeviceData)
-    #[non_exhaustive]
+    /// A builder for [`DeviceData`](crate::model::DeviceData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_arn: std::option::Option<std::string::String>,
@@ -3524,7 +3501,7 @@ pub mod device_data {
             self.created_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceData`](crate::model::DeviceData)
+        /// Consumes the builder and constructs a [`DeviceData`](crate::model::DeviceData).
         pub fn build(self) -> crate::model::DeviceData {
             crate::model::DeviceData {
                 device_arn: self.device_arn,
@@ -3545,7 +3522,7 @@ pub mod device_data {
     }
 }
 impl DeviceData {
-    /// Creates a new builder-style object to manufacture [`DeviceData`](crate::model::DeviceData)
+    /// Creates a new builder-style object to manufacture [`DeviceData`](crate::model::DeviceData).
     pub fn builder() -> crate::model::device_data::Builder {
         crate::model::device_data::Builder::default()
     }
@@ -3592,11 +3569,10 @@ impl std::fmt::Debug for DeviceStatusInfo {
         formatter.finish()
     }
 }
-/// See [`DeviceStatusInfo`](crate::model::DeviceStatusInfo)
+/// See [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
 pub mod device_status_info {
 
-    /// A builder for [`DeviceStatusInfo`](crate::model::DeviceStatusInfo)
-    #[non_exhaustive]
+    /// A builder for [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_status_details:
@@ -3650,7 +3626,7 @@ pub mod device_status_info {
             self.connection_status_updated_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceStatusInfo`](crate::model::DeviceStatusInfo)
+        /// Consumes the builder and constructs a [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
         pub fn build(self) -> crate::model::DeviceStatusInfo {
             crate::model::DeviceStatusInfo {
                 device_status_details: self.device_status_details,
@@ -3661,7 +3637,7 @@ pub mod device_status_info {
     }
 }
 impl DeviceStatusInfo {
-    /// Creates a new builder-style object to manufacture [`DeviceStatusInfo`](crate::model::DeviceStatusInfo)
+    /// Creates a new builder-style object to manufacture [`DeviceStatusInfo`](crate::model::DeviceStatusInfo).
     pub fn builder() -> crate::model::device_status_info::Builder {
         crate::model::device_status_info::Builder::default()
     }
@@ -3749,11 +3725,10 @@ impl std::fmt::Debug for DeviceStatusDetail {
         formatter.finish()
     }
 }
-/// See [`DeviceStatusDetail`](crate::model::DeviceStatusDetail)
+/// See [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
 pub mod device_status_detail {
 
-    /// A builder for [`DeviceStatusDetail`](crate::model::DeviceStatusDetail)
-    #[non_exhaustive]
+    /// A builder for [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) feature: std::option::Option<crate::model::Feature>,
@@ -3783,7 +3758,7 @@ pub mod device_status_detail {
             self.code = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceStatusDetail`](crate::model::DeviceStatusDetail)
+        /// Consumes the builder and constructs a [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
         pub fn build(self) -> crate::model::DeviceStatusDetail {
             crate::model::DeviceStatusDetail {
                 feature: self.feature,
@@ -3793,7 +3768,7 @@ pub mod device_status_detail {
     }
 }
 impl DeviceStatusDetail {
-    /// Creates a new builder-style object to manufacture [`DeviceStatusDetail`](crate::model::DeviceStatusDetail)
+    /// Creates a new builder-style object to manufacture [`DeviceStatusDetail`](crate::model::DeviceStatusDetail).
     pub fn builder() -> crate::model::device_status_detail::Builder {
         crate::model::device_status_detail::Builder::default()
     }
@@ -4069,11 +4044,10 @@ impl std::fmt::Debug for ContactData {
         formatter.finish()
     }
 }
-/// See [`ContactData`](crate::model::ContactData)
+/// See [`ContactData`](crate::model::ContactData).
 pub mod contact_data {
 
-    /// A builder for [`ContactData`](crate::model::ContactData)
-    #[non_exhaustive]
+    /// A builder for [`ContactData`](crate::model::ContactData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -4173,7 +4147,7 @@ pub mod contact_data {
             self.sip_addresses = input;
             self
         }
-        /// Consumes the builder and constructs a [`ContactData`](crate::model::ContactData)
+        /// Consumes the builder and constructs a [`ContactData`](crate::model::ContactData).
         pub fn build(self) -> crate::model::ContactData {
             crate::model::ContactData {
                 contact_arn: self.contact_arn,
@@ -4188,7 +4162,7 @@ pub mod contact_data {
     }
 }
 impl ContactData {
-    /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData)
+    /// Creates a new builder-style object to manufacture [`ContactData`](crate::model::ContactData).
     pub fn builder() -> crate::model::contact_data::Builder {
         crate::model::contact_data::Builder::default()
     }
@@ -4228,11 +4202,10 @@ impl std::fmt::Debug for AddressBookData {
         formatter.finish()
     }
 }
-/// See [`AddressBookData`](crate::model::AddressBookData)
+/// See [`AddressBookData`](crate::model::AddressBookData).
 pub mod address_book_data {
 
-    /// A builder for [`AddressBookData`](crate::model::AddressBookData)
-    #[non_exhaustive]
+    /// A builder for [`AddressBookData`](crate::model::AddressBookData).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_book_arn: std::option::Option<std::string::String>,
@@ -4273,7 +4246,7 @@ pub mod address_book_data {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddressBookData`](crate::model::AddressBookData)
+        /// Consumes the builder and constructs a [`AddressBookData`](crate::model::AddressBookData).
         pub fn build(self) -> crate::model::AddressBookData {
             crate::model::AddressBookData {
                 address_book_arn: self.address_book_arn,
@@ -4284,7 +4257,7 @@ pub mod address_book_data {
     }
 }
 impl AddressBookData {
-    /// Creates a new builder-style object to manufacture [`AddressBookData`](crate::model::AddressBookData)
+    /// Creates a new builder-style object to manufacture [`AddressBookData`](crate::model::AddressBookData).
     pub fn builder() -> crate::model::address_book_data::Builder {
         crate::model::address_book_data::Builder::default()
     }
@@ -4317,11 +4290,10 @@ impl std::fmt::Debug for RoomSkillParameter {
         formatter.finish()
     }
 }
-/// See [`RoomSkillParameter`](crate::model::RoomSkillParameter)
+/// See [`RoomSkillParameter`](crate::model::RoomSkillParameter).
 pub mod room_skill_parameter {
 
-    /// A builder for [`RoomSkillParameter`](crate::model::RoomSkillParameter)
-    #[non_exhaustive]
+    /// A builder for [`RoomSkillParameter`](crate::model::RoomSkillParameter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) parameter_key: std::option::Option<std::string::String>,
@@ -4354,7 +4326,7 @@ pub mod room_skill_parameter {
             self.parameter_value = input;
             self
         }
-        /// Consumes the builder and constructs a [`RoomSkillParameter`](crate::model::RoomSkillParameter)
+        /// Consumes the builder and constructs a [`RoomSkillParameter`](crate::model::RoomSkillParameter).
         pub fn build(self) -> crate::model::RoomSkillParameter {
             crate::model::RoomSkillParameter {
                 parameter_key: self.parameter_key,
@@ -4364,7 +4336,7 @@ pub mod room_skill_parameter {
     }
 }
 impl RoomSkillParameter {
-    /// Creates a new builder-style object to manufacture [`RoomSkillParameter`](crate::model::RoomSkillParameter)
+    /// Creates a new builder-style object to manufacture [`RoomSkillParameter`](crate::model::RoomSkillParameter).
     pub fn builder() -> crate::model::room_skill_parameter::Builder {
         crate::model::room_skill_parameter::Builder::default()
     }
@@ -4393,11 +4365,10 @@ impl std::fmt::Debug for ConferencePreference {
         formatter.finish()
     }
 }
-/// See [`ConferencePreference`](crate::model::ConferencePreference)
+/// See [`ConferencePreference`](crate::model::ConferencePreference).
 pub mod conference_preference {
 
-    /// A builder for [`ConferencePreference`](crate::model::ConferencePreference)
-    #[non_exhaustive]
+    /// A builder for [`ConferencePreference`](crate::model::ConferencePreference).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) default_conference_provider_arn: std::option::Option<std::string::String>,
@@ -4419,7 +4390,7 @@ pub mod conference_preference {
             self.default_conference_provider_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConferencePreference`](crate::model::ConferencePreference)
+        /// Consumes the builder and constructs a [`ConferencePreference`](crate::model::ConferencePreference).
         pub fn build(self) -> crate::model::ConferencePreference {
             crate::model::ConferencePreference {
                 default_conference_provider_arn: self.default_conference_provider_arn,
@@ -4428,7 +4399,7 @@ pub mod conference_preference {
     }
 }
 impl ConferencePreference {
-    /// Creates a new builder-style object to manufacture [`ConferencePreference`](crate::model::ConferencePreference)
+    /// Creates a new builder-style object to manufacture [`ConferencePreference`](crate::model::ConferencePreference).
     pub fn builder() -> crate::model::conference_preference::Builder {
         crate::model::conference_preference::Builder::default()
     }
@@ -4468,11 +4439,10 @@ impl std::fmt::Debug for SmartHomeAppliance {
         formatter.finish()
     }
 }
-/// See [`SmartHomeAppliance`](crate::model::SmartHomeAppliance)
+/// See [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
 pub mod smart_home_appliance {
 
-    /// A builder for [`SmartHomeAppliance`](crate::model::SmartHomeAppliance)
-    #[non_exhaustive]
+    /// A builder for [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) friendly_name: std::option::Option<std::string::String>,
@@ -4516,7 +4486,7 @@ pub mod smart_home_appliance {
             self.manufacturer_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`SmartHomeAppliance`](crate::model::SmartHomeAppliance)
+        /// Consumes the builder and constructs a [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
         pub fn build(self) -> crate::model::SmartHomeAppliance {
             crate::model::SmartHomeAppliance {
                 friendly_name: self.friendly_name,
@@ -4527,7 +4497,7 @@ pub mod smart_home_appliance {
     }
 }
 impl SmartHomeAppliance {
-    /// Creates a new builder-style object to manufacture [`SmartHomeAppliance`](crate::model::SmartHomeAppliance)
+    /// Creates a new builder-style object to manufacture [`SmartHomeAppliance`](crate::model::SmartHomeAppliance).
     pub fn builder() -> crate::model::smart_home_appliance::Builder {
         crate::model::smart_home_appliance::Builder::default()
     }
@@ -4595,11 +4565,10 @@ impl std::fmt::Debug for SkillsStoreSkill {
         formatter.finish()
     }
 }
-/// See [`SkillsStoreSkill`](crate::model::SkillsStoreSkill)
+/// See [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
 pub mod skills_store_skill {
 
-    /// A builder for [`SkillsStoreSkill`](crate::model::SkillsStoreSkill)
-    #[non_exhaustive]
+    /// A builder for [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_id: std::option::Option<std::string::String>,
@@ -4696,7 +4665,7 @@ pub mod skills_store_skill {
             self.supports_linking = input;
             self
         }
-        /// Consumes the builder and constructs a [`SkillsStoreSkill`](crate::model::SkillsStoreSkill)
+        /// Consumes the builder and constructs a [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
         pub fn build(self) -> crate::model::SkillsStoreSkill {
             crate::model::SkillsStoreSkill {
                 skill_id: self.skill_id,
@@ -4711,7 +4680,7 @@ pub mod skills_store_skill {
     }
 }
 impl SkillsStoreSkill {
-    /// Creates a new builder-style object to manufacture [`SkillsStoreSkill`](crate::model::SkillsStoreSkill)
+    /// Creates a new builder-style object to manufacture [`SkillsStoreSkill`](crate::model::SkillsStoreSkill).
     pub fn builder() -> crate::model::skills_store_skill::Builder {
         crate::model::skills_store_skill::Builder::default()
     }
@@ -4812,11 +4781,10 @@ impl std::fmt::Debug for SkillDetails {
         formatter.finish()
     }
 }
-/// See [`SkillDetails`](crate::model::SkillDetails)
+/// See [`SkillDetails`](crate::model::SkillDetails).
 pub mod skill_details {
 
-    /// A builder for [`SkillDetails`](crate::model::SkillDetails)
-    #[non_exhaustive]
+    /// A builder for [`SkillDetails`](crate::model::SkillDetails).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_description: std::option::Option<std::string::String>,
@@ -5002,7 +4970,7 @@ pub mod skill_details {
             self.developer_info = input;
             self
         }
-        /// Consumes the builder and constructs a [`SkillDetails`](crate::model::SkillDetails)
+        /// Consumes the builder and constructs a [`SkillDetails`](crate::model::SkillDetails).
         pub fn build(self) -> crate::model::SkillDetails {
             crate::model::SkillDetails {
                 product_description: self.product_description,
@@ -5020,7 +4988,7 @@ pub mod skill_details {
     }
 }
 impl SkillDetails {
-    /// Creates a new builder-style object to manufacture [`SkillDetails`](crate::model::SkillDetails)
+    /// Creates a new builder-style object to manufacture [`SkillDetails`](crate::model::SkillDetails).
     pub fn builder() -> crate::model::skill_details::Builder {
         crate::model::skill_details::Builder::default()
     }
@@ -5067,11 +5035,10 @@ impl std::fmt::Debug for DeveloperInfo {
         formatter.finish()
     }
 }
-/// See [`DeveloperInfo`](crate::model::DeveloperInfo)
+/// See [`DeveloperInfo`](crate::model::DeveloperInfo).
 pub mod developer_info {
 
-    /// A builder for [`DeveloperInfo`](crate::model::DeveloperInfo)
-    #[non_exhaustive]
+    /// A builder for [`DeveloperInfo`](crate::model::DeveloperInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) developer_name: std::option::Option<std::string::String>,
@@ -5126,7 +5093,7 @@ pub mod developer_info {
             self.url = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeveloperInfo`](crate::model::DeveloperInfo)
+        /// Consumes the builder and constructs a [`DeveloperInfo`](crate::model::DeveloperInfo).
         pub fn build(self) -> crate::model::DeveloperInfo {
             crate::model::DeveloperInfo {
                 developer_name: self.developer_name,
@@ -5138,7 +5105,7 @@ pub mod developer_info {
     }
 }
 impl DeveloperInfo {
-    /// Creates a new builder-style object to manufacture [`DeveloperInfo`](crate::model::DeveloperInfo)
+    /// Creates a new builder-style object to manufacture [`DeveloperInfo`](crate::model::DeveloperInfo).
     pub fn builder() -> crate::model::developer_info::Builder {
         crate::model::developer_info::Builder::default()
     }
@@ -5171,11 +5138,10 @@ impl std::fmt::Debug for Category {
         formatter.finish()
     }
 }
-/// See [`Category`](crate::model::Category)
+/// See [`Category`](crate::model::Category).
 pub mod category {
 
-    /// A builder for [`Category`](crate::model::Category)
-    #[non_exhaustive]
+    /// A builder for [`Category`](crate::model::Category).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) category_id: std::option::Option<i64>,
@@ -5205,7 +5171,7 @@ pub mod category {
             self.category_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`Category`](crate::model::Category)
+        /// Consumes the builder and constructs a [`Category`](crate::model::Category).
         pub fn build(self) -> crate::model::Category {
             crate::model::Category {
                 category_id: self.category_id,
@@ -5215,7 +5181,7 @@ pub mod category {
     }
 }
 impl Category {
-    /// Creates a new builder-style object to manufacture [`Category`](crate::model::Category)
+    /// Creates a new builder-style object to manufacture [`Category`](crate::model::Category).
     pub fn builder() -> crate::model::category::Builder {
         crate::model::category::Builder::default()
     }
@@ -5269,11 +5235,10 @@ impl std::fmt::Debug for SkillSummary {
         formatter.finish()
     }
 }
-/// See [`SkillSummary`](crate::model::SkillSummary)
+/// See [`SkillSummary`](crate::model::SkillSummary).
 pub mod skill_summary {
 
-    /// A builder for [`SkillSummary`](crate::model::SkillSummary)
-    #[non_exhaustive]
+    /// A builder for [`SkillSummary`](crate::model::SkillSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_id: std::option::Option<std::string::String>,
@@ -5339,7 +5304,7 @@ pub mod skill_summary {
             self.skill_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`SkillSummary`](crate::model::SkillSummary)
+        /// Consumes the builder and constructs a [`SkillSummary`](crate::model::SkillSummary).
         pub fn build(self) -> crate::model::SkillSummary {
             crate::model::SkillSummary {
                 skill_id: self.skill_id,
@@ -5352,7 +5317,7 @@ pub mod skill_summary {
     }
 }
 impl SkillSummary {
-    /// Creates a new builder-style object to manufacture [`SkillSummary`](crate::model::SkillSummary)
+    /// Creates a new builder-style object to manufacture [`SkillSummary`](crate::model::SkillSummary).
     pub fn builder() -> crate::model::skill_summary::Builder {
         crate::model::skill_summary::Builder::default()
     }
@@ -5630,11 +5595,10 @@ impl std::fmt::Debug for GatewaySummary {
         formatter.finish()
     }
 }
-/// See [`GatewaySummary`](crate::model::GatewaySummary)
+/// See [`GatewaySummary`](crate::model::GatewaySummary).
 pub mod gateway_summary {
 
-    /// A builder for [`GatewaySummary`](crate::model::GatewaySummary)
-    #[non_exhaustive]
+    /// A builder for [`GatewaySummary`](crate::model::GatewaySummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5700,7 +5664,7 @@ pub mod gateway_summary {
             self.software_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatewaySummary`](crate::model::GatewaySummary)
+        /// Consumes the builder and constructs a [`GatewaySummary`](crate::model::GatewaySummary).
         pub fn build(self) -> crate::model::GatewaySummary {
             crate::model::GatewaySummary {
                 arn: self.arn,
@@ -5713,7 +5677,7 @@ pub mod gateway_summary {
     }
 }
 impl GatewaySummary {
-    /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary)
+    /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary).
     pub fn builder() -> crate::model::gateway_summary::Builder {
         crate::model::gateway_summary::Builder::default()
     }
@@ -5753,11 +5717,10 @@ impl std::fmt::Debug for GatewayGroupSummary {
         formatter.finish()
     }
 }
-/// See [`GatewayGroupSummary`](crate::model::GatewayGroupSummary)
+/// See [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
 pub mod gateway_group_summary {
 
-    /// A builder for [`GatewayGroupSummary`](crate::model::GatewayGroupSummary)
-    #[non_exhaustive]
+    /// A builder for [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5795,7 +5758,7 @@ pub mod gateway_group_summary {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatewayGroupSummary`](crate::model::GatewayGroupSummary)
+        /// Consumes the builder and constructs a [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
         pub fn build(self) -> crate::model::GatewayGroupSummary {
             crate::model::GatewayGroupSummary {
                 arn: self.arn,
@@ -5806,7 +5769,7 @@ pub mod gateway_group_summary {
     }
 }
 impl GatewayGroupSummary {
-    /// Creates a new builder-style object to manufacture [`GatewayGroupSummary`](crate::model::GatewayGroupSummary)
+    /// Creates a new builder-style object to manufacture [`GatewayGroupSummary`](crate::model::GatewayGroupSummary).
     pub fn builder() -> crate::model::gateway_group_summary::Builder {
         crate::model::gateway_group_summary::Builder::default()
     }
@@ -5846,11 +5809,10 @@ impl std::fmt::Debug for DeviceEvent {
         formatter.finish()
     }
 }
-/// See [`DeviceEvent`](crate::model::DeviceEvent)
+/// See [`DeviceEvent`](crate::model::DeviceEvent).
 pub mod device_event {
 
-    /// A builder for [`DeviceEvent`](crate::model::DeviceEvent)
-    #[non_exhaustive]
+    /// A builder for [`DeviceEvent`](crate::model::DeviceEvent).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::DeviceEventType>,
@@ -5894,7 +5856,7 @@ pub mod device_event {
             self.timestamp = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceEvent`](crate::model::DeviceEvent)
+        /// Consumes the builder and constructs a [`DeviceEvent`](crate::model::DeviceEvent).
         pub fn build(self) -> crate::model::DeviceEvent {
             crate::model::DeviceEvent {
                 r#type: self.r#type,
@@ -5905,7 +5867,7 @@ pub mod device_event {
     }
 }
 impl DeviceEvent {
-    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent)
+    /// Creates a new builder-style object to manufacture [`DeviceEvent`](crate::model::DeviceEvent).
     pub fn builder() -> crate::model::device_event::Builder {
         crate::model::device_event::Builder::default()
     }
@@ -6021,11 +5983,10 @@ impl std::fmt::Debug for ConferenceProvider {
         formatter.finish()
     }
 }
-/// See [`ConferenceProvider`](crate::model::ConferenceProvider)
+/// See [`ConferenceProvider`](crate::model::ConferenceProvider).
 pub mod conference_provider {
 
-    /// A builder for [`ConferenceProvider`](crate::model::ConferenceProvider)
-    #[non_exhaustive]
+    /// A builder for [`ConferenceProvider`](crate::model::ConferenceProvider).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6108,7 +6069,7 @@ pub mod conference_provider {
             self.meeting_setting = input;
             self
         }
-        /// Consumes the builder and constructs a [`ConferenceProvider`](crate::model::ConferenceProvider)
+        /// Consumes the builder and constructs a [`ConferenceProvider`](crate::model::ConferenceProvider).
         pub fn build(self) -> crate::model::ConferenceProvider {
             crate::model::ConferenceProvider {
                 arn: self.arn,
@@ -6122,7 +6083,7 @@ pub mod conference_provider {
     }
 }
 impl ConferenceProvider {
-    /// Creates a new builder-style object to manufacture [`ConferenceProvider`](crate::model::ConferenceProvider)
+    /// Creates a new builder-style object to manufacture [`ConferenceProvider`](crate::model::ConferenceProvider).
     pub fn builder() -> crate::model::conference_provider::Builder {
         crate::model::conference_provider::Builder::default()
     }
@@ -6197,11 +6158,10 @@ impl std::fmt::Debug for BusinessReportSchedule {
         formatter.finish()
     }
 }
-/// See [`BusinessReportSchedule`](crate::model::BusinessReportSchedule)
+/// See [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
 pub mod business_report_schedule {
 
-    /// A builder for [`BusinessReportSchedule`](crate::model::BusinessReportSchedule)
-    #[non_exhaustive]
+    /// A builder for [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schedule_arn: std::option::Option<std::string::String>,
@@ -6315,7 +6275,7 @@ pub mod business_report_schedule {
             self.last_business_report = input;
             self
         }
-        /// Consumes the builder and constructs a [`BusinessReportSchedule`](crate::model::BusinessReportSchedule)
+        /// Consumes the builder and constructs a [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
         pub fn build(self) -> crate::model::BusinessReportSchedule {
             crate::model::BusinessReportSchedule {
                 schedule_arn: self.schedule_arn,
@@ -6331,7 +6291,7 @@ pub mod business_report_schedule {
     }
 }
 impl BusinessReportSchedule {
-    /// Creates a new builder-style object to manufacture [`BusinessReportSchedule`](crate::model::BusinessReportSchedule)
+    /// Creates a new builder-style object to manufacture [`BusinessReportSchedule`](crate::model::BusinessReportSchedule).
     pub fn builder() -> crate::model::business_report_schedule::Builder {
         crate::model::business_report_schedule::Builder::default()
     }
@@ -6385,11 +6345,10 @@ impl std::fmt::Debug for BusinessReport {
         formatter.finish()
     }
 }
-/// See [`BusinessReport`](crate::model::BusinessReport)
+/// See [`BusinessReport`](crate::model::BusinessReport).
 pub mod business_report {
 
-    /// A builder for [`BusinessReport`](crate::model::BusinessReport)
-    #[non_exhaustive]
+    /// A builder for [`BusinessReport`](crate::model::BusinessReport).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::BusinessReportStatus>,
@@ -6461,7 +6420,7 @@ pub mod business_report {
             self.download_url = input;
             self
         }
-        /// Consumes the builder and constructs a [`BusinessReport`](crate::model::BusinessReport)
+        /// Consumes the builder and constructs a [`BusinessReport`](crate::model::BusinessReport).
         pub fn build(self) -> crate::model::BusinessReport {
             crate::model::BusinessReport {
                 status: self.status,
@@ -6474,7 +6433,7 @@ pub mod business_report {
     }
 }
 impl BusinessReport {
-    /// Creates a new builder-style object to manufacture [`BusinessReport`](crate::model::BusinessReport)
+    /// Creates a new builder-style object to manufacture [`BusinessReport`](crate::model::BusinessReport).
     pub fn builder() -> crate::model::business_report::Builder {
         crate::model::business_report::Builder::default()
     }
@@ -6507,11 +6466,10 @@ impl std::fmt::Debug for BusinessReportS3Location {
         formatter.finish()
     }
 }
-/// See [`BusinessReportS3Location`](crate::model::BusinessReportS3Location)
+/// See [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
 pub mod business_report_s3_location {
 
-    /// A builder for [`BusinessReportS3Location`](crate::model::BusinessReportS3Location)
-    #[non_exhaustive]
+    /// A builder for [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path: std::option::Option<std::string::String>,
@@ -6538,7 +6496,7 @@ pub mod business_report_s3_location {
             self.bucket_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`BusinessReportS3Location`](crate::model::BusinessReportS3Location)
+        /// Consumes the builder and constructs a [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
         pub fn build(self) -> crate::model::BusinessReportS3Location {
             crate::model::BusinessReportS3Location {
                 path: self.path,
@@ -6548,7 +6506,7 @@ pub mod business_report_s3_location {
     }
 }
 impl BusinessReportS3Location {
-    /// Creates a new builder-style object to manufacture [`BusinessReportS3Location`](crate::model::BusinessReportS3Location)
+    /// Creates a new builder-style object to manufacture [`BusinessReportS3Location`](crate::model::BusinessReportS3Location).
     pub fn builder() -> crate::model::business_report_s3_location::Builder {
         crate::model::business_report_s3_location::Builder::default()
     }
@@ -6692,11 +6650,10 @@ impl std::fmt::Debug for BusinessReportContentRange {
         formatter.finish()
     }
 }
-/// See [`BusinessReportContentRange`](crate::model::BusinessReportContentRange)
+/// See [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
 pub mod business_report_content_range {
 
-    /// A builder for [`BusinessReportContentRange`](crate::model::BusinessReportContentRange)
-    #[non_exhaustive]
+    /// A builder for [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interval: std::option::Option<crate::model::BusinessReportInterval>,
@@ -6715,7 +6672,7 @@ pub mod business_report_content_range {
             self.interval = input;
             self
         }
-        /// Consumes the builder and constructs a [`BusinessReportContentRange`](crate::model::BusinessReportContentRange)
+        /// Consumes the builder and constructs a [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
         pub fn build(self) -> crate::model::BusinessReportContentRange {
             crate::model::BusinessReportContentRange {
                 interval: self.interval,
@@ -6724,7 +6681,7 @@ pub mod business_report_content_range {
     }
 }
 impl BusinessReportContentRange {
-    /// Creates a new builder-style object to manufacture [`BusinessReportContentRange`](crate::model::BusinessReportContentRange)
+    /// Creates a new builder-style object to manufacture [`BusinessReportContentRange`](crate::model::BusinessReportContentRange).
     pub fn builder() -> crate::model::business_report_content_range::Builder {
         crate::model::business_report_content_range::Builder::default()
     }
@@ -6823,11 +6780,10 @@ impl std::fmt::Debug for SkillGroup {
         formatter.finish()
     }
 }
-/// See [`SkillGroup`](crate::model::SkillGroup)
+/// See [`SkillGroup`](crate::model::SkillGroup).
 pub mod skill_group {
 
-    /// A builder for [`SkillGroup`](crate::model::SkillGroup)
-    #[non_exhaustive]
+    /// A builder for [`SkillGroup`](crate::model::SkillGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) skill_group_arn: std::option::Option<std::string::String>,
@@ -6871,7 +6827,7 @@ pub mod skill_group {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`SkillGroup`](crate::model::SkillGroup)
+        /// Consumes the builder and constructs a [`SkillGroup`](crate::model::SkillGroup).
         pub fn build(self) -> crate::model::SkillGroup {
             crate::model::SkillGroup {
                 skill_group_arn: self.skill_group_arn,
@@ -6882,7 +6838,7 @@ pub mod skill_group {
     }
 }
 impl SkillGroup {
-    /// Creates a new builder-style object to manufacture [`SkillGroup`](crate::model::SkillGroup)
+    /// Creates a new builder-style object to manufacture [`SkillGroup`](crate::model::SkillGroup).
     pub fn builder() -> crate::model::skill_group::Builder {
         crate::model::skill_group::Builder::default()
     }
@@ -6936,11 +6892,10 @@ impl std::fmt::Debug for Room {
         formatter.finish()
     }
 }
-/// See [`Room`](crate::model::Room)
+/// See [`Room`](crate::model::Room).
 pub mod room {
 
-    /// A builder for [`Room`](crate::model::Room)
-    #[non_exhaustive]
+    /// A builder for [`Room`](crate::model::Room).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_arn: std::option::Option<std::string::String>,
@@ -7003,7 +6958,7 @@ pub mod room {
             self.profile_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`Room`](crate::model::Room)
+        /// Consumes the builder and constructs a [`Room`](crate::model::Room).
         pub fn build(self) -> crate::model::Room {
             crate::model::Room {
                 room_arn: self.room_arn,
@@ -7016,7 +6971,7 @@ pub mod room {
     }
 }
 impl Room {
-    /// Creates a new builder-style object to manufacture [`Room`](crate::model::Room)
+    /// Creates a new builder-style object to manufacture [`Room`](crate::model::Room).
     pub fn builder() -> crate::model::room::Builder {
         crate::model::room::Builder::default()
     }
@@ -7145,11 +7100,10 @@ impl std::fmt::Debug for Profile {
         formatter.finish()
     }
 }
-/// See [`Profile`](crate::model::Profile)
+/// See [`Profile`](crate::model::Profile).
 pub mod profile {
 
-    /// A builder for [`Profile`](crate::model::Profile)
-    #[non_exhaustive]
+    /// A builder for [`Profile`](crate::model::Profile).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profile_arn: std::option::Option<std::string::String>,
@@ -7335,7 +7289,7 @@ pub mod profile {
             self.meeting_room_configuration = input;
             self
         }
-        /// Consumes the builder and constructs a [`Profile`](crate::model::Profile)
+        /// Consumes the builder and constructs a [`Profile`](crate::model::Profile).
         pub fn build(self) -> crate::model::Profile {
             crate::model::Profile {
                 profile_arn: self.profile_arn,
@@ -7358,7 +7312,7 @@ pub mod profile {
     }
 }
 impl Profile {
-    /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile)
+    /// Creates a new builder-style object to manufacture [`Profile`](crate::model::Profile).
     pub fn builder() -> crate::model::profile::Builder {
         crate::model::profile::Builder::default()
     }
@@ -7410,11 +7364,10 @@ impl std::fmt::Debug for MeetingRoomConfiguration {
         formatter.finish()
     }
 }
-/// See [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration)
+/// See [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
 pub mod meeting_room_configuration {
 
-    /// A builder for [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
@@ -7478,7 +7431,7 @@ pub mod meeting_room_configuration {
             self.require_check_in = input;
             self
         }
-        /// Consumes the builder and constructs a [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration)
+        /// Consumes the builder and constructs a [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
         pub fn build(self) -> crate::model::MeetingRoomConfiguration {
             crate::model::MeetingRoomConfiguration {
                 room_utilization_metrics_enabled: self.room_utilization_metrics_enabled,
@@ -7490,7 +7443,7 @@ pub mod meeting_room_configuration {
     }
 }
 impl MeetingRoomConfiguration {
-    /// Creates a new builder-style object to manufacture [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration)
+    /// Creates a new builder-style object to manufacture [`MeetingRoomConfiguration`](crate::model::MeetingRoomConfiguration).
     pub fn builder() -> crate::model::meeting_room_configuration::Builder {
         crate::model::meeting_room_configuration::Builder::default()
     }
@@ -7523,11 +7476,10 @@ impl std::fmt::Debug for RequireCheckIn {
         formatter.finish()
     }
 }
-/// See [`RequireCheckIn`](crate::model::RequireCheckIn)
+/// See [`RequireCheckIn`](crate::model::RequireCheckIn).
 pub mod require_check_in {
 
-    /// A builder for [`RequireCheckIn`](crate::model::RequireCheckIn)
-    #[non_exhaustive]
+    /// A builder for [`RequireCheckIn`](crate::model::RequireCheckIn).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_after_minutes: std::option::Option<i32>,
@@ -7554,7 +7506,7 @@ pub mod require_check_in {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`RequireCheckIn`](crate::model::RequireCheckIn)
+        /// Consumes the builder and constructs a [`RequireCheckIn`](crate::model::RequireCheckIn).
         pub fn build(self) -> crate::model::RequireCheckIn {
             crate::model::RequireCheckIn {
                 release_after_minutes: self.release_after_minutes,
@@ -7564,7 +7516,7 @@ pub mod require_check_in {
     }
 }
 impl RequireCheckIn {
-    /// Creates a new builder-style object to manufacture [`RequireCheckIn`](crate::model::RequireCheckIn)
+    /// Creates a new builder-style object to manufacture [`RequireCheckIn`](crate::model::RequireCheckIn).
     pub fn builder() -> crate::model::require_check_in::Builder {
         crate::model::require_check_in::Builder::default()
     }
@@ -7597,11 +7549,10 @@ impl std::fmt::Debug for InstantBooking {
         formatter.finish()
     }
 }
-/// See [`InstantBooking`](crate::model::InstantBooking)
+/// See [`InstantBooking`](crate::model::InstantBooking).
 pub mod instant_booking {
 
-    /// A builder for [`InstantBooking`](crate::model::InstantBooking)
-    #[non_exhaustive]
+    /// A builder for [`InstantBooking`](crate::model::InstantBooking).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i32>,
@@ -7628,7 +7579,7 @@ pub mod instant_booking {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstantBooking`](crate::model::InstantBooking)
+        /// Consumes the builder and constructs a [`InstantBooking`](crate::model::InstantBooking).
         pub fn build(self) -> crate::model::InstantBooking {
             crate::model::InstantBooking {
                 duration_in_minutes: self.duration_in_minutes,
@@ -7638,7 +7589,7 @@ pub mod instant_booking {
     }
 }
 impl InstantBooking {
-    /// Creates a new builder-style object to manufacture [`InstantBooking`](crate::model::InstantBooking)
+    /// Creates a new builder-style object to manufacture [`InstantBooking`](crate::model::InstantBooking).
     pub fn builder() -> crate::model::instant_booking::Builder {
         crate::model::instant_booking::Builder::default()
     }
@@ -7678,11 +7629,10 @@ impl std::fmt::Debug for EndOfMeetingReminder {
         formatter.finish()
     }
 }
-/// See [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder)
+/// See [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
 pub mod end_of_meeting_reminder {
 
-    /// A builder for [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder)
-    #[non_exhaustive]
+    /// A builder for [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
@@ -7732,7 +7682,7 @@ pub mod end_of_meeting_reminder {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder)
+        /// Consumes the builder and constructs a [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
         pub fn build(self) -> crate::model::EndOfMeetingReminder {
             crate::model::EndOfMeetingReminder {
                 reminder_at_minutes: self.reminder_at_minutes,
@@ -7743,7 +7693,7 @@ pub mod end_of_meeting_reminder {
     }
 }
 impl EndOfMeetingReminder {
-    /// Creates a new builder-style object to manufacture [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder)
+    /// Creates a new builder-style object to manufacture [`EndOfMeetingReminder`](crate::model::EndOfMeetingReminder).
     pub fn builder() -> crate::model::end_of_meeting_reminder::Builder {
         crate::model::end_of_meeting_reminder::Builder::default()
     }
@@ -7832,11 +7782,10 @@ impl std::fmt::Debug for NetworkProfile {
         formatter.finish()
     }
 }
-/// See [`NetworkProfile`](crate::model::NetworkProfile)
+/// See [`NetworkProfile`](crate::model::NetworkProfile).
 pub mod network_profile {
 
-    /// A builder for [`NetworkProfile`](crate::model::NetworkProfile)
-    #[non_exhaustive]
+    /// A builder for [`NetworkProfile`](crate::model::NetworkProfile).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
@@ -7981,7 +7930,7 @@ pub mod network_profile {
             self.trust_anchors = input;
             self
         }
-        /// Consumes the builder and constructs a [`NetworkProfile`](crate::model::NetworkProfile)
+        /// Consumes the builder and constructs a [`NetworkProfile`](crate::model::NetworkProfile).
         pub fn build(self) -> crate::model::NetworkProfile {
             crate::model::NetworkProfile {
                 network_profile_arn: self.network_profile_arn,
@@ -7999,7 +7948,7 @@ pub mod network_profile {
     }
 }
 impl NetworkProfile {
-    /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile)
+    /// Creates a new builder-style object to manufacture [`NetworkProfile`](crate::model::NetworkProfile).
     pub fn builder() -> crate::model::network_profile::Builder {
         crate::model::network_profile::Builder::default()
     }
@@ -8039,11 +7988,10 @@ impl std::fmt::Debug for GatewayGroup {
         formatter.finish()
     }
 }
-/// See [`GatewayGroup`](crate::model::GatewayGroup)
+/// See [`GatewayGroup`](crate::model::GatewayGroup).
 pub mod gateway_group {
 
-    /// A builder for [`GatewayGroup`](crate::model::GatewayGroup)
-    #[non_exhaustive]
+    /// A builder for [`GatewayGroup`](crate::model::GatewayGroup).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -8081,7 +8029,7 @@ pub mod gateway_group {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`GatewayGroup`](crate::model::GatewayGroup)
+        /// Consumes the builder and constructs a [`GatewayGroup`](crate::model::GatewayGroup).
         pub fn build(self) -> crate::model::GatewayGroup {
             crate::model::GatewayGroup {
                 arn: self.arn,
@@ -8092,7 +8040,7 @@ pub mod gateway_group {
     }
 }
 impl GatewayGroup {
-    /// Creates a new builder-style object to manufacture [`GatewayGroup`](crate::model::GatewayGroup)
+    /// Creates a new builder-style object to manufacture [`GatewayGroup`](crate::model::GatewayGroup).
     pub fn builder() -> crate::model::gateway_group::Builder {
         crate::model::gateway_group::Builder::default()
     }
@@ -8146,11 +8094,10 @@ impl std::fmt::Debug for Gateway {
         formatter.finish()
     }
 }
-/// See [`Gateway`](crate::model::Gateway)
+/// See [`Gateway`](crate::model::Gateway).
 pub mod gateway {
 
-    /// A builder for [`Gateway`](crate::model::Gateway)
-    #[non_exhaustive]
+    /// A builder for [`Gateway`](crate::model::Gateway).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -8216,7 +8163,7 @@ pub mod gateway {
             self.software_version = input;
             self
         }
-        /// Consumes the builder and constructs a [`Gateway`](crate::model::Gateway)
+        /// Consumes the builder and constructs a [`Gateway`](crate::model::Gateway).
         pub fn build(self) -> crate::model::Gateway {
             crate::model::Gateway {
                 arn: self.arn,
@@ -8229,7 +8176,7 @@ pub mod gateway {
     }
 }
 impl Gateway {
-    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway)
+    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
     pub fn builder() -> crate::model::gateway::Builder {
         crate::model::gateway::Builder::default()
     }
@@ -8320,11 +8267,10 @@ impl std::fmt::Debug for Device {
         formatter.finish()
     }
 }
-/// See [`Device`](crate::model::Device)
+/// See [`Device`](crate::model::Device).
 pub mod device {
 
-    /// A builder for [`Device`](crate::model::Device)
-    #[non_exhaustive]
+    /// A builder for [`Device`](crate::model::Device).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_arn: std::option::Option<std::string::String>,
@@ -8458,7 +8404,7 @@ pub mod device {
             self.network_profile_info = input;
             self
         }
-        /// Consumes the builder and constructs a [`Device`](crate::model::Device)
+        /// Consumes the builder and constructs a [`Device`](crate::model::Device).
         pub fn build(self) -> crate::model::Device {
             crate::model::Device {
                 device_arn: self.device_arn,
@@ -8476,7 +8422,7 @@ pub mod device {
     }
 }
 impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device)
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
     pub fn builder() -> crate::model::device::Builder {
         crate::model::device::Builder::default()
     }
@@ -8519,11 +8465,10 @@ impl std::fmt::Debug for DeviceNetworkProfileInfo {
         formatter.finish()
     }
 }
-/// See [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo)
+/// See [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
 pub mod device_network_profile_info {
 
-    /// A builder for [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo)
-    #[non_exhaustive]
+    /// A builder for [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) network_profile_arn: std::option::Option<std::string::String>,
@@ -8570,7 +8515,7 @@ pub mod device_network_profile_info {
             self.certificate_expiration_time = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo)
+        /// Consumes the builder and constructs a [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
         pub fn build(self) -> crate::model::DeviceNetworkProfileInfo {
             crate::model::DeviceNetworkProfileInfo {
                 network_profile_arn: self.network_profile_arn,
@@ -8581,7 +8526,7 @@ pub mod device_network_profile_info {
     }
 }
 impl DeviceNetworkProfileInfo {
-    /// Creates a new builder-style object to manufacture [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo)
+    /// Creates a new builder-style object to manufacture [`DeviceNetworkProfileInfo`](crate::model::DeviceNetworkProfileInfo).
     pub fn builder() -> crate::model::device_network_profile_info::Builder {
         crate::model::device_network_profile_info::Builder::default()
     }
@@ -8649,11 +8594,10 @@ impl std::fmt::Debug for Contact {
         formatter.finish()
     }
 }
-/// See [`Contact`](crate::model::Contact)
+/// See [`Contact`](crate::model::Contact).
 pub mod contact {
 
-    /// A builder for [`Contact`](crate::model::Contact)
-    #[non_exhaustive]
+    /// A builder for [`Contact`](crate::model::Contact).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
@@ -8753,7 +8697,7 @@ pub mod contact {
             self.sip_addresses = input;
             self
         }
-        /// Consumes the builder and constructs a [`Contact`](crate::model::Contact)
+        /// Consumes the builder and constructs a [`Contact`](crate::model::Contact).
         pub fn build(self) -> crate::model::Contact {
             crate::model::Contact {
                 contact_arn: self.contact_arn,
@@ -8768,7 +8712,7 @@ pub mod contact {
     }
 }
 impl Contact {
-    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact)
+    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
     pub fn builder() -> crate::model::contact::Builder {
         crate::model::contact::Builder::default()
     }
@@ -8808,11 +8752,10 @@ impl std::fmt::Debug for AddressBook {
         formatter.finish()
     }
 }
-/// See [`AddressBook`](crate::model::AddressBook)
+/// See [`AddressBook`](crate::model::AddressBook).
 pub mod address_book {
 
-    /// A builder for [`AddressBook`](crate::model::AddressBook)
-    #[non_exhaustive]
+    /// A builder for [`AddressBook`](crate::model::AddressBook).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address_book_arn: std::option::Option<std::string::String>,
@@ -8853,7 +8796,7 @@ pub mod address_book {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`AddressBook`](crate::model::AddressBook)
+        /// Consumes the builder and constructs a [`AddressBook`](crate::model::AddressBook).
         pub fn build(self) -> crate::model::AddressBook {
             crate::model::AddressBook {
                 address_book_arn: self.address_book_arn,
@@ -8864,7 +8807,7 @@ pub mod address_book {
     }
 }
 impl AddressBook {
-    /// Creates a new builder-style object to manufacture [`AddressBook`](crate::model::AddressBook)
+    /// Creates a new builder-style object to manufacture [`AddressBook`](crate::model::AddressBook).
     pub fn builder() -> crate::model::address_book::Builder {
         crate::model::address_book::Builder::default()
     }
@@ -8967,11 +8910,10 @@ impl std::fmt::Debug for CreateMeetingRoomConfiguration {
         formatter.finish()
     }
 }
-/// See [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration)
+/// See [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
 pub mod create_meeting_room_configuration {
 
-    /// A builder for [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration)
-    #[non_exhaustive]
+    /// A builder for [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) room_utilization_metrics_enabled: std::option::Option<bool>,
@@ -9036,7 +8978,7 @@ pub mod create_meeting_room_configuration {
             self.require_check_in = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration)
+        /// Consumes the builder and constructs a [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
         pub fn build(self) -> crate::model::CreateMeetingRoomConfiguration {
             crate::model::CreateMeetingRoomConfiguration {
                 room_utilization_metrics_enabled: self.room_utilization_metrics_enabled,
@@ -9048,7 +8990,7 @@ pub mod create_meeting_room_configuration {
     }
 }
 impl CreateMeetingRoomConfiguration {
-    /// Creates a new builder-style object to manufacture [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration)
+    /// Creates a new builder-style object to manufacture [`CreateMeetingRoomConfiguration`](crate::model::CreateMeetingRoomConfiguration).
     pub fn builder() -> crate::model::create_meeting_room_configuration::Builder {
         crate::model::create_meeting_room_configuration::Builder::default()
     }
@@ -9081,11 +9023,10 @@ impl std::fmt::Debug for CreateRequireCheckIn {
         formatter.finish()
     }
 }
-/// See [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn)
+/// See [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
 pub mod create_require_check_in {
 
-    /// A builder for [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn)
-    #[non_exhaustive]
+    /// A builder for [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) release_after_minutes: std::option::Option<i32>,
@@ -9112,7 +9053,7 @@ pub mod create_require_check_in {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn)
+        /// Consumes the builder and constructs a [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
         pub fn build(self) -> crate::model::CreateRequireCheckIn {
             crate::model::CreateRequireCheckIn {
                 release_after_minutes: self.release_after_minutes,
@@ -9122,7 +9063,7 @@ pub mod create_require_check_in {
     }
 }
 impl CreateRequireCheckIn {
-    /// Creates a new builder-style object to manufacture [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn)
+    /// Creates a new builder-style object to manufacture [`CreateRequireCheckIn`](crate::model::CreateRequireCheckIn).
     pub fn builder() -> crate::model::create_require_check_in::Builder {
         crate::model::create_require_check_in::Builder::default()
     }
@@ -9155,11 +9096,10 @@ impl std::fmt::Debug for CreateInstantBooking {
         formatter.finish()
     }
 }
-/// See [`CreateInstantBooking`](crate::model::CreateInstantBooking)
+/// See [`CreateInstantBooking`](crate::model::CreateInstantBooking).
 pub mod create_instant_booking {
 
-    /// A builder for [`CreateInstantBooking`](crate::model::CreateInstantBooking)
-    #[non_exhaustive]
+    /// A builder for [`CreateInstantBooking`](crate::model::CreateInstantBooking).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) duration_in_minutes: std::option::Option<i32>,
@@ -9186,7 +9126,7 @@ pub mod create_instant_booking {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateInstantBooking`](crate::model::CreateInstantBooking)
+        /// Consumes the builder and constructs a [`CreateInstantBooking`](crate::model::CreateInstantBooking).
         pub fn build(self) -> crate::model::CreateInstantBooking {
             crate::model::CreateInstantBooking {
                 duration_in_minutes: self.duration_in_minutes,
@@ -9196,7 +9136,7 @@ pub mod create_instant_booking {
     }
 }
 impl CreateInstantBooking {
-    /// Creates a new builder-style object to manufacture [`CreateInstantBooking`](crate::model::CreateInstantBooking)
+    /// Creates a new builder-style object to manufacture [`CreateInstantBooking`](crate::model::CreateInstantBooking).
     pub fn builder() -> crate::model::create_instant_booking::Builder {
         crate::model::create_instant_booking::Builder::default()
     }
@@ -9236,11 +9176,10 @@ impl std::fmt::Debug for CreateEndOfMeetingReminder {
         formatter.finish()
     }
 }
-/// See [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder)
+/// See [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
 pub mod create_end_of_meeting_reminder {
 
-    /// A builder for [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder)
-    #[non_exhaustive]
+    /// A builder for [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reminder_at_minutes: std::option::Option<std::vec::Vec<i32>>,
@@ -9290,7 +9229,7 @@ pub mod create_end_of_meeting_reminder {
             self.enabled = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder)
+        /// Consumes the builder and constructs a [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
         pub fn build(self) -> crate::model::CreateEndOfMeetingReminder {
             crate::model::CreateEndOfMeetingReminder {
                 reminder_at_minutes: self.reminder_at_minutes,
@@ -9301,7 +9240,7 @@ pub mod create_end_of_meeting_reminder {
     }
 }
 impl CreateEndOfMeetingReminder {
-    /// Creates a new builder-style object to manufacture [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder)
+    /// Creates a new builder-style object to manufacture [`CreateEndOfMeetingReminder`](crate::model::CreateEndOfMeetingReminder).
     pub fn builder() -> crate::model::create_end_of_meeting_reminder::Builder {
         crate::model::create_end_of_meeting_reminder::Builder::default()
     }

@@ -108,11 +108,10 @@ impl std::fmt::Debug for AlternateContact {
         formatter.finish()
     }
 }
-/// See [`AlternateContact`](crate::model::AlternateContact)
+/// See [`AlternateContact`](crate::model::AlternateContact).
 pub mod alternate_contact {
 
-    /// A builder for [`AlternateContact`](crate::model::AlternateContact)
-    #[non_exhaustive]
+    /// A builder for [`AlternateContact`](crate::model::AlternateContact).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -178,7 +177,7 @@ pub mod alternate_contact {
             self.alternate_contact_type = input;
             self
         }
-        /// Consumes the builder and constructs a [`AlternateContact`](crate::model::AlternateContact)
+        /// Consumes the builder and constructs a [`AlternateContact`](crate::model::AlternateContact).
         pub fn build(self) -> crate::model::AlternateContact {
             crate::model::AlternateContact {
                 name: self.name,
@@ -191,7 +190,7 @@ pub mod alternate_contact {
     }
 }
 impl AlternateContact {
-    /// Creates a new builder-style object to manufacture [`AlternateContact`](crate::model::AlternateContact)
+    /// Creates a new builder-style object to manufacture [`AlternateContact`](crate::model::AlternateContact).
     pub fn builder() -> crate::model::alternate_contact::Builder {
         crate::model::alternate_contact::Builder::default()
     }

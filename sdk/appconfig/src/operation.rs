@@ -10,7 +10,7 @@ pub struct CreateApplication {
     _private: (),
 }
 impl CreateApplication {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::input::CreateApplicationInput).
     pub fn builder() -> crate::input::create_application_input::Builder {
         crate::input::create_application_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CreateConfigurationProfile {
     _private: (),
 }
 impl CreateConfigurationProfile {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationProfileInput`](crate::input::CreateConfigurationProfileInput)
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationProfileInput`](crate::input::CreateConfigurationProfileInput).
     pub fn builder() -> crate::input::create_configuration_profile_input::Builder {
         crate::input::create_configuration_profile_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateDeploymentStrategy {
     _private: (),
 }
 impl CreateDeploymentStrategy {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentStrategyInput`](crate::input::CreateDeploymentStrategyInput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentStrategyInput`](crate::input::CreateDeploymentStrategyInput).
     pub fn builder() -> crate::input::create_deployment_strategy_input::Builder {
         crate::input::create_deployment_strategy_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct CreateEnvironment {
     _private: (),
 }
 impl CreateEnvironment {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput).
     pub fn builder() -> crate::input::create_environment_input::Builder {
         crate::input::create_environment_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct CreateHostedConfigurationVersion {
     _private: (),
 }
 impl CreateHostedConfigurationVersion {
-    /// Creates a new builder-style object to manufacture [`CreateHostedConfigurationVersionInput`](crate::input::CreateHostedConfigurationVersionInput)
+    /// Creates a new builder-style object to manufacture [`CreateHostedConfigurationVersionInput`](crate::input::CreateHostedConfigurationVersionInput).
     pub fn builder() -> crate::input::create_hosted_configuration_version_input::Builder {
         crate::input::create_hosted_configuration_version_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteApplication {
     _private: (),
 }
 impl DeleteApplication {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput)
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::input::DeleteApplicationInput).
     pub fn builder() -> crate::input::delete_application_input::Builder {
         crate::input::delete_application_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DeleteConfigurationProfile {
     _private: (),
 }
 impl DeleteConfigurationProfile {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationProfileInput`](crate::input::DeleteConfigurationProfileInput)
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationProfileInput`](crate::input::DeleteConfigurationProfileInput).
     pub fn builder() -> crate::input::delete_configuration_profile_input::Builder {
         crate::input::delete_configuration_profile_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct DeleteDeploymentStrategy {
     _private: (),
 }
 impl DeleteDeploymentStrategy {
-    /// Creates a new builder-style object to manufacture [`DeleteDeploymentStrategyInput`](crate::input::DeleteDeploymentStrategyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentStrategyInput`](crate::input::DeleteDeploymentStrategyInput).
     pub fn builder() -> crate::input::delete_deployment_strategy_input::Builder {
         crate::input::delete_deployment_strategy_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct DeleteEnvironment {
     _private: (),
 }
 impl DeleteEnvironment {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput).
     pub fn builder() -> crate::input::delete_environment_input::Builder {
         crate::input::delete_environment_input::Builder::default()
     }
@@ -316,7 +316,7 @@ pub struct DeleteHostedConfigurationVersion {
     _private: (),
 }
 impl DeleteHostedConfigurationVersion {
-    /// Creates a new builder-style object to manufacture [`DeleteHostedConfigurationVersionInput`](crate::input::DeleteHostedConfigurationVersionInput)
+    /// Creates a new builder-style object to manufacture [`DeleteHostedConfigurationVersionInput`](crate::input::DeleteHostedConfigurationVersionInput).
     pub fn builder() -> crate::input::delete_hosted_configuration_version_input::Builder {
         crate::input::delete_hosted_configuration_version_input::Builder::default()
     }
@@ -350,7 +350,7 @@ pub struct GetApplication {
     _private: (),
 }
 impl GetApplication {
-    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationInput`](crate::input::GetApplicationInput).
     pub fn builder() -> crate::input::get_application_input::Builder {
         crate::input::get_application_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct GetConfiguration {
     _private: (),
 }
 impl GetConfiguration {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::input::GetConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`GetConfigurationInput`](crate::input::GetConfigurationInput).
     pub fn builder() -> crate::input::get_configuration_input::Builder {
         crate::input::get_configuration_input::Builder::default()
     }
@@ -416,7 +416,7 @@ pub struct GetConfigurationProfile {
     _private: (),
 }
 impl GetConfigurationProfile {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationProfileInput`](crate::input::GetConfigurationProfileInput)
+    /// Creates a new builder-style object to manufacture [`GetConfigurationProfileInput`](crate::input::GetConfigurationProfileInput).
     pub fn builder() -> crate::input::get_configuration_profile_input::Builder {
         crate::input::get_configuration_profile_input::Builder::default()
     }
@@ -450,7 +450,7 @@ pub struct GetDeployment {
     _private: (),
 }
 impl GetDeployment {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::input::GetDeploymentInput).
     pub fn builder() -> crate::input::get_deployment_input::Builder {
         crate::input::get_deployment_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct GetDeploymentStrategy {
     _private: (),
 }
 impl GetDeploymentStrategy {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentStrategyInput`](crate::input::GetDeploymentStrategyInput)
+    /// Creates a new builder-style object to manufacture [`GetDeploymentStrategyInput`](crate::input::GetDeploymentStrategyInput).
     pub fn builder() -> crate::input::get_deployment_strategy_input::Builder {
         crate::input::get_deployment_strategy_input::Builder::default()
     }
@@ -516,7 +516,7 @@ pub struct GetEnvironment {
     _private: (),
 }
 impl GetEnvironment {
-    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`GetEnvironmentInput`](crate::input::GetEnvironmentInput).
     pub fn builder() -> crate::input::get_environment_input::Builder {
         crate::input::get_environment_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct GetHostedConfigurationVersion {
     _private: (),
 }
 impl GetHostedConfigurationVersion {
-    /// Creates a new builder-style object to manufacture [`GetHostedConfigurationVersionInput`](crate::input::GetHostedConfigurationVersionInput)
+    /// Creates a new builder-style object to manufacture [`GetHostedConfigurationVersionInput`](crate::input::GetHostedConfigurationVersionInput).
     pub fn builder() -> crate::input::get_hosted_configuration_version_input::Builder {
         crate::input::get_hosted_configuration_version_input::Builder::default()
     }
@@ -582,7 +582,7 @@ pub struct ListApplications {
     _private: (),
 }
 impl ListApplications {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::input::ListApplicationsInput).
     pub fn builder() -> crate::input::list_applications_input::Builder {
         crate::input::list_applications_input::Builder::default()
     }
@@ -616,7 +616,7 @@ pub struct ListConfigurationProfiles {
     _private: (),
 }
 impl ListConfigurationProfiles {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationProfilesInput`](crate::input::ListConfigurationProfilesInput)
+    /// Creates a new builder-style object to manufacture [`ListConfigurationProfilesInput`](crate::input::ListConfigurationProfilesInput).
     pub fn builder() -> crate::input::list_configuration_profiles_input::Builder {
         crate::input::list_configuration_profiles_input::Builder::default()
     }
@@ -650,7 +650,7 @@ pub struct ListDeployments {
     _private: (),
 }
 impl ListDeployments {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::input::ListDeploymentsInput).
     pub fn builder() -> crate::input::list_deployments_input::Builder {
         crate::input::list_deployments_input::Builder::default()
     }
@@ -684,7 +684,7 @@ pub struct ListDeploymentStrategies {
     _private: (),
 }
 impl ListDeploymentStrategies {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentStrategiesInput`](crate::input::ListDeploymentStrategiesInput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentStrategiesInput`](crate::input::ListDeploymentStrategiesInput).
     pub fn builder() -> crate::input::list_deployment_strategies_input::Builder {
         crate::input::list_deployment_strategies_input::Builder::default()
     }
@@ -718,7 +718,7 @@ pub struct ListEnvironments {
     _private: (),
 }
 impl ListEnvironments {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput)
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput).
     pub fn builder() -> crate::input::list_environments_input::Builder {
         crate::input::list_environments_input::Builder::default()
     }
@@ -752,7 +752,7 @@ pub struct ListHostedConfigurationVersions {
     _private: (),
 }
 impl ListHostedConfigurationVersions {
-    /// Creates a new builder-style object to manufacture [`ListHostedConfigurationVersionsInput`](crate::input::ListHostedConfigurationVersionsInput)
+    /// Creates a new builder-style object to manufacture [`ListHostedConfigurationVersionsInput`](crate::input::ListHostedConfigurationVersionsInput).
     pub fn builder() -> crate::input::list_hosted_configuration_versions_input::Builder {
         crate::input::list_hosted_configuration_versions_input::Builder::default()
     }
@@ -786,7 +786,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -820,7 +820,7 @@ pub struct StartDeployment {
     _private: (),
 }
 impl StartDeployment {
-    /// Creates a new builder-style object to manufacture [`StartDeploymentInput`](crate::input::StartDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`StartDeploymentInput`](crate::input::StartDeploymentInput).
     pub fn builder() -> crate::input::start_deployment_input::Builder {
         crate::input::start_deployment_input::Builder::default()
     }
@@ -854,7 +854,7 @@ pub struct StopDeployment {
     _private: (),
 }
 impl StopDeployment {
-    /// Creates a new builder-style object to manufacture [`StopDeploymentInput`](crate::input::StopDeploymentInput)
+    /// Creates a new builder-style object to manufacture [`StopDeploymentInput`](crate::input::StopDeploymentInput).
     pub fn builder() -> crate::input::stop_deployment_input::Builder {
         crate::input::stop_deployment_input::Builder::default()
     }
@@ -886,7 +886,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -918,7 +918,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -950,7 +950,7 @@ pub struct UpdateApplication {
     _private: (),
 }
 impl UpdateApplication {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::input::UpdateApplicationInput).
     pub fn builder() -> crate::input::update_application_input::Builder {
         crate::input::update_application_input::Builder::default()
     }
@@ -984,7 +984,7 @@ pub struct UpdateConfigurationProfile {
     _private: (),
 }
 impl UpdateConfigurationProfile {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationProfileInput`](crate::input::UpdateConfigurationProfileInput)
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationProfileInput`](crate::input::UpdateConfigurationProfileInput).
     pub fn builder() -> crate::input::update_configuration_profile_input::Builder {
         crate::input::update_configuration_profile_input::Builder::default()
     }
@@ -1018,7 +1018,7 @@ pub struct UpdateDeploymentStrategy {
     _private: (),
 }
 impl UpdateDeploymentStrategy {
-    /// Creates a new builder-style object to manufacture [`UpdateDeploymentStrategyInput`](crate::input::UpdateDeploymentStrategyInput)
+    /// Creates a new builder-style object to manufacture [`UpdateDeploymentStrategyInput`](crate::input::UpdateDeploymentStrategyInput).
     pub fn builder() -> crate::input::update_deployment_strategy_input::Builder {
         crate::input::update_deployment_strategy_input::Builder::default()
     }
@@ -1052,7 +1052,7 @@ pub struct UpdateEnvironment {
     _private: (),
 }
 impl UpdateEnvironment {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput).
     pub fn builder() -> crate::input::update_environment_input::Builder {
         crate::input::update_environment_input::Builder::default()
     }
@@ -1086,7 +1086,7 @@ pub struct ValidateConfiguration {
     _private: (),
 }
 impl ValidateConfiguration {
-    /// Creates a new builder-style object to manufacture [`ValidateConfigurationInput`](crate::input::ValidateConfigurationInput)
+    /// Creates a new builder-style object to manufacture [`ValidateConfigurationInput`](crate::input::ValidateConfigurationInput).
     pub fn builder() -> crate::input::validate_configuration_input::Builder {
         crate::input::validate_configuration_input::Builder::default()
     }

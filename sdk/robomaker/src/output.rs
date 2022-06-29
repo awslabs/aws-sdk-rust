@@ -40,11 +40,10 @@ impl std::fmt::Debug for UpdateWorldTemplateOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput)
+/// See [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
 pub mod update_world_template_output {
 
-    /// A builder for [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -99,7 +98,7 @@ pub mod update_world_template_output {
             self.last_updated_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput)
+        /// Consumes the builder and constructs a [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
         pub fn build(self) -> crate::output::UpdateWorldTemplateOutput {
             crate::output::UpdateWorldTemplateOutput {
                 arn: self.arn,
@@ -111,7 +110,7 @@ pub mod update_world_template_output {
     }
 }
 impl UpdateWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateWorldTemplateOutput`](crate::output::UpdateWorldTemplateOutput).
     pub fn builder() -> crate::output::update_world_template_output::Builder {
         crate::output::update_world_template_output::Builder::default()
     }
@@ -202,11 +201,10 @@ impl std::fmt::Debug for UpdateSimulationApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput)
+/// See [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
 pub mod update_simulation_application_output {
 
-    /// A builder for [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -349,7 +347,7 @@ pub mod update_simulation_application_output {
             self.environment = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput)
+        /// Consumes the builder and constructs a [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
         pub fn build(self) -> crate::output::UpdateSimulationApplicationOutput {
             crate::output::UpdateSimulationApplicationOutput {
                 arn: self.arn,
@@ -367,7 +365,7 @@ pub mod update_simulation_application_output {
     }
 }
 impl UpdateSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateSimulationApplicationOutput`](crate::output::UpdateSimulationApplicationOutput).
     pub fn builder() -> crate::output::update_simulation_application_output::Builder {
         crate::output::update_simulation_application_output::Builder::default()
     }
@@ -442,11 +440,10 @@ impl std::fmt::Debug for UpdateRobotApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput)
+/// See [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
 pub mod update_robot_application_output {
 
-    /// A builder for [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -557,7 +554,7 @@ pub mod update_robot_application_output {
             self.environment = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput)
+        /// Consumes the builder and constructs a [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
         pub fn build(self) -> crate::output::UpdateRobotApplicationOutput {
             crate::output::UpdateRobotApplicationOutput {
                 arn: self.arn,
@@ -573,7 +570,7 @@ pub mod update_robot_application_output {
     }
 }
 impl UpdateRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateRobotApplicationOutput`](crate::output::UpdateRobotApplicationOutput).
     pub fn builder() -> crate::output::update_robot_application_output::Builder {
         crate::output::update_robot_application_output::Builder::default()
     }
@@ -589,22 +586,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -620,22 +616,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -888,11 +883,10 @@ impl std::fmt::Debug for SyncDeploymentJobOutput {
         formatter.finish()
     }
 }
-/// See [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput)
+/// See [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
 pub mod sync_deployment_job_output {
 
-    /// A builder for [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1185,7 +1179,7 @@ pub mod sync_deployment_job_output {
             self.created_at = input;
             self
         }
-        /// Consumes the builder and constructs a [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput)
+        /// Consumes the builder and constructs a [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
         pub fn build(self) -> crate::output::SyncDeploymentJobOutput {
             crate::output::SyncDeploymentJobOutput {
                 arn: self.arn,
@@ -1201,7 +1195,7 @@ pub mod sync_deployment_job_output {
     }
 }
 impl SyncDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput)
+    /// Creates a new builder-style object to manufacture [`SyncDeploymentJobOutput`](crate::output::SyncDeploymentJobOutput).
     pub fn builder() -> crate::output::sync_deployment_job_output::Builder {
         crate::output::sync_deployment_job_output::Builder::default()
     }
@@ -1418,11 +1412,10 @@ impl std::fmt::Debug for StartSimulationJobBatchOutput {
         formatter.finish()
     }
 }
-/// See [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput)
+/// See [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
 pub mod start_simulation_job_batch_output {
 
-    /// A builder for [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput)
-    #[non_exhaustive]
+    /// A builder for [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1732,7 +1725,7 @@ pub mod start_simulation_job_batch_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput)
+        /// Consumes the builder and constructs a [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
         pub fn build(self) -> crate::output::StartSimulationJobBatchOutput {
             crate::output::StartSimulationJobBatchOutput {
                 arn: self.arn,
@@ -1751,7 +1744,7 @@ pub mod start_simulation_job_batch_output {
     }
 }
 impl StartSimulationJobBatchOutput {
-    /// Creates a new builder-style object to manufacture [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput)
+    /// Creates a new builder-style object to manufacture [`StartSimulationJobBatchOutput`](crate::output::StartSimulationJobBatchOutput).
     pub fn builder() -> crate::output::start_simulation_job_batch_output::Builder {
         crate::output::start_simulation_job_batch_output::Builder::default()
     }
@@ -1767,22 +1760,21 @@ impl std::fmt::Debug for RestartSimulationJobOutput {
         formatter.finish()
     }
 }
-/// See [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput)
+/// See [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
 pub mod restart_simulation_job_output {
 
-    /// A builder for [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput)
+        /// Consumes the builder and constructs a [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
         pub fn build(self) -> crate::output::RestartSimulationJobOutput {
             crate::output::RestartSimulationJobOutput {}
         }
     }
 }
 impl RestartSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput)
+    /// Creates a new builder-style object to manufacture [`RestartSimulationJobOutput`](crate::output::RestartSimulationJobOutput).
     pub fn builder() -> crate::output::restart_simulation_job_output::Builder {
         crate::output::restart_simulation_job_output::Builder::default()
     }
@@ -1815,11 +1807,10 @@ impl std::fmt::Debug for RegisterRobotOutput {
         formatter.finish()
     }
 }
-/// See [`RegisterRobotOutput`](crate::output::RegisterRobotOutput)
+/// See [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
 pub mod register_robot_output {
 
-    /// A builder for [`RegisterRobotOutput`](crate::output::RegisterRobotOutput)
-    #[non_exhaustive]
+    /// A builder for [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
@@ -1846,7 +1837,7 @@ pub mod register_robot_output {
             self.robot = input;
             self
         }
-        /// Consumes the builder and constructs a [`RegisterRobotOutput`](crate::output::RegisterRobotOutput)
+        /// Consumes the builder and constructs a [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
         pub fn build(self) -> crate::output::RegisterRobotOutput {
             crate::output::RegisterRobotOutput {
                 fleet: self.fleet,
@@ -1856,7 +1847,7 @@ pub mod register_robot_output {
     }
 }
 impl RegisterRobotOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterRobotOutput`](crate::output::RegisterRobotOutput)
+    /// Creates a new builder-style object to manufacture [`RegisterRobotOutput`](crate::output::RegisterRobotOutput).
     pub fn builder() -> crate::output::register_robot_output::Builder {
         crate::output::register_robot_output::Builder::default()
     }
@@ -1889,11 +1880,10 @@ impl std::fmt::Debug for ListWorldTemplatesOutput {
         formatter.finish()
     }
 }
-/// See [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput)
+/// See [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
 pub mod list_world_templates_output {
 
-    /// A builder for [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_summaries:
@@ -1930,7 +1920,7 @@ pub mod list_world_templates_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput)
+        /// Consumes the builder and constructs a [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
         pub fn build(self) -> crate::output::ListWorldTemplatesOutput {
             crate::output::ListWorldTemplatesOutput {
                 template_summaries: self.template_summaries,
@@ -1940,7 +1930,7 @@ pub mod list_world_templates_output {
     }
 }
 impl ListWorldTemplatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput)
+    /// Creates a new builder-style object to manufacture [`ListWorldTemplatesOutput`](crate::output::ListWorldTemplatesOutput).
     pub fn builder() -> crate::output::list_world_templates_output::Builder {
         crate::output::list_world_templates_output::Builder::default()
     }
@@ -1973,11 +1963,10 @@ impl std::fmt::Debug for ListWorldsOutput {
         formatter.finish()
     }
 }
-/// See [`ListWorldsOutput`](crate::output::ListWorldsOutput)
+/// See [`ListWorldsOutput`](crate::output::ListWorldsOutput).
 pub mod list_worlds_output {
 
-    /// A builder for [`ListWorldsOutput`](crate::output::ListWorldsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWorldsOutput`](crate::output::ListWorldsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world_summaries: std::option::Option<std::vec::Vec<crate::model::WorldSummary>>,
@@ -2013,7 +2002,7 @@ pub mod list_worlds_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWorldsOutput`](crate::output::ListWorldsOutput)
+        /// Consumes the builder and constructs a [`ListWorldsOutput`](crate::output::ListWorldsOutput).
         pub fn build(self) -> crate::output::ListWorldsOutput {
             crate::output::ListWorldsOutput {
                 world_summaries: self.world_summaries,
@@ -2023,7 +2012,7 @@ pub mod list_worlds_output {
     }
 }
 impl ListWorldsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldsOutput`](crate::output::ListWorldsOutput)
+    /// Creates a new builder-style object to manufacture [`ListWorldsOutput`](crate::output::ListWorldsOutput).
     pub fn builder() -> crate::output::list_worlds_output::Builder {
         crate::output::list_worlds_output::Builder::default()
     }
@@ -2062,11 +2051,10 @@ impl std::fmt::Debug for ListWorldGenerationJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput)
+/// See [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
 pub mod list_world_generation_jobs_output {
 
-    /// A builder for [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world_generation_job_summaries:
@@ -2106,7 +2094,7 @@ pub mod list_world_generation_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput)
+        /// Consumes the builder and constructs a [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
         pub fn build(self) -> crate::output::ListWorldGenerationJobsOutput {
             crate::output::ListWorldGenerationJobsOutput {
                 world_generation_job_summaries: self.world_generation_job_summaries,
@@ -2116,7 +2104,7 @@ pub mod list_world_generation_jobs_output {
     }
 }
 impl ListWorldGenerationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListWorldGenerationJobsOutput`](crate::output::ListWorldGenerationJobsOutput).
     pub fn builder() -> crate::output::list_world_generation_jobs_output::Builder {
         crate::output::list_world_generation_jobs_output::Builder::default()
     }
@@ -2155,11 +2143,10 @@ impl std::fmt::Debug for ListWorldExportJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput)
+/// See [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
 pub mod list_world_export_jobs_output {
 
-    /// A builder for [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) world_export_job_summaries:
@@ -2199,7 +2186,7 @@ pub mod list_world_export_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput)
+        /// Consumes the builder and constructs a [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
         pub fn build(self) -> crate::output::ListWorldExportJobsOutput {
             crate::output::ListWorldExportJobsOutput {
                 world_export_job_summaries: self.world_export_job_summaries,
@@ -2209,7 +2196,7 @@ pub mod list_world_export_jobs_output {
     }
 }
 impl ListWorldExportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListWorldExportJobsOutput`](crate::output::ListWorldExportJobsOutput).
     pub fn builder() -> crate::output::list_world_export_jobs_output::Builder {
         crate::output::list_world_export_jobs_output::Builder::default()
     }
@@ -2239,11 +2226,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -2276,14 +2262,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -2319,11 +2305,10 @@ impl std::fmt::Debug for ListSimulationJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput)
+/// See [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
 pub mod list_simulation_jobs_output {
 
-    /// A builder for [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_job_summaries:
@@ -2363,7 +2348,7 @@ pub mod list_simulation_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput)
+        /// Consumes the builder and constructs a [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
         pub fn build(self) -> crate::output::ListSimulationJobsOutput {
             crate::output::ListSimulationJobsOutput {
                 simulation_job_summaries: self.simulation_job_summaries,
@@ -2373,7 +2358,7 @@ pub mod list_simulation_jobs_output {
     }
 }
 impl ListSimulationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListSimulationJobsOutput`](crate::output::ListSimulationJobsOutput).
     pub fn builder() -> crate::output::list_simulation_jobs_output::Builder {
         crate::output::list_simulation_jobs_output::Builder::default()
     }
@@ -2412,11 +2397,10 @@ impl std::fmt::Debug for ListSimulationJobBatchesOutput {
         formatter.finish()
     }
 }
-/// See [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput)
+/// See [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
 pub mod list_simulation_job_batches_output {
 
-    /// A builder for [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_job_batch_summaries:
@@ -2456,7 +2440,7 @@ pub mod list_simulation_job_batches_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput)
+        /// Consumes the builder and constructs a [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
         pub fn build(self) -> crate::output::ListSimulationJobBatchesOutput {
             crate::output::ListSimulationJobBatchesOutput {
                 simulation_job_batch_summaries: self.simulation_job_batch_summaries,
@@ -2466,7 +2450,7 @@ pub mod list_simulation_job_batches_output {
     }
 }
 impl ListSimulationJobBatchesOutput {
-    /// Creates a new builder-style object to manufacture [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput)
+    /// Creates a new builder-style object to manufacture [`ListSimulationJobBatchesOutput`](crate::output::ListSimulationJobBatchesOutput).
     pub fn builder() -> crate::output::list_simulation_job_batches_output::Builder {
         crate::output::list_simulation_job_batches_output::Builder::default()
     }
@@ -2505,11 +2489,10 @@ impl std::fmt::Debug for ListSimulationApplicationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput)
+/// See [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
 pub mod list_simulation_applications_output {
 
-    /// A builder for [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) simulation_application_summaries:
@@ -2549,7 +2532,7 @@ pub mod list_simulation_applications_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput)
+        /// Consumes the builder and constructs a [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
         pub fn build(self) -> crate::output::ListSimulationApplicationsOutput {
             crate::output::ListSimulationApplicationsOutput {
                 simulation_application_summaries: self.simulation_application_summaries,
@@ -2559,7 +2542,7 @@ pub mod list_simulation_applications_output {
     }
 }
 impl ListSimulationApplicationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListSimulationApplicationsOutput`](crate::output::ListSimulationApplicationsOutput).
     pub fn builder() -> crate::output::list_simulation_applications_output::Builder {
         crate::output::list_simulation_applications_output::Builder::default()
     }
@@ -2592,11 +2575,10 @@ impl std::fmt::Debug for ListRobotsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRobotsOutput`](crate::output::ListRobotsOutput)
+/// See [`ListRobotsOutput`](crate::output::ListRobotsOutput).
 pub mod list_robots_output {
 
-    /// A builder for [`ListRobotsOutput`](crate::output::ListRobotsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRobotsOutput`](crate::output::ListRobotsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) robots: std::option::Option<std::vec::Vec<crate::model::Robot>>,
@@ -2632,7 +2614,7 @@ pub mod list_robots_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRobotsOutput`](crate::output::ListRobotsOutput)
+        /// Consumes the builder and constructs a [`ListRobotsOutput`](crate::output::ListRobotsOutput).
         pub fn build(self) -> crate::output::ListRobotsOutput {
             crate::output::ListRobotsOutput {
                 robots: self.robots,
@@ -2642,7 +2624,7 @@ pub mod list_robots_output {
     }
 }
 impl ListRobotsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRobotsOutput`](crate::output::ListRobotsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRobotsOutput`](crate::output::ListRobotsOutput).
     pub fn builder() -> crate::output::list_robots_output::Builder {
         crate::output::list_robots_output::Builder::default()
     }
@@ -2681,11 +2663,10 @@ impl std::fmt::Debug for ListRobotApplicationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput)
+/// See [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
 pub mod list_robot_applications_output {
 
-    /// A builder for [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) robot_application_summaries:
@@ -2725,7 +2706,7 @@ pub mod list_robot_applications_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput)
+        /// Consumes the builder and constructs a [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
         pub fn build(self) -> crate::output::ListRobotApplicationsOutput {
             crate::output::ListRobotApplicationsOutput {
                 robot_application_summaries: self.robot_application_summaries,
@@ -2735,7 +2716,7 @@ pub mod list_robot_applications_output {
     }
 }
 impl ListRobotApplicationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListRobotApplicationsOutput`](crate::output::ListRobotApplicationsOutput).
     pub fn builder() -> crate::output::list_robot_applications_output::Builder {
         crate::output::list_robot_applications_output::Builder::default()
     }
@@ -2768,11 +2749,10 @@ impl std::fmt::Debug for ListFleetsOutput {
         formatter.finish()
     }
 }
-/// See [`ListFleetsOutput`](crate::output::ListFleetsOutput)
+/// See [`ListFleetsOutput`](crate::output::ListFleetsOutput).
 pub mod list_fleets_output {
 
-    /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_details: std::option::Option<std::vec::Vec<crate::model::Fleet>>,
@@ -2808,7 +2788,7 @@ pub mod list_fleets_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFleetsOutput`](crate::output::ListFleetsOutput)
+        /// Consumes the builder and constructs a [`ListFleetsOutput`](crate::output::ListFleetsOutput).
         pub fn build(self) -> crate::output::ListFleetsOutput {
             crate::output::ListFleetsOutput {
                 fleet_details: self.fleet_details,
@@ -2818,7 +2798,7 @@ pub mod list_fleets_output {
     }
 }
 impl ListFleetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFleetsOutput`](crate::output::ListFleetsOutput)
+    /// Creates a new builder-style object to manufacture [`ListFleetsOutput`](crate::output::ListFleetsOutput).
     pub fn builder() -> crate::output::list_fleets_output::Builder {
         crate::output::list_fleets_output::Builder::default()
     }
@@ -2851,11 +2831,10 @@ impl std::fmt::Debug for ListDeploymentJobsOutput {
         formatter.finish()
     }
 }
-/// See [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput)
+/// See [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
 pub mod list_deployment_jobs_output {
 
-    /// A builder for [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployment_jobs: std::option::Option<std::vec::Vec<crate::model::DeploymentJob>>,
@@ -2891,7 +2870,7 @@ pub mod list_deployment_jobs_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput)
+        /// Consumes the builder and constructs a [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
         pub fn build(self) -> crate::output::ListDeploymentJobsOutput {
             crate::output::ListDeploymentJobsOutput {
                 deployment_jobs: self.deployment_jobs,
@@ -2901,7 +2880,7 @@ pub mod list_deployment_jobs_output {
     }
 }
 impl ListDeploymentJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput)
+    /// Creates a new builder-style object to manufacture [`ListDeploymentJobsOutput`](crate::output::ListDeploymentJobsOutput).
     pub fn builder() -> crate::output::list_deployment_jobs_output::Builder {
         crate::output::list_deployment_jobs_output::Builder::default()
     }
@@ -2927,11 +2906,10 @@ impl std::fmt::Debug for GetWorldTemplateBodyOutput {
         formatter.finish()
     }
 }
-/// See [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput)
+/// See [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
 pub mod get_world_template_body_output {
 
-    /// A builder for [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) template_body: std::option::Option<std::string::String>,
@@ -2950,7 +2928,7 @@ pub mod get_world_template_body_output {
             self.template_body = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput)
+        /// Consumes the builder and constructs a [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
         pub fn build(self) -> crate::output::GetWorldTemplateBodyOutput {
             crate::output::GetWorldTemplateBodyOutput {
                 template_body: self.template_body,
@@ -2959,7 +2937,7 @@ pub mod get_world_template_body_output {
     }
 }
 impl GetWorldTemplateBodyOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput)
+    /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyOutput`](crate::output::GetWorldTemplateBodyOutput).
     pub fn builder() -> crate::output::get_world_template_body_output::Builder {
         crate::output::get_world_template_body_output::Builder::default()
     }
@@ -3031,11 +3009,10 @@ impl std::fmt::Debug for DescribeWorldTemplateOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput)
+/// See [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
 pub mod describe_world_template_output {
 
-    /// A builder for [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3143,7 +3120,7 @@ pub mod describe_world_template_output {
             self.version = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput)
+        /// Consumes the builder and constructs a [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
         pub fn build(self) -> crate::output::DescribeWorldTemplateOutput {
             crate::output::DescribeWorldTemplateOutput {
                 arn: self.arn,
@@ -3158,7 +3135,7 @@ pub mod describe_world_template_output {
     }
 }
 impl DescribeWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorldTemplateOutput`](crate::output::DescribeWorldTemplateOutput).
     pub fn builder() -> crate::output::describe_world_template_output::Builder {
         crate::output::describe_world_template_output::Builder::default()
     }
@@ -3416,11 +3393,10 @@ impl std::fmt::Debug for DescribeWorldGenerationJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput)
+/// See [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
 pub mod describe_world_generation_job_output {
 
-    /// A builder for [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -3757,7 +3733,7 @@ pub mod describe_world_generation_job_output {
             self.world_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput)
+        /// Consumes the builder and constructs a [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
         pub fn build(self) -> crate::output::DescribeWorldGenerationJobOutput {
             crate::output::DescribeWorldGenerationJobOutput {
                 arn: self.arn,
@@ -3776,7 +3752,7 @@ pub mod describe_world_generation_job_output {
     }
 }
 impl DescribeWorldGenerationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobOutput`](crate::output::DescribeWorldGenerationJobOutput).
     pub fn builder() -> crate::output::describe_world_generation_job_output::Builder {
         crate::output::describe_world_generation_job_output::Builder::default()
     }
@@ -4009,11 +3985,10 @@ impl std::fmt::Debug for DescribeWorldExportJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput)
+/// See [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
 pub mod describe_world_export_job_output {
 
-    /// A builder for [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4312,7 +4287,7 @@ pub mod describe_world_export_job_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput)
+        /// Consumes the builder and constructs a [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
         pub fn build(self) -> crate::output::DescribeWorldExportJobOutput {
             crate::output::DescribeWorldExportJobOutput {
                 arn: self.arn,
@@ -4330,7 +4305,7 @@ pub mod describe_world_export_job_output {
     }
 }
 impl DescribeWorldExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorldExportJobOutput`](crate::output::DescribeWorldExportJobOutput).
     pub fn builder() -> crate::output::describe_world_export_job_output::Builder {
         crate::output::describe_world_export_job_output::Builder::default()
     }
@@ -4395,11 +4370,10 @@ impl std::fmt::Debug for DescribeWorldOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeWorldOutput`](crate::output::DescribeWorldOutput)
+/// See [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
 pub mod describe_world_output {
 
-    /// A builder for [`DescribeWorldOutput`](crate::output::DescribeWorldOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -4496,7 +4470,7 @@ pub mod describe_world_output {
             self.world_description_body = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeWorldOutput`](crate::output::DescribeWorldOutput)
+        /// Consumes the builder and constructs a [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
         pub fn build(self) -> crate::output::DescribeWorldOutput {
             crate::output::DescribeWorldOutput {
                 arn: self.arn,
@@ -4510,7 +4484,7 @@ pub mod describe_world_output {
     }
 }
 impl DescribeWorldOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorldOutput`](crate::output::DescribeWorldOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeWorldOutput`](crate::output::DescribeWorldOutput).
     pub fn builder() -> crate::output::describe_world_output::Builder {
         crate::output::describe_world_output::Builder::default()
     }
@@ -4734,11 +4708,10 @@ impl std::fmt::Debug for DescribeSimulationJobBatchOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput)
+/// See [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
 pub mod describe_simulation_job_batch_output {
 
-    /// A builder for [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5062,7 +5035,7 @@ pub mod describe_simulation_job_batch_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput)
+        /// Consumes the builder and constructs a [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
         pub fn build(self) -> crate::output::DescribeSimulationJobBatchOutput {
             crate::output::DescribeSimulationJobBatchOutput {
                 arn: self.arn,
@@ -5082,7 +5055,7 @@ pub mod describe_simulation_job_batch_output {
     }
 }
 impl DescribeSimulationJobBatchOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobBatchOutput`](crate::output::DescribeSimulationJobBatchOutput).
     pub fn builder() -> crate::output::describe_simulation_job_batch_output::Builder {
         crate::output::describe_simulation_job_batch_output::Builder::default()
     }
@@ -5433,11 +5406,10 @@ impl std::fmt::Debug for DescribeSimulationJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput)
+/// See [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
 pub mod describe_simulation_job_output {
 
-    /// A builder for [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -5930,7 +5902,7 @@ pub mod describe_simulation_job_output {
             self.compute = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput)
+        /// Consumes the builder and constructs a [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
         pub fn build(self) -> crate::output::DescribeSimulationJobOutput {
             crate::output::DescribeSimulationJobOutput {
                 arn: self.arn,
@@ -5959,7 +5931,7 @@ pub mod describe_simulation_job_output {
     }
 }
 impl DescribeSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeSimulationJobOutput`](crate::output::DescribeSimulationJobOutput).
     pub fn builder() -> crate::output::describe_simulation_job_output::Builder {
         crate::output::describe_simulation_job_output::Builder::default()
     }
@@ -6068,11 +6040,10 @@ impl std::fmt::Debug for DescribeSimulationApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput)
+/// See [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
 pub mod describe_simulation_application_output {
 
-    /// A builder for [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6254,7 +6225,7 @@ pub mod describe_simulation_application_output {
             self.image_digest = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput)
+        /// Consumes the builder and constructs a [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
         pub fn build(self) -> crate::output::DescribeSimulationApplicationOutput {
             crate::output::DescribeSimulationApplicationOutput {
                 arn: self.arn,
@@ -6274,7 +6245,7 @@ pub mod describe_simulation_application_output {
     }
 }
 impl DescribeSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeSimulationApplicationOutput`](crate::output::DescribeSimulationApplicationOutput).
     pub fn builder() -> crate::output::describe_simulation_application_output::Builder {
         crate::output::describe_simulation_application_output::Builder::default()
     }
@@ -6367,11 +6338,10 @@ impl std::fmt::Debug for DescribeRobotApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput)
+/// See [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
 pub mod describe_robot_application_output {
 
-    /// A builder for [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6521,7 +6491,7 @@ pub mod describe_robot_application_output {
             self.image_digest = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput)
+        /// Consumes the builder and constructs a [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
         pub fn build(self) -> crate::output::DescribeRobotApplicationOutput {
             crate::output::DescribeRobotApplicationOutput {
                 arn: self.arn,
@@ -6539,7 +6509,7 @@ pub mod describe_robot_application_output {
     }
 }
 impl DescribeRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRobotApplicationOutput`](crate::output::DescribeRobotApplicationOutput).
     pub fn builder() -> crate::output::describe_robot_application_output::Builder {
         crate::output::describe_robot_application_output::Builder::default()
     }
@@ -6632,11 +6602,10 @@ impl std::fmt::Debug for DescribeRobotOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeRobotOutput`](crate::output::DescribeRobotOutput)
+/// See [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
 pub mod describe_robot_output {
 
-    /// A builder for [`DescribeRobotOutput`](crate::output::DescribeRobotOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -6783,7 +6752,7 @@ pub mod describe_robot_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeRobotOutput`](crate::output::DescribeRobotOutput)
+        /// Consumes the builder and constructs a [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
         pub fn build(self) -> crate::output::DescribeRobotOutput {
             crate::output::DescribeRobotOutput {
                 arn: self.arn,
@@ -6801,7 +6770,7 @@ pub mod describe_robot_output {
     }
 }
 impl DescribeRobotOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRobotOutput`](crate::output::DescribeRobotOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeRobotOutput`](crate::output::DescribeRobotOutput).
     pub fn builder() -> crate::output::describe_robot_output::Builder {
         crate::output::describe_robot_output::Builder::default()
     }
@@ -6880,11 +6849,10 @@ impl std::fmt::Debug for DescribeFleetOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeFleetOutput`](crate::output::DescribeFleetOutput)
+/// See [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
 pub mod describe_fleet_output {
 
-    /// A builder for [`DescribeFleetOutput`](crate::output::DescribeFleetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
@@ -7015,7 +6983,7 @@ pub mod describe_fleet_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeFleetOutput`](crate::output::DescribeFleetOutput)
+        /// Consumes the builder and constructs a [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
         pub fn build(self) -> crate::output::DescribeFleetOutput {
             crate::output::DescribeFleetOutput {
                 name: self.name,
@@ -7031,7 +6999,7 @@ pub mod describe_fleet_output {
     }
 }
 impl DescribeFleetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFleetOutput`](crate::output::DescribeFleetOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeFleetOutput`](crate::output::DescribeFleetOutput).
     pub fn builder() -> crate::output::describe_fleet_output::Builder {
         crate::output::describe_fleet_output::Builder::default()
     }
@@ -7132,11 +7100,10 @@ impl std::fmt::Debug for DescribeDeploymentJobOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput)
+/// See [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
 pub mod describe_deployment_job_output {
 
-    /// A builder for [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7306,7 +7273,7 @@ pub mod describe_deployment_job_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput)
+        /// Consumes the builder and constructs a [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
         pub fn build(self) -> crate::output::DescribeDeploymentJobOutput {
             crate::output::DescribeDeploymentJobOutput {
                 arn: self.arn,
@@ -7324,7 +7291,7 @@ pub mod describe_deployment_job_output {
     }
 }
 impl DescribeDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeDeploymentJobOutput`](crate::output::DescribeDeploymentJobOutput).
     pub fn builder() -> crate::output::describe_deployment_job_output::Builder {
         crate::output::describe_deployment_job_output::Builder::default()
     }
@@ -7357,11 +7324,10 @@ impl std::fmt::Debug for DeregisterRobotOutput {
         formatter.finish()
     }
 }
-/// See [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput)
+/// See [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
 pub mod deregister_robot_output {
 
-    /// A builder for [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet: std::option::Option<std::string::String>,
@@ -7388,7 +7354,7 @@ pub mod deregister_robot_output {
             self.robot = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput)
+        /// Consumes the builder and constructs a [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
         pub fn build(self) -> crate::output::DeregisterRobotOutput {
             crate::output::DeregisterRobotOutput {
                 fleet: self.fleet,
@@ -7398,7 +7364,7 @@ pub mod deregister_robot_output {
     }
 }
 impl DeregisterRobotOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput)
+    /// Creates a new builder-style object to manufacture [`DeregisterRobotOutput`](crate::output::DeregisterRobotOutput).
     pub fn builder() -> crate::output::deregister_robot_output::Builder {
         crate::output::deregister_robot_output::Builder::default()
     }
@@ -7414,22 +7380,21 @@ impl std::fmt::Debug for DeleteWorldTemplateOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput)
+/// See [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
 pub mod delete_world_template_output {
 
-    /// A builder for [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput)
+        /// Consumes the builder and constructs a [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
         pub fn build(self) -> crate::output::DeleteWorldTemplateOutput {
             crate::output::DeleteWorldTemplateOutput {}
         }
     }
 }
 impl DeleteWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteWorldTemplateOutput`](crate::output::DeleteWorldTemplateOutput).
     pub fn builder() -> crate::output::delete_world_template_output::Builder {
         crate::output::delete_world_template_output::Builder::default()
     }
@@ -7445,22 +7410,21 @@ impl std::fmt::Debug for DeleteSimulationApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput)
+/// See [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
 pub mod delete_simulation_application_output {
 
-    /// A builder for [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput)
+        /// Consumes the builder and constructs a [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
         pub fn build(self) -> crate::output::DeleteSimulationApplicationOutput {
             crate::output::DeleteSimulationApplicationOutput {}
         }
     }
 }
 impl DeleteSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteSimulationApplicationOutput`](crate::output::DeleteSimulationApplicationOutput).
     pub fn builder() -> crate::output::delete_simulation_application_output::Builder {
         crate::output::delete_simulation_application_output::Builder::default()
     }
@@ -7476,22 +7440,21 @@ impl std::fmt::Debug for DeleteRobotApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput)
+/// See [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
 pub mod delete_robot_application_output {
 
-    /// A builder for [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput)
+        /// Consumes the builder and constructs a [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
         pub fn build(self) -> crate::output::DeleteRobotApplicationOutput {
             crate::output::DeleteRobotApplicationOutput {}
         }
     }
 }
 impl DeleteRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRobotApplicationOutput`](crate::output::DeleteRobotApplicationOutput).
     pub fn builder() -> crate::output::delete_robot_application_output::Builder {
         crate::output::delete_robot_application_output::Builder::default()
     }
@@ -7507,22 +7470,21 @@ impl std::fmt::Debug for DeleteRobotOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteRobotOutput`](crate::output::DeleteRobotOutput)
+/// See [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
 pub mod delete_robot_output {
 
-    /// A builder for [`DeleteRobotOutput`](crate::output::DeleteRobotOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteRobotOutput`](crate::output::DeleteRobotOutput)
+        /// Consumes the builder and constructs a [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
         pub fn build(self) -> crate::output::DeleteRobotOutput {
             crate::output::DeleteRobotOutput {}
         }
     }
 }
 impl DeleteRobotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRobotOutput`](crate::output::DeleteRobotOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteRobotOutput`](crate::output::DeleteRobotOutput).
     pub fn builder() -> crate::output::delete_robot_output::Builder {
         crate::output::delete_robot_output::Builder::default()
     }
@@ -7538,22 +7500,21 @@ impl std::fmt::Debug for DeleteFleetOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
+/// See [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
 pub mod delete_fleet_output {
 
-    /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
+        /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
         pub fn build(self) -> crate::output::DeleteFleetOutput {
             crate::output::DeleteFleetOutput {}
         }
     }
 }
 impl DeleteFleetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
     pub fn builder() -> crate::output::delete_fleet_output::Builder {
         crate::output::delete_fleet_output::Builder::default()
     }
@@ -7611,11 +7572,10 @@ impl std::fmt::Debug for CreateWorldTemplateOutput {
         formatter.finish()
     }
 }
-/// See [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput)
+/// See [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
 pub mod create_world_template_output {
 
-    /// A builder for [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -7698,7 +7658,7 @@ pub mod create_world_template_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput)
+        /// Consumes the builder and constructs a [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
         pub fn build(self) -> crate::output::CreateWorldTemplateOutput {
             crate::output::CreateWorldTemplateOutput {
                 arn: self.arn,
@@ -7711,7 +7671,7 @@ pub mod create_world_template_output {
     }
 }
 impl CreateWorldTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput)
+    /// Creates a new builder-style object to manufacture [`CreateWorldTemplateOutput`](crate::output::CreateWorldTemplateOutput).
     pub fn builder() -> crate::output::create_world_template_output::Builder {
         crate::output::create_world_template_output::Builder::default()
     }
@@ -7953,11 +7913,10 @@ impl std::fmt::Debug for CreateWorldGenerationJobOutput {
         formatter.finish()
     }
 }
-/// See [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput)
+/// See [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
 pub mod create_world_generation_job_output {
 
-    /// A builder for [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -8262,7 +8221,7 @@ pub mod create_world_generation_job_output {
             self.world_tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput)
+        /// Consumes the builder and constructs a [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
         pub fn build(self) -> crate::output::CreateWorldGenerationJobOutput {
             crate::output::CreateWorldGenerationJobOutput {
                 arn: self.arn,
@@ -8279,7 +8238,7 @@ pub mod create_world_generation_job_output {
     }
 }
 impl CreateWorldGenerationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput)
+    /// Creates a new builder-style object to manufacture [`CreateWorldGenerationJobOutput`](crate::output::CreateWorldGenerationJobOutput).
     pub fn builder() -> crate::output::create_world_generation_job_output::Builder {
         crate::output::create_world_generation_job_output::Builder::default()
     }
@@ -8512,11 +8471,10 @@ impl std::fmt::Debug for CreateWorldExportJobOutput {
         formatter.finish()
     }
 }
-/// See [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput)
+/// See [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
 pub mod create_world_export_job_output {
 
-    /// A builder for [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -8795,7 +8753,7 @@ pub mod create_world_export_job_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput)
+        /// Consumes the builder and constructs a [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
         pub fn build(self) -> crate::output::CreateWorldExportJobOutput {
             crate::output::CreateWorldExportJobOutput {
                 arn: self.arn,
@@ -8811,7 +8769,7 @@ pub mod create_world_export_job_output {
     }
 }
 impl CreateWorldExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput)
+    /// Creates a new builder-style object to manufacture [`CreateWorldExportJobOutput`](crate::output::CreateWorldExportJobOutput).
     pub fn builder() -> crate::output::create_world_export_job_output::Builder {
         crate::output::create_world_export_job_output::Builder::default()
     }
@@ -9141,11 +9099,10 @@ impl std::fmt::Debug for CreateSimulationJobOutput {
         formatter.finish()
     }
 }
-/// See [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput)
+/// See [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
 pub mod create_simulation_job_output {
 
-    /// A builder for [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -9599,7 +9556,7 @@ pub mod create_simulation_job_output {
             self.compute = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput)
+        /// Consumes the builder and constructs a [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
         pub fn build(self) -> crate::output::CreateSimulationJobOutput {
             crate::output::CreateSimulationJobOutput {
                 arn: self.arn,
@@ -9625,7 +9582,7 @@ pub mod create_simulation_job_output {
     }
 }
 impl CreateSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput)
+    /// Creates a new builder-style object to manufacture [`CreateSimulationJobOutput`](crate::output::CreateSimulationJobOutput).
     pub fn builder() -> crate::output::create_simulation_job_output::Builder {
         crate::output::create_simulation_job_output::Builder::default()
     }
@@ -9716,11 +9673,10 @@ impl std::fmt::Debug for CreateSimulationApplicationVersionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput)
+/// See [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
 pub mod create_simulation_application_version_output {
 
-    /// A builder for [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -9863,7 +9819,7 @@ pub mod create_simulation_application_version_output {
             self.environment = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput)
+        /// Consumes the builder and constructs a [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
         pub fn build(self) -> crate::output::CreateSimulationApplicationVersionOutput {
             crate::output::CreateSimulationApplicationVersionOutput {
                 arn: self.arn,
@@ -9881,7 +9837,7 @@ pub mod create_simulation_application_version_output {
     }
 }
 impl CreateSimulationApplicationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationVersionOutput`](crate::output::CreateSimulationApplicationVersionOutput).
     pub fn builder() -> crate::output::create_simulation_application_version_output::Builder {
         crate::output::create_simulation_application_version_output::Builder::default()
     }
@@ -9983,11 +9939,10 @@ impl std::fmt::Debug for CreateSimulationApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput)
+/// See [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
 pub mod create_simulation_application_output {
 
-    /// A builder for [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -10158,7 +10113,7 @@ pub mod create_simulation_application_output {
             self.environment = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput)
+        /// Consumes the builder and constructs a [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
         pub fn build(self) -> crate::output::CreateSimulationApplicationOutput {
             crate::output::CreateSimulationApplicationOutput {
                 arn: self.arn,
@@ -10177,7 +10132,7 @@ pub mod create_simulation_application_output {
     }
 }
 impl CreateSimulationApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationOutput`](crate::output::CreateSimulationApplicationOutput).
     pub fn builder() -> crate::output::create_simulation_application_output::Builder {
         crate::output::create_simulation_application_output::Builder::default()
     }
@@ -10252,11 +10207,10 @@ impl std::fmt::Debug for CreateRobotApplicationVersionOutput {
         formatter.finish()
     }
 }
-/// See [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput)
+/// See [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
 pub mod create_robot_application_version_output {
 
-    /// A builder for [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -10367,7 +10321,7 @@ pub mod create_robot_application_version_output {
             self.environment = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput)
+        /// Consumes the builder and constructs a [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
         pub fn build(self) -> crate::output::CreateRobotApplicationVersionOutput {
             crate::output::CreateRobotApplicationVersionOutput {
                 arn: self.arn,
@@ -10383,7 +10337,7 @@ pub mod create_robot_application_version_output {
     }
 }
 impl CreateRobotApplicationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput)
+    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationVersionOutput`](crate::output::CreateRobotApplicationVersionOutput).
     pub fn builder() -> crate::output::create_robot_application_version_output::Builder {
         crate::output::create_robot_application_version_output::Builder::default()
     }
@@ -10469,11 +10423,10 @@ impl std::fmt::Debug for CreateRobotApplicationOutput {
         formatter.finish()
     }
 }
-/// See [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput)
+/// See [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
 pub mod create_robot_application_output {
 
-    /// A builder for [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -10612,7 +10565,7 @@ pub mod create_robot_application_output {
             self.environment = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput)
+        /// Consumes the builder and constructs a [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
         pub fn build(self) -> crate::output::CreateRobotApplicationOutput {
             crate::output::CreateRobotApplicationOutput {
                 arn: self.arn,
@@ -10629,7 +10582,7 @@ pub mod create_robot_application_output {
     }
 }
 impl CreateRobotApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput)
+    /// Creates a new builder-style object to manufacture [`CreateRobotApplicationOutput`](crate::output::CreateRobotApplicationOutput).
     pub fn builder() -> crate::output::create_robot_application_output::Builder {
         crate::output::create_robot_application_output::Builder::default()
     }
@@ -10694,11 +10647,10 @@ impl std::fmt::Debug for CreateRobotOutput {
         formatter.finish()
     }
 }
-/// See [`CreateRobotOutput`](crate::output::CreateRobotOutput)
+/// See [`CreateRobotOutput`](crate::output::CreateRobotOutput).
 pub mod create_robot_output {
 
-    /// A builder for [`CreateRobotOutput`](crate::output::CreateRobotOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateRobotOutput`](crate::output::CreateRobotOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -10795,7 +10747,7 @@ pub mod create_robot_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateRobotOutput`](crate::output::CreateRobotOutput)
+        /// Consumes the builder and constructs a [`CreateRobotOutput`](crate::output::CreateRobotOutput).
         pub fn build(self) -> crate::output::CreateRobotOutput {
             crate::output::CreateRobotOutput {
                 arn: self.arn,
@@ -10809,7 +10761,7 @@ pub mod create_robot_output {
     }
 }
 impl CreateRobotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRobotOutput`](crate::output::CreateRobotOutput)
+    /// Creates a new builder-style object to manufacture [`CreateRobotOutput`](crate::output::CreateRobotOutput).
     pub fn builder() -> crate::output::create_robot_output::Builder {
         crate::output::create_robot_output::Builder::default()
     }
@@ -10860,11 +10812,10 @@ impl std::fmt::Debug for CreateFleetOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFleetOutput`](crate::output::CreateFleetOutput)
+/// See [`CreateFleetOutput`](crate::output::CreateFleetOutput).
 pub mod create_fleet_output {
 
-    /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -10933,7 +10884,7 @@ pub mod create_fleet_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFleetOutput`](crate::output::CreateFleetOutput)
+        /// Consumes the builder and constructs a [`CreateFleetOutput`](crate::output::CreateFleetOutput).
         pub fn build(self) -> crate::output::CreateFleetOutput {
             crate::output::CreateFleetOutput {
                 arn: self.arn,
@@ -10945,7 +10896,7 @@ pub mod create_fleet_output {
     }
 }
 impl CreateFleetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFleetOutput`](crate::output::CreateFleetOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFleetOutput`](crate::output::CreateFleetOutput).
     pub fn builder() -> crate::output::create_fleet_output::Builder {
         crate::output::create_fleet_output::Builder::default()
     }
@@ -11185,11 +11136,10 @@ impl std::fmt::Debug for CreateDeploymentJobOutput {
         formatter.finish()
     }
 }
-/// See [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput)
+/// See [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
 pub mod create_deployment_job_output {
 
-    /// A builder for [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -11486,7 +11436,7 @@ pub mod create_deployment_job_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput)
+        /// Consumes the builder and constructs a [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
         pub fn build(self) -> crate::output::CreateDeploymentJobOutput {
             crate::output::CreateDeploymentJobOutput {
                 arn: self.arn,
@@ -11503,7 +11453,7 @@ pub mod create_deployment_job_output {
     }
 }
 impl CreateDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput)
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentJobOutput`](crate::output::CreateDeploymentJobOutput).
     pub fn builder() -> crate::output::create_deployment_job_output::Builder {
         crate::output::create_deployment_job_output::Builder::default()
     }
@@ -11519,22 +11469,21 @@ impl std::fmt::Debug for CancelWorldGenerationJobOutput {
         formatter.finish()
     }
 }
-/// See [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput)
+/// See [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
 pub mod cancel_world_generation_job_output {
 
-    /// A builder for [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput)
+        /// Consumes the builder and constructs a [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
         pub fn build(self) -> crate::output::CancelWorldGenerationJobOutput {
             crate::output::CancelWorldGenerationJobOutput {}
         }
     }
 }
 impl CancelWorldGenerationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput)
+    /// Creates a new builder-style object to manufacture [`CancelWorldGenerationJobOutput`](crate::output::CancelWorldGenerationJobOutput).
     pub fn builder() -> crate::output::cancel_world_generation_job_output::Builder {
         crate::output::cancel_world_generation_job_output::Builder::default()
     }
@@ -11550,22 +11499,21 @@ impl std::fmt::Debug for CancelWorldExportJobOutput {
         formatter.finish()
     }
 }
-/// See [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput)
+/// See [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
 pub mod cancel_world_export_job_output {
 
-    /// A builder for [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput)
+        /// Consumes the builder and constructs a [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
         pub fn build(self) -> crate::output::CancelWorldExportJobOutput {
             crate::output::CancelWorldExportJobOutput {}
         }
     }
 }
 impl CancelWorldExportJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput)
+    /// Creates a new builder-style object to manufacture [`CancelWorldExportJobOutput`](crate::output::CancelWorldExportJobOutput).
     pub fn builder() -> crate::output::cancel_world_export_job_output::Builder {
         crate::output::cancel_world_export_job_output::Builder::default()
     }
@@ -11581,22 +11529,21 @@ impl std::fmt::Debug for CancelSimulationJobBatchOutput {
         formatter.finish()
     }
 }
-/// See [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput)
+/// See [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
 pub mod cancel_simulation_job_batch_output {
 
-    /// A builder for [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput)
+        /// Consumes the builder and constructs a [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
         pub fn build(self) -> crate::output::CancelSimulationJobBatchOutput {
             crate::output::CancelSimulationJobBatchOutput {}
         }
     }
 }
 impl CancelSimulationJobBatchOutput {
-    /// Creates a new builder-style object to manufacture [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput)
+    /// Creates a new builder-style object to manufacture [`CancelSimulationJobBatchOutput`](crate::output::CancelSimulationJobBatchOutput).
     pub fn builder() -> crate::output::cancel_simulation_job_batch_output::Builder {
         crate::output::cancel_simulation_job_batch_output::Builder::default()
     }
@@ -11612,22 +11559,21 @@ impl std::fmt::Debug for CancelSimulationJobOutput {
         formatter.finish()
     }
 }
-/// See [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput)
+/// See [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
 pub mod cancel_simulation_job_output {
 
-    /// A builder for [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput)
+        /// Consumes the builder and constructs a [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
         pub fn build(self) -> crate::output::CancelSimulationJobOutput {
             crate::output::CancelSimulationJobOutput {}
         }
     }
 }
 impl CancelSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput)
+    /// Creates a new builder-style object to manufacture [`CancelSimulationJobOutput`](crate::output::CancelSimulationJobOutput).
     pub fn builder() -> crate::output::cancel_simulation_job_output::Builder {
         crate::output::cancel_simulation_job_output::Builder::default()
     }
@@ -11643,22 +11589,21 @@ impl std::fmt::Debug for CancelDeploymentJobOutput {
         formatter.finish()
     }
 }
-/// See [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput)
+/// See [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
 pub mod cancel_deployment_job_output {
 
-    /// A builder for [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput)
+        /// Consumes the builder and constructs a [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
         pub fn build(self) -> crate::output::CancelDeploymentJobOutput {
             crate::output::CancelDeploymentJobOutput {}
         }
     }
 }
 impl CancelDeploymentJobOutput {
-    /// Creates a new builder-style object to manufacture [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput)
+    /// Creates a new builder-style object to manufacture [`CancelDeploymentJobOutput`](crate::output::CancelDeploymentJobOutput).
     pub fn builder() -> crate::output::cancel_deployment_job_output::Builder {
         crate::output::cancel_deployment_job_output::Builder::default()
     }
@@ -11691,11 +11636,10 @@ impl std::fmt::Debug for BatchDescribeSimulationJobOutput {
         formatter.finish()
     }
 }
-/// See [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput)
+/// See [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
 pub mod batch_describe_simulation_job_output {
 
-    /// A builder for [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::SimulationJob>>,
@@ -11740,7 +11684,7 @@ pub mod batch_describe_simulation_job_output {
             self.unprocessed_jobs = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput)
+        /// Consumes the builder and constructs a [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
         pub fn build(self) -> crate::output::BatchDescribeSimulationJobOutput {
             crate::output::BatchDescribeSimulationJobOutput {
                 jobs: self.jobs,
@@ -11750,7 +11694,7 @@ pub mod batch_describe_simulation_job_output {
     }
 }
 impl BatchDescribeSimulationJobOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput)
+    /// Creates a new builder-style object to manufacture [`BatchDescribeSimulationJobOutput`](crate::output::BatchDescribeSimulationJobOutput).
     pub fn builder() -> crate::output::batch_describe_simulation_job_output::Builder {
         crate::output::batch_describe_simulation_job_output::Builder::default()
     }
@@ -11776,11 +11720,10 @@ impl std::fmt::Debug for BatchDeleteWorldsOutput {
         formatter.finish()
     }
 }
-/// See [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput)
+/// See [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
 pub mod batch_delete_worlds_output {
 
-    /// A builder for [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) unprocessed_worlds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11805,7 +11748,7 @@ pub mod batch_delete_worlds_output {
             self.unprocessed_worlds = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput)
+        /// Consumes the builder and constructs a [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
         pub fn build(self) -> crate::output::BatchDeleteWorldsOutput {
             crate::output::BatchDeleteWorldsOutput {
                 unprocessed_worlds: self.unprocessed_worlds,
@@ -11814,7 +11757,7 @@ pub mod batch_delete_worlds_output {
     }
 }
 impl BatchDeleteWorldsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput)
+    /// Creates a new builder-style object to manufacture [`BatchDeleteWorldsOutput`](crate::output::BatchDeleteWorldsOutput).
     pub fn builder() -> crate::output::batch_delete_worlds_output::Builder {
         crate::output::batch_delete_worlds_output::Builder::default()
     }

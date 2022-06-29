@@ -10,7 +10,7 @@ pub struct AssociateEncryptionConfig {
     _private: (),
 }
 impl AssociateEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`AssociateEncryptionConfigInput`](crate::input::AssociateEncryptionConfigInput)
+    /// Creates a new builder-style object to manufacture [`AssociateEncryptionConfigInput`](crate::input::AssociateEncryptionConfigInput).
     pub fn builder() -> crate::input::associate_encryption_config_input::Builder {
         crate::input::associate_encryption_config_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct AssociateIdentityProviderConfig {
     _private: (),
 }
 impl AssociateIdentityProviderConfig {
-    /// Creates a new builder-style object to manufacture [`AssociateIdentityProviderConfigInput`](crate::input::AssociateIdentityProviderConfigInput)
+    /// Creates a new builder-style object to manufacture [`AssociateIdentityProviderConfigInput`](crate::input::AssociateIdentityProviderConfigInput).
     pub fn builder() -> crate::input::associate_identity_provider_config_input::Builder {
         crate::input::associate_identity_provider_config_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct CreateAddon {
     _private: (),
 }
 impl CreateAddon {
-    /// Creates a new builder-style object to manufacture [`CreateAddonInput`](crate::input::CreateAddonInput)
+    /// Creates a new builder-style object to manufacture [`CreateAddonInput`](crate::input::CreateAddonInput).
     pub fn builder() -> crate::input::create_addon_input::Builder {
         crate::input::create_addon_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct CreateCluster {
     _private: (),
 }
 impl CreateCluster {
-    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput)
+    /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::input::CreateClusterInput).
     pub fn builder() -> crate::input::create_cluster_input::Builder {
         crate::input::create_cluster_input::Builder::default()
     }
@@ -142,7 +142,7 @@ pub struct CreateFargateProfile {
     _private: (),
 }
 impl CreateFargateProfile {
-    /// Creates a new builder-style object to manufacture [`CreateFargateProfileInput`](crate::input::CreateFargateProfileInput)
+    /// Creates a new builder-style object to manufacture [`CreateFargateProfileInput`](crate::input::CreateFargateProfileInput).
     pub fn builder() -> crate::input::create_fargate_profile_input::Builder {
         crate::input::create_fargate_profile_input::Builder::default()
     }
@@ -176,7 +176,7 @@ pub struct CreateNodegroup {
     _private: (),
 }
 impl CreateNodegroup {
-    /// Creates a new builder-style object to manufacture [`CreateNodegroupInput`](crate::input::CreateNodegroupInput)
+    /// Creates a new builder-style object to manufacture [`CreateNodegroupInput`](crate::input::CreateNodegroupInput).
     pub fn builder() -> crate::input::create_nodegroup_input::Builder {
         crate::input::create_nodegroup_input::Builder::default()
     }
@@ -210,7 +210,7 @@ pub struct DeleteAddon {
     _private: (),
 }
 impl DeleteAddon {
-    /// Creates a new builder-style object to manufacture [`DeleteAddonInput`](crate::input::DeleteAddonInput)
+    /// Creates a new builder-style object to manufacture [`DeleteAddonInput`](crate::input::DeleteAddonInput).
     pub fn builder() -> crate::input::delete_addon_input::Builder {
         crate::input::delete_addon_input::Builder::default()
     }
@@ -242,7 +242,7 @@ pub struct DeleteCluster {
     _private: (),
 }
 impl DeleteCluster {
-    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeleteClusterInput`](crate::input::DeleteClusterInput).
     pub fn builder() -> crate::input::delete_cluster_input::Builder {
         crate::input::delete_cluster_input::Builder::default()
     }
@@ -274,7 +274,7 @@ pub struct DeleteFargateProfile {
     _private: (),
 }
 impl DeleteFargateProfile {
-    /// Creates a new builder-style object to manufacture [`DeleteFargateProfileInput`](crate::input::DeleteFargateProfileInput)
+    /// Creates a new builder-style object to manufacture [`DeleteFargateProfileInput`](crate::input::DeleteFargateProfileInput).
     pub fn builder() -> crate::input::delete_fargate_profile_input::Builder {
         crate::input::delete_fargate_profile_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct DeleteNodegroup {
     _private: (),
 }
 impl DeleteNodegroup {
-    /// Creates a new builder-style object to manufacture [`DeleteNodegroupInput`](crate::input::DeleteNodegroupInput)
+    /// Creates a new builder-style object to manufacture [`DeleteNodegroupInput`](crate::input::DeleteNodegroupInput).
     pub fn builder() -> crate::input::delete_nodegroup_input::Builder {
         crate::input::delete_nodegroup_input::Builder::default()
     }
@@ -342,7 +342,7 @@ pub struct DeregisterCluster {
     _private: (),
 }
 impl DeregisterCluster {
-    /// Creates a new builder-style object to manufacture [`DeregisterClusterInput`](crate::input::DeregisterClusterInput)
+    /// Creates a new builder-style object to manufacture [`DeregisterClusterInput`](crate::input::DeregisterClusterInput).
     pub fn builder() -> crate::input::deregister_cluster_input::Builder {
         crate::input::deregister_cluster_input::Builder::default()
     }
@@ -376,7 +376,7 @@ pub struct DescribeAddon {
     _private: (),
 }
 impl DescribeAddon {
-    /// Creates a new builder-style object to manufacture [`DescribeAddonInput`](crate::input::DescribeAddonInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAddonInput`](crate::input::DescribeAddonInput).
     pub fn builder() -> crate::input::describe_addon_input::Builder {
         crate::input::describe_addon_input::Builder::default()
     }
@@ -408,7 +408,7 @@ pub struct DescribeAddonVersions {
     _private: (),
 }
 impl DescribeAddonVersions {
-    /// Creates a new builder-style object to manufacture [`DescribeAddonVersionsInput`](crate::input::DescribeAddonVersionsInput)
+    /// Creates a new builder-style object to manufacture [`DescribeAddonVersionsInput`](crate::input::DescribeAddonVersionsInput).
     pub fn builder() -> crate::input::describe_addon_versions_input::Builder {
         crate::input::describe_addon_versions_input::Builder::default()
     }
@@ -442,7 +442,7 @@ pub struct DescribeCluster {
     _private: (),
 }
 impl DescribeCluster {
-    /// Creates a new builder-style object to manufacture [`DescribeClusterInput`](crate::input::DescribeClusterInput)
+    /// Creates a new builder-style object to manufacture [`DescribeClusterInput`](crate::input::DescribeClusterInput).
     pub fn builder() -> crate::input::describe_cluster_input::Builder {
         crate::input::describe_cluster_input::Builder::default()
     }
@@ -476,7 +476,7 @@ pub struct DescribeFargateProfile {
     _private: (),
 }
 impl DescribeFargateProfile {
-    /// Creates a new builder-style object to manufacture [`DescribeFargateProfileInput`](crate::input::DescribeFargateProfileInput)
+    /// Creates a new builder-style object to manufacture [`DescribeFargateProfileInput`](crate::input::DescribeFargateProfileInput).
     pub fn builder() -> crate::input::describe_fargate_profile_input::Builder {
         crate::input::describe_fargate_profile_input::Builder::default()
     }
@@ -510,7 +510,7 @@ pub struct DescribeIdentityProviderConfig {
     _private: (),
 }
 impl DescribeIdentityProviderConfig {
-    /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderConfigInput`](crate::input::DescribeIdentityProviderConfigInput)
+    /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderConfigInput`](crate::input::DescribeIdentityProviderConfigInput).
     pub fn builder() -> crate::input::describe_identity_provider_config_input::Builder {
         crate::input::describe_identity_provider_config_input::Builder::default()
     }
@@ -544,7 +544,7 @@ pub struct DescribeNodegroup {
     _private: (),
 }
 impl DescribeNodegroup {
-    /// Creates a new builder-style object to manufacture [`DescribeNodegroupInput`](crate::input::DescribeNodegroupInput)
+    /// Creates a new builder-style object to manufacture [`DescribeNodegroupInput`](crate::input::DescribeNodegroupInput).
     pub fn builder() -> crate::input::describe_nodegroup_input::Builder {
         crate::input::describe_nodegroup_input::Builder::default()
     }
@@ -578,7 +578,7 @@ pub struct DescribeUpdate {
     _private: (),
 }
 impl DescribeUpdate {
-    /// Creates a new builder-style object to manufacture [`DescribeUpdateInput`](crate::input::DescribeUpdateInput)
+    /// Creates a new builder-style object to manufacture [`DescribeUpdateInput`](crate::input::DescribeUpdateInput).
     pub fn builder() -> crate::input::describe_update_input::Builder {
         crate::input::describe_update_input::Builder::default()
     }
@@ -610,7 +610,7 @@ pub struct DisassociateIdentityProviderConfig {
     _private: (),
 }
 impl DisassociateIdentityProviderConfig {
-    /// Creates a new builder-style object to manufacture [`DisassociateIdentityProviderConfigInput`](crate::input::DisassociateIdentityProviderConfigInput)
+    /// Creates a new builder-style object to manufacture [`DisassociateIdentityProviderConfigInput`](crate::input::DisassociateIdentityProviderConfigInput).
     pub fn builder() -> crate::input::disassociate_identity_provider_config_input::Builder {
         crate::input::disassociate_identity_provider_config_input::Builder::default()
     }
@@ -644,7 +644,7 @@ pub struct ListAddons {
     _private: (),
 }
 impl ListAddons {
-    /// Creates a new builder-style object to manufacture [`ListAddonsInput`](crate::input::ListAddonsInput)
+    /// Creates a new builder-style object to manufacture [`ListAddonsInput`](crate::input::ListAddonsInput).
     pub fn builder() -> crate::input::list_addons_input::Builder {
         crate::input::list_addons_input::Builder::default()
     }
@@ -676,7 +676,7 @@ pub struct ListClusters {
     _private: (),
 }
 impl ListClusters {
-    /// Creates a new builder-style object to manufacture [`ListClustersInput`](crate::input::ListClustersInput)
+    /// Creates a new builder-style object to manufacture [`ListClustersInput`](crate::input::ListClustersInput).
     pub fn builder() -> crate::input::list_clusters_input::Builder {
         crate::input::list_clusters_input::Builder::default()
     }
@@ -708,7 +708,7 @@ pub struct ListFargateProfiles {
     _private: (),
 }
 impl ListFargateProfiles {
-    /// Creates a new builder-style object to manufacture [`ListFargateProfilesInput`](crate::input::ListFargateProfilesInput)
+    /// Creates a new builder-style object to manufacture [`ListFargateProfilesInput`](crate::input::ListFargateProfilesInput).
     pub fn builder() -> crate::input::list_fargate_profiles_input::Builder {
         crate::input::list_fargate_profiles_input::Builder::default()
     }
@@ -742,7 +742,7 @@ pub struct ListIdentityProviderConfigs {
     _private: (),
 }
 impl ListIdentityProviderConfigs {
-    /// Creates a new builder-style object to manufacture [`ListIdentityProviderConfigsInput`](crate::input::ListIdentityProviderConfigsInput)
+    /// Creates a new builder-style object to manufacture [`ListIdentityProviderConfigsInput`](crate::input::ListIdentityProviderConfigsInput).
     pub fn builder() -> crate::input::list_identity_provider_configs_input::Builder {
         crate::input::list_identity_provider_configs_input::Builder::default()
     }
@@ -776,7 +776,7 @@ pub struct ListNodegroups {
     _private: (),
 }
 impl ListNodegroups {
-    /// Creates a new builder-style object to manufacture [`ListNodegroupsInput`](crate::input::ListNodegroupsInput)
+    /// Creates a new builder-style object to manufacture [`ListNodegroupsInput`](crate::input::ListNodegroupsInput).
     pub fn builder() -> crate::input::list_nodegroups_input::Builder {
         crate::input::list_nodegroups_input::Builder::default()
     }
@@ -808,7 +808,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -842,7 +842,7 @@ pub struct ListUpdates {
     _private: (),
 }
 impl ListUpdates {
-    /// Creates a new builder-style object to manufacture [`ListUpdatesInput`](crate::input::ListUpdatesInput)
+    /// Creates a new builder-style object to manufacture [`ListUpdatesInput`](crate::input::ListUpdatesInput).
     pub fn builder() -> crate::input::list_updates_input::Builder {
         crate::input::list_updates_input::Builder::default()
     }
@@ -874,7 +874,7 @@ pub struct RegisterCluster {
     _private: (),
 }
 impl RegisterCluster {
-    /// Creates a new builder-style object to manufacture [`RegisterClusterInput`](crate::input::RegisterClusterInput)
+    /// Creates a new builder-style object to manufacture [`RegisterClusterInput`](crate::input::RegisterClusterInput).
     pub fn builder() -> crate::input::register_cluster_input::Builder {
         crate::input::register_cluster_input::Builder::default()
     }
@@ -908,7 +908,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -940,7 +940,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }
@@ -972,7 +972,7 @@ pub struct UpdateAddon {
     _private: (),
 }
 impl UpdateAddon {
-    /// Creates a new builder-style object to manufacture [`UpdateAddonInput`](crate::input::UpdateAddonInput)
+    /// Creates a new builder-style object to manufacture [`UpdateAddonInput`](crate::input::UpdateAddonInput).
     pub fn builder() -> crate::input::update_addon_input::Builder {
         crate::input::update_addon_input::Builder::default()
     }
@@ -1004,7 +1004,7 @@ pub struct UpdateClusterConfig {
     _private: (),
 }
 impl UpdateClusterConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::input::UpdateClusterConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::input::UpdateClusterConfigInput).
     pub fn builder() -> crate::input::update_cluster_config_input::Builder {
         crate::input::update_cluster_config_input::Builder::default()
     }
@@ -1038,7 +1038,7 @@ pub struct UpdateClusterVersion {
     _private: (),
 }
 impl UpdateClusterVersion {
-    /// Creates a new builder-style object to manufacture [`UpdateClusterVersionInput`](crate::input::UpdateClusterVersionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateClusterVersionInput`](crate::input::UpdateClusterVersionInput).
     pub fn builder() -> crate::input::update_cluster_version_input::Builder {
         crate::input::update_cluster_version_input::Builder::default()
     }
@@ -1072,7 +1072,7 @@ pub struct UpdateNodegroupConfig {
     _private: (),
 }
 impl UpdateNodegroupConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateNodegroupConfigInput`](crate::input::UpdateNodegroupConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNodegroupConfigInput`](crate::input::UpdateNodegroupConfigInput).
     pub fn builder() -> crate::input::update_nodegroup_config_input::Builder {
         crate::input::update_nodegroup_config_input::Builder::default()
     }
@@ -1106,7 +1106,7 @@ pub struct UpdateNodegroupVersion {
     _private: (),
 }
 impl UpdateNodegroupVersion {
-    /// Creates a new builder-style object to manufacture [`UpdateNodegroupVersionInput`](crate::input::UpdateNodegroupVersionInput)
+    /// Creates a new builder-style object to manufacture [`UpdateNodegroupVersionInput`](crate::input::UpdateNodegroupVersionInput).
     pub fn builder() -> crate::input::update_nodegroup_version_input::Builder {
         crate::input::update_nodegroup_version_input::Builder::default()
     }

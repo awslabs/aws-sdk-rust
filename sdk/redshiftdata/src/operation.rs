@@ -10,7 +10,7 @@ pub struct BatchExecuteStatement {
     _private: (),
 }
 impl BatchExecuteStatement {
-    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
+    /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput).
     pub fn builder() -> crate::input::batch_execute_statement_input::Builder {
         crate::input::batch_execute_statement_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct CancelStatement {
     _private: (),
 }
 impl CancelStatement {
-    /// Creates a new builder-style object to manufacture [`CancelStatementInput`](crate::input::CancelStatementInput)
+    /// Creates a new builder-style object to manufacture [`CancelStatementInput`](crate::input::CancelStatementInput).
     pub fn builder() -> crate::input::cancel_statement_input::Builder {
         crate::input::cancel_statement_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DescribeStatement {
     _private: (),
 }
 impl DescribeStatement {
-    /// Creates a new builder-style object to manufacture [`DescribeStatementInput`](crate::input::DescribeStatementInput)
+    /// Creates a new builder-style object to manufacture [`DescribeStatementInput`](crate::input::DescribeStatementInput).
     pub fn builder() -> crate::input::describe_statement_input::Builder {
         crate::input::describe_statement_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DescribeTable {
     _private: (),
 }
 impl DescribeTable {
-    /// Creates a new builder-style object to manufacture [`DescribeTableInput`](crate::input::DescribeTableInput)
+    /// Creates a new builder-style object to manufacture [`DescribeTableInput`](crate::input::DescribeTableInput).
     pub fn builder() -> crate::input::describe_table_input::Builder {
         crate::input::describe_table_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct ExecuteStatement {
     _private: (),
 }
 impl ExecuteStatement {
-    /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
+    /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::input::ExecuteStatementInput).
     pub fn builder() -> crate::input::execute_statement_input::Builder {
         crate::input::execute_statement_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct GetStatementResult {
     _private: (),
 }
 impl GetStatementResult {
-    /// Creates a new builder-style object to manufacture [`GetStatementResultInput`](crate::input::GetStatementResultInput)
+    /// Creates a new builder-style object to manufacture [`GetStatementResultInput`](crate::input::GetStatementResultInput).
     pub fn builder() -> crate::input::get_statement_result_input::Builder {
         crate::input::get_statement_result_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct ListDatabases {
     _private: (),
 }
 impl ListDatabases {
-    /// Creates a new builder-style object to manufacture [`ListDatabasesInput`](crate::input::ListDatabasesInput)
+    /// Creates a new builder-style object to manufacture [`ListDatabasesInput`](crate::input::ListDatabasesInput).
     pub fn builder() -> crate::input::list_databases_input::Builder {
         crate::input::list_databases_input::Builder::default()
     }
@@ -244,7 +244,7 @@ pub struct ListSchemas {
     _private: (),
 }
 impl ListSchemas {
-    /// Creates a new builder-style object to manufacture [`ListSchemasInput`](crate::input::ListSchemasInput)
+    /// Creates a new builder-style object to manufacture [`ListSchemasInput`](crate::input::ListSchemasInput).
     pub fn builder() -> crate::input::list_schemas_input::Builder {
         crate::input::list_schemas_input::Builder::default()
     }
@@ -276,7 +276,7 @@ pub struct ListStatements {
     _private: (),
 }
 impl ListStatements {
-    /// Creates a new builder-style object to manufacture [`ListStatementsInput`](crate::input::ListStatementsInput)
+    /// Creates a new builder-style object to manufacture [`ListStatementsInput`](crate::input::ListStatementsInput).
     pub fn builder() -> crate::input::list_statements_input::Builder {
         crate::input::list_statements_input::Builder::default()
     }
@@ -308,7 +308,7 @@ pub struct ListTables {
     _private: (),
 }
 impl ListTables {
-    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput)
+    /// Creates a new builder-style object to manufacture [`ListTablesInput`](crate::input::ListTablesInput).
     pub fn builder() -> crate::input::list_tables_input::Builder {
         crate::input::list_tables_input::Builder::default()
     }

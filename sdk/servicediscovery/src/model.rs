@@ -34,11 +34,10 @@ impl std::fmt::Debug for ServiceChange {
         formatter.finish()
     }
 }
-/// See [`ServiceChange`](crate::model::ServiceChange)
+/// See [`ServiceChange`](crate::model::ServiceChange).
 pub mod service_change {
 
-    /// A builder for [`ServiceChange`](crate::model::ServiceChange)
-    #[non_exhaustive]
+    /// A builder for [`ServiceChange`](crate::model::ServiceChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -82,7 +81,7 @@ pub mod service_change {
             self.health_check_config = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceChange`](crate::model::ServiceChange)
+        /// Consumes the builder and constructs a [`ServiceChange`](crate::model::ServiceChange).
         pub fn build(self) -> crate::model::ServiceChange {
             crate::model::ServiceChange {
                 description: self.description,
@@ -93,7 +92,7 @@ pub mod service_change {
     }
 }
 impl ServiceChange {
-    /// Creates a new builder-style object to manufacture [`ServiceChange`](crate::model::ServiceChange)
+    /// Creates a new builder-style object to manufacture [`ServiceChange`](crate::model::ServiceChange).
     pub fn builder() -> crate::model::service_change::Builder {
         crate::model::service_change::Builder::default()
     }
@@ -203,11 +202,10 @@ impl std::fmt::Debug for HealthCheckConfig {
         formatter.finish()
     }
 }
-/// See [`HealthCheckConfig`](crate::model::HealthCheckConfig)
+/// See [`HealthCheckConfig`](crate::model::HealthCheckConfig).
 pub mod health_check_config {
 
-    /// A builder for [`HealthCheckConfig`](crate::model::HealthCheckConfig)
-    #[non_exhaustive]
+    /// A builder for [`HealthCheckConfig`](crate::model::HealthCheckConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::HealthCheckType>,
@@ -275,7 +273,7 @@ pub mod health_check_config {
             self.failure_threshold = input;
             self
         }
-        /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::model::HealthCheckConfig)
+        /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::model::HealthCheckConfig).
         pub fn build(self) -> crate::model::HealthCheckConfig {
             crate::model::HealthCheckConfig {
                 r#type: self.r#type,
@@ -286,7 +284,7 @@ pub mod health_check_config {
     }
 }
 impl HealthCheckConfig {
-    /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::model::HealthCheckConfig)
+    /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::model::HealthCheckConfig).
     pub fn builder() -> crate::model::health_check_config::Builder {
         crate::model::health_check_config::Builder::default()
     }
@@ -371,11 +369,10 @@ impl std::fmt::Debug for DnsConfigChange {
         formatter.finish()
     }
 }
-/// See [`DnsConfigChange`](crate::model::DnsConfigChange)
+/// See [`DnsConfigChange`](crate::model::DnsConfigChange).
 pub mod dns_config_change {
 
-    /// A builder for [`DnsConfigChange`](crate::model::DnsConfigChange)
-    #[non_exhaustive]
+    /// A builder for [`DnsConfigChange`](crate::model::DnsConfigChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_records: std::option::Option<std::vec::Vec<crate::model::DnsRecord>>,
@@ -400,7 +397,7 @@ pub mod dns_config_change {
             self.dns_records = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsConfigChange`](crate::model::DnsConfigChange)
+        /// Consumes the builder and constructs a [`DnsConfigChange`](crate::model::DnsConfigChange).
         pub fn build(self) -> crate::model::DnsConfigChange {
             crate::model::DnsConfigChange {
                 dns_records: self.dns_records,
@@ -409,7 +406,7 @@ pub mod dns_config_change {
     }
 }
 impl DnsConfigChange {
-    /// Creates a new builder-style object to manufacture [`DnsConfigChange`](crate::model::DnsConfigChange)
+    /// Creates a new builder-style object to manufacture [`DnsConfigChange`](crate::model::DnsConfigChange).
     pub fn builder() -> crate::model::dns_config_change::Builder {
         crate::model::dns_config_change::Builder::default()
     }
@@ -562,11 +559,10 @@ impl std::fmt::Debug for DnsRecord {
         formatter.finish()
     }
 }
-/// See [`DnsRecord`](crate::model::DnsRecord)
+/// See [`DnsRecord`](crate::model::DnsRecord).
 pub mod dns_record {
 
-    /// A builder for [`DnsRecord`](crate::model::DnsRecord)
-    #[non_exhaustive]
+    /// A builder for [`DnsRecord`](crate::model::DnsRecord).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RecordType>,
@@ -713,7 +709,7 @@ pub mod dns_record {
             self.ttl = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsRecord`](crate::model::DnsRecord)
+        /// Consumes the builder and constructs a [`DnsRecord`](crate::model::DnsRecord).
         pub fn build(self) -> crate::model::DnsRecord {
             crate::model::DnsRecord {
                 r#type: self.r#type,
@@ -723,7 +719,7 @@ pub mod dns_record {
     }
 }
 impl DnsRecord {
-    /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord)
+    /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord).
     pub fn builder() -> crate::model::dns_record::Builder {
         crate::model::dns_record::Builder::default()
     }
@@ -821,11 +817,10 @@ impl std::fmt::Debug for PublicDnsNamespaceChange {
         formatter.finish()
     }
 }
-/// See [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange)
+/// See [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
 pub mod public_dns_namespace_change {
 
-    /// A builder for [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange)
-    #[non_exhaustive]
+    /// A builder for [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -859,7 +854,7 @@ pub mod public_dns_namespace_change {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange)
+        /// Consumes the builder and constructs a [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
         pub fn build(self) -> crate::model::PublicDnsNamespaceChange {
             crate::model::PublicDnsNamespaceChange {
                 description: self.description,
@@ -869,7 +864,7 @@ pub mod public_dns_namespace_change {
     }
 }
 impl PublicDnsNamespaceChange {
-    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange)
+    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
     pub fn builder() -> crate::model::public_dns_namespace_change::Builder {
         crate::model::public_dns_namespace_change::Builder::default()
     }
@@ -897,11 +892,10 @@ impl std::fmt::Debug for PublicDnsNamespacePropertiesChange {
         formatter.finish()
     }
 }
-/// See [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange)
+/// See [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
 pub mod public_dns_namespace_properties_change {
 
-    /// A builder for [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange)
-    #[non_exhaustive]
+    /// A builder for [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties:
@@ -924,7 +918,7 @@ pub mod public_dns_namespace_properties_change {
             self.dns_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange)
+        /// Consumes the builder and constructs a [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
         pub fn build(self) -> crate::model::PublicDnsNamespacePropertiesChange {
             crate::model::PublicDnsNamespacePropertiesChange {
                 dns_properties: self.dns_properties,
@@ -933,7 +927,7 @@ pub mod public_dns_namespace_properties_change {
     }
 }
 impl PublicDnsNamespacePropertiesChange {
-    /// Creates a new builder-style object to manufacture [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange)
+    /// Creates a new builder-style object to manufacture [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
     pub fn builder() -> crate::model::public_dns_namespace_properties_change::Builder {
         crate::model::public_dns_namespace_properties_change::Builder::default()
     }
@@ -959,11 +953,10 @@ impl std::fmt::Debug for PublicDnsPropertiesMutableChange {
         formatter.finish()
     }
 }
-/// See [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange)
+/// See [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
 pub mod public_dns_properties_mutable_change {
 
-    /// A builder for [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange)
-    #[non_exhaustive]
+    /// A builder for [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::SoaChange>,
@@ -979,14 +972,14 @@ pub mod public_dns_properties_mutable_change {
             self.soa = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange)
+        /// Consumes the builder and constructs a [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
         pub fn build(self) -> crate::model::PublicDnsPropertiesMutableChange {
             crate::model::PublicDnsPropertiesMutableChange { soa: self.soa }
         }
     }
 }
 impl PublicDnsPropertiesMutableChange {
-    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange)
+    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
     pub fn builder() -> crate::model::public_dns_properties_mutable_change::Builder {
         crate::model::public_dns_properties_mutable_change::Builder::default()
     }
@@ -1012,11 +1005,10 @@ impl std::fmt::Debug for SoaChange {
         formatter.finish()
     }
 }
-/// See [`SoaChange`](crate::model::SoaChange)
+/// See [`SoaChange`](crate::model::SoaChange).
 pub mod soa_change {
 
-    /// A builder for [`SoaChange`](crate::model::SoaChange)
-    #[non_exhaustive]
+    /// A builder for [`SoaChange`](crate::model::SoaChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ttl: std::option::Option<i64>,
@@ -1032,14 +1024,14 @@ pub mod soa_change {
             self.ttl = input;
             self
         }
-        /// Consumes the builder and constructs a [`SoaChange`](crate::model::SoaChange)
+        /// Consumes the builder and constructs a [`SoaChange`](crate::model::SoaChange).
         pub fn build(self) -> crate::model::SoaChange {
             crate::model::SoaChange { ttl: self.ttl }
         }
     }
 }
 impl SoaChange {
-    /// Creates a new builder-style object to manufacture [`SoaChange`](crate::model::SoaChange)
+    /// Creates a new builder-style object to manufacture [`SoaChange`](crate::model::SoaChange).
     pub fn builder() -> crate::model::soa_change::Builder {
         crate::model::soa_change::Builder::default()
     }
@@ -1074,11 +1066,10 @@ impl std::fmt::Debug for PrivateDnsNamespaceChange {
         formatter.finish()
     }
 }
-/// See [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange)
+/// See [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
 pub mod private_dns_namespace_change {
 
-    /// A builder for [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange)
-    #[non_exhaustive]
+    /// A builder for [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1112,7 +1103,7 @@ pub mod private_dns_namespace_change {
             self.properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange)
+        /// Consumes the builder and constructs a [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
         pub fn build(self) -> crate::model::PrivateDnsNamespaceChange {
             crate::model::PrivateDnsNamespaceChange {
                 description: self.description,
@@ -1122,7 +1113,7 @@ pub mod private_dns_namespace_change {
     }
 }
 impl PrivateDnsNamespaceChange {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange)
+    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
     pub fn builder() -> crate::model::private_dns_namespace_change::Builder {
         crate::model::private_dns_namespace_change::Builder::default()
     }
@@ -1150,11 +1141,10 @@ impl std::fmt::Debug for PrivateDnsNamespacePropertiesChange {
         formatter.finish()
     }
 }
-/// See [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange)
+/// See [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
 pub mod private_dns_namespace_properties_change {
 
-    /// A builder for [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange)
-    #[non_exhaustive]
+    /// A builder for [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties:
@@ -1177,7 +1167,7 @@ pub mod private_dns_namespace_properties_change {
             self.dns_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange)
+        /// Consumes the builder and constructs a [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
         pub fn build(self) -> crate::model::PrivateDnsNamespacePropertiesChange {
             crate::model::PrivateDnsNamespacePropertiesChange {
                 dns_properties: self.dns_properties,
@@ -1186,7 +1176,7 @@ pub mod private_dns_namespace_properties_change {
     }
 }
 impl PrivateDnsNamespacePropertiesChange {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange)
+    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
     pub fn builder() -> crate::model::private_dns_namespace_properties_change::Builder {
         crate::model::private_dns_namespace_properties_change::Builder::default()
     }
@@ -1212,11 +1202,10 @@ impl std::fmt::Debug for PrivateDnsPropertiesMutableChange {
         formatter.finish()
     }
 }
-/// See [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange)
+/// See [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
 pub mod private_dns_properties_mutable_change {
 
-    /// A builder for [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange)
-    #[non_exhaustive]
+    /// A builder for [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::SoaChange>,
@@ -1232,14 +1221,14 @@ pub mod private_dns_properties_mutable_change {
             self.soa = input;
             self
         }
-        /// Consumes the builder and constructs a [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange)
+        /// Consumes the builder and constructs a [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
         pub fn build(self) -> crate::model::PrivateDnsPropertiesMutableChange {
             crate::model::PrivateDnsPropertiesMutableChange { soa: self.soa }
         }
     }
 }
 impl PrivateDnsPropertiesMutableChange {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange)
+    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
     pub fn builder() -> crate::model::private_dns_properties_mutable_change::Builder {
         crate::model::private_dns_properties_mutable_change::Builder::default()
     }
@@ -1320,11 +1309,10 @@ impl std::fmt::Debug for HttpNamespaceChange {
         formatter.finish()
     }
 }
-/// See [`HttpNamespaceChange`](crate::model::HttpNamespaceChange)
+/// See [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
 pub mod http_namespace_change {
 
-    /// A builder for [`HttpNamespaceChange`](crate::model::HttpNamespaceChange)
-    #[non_exhaustive]
+    /// A builder for [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
@@ -1340,7 +1328,7 @@ pub mod http_namespace_change {
             self.description = input;
             self
         }
-        /// Consumes the builder and constructs a [`HttpNamespaceChange`](crate::model::HttpNamespaceChange)
+        /// Consumes the builder and constructs a [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
         pub fn build(self) -> crate::model::HttpNamespaceChange {
             crate::model::HttpNamespaceChange {
                 description: self.description,
@@ -1349,7 +1337,7 @@ pub mod http_namespace_change {
     }
 }
 impl HttpNamespaceChange {
-    /// Creates a new builder-style object to manufacture [`HttpNamespaceChange`](crate::model::HttpNamespaceChange)
+    /// Creates a new builder-style object to manufacture [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
     pub fn builder() -> crate::model::http_namespace_change::Builder {
         crate::model::http_namespace_change::Builder::default()
     }
@@ -1382,11 +1370,10 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
-/// See [`Tag`](crate::model::Tag)
+/// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
-    /// A builder for [`Tag`](crate::model::Tag)
-    #[non_exhaustive]
+    /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
@@ -1413,7 +1400,7 @@ pub mod tag {
             self.value = input;
             self
         }
-        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
+        /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
@@ -1423,7 +1410,7 @@ pub mod tag {
     }
 }
 impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag)
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
     pub fn builder() -> crate::model::tag::Builder {
         crate::model::tag::Builder::default()
     }
@@ -1569,11 +1556,10 @@ impl std::fmt::Debug for ServiceSummary {
         formatter.finish()
     }
 }
-/// See [`ServiceSummary`](crate::model::ServiceSummary)
+/// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
 
-    /// A builder for [`ServiceSummary`](crate::model::ServiceSummary)
-    #[non_exhaustive]
+    /// A builder for [`ServiceSummary`](crate::model::ServiceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -1756,7 +1742,7 @@ pub mod service_summary {
             self.create_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceSummary`](crate::model::ServiceSummary)
+        /// Consumes the builder and constructs a [`ServiceSummary`](crate::model::ServiceSummary).
         pub fn build(self) -> crate::model::ServiceSummary {
             crate::model::ServiceSummary {
                 id: self.id,
@@ -1774,7 +1760,7 @@ pub mod service_summary {
     }
 }
 impl ServiceSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary)
+    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
     pub fn builder() -> crate::model::service_summary::Builder {
         crate::model::service_summary::Builder::default()
     }
@@ -1827,11 +1813,10 @@ impl std::fmt::Debug for HealthCheckCustomConfig {
         formatter.finish()
     }
 }
-/// See [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig)
+/// See [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
 pub mod health_check_custom_config {
 
-    /// A builder for [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig)
-    #[non_exhaustive]
+    /// A builder for [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) failure_threshold: std::option::Option<i32>,
@@ -1855,7 +1840,7 @@ pub mod health_check_custom_config {
             self.failure_threshold = input;
             self
         }
-        /// Consumes the builder and constructs a [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig)
+        /// Consumes the builder and constructs a [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
         pub fn build(self) -> crate::model::HealthCheckCustomConfig {
             crate::model::HealthCheckCustomConfig {
                 failure_threshold: self.failure_threshold,
@@ -1864,7 +1849,7 @@ pub mod health_check_custom_config {
     }
 }
 impl HealthCheckCustomConfig {
-    /// Creates a new builder-style object to manufacture [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig)
+    /// Creates a new builder-style object to manufacture [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
     pub fn builder() -> crate::model::health_check_custom_config::Builder {
         crate::model::health_check_custom_config::Builder::default()
     }
@@ -1950,11 +1935,10 @@ impl std::fmt::Debug for DnsConfig {
         formatter.finish()
     }
 }
-/// See [`DnsConfig`](crate::model::DnsConfig)
+/// See [`DnsConfig`](crate::model::DnsConfig).
 pub mod dns_config {
 
-    /// A builder for [`DnsConfig`](crate::model::DnsConfig)
-    #[non_exhaustive]
+    /// A builder for [`DnsConfig`](crate::model::DnsConfig).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_id: std::option::Option<std::string::String>,
@@ -2050,7 +2034,7 @@ pub mod dns_config {
             self.dns_records = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsConfig`](crate::model::DnsConfig)
+        /// Consumes the builder and constructs a [`DnsConfig`](crate::model::DnsConfig).
         pub fn build(self) -> crate::model::DnsConfig {
             crate::model::DnsConfig {
                 namespace_id: self.namespace_id,
@@ -2061,7 +2045,7 @@ pub mod dns_config {
     }
 }
 impl DnsConfig {
-    /// Creates a new builder-style object to manufacture [`DnsConfig`](crate::model::DnsConfig)
+    /// Creates a new builder-style object to manufacture [`DnsConfig`](crate::model::DnsConfig).
     pub fn builder() -> crate::model::dns_config::Builder {
         crate::model::dns_config::Builder::default()
     }
@@ -2225,11 +2209,10 @@ impl std::fmt::Debug for ServiceFilter {
         formatter.finish()
     }
 }
-/// See [`ServiceFilter`](crate::model::ServiceFilter)
+/// See [`ServiceFilter`](crate::model::ServiceFilter).
 pub mod service_filter {
 
-    /// A builder for [`ServiceFilter`](crate::model::ServiceFilter)
-    #[non_exhaustive]
+    /// A builder for [`ServiceFilter`](crate::model::ServiceFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::ServiceFilterName>,
@@ -2292,7 +2275,7 @@ pub mod service_filter {
             self.condition = input;
             self
         }
-        /// Consumes the builder and constructs a [`ServiceFilter`](crate::model::ServiceFilter)
+        /// Consumes the builder and constructs a [`ServiceFilter`](crate::model::ServiceFilter).
         pub fn build(self) -> crate::model::ServiceFilter {
             crate::model::ServiceFilter {
                 name: self.name,
@@ -2303,7 +2286,7 @@ pub mod service_filter {
     }
 }
 impl ServiceFilter {
-    /// Creates a new builder-style object to manufacture [`ServiceFilter`](crate::model::ServiceFilter)
+    /// Creates a new builder-style object to manufacture [`ServiceFilter`](crate::model::ServiceFilter).
     pub fn builder() -> crate::model::service_filter::Builder {
         crate::model::service_filter::Builder::default()
     }
@@ -2458,11 +2441,10 @@ impl std::fmt::Debug for OperationSummary {
         formatter.finish()
     }
 }
-/// See [`OperationSummary`](crate::model::OperationSummary)
+/// See [`OperationSummary`](crate::model::OperationSummary).
 pub mod operation_summary {
 
-    /// A builder for [`OperationSummary`](crate::model::OperationSummary)
-    #[non_exhaustive]
+    /// A builder for [`OperationSummary`](crate::model::OperationSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -2504,7 +2486,7 @@ pub mod operation_summary {
             self.status = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationSummary`](crate::model::OperationSummary)
+        /// Consumes the builder and constructs a [`OperationSummary`](crate::model::OperationSummary).
         pub fn build(self) -> crate::model::OperationSummary {
             crate::model::OperationSummary {
                 id: self.id,
@@ -2514,7 +2496,7 @@ pub mod operation_summary {
     }
 }
 impl OperationSummary {
-    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary)
+    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
     pub fn builder() -> crate::model::operation_summary::Builder {
         crate::model::operation_summary::Builder::default()
     }
@@ -2655,11 +2637,10 @@ impl std::fmt::Debug for OperationFilter {
         formatter.finish()
     }
 }
-/// See [`OperationFilter`](crate::model::OperationFilter)
+/// See [`OperationFilter`](crate::model::OperationFilter).
 pub mod operation_filter {
 
-    /// A builder for [`OperationFilter`](crate::model::OperationFilter)
-    #[non_exhaustive]
+    /// A builder for [`OperationFilter`](crate::model::OperationFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::OperationFilterName>,
@@ -2750,7 +2731,7 @@ pub mod operation_filter {
             self.condition = input;
             self
         }
-        /// Consumes the builder and constructs a [`OperationFilter`](crate::model::OperationFilter)
+        /// Consumes the builder and constructs a [`OperationFilter`](crate::model::OperationFilter).
         pub fn build(self) -> crate::model::OperationFilter {
             crate::model::OperationFilter {
                 name: self.name,
@@ -2761,7 +2742,7 @@ pub mod operation_filter {
     }
 }
 impl OperationFilter {
-    /// Creates a new builder-style object to manufacture [`OperationFilter`](crate::model::OperationFilter)
+    /// Creates a new builder-style object to manufacture [`OperationFilter`](crate::model::OperationFilter).
     pub fn builder() -> crate::model::operation_filter::Builder {
         crate::model::operation_filter::Builder::default()
     }
@@ -2909,11 +2890,10 @@ impl std::fmt::Debug for NamespaceSummary {
         formatter.finish()
     }
 }
-/// See [`NamespaceSummary`](crate::model::NamespaceSummary)
+/// See [`NamespaceSummary`](crate::model::NamespaceSummary).
 pub mod namespace_summary {
 
-    /// A builder for [`NamespaceSummary`](crate::model::NamespaceSummary)
-    #[non_exhaustive]
+    /// A builder for [`NamespaceSummary`](crate::model::NamespaceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3012,7 +2992,7 @@ pub mod namespace_summary {
             self.create_date = input;
             self
         }
-        /// Consumes the builder and constructs a [`NamespaceSummary`](crate::model::NamespaceSummary)
+        /// Consumes the builder and constructs a [`NamespaceSummary`](crate::model::NamespaceSummary).
         pub fn build(self) -> crate::model::NamespaceSummary {
             crate::model::NamespaceSummary {
                 id: self.id,
@@ -3028,7 +3008,7 @@ pub mod namespace_summary {
     }
 }
 impl NamespaceSummary {
-    /// Creates a new builder-style object to manufacture [`NamespaceSummary`](crate::model::NamespaceSummary)
+    /// Creates a new builder-style object to manufacture [`NamespaceSummary`](crate::model::NamespaceSummary).
     pub fn builder() -> crate::model::namespace_summary::Builder {
         crate::model::namespace_summary::Builder::default()
     }
@@ -3061,11 +3041,10 @@ impl std::fmt::Debug for NamespaceProperties {
         formatter.finish()
     }
 }
-/// See [`NamespaceProperties`](crate::model::NamespaceProperties)
+/// See [`NamespaceProperties`](crate::model::NamespaceProperties).
 pub mod namespace_properties {
 
-    /// A builder for [`NamespaceProperties`](crate::model::NamespaceProperties)
-    #[non_exhaustive]
+    /// A builder for [`NamespaceProperties`](crate::model::NamespaceProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties: std::option::Option<crate::model::DnsProperties>,
@@ -3098,7 +3077,7 @@ pub mod namespace_properties {
             self.http_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`NamespaceProperties`](crate::model::NamespaceProperties)
+        /// Consumes the builder and constructs a [`NamespaceProperties`](crate::model::NamespaceProperties).
         pub fn build(self) -> crate::model::NamespaceProperties {
             crate::model::NamespaceProperties {
                 dns_properties: self.dns_properties,
@@ -3108,7 +3087,7 @@ pub mod namespace_properties {
     }
 }
 impl NamespaceProperties {
-    /// Creates a new builder-style object to manufacture [`NamespaceProperties`](crate::model::NamespaceProperties)
+    /// Creates a new builder-style object to manufacture [`NamespaceProperties`](crate::model::NamespaceProperties).
     pub fn builder() -> crate::model::namespace_properties::Builder {
         crate::model::namespace_properties::Builder::default()
     }
@@ -3134,11 +3113,10 @@ impl std::fmt::Debug for HttpProperties {
         formatter.finish()
     }
 }
-/// See [`HttpProperties`](crate::model::HttpProperties)
+/// See [`HttpProperties`](crate::model::HttpProperties).
 pub mod http_properties {
 
-    /// A builder for [`HttpProperties`](crate::model::HttpProperties)
-    #[non_exhaustive]
+    /// A builder for [`HttpProperties`](crate::model::HttpProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) http_name: std::option::Option<std::string::String>,
@@ -3154,7 +3132,7 @@ pub mod http_properties {
             self.http_name = input;
             self
         }
-        /// Consumes the builder and constructs a [`HttpProperties`](crate::model::HttpProperties)
+        /// Consumes the builder and constructs a [`HttpProperties`](crate::model::HttpProperties).
         pub fn build(self) -> crate::model::HttpProperties {
             crate::model::HttpProperties {
                 http_name: self.http_name,
@@ -3163,7 +3141,7 @@ pub mod http_properties {
     }
 }
 impl HttpProperties {
-    /// Creates a new builder-style object to manufacture [`HttpProperties`](crate::model::HttpProperties)
+    /// Creates a new builder-style object to manufacture [`HttpProperties`](crate::model::HttpProperties).
     pub fn builder() -> crate::model::http_properties::Builder {
         crate::model::http_properties::Builder::default()
     }
@@ -3196,11 +3174,10 @@ impl std::fmt::Debug for DnsProperties {
         formatter.finish()
     }
 }
-/// See [`DnsProperties`](crate::model::DnsProperties)
+/// See [`DnsProperties`](crate::model::DnsProperties).
 pub mod dns_properties {
 
-    /// A builder for [`DnsProperties`](crate::model::DnsProperties)
-    #[non_exhaustive]
+    /// A builder for [`DnsProperties`](crate::model::DnsProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
@@ -3230,7 +3207,7 @@ pub mod dns_properties {
             self.soa = input;
             self
         }
-        /// Consumes the builder and constructs a [`DnsProperties`](crate::model::DnsProperties)
+        /// Consumes the builder and constructs a [`DnsProperties`](crate::model::DnsProperties).
         pub fn build(self) -> crate::model::DnsProperties {
             crate::model::DnsProperties {
                 hosted_zone_id: self.hosted_zone_id,
@@ -3240,7 +3217,7 @@ pub mod dns_properties {
     }
 }
 impl DnsProperties {
-    /// Creates a new builder-style object to manufacture [`DnsProperties`](crate::model::DnsProperties)
+    /// Creates a new builder-style object to manufacture [`DnsProperties`](crate::model::DnsProperties).
     pub fn builder() -> crate::model::dns_properties::Builder {
         crate::model::dns_properties::Builder::default()
     }
@@ -3266,11 +3243,10 @@ impl std::fmt::Debug for Soa {
         formatter.finish()
     }
 }
-/// See [`Soa`](crate::model::Soa)
+/// See [`Soa`](crate::model::Soa).
 pub mod soa {
 
-    /// A builder for [`Soa`](crate::model::Soa)
-    #[non_exhaustive]
+    /// A builder for [`Soa`](crate::model::Soa).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ttl: std::option::Option<i64>,
@@ -3286,14 +3262,14 @@ pub mod soa {
             self.ttl = input;
             self
         }
-        /// Consumes the builder and constructs a [`Soa`](crate::model::Soa)
+        /// Consumes the builder and constructs a [`Soa`](crate::model::Soa).
         pub fn build(self) -> crate::model::Soa {
             crate::model::Soa { ttl: self.ttl }
         }
     }
 }
 impl Soa {
-    /// Creates a new builder-style object to manufacture [`Soa`](crate::model::Soa)
+    /// Creates a new builder-style object to manufacture [`Soa`](crate::model::Soa).
     pub fn builder() -> crate::model::soa::Builder {
         crate::model::soa::Builder::default()
     }
@@ -3434,11 +3410,10 @@ impl std::fmt::Debug for NamespaceFilter {
         formatter.finish()
     }
 }
-/// See [`NamespaceFilter`](crate::model::NamespaceFilter)
+/// See [`NamespaceFilter`](crate::model::NamespaceFilter).
 pub mod namespace_filter {
 
-    /// A builder for [`NamespaceFilter`](crate::model::NamespaceFilter)
-    #[non_exhaustive]
+    /// A builder for [`NamespaceFilter`](crate::model::NamespaceFilter).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<crate::model::NamespaceFilterName>,
@@ -3533,7 +3508,7 @@ pub mod namespace_filter {
             self.condition = input;
             self
         }
-        /// Consumes the builder and constructs a [`NamespaceFilter`](crate::model::NamespaceFilter)
+        /// Consumes the builder and constructs a [`NamespaceFilter`](crate::model::NamespaceFilter).
         pub fn build(self) -> crate::model::NamespaceFilter {
             crate::model::NamespaceFilter {
                 name: self.name,
@@ -3544,7 +3519,7 @@ pub mod namespace_filter {
     }
 }
 impl NamespaceFilter {
-    /// Creates a new builder-style object to manufacture [`NamespaceFilter`](crate::model::NamespaceFilter)
+    /// Creates a new builder-style object to manufacture [`NamespaceFilter`](crate::model::NamespaceFilter).
     pub fn builder() -> crate::model::namespace_filter::Builder {
         crate::model::namespace_filter::Builder::default()
     }
@@ -3730,11 +3705,10 @@ impl std::fmt::Debug for InstanceSummary {
         formatter.finish()
     }
 }
-/// See [`InstanceSummary`](crate::model::InstanceSummary)
+/// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
 
-    /// A builder for [`InstanceSummary`](crate::model::InstanceSummary)
-    #[non_exhaustive]
+    /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -3876,7 +3850,7 @@ pub mod instance_summary {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`InstanceSummary`](crate::model::InstanceSummary)
+        /// Consumes the builder and constructs a [`InstanceSummary`](crate::model::InstanceSummary).
         pub fn build(self) -> crate::model::InstanceSummary {
             crate::model::InstanceSummary {
                 id: self.id,
@@ -3886,7 +3860,7 @@ pub mod instance_summary {
     }
 }
 impl InstanceSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary)
+    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
     pub fn builder() -> crate::model::instance_summary::Builder {
         crate::model::instance_summary::Builder::default()
     }
@@ -4040,11 +4014,10 @@ impl std::fmt::Debug for Service {
         formatter.finish()
     }
 }
-/// See [`Service`](crate::model::Service)
+/// See [`Service`](crate::model::Service).
 pub mod service {
 
-    /// A builder for [`Service`](crate::model::Service)
-    #[non_exhaustive]
+    /// A builder for [`Service`](crate::model::Service).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4246,7 +4219,7 @@ pub mod service {
             self.creator_request_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Service`](crate::model::Service)
+        /// Consumes the builder and constructs a [`Service`](crate::model::Service).
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
                 id: self.id,
@@ -4266,7 +4239,7 @@ pub mod service {
     }
 }
 impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service)
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
     pub fn builder() -> crate::model::service::Builder {
         crate::model::service::Builder::default()
     }
@@ -4457,11 +4430,10 @@ impl std::fmt::Debug for Operation {
         formatter.finish()
     }
 }
-/// See [`Operation`](crate::model::Operation)
+/// See [`Operation`](crate::model::Operation).
 pub mod operation {
 
-    /// A builder for [`Operation`](crate::model::Operation)
-    #[non_exhaustive]
+    /// A builder for [`Operation`](crate::model::Operation).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4693,7 +4665,7 @@ pub mod operation {
             self.targets = input;
             self
         }
-        /// Consumes the builder and constructs a [`Operation`](crate::model::Operation)
+        /// Consumes the builder and constructs a [`Operation`](crate::model::Operation).
         pub fn build(self) -> crate::model::Operation {
             crate::model::Operation {
                 id: self.id,
@@ -4709,7 +4681,7 @@ pub mod operation {
     }
 }
 impl Operation {
-    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation)
+    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
     pub fn builder() -> crate::model::operation::Builder {
         crate::model::operation::Builder::default()
     }
@@ -4968,11 +4940,10 @@ impl std::fmt::Debug for Namespace {
         formatter.finish()
     }
 }
-/// See [`Namespace`](crate::model::Namespace)
+/// See [`Namespace`](crate::model::Namespace).
 pub mod namespace {
 
-    /// A builder for [`Namespace`](crate::model::Namespace)
-    #[non_exhaustive]
+    /// A builder for [`Namespace`](crate::model::Namespace).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5125,7 +5096,7 @@ pub mod namespace {
             self.creator_request_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`Namespace`](crate::model::Namespace)
+        /// Consumes the builder and constructs a [`Namespace`](crate::model::Namespace).
         pub fn build(self) -> crate::model::Namespace {
             crate::model::Namespace {
                 id: self.id,
@@ -5142,7 +5113,7 @@ pub mod namespace {
     }
 }
 impl Namespace {
-    /// Creates a new builder-style object to manufacture [`Namespace`](crate::model::Namespace)
+    /// Creates a new builder-style object to manufacture [`Namespace`](crate::model::Namespace).
     pub fn builder() -> crate::model::namespace::Builder {
         crate::model::namespace::Builder::default()
     }
@@ -5385,11 +5356,10 @@ impl std::fmt::Debug for Instance {
         formatter.finish()
     }
 }
-/// See [`Instance`](crate::model::Instance)
+/// See [`Instance`](crate::model::Instance).
 pub mod instance {
 
-    /// A builder for [`Instance`](crate::model::Instance)
-    #[non_exhaustive]
+    /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
@@ -5587,7 +5557,7 @@ pub mod instance {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`Instance`](crate::model::Instance)
+        /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
                 id: self.id,
@@ -5598,7 +5568,7 @@ pub mod instance {
     }
 }
 impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance)
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
     pub fn builder() -> crate::model::instance::Builder {
         crate::model::instance::Builder::default()
     }
@@ -5658,11 +5628,10 @@ impl std::fmt::Debug for HttpInstanceSummary {
         formatter.finish()
     }
 }
-/// See [`HttpInstanceSummary`](crate::model::HttpInstanceSummary)
+/// See [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
 pub mod http_instance_summary {
 
-    /// A builder for [`HttpInstanceSummary`](crate::model::HttpInstanceSummary)
-    #[non_exhaustive]
+    /// A builder for [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_id: std::option::Option<std::string::String>,
@@ -5747,7 +5716,7 @@ pub mod http_instance_summary {
             self.attributes = input;
             self
         }
-        /// Consumes the builder and constructs a [`HttpInstanceSummary`](crate::model::HttpInstanceSummary)
+        /// Consumes the builder and constructs a [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
         pub fn build(self) -> crate::model::HttpInstanceSummary {
             crate::model::HttpInstanceSummary {
                 instance_id: self.instance_id,
@@ -5760,7 +5729,7 @@ pub mod http_instance_summary {
     }
 }
 impl HttpInstanceSummary {
-    /// Creates a new builder-style object to manufacture [`HttpInstanceSummary`](crate::model::HttpInstanceSummary)
+    /// Creates a new builder-style object to manufacture [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
     pub fn builder() -> crate::model::http_instance_summary::Builder {
         crate::model::http_instance_summary::Builder::default()
     }
@@ -5900,11 +5869,10 @@ impl std::fmt::Debug for PublicDnsNamespaceProperties {
         formatter.finish()
     }
 }
-/// See [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties)
+/// See [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
 pub mod public_dns_namespace_properties {
 
-    /// A builder for [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties)
-    #[non_exhaustive]
+    /// A builder for [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties: std::option::Option<crate::model::PublicDnsPropertiesMutable>,
@@ -5923,7 +5891,7 @@ pub mod public_dns_namespace_properties {
             self.dns_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties)
+        /// Consumes the builder and constructs a [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
         pub fn build(self) -> crate::model::PublicDnsNamespaceProperties {
             crate::model::PublicDnsNamespaceProperties {
                 dns_properties: self.dns_properties,
@@ -5932,7 +5900,7 @@ pub mod public_dns_namespace_properties {
     }
 }
 impl PublicDnsNamespaceProperties {
-    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties)
+    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
     pub fn builder() -> crate::model::public_dns_namespace_properties::Builder {
         crate::model::public_dns_namespace_properties::Builder::default()
     }
@@ -5958,11 +5926,10 @@ impl std::fmt::Debug for PublicDnsPropertiesMutable {
         formatter.finish()
     }
 }
-/// See [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable)
+/// See [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
 pub mod public_dns_properties_mutable {
 
-    /// A builder for [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable)
-    #[non_exhaustive]
+    /// A builder for [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::Soa>,
@@ -5978,14 +5945,14 @@ pub mod public_dns_properties_mutable {
             self.soa = input;
             self
         }
-        /// Consumes the builder and constructs a [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable)
+        /// Consumes the builder and constructs a [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
         pub fn build(self) -> crate::model::PublicDnsPropertiesMutable {
             crate::model::PublicDnsPropertiesMutable { soa: self.soa }
         }
     }
 }
 impl PublicDnsPropertiesMutable {
-    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable)
+    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
     pub fn builder() -> crate::model::public_dns_properties_mutable::Builder {
         crate::model::public_dns_properties_mutable::Builder::default()
     }
@@ -6013,11 +5980,10 @@ impl std::fmt::Debug for PrivateDnsNamespaceProperties {
         formatter.finish()
     }
 }
-/// See [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties)
+/// See [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
 pub mod private_dns_namespace_properties {
 
-    /// A builder for [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties)
-    #[non_exhaustive]
+    /// A builder for [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dns_properties: std::option::Option<crate::model::PrivateDnsPropertiesMutable>,
@@ -6036,7 +6002,7 @@ pub mod private_dns_namespace_properties {
             self.dns_properties = input;
             self
         }
-        /// Consumes the builder and constructs a [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties)
+        /// Consumes the builder and constructs a [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
         pub fn build(self) -> crate::model::PrivateDnsNamespaceProperties {
             crate::model::PrivateDnsNamespaceProperties {
                 dns_properties: self.dns_properties,
@@ -6045,7 +6011,7 @@ pub mod private_dns_namespace_properties {
     }
 }
 impl PrivateDnsNamespaceProperties {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties)
+    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
     pub fn builder() -> crate::model::private_dns_namespace_properties::Builder {
         crate::model::private_dns_namespace_properties::Builder::default()
     }
@@ -6071,11 +6037,10 @@ impl std::fmt::Debug for PrivateDnsPropertiesMutable {
         formatter.finish()
     }
 }
-/// See [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable)
+/// See [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
 pub mod private_dns_properties_mutable {
 
-    /// A builder for [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable)
-    #[non_exhaustive]
+    /// A builder for [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) soa: std::option::Option<crate::model::Soa>,
@@ -6091,14 +6056,14 @@ pub mod private_dns_properties_mutable {
             self.soa = input;
             self
         }
-        /// Consumes the builder and constructs a [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable)
+        /// Consumes the builder and constructs a [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
         pub fn build(self) -> crate::model::PrivateDnsPropertiesMutable {
             crate::model::PrivateDnsPropertiesMutable { soa: self.soa }
         }
     }
 }
 impl PrivateDnsPropertiesMutable {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable)
+    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
     pub fn builder() -> crate::model::private_dns_properties_mutable::Builder {
         crate::model::private_dns_properties_mutable::Builder::default()
     }

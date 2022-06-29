@@ -10,7 +10,7 @@ pub struct GetApplicationComponentDetails {
     _private: (),
 }
 impl GetApplicationComponentDetails {
-    /// Creates a new builder-style object to manufacture [`GetApplicationComponentDetailsInput`](crate::input::GetApplicationComponentDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationComponentDetailsInput`](crate::input::GetApplicationComponentDetailsInput).
     pub fn builder() -> crate::input::get_application_component_details_input::Builder {
         crate::input::get_application_component_details_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct GetApplicationComponentStrategies {
     _private: (),
 }
 impl GetApplicationComponentStrategies {
-    /// Creates a new builder-style object to manufacture [`GetApplicationComponentStrategiesInput`](crate::input::GetApplicationComponentStrategiesInput)
+    /// Creates a new builder-style object to manufacture [`GetApplicationComponentStrategiesInput`](crate::input::GetApplicationComponentStrategiesInput).
     pub fn builder() -> crate::input::get_application_component_strategies_input::Builder {
         crate::input::get_application_component_strategies_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct GetAssessment {
     _private: (),
 }
 impl GetAssessment {
-    /// Creates a new builder-style object to manufacture [`GetAssessmentInput`](crate::input::GetAssessmentInput)
+    /// Creates a new builder-style object to manufacture [`GetAssessmentInput`](crate::input::GetAssessmentInput).
     pub fn builder() -> crate::input::get_assessment_input::Builder {
         crate::input::get_assessment_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct GetImportFileTask {
     _private: (),
 }
 impl GetImportFileTask {
-    /// Creates a new builder-style object to manufacture [`GetImportFileTaskInput`](crate::input::GetImportFileTaskInput)
+    /// Creates a new builder-style object to manufacture [`GetImportFileTaskInput`](crate::input::GetImportFileTaskInput).
     pub fn builder() -> crate::input::get_import_file_task_input::Builder {
         crate::input::get_import_file_task_input::Builder::default()
     }
@@ -144,7 +144,7 @@ pub struct GetPortfolioPreferences {
     _private: (),
 }
 impl GetPortfolioPreferences {
-    /// Creates a new builder-style object to manufacture [`GetPortfolioPreferencesInput`](crate::input::GetPortfolioPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`GetPortfolioPreferencesInput`](crate::input::GetPortfolioPreferencesInput).
     pub fn builder() -> crate::input::get_portfolio_preferences_input::Builder {
         crate::input::get_portfolio_preferences_input::Builder::default()
     }
@@ -178,7 +178,7 @@ pub struct GetPortfolioSummary {
     _private: (),
 }
 impl GetPortfolioSummary {
-    /// Creates a new builder-style object to manufacture [`GetPortfolioSummaryInput`](crate::input::GetPortfolioSummaryInput)
+    /// Creates a new builder-style object to manufacture [`GetPortfolioSummaryInput`](crate::input::GetPortfolioSummaryInput).
     pub fn builder() -> crate::input::get_portfolio_summary_input::Builder {
         crate::input::get_portfolio_summary_input::Builder::default()
     }
@@ -212,7 +212,7 @@ pub struct GetRecommendationReportDetails {
     _private: (),
 }
 impl GetRecommendationReportDetails {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationReportDetailsInput`](crate::input::GetRecommendationReportDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetRecommendationReportDetailsInput`](crate::input::GetRecommendationReportDetailsInput).
     pub fn builder() -> crate::input::get_recommendation_report_details_input::Builder {
         crate::input::get_recommendation_report_details_input::Builder::default()
     }
@@ -246,7 +246,7 @@ pub struct GetServerDetails {
     _private: (),
 }
 impl GetServerDetails {
-    /// Creates a new builder-style object to manufacture [`GetServerDetailsInput`](crate::input::GetServerDetailsInput)
+    /// Creates a new builder-style object to manufacture [`GetServerDetailsInput`](crate::input::GetServerDetailsInput).
     pub fn builder() -> crate::input::get_server_details_input::Builder {
         crate::input::get_server_details_input::Builder::default()
     }
@@ -280,7 +280,7 @@ pub struct GetServerStrategies {
     _private: (),
 }
 impl GetServerStrategies {
-    /// Creates a new builder-style object to manufacture [`GetServerStrategiesInput`](crate::input::GetServerStrategiesInput)
+    /// Creates a new builder-style object to manufacture [`GetServerStrategiesInput`](crate::input::GetServerStrategiesInput).
     pub fn builder() -> crate::input::get_server_strategies_input::Builder {
         crate::input::get_server_strategies_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct ListApplicationComponents {
     _private: (),
 }
 impl ListApplicationComponents {
-    /// Creates a new builder-style object to manufacture [`ListApplicationComponentsInput`](crate::input::ListApplicationComponentsInput)
+    /// Creates a new builder-style object to manufacture [`ListApplicationComponentsInput`](crate::input::ListApplicationComponentsInput).
     pub fn builder() -> crate::input::list_application_components_input::Builder {
         crate::input::list_application_components_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct ListCollectors {
     _private: (),
 }
 impl ListCollectors {
-    /// Creates a new builder-style object to manufacture [`ListCollectorsInput`](crate::input::ListCollectorsInput)
+    /// Creates a new builder-style object to manufacture [`ListCollectorsInput`](crate::input::ListCollectorsInput).
     pub fn builder() -> crate::input::list_collectors_input::Builder {
         crate::input::list_collectors_input::Builder::default()
     }
@@ -380,7 +380,7 @@ pub struct ListImportFileTask {
     _private: (),
 }
 impl ListImportFileTask {
-    /// Creates a new builder-style object to manufacture [`ListImportFileTaskInput`](crate::input::ListImportFileTaskInput)
+    /// Creates a new builder-style object to manufacture [`ListImportFileTaskInput`](crate::input::ListImportFileTaskInput).
     pub fn builder() -> crate::input::list_import_file_task_input::Builder {
         crate::input::list_import_file_task_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct ListServers {
     _private: (),
 }
 impl ListServers {
-    /// Creates a new builder-style object to manufacture [`ListServersInput`](crate::input::ListServersInput)
+    /// Creates a new builder-style object to manufacture [`ListServersInput`](crate::input::ListServersInput).
     pub fn builder() -> crate::input::list_servers_input::Builder {
         crate::input::list_servers_input::Builder::default()
     }
@@ -446,7 +446,7 @@ pub struct PutPortfolioPreferences {
     _private: (),
 }
 impl PutPortfolioPreferences {
-    /// Creates a new builder-style object to manufacture [`PutPortfolioPreferencesInput`](crate::input::PutPortfolioPreferencesInput)
+    /// Creates a new builder-style object to manufacture [`PutPortfolioPreferencesInput`](crate::input::PutPortfolioPreferencesInput).
     pub fn builder() -> crate::input::put_portfolio_preferences_input::Builder {
         crate::input::put_portfolio_preferences_input::Builder::default()
     }
@@ -480,7 +480,7 @@ pub struct StartAssessment {
     _private: (),
 }
 impl StartAssessment {
-    /// Creates a new builder-style object to manufacture [`StartAssessmentInput`](crate::input::StartAssessmentInput)
+    /// Creates a new builder-style object to manufacture [`StartAssessmentInput`](crate::input::StartAssessmentInput).
     pub fn builder() -> crate::input::start_assessment_input::Builder {
         crate::input::start_assessment_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct StartImportFileTask {
     _private: (),
 }
 impl StartImportFileTask {
-    /// Creates a new builder-style object to manufacture [`StartImportFileTaskInput`](crate::input::StartImportFileTaskInput)
+    /// Creates a new builder-style object to manufacture [`StartImportFileTaskInput`](crate::input::StartImportFileTaskInput).
     pub fn builder() -> crate::input::start_import_file_task_input::Builder {
         crate::input::start_import_file_task_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct StartRecommendationReportGeneration {
     _private: (),
 }
 impl StartRecommendationReportGeneration {
-    /// Creates a new builder-style object to manufacture [`StartRecommendationReportGenerationInput`](crate::input::StartRecommendationReportGenerationInput)
+    /// Creates a new builder-style object to manufacture [`StartRecommendationReportGenerationInput`](crate::input::StartRecommendationReportGenerationInput).
     pub fn builder() -> crate::input::start_recommendation_report_generation_input::Builder {
         crate::input::start_recommendation_report_generation_input::Builder::default()
     }
@@ -582,7 +582,7 @@ pub struct StopAssessment {
     _private: (),
 }
 impl StopAssessment {
-    /// Creates a new builder-style object to manufacture [`StopAssessmentInput`](crate::input::StopAssessmentInput)
+    /// Creates a new builder-style object to manufacture [`StopAssessmentInput`](crate::input::StopAssessmentInput).
     pub fn builder() -> crate::input::stop_assessment_input::Builder {
         crate::input::stop_assessment_input::Builder::default()
     }
@@ -614,7 +614,7 @@ pub struct UpdateApplicationComponentConfig {
     _private: (),
 }
 impl UpdateApplicationComponentConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationComponentConfigInput`](crate::input::UpdateApplicationComponentConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationComponentConfigInput`](crate::input::UpdateApplicationComponentConfigInput).
     pub fn builder() -> crate::input::update_application_component_config_input::Builder {
         crate::input::update_application_component_config_input::Builder::default()
     }
@@ -648,7 +648,7 @@ pub struct UpdateServerConfig {
     _private: (),
 }
 impl UpdateServerConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateServerConfigInput`](crate::input::UpdateServerConfigInput)
+    /// Creates a new builder-style object to manufacture [`UpdateServerConfigInput`](crate::input::UpdateServerConfigInput).
     pub fn builder() -> crate::input::update_server_config_input::Builder {
         crate::input::update_server_config_input::Builder::default()
     }

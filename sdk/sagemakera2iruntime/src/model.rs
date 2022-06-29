@@ -22,11 +22,10 @@ impl std::fmt::Debug for HumanLoopDataAttributes {
         formatter.finish()
     }
 }
-/// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes)
+/// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
 pub mod human_loop_data_attributes {
 
-    /// A builder for [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes)
-    #[non_exhaustive]
+    /// A builder for [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content_classifiers:
@@ -54,7 +53,7 @@ pub mod human_loop_data_attributes {
             self.content_classifiers = input;
             self
         }
-        /// Consumes the builder and constructs a [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes)
+        /// Consumes the builder and constructs a [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
         pub fn build(self) -> crate::model::HumanLoopDataAttributes {
             crate::model::HumanLoopDataAttributes {
                 content_classifiers: self.content_classifiers,
@@ -63,7 +62,7 @@ pub mod human_loop_data_attributes {
     }
 }
 impl HumanLoopDataAttributes {
-    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes)
+    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
     pub fn builder() -> crate::model::human_loop_data_attributes::Builder {
         crate::model::human_loop_data_attributes::Builder::default()
     }
@@ -151,11 +150,10 @@ impl std::fmt::Debug for HumanLoopInput {
         formatter.finish()
     }
 }
-/// See [`HumanLoopInput`](crate::model::HumanLoopInput)
+/// See [`HumanLoopInput`](crate::model::HumanLoopInput).
 pub mod human_loop_input {
 
-    /// A builder for [`HumanLoopInput`](crate::model::HumanLoopInput)
-    #[non_exhaustive]
+    /// A builder for [`HumanLoopInput`](crate::model::HumanLoopInput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_content: std::option::Option<std::string::String>,
@@ -174,7 +172,7 @@ pub mod human_loop_input {
             self.input_content = input;
             self
         }
-        /// Consumes the builder and constructs a [`HumanLoopInput`](crate::model::HumanLoopInput)
+        /// Consumes the builder and constructs a [`HumanLoopInput`](crate::model::HumanLoopInput).
         pub fn build(self) -> crate::model::HumanLoopInput {
             crate::model::HumanLoopInput {
                 input_content: self.input_content,
@@ -183,7 +181,7 @@ pub mod human_loop_input {
     }
 }
 impl HumanLoopInput {
-    /// Creates a new builder-style object to manufacture [`HumanLoopInput`](crate::model::HumanLoopInput)
+    /// Creates a new builder-style object to manufacture [`HumanLoopInput`](crate::model::HumanLoopInput).
     pub fn builder() -> crate::model::human_loop_input::Builder {
         crate::model::human_loop_input::Builder::default()
     }
@@ -237,11 +235,10 @@ impl std::fmt::Debug for HumanLoopSummary {
         formatter.finish()
     }
 }
-/// See [`HumanLoopSummary`](crate::model::HumanLoopSummary)
+/// See [`HumanLoopSummary`](crate::model::HumanLoopSummary).
 pub mod human_loop_summary {
 
-    /// A builder for [`HumanLoopSummary`](crate::model::HumanLoopSummary)
-    #[non_exhaustive]
+    /// A builder for [`HumanLoopSummary`](crate::model::HumanLoopSummary).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
@@ -316,7 +313,7 @@ pub mod human_loop_summary {
             self.flow_definition_arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`HumanLoopSummary`](crate::model::HumanLoopSummary)
+        /// Consumes the builder and constructs a [`HumanLoopSummary`](crate::model::HumanLoopSummary).
         pub fn build(self) -> crate::model::HumanLoopSummary {
             crate::model::HumanLoopSummary {
                 human_loop_name: self.human_loop_name,
@@ -329,7 +326,7 @@ pub mod human_loop_summary {
     }
 }
 impl HumanLoopSummary {
-    /// Creates a new builder-style object to manufacture [`HumanLoopSummary`](crate::model::HumanLoopSummary)
+    /// Creates a new builder-style object to manufacture [`HumanLoopSummary`](crate::model::HumanLoopSummary).
     pub fn builder() -> crate::model::human_loop_summary::Builder {
         crate::model::human_loop_summary::Builder::default()
     }
@@ -477,11 +474,10 @@ impl std::fmt::Debug for HumanLoopOutput {
         formatter.finish()
     }
 }
-/// See [`HumanLoopOutput`](crate::model::HumanLoopOutput)
+/// See [`HumanLoopOutput`](crate::model::HumanLoopOutput).
 pub mod human_loop_output {
 
-    /// A builder for [`HumanLoopOutput`](crate::model::HumanLoopOutput)
-    #[non_exhaustive]
+    /// A builder for [`HumanLoopOutput`](crate::model::HumanLoopOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) output_s3_uri: std::option::Option<std::string::String>,
@@ -500,7 +496,7 @@ pub mod human_loop_output {
             self.output_s3_uri = input;
             self
         }
-        /// Consumes the builder and constructs a [`HumanLoopOutput`](crate::model::HumanLoopOutput)
+        /// Consumes the builder and constructs a [`HumanLoopOutput`](crate::model::HumanLoopOutput).
         pub fn build(self) -> crate::model::HumanLoopOutput {
             crate::model::HumanLoopOutput {
                 output_s3_uri: self.output_s3_uri,
@@ -509,7 +505,7 @@ pub mod human_loop_output {
     }
 }
 impl HumanLoopOutput {
-    /// Creates a new builder-style object to manufacture [`HumanLoopOutput`](crate::model::HumanLoopOutput)
+    /// Creates a new builder-style object to manufacture [`HumanLoopOutput`](crate::model::HumanLoopOutput).
     pub fn builder() -> crate::model::human_loop_output::Builder {
         crate::model::human_loop_output::Builder::default()
     }

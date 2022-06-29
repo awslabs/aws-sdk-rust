@@ -9,22 +9,21 @@ impl std::fmt::Debug for PutAlternateContactOutput {
         formatter.finish()
     }
 }
-/// See [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput)
+/// See [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
 pub mod put_alternate_contact_output {
 
-    /// A builder for [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput)
+        /// Consumes the builder and constructs a [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
         pub fn build(self) -> crate::output::PutAlternateContactOutput {
             crate::output::PutAlternateContactOutput {}
         }
     }
 }
 impl PutAlternateContactOutput {
-    /// Creates a new builder-style object to manufacture [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput)
+    /// Creates a new builder-style object to manufacture [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
     pub fn builder() -> crate::output::put_alternate_contact_output::Builder {
         crate::output::put_alternate_contact_output::Builder::default()
     }
@@ -40,22 +39,21 @@ impl std::fmt::Debug for DeleteAlternateContactOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput)
+/// See [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
 pub mod delete_alternate_contact_output {
 
-    /// A builder for [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput)
+        /// Consumes the builder and constructs a [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
         pub fn build(self) -> crate::output::DeleteAlternateContactOutput {
             crate::output::DeleteAlternateContactOutput {}
         }
     }
 }
 impl DeleteAlternateContactOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
     pub fn builder() -> crate::output::delete_alternate_contact_output::Builder {
         crate::output::delete_alternate_contact_output::Builder::default()
     }
@@ -81,11 +79,10 @@ impl std::fmt::Debug for GetAlternateContactOutput {
         formatter.finish()
     }
 }
-/// See [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput)
+/// See [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
 pub mod get_alternate_contact_output {
 
-    /// A builder for [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alternate_contact: std::option::Option<crate::model::AlternateContact>,
@@ -104,7 +101,7 @@ pub mod get_alternate_contact_output {
             self.alternate_contact = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput)
+        /// Consumes the builder and constructs a [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
         pub fn build(self) -> crate::output::GetAlternateContactOutput {
             crate::output::GetAlternateContactOutput {
                 alternate_contact: self.alternate_contact,
@@ -113,7 +110,7 @@ pub mod get_alternate_contact_output {
     }
 }
 impl GetAlternateContactOutput {
-    /// Creates a new builder-style object to manufacture [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput)
+    /// Creates a new builder-style object to manufacture [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
     pub fn builder() -> crate::output::get_alternate_contact_output::Builder {
         crate::output::get_alternate_contact_output::Builder::default()
     }

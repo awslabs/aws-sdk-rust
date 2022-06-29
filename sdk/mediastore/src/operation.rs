@@ -10,7 +10,7 @@ pub struct CreateContainer {
     _private: (),
 }
 impl CreateContainer {
-    /// Creates a new builder-style object to manufacture [`CreateContainerInput`](crate::input::CreateContainerInput)
+    /// Creates a new builder-style object to manufacture [`CreateContainerInput`](crate::input::CreateContainerInput).
     pub fn builder() -> crate::input::create_container_input::Builder {
         crate::input::create_container_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct DeleteContainer {
     _private: (),
 }
 impl DeleteContainer {
-    /// Creates a new builder-style object to manufacture [`DeleteContainerInput`](crate::input::DeleteContainerInput)
+    /// Creates a new builder-style object to manufacture [`DeleteContainerInput`](crate::input::DeleteContainerInput).
     pub fn builder() -> crate::input::delete_container_input::Builder {
         crate::input::delete_container_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct DeleteContainerPolicy {
     _private: (),
 }
 impl DeleteContainerPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteContainerPolicyInput`](crate::input::DeleteContainerPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteContainerPolicyInput`](crate::input::DeleteContainerPolicyInput).
     pub fn builder() -> crate::input::delete_container_policy_input::Builder {
         crate::input::delete_container_policy_input::Builder::default()
     }
@@ -112,7 +112,7 @@ pub struct DeleteCorsPolicy {
     _private: (),
 }
 impl DeleteCorsPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyInput`](crate::input::DeleteCorsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyInput`](crate::input::DeleteCorsPolicyInput).
     pub fn builder() -> crate::input::delete_cors_policy_input::Builder {
         crate::input::delete_cors_policy_input::Builder::default()
     }
@@ -146,7 +146,7 @@ pub struct DeleteLifecyclePolicy {
     _private: (),
 }
 impl DeleteLifecyclePolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyInput`](crate::input::DeleteLifecyclePolicyInput).
     pub fn builder() -> crate::input::delete_lifecycle_policy_input::Builder {
         crate::input::delete_lifecycle_policy_input::Builder::default()
     }
@@ -180,7 +180,7 @@ pub struct DeleteMetricPolicy {
     _private: (),
 }
 impl DeleteMetricPolicy {
-    /// Creates a new builder-style object to manufacture [`DeleteMetricPolicyInput`](crate::input::DeleteMetricPolicyInput)
+    /// Creates a new builder-style object to manufacture [`DeleteMetricPolicyInput`](crate::input::DeleteMetricPolicyInput).
     pub fn builder() -> crate::input::delete_metric_policy_input::Builder {
         crate::input::delete_metric_policy_input::Builder::default()
     }
@@ -214,7 +214,7 @@ pub struct DescribeContainer {
     _private: (),
 }
 impl DescribeContainer {
-    /// Creates a new builder-style object to manufacture [`DescribeContainerInput`](crate::input::DescribeContainerInput)
+    /// Creates a new builder-style object to manufacture [`DescribeContainerInput`](crate::input::DescribeContainerInput).
     pub fn builder() -> crate::input::describe_container_input::Builder {
         crate::input::describe_container_input::Builder::default()
     }
@@ -248,7 +248,7 @@ pub struct GetContainerPolicy {
     _private: (),
 }
 impl GetContainerPolicy {
-    /// Creates a new builder-style object to manufacture [`GetContainerPolicyInput`](crate::input::GetContainerPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetContainerPolicyInput`](crate::input::GetContainerPolicyInput).
     pub fn builder() -> crate::input::get_container_policy_input::Builder {
         crate::input::get_container_policy_input::Builder::default()
     }
@@ -282,7 +282,7 @@ pub struct GetCorsPolicy {
     _private: (),
 }
 impl GetCorsPolicy {
-    /// Creates a new builder-style object to manufacture [`GetCorsPolicyInput`](crate::input::GetCorsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetCorsPolicyInput`](crate::input::GetCorsPolicyInput).
     pub fn builder() -> crate::input::get_cors_policy_input::Builder {
         crate::input::get_cors_policy_input::Builder::default()
     }
@@ -314,7 +314,7 @@ pub struct GetLifecyclePolicy {
     _private: (),
 }
 impl GetLifecyclePolicy {
-    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyInput`](crate::input::GetLifecyclePolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyInput`](crate::input::GetLifecyclePolicyInput).
     pub fn builder() -> crate::input::get_lifecycle_policy_input::Builder {
         crate::input::get_lifecycle_policy_input::Builder::default()
     }
@@ -348,7 +348,7 @@ pub struct GetMetricPolicy {
     _private: (),
 }
 impl GetMetricPolicy {
-    /// Creates a new builder-style object to manufacture [`GetMetricPolicyInput`](crate::input::GetMetricPolicyInput)
+    /// Creates a new builder-style object to manufacture [`GetMetricPolicyInput`](crate::input::GetMetricPolicyInput).
     pub fn builder() -> crate::input::get_metric_policy_input::Builder {
         crate::input::get_metric_policy_input::Builder::default()
     }
@@ -382,7 +382,7 @@ pub struct ListContainers {
     _private: (),
 }
 impl ListContainers {
-    /// Creates a new builder-style object to manufacture [`ListContainersInput`](crate::input::ListContainersInput)
+    /// Creates a new builder-style object to manufacture [`ListContainersInput`](crate::input::ListContainersInput).
     pub fn builder() -> crate::input::list_containers_input::Builder {
         crate::input::list_containers_input::Builder::default()
     }
@@ -414,7 +414,7 @@ pub struct ListTagsForResource {
     _private: (),
 }
 impl ListTagsForResource {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
         crate::input::list_tags_for_resource_input::Builder::default()
     }
@@ -448,7 +448,7 @@ pub struct PutContainerPolicy {
     _private: (),
 }
 impl PutContainerPolicy {
-    /// Creates a new builder-style object to manufacture [`PutContainerPolicyInput`](crate::input::PutContainerPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutContainerPolicyInput`](crate::input::PutContainerPolicyInput).
     pub fn builder() -> crate::input::put_container_policy_input::Builder {
         crate::input::put_container_policy_input::Builder::default()
     }
@@ -482,7 +482,7 @@ pub struct PutCorsPolicy {
     _private: (),
 }
 impl PutCorsPolicy {
-    /// Creates a new builder-style object to manufacture [`PutCorsPolicyInput`](crate::input::PutCorsPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutCorsPolicyInput`](crate::input::PutCorsPolicyInput).
     pub fn builder() -> crate::input::put_cors_policy_input::Builder {
         crate::input::put_cors_policy_input::Builder::default()
     }
@@ -514,7 +514,7 @@ pub struct PutLifecyclePolicy {
     _private: (),
 }
 impl PutLifecyclePolicy {
-    /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyInput`](crate::input::PutLifecyclePolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyInput`](crate::input::PutLifecyclePolicyInput).
     pub fn builder() -> crate::input::put_lifecycle_policy_input::Builder {
         crate::input::put_lifecycle_policy_input::Builder::default()
     }
@@ -548,7 +548,7 @@ pub struct PutMetricPolicy {
     _private: (),
 }
 impl PutMetricPolicy {
-    /// Creates a new builder-style object to manufacture [`PutMetricPolicyInput`](crate::input::PutMetricPolicyInput)
+    /// Creates a new builder-style object to manufacture [`PutMetricPolicyInput`](crate::input::PutMetricPolicyInput).
     pub fn builder() -> crate::input::put_metric_policy_input::Builder {
         crate::input::put_metric_policy_input::Builder::default()
     }
@@ -582,7 +582,7 @@ pub struct StartAccessLogging {
     _private: (),
 }
 impl StartAccessLogging {
-    /// Creates a new builder-style object to manufacture [`StartAccessLoggingInput`](crate::input::StartAccessLoggingInput)
+    /// Creates a new builder-style object to manufacture [`StartAccessLoggingInput`](crate::input::StartAccessLoggingInput).
     pub fn builder() -> crate::input::start_access_logging_input::Builder {
         crate::input::start_access_logging_input::Builder::default()
     }
@@ -616,7 +616,7 @@ pub struct StopAccessLogging {
     _private: (),
 }
 impl StopAccessLogging {
-    /// Creates a new builder-style object to manufacture [`StopAccessLoggingInput`](crate::input::StopAccessLoggingInput)
+    /// Creates a new builder-style object to manufacture [`StopAccessLoggingInput`](crate::input::StopAccessLoggingInput).
     pub fn builder() -> crate::input::stop_access_logging_input::Builder {
         crate::input::stop_access_logging_input::Builder::default()
     }
@@ -650,7 +650,7 @@ pub struct TagResource {
     _private: (),
 }
 impl TagResource {
-    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput).
     pub fn builder() -> crate::input::tag_resource_input::Builder {
         crate::input::tag_resource_input::Builder::default()
     }
@@ -682,7 +682,7 @@ pub struct UntagResource {
     _private: (),
 }
 impl UntagResource {
-    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput).
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
     }

@@ -9,22 +9,21 @@ impl std::fmt::Debug for EnableHealthServiceAccessForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput)
+/// See [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
 pub mod enable_health_service_access_for_organization_output {
 
-    /// A builder for [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput)
+        /// Consumes the builder and constructs a [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
         pub fn build(self) -> crate::output::EnableHealthServiceAccessForOrganizationOutput {
             crate::output::EnableHealthServiceAccessForOrganizationOutput {}
         }
     }
 }
 impl EnableHealthServiceAccessForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
     pub fn builder() -> crate::output::enable_health_service_access_for_organization_output::Builder
     {
         crate::output::enable_health_service_access_for_organization_output::Builder::default()
@@ -41,22 +40,21 @@ impl std::fmt::Debug for DisableHealthServiceAccessForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput)
+/// See [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
 pub mod disable_health_service_access_for_organization_output {
 
-    /// A builder for [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput)
+        /// Consumes the builder and constructs a [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
         pub fn build(self) -> crate::output::DisableHealthServiceAccessForOrganizationOutput {
             crate::output::DisableHealthServiceAccessForOrganizationOutput {}
         }
     }
 }
 impl DisableHealthServiceAccessForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
     pub fn builder() -> crate::output::disable_health_service_access_for_organization_output::Builder
     {
         crate::output::disable_health_service_access_for_organization_output::Builder::default()
@@ -89,11 +87,10 @@ impl std::fmt::Debug for DescribeHealthServiceStatusForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput)
+/// See [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
 pub mod describe_health_service_status_for_organization_output {
 
-    /// A builder for [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) health_service_access_status_for_organization:
@@ -118,7 +115,7 @@ pub mod describe_health_service_status_for_organization_output {
             self.health_service_access_status_for_organization = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput)
+        /// Consumes the builder and constructs a [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeHealthServiceStatusForOrganizationOutput {
             crate::output::DescribeHealthServiceStatusForOrganizationOutput {
                 health_service_access_status_for_organization: self
@@ -128,7 +125,7 @@ pub mod describe_health_service_status_for_organization_output {
     }
 }
 impl DescribeHealthServiceStatusForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
     pub fn builder(
     ) -> crate::output::describe_health_service_status_for_organization_output::Builder {
         crate::output::describe_health_service_status_for_organization_output::Builder::default()
@@ -162,11 +159,10 @@ impl std::fmt::Debug for DescribeEventTypesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput)
+/// See [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
 pub mod describe_event_types_output {
 
-    /// A builder for [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -202,7 +198,7 @@ pub mod describe_event_types_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput)
+        /// Consumes the builder and constructs a [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
         pub fn build(self) -> crate::output::DescribeEventTypesOutput {
             crate::output::DescribeEventTypesOutput {
                 event_types: self.event_types,
@@ -212,7 +208,7 @@ pub mod describe_event_types_output {
     }
 }
 impl DescribeEventTypesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
     pub fn builder() -> crate::output::describe_event_types_output::Builder {
         crate::output::describe_event_types_output::Builder::default()
     }
@@ -245,11 +241,10 @@ impl std::fmt::Debug for DescribeEventsForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput)
+/// See [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
 pub mod describe_events_for_organization_output {
 
-    /// A builder for [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::OrganizationEvent>>,
@@ -285,7 +280,7 @@ pub mod describe_events_for_organization_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput)
+        /// Consumes the builder and constructs a [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeEventsForOrganizationOutput {
             crate::output::DescribeEventsForOrganizationOutput {
                 events: self.events,
@@ -295,7 +290,7 @@ pub mod describe_events_for_organization_output {
     }
 }
 impl DescribeEventsForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
     pub fn builder() -> crate::output::describe_events_for_organization_output::Builder {
         crate::output::describe_events_for_organization_output::Builder::default()
     }
@@ -328,11 +323,10 @@ impl std::fmt::Debug for DescribeEventsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
+/// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
 
-    /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -368,7 +362,7 @@ pub mod describe_events_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
+        /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
                 events: self.events,
@@ -378,7 +372,7 @@ pub mod describe_events_output {
     }
 }
 impl DescribeEventsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     pub fn builder() -> crate::output::describe_events_output::Builder {
         crate::output::describe_events_output::Builder::default()
     }
@@ -414,11 +408,10 @@ impl std::fmt::Debug for DescribeEventDetailsForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput)
+/// See [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
 pub mod describe_event_details_for_organization_output {
 
-    /// A builder for [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_set:
@@ -470,7 +463,7 @@ pub mod describe_event_details_for_organization_output {
             self.failed_set = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput)
+        /// Consumes the builder and constructs a [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeEventDetailsForOrganizationOutput {
             crate::output::DescribeEventDetailsForOrganizationOutput {
                 successful_set: self.successful_set,
@@ -480,7 +473,7 @@ pub mod describe_event_details_for_organization_output {
     }
 }
 impl DescribeEventDetailsForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
     pub fn builder() -> crate::output::describe_event_details_for_organization_output::Builder {
         crate::output::describe_event_details_for_organization_output::Builder::default()
     }
@@ -513,11 +506,10 @@ impl std::fmt::Debug for DescribeEventDetailsOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput)
+/// See [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
 pub mod describe_event_details_output {
 
-    /// A builder for [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) successful_set: std::option::Option<std::vec::Vec<crate::model::EventDetails>>,
@@ -563,7 +555,7 @@ pub mod describe_event_details_output {
             self.failed_set = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput)
+        /// Consumes the builder and constructs a [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
         pub fn build(self) -> crate::output::DescribeEventDetailsOutput {
             crate::output::DescribeEventDetailsOutput {
                 successful_set: self.successful_set,
@@ -573,7 +565,7 @@ pub mod describe_event_details_output {
     }
 }
 impl DescribeEventDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
     pub fn builder() -> crate::output::describe_event_details_output::Builder {
         crate::output::describe_event_details_output::Builder::default()
     }
@@ -606,11 +598,10 @@ impl std::fmt::Debug for DescribeEventAggregatesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput)
+/// See [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
 pub mod describe_event_aggregates_output {
 
-    /// A builder for [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_aggregates:
@@ -647,7 +638,7 @@ pub mod describe_event_aggregates_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput)
+        /// Consumes the builder and constructs a [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
         pub fn build(self) -> crate::output::DescribeEventAggregatesOutput {
             crate::output::DescribeEventAggregatesOutput {
                 event_aggregates: self.event_aggregates,
@@ -657,7 +648,7 @@ pub mod describe_event_aggregates_output {
     }
 }
 impl DescribeEventAggregatesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
     pub fn builder() -> crate::output::describe_event_aggregates_output::Builder {
         crate::output::describe_event_aggregates_output::Builder::default()
     }
@@ -683,11 +674,10 @@ impl std::fmt::Debug for DescribeEntityAggregatesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput)
+/// See [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
 pub mod describe_entity_aggregates_output {
 
-    /// A builder for [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_aggregates:
@@ -713,7 +703,7 @@ pub mod describe_entity_aggregates_output {
             self.entity_aggregates = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput)
+        /// Consumes the builder and constructs a [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
         pub fn build(self) -> crate::output::DescribeEntityAggregatesOutput {
             crate::output::DescribeEntityAggregatesOutput {
                 entity_aggregates: self.entity_aggregates,
@@ -722,7 +712,7 @@ pub mod describe_entity_aggregates_output {
     }
 }
 impl DescribeEntityAggregatesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
     pub fn builder() -> crate::output::describe_entity_aggregates_output::Builder {
         crate::output::describe_entity_aggregates_output::Builder::default()
     }
@@ -765,11 +755,10 @@ impl std::fmt::Debug for DescribeAffectedEntitiesForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput)
+/// See [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
 pub mod describe_affected_entities_for_organization_output {
 
-    /// A builder for [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
@@ -831,7 +820,7 @@ pub mod describe_affected_entities_for_organization_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput)
+        /// Consumes the builder and constructs a [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeAffectedEntitiesForOrganizationOutput {
             crate::output::DescribeAffectedEntitiesForOrganizationOutput {
                 entities: self.entities,
@@ -842,7 +831,7 @@ pub mod describe_affected_entities_for_organization_output {
     }
 }
 impl DescribeAffectedEntitiesForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
     pub fn builder() -> crate::output::describe_affected_entities_for_organization_output::Builder {
         crate::output::describe_affected_entities_for_organization_output::Builder::default()
     }
@@ -875,11 +864,10 @@ impl std::fmt::Debug for DescribeAffectedEntitiesOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput)
+/// See [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
 pub mod describe_affected_entities_output {
 
-    /// A builder for [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::AffectedEntity>>,
@@ -915,7 +903,7 @@ pub mod describe_affected_entities_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput)
+        /// Consumes the builder and constructs a [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
         pub fn build(self) -> crate::output::DescribeAffectedEntitiesOutput {
             crate::output::DescribeAffectedEntitiesOutput {
                 entities: self.entities,
@@ -925,7 +913,7 @@ pub mod describe_affected_entities_output {
     }
 }
 impl DescribeAffectedEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
     pub fn builder() -> crate::output::describe_affected_entities_output::Builder {
         crate::output::describe_affected_entities_output::Builder::default()
     }
@@ -975,11 +963,10 @@ impl std::fmt::Debug for DescribeAffectedAccountsForOrganizationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput)
+/// See [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
 pub mod describe_affected_accounts_for_organization_output {
 
-    /// A builder for [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1039,7 +1026,7 @@ pub mod describe_affected_accounts_for_organization_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput)
+        /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeAffectedAccountsForOrganizationOutput {
             crate::output::DescribeAffectedAccountsForOrganizationOutput {
                 affected_accounts: self.affected_accounts,
@@ -1050,7 +1037,7 @@ pub mod describe_affected_accounts_for_organization_output {
     }
 }
 impl DescribeAffectedAccountsForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
     pub fn builder() -> crate::output::describe_affected_accounts_for_organization_output::Builder {
         crate::output::describe_affected_accounts_for_organization_output::Builder::default()
     }

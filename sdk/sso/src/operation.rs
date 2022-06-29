@@ -10,7 +10,7 @@ pub struct GetRoleCredentials {
     _private: (),
 }
 impl GetRoleCredentials {
-    /// Creates a new builder-style object to manufacture [`GetRoleCredentialsInput`](crate::input::GetRoleCredentialsInput)
+    /// Creates a new builder-style object to manufacture [`GetRoleCredentialsInput`](crate::input::GetRoleCredentialsInput).
     pub fn builder() -> crate::input::get_role_credentials_input::Builder {
         crate::input::get_role_credentials_input::Builder::default()
     }
@@ -44,7 +44,7 @@ pub struct ListAccountRoles {
     _private: (),
 }
 impl ListAccountRoles {
-    /// Creates a new builder-style object to manufacture [`ListAccountRolesInput`](crate::input::ListAccountRolesInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountRolesInput`](crate::input::ListAccountRolesInput).
     pub fn builder() -> crate::input::list_account_roles_input::Builder {
         crate::input::list_account_roles_input::Builder::default()
     }
@@ -78,7 +78,7 @@ pub struct ListAccounts {
     _private: (),
 }
 impl ListAccounts {
-    /// Creates a new builder-style object to manufacture [`ListAccountsInput`](crate::input::ListAccountsInput)
+    /// Creates a new builder-style object to manufacture [`ListAccountsInput`](crate::input::ListAccountsInput).
     pub fn builder() -> crate::input::list_accounts_input::Builder {
         crate::input::list_accounts_input::Builder::default()
     }
@@ -110,7 +110,7 @@ pub struct Logout {
     _private: (),
 }
 impl Logout {
-    /// Creates a new builder-style object to manufacture [`LogoutInput`](crate::input::LogoutInput)
+    /// Creates a new builder-style object to manufacture [`LogoutInput`](crate::input::LogoutInput).
     pub fn builder() -> crate::input::logout_input::Builder {
         crate::input::logout_input::Builder::default()
     }

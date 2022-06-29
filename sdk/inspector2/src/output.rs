@@ -19,11 +19,10 @@ impl std::fmt::Debug for UpdateOrganizationConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
+/// See [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
 pub mod update_organization_configuration_output {
 
-    /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable: std::option::Option<crate::model::AutoEnable>,
@@ -42,7 +41,7 @@ pub mod update_organization_configuration_output {
             self.auto_enable = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
+        /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateOrganizationConfigurationOutput {
             crate::output::UpdateOrganizationConfigurationOutput {
                 auto_enable: self.auto_enable,
@@ -51,7 +50,7 @@ pub mod update_organization_configuration_output {
     }
 }
 impl UpdateOrganizationConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput).
     pub fn builder() -> crate::output::update_organization_configuration_output::Builder {
         crate::output::update_organization_configuration_output::Builder::default()
     }
@@ -77,11 +76,10 @@ impl std::fmt::Debug for UpdateFilterOutput {
         formatter.finish()
     }
 }
-/// See [`UpdateFilterOutput`](crate::output::UpdateFilterOutput)
+/// See [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
 pub mod update_filter_output {
 
-    /// A builder for [`UpdateFilterOutput`](crate::output::UpdateFilterOutput)
-    #[non_exhaustive]
+    /// A builder for [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -97,14 +95,14 @@ pub mod update_filter_output {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`UpdateFilterOutput`](crate::output::UpdateFilterOutput)
+        /// Consumes the builder and constructs a [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
         pub fn build(self) -> crate::output::UpdateFilterOutput {
             crate::output::UpdateFilterOutput { arn: self.arn }
         }
     }
 }
 impl UpdateFilterOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFilterOutput`](crate::output::UpdateFilterOutput)
+    /// Creates a new builder-style object to manufacture [`UpdateFilterOutput`](crate::output::UpdateFilterOutput).
     pub fn builder() -> crate::output::update_filter_output::Builder {
         crate::output::update_filter_output::Builder::default()
     }
@@ -120,22 +118,21 @@ impl std::fmt::Debug for UntagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
-    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {}
         }
     }
 }
 impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     pub fn builder() -> crate::output::untag_resource_output::Builder {
         crate::output::untag_resource_output::Builder::default()
     }
@@ -151,22 +148,21 @@ impl std::fmt::Debug for TagResourceOutput {
         formatter.finish()
     }
 }
-/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
-    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {}
     impl Builder {
-        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {}
         }
     }
 }
 impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
     pub fn builder() -> crate::output::tag_resource_output::Builder {
         crate::output::tag_resource_output::Builder::default()
     }
@@ -199,11 +195,10 @@ impl std::fmt::Debug for ListUsageTotalsOutput {
         formatter.finish()
     }
 }
-/// See [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput)
+/// See [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
 pub mod list_usage_totals_output {
 
-    /// A builder for [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -239,7 +234,7 @@ pub mod list_usage_totals_output {
             self.totals = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput)
+        /// Consumes the builder and constructs a [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
         pub fn build(self) -> crate::output::ListUsageTotalsOutput {
             crate::output::ListUsageTotalsOutput {
                 next_token: self.next_token,
@@ -249,7 +244,7 @@ pub mod list_usage_totals_output {
     }
 }
 impl ListUsageTotalsOutput {
-    /// Creates a new builder-style object to manufacture [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput)
+    /// Creates a new builder-style object to manufacture [`ListUsageTotalsOutput`](crate::output::ListUsageTotalsOutput).
     pub fn builder() -> crate::output::list_usage_totals_output::Builder {
         crate::output::list_usage_totals_output::Builder::default()
     }
@@ -279,11 +274,10 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
         formatter.finish()
     }
 }
-/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
-    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<
@@ -316,14 +310,14 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput { tags: self.tags }
         }
     }
 }
 impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
@@ -356,11 +350,10 @@ impl std::fmt::Debug for ListMembersOutput {
         formatter.finish()
     }
 }
-/// See [`ListMembersOutput`](crate::output::ListMembersOutput)
+/// See [`ListMembersOutput`](crate::output::ListMembersOutput).
 pub mod list_members_output {
 
-    /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListMembersOutput`](crate::output::ListMembersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) members: std::option::Option<std::vec::Vec<crate::model::Member>>,
@@ -396,7 +389,7 @@ pub mod list_members_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListMembersOutput`](crate::output::ListMembersOutput)
+        /// Consumes the builder and constructs a [`ListMembersOutput`](crate::output::ListMembersOutput).
         pub fn build(self) -> crate::output::ListMembersOutput {
             crate::output::ListMembersOutput {
                 members: self.members,
@@ -406,7 +399,7 @@ pub mod list_members_output {
     }
 }
 impl ListMembersOutput {
-    /// Creates a new builder-style object to manufacture [`ListMembersOutput`](crate::output::ListMembersOutput)
+    /// Creates a new builder-style object to manufacture [`ListMembersOutput`](crate::output::ListMembersOutput).
     pub fn builder() -> crate::output::list_members_output::Builder {
         crate::output::list_members_output::Builder::default()
     }
@@ -439,11 +432,10 @@ impl std::fmt::Debug for ListFindingsOutput {
         formatter.finish()
     }
 }
-/// See [`ListFindingsOutput`](crate::output::ListFindingsOutput)
+/// See [`ListFindingsOutput`](crate::output::ListFindingsOutput).
 pub mod list_findings_output {
 
-    /// A builder for [`ListFindingsOutput`](crate::output::ListFindingsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFindingsOutput`](crate::output::ListFindingsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -479,7 +471,7 @@ pub mod list_findings_output {
             self.findings = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::output::ListFindingsOutput)
+        /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::output::ListFindingsOutput).
         pub fn build(self) -> crate::output::ListFindingsOutput {
             crate::output::ListFindingsOutput {
                 next_token: self.next_token,
@@ -489,7 +481,7 @@ pub mod list_findings_output {
     }
 }
 impl ListFindingsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::output::ListFindingsOutput)
+    /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::output::ListFindingsOutput).
     pub fn builder() -> crate::output::list_findings_output::Builder {
         crate::output::list_findings_output::Builder::default()
     }
@@ -529,11 +521,10 @@ impl std::fmt::Debug for ListFindingAggregationsOutput {
         formatter.finish()
     }
 }
-/// See [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput)
+/// See [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
 pub mod list_finding_aggregations_output {
 
-    /// A builder for [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) aggregation_type: std::option::Option<crate::model::AggregationType>,
@@ -583,7 +574,7 @@ pub mod list_finding_aggregations_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput)
+        /// Consumes the builder and constructs a [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
         pub fn build(self) -> crate::output::ListFindingAggregationsOutput {
             crate::output::ListFindingAggregationsOutput {
                 aggregation_type: self.aggregation_type,
@@ -594,7 +585,7 @@ pub mod list_finding_aggregations_output {
     }
 }
 impl ListFindingAggregationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput)
+    /// Creates a new builder-style object to manufacture [`ListFindingAggregationsOutput`](crate::output::ListFindingAggregationsOutput).
     pub fn builder() -> crate::output::list_finding_aggregations_output::Builder {
         crate::output::list_finding_aggregations_output::Builder::default()
     }
@@ -627,11 +618,10 @@ impl std::fmt::Debug for ListFiltersOutput {
         formatter.finish()
     }
 }
-/// See [`ListFiltersOutput`](crate::output::ListFiltersOutput)
+/// See [`ListFiltersOutput`](crate::output::ListFiltersOutput).
 pub mod list_filters_output {
 
-    /// A builder for [`ListFiltersOutput`](crate::output::ListFiltersOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListFiltersOutput`](crate::output::ListFiltersOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -667,7 +657,7 @@ pub mod list_filters_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListFiltersOutput`](crate::output::ListFiltersOutput)
+        /// Consumes the builder and constructs a [`ListFiltersOutput`](crate::output::ListFiltersOutput).
         pub fn build(self) -> crate::output::ListFiltersOutput {
             crate::output::ListFiltersOutput {
                 filters: self.filters,
@@ -677,7 +667,7 @@ pub mod list_filters_output {
     }
 }
 impl ListFiltersOutput {
-    /// Creates a new builder-style object to manufacture [`ListFiltersOutput`](crate::output::ListFiltersOutput)
+    /// Creates a new builder-style object to manufacture [`ListFiltersOutput`](crate::output::ListFiltersOutput).
     pub fn builder() -> crate::output::list_filters_output::Builder {
         crate::output::list_filters_output::Builder::default()
     }
@@ -713,11 +703,10 @@ impl std::fmt::Debug for ListDelegatedAdminAccountsOutput {
         formatter.finish()
     }
 }
-/// See [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput)
+/// See [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
 pub mod list_delegated_admin_accounts_output {
 
-    /// A builder for [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_admin_accounts:
@@ -757,7 +746,7 @@ pub mod list_delegated_admin_accounts_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput)
+        /// Consumes the builder and constructs a [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
         pub fn build(self) -> crate::output::ListDelegatedAdminAccountsOutput {
             crate::output::ListDelegatedAdminAccountsOutput {
                 delegated_admin_accounts: self.delegated_admin_accounts,
@@ -767,7 +756,7 @@ pub mod list_delegated_admin_accounts_output {
     }
 }
 impl ListDelegatedAdminAccountsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput)
+    /// Creates a new builder-style object to manufacture [`ListDelegatedAdminAccountsOutput`](crate::output::ListDelegatedAdminAccountsOutput).
     pub fn builder() -> crate::output::list_delegated_admin_accounts_output::Builder {
         crate::output::list_delegated_admin_accounts_output::Builder::default()
     }
@@ -807,11 +796,10 @@ impl std::fmt::Debug for ListCoverageStatisticsOutput {
         formatter.finish()
     }
 }
-/// See [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput)
+/// See [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
 pub mod list_coverage_statistics_output {
 
-    /// A builder for [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) counts_by_group: std::option::Option<std::vec::Vec<crate::model::Counts>>,
@@ -858,7 +846,7 @@ pub mod list_coverage_statistics_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput)
+        /// Consumes the builder and constructs a [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
         pub fn build(self) -> crate::output::ListCoverageStatisticsOutput {
             crate::output::ListCoverageStatisticsOutput {
                 counts_by_group: self.counts_by_group,
@@ -869,7 +857,7 @@ pub mod list_coverage_statistics_output {
     }
 }
 impl ListCoverageStatisticsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput)
+    /// Creates a new builder-style object to manufacture [`ListCoverageStatisticsOutput`](crate::output::ListCoverageStatisticsOutput).
     pub fn builder() -> crate::output::list_coverage_statistics_output::Builder {
         crate::output::list_coverage_statistics_output::Builder::default()
     }
@@ -902,11 +890,10 @@ impl std::fmt::Debug for ListCoverageOutput {
         formatter.finish()
     }
 }
-/// See [`ListCoverageOutput`](crate::output::ListCoverageOutput)
+/// See [`ListCoverageOutput`](crate::output::ListCoverageOutput).
 pub mod list_coverage_output {
 
-    /// A builder for [`ListCoverageOutput`](crate::output::ListCoverageOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListCoverageOutput`](crate::output::ListCoverageOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -943,7 +930,7 @@ pub mod list_coverage_output {
             self.covered_resources = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListCoverageOutput`](crate::output::ListCoverageOutput)
+        /// Consumes the builder and constructs a [`ListCoverageOutput`](crate::output::ListCoverageOutput).
         pub fn build(self) -> crate::output::ListCoverageOutput {
             crate::output::ListCoverageOutput {
                 next_token: self.next_token,
@@ -953,7 +940,7 @@ pub mod list_coverage_output {
     }
 }
 impl ListCoverageOutput {
-    /// Creates a new builder-style object to manufacture [`ListCoverageOutput`](crate::output::ListCoverageOutput)
+    /// Creates a new builder-style object to manufacture [`ListCoverageOutput`](crate::output::ListCoverageOutput).
     pub fn builder() -> crate::output::list_coverage_output::Builder {
         crate::output::list_coverage_output::Builder::default()
     }
@@ -986,11 +973,10 @@ impl std::fmt::Debug for ListAccountPermissionsOutput {
         formatter.finish()
     }
 }
-/// See [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput)
+/// See [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
 pub mod list_account_permissions_output {
 
-    /// A builder for [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput)
-    #[non_exhaustive]
+    /// A builder for [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions: std::option::Option<std::vec::Vec<crate::model::Permission>>,
@@ -1026,7 +1012,7 @@ pub mod list_account_permissions_output {
             self.next_token = input;
             self
         }
-        /// Consumes the builder and constructs a [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput)
+        /// Consumes the builder and constructs a [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
         pub fn build(self) -> crate::output::ListAccountPermissionsOutput {
             crate::output::ListAccountPermissionsOutput {
                 permissions: self.permissions,
@@ -1036,7 +1022,7 @@ pub mod list_account_permissions_output {
     }
 }
 impl ListAccountPermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput)
+    /// Creates a new builder-style object to manufacture [`ListAccountPermissionsOutput`](crate::output::ListAccountPermissionsOutput).
     pub fn builder() -> crate::output::list_account_permissions_output::Builder {
         crate::output::list_account_permissions_output::Builder::default()
     }
@@ -1062,11 +1048,10 @@ impl std::fmt::Debug for GetMemberOutput {
         formatter.finish()
     }
 }
-/// See [`GetMemberOutput`](crate::output::GetMemberOutput)
+/// See [`GetMemberOutput`](crate::output::GetMemberOutput).
 pub mod get_member_output {
 
-    /// A builder for [`GetMemberOutput`](crate::output::GetMemberOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetMemberOutput`](crate::output::GetMemberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) member: std::option::Option<crate::model::Member>,
@@ -1082,7 +1067,7 @@ pub mod get_member_output {
             self.member = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetMemberOutput`](crate::output::GetMemberOutput)
+        /// Consumes the builder and constructs a [`GetMemberOutput`](crate::output::GetMemberOutput).
         pub fn build(self) -> crate::output::GetMemberOutput {
             crate::output::GetMemberOutput {
                 member: self.member,
@@ -1091,7 +1076,7 @@ pub mod get_member_output {
     }
 }
 impl GetMemberOutput {
-    /// Creates a new builder-style object to manufacture [`GetMemberOutput`](crate::output::GetMemberOutput)
+    /// Creates a new builder-style object to manufacture [`GetMemberOutput`](crate::output::GetMemberOutput).
     pub fn builder() -> crate::output::get_member_output::Builder {
         crate::output::get_member_output::Builder::default()
     }
@@ -1152,11 +1137,10 @@ impl std::fmt::Debug for GetFindingsReportStatusOutput {
         formatter.finish()
     }
 }
-/// See [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput)
+/// See [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
 pub mod get_findings_report_status_output {
 
-    /// A builder for [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -1242,7 +1226,7 @@ pub mod get_findings_report_status_output {
             self.filter_criteria = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput)
+        /// Consumes the builder and constructs a [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
         pub fn build(self) -> crate::output::GetFindingsReportStatusOutput {
             crate::output::GetFindingsReportStatusOutput {
                 report_id: self.report_id,
@@ -1256,7 +1240,7 @@ pub mod get_findings_report_status_output {
     }
 }
 impl GetFindingsReportStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput)
+    /// Creates a new builder-style object to manufacture [`GetFindingsReportStatusOutput`](crate::output::GetFindingsReportStatusOutput).
     pub fn builder() -> crate::output::get_findings_report_status_output::Builder {
         crate::output::get_findings_report_status_output::Builder::default()
     }
@@ -1282,11 +1266,10 @@ impl std::fmt::Debug for GetDelegatedAdminAccountOutput {
         formatter.finish()
     }
 }
-/// See [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput)
+/// See [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
 pub mod get_delegated_admin_account_output {
 
-    /// A builder for [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_admin: std::option::Option<crate::model::DelegatedAdmin>,
@@ -1305,7 +1288,7 @@ pub mod get_delegated_admin_account_output {
             self.delegated_admin = input;
             self
         }
-        /// Consumes the builder and constructs a [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput)
+        /// Consumes the builder and constructs a [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
         pub fn build(self) -> crate::output::GetDelegatedAdminAccountOutput {
             crate::output::GetDelegatedAdminAccountOutput {
                 delegated_admin: self.delegated_admin,
@@ -1314,7 +1297,7 @@ pub mod get_delegated_admin_account_output {
     }
 }
 impl GetDelegatedAdminAccountOutput {
-    /// Creates a new builder-style object to manufacture [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput)
+    /// Creates a new builder-style object to manufacture [`GetDelegatedAdminAccountOutput`](crate::output::GetDelegatedAdminAccountOutput).
     pub fn builder() -> crate::output::get_delegated_admin_account_output::Builder {
         crate::output::get_delegated_admin_account_output::Builder::default()
     }
@@ -1343,11 +1326,10 @@ impl std::fmt::Debug for EnableDelegatedAdminAccountOutput {
         formatter.finish()
     }
 }
-/// See [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput)
+/// See [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
 pub mod enable_delegated_admin_account_output {
 
-    /// A builder for [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_admin_account_id: std::option::Option<std::string::String>,
@@ -1366,7 +1348,7 @@ pub mod enable_delegated_admin_account_output {
             self.delegated_admin_account_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput)
+        /// Consumes the builder and constructs a [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
         pub fn build(self) -> crate::output::EnableDelegatedAdminAccountOutput {
             crate::output::EnableDelegatedAdminAccountOutput {
                 delegated_admin_account_id: self.delegated_admin_account_id,
@@ -1375,7 +1357,7 @@ pub mod enable_delegated_admin_account_output {
     }
 }
 impl EnableDelegatedAdminAccountOutput {
-    /// Creates a new builder-style object to manufacture [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput)
+    /// Creates a new builder-style object to manufacture [`EnableDelegatedAdminAccountOutput`](crate::output::EnableDelegatedAdminAccountOutput).
     pub fn builder() -> crate::output::enable_delegated_admin_account_output::Builder {
         crate::output::enable_delegated_admin_account_output::Builder::default()
     }
@@ -1408,11 +1390,10 @@ impl std::fmt::Debug for EnableOutput {
         formatter.finish()
     }
 }
-/// See [`EnableOutput`](crate::output::EnableOutput)
+/// See [`EnableOutput`](crate::output::EnableOutput).
 pub mod enable_output {
 
-    /// A builder for [`EnableOutput`](crate::output::EnableOutput)
-    #[non_exhaustive]
+    /// A builder for [`EnableOutput`](crate::output::EnableOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1457,7 +1438,7 @@ pub mod enable_output {
             self.failed_accounts = input;
             self
         }
-        /// Consumes the builder and constructs a [`EnableOutput`](crate::output::EnableOutput)
+        /// Consumes the builder and constructs a [`EnableOutput`](crate::output::EnableOutput).
         pub fn build(self) -> crate::output::EnableOutput {
             crate::output::EnableOutput {
                 accounts: self.accounts,
@@ -1467,7 +1448,7 @@ pub mod enable_output {
     }
 }
 impl EnableOutput {
-    /// Creates a new builder-style object to manufacture [`EnableOutput`](crate::output::EnableOutput)
+    /// Creates a new builder-style object to manufacture [`EnableOutput`](crate::output::EnableOutput).
     pub fn builder() -> crate::output::enable_output::Builder {
         crate::output::enable_output::Builder::default()
     }
@@ -1493,11 +1474,10 @@ impl std::fmt::Debug for DisassociateMemberOutput {
         formatter.finish()
     }
 }
-/// See [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput)
+/// See [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
 pub mod disassociate_member_output {
 
-    /// A builder for [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -1513,7 +1493,7 @@ pub mod disassociate_member_output {
             self.account_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput)
+        /// Consumes the builder and constructs a [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
         pub fn build(self) -> crate::output::DisassociateMemberOutput {
             crate::output::DisassociateMemberOutput {
                 account_id: self.account_id,
@@ -1522,7 +1502,7 @@ pub mod disassociate_member_output {
     }
 }
 impl DisassociateMemberOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput)
+    /// Creates a new builder-style object to manufacture [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput).
     pub fn builder() -> crate::output::disassociate_member_output::Builder {
         crate::output::disassociate_member_output::Builder::default()
     }
@@ -1551,11 +1531,10 @@ impl std::fmt::Debug for DisableDelegatedAdminAccountOutput {
         formatter.finish()
     }
 }
-/// See [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput)
+/// See [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
 pub mod disable_delegated_admin_account_output {
 
-    /// A builder for [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) delegated_admin_account_id: std::option::Option<std::string::String>,
@@ -1574,7 +1553,7 @@ pub mod disable_delegated_admin_account_output {
             self.delegated_admin_account_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput)
+        /// Consumes the builder and constructs a [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
         pub fn build(self) -> crate::output::DisableDelegatedAdminAccountOutput {
             crate::output::DisableDelegatedAdminAccountOutput {
                 delegated_admin_account_id: self.delegated_admin_account_id,
@@ -1583,7 +1562,7 @@ pub mod disable_delegated_admin_account_output {
     }
 }
 impl DisableDelegatedAdminAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput)
+    /// Creates a new builder-style object to manufacture [`DisableDelegatedAdminAccountOutput`](crate::output::DisableDelegatedAdminAccountOutput).
     pub fn builder() -> crate::output::disable_delegated_admin_account_output::Builder {
         crate::output::disable_delegated_admin_account_output::Builder::default()
     }
@@ -1616,11 +1595,10 @@ impl std::fmt::Debug for DisableOutput {
         formatter.finish()
     }
 }
-/// See [`DisableOutput`](crate::output::DisableOutput)
+/// See [`DisableOutput`](crate::output::DisableOutput).
 pub mod disable_output {
 
-    /// A builder for [`DisableOutput`](crate::output::DisableOutput)
-    #[non_exhaustive]
+    /// A builder for [`DisableOutput`](crate::output::DisableOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1665,7 +1643,7 @@ pub mod disable_output {
             self.failed_accounts = input;
             self
         }
-        /// Consumes the builder and constructs a [`DisableOutput`](crate::output::DisableOutput)
+        /// Consumes the builder and constructs a [`DisableOutput`](crate::output::DisableOutput).
         pub fn build(self) -> crate::output::DisableOutput {
             crate::output::DisableOutput {
                 accounts: self.accounts,
@@ -1675,7 +1653,7 @@ pub mod disable_output {
     }
 }
 impl DisableOutput {
-    /// Creates a new builder-style object to manufacture [`DisableOutput`](crate::output::DisableOutput)
+    /// Creates a new builder-style object to manufacture [`DisableOutput`](crate::output::DisableOutput).
     pub fn builder() -> crate::output::disable_output::Builder {
         crate::output::disable_output::Builder::default()
     }
@@ -1708,11 +1686,10 @@ impl std::fmt::Debug for DescribeOrganizationConfigurationOutput {
         formatter.finish()
     }
 }
-/// See [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput)
+/// See [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
 pub mod describe_organization_configuration_output {
 
-    /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput)
-    #[non_exhaustive]
+    /// A builder for [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_enable: std::option::Option<crate::model::AutoEnable>,
@@ -1742,7 +1719,7 @@ pub mod describe_organization_configuration_output {
             self.max_account_limit_reached = input;
             self
         }
-        /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput)
+        /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeOrganizationConfigurationOutput {
             crate::output::DescribeOrganizationConfigurationOutput {
                 auto_enable: self.auto_enable,
@@ -1752,7 +1729,7 @@ pub mod describe_organization_configuration_output {
     }
 }
 impl DescribeOrganizationConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput)
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput).
     pub fn builder() -> crate::output::describe_organization_configuration_output::Builder {
         crate::output::describe_organization_configuration_output::Builder::default()
     }
@@ -1778,11 +1755,10 @@ impl std::fmt::Debug for DeleteFilterOutput {
         formatter.finish()
     }
 }
-/// See [`DeleteFilterOutput`](crate::output::DeleteFilterOutput)
+/// See [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
 pub mod delete_filter_output {
 
-    /// A builder for [`DeleteFilterOutput`](crate::output::DeleteFilterOutput)
-    #[non_exhaustive]
+    /// A builder for [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1798,14 +1774,14 @@ pub mod delete_filter_output {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`DeleteFilterOutput`](crate::output::DeleteFilterOutput)
+        /// Consumes the builder and constructs a [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
         pub fn build(self) -> crate::output::DeleteFilterOutput {
             crate::output::DeleteFilterOutput { arn: self.arn }
         }
     }
 }
 impl DeleteFilterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFilterOutput`](crate::output::DeleteFilterOutput)
+    /// Creates a new builder-style object to manufacture [`DeleteFilterOutput`](crate::output::DeleteFilterOutput).
     pub fn builder() -> crate::output::delete_filter_output::Builder {
         crate::output::delete_filter_output::Builder::default()
     }
@@ -1831,11 +1807,10 @@ impl std::fmt::Debug for CreateFindingsReportOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput)
+/// See [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
 pub mod create_findings_report_output {
 
-    /// A builder for [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -1851,7 +1826,7 @@ pub mod create_findings_report_output {
             self.report_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput)
+        /// Consumes the builder and constructs a [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
         pub fn build(self) -> crate::output::CreateFindingsReportOutput {
             crate::output::CreateFindingsReportOutput {
                 report_id: self.report_id,
@@ -1860,7 +1835,7 @@ pub mod create_findings_report_output {
     }
 }
 impl CreateFindingsReportOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFindingsReportOutput`](crate::output::CreateFindingsReportOutput).
     pub fn builder() -> crate::output::create_findings_report_output::Builder {
         crate::output::create_findings_report_output::Builder::default()
     }
@@ -1886,11 +1861,10 @@ impl std::fmt::Debug for CreateFilterOutput {
         formatter.finish()
     }
 }
-/// See [`CreateFilterOutput`](crate::output::CreateFilterOutput)
+/// See [`CreateFilterOutput`](crate::output::CreateFilterOutput).
 pub mod create_filter_output {
 
-    /// A builder for [`CreateFilterOutput`](crate::output::CreateFilterOutput)
-    #[non_exhaustive]
+    /// A builder for [`CreateFilterOutput`](crate::output::CreateFilterOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -1906,14 +1880,14 @@ pub mod create_filter_output {
             self.arn = input;
             self
         }
-        /// Consumes the builder and constructs a [`CreateFilterOutput`](crate::output::CreateFilterOutput)
+        /// Consumes the builder and constructs a [`CreateFilterOutput`](crate::output::CreateFilterOutput).
         pub fn build(self) -> crate::output::CreateFilterOutput {
             crate::output::CreateFilterOutput { arn: self.arn }
         }
     }
 }
 impl CreateFilterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFilterOutput`](crate::output::CreateFilterOutput)
+    /// Creates a new builder-style object to manufacture [`CreateFilterOutput`](crate::output::CreateFilterOutput).
     pub fn builder() -> crate::output::create_filter_output::Builder {
         crate::output::create_filter_output::Builder::default()
     }
@@ -1939,11 +1913,10 @@ impl std::fmt::Debug for CancelFindingsReportOutput {
         formatter.finish()
     }
 }
-/// See [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput)
+/// See [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
 pub mod cancel_findings_report_output {
 
-    /// A builder for [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput)
-    #[non_exhaustive]
+    /// A builder for [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
@@ -1959,7 +1932,7 @@ pub mod cancel_findings_report_output {
             self.report_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput)
+        /// Consumes the builder and constructs a [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
         pub fn build(self) -> crate::output::CancelFindingsReportOutput {
             crate::output::CancelFindingsReportOutput {
                 report_id: self.report_id,
@@ -1968,7 +1941,7 @@ pub mod cancel_findings_report_output {
     }
 }
 impl CancelFindingsReportOutput {
-    /// Creates a new builder-style object to manufacture [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput)
+    /// Creates a new builder-style object to manufacture [`CancelFindingsReportOutput`](crate::output::CancelFindingsReportOutput).
     pub fn builder() -> crate::output::cancel_findings_report_output::Builder {
         crate::output::cancel_findings_report_output::Builder::default()
     }
@@ -2001,11 +1974,10 @@ impl std::fmt::Debug for BatchGetFreeTrialInfoOutput {
         formatter.finish()
     }
 }
-/// See [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput)
+/// See [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
 pub mod batch_get_free_trial_info_output {
 
-    /// A builder for [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::FreeTrialAccountInfo>>,
@@ -2051,7 +2023,7 @@ pub mod batch_get_free_trial_info_output {
             self.failed_accounts = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput)
+        /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
         pub fn build(self) -> crate::output::BatchGetFreeTrialInfoOutput {
             crate::output::BatchGetFreeTrialInfoOutput {
                 accounts: self.accounts,
@@ -2061,7 +2033,7 @@ pub mod batch_get_free_trial_info_output {
     }
 }
 impl BatchGetFreeTrialInfoOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput)
+    /// Creates a new builder-style object to manufacture [`BatchGetFreeTrialInfoOutput`](crate::output::BatchGetFreeTrialInfoOutput).
     pub fn builder() -> crate::output::batch_get_free_trial_info_output::Builder {
         crate::output::batch_get_free_trial_info_output::Builder::default()
     }
@@ -2094,11 +2066,10 @@ impl std::fmt::Debug for BatchGetAccountStatusOutput {
         formatter.finish()
     }
 }
-/// See [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput)
+/// See [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
 pub mod batch_get_account_status_output {
 
-    /// A builder for [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput)
-    #[non_exhaustive]
+    /// A builder for [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::AccountState>>,
@@ -2143,7 +2114,7 @@ pub mod batch_get_account_status_output {
             self.failed_accounts = input;
             self
         }
-        /// Consumes the builder and constructs a [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput)
+        /// Consumes the builder and constructs a [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
         pub fn build(self) -> crate::output::BatchGetAccountStatusOutput {
             crate::output::BatchGetAccountStatusOutput {
                 accounts: self.accounts,
@@ -2153,7 +2124,7 @@ pub mod batch_get_account_status_output {
     }
 }
 impl BatchGetAccountStatusOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput)
+    /// Creates a new builder-style object to manufacture [`BatchGetAccountStatusOutput`](crate::output::BatchGetAccountStatusOutput).
     pub fn builder() -> crate::output::batch_get_account_status_output::Builder {
         crate::output::batch_get_account_status_output::Builder::default()
     }
@@ -2179,11 +2150,10 @@ impl std::fmt::Debug for AssociateMemberOutput {
         formatter.finish()
     }
 }
-/// See [`AssociateMemberOutput`](crate::output::AssociateMemberOutput)
+/// See [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
 pub mod associate_member_output {
 
-    /// A builder for [`AssociateMemberOutput`](crate::output::AssociateMemberOutput)
-    #[non_exhaustive]
+    /// A builder for [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
@@ -2199,7 +2169,7 @@ pub mod associate_member_output {
             self.account_id = input;
             self
         }
-        /// Consumes the builder and constructs a [`AssociateMemberOutput`](crate::output::AssociateMemberOutput)
+        /// Consumes the builder and constructs a [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
         pub fn build(self) -> crate::output::AssociateMemberOutput {
             crate::output::AssociateMemberOutput {
                 account_id: self.account_id,
@@ -2208,7 +2178,7 @@ pub mod associate_member_output {
     }
 }
 impl AssociateMemberOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateMemberOutput`](crate::output::AssociateMemberOutput)
+    /// Creates a new builder-style object to manufacture [`AssociateMemberOutput`](crate::output::AssociateMemberOutput).
     pub fn builder() -> crate::output::associate_member_output::Builder {
         crate::output::associate_member_output::Builder::default()
     }
